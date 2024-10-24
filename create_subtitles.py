@@ -5,7 +5,7 @@
 import whisperx
 ## to test hugging face token:
 #from pyannote.audio import Pipeline
-#token = "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"
+#with open('hf_token.txt') as f: token = f.readline()
 #pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", use_auth_token=token)
 #ipdb.set_trace()
 
@@ -131,8 +131,8 @@ print("Alignment complete. Took " + str((datetime.datetime.utcnow()-t0).total_se
 # import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
 
 # Assign speaker labels ("diarization")
-with open('hf_token.txt') as f:
-    token = f.readline()
+with open('hf_token.txt') as f: token = f.readline()
+
 diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
 
 # add min/max number of speakers if known
