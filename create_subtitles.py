@@ -131,7 +131,8 @@ print("Alignment complete. Took " + str((datetime.datetime.utcnow()-t0).total_se
 # import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
 
 # Assign speaker labels ("diarization")
-token = "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"
+with open('hf_token.txt') as f:
+    token = f.readline()
 diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
 
 # add min/max number of speakers if known
