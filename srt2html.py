@@ -33,6 +33,8 @@ def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop):
 
 def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 
+    councilors = ["Bears","Collins","Callahan","Lazzaro","Leming","Scarpelli","Tseng","Olapade","Reinfeld","Jessica","Graham","Ruseau","Lungo-Koehn"]
+
     speaker = ""
     start = 0.0
     stop = 86400.0
@@ -43,7 +45,7 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
     	yt_id = os.path.basename(srtfilename)[0]
 
     # output custom html with links to corresponding parts of the youtube video
-    html = open(os.path.join(dir,htmlfilename), 'w')
+    html = open(os.path.join(dir,htmlfilename), 'w', encoding="utf-8")
     html.write('<!DOCTYPE html>\n')
     html.write('<html lang="en">\n')
     html.write('  <head>\n')
@@ -53,10 +55,11 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
     html.write('   <title>Transcript for ' + yt_id + '</title>\n')
     html.write('  </head>\n')
     html.write('  <body>\n')
+    html.write('  <table>\n')
 
     speaker_stats = {}
 
-    with open(os.path.join(dir,srtfilename), 'r') as file:
+    with open(os.path.join(dir,srtfilename), 'r', encoding="utf-8") as file:
 
         # Read each line in the file
 	    for line in file:
@@ -97,13 +100,6 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 
     finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop)
 
-    html.write('  </body>\n')
-    html.write('</html>\n')
-    html.close()
-
-    ignore_words = ["to","the","that","of","a","is","this","on","and","it","so","in","it's","just","are","for","has","had"]#,"i","you"]
-    max_to_print = 3
-
     for speaker in speaker_stats.keys():
     	nprinted = 0
     	if speaker != '':
@@ -111,23 +107,36 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 	    	print("  total time: " + str(round(speaker_stats[speaker]["total_time"]/60.0,2)) + ' minutes')
 	    	print("  total words: " + str(speaker_stats[speaker]["total_words"]))
 
-
-	    	if 0:
-		    	print("  top " + str(max_to_print) + " words:")
-		    	sorted_words = dict(sorted(speaker_stats[speaker]["words"].items(), key=lambda item: item[1],reverse=True))
-		    	for word in sorted_words.keys():
-		    		if word not in ignore_words:
-		    			print("    " + word + ":" + str(sorted_words[word]))
-		    			nprinted += 1
-		    		if nprinted >= max_to_print: break
-
 	    	# make a word cloud
-	    	wordcloud = WordCloud(max_font_size=40).generate(speaker_stats[speaker]["all_words"])
-	    	plt.figure()
-	    	plt.imshow(wordcloud, interpolation="bilinear")
-	    	plt.axis("off")
-	    	plt.savefig(os.path.join(dir,speaker + '.wordcloud.png'))
+	    	if speaker in councilors:
+		    	wordcloud = WordCloud(max_font_size=40).generate(speaker_stats[speaker]["all_words"])
+		    	wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
 
+
+    ncols = 4
+    nrows = 4
+    idx = 0
+    # TODO: make councilors only the subset of councilors present
+    # make a table with stats
+    for i in range(nrows):
+    	html.write('    <tr>\n')
+    	for j in range(ncols):
+		    html.write('      <td>\n')
+		    idx = i*ncols+j
+		    if idx < len(councilors):
+		    	if councilors[idx] in speaker_stats.keys():
+				    imagename = councilors[idx] + '.wordcloud.png'
+				    html.write('        <center>' + councilors[idx] + "</center><br>\n")
+				    html.write('        total time: ' + str(round(speaker_stats[councilors[idx]]["total_time"]/60.0,2)) + ' minutes<br>\n')
+				    html.write('        total words: ' + str(speaker_stats[councilors[idx]]["total_words"]) + '<br>\n')
+				    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" height=150></img></a><br>\n')
+		    html.write('      </td>\n')
+    	html.write('    </tr>\n')
+    html.write('  </table>\n')
+
+    html.write('  </body>\n')
+    html.write('</html>\n')
+    html.close()
 
 
 #    ipdb.set_trace()
@@ -135,22 +144,25 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 if __name__ == "__main__":
 
 	speaker_ids = {
-		"SPEAKER_00": "Barkson",
-		"SPEAKER_01": "Tseng",
-		"SPEAKER_02": "Costigan",
-		"SPEAKER_03": "Collins",
-		"SPEAKER_04": "Castagnetti",
-		"SPEAKER_05": "Costigan",
-		"SPEAKER_06": "Bears",
-		"SPEAKER_07": "Scarpelli",
-		"SPEAKER_08": "Costigan",
-		"SPEAKER_09": "Leming",
-		"SPEAKER_10": "Hurtubise",
-		"SPEAKER_11": "Hurtubise",
+		"SPEAKER_00": "Olapade",
+		"SPEAKER_01": "Bears",
+		"SPEAKER_02": "Collins",
+		"SPEAKER_03": "Music",
+		"SPEAKER_04": "SPEAKER_04",
+		"SPEAKER_05": "Leming",
+		"SPEAKER_06": "Reinfeld",
+		"SPEAKER_07": "Jessica",
+		"SPEAKER_08": "Lazzaro",
+		"SPEAKER_09": "Graham",
+		"SPEAKER_10": "Lungo-Koehn",
+		"SPEAKER_11": "Callahan",
+		"SPEAKER_12": "Ruseau",
 	}
-
-	#srt2html("council30.srt","council30_new.html",speaker_ids=speaker_ids, yt_id="kP4iRYobyr0", dir="council30")
-
+	dir="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall"
+	srtfile="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall.srt"
+	htmlfile="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall.html"
+	srt2html(srtfile,htmlfile, yt_id="eYLl0XsNfvs", speaker_ids=speaker_ids, dir=dir)
+	ipdb.set_trace()
 
 	speaker_ids = {
 		"SPEAKER_00": "Sharpener",
@@ -172,4 +184,7 @@ if __name__ == "__main__":
 		"SPEAKER_16": "Costigan",
 	}
 
-	srt2html("council.0-60.srt","council.0-60_new.html",speaker_ids=speaker_ids, yt_id="kP4iRYobyr0", dir="council.0-60")
+	dir = "2024-10-15_kP4iRYobyr0_city_council_committee_of_the_whole_10-15-24"
+	srtfile = dir + '.srt'
+	htmlfile = dir + '.html'
+	srt2html(srtfile,htmlfile,speaker_ids=speaker_ids, yt_id="kP4iRYobyr0", dir=dir)
