@@ -1,8 +1,7 @@
 import datetime, os
 import ipdb
 from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-
+import json,glob
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop):
 	# new speaker; wrap up and start new
@@ -31,7 +30,11 @@ def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop):
 	if "total_words" in speaker_stats[speaker].keys(): speaker_stats[speaker]["total_words"] += added_words
 	else: speaker_stats[speaker]["total_words"] = added_words
 
-def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
+def srt2html(yt_id):
+
+    srtfilename = glob.glob('*'+yt_id+'*/*.srt')[0]
+    htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
+    dir = os.path.dirname(srtfilename)
 
     councilors = ["Lungo-Koehn", # Mayor
     "Bears","Collins","Callahan","Lazzaro","Leming","Scarpelli","Tseng", # City Councilors
@@ -44,11 +47,15 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
     text = ""
     t0 = datetime.datetime(1900,1,1)	
 
-    if yt_id == None:
-    	yt_id = os.path.basename(srtfilename)[0]
+    # read in the speaker mappings
+    jsonfile = os.path.join(dir,'speaker_ids.json')
+    if os.path.exists(jsonfile):
+	    with open(jsonfile, 'r') as fp:
+    		speaker_ids = json.load(fp)
+    else: speaker_ids = {}
 
     # output custom html with links to corresponding parts of the youtube video
-    html = open(os.path.join(dir,htmlfilename), 'w', encoding="utf-8")
+    html = open(htmlfilename, 'w', encoding="utf-8")
     html.write('<!DOCTYPE html>\n')
     html.write('<html lang="en">\n')
     html.write('  <head>\n')
@@ -62,7 +69,7 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 
     speaker_stats = {}
 
-    with open(os.path.join(dir,srtfilename), 'r', encoding="utf-8") as file:
+    with open(srtfilename, 'r', encoding="utf-8") as file:
 
         # Read each line in the file
 	    for line in file:
@@ -146,53 +153,8 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
     html.write('</html>\n')
     html.close()
 
-
-#    ipdb.set_trace()
-
 if __name__ == "__main__":
 
-	speaker_ids = {
-		"SPEAKER_00": "Olapade",
-		"SPEAKER_01": "Bears",
-		"SPEAKER_02": "Collins",
-		"SPEAKER_03": "Music",
-		"SPEAKER_04": "SPEAKER_04",
-		"SPEAKER_05": "Leming",
-		"SPEAKER_06": "Reinfeld",
-		"SPEAKER_07": "Jessica",
-		"SPEAKER_08": "Lazzaro",
-		"SPEAKER_09": "Graham",
-		"SPEAKER_10": "Lungo-Koehn",
-		"SPEAKER_11": "Callahan",
-		"SPEAKER_12": "Ruseau",
-	}
-	dir="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall"
-	srtfile="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall.srt"
-	htmlfile="2024-10-23_eYLl0XsNfvs_invest_in_medford_town_hall.html"
-	srt2html(srtfile,htmlfile, yt_id="eYLl0XsNfvs", speaker_ids=speaker_ids, dir=dir)
-	ipdb.set_trace()
-
-	speaker_ids = {
-		"SPEAKER_00": "Sharpener",
-		"SPEAKER_01": "Lazzaro",
-		"SPEAKER_02": "Costigan",
-		"SPEAKER_03": "Scarpelli",
-		"SPEAKER_04": "Leming",
-		"SPEAKER_05": "Hurtubise",
-		"SPEAKER_06": "Hurtubise",
-		"SPEAKER_07": "Bears",
-		"SPEAKER_08": "Bears",
-		"SPEAKER_09": "Tardelli",
-		"SPEAKER_10": "Barkson",
-		"SPEAKER_11": "Collins",
-		"SPEAKER_12": "Castagnetti",
-		"SPEAKER_13": "Tseng",
-		"SPEAKER_14": "Callahan",
-		"SPEAKER_15": "McGonigal",
-		"SPEAKER_16": "Costigan",
-	}
-
-	dir = "2024-10-15_kP4iRYobyr0_city_council_committee_of_the_whole_10-15-24"
-	srtfile = dir + '.srt'
-	htmlfile = dir + '.html'
-	srt2html(srtfile,htmlfile,speaker_ids=speaker_ids, yt_id="kP4iRYobyr0", dir=dir)
+	#yt_id="kP4iRYobyr0"
+	yt_id = "eYLl0XsNfvs"
+	srt2html(yt_id)

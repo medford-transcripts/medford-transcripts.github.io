@@ -11,6 +11,9 @@ import yt_dlp
 # standard libraries 
 import datetime, os, glob
 import ipdb
+from . import srt2html
+
+ipdb.set_trace()
 
 ##### test hugging face token #####
 #from pyannote.audio import Pipeline
@@ -38,12 +41,14 @@ def download_audio(yt_id, dir=None):
 			break
 	
 	timestamp = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
-	title = info["title"].replace(" ","_")
+	title = info["title"].replace(" ","_").replace("#","").replace(",","").replace('"','')
 	if dir==None:
-		dir = timestamp + "_" + yt_id + "_" + title.lower()
+		dir = timestamp + "_" + yt_id #+ "_" + title.lower()
 
-	mp3file = os.path.join(dir,dir+'.mp3') 
+	mp3file = os.path.join(dir,dir) +'.mp3'
 	if os.path.isfile(mp3file): return mp3file
+
+	if not os.path.exists(dir): os.makedirs(dir)
 
 	ydl_opts = {
 	    'format': 'bestaudio/best',
@@ -114,14 +119,21 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None):
 	generate_output(diarize_result, base + '.mp3')
 
 	print("Output complete. Took " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
-	ipdb.set_trace()
 
 if __name__ == "__main__":
 
-	yt_id = "kP4iRYobyr0" # city council meeting 2024-10-15
+	#yt_id = "kP4iRYobyr0" # city council meeting 2024-10-15
 	#yt_id = "eYLl0XsNfvs" # town hall
-	transcribe(yt_id)
+	#transcribe(yt_id)
 
-	# TODO: loop over every video on a channel
-	#url = "https://www.youtube.com/@CityofMedfordMass"
-	#info = ydl.extract_info("https://www.youtube.com/@CityofMedfordMass", download=False) 
+	channels = ["@ALLMedford","@InvestinMedford","@CityofMedfordMass"]
+	for channel in channels:
+		url = "https://www.youtube.com/" + channel 
+		info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
+		for entry in info["entries"]:
+			# the downloads are super slow, and timeout often.
+			# but they pick up where they left off. 
+			try: 
+				transcribe(entry["display_id"])
+				srt2html(yt_id)
+			except: pass
