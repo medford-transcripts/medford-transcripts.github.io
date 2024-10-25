@@ -33,7 +33,10 @@ def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop):
 
 def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
 
-    councilors = ["Bears","Collins","Callahan","Lazzaro","Leming","Scarpelli","Tseng","Olapade","Reinfeld","Jessica","Graham","Ruseau","Lungo-Koehn"]
+    councilors = ["Lungo-Koehn", # Mayor
+    "Bears","Collins","Callahan","Lazzaro","Leming","Scarpelli","Tseng", # City Councilors
+    "Branley","Graham","Intoppa","Olapade","Reinfeld","Ruseau", # School committee
+    "Jessica"] # important guest speakers
 
     speaker = ""
     start = 0.0
@@ -116,19 +119,24 @@ def srt2html(srtfilename, htmlfilename, speaker_ids={}, yt_id=None, dir=None):
     ncols = 4
     nrows = 4
     idx = 0
-    # TODO: make councilors only the subset of councilors present
+
+	# find the subset of councilors present
+    present_councilors = []
+    for speaker_id in speaker_stats.keys():
+    	if speaker_id in councilors: present_councilors.append(speaker_id)
+
     # make a table with stats
     for i in range(nrows):
     	html.write('    <tr>\n')
     	for j in range(ncols):
 		    html.write('      <td>\n')
 		    idx = i*ncols+j
-		    if idx < len(councilors):
-		    	if councilors[idx] in speaker_stats.keys():
-				    imagename = councilors[idx] + '.wordcloud.png'
-				    html.write('        <center>' + councilors[idx] + "</center><br>\n")
-				    html.write('        total time: ' + str(round(speaker_stats[councilors[idx]]["total_time"]/60.0,2)) + ' minutes<br>\n')
-				    html.write('        total words: ' + str(speaker_stats[councilors[idx]]["total_words"]) + '<br>\n')
+		    if idx < len(present_councilors):
+		    	if present_councilors[idx] in speaker_stats.keys():
+				    imagename = present_councilors[idx] + '.wordcloud.png'
+				    html.write('        <center>' + present_councilors[idx] + "</center><br>\n")
+				    html.write('        total time: ' + str(round(speaker_stats[present_councilors[idx]]["total_time"]/60.0,2)) + ' minutes<br>\n')
+				    html.write('        total words: ' + str(speaker_stats[present_councilors[idx]]["total_words"]) + '<br>\n')
 				    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" height=150></img></a><br>\n')
 		    html.write('      </td>\n')
     	html.write('    </tr>\n')
