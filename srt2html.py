@@ -2,12 +2,19 @@ import datetime, os
 import ipdb
 from wordcloud import WordCloud
 import json,glob
+from googletrans import Translator, constants
 
-def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop):
+def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
 	# new speaker; wrap up and start new
 	if text != "":
 		html.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
 		html.write("[" + speaker + "]</a>: " + text + "<br><br>\n\n")
+
+		if eshtml != None:
+			translator = Translator()
+			translation = translator.translate(text, dest="es")
+			eshtml.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
+			eshtml.write("[" + speaker + "]</a>: " + translation.text + "<br><br>\n\n")
 
 	# let's do some stats by speaker
 	if not speaker in speaker_stats.keys(): speaker_stats[speaker] = {"words": {}, "all_words" : ""}
@@ -34,6 +41,7 @@ def srt2html(yt_id):
 
     srtfilename = glob.glob('*'+yt_id+'*/*.srt')[0]
     htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
+    eshtmlfilename = os.path.splitext(srtfilename)[0] + '.es.html'
     dir = os.path.dirname(srtfilename)
 
     councilors = ["Lungo-Koehn", # Mayor
@@ -67,6 +75,9 @@ def srt2html(yt_id):
     html.write('  <body>\n')
     html.write('  <table>\n')
 
+    eshtml = open(eshtmlfilename, 'w', encoding="utf-8")
+
+
     speaker_stats = {}
 
     with open(srtfilename, 'r', encoding="utf-8") as file:
@@ -97,7 +108,7 @@ def srt2html(yt_id):
 	        		# same speaker; append to previous text
 	        		text += this_text
 	        	else:
-	        		finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop)
+	        		finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
 
 	        		# update to new values
 	        		start = this_start
@@ -108,7 +119,7 @@ def srt2html(yt_id):
 
 	        else: continue
 
-    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop)
+    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
 
     for speaker in speaker_stats.keys():
     	nprinted = 0
@@ -152,9 +163,52 @@ def srt2html(yt_id):
     html.write('  </body>\n')
     html.write('</html>\n')
     html.close()
+    eshtml.close()
+
+def make_index():
+
+    import yt_dlp
+    htmlfiles = glob.glob('*/*.html')
+    lines = []
+    for htmlfile in htmlfiles:
+    	if htmlfile.endswith("es.html"): continue
+    	date = htmlfile.split('_')[0]
+    	yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
+
+    	eshtmlfile = os.path.splitext(htmlfile)[0]+'.es.html'
+    	url = "https://youtu.be/" + yt_id 
+    	info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
+    	title = info["title"]
+    	channel = info["channel"]
+    	lines.append('<tr><td>' + date + '</td><td><a href="' + url + '">[Video]</a></td><td>' + channel + '</td><td>'+title+'</td><td><a href="' + htmlfile + '">English</a></td><td><a href="' + eshtmlfile + '">Spanish</a></td></tr>\n')
+
+
+    lines.sort(reverse=True)
+    index_page = open('index.html', 'w', encoding="utf-8")
+    index_page.write("<table border=1>\n")
+    index_page.write("<tr><td><center>Upload Date</center></td><td><center>YouTube</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td></tr>\n")
+    for line in lines:
+    	index_page.write(line)
+    index_page.write("</table>")
+    index_page.close()
 
 if __name__ == "__main__":
 
-	#yt_id="kP4iRYobyr0"
-	yt_id = "eYLl0XsNfvs"
-	srt2html(yt_id)
+	make_index()
+	ipdb.set_trace()
+
+	files = glob.glob("*/*.srt")
+	for file in files:
+		yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+		dir = os.path.dirname(file)
+		srtfilename = os.path.join(dir,dir) + '.srt'
+		htmlfilename = os.path.join(dir,dir) + '.html'
+
+		# we want to regenerate them in case we update speaker_ids.json or the srt file
+		# it's pretty fast anyway
+		if os.path.exists(srtfilename): # and not os.path.exists(htmlfilename)
+			srt2html(yt_id)
+
+	# make the top level page with links to all transcripts
+	make_index()
+

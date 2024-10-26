@@ -11,9 +11,7 @@ import yt_dlp
 # standard libraries 
 import datetime, os, glob
 import ipdb
-from . import srt2html
-
-ipdb.set_trace()
+#from . import srt2html
 
 ##### test hugging face token #####
 #from pyannote.audio import Pipeline
@@ -124,16 +122,32 @@ if __name__ == "__main__":
 
 	#yt_id = "kP4iRYobyr0" # city council meeting 2024-10-15
 	#yt_id = "eYLl0XsNfvs" # town hall
+	#yt_id = "kgJb8ZwdaF0" # school committee
 	#transcribe(yt_id)
 
-	channels = ["@ALLMedford","@InvestinMedford","@CityofMedfordMass"]
+	channels = ["@medfordpublicschools464","@CityofMedfordMass","@InvestinMedford","@ALLMedford"]
 	for channel in channels:
 		url = "https://www.youtube.com/" + channel 
 		info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
-		for entry in info["entries"]:
-			# the downloads are super slow, and timeout often.
-			# but they pick up where they left off. 
-			try: 
-				transcribe(entry["display_id"])
-				srt2html(yt_id)
-			except: pass
+
+		if "display_id" in info["entries"][0].keys():
+			for entry in info["entries"]:
+				yt_id = entry["display_id"]
+				files = glob.glob("*/*_" + yt_id + ".srt")
+				if len(files) == 0:
+					try: 
+						# downloads are heavily throttled by youtube and can be done at the same time as transcription
+						#download_audio(yt_id) 
+						transcribe(yt_id)
+					except: pass
+		else:
+			for playlist in info["entries"]:
+				for entry in playlist["entries"]:
+					yt_id = entry["display_id"]
+					files = glob.glob("*/*_" + yt_id + ".srt")
+					if len(files) == 0:
+						try: 
+							# downloads are heavily throttled by youtube and can be done at the same time as transcription
+							#download_audio(yt_id) 
+							transcribe(yt_id)
+						except: pass
