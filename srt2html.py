@@ -78,7 +78,7 @@ def srt2html(yt_id):
         if "last_update" in video_data[yt_id].keys():
             last_update = video_data[yt_id]["last_update"]
 
-    if last_update > last_changed: return
+    if (last_update > last_changed) and os.path.exists(htmlfilename) and os.path.exists(eshtmlfilename): return
     #######################################################################################################
 
     # output custom html with links to corresponding parts of the youtube video
@@ -122,6 +122,8 @@ def srt2html(yt_id):
                 # replace automated speaker tag with speaker ID
                 if this_speaker in speaker_ids.keys():
                     this_speaker = speaker_ids[this_speaker]
+                else:
+                    speaker_ids[this_speaker] = this_speaker
 
                 if this_speaker == speaker:
                     # same speaker; append to previous text
@@ -139,6 +141,9 @@ def srt2html(yt_id):
             else: continue
 
     finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
+
+    with open(os.path.join(dir,"speaker_ids.json"), "w") as fp:
+        json.dump(speaker_ids, fp, indent=4)
 
     for speaker in speaker_stats.keys():
         nprinted = 0
@@ -184,6 +189,7 @@ def srt2html(yt_id):
     html.close()
     eshtml.close()
 
+    if yt_id not in video_data.keys(): video_data[yt_id] = {}
     video_data[yt_id]["last_update"] = time.time()
     with open(jsonfile, "w") as fp:
         json.dump(video_data, fp, indent=4)
