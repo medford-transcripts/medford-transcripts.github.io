@@ -194,8 +194,8 @@ def make_index():
 
 if __name__ == "__main__":
 
-	make_index()
-	ipdb.set_trace()
+	#make_index()
+	#ipdb.set_trace()
 
 	files = glob.glob("*/*.srt")
 	for file in files:
