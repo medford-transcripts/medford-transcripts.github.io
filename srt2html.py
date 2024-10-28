@@ -117,7 +117,7 @@ def srt2html(yt_id):
             elif "[" in line:
                 # text
                 this_speaker = line.split()[0].split("[")[-1].split("]")[0]
-                this_text = line.split(":")[-1]
+                this_text = ":".join(line.split(":")[1:])
 
                 # replace automated speaker tag with speaker ID
                 if this_speaker in speaker_ids.keys():
