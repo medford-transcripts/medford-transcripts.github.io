@@ -47,8 +47,12 @@ def srt2html(yt_id):
     last_changed = os.path.getmtime(srtfilename)
 
     councilors = ["Lungo-Koehn", # Mayor
-    "Bears","Collins","Callahan","Lazzaro","Leming","Scarpelli","Tseng", # City Councilors 2024-2026
-    "Branley","Graham","Intoppa","Olapade","Reinfeld","Ruseau", # School committee 2024-2026
+    "Callahan","Lazzaro","Leming", # City Councilors 2024 (Caraviello, Knight, Morell out) 
+    "Collins","Tseng", # City Councilors 2022 (Marks, Falco out)
+    "Falco","Marks","Knight","Caraviello","Scarpelli","Bears","Morell", # City Councilors 2020
+    "Branley","Intoppa","Olapade","Reinfeld", # School committee 2024 (Kreatz, McLaughlin, Mustone, Hays out)
+    "Hays", # School Committee 2022 (Van der Kloot out)
+    "Hays","Mustone","McLaughlin","Kreatz","Graham","Ruseau", "Van der Kloot" # School Committee 2020
     "Jessica"] # important guest speakers
 
     speaker = ""
