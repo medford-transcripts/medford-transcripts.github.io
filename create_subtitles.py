@@ -1,17 +1,24 @@
-# pip install git+https://github.com/m-bain/whisperx.git
-# also requires a "hugging face" token called "hf_token.txt" 
+# requires a "hugging face" token called "hf_token.txt" 
 # in the top level directory with permissions for 
 # a couple libraries. See requirements here:
 # https://huggingface.co/pyannote/speaker-diarization-3.1 
+
+# pip install git+https://github.com/m-bain/whisperx.git
 import whisperx
+
 # pip install yt_dlp
-# also requires ffmpeg in your path (https://www.ffmpeg.org/download.html)
 import yt_dlp 
+# yt_dlp requires ffmpeg in your path (https://www.ffmpeg.org/download.html)
+
+# whisperx dependency, pip will grab this
+import torch 
+
+# pip install ipdb
+import ipdb
+# not required. I'm leaving this here for debugging
 
 # standard libraries 
 import datetime, os, glob
-import ipdb
-#from . import srt2html
 
 ##### test hugging face token #####
 #from pyannote.audio import Pipeline
@@ -69,24 +76,33 @@ def generate_output(result, mp3file):
     output_writer(result, mp3file, {'max_line_width': None,'max_line_count': None,'highlight_words': False})
     return
 
-def transcribe(yt_id, min_speakers=None, max_speakers=None):
-    t0 = datetime.datetime.utcnow()
+def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download_only=False):
 
-    # command to trim an audio file
-    # ffmpeg -i kP4iRYobyr0.mp3 -ss 0 -to 300 council5.mp3
+    # skip files that are already done
+    files = glob.glob("*/*_" + yt_id + ".srt")
+    if len(files) != 0 and not redo: 
+        print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to force transcription")
+        return
+
+    t0 = datetime.datetime.utcnow()
 
     mp3file = download_audio(yt_id)
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
     print("Download complete. Took " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    if download_only: return
 
     # whisperX options
-    device = "cpu" #"cuda" 
+    if torch.cuda.is_available():
+        device = "cuda"
+        compute_type = "float16" # change to "int8" if low on GPU mem (may reduce accuracy)
+    else:
+        device = "cpu"
+        compute_type = "int8"
+
     batch_size = 16 # reduce if low on GPU mem
-    #compute_type = "float16" # change to "int8" if low on GPU mem (may reduce accuracy)
-    compute_type = "int8" # float16 not supported on my machine (may reduce accuracy)
     model_dir = "./"
-    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir, language="en")
+    model = whisperx.load_model("large-v3", device, compute_type=compute_type, download_root=model_dir, language="en")
 
     # basic transcription
     audio = whisperx.load_audio(mp3file)
@@ -118,36 +134,42 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None):
 
     print("Output complete. Took " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
+def transcribe_entry(entry, download_only=False):
+    yt_id = entry["display_id"]
+    # don't let hiccups halt progress
+    # Move to next video and we can clean up later
+    try: 
+        transcribe(yt_id, download_only=download_only)
+    except: pass
+
 if __name__ == "__main__":
 
-    #yt_id = "kP4iRYobyr0" # city council meeting 2024-10-15
-    #yt_id = "eYLl0XsNfvs" # town hall
-    #yt_id = "kgJb8ZwdaF0" # school committee
-    #transcribe(yt_id)
+    # downloads are heavily throttled by YouTube (~32 KiB/s) 
+    # but we can download future videos while transcribing this one
+    # set to True to only download audio files for all channels
+    download_only = False
 
+    # command to trim an audio file (0 to 300 seconds)
+    # ffmpeg -i kP4iRYobyr0.mp3 -ss 0 -to 300 kP4iRYobyr0.0-5.mp3
+
+    # prioritize videos by specifying youtube IDs (one per line) in priority_videos.txt
+    with open('priority_videos.txt') as f:
+        yt_ids = f.read().splitlines()
+    for yt_id in yt_ids:
+        transcribe(yt_id, download_only=download_only)
+
+    # loop through every video on these channels
+    # it does regular videos, streams, then shorts
     channels = ["@medfordpublicschools464","@CityofMedfordMass","@InvestinMedford","@ALLMedford"]
     for channel in channels:
         url = "https://www.youtube.com/" + channel 
         info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
 
+        # the structure of "info" varies depending on how many playlists (live stream, short, etc)
         if "display_id" in info["entries"][0].keys():
             for entry in info["entries"]:
-                yt_id = entry["display_id"]
-                files = glob.glob("*/*_" + yt_id + ".srt")
-                if len(files) == 0:
-                    try: 
-                        # downloads are heavily throttled by youtube and can be done at the same time as transcription
-                        #download_audio(yt_id) 
-                        transcribe(yt_id)
-                    except: pass
+                transcribe_entry(entry, download_only=download_only)
         else:
             for playlist in info["entries"]:
                 for entry in playlist["entries"]:
-                    yt_id = entry["display_id"]
-                    files = glob.glob("*/*_" + yt_id + ".srt")
-                    if len(files) == 0:
-                        try: 
-                            # downloads are heavily throttled by youtube and can be done at the same time as transcription
-                            #download_audio(yt_id) 
-                            transcribe(yt_id)
-                        except: pass
+                    transcribe_entry(entry, download_only=download_only)

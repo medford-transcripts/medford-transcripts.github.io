@@ -46,14 +46,17 @@ def srt2html(yt_id):
 
     last_changed = os.path.getmtime(srtfilename)
 
-    councilors = ["Lungo-Koehn", # Mayor
+    councilors = ["Lungo-Koehn", # Mayor 2020-
+    "Burke", # Mayor 2016-2020
+    "McGlynn", # Mayor 1988-2016
     "Callahan","Lazzaro","Leming", # City Councilors 2024 (Caraviello, Knight, Morell out) 
     "Collins","Tseng", # City Councilors 2022 (Marks, Falco out)
     "Falco","Marks","Knight","Caraviello","Scarpelli","Bears","Morell", # City Councilors 2020
     "Branley","Intoppa","Olapade","Reinfeld", # School committee 2024 (Kreatz, McLaughlin, Mustone, Hays out)
     "Hays", # School Committee 2022 (Van der Kloot out)
-    "Hays","Mustone","McLaughlin","Kreatz","Graham","Ruseau", "Van der Kloot" # School Committee 2020
+    "Mustone","McLaughlin","Kreatz","Graham","Ruseau", "Van der Kloot" # School Committee 2020
     "Jessica"] # important guest speakers
+    # No videos prior to 2020?
 
     speaker = ""
     start = 0.0
@@ -146,9 +149,11 @@ def srt2html(yt_id):
 
     finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
 
+    # create speaker_ids.json, sorting by auto-assigned speaker ID (SPEAKER_##)
     with open(os.path.join(dir,"speaker_ids.json"), "w") as fp:
-        json.dump(speaker_ids, fp, indent=4)
+        json.dump(dict(sorted(speaker_ids.items())), fp, indent=4)
 
+    # get speaker stats (total time speaking, number of words), make a word cloud
     for speaker in speaker_stats.keys():
         nprinted = 0
         if speaker != '':
