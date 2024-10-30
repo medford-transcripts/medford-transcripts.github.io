@@ -33,8 +33,9 @@ import datetime, os, glob, argparse
 ''' 
 def download_audio(yt_id, dir=None):
 
+    duration = 0
     files = glob.glob('*' + yt_id + '*/*' + yt_id + '*.mp3')
-    if len(files) == 1: return files[0]
+    if len(files) == 1: return files[0],duration
 
     url = "https://youtu.be/" + yt_id
     with yt_dlp.YoutubeDL() as ydl:
@@ -46,12 +47,13 @@ def download_audio(yt_id, dir=None):
             break
     
     timestamp = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+    duration = info["duration"]
     title = info["title"].replace(" ","_").replace("#","").replace(",","").replace('"','')
     if dir==None:
         dir = timestamp + "_" + yt_id #+ "_" + title.lower()
 
     mp3file = os.path.join(dir,dir) +'.mp3'
-    if os.path.isfile(mp3file): return mp3file
+    if os.path.isfile(mp3file): return mp3file, duration
 
     if not os.path.exists(dir): os.makedirs(dir)
 
@@ -67,7 +69,7 @@ def download_audio(yt_id, dir=None):
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl: 
         ydl.download(audio_url)
-        return mp3file
+        return mp3file, duration
 
 def generate_output(result, mp3file):
     subdir = os.path.dirname(mp3file)
@@ -81,7 +83,9 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     t0 = datetime.datetime.utcnow()
     print("Transcribing " + yt_id)
 
-    mp3file = download_audio(yt_id)
+    mp3file, duration = download_audio(yt_id)
+    print("Duration of " + yt_id + " is " + str(duration))
+
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
     print("Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
@@ -144,6 +148,9 @@ def transcribe_entry(entry, download_only=False):
     # Move to next video and we can clean up later
     try: 
         transcribe(yt_id, download_only=download_only)
+    except KeyboardInterrupt:
+        print('Interrupted')
+        ipdb.set_trace()
     except: 
         pass
 

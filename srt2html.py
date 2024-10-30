@@ -51,7 +51,8 @@ def srt2html(yt_id):
     "McGlynn", # Mayor 1988-2016
     "Callahan","Lazzaro","Leming", # City Councilors 2024 (Caraviello, Knight, Morell out) 
     "Collins","Tseng", # City Councilors 2022 (Marks, Falco out)
-    "Falco","Marks","Knight","Caraviello","Scarpelli","Bears","Morell", # City Councilors 2020
+    "Falco","Scarpelli","Bears","Morell", # City Councilors 2020
+    "Camuso","Caraviello","Dello Russo","Knight","Marks","Penta", # City Councilors 2014 (also Lungo-Koehn)
     "Branley","Intoppa","Olapade","Reinfeld", # School committee 2024 (Kreatz, McLaughlin, Mustone, Hays out)
     "Hays", # School Committee 2022 (Van der Kloot out)
     "Mustone","McLaughlin","Kreatz","Graham","Ruseau", "Van der Kloot" # School Committee 2020
@@ -238,9 +239,11 @@ def make_index():
             info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
             title = info["title"]
             channel = info["channel"]
+            duration = info["duration"]
             video_data[yt_id] = {}
             video_data[yt_id]["title"] = title
             video_data[yt_id]["channel"] = channel
+            video_data[yt_id]["duration"] = duration
 
         lines.append('<tr><td>' + date + '</td><td><a href="' + url + '">[Video]</a></td><td>' + channel + '</td><td>'+title+'</td><td><a href="' + htmlfile + '">English</a></td><td><a href="' + eshtmlfile + '">Spanish</a></td></tr>\n')
 
