@@ -87,6 +87,8 @@ def srt2html(yt_id):
 
     if (last_update > last_changed) and os.path.exists(htmlfilename) and os.path.exists(eshtmlfilename): return
     #######################################################################################################
+    print("Making HTML for " + yt_id)
+
 
     # output custom html with links to corresponding parts of the youtube video
     html = open(htmlfilename, 'w', encoding="utf-8")
