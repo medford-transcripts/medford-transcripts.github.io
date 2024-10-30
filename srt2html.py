@@ -219,6 +219,7 @@ def make_index():
     htmlfiles = glob.glob('*/*.html')
     lines = []
     for htmlfile in htmlfiles:
+        if htmlfile.startswith("electeds"): continue
         if htmlfile.endswith("es.html"): continue
         date = htmlfile.split('_')[0]
         yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
