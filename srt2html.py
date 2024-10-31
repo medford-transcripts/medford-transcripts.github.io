@@ -245,9 +245,10 @@ def make_index():
 
         download = True
         if yt_id in video_data.keys():
-            if "title" in video_data[yt_id].keys():
+            if "duration" in video_data[yt_id].keys():
                 title = video_data[yt_id]["title"]
                 channel = video_data[yt_id]["channel"]
+                duration = video_data[yt_id]["duration"]
                 download = False
 
         if download:
@@ -259,8 +260,10 @@ def make_index():
             video_data[yt_id]["title"] = title
             video_data[yt_id]["channel"] = channel
             video_data[yt_id]["duration"] = duration
+    
+        duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
-        lines.append('<tr><td>' + date + '</td><td><a href="' + url + '">[Video]</a></td><td>' + channel + '</td><td>'+title+'</td><td><a href="' + htmlfile + '">English</a></td><td><a href="' + eshtmlfile + '">Spanish</a></td></tr>\n')
+        lines.append('<tr><td>' + date + '</td><td><a href="' + url + '">[' + duration_string + ']</a></td><td>' + channel + '</td><td>'+title+'</td><td><a href="' + htmlfile + '">English</a></td><td><a href="' + eshtmlfile + '">Spanish</a></td></tr>\n')
 
     with open(jsonfile, "w") as fp:
         json.dump(video_data, fp, indent=4)
@@ -268,7 +271,7 @@ def make_index():
     lines.sort(reverse=True)
     index_page = open('index.html', 'w', encoding="utf-8")
     index_page.write("<table border=1>\n")
-    index_page.write("<tr><td><center>Upload Date</center></td><td><center>YouTube</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td></tr>\n")
+    index_page.write("<tr><td><center>Upload Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("</table>")
