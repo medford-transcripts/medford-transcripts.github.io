@@ -19,6 +19,7 @@ import ipdb
 
 # standard libraries 
 import datetime, os, glob, argparse
+import json
 
 ##### test hugging face token #####
 #from pyannote.audio import Pipeline
@@ -33,29 +34,51 @@ import datetime, os, glob, argparse
 ''' 
 def download_audio(yt_id, dir=None):
 
-    duration = 0
-    files = glob.glob('*' + yt_id + '*/*' + yt_id + '*.mp3')
-    if len(files) == 1: return files[0],duration
+    # read info
+    jsonfile = 'video_data.json'
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            video_data = json.load(fp)
+    else: video_data = {}
+    if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
-    url = "https://youtu.be/" + yt_id
-    with yt_dlp.YoutubeDL() as ydl:
-        info = ydl.extract_info(url, download=False)
+    # construct the name of the file
+    if "upload_date" in video_data[yt_id].keys():
+        if dir==None:
+            dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+        mp3file = os.path.join(dir,dir) +'.mp3'
+        mp3file_exists = os.path.exists(mp3file)
+    else: mp3file_exists = False
 
-    for format in info["formats"][::-1]:
-        if format["resolution"] == "audio only" and format["ext"] == "m4a":
-            audio_url = format["url"]
-            break
-    
-    timestamp = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
-    duration = info["duration"]
-    title = info["title"].replace(" ","_").replace("#","").replace(",","").replace('"','')
+    # if video_data doesn't have all required info, grab it
+    required_keys = ["upload_date","channel","title","duration"]
+    if all(key not in video_data[yt_id].keys() for key in required_keys) or not mp3file_exists:
+        url = "https://youtu.be/" + yt_id
+        with yt_dlp.YoutubeDL() as ydl:
+            info = ydl.extract_info(url, download=False)
+
+        for format in info["formats"][::-1]:
+            if format["resolution"] == "audio only" and format["ext"] == "m4a":
+                # this is a temporary, IP-locked URL, storing it doesn't do any good
+                audio_url = format["url"] 
+                
+                # store these for later
+                video_data[yt_id]["title"] = info["title"]
+                video_data[yt_id]["channel"] = info["channel"]
+                video_data[yt_id]["duration"] = info["duration"]
+                video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+                break
+
+        # update video_data    
+        with open(jsonfile, "w") as fp:
+            json.dump(video_data, fp, indent=4)
+
     if dir==None:
-        dir = timestamp + "_" + yt_id #+ "_" + title.lower()
-
+        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
     mp3file = os.path.join(dir,dir) +'.mp3'
-    if os.path.isfile(mp3file): return mp3file, duration
 
     if not os.path.exists(dir): os.makedirs(dir)
+    if os.path.exists(mp3file): return mp3file, video_data[yt_id]["duration"]
 
     ydl_opts = {
         'format': 'bestaudio/best',
@@ -67,9 +90,10 @@ def download_audio(yt_id, dir=None):
         }],
     }
 
+    # download the audio file
     with yt_dlp.YoutubeDL(ydl_opts) as ydl: 
         ydl.download(audio_url)
-        return mp3file, duration
+        return mp3file, video_data[yt_id]["duration"]
 
 def generate_output(result, mp3file):
     subdir = os.path.dirname(mp3file)
