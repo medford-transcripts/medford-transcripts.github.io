@@ -3,6 +3,7 @@ import ipdb
 from wordcloud import WordCloud
 import json,glob
 from googletrans import Translator, constants
+import shutil
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
     # new speaker; wrap up and start new
@@ -59,7 +60,7 @@ def srt2html(yt_id):
     # 2018 (no new councilors)
     "Falco", "Scarpelli", # 2016 (Penta, Camuso out)
     "Knight", # 2014 (Maiocco out)
-    "Caraviello" # 2012 (Burke out)
+    "Caraviello", # 2012 (Burke out)
     # 2010 (no new members)
     "Camuso","Dello Russo","Maiocco","Marks","Penta", # 2008 (also Burke, Lungo-Koehn)
     # School Committee
@@ -266,7 +267,7 @@ def make_index():
         duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
         # one row in the html table
-        lines.append('<tr>' +\
+        lines.append('      <tr>' +\
             '<td>' + date + '</td>' +\
             '<td><a href="' + url + '">[' + duration_string + ']</a></td>'+\
             '<td>' + channel + '</td>'+\
@@ -281,13 +282,16 @@ def make_index():
         json.dump(video_data, fp, indent=4)
 
     lines.sort(reverse=True)
-    index_page = open('index.html', 'w', encoding="utf-8")
-    index_page.write("<table border=1>\n")
+    shutil.copy("header.html", "index.html")
+    index_page = open('index.html', 'a', encoding="utf-8")
+    index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("<tr><td><center>Upload Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Upload Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
-    index_page.write("</table>")
+    index_page.write("    </table>\n")
+    index_page.write('  </body>\n')
+    index_page.write('</html>\n')
     index_page.close()
 
 if __name__ == "__main__":

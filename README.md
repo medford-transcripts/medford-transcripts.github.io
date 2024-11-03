@@ -8,6 +8,9 @@ The intent is to make it easier to engage with these meetings and to help voters
 
 The raw SRT file (which is time stamped by ~sentence for captions) is also available for download, as are the JSON files to identify each speaker. If you would like to improve the transcripts, please send me edits to the SRT files for corrections to the transcripts, and edits to the JSON file for changes to the speaker IDs -- not the HTML.
 
-It takes about 3x real time (e.g., 3 hours for a 1-hour video) to make each transcript, so it'll be a while before I work through the backlog of 500+ videos. I'm currently working on all videos on the CityofMedfordMass, medfordpublicschools464, InvestinMedford, and ALLMedford youtube channels, but if there are others, please let me know. And for the technically minded, you're welcome to use the source code for your own purposes (or to help me out). I tried to make it reasonably easy to follow, but it definitely takes some technical bonafides to get going. 
+It takes about 3x real time (e.g., 3 hours for a 1-hour video) to make each transcript, so it'll be a while before I work through the backlog of 500+ videos. I'm currently working on all videos on the CityofMedfordMass, medfordpublicschools464, medfordcommunitymedia391, InvestinMedford, and ALLMedford youtube channels, but if there are others, please let me know. And for the technically minded, you're welcome to use the source code for your own purposes (or to help me out). I tried to make it reasonably easy to follow, but it definitely takes some technical chops to get going. 
 
 There's no reason this code, with minimial modifications, wouldn't work for other municipalities or even a much broader purpose that requires transcripts of youtube videos.
+
+If you fork this repo with the intent of making your own page of channel transcripts, and assuming you'd like google to index your transcripts, see here:
+https://github.com/orgs/community/discussions/42375

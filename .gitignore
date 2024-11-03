@@ -5,6 +5,10 @@ models--Systran--faster-whisper-large-v3
 # experimental/sandbox codes
 post.py
 length.py
+mkdirectory.py
+*.png
+*.jpg
+directory.json
 # exclude credentials for security
 hf_token.txt
 openai_key.txt
