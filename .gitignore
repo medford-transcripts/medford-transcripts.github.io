@@ -2,13 +2,13 @@ models--Systran--faster-whisper-large-v2
 models--Systran--faster-whisper-large-v3
 *.mp3
 *.part
-# experimental/sandbox codes
+# exclude experimental/sandbox codes
 post.py
 length.py
 mkdirectory.py
+directory.json
 *.png
 *.jpg
-directory.json
 # exclude credentials for security
 hf_token.txt
 openai_key.txt
