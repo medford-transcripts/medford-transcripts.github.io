@@ -60,7 +60,7 @@ def download_audio(yt_id, dir=None):
         for format in info["formats"][::-1]:
             if format["resolution"] == "audio only" and format["ext"] == "m4a":
                 # this is a temporary, IP-locked URL, storing it doesn't do any good
-                audio_url = format["url"] 
+                audio_url = format["url"]
                 
                 # store these for later
                 video_data[yt_id]["title"] = info["title"]
@@ -108,7 +108,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     print("Transcribing " + yt_id)
 
     mp3file, duration = download_audio(yt_id)
-    print("Duration of " + yt_id + " is " + str(duration))
+    print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
 
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
@@ -166,12 +166,12 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     print("Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-def transcribe_entry(entry, download_only=False):
+def transcribe_entry(entry, download_only=False, redo=False):
     yt_id = entry["display_id"]
     # don't let hiccups halt progress
     # Move to next video and we can clean up later
     try: 
-        transcribe(yt_id, download_only=download_only)
+        transcribe(yt_id, download_only=download_only, redo=redo)
     except KeyboardInterrupt:
         print('Interrupted')
         ipdb.set_trace()
@@ -188,6 +188,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
+    parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcriptions that have already been done")
     parser.add_argument('-c','--channel-file', dest='channel_file', help='filename containing a list of channels, transcribe all videos')
     parser.add_argument('-i','--youtube-id-file', dest='id_file', help='filename containing a list of YouTube IDs to transcribe')
     opt = parser.parse_args()
@@ -200,7 +201,7 @@ if __name__ == "__main__":
         with open(opt.id_file) as f:
             yt_ids = f.read().splitlines()
         for yt_id in yt_ids:
-            transcribe(yt_id, download_only=opt.download_only)
+            transcribe(yt_id, download_only=opt.download_only, redo=opt.redo)
 
     if os.path.exists(opt.channel_file):
         with open(opt.channel_file) as f:
@@ -215,8 +216,8 @@ if __name__ == "__main__":
             # the structure of "info" varies depending on how many playlists (live stream, short, etc)
             if "display_id" in info["entries"][0].keys():
                 for entry in info["entries"]:
-                    transcribe_entry(entry, download_only=opt.download_only)
+                    transcribe_entry(entry, download_only=opt.download_only, redo=opt.redo)
             else:
                 for playlist in info["entries"]:
                     for entry in playlist["entries"]:
-                        transcribe_entry(entry, download_only=opt.download_only)
+                        transcribe_entry(entry, download_only=opt.download_only, redo=opt.redo)
