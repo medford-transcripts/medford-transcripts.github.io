@@ -294,6 +294,14 @@ def make_index():
     index_page.write('</html>\n')
     index_page.close()
 
+def make_sitemap():
+    files = glob.glob("*/*.html")
+    sitemap_file = 'sitemap.txt'
+    with open(sitemap_file, "w") as fp:
+        for file in files:
+            fp.write("https://medford-transcripts.github.io/"+file.replace('\\', '/')+'\n')
+
+
 if __name__ == "__main__":
 
     files = glob.glob("*/*.srt")
@@ -309,4 +317,4 @@ if __name__ == "__main__":
 
     # make the top level page with links to all transcripts
     make_index()
-
+    make_sitemap()
