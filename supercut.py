@@ -101,17 +101,33 @@ if __name__ == "__main__":
 
     This is a very early draft that does none of those things...
     '''
-    councilors = ["Lungo-Koehn", # Mayor 2020-
+    # we will do some analytics on these people
+    councilors = [
+    # Mayor
+    "Lungo-Koehn", # Mayor 2020-
     "Burke", # Mayor 2016-2020
     "McGlynn", # Mayor 1988-2016
-    "Callahan","Lazzaro","Leming", # City Councilors 2024 (Caraviello, Knight, Morell out) 
-    "Collins","Tseng", # City Councilors 2022 (Marks, Falco out)
-    "Falco","Marks","Knight","Caraviello","Scarpelli","Bears","Morell", # City Councilors 2020
-    "Branley","Intoppa","Olapade","Reinfeld", # School committee 2024 (Kreatz, McLaughlin, Mustone, Hays out)
-    "Hays", # School Committee 2022 (Van der Kloot out)
-    "Mustone","McLaughlin","Kreatz","Graham","Ruseau", "Van der Kloot", # School Committee 2020
-    "Jessica"] # important guest speakers
-    # No videos prior to 2020?
+    # City Councilors
+    "Callahan","Lazzaro","Leming", # 2024 (Caraviello, Knight, Morell out) 
+    "Collins","Tseng", # 2022 (Marks, Falco out)
+    "Bears","Morell", # 2020 (Dello Russo, Lungo-Koehn out)
+    # 2018 (no new councilors)
+    "Falco", "Scarpelli", # 2016 (Penta, Camuso out)
+    "Knight", # 2014 (Maiocco out)
+    "Caraviello", # 2012 (Burke out)
+    # 2010 (no new members)
+    "Camuso","Dello Russo","Maiocco","Marks","Penta", # 2008 (also Burke, Lungo-Koehn)
+    # School Committee
+    "Branley","Intoppa","Olapade","Reinfeld", # 2024 (Kreatz, McLaughlin, Mustone, Hays out)
+    "Hays", # 2022 (Van der Kloot out)
+    "McLaughlin","Graham", # 2020 (DiBenedetto, Ruggiero out)
+    "Ruseau","Ruggiero", # 2018 (Skerry, Cugno out)
+    "Kreatz","Mustone", # 2016 (Falco, Scarpelli out)
+    # 2014 (no new members) 
+    # 2012 (Plus Skerry, Guzik out)
+    "DiBenedetto","Guzik", # 2010 (plus Falco, Scarpelli. Brady, DiGiantommaso, Pompeo, Skerry out)
+    "Brady","Cugno","DiGiantommaso","Pompeo","Skerry", "Van der Kloot", # 2008
+    ]
 
     for councilor in councilors:
         print(councilor)

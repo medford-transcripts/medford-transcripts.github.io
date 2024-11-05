@@ -105,14 +105,14 @@ def generate_output(result, mp3file):
 def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download_only=False):
 
     t0 = datetime.datetime.utcnow()
-    print("Transcribing " + yt_id)
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
 
     mp3file, duration = download_audio(yt_id)
     print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
 
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
-    print("Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
     if download_only: return
 
     # skip files that are already done
@@ -140,7 +140,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     audio = whisperx.load_audio(mp3file)
     result = model.transcribe(audio, batch_size=batch_size)
     generate_output(result, base + '_basic.mp3')
-    print("Transcription of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcription of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
     # delete model if low on GPU resources
     # import gc; gc.collect(); torch.cuda.empty_cache(); del model
@@ -149,7 +149,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
     aligned_result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
     generate_output(aligned_result, base + '_aligned.mp3')
-    print("Alignment of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Alignment of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
     # delete model if low on GPU resources
     # import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
@@ -158,15 +158,30 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     with open('hf_token.txt') as f: token = f.readline()
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
     diarize_segments = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers)
-    print("Diarization of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Diarization of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
     # segments are now assigned speaker IDs
     diarize_result = whisperx.assign_word_speakers(diarize_segments, aligned_result)
     generate_output(diarize_result, base + '.mp3')
 
-    print("Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-def transcribe_entry(entry, download_only=False, redo=False):
+def transcribe_entry(entry, download_only=False, id_file="ids_to_transcribe.txt", redo=False):
+
+    # putting this here makes it possible to queue new videos without interrupting
+    if os.path.exists(id_file):
+        with open(opt.id_file) as f:
+            yt_ids = f.read().splitlines()
+        for yt_id in yt_ids:
+            # only do it if the mp3 file already exists
+            # assumes we have a parallel download script running
+            mp3files = glob.glob("*/*" + yt_id + '.mp3')
+            if (download_only != (len(mp3files) == 1)): # xor
+                try:
+                    transcribe(yt_id, download_only=download_only, redo=redo)
+                except:
+                    pass
+
     yt_id = entry["display_id"]
     # don't let hiccups halt progress
     # Move to next video and we can clean up later
@@ -188,7 +203,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
-    parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcriptions that have already been done")
+    parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
     parser.add_argument('-c','--channel-file', dest='channel_file', help='filename containing a list of channels, transcribe all videos')
     parser.add_argument('-i','--youtube-id-file', dest='id_file', help='filename containing a list of YouTube IDs to transcribe')
     opt = parser.parse_args()
@@ -196,12 +211,12 @@ if __name__ == "__main__":
     # command to trim an audio file (0 to 300 seconds)
     # ffmpeg -i original.mp3 -ss 0 -to 300 trimmed.mp3
 
-    # prioritize videos by specifying youtube IDs (one per line) in priority_videos.txt
-    if os.path.exists(opt.id_file):
-        with open(opt.id_file) as f:
-            yt_ids = f.read().splitlines()
-        for yt_id in yt_ids:
-            transcribe(yt_id, download_only=opt.download_only, redo=opt.redo)
+ #   # prioritize videos by specifying youtube IDs (one per line) in priority_videos.txt
+ #   if os.path.exists(opt.id_file):
+ #       with open(opt.id_file) as f:
+ #           yt_ids = f.read().splitlines()
+ #       for yt_id in yt_ids:
+ #           transcribe(yt_id, download_only=opt.download_only)
 
     if os.path.exists(opt.channel_file):
         with open(opt.channel_file) as f:
@@ -216,8 +231,8 @@ if __name__ == "__main__":
             # the structure of "info" varies depending on how many playlists (live stream, short, etc)
             if "display_id" in info["entries"][0].keys():
                 for entry in info["entries"]:
-                    transcribe_entry(entry, download_only=opt.download_only, redo=opt.redo)
+                    transcribe_entry(entry, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
             else:
                 for playlist in info["entries"]:
                     for entry in playlist["entries"]:
-                        transcribe_entry(entry, download_only=opt.download_only, redo=opt.redo)
+                        transcribe_entry(entry, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)

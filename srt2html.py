@@ -102,9 +102,14 @@ def srt2html(yt_id):
         if "last_update" in video_data[yt_id].keys():
             last_update = video_data[yt_id]["last_update"]
 
+    # redo all videos updated before 2024-11-04 2:35 PM
+    #last_update = datetime.datetime(2024,11,4,14,35).timestamp() 
+    #last_update = 0.0 # uncomment to redo them all
     if (last_update > last_changed) and os.path.exists(htmlfilename) and os.path.exists(eshtmlfilename): return
     #######################################################################################################
     print("Making HTML for " + yt_id)
+
+    title = "Transcript for " + video_data[yt_id]["title"] + " (" + yt_id + ")"
 
 
     # output custom html with links to corresponding parts of the youtube video
@@ -115,7 +120,7 @@ def srt2html(yt_id):
     html.write('    <meta charset="UTF-8">\n')
     html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
     html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
-    html.write('   <title>Transcript for ' + yt_id + '</title>\n')
+    html.write('   <title>' + title + '</title>\n')
     html.write('  </head>\n')
     html.write('  <body>\n')
     html.write('  <table>\n')
