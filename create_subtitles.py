@@ -204,7 +204,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
     parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
-    parser.add_argument('-c','--channel-file', dest='channel_file', help='filename containing a list of channels, transcribe all videos')
+    parser.add_argument('-c','--channel-file', dest='channel_file', help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
     parser.add_argument('-i','--youtube-id-file', dest='id_file', help='filename containing a list of YouTube IDs to transcribe')
     opt = parser.parse_args()
 
