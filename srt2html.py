@@ -4,6 +4,9 @@ from wordcloud import WordCloud
 import json,glob
 from googletrans import Translator, constants
 import shutil
+import os
+import gzip
+from xml.etree import cElementTree
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
     # new speaker; wrap up and start new
@@ -123,6 +126,9 @@ def srt2html(yt_id):
     html.write('   <title>' + title + '</title>\n')
     html.write('  </head>\n')
     html.write('  <body>\n')
+
+    html.write('    <a href="./">Back to all transcripts</a><br><br>\n')
+
     html.write('  <table>\n')
 
     eshtml = open(eshtmlfilename, 'w', encoding="utf-8")
@@ -216,7 +222,7 @@ def srt2html(yt_id):
             html.write('      </td>\n')
         html.write('    </tr>\n')
     html.write('  </table>\n')
-
+    html.write('  <br><br><a href="./">Back to all transcripts</a><br><br>\n')
     html.write('  </body>\n')
     html.write('</html>\n')
     html.close()
@@ -300,11 +306,64 @@ def make_index():
     index_page.close()
 
 def make_sitemap():
+
     files = glob.glob("*/*.html")
+
+    # make a txt sitemap
     sitemap_file = 'sitemap.txt'
     with open(sitemap_file, "w") as fp:
         for file in files:
             fp.write("https://medford-transcripts.github.io/"+file.replace('\\', '/')+'\n')
+
+    # create root XML node
+    sitemap_root = cElementTree.Element('urlset')
+    sitemap_root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
+
+    # add urls
+    for file in files:
+        timestamp = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(file)),'%Y-%m-%dT%H:%M:%SZ') 
+        url = "https://medford-transcripts.github.io/"+file.replace('\\', '/')
+        add_url(sitemap_root, url, timestamp)
+
+    # save sitemap. xml extension will be added automatically
+    save_sitemap(sitemap_root, "./sitemap")
+
+
+def add_url(root_node, url, lastmod):
+    doc = cElementTree.SubElement(root_node, "url")
+    cElementTree.SubElement(doc, "loc").text = url
+    cElementTree.SubElement(doc, "lastmod").text = lastmod
+
+    return doc
+
+
+def save_sitemap(root_node, save_as, **kwargs):
+    compress = kwargs.get("compress", False)
+
+    sitemap_name = save_as.split("/")[-1]
+    dest_path = "/".join(save_as.split("/")[:-1])
+
+    sitemap_name = f"{sitemap_name}.xml"
+    if compress:
+        sitemap_name = f"{sitemap_name}.gz"
+
+    save_as = f"{dest_path}/{sitemap_name}"
+
+    # create sitemap path if not existed
+    if not os.path.exists(f"{dest_path}/"):
+        os.makedirs(f"{dest_path}/")
+
+    if not compress:
+        tree = cElementTree.ElementTree(root_node)
+        tree.write(save_as, encoding='utf-8', xml_declaration=True)
+    else:
+
+        # gzip sitemap
+        gzipped_sitemap_file = gzip.open(save_as, 'wb')
+        cElementTree.ElementTree(root_node).write(gzipped_sitemap_file)
+        gzipped_sitemap_file.close()
+
+    return sitemap_name
 
 
 if __name__ == "__main__":
