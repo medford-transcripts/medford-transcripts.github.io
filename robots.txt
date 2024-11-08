@@ -1,5 +1,8 @@
 User-agent: *
+
 Allow: /
 
-Sitemap: https://medford-transcripts.github.io/sitemap.txt
+Disallow: /*.srt$
+Disallow: /*.json$
+
 Sitemap: https://medford-transcripts.github.io/sitemap.xml

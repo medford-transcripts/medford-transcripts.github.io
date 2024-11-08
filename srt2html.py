@@ -12,13 +12,13 @@ def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtm
     # new speaker; wrap up and start new
     if text != "":
         html.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-        html.write("[" + speaker + "]</a>: " + text + "<br><br>\n\n")
+        html.write("<p>[" + speaker + "]</a>: " + text + "</p>\n\n")
 
         if eshtml != None:
             translator = Translator()
             translation = translator.translate(text, dest="es")
             eshtml.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-            eshtml.write("[" + speaker + "]</a>: " + translation.text + "<br><br>\n\n")
+            eshtml.write("<p>[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
 
     # let's do some stats by speaker
     if not speaker in speaker_stats.keys(): speaker_stats[speaker] = {"words": {}, "all_words" : ""}
@@ -112,8 +112,8 @@ def srt2html(yt_id):
     #######################################################################################################
     print("Making HTML for " + yt_id)
 
-    title = "Transcript for " + video_data[yt_id]["title"] + " (" + yt_id + ")"
-
+    video_title = video_data[yt_id]["title"]
+    title = "Transcript for " + video_title + " (" + yt_id + ")"
 
     # output custom html with links to corresponding parts of the youtube video
     html = open(htmlfilename, 'w', encoding="utf-8")
@@ -122,18 +122,27 @@ def srt2html(yt_id):
     html.write('  <head>\n')
     html.write('    <meta charset="UTF-8">\n')
     html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
-    html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
+    html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edgBack to all transcriptse">\n')
+    html.write('    <meta name="description" content="AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics">\n')
     html.write('   <title>' + title + '</title>\n')
     html.write('  </head>\n')
     html.write('  <body>\n')
-
-    html.write('    <a href="./">Back to all transcripts</a><br><br>\n')
-
-    html.write('  <table>\n')
+    html.write('  <h1>AI-generated transcript for ' + video_title + '</h1>\n')
+    html.write('    <a href="../index.html">Back to all transcripts</a><br><br>\n')
 
     eshtml = open(eshtmlfilename, 'w', encoding="utf-8")
-
-
+    eshtml.write('<!DOCTYPE html>\n')
+    eshtml.write('<html lang="es">\n')
+    eshtml.write('  <head>\n')
+    eshtml.write('    <meta charset="UTF-8">\n')
+    eshtml.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
+    eshtml.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
+    eshtml.write('    <meta name="description" content="Transcripción generada por IA de ' + video_title + ', un vídeo relevante para la política local de Medford, Massachusetts.">\n')
+    eshtml.write('   <title>' + title + '</title>\n')
+    eshtml.write('  </head>\n')
+    eshtml.write('  <body>\n')
+    eshtml.write('  <h1>Transcripción generada por IA de ' + video_title + '</h1>\n')
+    eshtml.write('    <a href="../index.html">Volver a todas las transcripciones</a><br><br>\n')
     speaker_stats = {}
 
     with open(srtfilename, 'r', encoding="utf-8") as file:
@@ -207,6 +216,7 @@ def srt2html(yt_id):
         if speaker_id in councilors: present_councilors.append(speaker_id)
 
     # make a table with stats
+    html.write('  <table>\n')
     for i in range(nrows):
         html.write('    <tr>\n')
         for j in range(ncols):
@@ -218,14 +228,20 @@ def srt2html(yt_id):
                     html.write('        <center>' + present_councilors[idx] + "</center><br>\n")
                     html.write('        total time: ' + str(round(speaker_stats[present_councilors[idx]]["total_time"]/60.0,2)) + ' minutes<br>\n')
                     html.write('        total words: ' + str(speaker_stats[present_councilors[idx]]["total_words"]) + '<br>\n')
-                    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" height=150></img></a><br>\n')
+                    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + present_councilors[idx] + '" height=150></img></a><br>\n')
             html.write('      </td>\n')
         html.write('    </tr>\n')
     html.write('  </table>\n')
-    html.write('  <br><br><a href="./">Back to all transcripts</a><br><br>\n')
+    html.write('  <br><br><a href="../index.html">Back to all transcripts</a><br><br>\n')
     html.write('  </body>\n')
     html.write('</html>\n')
     html.close()
+
+
+    eshtml.write('    <a href="../index.html">Volver a todas las transcripciones</a><br><br>\n')
+    eshtml.write('  </body>\n')
+    eshtml.write('</html>\n')
+    eshtml.close()
     eshtml.close()
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
@@ -310,10 +326,10 @@ def make_sitemap():
     files = glob.glob("*/*.html")
 
     # make a txt sitemap
-    sitemap_file = 'sitemap.txt'
-    with open(sitemap_file, "w") as fp:
-        for file in files:
-            fp.write("https://medford-transcripts.github.io/"+file.replace('\\', '/')+'\n')
+    #sitemap_file = 'sitemap.txt'
+    #with open(sitemap_file, "w") as fp:
+    #    for file in files:
+    #        fp.write("https://medford-transcripts.github.io/"+file.replace('\\', '/')+'\n')
 
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')
