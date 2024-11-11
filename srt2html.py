@@ -11,14 +11,14 @@ from xml.etree import cElementTree
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
     # new speaker; wrap up and start new
     if text != "":
-        html.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-        html.write("<p>[" + speaker + "]</a>: " + text + "</p>\n\n")
+        html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
+        html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
 
         if eshtml != None:
             translator = Translator()
             translation = translator.translate(text, dest="es")
-            eshtml.write('    <a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-            eshtml.write("<p>[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
+            eshtml.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
+            eshtml.write("[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
 
     # let's do some stats by speaker
     if not speaker in speaker_stats.keys(): speaker_stats[speaker] = {"words": {}, "all_words" : ""}
@@ -107,7 +107,7 @@ def srt2html(yt_id):
 
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,14,35).timestamp() 
-    #last_update = 0.0 # uncomment to redo them all
+    #last_update = 0.0 # uncomment to remake them all (for changes to the template)
     if (last_update > last_changed) and os.path.exists(htmlfilename) and os.path.exists(eshtmlfilename): return
     #######################################################################################################
     print("Making HTML for " + yt_id)
