@@ -7,7 +7,7 @@ post.py
 length.py
 mkdirectory.py
 directory.json
-*.png
+#*.png oops, wordclouds
 *.jpg
 # exclude credentials for security
 hf_token.txt
