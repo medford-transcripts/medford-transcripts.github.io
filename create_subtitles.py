@@ -78,7 +78,7 @@ def update_priority():
         sorted_dict[yt_ids[k]]["priority"] = priority[k]
 
     # update video_data
-    jsonfile = 'video_data2.json'
+    jsonfile = 'video_data.json'
     with open(jsonfile, "w") as fp:
         json.dump(sorted_dict, fp, indent=4)
 
