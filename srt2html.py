@@ -122,7 +122,9 @@ def srt2html(yt_id):
     html.write('  <head>\n')
     html.write('    <meta charset="UTF-8">\n')
     html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
-    html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edgBack to all transcriptse">\n')
+    html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
+    if "keywords" in video_data[yt_id].keys():
+        html.write('    <meta name="keywords" content="' + ','.join(video_data[yt_id]["keywords"]) + '">\n')
     html.write('    <meta name="description" content="AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics">\n')
     html.write('    <title>' + title + '</title>\n')
     html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
