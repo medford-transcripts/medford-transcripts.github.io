@@ -18,7 +18,7 @@ import ipdb
 # not required. I'm leaving this here for debugging
 
 # standard libraries 
-import datetime, os, glob, argparse
+import datetime, os, glob, argparse, math, sys
 import json
 
 ##### test hugging face token #####
@@ -27,6 +27,133 @@ import json
 #pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", use_auth_token=token)
 #ipdb.set_trace()
 ###################################
+
+def update_priority():
+    # read info
+    jsonfile = 'video_data.json'
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            video_data = json.load(fp)
+    else: return
+
+    now = datetime.datetime.now()
+    priority = []
+    halflife = 90.0
+    for yt_id in video_data.keys():
+        if "view_count" in video_data[yt_id].keys(): 
+            views = video_data[yt_id]["view_count"]
+        else: views = 0
+
+        if "upload_date" in video_data[yt_id].keys(): 
+            age = ((now - datetime.datetime.strptime(video_data[yt_id]["upload_date"],'%Y-%m-%d')).total_seconds()/86400)
+        else: age = 0
+
+        if "duration" in video_data[yt_id].keys(): 
+            duration = video_data[yt_id]["duration"]
+        else: duration = 9e999
+
+        # ad hoc prioritization based on popularity and age
+
+        # prioritize by popularity
+        #priority.append(views)
+
+        # prioritize by age (newest first)
+        #priority.append(1.0/age)
+
+        # prioritize by age (oldest first)
+        #priority.append(age)
+
+        # exponential decay penalizes old videos too strongly or doesn't weight new ones strongly enough
+        #priority.append(views*math.exp(-math.log(2.0)*age/halflife))
+
+        # linear decay weakly penalizes old videos
+        priority.append((views+100)*100/age)
+
+    # sort video_data by priority (equivalent to np.argsort)
+    sort_ndx = reversed(sorted(range(len(priority)), key=priority.__getitem__))
+    yt_ids = list(video_data.keys())
+    sorted_dict = {}
+    for k in sort_ndx:
+        sorted_dict[yt_ids[k]] = video_data[yt_ids[k]]
+        sorted_dict[yt_ids[k]]["priority"] = priority[k]
+
+    # update video_data
+    jsonfile = 'video_data2.json'
+    with open(jsonfile, "w") as fp:
+        json.dump(sorted_dict, fp, indent=4)
+
+
+# updates video_data.json with info from yt_id
+def update_data(yt_id):
+
+    # read info
+    jsonfile = 'video_data.json'
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            video_data = json.load(fp)
+    else: video_data = {}
+
+    if yt_id not in video_data.keys(): video_data[yt_id] = {}
+
+    required_keys = ["upload_date","channel","title","duration","view_count"]
+    if not all(key in video_data[yt_id].keys() for key in required_keys):
+        url = "https://youtu.be/" + yt_id
+        with yt_dlp.YoutubeDL() as ydl:
+            info = ydl.extract_info(url, download=False)
+
+            video_data[yt_id]["title"] = info["title"]
+            video_data[yt_id]["channel"] = info["channel"]
+            video_data[yt_id]["duration"] = info["duration"]
+            video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+            video_data[yt_id]["view_count"] = info["view_count"]
+            #video_data[yt_id]["last_update"] = 0.0
+
+            # update video_data
+            with open(jsonfile, "w") as fp:
+                json.dump(video_data, fp, indent=4)
+
+def update_video_data():
+    # read info
+    jsonfile = 'video_data.json'
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            video_data = json.load(fp)
+            for yt_id in video_data.keys():
+                update_data(yt_id)
+
+def update_channel(channel):
+
+    url = "https://www.youtube.com/" + channel 
+    info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
+
+    # the structure of "info" varies depending on how many playlists (live stream, short, etc)
+    if "display_id" in info["entries"][0].keys():
+        for entry in info["entries"]:
+            update_data(entry["display_id"])
+    else:
+        for playlist in info["entries"]:
+            for entry in playlist["entries"]:
+                update_data(entry["display_id"])
+
+def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
+
+    if os.path.exists(id_file):
+        with open(id_file) as f:
+            yt_ids = f.read().splitlines()
+        for yt_id in yt_ids:
+            update_data(yt_id)
+
+    channel_file = ""
+    if os.path.exists(channel_file):
+        with open(channel_file) as f:
+            channels = f.read().splitlines()
+
+            # loop through every video on these channels
+            for channel in channels: update_channel(channel)
+
+    update_video_data()
+    update_priority()
+
 
 '''
  download the Youtube audio at highest quality as an mp3
@@ -166,23 +293,24 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-def transcribe_entry(entry, download_only=False, id_file="ids_to_transcribe.txt", redo=False):
+# allow us to pre-empt with ids in a file
+def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcribe.txt", redo=False):
 
-    # putting this here makes it possible to queue new videos without interrupting
     if os.path.exists(id_file):
         with open(opt.id_file) as f:
             yt_ids = f.read().splitlines()
-        for yt_id in yt_ids:
-            # only do it if the mp3 file already exists
-            # assumes we have a parallel download script running
-            mp3files = glob.glob("*/*" + yt_id + '.mp3')
-            if (download_only != (len(mp3files) == 1)): # xor
-                try:
-                    transcribe(yt_id, download_only=download_only, redo=redo)
-                except:
-                    pass
 
-    yt_id = entry["display_id"]
+            for priority_yt_id in yt_ids:
+                # only do it if the mp3 file already exists
+                # assumes we have a parallel download script running
+                mp3files = glob.glob("*/*" + priority_yt_id + '.mp3')
+                if (download_only != (len(mp3files) == 1)): # xor
+                    try:
+                        update_data(priority_yt_id)
+                        transcribe(priority_yt_id, download_only=download_only, redo=redo)
+                    except:
+                        pass
+
     # don't let hiccups halt progress
     # Move to next video and we can clean up later
     try: 
@@ -204,35 +332,30 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
     parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
-    parser.add_argument('-c','--channel-file', dest='channel_file', help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
-    parser.add_argument('-i','--youtube-id-file', dest='id_file', help='filename containing a list of YouTube IDs to transcribe')
+    parser.add_argument('-u','--update', dest='update', action='store_true', default=False, help="update video data")
+    parser.add_argument('-p','--update_priority', dest='update_priority', action='store_true', default=False, help="update video prioritization. Only necessary if algorithm has changed.")
+    parser.add_argument('-c','--channel-file', dest='channel_file', default="channels_to_transcribe.txt", help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
+    parser.add_argument('-i','--youtube-id-file', dest='id_file', default="ids_to_transcribe.txt", help='filename containing a list of YouTube IDs to transcribe')
+ 
     opt = parser.parse_args()
+
+    if opt.update: update_all()
+    if opt.update_priority: update_priority()
+
+    # read info
+    jsonfile = 'video_data.json'
+    if not os.path.exists(jsonfile):
+        print("video_data.json not found; updating")
+        update_all()
+
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            video_data = json.load(fp)
+            for yt_id in video_data.keys():
+                transcribe_with_preempt(yt_id, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
+    else: 
+        print("No video data file found after updating. Add channels to channels_to_transcribe.txt or ids to ids_to_transcribe.txt")
+        sys.exit()
 
     # command to trim an audio file (0 to 300 seconds)
     # ffmpeg -i original.mp3 -ss 0 -to 300 trimmed.mp3
-
- #   # prioritize videos by specifying youtube IDs (one per line) in priority_videos.txt
- #   if os.path.exists(opt.id_file):
- #       with open(opt.id_file) as f:
- #           yt_ids = f.read().splitlines()
- #       for yt_id in yt_ids:
- #           transcribe(yt_id, download_only=opt.download_only)
-
-    if os.path.exists(opt.channel_file):
-        with open(opt.channel_file) as f:
-            channels = f.read().splitlines()
-
-        # loop through every video on these channels
-        # it does regular videos, streams, then shorts
-        for channel in channels:
-            url = "https://www.youtube.com/" + channel 
-            info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
-
-            # the structure of "info" varies depending on how many playlists (live stream, short, etc)
-            if "display_id" in info["entries"][0].keys():
-                for entry in info["entries"]:
-                    transcribe_entry(entry, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
-            else:
-                for playlist in info["entries"]:
-                    for entry in playlist["entries"]:
-                        transcribe_entry(entry, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
