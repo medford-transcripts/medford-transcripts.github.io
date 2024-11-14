@@ -242,13 +242,13 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
-    if download_only: return 0
+    if download_only: return False
 
     # skip files that are already done
     files = glob.glob("*/*_" + yt_id + ".srt")
     if len(files) != 0 and not redo: 
         print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
-        return 0
+        return False
 
     # whisperX options
     if torch.cuda.is_available():
@@ -294,7 +294,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     generate_output(diarize_result, base + '.mp3')
 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
-    return 1
+    return True
 
 def push_to_git():
     subprocess.run(["git","add", "20*"]) 
@@ -315,24 +315,24 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
                 if (download_only != (len(mp3files) == 1)): # xor
                     try:
                         update_data(priority_yt_id)
-                        transcribe(priority_yt_id, download_only=download_only, redo=redo)
-                        srt2html.srt2html(priority_yt_id)
-                        supercut.do_all_councilors()
-                        srt2html.make_index()
-                        srt2html.make_sitemap()
-                        push_to_git()
+                        if transcribe(priority_yt_id, download_only=download_only, redo=redo):
+                            srt2html.srt2html(priority_yt_id)
+                            supercut.do_all_councilors()
+                            srt2html.make_index()
+                            srt2html.make_sitemap()
+                            push_to_git()
                     except:
                         pass
 
     # don't let hiccups halt progress
     # Move to next video and we can clean up later
     try: 
-        transcribe(yt_id, download_only=download_only, redo=redo)
-        srt2html.srt2html(priority_yt_id)
-        supercut.do_all_councilors()
-        srt2html.make_index()
-        srt2html.make_sitemap()
-        push_to_git()
+        if transcribe(yt_id, download_only=download_only, redo=redo):
+            srt2html.srt2html(priority_yt_id)
+            supercut.do_all_councilors()
+            srt2html.make_index()
+            srt2html.make_sitemap()
+            push_to_git()
     except KeyboardInterrupt:
         print('Interrupted')
         sys.exit()
