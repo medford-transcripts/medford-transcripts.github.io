@@ -1,9 +1,10 @@
 models--Systran--faster-whisper-large-v2
 models--Systran--faster-whisper-large-v3
+__pycache__
+# exclude (large) mp3 files and partials
 *.mp3
 *.part
 */20??-??-??_???????????
-__pycache__
 # exclude experimental/sandbox codes
 post.py
 length.py
