@@ -92,15 +92,7 @@ def supercut(speaker):
     #response = client.chat.completions.create(model=model, messages=messages)
     return response.choices[0].message.content.strip()
 
-if __name__ == "__main__":
-
-    ''' The goal for this code is to find the most consequential exerpts
-    for a given person (using chatGPT?) across all transcripts, then extract 
-    the corresponding clips (yt_dlp?) from the transcribed videos and splice 
-    them together (ffmpeg?) into a 2-4 minute supercut. 
-
-    This is a very early draft that does none of those things...
-    '''
+def do_all_councilors():
     # we will do some analytics on these people
     councilors = [
     # Mayor
@@ -134,5 +126,16 @@ if __name__ == "__main__":
         excerpts = supercut(councilor)
         #ipdb.set_trace()
 
+
+if __name__ == "__main__":
+
+    ''' The goal for this code is to find the most consequential exerpts
+    for a given person (using chatGPT?) across all transcripts, then extract 
+    the corresponding clips (yt_dlp?) from the transcribed videos and splice 
+    them together (ffmpeg?) into a 2-4 minute supercut. 
+
+    This is a very early draft that does none of those things...
+    '''
+    do_all_councilors()
 
 
