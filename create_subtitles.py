@@ -145,7 +145,7 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
         for yt_id in yt_ids:
             update_data(yt_id)
 
-    channel_file = ""
+    #channel_file = ""
     if os.path.exists(channel_file):
         with open(channel_file) as f:
             channels = f.read().splitlines()
