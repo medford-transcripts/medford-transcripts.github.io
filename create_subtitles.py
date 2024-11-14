@@ -242,13 +242,13 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
-    if download_only: return
+    if download_only: return 0
 
     # skip files that are already done
     files = glob.glob("*/*_" + yt_id + ".srt")
     if len(files) != 0 and not redo: 
         print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
-        return
+        return 0
 
     # whisperX options
     if torch.cuda.is_available():
@@ -294,6 +294,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     generate_output(diarize_result, base + '.mp3')
 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    return 1
 
 def push_to_git():
     subprocess.run(["git","add", "20*"]) 
