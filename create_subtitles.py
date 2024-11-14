@@ -296,6 +296,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
 def push_to_git():
+    subprocess.run(["git","add", "20*"]) 
     subprocess.run(["git","commit", "-a", "-m", "add video"]) 
     subprocess.run(["git","push"]) 
 
@@ -314,10 +315,11 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
                     try:
                         update_data(priority_yt_id)
                         transcribe(priority_yt_id, download_only=download_only, redo=redo)
-                        srt2hmtl.srt2html(priority_yt_id)
+                        srt2html.srt2html(priority_yt_id)
                         supercut.do_all_councilors()
-                        srt2hmtl.make_index()
+                        srt2html.make_index()
                         srt2html.make_sitemap()
+                        push_to_git()
                     except:
                         pass
 
@@ -325,13 +327,14 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
     # Move to next video and we can clean up later
     try: 
         transcribe(yt_id, download_only=download_only, redo=redo)
-        srt2hmtl.srt2html(yt_id)
+        srt2html.srt2html(priority_yt_id)
         supercut.do_all_councilors()
-        srt2hmtl.make_index()
+        srt2html.make_index()
         srt2html.make_sitemap()
+        push_to_git()
     except KeyboardInterrupt:
         print('Interrupted')
-        ipdb.set_trace()
+        sys.exit()
     except: 
         pass
 
