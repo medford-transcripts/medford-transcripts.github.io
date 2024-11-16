@@ -385,20 +385,18 @@ def save_sitemap(root_node, save_as, **kwargs):
 
     return sitemap_name
 
-
-if __name__ == "__main__":
-
-    files = glob.glob("*/*.srt")
+def do_all():
+    files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-        dir = os.path.dirname(file)
-        srtfilename = os.path.join(dir,dir) + '.srt'
-        if srtfilename != file: continue
-        htmlfilename = os.path.join(dir,dir) + '.html'
-
-        if os.path.exists(srtfilename): 
-            srt2html(yt_id)
+        srt2html(yt_id)
 
     # make the top level page with links to all transcripts
     make_index()
     make_sitemap()
+
+
+if __name__ == "__main__":
+
+    do_all()
+

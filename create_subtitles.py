@@ -316,10 +316,7 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
                     try:
                         update_data(priority_yt_id)
                         if transcribe(priority_yt_id, download_only=download_only, redo=redo):
-                            srt2html.srt2html(priority_yt_id)
-                            supercut.do_all_councilors()
-                            srt2html.make_index()
-                            srt2html.make_sitemap()
+                            srt2html.do_all()
                             push_to_git()
                     except:
                         pass
@@ -328,10 +325,7 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
     # Move to next video and we can clean up later
     try: 
         if transcribe(yt_id, download_only=download_only, redo=redo):
-            srt2html.srt2html(priority_yt_id)
-            supercut.do_all_councilors()
-            srt2html.make_index()
-            srt2html.make_sitemap()
+            srt2html.do_all()
             push_to_git()
     except KeyboardInterrupt:
         print('Interrupted')

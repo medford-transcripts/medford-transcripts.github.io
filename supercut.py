@@ -112,7 +112,7 @@ def do_all_councilors():
     # School Committee
     "Branley","Intoppa","Olapade","Reinfeld", # 2024 (Kreatz, McLaughlin, Mustone, Hays out)
     "Hays", # 2022 (Van der Kloot out)
-    "McLaughlin","Graham", # 2020 (DiBenedetto, Ruggiero out)
+    "McLaughlin","Graham", # 2020( DiBenedetto, Ruggiero out)
     "Ruseau","Ruggiero", # 2018 (Skerry, Cugno out)
     "Kreatz","Mustone", # 2016 (Falco, Scarpelli out)
     # 2014 (no new members) 
@@ -120,6 +120,10 @@ def do_all_councilors():
     "DiBenedetto","Guzik", # 2010 (plus Falco, Scarpelli. Brady, DiGiantommaso, Pompeo, Skerry out)
     "Brady","Cugno","DiGiantommaso","Pompeo","Skerry", "Van der Kloot", # 2008
     ]
+
+    # remove duplicates
+    councilors = set(councilors)
+
 
     for councilor in councilors:
         print(councilor)
