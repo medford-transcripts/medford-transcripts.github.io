@@ -125,17 +125,43 @@ def update_video_data():
 
 def update_channel(channel):
 
-    url = "https://www.youtube.com/" + channel 
-    info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
+    video_data = read_video_data()
+    all_downloaded = False
+    nupdate = 5
 
-    # the structure of "info" varies depending on how many playlists (live stream, short, etc)
-    if "display_id" in info["entries"][0].keys():
-        for entry in info["entries"]:
-            update_data(entry["display_id"])
-    else:
-        for playlist in info["entries"]:
-            for entry in playlist["entries"]:
-                update_data(entry["display_id"])
+    while not all_downloaded:
+
+        nupdate += 1
+
+        ydl_opts = {
+            'playlist_items': str(nupdate),
+            'extract_flat': 'in_playlist',
+        }
+
+        url = "https://www.youtube.com/" + channel 
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=False) 
+
+
+#        for entry in info["entries"]:
+        ipdb.set_trace()
+
+
+
+        all_downloaded = True
+        # the structure of "info" varies depending on how many playlists (live stream, short, etc)
+        if "display_id" in info["entries"][0].keys():
+            for entry in info["entries"]:
+                if entry["display_id"] not in video_data.keys():
+                    update_data(entry["display_id"])
+                    all_downloaded = False
+        else:
+            ipdb.set_trace()
+            for playlist in info["entries"]:
+                for entry in playlist["entries"]:
+                    if entry["display_id"] not in video_data.keys():
+                        update_data(entry["display_id"])
+                        all_downloaded = False
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
@@ -156,6 +182,12 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
     update_video_data()
     update_priority()
 
+def read_video_data(jsonfile='video_data.json'):
+    # read info
+    if os.path.exists(jsonfile):
+        with open(jsonfile, 'r') as fp:
+            return json.load(fp)
+    else: return {}
 
 '''
  download the Youtube audio at highest quality as an mp3
@@ -164,11 +196,7 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
 def download_audio(yt_id, dir=None):
 
     # read info
-    jsonfile = 'video_data.json'
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else: video_data = {}
+    video_data = read_video_data()
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
     # construct the name of the file
@@ -337,6 +365,9 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
  transcribe a youtube video, list of videos, channel, or list of channels.
 '''
 if __name__ == "__main__":
+
+    update_all()
+    ipdb.set_trace()
 
     # example usage:
     # python create_subtitles.py -c channels_to_transcribe.txt -i ids_to_transcribe.txt
