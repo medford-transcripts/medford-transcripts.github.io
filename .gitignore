@@ -7,13 +7,13 @@ __pycache__
 */20??-??-??_???????????
 # exclude experimental/sandbox codes
 post.py
-length.py
 mkdirectory.py
 directory.json
 headshots
+voices_folder
+councilors.txt
 *.jpg
 # exclude credentials for security
 hf_token.txt
 openai_key.txt
-councilors.txt
 reddit.json

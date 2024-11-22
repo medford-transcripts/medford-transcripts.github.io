@@ -389,7 +389,12 @@ def do_all():
     files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-        srt2html(yt_id)
+        try:
+            srt2html(yt_id)
+        except Exception as error:
+            print("Failed on " + yt_id)
+            print(error)
+
 
     # make the top level page with links to all transcripts
     make_index()
