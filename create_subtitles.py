@@ -366,8 +366,8 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
 '''
 if __name__ == "__main__":
 
-    update_all()
-    ipdb.set_trace()
+#    update_all()
+#    ipdb.set_trace()
 
     # example usage:
     # python create_subtitles.py -c channels_to_transcribe.txt -i ids_to_transcribe.txt
