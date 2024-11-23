@@ -123,45 +123,41 @@ def update_video_data():
             for yt_id in video_data.keys():
                 update_data(yt_id)
 
+def update_channel_old(channel):
+
+    url = "https://www.youtube.com/" + channel 
+    info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
+
+    # the structure of "info" varies depending on how many playlists (live stream, short, etc)
+    if "display_id" in info["entries"][0].keys():
+        for entry in info["entries"]:
+            update_data(entry["display_id"])
+    else:
+        for playlist in info["entries"]:
+            for entry in playlist["entries"]:
+                update_data(entry["display_id"])
+
 def update_channel(channel):
 
     video_data = read_video_data()
-    all_downloaded = False
-    nupdate = 5
+    url = "https://www.youtube.com/" + channel 
+    info = yt_dlp.YoutubeDL({'extract_flat':'in_playlist'}).extract_info(url, download=False) 
 
-    while not all_downloaded:
-
-        nupdate += 1
-
-        ydl_opts = {
-            'playlist_items': str(nupdate),
-            'extract_flat': 'in_playlist',
-        }
-
-        url = "https://www.youtube.com/" + channel 
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(url, download=False) 
-
-
-#        for entry in info["entries"]:
-        ipdb.set_trace()
-
-
-
-        all_downloaded = True
-        # the structure of "info" varies depending on how many playlists (live stream, short, etc)
-        if "display_id" in info["entries"][0].keys():
-            for entry in info["entries"]:
-                if entry["display_id"] not in video_data.keys():
-                    update_data(entry["display_id"])
-                    all_downloaded = False
-        else:
-            ipdb.set_trace()
-            for playlist in info["entries"]:
-                for entry in playlist["entries"]:
-                    if entry["display_id"] not in video_data.keys():
-                        update_data(entry["display_id"])
-                        all_downloaded = False
+    if "id" in info["entries"][0].keys():
+        for entry in info["entries"]:
+            if entry["id"] not in video_data.keys():
+                try:
+                    update_data(entry["id"])
+                except:
+                    pass
+    else:
+        for playlist in info["entries"]:
+            for entry in playlist["entries"]:
+                if entry["id"] not in video_data.keys():
+                    try:
+                        update_data(entry["id"])
+                    except:
+                        pass
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
@@ -273,7 +269,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     if download_only: return False
 
     # skip files that are already done
-    files = glob.glob("*/*_" + yt_id + ".srt")
+    files = glob.glob("*/20??-??-??_" + yt_id + ".srt")
     if len(files) != 0 and not redo: 
         print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
         return False
@@ -333,7 +329,7 @@ def push_to_git():
 def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcribe.txt", redo=False):
 
     if os.path.exists(id_file):
-        with open(opt.id_file) as f:
+        with open(id_file) as f:
             yt_ids = f.read().splitlines()
 
             for priority_yt_id in yt_ids:
@@ -348,6 +344,16 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
                             push_to_git()
                     except:
                         pass
+
+
+    # skip files that are already done
+    files = glob.glob("*/20??-??-??_" + yt_id + ".srt")
+    if len(files) != 0 and not redo: 
+        print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
+        return
+
+    # check for new videos
+    update_all()
 
     # don't let hiccups halt progress
     # Move to next video and we can clean up later
@@ -365,9 +371,6 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
  transcribe a youtube video, list of videos, channel, or list of channels.
 '''
 if __name__ == "__main__":
-
-#    update_all()
-#    ipdb.set_trace()
 
     # example usage:
     # python create_subtitles.py -c channels_to_transcribe.txt -i ids_to_transcribe.txt
