@@ -9,11 +9,15 @@ import gzip
 from xml.etree import cElementTree
 import dateutil.parser as dparser
 
-def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
+def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None, htmltext=None):
     # new speaker; wrap up and start new
     if text != "":
-        html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-        html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
+
+        if htmltext != None:
+            html.write("    <p>[" + speaker + "]</a>: " + htmltext + "</p>\n\n")
+        else:
+            html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
+            html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
 
         if eshtml != None:
             translator = Translator()
@@ -83,6 +87,7 @@ def srt2html(yt_id):
     start = 0.0
     stop = 86400.0
     text = ""
+    htmltext = ""
     t0 = datetime.datetime(1900,1,1)    
 
     # read in the speaker mappings
@@ -170,6 +175,11 @@ def srt2html(yt_id):
                 this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                 this_text = ":".join(line.split(":")[1:])
 
+                tmp_text = this_text.split()
+                link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                tmp_text[0] = link
+                this_html_text = ' '.join(tmp_text)
+
                 # replace automated speaker tag with speaker ID
                 if this_speaker in speaker_ids.keys():
                     this_speaker = speaker_ids[this_speaker]
@@ -179,12 +189,20 @@ def srt2html(yt_id):
                 if this_speaker == speaker:
                     # same speaker; append to previous text
                     text += this_text
+                    htmltext += this_html_text
+
+
+                    # links mid text for more precise timestamps
+                    #tmp_text = this_text.split()
+                    #link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                    #tmp_text[0] = link
                 else:
-                    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
+                    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml, htmltext=htmltext)
 
                     # update to new values
                     start = this_start
                     text = this_text
+                    htmltext = this_html_text
                     speaker = this_speaker
 
                 stop = this_stop
@@ -265,11 +283,9 @@ def make_index():
     else:
         video_data = {}
 
-    htmlfiles = glob.glob('*/*.html')
+    htmlfiles = glob.glob('*/20??-??-??_???????????.html')
     lines = []
     for htmlfile in htmlfiles:
-        if htmlfile.startswith("electeds"): continue
-        if htmlfile.endswith("es.html"): continue
         date = htmlfile.split('_')[0]
         yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
 

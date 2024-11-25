@@ -1,5 +1,6 @@
-import json, os
+import json, os, glob
 import datetime
+import ipdb
 
 jsonfile = 'video_data.json'
 with open(jsonfile, 'r') as fp:
@@ -11,6 +12,8 @@ ndownloaded = 0
 time_downloaded = 0
 nrequested = 0
 time_requested = 0
+
+srtfiles = glob.glob("*/20??-??-??_???????????.srt")
 
 for video in video_data.keys(): 
 	if "duration" in video_data[video].keys():
@@ -32,7 +35,13 @@ for video in video_data.keys():
 		srtfile = base + '.srt'
 		if os.path.exists(srtfile):
 			time += video_data[video]["duration"]
-			nvideos += 1			
+			nvideos += 1
+			if srtfile in srtfiles:
+				ndx = srtfiles.index(srtfile)
+				srtfiles[ndx] = ''
+
+	else:
+		print(video + " not found in video_data")	
 
 print(str(round(time_requested/86400,2)) + " days of (" + str(nrequested) + ") videos requested")
 print(str(round(time_downloaded/86400,2)) + " days of (" + str(ndownloaded) + ") videos downloaded")
@@ -44,3 +53,6 @@ now = datetime.datetime.now()
 elasped_time = (now-started).total_seconds()
 print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an hour of video")
 print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
+
+#print(srtfiles)
+#ipdb.set_trace()
