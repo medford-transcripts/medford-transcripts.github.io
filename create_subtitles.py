@@ -30,7 +30,7 @@ import srt2html, supercut
 #ipdb.set_trace()
 ###################################
 
-last_update = datetime.datetime(1,1,2000)
+last_update = datetime.datetime(2000,1,1)
 
 
 def update_priority():
@@ -164,12 +164,20 @@ def update_channel(channel):
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
+    # update data for all videos already transcribed
+    transcribed_files = glob.glob("*/20??-??-??_???????????.srt")
+    for file in transcribed_files:
+        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+        update_data(yt_id)
+
+    # update data for files in id_file
     if os.path.exists(id_file):
         with open(id_file) as f:
             yt_ids = f.read().splitlines()
         for yt_id in yt_ids:
             update_data(yt_id)
 
+    # update data for all channels
     #channel_file = ""
     if os.path.exists(channel_file):
         with open(channel_file) as f:
@@ -177,6 +185,7 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
 
             # loop through every video on these channels
             for channel in channels: update_channel(channel)
+
 
     update_video_data()
     update_priority()
@@ -381,10 +390,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
     parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
+    parser.add_argument('-u','--update', dest='update', action='store_true', default=False, help="update only")
     parser.add_argument('-c','--channel-file', dest='channel_file', default="channels_to_transcribe.txt", help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
     parser.add_argument('-i','--youtube-id-file', dest='id_file', default="ids_to_transcribe.txt", help='filename containing a list of YouTube IDs to transcribe')
  
     opt = parser.parse_args()
+
+    if opt.update:
+        update_all()
+        sys.exit()
 
     # read info
     jsonfile = 'video_data.json'

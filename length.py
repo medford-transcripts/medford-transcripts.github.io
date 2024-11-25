@@ -15,17 +15,20 @@ time_requested = 0
 for video in video_data.keys(): 
 	if "duration" in video_data[video].keys():
 
+		# requested
 		time_requested += video_data[video]["duration"]
 		nrequested += 1
 
 		dirname = video_data[video]["upload_date"] + "_" + video
 		base = os.path.join(dirname,dirname)
 
+		# downloaded
 		mp3file = base + '.mp3'
 		if os.path.exists(mp3file):
 			time_downloaded += video_data[video]["duration"]
 			ndownloaded +=1
 
+		# transcribed
 		srtfile = base + '.srt'
 		if os.path.exists(srtfile):
 			time += video_data[video]["duration"]

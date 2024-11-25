@@ -312,7 +312,7 @@ def make_index():
                     date = create_date.strftime("%Y-%m-%d")
             except ValueError:
                 # default to the upload date
-                #print('no date in title of "' + title + '", using upload date')
+                #print('No parsable date in title of "' + title + '"; using upload date')
                 pass
 
         duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
