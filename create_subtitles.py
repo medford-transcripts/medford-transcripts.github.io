@@ -326,7 +326,7 @@ def push_to_git():
     subprocess.run(["git","push"]) 
 
 # allow us to pre-empt with ids in a file
-def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcribe.txt", redo=False):
+def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt", redo=False):
 
     if os.path.exists(id_file):
         with open(id_file) as f:
@@ -345,27 +345,26 @@ def transcribe_with_preempt(yt_id, download_only=False, id_file="ids_to_transcri
                     except:
                         pass
 
-
-    # skip files that are already done
-    files = glob.glob("*/20??-??-??_" + yt_id + ".srt")
-    if len(files) != 0 and not redo: 
-        print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
-        return
-
     # check for new videos
     update_all()
 
-    # don't let hiccups halt progress
-    # Move to next video and we can clean up later
-    try: 
-        if transcribe(yt_id, download_only=download_only, redo=redo):
-            srt2html.do_all()
-            push_to_git()
-    except KeyboardInterrupt:
-        print('Interrupted')
-        sys.exit()
-    except: 
-        pass
+    with open(jsonfile, 'r') as fp:
+        video_data = json.load(fp)
+        for yt_id in video_data.keys():
+            # don't let hiccups halt progress
+            # Move to next video and we can clean up later
+            try: 
+                if transcribe(yt_id, download_only=download_only, redo=redo):
+                    srt2html.do_all()
+                    push_to_git()
+                    return
+            except KeyboardInterrupt:
+                print('Interrupted')
+                sys.exit()
+            except: 
+                pass
+
+
 
 '''
  transcribe a youtube video, list of videos, channel, or list of channels.
@@ -378,15 +377,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
     parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
-    parser.add_argument('-u','--update', dest='update', action='store_true', default=False, help="update video data")
-    parser.add_argument('-p','--update_priority', dest='update_priority', action='store_true', default=False, help="update video prioritization. Only necessary if algorithm has changed.")
     parser.add_argument('-c','--channel-file', dest='channel_file', default="channels_to_transcribe.txt", help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
     parser.add_argument('-i','--youtube-id-file', dest='id_file', default="ids_to_transcribe.txt", help='filename containing a list of YouTube IDs to transcribe')
  
     opt = parser.parse_args()
-
-    if opt.update: update_all()
-    if opt.update_priority: update_priority()
 
     # read info
     jsonfile = 'video_data.json'
@@ -395,10 +389,8 @@ if __name__ == "__main__":
         update_all()
 
     if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-            for yt_id in video_data.keys():
-                transcribe_with_preempt(yt_id, download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
+        while True:
+            transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
     else: 
         print("No video data file found after updating. Add channels to channels_to_transcribe.txt or ids to ids_to_transcribe.txt")
         sys.exit()
