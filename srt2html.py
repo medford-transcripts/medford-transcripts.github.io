@@ -7,6 +7,7 @@ import shutil
 import os
 import gzip
 from xml.etree import cElementTree
+import dateutil.parser as dparser
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None):
     # new speaker; wrap up and start new
@@ -295,6 +296,25 @@ def make_index():
             video_data[yt_id]["channel"] = channel
             video_data[yt_id]["duration"] = duration
 
+        # first priority, the date field of video_data.json
+        # next, date parsed from title
+        # next, upload date
+        if "date" in video_data[yt_id].keys():
+            # you can hand edit the date in the video_data.json file for ones that fail to parse
+            date = video_data[yt_id]["date"]
+        else:
+            try:
+                create_date = dparser.parse(title,fuzzy=True)
+                upload_date = datetime.datetime.strptime(date,'%Y-%m-%d')
+
+                # sometimes the parser guesses too much. It can't be later the upload date
+                if upload_date > create_date:
+                    date = create_date.strftime("%Y-%m-%d")
+            except ValueError:
+                # default to the upload date
+                #print('no date in title of "' + title + '", using upload date')
+                pass
+
         duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
         # one row in the html table
@@ -317,7 +337,7 @@ def make_index():
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("      <tr><td><center>Upload Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")

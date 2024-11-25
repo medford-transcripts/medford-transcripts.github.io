@@ -30,6 +30,9 @@ import srt2html, supercut
 #ipdb.set_trace()
 ###################################
 
+last_update = datetime.datetime(1,1,2000)
+
+
 def update_priority():
     # read info
     jsonfile = 'video_data.json'
@@ -332,39 +335,40 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         with open(id_file) as f:
             yt_ids = f.read().splitlines()
 
-            for priority_yt_id in yt_ids:
-                # only do it if the mp3 file already exists
-                # assumes we have a parallel download script running
-                mp3files = glob.glob("*/*" + priority_yt_id + '.mp3')
-                if (download_only != (len(mp3files) == 1)): # xor
-                    try:
-                        update_data(priority_yt_id)
-                        if transcribe(priority_yt_id, download_only=download_only, redo=redo):
-                            srt2html.do_all()
-                            push_to_git()
-                    except:
-                        pass
+        for priority_yt_id in yt_ids:
+            # only do it if the mp3 file already exists
+            # assumes we have a parallel download script running
+            mp3files = glob.glob("*/*" + priority_yt_id + '.mp3')
+            if (download_only != (len(mp3files) == 1)): # xor
+                try:
+                    update_data(priority_yt_id)
+                    if transcribe(priority_yt_id, download_only=download_only, redo=redo):
+                        srt2html.do_all()
+                        push_to_git()
+                except:
+                    pass
 
     # check for new videos
-    update_all()
+    if (datetime.datetime.now() - last_update).total_seconds() > 3600:
+        update_all()
+        last_update = datetime.datetime.now()
 
     with open(jsonfile, 'r') as fp:
         video_data = json.load(fp)
-        for yt_id in video_data.keys():
-            # don't let hiccups halt progress
-            # Move to next video and we can clean up later
-            try: 
-                if transcribe(yt_id, download_only=download_only, redo=redo):
-                    srt2html.do_all()
-                    push_to_git()
-                    return
-            except KeyboardInterrupt:
-                print('Interrupted')
-                sys.exit()
-            except: 
-                pass
 
-
+    for yt_id in video_data.keys():
+        # don't let hiccups halt progress
+        # Move to next video and we can clean up later
+        try: 
+            if transcribe(yt_id, download_only=download_only, redo=redo):
+                srt2html.do_all()
+                push_to_git()
+                return
+        except KeyboardInterrupt:
+            print('Interrupted')
+            sys.exit()
+        except: 
+            pass
 
 '''
  transcribe a youtube video, list of videos, channel, or list of channels.

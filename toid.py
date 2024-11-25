@@ -15,8 +15,8 @@ for file in files:
             unidentified += 1
         nspeakers += 1
 
-    if unidentified == nspeakers: 
-        print(file + " not done (" + str(unidentified) + " unidentified speakers)")
+    if unidentified > 0.8*nspeakers: 
+        print(file + " not done (" + str(unidentified) + "/" + str(nspeakers) + " unidentified speakers)")
         number_to_id += 1
 
 print(str(number_to_id) + " left to do")
