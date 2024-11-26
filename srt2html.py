@@ -46,6 +46,17 @@ def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtm
     if "total_words" in speaker_stats[speaker].keys(): speaker_stats[speaker]["total_words"] += added_words
     else: speaker_stats[speaker]["total_words"] = added_words
 
+def get_councilors(file="councilors.txt"):
+    councilors = []
+    with open(file,'r') as fp:
+        for line in fp:
+            entries = line.split("#")[0].strip().split(',')
+            for entry in entries:
+                if entry != '':
+                    councilors.append(entry.strip())
+    return list(set(councilors))
+
+
 def srt2html(yt_id):
 
     srtfilename = glob.glob('*'+yt_id+'*/*.srt')[0]
@@ -56,32 +67,7 @@ def srt2html(yt_id):
     last_changed = os.path.getmtime(srtfilename)
 
     # we will do some analytics on these people
-    councilors = [
-    # Mayor
-    "Lungo-Koehn", # Mayor 2020-
-    "Burke", # Mayor 2016-2020
-    "McGlynn", # Mayor 1988-2016
-    # City Councilors
-    "Callahan","Lazzaro","Leming", # 2024 (Caraviello, Knight, Morell out) 
-    "Collins","Tseng", # 2022 (Marks, Falco out)
-    "Bears","Morell", # 2020 (Dello Russo, Lungo-Koehn out)
-    # 2018 (no new councilors)
-    "Falco", "Scarpelli", # 2016 (Penta, Camuso out)
-    "Knight", # 2014 (Maiocco out)
-    "Caraviello", # 2012 (Burke out)
-    # 2010 (no new members)
-    "Camuso","Dello Russo","Maiocco","Marks","Penta", # 2008 (also Burke, Lungo-Koehn)
-    # School Committee
-    "Branley","Intoppa","Olapade","Reinfeld", # 2024 (Kreatz, McLaughlin, Mustone, Hays out)
-    "Hays", # 2022 (Van der Kloot out)
-    "McLaughlin","Graham", # 2020 (DiBenedetto, Ruggiero out)
-    "Ruseau","Ruggiero", # 2018 (Skerry, Cugno out)
-    "Kreatz","Mustone", # 2016 (Falco, Scarpelli out)
-    # 2014 (no new members) 
-    # 2012 (Plus Skerry, Guzik out)
-    "DiBenedetto","Guzik", # 2010 (plus Falco, Scarpelli. Brady, DiGiantommaso, Pompeo, Skerry out)
-    "Brady","Cugno","DiGiantommaso","Pompeo","Skerry", "Van der Kloot", # 2008
-    ]
+    councilors = get_councilors()
 
     speaker = ""
     start = 0.0

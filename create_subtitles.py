@@ -379,6 +379,8 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         except: 
             pass
 
+def 
+
 '''
  transcribe a youtube video, list of videos, channel, or list of channels.
 '''
