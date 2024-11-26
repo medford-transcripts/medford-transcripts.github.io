@@ -358,9 +358,9 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                     pass
 
     # check for new videos
-    if (datetime.datetime.now() - last_update).total_seconds() > 3600:
-        update_all()
-        last_update = datetime.datetime.now()
+    #if (datetime.datetime.now() - last_update).total_seconds() > 3600:
+    update_all()
+    #    last_update = datetime.datetime.now()
 
     with open(jsonfile, 'r') as fp:
         video_data = json.load(fp)
