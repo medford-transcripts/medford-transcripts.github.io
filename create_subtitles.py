@@ -151,16 +151,18 @@ def update_channel(channel):
             if entry["id"] not in video_data.keys():
                 try:
                     update_data(entry["id"])
-                except:
-                    pass
+                except Exception as error:
+                    print("Failed on " + entry["id"])
+                    print(error)
     else:
         for playlist in info["entries"]:
             for entry in playlist["entries"]:
                 if entry["id"] not in video_data.keys():
                     try:
                         update_data(entry["id"])
-                    except:
-                        pass
+                    except Exception as error:
+                        print("Failed on " + entry["id"])
+                        print(error)
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
@@ -378,8 +380,6 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
             sys.exit()
         except: 
             pass
-
-def 
 
 '''
  transcribe a youtube video, list of videos, channel, or list of channels.
