@@ -21,6 +21,8 @@ import ipdb
 import datetime, os, glob, argparse, math, sys, subprocess
 import json
 
+import dateutil.parser as dparser
+
 import srt2html, supercut
 
 ##### test hugging face token #####
@@ -49,15 +51,35 @@ def update_priority():
             views = video_data[yt_id]["view_count"]
         else: views = 0
 
+        date = now
+
         if "upload_date" in video_data[yt_id].keys(): 
-            age = ((now - datetime.datetime.strptime(video_data[yt_id]["upload_date"],'%Y-%m-%d')).total_seconds()/86400)
-        else: age = 0
+            date = datetime.datetime.strptime(video_data[yt_id]["upload_date"],'%Y-%m-%d')
+
+        if "title" in video_data[yt_id].keys():
+            try: 
+                create_date = dparser.parse(video_data[yt_id]["title"],fuzzy=True)
+
+                # sometimes the parser guesses too much. It can't be later the upload date
+                if date > create_date:
+                    date = create_date
+
+            except ValueError:
+                print('No parsable date in title of "' + video_data[yt_id]["title"] + '"')
+                pass
+
+        if "date" in video_data[yt_id].keys():
+            # you can hand edit the date in the video_data.json file for ones that fail to parse
+            date = datetime.datetime.strptime(video_data[yt_id]["date"],'%Y-%m-%d')
+
+            
+        age = (now - date).total_seconds()/86400.0
 
         if "duration" in video_data[yt_id].keys(): 
             duration = video_data[yt_id]["duration"]
-        else: duration = 9e999
+        else: duration = 7200.0 # default to 2 hours
 
-        # ad hoc prioritization based on popularity and age
+        # ad hoc prioritization based on popularity, age, and/or duration
 
         # prioritize by popularity
         #priority.append(views)
