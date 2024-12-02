@@ -18,7 +18,7 @@ import ipdb
 # not required. I'm leaving this here for debugging
 
 # standard libraries 
-import datetime, os, glob, argparse, math, sys, subprocess
+import datetime, os, glob, argparse, math, sys, subprocess, time
 import json
 
 import dateutil.parser as dparser
@@ -390,12 +390,13 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         video_data = json.load(fp)
 
     for yt_id in video_data.keys():
-        # don't let hiccups halt progress
-        # Move to next video and we can clean up later
+        # wrap in try so don't halt progress
         try: 
             if transcribe(yt_id, download_only=download_only, redo=redo):
                 srt2html.do_all()
                 push_to_git()
+                # after every successful transcription, 
+                # we'll restart this loop to check for higher priority videos 
                 return
         except KeyboardInterrupt:
             print('Interrupted')
@@ -432,7 +433,14 @@ if __name__ == "__main__":
 
     if os.path.exists(jsonfile):
         while True:
+            t0 = datetime.datetime.now()
             transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
+            tf = datetime.datetime.now()
+            time_to_sleep = 300.0 - (tf-t0).total_seconds() 
+            if time_to_sleep > 0.0:
+                print("Done with all videos; waiting " + str(time_to_sleep) + " seconds to check again")
+                time.sleep(time_to_sleep)
+
     else: 
         print("No video data file found after updating. Add channels to channels_to_transcribe.txt or ids to ids_to_transcribe.txt")
         sys.exit()
