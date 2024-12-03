@@ -8,6 +8,7 @@ import os
 import gzip
 from xml.etree import cElementTree
 import dateutil.parser as dparser
+import re
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None, htmltext=None):
     # new speaker; wrap up and start new
@@ -161,10 +162,30 @@ def srt2html(yt_id):
                 this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                 this_text = ":".join(line.split(":")[1:])
 
-                tmp_text = this_text.split()
-                link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
-                tmp_text[0] = link
-                this_html_text = ' '.join(tmp_text)
+                this_html_text = this_text
+                tmp_text_og = this_html_text.split()
+
+                # if a resolution is mentioned (##-###) and we have a copy of that resolution,
+                # link to it (in green to distinguish it from video links)
+                resolutionRegex = re.compile(r'\d\d-\d\d\d')
+                resolutions = re.findall(resolutionRegex,this_html_text)
+                resolution_is_first = False
+                for resolution in resolutions:
+                    pdf_name = os.path.join('resolutions',resolution + '.pdf')
+                    if os.path.exists(pdf_name):
+                        # replace text
+                        link = '<a href="../resolutions/' + resolution + '.pdf"><font color="green">' + resolution + '</font></a>'
+                        this_html_text = this_html_text.replace(resolution,link)
+
+                    if resolution in tmp_text_og[0]:
+                        resolution_is_first = True
+
+                # if it's not a resolution, and it's the first word, link to the timestamped video
+                tmp_text = this_html_text.split()
+                if not resolution_is_first:
+                    link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                    tmp_text[0] = link
+                    this_html_text = ' '.join(tmp_text)
 
                 # replace automated speaker tag with speaker ID
                 if this_speaker in speaker_ids.keys():
