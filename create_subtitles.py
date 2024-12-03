@@ -148,7 +148,7 @@ def update_video_data():
             for yt_id in video_data.keys():
                 update_data(yt_id)
 
-def update_channel_old(channel):
+def update_channel_slow(channel):
 
     url = "https://www.youtube.com/" + channel 
     info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
@@ -162,6 +162,7 @@ def update_channel_old(channel):
             for entry in playlist["entries"]:
                 update_data(entry["display_id"])
 
+#def update_channel_fast(channel):
 def update_channel(channel):
 
     video_data = read_video_data()
