@@ -167,14 +167,18 @@ def srt2html(yt_id):
 
                 # if a resolution is mentioned (##-###) and we have a copy of that resolution,
                 # link to it (in green to distinguish it from video links)
-                resolutionRegex = re.compile(r'\d\d-\d\d\d')
-                resolutions = re.findall(resolutionRegex,this_html_text)
+                resolutions = re.findall(r'\d\d-\d\d\d',this_html_text)+re.findall(r'\d\d\d\d\d',this_html_text)
                 resolution_is_first = False
                 for resolution in resolutions:
-                    pdf_name = os.path.join('resolutions',resolution + '.pdf')
+                    if '-' not in resolution:
+                        resolution_str = resolution[:2] + '-' + resolution[2:]
+                    else:
+                        resolution_str = resolution
+
+                    pdf_name = os.path.join('resolutions',resolution_str + '.pdf')
                     if os.path.exists(pdf_name):
                         # replace text
-                        link = '<a href="../resolutions/' + resolution + '.pdf"><font color="green">' + resolution + '</font></a>'
+                        link = '<a href="../resolutions/' + resolution_str + '.pdf"><font color="green">' + resolution_str + '</font></a>'
                         this_html_text = this_html_text.replace(resolution,link)
 
                     if resolution in tmp_text_og[0]:
