@@ -181,8 +181,8 @@ def srt2html(yt_id):
                         link = '<a href="../resolutions/' + resolution_str + '.pdf"><font color="green">' + resolution_str + '</font></a>'
                         this_html_text = this_html_text.replace(resolution,link)
 
-                    if resolution in tmp_text_og[0]:
-                        resolution_is_first = True
+                        if resolution in tmp_text_og[0]:
+                            resolution_is_first = True
 
                 # if it's not a resolution, and it's the first word, link to the timestamped video
                 tmp_text = this_html_text.split()
