@@ -220,7 +220,7 @@ def srt2html(yt_id):
 
             else: continue
 
-    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml)
+    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml,htmltext=htmltext)
 
     # create speaker_ids.json, sorting by auto-assigned speaker ID (SPEAKER_##)
     with open(os.path.join(dir,"speaker_ids.json"), "w") as fp:
