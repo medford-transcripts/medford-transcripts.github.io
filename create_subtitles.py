@@ -1,30 +1,30 @@
-# requires a "hugging face" token called "hf_token.txt" 
-# in the top level directory with permissions for 
-# a couple libraries. See requirements here:
-# https://huggingface.co/pyannote/speaker-diarization-3.1 
-
 # pip install git+https://github.com/m-bain/whisperx.git
 import whisperx
 
 # pip install yt_dlp
 import yt_dlp 
-# yt_dlp requires ffmpeg in your path (https://www.ffmpeg.org/download.html)
+# yt_dlp requires ffmpeg to be in your path (https://www.ffmpeg.org/download.html)
 
 # whisperx dependency, pip will grab this
 import torch 
 
 # pip install ipdb
 import ipdb
-# not required. I'm leaving this here for debugging
+# not strictly required, but I'm leaving this here for debugging
 
 # standard libraries 
 import datetime, os, glob, argparse, math, sys, subprocess, time
 import json
-
 import dateutil.parser as dparser
 
+# imports from this repo
 import srt2html, supercut
 
+# requires a "hugging face" token called "hf_token.txt" 
+# in the top level directory with permissions for 
+# a couple libraries. See requirements here:
+# https://huggingface.co/pyannote/speaker-diarization-3.1 
+#
 ##### test hugging face token #####
 #from pyannote.audio import Pipeline
 #with open('hf_token.txt') as f: token = f.readline()
@@ -35,6 +35,7 @@ import srt2html, supercut
 last_update = datetime.datetime(2000,1,1)
 
 
+# this prioritizes the videos by age, popularity (views), and/or duration
 def update_priority():
     # read info
     jsonfile = 'video_data.json'
@@ -79,7 +80,7 @@ def update_priority():
             duration = video_data[yt_id]["duration"]
         else: duration = 7200.0 # default to 2 hours
 
-        # ad hoc prioritization based on popularity, age, and/or duration
+        # ad hoc prioritization scheme based on popularity, age, and/or duration
 
         # prioritize by popularity
         #priority.append(views)
@@ -120,9 +121,19 @@ def update_data(yt_id):
             video_data = json.load(fp)
     else: video_data = {}
 
-    if yt_id not in video_data.keys(): video_data[yt_id] = {}
+    if yt_id not in video_data.keys(): 
+        video_data[yt_id] = {}
+        #print(yt_id)
+        #ipdb.set_trace()
 
     required_keys = ["upload_date","channel","title","duration","view_count"]
+#    download = False
+#    for required_key in required_keys:
+#        if not required_key in video_data[yt_id].keys():
+#            download = True
+#
+#    if download:
+
     if not all(key in video_data[yt_id].keys() for key in required_keys):
         url = "https://youtu.be/" + yt_id
         with yt_dlp.YoutubeDL() as ydl:
@@ -169,23 +180,28 @@ def update_channel(channel):
     url = "https://www.youtube.com/" + channel 
     info = yt_dlp.YoutubeDL({'extract_flat':'in_playlist'}).extract_info(url, download=False) 
 
-    if "id" in info["entries"][0].keys():
-        for entry in info["entries"]:
-            if entry["id"] not in video_data.keys():
-                try:
-                    update_data(entry["id"])
-                except Exception as error:
-                    print("Failed on " + entry["id"])
-                    print(error)
-    else:
-        for playlist in info["entries"]:
+    # all we're trying to do is loop through a list of all YouTube IDs in this channel
+    # there must be a better way, but the structure of info is a mystery to me
+    # beware: info changes between channels with only one video type vs multiple video types
+
+    for playlist in info["entries"]:
+        if "entries" in playlist.keys():
             for entry in playlist["entries"]:
                 if entry["id"] not in video_data.keys():
                     try:
+                        if entry["id"] == 'UCTJGkgFesimf6BOlToHzINg': ipdb.set_trace()
                         update_data(entry["id"])
                     except Exception as error:
                         print("Failed on " + entry["id"])
                         print(error)
+        else:
+            # this captures channels with only one video type (?)
+            # I think "playlist" is actually a video
+            try:
+                update_data(playlist["id"])
+            except Exception as error:
+                print("Failed on " + playlist["id"])
+                print(error)
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
@@ -398,12 +414,14 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                 push_to_git()
                 # after every successful transcription, 
                 # we'll restart this loop to check for higher priority videos 
-                return
+                return True
         except KeyboardInterrupt:
             print('Interrupted')
             sys.exit()
         except: 
             pass
+
+    return False
 
 '''
  transcribe a youtube video, list of videos, channel, or list of channels.
@@ -435,10 +453,15 @@ if __name__ == "__main__":
     if os.path.exists(jsonfile):
         while True:
             t0 = datetime.datetime.now()
-            transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
+            more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
             tf = datetime.datetime.now()
-            time_to_sleep = 300.0 - (tf-t0).total_seconds() 
-            if time_to_sleep > 0.0:
+
+            # if we did them all, wait an hour and check again
+            # otherwise, on to the next one
+            if more_to_do: time_to_sleep = 0
+            else: time_to_sleep = 3600.0 - (tf-t0).total_seconds()
+
+            if time_to_sleep > 0.0:            
                 print("Done with all videos; waiting " + str(time_to_sleep) + " seconds to check again")
                 time.sleep(time_to_sleep)
 
