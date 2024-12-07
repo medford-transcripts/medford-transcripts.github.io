@@ -9,6 +9,7 @@ import gzip
 from xml.etree import cElementTree
 import dateutil.parser as dparser
 import re
+import fix_common_errors
 
 def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None, htmltext=None):
     # new speaker; wrap up and start new
@@ -450,5 +451,6 @@ def do_all():
 
 if __name__ == "__main__":
 
+    fix_common_errors.fix_common_errors()
     do_all()
 
