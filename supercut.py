@@ -1,6 +1,7 @@
 import datetime, time, os
 import ipdb
 import json,glob
+from wordcloud import WordCloud
 
 import srt2html
 
@@ -80,11 +81,19 @@ def supercut(speaker):
     htmlfilename = os.path.join("electeds",speaker + '.html')
     html = open(htmlfilename, 'w', encoding="utf-8")
 
+    imagename = speaker + '.wordcloud.png'
+    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + speaker + '" height=150></img></a><br>\n')
+
     for excerpt in excerpts:
         html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
         html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
         text = text + " " + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
+
+    if text != "":
+        wordcloud = WordCloud(max_font_size=40).generate(text)
+        wordcloud.to_file(imagename)
+
 
     #if alltime == 0.0: ipdb.set_trace()
 

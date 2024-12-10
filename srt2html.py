@@ -11,21 +11,24 @@ import dateutil.parser as dparser
 import re
 import fix_common_errors
 
-def finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=None, htmltext=None):
-    # new speaker; wrap up and start new
-    if text != "":
 
-        if htmltext != None:
+def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages=['en']):
+
+    translator = Translator()
+
+    for language in languages:
+        if language == 'en':
+            htmlfilename = basename + '.html'
+            html = open(htmlfilename, 'a', encoding="utf-8")
             html.write("    <p>[" + speaker + "]</a>: " + htmltext + "</p>\n\n")
-        else:
+            html.close()
+        else: 
+            htmlfilename = basename + '.' + language + '.html'
+            translation = translator.translate(text, dest=language)
+            html = open(htmlfilename, 'a', encoding="utf-8")
             html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-            html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
-
-        if eshtml != None:
-            translator = Translator()
-            translation = translator.translate(text, dest="es")
-            eshtml.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
-            eshtml.write("[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
+            html.write("[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
+            html.close()
 
     # let's do some stats by speaker
     if not speaker in speaker_stats.keys(): speaker_stats[speaker] = {"words": {}, "all_words" : ""}
@@ -63,7 +66,6 @@ def srt2html(yt_id):
 
     srtfilename = glob.glob('*'+yt_id+'*/*.srt')[0]
     htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
-    eshtmlfilename = os.path.splitext(srtfilename)[0] + '.es.html'
     dir = os.path.dirname(srtfilename)
 
     last_changed = os.path.getmtime(srtfilename)
@@ -102,45 +104,71 @@ def srt2html(yt_id):
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,14,35).timestamp() 
     #last_update = 0.0 # uncomment to remake them all (for changes to the template)
-    if (last_update > last_changed) and os.path.exists(htmlfilename) and os.path.exists(eshtmlfilename): return
+    if (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
+
+    # top 10 languages from
+    # https://www.mass.gov/doc/appendix-f-language-audience-guidesdoc/download
+    # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
+    # cape verdean is not available within googletrans
+    languages = ['es','pt','zh-cn','ht','vi','km','ru','ar','ko']
+
     print("Making HTML for " + yt_id)
 
+    basename = os.path.splitext(srtfilename)[0]
     video_title = video_data[yt_id]["title"]
     title = "Transcript for " + video_title + " (" + yt_id + ")"
 
-    # output custom html with links to corresponding parts of the youtube video
-    html = open(htmlfilename, 'w', encoding="utf-8")
-    html.write('<!DOCTYPE html>\n')
-    html.write('<html lang="en">\n')
-    html.write('  <head>\n')
-    html.write('    <meta charset="UTF-8">\n')
-    html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
-    html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
-    if "keywords" in video_data[yt_id].keys():
-        html.write('    <meta name="keywords" content="' + ','.join(video_data[yt_id]["keywords"]) + '">\n')
-    html.write('    <meta name="description" content="AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics">\n')
-    html.write('    <title>' + title + '</title>\n')
-    html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
-    html.write('  </head>\n')
-    html.write('  <body>\n')
-    html.write('  <h1>AI-generated transcript of ' + video_title + '</h1>\n')
-    html.write('    <a href="../index.html">Back to all transcripts</a><br><br>\n')
+    translator = Translator()
+    for language in languages:
 
-    eshtml = open(eshtmlfilename, 'w', encoding="utf-8")
-    eshtml.write('<!DOCTYPE html>\n')
-    eshtml.write('<html lang="es">\n')
-    eshtml.write('  <head>\n')
-    eshtml.write('    <meta charset="UTF-8">\n')
-    eshtml.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
-    eshtml.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
-    eshtml.write('    <meta name="description" content="Transcripción generada por IA de ' + video_title + ', un vídeo relevante para la política local de Medford, Massachusetts.">\n')
-    eshtml.write('    <title>' + title + '</title>\n')
-    eshtml.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + eshtmlfilename + '" />\n')
-    eshtml.write('  </head>\n')
-    eshtml.write('  <body>\n')
-    eshtml.write('  <h1>Transcripción generada por IA de ' + video_title + '</h1>\n')
-    eshtml.write('    <a href="../index.html">Volver a todas las transcripciones</a><br><br>\n')
+        if language == 'en':
+            htmlfilename = basename + '.html'
+        else: 
+            htmlfilename = basename + '.' + language + '.html'
+
+        html = open(htmlfilename, 'w', encoding="utf-8")
+        html.write('<!DOCTYPE html>\n')
+        html.write('<html lang="' + language + '">\n')
+        html.write('  <head>\n')
+        html.write('    <meta charset="UTF-8">\n')
+        html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
+        html.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
+        if "keywords" in video_data[yt_id].keys():
+            html.write('    <meta name="keywords" content="' + ','.join(video_data[yt_id]["keywords"]) + '">\n')
+
+        text = 'AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics.'        
+        if language != 'en':
+            try:
+                translation = translator.translate(text, dest=language)
+            except:
+                ipdb.set_trace()
+            text = translation.text
+        html.write('    <meta name="description" content="' + text + '">\n')
+
+        text = title    
+        if language != 'en':
+            translation = translator.translate(text, dest=language)
+            text = translation.text
+        html.write('    <title>' + text + '</title>\n')
+
+        html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
+        html.write('  </head>\n')
+        html.write('  <body>\n')
+
+        text = 'AI-generated transcript of ' + video_title
+        if language != 'en':
+            translation = translator.translate(text, dest=language)
+            text = translation.text
+        html.write('  <h1>' + text + '</h1>\n')
+
+        text = 'Back to all transcripts'
+        if language != 'en':
+            translation = translator.translate(text, dest=language)
+            text = translation.text
+        html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
+        html.close()
+
     speaker_stats = {}
 
     with open(srtfilename, 'r', encoding="utf-8") as file:
@@ -203,13 +231,12 @@ def srt2html(yt_id):
                     text += this_text
                     htmltext += this_html_text
 
-
                     # links mid text for more precise timestamps
                     #tmp_text = this_text.split()
                     #link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
                     #tmp_text[0] = link
                 else:
-                    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml, htmltext=htmltext)
+                    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages)
 
                     # update to new values
                     start = this_start
@@ -221,7 +248,7 @@ def srt2html(yt_id):
 
             else: continue
 
-    finish_speaker(html, speaker_stats, text, speaker, yt_id, start, stop, eshtml=eshtml,htmltext=htmltext)
+    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages)
 
     # create speaker_ids.json, sorting by auto-assigned speaker ID (SPEAKER_##)
     with open(os.path.join(dir,"speaker_ids.json"), "w") as fp:
@@ -240,7 +267,6 @@ def srt2html(yt_id):
                 wordcloud = WordCloud(max_font_size=40).generate(speaker_stats[speaker]["all_words"])
                 wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
 
-
     ncols = 4
     nrows = 4
     idx = 0
@@ -250,7 +276,9 @@ def srt2html(yt_id):
     for speaker_id in speaker_stats.keys():
         if speaker_id in councilors: present_councilors.append(speaker_id)
 
-    # make a table with stats
+    # make a table with stats (english only)
+    htmlfilename = basename + '.html'
+    html = open(htmlfilename, 'a', encoding="utf-8")
     html.write('  <table>\n')
     for i in range(nrows):
         html.write('    <tr>\n')
@@ -267,17 +295,23 @@ def srt2html(yt_id):
             html.write('      </td>\n')
         html.write('    </tr>\n')
     html.write('  </table>\n')
-    html.write('  <br><br><a href="../index.html">Back to all transcripts</a><br><br>\n')
-    html.write('  </body>\n')
-    html.write('</html>\n')
-    html.close()
 
+    for language in languages:
 
-    eshtml.write('    <a href="../index.html">Volver a todas las transcripciones</a><br><br>\n')
-    eshtml.write('  </body>\n')
-    eshtml.write('</html>\n')
-    eshtml.close()
-    eshtml.close()
+        text = "Back to all transcripts"
+
+        if language == 'en':
+            htmlfilename = basename + '.html'
+        else: 
+            htmlfilename = basename + '.' + language + '.html'
+            translation = translator.translate(text, dest=language)
+            text = translation.text
+
+        html = open(htmlfilename, 'a', encoding="utf-8")
+        html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
+        html.write('  </body>\n')
+        html.write('</html>\n')
+        html.close()
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
     video_data[yt_id]["last_update"] = time.time()
@@ -437,11 +471,12 @@ def do_all():
     files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-        try:
+#        try:
+        if True:
             srt2html(yt_id)
-        except Exception as error:
-            print("Failed on " + yt_id)
-            print(error)
+#        except Exception as error:
+#            print("Failed on " + yt_id)
+#            print(error)
 
 
     # make the top level page with links to all transcripts
