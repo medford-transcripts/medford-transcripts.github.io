@@ -110,7 +110,7 @@ def srt2html(yt_id):
     # top 10 languages from
     # https://www.mass.gov/doc/appendix-f-language-audience-guidesdoc/download
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
-    # cape verdean is not available within googletrans
+    # cape verdean is not supported by googletrans
     languages = ['es','pt','zh-cn','ht','vi','km','ru','ar','ko']
 
     print("Making HTML for " + yt_id)
@@ -315,8 +315,24 @@ def srt2html(yt_id):
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
     video_data[yt_id]["last_update"] = time.time()
+
+    update_video_json(video_data)
+
+def update_video_json(video_data):
+
+    jsonfile = 'video_data.json'
+
+    while os.path.exists('video_data.lock'):
+        time.sleep(1)
+
+    with open("video_data.lock", "w") as file:
+        file.write("lock")
+
     with open(jsonfile, "w") as fp:
         json.dump(video_data, fp, indent=4)
+
+    os.remove("video_data.lock")
+
 
 def make_index():
 
@@ -391,8 +407,7 @@ def make_index():
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
 
-    with open(jsonfile, "w") as fp:
-        json.dump(video_data, fp, indent=4)
+    update_video_json(video_data)
 
     lines.sort(reverse=True)
     shutil.copy("header.html", "index.html")

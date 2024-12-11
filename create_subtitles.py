@@ -105,11 +105,7 @@ def update_priority():
         sorted_dict[yt_ids[k]] = video_data[yt_ids[k]]
         sorted_dict[yt_ids[k]]["priority"] = priority[k]
 
-    # update video_data
-    jsonfile = 'video_data.json'
-    with open(jsonfile, "w") as fp:
-        json.dump(sorted_dict, fp, indent=4)
-
+    srt2html.update_video_json(video_data)
 
 # updates video_data.json with info from yt_id
 def update_data(yt_id):
@@ -147,8 +143,7 @@ def update_data(yt_id):
             #video_data[yt_id]["last_update"] = 0.0
 
             # update video_data
-            with open(jsonfile, "w") as fp:
-                json.dump(video_data, fp, indent=4)
+            srt2html.update_video_json(video_data)
 
 def update_video_data():
     # read info
@@ -275,9 +270,8 @@ def download_audio(yt_id, dir=None):
                 video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
                 break
 
-        # update video_data    
-        with open(jsonfile, "w") as fp:
-            json.dump(video_data, fp, indent=4)
+        # update video_data 
+        srt2html.update_video_json(video_data)
 
     if dir==None:
         dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
