@@ -92,7 +92,7 @@ def supercut(speaker):
 
     if text != "":
         wordcloud = WordCloud(max_font_size=40).generate(text)
-        wordcloud.to_file(imagename)
+        wordcloud.to_file("electeds/" + imagename)
 
 
     #if alltime == 0.0: ipdb.set_trace()

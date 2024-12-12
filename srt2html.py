@@ -99,7 +99,7 @@ def srt2html(yt_id):
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
     #last_update = datetime.datetime(2024,12,9,0,0).timestamp() 
-    #last_update = 0.0 # uncomment to remake them all (for changes to the template)
+    last_update = 0.0 # uncomment to remake them all (for changes to the template)
     if (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
 
@@ -428,8 +428,8 @@ def make_index():
         lines.append('      <tr>' +\
             '<td>' + date + '</td>' +\
             '<td><a href="' + url + '">[' + duration_string + ']</a></td>'+\
-            '<td>' + channel + '</td>'+\
             '<td><a href="' + htmlfile +'">' + title + '</a></td>'+\
+            '<td>' + channel + '</td>'+\
             '<td><a href="' + srtfile + '">SRT</a></td>'+\
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
@@ -441,7 +441,7 @@ def make_index():
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
