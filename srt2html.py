@@ -12,13 +12,13 @@ import re
 import fix_common_errors
 
 
-def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages=['en']):
+def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}):
 
     if text == '': return
 
     translator = Translator()
 
-    for language in languages:
+    for language in languages.keys():
         if language == 'en':
             htmlfilename = basename + '.html'
             html = open(htmlfilename, 'a', encoding="utf-8")
@@ -103,20 +103,45 @@ def srt2html(yt_id):
     if (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
 
-    # top 10 languages from
+    basename = os.path.splitext(srtfilename)[0]
+    filebasename = os.path.basename(basename)
+
+    # top 10 languages used in MA from
     # https://www.mass.gov/doc/appendix-f-language-audience-guidesdoc/download
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
-    languages = ['en','es','pt','zh-cn','ht','vi','km','ru','ar','ko']
+
+    languages = {
+        'en' : "English" , # English
+        'es' : "español" , # Spanish
+        'pt' : "português" , # Portuguese
+        'zh-cn' : "中国人", # Chinese
+        'ht' : "kreyol ayisyen" , # Haitian Creole
+        'vi' : "tiếng việt" , # Vietnamese
+        'km' : "ខ្មែរ", # Khmer
+        'ru' : "русский", # Russian
+        'ar' : "عربي", # Arabic
+        'ko' : "한국인" # Korean
+        }
+
+    # generate links to other language pages
+    links_to_languages = ""
+    for language in languages.keys():
+        if language == "en":
+            htmlname = filebasename + '.html'
+        else:
+            htmlname =  filebasename + '.' + language + '.html'
+            links_to_languages += ' | '
+        links_to_languages += '<a href="' + htmlname + '">' + languages[language] + '</a>'
+    #ipdb.set_trace()
 
     print("Making HTML for " + yt_id)
 
-    basename = os.path.splitext(srtfilename)[0]
     video_title = video_data[yt_id]["title"]
     title = "Transcript for " + video_title + " (" + yt_id + ")"
 
     translator = Translator()
-    for language in languages:
+    for language in languages.keys():
 
         if language == 'en':
             htmlfilename = basename + '.html'
@@ -157,6 +182,8 @@ def srt2html(yt_id):
             translation = translator.translate(text, dest=language)
             text = translation.text
         html.write('  <h1>' + text + '</h1>\n')
+
+        html.write(links_to_languages + '<br><br>\n')
 
         text = 'Back to all transcripts'
         if language != 'en':
@@ -402,9 +429,7 @@ def make_index():
             '<td>' + date + '</td>' +\
             '<td><a href="' + url + '">[' + duration_string + ']</a></td>'+\
             '<td>' + channel + '</td>'+\
-            '<td>'+title+'</td>'
-            '<td><a href="' + htmlfile +'">English</a></td>'+\
-            '<td><a href="' + eshtmlfile + '">Spanish</a></td>'+\
+            '<td><a href="' + htmlfile +'">' + title + '</a></td>'+\
             '<td><a href="' + srtfile + '">SRT</a></td>'+\
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
@@ -416,7 +441,7 @@ def make_index():
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Transcript</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Channel</center></td><td><center>Title</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
