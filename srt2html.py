@@ -111,7 +111,7 @@ def srt2html(yt_id):
     # https://www.mass.gov/doc/appendix-f-language-audience-guidesdoc/download
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
-    languages = ['es','pt','zh-cn','ht','vi','km','ru','ar','ko']
+    languages = ['es']#,'pt','zh-cn','ht','vi','km','ru','ar','ko']
 
     print("Making HTML for " + yt_id)
 
