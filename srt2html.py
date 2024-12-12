@@ -14,6 +14,8 @@ import fix_common_errors
 
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages=['en']):
 
+    if text == '': return
+
     translator = Translator()
 
     for language in languages:
@@ -73,13 +75,6 @@ def srt2html(yt_id):
     # we will do some analytics on these people
     councilors = get_councilors()
 
-    speaker = ""
-    start = 0.0
-    stop = 86400.0
-    text = ""
-    htmltext = ""
-    t0 = datetime.datetime(1900,1,1)    
-
     # read in the speaker mappings
     jsonfile = os.path.join(dir,'speaker_ids.json')
     if os.path.exists(jsonfile):
@@ -102,7 +97,8 @@ def srt2html(yt_id):
             last_update = video_data[yt_id]["last_update"]
 
     # redo all videos updated before 2024-11-04 2:35 PM
-    #last_update = datetime.datetime(2024,11,4,14,35).timestamp() 
+    #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
+    #last_update = datetime.datetime(2024,12,9,0,0).timestamp() 
     #last_update = 0.0 # uncomment to remake them all (for changes to the template)
     if (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
@@ -111,7 +107,7 @@ def srt2html(yt_id):
     # https://www.mass.gov/doc/appendix-f-language-audience-guidesdoc/download
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
-    languages = ['es']#,'pt','zh-cn','ht','vi','km','ru','ar','ko']
+    languages = ['en','es','pt','zh-cn','ht','vi','km','ru','ar','ko']
 
     print("Making HTML for " + yt_id)
 
@@ -141,9 +137,9 @@ def srt2html(yt_id):
         if language != 'en':
             try:
                 translation = translator.translate(text, dest=language)
+                text = translation.text
             except:
-                ipdb.set_trace()
-            text = translation.text
+                pass
         html.write('    <meta name="description" content="' + text + '">\n')
 
         text = title    
@@ -171,6 +167,12 @@ def srt2html(yt_id):
 
     speaker_stats = {}
 
+    start = 0.0
+    stop = 86400.0
+    speaker = ""
+    text = ""
+    htmltext = ""
+    t0 = datetime.datetime(1900,1,1)    
     with open(srtfilename, 'r', encoding="utf-8") as file:
 
         # Read each line in the file

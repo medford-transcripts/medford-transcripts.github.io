@@ -29,6 +29,7 @@ def fix_common_errors():
         "Councilor Baird" : "Councilor Bears",
         "Councilor Baez" : "Councilor Bears",
         "Councilor Bares" : "Councilor Bears",
+        "President Bares" : "President Bears",
 
         "Councilor Sang" : "Councilor Tseng",
         "Councilor saying" : "Councilor Tseng",
