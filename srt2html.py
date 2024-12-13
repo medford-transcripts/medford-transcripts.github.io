@@ -98,8 +98,8 @@ def srt2html(yt_id):
 
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
-    #last_update = datetime.datetime(2024,12,9,0,0).timestamp() 
-    last_update = 0.0 # uncomment to remake them all (for changes to the template)
+    #last_update = datetime.datetime(2024,12,12,0,0).timestamp() 
+    #last_update = 0.0 # uncomment to remake them all (for changes to the template)
     if (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
 

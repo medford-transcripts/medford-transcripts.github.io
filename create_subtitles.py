@@ -3,7 +3,10 @@ import whisperx
 
 # pip install yt_dlp
 import yt_dlp 
-# yt_dlp requires ffmpeg to be in your path (https://www.ffmpeg.org/download.html)
+# yt_dlp requires ffmpeg (stand alone executable) to be in your path (https://www.ffmpeg.org/download.html)
+
+# separately, pip install ffmpeg-python (the python package)
+import ffmpeg
 
 # whisperx dependency, pip will grab this
 import torch 
@@ -105,7 +108,7 @@ def update_priority():
         sorted_dict[yt_ids[k]] = video_data[yt_ids[k]]
         sorted_dict[yt_ids[k]]["priority"] = priority[k]
 
-    srt2html.update_video_json(video_data)
+    srt2html.update_video_json(sorted_dict)
 
 # updates video_data.json with info from yt_id
 def update_data(yt_id):
@@ -278,7 +281,16 @@ def download_audio(yt_id, dir=None):
     mp3file = os.path.join(dir,dir) +'.mp3'
 
     if not os.path.exists(dir): os.makedirs(dir)
-    if os.path.exists(mp3file): return mp3file, video_data[yt_id]["duration"]
+    if os.path.exists(mp3file): 
+
+        duration = float(ffmpeg.probe(mp3file)['format']['duration'])
+
+        # I'm not sure what level of disagreement is acceptable. 1 second errors are common:
+        if abs((duration - video_data[yt_id]["duration"])) < 3.0:
+            return mp3file, video_data[yt_id]["duration"]
+        else:
+            print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + '). Downloading again')
+            #os.remove(mp3file)
 
     ydl_opts = {
         'format': 'bestaudio/best',
@@ -302,13 +314,21 @@ def generate_output(result, mp3file):
     output_writer(result, mp3file, {'max_line_width': None,'max_line_count': None,'highlight_words': False})
     return
 
-def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download_only=False):
+def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download_only=False, transcribe_only=False):
 
     t0 = datetime.datetime.utcnow()
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
 
-    mp3file, duration = download_audio(yt_id)
-    print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
+    if transcribe_only:
+        video_data = read_video_data()
+        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+        mp3file = os.path.join(dir,dir) +'.mp3'
+        if not os.path.exists(mp3file):
+            print("mp3 file does not exist and download not requested; skipping " + yt_id)
+            return False
+    else:
+        mp3file, duration = download_audio(yt_id)
+        print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
 
     base = os.path.splitext(mp3file)[0]
     subdir = os.path.dirname(mp3file)
@@ -373,7 +393,7 @@ def push_to_git():
     subprocess.run(["git","push"]) 
 
 # allow us to pre-empt with ids in a file
-def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt", redo=False):
+def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt", redo=False, transcribe_only=False):
 
     if os.path.exists(id_file):
         with open(id_file) as f:
@@ -386,7 +406,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
             if (download_only != (len(mp3files) == 1)): # xor
                 try:
                     update_data(priority_yt_id)
-                    if transcribe(priority_yt_id, download_only=download_only, redo=redo):
+                    if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                         srt2html.do_all()
                         push_to_git()
                 except:
@@ -403,7 +423,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
     for yt_id in video_data.keys():
         # wrap in try so don't halt progress
         try: 
-            if transcribe(yt_id, download_only=download_only, redo=redo):
+            if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                 srt2html.do_all()
                 push_to_git()
                 # after every successful transcription, 
@@ -427,6 +447,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-d','--download-only', dest='download_only', action='store_true', default=False, help="just download audio; don't transcribe")
+    parser.add_argument('-t','--transcribe-only', dest='transcribe_only', action='store_true', default=False, help="just transcribe audio; don't download")
     parser.add_argument('-r','--redo', dest='redo', action='store_true', default=False, help="redo transcription")
     parser.add_argument('-u','--update', dest='update', action='store_true', default=False, help="update only")
     parser.add_argument('-c','--channel-file', dest='channel_file', default="channels_to_transcribe.txt", help='filename containing a list of channels, transcribe all videos. This file will be checked for updates after each file to prioritize videos.')
@@ -447,7 +468,7 @@ if __name__ == "__main__":
     if os.path.exists(jsonfile):
         while True:
             t0 = datetime.datetime.now()
-            more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo)
+            more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo, transcribe_only=opt.transcribe_only)
             tf = datetime.datetime.now()
 
             # if we did them all, wait an hour and check again
