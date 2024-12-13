@@ -66,7 +66,7 @@ def get_councilors(file="councilors.txt"):
 
 def srt2html(yt_id):
 
-    srtfilename = glob.glob('*'+yt_id+'*/*.srt')[0]
+    srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
     htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
     dir = os.path.dirname(srtfilename)
 

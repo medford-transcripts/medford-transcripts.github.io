@@ -409,8 +409,9 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                     if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                         srt2html.do_all()
                         push_to_git()
-                except:
-                    pass
+                except Exception as error:
+                    print("Failed on " + priority_yt_id)
+                    print(error)
 
     # check for new videos
     #if (datetime.datetime.now() - last_update).total_seconds() > 3600:
@@ -432,8 +433,10 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         except KeyboardInterrupt:
             print('Interrupted')
             sys.exit()
-        except: 
-            pass
+        except Exception as error:
+            print("Failed on " + yt_id)
+            print(error)
+            ipdb.set_trace()
 
     return False
 

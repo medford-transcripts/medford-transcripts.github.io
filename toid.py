@@ -20,7 +20,7 @@ for file in files:
         if "SPEAKER" in key and "SPEAKER" not in speaker_ids[key]:
             all_speakers.append(speaker_ids[key])
 
-    if unidentified > 0.5*nspeakers: 
+    if unidentified > 0.9*nspeakers: 
         print(file + " not done (" + str(unidentified) + "/" + str(nspeakers) + " unidentified speakers)")
         number_to_id += 1
 
