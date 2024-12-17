@@ -3,11 +3,12 @@ import shutil
 import ipdb
 import os
 
-def fix_common_errors():
+def fix_common_errors(yt_id=None):
 
     replace_dict = {
         "Councillor" : "Councilor",
         "Counselor" : "Councilor",
+        "counselor" : "Councilor", 
         "Membo" : "Member",
         "Mr " : "Mr. ",
         "Mrs " : "Mrs. ",
@@ -16,6 +17,10 @@ def fix_common_errors():
         "Medfitt" : "Medford",
         "Medfit" : "Medford",
         "Medfin" : "Medford",
+
+        "Missituck" : "Missituk",
+        "Misituk" : "Missituk",
+        "Mistituck" : "Missituk",
 
         "Car Park" : "Carr Park",
 
@@ -26,6 +31,7 @@ def fix_common_errors():
         "Counsel Pierce" : "Councilor Bears",
         "Councilor Beas" : "Councilor Bears",
         "President Beers" : "President Bears",
+        "President bears" : "President Bears",
         "Councilor Baird" : "Councilor Bears",
         "Councilor Baez" : "Councilor Bears",
         "Councilor Bares" : "Councilor Bears",
@@ -93,6 +99,7 @@ def fix_common_errors():
         "Karaviello" : "Caraviello",
         "Cabello" : "Caraviello",
         "Caviola": "Caraviello",
+
 
         "Castaneda" : "Castagnetti",
         "Castanetti" : "Castagnetti",
@@ -164,6 +171,7 @@ def fix_common_errors():
 
         "Kretz" : "Kreatz",
         "Kraetz" : "Kreatz",
+        "Kratz" : "Kreatz",
 
         " Zaro" : " Lazzaro",
         "Lazaro" : "Lazzaro",
@@ -174,6 +182,7 @@ def fix_common_errors():
         "Lizaro" : "Lazzaro",
         "Lazarro" : "Lazzaro",
         "Lazarus" : "Lazzaro",
+        "Lozero" : "Lazzaro",
         "Councilor Lazar" : "Councilor Lazzaro",
         "Councilor Zahra" : "Councilor Lazzaro",
         "Councilor Zara" : "Councilor Lazzaro",
@@ -213,7 +222,8 @@ def fix_common_errors():
         "Murrell" : "Morell",
 
         "McStone" : "Mustone",
-        "Mrs stone" : "Mustone",
+        "Mrs stone" : "Mrs. Mustone",
+        "Member Stone" : "Member Mustone",
 
         "Navarro" : "Navarre",
         "Navar," : "Navarre,",
@@ -230,6 +240,7 @@ def fix_common_errors():
         "member Russo" : "member Ruseau",
         "Roussel" : "Ruseau",
         "Member Rousseau" : "Member Ruseau",
+        "Member Ruseaul" : "Member Ruseau",
 
         "Scott Pelley" : "Scarpelli",
         "Scarfelli" : "Scarpelli",
@@ -252,6 +263,7 @@ def fix_common_errors():
         "Councilor Say" : "Councilor Tseng",
         "Councilor Singh" : "Councilor Tseng",
         "Councilor Stang" : "Councilor Tseng",
+        "Saeng": " Tseng",
         " Seng" : " Tseng",
         "Hsieng" : "Tseng",
         "Zeng" : "Tseng",
@@ -261,15 +273,18 @@ def fix_common_errors():
         "Van de Kloot" : "Van der Kloot",
         "Van De Kloot" : "Van der Kloot",
         "Vanderkloof" : "Van der Kloot",
-
+        "Van de Groot" : "Van der Kloot",
 
         "Councilor Mox" : "Councilor Marks",
         "Council Meeks" : "Councilor Marks",
 
     }
 
-    path = '*/20??-??-??_???????????.srt'
-    #path = "2024-11-19_puRJAp7j8rg/2024-11-19_puRJAp7j8rg.srt"
+    if yt_id == None:
+        path = '*/20??-??-??_???????????.srt'
+    else:
+        path = "*/20??-??-??_" + yt_id + ".srt"
+
     srtfiles = glob.glob(path)
 
     for srtfilename in srtfiles:

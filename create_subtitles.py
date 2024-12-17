@@ -16,7 +16,7 @@ import ipdb
 # not strictly required, but I'm leaving this here for debugging
 
 # standard libraries 
-import datetime, os, glob, argparse, math, sys, subprocess, time
+import datetime, os, glob, argparse, math, sys, subprocess, time, traceback
 import json
 import dateutil.parser as dparser
 
@@ -122,17 +122,8 @@ def update_data(yt_id):
 
     if yt_id not in video_data.keys(): 
         video_data[yt_id] = {}
-        #print(yt_id)
-        #ipdb.set_trace()
 
     required_keys = ["upload_date","channel","title","duration","view_count"]
-#    download = False
-#    for required_key in required_keys:
-#        if not required_key in video_data[yt_id].keys():
-#            download = True
-#
-#    if download:
-
     if not all(key in video_data[yt_id].keys() for key in required_keys):
         url = "https://youtu.be/" + yt_id
         with yt_dlp.YoutubeDL() as ydl:
@@ -187,11 +178,11 @@ def update_channel(channel):
             for entry in playlist["entries"]:
                 if entry["id"] not in video_data.keys():
                     try:
-                        if entry["id"] == 'UCTJGkgFesimf6BOlToHzINg': ipdb.set_trace()
                         update_data(entry["id"])
                     except Exception as error:
                         print("Failed on " + entry["id"])
                         print(error)
+                        print(traceback.format_exc())
         else:
             # this captures channels with only one video type (?)
             # I think "playlist" is actually a video
@@ -200,6 +191,7 @@ def update_channel(channel):
             except Exception as error:
                 print("Failed on " + playlist["id"])
                 print(error)
+                print(traceback.format_exc())
 
 def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transcribe.txt"):
 
@@ -225,7 +217,6 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
             # loop through every video on these channels
             for channel in channels: update_channel(channel)
 
-
     update_video_data()
     update_priority()
 
@@ -236,65 +227,76 @@ def read_video_data(jsonfile='video_data.json'):
             return json.load(fp)
     else: return {}
 
+
+def mp3_is_good(yt_id, video_data):
+
+    # if video_data doesn't have all the required info, it's bad
+    if yt_id not in video_data.keys(): return False
+    required_keys = ["upload_date","channel","title","duration"]
+    if all(key not in video_data[yt_id].keys() for key in required_keys): return False
+
+    # if the mp3 file doesn't exist, it's bad
+    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    mp3file = os.path.join(dir,dir) +'.mp3'
+    if not os.path.exists(mp3file): return False
+
+    # if the mp3 duration doesn't match the video duration, it's bad
+    duration = float(ffmpeg.probe(mp3file)['format']['duration'])
+    # I'm not sure what level of disagreement is acceptable. I've seen 6.6s discrepancies
+    if abs((duration - video_data[yt_id]["duration"])) > 10.0:
+        print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
+        return False
+
+    # otherwise, it's good
+    return True
+
 '''
  download the Youtube audio at highest quality as an mp3
  yt_id   - youtube ID
 ''' 
-def download_audio(yt_id, dir=None):
+def download_audio(yt_id):
 
     # read info
     video_data = read_video_data()
+
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
-    # construct the name of the file
-    if "upload_date" in video_data[yt_id].keys():
-        if dir==None:
-            dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-        mp3file = os.path.join(dir,dir) +'.mp3'
-        mp3file_exists = os.path.exists(mp3file)
-    else: mp3file_exists = False
-
-    # if video_data doesn't have all required info, grab it
-    required_keys = ["upload_date","channel","title","duration"]
-    if all(key not in video_data[yt_id].keys() for key in required_keys) or not mp3file_exists:
-        url = "https://youtu.be/" + yt_id
-        with yt_dlp.YoutubeDL() as ydl:
-            info = ydl.extract_info(url, download=False)
-
-        for format in info["formats"][::-1]:
-            if format["resolution"] == "audio only" and format["ext"] == "m4a":
-                # this is a temporary, IP-locked URL, storing it doesn't do any good
-                audio_url = format["url"]
-                
-                # store these for later
-                video_data[yt_id]["title"] = info["title"]
-                video_data[yt_id]["channel"] = info["channel"]
-                video_data[yt_id]["duration"] = info["duration"]
-                video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
-                break
-
-        # update video_data 
-        srt2html.update_video_json(video_data)
-
-    if dir==None:
+    if mp3_is_good(yt_id, video_data):
         dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+        mp3file = os.path.join(dir,dir) +'.mp3'
+        return mp3file, video_data[yt_id]["duration"]
+
+    url = "https://youtu.be/" + yt_id
+    with yt_dlp.YoutubeDL() as ydl:
+        info = ydl.extract_info(url, download=False)
+
+    for format in info["formats"][::-1]:
+        if format["resolution"] == "audio only" and format["ext"] == "m4a":
+            # this is a temporary, IP-locked URL, storing it doesn't do any good
+            audio_url = format["url"]
+            
+            # store these for later
+            video_data[yt_id]["title"] = info["title"]
+            video_data[yt_id]["channel"] = info["channel"]
+            video_data[yt_id]["duration"] = info["duration"]
+            video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+            break
+
+    # update video_data
+    srt2html.update_video_json(video_data)
+
+    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
     mp3file = os.path.join(dir,dir) +'.mp3'
 
+    if mp3_is_good(yt_id, video_data):
+        return mp3file, video_data[yt_id]["duration"]
+
     if not os.path.exists(dir): os.makedirs(dir)
-    if os.path.exists(mp3file): 
-
-        duration = float(ffmpeg.probe(mp3file)['format']['duration'])
-
-        # I'm not sure what level of disagreement is acceptable. 1 second errors are common:
-        if abs((duration - video_data[yt_id]["duration"])) < 3.0:
-            return mp3file, video_data[yt_id]["duration"]
-        else:
-            print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + '). Downloading again')
-            #os.remove(mp3file)
 
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': os.path.join(dir,dir),
+        'skip_unavailable_fragments': False,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
@@ -321,11 +323,13 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     if transcribe_only:
         video_data = read_video_data()
-        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-        mp3file = os.path.join(dir,dir) +'.mp3'
-        if not os.path.exists(mp3file):
-            print("mp3 file does not exist and download not requested; skipping " + yt_id)
+        if not mp3_is_good(yt_id, video_data):
+            print("mp3 file not ready and download not requested; skipping " + yt_id)
             return False
+        else: 
+            print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")
+            dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+            mp3file = os.path.join(dir,dir) +'.mp3' 
     else:
         mp3file, duration = download_audio(yt_id)
         print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
@@ -406,17 +410,16 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
             if (download_only != (len(mp3files) == 1)): # xor
                 try:
                     update_data(priority_yt_id)
-                    if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
-                        srt2html.do_all()
+                    if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
+                        srt2html.do_one(yt_id=priority_yt_id)
                         push_to_git()
                 except Exception as error:
                     print("Failed on " + priority_yt_id)
                     print(error)
+                    print(traceback.format_exc())
 
     # check for new videos
-    #if (datetime.datetime.now() - last_update).total_seconds() > 3600:
     update_all()
-    #    last_update = datetime.datetime.now()
 
     with open(jsonfile, 'r') as fp:
         video_data = json.load(fp)
@@ -425,7 +428,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         # wrap in try so don't halt progress
         try: 
             if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
-                srt2html.do_all()
+                srt2html.do_one(yt_id)
                 push_to_git()
                 # after every successful transcription, 
                 # we'll restart this loop to check for higher priority videos 
@@ -436,7 +439,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         except Exception as error:
             print("Failed on " + yt_id)
             print(error)
-            ipdb.set_trace()
+            print(traceback.format_exc())
 
     return False
 

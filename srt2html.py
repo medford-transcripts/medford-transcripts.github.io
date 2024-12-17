@@ -10,7 +10,7 @@ from xml.etree import cElementTree
 import dateutil.parser as dparser
 import re
 import fix_common_errors
-
+import argparse
 
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}):
 
@@ -64,7 +64,7 @@ def get_councilors(file="councilors.txt"):
     return list(set(councilors))
 
 
-def srt2html(yt_id):
+def srt2html(yt_id,skip_translation=False):
 
     srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
     htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
@@ -111,18 +111,21 @@ def srt2html(yt_id):
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
 
-    languages = {
-        'en' : "English" , # English
-        'es' : "español" , # Spanish
-        'pt' : "português" , # Portuguese
-        'zh-cn' : "中国人", # Chinese
-        'ht' : "kreyol ayisyen" , # Haitian Creole
-        'vi' : "tiếng việt" , # Vietnamese
-        'km' : "ខ្មែរ", # Khmer
-        'ru' : "русский", # Russian
-        'ar' : "عربي", # Arabic
-        'ko' : "한국인" # Korean
-        }
+    if skip_translation:
+        languages = {'en' : "English" }
+    else:
+        languages = {
+            'en' : "English" , # English
+            'es' : "español" , # Spanish
+            'pt' : "português" , # Portuguese
+            'zh-cn' : "中国人", # Chinese
+            'ht' : "kreyol ayisyen" , # Haitian Creole
+            'vi' : "tiếng việt" , # Vietnamese
+            'km' : "ខ្មែរ", # Khmer
+            'ru' : "русский", # Russian
+            'ar' : "عربي", # Arabic
+            'ko' : "한국인" # Korean
+            }
 
     # generate links to other language pages
     links_to_languages = ""
@@ -509,17 +512,21 @@ def save_sitemap(root_node, save_as, **kwargs):
 
     return sitemap_name
 
-def do_all():
+def do_one(yt_id,skip_translation=False):
+    fix_common_errors.fix_common_errors(yt_id=yt_id)
+    srt2html(yt_id, skip_translation=skip_translation)
+
+def do_all(skip_translation=False):
+    #fix_common_errors.fix_common_errors()
     files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-#        try:
-        if True:
-            srt2html(yt_id)
-#        except Exception as error:
-#            print("Failed on " + yt_id)
-#            print(error)
-
+        try:
+            do_one(yt_id, skip_translation=skip_translation)
+            #srt2html(yt_id, skip_translation=skip_translation)
+        except Exception as error:
+            print("Failed on " + yt_id)
+            print(error)
 
     # make the top level page with links to all transcripts
     make_index()
@@ -528,6 +535,14 @@ def do_all():
 
 if __name__ == "__main__":
 
-    fix_common_errors.fix_common_errors()
-    do_all()
+    parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
+    parser.add_argument('-i','--yt_id', dest='yt_id', default=None, help="id to just do one")
+    parser.add_argument('-s','--skip_translation', dest='skip_translation', action='store_true', default=False, help="Only do english transcript")
+
+    opt = parser.parse_args()
+
+    if opt.yt_id != None:
+        do_one(opt.yt_id, skip_translation=opt.skip_translation)
+    else:
+        do_all(skip_translation=opt.skip_translation)
 
