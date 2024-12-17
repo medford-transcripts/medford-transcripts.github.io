@@ -444,7 +444,7 @@ def make_index():
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
