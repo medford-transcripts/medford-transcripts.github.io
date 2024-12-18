@@ -296,8 +296,12 @@ def srt2html(yt_id,skip_translation=False):
 
             # make a word cloud
             if speaker in councilors:
-                wordcloud = WordCloud(max_font_size=40).generate(speaker_stats[speaker]["all_words"])
-                wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
+                try:
+                    # if only words are common/excluded, it'll raise a valueError
+                    wordcloud = WordCloud(max_font_size=40).generate(speaker_stats[speaker]["all_words"])
+                    wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
+                except:
+                    pass
 
     ncols = 4
     nrows = 4

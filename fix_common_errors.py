@@ -17,6 +17,7 @@ def fix_common_errors(yt_id=None):
         "Medfitt" : "Medford",
         "Medfit" : "Medford",
         "Medfin" : "Medford",
+        "Meffitt" : "Medford",
 
         "Missituck" : "Missituk",
         "Misituk" : "Missituk",
@@ -25,6 +26,7 @@ def fix_common_errors(yt_id=None):
         "Car Park" : "Carr Park",
 
         "Behrs" : "Bears",
+        "President Behr" : "President Bears",
         "Councilor Beers" : "Councilor Bears",
         "Councilor beers" : "Councilor Bears",
         "Councilor Piers" : "Councilor Bears",
@@ -36,12 +38,18 @@ def fix_common_errors(yt_id=None):
         "Councilor Baez" : "Councilor Bears",
         "Councilor Bares" : "Councilor Bears",
         "President Bares" : "President Bears",
+        "Counsel Bears" : "Councilor Bears",
+        "President Bex" : "President Bears",
+        "President Perrs" : "President Bears",
+        "president Ferris" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
 
         "Councilor Kellyanne" : "Councilor Callahan",
         "Kallian" : "Callahan",
+
+        "counsel Camuso": "Councilor Camuso",
 
         "Caviello" : "Caraviello",
         "Caravaglia" : "Caraviello",
@@ -99,7 +107,8 @@ def fix_common_errors(yt_id=None):
         "Karaviello" : "Caraviello",
         "Cabello" : "Caraviello",
         "Caviola": "Caraviello",
-
+        "counsel Caraviello": "Councilor Caraviello",
+        "Faviello" : "Caraviello",
 
         "Castaneda" : "Castagnetti",
         "Castanetti" : "Castagnetti",
@@ -112,6 +121,10 @@ def fix_common_errors(yt_id=None):
         "DelaRusso" : "Dello Russo",
         "Dela Russo" : "Dello Russo",
         "Della Russo" : "Dello Russo",
+        "Counsel Del Rosso" : "Councilor Dello Russo",
+        "Del Rosso" : "Dello Russo",
+
+        "Edward Vincent": "Edouard-Vincent",
 
         "Falcone" : "Falco",
         "Felco" : "Falco",
@@ -144,6 +157,7 @@ def fix_common_errors(yt_id=None):
         "Hertoghese" : "Hurtubise",
         "Clerk Hernandez" : "Clerk Hurtubise",
         "Clerk Artemis" : "Clerk Hurtubise",
+        "Clerk Curtis" : "Clerk Hurtubise",
         "Arnabis" : "Hurtubise",
         "Herderby" : "Hurtubise",
         "Kurtabeas" : "Hurtubise",
@@ -167,7 +181,9 @@ def fix_common_errors(yt_id=None):
         "Councilor Nye" : "Councilor Knight",
         "Council Light" : "Councilor Knight",
         "Council Night" : "Councilor Knight",
+        "Counsel Knight" : "Councilor Knight",
         "Neidt" : "Knight",
+        "Councilor Councilor Knight" : "Councilor Knight",
 
         "Kretz" : "Kreatz",
         "Kraetz" : "Kreatz",
@@ -217,9 +233,20 @@ def fix_common_errors(yt_id=None):
         "Lego-Kern" : "Lungo-Koehn",
         "Brianna Lungo-Koehn" : "Breanna Lungo-Koehn",
 
+        "Counsel Mox": "Councilor Marks",
+        "Counsel Marx": "Councilor Marks",
+        "Councilor marks": "Councilor Marks",
+        "Councilor Max": "Councilor Marks",
+        "council marks": "Councilor Marks",
+        "council Mox": "Councilor Marks",
+        "Council Mox": "Councilor Marks",
+
+        "Jerry McHugh": "Gerry McCue",
+
         "Morrell" : "Morell",
         "Merrill" : "Morell",
         "Murrell" : "Morell",
+        "Councilor morale" : "Councilor Morell",
 
         "McStone" : "Mustone",
         "Mrs stone" : "Mrs. Mustone",
@@ -228,10 +255,18 @@ def fix_common_errors(yt_id=None):
         "Navarro" : "Navarre",
         "Navar," : "Navarre,",
 
+        "Alicia Nunley": "Aleesha Nunley",
+        "Alicia Donnelly Benjamin": "Aleesha Nunley Benjamin",
+
         "Olopade" : "Olapade",
         "Olapode" : "Olapade",
 
         "Councilor Pinto" : "Councilor Penta",
+        "council Penta" : "Councilor Penta",
+
+        "Tony Ray": "Toni Wray",
+        "Tony Wray": "Toni Wray",
+        "Miss Tony Ray": "Miss Toni Wray",
 
         "Reinfeldt" : "Reinfeld",
         "Rheinfeld" : "Reinfeld",
@@ -247,10 +282,14 @@ def fix_common_errors(yt_id=None):
         "Scarbelli" : "Scarpelli",
         "Carpelli" : "Scarpelli",
         "Scott Pelli" : "Scarpelli",
+        "Scott Pelly" : "Scarpelli",
         "Scott Kelly" : "Scarpelli",
         "Starkelli" : "Scarpelli",
         "Skarpel" : "Scarpelli",
         "Scott Pele" : "Scarpelli",
+        "Spadafore" : "Scarpelli",
+        "Capelli" : "Scarpelli",
+        "Scavoli" : "Scarpelli",
 
         "Mr. Scarry" : "Mr. Skerry",
         "Mr. Scary" : "Mr. Skerry",
