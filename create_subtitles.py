@@ -410,7 +410,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
             if (download_only != (len(mp3files) == 1)): # xor
                 try:
                     update_data(priority_yt_id)
-                    if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
+                    if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                         srt2html.do_one(yt_id=priority_yt_id)
                         push_to_git()
                 except Exception as error:
