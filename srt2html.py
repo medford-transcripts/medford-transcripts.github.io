@@ -519,6 +519,9 @@ def save_sitemap(root_node, save_as, **kwargs):
 def do_one(yt_id,skip_translation=False):
     fix_common_errors.fix_common_errors(yt_id=yt_id)
     srt2html(yt_id, skip_translation=skip_translation)
+    # make the top level page with links to all transcripts
+    make_index()
+    make_sitemap()
 
 def do_all(skip_translation=False):
     #fix_common_errors.fix_common_errors()
@@ -532,11 +535,6 @@ def do_all(skip_translation=False):
             print("Failed on " + yt_id)
             print(error)
 
-    # make the top level page with links to all transcripts
-    make_index()
-    make_sitemap()
-
-
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
@@ -549,4 +547,3 @@ if __name__ == "__main__":
         do_one(opt.yt_id, skip_translation=opt.skip_translation)
     else:
         do_all(skip_translation=opt.skip_translation)
-
