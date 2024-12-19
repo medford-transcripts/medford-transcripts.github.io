@@ -4,6 +4,8 @@ import ipdb
 import dateutil.parser as dparser
 
 
+time_by_year = {}
+
 jsonfile = 'video_data.json'
 with open(jsonfile, 'r') as fp:
     video_data = json.load(fp)
@@ -41,6 +43,11 @@ for video in video_data.keys():
         if "date" in video_data[video].keys():
             # you can hand edit the date in the video_data.json file for ones that fail to parse
             date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
+
+
+        year = date.strftime('%Y')
+        if year not in time_by_year.keys(): time_by_year[year] = 0
+        time_by_year[year] += video_data[video]["duration"]
 
         # requested
         time_requested += video_data[video]["duration"]
@@ -82,6 +89,8 @@ elasped_time = (now-started).total_seconds()
 print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an hour of video")
 print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
 print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
+
+print(time_by_year)
 
 #print(srtfiles)
 #ipdb.set_trace()

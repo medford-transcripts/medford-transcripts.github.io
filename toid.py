@@ -5,6 +5,17 @@ files = glob.glob("*/*.json")
 
 all_speakers = []
 
+time = {
+    "2024":0,
+    "2023":0,
+    "2022":0,
+    "2021":0,
+    "2020":0,
+    "2019":0,
+    "2018":0,
+    "2017":0
+}
+
 number_to_id = 0
 for file in files:
     nspeakers = 0
@@ -26,8 +37,8 @@ for file in files:
 
 unique_speakers = list(set(all_speakers))
 unique_speakers.sort()
-print(str(len(unique_speakers)) + " unique speakers")
-#for person in test:
+#print(str(len(unique_speakers)) + " unique speakers")
+#for person in unique_speakers:
 #    print(person)
 
 print(str(number_to_id) + " left to do")
