@@ -42,6 +42,8 @@ def fix_common_errors(yt_id=None):
         "President Bex" : "President Bears",
         "President Perrs" : "President Bears",
         "president Ferris" : "President Bears",
+        "Council Beers" : "Councilor Bears",
+        "President Barish" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -290,6 +292,7 @@ def fix_common_errors(yt_id=None):
         "Spadafore" : "Scarpelli",
         "Capelli" : "Scarpelli",
         "Scavoli" : "Scarpelli",
+        "Scarpa" : "Scarpelli",
 
         "Mr. Scarry" : "Mr. Skerry",
         "Mr. Scary" : "Mr. Skerry",
