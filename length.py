@@ -4,7 +4,10 @@ import ipdb
 import dateutil.parser as dparser
 
 
-time_by_year = {}
+time_by_year_sc = {}
+time_by_year_cc = {}
+number_by_year_sc = {}
+number_by_year_cc = {}
 
 jsonfile = 'video_data.json'
 with open(jsonfile, 'r') as fp:
@@ -46,8 +49,25 @@ for video in video_data.keys():
 
 
         year = date.strftime('%Y')
-        if year not in time_by_year.keys(): time_by_year[year] = 0
-        time_by_year[year] += video_data[video]["duration"]
+        if date < datetime.datetime(2000,1,1): print((date,video))
+        title = video_data[video]["title"]
+
+        #if "City Council" in video_data[video]["title"]:
+        if (video_data[video]["channel"] == "City of Medford, Massachusetts") and "City Council" in video_data[video]["title"]:
+            if year not in time_by_year_cc.keys(): 
+                time_by_year_cc[year] = 0
+                number_by_year_cc[year] = 0
+            time_by_year_cc[year] += video_data[video]["duration"]/3600.0
+            number_by_year_cc[year] += 1
+        elif (video_data[video]["channel"] == "Medford Public Schools" or video_data[video]["channel"] == "City of Medford, Massachusetts") and \
+            ("ommittee" in title or "eeting" in title or "MSC" in title):
+            if year not in time_by_year_sc.keys(): time_by_year_sc[year] = 0
+            if year not in number_by_year_sc.keys(): number_by_year_sc[year] = 0
+            time_by_year_sc[year] += video_data[video]["duration"]/3600.0
+            number_by_year_sc[year] += 1
+        else:
+            print('"' + title + '"'+ " not a meeting video")
+            #if (video_data[video]["channel"] == "Medford Public Schools"): ipdb.set_trace()
 
         # requested
         time_requested += video_data[video]["duration"]
@@ -90,7 +110,16 @@ print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an h
 print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
 print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
 
-print(time_by_year)
+for year in sorted(time_by_year_cc.keys()):
+    print(year + ' ' + str(round(time_by_year_cc[year],2)) + ' ' + str(number_by_year_cc[year]))
+
+print()
+
+for year in sorted(time_by_year_sc.keys()):
+    print(year + ' ' + str(round(time_by_year_sc[year],2)) + ' ' + str(number_by_year_sc[year]))
+
+#print(dict(sorted(time_by_year_cc.items())))
+#print(dict(sorted(time_by_year_sc.items())))
 
 #print(srtfiles)
 #ipdb.set_trace()
