@@ -253,6 +253,8 @@ def fix_common_errors(yt_id=None):
         "Malango-Kern" : "Lungo-Koehn",
         "Lego-Kern" : "Lungo-Koehn",
         "Brianna Lungo-Koehn" : "Breanna Lungo-Koehn",
+        "McKern" : "Lungo-Koehn",
+        "Council Member Kern" : "Councilor Lungo-Koehn",
 
         "Counsel Mox": "Councilor Marks",
         "Counsel Marx": "Councilor Marks",
