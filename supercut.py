@@ -240,18 +240,13 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                     # text
                     this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                     text = ":".join(line.split(":")[1:])
-#                    if speaker_ids[this_speaker] == speaker: ipdb.set_trace()
 
                     if (speaker_ids[this_speaker] == speaker) and (keyword in line):
                         nclips += 1
                         output_name = speaker + '_' + keyword + '_' + str(nclips).zfill(3) + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
-                        clipname = glob.glob(output_name + "*")
-                        if True: #len(clipname) == 0:
+                        clipname = glob.glob(os.path.join("clips",output_name + "*"))
+                        if len(clipname) == 0:
                             download_clip(yt_id, start_time, stop_time, output_name=output_name)
-#                        clipname = glob.glob(output_name + "*")[0]
-#                        if os.path.splitext(clipname)[1] != 'webm':
-#                            subprocess.run(["ffmpeg", "-y", "-f", "concat", "-i", "concat.txt", output_name])
-
                     
                 else: continue
 
@@ -273,6 +268,8 @@ def concatenate_clips(path, output_name):
     # the quality here isn't very good. There must be some tweaks here
     #command = ["ffmpeg","-y", "-f", "concat","-i", "concat.txt","-c:v", "libvpx-vp9","-c:a", "libopus", output_name]
     #subprocess.run(command)
+
+    #return
 
     # First pass of 2-pass encoding
     first_pass_command = [
@@ -301,7 +298,8 @@ def concatenate_clips(path, output_name):
         "-crf", "18",  # Same CRF as the first pass
         "-pass", "2",
         "-c:a", "libopus",  # Audio codec for WebM
-        "output.webm"
+        "-y",
+        output_name
     ]
     subprocess.run(second_pass_command, check=True)
 
@@ -330,14 +328,16 @@ if __name__ == "__main__":
     speaker = "Scarpelli"
     keyword = "transparency"
 
-    supercut_by_keyword_and_speaker(keyword, speaker)
+    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
+    concatenate_clips("clips/"+speaker + '_' + keyword + '_???_???????????_*_*.*', output_name)
+    mkhtml(output_name)
+
+    #supercut_by_keyword_and_speaker(keyword, speaker)
     ipdb.set_trace()
 
 
     # merge videos
-    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
-    concatenate_clips("clips/"+speaker + '_' + keyword + '_???_???????????_*_*.webm', output_name)
-    mkhtml(output_name)
+
 
 
 
