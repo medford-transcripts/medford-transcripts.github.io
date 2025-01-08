@@ -126,8 +126,53 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     url = "https://www.youtube.com/watch?v=" + yt_id
 
     if output_name == None:
-        output_name = yt_id + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5) + '.mkv'
+        output_name = yt_id + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
 
+    # FFmpeg command to stream and trim directly
+    command = [
+        "ffmpeg",
+        "-ss", str(start_time),       # Seek to start time
+        "-i", youtube_url,            # Input URL (YouTube video)
+        "-t", str(stop_time - start_time),  # Duration of the clip
+        "-c", "copy",                 # Copy streams without re-encoding
+        output_file                   # Output file
+    ]
+
+    # Run the FFmpeg command
+    subprocess.run(command, check=True)
+
+
+
+
+
+
+
+
+
+    # yt_dlp options
+    clipstr = str(start_time) + "-" + str(stop_time)
+    ydl_opts = {
+        "outtmpl": os.path.join("clips",output_name),  # Output filename
+#        "download_sections": {"*": [clipstr]},  # Specify the time range (20 to 30 seconds)
+        "format": "bestvideo+bestaudio/best",  # Choose the best quality video and audio
+        "postprocessors": [
+            {
+                "key": "FFmpegVideoTrimmer",
+                "trim_start": start_time,  # Start time in seconds
+                "trim_end": stop_time,    # End time in seconds
+            }
+        ]
+    }
+
+    # Download the clip
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+    ipdb.set_trace()
+
+    return
+
+    # this gets really bad quality clips, but it's pretty fast/small
     ffmpeg_args = {
         "ffmpeg_i": ["-ss", str(start_time), "-to", str(stop_time)]  
     }
@@ -163,6 +208,8 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
         # requested speaker not in this transcript; skip file
         if speaker not in speaker_ids.values(): continue
 
+        print(file)
+
         # extract text from this transcript
         with open(srtfilename, 'r', encoding="utf-8") as f:
 
@@ -184,21 +231,29 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                     # text
                     this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                     text = ":".join(line.split(":")[1:])
+#                    if speaker_ids[this_speaker] == speaker: ipdb.set_trace()
 
                     if (speaker_ids[this_speaker] == speaker) and (keyword in line):
                         nclips += 1
-                        download_clip(yt_id, start_time, stop_time, output_name=speaker + '_' + keyword + '_' + str(nclips).zfill(3) + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5) + '.mkv')
+                        output_name = speaker + '_' + keyword + '_' + str(nclips).zfill(3) + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                        clipname = glob.glob(output_name + "*")
+                        if True: #len(clipname) == 0:
+                            download_clip(yt_id, start_time, stop_time, output_name=output_name)
+#                        clipname = glob.glob(output_name + "*")[0]
+#                        if os.path.splitext(clipname)[1] != 'webm':
+#                            subprocess.run(["ffmpeg", "-y", "-f", "concat", "-i", "concat.txt", output_name])
+
                     
                 else: continue
 
-        # merge videos
-        output_name = os.path.join("supercuts",speaker + '_' + keyword + '.mp4') 
-        concatenate_clips(speaker + '_' + keyword + '_???_???????????_*-*.mkv*', output_name)
+    # merge videos
+    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
+    concatenate_clips(os.path.join("clips",speaker + '_' + keyword + '_???_???????????_*_*.*'), output_name)
+    mkhtml(output_name)
  
 def concatenate_clips(path, output_name):
 
     files = glob.glob(path)
-
     with open('concat.txt','w') as fp:
         for file in files:                 
             fp.write('file ' + file.replace('\\','/')  + '\n')
@@ -207,7 +262,51 @@ def concatenate_clips(path, output_name):
 
     # not sure of the syntax for the python package
     # the quality here isn't very good. There must be some tweaks here
-    subprocess.run(["ffmpeg", "-y", "-f", "concat", "-i", "concat.txt", output_name])
+    #command = ["ffmpeg","-y", "-f", "concat","-i", "concat.txt","-c:v", "libvpx-vp9","-c:a", "libopus", output_name]
+    #subprocess.run(command)
+
+    # First pass of 2-pass encoding
+    first_pass_command = [
+        "ffmpeg",
+        "-f", "concat",
+        "-safe", "0",
+        "-i", "concat.txt",
+        "-c:v", "libvpx-vp9",
+        "-b:v", "0",  # Constant quality mode
+        "-crf", "18",  # Lower CRF = higher quality (15–25 is a good range)
+        "-pass", "1",
+        "-an",  # No audio in the first pass
+        "-f", "webm",
+        "/dev/null" if os.name != 'nt' else "NUL"  # Discard output
+    ]
+    subprocess.run(first_pass_command, check=True)
+
+    # Second pass of 2-pass encoding
+    second_pass_command = [
+        "ffmpeg",
+        "-f", "concat",
+        "-safe", "0",
+        "-i", "concat.txt",
+        "-c:v", "libvpx-vp9",
+        "-b:v", "0",  # Constant quality mode
+        "-crf", "18",  # Same CRF as the first pass
+        "-pass", "2",
+        "-c:a", "libopus",  # Audio codec for WebM
+        "output.webm"
+    ]
+    subprocess.run(second_pass_command, check=True)
+
+    #subprocess.run(["ffmpeg", "-y", "-i", "concat.txt", '-filter_complex', '"[0:v] [0:a] [1:v] [1:a] [2:v] [2:a] concat=n=3:v=1:a=1 [v] [a]"', '-map',"[v]",'-map', "[a]", output_name])
+
+
+#-filter_complex "[0:v] [0:a] [1:v] [1:a] [2:v] [2:a] \
+#concat=n=3:v=1:a=1 [v] [a]" \
+#-map "[v]" -map "[a]"
+
+def mkhtml(video_name):
+    with open(os.path.splitext(video_name)[0] + '.html','w') as fp:
+        fp.write('<video width="704" height="480" controls><source src="' + os.path.basename(video_name) + '" type="video/webm"></video>')
+
 
 if __name__ == "__main__":
 
@@ -219,12 +318,20 @@ if __name__ == "__main__":
     This is a very early draft that does a few of these things...
     '''
 
-    do_all_councilors()
-
-    ipdb.set_trace()
-
     speaker = "Scarpelli"
     keyword = "transparency"
+
     supercut_by_keyword_and_speaker(keyword, speaker)
+    ipdb.set_trace()
+
+
+    # merge videos
+    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
+    concatenate_clips("clips/"+speaker + '_' + keyword + '_???_???????????_*_*.webm', output_name)
+    mkhtml(output_name)
+
+
+
+#    do_all_councilors()
 
 
