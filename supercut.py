@@ -128,24 +128,48 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     if output_name == None:
         output_name = yt_id + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
 
-    # FFmpeg command to stream and trim directly
-    command = [
-        "ffmpeg",
-        "-ss", str(start_time),       # Seek to start time
-        "-i", youtube_url,            # Input URL (YouTube video)
-        "-t", str(stop_time - start_time),  # Duration of the clip
-        "-c", "copy",                 # Copy streams without re-encoding
-        output_file                   # Output file
-    ]
+    # pad by 10 seconds to avoid bad video
+    if start_time < 10:
+        start_time_ext = 0
+    else: 
+        start_time_ext = start_time - 10
+    start_pad = start_time - start_time_ext + 6
 
-    # Run the FFmpeg command
-    subprocess.run(command, check=True)
+    stop_time_ext = stop_time + 10
 
+    start_string = (datetime.datetime(2000,1,1) + datetime.timedelta(seconds=start_time_ext)).strftime("%H:%M:%S.%f")[:-3]
+    stop_string = (datetime.datetime(2000,1,1) + datetime.timedelta(seconds=stop_time_ext)).strftime("%H:%M:%S.%f")[:-3]
 
+    # this gets really bad quality clips, but it's pretty fast/small
+    ffmpeg_args = {
+        "ffmpeg_i": ["-ss", start_string, "-to", stop_string]
+    }
 
+    opts = {
+      "format": "bestvideo+bestaudio/best", 
+      "external_downloader": "ffmpeg",
+      "external_downloader_args": ffmpeg_args,
+      "quiet": True,
+      "outtmpl": os.path.join("clips","pad_" + output_name),
+    }
 
+    with yt_dlp.YoutubeDL(opts) as ydl:
+        ydl.download(url)
 
+    pad_clipname = glob.glob("clips/pad_" + output_name + '*')[0]
+    ext = os.path.splitext(pad_clipname)[1]
 
+    print(stop_time-start_time)
+    print(start_pad)
+    print(start_pad+stop_time-start_time)
+
+    #ipdb.set_trace()
+
+    command = ["ffmpeg", "-ss", str(start_pad-1), "-to", str(start_pad+stop_time-start_time+2), "-y", "-i", pad_clipname, os.path.join("clips",output_name)+ext,"-c","copy"]
+    subprocess.run(command)
+    # ffmpeg -i original.mp3 -ss 0 -to 300 trimmed.mp3
+
+    return
 
 
 
@@ -172,21 +196,6 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
 
     return
 
-    # this gets really bad quality clips, but it's pretty fast/small
-    ffmpeg_args = {
-        "ffmpeg_i": ["-ss", str(start_time), "-to", str(stop_time)]  
-    }
-
-    opts = {
-      "external_downloader": "ffmpeg",
-      "external_downloader_args": ffmpeg_args,
-      "quiet": True,
-      "outtmpl": os.path.join("clips",output_name),
-
-    }
-
-    with yt_dlp.YoutubeDL(opts) as ydl:
-        ydl.download(url)
 
 def supercut_by_keyword_and_speaker(keyword, speaker):
 
@@ -255,7 +264,7 @@ def concatenate_clips(path, output_name):
 
     files = glob.glob(path)
     with open('concat.txt','w') as fp:
-        for file in files:                 
+        for file in files:       
             fp.write('file ' + file.replace('\\','/')  + '\n')
 
     #ffmpeg.input('concat.txt', format='concat', safe=0).output('output.mp4', c='copy').run()
