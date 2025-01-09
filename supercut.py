@@ -7,6 +7,7 @@ import ffmpeg
 import subprocess
 
 import srt2html
+import create_subtitles
 
 # openAI has conflicting requirements with googletrans :(
 #from openai import OpenAI
@@ -48,9 +49,6 @@ def supercut(speaker):
                     # convert timestamp to seconds elapsed
                     start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
                     stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
-
-                    #print(start_time)
-                    #print(stop_time)
 
                 elif "[" in line:
                     # text
@@ -128,7 +126,7 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     if output_name == None:
         output_name = yt_id + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
 
-    # pad by 10 seconds to avoid bad video
+    # pad by 10 seconds (and trim later) to avoid bad video
     if start_time < 10:
         start_time_ext = 0
     else: 
@@ -161,25 +159,47 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     pad_clipname = glob.glob("clips/pad_" + output_name + '*')[0]
     ext = os.path.splitext(pad_clipname)[1]
 
+    video_data = create_subtitles.get_video_data()
+    source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
+
+
     # can/should trimming, converting to webm be combined?
 
     # trim the padded clip; this eliminates artifacts from downloading clips
     # ffmpeg -i original.mp3 -ss 0 -to 300 trimmed.mp3
-    command = ["ffmpeg", "-ss", str(start_pad-1), "-to", str(start_pad+stop_time-start_time+2), "-y", "-i", pad_clipname, os.path.join("clips",output_name)+ext,"-c","copy"]
+
+    #bfbfbf = grey
+
+    #9:42 
+    # trim the clip to original length, overlay date and title of source clip, and re-encode to webm
+    command = ["ffmpeg", 
+               "-ss", str(start_pad-1), 
+               "-to", str(start_pad+stop_time-start_time+2), 
+               "-i", pad_clipname,
+               "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=30:x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
+                "-y", 
+                "-c:v", "libvpx-vp9", 
+                "-c:a", "libopus",
+                os.path.join("clips",output_name)+'.webm']
     subprocess.run(command)
 
-    # if not webm, convert to webm (and re-encode) so the clips can be concatenated later
-    if ext != '.webm':
-        command = ["ffmpeg", "-i", os.path.join("clips",output_name)+ext,"-c:v", "libvpx-vp9", "-c:a", "libopus",os.path.join("clips",output_name)+'.webm' ]
-        subprocess.run(command)
+ #   # if not webm, convert to webm (and re-encode) so the clips can be concatenated later
+ #   if ext != '.webm':
+ #       command = ["ffmpeg", "-i", os.path.join("clips",output_name)+ext,"-c:v", "libvpx-vp9", "-c:a", "libopus",os.path.join("clips",output_name)+'.webm' ]
+ #       subprocess.run(command)
+
+#ffmpeg -i input.mp4 -vf "drawtext=fontfile=/path/to/font.ttf:text='Stack Overflow':fontcolor=white:fontsize=24:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=(h-text_h)/2" -codec:a copy output.mp4
+
+ #   ipdb.set_trace()
 
     return
 
 def supercut_by_keyword_and_speaker(keyword, speaker):
 
     t0 = datetime.datetime(1900,1,1)   
-    nclips = 0
     files = glob.glob("*/20??-??-??_???????????.srt")
+    video_data = create_subtitles.get_video_data()
+
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         dir = os.path.dirname(file)
@@ -218,8 +238,7 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                     text = ":".join(line.split(":")[1:])
 
                     if (speaker_ids[this_speaker] == speaker) and (keyword in line):
-                        nclips += 1
-                        output_name = speaker + '_' + keyword + '_' + str(nclips).zfill(3) + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                        output_name = speaker + '_' + keyword + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
                         clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
                         if len(clipname) == 0:
                             download_clip(yt_id, start_time, stop_time, output_name=output_name)
@@ -228,7 +247,7 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
 
     # merge videos
     output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
-    concatenate_clips(os.path.join("clips",speaker + '_' + keyword + '_???_???????????_*_*.webm'), output_name)
+    concatenate_clips(os.path.join("clips",speaker + '_' + keyword + '_20??-??-??_???????????_*_*.webm'), output_name)
     mkhtml(output_name)
  
 def concatenate_clips(path, output_name):
@@ -271,7 +290,7 @@ if __name__ == "__main__":
     ipdb.set_trace()
 
     output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
-    concatenate_clips("clips/"+speaker + '_' + keyword + '_???_???????????_*_*.webm', output_name)
+    concatenate_clips("clips/"+speaker + '_' + keyword + '_20??-??-??_???????????_*_*.webm', output_name)
     mkhtml(output_name)
 
     #
