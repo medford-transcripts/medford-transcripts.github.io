@@ -36,6 +36,9 @@ def fix_common_errors(yt_id=None):
         "22 dash ": "22-",
         "23 dash ": "23-",
         "24 dash ": "24-",
+        "25 dash ": "25-",
+
+        "Councilor San Buenaventura": "Councilor Tseng? President Bears?",
 
         "Behrs" : "Bears",
         "Council bears" : "Councilor Bears",
@@ -61,6 +64,8 @@ def fix_common_errors(yt_id=None):
         "President Perrs" : "President Bears",
         "President Barrett" : "President Bears",
         "President Baird" : "President Bears",
+        "President Burris" : "President Bears",
+        "President Rivers" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -154,6 +159,8 @@ def fix_common_errors(yt_id=None):
         "Fidler Carey" : "Fidler-Carey",
         "Fidler-Carrie" : "Fidler-Carey",
 
+        "Gaston Fury" : "Gaston Fiore",
+
         "Galluzzi" : "Galusi",
 
         "Member Hayes" : "Member Hays",
@@ -221,6 +228,7 @@ def fix_common_errors(yt_id=None):
         "Lazarro" : "Lazzaro",
         "Lazarus" : "Lazzaro",
         "Lozero" : "Lazzaro",
+        "Lazzaroo" : "Lazzaro",
         "Councilor Lazar" : "Councilor Lazzaro",
         "Councilor Zahra" : "Councilor Lazzaro",
         "Councilor Zara" : "Councilor Lazzaro",
@@ -228,6 +236,7 @@ def fix_common_errors(yt_id=None):
         "Lemming" : "Leming",
         "lemming" : "Leming",
         "Lemmon" : "Leming",
+        "Councilor Lemi" : "Councilor Leming",
 
         "Lungo Kern" : "Lungo-Koehn",
         "Lungo-Kern" : "Lungo-Koehn",
@@ -315,6 +324,7 @@ def fix_common_errors(yt_id=None):
         "Capelli" : "Scarpelli",
         "Scavoli" : "Scarpelli",
         "Scarpa" : "Scarpelli",
+        "Scott Riley" : "Scarpelli",
 
         "Mr. Scarry" : "Mr. Skerry",
         "Mr. Scary" : "Mr. Skerry",
@@ -328,17 +338,25 @@ def fix_common_errors(yt_id=None):
         "Councilor Singh" : "Councilor Tseng",
         "Councilor Stang" : "Councilor Tseng",
         "Councilor Sank" : "Councilor Tseng",
+        "Councilor Sanz" : "Councilor Tseng",
         "Saeng": " Tseng",
         " Seng" : " Tseng",
         "Hsieng" : "Tseng",
         "Zeng" : "Tseng",
         "Hussain" : "Tseng",
+        "Sviggum" : "Tseng",
 
         "Van de Kloet" : "Van der Kloot",
         "Van de Kloot" : "Van der Kloot",
         "Van De Kloot" : "Van der Kloot",
         "Vanderkloof" : "Van der Kloot",
         "Van de Groot" : "Van der Kloot",
+        "Vander Kloot" : "Van der Kloot",
+
+        "Vardabedian" : "Vartabedian",
+        "Vardabedi" : "Vartabedian",
+        "Bartabedian" : "Vartabedian",
+        "Bardabedian" : "Vartabedian",
 
         "Councilor Mox" : "Councilor Marks",
         "Council Meeks" : "Councilor Marks",
