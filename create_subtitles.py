@@ -40,7 +40,12 @@ last_update = datetime.datetime(2000,1,1)
 def get_video_data():
     # read info
     jsonfile = 'video_data.json'
+
     if os.path.exists(jsonfile):
+
+        while os.path.exists('video_data.lock'):
+            time.sleep(1)
+
         with open(jsonfile, 'r') as fp:
             video_data = json.load(fp)
     else: return

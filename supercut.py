@@ -162,6 +162,20 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     video_data = create_subtitles.get_video_data()
     source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
 
+    # if the line is too long, add a line break at a space nearest to the midpoint
+    if len(source) > 80:
+        source.split
+        halfndx = round(len(source)/2)
+        bestdiff = len(source)
+        for n in range(len(source)):
+            if source[n] == " ":
+                diff = abs(n - halfndx)
+                if diff < bestdiff:
+                    bestdiff = diff
+                    bestndx = n
+        source = source[:bestndx] + "\n" + source[bestndx:]
+        #print(source)
+        #ipdb.set_trace()
 
     # can/should trimming, converting to webm be combined?
 
@@ -176,7 +190,7 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
                "-ss", str(start_pad-1), 
                "-to", str(start_pad+stop_time-start_time+2), 
                "-i", pad_clipname,
-               "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=30:x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
+               "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=(h/30):x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
                 "-y", 
                 "-c:v", "libvpx-vp9", 
                 "-c:a", "libopus",
@@ -277,14 +291,19 @@ if __name__ == "__main__":
 
     ''' The goal for this code is to find the most consequential exerpts
     for a given person (using chatGPT?) across all transcripts, then extract 
-    the corresponding clips (yt_dlp?) from the transcribed videos and splice 
-    them together into a 2-4 minute supercut. 
+    the corresponding clips from the transcribed videos and splice 
+    them together into a short (< 5 minute) supercut. 
 
-    This is a very early draft that does a few of these things...
-    '''
+    This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
+    do_all_councilors()
+    ipdb.set_trace()
+
 
     speaker = "Scarpelli"
     keyword = "transparency"
+
+    speaker = "Marks"
+    keyword = "Thank you, Mr. President"
 
     supercut_by_keyword_and_speaker(keyword, speaker)
     ipdb.set_trace()
@@ -301,6 +320,5 @@ if __name__ == "__main__":
 
 
 
-#    do_all_councilors()
 
 
