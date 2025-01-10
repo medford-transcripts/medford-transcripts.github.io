@@ -117,7 +117,6 @@ def do_all_councilors():
     for councilor in councilors:
         print(councilor)
         excerpts = supercut(councilor)
-        #ipdb.set_trace()
 
 def download_clip(yt_id, start_time, stop_time, output_name=None):
 
@@ -151,7 +150,6 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
       "outtmpl": os.path.join("clips","pad_" + output_name),
     }
 
-
     with yt_dlp.YoutubeDL(opts) as ydl:
         ydl.download(url)
 
@@ -177,14 +175,6 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
         #print(source)
         #ipdb.set_trace()
 
-    # can/should trimming, converting to webm be combined?
-
-    # trim the padded clip; this eliminates artifacts from downloading clips
-    # ffmpeg -i original.mp3 -ss 0 -to 300 trimmed.mp3
-
-    #bfbfbf = grey
-
-    #9:42 
     # trim the clip to original length, overlay date and title of source clip, and re-encode to webm
     command = ["ffmpeg", 
                "-ss", str(start_pad-1), 
@@ -197,18 +187,14 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
                 os.path.join("clips",output_name)+'.webm']
     subprocess.run(command)
 
- #   # if not webm, convert to webm (and re-encode) so the clips can be concatenated later
- #   if ext != '.webm':
- #       command = ["ffmpeg", "-i", os.path.join("clips",output_name)+ext,"-c:v", "libvpx-vp9", "-c:a", "libopus",os.path.join("clips",output_name)+'.webm' ]
- #       subprocess.run(command)
-
-#ffmpeg -i input.mp4 -vf "drawtext=fontfile=/path/to/font.ttf:text='Stack Overflow':fontcolor=white:fontsize=24:box=1:boxcolor=black@0.5:boxborderw=5:x=(w-text_w)/2:y=(h-text_h)/2" -codec:a copy output.mp4
-
- #   ipdb.set_trace()
-
     return
 
 def supercut_by_keyword_and_speaker(keyword, speaker):
+
+    keyword_filename = keyword.replace(" ","")
+    keyword_filename = keyword_filename.replace(".","")
+    keyword_filename = keyword_filename.replace(",","")
+    keyword_filename = keyword_filename.replace("'","")
 
     t0 = datetime.datetime(1900,1,1)   
     files = glob.glob("*/20??-??-??_???????????.srt")
@@ -227,7 +213,7 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
         else: continue
 
         # requested speaker not in this transcript; skip file
-        if speaker not in speaker_ids.values(): continue
+        if speaker not in speaker_ids.values() and speaker != 'any': continue
 
         # extract text from this transcript
         with open(srtfilename, 'r', encoding="utf-8") as f:
@@ -251,8 +237,10 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                     this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                     text = ":".join(line.split(":")[1:])
 
-                    if (speaker_ids[this_speaker] == speaker) and (keyword in line):
-                        output_name = speaker + '_' + keyword + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                    #if keyword in line.upper(): ipdb.set_trace()
+
+                    if ((speaker_ids[this_speaker] == speaker) or speaker == "any") and (keyword.upper() in line.upper()):
+                        output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
                         clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
                         if len(clipname) == 0:
                             download_clip(yt_id, start_time, stop_time, output_name=output_name)
@@ -260,8 +248,8 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                 else: continue
 
     # merge videos
-    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
-    concatenate_clips(os.path.join("clips",speaker + '_' + keyword + '_20??-??-??_???????????_*_*.webm'), output_name)
+    output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
+    concatenate_clips(os.path.join("clips",speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm'), output_name)
     mkhtml(output_name)
  
 def concatenate_clips(path, output_name):
@@ -295,21 +283,29 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    do_all_councilors()
-    ipdb.set_trace()
+    #do_all_councilors()
+    #ipdb.set_trace()
 
 
-    speaker = "Scarpelli"
-    keyword = "transparency"
+    #speaker = "Scarpelli"
+    #keyword = "transparency"
 
     speaker = "Marks"
     keyword = "Thank you, Mr. President"
 
+    speaker = "any"
+    keyword = "yeoman's work"
+
+    keyword_filename = keyword.replace(" ","")
+    keyword_filename = keyword_filename.replace(".","")
+    keyword_filename = keyword_filename.replace(",","")
+    keyword_filename = keyword_filename.replace("'","")
+
     supercut_by_keyword_and_speaker(keyword, speaker)
     ipdb.set_trace()
 
-    output_name = os.path.join("supercuts",speaker + '_' + keyword + '.webm') 
-    concatenate_clips("clips/"+speaker + '_' + keyword + '_20??-??-??_???????????_*_*.webm', output_name)
+    output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
+    concatenate_clips("clips/"+speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm', output_name)
     mkhtml(output_name)
 
     #
