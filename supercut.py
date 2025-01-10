@@ -295,14 +295,15 @@ if __name__ == "__main__":
 
     speaker = "any"
     keyword = "yeoman's work"
+    keyword = "august body"
 
     keyword_filename = keyword.replace(" ","")
     keyword_filename = keyword_filename.replace(".","")
     keyword_filename = keyword_filename.replace(",","")
     keyword_filename = keyword_filename.replace("'","")
 
-    #supercut_by_keyword_and_speaker(keyword, speaker)
-    #ipdb.set_trace()
+    supercut_by_keyword_and_speaker(keyword, speaker)
+    ipdb.set_trace()
 
     output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
     concatenate_clips("clips/"+speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm', output_name)
