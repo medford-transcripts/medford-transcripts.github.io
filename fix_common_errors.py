@@ -66,6 +66,7 @@ def fix_common_errors(yt_id=None):
         "President Baird" : "President Bears",
         "President Burris" : "President Bears",
         "President Rivers" : "President Bears",
+        "President Abiris" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -236,7 +237,8 @@ def fix_common_errors(yt_id=None):
         "Lemming" : "Leming",
         "lemming" : "Leming",
         "Lemmon" : "Leming",
-        "Councilor Lemi" : "Councilor Leming",
+        "Councilor Lemi " : "Councilor Leming ",
+        "Councilor Lemingng" : "Councilor Leming",
 
         "Lungo Kern" : "Lungo-Koehn",
         "Lungo-Kern" : "Lungo-Koehn",
