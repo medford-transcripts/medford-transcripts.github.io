@@ -18,13 +18,18 @@ def fix_common_errors(yt_id=None):
         "Medfit" : "Medford",
         "Medfin" : "Medford",
         "Meffitt" : "Medford",
-        "city of Medford": "city of Method",
+        "city of Method": "city of Medford",
 
         "Missituck" : "Missituk",
         "Misituk" : "Missituk",
         "Mistituck" : "Missituk",
 
         "Car Park" : "Carr Park",
+
+        "Innis Associates": "Innes Associates",
+        "Innis associates": "Innes Associates",
+        "Ennis Associates": "Innes Associates",
+        "Ennis associates": "Innes Associates",
 
         "15 dash ": "15-",
         "16 dash ": "16-",
@@ -67,6 +72,7 @@ def fix_common_errors(yt_id=None):
         "President Burris" : "President Bears",
         "President Rivers" : "President Bears",
         "President Abiris" : "President Bears",
+        "President Barris" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -150,6 +156,8 @@ def fix_common_errors(yt_id=None):
         "Del Rosso" : "Dello Russo",
 
         "Edward Vincent": "Edouard-Vincent",
+        "Edward Vinson": "Edouard-Vincent",
+        "Maurice Edouard-Vincent": "Marice Edouard-Vincent",
 
         "Falcone" : "Falco",
         "Felco" : "Falco",
@@ -237,7 +245,7 @@ def fix_common_errors(yt_id=None):
         "Lemming" : "Leming",
         "lemming" : "Leming",
         "Lemmon" : "Leming",
-        "Councilor Lemi " : "Councilor Leming ",
+        "Leving" : "Leming",
         "Councilor Lemingng" : "Councilor Leming",
 
         "Lungo Kern" : "Lungo-Koehn",
@@ -267,6 +275,7 @@ def fix_common_errors(yt_id=None):
         "Brianna Lungo-Koehn" : "Breanna Lungo-Koehn",
         "McKern" : "Lungo-Koehn",
         "Council Member Kern" : "Councilor Lungo-Koehn",
+        "Langer-Cohen" : "Lungo-Koehn",
 
         "Counsel Mox": "Councilor Marks",
         "Counsel Marx": "Councilor Marks",
@@ -341,6 +350,8 @@ def fix_common_errors(yt_id=None):
         "Councilor Stang" : "Councilor Tseng",
         "Councilor Sank" : "Councilor Tseng",
         "Councilor Sanz" : "Councilor Tseng",
+        "Councilor Sanchez" : "Councilor Tseng",
+        "Justin Sang" : "Justin Tseng",
         "Saeng": " Tseng",
         " Seng" : " Tseng",
         "Hsieng" : "Tseng",

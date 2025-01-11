@@ -9,8 +9,10 @@ import gzip
 from xml.etree import cElementTree
 import dateutil.parser as dparser
 import re
-import fix_common_errors
 import argparse
+
+import fix_common_errors
+import supercut
 
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}):
 
@@ -547,3 +549,5 @@ if __name__ == "__main__":
         do_one(opt.yt_id, skip_translation=opt.skip_translation)
     else:
         do_all(skip_translation=opt.skip_translation)
+
+    supercut.do_all_councilors()
