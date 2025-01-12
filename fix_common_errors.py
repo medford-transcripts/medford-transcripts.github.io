@@ -73,6 +73,7 @@ def fix_common_errors(yt_id=None):
         "President Rivers" : "President Bears",
         "President Abiris" : "President Bears",
         "President Barris" : "President Bears",
+        "President Baer" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -351,6 +352,7 @@ def fix_common_errors(yt_id=None):
         "Councilor Sank" : "Councilor Tseng",
         "Councilor Sanz" : "Councilor Tseng",
         "Councilor Sanchez" : "Councilor Tseng",
+        "Councilor Sands" : "Councilor Tseng",
         "Justin Sang" : "Justin Tseng",
         "Saeng": " Tseng",
         " Seng" : " Tseng",
