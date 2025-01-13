@@ -2,7 +2,10 @@ import datetime, time, os
 import ipdb
 from wordcloud import WordCloud
 import json,glob
+
+# pip install googletrans-py (not googletrans, it's outdated and leads to dependency conflicts; this version solves them)
 from googletrans import Translator, constants
+
 import shutil
 import os
 import gzip

@@ -66,7 +66,8 @@ for video in video_data.keys():
             time_by_year_sc[year] += video_data[video]["duration"]/3600.0
             number_by_year_sc[year] += 1
         else:
-            print('"' + title + '"'+ " not a meeting video")
+            pass
+            #print('"' + title + '"'+ " not a meeting video")
             #if (video_data[video]["channel"] == "Medford Public Schools"): ipdb.set_trace()
 
         # requested

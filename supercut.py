@@ -10,9 +10,10 @@ import srt2html
 import create_subtitles
 
 # openAI has conflicting requirements with googletrans :(
-#from openai import OpenAI
-#with open('openai_key.txt') as f: api_key = f.readline().strip()
-#client = OpenAI(api_key=api_key)
+# pip install googletrans-py instead
+from openai import OpenAI
+with open('openai_key.txt') as f: api_key = f.readline().strip()
+client = OpenAI(api_key=api_key)
 
 def supercut(speaker):
 
@@ -65,17 +66,17 @@ def supercut(speaker):
                     
                 else: continue
 
-    messages = [ {"role": "system", "content": "You are an intelligent assistant."} ]
-    text = "Extract 2-4 minutes of the most consequential quotes from the following excerpts: "
+    messages = [ {"role": "system", "content": "You are a video editor."} ]
+    text = "You are a video editor putting together a campaign ad for a local candidate. Output a JSON text string that identifies the youtube ID, start time, and end times of 2-4 minutes of video clips to splice together."
 
-    office = "city council"
-    values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
-    priorities = ["education","infrastructure","economic development","jobs","equity","equality","climate change","economy","veterans","health","affordable housing","public safety"]
-    text = "Based on their quotes below, on a scale from 1 to 10 " + \
-        "(10 being best) rate the candidate's suitability for " + office + \
-        " based on each of the following values: " + ",".join(values) + \
-        ". Also rate them based on the following priorities: " + ",".join(priorities) + \
-        ". 'not enough information' is a valid ranking. Explain each score in 1-2 sentences."
+    #office = "city council"
+    #values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
+    #priorities = ["education","infrastructure","economic development","jobs","equity","equality","climate change","economy","veterans","health","affordable housing","public safety"]
+    #text = "Based on their quotes below, on a scale from 1 to 10 " + \
+    #    "(10 being best) rate the candidate's suitability for " + office + \
+    #    " based on each of the following values: " + ",".join(values) + \
+    #    ". Also rate them based on the following priorities: " + ",".join(priorities) + \
+    #    ". 'not enough information' is a valid ranking. Explain each score in 1-2 sentences."
 
     text = ""
     alltime = 0.0
@@ -95,19 +96,16 @@ def supercut(speaker):
         wordcloud = WordCloud(max_font_size=40).generate(text)
         wordcloud.to_file("electeds/" + imagename)
 
-
-    #if alltime == 0.0: ipdb.set_trace()
-
     html.close()
     messages = [({"role": "user", "content": text})]
     print(str(alltime/3600) + " hours of speech")
 
-    return text
-    ipdb.set_trace()
+    #return text
+    #ipdb.set_trace()
 
     model = "gpt-3.5-turbo"
     #model = "gpt-4o-mini"
-    #response = client.chat.completions.create(model=model, messages=messages)
+    response = client.chat.completions.create(model=model, messages=messages)
     return response.choices[0].message.content.strip()
 
 def do_all_councilors():
@@ -117,6 +115,7 @@ def do_all_councilors():
     for councilor in councilors:
         print(councilor)
         excerpts = supercut(councilor)
+        ipdb.set_trace()
 
 def download_clip(yt_id, start_time, stop_time, output_name=None):
 
@@ -283,8 +282,8 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    #do_all_councilors()
-    #ipdb.set_trace()
+    do_all_councilors()
+    ipdb.set_trace()
 
 
     #speaker = "Scarpelli"
