@@ -3,6 +3,7 @@ import ipdb
 import json,glob
 from wordcloud import WordCloud
 import yt_dlp 
+from yt_dlp.utils import download_range_func
 import ffmpeg
 import subprocess
 
@@ -118,6 +119,49 @@ def do_all_councilors():
         ipdb.set_trace()
 
 def download_clip(yt_id, start_time, stop_time, output_name=None):
+
+    url = "https://www.youtube.com/watch?v=" + yt_id
+
+    yt_opts = {
+        'verbose': True,
+        'download_ranges': download_range_func(None,[(start_time, stop_time)]),
+        'force_keyframes_at_cuts': True,
+        "format": "bestvideo+bestaudio/best", 
+        "outtmpl": os.path.join("clips","og_" + output_name),
+    }
+
+    with yt_dlp.YoutubeDL(yt_opts) as ydl:
+        ydl.download(url)
+
+    og_clipname = glob.glob("clips/og_" + output_name + '*')[0]
+
+    video_data = create_subtitles.get_video_data()
+    source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
+
+    # if the line is too long, add a line break at a space nearest to the midpoint
+    if len(source) > 80:
+        source.split
+        halfndx = round(len(source)/2)
+        bestdiff = len(source)
+        for n in range(len(source)):
+            if source[n] == " ":
+                diff = abs(n - halfndx)
+                if diff < bestdiff:
+                    bestdiff = diff
+                    bestndx = n
+        source = source[:bestndx] + "\n" + source[bestndx:]
+
+    # overlay date and title of source clip, and re-encode to webm
+    command = ["ffmpeg", 
+               "-i", og_clipname,
+               "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=(h/30):x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
+                "-y", 
+                "-c:v", "libvpx-vp9", 
+                "-c:a", "libopus",
+                os.path.join("clips",output_name)+'.webm']
+    subprocess.run(command)
+
+def download_clip_old(yt_id, start_time, stop_time, output_name=None):
 
     url = "https://www.youtube.com/watch?v=" + yt_id
 
@@ -282,8 +326,8 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    do_all_councilors()
-    ipdb.set_trace()
+    #do_all_councilors()
+    #ipdb.set_trace()
 
 
     #speaker = "Scarpelli"
@@ -292,10 +336,10 @@ if __name__ == "__main__":
     speaker = "Marks"
     keyword = "Thank you, Mr. President"
 
-    speaker = "any"
-    keyword = "yeoman's work"
-    keyword = "august body"
-    keyword = "slippery slope"
+    #speaker = "any"
+    #keyword = "yeoman's work"
+    #keyword = "august body"
+    #keyword = "slippery slope"
 
 
     keyword_filename = keyword.replace(" ","")
@@ -303,7 +347,7 @@ if __name__ == "__main__":
     keyword_filename = keyword_filename.replace(",","")
     keyword_filename = keyword_filename.replace("'","")
 
-    #supercut_by_keyword_and_speaker(keyword, speaker)
+    supercut_by_keyword_and_speaker(keyword, speaker)
     #ipdb.set_trace()
 
     output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
