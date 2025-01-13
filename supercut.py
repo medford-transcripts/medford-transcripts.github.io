@@ -68,7 +68,7 @@ def supercut(speaker):
                 else: continue
 
     messages = [ {"role": "system", "content": "You are a video editor."} ]
-    text = "You are a video editor putting together a campaign ad for a local candidate. Output a JSON text string that identifies the youtube ID, start time, and end times of 2-4 minutes of video clips to splice together."
+    text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (separated by new lines) from the following list:\n"
 
     #office = "city council"
     #values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
@@ -90,7 +90,7 @@ def supercut(speaker):
     for excerpt in excerpts:
         html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
         html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
-        text = text + " " + excerpt["text"]
+        text = text + "\n" + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
 
     if text != "":
@@ -106,6 +106,7 @@ def supercut(speaker):
 
     model = "gpt-3.5-turbo"
     #model = "gpt-4o-mini"
+    ipdb.set_trace()
     response = client.chat.completions.create(model=model, messages=messages)
     return response.choices[0].message.content.strip()
 
@@ -321,7 +322,7 @@ def mkhtml(video_name):
 if __name__ == "__main__":
 
     ''' The goal for this code is to find the most consequential exerpts
-    for a given person (using chatGPT?) across all transcripts, then extract 
+    for a given person, topic, or meeting (using chatGPT?) across all transcripts, then extract 
     the corresponding clips from the transcribed videos and splice 
     them together into a short (< 5 minute) supercut. 
 
@@ -347,7 +348,7 @@ if __name__ == "__main__":
     keyword_filename = keyword_filename.replace(",","")
     keyword_filename = keyword_filename.replace("'","")
 
-    supercut_by_keyword_and_speaker(keyword, speaker)
+    #supercut_by_keyword_and_speaker(keyword, speaker)
     #ipdb.set_trace()
 
     output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
