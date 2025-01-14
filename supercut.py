@@ -67,8 +67,14 @@ def supercut(speaker):
                     
                 else: continue
 
+    chatGPT = True
+    model = "o1-mini" 
+    #model = "gpt-3.5-turbo"
+    #model = "gpt-4o-mini"
+
     messages = [ {"role": "system", "content": "You are a video editor."} ]
-    text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (separated by new lines) from the following list:\n"
+    text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (sent one at a time). Wait until I say 'ok chatgpt, I'm done' to respond:\n"
+    if chatGPT: response = client.chat.completions.create(model=model, messages=text)
 
     #office = "city council"
     #values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
@@ -92,6 +98,8 @@ def supercut(speaker):
         html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
         text = text + "\n" + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
+        if chatGPT: response = client.chat.completions.create(model=model, messages=excerpt["text"])
+        time.sleep(1)
 
     if text != "":
         wordcloud = WordCloud(max_font_size=40).generate(text)
@@ -101,18 +109,17 @@ def supercut(speaker):
     messages = [({"role": "user", "content": text})]
     print(str(alltime/3600) + " hours of speech")
 
-    #return text
-    #ipdb.set_trace()
+    if not chatGPT: return text
 
-    model = "gpt-3.5-turbo"
-    #model = "gpt-4o-mini"
-    ipdb.set_trace()
-    response = client.chat.completions.create(model=model, messages=messages)
+    text = "ok chatgpt, I'm done"
+
+    response = client.chat.completions.create(model=model, messages=text)
     return response.choices[0].message.content.strip()
 
 def do_all_councilors():
 
     councilors = srt2html.get_councilors()
+    councilors.sort()
 
     for councilor in councilors:
         print(councilor)
@@ -128,16 +135,11 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
         'download_ranges': download_range_func(None,[(start_time, stop_time)]),
         'force_keyframes_at_cuts': True,
         "format": "bestvideo+bestaudio/best", 
-#        "format":"webm",
         "outtmpl": os.path.join("clips","og_" + output_name),
     }
 
-    ipdb.set_trace()
-
     with yt_dlp.YoutubeDL(yt_opts) as ydl:
         ydl.download(url)
-
-    ipdb.set_trace()
 
     og_clipname = glob.glob("clips/og_" + output_name + '*')[0]
 

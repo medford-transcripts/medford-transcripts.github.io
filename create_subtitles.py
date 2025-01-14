@@ -72,7 +72,7 @@ def get_video_data():
                     date = create_date
 
             except ValueError:
-                print('No parsable date in title of "' + video_data[yt_id]["title"] + '"')
+                #print('No parsable date in title of "' + video_data[yt_id]["title"] + '"')
                 pass
 
         if "date" in video_data[yt_id].keys():
