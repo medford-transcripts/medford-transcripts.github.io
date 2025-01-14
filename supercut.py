@@ -128,11 +128,16 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
         'download_ranges': download_range_func(None,[(start_time, stop_time)]),
         'force_keyframes_at_cuts': True,
         "format": "bestvideo+bestaudio/best", 
+#        "format":"webm",
         "outtmpl": os.path.join("clips","og_" + output_name),
     }
 
+    ipdb.set_trace()
+
     with yt_dlp.YoutubeDL(yt_opts) as ydl:
         ydl.download(url)
+
+    ipdb.set_trace()
 
     og_clipname = glob.glob("clips/og_" + output_name + '*')[0]
 
@@ -156,10 +161,11 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
     command = ["ffmpeg", 
                "-i", og_clipname,
                "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=(h/30):x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
-                "-y", 
-                "-c:v", "libvpx-vp9", 
-                "-c:a", "libopus",
-                os.path.join("clips",output_name)+'.webm']
+               "-y", 
+               "-c:v", "libvpx-vp9", 
+               "-crf", "18",
+               "-c:a", "libopus",
+               os.path.join("clips",output_name)+'.webm']
     subprocess.run(command)
 
 def download_clip_old(yt_id, start_time, stop_time, output_name=None):
@@ -225,10 +231,11 @@ def download_clip_old(yt_id, start_time, stop_time, output_name=None):
                "-to", str(start_pad+stop_time-start_time+2), 
                "-i", pad_clipname,
                "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=(h/30):x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
-                "-y", 
-                "-c:v", "libvpx-vp9", 
-                "-c:a", "libopus",
-                os.path.join("clips",output_name)+'.webm']
+               "-y", 
+               "-c:v", "libvpx-vp9", 
+               "-crf", "18",
+               "-c:a", "libopus",
+               os.path.join("clips",output_name)+'.webm']
     subprocess.run(command)
 
     return
@@ -310,7 +317,7 @@ def concatenate_clips(path, output_name):
     #command = ["ffmpeg","-y", "-f", "concat", "-i", "concat.txt","-c:v", "libvpx-vp9","-c:a", "libopus", output_name]
 
     # concatenate clips
-    command = ["ffmpeg","-y", "-f", "concat","-i", "concat.txt", output_name]
+    command = ["ffmpeg","-y", "-f", "concat","-i", "concat.txt", "-crf", "18", output_name]
     subprocess.run(command)
 
 # make a page with the video embedded
@@ -337,8 +344,8 @@ if __name__ == "__main__":
     speaker = "Marks"
     keyword = "Thank you, Mr. President"
 
-    #speaker = "any"
-    #keyword = "yeoman's work"
+    speaker = "any"
+    keyword = "yeoman's work"
     #keyword = "august body"
     #keyword = "slippery slope"
 
@@ -348,8 +355,8 @@ if __name__ == "__main__":
     keyword_filename = keyword_filename.replace(",","")
     keyword_filename = keyword_filename.replace("'","")
 
-    #supercut_by_keyword_and_speaker(keyword, speaker)
-    #ipdb.set_trace()
+    supercut_by_keyword_and_speaker(keyword, speaker)
+    ipdb.set_trace()
 
     output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
     concatenate_clips("clips/"+speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm', output_name)
