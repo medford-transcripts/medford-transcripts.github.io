@@ -430,7 +430,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     diarize_segments = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers)
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Diarization of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-    # segments are now assigned speaker IDs
+    # segments are now assigned generic speaker IDs (e.g., SPEAKER_01)
     diarize_result = whisperx.assign_word_speakers(diarize_segments, aligned_result)
     generate_output(diarize_result, base + '.mp3')
 
