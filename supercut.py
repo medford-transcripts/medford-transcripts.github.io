@@ -21,7 +21,7 @@ try:
 except:
     chatGPT=False
 
-def supercut(speaker):
+def supercut(speaker, useGPT=False):
 
     t0 = datetime.datetime(1900,1,1)    
     excerpts = []
@@ -73,7 +73,7 @@ def supercut(speaker):
                     
                 else: continue
 
-    if chatGPT: 
+    if useGPT: 
         model = "o1-mini" 
         #model = "gpt-3.5-turbo"
         #model = "gpt-4o-mini"
@@ -103,7 +103,7 @@ def supercut(speaker):
         html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
         text = text + " " + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
-        if chatGPT: 
+        if useGPT: 
             response = client.chat.completions.create(model=model, messages=excerpt["text"])
             time.sleep(1)
 
@@ -114,7 +114,7 @@ def supercut(speaker):
     html.close()
     print(str(alltime/3600) + " hours of speech")
 
-    if not chatGPT: return text
+    if not useGPT: return text
 
     # send the final response
     messages = [({"role": "user", "content": text})]
@@ -122,7 +122,7 @@ def supercut(speaker):
     response = client.chat.completions.create(model=model, messages=text)
     return response.choices[0].message.content.strip()
 
-def do_all_councilors():
+def do_all_councilors(useGPT=False):
 
 
     councilors = srt2html.get_councilors()
@@ -130,7 +130,7 @@ def do_all_councilors():
 
     for councilor in councilors:
         print(councilor)
-        excerpts = supercut(councilor)
+        excerpts = supercut(councilor,useGPT=useGPT)
 
 def download_clip(yt_id, start_time, stop_time, output_name=None):
 

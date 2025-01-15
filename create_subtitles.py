@@ -1,4 +1,6 @@
 # pip install git+https://github.com/m-bain/whisperx.git
+# note: I've manally updated to PR 952 to return speaker embeddings
+# https://github.com/m-bain/whisperX/pull/952/files
 import whisperx
 
 # pip install yt_dlp
@@ -432,6 +434,9 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     # segments are now assigned generic speaker IDs (e.g., SPEAKER_01)
     diarize_result = whisperx.assign_word_speakers(diarize_segments, aligned_result)
+
+    # now compare speaker embeddings (diarized_result["embeddings"]) to those of identified speakers
+
     generate_output(diarize_result, base + '.mp3')
 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")

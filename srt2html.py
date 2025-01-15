@@ -20,11 +20,15 @@ import argparse
 import fix_common_errors
 import supercut
 
+import asyncio
+
+def translate_text(text, dest="en"):
+    translator = Translator()
+    return asyncio.run(translator.translate(text, dest=dest))
+
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}):
 
     if text == '': return
-
-    translator = Translator()
 
     for language in languages.keys():
         if language == 'en':
@@ -35,7 +39,7 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
         else: 
             htmlfilename = basename + '.' + language + '.html'
             if text != None:
-                translation = translator.translate(text, dest=language)
+                translation = translate_text(text, dest=language)
             else: translation = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
             html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
@@ -74,7 +78,7 @@ def get_councilors(file="councilors.txt"):
     return list(set(councilors))
 
 
-def srt2html(yt_id,skip_translation=False):
+def srt2html(yt_id,skip_translation=False, force=False):
 
     srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
     htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
@@ -110,7 +114,7 @@ def srt2html(yt_id,skip_translation=False):
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
     #last_update = datetime.datetime(2024,12,12,0,0).timestamp() 
     #last_update = 0.0 # uncomment to remake them all (for changes to the template)
-    if (last_update > last_changed) and os.path.exists(htmlfilename): return
+    if (not force) and (last_update > last_changed) and os.path.exists(htmlfilename): return
     #######################################################################################################
 
     basename = os.path.splitext(srtfilename)[0]
@@ -121,7 +125,7 @@ def srt2html(yt_id,skip_translation=False):
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
 
-    skip_translation = True
+    #skip_translation = True
     if skip_translation:
         languages = {'en' : "English" }
     else:
@@ -175,7 +179,7 @@ def srt2html(yt_id,skip_translation=False):
         text = 'AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics.'        
         if language != 'en':
             try:
-                translation = translator.translate(text, dest=language)
+                translation = translate_text(text, dest=language)
                 text = translation.text
             except:
                 pass
@@ -183,7 +187,7 @@ def srt2html(yt_id,skip_translation=False):
 
         text = title    
         if language != 'en':
-            translation = translator.translate(text, dest=language)
+            translation = translate_text(text, dest=language)
             text = translation.text
         html.write('    <title>' + text + '</title>\n')
 
@@ -193,7 +197,7 @@ def srt2html(yt_id,skip_translation=False):
 
         text = 'AI-generated transcript of ' + video_title
         if language != 'en':
-            translation = translator.translate(text, dest=language)
+            translation = translate_text(text, dest=language)
             text = translation.text
         html.write('  <h1>' + text + '</h1>\n')
 
@@ -201,7 +205,7 @@ def srt2html(yt_id,skip_translation=False):
 
         text = 'Back to all transcripts'
         if language != 'en':
-            translation = translator.translate(text, dest=language)
+            translation = translate_text(text, dest=language)
             text = translation.text
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
         html.close()
@@ -351,7 +355,7 @@ def srt2html(yt_id,skip_translation=False):
             htmlfilename = basename + '.html'
         else: 
             htmlfilename = basename + '.' + language + '.html'
-            translation = translator.translate(text, dest=language)
+            translation = translate_text(text, dest=language)
             text = translation.text
 
         html = open(htmlfilename, 'a', encoding="utf-8")
@@ -527,21 +531,20 @@ def save_sitemap(root_node, save_as, **kwargs):
 
     return sitemap_name
 
-def do_one(yt_id,skip_translation=False):
+def do_one(yt_id,skip_translation=False, force=False):
     fix_common_errors.fix_common_errors(yt_id=yt_id)
-    srt2html(yt_id, skip_translation=skip_translation)
+    srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     make_index()
     make_sitemap()
 
-def do_all(skip_translation=False):
+def do_all(skip_translation=False, force=False):
     #fix_common_errors.fix_common_errors()
     files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         try:
-            do_one(yt_id, skip_translation=skip_translation)
-            #srt2html(yt_id, skip_translation=skip_translation)
+            do_one(yt_id, skip_translation=skip_translation, force=force)
         except Exception as error:
             print("Failed on " + yt_id)
             print(error)
@@ -551,12 +554,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Transcribe YouTube videos')
     parser.add_argument('-i','--yt_id', dest='yt_id', default=None, help="id to just do one")
     parser.add_argument('-s','--skip_translation', dest='skip_translation', action='store_true', default=False, help="Only do english transcript")
+    parser.add_argument('-f','--force', dest='force', action='store_true', default=False, help="Force regeneration of html")
 
     opt = parser.parse_args()
 
     if opt.yt_id != None:
-        do_one(opt.yt_id, skip_translation=opt.skip_translation)
+        do_one(opt.yt_id, skip_translation=opt.skip_translation, force=opt.force)
     else:
-        do_all(skip_translation=opt.skip_translation)
+        do_all(skip_translation=opt.skip_translation, force=opt.force)
 
-    supercut.do_all_councilors()
+    supercut.do_all_councilors(useGPT=False)
