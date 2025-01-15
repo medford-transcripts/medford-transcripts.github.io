@@ -3,7 +3,10 @@ import ipdb
 from wordcloud import WordCloud
 import json,glob
 
-# pip install googletrans-py (not googletrans, it's outdated and leads to dependency conflicts; this version solves them)
+# dependency hell... 
+#pip install googletrans
+#pip install httpx==0.28.1 --ignore-requires-python
+#pip install openai
 from googletrans import Translator, constants
 
 import shutil
@@ -31,7 +34,9 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
             html.close()
         else: 
             htmlfilename = basename + '.' + language + '.html'
-            translation = translator.translate(text, dest=language)
+            if text != None:
+                translation = translator.translate(text, dest=language)
+            else: translation = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
             html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
             html.write("[" + speaker + "]</a>: " + translation.text + "</p>\n\n")
@@ -116,6 +121,7 @@ def srt2html(yt_id,skip_translation=False):
     # english, spanish, brazilian portuguese, chinese, haitian creole, vietnamese, khmer, (cape verdean), russian, arabic, korean
     # cape verdean is not supported by googletrans
 
+    skip_translation = True
     if skip_translation:
         languages = {'en' : "English" }
     else:

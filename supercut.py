@@ -12,16 +12,22 @@ import create_subtitles
 
 # openAI has conflicting requirements with googletrans :(
 # pip install googletrans-py instead
-from openai import OpenAI
-with open('openai_key.txt') as f: api_key = f.readline().strip()
-client = OpenAI(api_key=api_key)
+
+try:
+    from openai import OpenAI
+    with open('openai_key.txt') as f: api_key = f.readline().strip()
+    client = OpenAI(api_key=api_key)
+    chatGPT=True
+except:
+    chatGPT=False
 
 def supercut(speaker):
 
     t0 = datetime.datetime(1900,1,1)    
     excerpts = []
-    files = glob.glob("*/20??-??-??_???????????.srt")
+    files = glob.glob("20*/20??-??-??_???????????.srt")
     for file in files:
+
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         dir = os.path.dirname(file)
         srtfilename = os.path.join(dir,dir) + '.srt'
@@ -67,14 +73,13 @@ def supercut(speaker):
                     
                 else: continue
 
-    chatGPT = True
-    model = "o1-mini" 
-    #model = "gpt-3.5-turbo"
-    #model = "gpt-4o-mini"
-
-    messages = [ {"role": "system", "content": "You are a video editor."} ]
-    text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (sent one at a time). Wait until I say 'ok chatgpt, I'm done' to respond:\n"
-    if chatGPT: response = client.chat.completions.create(model=model, messages=text)
+    if chatGPT: 
+        model = "o1-mini" 
+        #model = "gpt-3.5-turbo"
+        #model = "gpt-4o-mini"
+        messages = [ {"role": "system", "content": "You are a video editor."} ]
+        text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (sent one at a time). Wait until I say 'ok chatgpt, I'm done' to respond:\n"
+        response = client.chat.completions.create(model=model, messages=text)
 
     #office = "city council"
     #values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
@@ -96,27 +101,29 @@ def supercut(speaker):
     for excerpt in excerpts:
         html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
         html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
-        text = text + "\n" + excerpt["text"]
+        text = text + " " + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
-        if chatGPT: response = client.chat.completions.create(model=model, messages=excerpt["text"])
-        time.sleep(1)
+        if chatGPT: 
+            response = client.chat.completions.create(model=model, messages=excerpt["text"])
+            time.sleep(1)
 
     if text != "":
         wordcloud = WordCloud(max_font_size=40).generate(text)
         wordcloud.to_file("electeds/" + imagename)
 
     html.close()
-    messages = [({"role": "user", "content": text})]
     print(str(alltime/3600) + " hours of speech")
 
     if not chatGPT: return text
 
+    # send the final response
+    messages = [({"role": "user", "content": text})]
     text = "ok chatgpt, I'm done"
-
     response = client.chat.completions.create(model=model, messages=text)
     return response.choices[0].message.content.strip()
 
 def do_all_councilors():
+
 
     councilors = srt2html.get_councilors()
     councilors.sort()
@@ -124,7 +131,6 @@ def do_all_councilors():
     for councilor in councilors:
         print(councilor)
         excerpts = supercut(councilor)
-        ipdb.set_trace()
 
 def download_clip(yt_id, start_time, stop_time, output_name=None):
 
