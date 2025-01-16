@@ -384,7 +384,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     speaker_ids = {"AUTOMATED_IDS":True} 
     #speakers = ["SPEAKER_%02d" % x for x in np.arange(nspeakers)]
     for i, embedding in enumerate(embeddings["embeddings"]):
-        score = np.empty()
+        score = np.empty(0,dtype=float)
         for speaker in reference_speakers.keys():
             score = np.append(score, 1.0 - cosine(embedding,reference_speaker[speaker]["average"]))
         bestidx = np.argmax(score)
