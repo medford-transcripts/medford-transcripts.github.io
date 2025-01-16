@@ -1,7 +1,13 @@
-import datetime, time, os
+import datetime, time 
+import os, shutil, asyncio
+import json, glob
+from xml.etree import cElementTree
+import re
+import argparse
+
 import ipdb
+
 from wordcloud import WordCloud
-import json,glob
 
 # dependency hell... 
 #pip install googletrans
@@ -9,18 +15,10 @@ import json,glob
 #pip install openai
 from googletrans import Translator, constants
 
-import shutil
-import os
-import gzip
-from xml.etree import cElementTree
-import dateutil.parser as dparser
-import re
-import argparse
+import yt_dlp
 
-import fix_common_errors
-import supercut
-
-import asyncio
+# this repo
+import utils, supercut, fix_common_errors
 
 def translate_text(text, dest="en"):
     translator = Translator()
@@ -67,17 +65,6 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
     if "total_words" in speaker_stats[speaker].keys(): speaker_stats[speaker]["total_words"] += added_words
     else: speaker_stats[speaker]["total_words"] = added_words
 
-def get_councilors(file="councilors.txt"):
-    councilors = []
-    with open(file,'r') as fp:
-        for line in fp:
-            entries = line.split("#")[0].strip().split(',')
-            for entry in entries:
-                if entry != '':
-                    councilors.append(entry.strip())
-    return list(set(councilors))
-
-
 def srt2html(yt_id,skip_translation=False, force=False):
 
     srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
@@ -87,7 +74,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
     last_changed = os.path.getmtime(srtfilename)
 
     # we will do some analytics on these people
-    councilors = get_councilors()
+    councilors = utils.get_councilors()
 
     # read in the speaker mappings
     jsonfile = os.path.join(dir,'speaker_ids.json')
@@ -97,14 +84,9 @@ def srt2html(yt_id,skip_translation=False, force=False):
         last_changed = max(os.path.getmtime(jsonfile),last_changed)
     else: speaker_ids = {}
 
-    ### if the speaker IDs or SRT file haven't been updated since we did this last, no need to redo it ###
-    jsonfile = os.path.join('video_data.json')
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else:
-        video_data = {}
+    video_data = utils.get_video_data()
 
+    ### if the speaker IDs or SRT file haven't been updated since we did this last, no need to redo it ###
     last_update = 0.0
     if yt_id in video_data.keys():
         if "last_update" in video_data[yt_id].keys():
@@ -367,34 +349,11 @@ def srt2html(yt_id,skip_translation=False, force=False):
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
     video_data[yt_id]["last_update"] = time.time()
 
-    update_video_json(video_data)
-
-def update_video_json(video_data):
-
-    jsonfile = 'video_data.json'
-
-    while os.path.exists('video_data.lock'):
-        time.sleep(1)
-
-    with open("video_data.lock", "w") as file:
-        file.write("lock")
-
-    with open(jsonfile, "w") as fp:
-        json.dump(video_data, fp, indent=4)
-
-    os.remove("video_data.lock")
-
+    utils.save_video_data(video_data)
 
 def make_index():
 
-    import yt_dlp
-    # read in the speaker mappings
-    jsonfile = 'video_data.json'
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else:
-        video_data = {}
+    video_data = utils.get_video_data()
 
     htmlfiles = glob.glob('*/20??-??-??_???????????.html')
     lines = []
@@ -405,7 +364,7 @@ def make_index():
         eshtmlfile = os.path.splitext(htmlfile)[0]+'.es.html'
         srtfile = os.path.splitext(htmlfile)[0]+'.srt'
         speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
-        url = "https://youtu.be/" + yt_id 
+        url = "https://youtu.be/" + yt_id
 
         download = True
         if yt_id in video_data.keys():
@@ -425,25 +384,6 @@ def make_index():
             video_data[yt_id]["channel"] = channel
             video_data[yt_id]["duration"] = duration
 
-        # first priority, the date field of video_data.json
-        # next, date parsed from title
-        # next, upload date
-        if "date" in video_data[yt_id].keys():
-            # you can hand edit the date in the video_data.json file for ones that fail to parse
-            date = video_data[yt_id]["date"]
-        else:
-            try:
-                create_date = dparser.parse(title,fuzzy=True)
-                upload_date = datetime.datetime.strptime(date,'%Y-%m-%d')
-
-                # sometimes the parser guesses too much. It can't be later the upload date
-                if upload_date > create_date:
-                    date = create_date.strftime("%Y-%m-%d")
-            except ValueError:
-                # default to the upload date
-                #print('No parsable date in title of "' + title + '"; using upload date')
-                pass
-
         duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
         # one row in the html table
@@ -456,7 +396,7 @@ def make_index():
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
 
-    update_video_json(video_data)
+    utils.save_video_data(video_data)
 
     lines.sort(reverse=True)
     shutil.copy("header.html", "index.html")
@@ -475,12 +415,6 @@ def make_sitemap():
 
     files = glob.glob("*/*.html")
 
-    # make a txt sitemap
-    #sitemap_file = 'sitemap.txt'
-    #with open(sitemap_file, "w") as fp:
-    #    for file in files:
-    #        fp.write("https://medford-transcripts.github.io/"+file.replace('\\', '/')+'\n')
-
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')
     sitemap_root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -494,7 +428,6 @@ def make_sitemap():
     # save sitemap. xml extension will be added automatically
     save_sitemap(sitemap_root, "./sitemap")
 
-
 def add_url(root_node, url, lastmod):
     doc = cElementTree.SubElement(root_node, "url")
     cElementTree.SubElement(doc, "loc").text = url
@@ -502,16 +435,12 @@ def add_url(root_node, url, lastmod):
 
     return doc
 
-
 def save_sitemap(root_node, save_as, **kwargs):
-    compress = kwargs.get("compress", False)
 
     sitemap_name = save_as.split("/")[-1]
     dest_path = "/".join(save_as.split("/")[:-1])
 
     sitemap_name = f"{sitemap_name}.xml"
-    if compress:
-        sitemap_name = f"{sitemap_name}.gz"
 
     save_as = f"{dest_path}/{sitemap_name}"
 
@@ -519,15 +448,8 @@ def save_sitemap(root_node, save_as, **kwargs):
     if not os.path.exists(f"{dest_path}/"):
         os.makedirs(f"{dest_path}/")
 
-    if not compress:
-        tree = cElementTree.ElementTree(root_node)
-        tree.write(save_as, encoding='utf-8', xml_declaration=True)
-    else:
-
-        # gzip sitemap
-        gzipped_sitemap_file = gzip.open(save_as, 'wb')
-        cElementTree.ElementTree(root_node).write(gzipped_sitemap_file)
-        gzipped_sitemap_file.close()
+    tree = cElementTree.ElementTree(root_node)
+    tree.write(save_as, encoding='utf-8', xml_declaration=True)
 
     return sitemap_name
 
@@ -539,7 +461,7 @@ def do_one(yt_id,skip_translation=False, force=False):
     make_sitemap()
 
 def do_all(skip_translation=False, force=False):
-    #fix_common_errors.fix_common_errors()
+
     files = glob.glob("*/20??-??-??_???????????.srt")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]

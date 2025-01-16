@@ -7,8 +7,7 @@ from yt_dlp.utils import download_range_func
 import ffmpeg
 import subprocess
 
-import srt2html
-import create_subtitles
+import utils
 
 # openAI has conflicting requirements with googletrans :(
 # pip install googletrans-py instead
@@ -124,8 +123,7 @@ def supercut(speaker, useGPT=False):
 
 def do_all_councilors(useGPT=False):
 
-
-    councilors = srt2html.get_councilors()
+    councilors = utils.get_councilors()
     councilors.sort()
 
     for councilor in councilors:
@@ -149,7 +147,7 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
 
     og_clipname = glob.glob("clips/og_" + output_name + '*')[0]
 
-    video_data = create_subtitles.get_video_data()
+    video_data = utils.get_video_data()
     source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
 
     # if the line is too long, add a line break at a space nearest to the midpoint
@@ -215,7 +213,7 @@ def download_clip_old(yt_id, start_time, stop_time, output_name=None):
     pad_clipname = glob.glob("clips/pad_" + output_name + '*')[0]
     ext = os.path.splitext(pad_clipname)[1]
 
-    video_data = create_subtitles.get_video_data()
+    video_data = utils.get_video_data()
     source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
 
     # if the line is too long, add a line break at a space nearest to the midpoint
@@ -257,7 +255,7 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
 
     t0 = datetime.datetime(1900,1,1)   
     files = glob.glob("*/20??-??-??_???????????.srt")
-    video_data = create_subtitles.get_video_data()
+    video_data = utils.get_video_data()
 
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]

@@ -6,6 +6,7 @@ import whisperx
 # pip install yt_dlp
 import yt_dlp 
 # yt_dlp requires ffmpeg (stand alone executable) to be in your path (https://www.ffmpeg.org/download.html)
+import numpy as np
 
 # separately, pip install ffmpeg-python (the python package)
 import ffmpeg
@@ -23,7 +24,7 @@ import json
 import dateutil.parser as dparser
 
 # imports from this repo
-import srt2html, supercut
+import srt2html, supercut, generate_reference_voices, utils
 
 # requires a "hugging face" token called "hf_token.txt" 
 # in the top level directory with permissions for 
@@ -39,61 +40,13 @@ import srt2html, supercut
 
 last_update = datetime.datetime(2000,1,1)
 
-def get_video_data():
-    # read info
-    jsonfile = 'video_data.json'
 
-    if os.path.exists(jsonfile):
-
-        while os.path.exists('video_data.lock'):
-            time.sleep(1)
-
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else: return
-
-    now = datetime.datetime.now()
-    priority = []
-    halflife = 90.0
-    for yt_id in video_data.keys():
-        if "view_count" in video_data[yt_id].keys(): 
-            views = video_data[yt_id]["view_count"]
-        else: views = 0
-
-        date = now
-
-        if "upload_date" in video_data[yt_id].keys(): 
-            date = datetime.datetime.strptime(video_data[yt_id]["upload_date"],'%Y-%m-%d')
-
-        if "title" in video_data[yt_id].keys():
-            try: 
-                create_date = dparser.parse(video_data[yt_id]["title"],fuzzy=True)
-
-                # sometimes the parser guesses too much. It can't be later the upload date
-                if date > create_date:
-                    date = create_date
-
-            except ValueError:
-                #print('No parsable date in title of "' + video_data[yt_id]["title"] + '"')
-                pass
-
-        if "date" in video_data[yt_id].keys():
-            # you can hand edit the date in the video_data.json file for ones that fail to parse
-            date = datetime.datetime.strptime(video_data[yt_id]["date"],'%Y-%m-%d')
-
-        video_data[yt_id]["date"] = date.strftime("%Y-%m-%d")  
-
-    return video_data
 
 
 # this prioritizes the videos by age, popularity (views), and/or duration
 def update_priority():
-    # read info
-    jsonfile = 'video_data.json'
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else: return
+
+    video_data = utils.get_video_data()
 
     now = datetime.datetime.now()
     priority = []
@@ -156,17 +109,12 @@ def update_priority():
         sorted_dict[yt_ids[k]] = video_data[yt_ids[k]]
         sorted_dict[yt_ids[k]]["priority"] = priority[k]
 
-    srt2html.update_video_json(sorted_dict)
+    utils.save_video_data(sorted_dict)
 
 # updates video_data.json with info from yt_id
 def update_data(yt_id):
 
-    # read info
-    jsonfile = 'video_data.json'
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-    else: video_data = {}
+    video_data = utils.get_video_data()
 
     if yt_id not in video_data.keys(): 
         video_data[yt_id] = {}
@@ -185,16 +133,13 @@ def update_data(yt_id):
             #video_data[yt_id]["last_update"] = 0.0
 
             # update video_data
-            srt2html.update_video_json(video_data)
+            utils.save_video_data(video_data)
 
 def update_video_data():
     # read info
-    jsonfile = 'video_data.json'
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            video_data = json.load(fp)
-            for yt_id in video_data.keys():
-                update_data(yt_id)
+    video_data = utils.get_video_data()
+    for yt_id in video_data.keys():
+        update_data(yt_id)
 
 def update_channel_slow(channel):
 
@@ -213,7 +158,7 @@ def update_channel_slow(channel):
 #def update_channel_fast(channel):
 def update_channel(channel):
 
-    video_data = read_video_data()
+    video_data = utils.get_video_data()
     url = "https://www.youtube.com/" + channel 
     info = yt_dlp.YoutubeDL({'extract_flat':'in_playlist'}).extract_info(url, download=False) 
 
@@ -268,14 +213,6 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
     update_video_data()
     update_priority()
 
-def read_video_data(jsonfile='video_data.json'):
-    # read info
-    if os.path.exists(jsonfile):
-        with open(jsonfile, 'r') as fp:
-            return json.load(fp)
-    else: return {}
-
-
 def mp3_is_good(yt_id, video_data):
 
     # if video_data doesn't have all the required info, it's bad
@@ -305,7 +242,7 @@ def mp3_is_good(yt_id, video_data):
 def download_audio(yt_id):
 
     # read info
-    video_data = read_video_data()
+    video_data = utils.get_video_data()
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
@@ -331,7 +268,7 @@ def download_audio(yt_id):
             break
 
     # update video_data
-    srt2html.update_video_json(video_data)
+    utils.save_video_data(video_data)
 
     dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
     mp3file = os.path.join(dir,dir) +'.mp3'
@@ -370,7 +307,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
 
     if transcribe_only:
-        video_data = read_video_data()
+        video_data = utils.get_video_data()
         if not mp3_is_good(yt_id, video_data):
             print("mp3 file not ready and download not requested; skipping " + yt_id)
             return False
@@ -429,17 +366,44 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # Assign speaker labels ("diarization")
     with open('hf_token.txt') as f: token = f.readline()
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
-    diarize_segments = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers)
+    diarize_segments, embeddings = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers, return_embeddings=True)
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Diarization of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
     # segments are now assigned generic speaker IDs (e.g., SPEAKER_01)
     diarize_result = whisperx.assign_word_speakers(diarize_segments, aligned_result)
 
-    # now compare speaker embeddings (diarized_result["embeddings"]) to those of identified speakers
+    # save result for later (word level timestamps, speaker re-identification)
+    np.savez(os.path.join(subdir,"embeddings.npz"),embeddings)
+    np.savez(os.path.join(subdir,"model.npz"),diarize_result)
 
+    # now compare each this clip's speaker embeddings to the reference speaker embeddings
+    # in order to assign named speakers
+    threshold = 0.7
+    reference_speakers = generate_reference_voices.get_reference_embeddings()
+    nspeakers = len(embeddings["embeddings"])
+    speaker_ids = {"AUTOMATED_IDS":True} 
+    #speakers = ["SPEAKER_%02d" % x for x in np.arange(nspeakers)]
+    for i, embedding in enumerate(embeddings["embeddings"]):
+        score = np.empty()
+        for speaker in reference_speakers.keys():
+            score = np.append(score, 1.0 - cosine(embedding,reference_speaker[speaker]["average"]))
+        bestidx = np.argmax(score)
+        if score[bestidx] > threshold:
+            speaker_ids["SPEAKER_" + str(i).zfill(2)] = reference_speakers.keys()[bestidx]
+        else: 
+            speaker_ids["SPEAKER_" + str(i).zfill(2)] = "SPEAKER_" + str(i).zfill(2)
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Speaker tracking of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+
+    # save the speaker ID JSON file
+    jsonfile = os.path.join(subdir,"speaker_ids.json")
+    with open(jsonfile, "w") as fp:
+        json.dump(speaker_ids, fp, indent=4)
+
+    # convert to SRT file
     generate_output(diarize_result, base + '.mp3')
 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Output of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+    ipdb.set_trace()
     return True
 
 def push_to_git():
@@ -472,8 +436,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
     # check for new videos
     update_all()
 
-    with open(jsonfile, 'r') as fp:
-        video_data = json.load(fp)
+    video_data = utils.get_video_data()
 
     for yt_id in video_data.keys():
         # wrap in try so don't halt progress

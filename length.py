@@ -2,16 +2,14 @@ import json, os, glob
 import datetime
 import ipdb
 import dateutil.parser as dparser
-
+import utils
 
 time_by_year_sc = {}
 time_by_year_cc = {}
 number_by_year_sc = {}
 number_by_year_cc = {}
 
-jsonfile = 'video_data.json'
-with open(jsonfile, 'r') as fp:
-    video_data = json.load(fp)
+video_data = utils.get_video_data()
 
 time = 0
 nvideos = 0
