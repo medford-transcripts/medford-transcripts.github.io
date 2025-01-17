@@ -40,9 +40,9 @@ def match_embeddings(yt_id, threshold=0.7):
             ref_yt_id = ref_dir.split("_")[1]
 
             # read in the speaker mappings
-            jsonfile = os.path.join(ref_dir,'speaker_ids.json')
-            if os.path.exists(jsonfile):
-                with open(jsonfile, 'r') as fp:
+            ref_jsonfile = os.path.join(ref_dir,'speaker_ids.json')
+            if os.path.exists(ref_jsonfile):
+                with open(ref_jsonfile, 'r') as fp:
                     ref_speaker_ids = json.load(fp)
 
             # read in the reference embeddings
@@ -64,7 +64,7 @@ def match_embeddings(yt_id, threshold=0.7):
         best_score = -1
         for match in score:
             if match["score"] > threshold:
-                #print(embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
+                print(embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
                 if match["score"] > best_score:
                     best_score = match["score"]
                     if "SPEAKER_" == match["speaker"][:8]: best_match = match["yt_id"] + "_" + match["speaker"]
@@ -77,9 +77,12 @@ def match_embeddings(yt_id, threshold=0.7):
                 #print("speaker ID already assigned")
                 pass
 
+    print(json.dumps(speaker_ids, indent=4))
+
+    ipdb.set_trace()
     with open(jsonfile, "w") as fp:
         json.dump(speaker_ids, fp, indent=4)
-    print(json.dumps(speaker_ids, indent=4))
+
 
 if __name__ == "__main__":
 
