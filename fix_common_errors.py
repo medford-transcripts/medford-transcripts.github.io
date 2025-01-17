@@ -74,6 +74,8 @@ def fix_common_errors(yt_id=None):
         "President Abiris" : "President Bears",
         "President Barris" : "President Bears",
         "President Baer" : "President Bears",
+        "President Beres" : "President Bears",
+        "President Farris" : "President Bears",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",

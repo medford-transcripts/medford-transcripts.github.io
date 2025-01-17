@@ -17,7 +17,6 @@ concat.txt
 # exclude voice samples for automatic speaker tracking 
 # (experimental and big)
 voices_folder
-track_speaker.py
 # exclude credentials for security
 hf_token.txt
 openai_key.txt
