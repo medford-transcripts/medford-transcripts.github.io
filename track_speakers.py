@@ -206,7 +206,7 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         best_score = -1
         for match in score:
             if match["score"] > threshold:
-                #print(embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
+                print(embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
                 if match["score"] > best_score:
                     best_score = match["score"]
                     if "SPEAKER_" == match["speaker"][:8]:
@@ -237,11 +237,12 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
 
 if __name__ == "__main__":
 
-    match_all()
-    propagate()
-    ipdb.set_trace()
+    #match_all()
+    #propagate()
+    #ipdb.set_trace()
 
     yt_id = "DSAvAI2oq28"
     yt_id = "7D6c0Dkkm94"
     yt_id = "hGxT3FthToQ"
+    yt_id = "fvIk50DtTTc"
     match_embeddings(yt_id)
