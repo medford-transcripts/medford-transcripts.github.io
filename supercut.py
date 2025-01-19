@@ -20,8 +20,9 @@ try:
 except:
     chatGPT=False
 
-def supercut(speaker, useGPT=False):
+def supercut(speaker, useGPT=False, year=None, mkhtml=True):
 
+    video_data = utils.get_video_data()
     t0 = datetime.datetime(1900,1,1)    
     excerpts = []
     files = glob.glob("20*/20??-??-??_???????????.srt")
@@ -40,6 +41,11 @@ def supercut(speaker, useGPT=False):
 
         # requested speaker not in this transcript; skip file
         if speaker not in speaker_ids.values(): continue
+
+        # if year given and this file isn't it, skip it
+        this_year = video_data[yt_id]["date"][0:4]
+        #print(this_year)
+        if (year != None) and (str(year) != this_year): continue
 
         # extract text from this transcript
         with open(srtfilename, 'r', encoding="utf-8") as f:
@@ -91,27 +97,31 @@ def supercut(speaker, useGPT=False):
 
     text = ""
     alltime = 0.0
-    htmlfilename = os.path.join("electeds",speaker + '.html')
-    html = open(htmlfilename, 'w', encoding="utf-8")
 
-    imagename = speaker + '.wordcloud.png'
-    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + speaker + '" height=150></img></a><br>\n')
+    if mkhtml:
+        htmlfilename = os.path.join("electeds",speaker + '.html')
+        html = open(htmlfilename, 'w', encoding="utf-8")
+        imagename = speaker + '.wordcloud.png'
+        html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + speaker + '" height=150></img></a><br>\n')
 
     for excerpt in excerpts:
-        html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
-        html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
+        if mkhtml:
+            html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
+            html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
         text = text + " " + excerpt["text"]
         alltime += (excerpt["stop"] - excerpt["start"])
         if useGPT: 
             response = client.chat.completions.create(model=model, messages=excerpt["text"])
             time.sleep(1)
 
-    if text != "":
-        wordcloud = WordCloud(max_font_size=40).generate(text)
-        wordcloud.to_file("electeds/" + imagename)
+    if mkhtml:
+        if text != "":
+            wordcloud = WordCloud(max_font_size=40).generate(text)
+            wordcloud.to_file("electeds/" + imagename)
+        html.close()
 
-    html.close()
     print(str(alltime/3600) + " hours of speech")
+    print(str(len(text.split())) + " words")
 
     if not useGPT: return text
 
@@ -120,6 +130,18 @@ def supercut(speaker, useGPT=False):
     text = "ok chatgpt, I'm done"
     response = client.chat.completions.create(model=model, messages=text)
     return response.choices[0].message.content.strip()
+
+def do_all_councilors_by_year():
+    councilors = utils.get_councilors()
+    councilors.sort()
+
+    years = [2020,2021,2022,2023,2024,2025]
+
+    for councilor in councilors:
+        for year in years:
+            print(councilor + ' ' + str(year))
+            excerpts = supercut(councilor,useGPT=False, mkhtml=False, year=year)
+
 
 def do_all_councilors(useGPT=False):
 
@@ -173,78 +195,6 @@ def download_clip(yt_id, start_time, stop_time, output_name=None):
                "-c:a", "libopus",
                os.path.join("clips",output_name)+'.webm']
     subprocess.run(command)
-
-def download_clip_old(yt_id, start_time, stop_time, output_name=None):
-
-    url = "https://www.youtube.com/watch?v=" + yt_id
-
-    if output_name == None:
-        output_name = yt_id + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
-
-    # pad by 10 seconds (and trim later) to avoid bad video
-    if start_time < 10:
-        start_time_ext = 0
-    else: 
-        start_time_ext = start_time - 10
-    start_pad = start_time - start_time_ext + 6
-    stop_time_ext = stop_time + 10
-
-    # this allows clipping to fractions of a second
-    start_string = (datetime.datetime(2000,1,1) + datetime.timedelta(seconds=start_time_ext)).strftime("%H:%M:%S.%f")[:-3]
-    stop_string = (datetime.datetime(2000,1,1) + datetime.timedelta(seconds=stop_time_ext)).strftime("%H:%M:%S.%f")[:-3]
-
-    # download clip
-    ffmpeg_args = {
-        "ffmpeg_i": ["-ss", start_string, "-to", stop_string]
-    }
-
-    opts = {
-      "format": "bestvideo+bestaudio/best", 
-      "external_downloader": "ffmpeg",
-      "external_downloader_args": ffmpeg_args,
-      "quiet": True,
-      "outtmpl": os.path.join("clips","pad_" + output_name),
-    }
-
-    with yt_dlp.YoutubeDL(opts) as ydl:
-        ydl.download(url)
-
-    # find the extension that was downloaded
-    pad_clipname = glob.glob("clips/pad_" + output_name + '*')[0]
-    ext = os.path.splitext(pad_clipname)[1]
-
-    video_data = utils.get_video_data()
-    source = video_data[yt_id]["date"] + " " + video_data[yt_id]["title"]
-
-    # if the line is too long, add a line break at a space nearest to the midpoint
-    if len(source) > 80:
-        source.split
-        halfndx = round(len(source)/2)
-        bestdiff = len(source)
-        for n in range(len(source)):
-            if source[n] == " ":
-                diff = abs(n - halfndx)
-                if diff < bestdiff:
-                    bestdiff = diff
-                    bestndx = n
-        source = source[:bestndx] + "\n" + source[bestndx:]
-        #print(source)
-        #ipdb.set_trace()
-
-    # trim the clip to original length, overlay date and title of source clip, and re-encode to webm
-    command = ["ffmpeg", 
-               "-ss", str(start_pad-1), 
-               "-to", str(start_pad+stop_time-start_time+2), 
-               "-i", pad_clipname,
-               "-vf", f"drawtext=fontfile=fonts/tnr.ttf:text='{source}':fontcolor=white:fontsize=(h/30):x=(w-text_w)/2:y=10:borderw=3:bordercolor=#000000", 
-               "-y", 
-               "-c:v", "libvpx-vp9", 
-               "-crf", "18",
-               "-c:a", "libopus",
-               os.path.join("clips",output_name)+'.webm']
-    subprocess.run(command)
-
-    return
 
 def supercut_by_keyword_and_speaker(keyword, speaker):
 
@@ -343,6 +293,8 @@ if __name__ == "__main__":
     #do_all_councilors()
     #ipdb.set_trace()
 
+    do_all_councilors_by_year()
+    ipdb.set_trace()
 
     #speaker = "Scarpelli"
     #keyword = "transparency"

@@ -25,9 +25,15 @@ latest_date = datetime.datetime(2000,1,1)
 
 for video in video_data.keys(): 
 
+    date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
 
-    if "duration" in video_data[video].keys():
+    if "duration" not in video_data[video].keys():
+        print(video + " not found in video_data") 
+        continue
 
+
+    # this is done inside utils.get_video_data now (I think)
+    if False:
         date = now
         if "upload_date" in video_data[video].keys():
             date = datetime.datetime.strptime(video_data[video]["upload_date"],'%Y-%m-%d')
@@ -46,56 +52,57 @@ for video in video_data.keys():
             date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
 
 
-        year = date.strftime('%Y')
-        if date < datetime.datetime(2000,1,1): print((date,video))
-        title = video_data[video]["title"]
+    year = date.strftime('%Y')
 
-        #if "City Council" in video_data[video]["title"]:
-        if (video_data[video]["channel"] == "City of Medford, Massachusetts") and "City Council" in video_data[video]["title"]:
-            if year not in time_by_year_cc.keys(): 
-                time_by_year_cc[year] = 0
-                number_by_year_cc[year] = 0
-            time_by_year_cc[year] += video_data[video]["duration"]/3600.0
-            number_by_year_cc[year] += 1
-        elif (video_data[video]["channel"] == "Medford Public Schools" or video_data[video]["channel"] == "City of Medford, Massachusetts") and \
-            ("ommittee" in title or "eeting" in title or "MSC" in title):
-            if year not in time_by_year_sc.keys(): time_by_year_sc[year] = 0
-            if year not in number_by_year_sc.keys(): number_by_year_sc[year] = 0
-            time_by_year_sc[year] += video_data[video]["duration"]/3600.0
-            number_by_year_sc[year] += 1
-        else:
-            pass
-            #print('"' + title + '"'+ " not a meeting video")
-            #if (video_data[video]["channel"] == "Medford Public Schools"): ipdb.set_trace()
 
-        # requested
-        time_requested += video_data[video]["duration"]
-        nrequested += 1
 
-        dirname = video_data[video]["upload_date"] + "_" + video
-        base = os.path.join(dirname,dirname)
+    if date < datetime.datetime(2000,1,1): print((date,video))
+    title = video_data[video]["title"]
 
-        # downloaded
-        mp3file = base + '.mp3'
-        if os.path.exists(mp3file):
-            time_downloaded += video_data[video]["duration"]
-            ndownloaded +=1
-
-        # transcribed
-        srtfile = base + '.srt'
-        if os.path.exists(srtfile):
-            time += video_data[video]["duration"]
-            nvideos += 1
-            if srtfile in srtfiles:
-                ndx = srtfiles.index(srtfile)
-                srtfiles[ndx] = ''
-        else:
-            if date > latest_date:
-                latest_date = date
-                latest_video = video
-
+    #if "City Council" in video_data[video]["title"]:
+    if (video_data[video]["channel"] == "City of Medford, Massachusetts") and "City Council" in video_data[video]["title"]:
+        if year not in time_by_year_cc.keys(): 
+            time_by_year_cc[year] = 0
+            number_by_year_cc[year] = 0
+        time_by_year_cc[year] += video_data[video]["duration"]/3600.0
+        number_by_year_cc[year] += 1
+    elif (video_data[video]["channel"] == "Medford Public Schools" or video_data[video]["channel"] == "City of Medford, Massachusetts") and \
+        ("ommittee" in title or "eeting" in title or "MSC" in title):
+        if year not in time_by_year_sc.keys(): time_by_year_sc[year] = 0
+        if year not in number_by_year_sc.keys(): number_by_year_sc[year] = 0
+        time_by_year_sc[year] += video_data[video]["duration"]/3600.0
+        number_by_year_sc[year] += 1
     else:
-        print(video + " not found in video_data")   
+        pass
+        #print('"' + title + '"'+ " not a meeting video")
+        #if (video_data[video]["channel"] == "Medford Public Schools"): ipdb.set_trace()
+
+    # requested
+    time_requested += video_data[video]["duration"]
+    nrequested += 1
+
+    dirname = video_data[video]["upload_date"] + "_" + video
+    base = os.path.join(dirname,dirname)
+
+    # downloaded
+    mp3file = base + '.mp3'
+    if os.path.exists(mp3file):
+        time_downloaded += video_data[video]["duration"]
+        ndownloaded +=1
+
+    # transcribed
+    srtfile = base + '.srt'
+    if os.path.exists(srtfile):
+        time += video_data[video]["duration"]
+        nvideos += 1
+        if srtfile in srtfiles:
+            ndx = srtfiles.index(srtfile)
+            srtfiles[ndx] = ''
+    else:
+        if date > latest_date:
+            latest_date = date
+            latest_video = video
+
 
 print(str(round(time_requested/86400,2)) + " days of (" + str(nrequested) + ") videos requested")
 print(str(round(time_downloaded/86400,2)) + " days of (" + str(ndownloaded) + ") videos downloaded")
