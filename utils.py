@@ -78,17 +78,20 @@ def update_video_data_one(yt_id):
     if not all(key in video_data[yt_id].keys() for key in required_keys):
         url = "https://youtu.be/" + yt_id
         with yt_dlp.YoutubeDL() as ydl:
-            info = ydl.extract_info(url, download=False)
+            try:
+                info = ydl.extract_info(url, download=False)
 
-            video_data[yt_id]["title"] = info["title"]
-            video_data[yt_id]["channel"] = info["channel"]
-            video_data[yt_id]["duration"] = info["duration"]
-            video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
-            video_data[yt_id]["view_count"] = info["view_count"]
-            #video_data[yt_id]["last_update"] = 0.0
+                video_data[yt_id]["title"] = info["title"]
+                video_data[yt_id]["channel"] = info["channel"]
+                video_data[yt_id]["duration"] = info["duration"]
+                video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+                video_data[yt_id]["view_count"] = info["view_count"]
+                #video_data[yt_id]["last_update"] = 0.0
 
-            # update video_data
-            save_video_data(video_data)
+                # update video_data
+                save_video_data(video_data)
+            except:
+                print(yt_id + " not ready yet")
 
 
 # this prioritizes the videos by age, popularity (views), and/or duration

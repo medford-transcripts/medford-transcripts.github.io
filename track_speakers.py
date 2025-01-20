@@ -73,7 +73,7 @@ def propagate():
 
     return
 
-    # what scenario was this handling?
+    # wait... what scenario was I handling here? I think I covered it all
     for file1 in files:
         print("doing " + file1)
         update1 = False
@@ -157,6 +157,8 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
     if os.path.exists(jsonfile):
         with open(jsonfile, 'r') as fp:
             speaker_ids = json.load(fp)
+    else:
+        speaker_ids = {}
 
     print(yt_id + ":")
     print(json.dumps(speaker_ids, indent=4))
@@ -164,8 +166,10 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
     update = False
     for i, embedding in enumerate(embeddings.embeddings):
 
-        # this speaker has been pruned from the ID file; skip it
-        if embeddings.speaker[i] not in speaker_ids.keys(): continue
+        # this speaker is not in the ID file; add it
+        # maybe pruned, maybe never created
+        if embeddings.speaker[i] not in speaker_ids.keys(): 
+            speaker_ids[embeddings.speaker[i]] = embeddings.speaker[i]
 
         score = []
 
@@ -183,10 +187,12 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
             if os.path.exists(ref_jsonfile):
                 with open(ref_jsonfile, 'r') as fp:
                     ref_speaker_ids = json.load(fp)
+            else:
+                # hasn't been created yet 
+                continue
 
             # read in the reference embeddings
             with open(reference_file,'rb') as fp: reference_embeddings = pickle.load(fp)
-
 
             #score[ref_yt_id] = {}
             for j,reference_embedding in enumerate(reference_embeddings.embeddings):
@@ -237,9 +243,9 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
 
 if __name__ == "__main__":
 
-    #match_all()
-    #propagate()
-    #ipdb.set_trace()
+    match_all()
+    propagate()
+    ipdb.set_trace()
 
     yt_id = "DSAvAI2oq28"
     yt_id = "7D6c0Dkkm94"

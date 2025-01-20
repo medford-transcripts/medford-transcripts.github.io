@@ -26,7 +26,7 @@ import json, pickle
 import dateutil.parser as dparser
 
 # imports from this repo
-import srt2html, supercut, generate_reference_voices, utils
+import srt2html, supercut, generate_reference_voices, utils, track_speakers
 
 # requires a "hugging face" token called "hf_token.txt" 
 # in the top level directory with permissions for 
@@ -269,6 +269,8 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                 try:
                     utils.update_video_data_one(priority_yt_id)
                     if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
+                        track_speakers.match_all()
+                        track_speakers.propagate()
                         srt2html.do_one(yt_id=priority_yt_id)
                         push_to_git()
                 except Exception as error:
@@ -285,6 +287,8 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         # wrap in try so don't halt progress
         try: 
             if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
+                track_speakers.match_all()
+                track_speakers.propagate()
                 srt2html.do_one(yt_id)
                 push_to_git()
                 # after every successful transcription, 

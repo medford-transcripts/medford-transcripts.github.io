@@ -4,17 +4,7 @@ import ipdb
 files = glob.glob("*/*.json")
 
 all_speakers = []
-
-time = {
-    "2024":0,
-    "2023":0,
-    "2022":0,
-    "2021":0,
-    "2020":0,
-    "2019":0,
-    "2018":0,
-    "2017":0
-}
+speaker_count = {}
 
 number_to_id = 0
 for file in files:
@@ -25,6 +15,11 @@ for file in files:
         speaker_ids = json.load(fp)
 
     for key in speaker_ids.keys():
+
+        if speaker_ids[key] not in speaker_count.keys():
+            speaker_count[speaker_ids[key]] = 1
+        else: speaker_count[speaker_ids[key]] += 1
+
         if "SPEAKER" in speaker_ids[key]:
             unidentified += 1
         nspeakers += 1
@@ -42,3 +37,6 @@ unique_speakers.sort()
 #    print(person)
 
 print(str(number_to_id) + " left to do")
+
+
+print(json.dumps(speaker_count,indent=4))
