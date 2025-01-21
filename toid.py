@@ -1,5 +1,6 @@
 import glob, json
 import ipdb
+import re
 
 files = glob.glob("*/*.json")
 
@@ -38,5 +39,13 @@ unique_speakers.sort()
 
 print(str(number_to_id) + " left to do")
 
+# pattern to match a cross matched speaker: ???????????_SPEAKER_??
+pattern = r"^.{11}_SPEAKER_.{2}$"
 
-print(json.dumps(speaker_count,indent=4))
+print()
+print("The following speakers have been automatically cross matched from multiple videos, but are unidentified:")
+for speaker in speaker_count.keys():
+    if re.match(pattern,speaker):
+        print((speaker, speaker_count[speaker]))
+
+#print(json.dumps(speaker_count,indent=4))
