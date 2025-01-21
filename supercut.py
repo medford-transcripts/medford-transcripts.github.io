@@ -1,6 +1,6 @@
 import datetime, time, os
 import ipdb
-import json,glob
+import json,pickle,glob,string
 from wordcloud import WordCloud
 import yt_dlp 
 from yt_dlp.utils import download_range_func
@@ -19,6 +19,44 @@ try:
     chatGPT=True
 except:
     chatGPT=False
+
+def mashup(speaker, text):
+
+    textarr = [s.upper().strip(string.punctuation) for s in text.split()]
+
+    clips = {}
+
+#    files = glob.glob("20*/20??-??-??_???????????.srt")
+    files = glob.glob("20*/model.pkl")
+    for file in files:
+        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+        dir = os.path.dirname(file)
+        jsonfile = os.path.join(dir,'speaker_ids.json')
+        if os.path.exists(jsonfile):
+            with open(jsonfile, 'r') as fp:
+                speaker_ids = json.load(fp)
+        else: speaker_ids = {}
+
+        # requested speaker not in this transcript; skip file
+        if speaker not in speaker_ids.values(): continue
+
+        speaker_id = next((k for k, v in speaker_ids.items() if v == speaker), None)
+
+        with open(file, 'rb') as fp: model = pickle.load(fp)
+
+        for segment in model["segments"]:
+
+            if 'speaker' not in segment.keys(): continue
+
+            # doesn't match speaker; move to next segment
+            if segment["speaker"] != speaker_id: continue
+
+            for word in segment["words"]:
+                if word["word"].upper().strip(string.punctuation) in textarr:
+                    clips[word["word"]] = {'yt_id':yt_id,'start':word['start'],'end':word['end']}
+    return clips
+
+
 
 def supercut(speaker, useGPT=False, year=None, mkhtml=True):
 
@@ -291,6 +329,13 @@ if __name__ == "__main__":
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
     #do_all_councilors()
+    #ipdb.set_trace()
+
+    # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
+    #speaker = 'Collins'
+    #text = "Hi. My name is Kit Collins. My voice is my pass port. Verify me."
+    #clips = mashup(speaker, text)
+    #for clip in clips: print(clip)
     #ipdb.set_trace()
 
     do_all_councilors_by_year()
