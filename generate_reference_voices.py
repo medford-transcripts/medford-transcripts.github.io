@@ -172,6 +172,97 @@ def identify_clips():
 
     return clips
 
+# Prepare speaker embeddings from the voices_folder
+def get_reference_embeddings(voices_folder="voices_folder", update=False):
+
+    # whisperX options
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    with open('hf_token.txt') as f: token = f.readline()
+    diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
+
+    files = glob.glob('*/*.json')
+    for jsonfile in files:
+
+        dir = os.path.dirname(jsonfile)
+        embedding_file = os.path.join(dir,"embeddings.pkl")
+
+        # we already have embeddings, skip it
+        if os.path.exists(embedding_file): continue
+
+        yt_id = '_'.join(jsonfile.split('_')[1:]).split('\\')[0]
+
+        # read the speaker_ids file
+        with open(jsonfile, 'r') as fp:
+            speaker_ids = json.load(fp)        
+
+        for key in speaker_ids.keys():
+
+            if speaker_ids[key][:8] == 'SPEAKER_':
+                # this one is not identified; identify it
+            else:
+                # this one is identified; see if we have embeddings for it
+                embedding_file = os.path.join(voices_folder,speaker_ids[key] + '_' + yt_id + '.pkl')
+                if os.path.exists(embedding_file): continue
+
+                srtfile = os.path.join(dir,dir + ".srt")
+                with open(srtfile, 'r', encoding="utf-8") as f:
+
+                    # Read each line in the file
+                    for line in f:
+                        line.strip()
+
+                        if "-->" in line:
+                            # timestamp
+                            start_string = line.split()[0]
+                            stop_string = line.split()[-1]
+
+                            # convert timestamp to seconds elapsed
+                            start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
+                            stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
+
+
+                        elif "[" in line:
+                            # text
+                            this_speaker = line.split()[0].split("[")[-1].split("]")[0]
+                            text = ":".join(line.split(":")[1:])
+
+                            if this_speaker != key: continue
+                                output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                                clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
+                                if len(clipname) == 0:
+                                    download_clip(yt_id, start_time, stop_time, output_name=output_name)
+                            
+                        else: continue
+
+
+
+
+    for speaker in os.listdir(voices_folder):
+        print("Generating reference embeddings for " + speaker)
+        speaker_path = os.path.join(voices_folder, speaker)
+        if os.path.isdir(speaker_path):
+            all_embeddings = []
+            for file in os.listdir(speaker_path):
+                if file.endswith(".wav"):
+                    file_path = os.path.join(speaker_path, file)
+
+                    audio = whisperx.load_audio(file_path)
+                    diarize_segments, embeddings = diarize_model(audio, num_speakers=1, return_embeddings=True)
+
+                    all_embeddings.append(embeddings["embeddings"][0])
+
+            if len(all_embeddings) > 0:
+                reference_embeddings[speaker] = {
+                    "all": all_embeddings,
+                    "average": np.mean(all_embeddings, axis=0)
+                }
+
+    # this is expensive! save to restore later
+    with open(pklfile, 'wb') as fp: pickle.dump(reference_embeddings, fp)
+
+    return reference_embeddings
+
+
 
 # Prepare speaker embeddings from the voices_folder
 def get_reference_embeddings(voices_folder="voices_folder", update=False):
