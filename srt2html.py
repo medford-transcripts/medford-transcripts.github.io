@@ -358,33 +358,16 @@ def make_index():
     htmlfiles = glob.glob('*/20??-??-??_???????????.html')
     lines = []
     for htmlfile in htmlfiles:
-        date = htmlfile.split('_')[0]
         yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
+        date = video_data[yt_id]["date"]
+        title = video_data[yt_id]["title"]
+        channel = video_data[yt_id]["channel"]
+        duration = video_data[yt_id]["duration"]
+        duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
-        eshtmlfile = os.path.splitext(htmlfile)[0]+'.es.html'
         srtfile = os.path.splitext(htmlfile)[0]+'.srt'
         speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
         url = "https://youtu.be/" + yt_id
-
-        download = True
-        if yt_id in video_data.keys():
-            if "duration" in video_data[yt_id].keys():
-                title = video_data[yt_id]["title"]
-                channel = video_data[yt_id]["channel"]
-                duration = video_data[yt_id]["duration"]
-                download = False
-
-        if download:
-            info = yt_dlp.YoutubeDL().extract_info(url, download=False) 
-            title = info["title"]
-            channel = info["channel"]
-            duration = info["duration"]
-            video_data[yt_id] = {}
-            video_data[yt_id]["title"] = title
-            video_data[yt_id]["channel"] = channel
-            video_data[yt_id]["duration"] = duration
-
-        duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
 
         # one row in the html table
         lines.append('      <tr>' +\
@@ -395,8 +378,6 @@ def make_index():
             '<td><a href="' + srtfile + '">SRT</a></td>'+\
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
-
-    utils.save_video_data(video_data)
 
     lines.sort(reverse=True)
     shutil.copy("header.html", "index.html")
@@ -479,6 +460,7 @@ if __name__ == "__main__":
     parser.add_argument('-f','--force', dest='force', action='store_true', default=False, help="Force regeneration of html")
 
     opt = parser.parse_args()
+    utils.update_all()
 
     if opt.yt_id != None:
         do_one(opt.yt_id, skip_translation=opt.skip_translation, force=opt.force)
