@@ -141,7 +141,7 @@ def update_priority():
         #priority.append(views)
 
         # prioritize by age (newest first)
-        #priority.append(1.0/age)
+        priority.append(1.0/age)
 
         # prioritize by age (oldest first)
         #priority.append(age)
@@ -150,7 +150,7 @@ def update_priority():
         #priority.append(views*math.exp(-math.log(2.0)*age/halflife))
 
         # linear decay weakly penalizes old videos
-        priority.append((views+100)*100/age)
+        #priority.append((views+100)*100/age)
 
     # sort video_data by priority (equivalent to np.argsort)
     sort_ndx = reversed(sorted(range(len(priority)), key=priority.__getitem__))

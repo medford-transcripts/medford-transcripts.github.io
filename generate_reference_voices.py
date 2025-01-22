@@ -190,6 +190,7 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
         if os.path.exists(embedding_file): continue
 
         yt_id = '_'.join(jsonfile.split('_')[1:]).split('\\')[0]
+        srtfile = os.path.join(dir,dir + ".srt")
 
         # read the speaker_ids file
         with open(jsonfile, 'r') as fp:
@@ -197,40 +198,56 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
 
         for key in speaker_ids.keys():
 
+            # if we've already extracted embeddings for this speaker, skip it
+            embedding_file = os.path.join(voices_folder,speaker_ids[key] + '_' + yt_id + '.pkl')
+            if os.path.exists(embeddings_file): continue
+
+            with open(srtfile, 'r', encoding="utf-8") as f:
+
+                text = ''
+                # Read each line in the file
+                for line in f:
+                    line.strip()
+
+                    if "-->" in line:
+                        # timestamp
+                        start_string = line.split()[0]
+                        stop_string = line.split()[-1]
+
+                        # convert timestamp to seconds elapsed
+                        start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
+                        stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
+
+
+                    elif "[" in line:
+                        # text
+                        this_speaker = line.split()[0].split("[")[-1].split("]")[0]
+                        text += ":".join(line.split(":")[1:])
+
+                        if this_speaker != key:
+                            if text != '':
+                                clip_duration = stop_time - start_time
+                                if clip_duration > 10 and clip_duration < 30:
+                                    # wrap up some
+                                    output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                                    clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
+                                    if len(clipname) == 0:
+                                        download_clip(yt_id, start_time, stop_time, output_name=output_name)
+
             if speaker_ids[key][:8] == 'SPEAKER_':
                 # this one is not identified; identify it
             else:
                 # this one is identified; see if we have embeddings for it
-                embedding_file = os.path.join(voices_folder,speaker_ids[key] + '_' + yt_id + '.pkl')
                 if os.path.exists(embedding_file): continue
 
-                srtfile = os.path.join(dir,dir + ".srt")
-                with open(srtfile, 'r', encoding="utf-8") as f:
-
-                    # Read each line in the file
-                    for line in f:
-                        line.strip()
-
-                        if "-->" in line:
-                            # timestamp
-                            start_string = line.split()[0]
-                            stop_string = line.split()[-1]
-
-                            # convert timestamp to seconds elapsed
-                            start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
-                            stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
 
 
-                        elif "[" in line:
-                            # text
-                            this_speaker = line.split()[0].split("[")[-1].split("]")[0]
-                            text = ":".join(line.split(":")[1:])
 
-                            if this_speaker != key: continue
-                                output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
-                                clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
-                                if len(clipname) == 0:
-                                    download_clip(yt_id, start_time, stop_time, output_name=output_name)
+                                text = ''
+                                continue
+
+
+
                             
                         else: continue
 

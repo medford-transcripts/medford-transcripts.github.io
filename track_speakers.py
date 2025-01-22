@@ -154,40 +154,6 @@ def probe():
  
     ipdb.set_trace()
 
-def match_without_embeddings():
-    files = glob.glob("*/speaker_ids.json")
-    for file in files:
-        dir = os.path.dirname(file)
-        embedding_file = os.path.join(dir,"embeddings.pkl")
-
-        # we have the embeddings, we can skip it
-        if os.path.exists(embedding_file): continue
-
-        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-    
-        # read the speaker_ids file
-        jsonfile = os.path.join(dir,'speaker_ids.json')
-        if os.path.exists(jsonfile):
-            with open(jsonfile, 'r') as fp:
-                speaker_ids = json.load(fp)
-        else:
-            speaker_ids = {}
-
-        unidentified = 0.0
-        indentified = 0.0
-        for key in speaker_ids.keys():
-            if speaker_ids[key][:8] == "SPEAKER_":
-                unidentified += 1.0
-            else: 
-                identified += 1.0
-
-        # if more than 10% are unidentified, let's do some automatic matching
-        if unidentified/(identified+unidentified) > 0.1:
-            srtfile = os.path.join(dir,dir+".srt")
-
-
-
-
 
 def match_all():
     files = glob.glob("*/embeddings.pkl")
