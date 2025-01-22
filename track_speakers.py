@@ -34,27 +34,27 @@ def propagate():
     files = glob.glob("*/speaker_ids.json")
 
     # propagate updates in the referenced files
-    for file1 in files:
-        update1 = False
+    for file in files:
+        update = False
 
-        yt_id1 = '_'.join(file1.split('_')[1:]).split('\\')[0]
+        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
 
-        # read in the speaker mappings
-        with open(file1, 'r') as fp:
-            speaker_ids1 = json.load(fp)
+        # read iexit(n the speaker mappings
+        with open(file, 'r') as fp:
+            speaker_ids = json.load(fp)
 
-        print(yt_id1)
-        print(json.dumps(speaker_ids1, indent=4))
+        #print(yt_id)
+        #print(json.dumps(speaker_ids, indent=4))
 
-        for speaker1 in speaker_ids1.keys():
+        for speaker in speaker_ids.keys():
 
             # reference to another file's ID, grab its (updated?) ID
-            if len(speaker_ids1[speaker1]) > 12:
-                if speaker_ids1[speaker1][11] == "_":
-                    mapped_yt_id = speaker_ids1[speaker1][:11]
-                    mapped_speaker = speaker_ids1[speaker1][12:]
+            if len(speaker_ids[speaker]) > 12:
+                if speaker_ids[speaker][11] == "_":
+                    mapped_yt_id = speaker_ids[speaker][:11]
+                    mapped_speaker = speaker_ids[speaker][12:]
 
-                    print((speaker_ids1[speaker1], mapped_yt_id, mapped_speaker))
+                    print((speaker_ids[speaker], mapped_yt_id, mapped_speaker))
 
                     # read in the speaker mappings
                     mapped_file = glob.glob('*' + mapped_yt_id + '/speaker_ids.json')
@@ -64,75 +64,70 @@ def propagate():
 
                         # if it's been updated, propagate it
                         if mapped_ids[mapped_speaker] != mapped_speaker:
-                            speaker_ids1[speaker1] = mapped_ids[mapped_speaker]
-                            update1 = True
+                            speaker_ids[speaker] = mapped_ids[mapped_speaker]
+                            update = True
 
-        if update1:
-            with open(file1, "w") as fp:
-                json.dump(speaker_ids1, fp, indent=4)
+        if update:
+            with open(file, "w") as fp:
+                json.dump(speaker_ids, fp, indent=4)
 
     return
 
-    # wait... what scenario was I handling here? I think I covered it all
-    for file1 in files:
-        print("doing " + file1)
-        update1 = False
-        yt_id1 = '_'.join(file1.split('_')[1:]).split('\\')[0]
+def match_to_reference(threshold=0.7):
+
+    with open('speaker_references.pkl','rb') as fp: reference_speakers = pickle.load(fp)
+
+    video_data = utils.get_video_data()
+    files = glob.glob("*/embeddings.pkl")
+    for file in files:
+        update=False
+        with open(file,'rb') as fp: embeddings = pickle.load(fp)
+
+        dir = os.path.dirname(file)
+
+        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+
 
         # read in the speaker mappings
-        with open(file1, 'r') as fp:
-            speaker_ids1 = json.load(fp)
+        jsonfile = os.path.join(dir,'speaker_ids.json')
+        if os.path.exists(jsonfile):
+            with open(jsonfile, 'r') as fp:
+                speaker_ids = json.load(fp)
+        else:
+            speaker_ids = {}
 
-        for file2 in files:
-            update2 = False
+        for i, embedding in enumerate(embeddings.embeddings):
+            best_score = -1
+            for reference_speaker in reference_speakers.keys():
+                score = cosine(embedding, reference_speakers[reference_speaker]["average"])
+                if score > best_score:
+                    best_score = score
+                    best_match = reference_speaker
 
-            # skip self
-            if file1 == file2: continue
+            if best_score > threshold and best_match != "North":
+                print(yt_id + ': ' + embeddings.speaker[i])
+                print("best match: " + best_match + ' (' + str(best_score) + ')')
+                print("current id: " + speaker_ids[embeddings.speaker[i]])
+                if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
+                    #ipdb.set_trace()
+                    speaker_ids[embeddings.speaker[i]] = best_match
+                    update = True
+        if update:
+            #print(json.dumps(speaker_ids, indent=4))
+            with open(jsonfile, "w") as fp:
+                json.dump(speaker_ids, fp, indent=4)
 
-            yt_id2 = '_'.join(file1.split('_')[1:]).split('\\')[0]
+            
 
-            # read in the speaker mappings
-            with open(file2, 'r') as fp:
-                speaker_ids2 = json.load(fp)
-
-            for speaker1 in speaker_ids1.keys():
-
-                for speaker2 in speaker_ids2.keys():
-
-                    # overwrite speaker2's automatic identification with 
-                    # speaker1's manual identification
-                    if speaker_ids2[speaker2] == yt_id1 + '_' + speaker2: ipdb.set_trace()
-                    if speaker_ids1[speaker1] == yt_id2 + '_' + speaker1: ipdb.set_trace()
-
-                    if speaker_ids1[speaker1][:8] != "SPEAKER_" and speaker_ids2[speaker2] == yt_id1 + '_' + speaker2:
-                        ipdb.set_trace()
-                        speaker_ids2[speaker2] = speaker_ids1[speaker1]
-                        update2 = True
-
-                    # overwrite speaker1's automatic identification with 
-                    # speaker2's manual identification
-                    if speaker_ids2[speaker2][:8] != "SPEAKER_" and speaker_ids1[speaker1] == yt_id2 + '_' + speaker1:
-                        ipdb.set_trace()
-                        speaker_ids1[speaker1] = speaker_ids2[speaker2]
-                        update1 = True
-
-        # if the speakers in file2 were updated, save it
-        if update2:
-            print(json.dumps(speaker_ids2, indent=4))
-            ipdb.set_trace()
-            with open(file2, "w") as fp:
-                json.dump(speaker_ids2, fp, indent=4)
-
-    # if the speakers in file1 were updated, save it
-    if update1:
-        print(json.dumps(speaker_ids1, indent=4))
-        ipdb.set_trace()
-        with open(file1, "w") as fp:
-            json.dump(speaker_ids1, fp, indent=4)
-
+#    ipdb.set_trace()
+def probe():
+    file = '2024-10-05_3gvhm0AovZU/embeddings.pkl'
+    with open(file,'rb') as fp: embeddings = pickle.load(fp)
+    for i, embedding in enumerate(embeddings.embeddings):
+        print((i, np.min(embedding), np.max(embedding), np.max(embedding) - np.min(embedding), np.std(embedding), np.median(embedding), np.mean(embedding)  ))
+    ipdb.set_trace()
 
 def match_all():
-
     files = glob.glob("*/embeddings.pkl")
     for file in files:
         print(file)
@@ -161,7 +156,7 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         speaker_ids = {}
 
     print(yt_id + ":")
-    print(json.dumps(speaker_ids, indent=4))
+    #print(json.dumps(speaker_ids, indent=4))
 
     update = False
     for i, embedding in enumerate(embeddings.embeddings):
@@ -236,19 +231,25 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
                 pass
 
     if update:
-        print(json.dumps(speaker_ids, indent=4))
+        #print(json.dumps(speaker_ids, indent=4))
         with open(jsonfile, "w") as fp:
             json.dump(speaker_ids, fp, indent=4)
 
 
 if __name__ == "__main__":
 
+    probe()
+    ipdb.set_trace()
+
     match_all()
     propagate()
-    ipdb.set_trace()
+    match_to_reference()
+    propagate()
+#    ipdb.set_trace()
+ #   ipdb.set_trace()
 
     yt_id = "DSAvAI2oq28"
     yt_id = "7D6c0Dkkm94"
     yt_id = "hGxT3FthToQ"
     yt_id = "fvIk50DtTTc"
-    match_embeddings(yt_id)
+#    match_embeddings(yt_id)
