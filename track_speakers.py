@@ -5,6 +5,7 @@ import ipdb
 
 # compute the cosine similarity of embeddings
 #from scipy.spatial.distance import cosine
+from scipy.stats import wasserstein_distance
 # this is a massive dependency for a simple task
 # TODO: compute myself
 
@@ -26,6 +27,9 @@ def cosine(vector1, vector2):
     norm1 = np.linalg.norm(vector1)
     norm2 = np.linalg.norm(vector2)
     return dot_product / (norm1 * norm2)
+
+def distance(vector1, vector2):
+    return np.sqrt(np.sum((vector1-vector2)**2))
 
 '''
 This will propagate manual identifications throughout the speaker_id.json files
@@ -54,7 +58,7 @@ def propagate():
                     mapped_yt_id = speaker_ids[speaker][:11]
                     mapped_speaker = speaker_ids[speaker][12:]
 
-                    print((speaker_ids[speaker], mapped_yt_id, mapped_speaker))
+                    #print((speaker_ids[speaker], mapped_yt_id, mapped_speaker))
 
                     # read in the speaker mappings
                     mapped_file = glob.glob('*' + mapped_yt_id + '/speaker_ids.json')
@@ -73,7 +77,7 @@ def propagate():
 
     return
 
-def match_to_reference(threshold=0.7):
+def match_to_reference(threshold=0.7, yt_id=None):
 
     with open('speaker_references.pkl','rb') as fp: reference_speakers = pickle.load(fp)
 
@@ -85,8 +89,10 @@ def match_to_reference(threshold=0.7):
 
         dir = os.path.dirname(file)
 
-        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-
+        if yt_id != None:
+            if yt_id != '_'.join(file.split('_')[1:]).split('\\')[0]: continue
+        else: 
+            yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
 
         # read in the speaker mappings
         jsonfile = os.path.join(dir,'speaker_ids.json')
@@ -97,7 +103,8 @@ def match_to_reference(threshold=0.7):
             speaker_ids = {}
 
         for i, embedding in enumerate(embeddings.embeddings):
-            best_score = -1
+            best_score = -1.0
+            best_match = ""
             for reference_speaker in reference_speakers.keys():
                 score = cosine(embedding, reference_speakers[reference_speaker]["average"])
                 if score > best_score:
@@ -105,26 +112,46 @@ def match_to_reference(threshold=0.7):
                     best_match = reference_speaker
 
             if best_score > threshold and best_match != "North":
-                print(yt_id + ': ' + embeddings.speaker[i])
-                print("best match: " + best_match + ' (' + str(best_score) + ')')
-                print("current id: " + speaker_ids[embeddings.speaker[i]])
+                #print(yt_id + ': ' + embeddings.speaker[i])
+                #print("best match: " + best_match + ' (' + str(best_score) + ')')
+                #print("current id: " + speaker_ids[embeddings.speaker[i]])
                 if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
                     #ipdb.set_trace()
                     speaker_ids[embeddings.speaker[i]] = best_match
                     update = True
+
         if update:
             #print(json.dumps(speaker_ids, indent=4))
+            print("Updating " + yt_id)
             with open(jsonfile, "w") as fp:
                 json.dump(speaker_ids, fp, indent=4)
 
             
 
 #    ipdb.set_trace()
+import matplotlib.pyplot as plt
 def probe():
+
+    plt.figure(figsize=(8, 5))
+    values = np.linspace(0, 255, 256)
+
     file = '2024-10-05_3gvhm0AovZU/embeddings.pkl'
+    yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+
     with open(file,'rb') as fp: embeddings = pickle.load(fp)
     for i, embedding in enumerate(embeddings.embeddings):
-        print((i, np.min(embedding), np.max(embedding), np.max(embedding) - np.min(embedding), np.std(embedding), np.median(embedding), np.mean(embedding)  ))
+        norm = np.linalg.norm(embedding)
+        print((i, np.min(embedding), np.max(embedding), np.max(embedding) - np.min(embedding), np.std(embedding), np.median(embedding), np.mean(embedding), norm  ))
+
+        if i > 40:
+            plt.plot(values, embedding, label=str(i), linewidth=2)
+    plt.title('embeddings for ' + yt_id, fontsize=14)
+    plt.xlabel('X', fontsize=12)
+    plt.ylabel('embedding', fontsize=12)
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+ 
     ipdb.set_trace()
 
 def match_all():
@@ -238,12 +265,12 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
 
 if __name__ == "__main__":
 
-    probe()
-    ipdb.set_trace()
+    #probe()
+    #ipdb.set_trace()
 
-    match_all()
-    propagate()
-    match_to_reference()
+    #match_all()
+    #propagate()
+    match_to_reference()#yt_id="a6bZISOstiw")
     propagate()
 #    ipdb.set_trace()
  #   ipdb.set_trace()
