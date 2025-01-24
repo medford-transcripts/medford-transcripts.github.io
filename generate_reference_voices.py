@@ -173,7 +173,7 @@ def identify_clips():
     return clips
 
 # Prepare speaker embeddings from the voices_folder
-def get_reference_embeddings(voices_folder="voices_folder", update=False):
+def get_reference_embeddings2(voices_folder="voices_folder", update=False):
 
     # whisperX options
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -200,59 +200,7 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
 
             # if we've already extracted embeddings for this speaker, skip it
             embedding_file = os.path.join(voices_folder,speaker_ids[key] + '_' + yt_id + '.pkl')
-            if os.path.exists(embeddings_file): continue
-
-            with open(srtfile, 'r', encoding="utf-8") as f:
-
-                text = ''
-                # Read each line in the file
-                for line in f:
-                    line.strip()
-
-                    if "-->" in line:
-                        # timestamp
-                        start_string = line.split()[0]
-                        stop_string = line.split()[-1]
-
-                        # convert timestamp to seconds elapsed
-                        start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
-                        stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
-
-
-                    elif "[" in line:
-                        # text
-                        this_speaker = line.split()[0].split("[")[-1].split("]")[0]
-                        text += ":".join(line.split(":")[1:])
-
-                        if this_speaker != key:
-                            if text != '':
-                                clip_duration = stop_time - start_time
-                                if clip_duration > 10 and clip_duration < 30:
-                                    # wrap up some
-                                    output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
-                                    clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
-                                    if len(clipname) == 0:
-                                        download_clip(yt_id, start_time, stop_time, output_name=output_name)
-
-            if speaker_ids[key][:8] == 'SPEAKER_':
-                # this one is not identified; identify it
-            else:
-                # this one is identified; see if we have embeddings for it
-                if os.path.exists(embedding_file): continue
-
-
-
-
-                                text = ''
-                                continue
-
-
-
-                            
-                        else: continue
-
-
-
+            if not os.path.exists(embeddings_file): extract_embedding(srtfile, speaker)
 
     for speaker in os.listdir(voices_folder):
         print("Generating reference embeddings for " + speaker)
@@ -279,6 +227,52 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
 
     return reference_embeddings
 
+def extract_embedding(srtfile, speakers):
+
+    dir = os.path.dirname(jsonfile)
+    embedding_file = os.path.join(dir,"embeddings.pkl")
+
+    with open(srtfile, 'r', encoding="utf-8") as f:
+
+        text = ''
+        # Read each line in the file
+        for line in f:
+            line.strip()
+
+            if "-->" in line:
+                # timestamp
+                start_string = line.split()[0]
+                stop_string = line.split()[-1]
+
+                # convert timestamp to seconds elapsed
+                start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
+                stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
+
+
+            elif "[" in line:
+                # text
+                this_speaker = line.split()[0].split("[")[-1].split("]")[0]
+                text += ":".join(line.split(":")[1:])
+
+                if this_speaker != key:
+                    if text != '':
+                        clip_duration = stop_time - start_time
+                        if clip_duration > 10 and clip_duration < 30:
+                            # wrap up some
+                            output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                            clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
+                            if len(clipname) == 0:
+                                download_clip(yt_id, start_time, stop_time, output_name=output_name)
+
+    if speaker_ids[key][:8] == 'SPEAKER_':
+        # this one is not identified; identify it
+        pass
+    else:
+        # this one is identified; see if we have embeddings for it
+        if os.path.exists(embedding_file): pass #continue
+
+        text = ''
+        #continue
 
 
 # Prepare speaker embeddings from the voices_folder
