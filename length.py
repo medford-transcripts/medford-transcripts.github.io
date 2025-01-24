@@ -55,7 +55,6 @@ for video in video_data.keys():
     year = date.strftime('%Y')
 
 
-
     if date < datetime.datetime(2000,1,1): print((date,video))
     title = video_data[video]["title"]
 
@@ -116,13 +115,13 @@ print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an h
 print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
 print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
 
-for year in sorted(time_by_year_cc.keys()):
-    print(year + ' ' + str(round(time_by_year_cc[year],2)) + ' ' + str(number_by_year_cc[year]))
-
-print()
-
-for year in sorted(time_by_year_sc.keys()):
-    print(year + ' ' + str(round(time_by_year_sc[year],2)) + ' ' + str(number_by_year_sc[year]))
+#for year in sorted(time_by_year_cc.keys()):
+#    print(year + ' ' + str(round(time_by_year_cc[year],2)) + ' ' + str(number_by_year_cc[year]))
+#
+#print()
+#
+#for year in sorted(time_by_year_sc.keys()):
+#    print(year + ' ' + str(round(time_by_year_sc[year],2)) + ' ' + str(number_by_year_sc[year]))
 
 #print(dict(sorted(time_by_year_cc.items())))
 #print(dict(sorted(time_by_year_sc.items())))
