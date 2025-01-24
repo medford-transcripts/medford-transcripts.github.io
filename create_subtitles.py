@@ -20,6 +20,8 @@ import torch
 import ipdb
 # not strictly required, but I'm leaving this here for debugging
 
+import threading
+
 # standard libraries 
 import datetime, os, glob, argparse, math, sys, subprocess, time, traceback
 import json, pickle
@@ -254,6 +256,7 @@ def push_to_git():
     subprocess.run(["git","commit", "-a", "-m", "add video"]) 
     subprocess.run(["git","push"]) 
 
+# this mostly waits on google translate; do it in the background
 def finish_async(yt_id):
     srt2html.do_one(yt_id=yt_id)
     push_to_git()
@@ -276,8 +279,12 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                         track_speakers.match_embeddings(priority_yt_id)
                         track_speakers.match_to_reference(yt_id=priority_yt_id)
                         track_speakers.propagate()
-                        srt2html.do_one(yt_id=priority_yt_id)
-                        push_to_git()
+
+                        thread = threading.Thread(target=finish_async, args=(priority_yt_id))
+                        thread.start()
+
+                        #srt2html.do_one(yt_id=priority_yt_id)
+                        #push_to_git()
                 except Exception as error:
                     print("Failed on " + priority_yt_id)
                     print(error)
@@ -295,8 +302,12 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                 track_speakers.match_embeddings(yt_id)
                 track_speakers.match_to_reference(yt_id=yt_id)
                 track_speakers.propagate()
-                srt2html.do_one(yt_id)
-                push_to_git()
+
+                thread = threading.Thread(target=finish_async, args=(priority_yt_id))
+                thread.start()
+
+                #srt2html.do_one(yt_id)
+                #push_to_git()
                 # after every successful transcription, 
                 # we'll restart this loop to check for higher priority videos 
                 return True
