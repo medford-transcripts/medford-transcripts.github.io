@@ -254,6 +254,10 @@ def push_to_git():
     subprocess.run(["git","commit", "-a", "-m", "add video"]) 
     subprocess.run(["git","push"]) 
 
+def finish_async(yt_id):
+    srt2html.do_one(yt_id=yt_id)
+    push_to_git()
+
 # allow us to pre-empt with ids in a file
 def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt", redo=False, transcribe_only=False):
 
@@ -269,7 +273,8 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                 try:
                     utils.update_video_data_one(priority_yt_id)
                     if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
-                        track_speakers.match_all()
+                        track_speakers.match_embeddings(priority_yt_id)
+                        track_speakers.match_to_reference(yt_id=priority_yt_id)
                         track_speakers.propagate()
                         srt2html.do_one(yt_id=priority_yt_id)
                         push_to_git()
@@ -287,7 +292,8 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         # wrap in try so don't halt progress
         try: 
             if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
-                track_speakers.match_all()
+                track_speakers.match_embeddings(yt_id)
+                track_speakers.match_to_reference(yt_id=yt_id)
                 track_speakers.propagate()
                 srt2html.do_one(yt_id)
                 push_to_git()
