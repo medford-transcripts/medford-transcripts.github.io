@@ -158,7 +158,7 @@ def probe():
 def match_all():
     files = glob.glob("*/embeddings.pkl")
     for file in files:
-        print(file)
+        #print(file)
         dir = os.path.dirname(file)
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         match_embeddings(yt_id)
@@ -183,7 +183,6 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
     else:
         speaker_ids = {}
 
-    print(yt_id + ":")
     #print(json.dumps(speaker_ids, indent=4))
 
     update = False
@@ -195,6 +194,9 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
             speaker_ids[embeddings.speaker[i]] = embeddings.speaker[i]
 
         score = []
+
+        # skip ones we've already ID'ed
+        if speaker_ids[embeddings.speaker[i]][0:8] != "SPEAKER_": continue
 
         reference_files = glob.glob("*/embeddings.pkl")
         for reference_file in reference_files:
@@ -235,7 +237,7 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         best_score = -1
         for match in score:
             if match["score"] > threshold:
-                print(embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
+                print(yt_id + ": " + embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
                 if match["score"] > best_score:
                     best_score = match["score"]
                     if "SPEAKER_" == match["speaker"][:8]:
