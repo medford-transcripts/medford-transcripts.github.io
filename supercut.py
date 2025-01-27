@@ -7,6 +7,7 @@ from yt_dlp.utils import download_range_func
 import ffmpeg
 import subprocess
 
+import numpy as np
 import utils
 
 # openAI has conflicting requirements with googletrans :(
@@ -22,11 +23,10 @@ except:
 
 def mashup(speaker, text):
 
-    textarr = [s.upper().strip(string.punctuation) for s in text.split()]
+    textarr = np.array([s.upper().strip(string.punctuation) for s in text.split()],dtype='U')
 
-    clips = {}
+    clips = np.empty(len(textarr),dtype=object)
 
-#    files = glob.glob("20*/20??-??-??_???????????.srt")
     files = glob.glob("20*/model.pkl")
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
@@ -52,11 +52,19 @@ def mashup(speaker, text):
             if segment["speaker"] != speaker_id: continue
 
             for word in segment["words"]:
-                if word["word"].upper().strip(string.punctuation) in textarr:
-                    clips[word["word"]] = {'yt_id':yt_id,'start':word['start'],'end':word['end']}
+                stripped_word = word["word"].upper().strip(string.punctuation)
+                match = np.where(textarr == stripped_word)[0]
+                #if ipdb.set_trace()
+                try:
+                    clips[match] = {'word':stripped_word, 'yt_id':yt_id,'start_time':word['start'],'stop_time':word['end']}
+                except:
+                    # not present
+                    pass
+
+
+    clips_to_video(clips, os.path.join("supercuts",speaker + '_mashup.webm'))
+
     return clips
-
-
 
 def supercut(speaker, useGPT=False, year=None, mkhtml=True):
 
@@ -297,6 +305,23 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
     concatenate_clips(os.path.join("clips",speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm'), output_name)
     mkhtml(output_name)
  
+def clips_to_video(clips, output_name):
+
+    basename = os.path.splitext(os.path.basename(output_name))[0]
+    with open('concat.txt','w') as fp:
+        for clip in clips:
+            try: 
+                clipname = os.path.join("clips",basename + "_" + clip["word"] + ".webm")
+                if not os.path.exists(clipname):
+                    download_clip(clip["yt_id"], clip["start_time"], clip["stop_time"], output_name=basename + "_" + clip["word"])
+                fp.write('file ' + clipname.replace('\\','/')  + '\n')
+            except:
+                pass
+
+    # concatenate clips
+    command = ["ffmpeg","-y", "-f", "concat","-i", "concat.txt", "-crf", "18", os.path.join("supercuts",basename + '.webm')]
+    subprocess.run(command)
+
 def concatenate_clips(path, output_name):
 
     # make a list of clips to concatenate
@@ -332,11 +357,11 @@ if __name__ == "__main__":
     #ipdb.set_trace()
 
     # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
-    #speaker = 'Collins'
-    #text = "Hi. My name is Kit Collins. My voice is my pass port. Verify me."
-    #clips = mashup(speaker, text)
-    #for clip in clips: print(clip)
-    #ipdb.set_trace()
+    speaker = 'Bears'
+    text = "Hi. My name is President Bears. My voice is my pass support. Verify me."
+    clips = mashup(speaker, text)
+    for clip in clips: print(clip)
+    ipdb.set_trace()
 
     do_all_councilors_by_year()
     ipdb.set_trace()
