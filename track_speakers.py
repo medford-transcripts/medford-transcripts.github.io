@@ -88,7 +88,6 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
     for pklfile in pklfiles:
         with open(pklfile,'rb') as fp: 
             embeddings.append(pickle.load(fp))
-            #ipdb.set_trace()
 
             speaker = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[-2:])
             yt_id = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[:-2])
@@ -96,8 +95,6 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
             yt_ids.append(yt_id)
             speakers.append(speaker)
             jsonfiles.append(glob.glob('*' + yt_id + '*/speaker_ids.json')[0])
-
-    #ipdb.set_trace()
 
     nfiles = len(pklfiles)
     score = np.zeros((nfiles,nfiles))
