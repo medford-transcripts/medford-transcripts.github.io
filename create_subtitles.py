@@ -303,7 +303,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                 track_speakers.match_to_reference(yt_id=yt_id)
                 track_speakers.propagate()
 
-                thread = threading.Thread(target=finish_async, args=(priority_yt_id))
+                thread = threading.Thread(target=finish_async, args=(yt_id))
                 thread.start()
 
                 #srt2html.do_one(yt_id)

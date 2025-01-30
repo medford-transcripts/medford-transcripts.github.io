@@ -77,6 +77,75 @@ def propagate():
 
     return
 
+def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
+
+    pklfiles = glob.glob(voices_folder + '/*.pkl')
+    embeddings = []
+    speakers = []
+    yt_ids = []
+    jsonfiles = []
+
+    for pklfile in pklfiles:
+        with open(pklfile,'rb') as fp: 
+            embeddings.append(pickle.load(fp))
+            #ipdb.set_trace()
+
+            speaker = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[-2:])
+            yt_id = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[:-2])
+
+            yt_ids.append(yt_id)
+            speakers.append(speaker)
+            jsonfiles.append(glob.glob('*' + yt_id + '*/speaker_ids.json')[0])
+
+    #ipdb.set_trace()
+
+    nfiles = len(pklfiles)
+    score = np.zeros((nfiles,nfiles))
+    for i,embedding1 in enumerate(embeddings):
+        update1 = False
+        best_score = 0.0
+        with open(jsonfiles[i], 'r') as fp:
+            speaker_ids1 = json.load(fp)
+
+        for j,embedding2 in enumerate(embeddings):
+            if i == j: continue
+
+            try:
+                score = cosine(embedding1.embeddings[0], embedding2.embeddings[0])
+            except:
+                score = 0.0
+            if score > threshold and score > best_score:
+                best_score = score
+                best_match = j
+
+        if best_score > threshold:
+            with open(jsonfiles[best_match], 'r') as fp:
+                speaker_ids2 = json.load(fp)
+
+            if speaker_ids1[speakers[i]][0:8] == "SPEAKER_":
+                if speaker_ids2[speakers[best_match]][0:8] != "SPEAKER_":
+                    speaker_ids1[speakers[i]] = speaker_ids2[speakers[best_match]]
+                else:
+                    speaker_ids1[speakers[i]] = yt_ids[best_match] + "_" + speaker_ids2[speakers[best_match]]
+                update1 = True
+            else:
+                if speaker_ids2[speakers[best_match]][0:8] == "SPEAKER_":
+                    speaker_ids2[speakers[best_match]] = speaker_ids1[speakers[i]]
+                    ipdb.set_trace()
+                    #with open(jsonfiles[best_match], "w") as fp: 
+                    #    json.dump(speaker_ids2, fp, indent=4)
+
+        if update1:
+            #ipdb.set_trace()
+            with open(jsonfiles[i], "w") as fp: 
+                json.dump(speaker_ids1, fp, indent=4)
+
+            print((pklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
+
+
+    ipdb.set_trace()
+
+
 def match_to_reference(threshold=0.7, yt_id=None):
 
     with open('speaker_references.pkl','rb') as fp: reference_speakers = pickle.load(fp)
@@ -268,8 +337,9 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
 
 if __name__ == "__main__":
 
+    match_to_reference2()
     #probe()
-    #ipdb.set_trace()
+    ipdb.set_trace()
 
     match_all()
     propagate()

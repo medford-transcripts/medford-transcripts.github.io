@@ -71,9 +71,9 @@ def download_audio_clips(clips, max_per_speaker=3, shuffle=True, min_length=10, 
 
         if counter[clip["speaker"]] <= max_per_speaker:
             output_name = os.path.join("voices_folder", clip["speaker"], clip["speaker"] + "_" + clip["date"] + "_" + clip["yt_id"] + '_' + str(counter[clip["speaker"]]).zfill(3) + '.wav')
-            download_audio_clip(clip["yt_id"],clip["start_time"],clip["stop_time"],output_name)
+            download_clip(clip["yt_id"],clip["start_time"],clip["stop_time"],output_name)
 
-def download_audio_clip(yt_id, start_time, stop_time, output_name):
+def download_clip(yt_id, start_time, stop_time, output_name):
 
     url = "https://www.youtube.com/watch?v=" + yt_id
 
@@ -172,13 +172,7 @@ def identify_clips():
 
     return clips
 
-# Prepare speaker embeddings from the voices_folder
 def get_reference_embeddings2(voices_folder="voices_folder", update=False):
-
-    # whisperX options
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    with open('hf_token.txt') as f: token = f.readline()
-    diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
 
     files = glob.glob('*/*.json')
     for jsonfile in files:
@@ -186,11 +180,12 @@ def get_reference_embeddings2(voices_folder="voices_folder", update=False):
         dir = os.path.dirname(jsonfile)
         embedding_file = os.path.join(dir,"embeddings.pkl")
 
-        # we already have embeddings, skip it
+        # we already have embeddings (from runs that saved them), skip
         if os.path.exists(embedding_file): continue
 
         yt_id = '_'.join(jsonfile.split('_')[1:]).split('\\')[0]
         srtfile = os.path.join(dir,dir + ".srt")
+        print(yt_id)
 
         # read the speaker_ids file
         with open(jsonfile, 'r') as fp:
@@ -198,43 +193,48 @@ def get_reference_embeddings2(voices_folder="voices_folder", update=False):
 
         for key in speaker_ids.keys():
 
-            # if we've already extracted embeddings for this speaker, skip it
-            embedding_file = os.path.join(voices_folder,speaker_ids[key] + '_' + yt_id + '.pkl')
-            if not os.path.exists(embeddings_file): extract_embedding(srtfile, speaker)
+            # for each speaker, extract their longest clip
+            clipname = extract_clip(srtfile, key, voices_folder=voices_folder)
 
-    for speaker in os.listdir(voices_folder):
-        print("Generating reference embeddings for " + speaker)
-        speaker_path = os.path.join(voices_folder, speaker)
-        if os.path.isdir(speaker_path):
-            all_embeddings = []
-            for file in os.listdir(speaker_path):
-                if file.endswith(".wav"):
-                    file_path = os.path.join(speaker_path, file)
+            # and extract the speaker embeddings from that clip
+            pklfile = extract_embedding(clipname)
 
-                    audio = whisperx.load_audio(file_path)
-                    diarize_segments, embeddings = diarize_model(audio, num_speakers=1, return_embeddings=True)
+def extract_embedding(clipname):
+    pklfile = os.path.splitext(clipname)[0] + '.pkl'
+    if os.path.exists(pklfile): return pklfile
 
-                    all_embeddings.append(embeddings["embeddings"][0])
+    if not os.path.exists(clipname): return False
 
-            if len(all_embeddings) > 0:
-                reference_embeddings[speaker] = {
-                    "all": all_embeddings,
-                    "average": np.mean(all_embeddings, axis=0)
-                }
+    # whisperX options
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    with open('hf_token.txt') as f: token = f.readline()
+    diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)    
 
-    # this is expensive! save to restore later
-    with open(pklfile, 'wb') as fp: pickle.dump(reference_embeddings, fp)
+    audio = whisperx.load_audio(clipname)
+    diarize_segments, embeddings = diarize_model(audio, num_speakers=1, return_embeddings=True)
 
-    return reference_embeddings
+    with open(pklfile, 'wb') as fp: pickle.dump(embeddings, fp)
 
-def extract_embedding(srtfile, speakers):
+    return pklfile
 
-    dir = os.path.dirname(jsonfile)
-    embedding_file = os.path.join(dir,"embeddings.pkl")
+
+def extract_clip(srtfile, key, voices_folder="voices_folder"):
+
+    yt_id = '_'.join(srtfile.split('_')[1:]).split('\\')[0]
+    clipname = os.path.join("voices_folder",yt_id + '_' + key + '.webm')
+    if os.path.exists(clipname): return clipname
+
+    t0 = datetime.datetime(1900,1,1)   
 
     with open(srtfile, 'r', encoding="utf-8") as f:
 
         text = ''
+        last_speaker = ''
+        max_clip_duration = 0.0
+        last_stop_time = 0.0
+        best_start = 0.0
+        best_stop = 0.0
+
         # Read each line in the file
         for line in f:
             line.strip()
@@ -245,35 +245,56 @@ def extract_embedding(srtfile, speakers):
                 stop_string = line.split()[-1]
 
                 # convert timestamp to seconds elapsed
-                start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
-                stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
+                this_start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
+                this_stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
 
+                if last_stop_time == 0.0: 
+                    last_stop_time = this_start_time
+                    start_time = this_start_time
 
             elif "[" in line:
                 # text
                 this_speaker = line.split()[0].split("[")[-1].split("]")[0]
-                text += ":".join(line.split(":")[1:])
+                this_text = ":".join(line.split(":")[1:])
 
-                if this_speaker != key:
+                # changed speakers or long silence; wrap it up                
+                if this_speaker != last_speaker or ((this_start_time - last_stop_time) > 10):
                     if text != '':
-                        clip_duration = stop_time - start_time
-                        if clip_duration > 10 and clip_duration < 30:
-                            # wrap up some
-                            output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
-                            clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
-                            if len(clipname) == 0:
-                                download_clip(yt_id, start_time, stop_time, output_name=output_name)
+                        clip_duration = last_stop_time - start_time
 
-    if speaker_ids[key][:8] == 'SPEAKER_':
-        # this one is not identified; identify it
-        pass
-    else:
-        # this one is identified; see if we have embeddings for it
-        if os.path.exists(embedding_file): pass #continue
+                        if clip_duration > max_clip_duration:
+                            max_clip_duration = clip_duration
+                            best_start = start_time
+                            best_stop = last_stop_time
 
-        text = ''
-        #continue
+                    # for next time
+                    start_time = this_start_time
 
+                    if this_speaker != key: text = ''
+                    else: text = this_text
+                else:
+                    # same speaker
+                    stop_time = this_stop_time
+                    text += this_text
+                    if this_speaker != key: text = ''
+
+                last_stop_time = this_stop_time
+                last_speaker = this_speaker
+
+        if text != '':
+            clip_duration = last_stop_time - start_time
+
+            if clip_duration > max_clip_duration:
+                max_clip_duration = clip_duration
+                best_start = start_time
+                best_stop = last_stop_time        
+
+    print((key, best_start, best_stop, max_clip_duration))
+
+    if (best_stop - best_start) > 0.0:
+        download_clip(yt_id, best_start, best_stop, output_name=clipname)
+
+    return clipname
 
 # Prepare speaker embeddings from the voices_folder
 def get_reference_embeddings(voices_folder="voices_folder", update=False):
@@ -320,6 +341,9 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
     return reference_embeddings
 
 if __name__ == "__main__":
+
+    get_reference_embeddings2()
+    ipdb.set_trace()
 
 
     reference_embeddings = get_reference_embeddings()
