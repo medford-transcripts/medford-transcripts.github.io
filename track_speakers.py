@@ -121,16 +121,19 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
 
             if speaker_ids1[speakers[i]][0:8] == "SPEAKER_":
                 if speaker_ids2[speakers[best_match]][0:8] != "SPEAKER_":
-                    speaker_ids1[speakers[i]] = speaker_ids2[speakers[best_match]]
+                    if speaker_ids2[speakers[best_match]] != yt_ids[i] + "_" + speaker_ids1[speakers[i]]:
+                        speaker_ids1[speakers[i]] = speaker_ids2[speakers[best_match]]
+                        update1 = True
                 else:
                     speaker_ids1[speakers[i]] = yt_ids[best_match] + "_" + speaker_ids2[speakers[best_match]]
-                update1 = True
+                    update1 = True
             else:
                 if speaker_ids2[speakers[best_match]][0:8] == "SPEAKER_":
-                    speaker_ids2[speakers[best_match]] = speaker_ids1[speakers[i]]
-                    ipdb.set_trace()
-                    #with open(jsonfiles[best_match], "w") as fp: 
-                    #    json.dump(speaker_ids2, fp, indent=4)
+                    if speaker_ids1[speakers[i]] != yt_ids[best_match] + "_" + speaker_ids2[speakers[best_match]]:
+                        #ipdb.set_trace()
+                        speaker_ids2[speakers[best_match]] = speaker_ids1[speakers[i]]
+                        with open(jsonfiles[best_match], "w") as fp: 
+                            json.dump(speaker_ids2, fp, indent=4)
 
         if update1:
             #ipdb.set_trace()
@@ -138,10 +141,6 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
                 json.dump(speaker_ids1, fp, indent=4)
 
             print((pklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
-
-
-    ipdb.set_trace()
-
 
 def match_to_reference(threshold=0.7, yt_id=None):
 
@@ -335,6 +334,8 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
 if __name__ == "__main__":
 
     match_to_reference2()
+    propagate()
+
     #probe()
     ipdb.set_trace()
 

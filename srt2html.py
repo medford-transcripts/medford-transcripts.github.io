@@ -28,6 +28,8 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
 
     if text == '': return
 
+    #ipdb.set_trace()
+
     for language in languages.keys():
         if language == 'en':
             htmlfilename = basename + '.html'
