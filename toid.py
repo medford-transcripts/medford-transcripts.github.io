@@ -41,14 +41,28 @@ print(str(number_to_id) + " left to do")
 
 # pattern to match a cross matched speaker: ???????????_SPEAKER_??
 pattern = r"^.{11}_SPEAKER_.{2}$"
+pattern2 = r"SPEAKER_.{2}$"
+
 
 # Sort speaker_count by its count to prioritize output
 sorted_speaker_count = dict(sorted(speaker_count.items(), key=lambda item: item[1]))
 
 print()
+nunique = 0
+nunidentified = 0
+ntotal = 0
+nunmatched = 0
+
 print("The following speakers have been automatically cross matched from multiple videos, but are unidentified:")
 for speaker in sorted_speaker_count.keys():
     if re.match(pattern,speaker):
         print((speaker, sorted_speaker_count[speaker]))
+        nunidentified += sorted_speaker_count[speaker]
+        nunique += 1
+    ntotal += sorted_speaker_count[speaker]
+    if re.match(pattern2,speaker):
+        nunmatched += sorted_speaker_count[speaker]
+
+print((nunique, nunidentified, nunmatched, ntotal))
 
 #print(json.dumps(speaker_count,indent=4))

@@ -84,23 +84,50 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
     speakers = []
     yt_ids = []
     jsonfiles = []
+    goodpklfiles = []
+    stdevs = []
+    ranges = []
 
     for pklfile in pklfiles:
         with open(pklfile,'rb') as fp: 
-            embeddings.append(pickle.load(fp))
+            these_embeddings = pickle.load(fp)
 
-            speaker = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[-2:])
-            yt_id = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[:-2])
+        if len(these_embeddings) == 0: continue
 
-            yt_ids.append(yt_id)
-            speakers.append(speaker)
-            jsonfiles.append(glob.glob('*' + yt_id + '*/speaker_ids.json')[0])
+        # this is a signature of noisy embeddings (untrustworthy diarization) skip automatic IDs
+        if np.std(these_embeddings.embeddings[0]) < 0.1: continue
 
-    nfiles = len(pklfiles)
+
+        #print((pklfile, np.std(these_embeddings.embeddings[0]), np.max(these_embeddings.embeddings[0])-np.min(these_embeddings.embeddings[0])) )
+        #stdevs.append(np.std(these_embeddings.embeddings[0]))
+        #ranges.append( np.max(these_embeddings.embeddings[0])-np.min(these_embeddings.embeddings[0]) )
+
+        embeddings.append(these_embeddings)
+
+        speaker = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[-2:])
+        yt_id = '_'.join(os.path.splitext(os.path.basename(pklfile))[0].split('_')[:-2])
+
+        yt_ids.append(yt_id)
+        speakers.append(speaker)
+        jsonfiles.append(glob.glob('*' + yt_id + '*/speaker_ids.json')[0])
+        goodpklfiles.append(pklfile)
+
+
+    #import matplotlib.pyplot as plt
+    #plt.hist(stdevs, bins=30, color='skyblue', edgecolor='black')
+    #plt.show()
+
+    #plt.hist(ranges, bins=30, color='skyblue', edgecolor='black')
+    #plt.show()
+
+    #ipdb.set_trace()
+
+    nfiles = len(goodpklfiles)
     score = np.zeros((nfiles,nfiles))
     for i,embedding1 in enumerate(embeddings):
         update1 = False
         best_score = 0.0
+
         with open(jsonfiles[i], 'r') as fp:
             speaker_ids1 = json.load(fp)
 
@@ -140,7 +167,7 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
             with open(jsonfiles[i], "w") as fp: 
                 json.dump(speaker_ids1, fp, indent=4)
 
-            print((pklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
+            print((goodpklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
 
 def match_to_reference(threshold=0.7, yt_id=None):
 
