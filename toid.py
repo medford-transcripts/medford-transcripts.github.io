@@ -63,6 +63,9 @@ for speaker in sorted_speaker_count.keys():
     if re.match(pattern2,speaker):
         nunmatched += sorted_speaker_count[speaker]
 
-print((nunique, nunidentified, nunmatched, ntotal))
+print("unique matched, unidentified speakers: " + str(nunique))
+print("total matched (but unidentified) speakers: " + str(nunidentified))
+print("total unmatched speakers: " + str(nunmatched))
+print("total speakers: " + str(ntotal))
 
 #print(json.dumps(speaker_count,indent=4))
