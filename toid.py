@@ -57,7 +57,8 @@ print("The following speakers have been automatically cross matched from multipl
 for speaker in sorted_speaker_count.keys():
     if re.match(pattern,speaker):
         print((speaker, sorted_speaker_count[speaker]))
-        nunidentified += sorted_speaker_count[speaker]
+        nunidentified += (sorted_speaker_count[speaker]+1)
+        nunmatched -= 1
         nunique += 1
     ntotal += sorted_speaker_count[speaker]
     if re.match(pattern2,speaker):
