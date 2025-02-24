@@ -71,8 +71,21 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
     video_data = utils.get_video_data()
     t0 = datetime.datetime(1900,1,1)    
     excerpts = []
-    files = glob.glob("20*/20??-??-??_???????????.srt")
-    for file in files:
+
+    # most recent (by upload date) appears at the top of the page
+    #files = glob.glob("20*/20??-??-??_???????????.srt")
+    #files.reverse() 
+
+    # most recent (by air date) appears at the top of the page
+    sorted_video_data = dict(sorted(video_data.items(), key=lambda item: item[1]["date"], reverse=True))
+    sorted_files = []
+    for yt_id in sorted_video_data.keys():
+        dir = sorted_video_data[yt_id]["upload_date"]+"_"+yt_id
+        srtfilename = os.path.join(dir,dir + '.srt')
+        if os.path.exists(srtfilename):
+            sorted_files.append(srtfilename)
+
+    for file in sorted_files:
 
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         dir = os.path.dirname(file)
