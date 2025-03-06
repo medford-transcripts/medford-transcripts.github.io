@@ -18,7 +18,7 @@ from googletrans import Translator, constants
 import yt_dlp
 
 # this repo
-import utils, supercut, fix_common_errors
+import utils, supercut, fix_common_errors, heatmap
 
 def translate_text(text, dest="en"):
     translator = Translator()
@@ -192,6 +192,15 @@ def srt2html(yt_id,skip_translation=False, force=False):
             translation = translate_text(text, dest=language)
             text = translation.text
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
+
+        #ipdb.set_trace()
+        if os.path.exists(os.path.join(dir,"heatmap.html")):
+            text = 'Heatmap of speakers'
+            if language != 'en':
+                translation = translate_text(text, dest=language)
+                text = translation.text
+            html.write('    <a href="heatmap.html">' + text + '</a><br><br>\n')
+
         html.close()
 
     speaker_stats = {}
@@ -438,6 +447,7 @@ def save_sitemap(root_node, save_as, **kwargs):
 
 def do_one(yt_id,skip_translation=False, force=False):
     fix_common_errors.fix_common_errors(yt_id=yt_id)
+    make_heatmap(yt_id)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     make_index()
@@ -453,6 +463,36 @@ def do_all(skip_translation=False, force=False):
         except Exception as error:
             print("Failed on " + yt_id)
             print(error)
+
+def make_heatmap(yt_id):
+
+    with open("addresses.json", 'r') as fp:
+        directory = json.load(fp)
+    addresses = []
+
+    srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
+    htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
+    dir = os.path.dirname(srtfilename)
+
+    # read in the speaker mappings
+    jsonfile = os.path.join(dir,'speaker_ids.json')
+    if not os.path.exists(jsonfile): return
+    with open(jsonfile, 'r') as fp:
+        speaker_ids = json.load(fp)
+
+    for speaker in list(speaker_ids.values()):
+        if speaker in directory.keys():
+            addresses.append(directory[speaker])
+        elif "SPEAKER_" in speaker:
+            pass
+        else:
+            print("No address found for " + speaker)
+
+    if len(addresses) > 0:
+        htmlname = os.path.join(dir,'heatmap.html')
+        heatmap.heatmap(addresses, htmlname=htmlname)
+    else:
+        print("No matching addresses; skipping heatmap")
 
 if __name__ == "__main__":
 
