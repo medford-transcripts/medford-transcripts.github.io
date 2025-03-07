@@ -193,7 +193,6 @@ def srt2html(yt_id,skip_translation=False, force=False):
             text = translation.text
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
 
-        #ipdb.set_trace()
         if os.path.exists(os.path.join(dir,"heatmap.html")):
             text = 'Heatmap of speakers'
             if language != 'en':
