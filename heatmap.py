@@ -33,24 +33,26 @@ def heatmap(addresses, htmlname="heatmap.html"):
         # Add heatmap
         HeatMap(coordinates).add_to(m)
 
-        # download Medford boundaries
-        geojson_path = "medford_boundary.geojson"
-        if not os.path.exists(geojson_path):
-            medford = ox.geocode_to_gdf("Medford, Massachusetts, USA")
-            # Save as GeoJSON
-            medford.to_file(geojson_path, driver="GeoJSON")
+        show_boundary=False # doesn't work...
+        if show_boundary:
+            # download Medford boundaries
+            geojson_path = "medford_boundary.geojson"
+            if not os.path.exists(geojson_path):
+                medford = ox.geocode_to_gdf("Medford, Massachusetts, USA")
+                # Save as GeoJSON
+                medford.to_file(geojson_path, driver="GeoJSON")
 
-        # add medford boundaries to heatmap
-        geojson_data = json.loads(geojson_path)
-        folium.GeoJson(
-            geojson_data,
-            name="Medford Boundaries",
-            style_function=lambda feature: {
-                "fillColor": "none",
-                "color": "blue",
-                "weight": 2
-            }
-        ).add_to(m)
+            # add medford boundaries to heatmap
+            geojson_data = json.loads(geojson_path)
+            folium.GeoJson(
+                geojson_data,
+                name="Medford Boundaries",
+                style_function=lambda feature: {
+                    "fillColor": "none",
+                    "color": "blue",
+                    "weight": 2
+                }
+            ).add_to(m)
 
         # Save to file
         m.save(htmlname)
