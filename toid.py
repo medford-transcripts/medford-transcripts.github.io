@@ -2,7 +2,7 @@ import glob, json
 import ipdb
 import re
 
-files = glob.glob("*/*.json")
+files = glob.glob("*/speaker_ids.json")
 
 all_speakers = []
 speaker_count = {}
@@ -45,7 +45,7 @@ pattern2 = r"SPEAKER_.{2}$"
 
 
 # Sort speaker_count by its count to prioritize output
-sorted_speaker_count = dict(sorted(speaker_count.items(), key=lambda item: item[1]))
+sorted_speaker_count = dict(sorted(speaker_count.items(), key=lambda item: (item[1], item[0])))
 
 print()
 nunique = 0
