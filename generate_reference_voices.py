@@ -20,7 +20,7 @@ import whisperx, torch
 
 def get_unique_speakers():
 
-    files = glob.glob("*/*.json")
+    files = glob.glob("*/speaker_ids.json")
 
     all_speakers = []
     unidentified = 0
@@ -174,7 +174,7 @@ def identify_clips():
 
 def get_reference_embeddings2(voices_folder="voices_folder", update=False):
 
-    files = glob.glob('*/*.json')
+    files = glob.glob('*/speaker_ids.json')
     for jsonfile in files:
 
         dir = os.path.dirname(jsonfile)
