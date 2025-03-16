@@ -524,6 +524,7 @@ def do_one(yt_id,skip_translation=False, force=False):
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     make_index()
+    make_resolution_tracker()
     make_sitemap()
 
 def do_all(skip_translation=False, force=False):
