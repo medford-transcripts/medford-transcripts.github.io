@@ -402,6 +402,80 @@ def make_index():
     index_page.write('</html>\n')
     index_page.close()
 
+def make_resolution_tracker():
+
+    resolution_dict = {}
+
+    # if a resolution is mentioned (##-###) and we have a copy of that resolution,
+    # link to it (in green to distinguish it from video links)
+    srtfiles = glob.glob('*/20??-??-??_???????????.srt')
+
+
+    for srtfile in srtfiles:
+
+        yt_id = '_'.join(srtfile.split('_')[1:]).split('\\')[0]
+        htmlfile = os.path.splitext(srtfile)[0] + '.html'
+
+        pattern = r'(?<=\s)(\d{5}|\d{2}-\d{3})(?=[\s.,!?;:\'\"()-])'
+
+        with open(srtfile, 'r', encoding="utf-8") as file:
+
+            # Read each line in the file
+            for line in file:
+                line.strip()
+                resolutions = re.findall(pattern,line)
+                for resolution in resolutions:
+
+                    # regularize names as XX-XXX
+                    if resolution[2] != "-": 
+                        resolution = resolution[:2] + '-' + resolution[2:]
+
+                    # eliminate confusion with other 5-digit numbers
+                    year = float(resolution[:2])
+                    if year < 10 or year > 25: continue
+
+                    # is the resolution in my dictionary already?
+                    if resolution in resolution_dict.keys():
+                        # is that meeting ID in the list already?
+                        if yt_id not in resolution_dict[resolution]:
+                            resolution_dict[resolution].append(yt_id)
+                    else:
+                        resolution_dict[resolution] = [yt_id]
+
+
+    video_data = utils.get_video_data()
+    sorted_dict = dict(sorted(resolution_dict.items(), reverse=True))
+    html = open('resolutions.html', 'w', encoding="utf-8")
+
+
+
+    html.write('<table border=1>\n')
+    html.write('<tr><td colspan="2">Resolution #</td><td>Description</td></tr>\n')
+
+
+    for resolution in sorted_dict.keys():
+        nvideos = len(sorted_dict[resolution])
+        description = '' # placeholder
+        # this is the 
+        html.write('<tr><td colspan="2">' + resolution + '</td><td>' + description + '</td></tr>\n')
+        for yt_id in sorted_dict[resolution]:
+
+            title = video_data[yt_id]["title"]
+
+            dir = video_data[yt_id]["upload_date"] + '_' + yt_id
+            htmlfile = os.path.join(dir,dir+'.html')
+
+            html.write('<tr><td></td><td colspan=2><a href="' + htmlfile + '">' + title + '</a></td></tr>\n')
+
+
+
+    html.write('</table>\n')
+    html.close()
+
+
+    ipdb.set_trace()
+
+
 def make_sitemap():
 
     files = glob.glob("*/*.html")
