@@ -4,6 +4,7 @@ import json, glob
 from xml.etree import cElementTree
 import re
 import argparse
+import pypdf
 
 import ipdb
 
@@ -450,14 +451,53 @@ def make_resolution_tracker():
 
 
     html.write('<table border=1>\n')
-    html.write('<tr><td colspan="2">Resolution #</td><td>Description</td></tr>\n')
+    html.write('<tr><td colspan="2">Resolution</td><td>Sponsor</td><td>Description</td></tr>\n')
 
 
     for resolution in sorted_dict.keys():
         nvideos = len(sorted_dict[resolution])
-        description = '' # placeholder
+
+        resolution_pdf = os.path.join("resolutions",resolution + '.pdf')
+        sponsor = ''
+        description = ''
+        resolution_text = resolution
+        if os.path.exists(resolution_pdf):
+            reader = pypdf.PdfReader(resolution_pdf)
+            lines = reader.pages[0].extract_text().split('\n')
+            use_next_line = False
+            add_to_description = False
+    
+            for line in lines:
+
+                #if '24-357' in resolution_pdf: 
+                #    print(line)
+                #    ipdb.set_trace()
+
+                if description == '' and line.startswith(resolution):
+                    description = " ".join(line.split()[2:])
+                    add_to_description = True
+                elif add_to_description:
+                    if "FULL TEXT AND DESCRIPTION" in line:
+                        add_to_description = False
+                    else:
+                        description += (' ' + line)
+                elif "SPONSORED BY" in line:
+                    use_next_line = True
+                    trim = True
+                elif use_next_line:
+                    if "AGENDA ITEM" in line:
+                        use_next_line = False
+                    else:
+                        if trim: 
+                            sponsor = " ".join(line.split()[3:])
+                            trim = False
+                        else: 
+                            sponsor += (" " + line)
+
+            resolution_text = '<a href="' + resolution_pdf + '">' + resolution + '</a>' 
+
         # this is the 
-        html.write('<tr><td colspan="2">' + resolution + '</td><td>' + description + '</td></tr>\n')
+        html.write('<tr><td colspan="2">' + resolution_text + '</td><td>' + sponsor + '</td><td>' + description + '</td></tr>\n')
         for yt_id in sorted_dict[resolution]:
 
             title = video_data[yt_id]["title"]
@@ -465,16 +505,12 @@ def make_resolution_tracker():
             dir = video_data[yt_id]["upload_date"] + '_' + yt_id
             htmlfile = os.path.join(dir,dir+'.html')
 
-            html.write('<tr><td></td><td colspan=2><a href="' + htmlfile + '">' + title + '</a></td></tr>\n')
+            html.write('<tr><td></td><td colspan=3><a href="' + htmlfile + '">' + title + '</a></td></tr>\n')
 
 
 
     html.write('</table>\n')
     html.close()
-
-
-    ipdb.set_trace()
-
 
 def make_sitemap():
 
