@@ -453,7 +453,6 @@ def make_resolution_tracker():
     html.write('<table border=1>\n')
     html.write('<tr><td colspan="2">Resolution</td><td>Sponsor</td><td>Description</td></tr>\n')
 
-
     for resolution in sorted_dict.keys():
         nvideos = len(sorted_dict[resolution])
 
@@ -494,10 +493,20 @@ def make_resolution_tracker():
                         else: 
                             sponsor += (" " + line)
 
+            # link to the (local) pdf
             resolution_text = '<a href="' + resolution_pdf + '">' + resolution + '</a>' 
 
-        # this is the 
-        html.write('<tr><td colspan="2">' + resolution_text + '</td><td>' + sponsor + '</td><td>' + description + '</td></tr>\n')
+        # remove titles, extra spaces
+        sponsor = sponsor.replace("  ", " ").strip()
+        sponsor = sponsor.replace(", City Councilor","")
+        sponsor = sponsor.replace(", Council President","")
+        sponsor = sponsor.replace(", Council Vice President","")
+
+        # write the resolution
+        #html.write('<tr><td>' + resolution_text + '</td><td width="50">&nbsp;</td><td>' + sponsor + '</td><td>' + description + '</td></tr>\n')
+        html.write('<tr><td colspan=2>' + resolution_text + '</td><td>' + sponsor + '</td><td>' + description + '</td></tr>\n')
+
+
         for yt_id in sorted_dict[resolution]:
 
             title = video_data[yt_id]["title"]
