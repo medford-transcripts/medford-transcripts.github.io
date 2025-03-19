@@ -66,11 +66,51 @@ def mp3_is_good(yt_id, video_data):
     # otherwise, it's good
     return True
 
+def download_all_channel_videos(channel="@masstraction-us-medford-1-22"):
+    url = "https://www.youtube.com/" + channel 
+    info = yt_dlp.YoutubeDL({'extract_flat':'in_playlist'}).extract_info(url, download=False) 
+
+    # all we're trying to do is loop through a list of all YouTube IDs in this channel
+    # there must be a better way, but the structure of info is a mystery to me
+    # beware: info changes between channels with only one video type vs multiple video types
+
+    for playlist in info["entries"]:
+        if "entries" in playlist.keys():
+            for entry in playlist["entries"]:
+                #if entry["id"] not in video_data.keys():
+                    try:
+                        download_video(entry["id"])
+                    except Exception as error:
+                        print("Failed on " + entry["id"])
+                        print(error)
+                        print(traceback.format_exc())
+        else:
+            # this captures channels with only one video type (?)
+            # I think "playlist" is actually a video
+            try:
+                download_video(playlist["id"])
+            except Exception as error:
+                print("Failed on " + playlist["id"])
+                print(error)
+                print(traceback.format_exc())
+
+def download_video(yt_id):
+    
+    # this only gets audio (but way faster than my audio-only download)
+    #yt-dlp https://www.youtube.com/watch?v=NDgiDfoPie4 -x --audio-format mp3 --audio-quality 5
+
+    command = [
+        "yt-dlp",
+        "https://www.youtube.com/watch?v=" + yt_id
+        ]
+
+    subprocess.run(command)
+
 '''
  download the Youtube audio at highest quality as an mp3
  yt_id   - youtube ID
 ''' 
-def download_audio(yt_id):
+def download_audio(yt_id, video=False):
 
     # read info
     video_data = utils.get_video_data()
