@@ -99,8 +99,22 @@ def download_video(yt_id):
     # this only gets audio (but way faster than my audio-only download)
     #yt-dlp https://www.youtube.com/watch?v=NDgiDfoPie4 -x --audio-format mp3 --audio-quality 5
 
+    # getting cookies from chrome in windows is broken
+    # generate the cookies if we haven't already:
+    # yt-dlp --cookies-from-browser firefox --cookies cookies.txt
+    if not os.path.exists("cookies.txt"):
+        command = [
+            "yt-dlp",
+            "--cookies-from-browser","firefox",
+            "--cookies","cookies.txt"
+            ]
+        subprocess.run(command)
+
+    # now download the video
     command = [
         "yt-dlp",
+        "--cookies-from-browser", "firefox",
+        "--cookies","cookies.txt",
         "https://www.youtube.com/watch?v=" + yt_id
         ]
 
