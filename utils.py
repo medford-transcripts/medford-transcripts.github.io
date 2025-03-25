@@ -59,7 +59,11 @@ def update_video_data_one(yt_id):
                 video_data[yt_id]["title"] = info["title"]
                 video_data[yt_id]["channel"] = info["channel"]
                 video_data[yt_id]["duration"] = info["duration"]
-                video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+
+                # links and a bunch of stuff are built around the upload date, and it sometimes changes. Don't update it or things break!
+                if "upload_date" not in video_data[yt_id].keys():
+                    video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+
                 video_data[yt_id]["view_count"] = info["view_count"]
                 #video_data[yt_id]["last_update"] = 0.0
 
