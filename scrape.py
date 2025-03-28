@@ -23,7 +23,12 @@ for i in range(200):
         for child in item["childItems"]:
             if "attachmentsList" in child.keys():
                 for attachment in child["attachmentsList"]:
-                    print((attachment["mediaFileName"],attachment["pdfVersionFullPath"]))
+                    pdfname = os.path.join("resolutions",attachment["mediaFileName"])
+                    url = attachment["pdfVersionFullPath"]
+                    try:
+                        save_pdf(url, pdfname)
+                    except:
+                        print("failed to download " + pdfname)
             if "reportsList" in child.keys():
                 for report in child["reportsList"]:
                     pdfname = os.path.join("resolutions",report["agendaObjItemReportName"] + '.pdf')
