@@ -18,8 +18,8 @@ from googletrans import Translator, constants
 
 import yt_dlp
 
-# this repo
-import utils, supercut, fix_common_errors, heatmap
+# imports from this repo
+import utils, supercut, fix_common_errors, heatmap, scrape
 
 def translate_text(text, dest="en"):
     translator = Translator()
@@ -404,6 +404,9 @@ def make_index():
     index_page.close()
 
 def make_resolution_tracker():
+
+    # update meeting files from https://medfordma.civicclerk.com
+    scrape.scrape()
 
     resolution_dict = {}
 

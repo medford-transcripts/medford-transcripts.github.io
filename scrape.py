@@ -1,100 +1,68 @@
 import requests
-import os, sys
-import ipdb
+import os
 
-def save_pdf(url, pdfname):
+def save_file(url, filename):
 
-    if not os.path.exists(pdfname):
-        print("Fetching " + pdfname)
+    if not os.path.exists(filename):
+        print("Fetching " + filename)
         response = requests.get(url)
-        with open(pdfname, 'wb') as f:
+        with open(filename, 'wb') as f:
             f.write(response.content)
     else:
-        print(pdfname + ' already exists')
+        print(filename + ' already exists')
 
-expected_exts = ('.jpg','.pdf','.docx','.xlsx','.pptx','.doc','.mp3','.mp4','.webm')
+def scrape(url_base="https://medfordma.api.civicclerk.com"):
 
-# rather than looping arbitrarily over these, I should parse the upper level URL and follow the links
-# which would be faster and more general
-headers = {"User-Agent": "Mozilla/5.0"}  # Add other headers if needed
+    # if the file doesn't end in one of these, it's assumed to be a pdf
+    expected_exts = ('.jpg','.pdf','.docx','.xlsx','.pptx','.doc','.mp3','.mp4','.webm')
 
-for i in range(500):
+    # rather than looping arbitrarily over these, I should parse the upper level URL and follow the links
+    # which would be faster and more general
+    # but I did that (scrape_smart) and it misses a bunch of URLs, so maybe not
+    headers = {"User-Agent": "Mozilla/5.0"}  # Add other headers if needed
 
-    api_url = "https://medfordma.api.civicclerk.com/v1/Meetings/" + str(i+1)
+    # hardcoding this 500 is going to be problematic in the future
+    for i in range(500):
 
-    # other possible entry points:
-    #https://medfordma.api.civicclerk.com/v1
-    #https://medfordma.api.civicclerk.com/v1/Events
-    #https://medfordma.api.civicclerk.com/v1/EventCategories
+        api_url = url_base + "/v1/Meetings/" + str(i+1)
 
-    response = requests.get(api_url, headers=headers)
-    data = response.json()
+        # other possible entry points:
+        #https://medfordma.api.civicclerk.com/v1
+        #https://medfordma.api.civicclerk.com/v1/Events
+        #https://medfordma.api.civicclerk.com/v1/EventCategories
 
-    for item in data["items"]:
-        for child in item["childItems"]:
-
-            # these are other files
-            if "attachmentsList" in child.keys():
-                for attachment in child["attachmentsList"]:
-                    pdfname = os.path.join("other_files",attachment["mediaFileName"].strip())
-                    url = attachment["pdfVersionFullPath"]
-                    try:
-                        save_pdf(url, pdfname)
-                    except:
-                        print("failed to download " + pdfname)
-
-            # these are the resolutions (mostly?)
-            if "reportsList" in child.keys():
-                for report in child["reportsList"]:
-                    pdfname = os.path.join("resolutions",report["agendaObjItemReportName"].strip() + '.pdf')
-                    url = report["pdfMediaFullPath"]
-                    try:
-                        save_pdf(url, pdfname)
-                    except:
-                        print("failed to download " + pdfname)
-
-    api_url = "https://medfordma.api.civicclerk.com/v1/Events/" + str(i+1)
-    response = requests.get(api_url, headers=headers)
-    try:
+        response = requests.get(api_url, headers=headers)
         data = response.json()
-    except:
-        continue
 
-    for publishedFile in data["publishedFiles"]:
+        for item in data["items"]:
+            for child in item["childItems"]:
 
-        if publishedFile["type"] == "Agenda":
-            dir = "agendas"
-        elif publishedFile["type"] == "Agenda Packet":
-            dir = "agendas"
-        elif publishedFile["type"] == "Minutes":
-            dir = "minutes"
-        else:
-            dir = "other_files"
+                # these are other files
+                if "attachmentsList" in child.keys():
+                    for attachment in child["attachmentsList"]:
+                        pdfname = os.path.join("other_files",attachment["mediaFileName"].strip())
+                        url = attachment["pdfVersionFullPath"]
+                        try:
+                            save_file(url, pdfname)
+                        except:
+                            print("failed to download " + pdfname)
 
-        pdfname = os.path.join(dir,publishedFile["name"].strip())
-        if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
-        url = publishedFile["streamUrl"]
+                # these are the resolutions (mostly?)
+                if "reportsList" in child.keys():
+                    for report in child["reportsList"]:
+                        pdfname = os.path.join("resolutions",report["agendaObjItemReportName"].strip() + '.pdf')
+                        url = report["pdfMediaFullPath"]
+                        try:
+                            save_file(url, pdfname)
+                        except:
+                            print("failed to download " + pdfname)
 
+        api_url = "https://medfordma.api.civicclerk.com/v1/Events/" + str(i+1)
+        response = requests.get(api_url, headers=headers)
         try:
-            save_pdf(url, pdfname)
+            data = response.json()
         except:
-            print("failed to download " + pdfname)
-
-sys.exit()
-
-# this seems like the intended way to do this, but it doesn't actually grab everything
-base_url = "https://medfordma.api.civicclerk.com/v1/Events/"
-url = base_url
-while url:
-    response = requests.get(url, headers=headers)
-    data = response.json()
-
-    for value in data["value"]:
-        # value also contains things like eventName, startDateTime, agendaName...
-        url2 = base_url + value["id"]
-
-        response = requests.get(url2, headers=headers)
-        data2 = response.json()
+            continue
 
         for publishedFile in data["publishedFiles"]:
 
@@ -109,11 +77,54 @@ while url:
 
             pdfname = os.path.join(dir,publishedFile["name"].strip())
             if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
-
             url = publishedFile["streamUrl"]
+
             try:
-                save_pdf(url, pdfname)
+                save_file(url, pdfname)
             except:
                 print("failed to download " + pdfname)
 
-    url = data.get("@odata.nextLink")
+# this seems like the smart/intended way to do this, 
+# but there are many URLs that don't seem to be linked this way
+# so we'll do it the dumb way for now
+def scrape_smart():
+    base_url = "https://medfordma.api.civicclerk.com/v1/Events/"
+    url = base_url
+    while url:
+        response = requests.get(url, headers=headers)
+        data = response.json()
+
+        for value in data["value"]:
+            # value also contains things like eventName, startDateTime, agendaName...
+            url2 = base_url + value["id"]
+
+            response = requests.get(url2, headers=headers)
+            data2 = response.json()
+
+            for publishedFile in data["publishedFiles"]:
+
+                if publishedFile["type"] == "Agenda":
+                    dir = "agendas"
+                elif publishedFile["type"] == "Agenda Packet":
+                    dir = "agendas"
+                elif publishedFile["type"] == "Minutes":
+                    dir = "minutes"
+                else:
+                    dir = "other_files"
+
+                pdfname = os.path.join(dir,publishedFile["name"].strip())
+                if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
+
+                url = publishedFile["streamUrl"]
+                try:
+                    save_file(url, pdfname)
+                except:
+                    print("failed to download " + pdfname)
+
+        url = data.get("@odata.nextLink")
+
+if __name__ == "__main__":
+
+    scrape()
+
+

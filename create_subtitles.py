@@ -307,6 +307,10 @@ update the repo with new results
 '''
 def push_to_git():
     subprocess.run(["git","add", "20*"]) 
+    subprocess.run(["git","add", "resolutions/*"]) 
+    subprocess.run(["git","add", "agendas/*"]) 
+    subprocess.run(["git","add", "minutes/*"]) 
+    subprocess.run(["git","add", "other_files/*"]) 
     subprocess.run(["git","commit", "-a", "-m", "add video"]) 
     subprocess.run(["git","push"]) 
 
