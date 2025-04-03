@@ -149,7 +149,12 @@ def download_audio(yt_id, video=False):
             video_data[yt_id]["title"] = info["title"]
             video_data[yt_id]["channel"] = info["channel"]
             video_data[yt_id]["duration"] = info["duration"]
-            video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
+
+            # links and a bunch of stuff are built around the upload date, 
+            # and it sometimes changes (I think livestreams update when finished). 
+            # Don't update it or things break!
+            if "upload_date" not in video_data[yt_id].keys():
+                video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
 
             # update video_data
             utils.save_video_data(video_data)
