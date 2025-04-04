@@ -403,10 +403,10 @@ def make_index():
     index_page.write('</html>\n')
     index_page.close()
 
-def make_resolution_tracker():
+def make_resolution_tracker(do_scrape=True):
 
     # update meeting files from https://medfordma.civicclerk.com
-    scrape.scrape()
+    if do_scrape: scrape.scrape()
 
     resolution_dict = {}
 
@@ -566,22 +566,24 @@ def save_sitemap(root_node, save_as, **kwargs):
 
     return sitemap_name
 
-def do_one(yt_id,skip_translation=False, force=False):
+def do_one(yt_id,skip_translation=False, force=False, do_scrape=True):
     fix_common_errors.fix_common_errors(yt_id=yt_id)
     make_heatmap(yt_id)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     make_index()
-    make_resolution_tracker()
+    make_resolution_tracker(do_scrape=do_scrape)
     make_sitemap()
 
 def do_all(skip_translation=False, force=False):
 
     files = glob.glob("*/20??-??-??_???????????.srt")
+    do_scrape=True
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         try:
-            do_one(yt_id, skip_translation=skip_translation, force=force)
+            do_one(yt_id, skip_translation=skip_translation, force=force, do_scrape=do_scrape)
+            do_scrape=False
         except Exception as error:
             print("Failed on " + yt_id)
             print(error)
