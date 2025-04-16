@@ -9,7 +9,8 @@ def save_file(url, filename):
         with open(filename, 'wb') as f:
             f.write(response.content)
     else:
-        print(filename + ' already exists')
+        pass
+        #print(filename + ' already exists')
 
 def scrape(url_base="https://medfordma.api.civicclerk.com"):
 
