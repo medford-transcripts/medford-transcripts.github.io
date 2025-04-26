@@ -26,6 +26,9 @@ def cosine(vector1, vector2):
     dot_product = np.dot(vector1, vector2)
     norm1 = np.linalg.norm(vector1)
     norm2 = np.linalg.norm(vector2)
+    if norm1 == 0.0 or norm2 == 0.0: return 0
+    #print((norm1, norm2))
+
     return dot_product / (norm1 * norm2)
 
 def distance(vector1, vector2):
@@ -76,6 +79,75 @@ def propagate():
                 json.dump(speaker_ids, fp, indent=4)
 
     return
+
+# still working on it...
+def match_to_speaker(speaker, threshold=0.5, voices_folder='voices_folder'):
+    pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
+    pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
+
+    for pklfile1 in pklfiles:
+        with open(pklfile1,'rb') as fp: 
+            embedding1 = pickle.load(fp)
+
+        if len(embedding1) == 0: continue
+
+        # this is a signature of noisy embeddings (untrustworthy diarization). Skip?
+        if np.std(embedding1.embeddings[0]) < 0.1: continue
+
+        speaker_num1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[-2:])
+        yt_id1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[:-2])
+
+        jsonfile = glob.glob('*' + yt_id1 + '*/speaker_ids.json')[0]
+        with open(jsonfile, 'r') as fp:
+            speaker_ids1 = json.load(fp)
+        speaker_id1 = speaker_ids1[speaker_num1]
+
+        if speaker == speaker_id1:
+
+            for pklfile2 in pklfiles:
+
+                with open(pklfile2,'rb') as fp: 
+                    embedding2 = pickle.load(fp)
+
+                if len(embedding2) == 0: continue
+
+                if np.std(embedding2.embeddings[0]) < 0.1: continue
+
+                score = cosine(embedding1.embeddings[0], embedding2.embeddings[0])
+
+                if score > threshold:
+                    speaker_num2 = '_'.join(os.path.splitext(os.path.basename(pklfile2))[0].split('_')[-2:])
+                    yt_id2 = '_'.join(os.path.splitext(os.path.basename(pklfile2))[0].split('_')[:-2])
+                    jsonfile = glob.glob('*' + yt_id2 + '*/speaker_ids.json')[0]
+                    with open(jsonfile, 'r') as fp:
+                        speaker_ids2 = json.load(fp)
+                    
+                    speaker_id2 = speaker_ids2[speaker_num2]
+                    print(yt_id1 + ": " + speaker_id1 + " matches " + speaker_id2 + " of " + yt_id2 + " (" + str(score) + ")")
+
+            for pklfile2 in pklfiles2:
+
+                with open(pklfile2,'rb') as fp: embeddings = pickle.load(fp)
+
+                dir = os.path.dirname(pklfile2)
+                yt_id2 = '_'.join(dir.split('_')[1:]).split('\\')[0]
+
+                # read in the speaker mappings
+                jsonfile = os.path.join(dir,'speaker_ids.json')
+                if not os.path.exists(jsonfile): continue
+
+                with open(jsonfile, 'r') as fp:
+                    speaker_ids2 = json.load(fp)
+
+                for i, embedding in enumerate(embeddings.embeddings):
+
+                    if np.std(embedding) < 0.1: continue
+
+                    score = cosine(embedding1.embeddings[0], embedding)
+
+                    if score > threshold:
+                        print(yt_id1 + ": " + speaker_id1 + " matches " + speaker_ids2[embeddings.speaker[i]] + " of " + yt_id2 + " (" + str(score) + ")")
+
 
 def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
 
@@ -327,12 +399,15 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         #print(embeddings.speaker[i])
 
         best_score = -1
+        best_named_score = -1
         for match in score:
             if match["score"] > threshold:
                 print(yt_id + ": " + embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
+
                 if match["score"] > best_score:
                     best_score = match["score"]
-                    if "SPEAKER_" == match["speaker"][:8]:
+
+                    if match["speaker"][:8] == "SPEAKER_":
                         # name assigned by diarization
                         best_match = match["yt_id"] + "_" + match["speaker"]
                     else:
@@ -343,7 +418,23 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
                             # manually assigned name
                             best_match = match["speaker"]
 
-        if best_score > threshold:
+                if "SPEAKER_" not in match["speaker"] and match["score"] > best_named_score:
+                    best_named_score = match["score"]
+
+                    # manually assigned name
+                    best_named_match = match["speaker"]
+
+
+
+        if best_named_score > threshold:
+            if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
+                if speaker_ids[embeddings.speaker[i]] != best_named_match:
+                    speaker_ids[embeddings.speaker[i]] = best_named_match
+                    update = True
+            else:
+                #print("speaker ID already assigned")
+                pass
+        elif best_score > threshold:
             if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
                 if speaker_ids[embeddings.speaker[i]] != best_match:
                     speaker_ids[embeddings.speaker[i]] = best_match
