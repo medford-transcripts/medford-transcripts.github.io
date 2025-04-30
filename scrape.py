@@ -1,10 +1,12 @@
 import requests
 import os
+import ipdb
 
 def save_file(url, filename):
 
     if not os.path.exists(filename):
         print("Fetching " + filename)
+        #ipdb.set_trace()
         response = requests.get(url)
         with open(filename, 'wb') as f:
             f.write(response.content)
@@ -42,6 +44,7 @@ def scrape(url_base="https://medfordma.api.civicclerk.com"):
                 if "attachmentsList" in child.keys():
                     for attachment in child["attachmentsList"]:
                         pdfname = os.path.join("other_files",attachment["mediaFileName"].strip())
+                        pdfname = pdfname.replace("/","").replace("?","")
                         url = attachment["pdfVersionFullPath"]
                         try:
                             save_file(url, pdfname)
@@ -52,6 +55,7 @@ def scrape(url_base="https://medfordma.api.civicclerk.com"):
                 if "reportsList" in child.keys():
                     for report in child["reportsList"]:
                         pdfname = os.path.join("resolutions",report["agendaObjItemReportName"].strip() + '.pdf')
+                        pdfname = pdfname.replace("/","").replace("?","")
                         url = report["pdfMediaFullPath"]
                         try:
                             save_file(url, pdfname)
@@ -78,6 +82,8 @@ def scrape(url_base="https://medfordma.api.civicclerk.com"):
 
             pdfname = os.path.join(dir,publishedFile["name"].strip())
             if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
+            pdfname = pdfname.replace("/","").replace("?","")
+
             url = publishedFile["streamUrl"]
 
             try:
@@ -115,12 +121,15 @@ def scrape_smart():
 
                 pdfname = os.path.join(dir,publishedFile["name"].strip())
                 if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
+                pdfname.replace("/","")
+                pdfname.replace("?","")
 
                 url = publishedFile["streamUrl"]
                 try:
                     save_file(url, pdfname)
                 except:
                     print("failed to download " + pdfname)
+                    ipdb.set_trace()
 
         url = data.get("@odata.nextLink")
 

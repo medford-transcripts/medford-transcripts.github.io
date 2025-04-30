@@ -80,18 +80,52 @@ def propagate():
 
     return
 
+def standardize_speakers():
+    with open("addresses.json", 'r') as fp:
+        directory = json.load(fp)
+
+    jsonfiles = glob.glob("*/speaker_ids.json")
+    for jsonfile in jsonfiles:
+        with open(jsonfile, 'r') as fp:
+            speaker_ids = json.load(fp)
+
+        for speaker_id in speaker_ids.values():
+            if (speaker_id not in directory.keys()) and ("SPEAKER_" not in speaker_id):
+                print(speaker_id)
+                #match_to_speaker(speaker_id)
+                #ipdb.set_trace()
+                directory[speaker_id] = ""
+
+    # Sort the directory by last name, then first name
+    sorted_directory = dict(sorted(directory.items(),
+        key=lambda item: (item[0].split()[-1], item[0].split()[0])
+    ))
+
+
+    # save the new directory
+    with open("addresses2.json", "w") as fp:
+        json.dump(sorted_directory, fp, indent=4)
+
+
+    ipdb.set_trace()
+    for speaker_id in directory.keys():
+        match_to_speaker(speaker_id)
+
 # still working on it...
-def match_to_speaker(speaker, threshold=0.5, voices_folder='voices_folder'):
+# finds all matches to a particular speaker by name with a specified threshold, both the new files and back ported embeddings.
+def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update=False):
     pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
     pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
 
+    embeddings = []
+    speaker_ids = []
+    yt_ids = []
+
+    # embeddings made after the fact
     for pklfile1 in pklfiles:
         with open(pklfile1,'rb') as fp: 
             embedding1 = pickle.load(fp)
-
         if len(embedding1) == 0: continue
-
-        # this is a signature of noisy embeddings (untrustworthy diarization). Skip?
         if np.std(embedding1.embeddings[0]) < 0.1: continue
 
         speaker_num1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[-2:])
@@ -102,51 +136,46 @@ def match_to_speaker(speaker, threshold=0.5, voices_folder='voices_folder'):
             speaker_ids1 = json.load(fp)
         speaker_id1 = speaker_ids1[speaker_num1]
 
-        if speaker == speaker_id1:
+        # embeddings made during transcription
+        embeddings.append(embedding1.embeddings[0])
+        yt_ids.append(yt_id1)
+        speaker_ids.append(speaker_id1)
 
-            for pklfile2 in pklfiles:
+    # embeddings made during transcription
+    for pklfile2 in pklfiles2:
+        with open(pklfile2,'rb') as fp: 
+            embeddings2 = pickle.load(fp)
 
-                with open(pklfile2,'rb') as fp: 
-                    embedding2 = pickle.load(fp)
+        dir = os.path.dirname(pklfile2)
+        yt_id2 = '_'.join(dir.split('_')[1:]).split('\\')[0]
 
-                if len(embedding2) == 0: continue
+        # read in the speaker mappings
+        jsonfile = os.path.join(dir,'speaker_ids.json')
+        if not os.path.exists(jsonfile): continue        
+        with open(jsonfile, 'r') as fp:
+            speaker_ids2 = json.load(fp)
 
-                if np.std(embedding2.embeddings[0]) < 0.1: continue
+        # loop over all speakers for this video
+        for i, embedding in enumerate(embeddings2.embeddings):
+            if np.std(embedding) < 0.1: continue
 
-                score = cosine(embedding1.embeddings[0], embedding2.embeddings[0])
+            if embeddings2.speaker[i] not in speaker_ids2.keys(): continue
 
-                if score > threshold:
-                    speaker_num2 = '_'.join(os.path.splitext(os.path.basename(pklfile2))[0].split('_')[-2:])
-                    yt_id2 = '_'.join(os.path.splitext(os.path.basename(pklfile2))[0].split('_')[:-2])
-                    jsonfile = glob.glob('*' + yt_id2 + '*/speaker_ids.json')[0]
-                    with open(jsonfile, 'r') as fp:
-                        speaker_ids2 = json.load(fp)
-                    
-                    speaker_id2 = speaker_ids2[speaker_num2]
-                    print(yt_id1 + ": " + speaker_id1 + " matches " + speaker_id2 + " of " + yt_id2 + " (" + str(score) + ")")
+            embeddings.append(embedding)
+            yt_ids.append(yt_id2)
+            speaker_id2 = speaker_ids2[embeddings2.speaker[i]]
+            speaker_ids.append(speaker_id2)
 
-            for pklfile2 in pklfiles2:
+    # now compare the complete list of speakers with each other
+    for i in range(len(yt_ids)):
+        if speaker_ids[i] != speaker: continue # skip it if doesn't match the requested speaker
+        for j in range(len(yt_ids)):
+            # don't need to compare A to B and B to A
+            if (j <= i) and (speaker_ids[j] == speaker): continue
 
-                with open(pklfile2,'rb') as fp: embeddings = pickle.load(fp)
-
-                dir = os.path.dirname(pklfile2)
-                yt_id2 = '_'.join(dir.split('_')[1:]).split('\\')[0]
-
-                # read in the speaker mappings
-                jsonfile = os.path.join(dir,'speaker_ids.json')
-                if not os.path.exists(jsonfile): continue
-
-                with open(jsonfile, 'r') as fp:
-                    speaker_ids2 = json.load(fp)
-
-                for i, embedding in enumerate(embeddings.embeddings):
-
-                    if np.std(embedding) < 0.1: continue
-
-                    score = cosine(embedding1.embeddings[0], embedding)
-
-                    if score > threshold:
-                        print(yt_id1 + ": " + speaker_id1 + " matches " + speaker_ids2[embeddings.speaker[i]] + " of " + yt_id2 + " (" + str(score) + ")")
+            score = cosine(embeddings[i], embeddings[j])
+            if score > threshold:
+                print(yt_ids[i] + ": " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
 
 
 def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
