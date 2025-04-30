@@ -111,14 +111,16 @@ def standardize_speakers():
     for speaker_id in directory.keys():
         match_to_speaker(speaker_id)
 
-# still working on it...
 # finds all matches to a particular speaker by name with a specified threshold, both the new files and back ported embeddings.
-def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update=False):
+# if they're not the same, set update_json to update matched value to the supplied value
+# be careful about threshholds! it's wise to do a dry run first!
+def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False):
     pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
     pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
 
     embeddings = []
     speaker_ids = []
+    speaker_keys = []
     yt_ids = []
 
     # embeddings made after the fact
@@ -140,6 +142,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
         embeddings.append(embedding1.embeddings[0])
         yt_ids.append(yt_id1)
         speaker_ids.append(speaker_id1)
+        speaker_keys.append(speaker_num1)
 
     # embeddings made during transcription
     for pklfile2 in pklfiles2:
@@ -165,6 +168,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
             yt_ids.append(yt_id2)
             speaker_id2 = speaker_ids2[embeddings2.speaker[i]]
             speaker_ids.append(speaker_id2)
+            speaker_keys.append(embeddings2.speaker[i])
 
     # now compare the complete list of speakers with each other
     for i in range(len(yt_ids)):
@@ -177,6 +181,16 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
             if score > threshold:
                 print(yt_ids[i] + ": " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
 
+                # if they're not the same and updates were requested, update matched value to the supplied value
+                # be careful about threshholds! it's wise to do a dry run first!
+                if (speaker_ids[i] != speaker_ids[j]) and update_json:
+                    jsonfile = (glob.glob('*' + yt_ids[j] + "/speaker_ids.json"))[0]
+                    with open(jsonfile, 'r') as fp:
+                        these_speaker_ids = json.load(fp)
+                    these_speaker_ids[speaker_keys[j]] = speaker
+                    with open(jsonfile, "w") as fp: 
+                        json.dump(these_speaker_ids, fp, indent=4)
+                    speaker_ids[j] = speaker
 
 def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
 
