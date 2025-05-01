@@ -252,6 +252,7 @@ def fix_common_errors(yt_id=None):
         "Lemmon" : "Leming",
         "Leving" : "Leming",
         "Councilor Lemingng" : "Councilor Leming",
+        "Councilor Lemmick" : "Councilor Leming",
 
         "Lungo Kern" : "Lungo-Koehn",
         "Lungo-Kern" : "Lungo-Koehn",
