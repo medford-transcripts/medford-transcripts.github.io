@@ -114,7 +114,7 @@ def standardize_speakers():
 # finds all matches to a particular speaker by name with a specified threshold, both the new files and back ported embeddings.
 # if they're not the same, set update_json to update matched value to the supplied value
 # be careful about threshholds! it's wise to do a dry run first!
-def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False):
+def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False, only_print_updates=False):
     pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
     pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
 
@@ -179,11 +179,14 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
 
             score = cosine(embeddings[i], embeddings[j])
             if score > threshold:
-                print(yt_ids[i] + ": " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
+
+                if not only_print_updates or (speaker_ids[i] != speaker_ids[j]): 
+                    print(yt_ids[i] + ": " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
 
                 # if they're not the same and updates were requested, update matched value to the supplied value
                 # be careful about threshholds! it's wise to do a dry run first!
                 if (speaker_ids[i] != speaker_ids[j]) and update_json:
+
                     jsonfile = (glob.glob('*' + yt_ids[j] + "/speaker_ids.json"))[0]
                     with open(jsonfile, 'r') as fp:
                         these_speaker_ids = json.load(fp)
