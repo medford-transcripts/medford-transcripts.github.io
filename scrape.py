@@ -25,7 +25,7 @@ def scrape(url_base="https://medfordma.api.civicclerk.com"):
     headers = {"User-Agent": "Mozilla/5.0"}  # Add other headers if needed
 
     # hardcoding this 500 is going to be problematic in the future
-    for i in range(500):
+    for i in range(700):
 
         api_url = url_base + "/v1/Meetings/" + str(i+1)
 

@@ -5,6 +5,8 @@ from xml.etree import cElementTree
 import re
 import argparse
 import pypdf
+import dateutil.parser as dparser
+from rapidfuzz import fuzz, process
 
 import ipdb
 
@@ -362,6 +364,40 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
     utils.save_video_data(video_data)
 
+def match_files(title, minutes=False):
+
+    if minutes: 
+        dir = "minutes"
+    else: 
+        dir = "agendas"
+    files = glob.glob(os.path.join(dir,'*'))
+
+    try:
+        ref_date = dparser.parse(title,fuzzy=True)
+    except:
+        return ""
+
+    matches = []
+    for file in files:
+        try:
+            date = dparser.parse(os.path.splitext(os.path.basename(file))[0][0:12],fuzzy=True)
+        except:
+            try:
+                date = dparser.parse(os.path.splitext(os.path.basename(file))[0],fuzzy=True)
+            except:
+                date = ''
+
+        if date == ref_date:
+            matches.append(file)
+
+    if len(matches) == 0: return ""
+    best_match = process.extractOne(title,matches)
+    print(title)
+    print(best_match)
+    print("")
+
+    return best_match[0]
+
 def make_index():
 
     video_data = utils.get_video_data()
@@ -380,11 +416,25 @@ def make_index():
         speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
         url = "https://youtu.be/" + yt_id
 
+        agenda_file = match_files(title)
+        if agenda_file != "":
+            agenda_line = '<td><a href="' + agenda_file +'">Agenda</a></td>'
+        else:
+            agenda_line = '<td></td>'
+
+        minutes_file = match_files(title,minutes=True)
+        if minutes_file != "":
+            minutes_line = '<td><a href="' + minutes_file +'">Minutes</a></td>'
+        else:
+            minutes_line = '<td></td>'
+
         # one row in the html table
         lines.append('      <tr>' +\
             '<td>' + date + '</td>' +\
             '<td><a href="' + url + '">[' + duration_string + ']</a></td>'+\
             '<td><a href="' + htmlfile +'">' + title + '</a></td>'+\
+            agenda_line +\
+            minutes_line +\
             '<td>' + channel + '</td>'+\
             '<td><a href="' + srtfile + '">SRT</a></td>'+\
             '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
@@ -395,7 +445,8 @@ def make_index():
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
     # table header
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    #index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Agenda</center></td><td><center>Minutes</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
