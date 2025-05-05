@@ -392,9 +392,9 @@ def match_files(title, minutes=False):
 
     if len(matches) == 0: return ""
     best_match = process.extractOne(title,matches)
-    print(title)
-    print(best_match)
-    print("")
+    #print(title)
+    #print(best_match)
+    #print("")
 
     return best_match[0]
 
