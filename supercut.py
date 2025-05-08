@@ -127,13 +127,14 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
                     this_speaker = line.split()[0].split("[")[-1].split("]")[0]
                     text = ":".join(line.split(":")[1:])
 
-                    if speaker_ids[this_speaker] == speaker:
-                        excerpts.append({
-                            "yt_id" : yt_id,
-                            "start": start_time,
-                            "stop" : stop_time,
-                            "text" : text,
-                            })
+                    if this_speaker in speaker_ids.keys():
+                        if speaker_ids[this_speaker] == speaker:
+                            excerpts.append({
+                                "yt_id" : yt_id,
+                                "start": start_time,
+                                "stop" : stop_time,
+                                "text" : text,
+                                })
                     
                 else: continue
 
