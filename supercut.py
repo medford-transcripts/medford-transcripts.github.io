@@ -367,8 +367,8 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    #do_all_councilors()
-    #ipdb.set_trace()
+    do_all_councilors()
+    ipdb.set_trace()
 
     # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
     speaker = 'Bears'
