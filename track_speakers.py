@@ -80,6 +80,25 @@ def propagate():
 
     return
 
+def change_name(old_name,new_name):
+    jsonfiles = glob.glob("*/speaker_ids.json")
+    for jsonfile in jsonfiles:
+        updated = False
+
+        with open(jsonfile, 'r') as fp:
+            speaker_ids = json.load(fp)
+
+        for speaker_id in speaker_ids.keys():
+            if old_name == speaker_ids[speaker_id]:
+                speaker_ids[speaker_id] = new_name
+                print("Changing name in " + jsonfile)
+                updated = True
+
+        if updated:
+            with open(jsonfile, "w") as fp:
+                json.dump(speaker_ids, fp, indent=4)
+
+
 def standardize_speakers():
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)

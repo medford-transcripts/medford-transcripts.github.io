@@ -4,6 +4,13 @@ from geopy.geocoders import Nominatim
 import time
 import json, os
 import osmnx as ox
+import geopandas as gpd
+
+# from https://www.axisgis.com/MedfordMA
+#wards = gpd.read_file("WARDSPRECINCTS2022_POLY.shp")
+#wards = wards[['WARD', 'geometry']] 
+#wards.to_file("medford_wards.geojson", driver="GeoJSON")
+
 
 # Function to get latitude and longitude
 def get_lat_lon(address):
@@ -53,6 +60,22 @@ def heatmap(addresses, htmlname="heatmap.html"):
                     "weight": 2
                 }
             ).add_to(m)
+
+
+        # Add ward boundaries
+        folium.GeoJson("medford_wards.geojson",
+                        name="Wards",
+                        style_function=lambda feature: {
+                        "fillColor": "none",
+                        "color": "black",
+                        "weight": 2,
+                        "dashArray": "5, 5"
+                        },
+                        tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
+                        ).add_to(m)
+
+        # Add layer control
+        folium.LayerControl().add_to(m)
 
         # Save to file
         m.save(htmlname)
