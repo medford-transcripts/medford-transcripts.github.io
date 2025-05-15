@@ -5,12 +5,30 @@ import time
 import json, os
 import osmnx as ox
 import geopandas as gpd
+from shapely.geometry import shape
 
-# from https://www.axisgis.com/MedfordMA
-#wards = gpd.read_file("WARDSPRECINCTS2022_POLY.shp")
-#wards = wards[['WARD', 'geometry']] 
-#wards.to_file("medford_wards.geojson", driver="GeoJSON")
 
+def make_geojson():
+    # from https://www.axisgis.com/MedfordMA
+    wards = gpd.read_file("WARDSPRECINCTS2022_POLY.shp")
+
+
+    # filter just medford wards
+    wards = wards[wards['TOWN'] == 'MEDFORD'].copy()
+
+    #print(wards.columns)
+    #print(wards.head())
+    #import ipdb
+    #ipdb.set_trace()
+
+    # reproject to EPSG:4326 coordinate system (expected by folium)
+    wards = wards.to_crs(epsg=4326)
+
+    # only save ward geometry
+    wards = wards[['WARD', 'PRECINCT', 'geometry']] 
+
+    # save file
+    wards.to_file("medford_wards.geojson", driver="GeoJSON")
 
 # Function to get latitude and longitude
 def get_lat_lon(address):
@@ -63,7 +81,10 @@ def heatmap(addresses, htmlname="heatmap.html"):
 
 
         # Add ward boundaries
-        folium.GeoJson("medford_wards.geojson",
+        with open("medford_wards.geojson", "r") as f:
+            wards = json.load(f)
+
+        folium.GeoJson(wards,
                         name="Wards",
                         style_function=lambda feature: {
                         "fillColor": "none",
@@ -73,6 +94,23 @@ def heatmap(addresses, htmlname="heatmap.html"):
                         },
                         tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
                         ).add_to(m)
+
+
+        # Add text labels for each wards
+        for feature in wards["features"]:
+            geom = shape(feature["geometry"])
+            centroid = geom.centroid
+            ward = str(feature["properties"].get("WARD", "")).strip()
+            precinct = str(feature["properties"].get("PRECINCT", "")).strip()
+            label = f"{ward}-{precinct}"
+
+            folium.map.Marker(
+                [centroid.y, centroid.x],
+                icon=folium.DivIcon(
+                    html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
+                )
+            ).add_to(m)
+
 
         # Add layer control
         folium.LayerControl().add_to(m)
@@ -88,5 +126,8 @@ if __name__ == "__main__":
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)
     addresses = list(directory.values())
-
     heatmap(addresses)
+
+    # quick test with just one address
+    #addresses = [directory["Maryanne Adduci"]]
+    #heatmap(addresses,htmlname='test.html')

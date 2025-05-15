@@ -42,7 +42,10 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
         else: 
             htmlfilename = basename + '.' + language + '.html'
             if text != None:
-                translation = translate_text(text, dest=language)
+                try:
+                    translation = translate_text(text, dest=language)
+                except:
+                    translation = ""
             else: translation = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
             html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
@@ -174,8 +177,11 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = title    
         if language != 'en':
-            translation = translate_text(text, dest=language)
-            text = translation.text
+            try:
+                translation = translate_text(text, dest=language)
+                text = translation.text
+            except:
+                pass
         html.write('    <title>' + text + '</title>\n')
 
         html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
@@ -184,23 +190,32 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = 'AI-generated transcript of ' + video_title
         if language != 'en':
-            translation = translate_text(text, dest=language)
-            text = translation.text
+            try:
+                translation = translate_text(text, dest=language)
+                text = translation.text
+            except:
+                pass
         html.write('  <h1>' + text + '</h1>\n')
 
         html.write(links_to_languages + '<br><br>\n')
 
         text = 'Back to all transcripts'
         if language != 'en':
-            translation = translate_text(text, dest=language)
-            text = translation.text
+            try:
+                translation = translate_text(text, dest=language)
+                text = translation.text
+            except:
+                pass
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
 
         if os.path.exists(os.path.join(dir,"heatmap.html")):
             text = 'Heatmap of speakers'
             if language != 'en':
-                translation = translate_text(text, dest=language)
-                text = translation.text
+                try:
+                    translation = translate_text(text, dest=language)
+                    text = translation.text
+                except:
+                    pass
             html.write('    <a href="heatmap.html">' + text + '</a><br><br>\n')
 
         html.close()
@@ -350,8 +365,11 @@ def srt2html(yt_id,skip_translation=False, force=False):
             htmlfilename = basename + '.html'
         else: 
             htmlfilename = basename + '.' + language + '.html'
-            translation = translate_text(text, dest=language)
-            text = translation.text
+            try:
+                translation = translate_text(text, dest=language)
+                text = translation.text
+            except:
+                pass
 
         html = open(htmlfilename, 'a', encoding="utf-8")
         html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
