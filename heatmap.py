@@ -7,6 +7,8 @@ import osmnx as ox
 import geopandas as gpd
 from shapely.geometry import shape
 
+import utils
+
 
 def make_geojson():
     # from https://www.axisgis.com/MedfordMA
@@ -15,11 +17,6 @@ def make_geojson():
 
     # filter just medford wards
     wards = wards[wards['TOWN'] == 'MEDFORD'].copy()
-
-    #print(wards.columns)
-    #print(wards.head())
-    #import ipdb
-    #ipdb.set_trace()
 
     # reproject to EPSG:4326 coordinate system (expected by folium)
     wards = wards.to_crs(epsg=4326)
@@ -120,6 +117,21 @@ def heatmap(addresses, htmlname="heatmap.html"):
         print("Heatmap saved as " + htmlname)
     else:
         print("No valid coordinates found.")
+
+def electeds_heatmap(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
+
+    with open("addresses.json", 'r') as fp:
+        directory = json.load(fp)
+
+    elected_addresses = []
+
+    councilors = utils.get_councilors()
+    for councilor in councilors:
+        if councilor in directory.keys():
+            elected_addresses.append(directory[councilor])
+
+    heatmap(elected_addresses,htmlname='elected_heatmap.html')
+
 
 if __name__ == "__main__":
 

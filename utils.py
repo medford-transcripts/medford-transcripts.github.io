@@ -60,7 +60,7 @@ def update_video_data_one(yt_id):
                 video_data[yt_id]["channel"] = info["channel"]
                 video_data[yt_id]["duration"] = info["duration"]
 
-                # links and a bunch of stuff are built around the upload date, and it sometimes changes. Don't update it or things break!
+                # links and a bunch of stuff are built around the upload date, and it sometimes changes (I think livestreams update when finished). Don't update it or things break!
                 if "upload_date" not in video_data[yt_id].keys():
                     video_data[yt_id]["upload_date"] = datetime.datetime.fromtimestamp(info["timestamp"]).strftime("%Y-%m-%d")
 
@@ -100,6 +100,10 @@ def update_video_data_one(yt_id):
                 save_video_data(video_data)
             except:
                 print(yt_id + " not ready yet")
+
+    if "agenda" not in video_data[yt_id].keys():
+        agendas = glob.glob("agendas/*.pdf") 
+        
 
 
 '''
@@ -226,7 +230,7 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
 '''
 make a unique set of the councilors in councilors.txt
 '''
-def get_councilors(file="councilors.txt"):
+def get_councilors(file="councilors.txt",mayor=False, city_council=False, school_committee=False, candidates=False, year=None, superintendents=False):
     councilors = []
     with open(file,'r') as fp:
         for line in fp:
