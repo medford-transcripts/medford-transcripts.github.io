@@ -133,11 +133,12 @@ def standardize_speakers():
 # finds all matches to a particular speaker by name with a specified threshold, both the new files and back ported embeddings.
 # if they're not the same, set update_json to update matched value to the supplied value
 # be careful about threshholds! it's wise to do a dry run first!
-def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False, only_print_updates=False):
+def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False, only_print_updates=False, noisy_embedding=0.15):
     pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
     pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
 
     embeddings = []
+    stdevs = []
     speaker_ids = []
     speaker_keys = []
     yt_ids = []
@@ -147,7 +148,9 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
         with open(pklfile1,'rb') as fp: 
             embedding1 = pickle.load(fp)
         if len(embedding1) == 0: continue
-        if np.std(embedding1.embeddings[0]) < 0.1: continue
+
+        stdev = np.std(embedding1.embeddings[0])
+        if stdev < noisy_embedding: continue
 
         speaker_num1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[-2:])
         yt_id1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[:-2])
@@ -162,6 +165,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
         yt_ids.append(yt_id1)
         speaker_ids.append(speaker_id1)
         speaker_keys.append(speaker_num1)
+        stdevs.append(stdev)
 
     # embeddings made during transcription
     for pklfile2 in pklfiles2:
@@ -179,7 +183,9 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
 
         # loop over all speakers for this video
         for i, embedding in enumerate(embeddings2.embeddings):
-            if np.std(embedding) < 0.1: continue
+
+            stdev = np.std(embedding)
+            if stdev < noisy_embedding: continue
 
             if embeddings2.speaker[i] not in speaker_ids2.keys(): continue
 
@@ -188,6 +194,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
             speaker_id2 = speaker_ids2[embeddings2.speaker[i]]
             speaker_ids.append(speaker_id2)
             speaker_keys.append(embeddings2.speaker[i])
+            stdevs.append(stdev)
 
     # now compare the complete list of speakers with each other
     for i in range(len(yt_ids)):
@@ -200,7 +207,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
             if score > threshold:
 
                 if not only_print_updates or (speaker_ids[i] != speaker_ids[j]): 
-                    print(yt_ids[i] + ": " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
+                    print(yt_ids[i] + " (" + str(stdevs[i]) + ") : " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
 
                 # if they're not the same and updates were requested, update matched value to the supplied value
                 # be careful about threshholds! it's wise to do a dry run first!
