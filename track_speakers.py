@@ -520,6 +520,67 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         with open(jsonfile, "w") as fp:
             json.dump(speaker_ids, fp, indent=4)
 
+def get_embeddings(yt_id='*', noisy_embedding=0.1):
+
+    embeddings = {}
+
+    pklfiles = glob.glob("voices_folder/" + yt_id + "_*.pkl") # embeddings made after the fact
+    pklfiles2 = glob.glob("20??-??-??_" + yt_id + "/embeddings.pkl") # embeddings made during transcription
+
+    # embeddings made after the fact
+    for pklfile1 in pklfiles:
+        with open(pklfile1,'rb') as fp: 
+            embedding1 = pickle.load(fp)
+        if len(embedding1) == 0: continue
+
+        stdev = np.std(embedding1.embeddings[0])
+        if stdev < noisy_embedding: continue
+
+        speaker_num1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[-2:])
+        yt_id1 = '_'.join(os.path.splitext(os.path.basename(pklfile1))[0].split('_')[:-2])
+
+        jsonfile = glob.glob('*' + yt_id1 + '*/speaker_ids.json')[0]
+        with open(jsonfile, 'r') as fp:
+            speaker_ids1 = json.load(fp)
+        speaker_id1 = speaker_ids1[speaker_num1]
+
+        # embeddings made during transcription
+        key = yt_id1 + "_" + speaker_num1
+        embeddings[key] = {}
+        embeddings[key]["embedding"] = embedding1.embeddings[0]
+        embeddings[key]["id"] = speaker_id1
+        embeddings[key]["stdev"] = stdev
+
+    # embeddings made during transcription
+    for pklfile2 in pklfiles2:
+        with open(pklfile2,'rb') as fp: 
+            embeddings2 = pickle.load(fp)
+
+        dir = os.path.dirname(pklfile2)
+        yt_id2 = '_'.join(dir.split('_')[1:]).split('\\')[0]
+
+        # read in the speaker mappings
+        jsonfile = os.path.join(dir,'speaker_ids.json')
+        if not os.path.exists(jsonfile): continue        
+        with open(jsonfile, 'r') as fp:
+            speaker_ids2 = json.load(fp)
+
+        # loop over all speakers for this video
+        for i, embedding in enumerate(embeddings2.embeddings):
+
+            stdev = np.std(embedding)
+            if stdev < noisy_embedding: continue
+
+            if embeddings2.speaker[i] not in speaker_ids2.keys(): continue
+
+            # embeddings made during transcription
+            key = yt_id2 + "_" + embeddings2.speaker[i]
+            embeddings[key] = {}
+            embeddings[key]["embedding"] = embedding
+            embeddings[key]["id"] = speaker_ids2[embeddings2.speaker[i]]
+            embeddings[key]["stdev"] = stdev
+
+    return embeddings
 
 if __name__ == "__main__":
 
