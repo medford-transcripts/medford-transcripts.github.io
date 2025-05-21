@@ -340,7 +340,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
                     utils.update_video_data_one(priority_yt_id)
                     if transcribe(priority_yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                         track_speakers.match_embeddings(priority_yt_id)
-                        track_speakers.match_to_reference(yt_id=priority_yt_id)
+                        track_speakers.match_to_reference2(yt_id=priority_yt_id)
                         track_speakers.propagate()
 
                         thread = threading.Thread(target=finish_async, args=(priority_yt_id,))
@@ -363,7 +363,7 @@ def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt"
         try: 
             if transcribe(yt_id, download_only=download_only, redo=redo, transcribe_only=transcribe_only):
                 track_speakers.match_embeddings(yt_id)
-                track_speakers.match_to_reference(yt_id=yt_id)
+                track_speakers.match_to_reference2(yt_id=yt_id)
                 track_speakers.propagate()
 
                 thread = threading.Thread(target=finish_async, args=(yt_id,))

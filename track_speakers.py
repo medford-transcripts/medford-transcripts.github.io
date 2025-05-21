@@ -207,7 +207,7 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
             if score > threshold:
 
                 if not only_print_updates or (speaker_ids[i] != speaker_ids[j]): 
-                    print(yt_ids[i] + " (" + str(stdevs[i]) + ") : " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(score) + ")")
+                    print(yt_ids[i] + " (" + str(round(stdevs[i],2)) + "): " + speaker_ids[i] + " matches " + speaker_ids[j] + " of " + yt_ids[j] + " (" + str(round(score,3)) + ")")
 
                 # if they're not the same and updates were requested, update matched value to the supplied value
                 # be careful about threshholds! it's wise to do a dry run first!
@@ -221,6 +221,34 @@ def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', upda
                         json.dump(these_speaker_ids, fp, indent=4)
                     speaker_ids[j] = speaker
 
+def match_to_reference3(embeddings=None, threshold=0.7, yt_id=None, voices_folder='voices_folder'):
+
+    if embeddings == None: 
+        embeddings = get_embeddings()
+
+    keys = list(embeddings.keys())
+    for i in enumerate(keys):
+        embedding1 = embeddings[keys[i]]
+        best_score = 0.0
+        for j in enumerate(keys):
+            if j <= i: continue
+            embedding2 = embeddings[keys[j]]
+
+            try:
+                score = cosine(embedding1["embeddings"], embedding2["embeddings"])
+            except:
+                score = 0.0
+
+            if score > threshold and score > best_score:
+                best_score = score
+                best_match = j
+
+        if best_score > threshold:
+            with open(jsonfiles[best_match], 'r') as fp:
+                speaker_ids2 = json.load(fp)
+
+
+# this matches to the old-style embeddings extracted after the fact by my modified version of whisperx
 def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
 
     pklfiles = glob.glob(voices_folder + '/*.pkl')
@@ -313,6 +341,7 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
 
             print((goodpklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
 
+# this matches to an intermediate/incomplete set of old-style embeddings. This function should be retired.
 def match_to_reference(threshold=0.7, yt_id=None):
 
     with open('speaker_references.pkl','rb') as fp: reference_speakers = pickle.load(fp)
@@ -399,7 +428,8 @@ def match_all():
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         match_embeddings(yt_id)
 
-def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
+# this matches the embeddings of a video with only new-style embeddings
+def match_embeddings(yt_id, threshold=0.7):
     video_data = utils.get_video_data()
 
     dir = video_data[yt_id]["upload_date"] + "_" + yt_id
@@ -474,7 +504,9 @@ def match_embeddings(yt_id, threshold=0.7, voices_folder=None):
         best_named_score = -1
         for match in score:
             if match["score"] > threshold:
-                print(yt_id + ": " + embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
+
+                if match["speaker"] != (yt_id + "_" + embeddings.speaker[i]):
+                   print(yt_id + ": " + embeddings.speaker[i] + " matches " + match["speaker"] + " of " + match["yt_id"] + " (" + str(match["score"]) + ")")
 
                 if match["score"] > best_score:
                     best_score = match["score"]
@@ -588,8 +620,8 @@ if __name__ == "__main__":
     propagate()
     match_all()
     propagate()
-    match_to_reference()#yt_id="a6bZISOstiw")
-    propagate()
+    #match_to_reference()#yt_id="a6bZISOstiw")
+    #propagate()
     
     #probe()
     ipdb.set_trace()

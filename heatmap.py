@@ -1,8 +1,11 @@
+import time
+import json, os
+import glob
+import ipdb
+
 import folium
 from folium.plugins import HeatMap
 from geopy.geocoders import Nominatim
-import time
-import json, os
 import osmnx as ox
 import geopandas as gpd
 from shapely.geometry import shape
@@ -38,7 +41,7 @@ def get_lat_lon(address):
         print(f"Error geocoding {address}: {e}")
     return None
 
-def heatmap(addresses, htmlname="heatmap.html"):
+def heatmap(addresses, htmlname="heatmap.html",zoom_start=5.0):
 
     # Get coordinates
     coordinates = []
@@ -50,7 +53,7 @@ def heatmap(addresses, htmlname="heatmap.html"):
 
     # Create a map centered at the first location
     if coordinates:
-        m = folium.Map(location=coordinates[0], zoom_start=10)
+        m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
 
         # Add heatmap
         HeatMap(coordinates).add_to(m)
@@ -132,8 +135,29 @@ def electeds_heatmap(school_committee=False, city_council=False, mayor=False, ye
 
     heatmap(elected_addresses,htmlname='elected_heatmap.html')
 
+def speaker_heatmap():
+
+    with open("addresses.json", 'r') as fp:
+        directory = json.load(fp)
+
+    addresses = []
+    jsonfiles = glob.glob("20*/speaker_ids.json")
+    for jsonfile in jsonfiles:
+        with open(jsonfile, 'r') as fp:
+            speaker_ids = json.load(fp)
+        uniq_speakers = list({v for v in speaker_ids.values() if "SPEAKER_" not in v})
+        for speaker in uniq_speakers:
+            if speaker in directory.keys():
+                if directory[speaker] != "":
+                    addresses.append(directory[speaker])
+
+    ipdb.set_trace()
+    heatmap(addresses,htmlname='speaker_appearance_heatmap.html')
 
 if __name__ == "__main__":
+
+    speaker_heatmap()
+    ipdb.set_trace()
 
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)
