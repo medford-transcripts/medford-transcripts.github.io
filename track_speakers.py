@@ -133,7 +133,7 @@ def standardize_speakers():
 # finds all matches to a particular speaker by name with a specified threshold, both the new files and back ported embeddings.
 # if they're not the same, set update_json to update matched value to the supplied value
 # be careful about threshholds! it's wise to do a dry run first!
-def match_to_speaker(speaker, threshold=0.7, voices_folder='voices_folder', update_json=False, only_print_updates=False, noisy_embedding=0.10):
+def match_to_speaker(speaker, threshold=0.75, voices_folder='voices_folder', update_json=False, only_print_updates=False, noisy_embedding=0.15):
     pklfiles = glob.glob(voices_folder + '/*.pkl') # embeddings made after the fact
     pklfiles2 = glob.glob("*/embeddings.pkl") # embeddings made during transcription
 
@@ -582,6 +582,7 @@ def get_embeddings(yt_id='*', noisy_embedding=0.1):
         embeddings[key]["embedding"] = embedding1.embeddings[0]
         embeddings[key]["id"] = speaker_id1
         embeddings[key]["stdev"] = stdev
+        embeddings[key]["jsonfile"] = jsonfile
 
     # embeddings made during transcription
     for pklfile2 in pklfiles2:
@@ -611,6 +612,8 @@ def get_embeddings(yt_id='*', noisy_embedding=0.1):
             embeddings[key]["embedding"] = embedding
             embeddings[key]["id"] = speaker_ids2[embeddings2.speaker[i]]
             embeddings[key]["stdev"] = stdev
+            embeddings[key]["jsonfile"] = jsonfile
+
 
     return embeddings
 
