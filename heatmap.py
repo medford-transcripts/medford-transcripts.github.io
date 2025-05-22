@@ -49,7 +49,9 @@ def heatmap(addresses, htmlname="heatmap.html",zoom_start=5.0):
         lat_lon = get_lat_lon(address)
         if lat_lon:
             coordinates.append(lat_lon)
-        time.sleep(1)  # To avoid API rate limits
+        time.sleep(0.01)  # To avoid API rate limits
+
+    ipdb.set_trace()
 
     # Create a map centered at the first location
     if coordinates:
@@ -57,28 +59,6 @@ def heatmap(addresses, htmlname="heatmap.html",zoom_start=5.0):
 
         # Add heatmap
         HeatMap(coordinates).add_to(m)
-
-        show_boundary=False # doesn't work...
-        if show_boundary:
-            # download Medford boundaries
-            geojson_path = "medford_boundary.geojson"
-            if not os.path.exists(geojson_path):
-                medford = ox.geocode_to_gdf("Medford, Massachusetts, USA")
-                # Save as GeoJSON
-                medford.to_file(geojson_path, driver="GeoJSON")
-
-            # add medford boundaries to heatmap
-            geojson_data = json.loads(geojson_path)
-            folium.GeoJson(
-                geojson_data,
-                name="Medford Boundaries",
-                style_function=lambda feature: {
-                    "fillColor": "none",
-                    "color": "blue",
-                    "weight": 2
-                }
-            ).add_to(m)
-
 
         # Add ward boundaries
         with open("medford_wards.geojson", "r") as f:
@@ -151,7 +131,7 @@ def speaker_heatmap():
                 if directory[speaker] != "":
                     addresses.append(directory[speaker])
 
-    ipdb.set_trace()
+    #ipdb.set_trace()
     heatmap(addresses,htmlname='speaker_appearance_heatmap.html')
 
 if __name__ == "__main__":
