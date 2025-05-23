@@ -372,7 +372,8 @@ if __name__ == "__main__":
 
     # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
     speaker = 'Zac Bears'
-    text = "Hi. My name is President Bears. My voice is my pass port. Verify me."
+    speaker = 'George Scarpelli'
+    text = "Hi. My name is George Scarpelli. My voice is my passport. Verify me."
     clips = mashup(speaker, text)
     for clip in clips: print(clip)
     ipdb.set_trace()

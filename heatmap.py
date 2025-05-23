@@ -51,8 +51,6 @@ def heatmap(addresses, htmlname="heatmap.html",zoom_start=5.0):
             coordinates.append(lat_lon)
         time.sleep(0.01)  # To avoid API rate limits
 
-    ipdb.set_trace()
-
     # Create a map centered at the first location
     if coordinates:
         m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
