@@ -62,7 +62,7 @@ def mashup(speaker, text):
                     pass
 
 
-    clips_to_video(clips, os.path.join("supercuts",speaker + '_mashup.webm'))
+    clips_to_video(clips, os.path.join("supercuts",speaker.replace(" ","-") + '_mashup.webm'))
 
     return clips
 
@@ -307,7 +307,7 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                     #if keyword in line.upper(): ipdb.set_trace()
 
                     if ((speaker_ids[this_speaker] == speaker) or speaker == "any") and (keyword.upper() in line.upper()):
-                        output_name = speaker + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
+                        output_name = speaker.replace(" ","-") + '_' + keyword_filename + '_' + video_data[yt_id]["date"] + '_' + yt_id + '_' + str(round(start_time)).zfill(5) + '_' + str(round(stop_time)).zfill(5)
                         clipname = glob.glob(os.path.join("clips",output_name + "*webm"))
                         if len(clipname) == 0:
                             download_clip(yt_id, start_time, stop_time, output_name=output_name)
@@ -315,8 +315,8 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
                 else: continue
 
     # merge videos
-    output_name = os.path.join("supercuts",speaker + '_' + keyword_filename + '.webm') 
-    concatenate_clips(os.path.join("clips",speaker + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm'), output_name)
+    output_name = os.path.join("supercuts",speaker.replace(" ","-") + '_' + keyword_filename + '.webm') 
+    concatenate_clips(os.path.join("clips",speaker.replace(" ","-") + '_' + keyword_filename + '_20??-??-??_???????????_*_*.webm'), output_name)
     mkhtml(output_name)
  
 def clips_to_video(clips, output_name):
@@ -367,12 +367,12 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    do_all_councilors()
-    ipdb.set_trace()
+    #do_all_councilors()
+    #ipdb.set_trace()
 
     # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
-    speaker = 'Bears'
-    text = "Hi. My name is President Bears. My voice is my pass support. Verify me."
+    speaker = 'Zac Bears'
+    text = "Hi. My name is President Bears. My voice is my pass port. Verify me."
     clips = mashup(speaker, text)
     for clip in clips: print(clip)
     ipdb.set_trace()
