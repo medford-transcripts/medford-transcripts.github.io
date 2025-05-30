@@ -115,15 +115,17 @@ print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an h
 print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
 print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
 
-print()
-print("City Council")
-for year in sorted(time_by_year_cc.keys()):
-    print(year + ' ' + str(round(time_by_year_cc[year],2)) + ' ' + str(number_by_year_cc[year]))
+verbose = False
+if verbose:
+    print()
+    print("City Council")
+    for year in sorted(time_by_year_cc.keys()):
+        print(year + ' ' + str(round(time_by_year_cc[year],2)) + ' ' + str(number_by_year_cc[year]))
 
-print()
-print("School committee")
-for year in sorted(time_by_year_sc.keys()):
-    print(year + ' ' + str(round(time_by_year_sc[year],2)) + ' ' + str(number_by_year_sc[year]))
+    print()
+    print("School committee")
+    for year in sorted(time_by_year_sc.keys()):
+        print(year + ' ' + str(round(time_by_year_sc[year],2)) + ' ' + str(number_by_year_sc[year]))
 
 #print(dict(sorted(time_by_year_cc.items())))
 #print(dict(sorted(time_by_year_sc.items())))
