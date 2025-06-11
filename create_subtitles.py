@@ -236,7 +236,8 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     batch_size = 16 # reduce if low on GPU mem
     model_dir = "./"
-    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir, language="en")
+    # specifying english here will automatically translate other languages to english!
+    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir) #, language="en")
 
     # the few videos I did with v3 seemed to be the worst transcriptions I've seen, but this could be a coincidence
     #model = whisperx.load_model("large-v3", device, compute_type=compute_type, download_root=model_dir, language="en")
@@ -262,7 +263,11 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # Assign speaker labels ("diarization")
     with open('hf_token.txt') as f: token = f.readline()
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
+
+    # returning embeddings require custom modifications to whisperx (see PR997). 
+    # use commented line for stock whisperx (and lose the ability to match speakers across videos)
     diarize_segments, embeddings = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers, return_embeddings=True)
+    #diarize_segments = diarize_model(audio, min_speakers=min_speakers, max_speakers=max_speakers) 
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Diarization of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
     # assign generic speaker IDs (e.g., SPEAKER_01) to segments
@@ -271,35 +276,6 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # save result for later (word level timestamps, speaker re-identification)
     with open(os.path.join(subdir,"embeddings.pkl"),'wb') as fp: pickle.dump(embeddings, fp)
     with open(os.path.join(subdir,"model.pkl"),'wb') as fp: pickle.dump(diarize_result, fp)
-
-    # probably going to break this out into post-processing 
-    # and remove the prerequisite for reference embeddings
-    # and make it future proof
-    if False:
-        ipdb.set_trace()
-
-        # now compare each this clip's speaker embeddings to the reference speaker embeddings
-        # in order to assign named speakers
-        threshold = 0.7
-        reference_speakers = generate_reference_voices.get_reference_embeddings()
-        nspeakers = len(embeddings["embeddings"])
-        speaker_ids = {"AUTOMATED_IDS":True} 
-        #speakers = ["SPEAKER_%02d" % x for x in np.arange(nspeakers)]
-        for i, embedding in enumerate(embeddings["embeddings"]):
-            score = np.empty(0,dtype=float)
-            for speaker in reference_speakers.keys():
-                score = np.append(score, 1.0 - cosine(embedding,reference_speakers[speaker]["average"]))
-            bestidx = np.argmax(score)
-            if score[bestidx] > threshold:
-                speaker_ids["SPEAKER_" + str(i).zfill(2)] = reference_speakers.keys()[bestidx]
-            else: 
-                speaker_ids["SPEAKER_" + str(i).zfill(2)] = "SPEAKER_" + str(i).zfill(2)
-        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Speaker tracking of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
-
-        # save the speaker ID JSON file
-        jsonfile = os.path.join(subdir,"speaker_ids.json")
-        with open(jsonfile, "w") as fp:
-            json.dump(speaker_ids, fp, indent=4)
 
     # convert to SRT file
     generate_output(diarize_result, base + '.mp3')
