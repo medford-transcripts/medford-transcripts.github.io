@@ -64,22 +64,5 @@ One may also wish to upload these pages to <a href="http://chat.openai.com/">Cha
 
 The videos are transcriptions of (nearly) all videos at the <a href="channels_to_transcribe.txt"> YouTube channels listed here</a>, which are predominantly city council and school committee meetings, but also include campaign channels, news sources, and other channels dedicated to local politics, including partisans on both sides (I can only include YouTube channels, but if I'm missing any, please let me know).
 
-I used a slightly modified version of <a href="https://github.com/m-bain/whisperX">WhisperX</a>. WhisperX assigns generic IDs (e.g., "SPEAKER_01") to each unique speaker in a given video. My modification allowed me to match those generic IDs across all videos based on their voice fingerprint ("embeddings"), then automatically propagate manually assigned labels (e.g., "Zac Bears") to all other videos.<p>
-
-There are imperfections at every step of the process and these excerpts should not be considered perfectly complete. However, among the transcribed videos, I would be surprised if I missed more than 10% of challenger appearances and 5% of incumbent appearances.
-
-<ul>
-<li>The YouTube channels do not include many current subcommittee meetings and are incomplete prior to ~2021 (additional, untranscribed videos can be found <a href="https://archive.org/details/medfordmameetings">here</a> and <a href="https://medford.vod.castus.tv/vod">here</a>).</li>
-<li>Transcriptions of the available videos are incomplete prior to June 2017 and may be missing new videos uploaded in the last ~3 days.</li>
-<li>Transcriptions contain errors, and is especially bad with proper nouns</li>
-<li>Segmentation (separating one speaker from another) is imperfect, especially when people talk at the same time or have rapid exchanges (e.g., an argument or roll call)</li>
-<li>Diarization (speaker identification) is imperfect, especially in few-word exchanges</li>
-<li>Voice fingerprint matching is imperfect, but improves with a larger library of videos in which the speaker has been identified, especially in varied settings</li>
-<li>About 13% of the 13,000 non-unique speakers are unidentified</li>
-<li>About 25% of the 2,000 unique speakers are unidentified. These are mostly a combination of not being able to identify them (multiple speakers assigned one ID, noisy fingerprints, talking over each other, didn't state their name, mic not working) and not having the time to identify them yet.</li>
-</ul>
-
-Given those limitations, I'd expect a higher error rates for people with heavy accents, names that are difficult to spell or pronounce, and for people who are not identified in multiple videos (in multiple settings). Additional manual effort was made to find appearances by or mentions of challengers, including text searches of the transcripts for a variety of potential misspellings of the candidates' names, as well as a manual inspection of voice fingerprint matches below the automatic matching threshold. I fully expect to be missing some candidate excerpts, even among the videos that have been transcribed (I'm happy to correct that if anyone can find anything I've missed).<p>
-
   </body>
 </html>
