@@ -66,6 +66,131 @@ def mashup(speaker, text):
 
     return clips
 
+def supercut_old(speaker, useGPT=False, year=None, mkhtml=True):
+
+    video_data = utils.get_video_data()
+    t0 = datetime.datetime(1900,1,1)    
+    excerpts = []
+
+    # most recent (by upload date) appears at the top of the page
+    #files = glob.glob("20*/20??-??-??_???????????.srt")
+    #files.reverse() 
+
+    # most recent (by air date) appears at the top of the page
+    sorted_video_data = dict(sorted(video_data.items(), key=lambda item: item[1]["date"], reverse=True))
+    sorted_files = []
+    for yt_id in sorted_video_data.keys():
+        dir = sorted_video_data[yt_id]["upload_date"]+"_"+yt_id
+        srtfilename = os.path.join(dir,dir + '.srt')
+        if os.path.exists(srtfilename):
+            sorted_files.append(srtfilename)
+
+    for file in sorted_files:
+
+        yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+        dir = os.path.dirname(file)
+        srtfilename = os.path.join(dir,dir) + '.srt'
+        if srtfilename != file: continue
+
+        jsonfile = os.path.join(dir,'speaker_ids.json')
+        if os.path.exists(jsonfile):
+            with open(jsonfile, 'r') as fp:
+                speaker_ids = json.load(fp)
+        else: speaker_ids = {}
+
+        # requested speaker not in this transcript; skip file
+        if speaker not in speaker_ids.values(): continue
+
+        # if year given and this file isn't it, skip it
+        this_year = video_data[yt_id]["date"][0:4]
+        #print(this_year)
+        if (year != None) and (str(year) != this_year): continue
+
+        # extract text from this transcript
+        with open(srtfilename, 'r', encoding="utf-8") as f:
+
+            # Read each line in the file
+            for line in f:
+                line.strip()
+
+                if "-->" in line:
+                    # timestamp
+                    start_string = line.split()[0]
+                    stop_string = line.split()[-1]
+
+                    # convert timestamp to seconds elapsed
+                    start_time = (datetime.datetime.strptime(start_string,'%H:%M:%S,%f')-t0).total_seconds()
+                    stop_time = (datetime.datetime.strptime(stop_string,'%H:%M:%S,%f')-t0).total_seconds()
+
+                elif "[" in line:
+                    # text
+                    this_speaker = line.split()[0].split("[")[-1].split("]")[0]
+                    text = ":".join(line.split(":")[1:])
+
+                    if this_speaker in speaker_ids.keys():
+                        if speaker_ids[this_speaker] == speaker:
+                            excerpts.append({
+                                "yt_id" : yt_id,
+                                "start": start_time,
+                                "stop" : stop_time,
+                                "text" : text,
+                                })
+                    
+                else: continue
+
+    if useGPT: 
+        model = "o1-mini" 
+        #model = "gpt-3.5-turbo"
+        #model = "gpt-4o-mini"
+        messages = [ {"role": "system", "content": "You are a video editor."} ]
+        text = "You are a video editor. Select a list of quotes in JSON format that, when read together, is the script for a campaign ad for a local candidate using only their complete quotes (sent one at a time). Wait until I say 'ok chatgpt, I'm done' to respond:\n"
+        response = client.chat.completions.create(model=model, messages=text)
+
+    #office = "city council"
+    #values = ["engagement","passion","competence","critical thinking","creativity","intelligence","communication","compassion","inspirational","integrity","honesty","visionary","fiscal responsibility","respect"]
+    #priorities = ["education","infrastructure","economic development","jobs","equity","equality","climate change","economy","veterans","health","affordable housing","public safety"]
+    #text = "Based on their quotes below, on a scale from 1 to 10 " + \
+    #    "(10 being best) rate the candidate's suitability for " + office + \
+    #    " based on each of the following values: " + ",".join(values) + \
+    #    ". Also rate them based on the following priorities: " + ",".join(priorities) + \
+    #    ". 'not enough information' is a valid ranking. Explain each score in 1-2 sentences."
+
+    text = ""
+    alltime = 0.0
+
+    if mkhtml:
+        htmlfilename = os.path.join("electeds",speaker + '.html')
+        html = open(htmlfilename, 'w', encoding="utf-8")
+        imagename = speaker + '.wordcloud.png'
+        html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + speaker + '" height=150></img></a><br>\n')
+
+    for excerpt in excerpts:
+        if mkhtml:
+            html.write('    <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
+            html.write("[" + speaker + "]</a>: " + excerpt["text"].strip() + "<br><br>\n\n")
+        text = text + " " + excerpt["text"]
+        alltime += (excerpt["stop"] - excerpt["start"])
+        if useGPT: 
+            response = client.chat.completions.create(model=model, messages=excerpt["text"])
+            time.sleep(1)
+
+    if mkhtml:
+        if text != "":
+            wordcloud = WordCloud(max_font_size=40).generate(text)
+            wordcloud.to_file("electeds/" + imagename)
+        html.close()
+
+    print(str(alltime/3600) + " hours of speech")
+    print(str(len(text.split())) + " words")
+
+    if not useGPT: return text
+
+    # send the final response
+    messages = [({"role": "user", "content": text})]
+    text = "ok chatgpt, I'm done"
+    response = client.chat.completions.create(model=model, messages=text)
+    return response.choices[0].message.content.strip()
+
 def supercut(speaker, useGPT=False, year=None, mkhtml=True):
 
     video_data = utils.get_video_data()
