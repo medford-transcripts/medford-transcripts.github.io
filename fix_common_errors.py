@@ -24,6 +24,8 @@ def fix_common_errors(yt_id=None):
         "Misituk" : "Missituk",
         "Mistituck" : "Missituk",
 
+        "Felsway":"Fellsway",
+
         "Car Park" : "Carr Park",
 
         "Innis Associates": "Innes Associates",
@@ -78,6 +80,11 @@ def fix_common_errors(yt_id=None):
         "President Farris" : "President Bears",
         "President Barras" : "President Bears",
         "President Barrows" : "President Bears",
+
+        "Baldini":"Buldini",
+        "Boldini":"Buldini",
+        "Valdini":"Buldini",
+        "Paige Buldini":"Page Buldini",
 
         "Brantley" : "Branley",
         "Brandley" : "Branley",
@@ -239,13 +246,17 @@ def fix_common_errors(yt_id=None):
         "Lozano" : "Lazzaro",
         "Lozzaro" : "Lazzaro",
         "Lizaro" : "Lazzaro",
+        "Lizarra": "Lazzaro",
         "Lazarro" : "Lazzaro",
         "Lazarus" : "Lazzaro",
         "Lozero" : "Lazzaro",
         "Lazzaroo" : "Lazzaro",
+        "Lizardo" : "Lazzaro",
         "Councilor Lazar" : "Councilor Lazzaro",
         "Councilor Zahra" : "Councilor Lazzaro",
         "Councilor Zara" : "Councilor Lazzaro",
+        "Council Lizard" : "Councilor Lazzaro",
+        "Council Lazzaro" : "Councilor Lazzaro",
 
         "Lemming" : "Leming",
         "lemming" : "Leming",
