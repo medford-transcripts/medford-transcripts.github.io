@@ -617,13 +617,16 @@ def save_sitemap(root_node, save_as, **kwargs):
     return sitemap_name
 
 def do_one(yt_id,skip_translation=False, force=False, do_scrape=True):
+    t0 = datetime.datetime.utcnow()
     fix_common_errors.fix_common_errors(yt_id=yt_id)
-    make_heatmap(yt_id)
+    make_heatmap(yt_id, force=force)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     make_index()
     make_resolution_tracker(do_scrape=do_scrape)
     make_sitemap()
+    time_elapsed = (datetime.datetime.utcnow()-t0).total_seconds()
+    print("Done with " + yt_id + " in " + str(time_elapsed) + " seconds")
 
 def do_all(skip_translation=False, force=False):
 
@@ -638,7 +641,7 @@ def do_all(skip_translation=False, force=False):
             print("Failed on " + yt_id)
             print(error)
 
-def make_heatmap(yt_id):
+def make_heatmap(yt_id, force=False):
 
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)
@@ -664,7 +667,8 @@ def make_heatmap(yt_id):
 
     if len(addresses) > 0:
         htmlname = os.path.join(dir,'heatmap.html')
-        heatmap.heatmap(addresses, htmlname=htmlname)
+        if not os.path.exists(htmlname) or force:
+          heatmap.heatmap(addresses, htmlname=htmlname)
     else:
         print("No matching addresses; skipping heatmap")
 
