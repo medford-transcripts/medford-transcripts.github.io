@@ -52,6 +52,8 @@ nunique = 0
 nunidentified = 0
 ntotal = 0
 nunmatched = 0
+nuniqueidentified = 0
+
 
 print("The following speakers have been automatically cross matched from multiple videos, but are unidentified:")
 for speaker in sorted_speaker_count.keys():
@@ -60,10 +62,13 @@ for speaker in sorted_speaker_count.keys():
         nunidentified += (sorted_speaker_count[speaker]+1)
         nunmatched -= 1
         nunique += 1
+    else:
+        nuniqueidentified += 1
     ntotal += sorted_speaker_count[speaker]
     if re.match(pattern2,speaker):
         nunmatched += sorted_speaker_count[speaker]
 
+print("unique matched, identified speakers: " + str(nuniqueidentified))
 print("unique matched, unidentified speakers: " + str(nunique))
 print("total matched (but unidentified) speakers: " + str(nunidentified))
 print("total unmatched speakers: " + str(nunmatched))
