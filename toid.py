@@ -6,11 +6,15 @@ files = glob.glob("*/speaker_ids.json")
 
 all_speakers = []
 speaker_count = {}
+video_count = {}
 
 number_to_id = 0
 for file in files:
     nspeakers = 0
     unidentified = 0
+
+    yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+
 
     with open(file, 'r') as fp:
         speaker_ids = json.load(fp)
@@ -23,6 +27,20 @@ for file in files:
 
         if "SPEAKER" in speaker_ids[key]:
             unidentified += 1
+
+            if yt_id not in video_count.keys(): 
+                video_count[yt_id] = 1
+            else:  video_count[yt_id] += 1
+
+            # if it references another video, add to its count, too
+            if len(speaker_ids[key]) == 22:
+                yt_id_match = speaker_ids[key][0:11]
+                if yt_id_match not in video_count.keys(): 
+                    video_count[yt_id_match] = 1
+                else:  
+                    video_count[yt_id_match] += 1
+
+            #ipdb.set_trace()
         nspeakers += 1
         if "SPEAKER" in key and "SPEAKER" not in speaker_ids[key]:
             all_speakers.append(speaker_ids[key])
@@ -47,6 +65,8 @@ pattern2 = r"SPEAKER_.{2}$"
 # Sort speaker_count by its count to prioritize output
 sorted_speaker_count = dict(sorted(speaker_count.items(), key=lambda item: (item[1], item[0])))
 
+
+
 print()
 nunique = 0
 nunidentified = 0
@@ -67,6 +87,10 @@ for speaker in sorted_speaker_count.keys():
     ntotal += sorted_speaker_count[speaker]
     if re.match(pattern2,speaker):
         nunmatched += sorted_speaker_count[speaker]
+
+sorted_video_count = dict(sorted(video_count.items(), key=lambda item: (item[1], item[0])))
+for yt_id in sorted_video_count.keys():
+    print(yt_id + ": " + str(sorted_video_count[yt_id]))
 
 print("unique matched, identified speakers: " + str(nuniqueidentified))
 print("unique matched, unidentified speakers: " + str(nunique))

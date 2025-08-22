@@ -4,6 +4,8 @@ import ipdb
 import dateutil.parser as dparser
 import utils
 
+import create_subtitles
+
 time_by_year_sc = {}
 time_by_year_cc = {}
 number_by_year_sc = {}
@@ -85,9 +87,14 @@ for video in video_data.keys():
 
     # downloaded
     mp3file = base + '.mp3'
-    if os.path.exists(mp3file):
+    if create_subtitles.mp3_is_good(video,video_data):
+    #if os.path.exists(mp3file):
         time_downloaded += video_data[video]["duration"]
         ndownloaded +=1
+    elif os.path.exists(mp3file):
+        print(video + ": mp3file exists but is not acceptable for transcription")
+    else:
+        print(video + ": not yet downloaded")
 
     # transcribed
     srtfile = base + '.srt'
