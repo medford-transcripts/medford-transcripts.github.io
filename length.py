@@ -23,7 +23,8 @@ time_requested = 0
 srtfiles = glob.glob("*/20??-??-??_???????????.srt")
 
 now = datetime.datetime.now()
-latest_date = datetime.datetime(2000,1,1)
+latest_date = datetime.datetime(1900,1,1)
+latest_video = ""
 
 for video in video_data.keys(): 
 
@@ -32,27 +33,6 @@ for video in video_data.keys():
     if "duration" not in video_data[video].keys():
         print(video + " not found in video_data") 
         continue
-
-
-    # this is done inside utils.get_video_data now (I think)
-    if False:
-        date = now
-        if "upload_date" in video_data[video].keys():
-            date = datetime.datetime.strptime(video_data[video]["upload_date"],'%Y-%m-%d')
-
-        if "title" in video_data[video].keys():
-            try: 
-                create_date = dparser.parse(video_data[video]["title"],fuzzy=True)
-                # sometimes the parser guesses too much. It can't be later the upload date
-                if date > create_date:
-                    date = create_date
-            except:
-                pass
-
-        if "date" in video_data[video].keys():
-            # you can hand edit the date in the video_data.json file for ones that fail to parse
-            date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
-
 
     year = date.strftime('%Y')
 
@@ -119,8 +99,12 @@ started = datetime.datetime(2024,10,26)
 now = datetime.datetime.now()
 elasped_time = (now-started).total_seconds()
 print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an hour of video")
-print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
-print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
+
+if latest_video != "":
+    print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))
+    print("Done with all videos up until " + datetime.datetime.strftime(latest_date,'%Y-%m-%d') + " (" + latest_video + ")")
+else: 
+    print("Done with all videos")
 
 verbose = False
 if verbose:
