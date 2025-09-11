@@ -237,7 +237,8 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     batch_size = 16 # reduce if low on GPU mem
     model_dir = "./"
     # specifying english here will automatically translate other languages to english!
-    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir) #, language="en")
+    # but often, it gets the language wrong when automatically identifying it
+    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir, language="en")
 
     # the few videos I did with v3 seemed to be the worst transcriptions I've seen, but this could be a coincidence
     #model = whisperx.load_model("large-v3", device, compute_type=compute_type, download_root=model_dir, language="en")
