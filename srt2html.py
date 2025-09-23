@@ -405,6 +405,9 @@ def make_index():
     lines = []
     for htmlfile in htmlfiles:
         yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
+
+        if yt_id not in video_data.keys(): continue
+        
         date = video_data[yt_id]["date"]
         title = video_data[yt_id]["title"]
         channel = video_data[yt_id]["channel"]

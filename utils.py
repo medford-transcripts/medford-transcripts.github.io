@@ -15,9 +15,13 @@ def get_video_data(jsonfile='video_data.json'):
             time.sleep(1)
         with open(jsonfile, 'r') as fp:
             video_data = json.load(fp)
-    else: video_data = {}
+            filtered_video_data = {
+                k: v for k, v in video_data.items()
+                if not v.get("skip", False)
+            }
+    else: filtered_video_data = {}
 
-    return video_data
+    return filtered_video_data
 
 '''
 Save updates to the video metadata back to the json file

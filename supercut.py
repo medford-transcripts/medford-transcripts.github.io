@@ -291,6 +291,9 @@ def supercut_by_keyword_and_speaker(keyword, speaker):
 
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+
+        if yt_id not in video_data.keys(): continue
+
         dir = os.path.dirname(file)
         srtfilename = os.path.join(dir,dir) + '.srt'
         if srtfilename != file: continue
