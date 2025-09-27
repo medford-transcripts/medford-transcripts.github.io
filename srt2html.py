@@ -101,8 +101,14 @@ def srt2html(yt_id,skip_translation=False, force=False):
         if "last_update" in video_data[yt_id].keys():
             last_update = video_data[yt_id]["last_update"]
 
+    # this is my hack to allow non-youtube sources....
     on_youtube = True
-    if yt_id[0:6] == "XXXXXX": on_youtube = False
+    if yt_id[0:6] == "XXXXXX": 
+        on_youtube = False
+        on_spotify = True
+    else:
+        on_youtube = True
+        on_spotify  = False
 
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
@@ -260,8 +266,16 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
                 # if it's not a resolution, and it's the first word, link to the timestamped video
                 tmp_text = this_html_text.split()
-                if not resolution_is_first and on_youtube:
-                    link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                if not resolution_is_first:
+                    if on_youtube:
+                        link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                    elif on_spotify:
+                        if 'url' in video_data[yt_id].keys():
+                            link = ' <a href="' + video_data[yt_id]['url'] + '?t=' + str(this_start) + '">' + tmp_text[0] + '</a> '
+                        else:
+                            link = tmp_text[0]
+                    else:
+                        link = tmp_text[0]
                     tmp_text[0] = link
                     this_html_text = ' '.join(tmp_text)
 
