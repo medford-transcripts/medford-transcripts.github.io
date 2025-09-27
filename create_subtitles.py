@@ -136,6 +136,12 @@ def download_audio(yt_id, video=False):
         mp3file = os.path.join(dir,dir) +'.mp3'
         return mp3file, video_data[yt_id]["duration"]
 
+    # i think these stubs get left behind when it downloads while it's live streaming
+    # there must be a way to salvage them...
+    corrupt_filename = os.path.join(dir,dir)
+    if os.path.exists(corrupt_filename):
+        os.remove(corrupt_filename)
+
     url = "https://youtu.be/" + yt_id
     with yt_dlp.YoutubeDL() as ydl:
         info = ydl.extract_info(url, download=False)

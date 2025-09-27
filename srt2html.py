@@ -101,6 +101,9 @@ def srt2html(yt_id,skip_translation=False, force=False):
         if "last_update" in video_data[yt_id].keys():
             last_update = video_data[yt_id]["last_update"]
 
+    on_youtube = True
+    if yt_id[0:6] == "XXXXXX": on_youtube = False
+
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 
     #last_update = datetime.datetime(2024,12,12,0,0).timestamp() 
@@ -257,7 +260,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
                 # if it's not a resolution, and it's the first word, link to the timestamped video
                 tmp_text = this_html_text.split()
-                if not resolution_is_first:
+                if not resolution_is_first and on_youtube:
                     link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
                     tmp_text[0] = link
                     this_html_text = ' '.join(tmp_text)
@@ -273,10 +276,6 @@ def srt2html(yt_id,skip_translation=False, force=False):
                     text += this_text
                     htmltext += this_html_text
 
-                    # links mid text for more precise timestamps
-                    #tmp_text = this_text.split()
-                    #link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
-                    #tmp_text[0] = link
                 else:
                     finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages)
 
@@ -407,7 +406,7 @@ def make_index():
         yt_id = '_'.join(htmlfile.split('_')[1:]).split('\\')[0]
 
         if yt_id not in video_data.keys(): continue
-        
+
         date = video_data[yt_id]["date"]
         title = video_data[yt_id]["title"]
         channel = video_data[yt_id]["channel"]
