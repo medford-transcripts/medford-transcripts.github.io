@@ -23,7 +23,7 @@ import ipdb
 import threading
 
 # standard libraries 
-import datetime, os, glob, argparse, math, sys, subprocess, time, traceback
+import datetime, os, glob, argparse, math, sys, subprocess, time, traceback, shutil
 import json, pickle
 import dateutil.parser as dparser
 
@@ -131,13 +131,13 @@ def download_audio(yt_id, video=False):
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
+    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
     if mp3_is_good(yt_id, video_data):
-        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
         mp3file = os.path.join(dir,dir) +'.mp3'
         return mp3file, video_data[yt_id]["duration"]
 
-    # i think these stubs get left behind when it downloads while it's live streaming
-    # there must be a way to salvage them...
+    # i think these stubs get left behind when it partially downloads while live streaming
+    # there must be a way to salvage these parts, but we'll just start over
     corrupt_filename = os.path.join(dir,dir)
     if os.path.exists(corrupt_filename):
         os.remove(corrupt_filename)
@@ -146,6 +146,7 @@ def download_audio(yt_id, video=False):
     with yt_dlp.YoutubeDL() as ydl:
         info = ydl.extract_info(url, download=False)
 
+    audio_url = ''
     for format in info["formats"][::-1]:
         if format["resolution"] == "audio only" and format["ext"] == "m4a":
             # this is a temporary, IP-locked URL, storing it doesn't do any good
@@ -167,12 +168,17 @@ def download_audio(yt_id, video=False):
             break
 
     dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    if not os.path.exists(dir): os.makedirs(dir)
     mp3file = os.path.join(dir,dir) +'.mp3'
+
+    if audio_url == '': 
+        print("Could not find audio url for " + yt_id + ", attempting direct download of mp3")
+        subprocess.run(['yt-dlp', 'https://www.youtube.com/watch?v=' + yt_id,'-x', '--audio-format', 'mp3', '--audio-quality', '5'])
+        mp3path = glob.glob('*' + yt_id + '*.mp3')[0]        
+        shutil.move(mp3path, mp3file)
 
     if mp3_is_good(yt_id, video_data):
         return mp3file, video_data[yt_id]["duration"]
-
-    if not os.path.exists(dir): os.makedirs(dir)
 
     ydl_opts = {
         'format': 'bestaudio/best',
@@ -189,6 +195,63 @@ def download_audio(yt_id, video=False):
     with yt_dlp.YoutubeDL(ydl_opts) as ydl: 
         ydl.download(audio_url)
         return mp3file, video_data[yt_id]["duration"]
+
+# default is Medford Bytes apple podcast  
+def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
+
+    video_data = utils.get_video_data()
+
+    ydl_extract_opts = {"quiet": True, "dump_single_json": True}
+    with yt_dlp.YoutubeDL(ydl_extract_opts) as ydl:
+        playlist_dict = ydl.extract_info(rss_feed, download=False)
+
+    entries = playlist_dict["entries"]
+    for entry in entries:
+        date_raw = entry["upload_date"]
+        date_fmt = f"{date_raw[0:4]}-{date_raw[4:6]}-{date_raw[6:8]}"
+        ep_num = entry["playlist_count"] - entry["playlist_index"] + 1
+        yt_id = "XXXXXX" + str(ep_num).zfill(5)
+
+        # already downloaded, skip
+        if mp3_is_good(yt_id, video_data): continue
+
+        if not yt_id in video_data.keys(): video_data[yt_id] = {}
+
+        # update video_data and download
+        video_data[yt_id]["title"] = entry["title"]  
+        video_data[yt_id]["channel"] = entry["playlist"]    
+        video_data[yt_id]["duration"] = entry["duration"]
+        video_data[yt_id]["upload_date"] = date_fmt
+        video_data[yt_id]["view_count"] = 100 # this is only used for prioritization
+        video_data[yt_id]["date"] = date_fmt
+        video_data[yt_id]["url"] = "" # this is used for timestamped links, but we can't do that with apple. TODO: find the URL on spotify (or an RSS feed for spotify)
+
+        utils.save_video_data(video_data)
+
+        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+        mp3file = os.path.join(dir,dir) +'.mp3'
+        
+        # Build folder and file name
+        os.makedirs(dir, exist_ok=True)
+
+        # yt-dlp options for this episode
+        ydl_opts = {
+            "format": "bestaudio/best",
+            "extractaudio": True,
+            "audioformat": "mp3",
+            "outtmpl": os.path.join(dir,dir),
+            "writethumbnail": False,
+            "writeinfojson": False,
+            "embedmetadata": True,
+            "postprocessors": [
+                {"key": "FFmpegExtractAudio", "preferredcodec": "mp3", "preferredquality": "0"},
+                {"key": "FFmpegMetadata"},
+            ],
+        }
+
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([entry["url"]])
+
 
 '''
 translates the model file to human-readable outputs (SRT file)
