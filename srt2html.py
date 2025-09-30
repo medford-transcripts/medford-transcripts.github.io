@@ -102,7 +102,6 @@ def srt2html(yt_id,skip_translation=False, force=False):
             last_update = video_data[yt_id]["last_update"]
 
     # this is my hack to allow non-youtube sources....
-    on_youtube = True
     if yt_id[0:6] == "XXXXXX": 
         on_youtube = False
         on_spotify = True

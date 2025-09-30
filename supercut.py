@@ -188,7 +188,18 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
                     html.write('\n <p>['+ speaker + ']:')
                 words = excerpt["text"].strip().split()
 
-                html.write(' <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
+                if excerpt["yt_id"][0:6] == "XXXXXX":
+                    on_spotify = True
+                    on_youtube = False
+                else:
+                    on_spotify = False
+                    on_youtube = True
+
+                if on_youtube:
+                    html.write(' <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
+                elif on_spotify:
+                    html.write(' <a href="' + video_data[excerpt["yt_id"]]["url"] + '?t=' + str(excerpt["start"]) + 's">')
+
                 html.write(words[0] + "</a> " + " ".join(words[1:]))
             except:
                 ipdb.set_trace()
