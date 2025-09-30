@@ -631,26 +631,33 @@ def save_sitemap(root_node, save_as, **kwargs):
 
     return sitemap_name
 
-def do_one(yt_id,skip_translation=False, force=False, do_scrape=True):
+def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=True):
     t0 = datetime.datetime.utcnow()
     fix_common_errors.fix_common_errors(yt_id=yt_id)
     make_heatmap(yt_id, force=force)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
-    make_index()
-    make_resolution_tracker(do_scrape=do_scrape)
-    make_sitemap()
+    if do_extras:
+        make_index()
+        make_resolution_tracker(do_scrape=do_scrape)
+        make_sitemap()
     time_elapsed = (datetime.datetime.utcnow()-t0).total_seconds()
     print("Done with " + yt_id + " in " + str(time_elapsed) + " seconds")
 
 def do_all(skip_translation=False, force=False):
 
     files = glob.glob("*/20??-??-??_???????????.srt")
+    # on the first one only, scrape the city website for new resolutions
     do_scrape=True
+
     for file in files:
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
+
+        # on the last one only, remake the index page, resolution tracker, and sitemap
+        do_extras = (file == files[-1])
         try:
-            do_one(yt_id, skip_translation=skip_translation, force=force, do_scrape=do_scrape)
+            do_one(yt_id, skip_translation=skip_translation, force=force, do_scrape=do_scrape, do_extras=do_extras)
+            # on the first one only, scrape the city website for new resolutions
             do_scrape=False
         except Exception as error:
             print("Failed on " + yt_id)
@@ -674,7 +681,8 @@ def make_heatmap(yt_id, force=False):
 
     for speaker in list(speaker_ids.values()):
         if speaker in directory.keys():
-            addresses.append(directory[speaker])
+            if directory[speaker] != "":
+                addresses.append(directory[speaker])
         elif "SPEAKER_" in speaker:
             pass
         else:
@@ -683,7 +691,7 @@ def make_heatmap(yt_id, force=False):
     if len(addresses) > 0:
         htmlname = os.path.join(dir,'heatmap.html')
         if not os.path.exists(htmlname) or force:
-          heatmap.heatmap(addresses, htmlname=htmlname)
+            heatmap.heatmap(addresses, htmlname=htmlname)
     else:
         print("No matching addresses; skipping heatmap")
 
