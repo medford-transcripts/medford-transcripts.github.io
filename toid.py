@@ -1,6 +1,7 @@
 import glob, json
 import ipdb
 import re
+import utils
 
 files = glob.glob("*/speaker_ids.json")
 
@@ -8,6 +9,7 @@ all_speakers = []
 speaker_count = {}
 video_count = {}
 
+video_data = utils.get_video_data()
 number_to_id = 0
 for file in files:
     nspeakers = 0
@@ -15,6 +17,8 @@ for file in files:
 
     yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
 
+    if 'skip' in video_data[yt_id].keys():
+        if video_data[yt_id]["skip"]: continue
 
     with open(file, 'r') as fp:
         speaker_ids = json.load(fp)

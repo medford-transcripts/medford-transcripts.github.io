@@ -420,6 +420,9 @@ def make_index():
 
         if yt_id not in video_data.keys(): continue
 
+        if 'skip' in video_data[yt_id].keys():
+            if video_data[yt_id]["skip"]: continue
+
         date = video_data[yt_id]["date"]
         title = video_data[yt_id]["title"]
         channel = video_data[yt_id]["channel"]

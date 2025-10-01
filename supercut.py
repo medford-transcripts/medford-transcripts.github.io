@@ -80,6 +80,10 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
     sorted_video_data = dict(sorted(video_data.items(), key=lambda item: item[1]["date"], reverse=True))
     sorted_files = []
     for yt_id in sorted_video_data.keys():
+
+        if 'skip' in sorted_video_data[yt_id].keys():
+            if sorted_video_data[yt_id]["skip"]: continue
+
         dir = sorted_video_data[yt_id]["upload_date"]+"_"+yt_id
         srtfilename = os.path.join(dir,dir + '.srt')
         if os.path.exists(srtfilename):
@@ -418,6 +422,9 @@ def mkhtml(video_name):
 
 if __name__ == "__main__":
 
+    do_all_councilors()
+    ipdb.set_trace()
+
     #jsonfiles = ['tringali.json',
     #jsonfiles = ['leming.json',
     jsonfiles = ['leming_campaign.json']  
@@ -434,8 +441,7 @@ if __name__ == "__main__":
     them together into a short (< 5 minute) supercut. 
 
     This does everything but identify the most consequential excerpts, but can compile late-night style montages by identifying common keywords. '''
-    #do_all_councilors()
-    #ipdb.set_trace()
+
 
     # need a much fuller set of transcripts with model.pkl files for this to work, but I think the code is here
     speaker = 'Zac Bears'
