@@ -462,12 +462,14 @@ if __name__ == "__main__":
         while True:
             t0 = datetime.datetime.now()
             more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo, transcribe_only=opt.transcribe_only)
-            tf = datetime.datetime.now()
 
             # if we did them all, wait an hour and check again
             # otherwise, on to the next one
             if more_to_do: time_to_sleep = 0
-            else: time_to_sleep = 3600.0 - (tf-t0).total_seconds()
+            else: 
+                download_rss_feed()
+                tf = datetime.datetime.now()
+                time_to_sleep = 3600.0 - (tf-t0).total_seconds()
 
             if time_to_sleep > 0.0:            
                 print("Done with all videos; waiting " + str(time_to_sleep) + " seconds to check again")
