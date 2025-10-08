@@ -370,6 +370,8 @@ def srt2html(yt_id,skip_translation=False, force=False):
         html.write('</html>\n')
         html.close()
 
+    # update the saved video data, but reload it in case another process updated it in the meantime
+    video_data = utils.get_video_data()
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
     video_data[yt_id]["last_update"] = time.time()
 
@@ -409,6 +411,28 @@ def match_files(title, minutes=False):
 
     return best_match[0]
 
+def make_redirect(dir):
+    index_filename = os.path.join(dir,'index.html')
+
+    if os.path.exists(index_filename): return
+
+    with open(index_filename, "w", encoding="utf-8") as index_page:
+
+        index_page.write('<!DOCTYPE HTML>')
+        index_page.write('<html lang="en-US">')
+        index_page.write('    <head>')
+        index_page.write('       <meta charset="UTF-8">')
+        index_page.write('        <meta http-equiv="refresh" content="0; url="' + dir + '.html">')
+        index_page.write('        <script type="text/javascript">')
+        index_page.write('            window.location.href = "' + dir + '.html"')
+        index_page.write('        </script>')
+        index_page.write('        <title>Page Redirection</title>')
+        index_page.write('    </head> index_page.write("<body>')
+        index_page.write("       <!-- Note: don't tell people to 'click' the link, just tell them that it is a link. -->")
+        index_page.write('        If you are not redirected automatically, follow this <a href="' + dir + '.html">link</a>.')
+        index_page.write('    </body>')
+        index_page.write('</html>')
+
 def make_index():
 
     video_data = utils.get_video_data()
@@ -428,6 +452,9 @@ def make_index():
         channel = video_data[yt_id]["channel"]
         duration = video_data[yt_id]["duration"]
         duration_string = time.strftime('%H:%M:%S', time.gmtime(duration))
+
+        dir = os.path.dirname(htmlfile)
+        make_redirect(dir)
 
         srtfile = os.path.splitext(htmlfile)[0]+'.srt'
         speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
