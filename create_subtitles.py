@@ -59,7 +59,7 @@ def mp3_is_good(yt_id, video_data):
     # if the mp3 duration doesn't match the video duration, it's bad
     duration = float(ffmpeg.probe(mp3file)['format']['duration'])
     # I'm not sure what level of disagreement is acceptable. I've seen 6.6s discrepancies
-    if abs((duration - video_data[yt_id]["duration"])) > 10.0:
+    if abs((duration - video_data[yt_id]["duration"])) > 15.0:
         print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
         return False
 
@@ -472,7 +472,8 @@ if __name__ == "__main__":
                 time_to_sleep = 3600.0 - (tf-t0).total_seconds()
 
             if time_to_sleep > 0.0:            
-                print("Done with all videos; waiting " + str(time_to_sleep) + " seconds to check again")
+                later = (datetime.datetime.now() + datetime.timedelta(seconds=time_to_sleep)).strftime("%Y-%m-%d %H:%M:%S")
+                print("Done with all videos; checking again at " + later)
                 time.sleep(time_to_sleep)
 
     else: 
