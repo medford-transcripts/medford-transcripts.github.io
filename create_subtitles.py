@@ -110,11 +110,13 @@ def download_video(yt_id):
             ]
         subprocess.run(command)
 
+    print("Downloading " + yt_id + ", but with a workaround for issue #14157")
     # now download the video
     command = [
         "yt-dlp",
         "--cookies-from-browser", "firefox",
         "--cookies","cookies.txt",
+        "--extractor-args", "youtube:player_client=default,web_safari;player_js_version=actual", # workaround as seen in #14680 (lower quality!) to address pending merge of #14157 
         "https://www.youtube.com/watch?v=" + yt_id
         ]
 
@@ -175,25 +177,34 @@ def download_audio(yt_id, video=False):
         print("Could not find audio url for " + yt_id + ", attempting direct download of mp3")
         subprocess.run(['yt-dlp', 'https://www.youtube.com/watch?v=' + yt_id,'-x', '--audio-format', 'mp3', '--audio-quality', '5'])
         mp3path = glob.glob('*' + yt_id + '*.mp3')[0]        
-        shutil.move(mp3path, mp3file)
+        if len(mp3path) == 1:
+            mp3path = mp3path[0]
+            shutil.move(mp3path, mp3file)
+
+    if False:
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'outtmpl': os.path.join(dir,dir),
+            'skip_unavailable_fragments': False,
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '320',
+            }],
+        }
+        # download the audio file
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl: 
+            ydl.download(audio_url)
+            return mp3file, video_data[yt_id]["duration"]
+    else: 
+        print("working around audio only download! check on yt-dlp #14157 to see if it's merged")
+        download_video(yt_id)
+        input_file = glob.glob("*" + yt_id + "*.mp4")[0]
+        output_file = os.path.join(dir,dir) + '.mp3'
+        subprocess.run(["ffmpeg", "-i", input_file, "-vn", "-ab", "320k", output_file])
+        os.remove(input_file)
 
     if mp3_is_good(yt_id, video_data):
-        return mp3file, video_data[yt_id]["duration"]
-
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'outtmpl': os.path.join(dir,dir),
-        'skip_unavailable_fragments': False,
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '320',
-        }],
-    }
-
-    # download the audio file
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl: 
-        ydl.download(audio_url)
         return mp3file, video_data[yt_id]["duration"]
 
 # default is Medford Bytes apple podcast  
