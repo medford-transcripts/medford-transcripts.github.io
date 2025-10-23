@@ -201,7 +201,7 @@ def download_audio(yt_id, video=False):
         download_video(yt_id)
         input_file = glob.glob("*" + yt_id + "*.mp4")[0]
         output_file = os.path.join(dir,dir) + '.mp3'
-        subprocess.run(["ffmpeg", "-i", input_file, "-vn", "-ab", "320k", output_file])
+        subprocess.run(["ffmpeg", "-y", "-i", input_file, "-vn", "-ab", "320k", output_file])
         os.remove(input_file)
 
     if mp3_is_good(yt_id, video_data):
