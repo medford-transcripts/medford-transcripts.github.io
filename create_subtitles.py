@@ -199,7 +199,14 @@ def download_audio(yt_id, video=False):
     else: 
         print("working around audio only download! check on yt-dlp #14157 to see if it's merged")
         download_video(yt_id)
-        input_file = glob.glob("*" + yt_id + "*.mp4")[0]
+        exts = ['mp4', 'webm', 'mkv']
+        input_file = [f for ext in exts for f in glob.glob(f'*{yt_id}*.{ext}')]
+        if len(input_file) == 0:
+            return
+        else:
+            input_file = input_file[0]
+
+        
         output_file = os.path.join(dir,dir) + '.mp3'
         subprocess.run(["ffmpeg", "-y", "-i", input_file, "-vn", "-ab", "320k", output_file])
         os.remove(input_file)
