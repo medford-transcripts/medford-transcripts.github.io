@@ -129,7 +129,7 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     print("Heatmap saved as " + htmlname)
         
 
-def electeds_heatmap2(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
+def electeds_heatmap2(position, year=None):
 
     if year == None: year = str(datetime.datetime.now().year)
 
@@ -139,28 +139,15 @@ def electeds_heatmap2(school_committee=False, city_council=False, mayor=False, y
     #ipdb.set_trace()
     addresses = []
     labels = []
-    outname = year + '_heatmap.html'
-    if school_committee: outname = "sc_" + outname
-    if city_council: outname = "cc_" + outname
-    if mayor: outname = "mayor_" + outname
+    outname = year + "_" + position + '_heatmap.html'
 
     #ipdb.set_trace()
 
     for official in directory.keys():
         if year in directory[official].keys():
-            if school_committee:
-                if "school_committee" in directory[official][year]["position"]:
-                    addresses.append(directory[official][year]["address"])
-                    labels.append(official)
-            if city_council:
-                if "city_council" in directory[official][year]["position"]:
-                    addresses.append(directory[official][year]["address"])
-                    labels.append(official)
-            if mayor:
-                if "mayor" in directory[official][year]["position"]:
-                    addresses.append(directory[official][year]["address"])
-                    labels.append(official)
-
+            if position in directory[official][year]["position"]:
+                addresses.append(directory[official][year]["address"])
+                labels.append(official)
 
     heatmap(addresses,labels=labels,htmlname=outname)
 
