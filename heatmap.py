@@ -41,7 +41,7 @@ def get_lat_lon(address):
         print(f"Error geocoding {address}: {e}")
     return None
 
-def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=3.0, label_mode="tooltip"):
+def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip"):
 
     # Get coordinates
     coordinates = []
