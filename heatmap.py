@@ -11,7 +11,7 @@ import geopandas as gpd
 from shapely.geometry import shape
 
 import utils
-
+import datetime
 
 def make_geojson():
     # from https://www.axisgis.com/MedfordMA
@@ -41,63 +41,128 @@ def get_lat_lon(address):
         print(f"Error geocoding {address}: {e}")
     return None
 
-def heatmap(addresses, htmlname="heatmap.html",zoom_start=5.0):
+def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=3.0, label_mode="tooltip"):
 
     # Get coordinates
     coordinates = []
-    for address in addresses:
+    labels_aligned = []
+    for i, address in enumerate(addresses):
         lat_lon = get_lat_lon(address)
         if lat_lon:
             coordinates.append(lat_lon)
+            if labels is not None and i < len(labels):
+                labels_aligned.append(str(labels[i]))
+            else:
+                labels_aligned.append("")
         time.sleep(0.01)  # To avoid API rate limits
 
-    # Create a map centered at the first location
-    if coordinates:
-        m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
-
-        # Add heatmap
-        HeatMap(coordinates).add_to(m)
-
-        # Add ward boundaries
-        with open("medford_wards.geojson", "r") as f:
-            wards = json.load(f)
-
-        folium.GeoJson(wards,
-                        name="Wards",
-                        style_function=lambda feature: {
-                        "fillColor": "none",
-                        "color": "black",
-                        "weight": 2,
-                        "dashArray": "5, 5"
-                        },
-                        tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
-                        ).add_to(m)
-
-
-        # Add text labels for each wards
-        for feature in wards["features"]:
-            geom = shape(feature["geometry"])
-            centroid = geom.centroid
-            ward = str(feature["properties"].get("WARD", "")).strip()
-            precinct = str(feature["properties"].get("PRECINCT", "")).strip()
-            label = f"{ward}-{precinct}"
-
-            folium.map.Marker(
-                [centroid.y, centroid.x],
-                icon=folium.DivIcon(
-                    html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
-                )
-            ).add_to(m)
-
-
-        # Add layer control
-        folium.LayerControl().add_to(m)
-
-        # Save to file
-        m.save(htmlname)
-        print("Heatmap saved as " + htmlname)
-    else:
+    if not coordinates:
         print("No valid coordinates found.")
+        return
+
+    # Create a map centered at the first location
+    m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
+
+    # Add heatmap
+    HeatMap(coordinates).add_to(m)
+
+    # Optional: annotate each point
+    if labels is not None:
+        for (lat, lon), text in zip(coordinates, labels_aligned):
+            if not text:
+                continue
+            if label_mode == "tooltip":
+                # Cleanest: small dot with hover text
+                folium.CircleMarker(location=[lat, lon], radius=3, fill=True).add_to(m)
+                folium.Marker(
+                    location=[lat, lon],
+                    tooltip=text,
+                    icon=folium.Icon(icon="info-sign", prefix="glyphicon")
+                ).add_to(m)
+            else:  # "div" → always-visible text on the map
+                folium.map.Marker(
+                    [lat, lon],
+                    icon=folium.DivIcon(
+                        html=f"""<div style="font-size: 10pt; font-weight: 600; 
+                                 text-shadow: 0 0 2px #fff; white-space: nowrap;">
+                                 {html.escape(text)}</div>"""
+                    )
+                ).add_to(m)
+
+    # Add ward boundaries
+    with open("medford_wards.geojson", "r") as f:
+        wards = json.load(f)
+
+    folium.GeoJson(wards,
+                    name="Wards",
+                    style_function=lambda feature: {
+                    "fillColor": "none",
+                    "color": "black",
+                    "weight": 2,
+                    "dashArray": "5, 5"
+                    },
+                    tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
+                    ).add_to(m)
+
+
+    # Add text labels for each wards
+    for feature in wards["features"]:
+        geom = shape(feature["geometry"])
+        centroid = geom.centroid
+        ward = str(feature["properties"].get("WARD", "")).strip()
+        precinct = str(feature["properties"].get("PRECINCT", "")).strip()
+        label = f"{ward}-{precinct}"
+
+        folium.map.Marker(
+            [centroid.y, centroid.x],
+            icon=folium.DivIcon(
+                html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
+            )
+        ).add_to(m)
+
+
+    # Add layer control
+    folium.LayerControl().add_to(m)
+
+    # Save to file
+    m.save(htmlname)
+    print("Heatmap saved as " + htmlname)
+        
+
+def electeds_heatmap2(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
+
+    if year == None: year = str(datetime.datetime.now().year)
+
+    with open("councilors.json", 'r') as fp:
+        directory = json.load(fp)
+
+    #ipdb.set_trace()
+    addresses = []
+    labels = []
+    outname = year + '_heatmap.html'
+    if school_committee: outname = "sc_" + outname
+    if city_council: outname = "cc_" + outname
+    if mayor: outname = "mayor_" + outname
+
+    #ipdb.set_trace()
+
+    for official in directory.keys():
+        if year in directory[official].keys():
+            if school_committee:
+                if "school_committee" in directory[official][year]["position"]:
+                    addresses.append(directory[official][year]["address"])
+                    labels.append(official)
+            if city_council:
+                if "city_council" in directory[official][year]["position"]:
+                    addresses.append(directory[official][year]["address"])
+                    labels.append(official)
+            if mayor:
+                if "mayor" in directory[official][year]["position"]:
+                    addresses.append(directory[official][year]["address"])
+                    labels.append(official)
+
+
+    heatmap(addresses,labels=labels,htmlname=outname)
 
 def electeds_heatmap(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
 
