@@ -129,7 +129,29 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     print("Heatmap saved as " + htmlname)
         
 
-def electeds_heatmap2(position, year=None):
+def electeds_heatmap_all(position):
+
+    with open("councilors.json", 'r') as fp:
+        directory = json.load(fp)
+
+    #ipdb.set_trace()
+    addresses = []
+    labels = []
+    outname = "election/" + position + '_heatmap.html'
+
+    #ipdb.set_trace()
+
+    for official in directory.keys():
+        for year in directory[official].keys():
+            if not year.isdigit() or len(year) != 4: continue
+
+            if position in directory[official][year]["position"]:
+                addresses.append(directory[official][year]["address"])
+                labels.append(official + " " + year)
+
+    heatmap(addresses,labels=labels,htmlname=outname)
+
+def electeds_heatmap(position, year=None):
 
     if year == None: year = str(datetime.datetime.now().year)
 
@@ -139,7 +161,7 @@ def electeds_heatmap2(position, year=None):
     #ipdb.set_trace()
     addresses = []
     labels = []
-    outname = year + "_" + position + '_heatmap.html'
+    outname = "election/" + year + "_" + position + '_heatmap.html'
 
     #ipdb.set_trace()
 
@@ -151,7 +173,7 @@ def electeds_heatmap2(position, year=None):
 
     heatmap(addresses,labels=labels,htmlname=outname)
 
-def electeds_heatmap(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
+def electeds_heatmap_old(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
 
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)

@@ -93,6 +93,7 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
 
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
         dir = os.path.dirname(file)
+
         srtfilename = os.path.join(dir,dir) + '.srt'
         if srtfilename != file: continue
 
@@ -238,6 +239,8 @@ def do_all_councilors_by_year(years=[2020,2021,2022,2023,2024,2025]):
         for year in years:
             print(councilor + ' ' + str(year))
             excerpts = supercut(councilor,useGPT=False, mkhtml=False, year=year)
+
+    return excerpts
 
 
 def do_all_councilors(useGPT=False):
