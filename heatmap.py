@@ -128,64 +128,37 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     m.save(htmlname)
     print("Heatmap saved as " + htmlname)
         
-
-def electeds_heatmap_all(position):
-
-    with open("councilors.json", 'r') as fp:
-        directory = json.load(fp)
-
-    #ipdb.set_trace()
-    addresses = []
-    labels = []
-    outname = "election/" + position + '_heatmap.html'
-
-    #ipdb.set_trace()
-
-    for official in directory.keys():
-        for year in directory[official].keys():
-            if not year.isdigit() or len(year) != 4: continue
-
-            if position in directory[official][year]["position"]:
-                addresses.append(directory[official][year]["address"])
-                labels.append(official + " " + year)
-
-    heatmap(addresses,labels=labels,htmlname=outname)
-
 def electeds_heatmap(position, year=None):
 
-    if year == None: year = str(datetime.datetime.now().year)
+    if year is None: 
+        # do all years
+        outname = "election/" + position + '_heatmap.html'
+    else:
+        outname = "election/" + year + "_" + position + '_heatmap.html'
+
+
+    #year = str(datetime.datetime.now().year)
 
     with open("councilors.json", 'r') as fp:
         directory = json.load(fp)
 
-    #ipdb.set_trace()
     addresses = []
     labels = []
-    outname = "election/" + year + "_" + position + '_heatmap.html'
 
-    #ipdb.set_trace()
+    candidate_position = position.replace("_prelim","")
 
     for official in directory.keys():
-        if year in directory[official].keys():
-            if position in directory[official][year]["position"]:
-                addresses.append(directory[official][year]["address"])
-                labels.append(official)
+        for this_year in directory[official].keys():
+            if not this_year.isdigit() or len(this_year) != 4: continue
+            if year is not None and this_year != year: continue
+
+            if position in directory[official][this_year]["position"] or candidate_position in directory[official][this_year]["position"]:
+                addresses.append(directory[official][this_year]["address"])
+
+                if year is not None: labels.append(official + " " + this_year)
+                else: labels.append(official)
 
     heatmap(addresses,labels=labels,htmlname=outname)
-
-def electeds_heatmap_old(school_committee=False, city_council=False, mayor=False, year=None, candidates=False, superintendents=False):
-
-    with open("addresses.json", 'r') as fp:
-        directory = json.load(fp)
-
-    elected_addresses = []
-
-    councilors = utils.get_councilors()
-    for councilor in councilors:
-        if councilor in directory.keys():
-            elected_addresses.append(directory[councilor])
-
-    heatmap(elected_addresses,htmlname='elected_heatmap.html')
 
 def speaker_heatmap():
 
@@ -208,8 +181,21 @@ def speaker_heatmap():
 
 if __name__ == "__main__":
 
-    speaker_heatmap()
+    positions = {
+        "city_council_candidate":"City Council Candidates",
+        "city_council_prelim_candidate":"City Council Prelim Candidates",
+        "school_committee_candidate":"School Committee Candidates",
+        "school_committee_prelim_candidate":"School Committee Prelim Candidates",
+        "mayor_candidate": "Mayoral Candidates",
+        "mayor_prelim_candidate": "Mayoral Prelim Candidates"
+
+    }
+    for position in positions.keys():
+        electeds_heatmap(position=position)
+
     ipdb.set_trace()
+
+    speaker_heatmap()
 
     with open("addresses.json", 'r') as fp:
         directory = json.load(fp)

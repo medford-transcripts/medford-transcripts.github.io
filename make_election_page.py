@@ -7,6 +7,7 @@ import os
 
 def make_election_page(year=None, remake_heatmap=False, remake_html=False):
 
+    now = datetime.datetime.utcnow()
 
     with open("councilors.json", 'r') as fp:
         unsorted_directory = json.load(fp)
@@ -52,8 +53,8 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
             "school_committee_prelim_candidate":"School Committee Prelim Candidates",
             "mayor_candidate": "Mayoral Candidates",
             "mayor_prelim_candidate": "Mayoral Prelim Candidates"
-
         }
+
         for position in positions.keys():
 
             # skip tables without any candidates
@@ -65,7 +66,13 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
             if no_candidates: continue
 
             mapname = year + "_" + position + '_heatmap.html'
-            if not os.path.exists("election/" + mapname) or remake_heatmap: 
+            fullmapname = "election/" + mapname
+
+            if os.path.exists(fullmapname): 
+                mtime = os.path.getmtime(fullmapname)
+                modified_date = datetime.fromtimestamp(mtime)
+
+            if not os.path.exists(fullmapname) or (remake_heatmap and modified_date < now):
                 heatmap.electeds_heatmap(position, year=year)
 
             f.write('\n')
@@ -87,7 +94,13 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
             for official in directory.keys():
 
                 htmlname = "electeds/" + official + ".html"
-                if not os.path.exists(htmlname) or remake_html: supercut.supercut(official,mkhtml=True)
+
+                if os.path.exists(htmlname): 
+                    mtime = os.path.getmtime(htmlname)
+                    modified_date = datetime.fromtimestamp(mtime)
+
+                if not os.path.exists(htmlname) or (remake_html and modified_date < now):
+                    supercut.supercut(official,mkhtml=True)
 
                 if year in directory[official].keys():
                     if position in directory[official][year]["position"]:
@@ -238,10 +251,10 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False):
         f.write('  </head>\n\n')
         f.write('  <body>\n')
         f.write('    <h1>Medford MA elections</h1>\n') 
-        f.write('    <h2>Election info pages for Medford, MA Mayor, City Council, and School Committee</h2>\n\n')
-        f.write('    <a href="school_committee_candidate_heatmap.html">School Committee Map (2005-Present)</a>\n\n')
-        f.write('    <a href="city_council_candidate_heatmap.html">City Council Map (2005-Present)</a>\n\n')
-        f.write('    <a href="mayor_candidate_heatmap.html">Mayor Map (2005-Present)</a>\n\n')
+        f.write('    <h2>Election info pages for Medford, MA Mayor, City Council, and School Committee</h2><br>\n\n')
+        f.write('    <a href="school_committee_candidate_heatmap.html">School Committee Map (2005-Present)</a><br>\n\n')
+        f.write('    <a href="city_council_candidate_heatmap.html">City Council Map (2005-Present)</a><br>\n\n')
+        f.write('    <a href="mayor_candidate_heatmap.html">Mayor Map (2005-Present)</a><br><br>\n\n')
         f.write('    <table border=1>\n')
 
         years = list(range(2025, 2004, -2))
@@ -254,5 +267,5 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False):
         f.write('</html>\n')
 
 if __name__ == "__main__": 
-    make_all_election_pages(remake_heatmap=False, remake_html=False)
+    make_all_election_pages(remake_heatmap=True, remake_html=True)
     #make_election_page(year="2025")
