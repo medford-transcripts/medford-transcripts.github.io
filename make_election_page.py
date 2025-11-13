@@ -252,9 +252,9 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False):
         f.write('  <body>\n')
         f.write('    <h1>Medford MA elections</h1>\n') 
         f.write('    <h2>Election info pages for Medford, MA Mayor, City Council, and School Committee</h2><br>\n\n')
-        f.write('    <a href="school_committee_candidate_heatmap.html">School Committee Map (2005-Present)</a><br>\n\n')
-        f.write('    <a href="city_council_candidate_heatmap.html">City Council Map (2005-Present)</a><br>\n\n')
-        f.write('    <a href="mayor_candidate_heatmap.html">Mayor Map (2005-Present)</a><br><br>\n\n')
+        f.write('    <a href="school_committee_prelim_candidate_heatmap.html">School Committee Map (2005-Present)</a><br>\n\n')
+        f.write('    <a href="city_council_prelim_candidate_heatmap.html">City Council Map (2005-Present)</a><br>\n\n')
+        f.write('    <a href="mayor_prelim_candidate_heatmap.html">Mayor Map (2005-Present)</a><br><br>\n\n')
         f.write('    <table border=1>\n')
 
         years = list(range(2025, 2004, -2))
