@@ -223,7 +223,9 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
         with open(channel_file) as f:
             channels = f.read().splitlines()
             # loop through every video on these channels
-            for channel in channels: update_channel(channel)
+            for channel in channels: 
+                if channel[0] == '@':
+                    update_channel(channel)
 
     # update every entry in video_data.json
     video_data = get_video_data()

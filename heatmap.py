@@ -41,7 +41,7 @@ def get_lat_lon(address):
         print(f"Error geocoding {address}: {e}")
     return None
 
-def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip"):
+def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip", allow_none=False):
 
     # Get coordinates
     coordinates = []
@@ -58,13 +58,14 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
 
     if not coordinates:
         print("No valid coordinates found.")
-        return
-
-    # Create a map centered at the first location
-    m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
-
-    # Add heatmap
-    HeatMap(coordinates).add_to(m)
+        if not allow_none: return
+        lat_lon = get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
+        m = folium.Map(location=lat_lon, zoom_start=zoom_start)
+    else:
+        # Add heatmap
+        HeatMap(coordinates).add_to(m)
+        # Create a map centered at the first location
+        m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
 
     # Optional: annotate each point
     if labels is not None:
@@ -180,6 +181,9 @@ def speaker_heatmap():
     heatmap(addresses,htmlname='speaker_appearance_heatmap.html')
 
 if __name__ == "__main__":
+
+    heatmap([],htmlname="wardmap.html",allow_none=True)
+    ipdb.set_trace()
 
     positions = {
         "city_council_candidate":"City Council Candidates",
