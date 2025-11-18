@@ -8,7 +8,7 @@ from folium.plugins import HeatMap
 from geopy.geocoders import Nominatim
 import osmnx as ox
 import geopandas as gpd
-from shapely.geometry import shape
+from shapely.geometry import shape, Point
 
 import utils
 import datetime
@@ -41,15 +41,17 @@ def get_lat_lon(address):
         print(f"Error geocoding {address}: {e}")
     return None
 
-def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip", allow_none=False):
+def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip", allow_none=False, return_wards_dict=True, skip_labels=False):
 
     # Get coordinates
     coordinates = []
     labels_aligned = []
+    valid_addresses = []
     for i, address in enumerate(addresses):
         lat_lon = get_lat_lon(address)
         if lat_lon:
             coordinates.append(lat_lon)
+            valid_addresses.append(address)
             if labels is not None and i < len(labels):
                 labels_aligned.append(str(labels[i]))
             else:
@@ -62,13 +64,12 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
         lat_lon = get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
         m = folium.Map(location=lat_lon, zoom_start=zoom_start)
     else:
-        # Add heatmap
-        HeatMap(coordinates).add_to(m)
         # Create a map centered at the first location
         m = folium.Map(location=coordinates[0], zoom_start=zoom_start)
+        HeatMap(coordinates).add_to(m)
 
     # Optional: annotate each point
-    if labels is not None:
+    if labels is not None and not skip_labels:
         for (lat, lon), text in zip(coordinates, labels_aligned):
             if not text:
                 continue
@@ -105,6 +106,7 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
                     tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
                     ).add_to(m)
 
+    ward_geoms = []
 
     # Add text labels for each wards
     for feature in wards["features"]:
@@ -121,6 +123,14 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
             )
         ).add_to(m)
 
+        ward_geoms.append(
+            {
+                "geom": geom,
+                "ward": ward,
+                "precinct": precinct,
+                "ward_precinct": label,
+            }
+        )
 
     # Add layer control
     folium.LayerControl().add_to(m)
@@ -129,6 +139,36 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     m.save(htmlname)
     print("Heatmap saved as " + htmlname)
         
+
+    # build Ward dictionary
+    if return_wards_dict and coordinates:
+        wards_dict = {}
+        # labels_aligned and valid_addresses are aligned with coordinates
+        for (lat, lon), name, addr in zip(coordinates, labels_aligned, valid_addresses):
+            if not name:
+                # if no label, skip; you can remove this if you want address-only keys
+                continue
+
+            pt = Point(lon, lat)
+            ward_precinct = None
+
+            for w in ward_geoms:
+                if w["geom"].contains(pt):
+                    ward_precinct = w["ward_precinct"]
+                    break
+
+            wards_dict[name] = {
+                "address": addr,
+                "ward": ward_precinct,
+            }
+
+        return wards_dict
+
+    if return_wards_dict:
+        # no coordinates, but user asked for dict
+        return {}
+
+
 def electeds_heatmap(position, year=None):
 
     if year is None: 
@@ -180,7 +220,68 @@ def speaker_heatmap():
     #ipdb.set_trace()
     heatmap(addresses,htmlname='speaker_appearance_heatmap.html')
 
+def ward_list(wards_dict, skip_unknown=True):
+    """
+    wards_dict format:
+    {
+        "First Last": {"address": "...", "ward": "4-1"},
+        ...
+    }
+    """
+
+    def parse_ward(ward_str):
+        """Convert '4-1' → (4,1). Handle None or ''."""
+        if not ward_str:
+            return (999, 999)  # put unassigned at end
+        if "-" in ward_str:
+            w, p = ward_str.split("-")
+            return (int(w), int(p))
+        return (int(ward_str), 0)
+
+    def last_name(full_name):
+        """Return last name for sorting."""
+        return full_name.split()[-1]
+
+    # Sort by ward, then last name
+    sorted_items = sorted(
+        wards_dict.items(),
+        key=lambda item: (parse_ward(item[1]["ward"]), last_name(item[0]))
+    )
+
+    # Print nicely
+    current_ward = None
+    for name, data in sorted_items: 
+        ward = data["ward"] or "Unknown"
+
+        if skip_unknown and ward == "Unknown": continue
+
+        if ward != current_ward:
+            print(f"\n=== Ward {ward} ===")
+            current_ward = ward
+
+        print(f"{name:25s}  {data['address']}")
+
 if __name__ == "__main__":
+
+
+    with open("wards_dict.json", 'r') as fp:
+        wards_dict = json.load(fp)
+    ward_list(wards_dict, skip_unknown=False)
+    ipdb.set_trace()
+
+
+    with open("addresses.json", 'r') as fp:
+        directory = json.load(fp)
+    addresses = list(directory.values())
+    wards_dict = heatmap(addresses,labels=list(directory.keys()),skip_labels=True)
+
+    # save the data
+    with open("wards_dict.json", "w") as fp:
+        json.dump(wards_dict, fp, indent=4)
+
+
+
+    ipdb.set_trace()
 
     heatmap([],htmlname="wardmap.html",allow_none=True)
     ipdb.set_trace()
