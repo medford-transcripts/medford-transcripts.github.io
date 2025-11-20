@@ -290,7 +290,9 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
 
     if transcribe_only:
+        print(str(datetime.datetime.utcnow()-t0).total_seconds())
         video_data = utils.get_video_data()
+        print(str(datetime.datetime.utcnow()-t0).total_seconds())
         if not mp3_is_good(yt_id, video_data):
             print("mp3 file not ready and download not requested; skipping " + yt_id)
             return False
@@ -308,7 +310,9 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     if download_only: return False
 
     # skip files that are already done
+    print(str(datetime.datetime.utcnow()-t0).total_seconds())
     files = glob.glob("*/20??-??-??_" + yt_id + ".srt")
+    print(str(datetime.datetime.utcnow()-t0).total_seconds())
     if len(files) != 0 and not redo: 
         print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
         return False
