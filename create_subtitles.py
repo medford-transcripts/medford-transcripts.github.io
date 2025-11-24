@@ -287,18 +287,20 @@ uses whisperx to transcribe a video specified by YouTube ID (yt_id)
 def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download_only=False, transcribe_only=False):
 
     t0 = datetime.datetime.utcnow()
-    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
+    print("\n" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
+
+    video_data = utils.get_video_data()
+    dir = video_data[yt_id]["upload_date"] + "_" + yt_id
 
     if transcribe_only:
-        print(str(datetime.datetime.utcnow()-t0).total_seconds())
-        video_data = utils.get_video_data()
-        print(str(datetime.datetime.utcnow()-t0).total_seconds())
+        #print("starting: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
+        #print("read json video metadata: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
         if not mp3_is_good(yt_id, video_data):
+            #print("checking mp3: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
             print("mp3 file not ready and download not requested; skipping " + yt_id)
             return False
         else: 
-            print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")
-            dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+            print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")         
             mp3file = os.path.join(dir,dir) +'.mp3' 
     else:
         mp3file, duration = download_audio(yt_id)
@@ -310,11 +312,13 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     if download_only: return False
 
     # skip files that are already done
-    print(str(datetime.datetime.utcnow()-t0).total_seconds())
-    files = glob.glob("*/20??-??-??_" + yt_id + ".srt")
-    print(str(datetime.datetime.utcnow()-t0).total_seconds())
-    if len(files) != 0 and not redo: 
-        print("Already done with " + yt_id + " (" + files[0] + "). Set redo=True to redo transcription")
+    #print("before searching for files: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
+    #file = glob.glob("*/20??-??-??_" + yt_id + ".srt")
+    file = os.path.join(dir,dir) +'.srt'
+    #print("searching for files: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
+    #if len(file[0]) != 0 and not redo: 
+    if os.path.exists(file) != 0 and not redo: 
+        print("Already done with " + yt_id + " (" + file + "). Set redo=True to redo transcription")
         return False
 
     # whisperX options
@@ -483,13 +487,19 @@ if __name__ == "__main__":
     if os.path.exists(jsonfile):
         while True:
             t0 = datetime.datetime.now()
-            more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo, transcribe_only=opt.transcribe_only)
+            try:
+                more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo, transcribe_only=opt.transcribe_only)
+            except:
+                more_to_do = True
 
             # if we did them all, wait an hour and check again
             # otherwise, on to the next one
             if more_to_do: time_to_sleep = 0
             else: 
-                download_rss_feed()
+                try: 
+                    download_rss_feed()
+                except:
+                    pass
                 tf = datetime.datetime.now()
                 time_to_sleep = 3600.0 - (tf-t0).total_seconds()
 
