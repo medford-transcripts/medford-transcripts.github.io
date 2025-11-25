@@ -71,6 +71,7 @@ def propagate():
 
                         # if it's been updated, propagate it
                         if mapped_ids[mapped_speaker] != mapped_speaker:
+                            print(yt_id + ": " + speaker_ids[speaker] + " matches " + mapped_ids[mapped_speaker] + ")")
                             speaker_ids[speaker] = mapped_ids[mapped_speaker]
                             update = True
 
