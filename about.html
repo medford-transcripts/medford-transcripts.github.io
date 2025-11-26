@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="AI-generated transcripts of Medford Massachusetts local meetings, news, politics. City Council, School committee, sub committees.">
+    <title>Medford Transcripts</title>
+    <link rel="canonical" href="https://medford-transcripts.github.io/" />
+  </head>
+
+  <body>
+
+These transcripts are generated using a slightly modified version of WhisperX (<a href="https://arxiv.org/abs/2303.00747">arxiv</a>, <a href="https://github.com/m-bain/whisperX">Github</a>) along with significant custom software available on GitHub <a href="https://github.com/medford-transcripts/medford-transcripts.github.io">here</a> for postprocessing (cross matching speakers, turning transcripts into html pages, translating, compiling <a href="election/index.html">election pages</a> with <a href="councilors.json">candidate</a> excerpts, generating heatmaps, scraping civicclerk to download agendas, minutes, and resolutions, monitoring <a href="channels_to_transcribe.txt">these YouTube channels</a>, extracting audio, and automating the process) and utility functions (prioritizing manual speaker identification, monitoring progress).
+
+<br><br>WhisperX's audio-to-text engine is <a href="https://openai.com/index/whisper/">OpenAI's Whisper</a>, and just adding a layer to improve the accuracy of the timestamps. My custom modification simply outputs the "embeddings" from  (voice fingerprints) Whisper so I can use them in post-processing to cross-match speakers between videos.
+
+<br><br>In general, Whisper performance is top tier with error rates below 1%.
+
+<br><br>Here's a paper that discusses the <a href="https://arxiv.org/html/2402.08021v2">Hallucinations in Whisper</a>. Here's a paper that discusses Whisper <a href="https://arxiv.org/html/2501.11378v1">Hallucinations in non-speech audio</a>. In my post-processing step to cross match speakers, I identify noisy embeddings (uncertain speaker identities), which is often the case for the non-speech audio prone to hallucinations discussed in the above papers. These are assigned the "Unidentified" speaker and should be treated with particular suspicion. The flip side is, I believe positively identified speakers should be far less prone to the sorts of halicinations discussed in these papers, which is already rare (1 in ~250 transcripts).
+
+<br><br><a href="video_data.json">video_data.json</a> contains all the metadata for the videos. This is mostly automatically extracted from YouTube (using <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>), but there are some manual modifications to identify (and skip) duplicate videos, and correct dates that are ambiguously stated in the titles and do not match the upload date.
+
+<br><br>Automated cross matching of speakers is done with the highest cosine similarity between embeddings (with a minimum threshold of 0.75). At this threshold, false positives are rare but not impossible. More often, original manual identifications were bad and propagated automatically.
+
+<br><br>One may wish to use <a href="https://chatgpt.com/">ChatGPT</a> to make sense of these transcripts, and it's ~ok (and getting better). But be aware 
+
+  </body>
+</html>

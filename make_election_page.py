@@ -83,7 +83,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_
             f.write('        <td title="A link to all excerpt for this speaker, with sentence-level, timestamped links to the source video"><center>Excerpts</center></td>\n')
             f.write('        <td title="Number of words spoken among all transcribed videos of this year">' + years[1] + ' Words</td>\n')
             f.write('        <td title="Number of words spoken among all transcribed videos of this year">' + year + ' Words</td>\n')
-            f.write('        <td title="Campaign socials">Campaign Socials</td>\n')
+            f.write('        <td title="Campaign Links"><center>Campaign Links</center></td>\n')
             f.write('        <td><a href="https://ourrevolutionmedford.com/">ORM endorsed?</a></td>\n')
             f.write('        <td><a href="https://www.youtube.com/@MedfordHappenings">Medford Happenings</a></td>\n')
             f.write('        <td><a href="https://podcasts.apple.com/us/podcast/medford-bytes/id1591707053">Medford Bytes</a></td>\n')
