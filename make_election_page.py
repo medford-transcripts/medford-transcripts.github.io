@@ -4,8 +4,9 @@ import json
 import supercut
 import ipdb
 import os
+import datetime
 
-def make_election_page(year=None, remake_heatmap=False, remake_html=False):
+def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_words=False):
 
     now = datetime.datetime.utcnow()
 
@@ -70,7 +71,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
 
             if os.path.exists(fullmapname): 
                 mtime = os.path.getmtime(fullmapname)
-                modified_date = datetime.fromtimestamp(mtime)
+                modified_date = datetime.datetime.fromtimestamp(mtime)
 
             if not os.path.exists(fullmapname) or (remake_heatmap and modified_date < now):
                 heatmap.electeds_heatmap(position, year=year)
@@ -82,7 +83,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
             f.write('        <td title="A link to all excerpt for this speaker, with sentence-level, timestamped links to the source video"><center>Excerpts</center></td>\n')
             f.write('        <td title="Number of words spoken among all transcribed videos of this year">' + years[1] + ' Words</td>\n')
             f.write('        <td title="Number of words spoken among all transcribed videos of this year">' + year + ' Words</td>\n')
-            f.write('        <td title="Campaign website">Website</td>\n')
+            f.write('        <td title="Campaign socials">Campaign Socials</td>\n')
             f.write('        <td><a href="https://ourrevolutionmedford.com/">ORM endorsed?</a></td>\n')
             f.write('        <td><a href="https://www.youtube.com/@MedfordHappenings">Medford Happenings</a></td>\n')
             f.write('        <td><a href="https://podcasts.apple.com/us/podcast/medford-bytes/id1591707053">Medford Bytes</a></td>\n')
@@ -97,7 +98,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
 
                 if os.path.exists(htmlname): 
                     mtime = os.path.getmtime(htmlname)
-                    modified_date = datetime.fromtimestamp(mtime)
+                    modified_date = datetime.datetime.fromtimestamp(mtime)
 
                 if not os.path.exists(htmlname) or (remake_html and modified_date < now):
                     supercut.supercut(official,mkhtml=True)
@@ -105,12 +106,16 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
                 if year in directory[official].keys():
                     if position in directory[official][year]["position"]:
 
-                        print((official,years[0]))
-                        excerpts = supercut.supercut(official,mkhtml=False,year=years[0])
-                        excerptsm1 = supercut.supercut(official,mkhtml=False,year=years[1])
+                        if not skip_words:
+                            print((official,years[0]))
+                            excerpts = supercut.supercut(official,mkhtml=False,year=years[0])
+                            excerptsm1 = supercut.supercut(official,mkhtml=False,year=years[1])
 
-                        words_year = len(excerpts.split())
-                        words_lastyear = len(excerptsm1.split())
+                            words_year = len(excerpts.split())
+                            words_lastyear = len(excerptsm1.split())
+                        else:
+                            words_year = 0
+                            words_lastyear = 0
 
                         elected_position = position.removesuffix("_prelim_candidate").removesuffix("_candidate")
                         is_incumbent = elected_position in directory[official][year]["position"]
@@ -124,13 +129,22 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
                         f.write('        <td><center>' + format(words_year,",") + '</center></td>\n')
 
                         # add campaign website
-                        if 'website' in directory[official].keys():
-                            if directory[official]['website'] != "":
-                                f.write('        <td><center><a href="' + directory[official]['website'] + '">website</a></center></td>\n')
-                            else:
-                                f.write('        <td></td>\n')
-                        else:
-                            f.write('        <td></td>\n')
+                        #if 'website' in directory[official].keys():
+                        #    if directory[official]['website'] != "":
+                        #        f.write('        <td><center><a href="' + directory[official]['website'] + '">website</a></center></td>\n')
+                        #    else:
+                        #        f.write('        <td></td>\n')
+                        #else:
+                        #    f.write('        <td></td>\n')
+
+                        f.write('        <td><center>\n')
+                        socials = ["website","email","facebook","instagram","twitter","linkedin","reddit","whatsapp","youtube","tiktok","pinterest","discord","github","bluesky","donate"]
+                        for social in socials:
+                            if social in directory[official].keys():
+                                if directory[official][social] != "":
+                                    f.write('          <a href="' + directory[official][social] + '"><img height="16" src="' + social + '.svg"></a>\n')
+                        f.write('        </center></td>\n')
+
 
                         # add ORM endorsement
                         if 'orm_endorsed' in directory[official][year].keys():
@@ -148,8 +162,8 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
                                     else:
                                         link_text = test_year + ' Tran'
                                     yt_id = directory[official][test_year]["happenings"]
-                                    url = video_data[yt_id]["date"] + "_" + yt_id + '/index.html'
-                                    f.write('        <td><center><a href="' + url + '">' + link_text + '</a></center></td>\n')
+                                    url = video_data[yt_id]["upload_date"] + "_" + yt_id + '/index.html'
+                                    f.write('        <td><center><a href="../' + url + '">' + link_text + '</a></center></td>\n')
                                     found=True
                                     break
                         if not found:
@@ -165,8 +179,8 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
                                     else:
                                         link_text = test_year + ' Tran'
                                     yt_id = directory[official][test_year]["bytes"]
-                                    url = video_data[yt_id]["date"] + "_" + yt_id + '/index.html'
-                                    f.write('        <td><center><a href="' + url + '">' + link_text + '</a></center></td>\n')
+                                    url = video_data[yt_id]["upload_date"] + "_" + yt_id + '/index.html'
+                                    f.write('        <td><center><a href="../' + url + '">' + link_text + '</a></center></td>\n')
                                     found=True
                                     break
                         if not found:
@@ -214,8 +228,8 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
                                     else:
                                         link_text = test_year + ' Tran'
                                     yt_id = directory[official][test_year]["mcm"]
-                                    url = video_data[yt_id]["date"] + "_" + yt_id + '/index.html'
-                                    f.write('        <td><center><a href="' + url + '">' + link_text + '</a></center></td>\n')
+                                    url = video_data[yt_id]["upload_date"] + "_" + yt_id + '/index.html'
+                                    f.write('        <td><center><a href="../' + url + '">' + link_text + '</a></center></td>\n')
                                     found=True
                                     break
                         if not found:
@@ -234,7 +248,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False):
         f.write('  </body>\n')
         f.write('</html>\n')
 
-def make_all_election_pages(remake_heatmap=False, remake_html=False):
+def make_all_election_pages(remake_heatmap=False, remake_html=False, skip_words=False):
 
     with open("election/index.html", "w") as f:
 
@@ -259,7 +273,7 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False):
 
         years = list(range(2025, 2004, -2))
         for year in years:
-            make_election_page(year=str(year), remake_heatmap=remake_heatmap, remake_html=remake_html)
+            make_election_page(year=str(year), remake_heatmap=remake_heatmap, remake_html=remake_html, skip_words=skip_words)
             f.write('      <tr><td><a href="' + str(year) + '.html">' + str(year) + '</a></tr>\n')
 
         f.write('    </table>\n')
@@ -267,5 +281,9 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False):
         f.write('</html>\n')
 
 if __name__ == "__main__": 
+
+    # this is much faster (seconds, not hours) for testing
+    #make_all_election_pages(remake_heatmap=False, remake_html=False, skip_words=True)
+
     make_all_election_pages(remake_heatmap=True, remake_html=True)
     #make_election_page(year="2025")
