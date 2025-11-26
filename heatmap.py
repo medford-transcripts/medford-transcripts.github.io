@@ -158,6 +158,122 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
         # no coordinates, but user asked for dict
         return {}
 
+def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
+
+    # create a map centered at city hall
+    lat_lon = (42.4180601, -71.1057344)
+    m = folium.Map(location=lat_lon, zoom_start=zoom_start)
+
+    # Add ward boundaries
+    with open("medford_wards.geojson", "r") as f:
+        wards = json.load(f)
+
+    if ward_only or district_only:
+        if ward_only:
+            # one group per ward, but keep as lists for consistent handling
+            target_wards_list = [["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"]]
+            htmlname = "wardmap.html"
+        if district_only:
+            # groups of wards per district
+            target_wards_list = [["1", "7"], ["2", "3"], ["4", "5"], ["6", "8"]]
+            htmlname = "districtmap.html"
+
+        merged_features = []
+
+        for ward_group in target_wards_list:
+            geoms = []
+            for feature in wards["features"]:
+                ward = str(feature["properties"].get("WARD")).strip()
+                if ward in ward_group:
+                    geoms.append(shape(feature["geometry"]))
+
+            if not geoms:
+                continue  # nothing to merge for this group
+
+            merged_geom = unary_union(geoms)
+
+            # properties for the merged feature
+            if ward_only:
+                # single ward, use that as WARD
+                props = {"WARD": ward_group[0]}
+            else:  # district_only
+                label = "/".join(ward_group)  # e.g. "1/7"
+                props = {
+                    "DISTRICT": label,
+                    "WARDS": ward_group,
+                }
+
+            merged_feature = {
+                "type": "Feature",
+                "properties": props,
+                "geometry": mapping(merged_geom),
+            }
+            merged_features.append(merged_feature)
+
+        merged_wards = {
+            "type": "FeatureCollection",
+            "features": merged_features,
+        }
+
+    else:
+        # use raw wards (precinct-level) as-is
+        merged_wards = wards
+        htmlname = "ward_precinctmap.html"
+
+    # choose tooltip fields based on mode
+    if district_only:
+        tooltip_fields = ["DISTRICT"]
+        tooltip_aliases = ["District:"]
+    elif ward_only:
+        tooltip_fields = ["WARD"]
+        tooltip_aliases = ["Ward:"]
+    else:
+        tooltip_fields = ["WARD", "PRECINCT"]
+        tooltip_aliases = ["Ward:", "Precinct:"]
+
+    folium.GeoJson(
+        merged_wards,
+        name="Wards",
+        style_function=lambda feature: {
+            "fillColor": "none",
+            "color": "black",
+            "weight": 2,
+            "dashArray": "5, 5",
+        },
+        tooltip=folium.GeoJsonTooltip(
+            fields=tooltip_fields,
+            aliases=tooltip_aliases,
+        ),
+    ).add_to(m)
+
+    # Add text labels
+    for feature in merged_wards["features"]:
+        geom = shape(feature["geometry"])
+        #centroid = geom.centroid
+        label_point = geom.representative_point()
+
+
+        if district_only:
+            label = feature["properties"].get("DISTRICT", "")
+        elif ward_only:
+            ward = str(feature["properties"].get("WARD", "")).strip()
+            label = ward
+        else:
+            ward = str(feature["properties"].get("WARD", "")).strip()
+            precinct = str(feature["properties"].get("PRECINCT", "")).strip()
+            label = f"{ward}-{precinct}"
+
+        folium.map.Marker(
+            [label_point.y, label_point.x],
+            icon=folium.DivIcon(
+                html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
+            ),
+        ).add_to(m)
+
+    # Save to file
+    m.save(htmlname)
+    print("Heatmap saved as " + htmlname)
+
 def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
 
     # create a map centered at city hall
@@ -168,6 +284,7 @@ def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
     with open("medford_wards.geojson", "r") as f:
         wards = json.load(f)
 
+    addresses = None
     if ward_only or district_only:
         if ward_only: 
             target_wards_list = [("1"),("2"),("3"),("4"),("5"),("6"),("7"),("8")]
@@ -181,7 +298,6 @@ def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
             geoms = []
             for feature in wards["features"]:
                 ward = feature["properties"].get("WARD")
-                ipdb.set_trace()
                 if ward in target_wards:
                     geoms.append(shape(feature["geometry"]))
 
@@ -199,6 +315,24 @@ def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
             merged_wards.append(merged_feature)
     else:
         merged_wards = wards
+        addresses = {
+            "1-1":"3000 Mystic Valley Pkwy, Medford, MA",
+            "1-2":"340 Salem St, Medford, MA",
+            "2-1":"Park St & Court St, Medford, MA",
+            "2-2":"35 Court St, Medford, MA",
+            "3-1":"321 Winthrop St, Medford, MA",
+            "3-2":"475 Winthrop St, Medford, MA",
+            "4-1":"161 College Ave, Medford, MA",
+            "4-2":"Auburn & North St, Medford, MA",
+            "5-1":"37 Hicks Ave, Medford, MA",
+            "5-2":"37 Hicks Ave, Medford, MA",
+            "6-1":"26 Harvard Ave, Medford, MA",
+            "6-2":"388 High St, Medford, MA",
+            "7-1":"Mystic Valley Towers, Medford, MA",
+            "7-2":"3004 Mystic Valley Pkwy, Medford, MA",
+            "8-1":"101 Riverside Ave, Medford, MA",
+            "8-2":"Zero Medford St, Medford, MA",
+        }
         htmlname = "ward_precinctmap.html"
 
     folium.GeoJson(merged_wards,
