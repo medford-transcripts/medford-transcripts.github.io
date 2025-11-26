@@ -219,6 +219,62 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
         # use raw wards (precinct-level) as-is
         merged_wards = wards
         htmlname = "ward_precinctmap.html"
+        merged_wards = wards
+        addresses = {
+            "1-1":{"address":"3000 Mystic Valley Pkwy, Medford, MA"},
+            "1-2":{"address":"340 Salem St, Medford, MA"},
+            "2-1":{"address":"35 Court St, Medford, MA"},
+            "2-2":{"address":"35 Court St, Medford, MA"},
+            "3-1":{"address":"321 Winthrop St, Medford, MA"},
+            "3-2":{"address":"475 Winthrop St, Medford, MA"},
+            "4-1":{"address":"161 College Ave, Medford, MA"},
+            "4-2":{"address":"Auburn & North St, Medford, MA"},
+            "5-1":{"address":"37 Hicks Ave, Medford, MA"},
+            "5-2":{"address":"37 Hicks Ave, Medford, MA"},
+            "6-1":{"address":"26 Harvard Ave, Medford, MA"},
+            "6-2":{"address":"388 High St, Medford, MA"},
+            "7-1":{"address":"3600 Mystic Valley Pkwy, Medford, MA"},
+            "7-2":{"address":"3004 Mystic Valley Pkwy, Medford, MA"},
+            "8-1":{"address":"101 Riverside Ave, Medford, MA"},
+            "8-2":{"address":"Zero Medford St, Medford, MA"},
+        }
+        coordinates = []
+        labels_aligned = []
+        valid_addresses = []
+        for precinct in addresses.keys():
+            lat_lon = utils.get_lat_lon(addresses[precinct]["address"])
+            if lat_lon:
+                coordinates.append(lat_lon)
+                addresses[precinct]["lat"] = lat_lon[0]
+                addresses[precinct]["lon"] = lat_lon[1]
+                valid_addresses.append(addresses[precinct]["address"])
+                labels_aligned.append(precinct)
+            time.sleep(0.01)  # To avoid API rate limits
+        HeatMap(coordinates).add_to(m)
+
+        label_mode = "tooltip"
+        # Optional: annotate each point
+        for (lat, lon), text in zip(coordinates, labels_aligned):
+            if not text:
+                continue
+            if label_mode == "tooltip":
+                # Cleanest: small dot with hover text
+                folium.CircleMarker(location=[lat, lon], radius=3, fill=True).add_to(m)
+                folium.Marker(
+                    location=[lat, lon],
+                    tooltip=text,
+                    icon=folium.Icon(icon="info-sign", prefix="glyphicon")
+                ).add_to(m)
+            else:  # "div" → always-visible text on the map
+                folium.map.Marker(
+                    [lat, lon],
+                    icon=folium.DivIcon(
+                        html=f"""<div style="font-size: 10pt; font-weight: 600; 
+                                 text-shadow: 0 0 2px #fff; white-space: nowrap;">
+                                 {html.escape(text)}</div>"""
+                    )
+                ).add_to(m)
+
 
     # choose tooltip fields based on mode
     if district_only:
@@ -316,24 +372,38 @@ def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
     else:
         merged_wards = wards
         addresses = {
-            "1-1":"3000 Mystic Valley Pkwy, Medford, MA",
-            "1-2":"340 Salem St, Medford, MA",
-            "2-1":"Park St & Court St, Medford, MA",
-            "2-2":"35 Court St, Medford, MA",
-            "3-1":"321 Winthrop St, Medford, MA",
-            "3-2":"475 Winthrop St, Medford, MA",
-            "4-1":"161 College Ave, Medford, MA",
-            "4-2":"Auburn & North St, Medford, MA",
-            "5-1":"37 Hicks Ave, Medford, MA",
-            "5-2":"37 Hicks Ave, Medford, MA",
-            "6-1":"26 Harvard Ave, Medford, MA",
-            "6-2":"388 High St, Medford, MA",
-            "7-1":"Mystic Valley Towers, Medford, MA",
-            "7-2":"3004 Mystic Valley Pkwy, Medford, MA",
-            "8-1":"101 Riverside Ave, Medford, MA",
-            "8-2":"Zero Medford St, Medford, MA",
+            "1-1":{"address":"3000 Mystic Valley Pkwy, Medford, MA"},
+            "1-2":{"address":"340 Salem St, Medford, MA"},
+            "2-1":{"address":"Park St & Court St, Medford, MA"},
+            "2-2":{"address":"35 Court St, Medford, MA"},
+            "3-1":{"address":"321 Winthrop St, Medford, MA"},
+            "3-2":{"address":"475 Winthrop St, Medford, MA"},
+            "4-1":{"address":"161 College Ave, Medford, MA"},
+            "4-2":{"address":"Auburn & North St, Medford, MA"},
+            "5-1":{"address":"37 Hicks Ave, Medford, MA"},
+            "5-2":{"address":"37 Hicks Ave, Medford, MA"},
+            "6-1":{"address":"26 Harvard Ave, Medford, MA"},
+            "6-2":{"address":"388 High St, Medford, MA"},
+            "7-1":{"address":"Mystic Valley Towers, Medford, MA"},
+            "7-2":{"address":"3004 Mystic Valley Pkwy, Medford, MA"},
+            "8-1":{"address":"101 Riverside Ave, Medford, MA"},
+            "8-2":{"address":"Zero Medford St, Medford, MA"},
         }
+
+        coordinates = []
+        labels_aligned = []
+        valid_addresses = []
+        for precinct in addresses.keys():
+            lat_lon = utils.get_lat_lon(precinct["address"])
+            if lat_lon:
+                coordinates.append(lat_lon)
+                valid_addresses.append(address)
+                labels_aligned.append(precinct)
+            time.sleep(0.01)  # To avoid API rate limits
+        HeatMap(coordinates).add_to(m)
+        ipdb.set_trace()
         htmlname = "ward_precinctmap.html"
+    ipdb.set_trace()
 
     folium.GeoJson(merged_wards,
                     name="Wards",
