@@ -3,6 +3,11 @@ import os, time, datetime
 import dateutil.parser as dparser
 import yt_dlp 
 
+# ward geometry
+from geopy.geocoders import Nominatim
+from shapely.geometry import shape, Point
+
+
 '''
 return all the metadata for the videos stored in video_data.json
 update the creation date.
@@ -199,6 +204,58 @@ def update_channel(channel):
                 print("Failed on " + playlist["id"])
                 print(error)
                 print(traceback.format_exc())
+
+# Function to get latitude and longitude
+def get_lat_lon(address):
+    geolocator = Nominatim(user_agent="medfordTranscripts/1.0")
+    try:
+        location = geolocator.geocode(address, timeout=10)
+        if location:
+            return (location.latitude, location.longitude)
+    except Exception as e:
+        print(f"Error geocoding {address}: {e}")
+    return None
+
+def address_to_ward(address, return_district=False):
+
+    with open("medford_wards.geojson", "r") as f:
+        wards = json.load(f)
+
+    ward_geoms = []
+    # Add text labels for each wards
+    for feature in wards["features"]:
+        geom = shape(feature["geometry"])
+        ward = str(feature["properties"].get("WARD", "")).strip()
+        precinct = str(feature["properties"].get("PRECINCT", "")).strip()
+        label = f"{ward}-{precinct}"
+
+        # these define the school committee districts
+        if ward == "1" or ward == "7": district = "1/7"
+        if ward == "2" or ward == "3": district = "2/3"
+        if ward == "4" or ward == "5": district = "4/5"
+        if ward == "6" or ward == "8": district = "6/8"
+
+        ward_geoms.append(
+            {
+                "geom": geom,
+                "ward": ward,
+                "precinct": precinct,
+                "ward_precinct": label,
+                "district": district,
+            }
+        )
+
+    lat_lon = get_lat_lon(address)
+    if lat_lon is None: return None
+    lat = lat_lon[0]
+    lon = lat_lon[1]
+
+    for w in ward_geoms:
+        if w["geom"].contains(Point(lon, lat)):
+            if return_district: return w["district"]
+            return w["ward"]
+
+    return None
 
 ''' 
 update the meta data for all videos
