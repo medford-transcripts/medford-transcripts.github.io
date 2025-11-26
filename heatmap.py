@@ -8,7 +8,9 @@ from folium.plugins import HeatMap
 from geopy.geocoders import Nominatim
 import osmnx as ox
 import geopandas as gpd
-from shapely.geometry import shape, Point
+from shapely.geometry import shape, Point, mapping
+from shapely.ops import unary_union
+
 
 import utils
 import datetime
@@ -16,7 +18,6 @@ import datetime
 def make_geojson():
     # from https://www.axisgis.com/MedfordMA
     wards = gpd.read_file("WARDSPRECINCTS2022_POLY.shp")
-
 
     # filter just medford wards
     wards = wards[wards['TOWN'] == 'MEDFORD'].copy()
@@ -30,17 +31,6 @@ def make_geojson():
     # save file
     wards.to_file("medford_wards.geojson", driver="GeoJSON")
 
-# Function to get latitude and longitude
-def get_lat_lon(address):
-    geolocator = Nominatim(user_agent="medfordTranscripts/1.0")
-    try:
-        location = geolocator.geocode(address, timeout=10)
-        if location:
-            return (location.latitude, location.longitude)
-    except Exception as e:
-        print(f"Error geocoding {address}: {e}")
-    return None
-
 def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, label_mode="tooltip", allow_none=False, return_wards_dict=True, skip_labels=False):
 
     # Get coordinates
@@ -48,7 +38,7 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     labels_aligned = []
     valid_addresses = []
     for i, address in enumerate(addresses):
-        lat_lon = get_lat_lon(address)
+        lat_lon = utils.get_lat_lon(address)
         if lat_lon:
             coordinates.append(lat_lon)
             valid_addresses.append(address)
@@ -61,7 +51,7 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
     if not coordinates:
         print("No valid coordinates found.")
         if not allow_none: return
-        lat_lon = get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
+        lat_lon = (42.4180601, -71.1057344) # utils.get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
         m = folium.Map(location=lat_lon, zoom_start=zoom_start)
     else:
         # Create a map centered at the first location
@@ -168,6 +158,88 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
         # no coordinates, but user asked for dict
         return {}
 
+def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
+
+    # create a map centered at city hall
+    lat_lon = (42.4180601, -71.1057344) # utils.get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
+    m = folium.Map(location=lat_lon, zoom_start=zoom_start)
+
+    # Add ward boundaries
+    with open("medford_wards.geojson", "r") as f:
+        wards = json.load(f)
+
+    if ward_only or district_only:
+        if ward_only: 
+            target_wards_list = [("1"),("2"),("3"),("4"),("5"),("6"),("7"),("8")]
+            htmlname = "wardmap.html"
+        if district_only:
+            target_wards_list = [("1","7"),("2","3"),("4","5"),("6","8")]
+            htmlname = "districtmap.html"
+        merged_wards = []
+
+        for target_wards in target_wards_list:
+            geoms = []
+            for feature in wards["features"]:
+                ward = feature["properties"].get("WARD")
+                ipdb.set_trace()
+                if ward in target_wards:
+                    geoms.append(shape(feature["geometry"]))
+
+            # merge them into a single geometry
+            merged_geom = unary_union(geoms)
+
+            # wrap into a GeoJSON feature
+            merged_feature = {
+                "type": "Feature",
+                "properties": {
+                    "merged_wards": list(target_wards)
+                },
+                "geometry": mapping(merged_geom)
+            }
+            merged_wards.append(merged_feature)
+    else:
+        merged_wards = wards
+        htmlname = "ward_precinctmap.html"
+
+    folium.GeoJson(merged_wards,
+                    name="Wards",
+                    style_function=lambda feature: {
+                    "fillColor": "none",
+                    "color": "black",
+                    "weight": 2,
+                    "dashArray": "5, 5"
+                    },
+                    tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
+                    ).add_to(m)
+
+    # Add text labels for each wards
+    for feature in merged_wards["features"]:
+        geom = shape(feature["geometry"])
+        centroid = geom.centroid
+        ward = str(feature["properties"].get("WARD", "")).strip()
+        precinct = str(feature["properties"].get("PRECINCT", "")).strip()
+
+        if district_only:
+            if ward == "1" or ward=="7": label = "1/7"
+            if ward == "2" or ward=="3": label = "2/3"
+            if ward == "4" or ward=="5": label = "4/5"
+            if ward == "6" or ward=="8": label = "6/8"
+        elif ward_only:
+            label = ward
+        else: 
+            label = f"{ward}-{precinct}"
+
+        folium.map.Marker(
+            [centroid.y, centroid.x],
+            icon=folium.DivIcon(
+                html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
+            )
+        ).add_to(m)
+
+
+    # Save to file
+    m.save(htmlname)
+    print("Heatmap saved as " + htmlname)
 
 def electeds_heatmap(position, year=None):
 

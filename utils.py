@@ -230,10 +230,10 @@ def address_to_ward(address, return_district=False):
         label = f"{ward}-{precinct}"
 
         # these define the school committee districts
-        if ward == "1" or ward == "7": district = "1/7"
-        if ward == "2" or ward == "3": district = "2/3"
-        if ward == "4" or ward == "5": district = "4/5"
-        if ward == "6" or ward == "8": district = "6/8"
+        if ward == "1" or ward == "7": district = "1/7" # East?
+        if ward == "2" or ward == "3": district = "2/3" # North?
+        if ward == "4" or ward == "5": district = "4/5" # South?
+        if ward == "6" or ward == "8": district = "6/8" # West?
 
         ward_geoms.append(
             {
