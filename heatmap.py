@@ -218,25 +218,73 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
     else:
         # use raw wards (precinct-level) as-is
         merged_wards = wards
-        htmlname = "ward_precinctmap.html"
+        htmlname = "polling_places.html"
         merged_wards = wards
         addresses = {
-            "1-1":{"address":"3000 Mystic Valley Pkwy, Medford, MA"},
-            "1-2":{"address":"340 Salem St, Medford, MA"},
-            "2-1":{"address":"35 Court St, Medford, MA"},
-            "2-2":{"address":"35 Court St, Medford, MA"},
-            "3-1":{"address":"321 Winthrop St, Medford, MA"},
-            "3-2":{"address":"475 Winthrop St, Medford, MA"},
-            "4-1":{"address":"161 College Ave, Medford, MA"},
-            "4-2":{"address":"Auburn & North St, Medford, MA"},
-            "5-1":{"address":"37 Hicks Ave, Medford, MA"},
-            "5-2":{"address":"37 Hicks Ave, Medford, MA"},
-            "6-1":{"address":"26 Harvard Ave, Medford, MA"},
-            "6-2":{"address":"388 High St, Medford, MA"},
-            "7-1":{"address":"3600 Mystic Valley Pkwy, Medford, MA"},
-            "7-2":{"address":"3004 Mystic Valley Pkwy, Medford, MA"},
-            "8-1":{"address":"101 Riverside Ave, Medford, MA"},
-            "8-2":{"address":"Zero Medford St, Medford, MA"},
+            "1-1":{
+                "address":"3000 Mystic Valley Pkwy, Medford, MA",
+                "label": "1-1\nAndrews Middle School"
+                },
+            "1-2":{
+                "address":"340 Salem St, Medford, MA",
+                "label":"1-2\nFire Fighter's Club"
+                },
+            "2-1":{
+                "address":"35 Court St, Medford, MA",
+                "label":"2-1 & 2-2\nRoberts Elementary"
+                },
+#            "2-2":{
+#                "address":"35 Court St, Medford, MA",
+#                "label":"2-1 & 2-2\nRoberts Elementary"
+#                },
+            "3-1":{
+                "address":"321 Winthrop St, Medford, MA",
+                "label":"3-1\nMedford American Legion"
+                },
+            "3-2":{
+                "address":"475 Winthrop St, Medford, MA",
+                "label":"3-2\nTemple Shalom"
+                },
+            "4-1":{
+                "address":"161 College Ave, Medford, MA",
+                "label":"4-1\nTufts University, Gantcher Center"
+                },
+            "4-2":{
+                "address":"22 Walkling Court, Medford, MA",
+                "label":"4-2\nWalkling Court, Fondacaro Center"
+                },
+            "5-1":{
+                "address":"37 Hicks Ave, Medford, MA",
+                "label":"5-1 & 5-2\nMissituk Elementary School"
+                },
+#            "5-2":{
+#                "address":"37 Hicks Ave, Medford, MA",
+#                "label":"5-1 & 5-2\nMissituk Elementary School"
+#                },
+            "6-1":{
+                "address":"26 Harvard Ave, Medford, MA",
+                "label":"6-1\nWest Medford Fire Station"
+                },
+            "6-2":{
+                "address":"388 High St, Medford, MA",
+                "label":"6-2\nBrooks Elementary School"
+                },
+            "7-1":{
+                "address":"3600 Mystic Valley Pkwy, Medford, MA",
+                "label":"7-1\nMystic Valley Towers, Mystic Place"
+                },
+            "7-2":{
+                "address":"3004 Mystic Valley Pkwy, Medford, MA",
+                "label":"7-2\nMcGlynn K-8 Public School"
+                },
+            "8-1":{
+                "address":"101 Riverside Ave, Medford, MA",
+                "label":"8-1\nSenior Center"
+                },
+            "8-2":{
+                "address":"20 Medford St, Medford, MA",
+                "label":"8-2\nSouth Medford Fire Station"
+                },
         }
         coordinates = []
         labels_aligned = []
@@ -248,9 +296,14 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
                 addresses[precinct]["lat"] = lat_lon[0]
                 addresses[precinct]["lon"] = lat_lon[1]
                 valid_addresses.append(addresses[precinct]["address"])
-                labels_aligned.append(precinct)
+                labels_aligned.append(addresses[precinct]["label"])
             time.sleep(0.01)  # To avoid API rate limits
         HeatMap(coordinates).add_to(m)
+
+        # save the data
+        jsonfile = "polling_places.json"
+        with open(jsonfile, "w") as fp:
+            json.dump(addresses, fp, indent=4)
 
         label_mode = "tooltip"
         # Optional: annotate each point
