@@ -158,7 +158,7 @@ def heatmap(addresses, labels=None, htmlname="heatmap.html",zoom_start=13.0, lab
         # no coordinates, but user asked for dict
         return {}
 
-def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
+def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0, polling_place=False):
 
     # create a map centered at city hall
     lat_lon = (42.4180601, -71.1057344)
@@ -214,96 +214,38 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
             "type": "FeatureCollection",
             "features": merged_features,
         }
-
-    else:
+    elif polling_place:
         # use raw wards (precinct-level) as-is
         merged_wards = wards
         htmlname = "polling_places.html"
-        merged_wards = wards
-        addresses = {
-            "1-1":{
-                "address":"3000 Mystic Valley Pkwy, Medford, MA",
-                "label": "1-1\nAndrews Middle School"
-                },
-            "1-2":{
-                "address":"340 Salem St, Medford, MA",
-                "label":"1-2\nFire Fighter's Club"
-                },
-            "2-1":{
-                "address":"35 Court St, Medford, MA",
-                "label":"2-1 & 2-2\nRoberts Elementary"
-                },
-#            "2-2":{
-#                "address":"35 Court St, Medford, MA",
-#                "label":"2-1 & 2-2\nRoberts Elementary"
-#                },
-            "3-1":{
-                "address":"321 Winthrop St, Medford, MA",
-                "label":"3-1\nMedford American Legion"
-                },
-            "3-2":{
-                "address":"475 Winthrop St, Medford, MA",
-                "label":"3-2\nTemple Shalom"
-                },
-            "4-1":{
-                "address":"161 College Ave, Medford, MA",
-                "label":"4-1\nTufts University, Gantcher Center"
-                },
-            "4-2":{
-                "address":"22 Walkling Court, Medford, MA",
-                "label":"4-2\nWalkling Court, Fondacaro Center"
-                },
-            "5-1":{
-                "address":"37 Hicks Ave, Medford, MA",
-                "label":"5-1 & 5-2\nMissituk Elementary School"
-                },
-#            "5-2":{
-#                "address":"37 Hicks Ave, Medford, MA",
-#                "label":"5-1 & 5-2\nMissituk Elementary School"
-#                },
-            "6-1":{
-                "address":"26 Harvard Ave, Medford, MA",
-                "label":"6-1\nWest Medford Fire Station"
-                },
-            "6-2":{
-                "address":"388 High St, Medford, MA",
-                "label":"6-2\nBrooks Elementary School"
-                },
-            "7-1":{
-                "address":"3600 Mystic Valley Pkwy, Medford, MA",
-                "label":"7-1\nMystic Valley Towers, Mystic Place"
-                },
-            "7-2":{
-                "address":"3004 Mystic Valley Pkwy, Medford, MA",
-                "label":"7-2\nMcGlynn K-8 Public School"
-                },
-            "8-1":{
-                "address":"101 Riverside Ave, Medford, MA",
-                "label":"8-1\nSenior Center"
-                },
-            "8-2":{
-                "address":"20 Medford St, Medford, MA",
-                "label":"8-2\nSouth Medford Fire Station"
-                },
-        }
+
+        jsonfile = "polling_places.json"
+        with open(jsonfile, 'r') as fp:
+            addresses = json.load(fp)
+
         coordinates = []
         labels_aligned = []
         valid_addresses = []
+        update_polls = False
         for precinct in addresses.keys():
-            lat_lon = utils.get_lat_lon(addresses[precinct]["address"])
+            if "lat" in addresses[precinct].keys() and "lon" in addresses[precinct].keys():
+                lat_lon = (addresses[precinct]["lat"],addresses[precinct]["lon"])
+            else:
+                lat_lon = utils.get_lat_lon(addresses[precinct]["address"])
+                update_polls = True
+                time.sleep(0.01)  # To avoid API rate limits
             if lat_lon:
                 coordinates.append(lat_lon)
                 addresses[precinct]["lat"] = lat_lon[0]
                 addresses[precinct]["lon"] = lat_lon[1]
                 valid_addresses.append(addresses[precinct]["address"])
                 labels_aligned.append(addresses[precinct]["label"])
-            time.sleep(0.01)  # To avoid API rate limits
         HeatMap(coordinates).add_to(m)
 
-        # save the data
-        jsonfile = "polling_places.json"
-        with open(jsonfile, "w") as fp:
-            json.dump(addresses, fp, indent=4)
+        # resave the data if it was updated
+        if update_polls:
+            with open(jsonfile, "w") as fp:
+                json.dump(addresses, fp, indent=4)
 
         label_mode = "tooltip"
         # Optional: annotate each point
@@ -327,6 +269,9 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
                                  {html.escape(text)}</div>"""
                     )
                 ).add_to(m)
+    else:
+        merged_wards = wards
+        htmlname = "ward_precinctmap.html"
 
 
     # choose tooltip fields based on mode
@@ -358,9 +303,7 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
     # Add text labels
     for feature in merged_wards["features"]:
         geom = shape(feature["geometry"])
-        #centroid = geom.centroid
         label_point = geom.representative_point()
-
 
         if district_only:
             label = feature["properties"].get("DISTRICT", "")
@@ -381,122 +324,7 @@ def make_empty_map2(ward_only=False, district_only=False, zoom_start=13.0):
 
     # Save to file
     m.save(htmlname)
-    print("Heatmap saved as " + htmlname)
-
-def make_empty_map(ward_only=False, district_only=False, zoom_start=13.0):
-
-    # create a map centered at city hall
-    lat_lon = (42.4180601, -71.1057344) # utils.get_lat_lon("85 George P Hassett Dr, Medford, MA 02155")
-    m = folium.Map(location=lat_lon, zoom_start=zoom_start)
-
-    # Add ward boundaries
-    with open("medford_wards.geojson", "r") as f:
-        wards = json.load(f)
-
-    addresses = None
-    if ward_only or district_only:
-        if ward_only: 
-            target_wards_list = [("1"),("2"),("3"),("4"),("5"),("6"),("7"),("8")]
-            htmlname = "wardmap.html"
-        if district_only:
-            target_wards_list = [("1","7"),("2","3"),("4","5"),("6","8")]
-            htmlname = "districtmap.html"
-        merged_wards = []
-
-        for target_wards in target_wards_list:
-            geoms = []
-            for feature in wards["features"]:
-                ward = feature["properties"].get("WARD")
-                if ward in target_wards:
-                    geoms.append(shape(feature["geometry"]))
-
-            # merge them into a single geometry
-            merged_geom = unary_union(geoms)
-
-            # wrap into a GeoJSON feature
-            merged_feature = {
-                "type": "Feature",
-                "properties": {
-                    "merged_wards": list(target_wards)
-                },
-                "geometry": mapping(merged_geom)
-            }
-            merged_wards.append(merged_feature)
-    else:
-        merged_wards = wards
-        addresses = {
-            "1-1":{"address":"3000 Mystic Valley Pkwy, Medford, MA"},
-            "1-2":{"address":"340 Salem St, Medford, MA"},
-            "2-1":{"address":"Park St & Court St, Medford, MA"},
-            "2-2":{"address":"35 Court St, Medford, MA"},
-            "3-1":{"address":"321 Winthrop St, Medford, MA"},
-            "3-2":{"address":"475 Winthrop St, Medford, MA"},
-            "4-1":{"address":"161 College Ave, Medford, MA"},
-            "4-2":{"address":"Auburn & North St, Medford, MA"},
-            "5-1":{"address":"37 Hicks Ave, Medford, MA"},
-            "5-2":{"address":"37 Hicks Ave, Medford, MA"},
-            "6-1":{"address":"26 Harvard Ave, Medford, MA"},
-            "6-2":{"address":"388 High St, Medford, MA"},
-            "7-1":{"address":"Mystic Valley Towers, Medford, MA"},
-            "7-2":{"address":"3004 Mystic Valley Pkwy, Medford, MA"},
-            "8-1":{"address":"101 Riverside Ave, Medford, MA"},
-            "8-2":{"address":"Zero Medford St, Medford, MA"},
-        }
-
-        coordinates = []
-        labels_aligned = []
-        valid_addresses = []
-        for precinct in addresses.keys():
-            lat_lon = utils.get_lat_lon(precinct["address"])
-            if lat_lon:
-                coordinates.append(lat_lon)
-                valid_addresses.append(address)
-                labels_aligned.append(precinct)
-            time.sleep(0.01)  # To avoid API rate limits
-        HeatMap(coordinates).add_to(m)
-        ipdb.set_trace()
-        htmlname = "ward_precinctmap.html"
-    ipdb.set_trace()
-
-    folium.GeoJson(merged_wards,
-                    name="Wards",
-                    style_function=lambda feature: {
-                    "fillColor": "none",
-                    "color": "black",
-                    "weight": 2,
-                    "dashArray": "5, 5"
-                    },
-                    tooltip=folium.GeoJsonTooltip(fields=["WARD"], aliases=["Ward:"])
-                    ).add_to(m)
-
-    # Add text labels for each wards
-    for feature in merged_wards["features"]:
-        geom = shape(feature["geometry"])
-        centroid = geom.centroid
-        ward = str(feature["properties"].get("WARD", "")).strip()
-        precinct = str(feature["properties"].get("PRECINCT", "")).strip()
-
-        if district_only:
-            if ward == "1" or ward=="7": label = "1/7"
-            if ward == "2" or ward=="3": label = "2/3"
-            if ward == "4" or ward=="5": label = "4/5"
-            if ward == "6" or ward=="8": label = "6/8"
-        elif ward_only:
-            label = ward
-        else: 
-            label = f"{ward}-{precinct}"
-
-        folium.map.Marker(
-            [centroid.y, centroid.x],
-            icon=folium.DivIcon(
-                html=f"""<div style="font-size: 12pt; font-weight: bold; white-space: nowrap;">{label}</div>"""
-            )
-        ).add_to(m)
-
-
-    # Save to file
-    m.save(htmlname)
-    print("Heatmap saved as " + htmlname)
+    print("Map saved as " + htmlname)
 
 def electeds_heatmap(position, year=None):
 
