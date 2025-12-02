@@ -209,6 +209,7 @@ def identify_duplicate_videos(video_data=None):
             # don't match to self
             if yt_id == yt_id_trial: continue
 
+            # same type, same date, different channel => duplicate
             if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"] and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]:
                 try:
                     index = best_channels.index(video_data[yt_id]["channel"])
@@ -220,7 +221,6 @@ def identify_duplicate_videos(video_data=None):
                 except ValueError:
                     trial_index = 10
 
-
                 if (index < trial_index) or (index == trial_index and "livestream" in video_data[yt_id_trial]["title"]):
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
                     video_data[yt_id_trial]["duplicate_id"] = yt_id
@@ -229,12 +229,6 @@ def identify_duplicate_videos(video_data=None):
                     video_data[yt_id_trial]["duplicate_id"] = yt_id
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
                     video_data[yt_id]["skip"] = True                    
-
-                #print(video_data[yt_id])
-                #print("")
-                #print(video_data[yt_id_trial])
-
-                #ipdb.set_trace()
 
     save_video_data(video_data)
 
