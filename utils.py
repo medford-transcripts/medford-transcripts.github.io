@@ -123,27 +123,20 @@ def pick_date(entry):
         or "9999-99-99"
     )
 
-def add_all_meeting_types():
+def add_all_meeting_types(overwrite=False):
     video_data = get_video_data()
-
-    campaign_channels = ["Zac Bears","Dr. Lisa Kingsley","Justin Tseng for Medford","Matt Leming","Anna Callahan for Medford","Elect Aaron Olapade", "Invest in Medford", "ALL Medford"]
-    news_channels = ["WCVB Channel 5 Boston","CBS Boston","NBC10 Boston"]
 
     update = False
     for yt_id in video_data.keys():
 
-        if video_data[yt_id]["channel"] in campaign_channels:
-            video_data[yt_id]["meeting_type"] = "Campaign"
+        meeting_type = get_meeting_type(video_data[yt_id])
+        if "meeting_type" not in video_data[yt_id].keys():
+            video_data[yt_id]["meeting_type"] = meeting_type            
+            update = True
 
-        if video_data[yt_id]["channel"] in news_channels:
-            video_data[yt_id]["meeting_type"] = "News"
-
-        if "meeting_type" in video_data[yt_id].keys():
-            if video_data[yt_id]["meeting_type"] is not None: continue
-
-        title = video_data[yt_id]["title"]
-        video_data[yt_id]["meeting_type"] = get_meeting_type(title)
-        update = True
+        if meeting_type != video_data[yt_id]["meeting_type"] and overwrite:
+            video_data[yt_id]["meeting_type"] = meeting_type            
+            update = True            
 
     sorted_data = dict(
         sorted(
@@ -166,12 +159,36 @@ def add_all_meeting_types():
     if update:
         save_video_data(video_data)
 
-def get_meeting_type(title: str):
-    t = title.lower()
+def get_meeting_type(video):
 
+    campaign_channels = ["Zac Bears","Dr. Lisa Kingsley","Justin Tseng for Medford","Matt Leming","Anna Callahan for Medford","Elect Aaron Olapade", "Invest in Medford", "ALL Medford"]
+    news_channels = ["WCVB Channel 5 Boston","CBS Boston","NBC10 Boston"]
+
+    if video["channel"].strip() in campaign_channels:
+        return "Campaign"
+
+    if video["channel"].strip() in news_channels:
+        return "News"
+
+    if video["channel"].strip() == "Medford Bytes":
+        return "Medford Bytes"
+
+    if video["channel"].strip() == "Medford Happenings":
+        return "Medford Happenings"
+
+    t = video["title"].lower()
     with open("meeting_types.json", "r", encoding="utf-8") as fp:
         meeting_type_map = json.load(fp)
 
+    # some meetings can only be differentiated by channel and title
+    if video["channel"].strip() == "Medford Public Schools":
+        possible_meetings = ["MPS Meeting of the Whole","MPS Facilities","MPS Budget"]
+        for possible_meeting in possible_meetings:
+            keywords = meeting_type_map[possible_meeting]
+            if any(kw in t for kw in keywords):
+                return possible_meeting
+
+    # now check the leftovers against all keywords
     for meeting_type, keywords in meeting_type_map.items():
         if any(kw in t for kw in keywords):
             return meeting_type
@@ -183,7 +200,7 @@ def identify_duplicate_videos(video_data=None):
     if video_data is None:
         video_data = get_video_data()
 
-    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","MCM Archive","Mass Traction-US-Medford-1 - Government"]
+    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government"]
 
     video_data = get_video_data()
     for yt_id in video_data.keys():
@@ -192,13 +209,17 @@ def identify_duplicate_videos(video_data=None):
             # don't match to self
             if yt_id == yt_id_trial: continue
 
-            if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]:
+            if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"] and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]:
                 try:
                     index = best_channels.index(video_data[yt_id]["channel"])
+                except ValueError:
+                    index = 10
+
+                try:
                     trial_index = best_channels.index(video_data[yt_id_trial]["channel"])
                 except ValueError:
-                    # not one of the best channels. other meetings may have false "duplicates" by this criteria, skip them
-                    continue
+                    trial_index = 10
+
 
                 if (index < trial_index) or (index == trial_index and "livestream" in video_data[yt_id_trial]["title"]):
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
