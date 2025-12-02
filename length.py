@@ -28,6 +28,9 @@ latest_video = ""
 
 for video in video_data.keys(): 
 
+    if "skip" in video_data[video].keys(): 
+        if video_data[video]["skip"]: continue
+
     date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
 
     if "duration" not in video_data[video].keys():
@@ -68,7 +71,6 @@ for video in video_data.keys():
     # downloaded
     mp3file = base + '.mp3'
     if create_subtitles.mp3_is_good(video,video_data):
-    #if os.path.exists(mp3file):
         time_downloaded += video_data[video]["duration"]
         ndownloaded +=1
     elif os.path.exists(mp3file):

@@ -7,6 +7,10 @@ import whisperx
 import yt_dlp 
 # yt_dlp requires ffmpeg (stand alone executable) to be in your path (https://www.ffmpeg.org/download.html)
 
+# pip install internetarchive (for MCM pages)
+from internetarchive import Search, ArchiveSession, get_item
+import requests
+
 import numpy as np
 from scipy.spatial.distance import cosine
 
@@ -128,6 +132,9 @@ def download_video(yt_id):
 ''' 
 def download_audio(yt_id, video=False):
 
+    if yt_id[0:6] == "XXXXXX" or yt_id[0:6] == "MCM000":
+        return
+
     # read info
     video_data = utils.get_video_data()
 
@@ -213,6 +220,41 @@ def download_audio(yt_id, video=False):
 
     if mp3_is_good(yt_id, video_data):
         return mp3file, video_data[yt_id]["duration"]
+
+def download_mcm_archive():
+    #session = ArchiveSession()
+    #query = 'uploader:"medfordcommunitymedia@gmail.com" AND mediatype:(movies)'
+    ##search = Search(session, query, fields=["identifier", "title"], params={"sort[]": "publicdate asc",},)
+    #search = Search(
+    #    query,
+    #    fields=["identifier", "title"],
+    #    params={"sort[]": "publicdate asc"},
+    #)
+
+    params = {
+        "q": 'uploader:"medfordcommunitymedia@gmail.com" AND mediatype:(movies)',
+        "fl[]": ["identifier", "title", "publicdate"],
+        "sort[]": "publicdate asc",
+        "rows": 200,
+        "page": 1,
+        "output": "json",
+    }
+    r = requests.get("https://archive.org/advancedsearch.php", params=params)
+
+
+    print(r.json())
+
+    ipdb.set_trace()
+
+    for result in search:
+        print(result["identifier"], "|", result.get("title", ""))
+#        item = item = get_item(result["identifier"])
+#        audio_files = [f for f in item.files if 'mp3' in (f.get('format') or '').lower()]
+#        if len(audio_files) == 0:
+            # no audio files, get video and extract audio
+
+
+#        ipdb.set_trace()
 
 # default is Medford Bytes apple podcast  
 def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
@@ -303,7 +345,12 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
             print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")         
             mp3file = os.path.join(dir,dir) +'.mp3' 
     else:
-        mp3file, duration = download_audio(yt_id)
+        result = download_audio(yt_id)
+        if result is None:
+            print("Cannot download " + yt_id + "; skipping")
+            return False
+
+        mp3file, duration = result
         print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
 
     base = os.path.splitext(mp3file)[0]

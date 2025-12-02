@@ -3,6 +3,8 @@ import os, time, datetime
 import dateutil.parser as dparser
 import yt_dlp 
 
+import ipdb
+
 # ward geometry
 from geopy.geocoders import Nominatim
 from shapely.geometry import shape, Point
@@ -114,6 +116,107 @@ def update_video_data_one(yt_id):
     if "agenda" not in video_data[yt_id].keys():
         agendas = glob.glob("agendas/*.pdf") 
         
+def pick_date(entry):
+    return (
+        entry.get("date")
+        or entry.get("upload_date")
+        or "9999-99-99"
+    )
+
+def add_all_meeting_types():
+    video_data = get_video_data()
+
+    campaign_channels = ["Zac Bears","Dr. Lisa Kingsley","Justin Tseng for Medford","Matt Leming","Anna Callahan for Medford","Elect Aaron Olapade", "Invest in Medford", "ALL Medford"]
+    news_channels = ["WCVB Channel 5 Boston","CBS Boston","NBC10 Boston"]
+
+    update = False
+    for yt_id in video_data.keys():
+
+        if video_data[yt_id]["channel"] in campaign_channels:
+            video_data[yt_id]["meeting_type"] = "Campaign"
+
+        if video_data[yt_id]["channel"] in news_channels:
+            video_data[yt_id]["meeting_type"] = "News"
+
+        if "meeting_type" in video_data[yt_id].keys():
+            if video_data[yt_id]["meeting_type"] is not None: continue
+
+        title = video_data[yt_id]["title"]
+        video_data[yt_id]["meeting_type"] = get_meeting_type(title)
+        update = True
+
+    sorted_data = dict(
+        sorted(
+            video_data.items(),
+            key=lambda item: (
+                item[1].get("meeting_type") or "zzzz",
+                pick_date(item[1]),
+            )
+        )
+    )
+
+    nnone = 0
+    for yt_id in sorted_data.keys():
+        if video_data[yt_id]["meeting_type"] is None: nnone += 1
+        print(pick_date(video_data[yt_id]),  " | ", video_data[yt_id]["meeting_type"], " | ", video_data[yt_id]["channel"], " | ", video_data[yt_id]["title"])
+
+    print(nnone)
+    print(len(video_data))
+
+    if update:
+        save_video_data(video_data)
+
+def get_meeting_type(title: str):
+    t = title.lower()
+
+    with open("meeting_types.json", "r", encoding="utf-8") as fp:
+        meeting_type_map = json.load(fp)
+
+    for meeting_type, keywords in meeting_type_map.items():
+        if any(kw in t for kw in keywords):
+            return meeting_type
+
+    return None
+
+def identify_duplicate_videos(video_data=None):
+
+    if video_data is None:
+        video_data = get_video_data()
+
+    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","MCM Archive","Mass Traction-US-Medford-1 - Government"]
+
+    video_data = get_video_data()
+    for yt_id in video_data.keys():
+        for yt_id_trial in video_data.keys():
+
+            # don't match to self
+            if yt_id == yt_id_trial: continue
+
+            if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]:
+                try:
+                    index = best_channels.index(video_data[yt_id]["channel"])
+                    trial_index = best_channels.index(video_data[yt_id_trial]["channel"])
+                except ValueError:
+                    # not one of the best channels. other meetings may have false "duplicates" by this criteria, skip them
+                    continue
+
+                if (index < trial_index) or (index == trial_index and "livestream" in video_data[yt_id_trial]["title"]):
+                    video_data[yt_id]["duplicate_id"] = yt_id_trial
+                    video_data[yt_id_trial]["duplicate_id"] = yt_id
+                    video_data[yt_id_trial]["skip"] = True
+                else:
+                    video_data[yt_id_trial]["duplicate_id"] = yt_id
+                    video_data[yt_id]["duplicate_id"] = yt_id_trial
+                    video_data[yt_id]["skip"] = True                    
+
+                #print(video_data[yt_id])
+                #print("")
+                #print(video_data[yt_id_trial])
+
+                #ipdb.set_trace()
+
+    save_video_data(video_data)
+
 
 
 '''
