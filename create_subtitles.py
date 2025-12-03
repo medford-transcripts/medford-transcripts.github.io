@@ -33,6 +33,7 @@ import dateutil.parser as dparser
 
 # imports from this repo
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
+import download_mcm
 
 # requires a "hugging face" token called "hf_token.txt" 
 # in the top level directory with permissions for 
@@ -440,6 +441,28 @@ def push_to_git():
 
 # this mostly waits on google translate; do it in the background
 def finish_async(yt_id):
+    srt2html.do_one(yt_id=yt_id)
+    push_to_git()
+
+def rebuild_from_model(yt_id):
+    
+    video_data = utils.get_video_data()
+
+    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    pklfile = dir + "/model.pkl"
+    if not os.path.exists(pklfile):
+        print("No model file")
+        return
+
+    with open(pklfile, 'rb') as file:
+        diarize_result = pickle.load(file)
+
+    mp3file = dir + '/' + dir + '.mp3'
+    generate_output(diarize_result,mp3file)
+
+    track_speakers.match_embeddings(yt_id)
+    track_speakers.match_to_reference2(yt_id=yt_id)
+    track_speakers.propagate()
     srt2html.do_one(yt_id=yt_id)
     push_to_git()
 

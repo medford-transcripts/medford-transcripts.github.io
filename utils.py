@@ -195,12 +195,17 @@ def get_meeting_type(video):
 
     return None
 
-def identify_duplicate_videos(video_data=None):
+def identify_duplicate_videos(video_data=None, reset=False):
 
     if video_data is None:
         video_data = get_video_data()
 
     best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government"]
+
+    if reset: 
+        for yt_id in video_data.keys():
+            video_data[yt_id].pop('skip', None)
+            video_data[yt_id].pop('duplicate_id', None)
 
     video_data = get_video_data()
     for yt_id in video_data.keys():

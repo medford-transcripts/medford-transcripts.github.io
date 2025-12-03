@@ -27,7 +27,6 @@ def cosine(vector1, vector2):
     norm1 = np.linalg.norm(vector1)
     norm2 = np.linalg.norm(vector2)
     if norm1 == 0.0 or norm2 == 0.0: return 0
-    #print((norm1, norm2))
 
     return dot_product / (norm1 * norm2)
 

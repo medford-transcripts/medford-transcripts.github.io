@@ -7,7 +7,7 @@ import shutil
 import subprocess
 from pathlib import Path
 import dateutil.parser as dparser
-
+import datetime
 
 import requests
 from internetarchive import get_item
@@ -23,7 +23,7 @@ TEMPDIR = Path("medford_tmp")             # temp downloads
 INDEX_PATH = Path("medford_index.json")   # identifier -> integer mapping
 
 ROWS_PER_PAGE = 200
-SLEEP_BETWEEN_ITEMS = 1.0
+SLEEP_BETWEEN_ITEMS = 0.1
 
 OUTDIR.mkdir(exist_ok=True)
 TEMPDIR.mkdir(exist_ok=True)
@@ -323,6 +323,8 @@ def add_metadata():
 # ---------- MAIN ----------
 
 def main():
+
+
     index = load_index()
     video_data = utils.get_video_data()
 
@@ -351,6 +353,11 @@ def main():
         num_found = response.get("numFound", 0)
 
         for doc in docs:
+
+            # for profiling...
+            #t0 = datetime.datetime.utcnow()
+            #print(3,(datetime.datetime.utcnow()-t0).total_seconds())
+
             identifier = doc["identifier"]
             search_title = doc.get("title", "")
             publicdate_raw = doc.get("publicdate", "")
@@ -370,50 +377,51 @@ def main():
             mp3_name = f"{upload_date}_{enum_id}.mp3"
             final_mp3 = subdir / mp3_name
 
+            if video_data[enum_id]["duration"] != 0 and final_mp3.exists():
+                print(f"  MP3 already exists: {final_mp3}")
+                continue
+
             print(f"\n[{enum_id}] {identifier} | {search_title}")
 
             # We always need the item for metadata, even if MP3 already exists
             item = get_item(identifier)
             item_title = (item.metadata or {}).get("title") or search_title or identifier
 
-            if final_mp3.exists():
-                print(f"  MP3 already exists: {final_mp3}")
+            # 1) Try to download existing audio derivative
+            audio_name = choose_best_audio_file(item)
+            if audio_name:
+                print(f"  Found audio derivative: {audio_name}")
+                local_audio = download_file_from_item(item, audio_name, TEMPDIR)
+                shutil.move(str(local_audio), str(final_mp3))
+                # clean temp dir
+                
+                temp_dir_for_item = local_audio.parent
+                if temp_dir_for_item.exists():
+                    shutil.rmtree(temp_dir_for_item)
+
+                print(f"  Saved audio as {final_mp3}")
             else:
-                # 1) Try to download existing audio derivative
-                audio_name = choose_best_audio_file(item)
-                if audio_name:
-                    print(f"  Found audio derivative: {audio_name}")
-                    local_audio = download_file_from_item(item, audio_name, TEMPDIR)
-                    shutil.move(str(local_audio), str(final_mp3))
-                    # clean temp dir
-                    
-                    temp_dir_for_item = local_audio.parent
-                    if temp_dir_for_item.exists():
-                        shutil.rmtree(temp_dir_for_item)
+                # 2) Fallback: download video + ffmpeg
+                print("  No audio derivative; falling back to video + ffmpeg.")
+                video_name = choose_best_video_file(item)
+                if not video_name:
+                    print("  No suitable video file found; skipping.")
+                    # still record in index but no mp3/metadata
+                    save_index(index)
+                    continue
 
+                print(f"  Downloading video: {video_name}")
+                local_video = download_file_from_item(item, video_name, TEMPDIR)
+                print(f"  Extracting audio -> {final_mp3}")
+                try:
+                    ffmpeg_extract_audio(local_video, final_mp3)
                     print(f"  Saved audio as {final_mp3}")
-                else:
-                    # 2) Fallback: download video + ffmpeg
-                    print("  No audio derivative; falling back to video + ffmpeg.")
-                    video_name = choose_best_video_file(item)
-                    if not video_name:
-                        print("  No suitable video file found; skipping.")
-                        # still record in index but no mp3/metadata
-                        save_index(index)
-                        continue
-
-                    print(f"  Downloading video: {video_name}")
-                    local_video = download_file_from_item(item, video_name, TEMPDIR)
-                    print(f"  Extracting audio -> {final_mp3}")
-                    try:
-                        ffmpeg_extract_audio(local_video, final_mp3)
-                        print(f"  Saved audio as {final_mp3}")
-                    except subprocess.CalledProcessError as e:
-                        print(f"  ffmpeg failed: {e}")
-                        if final_mp3.exists():
-                            final_mp3.unlink()
-                        save_index(index)
-                        continue
+                except subprocess.CalledProcessError as e:
+                    print(f"  ffmpeg failed: {e}")
+                    if final_mp3.exists():
+                        final_mp3.unlink()
+                    save_index(index)
+                    continue
 
             # At this point, if final_mp3 exists, we can populate metadata
             if final_mp3.exists():
@@ -422,6 +430,7 @@ def main():
                 air_date = parse_air_date(item_title, upload_date)
                 url = f"https://archive.org/details/{identifier}"
 
+                video_data = utils.get_video_data()
                 video_data[enum_id] = {
                     "title": item_title,
                     "channel": "MCM Archive",
