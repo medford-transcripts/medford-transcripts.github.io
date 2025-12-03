@@ -102,7 +102,7 @@ now = datetime.datetime.now()
 elasped_time = (now-started).total_seconds()
 #print("It takes " + str(round(elasped_time/time,2)) + " hours to transcribe an hour of video")
 factor_to_transcribe = 3.5
-time_left = (time_requested/time)*factor_to_transcribe
+time_left = (time_requested-time)*factor_to_transcribe
 
 if latest_video != "":
 #    print("Will finish remaining videos on " + str(started + datetime.timedelta(seconds=elasped_time*time_requested/time)))

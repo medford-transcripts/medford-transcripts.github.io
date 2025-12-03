@@ -200,19 +200,33 @@ def identify_duplicate_videos(video_data=None, reset=False):
     if video_data is None:
         video_data = get_video_data()
 
-    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government"]
+    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government","Select Medford, MA City Meetings"]
 
     if reset: 
         for yt_id in video_data.keys():
             video_data[yt_id].pop('skip', None)
             video_data[yt_id].pop('duplicate_id', None)
 
-    video_data = get_video_data()
     for yt_id in video_data.keys():
+
+        if video_data[yt_id]["meeting_type"] is None:
+            continue
+        if video_data[yt_id]["meeting_type"] == "Campaign":
+            continue
+
         for yt_id_trial in video_data.keys():
 
             # don't match to self
             if yt_id == yt_id_trial: continue
+
+            # don't match to uncategorized meetings
+            if video_data[yt_id_trial]["meeting_type"] is None:
+                continue
+
+            # don't match to campaign meetings
+            if video_data[yt_id_trial]["meeting_type"] == "Campaign":
+                continue
+
 
             # same type, same date, different channel => duplicate
             if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"] and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]:
@@ -230,11 +244,16 @@ def identify_duplicate_videos(video_data=None, reset=False):
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
                     video_data[yt_id_trial]["duplicate_id"] = yt_id
                     video_data[yt_id_trial]["skip"] = True
+                    #print(yt_id_trial)
                 else:
                     video_data[yt_id_trial]["duplicate_id"] = yt_id
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
                     video_data[yt_id]["skip"] = True                    
+                    #print(yt_id)
 
+                #if yt_id == "DSAvAI2oq28" or yt_id_trial == 'DSAvAI2oq28': ipdb.set_trace()
+
+    #ipdb.set_trace()
     save_video_data(video_data)
 
 
