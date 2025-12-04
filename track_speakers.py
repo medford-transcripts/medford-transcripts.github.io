@@ -221,33 +221,6 @@ def match_to_speaker(speaker, threshold=0.75, voices_folder='voices_folder', upd
                         json.dump(these_speaker_ids, fp, indent=4)
                     speaker_ids[j] = speaker
 
-def match_to_reference3(embeddings=None, threshold=0.7, yt_id=None, voices_folder='voices_folder'):
-
-    if embeddings == None: 
-        embeddings = get_embeddings()
-
-    keys = list(embeddings.keys())
-    for i in enumerate(keys):
-        embedding1 = embeddings[keys[i]]
-        best_score = 0.0
-        for j in enumerate(keys):
-            if j <= i: continue
-            embedding2 = embeddings[keys[j]]
-
-            try:
-                score = cosine(embedding1["embeddings"], embedding2["embeddings"])
-            except:
-                score = 0.0
-
-            if score > threshold and score > best_score:
-                best_score = score
-                best_match = j
-
-        if best_score > threshold:
-            with open(jsonfiles[best_match], 'r') as fp:
-                speaker_ids2 = json.load(fp)
-
-
 # this matches to the old-style embeddings extracted after the fact by my modified version of whisperx
 def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'):
 
@@ -341,59 +314,6 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
 
             print((goodpklfiles[i], speakers[i], speaker_ids1[speakers[i]], best_score, yt_ids[best_match], speakers[best_match], speaker_ids2[speakers[best_match]] ))
 
-# this matches to an intermediate/incomplete set of old-style embeddings. This function should be retired.
-def match_to_reference(threshold=0.7, yt_id=None):
-
-    with open('speaker_references.pkl','rb') as fp: reference_speakers = pickle.load(fp)
-
-    video_data = utils.get_video_data()
-    files = glob.glob("*/embeddings.pkl")
-    for file in files:
-        update=False
-        with open(file,'rb') as fp: embeddings = pickle.load(fp)
-
-        dir = os.path.dirname(file)
-
-        if yt_id != None:
-            if yt_id != '_'.join(file.split('_')[1:]).split('\\')[0]: continue
-        else: 
-            yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
-
-        # read in the speaker mappings
-        jsonfile = os.path.join(dir,'speaker_ids.json')
-        if os.path.exists(jsonfile):
-            with open(jsonfile, 'r') as fp:
-                speaker_ids = json.load(fp)
-        else:
-            speaker_ids = {}
-
-        for i, embedding in enumerate(embeddings.embeddings):
-            best_score = -1.0
-            best_match = ""
-            for reference_speaker in reference_speakers.keys():
-                score = cosine(embedding, reference_speakers[reference_speaker]["average"])
-                if score > best_score:
-                    best_score = score
-                    best_match = reference_speaker
-
-            if best_score > threshold and best_match != "North":
-                #print(yt_id + ': ' + embeddings.speaker[i])
-                #print("best match: " + best_match + ' (' + str(best_score) + ')')
-                #print("current id: " + speaker_ids[embeddings.speaker[i]])
-                if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
-                    #ipdb.set_trace()
-                    speaker_ids[embeddings.speaker[i]] = best_match
-                    update = True
-
-        if update:
-            #print(json.dumps(speaker_ids, indent=4))
-            print("Updating " + yt_id)
-            with open(jsonfile, "w") as fp:
-                json.dump(speaker_ids, fp, indent=4)
-
-            
-
-#    ipdb.set_trace()
 import matplotlib.pyplot as plt
 def probe():
 

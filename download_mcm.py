@@ -23,7 +23,7 @@ TEMPDIR = Path("medford_tmp")             # temp downloads
 INDEX_PATH = Path("medford_index.json")   # identifier -> integer mapping
 
 ROWS_PER_PAGE = 200
-SLEEP_BETWEEN_ITEMS = 0.1
+SLEEP_BETWEEN_ITEMS = 1
 
 OUTDIR.mkdir(exist_ok=True)
 TEMPDIR.mkdir(exist_ok=True)

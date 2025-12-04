@@ -201,6 +201,7 @@ def identify_duplicate_videos(video_data=None, reset=False):
         video_data = get_video_data()
 
     best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government","Select Medford, MA City Meetings"]
+    mtchannel ="Mass Traction-US-Medford-1 - Government"
 
     if reset: 
         for yt_id in video_data.keys():
@@ -229,7 +230,24 @@ def identify_duplicate_videos(video_data=None, reset=False):
 
 
             # same type, same date, different channel => duplicate
-            if video_data[yt_id]["date"] == video_data[yt_id_trial]["date"] and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"] and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]:
+            # same type, same date, channel == Mass Traction, one livestream => duplicate
+            if (
+                (
+                    video_data[yt_id]["date"] == video_data[yt_id_trial]["date"]
+                    and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]
+                    and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]
+                )
+                or (
+                    video_data[yt_id]["date"] == video_data[yt_id_trial]["date"]
+                    and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]
+                    and video_data[yt_id]["channel"] == mtchannel
+                    and video_data[yt_id_trial]["channel"] == mtchannel
+                    and (
+                        "Livestream" in video_data[yt_id]["title"]
+                        or "Livestream" in video_data[yt_id_trial]["title"]
+                    )
+                )
+            ):
                 try:
                     index = best_channels.index(video_data[yt_id]["channel"])
                 except ValueError:
@@ -240,7 +258,7 @@ def identify_duplicate_videos(video_data=None, reset=False):
                 except ValueError:
                     trial_index = 10
 
-                if (index < trial_index) or (index == trial_index and "livestream" in video_data[yt_id_trial]["title"]):
+                if (index < trial_index) or (index == trial_index and "Livestream" in video_data[yt_id_trial]["title"]):
                     video_data[yt_id]["duplicate_id"] = yt_id_trial
                     video_data[yt_id_trial]["duplicate_id"] = yt_id
                     video_data[yt_id_trial]["skip"] = True
