@@ -22,6 +22,7 @@ import yt_dlp
 
 # imports from this repo
 import utils, supercut, fix_common_errors, heatmap, scrape
+import make_committee_pages
 
 def translate_text(text, dest="en"):
     translator = Translator()
@@ -467,7 +468,11 @@ def make_index():
 
         srtfile = os.path.splitext(htmlfile)[0]+'.srt'
         speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
-        url = "https://youtu.be/" + yt_id
+
+        if "url" in video_data[yt_id].keys():
+            url = video_data[yt_id]["url"]
+        else:
+            url = "https://youtu.be/" + yt_id
 
         agenda_file = match_files(title)
         if agenda_file != "":
@@ -680,6 +685,7 @@ def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=
         make_index()
         make_resolution_tracker(do_scrape=do_scrape)
         make_sitemap()
+        make_committee_pages.main()
     time_elapsed = (datetime.datetime.utcnow()-t0).total_seconds()
     print("Done with " + yt_id + " in " + str(time_elapsed) + " seconds")
 
