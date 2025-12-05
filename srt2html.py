@@ -25,9 +25,26 @@ import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
 
 def translate_text(text, dest="en"):
+    jsonfile = "translation_cache.json"
+    with open(jsonfile, 'r') as fp:
+        translations = json.load(fp)
+    if text in translations.keys():
+        if dest in translations[text].keys():
+            return translations[text][dest]
+
     translator = Translator()
     try:
         result = asyncio.run(translator.translate(text, dest=dest))
+
+        # save the data
+        if text in translations.keys():
+            translations[text][dest] = result.text
+        else:
+            translations[text] = {dest : result.text}
+
+        with open(jsonfile, "w") as fp:
+            json.dump(translations, fp, indent=4)
+
         return result.text
     except:
         return text
