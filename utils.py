@@ -134,7 +134,7 @@ def add_all_meeting_types(overwrite=False):
             video_data[yt_id]["meeting_type"] = meeting_type            
             update = True
 
-        if meeting_type != video_data[yt_id]["meeting_type"] and overwrite:
+        if (meeting_type != video_data[yt_id]["meeting_type"] and overwrite) or (meeting_type != video_data[yt_id]["meeting_type"] and video_data[yt_id]["meeting_type"] is None):
             video_data[yt_id]["meeting_type"] = meeting_type            
             update = True            
 
@@ -452,9 +452,17 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
     update_priority(newest=True)
 
 '''
+make a unique set of the councilors from councilors.json
+'''
+def get_councilors(jsonfile="councilors.json",mayor=False, city_council=False, school_committee=False, candidates=False, year=None, superintendents=False):
+    with open(jsonfile, 'r') as fp:
+        councilors = json.load(fp)
+    return(list(set(councilors.keys())))
+
+'''
 make a unique set of the councilors in councilors.txt
 '''
-def get_councilors(file="councilors.txt",mayor=False, city_council=False, school_committee=False, candidates=False, year=None, superintendents=False):
+def get_councilors_old(file="councilors.txt",mayor=False, city_council=False, school_committee=False, candidates=False, year=None, superintendents=False):
     councilors = []
     with open(file,'r') as fp:
         for line in fp:

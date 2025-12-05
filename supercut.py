@@ -194,24 +194,14 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
                 words = excerpt["text"].strip().split()
 
                 if excerpt["yt_id"][0:6] == "XXXXXX":
-                    on_spotify = True
-                    on_youtube = False
-                    on_archive = False
-                elif excerpt["yt_id"][0:6] == "MCM000":
-                    on_spotify = False
-                    on_youtube = False
-                    on_archive = True
-                else:
-                    on_spotify = False
-                    on_youtube = True
-                    on_archive = False
-
-                if on_youtube:
-                    html.write(' <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
-                elif on_spotify:
+                    # this is a spotify link
                     html.write(' <a href="' + video_data[excerpt["yt_id"]]["url"] + '?t=' + str(excerpt["start"]) + 's">')
-                elif on_archive:
+                elif excerpt["yt_id"][0:6] == "MCM000":
+                    # this is an archive.org link
                     html.write(' <a href="' + video_data[excerpt["yt_id"]]["url"] + '&start=' + str(excerpt["start"]) + 's">')
+                else:
+                    # this is a youtube link
+                    html.write(' <a href="https://youtu.be/' + excerpt["yt_id"] + '&t=' + str(excerpt["start"]) + 's">')
 
                 html.write(words[0] + "</a> " + " ".join(words[1:]))
             except:
