@@ -701,7 +701,7 @@ def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=
         make_index()
         make_resolution_tracker(do_scrape=do_scrape)
         make_sitemap()
-        make_committee_pages.main()
+        make_committee_pages.make()
     time_elapsed = (datetime.datetime.utcnow()-t0).total_seconds()
     print("Done with " + yt_id + " in " + str(time_elapsed) + " seconds")
 
