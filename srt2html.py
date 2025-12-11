@@ -24,25 +24,30 @@ import yt_dlp
 import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
 
-def translate_text(text, dest="en"):
-    #jsonfile = "translation_cache.json"
-    #with open(jsonfile, 'r') as fp:
-    #    translations = json.load(fp)
-    #if text in translations.keys():
-    #    if dest in translations[text].keys():
-    #        return translations[text][dest]
+def translate_text(text, dest="en", cachefile=None):
+
+    if cachefile is not None:
+        if not os.path.exists(cachefile):
+            translations = {}
+        else:
+            with open(cachefile, 'r') as fp:
+                translations = json.load(fp)
+                if text in translations.keys():
+                    if dest in translations[text].keys():
+                        return translations[text][dest]
 
     translator = Translator()
     try:
         result = asyncio.run(translator.translate(text, dest=dest))
 
         ## save the data
-        #if text in translations.keys():
-        #    translations[text][dest] = result.text
-        #else:
-        #    translations[text] = {dest : result.text}
-        #with open(jsonfile, "w") as fp:
-        #    json.dump(translations, fp, indent=4)
+        if cachefile is not None:
+            if text in translations.keys():
+                translations[text][dest] = result.text
+            else:
+                translations[text] = {dest : result.text}
+            with open(cachefile, "w") as fp:
+                json.dump(translations, fp, indent=4)
 
         return result.text
     except:
@@ -63,7 +68,7 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
         else: 
             htmlfilename = basename + '.' + language + '.html'
             if text != None:
-                text = translate_text(text, dest=language)
+                text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
             else: text = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
             html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
@@ -200,13 +205,13 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = 'AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics.'        
         if language != 'en':
-            text = translate_text(text, dest=language)
+            text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
         html.write('    <meta name="description" content="' + text + '">\n')
 
         text = title    
         if language != 'en':
-            text = translate_text(text, dest=language)
+            text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
         html.write('    <title>' + text + '</title>\n')
 
         html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
@@ -215,7 +220,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = 'AI-generated transcript of ' + video_title
         if language != 'en':
-            text = translate_text(text, dest=language)
+            text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
         html.write('  <h1>' + text + '</h1>\n')
 
@@ -223,14 +228,14 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = 'Back to all transcripts'
         if language != 'en':
-            text = translate_text(text, dest=language)
+            text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
 
         if os.path.exists(os.path.join(dir,"heatmap.html")):
             text = 'Heatmap of speakers'
             if language != 'en':
-                text = translate_text(text, dest=language)
+                text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
             html.write('    <a href="heatmap.html">' + text + '</a><br><br>\n')
 
@@ -388,7 +393,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
             htmlfilename = basename + '.html'
         else: 
             htmlfilename = basename + '.' + language + '.html'
-            text = translate_text(text, dest=language)
+            text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
         html = open(htmlfilename, 'a', encoding="utf-8")
         html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
@@ -490,17 +495,16 @@ def make_index():
         else:
             url = "https://youtu.be/" + yt_id
 
-        agenda_file = match_files(title)
-        if agenda_file != "":
-            agenda_line = '<td><a href="' + agenda_file +'">Agenda</a></td>'
-        else:
-            agenda_line = '<td></td>'
+        minutes_line = '<td></td>'
+        agenda_line = '<td></td>'
+        if video_data[yt_id]["meeting_type"] == "CC City Council":
+            agenda_file = match_files(title)
+            if agenda_file != "":
+                agenda_line = '<td><a href="' + agenda_file +'">Agenda</a></td>'
 
-        minutes_file = match_files(title,minutes=True)
-        if minutes_file != "":
-            minutes_line = '<td><a href="' + minutes_file +'">Minutes</a></td>'
-        else:
-            minutes_line = '<td></td>'
+            minutes_file = match_files(title,minutes=True)
+            if minutes_file != "":
+                minutes_line = '<td><a href="' + minutes_file +'">Minutes</a></td>'
 
         # one row in the html table
         lines.append('      <tr>' +\
@@ -698,10 +702,10 @@ def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     if do_extras:
+        make_committee_pages.make()
         make_index()
         make_resolution_tracker(do_scrape=do_scrape)
         make_sitemap()
-        make_committee_pages.make()
     time_elapsed = (datetime.datetime.utcnow()-t0).total_seconds()
     print("Done with " + yt_id + " in " + str(time_elapsed) + " seconds")
 
