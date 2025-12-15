@@ -31,6 +31,8 @@ for video in video_data.keys():
     if "skip" in video_data[video].keys(): 
         if video_data[video]["skip"]: continue
 
+    print(video)
+
     date = datetime.datetime.strptime(video_data[video]["date"],'%Y-%m-%d')
 
     if "duration" not in video_data[video].keys():
@@ -44,7 +46,7 @@ for video in video_data.keys():
     title = video_data[video]["title"]
 
     #if "City Council" in video_data[video]["title"]:
-    if (video_data[video]["channel"] == "City of Medford, Massachusetts") and "City Council" in video_data[video]["title"]:
+    if video_data[video]["meeting_type"] == "CC City Council":
         if year not in time_by_year_cc.keys(): 
             time_by_year_cc[year] = 0
             number_by_year_cc[year] = 0

@@ -1,4 +1,4 @@
-# pip install git+https://github.com/m-bain/whisperx.git
+34# pip install git+https://github.com/m-bain/whisperx.git
 # note: I've manally updated to PR 952 to return speaker embeddings
 # https://github.com/m-bain/whisperX/pull/952/files
 import whisperx
@@ -25,6 +25,9 @@ import ipdb
 # not strictly required, but I'm leaving this here for debugging
 
 import threading
+_git_lock = threading.Lock()
+_git_pending = False
+_git_pending_lock = threading.Lock()
 
 # standard libraries 
 import datetime, os, glob, argparse, math, sys, subprocess, time, traceback, shutil
@@ -62,10 +65,13 @@ def mp3_is_good(yt_id, video_data):
     if not os.path.exists(mp3file): return False
 
     # if the mp3 duration doesn't match the video duration, it's bad
-    duration = float(ffmpeg.probe(mp3file)['format']['duration'])
-    # I'm not sure what level of disagreement is acceptable. I've seen 12s discrepancies
-    if abs((duration - video_data[yt_id]["duration"])) > 15.0:
-        print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
+    try:
+        duration = float(ffmpeg.probe(mp3file)['format']['duration'])
+        # I'm not sure what level of disagreement is acceptable. I've seen 12s discrepancies
+        if abs((duration - video_data[yt_id]["duration"])) > 15.0:
+            print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
+            return False
+    except:
         return False
 
     # otherwise, it's good
@@ -430,6 +436,34 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 '''
 update the repo with new results
 '''
+def request_git_push():
+    global _git_pending
+
+    # If we can run now, run now.
+    if _git_lock.acquire(blocking=False):
+        try:
+            push_to_git()
+        finally:
+            _git_lock.release()
+
+        # After finishing, check if anything came in while we ran.
+        while True:
+            with _git_pending_lock:
+                if not _git_pending:
+                    break
+                _git_pending = False
+            _git_lock.acquire()
+            try:
+                push_to_git()
+            finally:
+                _git_lock.release()
+        return
+
+    # Otherwise, mark a single pending push and return immediately.
+    with _git_pending_lock:
+        _git_pending = True
+
+
 def push_to_git():
     subprocess.run(["git","add", "20*"]) 
     subprocess.run(["git","add", "resolutions/*"]) 
@@ -442,7 +476,7 @@ def push_to_git():
 # this mostly waits on google translate; do it in the background
 def finish_async(yt_id):
     srt2html.do_one(yt_id=yt_id)
-    push_to_git()
+    request_git_push()
 
 def rebuild_from_model(yt_id):
     
@@ -464,7 +498,7 @@ def rebuild_from_model(yt_id):
     track_speakers.match_to_reference2(yt_id=yt_id)
     track_speakers.propagate()
     srt2html.do_one(yt_id=yt_id)
-    push_to_git()
+    request_git_push()
 
 # allow us to pre-empt with ids in a file
 def transcribe_with_preempt(download_only=False, id_file="ids_to_transcribe.txt", redo=False, transcribe_only=False):
