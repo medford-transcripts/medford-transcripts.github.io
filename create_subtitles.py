@@ -228,41 +228,6 @@ def download_audio(yt_id, video=False):
     if mp3_is_good(yt_id, video_data):
         return mp3file, video_data[yt_id]["duration"]
 
-def download_mcm_archive():
-    #session = ArchiveSession()
-    #query = 'uploader:"medfordcommunitymedia@gmail.com" AND mediatype:(movies)'
-    ##search = Search(session, query, fields=["identifier", "title"], params={"sort[]": "publicdate asc",},)
-    #search = Search(
-    #    query,
-    #    fields=["identifier", "title"],
-    #    params={"sort[]": "publicdate asc"},
-    #)
-
-    params = {
-        "q": 'uploader:"medfordcommunitymedia@gmail.com" AND mediatype:(movies)',
-        "fl[]": ["identifier", "title", "publicdate"],
-        "sort[]": "publicdate asc",
-        "rows": 200,
-        "page": 1,
-        "output": "json",
-    }
-    r = requests.get("https://archive.org/advancedsearch.php", params=params)
-
-
-    print(r.json())
-
-    ipdb.set_trace()
-
-    for result in search:
-        print(result["identifier"], "|", result.get("title", ""))
-#        item = item = get_item(result["identifier"])
-#        audio_files = [f for f in item.files if 'mp3' in (f.get('format') or '').lower()]
-#        if len(audio_files) == 0:
-            # no audio files, get video and extract audio
-
-
-#        ipdb.set_trace()
-
 # default is Medford Bytes apple podcast  
 def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
 
@@ -340,6 +305,11 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
 
     video_data = utils.get_video_data()
     dir = video_data[yt_id]["upload_date"] + "_" + yt_id
+
+    if "skip" in video_data[yt_id].keys():
+        if video_data[yt_id]["skip"]:
+            print("Skip flag set for " + yt_id + "; skipping")
+            return False
 
     if transcribe_only:
         #print("starting: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
@@ -602,6 +572,7 @@ if __name__ == "__main__":
             else: 
                 try: 
                     download_rss_feed()
+                    download_mcm.main()
                 except:
                     pass
                 tf = datetime.datetime.now()

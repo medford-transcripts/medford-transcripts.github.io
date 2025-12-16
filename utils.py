@@ -148,13 +148,13 @@ def add_all_meeting_types(overwrite=False):
         )
     )
 
-    nnone = 0
-    for yt_id in sorted_data.keys():
-        if video_data[yt_id]["meeting_type"] is None: nnone += 1
-        print(pick_date(video_data[yt_id]),  " | ", video_data[yt_id]["meeting_type"], " | ", video_data[yt_id]["channel"], " | ", video_data[yt_id]["title"])
-
-    print(nnone)
-    print(len(video_data))
+    #nnone = 0
+    #for yt_id in sorted_data.keys():
+    #    if video_data[yt_id]["meeting_type"] is None: nnone += 1
+    #    print(pick_date(video_data[yt_id]),  " | ", video_data[yt_id]["meeting_type"], " | ", video_data[yt_id]["channel"], " | ", video_data[yt_id]["title"])
+    #
+    #print(nnone)
+    #print(len(video_data))
 
     if update:
         save_video_data(video_data)
@@ -205,6 +205,10 @@ def identify_duplicate_videos(video_data=None, reset=False):
 
     if reset: 
         for yt_id in video_data.keys():
+            # even a reset won't overwrite manually corrected entries
+            if "manual_correction" in video_data[yt_id].keys():
+                if video_data[yt_id]["manual_correction"]: 
+                    continue
             video_data[yt_id].pop('skip', None)
             video_data[yt_id].pop('duplicate_id', None)
 

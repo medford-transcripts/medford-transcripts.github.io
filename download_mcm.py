@@ -377,11 +377,12 @@ def main():
             mp3_name = f"{upload_date}_{enum_id}.mp3"
             final_mp3 = subdir / mp3_name
 
+            # we've already got good audio for this video
             if video_data[enum_id]["duration"] != 0 and final_mp3.exists():
-                print(f"  MP3 already exists: {final_mp3}")
+                #print(f"  MP3 already exists: {final_mp3}")
                 continue
 
-            print(f"\n[{enum_id}] {identifier} | {search_title}")
+            #print(f"\n[{enum_id}] {identifier} | {search_title}")
 
             # We always need the item for metadata, even if MP3 already exists
             item = get_item(identifier)
