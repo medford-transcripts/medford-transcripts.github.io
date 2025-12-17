@@ -25,14 +25,12 @@ import ipdb
 # not strictly required, but I'm leaving this here for debugging
 
 import threading
-_git_lock = threading.Lock()
-_git_pending = False
-_git_pending_lock = threading.Lock()
 
 # standard libraries 
 import datetime, os, glob, argparse, math, sys, subprocess, time, traceback, shutil
 import json, pickle
 import dateutil.parser as dparser
+from pathlib import Path
 
 # imports from this repo
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
@@ -50,7 +48,49 @@ import download_mcm
 #ipdb.set_trace()
 ###########################################################
 
+# prevent thread clashing for git push
+_git_lock = threading.Lock()
+_git_pending = False
+_git_pending_lock = threading.Lock()
+
+audio_path_backup = "D:/medford-transcripts/audio/"
+audio_path = "audio/"
+
 last_update = datetime.datetime(2000,1,1)
+
+def move_audio():
+    video_data = utils.get_video_data()
+    for yt_id in video_data.keys():
+        base = video_data[yt_id]["upload_date"] + "_" + yt_id
+
+        mp3_original = "D:/medford-transcripts.github.io/" + base + "/" + base + ".mp3"
+        mp3_external = audio_path_backup + base + ".mp3"
+        mp3_local = "audio/" + base + ".mp3"
+
+        srtfile = base + "/" + base + ".srt"
+        # if the transcription is done, make sure the audio file is on the external drive
+        if os.path.exists(srtfile):
+            if os.path.exists(mp3_local):
+                shutil.move(mp3_local,mp3_external)
+            if os.path.exists(mp3_original):
+                shutil.move(mp3_original,mp3_external)
+        else:
+            # if it's not transcribed, move the audio file to the local directory
+            if os.path.exists(mp3_original):
+                shutil.move(mp3_original,mp3_local)
+
+def get_audio_absolute_path(base, allow_nonexist=False):
+
+    external_name = audio_path_backup + base + '.mp3'
+    local_name = audio_path + base + '.mp3'
+
+    if os.path.exists(local_name): return local_name
+    if os.path.exists(external_name): return external_name
+
+    if allow_nonexist: return local_name
+    return None
+
+
 
 def mp3_is_good(yt_id, video_data):
 
@@ -60,8 +100,8 @@ def mp3_is_good(yt_id, video_data):
     if all(key not in video_data[yt_id].keys() for key in required_keys): return False
 
     # if the mp3 file doesn't exist, it's bad
-    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-    mp3file = os.path.join(dir,dir) +'.mp3'
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    mp3file = os.path.join(audio_path,base) +'.mp3'
     if not os.path.exists(mp3file): return False
 
     # if the mp3 duration doesn't match the video duration, it's bad
@@ -147,14 +187,14 @@ def download_audio(yt_id, video=False):
 
     if yt_id not in video_data.keys(): video_data[yt_id] = {}
 
-    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id 
     if mp3_is_good(yt_id, video_data):
-        mp3file = os.path.join(dir,dir) +'.mp3'
+        mp3file = os.path.join(audio_path,base) +'.mp3'
         return mp3file, video_data[yt_id]["duration"]
 
-    # i think these stubs get left behind when it partially downloads while live streaming
+    # i think these stubs (with no extension) get left behind when it partially downloads while live streaming
     # there must be a way to salvage these parts, but we'll just start over
-    corrupt_filename = os.path.join(dir,dir)
+    corrupt_filename = os.path.join(audio_path,base)
     if os.path.exists(corrupt_filename):
         os.remove(corrupt_filename)
 
@@ -183,9 +223,8 @@ def download_audio(yt_id, video=False):
             utils.save_video_data(video_data)
             break
 
-    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-    if not os.path.exists(dir): os.makedirs(dir)
-    mp3file = os.path.join(dir,dir) +'.mp3'
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    mp3file = os.path.join(audio_path,base) +'.mp3'
 
     if audio_url == '': 
         print("Could not find audio url for " + yt_id + ", attempting direct download of mp3")
@@ -198,7 +237,7 @@ def download_audio(yt_id, video=False):
     if False:
         ydl_opts = {
             'format': 'bestaudio/best',
-            'outtmpl': os.path.join(dir,dir),
+            'outtmpl': os.path.join(audio_path,base),
             'skip_unavailable_fragments': False,
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
@@ -221,7 +260,7 @@ def download_audio(yt_id, video=False):
             input_file = input_file[0]
 
         
-        output_file = os.path.join(dir,dir) + '.mp3'
+        output_file = os.path.join(audio_path,base) + '.mp3'
         subprocess.run(["ffmpeg", "-y", "-i", input_file, "-vn", "-ab", "320k", output_file])
         os.remove(input_file)
 
@@ -260,18 +299,15 @@ def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
 
         utils.save_video_data(video_data)
 
-        dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-        mp3file = os.path.join(dir,dir) +'.mp3'
+        base = video_data[yt_id]["upload_date"] + "_" + yt_id 
+        mp3file = os.path.join(audio_path,base) +'.mp3'
         
-        # Build folder and file name
-        os.makedirs(dir, exist_ok=True)
-
         # yt-dlp options for this episode
         ydl_opts = {
             "format": "bestaudio/best",
             "extractaudio": True,
             "audioformat": "mp3",
-            "outtmpl": os.path.join(dir,dir),
+            "outtmpl": os.path.join(audio_path,base),
             "writethumbnail": False,
             "writeinfojson": False,
             "embedmetadata": True,
@@ -289,7 +325,7 @@ def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
 translates the model file to human-readable outputs (SRT file)
 '''
 def generate_output(result, mp3file):
-    subdir = os.path.dirname(mp3file)
+    subdir = Path(mp3file).stem
     result["language"] = "en"
     output_writer = whisperx.utils.get_writer("srt", subdir)
     output_writer(result, mp3file, {'max_line_width': None,'max_line_count': None,'highlight_words': False})
@@ -304,7 +340,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     print("\n" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcribing " + yt_id)
 
     video_data = utils.get_video_data()
-    dir = video_data[yt_id]["upload_date"] + "_" + yt_id
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id
 
     if "skip" in video_data[yt_id].keys():
         if video_data[yt_id]["skip"]:
@@ -320,7 +356,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
             return False
         else: 
             print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")         
-            mp3file = os.path.join(dir,dir) +'.mp3' 
+            mp3file = os.path.join(audio_path,base) +'.mp3' 
     else:
         result = download_audio(yt_id)
         if result is None:
@@ -330,15 +366,15 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
         mp3file, duration = result
         print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
 
-    base = os.path.splitext(mp3file)[0]
-    subdir = os.path.dirname(mp3file)
+    base = Path.stem(mp3file)
+    subdir = Path.stem(mp3file)
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Download of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
     if download_only: return False
 
     # skip files that are already done
     #print("before searching for files: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
     #file = glob.glob("*/20??-??-??_" + yt_id + ".srt")
-    file = os.path.join(dir,dir) +'.srt'
+    file = os.path.join(subdir,base) +'.srt'
     #print("searching for files: " + str((datetime.datetime.utcnow()-t0).total_seconds()))
     #if len(file[0]) != 0 and not redo: 
     if os.path.exists(file) != 0 and not redo: 
@@ -452,8 +488,9 @@ def rebuild_from_model(yt_id):
     
     video_data = utils.get_video_data()
 
-    dir = video_data[yt_id]["upload_date"] + "_" + yt_id 
-    pklfile = dir + "/model.pkl"
+    subdir = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    pklfile = subdir + "/model.pkl"
     if not os.path.exists(pklfile):
         print("No model file")
         return
@@ -461,7 +498,7 @@ def rebuild_from_model(yt_id):
     with open(pklfile, 'rb') as file:
         diarize_result = pickle.load(file)
 
-    mp3file = dir + '/' + dir + '.mp3'
+    mp3file = audio_path + '/' + base + '.mp3'
     generate_output(diarize_result,mp3file)
 
     track_speakers.match_embeddings(yt_id)

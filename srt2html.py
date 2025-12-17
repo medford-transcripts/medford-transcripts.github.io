@@ -10,7 +10,7 @@ from rapidfuzz import fuzz, process
 
 import ipdb
 
-from wordcloud import WordCloud
+#from wordcloud import WordCloud
 
 # dependency hell... 
 #pip install googletrans
@@ -347,14 +347,14 @@ def srt2html(yt_id,skip_translation=False, force=False):
             print("  total time: " + str(round(speaker_stats[speaker]["total_time"]/60.0,2)) + ' minutes')
             print("  total words: " + str(speaker_stats[speaker]["total_words"]))
 
-            # make a word cloud
-            if speaker in councilors:
-                try:
-                    # if only words are common/excluded, it'll raise a valueError
-                    wordcloud = WordCloud(max_font_size=40).generate(" ".join(speaker_stats[speaker]["all_words"]))
-                    wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
-                except:
-                    pass
+            ## make a word cloud
+            #if speaker in councilors:
+            #    try:
+            #        # if only words are common/excluded, it'll raise a valueError
+            #        wordcloud = WordCloud(max_font_size=40).generate(" ".join(speaker_stats[speaker]["all_words"]))
+            #        wordcloud.to_file(os.path.join(dir,speaker + '.wordcloud.png'))
+            #    except:
+            #        pass
 
     ncols = 4
     nrows = 4
@@ -376,11 +376,11 @@ def srt2html(yt_id,skip_translation=False, force=False):
             idx = i*ncols+j
             if idx < len(present_councilors):
                 if present_councilors[idx] in speaker_stats.keys():
-                    imagename = present_councilors[idx] + '.wordcloud.png'
+                    #imagename = present_councilors[idx] + '.wordcloud.png'
                     html.write('        <center>' + present_councilors[idx] + "</center><br>\n")
                     html.write('        total time: ' + str(round(speaker_stats[present_councilors[idx]]["total_time"]/60.0,2)) + ' minutes<br>\n')
                     html.write('        total words: ' + str(speaker_stats[present_councilors[idx]]["total_words"]) + '<br>\n')
-                    html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + present_councilors[idx] + '" height=150></img></a><br>\n')
+                    #html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + present_councilors[idx] + '" height=150></img></a><br>\n')
             html.write('      </td>\n')
         html.write('    </tr>\n')
     html.write('  </table>\n')
