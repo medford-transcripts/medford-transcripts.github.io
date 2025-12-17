@@ -159,6 +159,17 @@ def add_all_meeting_types(overwrite=False):
     if update:
         save_video_data(video_data)
 
+def get_meeting_type_by_title(title):
+
+    t = title.lower()
+    with open("meeting_types.json", "r", encoding="utf-8") as fp:
+        meeting_type_map = json.load(fp)
+
+    # check against all keywords
+    for meeting_type, keywords in meeting_type_map.items():
+        if any(kw in t for kw in keywords):
+            return meeting_type
+
 def get_meeting_type(video):
 
     campaign_channels = ["Zac Bears","Dr. Lisa Kingsley","Justin Tseng for Medford","Matt Leming","Anna Callahan for Medford","Elect Aaron Olapade", "Invest in Medford", "ALL Medford"]
@@ -175,6 +186,7 @@ def get_meeting_type(video):
 
     if video["channel"].strip() == "Medford Happenings":
         return "Medford Happenings"
+
 
     t = video["title"].lower()
     with open("meeting_types.json", "r", encoding="utf-8") as fp:
