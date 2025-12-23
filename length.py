@@ -20,6 +20,9 @@ time_downloaded = 0
 nrequested = 0
 time_requested = 0
 
+
+audio_path_backup = "D:/medford-transcripts.github.io/audio/"
+audio_path = "audio/"
 srtfiles = glob.glob("*/20??-??-??_???????????.srt")
 
 now = datetime.datetime.now()

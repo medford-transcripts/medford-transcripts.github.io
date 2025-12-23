@@ -123,6 +123,24 @@ def pick_date(entry):
         or "9999-99-99"
     )
 
+def get_mp3filename(yt_id, video_data=None, local=False, external=False):
+    audio_path_backup = "D:/medford-transcripts.github.io/audio/"
+    audio_path = "audio/"
+
+    if video_data is None:
+        video_data = get_video_data()
+
+    upload_date = video_data[yt_id]["upload_date"]
+
+
+    base = upload_date + "_" + yt_id
+    mp3_external = audio_path_backup + base + ".mp3"
+    mp3_local = audio_path + base + ".mp3"
+
+    if os.path.exists(mp3_external) or external: return mp3_external
+    if os.path.exists(mp3_local) or local: return mp3_local
+    return None 
+
 def add_all_meeting_types(overwrite=False):
     video_data = get_video_data()
 
