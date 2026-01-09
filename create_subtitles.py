@@ -173,6 +173,7 @@ def download_audio(yt_id, video=False):
     # already downloaded, skip
     mp3file = utils.get_mp3filename(yt_id)
     if mp3file is not None: 
+        ipdb.set_trace()
         return mp3file
 
     # not a youtube video, can't download in this function
