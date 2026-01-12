@@ -12,13 +12,14 @@ import datetime
 import requests
 from internetarchive import get_item
 import utils
+import create_subtitles
 
 # ---------- CONFIG ----------
 
 UPLOADER_EMAIL = "medfordcommunitymedia@gmail.com"
 SEARCH_URL = "https://archive.org/advancedsearch.php"
 
-OUTDIR = Path("./")            # root for final MP3 directories
+OUTDIR = Path("audio")            # root for final MP3 directories
 TEMPDIR = Path("medford_tmp")             # temp downloads
 INDEX_PATH = Path("medford_index.json")   # identifier -> integer mapping
 
@@ -369,10 +370,13 @@ def main():
             if "skip" in video_data[enum_id].keys():
                 if video_data[enum_id]["skip"]: continue
 
+            # already have it, skip
+            if create_subtitles.mp3_is_good(enum_id, video_data): continue
+
             # Directory & filename based on upload_date + enum_id
             dir_name = f"{upload_date}_{enum_id}"
             subdir = OUTDIR / dir_name
-            subdir.mkdir(parents=True, exist_ok=True)
+            #subdir.mkdir(parents=True, exist_ok=True)
 
             mp3_name = f"{upload_date}_{enum_id}.mp3"
             final_mp3 = subdir / mp3_name

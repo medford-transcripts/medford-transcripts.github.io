@@ -350,6 +350,10 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
             print("Skip flag set for " + yt_id + "; skipping")
             return False
 
+    # make the subdirectory if it doesn't already exist
+    path = Path(subdir)
+    path.mkdir(parents=True, exist_ok=True)
+
     srtfile = os.path.join(subdir,base) +'.srt'
     if os.path.exists(srtfile) and not redo:
         print("Already done with " + yt_id + " (" + srtfile + "). Set redo=True to redo transcription")
