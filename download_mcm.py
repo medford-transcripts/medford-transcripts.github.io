@@ -367,6 +367,10 @@ def main():
             enum_num = get_enum_number(identifier, index)
             enum_id = enum_string(enum_num)
 
+            if enum_id not in video_data.keys():
+                print(enum_id + " not found in video_data.json; skipping")
+                continue
+
             if "skip" in video_data[enum_id].keys():
                 if video_data[enum_id]["skip"]: continue
 
@@ -375,11 +379,9 @@ def main():
 
             # Directory & filename based on upload_date + enum_id
             dir_name = f"{upload_date}_{enum_id}"
-            subdir = OUTDIR / dir_name
-            #subdir.mkdir(parents=True, exist_ok=True)
 
             mp3_name = f"{upload_date}_{enum_id}.mp3"
-            final_mp3 = subdir / mp3_name
+            final_mp3 = OUTDIR / mp3_name
 
             # we've already got good audio for this video
             if video_data[enum_id]["duration"] != 0 and final_mp3.exists():

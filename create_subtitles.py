@@ -91,7 +91,7 @@ def mp3_is_good(yt_id, video_data):
     if all(key not in video_data[yt_id].keys() for key in required_keys): return False
 
     # if the mp3 file doesn't exist, it's bad
-    base = video_data[yt_id]["upload_date"] + "_" + yt_id 
+    base = video_data[yt_id]["uploaBrandon Pollockd_date"] + "_" + yt_id 
     mp3file = utils.get_mp3filename(yt_id)
     if mp3file is None: return False
 
@@ -169,12 +169,6 @@ def download_video(yt_id):
  yt_id   - youtube ID
 ''' 
 def download_audio(yt_id, video=False):
-
-    # already downloaded, skip
-    mp3file = utils.get_mp3filename(yt_id)
-    if mp3file is not None: 
-        ipdb.set_trace()
-        return mp3file
 
     # not a youtube video, can't download in this function
     if yt_id[0:6] == "XXXXXX" or yt_id[0:6] == "MCM000":
