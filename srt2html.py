@@ -71,7 +71,7 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
                 text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
             else: text = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
-            html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's">')
+            html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's" rel="nofollow">')
             html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
             html.close()
 
@@ -295,13 +295,13 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 tmp_text = this_html_text.split()
                 if not resolution_is_first:
                     if on_youtube:
-                        link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's">' + tmp_text[0] + '</a> '
+                        link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's" rel="nofollow">' + tmp_text[0] + '</a> '
                     elif on_spotify or on_archive:
                         if 'url' in video_data[yt_id].keys():
                             if on_spotify:
-                                link = ' <a href="' + video_data[yt_id]['url'] + '?t=' + str(this_start) + '">' + tmp_text[0] + '</a> '
+                                link = ' <a href="' + video_data[yt_id]['url'] + '?t=' + str(this_start) + '" rel="nofollow">' + tmp_text[0] + '</a> '
                             elif on_archive:
-                                link = ' <a href="' + video_data[yt_id]['url'] + '&start=' + str(this_start) + '">' + tmp_text[0] + '</a> '
+                                link = ' <a href="' + video_data[yt_id]['url'] + '&start=' + str(this_start) + '" rel="nofollow">' + tmp_text[0] + '</a> '
                         else:
                             link = tmp_text[0]
                     else:
@@ -449,20 +449,20 @@ def make_redirect(dir):
 
     with open(index_filename, "w", encoding="utf-8") as index_page:
 
-        index_page.write('<!DOCTYPE HTML>')
-        index_page.write('<html lang="en-US">')
-        index_page.write('    <head>')
-        index_page.write('       <meta charset="UTF-8">')
-        index_page.write('        <meta http-equiv="refresh" content="0; url="' + dir + '.html">')
-        index_page.write('        <script type="text/javascript">')
-        index_page.write('            window.location.href = "' + dir + '.html"')
-        index_page.write('        </script>')
-        index_page.write('        <title>Page Redirection</title>')
-        index_page.write('    </head> index_page.write("<body>')
-        index_page.write("       <!-- Note: don't tell people to 'click' the link, just tell them that it is a link. -->")
-        index_page.write('        If you are not redirected automatically, follow this <a href="' + dir + '.html">link</a>.')
-        index_page.write('    </body>')
-        index_page.write('</html>')
+        index_page.write('<!DOCTYPE HTML>\n')
+        index_page.write('<html lang="en-US">\n')
+        index_page.write('    <head>\n')
+        index_page.write('       <meta charset="UTF-8">\n')
+        index_page.write('        <meta name="robots" content="noindex, follow">\n')
+        index_page.write('        <meta http-equiv="refresh" content="0; url=' + dir + '.html">\n')
+        index_page.write('        <script type="text/javascript">\n')
+        index_page.write('            window.location.replace = "' + dir + '.html"\n')
+        index_page.write('        </script>\n')
+        index_page.write('        <title>Page Redirection</title>\n')
+        index_page.write('    </head> index_page.write("<body>\n')
+        index_page.write('        If you are not redirected automatically, follow this <a href="' + dir + '.html">link</a>.\n')
+        index_page.write('    </body>\n')
+        index_page.write('</html>\n')
 
 def make_index():
 
