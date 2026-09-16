@@ -440,6 +440,10 @@
     add("original_text", (m ? m[2] : text).slice(0, 900));
     add("page_url", location.origin + location.pathname +
         "#t=" + Math.floor(parseFloat(line.getAttribute("data-t")) || 0));
+    // Prefill the two EDITABLE answers with the originals, so a correction is
+    // a quick edit rather than retyping. The pristine timestamp survives in
+    // page_url (#t=), so nothing is lost by letting this one be overwritten.
+    add("suggestion", (m ? m[2] : text).slice(0, 900));
     return cfg.form_url + "?usp=pp_url&" + q.join("&");
   }
 
