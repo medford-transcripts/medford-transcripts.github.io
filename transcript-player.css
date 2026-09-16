@@ -1,0 +1,69 @@
+/* transcript-player.css -- styling for the in-page synced player.
+   Deliberately minimal and theme-light, to sit alongside the existing
+   unstyled transcript pages without redesigning them. */
+
+#mt-player {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#mt-player iframe,
+#mt-player audio {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+#mt-yt {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 640px;
+}
+#mt-yt iframe { width: 100%; height: 100%; }
+
+.mt-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+  font: 14px system-ui, sans-serif;
+}
+.mt-controls button {
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.mt-controls [data-clock] {
+  font-variant-numeric: tabular-nums;
+  color: #555;
+}
+.mt-follow { color: #555; }
+
+/* A transcript line. Cursor hints that clicking seeks, but the underlying
+   <a href> still works without JS. */
+p.line { cursor: pointer; }
+
+p.line.mt-active {
+  background: #fff6d5;
+  border-left: 3px solid #e8b500;
+  padding-left: 8px;
+  margin-left: -11px;
+}
+
+/* word-level highlight: only ever present on the active line */
+span.w.w-active {
+  background: #ffe066;
+  border-radius: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #mt-player { background: #1b1b1b; border-bottom-color: #333; }
+  .mt-controls [data-clock], .mt-follow { color: #bbb; }
+  p.line.mt-active { background: #3a3320; border-left-color: #b98f00; }
+  span.w.w-active { background: #6b5500; }
+}

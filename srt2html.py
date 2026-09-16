@@ -24,6 +24,7 @@ import yt_dlp
 import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
 from urllib.parse import quote
+from html import escape
 from site_url import site_url
 
 # ---------------------------------------------------------------------------
@@ -144,6 +145,28 @@ def timestamp_url(yt_id, start, video_data=None):
     return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
 
 
+def player_source(yt_id, video_data=None):
+    """(kind, src) for the in-page player, or (None, None) if unavailable.
+
+    kind is one of "youtube" | "audio" | "archive"; transcript-player.js maps
+    each to a backend behind a common seek/time interface.
+    """
+    entry = (video_data or {}).get(yt_id, {})
+
+    if yt_id[0:6] == "XXXXXX":
+        audio = entry.get("audio_url")
+        return ("audio", audio) if audio else (None, None)
+
+    if yt_id[0:6] == "MCM000":
+        # archive.org's embed exposes no reliable seek API, so the player is
+        # informational there and line clicks fall back to the <a href>.
+        url = entry.get("url") or ""
+        ident = url.rstrip("/").split("/details/")[-1] if "/details/" in url else ""
+        return ("archive", ident) if ident else (None, None)
+
+    return ("youtube", yt_id)
+
+
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}, video_data=None):
 
     if text == '': return
@@ -154,7 +177,12 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
         if language == 'en':
             htmlfilename = basename + '.html'
             html = open(htmlfilename, 'a', encoding="utf-8")
-            html.write("    <p>[" + speaker + "]</a>: " + htmltext + "</p>\n\n")
+            # data-t drives the in-page synced player (transcript-player.js).
+            # The <a href> inside htmltext is deliberately KEPT: without JS,
+            # and for crawlers, the line behaves exactly as it always has.
+            # (The old markup also emitted a stray unmatched </a> here.)
+            html.write('    <p class="line" data-t="' + str(start) + '">['
+                       + speaker + ']: ' + htmltext + '</p>\n\n')
             html.close()
         else: 
             htmlfilename = basename + '.' + language + '.html'
@@ -313,6 +341,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
         html.write('    <title>' + text + '</title>\n')
 
         html.write('    <link rel="canonical" href="' + site_url(htmlfilename) + '" />\n')
+        html.write('    <link rel="stylesheet" href="' + site_url("transcript-player.css") + '">\n')
         html.write('  </head>\n')
         html.write('  <body>\n')
 
@@ -321,6 +350,15 @@ def srt2html(yt_id,skip_translation=False, force=False):
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
         html.write('  <h1>' + text + '</h1>\n')
+
+        # In-page synced player. This is an ENHANCEMENT of the existing page,
+        # not a new one: same URL, same canonical, all transcript text still in
+        # the DOM, so Ctrl+F, selection and indexing are unaffected. If the
+        # mount is absent or JS is off, every line's <a href> still works.
+        kind, src = player_source(yt_id, video_data)
+        if kind:
+            html.write('  <div id="mt-player" data-kind="' + kind
+                       + '" data-src="' + escape(src, quote=True) + '"></div>\n')
 
         if links_to_languages:
             html.write(links_to_languages + '<br><br>\n')
@@ -492,6 +530,10 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         html = open(htmlfilename, 'a', encoding="utf-8")
         html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
+        # loaded last and deferred: the transcript renders and is readable
+        # (and indexable) whether or not this ever runs
+        if language == 'en':
+            html.write('  <script src="' + site_url("transcript-player.js") + '" defer></script>\n')
         html.write('  </body>\n')
         html.write('</html>\n')
         html.close()
