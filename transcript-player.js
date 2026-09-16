@@ -167,7 +167,8 @@
     '<option value="3">3&times;</option>' +
     "</select></label>" +
     '<span data-clock>0:00</span>' +
-    '<label class="mt-follow"><input type="checkbox" data-follow checked> follow</label>';
+    '<label class="mt-follow"><input type="checkbox" data-follow checked> follow</label>' +
+    '<label class="mt-follow"><input type="checkbox" data-hl checked> highlight</label>';
   mount.appendChild(bar);
 
   bar.addEventListener("click", function (e) {
@@ -180,6 +181,23 @@
   });
   var clock = bar.querySelector("[data-clock]");
   var follow = bar.querySelector("[data-follow]");
+
+  // Highlighting is a matter of taste -- some readers find a moving highlight
+  // distracting -- so it is toggleable and the choice persists. Honour
+  // prefers-reduced-motion as the default, and never smooth-scroll under it.
+  var hl = bar.querySelector("[data-hl]");
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stored = null;
+  try { stored = localStorage.getItem("mt-highlight"); } catch (e) {}
+  hl.checked = stored === null ? !reduceMotion : stored === "1";
+  hl.addEventListener("change", function () {
+    try { localStorage.setItem("mt-highlight", hl.checked ? "1" : "0"); } catch (e) {}
+    if (!hl.checked && lines[current]) {
+      lines[current].classList.remove("mt-active");
+      clearWords(lines[current]);
+    }
+  });
 
   if (backend.limited) {
     // archive.org: no position feedback, so speed/clock/follow are meaningless
@@ -277,15 +295,18 @@
     if (i !== current) {
       if (lines[current]) { lines[current].classList.remove("mt-active"); clearWords(lines[current]); }
       current = i;
-      if (lines[current]) {
+      if (lines[current] && hl.checked) {
         lines[current].classList.add("mt-active");
         wordify(lines[current], current);
         if (follow.checked) {
-          lines[current].scrollIntoView({ block: "center", behavior: "smooth" });
+          lines[current].scrollIntoView({
+            block: "center",
+            behavior: reduceMotion ? "auto" : "smooth"
+          });
         }
       }
     }
-    if (wordTimes && lines[current] && lines[current].dataset.wordified) {
+    if (hl.checked && wordTimes && lines[current] && lines[current].dataset.wordified) {
       var spans = lines[current].querySelectorAll("span.w");
       for (var k = 0; k < spans.length; k++) {
         var wt = parseFloat(spans[k].getAttribute("data-wt"));
@@ -324,4 +345,99 @@
       }
     }
   });
+})();
+
+/* ---------------------------------------------------------------------------
+ * transcript-corrections -- right-click a line to report an error.
+ *
+ * Static-site friendly: no backend. The menu opens a PRE-FILLED Google Form
+ * with the video id, timestamp, speaker and original text already populated,
+ * so the contributor only supplies the fix. Configured by
+ * corrections-config.json; inert until that file sets enabled: true.
+ *
+ * Google Form rather than GitHub Issues on purpose -- requiring a GitHub
+ * account would exclude most residents, and broad participation is the point.
+ *
+ * Submissions are a QUEUE, never applied automatically. A public write path
+ * into a civic record is an abuse target, and these corrections are meant to
+ * become ground truth for evaluation -- unreviewed data would defeat that.
+ * ------------------------------------------------------------------------ */
+(function () {
+  "use strict";
+
+  var mount = document.getElementById("mt-player");
+  if (!mount) return;
+
+  var cfg = null, menu = null;
+
+  fetch(mount.getAttribute("data-corrections") || "corrections-config.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (c) { if (c && c.enabled) { cfg = c; arm(); } })
+    .catch(function () { /* no corrections UI; page is unaffected */ });
+
+  function prefill(kind, line) {
+    var f = cfg.fields, q = [];
+    function add(key, val) {
+      if (f[key] && val != null) q.push(f[key] + "=" + encodeURIComponent(val));
+    }
+    var text = (line.textContent || "").trim();
+    var m = text.match(/^\[([^\]]*)\]:\s*([\s\S]*)$/);
+    add("kind", (cfg.kinds && cfg.kinds[kind]) || kind);
+    add("video_id", mount.getAttribute("data-video-id") || "");
+    add("video_title", document.title);
+    add("timestamp", line.getAttribute("data-t"));
+    add("speaker", m ? m[1] : "");
+    add("original_text", (m ? m[2] : text).slice(0, 900));
+    add("page_url", location.origin + location.pathname +
+        "#t=" + Math.floor(parseFloat(line.getAttribute("data-t")) || 0));
+    return cfg.form_url + "?usp=pp_url&" + q.join("&");
+  }
+
+  function close() { if (menu) { menu.remove(); menu = null; } }
+
+  function open(x, y, line) {
+    close();
+    menu = document.createElement("div");
+    menu.className = "mt-menu";
+    Object.keys(cfg.kinds).forEach(function (kind) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = cfg.kinds[kind];
+      b.addEventListener("click", function () {
+        // The anonymization ask carries real consequences; state them plainly
+        // and require an explicit acknowledgement BEFORE the form opens.
+        if (kind === "anonymize" && cfg.anonymize_notice &&
+            !window.confirm(cfg.anonymize_notice + "\n\nContinue?")) {
+          close();
+          return;
+        }
+        window.open(prefill(kind, line), "_blank", "noopener");
+        close();
+      });
+      menu.appendChild(b);
+    });
+    menu.style.left = x + "px";
+    menu.style.top = y + "px";
+    document.body.appendChild(menu);
+  }
+
+  function arm() {
+    document.addEventListener("contextmenu", function (e) {
+      var line = e.target.closest && e.target.closest("p.line[data-t]");
+      if (!line) return;
+      e.preventDefault();
+      open(e.pageX, e.pageY, line);
+    });
+    document.addEventListener("click", function (e) {
+      if (menu && !menu.contains(e.target)) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+
+    var hint = document.createElement("div");
+    hint.className = "mt-hint";
+    hint.textContent = "Spot an error? Right-click any line to suggest a correction.";
+    mount.appendChild(hint);
+  }
 })();

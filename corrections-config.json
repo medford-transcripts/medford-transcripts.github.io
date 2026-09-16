@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Config for the in-page correction / anonymization requests.",
+    "",
+    "TO ACTIVATE: create a Google Form with the fields below, then open the",
+    "form's 'Get pre-filled link' view, fill each field with a recognisable",
+    "dummy value, copy the generated URL, and read the entry.NNNNN ids out of",
+    "it into the map below. Set enabled to true.",
+    "",
+    "Google Form was chosen over GitHub Issues deliberately: a GitHub account",
+    "is a hard wall for most residents, and public engagement is the point.",
+    "If volume ever justifies it, a Cloudflare Worker writing to the repo via",
+    "the GitHub API removes the third party entirely -- and comes free if the",
+    "site moves to Cloudflare Pages for the Phase 3.2 wildcard redirects.",
+    "",
+    "NOTHING here is secret; this file is public config. The private",
+    "real-name -> pseudonym mapping must NEVER live here."
+  ],
+
+  "enabled": false,
+
+  "form_url": "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform",
+
+  "fields": {
+    "kind": "entry.000000001",
+    "video_id": "entry.000000002",
+    "video_title": "entry.000000003",
+    "timestamp": "entry.000000004",
+    "speaker": "entry.000000005",
+    "original_text": "entry.000000006",
+    "page_url": "entry.000000007"
+  },
+
+  "kinds": {
+    "word": "Transcription error",
+    "speaker": "Wrong speaker / unidentified speaker",
+    "anonymize": "I am this speaker - please anonymize me"
+  },
+
+  "anonymize_notice": "Anonymization is offered to members of the public, not to elected officials, candidates for office, or city staff speaking in their official capacity. If you later run for or hold public office, your name will be restored across the archive so that candidates remain accountable for their public statements. We can remove your name from this site, but not from the city's own published video."
+}

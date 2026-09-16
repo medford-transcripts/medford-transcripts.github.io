@@ -377,6 +377,8 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 words_attr = ' data-words="' + filebasename + '.words.json"'
             html.write('  <div id="mt-player" data-kind="' + kind
                        + '" data-src="' + escape(src, quote=True) + '"'
+                       + ' data-video-id="' + escape(yt_id, quote=True) + '"'
+                       + ' data-corrections="' + asset_prefix(dir) + 'corrections-config.json"'
                        + words_attr + '></div>\n')
 
         if links_to_languages:

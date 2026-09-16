@@ -73,3 +73,40 @@ span.w.w-active {
   p.line.mt-active { background: #3a3320; border-left-color: #b98f00; }
   span.w.w-active { background: #6b5500; }
 }
+
+/* right-click correction menu */
+.mt-menu {
+  position: absolute;
+  z-index: 50;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+  font: 14px system-ui, sans-serif;
+}
+.mt-menu button {
+  text-align: left;
+  padding: 7px 10px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.mt-menu button:hover { background: #eef2ff; }
+
+.mt-hint {
+  font: 12px system-ui, sans-serif;
+  color: #666;
+  margin-top: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mt-menu { background: #232323; border-color: #444; color: #eee; }
+  .mt-menu button { color: #eee; }
+  .mt-menu button:hover { background: #333; }
+  .mt-hint { color: #999; }
+}
