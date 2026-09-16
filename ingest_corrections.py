@@ -2,18 +2,20 @@
 Ingest correction submissions into a local review queue.
 
 NO GOOGLE AUTHENTICATION REQUIRED. The Sheets API would need OAuth or a
-service account, but the responses sheet can simply be published as CSV:
+service account, but a LINK-SHARED responses sheet exports CSV over plain
+HTTP, which is all this needs:
 
-    responses Sheet -> File -> Share -> Publish to web
-                    -> pick the responses sheet, format "Comma-separated values"
+    https://docs.google.com/spreadsheets/d/<SHEET_ID>/export?format=csv
 
-That yields a plain URL this script can fetch. The form collects no email
-addresses and the content is public-transcript corrections, so the exposure is
-minimal. If that is ever not acceptable, download the CSV by hand and pass it
-as a path instead -- both work identically.
+(No "publish to web" step is necessary as long as the sheet is shared with
+"anyone with the link can view" -- which is also the caveat: anyone holding
+that link can read the responses. This form collects no email addresses and
+the content is public-transcript corrections, so the exposure is minimal. If
+that ever stops being acceptable, download the CSV by hand and pass a path --
+both work identically.)
 
-    python ingest_corrections.py --url  "https://docs.google.com/.../pub?output=csv"
-    python ingest_corrections.py --csv  responses.csv
+    python ingest_corrections.py --url "https://docs.google.com/spreadsheets/d/<ID>/export?format=csv"
+    python ingest_corrections.py --csv responses.csv
 
 Submissions are NEVER applied automatically. This writes them to
 corrections_queue.json with status "pending" for human review. A public write
@@ -28,6 +30,7 @@ preserved.
 import argparse
 import csv
 import hashlib
+import glob
 import io
 import json
 import os
@@ -91,6 +94,44 @@ def row_id(rec):
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:16]
 
 
+def original_speaker(video_id, timestamp):
+    """The speaker label currently in the transcript at this timestamp.
+
+    Needed because every form field is prefilled with the original and the
+    contributor edits whichever is wrong -- so on a SPEAKER correction the
+    'speaker' field comes back holding the CORRECTED name and the original is
+    gone. Text and timestamp corrections keep both sides (original_text, and
+    the pristine time in page_url#t=), so only this one needs resolving.
+
+    Recording it at ingest makes the queue self-contained: a reviewer sees
+    "SPEAKER_07 -> Zac Bears" without opening the transcript.
+    """
+    try:
+        t = float(timestamp)
+    except (TypeError, ValueError):
+        return None
+    hits = glob.glob("20??-??-??_" + video_id + "/*_" + video_id + ".srt")
+    if not hits:
+        return None
+
+    best, best_start = None, None
+    with io.open(hits[0], encoding="utf-8", errors="replace") as fp:
+        start = None
+        for line in fp:
+            if "-->" in line:
+                try:
+                    hh, mm, rest = line.split()[0].split(":")
+                    ss, ms = rest.split(",")
+                    start = int(hh) * 3600 + int(mm) * 60 + int(ss) + int(ms) / 1000.0
+                except (ValueError, IndexError):
+                    start = None
+            elif start is not None and line.strip().startswith("["):
+                if start <= t + 0.05 and (best_start is None or start >= best_start):
+                    best_start = start
+                    best = line.strip().split("]")[0].lstrip("[")
+    return best
+
+
 def classify(rec):
     k = (rec.get("kind") or "").lower()
     if "speaker" in k:
@@ -143,6 +184,10 @@ def main():
             dupes += 1
             continue
         rec["target"] = classify(rec)
+        if rec["target"] == "speaker":
+            was = original_speaker(rec.get("video_id"), rec.get("timestamp"))
+            if was:
+                rec["original_speaker"] = was
         rec["status"] = "pending"
         items[rid] = rec
         added += 1
@@ -162,8 +207,14 @@ def main():
     for v in list(items.values())[:3]:
         print("\n  %-9s %-12s t=%-9s %s" % (v.get("target"), v.get("video_id"),
                                             v.get("timestamp"), v.get("speaker")))
-        print("     was: %s" % (v.get("original_text") or "")[:88])
-        print("     fix: %s" % (v.get("suggestion") or "")[:88])
+        if v.get("target") == "speaker":
+            print("     speaker: %s -> %s"
+                  % (v.get("original_speaker") or "?", v.get("speaker")))
+        elif v.get("target") == "timestamp":
+            print("     time: %s (see page_url for the original)" % v.get("timestamp"))
+        else:
+            print("     was: %s" % (v.get("original_text") or "")[:88])
+            print("     fix: %s" % (v.get("suggestion") or "")[:88])
 
     if args.dry_run:
         print("\nDry run; %s not written." % QUEUE)
