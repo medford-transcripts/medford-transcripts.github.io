@@ -64,3 +64,6 @@ addresses*.json
 
 # pipeline crash/restart logs from the .bat wrappers
 logs/
+
+# per-word timing sidecars -- decide on full rollout before tracking
+*.words.json

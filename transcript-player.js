@@ -35,10 +35,27 @@
     return parseFloat(el.getAttribute("data-t")) || 0;
   });
 
-  var wordTimes = null;
-  var wtEl = document.getElementById("word-times");
-  if (wtEl) {
-    try { wordTimes = JSON.parse(wtEl.textContent); } catch (e) { wordTimes = null; }
+  // Word timings live in a sidecar (<base>.words.json), fetched lazily on
+  // first play. Keeping them out of the HTML keeps the page lean for crawlers
+  // and Ctrl+F, and costs nothing for visitors who never press play.
+  // Format: one array per line, delta-encoded centiseconds. The words are not
+  // shipped -- they are already in the DOM.
+  var wordTimes = null, wordsTried = false;
+
+  function loadWordTimes() {
+    if (wordsTried) return;
+    wordsTried = true;
+    var src = mount.getAttribute("data-words");
+    if (!src) return;
+    fetch(src).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!rows) return;
+        wordTimes = rows.map(function (row) {          // undo delta encoding
+          var abs = [], acc = 0;
+          for (var i = 0; i < row.length; i++) { acc += row[i]; abs.push(acc / 100); }
+          return abs;
+        });
+      }).catch(function () { /* stay at line-level */ });
   }
 
   // ---------------------------------------------------------------- backends
@@ -67,6 +84,7 @@
   function makeYouTube() {
     var div = document.createElement("div");
     div.id = "mt-yt";
+    div.className = "mt-video";
     mount.appendChild(div);
 
     var yt = null, poll = null, cbs = [];
@@ -101,22 +119,36 @@
   }
 
   function makeArchive() {
-    // archive.org's embed exposes no seek API we can rely on, so the player is
-    // informational and line clicks fall back to opening archive.org at the
-    // timestamp (the <a href> the line already carries).
+    // archive.org's embed exposes no seek API, but its src accepts ?start=N,
+    // so we can still honour a click by reloading the iframe at that offset.
+    // Crude (it restarts the player) but it makes MCM meetings -- the bulk of
+    // the archive -- actually clickable instead of merely decorative.
     var f = document.createElement("iframe");
-    f.src = "https://archive.org/embed/" + encodeURIComponent(SRC);
-    f.width = "100%";
-    f.height = "60";
-    f.frameBorder = "0";
+    var base = "https://archive.org/embed/" + encodeURIComponent(SRC);
+    f.src = base;
     f.setAttribute("allowfullscreen", "");
+    f.setAttribute("frameborder", "0");
+    f.className = "mt-video";
     mount.appendChild(f);
-    return null; // signals "no in-page seeking"
+
+    var sought = 0;
+    return {
+      video: true,
+      seek: function (t) {
+        sought = t;
+        f.src = base + "?start=" + Math.floor(t);
+      },
+      time: function () { return sought; },
+      rate: function () {},                 // not controllable through the embed
+      on: function () {},                   // no timeupdate available
+      ready: function (cb) { cb(); },
+      limited: true                         // no live position -> no auto-follow
+    };
   }
 
   if (KIND === "audio") backend = makeAudio();
   else if (KIND === "youtube") backend = makeYouTube();
-  else if (KIND === "archive") { makeArchive(); return; }
+  else if (KIND === "archive") backend = makeArchive();
   else return;
 
   // ------------------------------------------------------------- transport
@@ -149,6 +181,13 @@
   var clock = bar.querySelector("[data-clock]");
   var follow = bar.querySelector("[data-follow]");
 
+  if (backend.limited) {
+    // archive.org: no position feedback, so speed/clock/follow are meaningless
+    bar.querySelector("[data-rate]").parentNode.style.display = "none";
+    clock.style.display = "none";
+    follow.parentNode.style.display = "none";
+  }
+
   function hhmmss(t) {
     t = Math.max(0, Math.floor(t));
     var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
@@ -162,7 +201,11 @@
     // let modified clicks (new tab) behave normally
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
-    backend.seek(parseFloat(line.getAttribute("data-t")) || 0);
+    // if the click landed on a timed word, seek to THAT word, not the line
+    var w = e.target.closest("span.w[data-wt]");
+    var t = w ? parseFloat(w.getAttribute("data-wt"))
+              : (parseFloat(line.getAttribute("data-t")) || 0);
+    backend.seek(t);
   });
 
   // ------------------------------------------------- highlight + autoscroll
@@ -184,18 +227,46 @@
     }
   }
 
+  // Wrap each word of the line in a span, walking TEXT NODES only so the
+  // existing <a> links (timestamps, green resolution links) survive intact.
+  // Only ever applied to the line currently playing, then torn back down.
   function wordify(el, idx) {
-    if (!wordTimes || !wordTimes[idx] || el.dataset.wordified) return;
+    if (!wordTimes || !wordTimes[idx] || !wordTimes[idx].length) return;
+    if (el.dataset.wordified) return;
     el.dataset.plain = el.innerHTML;
-    var words = wordTimes[idx];           // [[t, "word"], ...]
-    var html = "";
-    for (var i = 0; i < words.length; i++) {
-      html += '<span class="w" data-wt="' + words[i][0] + '">' +
-        words[i][1] + "</span> ";
-    }
-    // keep the speaker prefix, replace only the spoken text
-    var m = el.dataset.plain.match(/^(\s*\[[^\]]*\]:\s*)/);
-    el.innerHTML = (m ? m[1] : "") + html;
+
+    var times = wordTimes[idx], n = 0;
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    var skippedPrefix = false;
+    nodes.forEach(function (node) {
+      var text = node.nodeValue;
+      if (!text.trim()) return;
+      var frag = document.createDocumentFragment();
+      // the leading "[Speaker]: " prefix is not spoken -- don't consume a timing
+      var parts = text.split(/(\s+)/);
+      parts.forEach(function (part) {
+        if (!part.trim()) { frag.appendChild(document.createTextNode(part)); return; }
+        if (!skippedPrefix && /\]:?$/.test(part)) {
+          frag.appendChild(document.createTextNode(part));
+          skippedPrefix = true;
+          return;
+        }
+        if (!skippedPrefix && /^\[/.test(part)) {
+          frag.appendChild(document.createTextNode(part));
+          return;
+        }
+        var span = document.createElement("span");
+        span.className = "w";
+        if (n < times.length) span.setAttribute("data-wt", times[n]);
+        n++;
+        span.textContent = part;
+        frag.appendChild(span);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
     el.dataset.wordified = "1";
   }
 
@@ -224,6 +295,7 @@
     }
   }
   backend.on(tick);
+  loadWordTimes();
 
   // ------------------------------------------------------ deep link (#t=)
   function fragmentTime() {

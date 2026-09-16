@@ -19,30 +19,36 @@
   display: block;
 }
 
-#mt-yt {
-  aspect-ratio: 16 / 9;
+/* Video backends (YouTube, archive.org) share one responsive 16:9 box.
+   It scales to the column but is capped so the sticky header cannot eat the
+   viewport on a laptop -- and is capped harder in landscape, where vertical
+   space is scarcest. */
+.mt-video {
+  display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: min(880px, 100%);
+  aspect-ratio: 16 / 9;
+  max-height: 45vh;
+  border: 0;
+  margin: 0 auto;
+  background: #000;
 }
-#mt-yt iframe { width: 100%; height: 100%; }
+#mt-yt iframe { width: 100%; height: 100%; border: 0; }
 
-.mt-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-top: 6px;
-  font: 14px system-ui, sans-serif;
+@media (orientation: landscape) and (max-height: 820px) {
+  .mt-video { max-height: 38vh; }
 }
-.mt-controls button {
-  padding: 4px 10px;
-  cursor: pointer;
+@media (max-width: 600px) {
+  #mt-player { padding: 4px 0; }
+  .mt-controls { font-size: 13px; gap: 6px; }
+  .mt-video { max-height: 32vh; }
 }
-.mt-controls [data-clock] {
-  font-variant-numeric: tabular-nums;
-  color: #555;
+/* If the viewport is really short, un-stick so the player cannot swallow
+   the whole screen. */
+@media (max-height: 420px) {
+  #mt-player { position: static; }
+  .mt-video { max-height: none; }
 }
-.mt-follow { color: #555; }
 
 /* A transcript line. Cursor hints that clicking seeks, but the underlying
    <a href> still works without JS. */

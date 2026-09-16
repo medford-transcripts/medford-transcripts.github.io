@@ -145,6 +145,19 @@ def timestamp_url(yt_id, start, video_data=None):
     return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
 
 
+def asset_prefix(page_dir):
+    """Relative path from a page's directory back to the site root, e.g. "../".
+
+    Assets are linked RELATIVELY (the canonical URL stays absolute, since it
+    must be). Relative means a local checkout previews correctly with no
+    rewriting, and nothing breaks if the site moves to a custom domain. The
+    depth is computed rather than hardcoded so the Phase 3 restructure to
+    t/<yt_id>/ (depth 1 -> 2) needs no change here.
+    """
+    rel = os.path.relpath(".", page_dir or ".").replace(os.sep, "/")
+    return "" if rel == "." else rel + "/"
+
+
 def player_source(yt_id, video_data=None):
     """(kind, src) for the in-page player, or (None, None) if unavailable.
 
@@ -341,7 +354,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
         html.write('    <title>' + text + '</title>\n')
 
         html.write('    <link rel="canonical" href="' + site_url(htmlfilename) + '" />\n')
-        html.write('    <link rel="stylesheet" href="' + site_url("transcript-player.css") + '">\n')
+        html.write('    <link rel="stylesheet" href="' + asset_prefix(dir) + 'transcript-player.css">\n')
         html.write('  </head>\n')
         html.write('  <body>\n')
 
@@ -357,8 +370,14 @@ def srt2html(yt_id,skip_translation=False, force=False):
         # mount is absent or JS is off, every line's <a href> still works.
         kind, src = player_source(yt_id, video_data)
         if kind:
+            # data-words points at the optional per-word timing sidecar
+            # (make_word_times.py). Absent -> the player stays at line level.
+            words_attr = ''
+            if os.path.exists(os.path.join(dir, filebasename + '.words.json')):
+                words_attr = ' data-words="' + filebasename + '.words.json"'
             html.write('  <div id="mt-player" data-kind="' + kind
-                       + '" data-src="' + escape(src, quote=True) + '"></div>\n')
+                       + '" data-src="' + escape(src, quote=True) + '"'
+                       + words_attr + '></div>\n')
 
         if links_to_languages:
             html.write(links_to_languages + '<br><br>\n')
@@ -533,7 +552,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
         # loaded last and deferred: the transcript renders and is readable
         # (and indexable) whether or not this ever runs
         if language == 'en':
-            html.write('  <script src="' + site_url("transcript-player.js") + '" defer></script>\n')
+            html.write('  <script src="' + asset_prefix(dir) + 'transcript-player.js" defer></script>\n')
         html.write('  </body>\n')
         html.write('</html>\n')
         html.close()
