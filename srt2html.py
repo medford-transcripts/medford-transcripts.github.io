@@ -51,10 +51,51 @@ def translate_text(text, dest="en", cachefile=None):
                 json.dump(translations, fp, indent=4)
 
         return result.text
-    except:
+    except Exception as e:
+        # This used to be a bare `except: return text`, which silently emitted
+        # ENGLISH into a page served as lang="ar"/"km"/"ru". A rate-limited or
+        # interrupted run therefore produced pages that looked fine but were
+        # not translated at all, with no error anywhere. Still degrade rather
+        # than crash a long run, but make it visible and countable.
+        global _translation_failures
+        _translation_failures += 1
+        if _translation_failures <= 5 or _translation_failures % 100 == 0:
+            print("  translate_text(-> %s) FAILED (%d so far): %s: %s"
+                  % (dest, _translation_failures, type(e).__name__, e))
         return text
 
-def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}):
+_translation_failures = 0
+
+
+def translation_failure_count():
+    return _translation_failures
+
+
+def timestamp_url(yt_id, start, video_data=None):
+    """Timestamped deep link into the source media for this yt_id.
+
+    The platform is implied by the id prefix, exactly as make_html() derives
+    on_youtube / on_spotify / on_archive. Returns None when no URL is known.
+
+    finish_speaker() used to hardcode https://youtu.be/<id> for the
+    non-English branch, so every translated page of every MCM archive.org
+    item carried a dead YouTube link on every timestamp -- 5,517 pages.
+    The English branch was correct because it reuses the caller's htmltext.
+    """
+    entry = (video_data or {}).get(yt_id, {})
+
+    if yt_id[0:6] == "XXXXXX":            # podcast / RSS -> spotify
+        url = entry.get("url")
+        return url + "?t=" + str(start) if url else None
+
+    if yt_id[0:6] == "MCM000":            # MCM archive -> archive.org
+        url = entry.get("url")
+        return url + "&start=" + str(start) if url else None
+
+    return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
+
+
+def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}, video_data=None):
 
     if text == '': return
 
@@ -72,8 +113,12 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
                 text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
             else: text = ""
             html = open(htmlfilename, 'a', encoding="utf-8")
-            html.write('    <p><a href="https://youtu.be/' + yt_id + '&t=' + str(start) + 's" rel="nofollow">')
-            html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
+            url = timestamp_url(yt_id, start, video_data)
+            if url:
+                html.write('    <p><a href="' + url + '" rel="nofollow">')
+                html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
+            else:
+                html.write("    <p>[" + speaker + "]: " + text + "</p>\n\n")
             html.close()
 
     # let's do some stats by speaker
@@ -322,7 +367,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
                     htmltext += this_html_text
 
                 else:
-                    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages)
+                    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages, video_data=video_data)
 
                     # update to new values
                     start = this_start
@@ -334,7 +379,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
             else: continue
 
-    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages)
+    finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages, video_data=video_data)
 
     # create speaker_ids.json, sorting by auto-assigned speaker ID (SPEAKER_##)
     with open(os.path.join(dir,"speaker_ids.json"), "w") as fp:
