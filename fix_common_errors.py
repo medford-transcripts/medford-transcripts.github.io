@@ -2,6 +2,41 @@ import glob
 import shutil
 import ipdb
 import os
+import re
+
+
+def compile_rules(replace_dict):
+    """Compile the replacement table into WORD-BOUNDARY-ANCHORED patterns.
+
+    This used to be a plain str.replace(), i.e. an unanchored substring match,
+    which silently corrupted text: the "counselor -> Councilor" rule turned
+    school "guidance counselors" into city "guidance Councilors" in 125
+    transcripts. Every rule with a short key had the same exposure.
+
+    Boundaries are only added where the key actually begins or ends with a word
+    character. Several rules depend on surrounding whitespace (" Seng",
+    "15 dash ") and a blanket \\b would break them, since \\b next to a space
+    asserts the opposite of what is wanted.
+    """
+    out = []
+    for key, value in replace_dict.items():
+        key = str(key)
+        if not key:
+            continue
+        pattern = re.escape(key)
+        if key[0].isalnum() or key[0] == "_":
+            pattern = r"\b" + pattern
+        if key[-1].isalnum() or key[-1] == "_":
+            pattern = pattern + r"\b"
+        out.append((re.compile(pattern), value.replace("\\", "\\\\")))
+    return out
+
+
+def apply_rules(text, patterns):
+    for rx, value in patterns:
+        text = rx.sub(value, text)
+    return text
+
 
 def fix_common_errors(yt_id=None):
 
@@ -401,6 +436,8 @@ def fix_common_errors(yt_id=None):
 
     srtfiles = glob.glob(path)
 
+    patterns = compile_rules(replace_dict)
+
     for srtfilename in srtfiles:
 
         # back it up
@@ -411,17 +448,12 @@ def fix_common_errors(yt_id=None):
         with open(srtfilename, 'r', encoding="utf-8") as f:
             text = f.read()
 
-        modified = False
-        # replace all strings
-        for key in replace_dict.keys():
-            if str(key) in text:
-                modified = True
-                text = text.replace(str(key), replace_dict[key])
+        new_text = apply_rules(text, patterns)
 
         # write it out
-        if modified:
+        if new_text != text:
             with open(srtfilename, 'w', encoding="utf-8") as f:
-                f.write(text)
+                f.write(new_text)
 
 if __name__ == "__main__":
     fix_common_errors()

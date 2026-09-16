@@ -431,21 +431,20 @@
       if (f[key] && val != null) q.push(f[key] + "=" + encodeURIComponent(val));
     }
     var text = (line.textContent || "").trim();
-    var m = text.match(/^\[([^\]]*)\]:\s*([\s\S]*)$/);
-    add("video_id", mount.getAttribute("data-video-id") || "");
-    add("video_title", document.title);
-    add("timestamp", line.getAttribute("data-t"));
-    add("speaker", m ? m[1] : "");
-    add("original_text", (m ? m[2] : text).slice(0, 900));
-    // FULL PRECISION on purpose: the timestamp question is prefilled and
-    // editable, so this is the only surviving copy of the original time --
-    // and ingest needs it to find the line and recover the original speaker.
-    add("page_url", location.origin + location.pathname +
-        "#t=" + (line.getAttribute("data-t") || "0"));
-    // Prefill the two EDITABLE answers with the originals, so a correction is
-    // a quick edit rather than retyping. The pristine timestamp survives in
-    // page_url (#t=), so nothing is lost by letting this one be overwritten.
-    add("suggestion", (m ? m[2] : text).slice(0, 900));
+    var t = line.getAttribute("data-t") || "0";
+
+    // ONE editable box, carrying the speaker label inside the text. Fixing a
+    // name and fixing the words are then the same action, and a multi-line
+    // answer is a split into separate turns (the roll-call case).
+    add("suggestion", text.slice(0, 1200));
+
+    // ONE opaque reference. Google Forms has no hidden fields, so every extra
+    // context field is another box the submitter must look at and ignore.
+    // These two values identify the line; ingest reads the originals back out
+    // of the transcript, which is a better source than a round trip through an
+    // editable text box.
+    add("reference", (mount.getAttribute("data-video-id") || "") + "@" + t);
+
     return cfg.form_url + "?usp=pp_url&" + q.join("&");
   }
 
