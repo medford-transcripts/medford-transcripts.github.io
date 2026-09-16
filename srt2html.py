@@ -23,6 +23,7 @@ import yt_dlp
 # imports from this repo
 import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
+from site_url import site_url
 
 def translate_text(text, dest="en", cachefile=None):
 
@@ -214,7 +215,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
         html.write('    <title>' + text + '</title>\n')
 
-        html.write('    <link rel="canonical" href="https://medford-transcripts.github.io/' + htmlfilename + '" />\n')
+        html.write('    <link rel="canonical" href="' + site_url(htmlfilename) + '" />\n')
         html.write('  </head>\n')
         html.write('  <body>\n')
 
@@ -664,7 +665,7 @@ def make_sitemap():
     # add urls
     for file in files:
         timestamp = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(file)),'%Y-%m-%dT%H:%M:%SZ') 
-        url = "https://medford-transcripts.github.io/"+file.replace('\\', '/')
+        url = site_url(file)
         add_url(sitemap_root, url, timestamp)
 
     # save sitemap. xml extension will be added automatically

@@ -5,6 +5,7 @@ import supercut
 import ipdb
 import os
 import datetime
+from site_url import site_url
 
 def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_words=False):
 
@@ -39,7 +40,9 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_
         f.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
         f.write('    <meta name="description" content="Excerpts from transcribed videos of the ' + str(year) + ' Medford MA candidates for Mayor, City Council, and School Committee.">\n')
         f.write('    <title>Medford MA ' + str(year) + ' Election</title>\n')
-        f.write('    <link rel="canonical" href="https://medford-transcripts.github.io/" />\n')
+        # self-referential: pointing every election page at the site root told
+        # Google these pages were duplicates of the homepage (plan.txt A1)
+        f.write('    <link rel="canonical" href="' + site_url("election/" + str(year) + ".html") + '" />\n')
         f.write('  </head>\n')
         f.write('\n')
         f.write('  <body>\n')
@@ -261,7 +264,7 @@ def make_all_election_pages(remake_heatmap=False, remake_html=False, skip_words=
         f.write('    <meta http-equiv="X-UA-Compatible" content="ie=edge">\n')
         f.write('    <meta name="description" content="Election info pages for Medford, MA Mayor, City Council, and School Committee.">\n')
         f.write('    <title>Medford Election</title>\n')
-        f.write('    <link rel="canonical" href="https://medford-transcripts.github.io/" />\n')
+        f.write('    <link rel="canonical" href="' + site_url("election/index.html") + '" />\n')
         f.write('  </head>\n\n')
         f.write('  <body>\n')
         f.write('    <h1>Medford MA elections</h1>\n') 

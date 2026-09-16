@@ -25,3 +25,15 @@ hf_token.txt
 hf_token_invalid.txt
 openai_key.txt
 reddit.json
+
+# refactor planning (item 16)
+plan.txt
+
+# credentials (cookies.txt = live YouTube session; never commit)
+cookies.txt
+credentials/
+
+# local scratch: orphaned experiments, never published (plan.txt 0.6)
+scratch/
+.claude/
+medford_tmp/

@@ -221,10 +221,32 @@ def download_audio(yt_id, video=False):
     if audio_url == '': 
         print("Could not find audio url for " + yt_id + ", attempting direct download of mp3")
         subprocess.run(['yt-dlp', 'https://www.youtube.com/watch?v=' + yt_id,'-x', '--audio-format', 'mp3', '--audio-quality', '5'])
-        mp3path = glob.glob('*' + yt_id + '*.mp3')[0]        
-        if len(mp3path) == 1:
-            mp3path = mp3path[0]
-            shutil.move(mp3path, mp3file)
+
+        # yt-dlp names the file after the video title, so it has to be moved
+        # into audio/ under our <date>_<yt_id> convention.
+        #
+        # This previously read:
+        #     mp3path = glob.glob(...)[0]     # <- already a string
+        #     if len(mp3path) == 1:           # <- tests the FILENAME's length
+        # which is never true, so the move never ran. The download was left in
+        # the repo root, and because there was also no early return, execution
+        # fell straight through to the video-download branch below and fetched
+        # the SAME video a second time. Every video taking this path was
+        # downloaded twice; 49 stranded mp3s / 1.9 GB had accumulated.
+        # See plan.txt A14.
+        candidates = glob.glob('*' + yt_id + '*.mp3')
+        if not candidates:
+            print("yt-dlp produced no mp3 for " + yt_id)
+        else:
+            dest = utils.get_mp3filename(yt_id, video_data=video_data, local=True)
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.move(candidates[0], dest)
+            print("moved " + candidates[0] + " -> " + dest)
+
+            # the fallback succeeded; do NOT also download the full video below
+            if mp3_is_good(yt_id, video_data):
+                return utils.get_mp3filename(yt_id, video_data=video_data), video_data[yt_id]["duration"]
+            print("direct mp3 download failed validation; falling back to video download")
 
     if False:
         ydl_opts = {
@@ -257,7 +279,11 @@ def download_audio(yt_id, video=False):
         os.remove(input_file)
 
     if mp3_is_good(yt_id, video_data):
-        return mp3file, video_data[yt_id]["duration"]
+        # recompute: mp3file was resolved BEFORE the download, so on a fresh
+        # download it is still None. Harmless today only because -d and -t run
+        # as separate processes and nothing consumes this return value on the
+        # download path; it would crash transcribe() in combined mode.
+        return utils.get_mp3filename(yt_id, video_data=video_data), video_data[yt_id]["duration"]
 
 # default is Medford Bytes apple podcast  
 def download_rss_feed(rss_feed="https://anchor.fm/s/6f6f95b8/podcast/rss"):
@@ -590,28 +616,63 @@ if __name__ == "__main__":
         utils.update_all()
 
     if os.path.exists(jsonfile):
+
+        # Exponential backoff on repeated failure.
+        #
+        # This loop used to be `except: more_to_do = True`, which set
+        # time_to_sleep = 0. Any PERSISTENT failure (external drive unplugged,
+        # network down, expired cookies) therefore span at full speed --
+        # pegging a core and hammering YouTube until we got rate-limited,
+        # which made downloads slower still. It looked like a hang rather than
+        # a crash. See plan.txt A5.
+        BACKOFF_START = 60.0      # 1 minute
+        BACKOFF_CAP = 1800.0      # 30 minutes
+        consecutive_failures = 0
+
         while True:
             t0 = datetime.datetime.now()
+            failed = False
             try:
                 more_to_do = transcribe_with_preempt(download_only=opt.download_only, id_file=opt.id_file, redo=opt.redo, transcribe_only=opt.transcribe_only)
-            except:
+            except (KeyboardInterrupt, SystemExit):
+                # a bare `except:` swallowed these; Ctrl-C could not stop the loop
+                print("\nInterrupted; exiting.")
+                raise
+            except Exception:
+                failed = True
                 more_to_do = True
+                consecutive_failures += 1
+                print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") +
+                      ": pass failed (" + str(consecutive_failures) + " in a row)")
+                print(traceback.format_exc())
 
-            # if we did them all, wait an hour and check again
-            # otherwise, on to the next one
-            if more_to_do: time_to_sleep = 0
-            else: 
-                try: 
+            if not failed:
+                consecutive_failures = 0
+
+            if failed:
+                # back off: 60s, 120s, 240s ... capped at 30 min
+                time_to_sleep = min(BACKOFF_START * (2 ** (consecutive_failures - 1)),
+                                    BACKOFF_CAP)
+                print("Backing off for " + str(int(time_to_sleep)) + "s before retrying")
+            elif more_to_do:
+                # healthy and there is work left: straight on to the next one
+                time_to_sleep = 0
+            else:
+                try:
                     download_rss_feed()
                     download_mcm.main()
-                except:
-                    pass
+                except (KeyboardInterrupt, SystemExit):
+                    raise
+                except Exception:
+                    print("feed/archive refresh failed:")
+                    print(traceback.format_exc())
                 tf = datetime.datetime.now()
                 time_to_sleep = 3600.0 - (tf-t0).total_seconds()
 
-            if time_to_sleep > 0.0:            
+            if time_to_sleep > 0.0:
                 later = (datetime.datetime.now() + datetime.timedelta(seconds=time_to_sleep)).strftime("%Y-%m-%d %H:%M:%S")
-                print("Done with all videos; checking again at " + later)
+                if not failed:
+                    print("Done with all videos; checking again at " + later)
                 time.sleep(time_to_sleep)
 
     else: 
