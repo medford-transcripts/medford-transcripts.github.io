@@ -425,21 +425,23 @@
     .then(function (c) { if (c && c.enabled) { cfg = c; arm(); } })
     .catch(function () { /* no corrections UI; page is unaffected */ });
 
-  function prefill(kind, line) {
+  function prefill(line) {
     var f = cfg.fields, q = [];
     function add(key, val) {
       if (f[key] && val != null) q.push(f[key] + "=" + encodeURIComponent(val));
     }
     var text = (line.textContent || "").trim();
     var m = text.match(/^\[([^\]]*)\]:\s*([\s\S]*)$/);
-    add("kind", (cfg.kinds && cfg.kinds[kind]) || kind);
     add("video_id", mount.getAttribute("data-video-id") || "");
     add("video_title", document.title);
     add("timestamp", line.getAttribute("data-t"));
     add("speaker", m ? m[1] : "");
     add("original_text", (m ? m[2] : text).slice(0, 900));
+    // FULL PRECISION on purpose: the timestamp question is prefilled and
+    // editable, so this is the only surviving copy of the original time --
+    // and ingest needs it to find the line and recover the original speaker.
     add("page_url", location.origin + location.pathname +
-        "#t=" + Math.floor(parseFloat(line.getAttribute("data-t")) || 0));
+        "#t=" + (line.getAttribute("data-t") || "0"));
     // Prefill the two EDITABLE answers with the originals, so a correction is
     // a quick edit rather than retyping. The pristine timestamp survives in
     // page_url (#t=), so nothing is lost by letting this one be overwritten.
@@ -453,23 +455,32 @@
     close();
     menu = document.createElement("div");
     menu.className = "mt-menu";
-    Object.keys(cfg.kinds).forEach(function (kind) {
+
+    function item(label, fn) {
       var b = document.createElement("button");
       b.type = "button";
-      b.textContent = cfg.kinds[kind];
-      b.addEventListener("click", function () {
-        // The anonymization ask carries real consequences; state them plainly
-        // and require an explicit acknowledgement BEFORE the form opens.
-        if (kind === "anonymize" && cfg.anonymize_notice &&
-            !window.confirm(cfg.anonymize_notice + "\n\nContinue?")) {
-          close();
-          return;
-        }
-        window.open(prefill(kind, line), "_blank", "noopener");
-        close();
-      });
+      b.textContent = label;
+      b.addEventListener("click", function () { fn(); close(); });
       menu.appendChild(b);
+    }
+
+    item(cfg.menu_label || "Suggest a correction…", function () {
+      window.open(prefill(line), "_blank", "noopener");
     });
+
+    // Overriding the context menu removes the browser's own Copy, which is
+    // what most people right-click a transcript for. Put it back rather than
+    // quietly taking it away.
+    item("Copy this line", function () {
+      var t = (line.textContent || "").trim();
+      if (navigator.clipboard) navigator.clipboard.writeText(t).catch(function () {});
+    });
+    item("Copy link to this moment", function () {
+      var u = location.origin + location.pathname +
+              "#t=" + (line.getAttribute("data-t") || "0");
+      if (navigator.clipboard) navigator.clipboard.writeText(u).catch(function () {});
+    });
+
     menu.style.left = x + "px";
     menu.style.top = y + "px";
     document.body.appendChild(menu);

@@ -43,7 +43,6 @@ QUEUE = "corrections_queue.json"
 # The sheet's column headers are the QUESTION TEXT, which the owner may reword
 # at any time. Match loosely on keywords rather than pinning exact strings.
 COLUMN_HINTS = [
-    ("kind",          ["kind", "what kind", "type of correction"]),
     ("video_id",      ["video id", "video_id"]),
     ("video_title",   ["video title", "title"]),
     ("timestamp",     ["timestamp", "seconds"]),
@@ -132,13 +131,87 @@ def original_speaker(video_id, timestamp):
     return best
 
 
+def original_timestamp(page_url):
+    """The pristine timestamp, carried at full precision in page_url#t=."""
+    m = re.search(r"[#&]t=([0-9.]+)", page_url or "")
+    return m.group(1) if m else None
+
+
+TURN_RE = re.compile(r"^\s*\[([^\]]{1,60})\]\s*:\s*(.*)$")
+
+
+def parse_turns(text):
+    """Parse a correction written as multiple speaker turns, or return None.
+
+    The most valuable correction shape is SPLITTING one run-on segment into
+    several turns -- a roll call being the canonical case, where diarization
+    collapses "Councilor Bears? / Present. / Councilor Collins? / Present."
+    into a single speaker. Both hand corrections found in the archive were
+    exactly this.
+
+    Convention: one turn per line, written as
+        [Name]: what they said
+    The prefilled text carries NO speaker prefix, so the presence of labelled
+    lines is an unambiguous signal that a split was intended.
+
+    Timings are NOT assigned here. At apply time the split points can be
+    aligned to real word boundaries using the per-word timings in model.pkl
+    (see make_word_times.py), which is far better than interpolating evenly
+    across the segment.
+    """
+    if not text or "[" not in text:
+        return None
+    turns = []
+    for raw in text.splitlines():
+        if not raw.strip():
+            continue
+        m = TURN_RE.match(raw)
+        if not m:
+            # a stray unlabelled line means this is not a clean split;
+            # treat the whole thing as ordinary replacement text
+            return None
+        turns.append({"speaker": m.group(1).strip(), "text": m.group(2).strip()})
+    return turns or None
+
+
 def classify(rec):
-    k = (rec.get("kind") or "").lower()
-    if "speaker" in k:
-        return "speaker"
-    if "timestamp" in k or "timing" in k:
-        return "timestamp"
-    return "word"
+    """Infer WHAT was corrected by diffing against the originals.
+
+    The form no longer asks. Every correctable field is prefilled with the
+    original, so what the contributor changed IS the answer -- and asking made
+    the form look harder than it is. A single submission can legitimately
+    correct more than one thing, so this returns a list.
+    """
+    changed = []
+
+    was_t = rec.get("original_timestamp")
+    now_t = rec.get("timestamp")
+    if was_t and now_t:
+        try:
+            if abs(float(was_t) - float(now_t)) > 0.001:
+                changed.append("timestamp")
+        except ValueError:
+            if was_t.strip() != now_t.strip():
+                changed.append("timestamp")
+
+    was_s = rec.get("original_speaker")
+    now_s = rec.get("speaker")
+    if was_s and now_s and was_s.strip() != now_s.strip():
+        changed.append("speaker")
+
+    was_x = (rec.get("original_text") or "").strip()
+    now_x = (rec.get("suggestion") or "").strip()
+    if was_x and now_x and was_x != now_x:
+        # a correction written as several [Name]: lines is a SPLIT of one
+        # segment into multiple speaker turns, not a text replacement
+        turns = parse_turns(now_x)
+        if turns and len(turns) > 1:
+            rec["turns"] = turns
+            changed.append("split")
+        else:
+            changed.append("text")
+
+    return changed or ["none"]
 
 
 def main():
@@ -183,11 +256,13 @@ def main():
         if rid in items:
             dupes += 1
             continue
+        # resolve the originals BEFORE classifying -- the diff depends on them
+        rec["original_timestamp"] = original_timestamp(rec.get("page_url"))
+        was = original_speaker(rec.get("video_id"),
+                               rec["original_timestamp"] or rec.get("timestamp"))
+        if was:
+            rec["original_speaker"] = was
         rec["target"] = classify(rec)
-        if rec["target"] == "speaker":
-            was = original_speaker(rec.get("video_id"), rec.get("timestamp"))
-            if was:
-                rec["original_speaker"] = was
         rec["status"] = "pending"
         items[rid] = rec
         added += 1
@@ -200,21 +275,30 @@ def main():
     by_target = {}
     for v in items.values():
         if v.get("status") == "pending":
-            by_target[v.get("target")] = by_target.get(v.get("target"), 0) + 1
+            for t in (v.get("target") or ["none"]):
+                by_target[t] = by_target.get(t, 0) + 1
     if by_target:
         print("  by kind:", by_target)
 
     for v in list(items.values())[:3]:
-        print("\n  %-9s %-12s t=%-9s %s" % (v.get("target"), v.get("video_id"),
-                                            v.get("timestamp"), v.get("speaker")))
-        if v.get("target") == "speaker":
-            print("     speaker: %s -> %s"
+        tg = v.get("target") or []
+        print("\n  %-18s %-12s t=%s" % ("+".join(tg), v.get("video_id"),
+                                        v.get("timestamp")))
+        if "speaker" in tg:
+            print("     speaker  : %s -> %s"
                   % (v.get("original_speaker") or "?", v.get("speaker")))
-        elif v.get("target") == "timestamp":
-            print("     time: %s (see page_url for the original)" % v.get("timestamp"))
-        else:
-            print("     was: %s" % (v.get("original_text") or "")[:88])
-            print("     fix: %s" % (v.get("suggestion") or "")[:88])
+        if "timestamp" in tg:
+            print("     timestamp: %s -> %s"
+                  % (v.get("original_timestamp") or "?", v.get("timestamp")))
+        if "split" in tg:
+            print("     SPLIT into %d turns:" % len(v.get("turns") or []))
+            for t in (v.get("turns") or [])[:6]:
+                print("        [%s] %s" % (t["speaker"], t["text"][:60]))
+        if "text" in tg:
+            print("     was: %s" % (v.get("original_text") or "")[:84])
+            print("     fix: %s" % (v.get("suggestion") or "")[:84])
+        if tg == ["none"]:
+            print("     (nothing changed -- likely a test or an accidental submit)")
 
     if args.dry_run:
         print("\nDry run; %s not written." % QUEUE)
