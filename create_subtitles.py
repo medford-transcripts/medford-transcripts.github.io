@@ -373,6 +373,69 @@ def is_manually_corrected(yt_id):
     return yt_id in _manual_corrections
 
 
+
+# ---------------------------------------------------------------------------
+# MODEL CACHE -- load each model ONCE per process, not once per video.
+#
+# These three were being constructed inside transcribe(), which the main loop
+# calls once per video, so every single meeting paid a full load of the ASR
+# model, the alignment model and the diarization pipeline, then dropped them.
+#
+# That was costing minutes per video, but the bigger problem was memory. Torch
+# does not return freed arena back to the OS, so repeatedly allocating and
+# discarding GB-sized models grows the process's COMMITTED memory even while
+# resident size stays modest. Measured on this machine mid-run: RSS 1.4 GB but
+# 11.5 GB committed, with the system at 27.7 GB of a 31.5 GB commit limit --
+# which is why unrelated processes kept being evicted, and matches the 89
+# Resource-Exhaustion events in the event log.
+#
+# Holding one copy costs steady-state memory but removes the churn and the
+# repeated arena growth, which is the thing actually exhausting commit.
+#
+# BATCH_SIZE is also lowered from 16: it is the main knob on peak allocation
+# during transcription, and this machine has 16 GB shared with everything else.
+BATCH_SIZE = 8
+
+_asr_model = None
+_align_models = {}
+_diarize_model = None
+
+
+def get_asr_model(device, compute_type):
+    global _asr_model
+    if _asr_model is None:
+        print("loading whisper model (once per process)...")
+        # specifying english here will automatically translate other languages
+        # to english! but often it gets the language wrong when auto-detecting
+        #
+        # the few videos done with large-v3 seemed to be the worst
+        # transcriptions seen, though that could be coincidence
+        _asr_model = whisperx.load_model("large-v2", device,
+                                         compute_type=compute_type,
+                                         download_root="./", language="en")
+    return _asr_model
+
+
+def get_align_model(language_code, device):
+    """Alignment model, cached per language (in practice only 'en')."""
+    if language_code not in _align_models:
+        print("loading alignment model for " + str(language_code) + " (once)...")
+        _align_models[language_code] = whisperx.load_align_model(
+            language_code=language_code, device=device)
+    return _align_models[language_code]
+
+
+def get_diarize_model(device):
+    global _diarize_model
+    if _diarize_model is None:
+        print("loading diarization pipeline (once per process)...")
+        with open('hf_token.txt') as f:
+            token = f.readline()
+        _diarize_model = whisperx.DiarizationPipeline(use_auth_token=token,
+                                                      device=device)
+    return _diarize_model
+
+
 '''
 uses whisperx to transcribe a video specified by YouTube ID (yt_id)
 '''
@@ -441,18 +504,10 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
         device = "cpu"
         compute_type = "int8"
 
-    batch_size = 16 # reduce if low on GPU mem
-    model_dir = "./"
-    # specifying english here will automatically translate other languages to english!
-    # but often, it gets the language wrong when automatically identifying it
-    model = whisperx.load_model("large-v2", device, compute_type=compute_type, download_root=model_dir, language="en")
-
-    # the few videos I did with v3 seemed to be the worst transcriptions I've seen, but this could be a coincidence
-    #model = whisperx.load_model("large-v3", device, compute_type=compute_type, download_root=model_dir, language="en")
-
     # basic transcription
+    model = get_asr_model(device, compute_type)
     audio = whisperx.load_audio(mp3file)
-    result = model.transcribe(audio, batch_size=batch_size)
+    result = model.transcribe(audio, batch_size=BATCH_SIZE)
     generate_output(result, base + '_basic.mp3')
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcription of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
@@ -460,7 +515,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # import gc; gc.collect(); torch.cuda.empty_cache(); del model
 
     # align whisper output (generate accurate word-level timestamps)
-    model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
+    model_a, metadata = get_align_model(result["language"], device)
     aligned_result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
     generate_output(aligned_result, base + '_aligned.mp3')
     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Alignment of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
@@ -469,8 +524,7 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
 
     # Assign speaker labels ("diarization")
-    with open('hf_token.txt') as f: token = f.readline()
-    diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
+    diarize_model = get_diarize_model(device)
 
     # returning embeddings require custom modifications to whisperx (see PR997). 
     # use commented line for stock whisperx (and lose the ability to match speakers across videos)
