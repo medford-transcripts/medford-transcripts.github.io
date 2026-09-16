@@ -25,6 +25,43 @@ import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
 from site_url import site_url
 
+# ---------------------------------------------------------------------------
+# TRANSLATIONS ARE OFF.
+#
+# googletrans 3.4.0 is broken: half the target languages raise
+# AttributeError("'NoneType' object has no attribute 'send'") and the other
+# half silently return the input unchanged. Either way the generator was
+# writing ENGLISH into pages served as lang="ar" / "km" / "ru" -- i.e. ~20,000
+# near-duplicate pages, the exact pattern Google treats as scaled content
+# abuse, on a domain that is already struggling to stay indexed.
+#
+# The translated pages have also been removed from git tracking. They are NOT
+# deleted -- they are still on disk and still in history at
+#     01245267f2de2472f2563765052468ad376ca6bc
+# See the recovery banner at the top of plan.txt.
+#
+# Translations DID work roughly a year ago, so older pages are genuinely
+# translated and are the ones worth restoring first. The intended path forward
+# is to translate the Phase 8 SUMMARIES (short, cheap, spot-checkable) rather
+# than raw transcripts.
+#
+# Set this back to False only after replacing googletrans AND adding a check
+# that the returned text actually differs from the input -- the silent failure
+# mode raises nothing, so exception logging alone will not catch it.
+TRANSLATIONS_DISABLED = True
+
+# file suffixes of the retired translated pages, used to keep them out of the
+# sitemap even while they remain on disk
+TRANSLATED_SUFFIXES = (".es.html", ".pt.html", ".pt-BR.html", ".zh-cn.html",
+                       ".ht.html", ".vi.html", ".km.html", ".ru.html",
+                       ".ar.html", ".ko.html")
+
+
+def is_translated_page(path):
+    """True for a retired per-language transcript page."""
+    return str(path).endswith(TRANSLATED_SUFFIXES)
+
+
 def translate_text(text, dest="en", cachefile=None):
 
     if cachefile is not None:
@@ -199,7 +236,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
     # cape verdean is not supported by googletrans
 
     #skip_translation = True
-    if skip_translation:
+    if skip_translation or TRANSLATIONS_DISABLED:
         languages = {'en' : "English" }
     else:
         languages = {
@@ -215,15 +252,18 @@ def srt2html(yt_id,skip_translation=False, force=False):
             'ko' : "한국인" # Korean
             }
 
-    # generate links to other language pages
+    # generate links to other language pages.
+    # With only English there is nothing to switch between, so emit nothing
+    # rather than a lone self-link.
     links_to_languages = ""
-    for language in languages.keys():
-        if language == "en":
-            htmlname = filebasename + '.html'
-        else:
-            htmlname =  filebasename + '.' + language + '.html'
-            links_to_languages += ' | '
-        links_to_languages += '<a href="' + htmlname + '">' + languages[language] + '</a>'
+    if len(languages) > 1:
+        for language in languages.keys():
+            if language == "en":
+                htmlname = filebasename + '.html'
+            else:
+                htmlname =  filebasename + '.' + language + '.html'
+                links_to_languages += ' | '
+            links_to_languages += '<a href="' + htmlname + '">' + languages[language] + '</a>'
     #ipdb.set_trace()
 
     print("Making HTML for " + yt_id)
@@ -270,7 +310,8 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         html.write('  <h1>' + text + '</h1>\n')
 
-        html.write(links_to_languages + '<br><br>\n')
+        if links_to_languages:
+            html.write(links_to_languages + '<br><br>\n')
 
         text = 'Back to all transcripts'
         if language != 'en':
@@ -702,6 +743,11 @@ def make_resolution_tracker(do_scrape=True):
 def make_sitemap():
 
     files = glob.glob("*/*.html")
+
+    # The per-language transcript copies are retired (TRANSLATIONS_DISABLED)
+    # and no longer tracked by git, so they are not published -- keep them out
+    # of the sitemap even though the files are still sitting on disk.
+    files = [f for f in files if not is_translated_page(f)]
 
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')

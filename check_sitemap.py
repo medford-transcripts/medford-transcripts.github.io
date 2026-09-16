@@ -17,6 +17,7 @@ import datetime
 import glob
 import os
 import sys
+from urllib.parse import unquote
 from xml.etree import ElementTree
 
 from site_url import SITE_ROOT
@@ -87,6 +88,9 @@ def main():
         if rel is None:
             continue
         rel = rel.split("#")[0].split("?")[0]
+        # <loc> is URL-escaped per the sitemap spec (site_url percent-encodes
+        # spaces), so decode before testing the filesystem
+        rel = unquote(rel)
         if rel == "":
             rel = "index.html"
         if not os.path.exists(rel.replace("/", os.sep)):

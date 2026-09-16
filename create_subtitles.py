@@ -490,14 +490,76 @@ def request_git_push():
         _git_pending = True
 
 
+# Paths holding AUTOMATICALLY GENERATED content. Only these are auto-committed.
+#
+# Anything not listed here -- source code, .bat files, .gitignore, CLAUDE.md,
+# hand-maintained pages like about.html and header.html -- is left alone for a
+# human to commit deliberately.
+#
+# These are directory/file PATHSPECS, not a list of "what we just made":
+# `git add <path>` stages every change under that path no matter when it
+# happened, so work left behind by a previous failed push, or edited by hand
+# afterwards, still gets picked up on the next run.
+GENERATED_PATHS = [
+    "20*",              # transcript directories, <date>_<yt_id>/
+    "t",                # restructured transcripts (Phase 3), if present
+    "resolutions",
+    "agendas",
+    "minutes",
+    "other_files",
+    "committees",
+    "election",
+    "electeds",
+    "index.html",
+    "resolutions.html",
+    "heatmap.html",
+    "sitemap.xml",
+    "video_data.json",
+    "medford_index.json",
+]
+
+
 def push_to_git():
-    subprocess.run(["git","add", "20*"]) 
-    subprocess.run(["git","add", "resolutions/*"]) 
-    subprocess.run(["git","add", "agendas/*"]) 
-    subprocess.run(["git","add", "minutes/*"]) 
-    subprocess.run(["git","add", "other_files/*"]) 
-    subprocess.run(["git","commit", "-a", "-m", "add video"]) 
-    subprocess.run(["git","push"]) 
+    """Commit and push generated content only.
+
+    This used to end in `git commit -a`, which stages EVERY modified tracked
+    file -- so a background push would sweep up whatever source edits happened
+    to be in the working tree and commit them, mid-edit, as "add video". It did
+    exactly that during the 2026-09-15 refactor, committing a half-finished
+    srt2html.py without the new module it imported. See plan.txt.
+    """
+    # stage only generated content; ignore paths that don't exist yet
+    for path in GENERATED_PATHS:
+        subprocess.run(["git", "add", "--", path],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    # commit only if something is actually staged -- `git commit` with nothing
+    # staged returns non-zero and spams the log every cycle
+    staged = subprocess.run(["git", "diff", "--cached", "--quiet"])
+    if staged.returncode != 0:
+        result = subprocess.run(["git", "commit", "-m", "add video"])
+        if result.returncode != 0:
+            print("git commit failed (rc=%d); not pushing" % result.returncode)
+            return
+    else:
+        print("nothing new to commit")
+
+    # push regardless of whether we just committed: a previous push may have
+    # failed, leaving good commits stranded locally
+    ahead = subprocess.run(["git", "rev-list", "--count", "@{u}..HEAD"],
+                           capture_output=True, text=True)
+    try:
+        n_ahead = int((ahead.stdout or "0").strip() or 0)
+    except ValueError:
+        n_ahead = 1  # no upstream info; attempt the push anyway
+
+    if n_ahead == 0:
+        return
+
+    print("pushing %d commit(s)" % n_ahead)
+    if subprocess.run(["git", "push"]).returncode != 0:
+        print("git push FAILED; %d commit(s) still local, will retry next cycle"
+              % n_ahead)
 
 # this mostly waits on google translate; do it in the background
 def finish_async(yt_id):

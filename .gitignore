@@ -41,3 +41,23 @@ medford_tmp/
 # privacy: speaker name -> home address mapping. The generated heatmaps are
 # aggregated and published; this raw mapping must never be.
 addresses*.json
+
+# Retired per-language transcript copies (2026-09-16).
+# googletrans 3.4.0 is broken -- half the languages raise, the other half
+# silently return English -- so these became ~20,000 duplicate-English pages
+# wearing foreign lang attributes. NOT deleted: still on disk, and in history
+# at 01245267f2de2472f2563765052468ad376ca6bc. See the recovery banner at the
+# top of plan.txt before restoring any of them.
+*.es.html
+*.pt.html
+*.pt-BR.html
+*.zh-cn.html
+*.ht.html
+*.vi.html
+*.km.html
+*.ru.html
+*.ar.html
+*.ko.html
+
+# orphaned legacy stub: no transcript body, dead nav to .srt.*.html
+*.en.html
