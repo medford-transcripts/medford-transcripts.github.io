@@ -61,3 +61,6 @@ addresses*.json
 
 # orphaned legacy stub: no transcript body, dead nav to .srt.*.html
 *.en.html
+
+# pipeline crash/restart logs from the .bat wrappers
+logs/

@@ -23,6 +23,7 @@ import yt_dlp
 # imports from this repo
 import utils, supercut, fix_common_errors, heatmap, scrape
 import make_committee_pages
+from urllib.parse import quote
 from site_url import site_url
 
 # ---------------------------------------------------------------------------
@@ -121,7 +122,18 @@ def timestamp_url(yt_id, start, video_data=None):
     """
     entry = (video_data or {}).get(yt_id, {})
 
-    if yt_id[0:6] == "XXXXXX":            # podcast / RSS -> spotify
+    if yt_id[0:6] == "XXXXXX":            # Medford Bytes podcast
+        # Our own player (player.html?video=...&t=...) rather than Spotify.
+        # The audio URL comes straight from the RSS <enclosure>, so it is
+        # fully programmatic -- see update_podcast_audio.py. Spotify episode
+        # ids are NOT derivable from the feed, and this also covers the 12
+        # episodes whose Spotify URL was lost entirely (plan.txt A19).
+        # entry["url"] is kept as the Spotify page, for "listen/subscribe".
+        audio = entry.get("audio_url")
+        if audio:
+            return (site_url("player.html")
+                    + "?video=" + quote(audio, safe="")
+                    + "&t=" + str(start))
         url = entry.get("url")
         return url + "?t=" + str(start) if url else None
 
@@ -381,16 +393,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 # if it's not a resolution, and it's the first word, link to the timestamped video
                 tmp_text = this_html_text.split()
                 if not resolution_is_first:
-                    if on_youtube:
-                        link = ' <a href="https://youtu.be/' + yt_id + '&t=' + str(this_start) + 's" rel="nofollow">' + tmp_text[0] + '</a> '
-                    elif on_spotify or on_archive:
-                        if 'url' in video_data[yt_id].keys():
-                            if on_spotify:
-                                link = ' <a href="' + video_data[yt_id]['url'] + '?t=' + str(this_start) + '" rel="nofollow">' + tmp_text[0] + '</a> '
-                            elif on_archive:
-                                link = ' <a href="' + video_data[yt_id]['url'] + '&start=' + str(this_start) + '" rel="nofollow">' + tmp_text[0] + '</a> '
-                        else:
-                            link = tmp_text[0]
+                    # single source of truth for media links -- the English and
+                    # translated paths used to build these separately, drifted
+                    # apart, and put dead youtu.be links on 5,669 pages
+                    media = timestamp_url(yt_id, this_start, video_data)
+                    if media:
+                        link = ' <a href="' + media + '" rel="nofollow">' + tmp_text[0] + '</a> '
                     else:
                         link = tmp_text[0]
                     tmp_text[0] = link
