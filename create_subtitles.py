@@ -504,21 +504,59 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
         device = "cpu"
         compute_type = "int8"
 
-    # basic transcription
-    model = get_asr_model(device, compute_type)
+    # CHECKPOINT. Transcription + alignment is the overwhelming majority of the
+    # work -- roughly 3.3 hours of wall time per hour of audio, so a 5 hour
+    # meeting is most of a day. Diarization runs after it, and until this
+    # existed a crash, a reboot, a battery blip or an operator restarting the
+    # service during diarization threw ALL of it away and started from zero.
+    #
+    # That happened for real: MCM00000556 lost 3.9 hours of completed
+    # transcription and alignment to a restart, even though _basic.srt and
+    # _aligned.srt were sitting on disk -- those are text renderings and do
+    # not carry the word-level structure assign_word_speakers needs, so they
+    # could not be resumed from.
+    #
+    # The checkpoint is deleted once model.pkl is written, so it costs nothing
+    # steady-state; it only exists during the window where a restart is
+    # expensive.
+    ckpt = os.path.join(subdir, "aligned.checkpoint.pkl")
+    aligned_result = None
+    if os.path.exists(ckpt):
+        try:
+            with open(ckpt, "rb") as fp:
+                aligned_result = pickle.load(fp)
+            print("resuming " + yt_id + " from alignment checkpoint "
+                  "(skipping transcription + alignment)")
+        except Exception:
+            print("alignment checkpoint unreadable; redoing from scratch")
+            print(traceback.format_exc())
+            aligned_result = None
+
     audio = whisperx.load_audio(mp3file)
-    result = model.transcribe(audio, batch_size=BATCH_SIZE)
-    generate_output(result, base + '_basic.mp3')
-    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcription of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-    # delete model if low on GPU resources
-    # import gc; gc.collect(); torch.cuda.empty_cache(); del model
+    if aligned_result is None:
+        # basic transcription
+        model = get_asr_model(device, compute_type)
+        result = model.transcribe(audio, batch_size=BATCH_SIZE)
+        generate_output(result, base + '_basic.mp3')
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Transcription of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
 
-    # align whisper output (generate accurate word-level timestamps)
-    model_a, metadata = get_align_model(result["language"], device)
-    aligned_result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
-    generate_output(aligned_result, base + '_aligned.mp3')
-    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Alignment of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+        # align whisper output (generate accurate word-level timestamps)
+        model_a, metadata = get_align_model(result["language"], device)
+        aligned_result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
+        generate_output(aligned_result, base + '_aligned.mp3')
+        print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Alignment of " + yt_id + " complete in " + str((datetime.datetime.utcnow()-t0).total_seconds()) + " seconds")
+
+        # write the checkpoint atomically so a crash mid-write cannot leave a
+        # truncated pickle that looks resumable
+        try:
+            tmp = ckpt + ".tmp"
+            with open(tmp, "wb") as fp:
+                pickle.dump(aligned_result, fp)
+            os.replace(tmp, ckpt)
+        except Exception:
+            print("could not write alignment checkpoint (continuing anyway)")
+            print(traceback.format_exc())
 
     # delete model if low on GPU resources
     # import gc; gc.collect(); torch.cuda.empty_cache(); del model_a
@@ -538,6 +576,14 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     # save result for later (word level timestamps, speaker re-identification)
     with open(os.path.join(subdir,"embeddings.pkl"),'wb') as fp: pickle.dump(embeddings, fp)
     with open(os.path.join(subdir,"model.pkl"),'wb') as fp: pickle.dump(diarize_result, fp)
+
+    # the expensive work is now durably captured in model.pkl, so the resume
+    # checkpoint has done its job and would only waste disk from here
+    if os.path.exists(ckpt):
+        try:
+            os.remove(ckpt)
+        except OSError:
+            pass
 
     # convert to SRT file
     generate_output(diarize_result, base + '.mp3')

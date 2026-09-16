@@ -67,3 +67,7 @@ logs/
 
 # per-word timing sidecars -- decide on full rollout before tracking
 *.words.json
+
+# alignment resume checkpoint: transient, deleted once model.pkl is written
+aligned.checkpoint.pkl
+*.checkpoint.pkl
