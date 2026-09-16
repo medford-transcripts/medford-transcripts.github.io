@@ -37,3 +37,7 @@ credentials/
 scratch/
 .claude/
 medford_tmp/
+
+# privacy: speaker name -> home address mapping. The generated heatmaps are
+# aggregated and published; this raw mapping must never be.
+addresses*.json
