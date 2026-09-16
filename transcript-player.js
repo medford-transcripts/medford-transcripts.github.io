@@ -219,12 +219,62 @@
     // let modified clicks (new tab) behave normally
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
-    // if the click landed on a timed word, seek to THAT word, not the line
-    var w = e.target.closest("span.w[data-wt]");
-    var t = w ? parseFloat(w.getAttribute("data-wt"))
-              : (parseFloat(line.getAttribute("data-t")) || 0);
+    var t = wordTimeAt(line, e);
+    if (t === null) t = parseFloat(line.getAttribute("data-t")) || 0;
     backend.seek(t);
   });
+
+
+  // Time of the word under the pointer, or null.
+  //
+  // We cannot rely on hit-testing span.w: only the CURRENTLY PLAYING line is
+  // wordified, so a click on any other line would find no span and fall back
+  // to the line start -- which is why the first click on a new paragraph used
+  // to jump to its beginning and only the second click landed on the word.
+  //
+  // Instead resolve the caret offset at the click point and count words up to
+  // it. Works on any line whether or not it has been wordified, and needs no
+  // DOM mutation at click time.
+  function wordTimeAt(line, e) {
+    if (!wordTimes) return null;
+    var idx = lines.indexOf(line);
+    if (idx < 0) return null;
+    var times = wordTimes[idx];
+    if (!times || !times.length) return null;
+
+    var node = null, offset = 0;
+    if (document.caretRangeFromPoint) {                 // WebKit/Blink
+      var r = document.caretRangeFromPoint(e.clientX, e.clientY);
+      if (r) { node = r.startContainer; offset = r.startOffset; }
+    } else if (document.caretPositionFromPoint) {       // Gecko
+      var pos = document.caretPositionFromPoint(e.clientX, e.clientY);
+      if (pos) { node = pos.offsetNode; offset = pos.offset; }
+    }
+    if (!node) return null;
+
+    // characters of the line's text preceding the click
+    var before = 0, done = false;
+    var walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT, null);
+    while (walker.nextNode()) {
+      var n = walker.currentNode;
+      if (n === node) { before += Math.min(offset, n.nodeValue.length); done = true; break; }
+      before += n.nodeValue.length;
+    }
+    if (!done) return null;
+
+    var text = line.textContent || "";
+    var head = text.slice(0, before);
+    // the "[Speaker]: " prefix is not spoken and consumes no timing -- drop it
+    // (same rule wordify() applies, so indices stay consistent)
+    var m = text.match(/^\s*\[[^\]]*\]:?\s*/);
+    if (m) {
+      if (before <= m[0].length) return times[0];
+      head = head.slice(m[0].length);
+    }
+    var n_words = (head.match(/\S+/g) || []).length;
+    var i = Math.max(0, Math.min(n_words, times.length - 1));
+    return times[i];
+  }
 
   // ------------------------------------------------- highlight + autoscroll
   var current = -1;
