@@ -2,10 +2,9 @@
   "_comment": [
     "Config for the in-page correction / anonymization requests.",
     "",
-    "TO ACTIVATE: create a Google Form with the fields below, then open the",
-    "form's 'Get pre-filled link' view, fill each field with a recognisable",
-    "dummy value, copy the generated URL, and read the entry.NNNNN ids out of",
-    "it into the map below. Set enabled to true.",
+    "Field ids were read out of a 'Get pre-filled link' URL. To change the",
+    "form, repeat that: fill each question with a recognisable dummy value,",
+    "copy the generated URL, and update the ids below.",
     "",
     "Google Form was chosen over GitHub Issues deliberately: a GitHub account",
     "is a hard wall for most residents, and public engagement is the point.",
@@ -13,27 +12,37 @@
     "the GitHub API removes the third party entirely -- and comes free if the",
     "site moves to Cloudflare Pages for the Phase 3.2 wildcard redirects.",
     "",
+    "NOTE on the two SPEAKER_00 fields in the source URL: both the speaker",
+    "label and the original text were filled with the same dummy value, so",
+    "they were told apart by their ORDER in the prefill URL, which follows",
+    "question order. If 'speaker' and 'original_text' arrive swapped in the",
+    "responses sheet, exchange entry.190036418 and entry.28606286 below.",
+    "",
+    "The 'what should it say instead' question (entry.1016391486) is",
+    "deliberately NOT prefilled -- that is the one field the contributor",
+    "fills in.",
+    "",
     "NOTHING here is secret; this file is public config. The private",
     "real-name -> pseudonym mapping must NEVER live here."
   ],
 
-  "enabled": false,
+  "enabled": true,
 
-  "form_url": "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform",
+  "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSccxxAMO1H6UWnMOQjyFKyvlCsjw1sBQoKdeKF3uLRwjVG_iQ/viewform",
 
   "fields": {
-    "kind": "entry.000000001",
-    "video_id": "entry.000000002",
-    "video_title": "entry.000000003",
-    "timestamp": "entry.000000004",
-    "speaker": "entry.000000005",
-    "original_text": "entry.000000006",
-    "page_url": "entry.000000007"
+    "kind": "entry.1410999551",
+    "video_id": "entry.2050702634",
+    "video_title": "entry.1950577177",
+    "timestamp": "entry.1122134584",
+    "speaker": "entry.190036418",
+    "original_text": "entry.28606286",
+    "page_url": "entry.1449096868"
   },
 
   "kinds": {
     "word": "Transcription error",
-    "speaker": "Wrong speaker / unidentified speaker",
+    "speaker": "Wrong speaker",
     "anonymize": "I am this speaker - please anonymize me"
   },
 
