@@ -1,0 +1,498 @@
+{
+  "_comment": [
+    "Transcripts containing MANUAL corrections, detected by find_manual_edits.py.",
+    "A .srt here is NOT reproducible by the pipeline: re-transcribing overwrites",
+    "hand corrections that are ground truth for the eval set and the roll-call",
+    "extractor. create_subtitles refuses to overwrite these unless forced.",
+    "Regenerate this list with: python find_manual_edits.py --json ..."
+  ],
+  "generated": "2026-09-16",
+  "ids": {
+    "_LyLALihqlE": {
+      "dir": "2022-12-21__LyLALihqlE",
+      "changed_lines": 1096,
+      "total_lines": 13332,
+      "has_model_pkl": false
+    },
+    "0CWldZ_RYd4": {
+      "dir": "2024-11-19_0CWldZ_RYd4",
+      "changed_lines": 508,
+      "total_lines": 10152,
+      "has_model_pkl": false
+    },
+    "pVNz2f7XJUQ": {
+      "dir": "2025-01-14_pVNz2f7XJUQ",
+      "changed_lines": 463,
+      "total_lines": 3660,
+      "has_model_pkl": false
+    },
+    "ibN3MqHgIhQ": {
+      "dir": "2024-10-05_ibN3MqHgIhQ",
+      "changed_lines": 442,
+      "total_lines": 8976,
+      "has_model_pkl": false
+    },
+    "5r8Hhmlpsmo": {
+      "dir": "2021-06-15_5r8Hhmlpsmo",
+      "changed_lines": 206,
+      "total_lines": 14716,
+      "has_model_pkl": false
+    },
+    "XL6CFVX_DxQ": {
+      "dir": "2024-11-19_XL6CFVX_DxQ",
+      "changed_lines": 197,
+      "total_lines": 21660,
+      "has_model_pkl": false
+    },
+    "81TW9SO-xRE": {
+      "dir": "2017-12-04_81TW9SO-xRE",
+      "changed_lines": 91,
+      "total_lines": 7606,
+      "has_model_pkl": false
+    },
+    "iw3k1TZ1ejU": {
+      "dir": "2024-12-18_iw3k1TZ1ejU",
+      "changed_lines": 68,
+      "total_lines": 16876,
+      "has_model_pkl": false
+    },
+    "yp_xdtxEMNg": {
+      "dir": "2024-06-01_yp_xdtxEMNg",
+      "changed_lines": 57,
+      "total_lines": 2808,
+      "has_model_pkl": false
+    },
+    "cCFTFy23gjY": {
+      "dir": "2024-12-17_cCFTFy23gjY",
+      "changed_lines": 50,
+      "total_lines": 384,
+      "has_model_pkl": false
+    },
+    "bxdTkh9HwuM": {
+      "dir": "2024-10-05_bxdTkh9HwuM",
+      "changed_lines": 48,
+      "total_lines": 1052,
+      "has_model_pkl": false
+    },
+    "2Yhv5Nitagw": {
+      "dir": "2024-12-11_2Yhv5Nitagw",
+      "changed_lines": 39,
+      "total_lines": 488,
+      "has_model_pkl": false
+    },
+    "5kvVHmOpvvU": {
+      "dir": "2024-12-16_5kvVHmOpvvU",
+      "changed_lines": 32,
+      "total_lines": 5020,
+      "has_model_pkl": false
+    },
+    "92ZcNcBM_Nk": {
+      "dir": "2025-01-07_92ZcNcBM_Nk",
+      "changed_lines": 31,
+      "total_lines": 900,
+      "has_model_pkl": false
+    },
+    "j7cOY__Bzdc": {
+      "dir": "2024-08-14_j7cOY__Bzdc",
+      "changed_lines": 26,
+      "total_lines": 7544,
+      "has_model_pkl": false
+    },
+    "_nS6u82anYk": {
+      "dir": "2024-10-02__nS6u82anYk",
+      "changed_lines": 26,
+      "total_lines": 5632,
+      "has_model_pkl": false
+    },
+    "JBgoiGlSfTo": {
+      "dir": "2024-11-19_JBgoiGlSfTo",
+      "changed_lines": 20,
+      "total_lines": 9244,
+      "has_model_pkl": false
+    },
+    "6Dwt4KXgHTk": {
+      "dir": "2024-11-19_6Dwt4KXgHTk",
+      "changed_lines": 19,
+      "total_lines": 10468,
+      "has_model_pkl": false
+    },
+    "pUMtYvwLQbQ": {
+      "dir": "2024-12-11_pUMtYvwLQbQ",
+      "changed_lines": 19,
+      "total_lines": 1564,
+      "has_model_pkl": false
+    },
+    "zZxqrgNcAQo": {
+      "dir": "2025-01-14_zZxqrgNcAQo",
+      "changed_lines": 17,
+      "total_lines": 11784,
+      "has_model_pkl": false
+    },
+    "EwoILHnJVI8": {
+      "dir": "2024-10-05_EwoILHnJVI8",
+      "changed_lines": 16,
+      "total_lines": 8172,
+      "has_model_pkl": false
+    },
+    "muHlZXB81Bw": {
+      "dir": "2024-11-19_muHlZXB81Bw",
+      "changed_lines": 16,
+      "total_lines": 1748,
+      "has_model_pkl": false
+    },
+    "ytZEv67Hdoc": {
+      "dir": "2024-09-24_ytZEv67Hdoc",
+      "changed_lines": 14,
+      "total_lines": 3576,
+      "has_model_pkl": false
+    },
+    "MzfT6g6xeyw": {
+      "dir": "2024-06-06_MzfT6g6xeyw",
+      "changed_lines": 12,
+      "total_lines": 1228,
+      "has_model_pkl": false
+    },
+    "6nDWJcu6tF4": {
+      "dir": "2024-06-26_6nDWJcu6tF4",
+      "changed_lines": 10,
+      "total_lines": 14372,
+      "has_model_pkl": false
+    },
+    "UuhcxZvksfg": {
+      "dir": "2024-08-14_UuhcxZvksfg",
+      "changed_lines": 10,
+      "total_lines": 1012,
+      "has_model_pkl": false
+    },
+    "nmhVrAiqiHw": {
+      "dir": "2024-10-02_nmhVrAiqiHw",
+      "changed_lines": 10,
+      "total_lines": 1256,
+      "has_model_pkl": false
+    },
+    "es9I6cVv7DI": {
+      "dir": "2024-11-19_es9I6cVv7DI",
+      "changed_lines": 10,
+      "total_lines": 7532,
+      "has_model_pkl": false
+    },
+    "KYii5qaeea0": {
+      "dir": "2024-09-25_KYii5qaeea0",
+      "changed_lines": 8,
+      "total_lines": 1528,
+      "has_model_pkl": false
+    },
+    "yfpMOktT6KA": {
+      "dir": "2024-12-11_yfpMOktT6KA",
+      "changed_lines": 8,
+      "total_lines": 4372,
+      "has_model_pkl": false
+    },
+    "qU-78lPQllo": {
+      "dir": "2024-09-11_qU-78lPQllo",
+      "changed_lines": 7,
+      "total_lines": 4740,
+      "has_model_pkl": false
+    },
+    "7sfoGg_NhzM": {
+      "dir": "2024-11-19_7sfoGg_NhzM",
+      "changed_lines": 7,
+      "total_lines": 5576,
+      "has_model_pkl": false
+    },
+    "scCLE7L4cnI": {
+      "dir": "2024-06-27_scCLE7L4cnI",
+      "changed_lines": 6,
+      "total_lines": 1344,
+      "has_model_pkl": false
+    },
+    "Bg8-wFn44kc": {
+      "dir": "2024-07-24_Bg8-wFn44kc",
+      "changed_lines": 6,
+      "total_lines": 4948,
+      "has_model_pkl": false
+    },
+    "kGliI9h-Ql4": {
+      "dir": "2017-06-14_kGliI9h-Ql4",
+      "changed_lines": 5,
+      "total_lines": 6240,
+      "has_model_pkl": false
+    },
+    "NOrgr9i4zbs": {
+      "dir": "2024-06-02_NOrgr9i4zbs",
+      "changed_lines": 5,
+      "total_lines": 2088,
+      "has_model_pkl": false
+    },
+    "F83fBWNvQ1Q": {
+      "dir": "2024-12-10_F83fBWNvQ1Q",
+      "changed_lines": 5,
+      "total_lines": 1224,
+      "has_model_pkl": false
+    },
+    "XMyVKWwRIL8": {
+      "dir": "2024-06-01_XMyVKWwRIL8",
+      "changed_lines": 4,
+      "total_lines": 16436,
+      "has_model_pkl": false
+    },
+    "k65YPGeaIcs": {
+      "dir": "2024-09-18_k65YPGeaIcs",
+      "changed_lines": 4,
+      "total_lines": 1500,
+      "has_model_pkl": false
+    },
+    "DqMvnghi1-4": {
+      "dir": "2024-12-18_DqMvnghi1-4",
+      "changed_lines": 4,
+      "total_lines": 3228,
+      "has_model_pkl": false
+    },
+    "h9rFEwBYeQg": {
+      "dir": "2024-06-12_h9rFEwBYeQg",
+      "changed_lines": 3,
+      "total_lines": 13108,
+      "has_model_pkl": false
+    },
+    "RmvL56DRR5k": {
+      "dir": "2024-06-27_RmvL56DRR5k",
+      "changed_lines": 3,
+      "total_lines": 1868,
+      "has_model_pkl": false
+    },
+    "COIKCqnQvjE": {
+      "dir": "2024-09-12_COIKCqnQvjE",
+      "changed_lines": 3,
+      "total_lines": 2332,
+      "has_model_pkl": false
+    },
+    "hGxT3FthToQ": {
+      "dir": "2023-04-13_hGxT3FthToQ",
+      "changed_lines": 2,
+      "total_lines": 880,
+      "has_model_pkl": true
+    },
+    "TWmAoWQ2xQE": {
+      "dir": "2024-06-01_TWmAoWQ2xQE",
+      "changed_lines": 2,
+      "total_lines": 9804,
+      "has_model_pkl": false
+    },
+    "X875ms8gt_4": {
+      "dir": "2024-06-01_X875ms8gt_4",
+      "changed_lines": 2,
+      "total_lines": 19392,
+      "has_model_pkl": false
+    },
+    "-smS3pjc1I0": {
+      "dir": "2024-06-13_-smS3pjc1I0",
+      "changed_lines": 2,
+      "total_lines": 3564,
+      "has_model_pkl": false
+    },
+    "-vjCj0xS-sU": {
+      "dir": "2024-06-26_-vjCj0xS-sU",
+      "changed_lines": 2,
+      "total_lines": 1892,
+      "has_model_pkl": false
+    },
+    "MCM00000931": {
+      "dir": "2024-07-18_MCM00000931",
+      "changed_lines": 2,
+      "total_lines": 3180,
+      "has_model_pkl": true
+    },
+    "MCM00000932": {
+      "dir": "2024-07-18_MCM00000932",
+      "changed_lines": 2,
+      "total_lines": 3180,
+      "has_model_pkl": true
+    },
+    "zRypqjx_sS4": {
+      "dir": "2024-09-26_zRypqjx_sS4",
+      "changed_lines": 2,
+      "total_lines": 3760,
+      "has_model_pkl": false
+    },
+    "rk5kVycceTI": {
+      "dir": "2024-11-20_rk5kVycceTI",
+      "changed_lines": 2,
+      "total_lines": 2232,
+      "has_model_pkl": false
+    },
+    "F41aZM7C-XA": {
+      "dir": "2025-01-15_F41aZM7C-XA",
+      "changed_lines": 2,
+      "total_lines": 1404,
+      "has_model_pkl": false
+    },
+    "8Kto7egzLDI": {
+      "dir": "2025-02-26_8Kto7egzLDI",
+      "changed_lines": 2,
+      "total_lines": 4200,
+      "has_model_pkl": true
+    },
+    "DSAvAI2oq28": {
+      "dir": "2016-06-08_DSAvAI2oq28",
+      "changed_lines": 1,
+      "total_lines": 8,
+      "has_model_pkl": true
+    },
+    "0Vc0VDUwAtI": {
+      "dir": "2017-10-17_0Vc0VDUwAtI",
+      "changed_lines": 1,
+      "total_lines": 4144,
+      "has_model_pkl": false
+    },
+    "c7aHV1_-sJM": {
+      "dir": "2017-10-17_c7aHV1_-sJM",
+      "changed_lines": 1,
+      "total_lines": 4143,
+      "has_model_pkl": false
+    },
+    "R49wqTZ5YIg": {
+      "dir": "2018-12-20_R49wqTZ5YIg",
+      "changed_lines": 1,
+      "total_lines": 4532,
+      "has_model_pkl": true
+    },
+    "qmMnmAGIsyk": {
+      "dir": "2021-06-01_qmMnmAGIsyk",
+      "changed_lines": 1,
+      "total_lines": 3172,
+      "has_model_pkl": false
+    },
+    "tZVXN6zzUHw": {
+      "dir": "2021-06-07_tZVXN6zzUHw",
+      "changed_lines": 1,
+      "total_lines": 7888,
+      "has_model_pkl": true
+    },
+    "ZTAFqIlEOR4": {
+      "dir": "2024-01-09_ZTAFqIlEOR4",
+      "changed_lines": 1,
+      "total_lines": 4748,
+      "has_model_pkl": false
+    },
+    "wn9Gi3fuhEM": {
+      "dir": "2024-03-05_wn9Gi3fuhEM",
+      "changed_lines": 1,
+      "total_lines": 5424,
+      "has_model_pkl": false
+    },
+    "RAMzOXnU5sc": {
+      "dir": "2024-04-30_RAMzOXnU5sc",
+      "changed_lines": 1,
+      "total_lines": 6948,
+      "has_model_pkl": false
+    },
+    "N-D96vxinG4": {
+      "dir": "2024-06-01_N-D96vxinG4",
+      "changed_lines": 1,
+      "total_lines": 2304,
+      "has_model_pkl": false
+    },
+    "pd_lLQvQtEk": {
+      "dir": "2024-06-01_pd_lLQvQtEk",
+      "changed_lines": 1,
+      "total_lines": 7432,
+      "has_model_pkl": false
+    },
+    "uzQnYqVC9YY": {
+      "dir": "2024-06-01_uzQnYqVC9YY",
+      "changed_lines": 1,
+      "total_lines": 1744,
+      "has_model_pkl": false
+    },
+    "MCM00000787": {
+      "dir": "2024-06-24_MCM00000787",
+      "changed_lines": 1,
+      "total_lines": 2824,
+      "has_model_pkl": true
+    },
+    "2sWy59yRtEY": {
+      "dir": "2024-06-25_2sWy59yRtEY",
+      "changed_lines": 1,
+      "total_lines": 7484,
+      "has_model_pkl": false
+    },
+    "T1o-WALn6Tw": {
+      "dir": "2024-07-25_T1o-WALn6Tw",
+      "changed_lines": 1,
+      "total_lines": 1056,
+      "has_model_pkl": false
+    },
+    "MCM00001542": {
+      "dir": "2024-09-26_MCM00001542",
+      "changed_lines": 1,
+      "total_lines": 212,
+      "has_model_pkl": true
+    },
+    "XwD1TYSSFis": {
+      "dir": "2024-10-05_XwD1TYSSFis",
+      "changed_lines": 1,
+      "total_lines": 3540,
+      "has_model_pkl": false
+    },
+    "kP4iRYobyr0": {
+      "dir": "2024-10-15_kP4iRYobyr0",
+      "changed_lines": 1,
+      "total_lines": 14488,
+      "has_model_pkl": false
+    },
+    "v5KM3TWS1RE": {
+      "dir": "2024-11-04_v5KM3TWS1RE",
+      "changed_lines": 1,
+      "total_lines": 5740,
+      "has_model_pkl": false
+    },
+    "NDgiDfoPie4": {
+      "dir": "2024-11-12_NDgiDfoPie4",
+      "changed_lines": 1,
+      "total_lines": 3872,
+      "has_model_pkl": false
+    },
+    "puRJAp7j8rg": {
+      "dir": "2024-11-19_puRJAp7j8rg",
+      "changed_lines": 1,
+      "total_lines": 4756,
+      "has_model_pkl": false
+    },
+    "7W6Pc0j59SY": {
+      "dir": "2025-01-15_7W6Pc0j59SY",
+      "changed_lines": 1,
+      "total_lines": 3116,
+      "has_model_pkl": false
+    },
+    "j8OA0M_9NI0": {
+      "dir": "2025-01-27_j8OA0M_9NI0",
+      "changed_lines": 1,
+      "total_lines": 3408,
+      "has_model_pkl": true
+    },
+    "MCM00001762": {
+      "dir": "2025-03-06_MCM00001762",
+      "changed_lines": 1,
+      "total_lines": 2964,
+      "has_model_pkl": true
+    },
+    "CsSw9Cunt1k": {
+      "dir": "2025-06-09_CsSw9Cunt1k",
+      "changed_lines": 1,
+      "total_lines": 3532,
+      "has_model_pkl": true
+    },
+    "ewRLf8jM8M0": {
+      "dir": "2025-09-23_ewRLf8jM8M0",
+      "changed_lines": 1,
+      "total_lines": 8352,
+      "has_model_pkl": true
+    },
+    "GvP0i0IR-AQ": {
+      "dir": "2025-11-17_GvP0i0IR-AQ",
+      "changed_lines": 1,
+      "total_lines": 4636,
+      "has_model_pkl": true
+    }
+  }
+}

@@ -353,6 +353,26 @@ def generate_output(result, mp3file):
     output_writer(result, mp3file, {'max_line_width': None,'max_line_count': None,'highlight_words': False})
     return
 
+_manual_corrections = None
+
+
+def is_manually_corrected(yt_id):
+    """True if this transcript carries hand corrections we must not clobber.
+
+    The list is produced by find_manual_edits.py, which compares the current
+    .srt against fix_common_errors rules re-applied to the .srt.orig snapshot.
+    Anything the automated rules cannot account for is a human edit.
+    """
+    global _manual_corrections
+    if _manual_corrections is None:
+        try:
+            with open("manual_corrections.json", "r", encoding="utf-8") as fp:
+                _manual_corrections = set(json.load(fp).get("ids", {}))
+        except (OSError, ValueError):
+            _manual_corrections = set()
+    return yt_id in _manual_corrections
+
+
 '''
 uses whisperx to transcribe a video specified by YouTube ID (yt_id)
 '''
@@ -377,6 +397,18 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
     srtfile = os.path.join(subdir,base) +'.srt'
     if os.path.exists(srtfile) and not redo:
         print("Already done with " + yt_id + " (" + srtfile + "). Set redo=True to redo transcription")
+        return False
+
+    # Never silently destroy hand corrections. 81 transcripts contain manual
+    # edits -- corrected words, reassigned speakers, roll-call votes split into
+    # individual turns. They are ground truth for the eval set and the
+    # roll-call extractor, and 67 of them have no model.pkl, so redoing them
+    # means RE-TRANSCRIBING from audio and the corrections are simply gone.
+    # See find_manual_edits.py / manual_corrections.json.
+    if redo and os.path.exists(srtfile) and is_manually_corrected(yt_id):
+        print("REFUSING to redo " + yt_id + ": it contains manual corrections "
+              "(manual_corrections.json). Back up " + srtfile + " and remove "
+              "the id from that file if you really mean to overwrite it.")
         return False
 
     if transcribe_only:
