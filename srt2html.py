@@ -798,7 +798,15 @@ def save_sitemap(root_node, save_as, **kwargs):
 def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=True):
     t0 = datetime.datetime.utcnow()
     fix_common_errors.fix_common_errors(yt_id=yt_id)
-    make_heatmap(yt_id, force=force)
+
+    # NOT force: the heatmap depends only on speaker_ids.json + addresses.json,
+    # never on the transcript template, so a forced HTML rebuild has no reason
+    # to redraw it. And folium stamps a RANDOM element id into every map
+    # (map_<32 hex>), so redrawing an unchanged map produces a ~4 KB diff whose
+    # coordinate data is byte-identical -- ~8 MB of pure git noise across the
+    # 1,935 heatmaps on every full regeneration.
+    # To genuinely rebuild them, delete the heatmap.html files first.
+    make_heatmap(yt_id, force=False)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
     # make the top level page with links to all transcripts
     if do_extras:
