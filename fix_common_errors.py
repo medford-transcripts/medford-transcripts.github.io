@@ -5,30 +5,68 @@ import os
 import re
 
 
+# Contexts where a rule must NOT fire, because the word is genuinely the other
+# thing. These are real ambiguities that no amount of boundary anchoring can
+# settle -- a school guidance counselor is not a city Councilor.
+# Patterns must be FIXED WIDTH -- Python lookbehind requires it, so "\s+" is
+# not allowed here. A character class is fine.
+RULE_EXCEPTIONS = {
+    "counselor": [r"[Gg]uidance "],
+    "Counselor": [r"[Gg]uidance "],
+    "counsel":   [r"[Gg]uidance "],
+}
+
+
 def compile_rules(replace_dict):
-    """Compile the replacement table into WORD-BOUNDARY-ANCHORED patterns.
+    """Compile the replacement table into anchored, plural-aware patterns.
 
-    This used to be a plain str.replace(), i.e. an unanchored substring match,
-    which silently corrupted text: the "counselor -> Councilor" rule turned
-    school "guidance counselors" into city "guidance Councilors" in 125
-    transcripts. Every rule with a short key had the same exposure.
+    THREE things have to be true at once, and the original str.replace() only
+    managed the second:
 
-    Boundaries are only added where the key actually begins or ends with a word
-    character. Several rules depend on surrounding whitespace (" Seng",
-    "15 dash ") and a blanket \\b would break them, since \\b next to a space
-    asserts the opposite of what is wanted.
+    1. WORD BOUNDARIES. Unanchored substring matching corrupted 935 of 2,273
+       transcripts, mangling residents' surnames: Moxley -> Marksley,
+       Maxwell -> Markswell, McKernan -> Lungo-Koehnan, Beasley -> Bearsley.
+
+    2. PLURALS. The dict contains NO plural forms -- all 151 single-word rules
+       relied on substring matching to pluralise for free, so naive anchoring
+       silently stopped correcting "counselors" -> "Councilors". The pattern
+       therefore carries an optional trailing "s" which is echoed into the
+       replacement.
+
+    3. CONTEXT. "guidance counselors" must stay counselors. Boundaries cannot
+       express that, so genuine ambiguities get an explicit negative lookbehind
+       from RULE_EXCEPTIONS.
+
+    Boundaries are only added where a key actually begins or ends with a word
+    character: several rules depend on surrounding whitespace (" Seng",
+    "15 dash ") and a blanket \b would break them.
     """
     out = []
     for key, value in replace_dict.items():
         key = str(key)
         if not key:
             continue
-        pattern = re.escape(key)
+
+        body = re.escape(key)
+        pattern = body
+        pluralised = False
+
+        if key[-1].isalnum() or key[-1] == "_":
+            # optional plural, echoed through to the replacement
+            if key[-1].isalpha() and not key.endswith("s"):
+                pattern = pattern + r"(s?)"
+                pluralised = True
+            pattern = pattern + r"\b"
+
         if key[0].isalnum() or key[0] == "_":
             pattern = r"\b" + pattern
-        if key[-1].isalnum() or key[-1] == "_":
-            pattern = pattern + r"\b"
-        out.append((re.compile(pattern), value.replace("\\", "\\\\")))
+            for ctx in RULE_EXCEPTIONS.get(key, []):
+                pattern = r"(?<!" + ctx + r")" + pattern
+
+        repl = value.replace("\\", "\\\\")
+        if pluralised:
+            repl = repl + r"\1"
+        out.append((re.compile(pattern), repl))
     return out
 
 
