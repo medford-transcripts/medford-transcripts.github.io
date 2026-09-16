@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timestamped video</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; }
+    .wrap { max-width: 960px; }
+    input { width: 100%; padding: 8px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; }
+    button { padding: 8px 12px; }
+    small { color: #555; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1 style="margin: 0 0 8px 0; font-size: 18px;">Timestamped video</h1>
+
+  <video id="v" controls playsinline preload="metadata" style="width:100%; height:auto;"></video>
+
+  <div style="margin-top:12px;">
+    <div class="row">
+      <button id="copy">Copy share link (current time)</button>
+      <button id="reseek">Seek to ?t again</button>
+    </div>
+    <div style="margin-top:8px;">
+      <small id="status"></small>
+    </div>
+    <div style="margin-top:8px;">
+      <small>Current shareable URL:</small>
+      <input id="share" readonly />
+    </div>
+  </div>
+</div>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const videoUrl = (q.get("video") || "").replace(/ /g, "+");
+  const tParam = q.get("t");
+
+  const v = document.getElementById("v");
+  const status = document.getElementById("status");
+  const share = document.getElementById("share");
+
+  function setStatus(s) { status.textContent = s; }
+
+  function setShareUrl(t) {
+    const u = new URL(location.href);
+    u.searchParams.set("t", String(Math.floor(t)));
+    share.value = u.toString();
+  }
+
+  function seekToParam() {
+    const t = Number(tParam || 0);
+    if (Number.isFinite(t) && t > 0) {
+      // Must wait for metadata before seeking reliably
+      if (v.readyState >= 1) {
+        v.currentTime = t;
+        setStatus(`Seeked to ${t}s`);
+      } else {
+        v.addEventListener("loadedmetadata", () => {
+          v.currentTime = t;
+          setStatus(`Seeked to ${t}s`);
+        }, { once: true });
+      }
+    } else {
+      setStatus("No ?t= provided (or invalid).");
+    }
+  }
+
+  if (!videoUrl) {
+    setStatus("Missing ?video=<url> query parameter.");
+    share.value = location.href;
+    throw new Error("Missing video URL");
+  }
+
+  // Set the video source
+  v.src = videoUrl;
+
+  // Initialize share URL
+  setShareUrl(Number(tParam || 0));
+
+  // Update share URL as playback time changes (throttled)
+  let last = -1;
+  v.addEventListener("timeupdate", () => {
+    const t = Math.floor(v.currentTime);
+    if (t !== last) {
+      last = t;
+      setShareUrl(t);
+    }
+  });
+
+  // Buttons
+  document.getElementById("copy").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(share.value);
+      setStatus("Copied share link.");
+    } catch {
+      setStatus("Clipboard blocked; copy manually from the box.");
+    }
+  });
+
+  document.getElementById("reseek").addEventListener("click", () => {
+    seekToParam();
+  });
+
+  // Perform initial seek
+  seekToParam();
+</script>
+</body>
+</html>
