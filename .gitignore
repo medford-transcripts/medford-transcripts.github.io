@@ -65,8 +65,10 @@ addresses*.json
 # pipeline crash/restart logs from the .bat wrappers
 logs/
 
-# per-word timing sidecars -- decide on full rollout before tracking
-*.words.json
+# per-word timing sidecars: ROLLED OUT 2026-09-17. 1,901 files, 68 MB,
+# tracked and published -- they are what makes word-level click-to-seek and
+# highlighting work. Pages without one fall back to sentence-level seek via
+# the data-t attribute, which is what the site did before and after.
 
 # alignment resume checkpoint: transient, deleted once model.pkl is written
 aligned.checkpoint.pkl

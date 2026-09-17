@@ -67,32 +67,51 @@ secrecy of that link. That is obscurity, not access control. It is a reasonable
 short-term trade for a small archive where the link has not been published, and
 it is not something to leave in place indefinitely — which is Stage 2.
 
+The good news is that Stage 2 costs the public nothing: closing the sheet is a
+sharing setting that submitters never see. It is not the sign-in requirement an
+earlier draft of this document described.
+
 Whatever the stage, every applied correction must land in its own revertible,
 attributed commit. A bad auto-accept that can be found and reverted is an
 incident; one that cannot is a corrupted archive.
 
 ---
 
-## Stage 2 — private sheet + verified identity (next)
+## Stage 2 — private sheet (next)
 
-This replaces self-asserted tokens with identity asserted by Google, and closes
-the bigger problem: a world-readable sheet is an unmoderated public text box at
-a stable URL, where anyone can post content naming a real resident.
+> **Making the responses sheet private does NOT require submitters to sign in.**
+> An earlier draft of this document bundled the two together; that was wrong.
+> They are unrelated settings:
+>
+> | Setting | Lives on | Affects submitters? |
+> |---|---|---|
+> | Sheet sharing (Restricted / link-shared) | the **responses sheet** | **No.** Submitters never touch the sheet. |
+> | "Collect email addresses → Verified" | the **form** | Yes — requires a Google login. |
+>
+> A private responses sheet with a wide-open form is the **Google default**.
+> This sheet is link-shared only because it was deliberately opened so that
+> `--url` could fetch CSV without credentials. Closing it returns to the
+> default and changes nothing for the public.
 
-### A. Turn on sign-in in the form
+**Sign-in is not part of this plan.** Requiring a Google account to report a
+typo would exclude exactly the people a civic archive exists to serve, and the
+project's stated goal is not erecting barriers to participation. The form stays
+open to anyone, no login.
 
-Google Forms → your form → **Settings**:
+What a private sheet buys, with zero submitter friction:
 
-- **Responses → Collect email addresses** → *Verified* (not "Responder input";
-  responder input is typed and therefore no better than the token).
-- **Restrict to users in <domain>** — only if all contributors share a Google
-  Workspace domain. For a civic project taking corrections from the public,
-  leave this **off**: requiring a specific domain excludes most of the city.
+- **Submitted free text stops being world-readable.** This is the real win.
+  An open responses sheet is an unmoderated public text box at a stable URL:
+  anyone can submit content naming a real resident and it is instantly public.
+- **Contributor tokens stop being public**, which is what currently reduces the
+  Stage 1 whitelist to obscurity. With a private sheet the token is no longer
+  printed anywhere a stranger can read, so auto-accept rests on actual access
+  control rather than on an unpublished link.
+- **Display names stop being public.** Contributors type real names into that
+  box and will not expect them to be readable by anyone.
 
-Requiring sign-in is a real trade. It raises the bar for good-faith
-contributors, some of whom will not have or want a Google account. Weigh that
-against the archive's integrity; a reasonable middle is sign-in required, with
-an emailed contact route advertised for anyone who cannot use it.
+So the whitelist stays keyed on the **token**, and gets meaningfully stronger
+without the form changing at all.
 
 ### B. Make the sheet private
 
@@ -160,20 +179,27 @@ Ragged rows are the one gotcha: the Sheets API truncates trailing empty cells
 per row, so rows come back at different widths and the CSV parser silently
 misaligns columns. The padding above is not optional.
 
-### E. Switch the whitelist to verified email
+### E. Nothing to change in the whitelist
 
-Once emails are verified, key trust on the email rather than the token:
+The whitelist keeps matching on the token. What changes is its strength: the
+token is no longer printed into a document a stranger can open, so "anyone who
+can read the sheet can submit as anyone in it" stops being true.
+
+It is still a bearer token, so it is still not authentication in the strict
+sense — someone who obtains it by other means can use it. But the realistic
+attack (read the public sheet, copy a token) is closed, and that was the one
+that made Stage 1 uncomfortable.
+
+If you ever *do* want verified identity — say a volunteer reviewer with
+auto-accept, where the stakes are higher — that is when email collection earns
+its cost. The hooks:
 
 - add an `email` hint to `COLUMN_HINTS` (`["email address"]`)
-- allow `{"email": "you@example.com", "label": "site owner"}` entries in
+- allow `{"email": "them@example.com", "label": "reviewer"}` entries in
   `trusted_contributors.json`
 - prefer an email match over a token match when both are present
 
-Then the whitelist rests on Google's authentication rather than on a secret
-that is printed into a spreadsheet, and Stage 1's limitation is gone.
-
-Keep the token regardless. It still correlates submissions from contributors
-who are not signed in, which is what it was built for.
+Do not turn that on for the general public.
 
 ### F. Portability note
 
