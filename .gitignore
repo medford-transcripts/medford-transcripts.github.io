@@ -71,3 +71,14 @@ logs/
 # alignment resume checkpoint: transient, deleted once model.pkl is written
 aligned.checkpoint.pkl
 *.checkpoint.pkl
+
+# Speaker voice embeddings -- BIOMETRIC DATA, must never be published.
+# These are pyannote voiceprints for everyone who spoke at a public meeting,
+# including private residents giving public comment. A transcript records what
+# someone said in public (the point of this project, and the city publishes the
+# video); a voiceprint is a biometric index that supports identifying them
+# against unrelated audio. Nobody speaking at a council meeting expects that.
+# They were served at https://<site>/<dir>/embeddings.pkl with HTTP 200 until
+# 2026-09-17. Keep them locally -- cross-video speaker matching needs them and
+# they are expensive to rebuild -- but never in a published tree.
+embeddings.pkl
