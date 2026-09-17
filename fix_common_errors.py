@@ -677,6 +677,15 @@ def fix_common_errors(yt_id=None):
         # a plural honorific followed by a LIST -- the name is not adjacent to
         # the honorific, so the contextual rules cannot reach it
         "Falco, Markson" : "Falco, Marks",
+
+        # The guidance-counselor case, keyed on the CORRUPTED form. The
+        # lookbehind in RULE_EXCEPTIONS prevents NEW corruption, but files the
+        # rebuild could not touch (hand-corrected ones) still contain the old
+        # output, and no rule above matches it.
+        "guidance Councilors" : "guidance counselors",
+        "guidance Councilor" : "guidance counselor",
+        "Guidance Councilors" : "Guidance counselors",
+        "Guidance Councilor" : "Guidance counselor",
     }
 
     if yt_id == None:

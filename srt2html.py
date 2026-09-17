@@ -451,7 +451,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
                 # if it's not a resolution, and it's the first word, link to the timestamped video
                 tmp_text = this_html_text.split()
-                if not resolution_is_first:
+                # tmp_text is empty when the segment is blank or whitespace
+                # only, which happens in real transcripts -- indexing [0]
+                # crashed the whole video (IndexError: list index out of
+                # range). There is simply no word to hang the link on, so
+                # leave the segment alone.
+                if not resolution_is_first and tmp_text:
                     # single source of truth for media links -- the English and
                     # translated paths used to build these separately, drifted
                     # apart, and put dead youtu.be links on 5,669 pages
@@ -819,6 +824,15 @@ def make_sitemap():
     # and no longer tracked by git, so they are not published -- keep them out
     # of the sitemap even though the files are still sitting on disk.
     files = [f for f in files if not is_translated_page(f)]
+
+    # electeds/ pages are 100% DUPLICATE text: every excerpt already appears on
+    # the transcript page it links to. Their purpose is as input to an LLM
+    # synthesising a candidate profile, not as pages for people or search
+    # engines. Asking Google to index 125 pages of duplicated transcript --
+    # one of them 13 MB -- would dilute the domain exactly the way the
+    # machine-translated copies did. They stay published and linked, just not
+    # advertised for indexing; noindex in the page head does the rest.
+    files = [f for f in files if not f.replace(os.sep, "/").startswith("electeds/")]
 
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')

@@ -182,6 +182,27 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
         htmlfilename = os.path.join("electeds",speaker + '.html')
         html = open(htmlfilename, 'w', encoding="utf-8")
         imagename = speaker + '.wordcloud.png'
+
+        # These pages had no <head> at all -- they began mid-document with the
+        # wordcloud image, which is malformed HTML and left no place to put
+        # directives.
+        #
+        # NOINDEX is deliberate. Every excerpt below is DUPLICATE text: it
+        # already appears on the transcript page it links to. The purpose of
+        # this file is to be fed to an LLM to synthesise a candidate profile,
+        # not to be read by people or ranked by search engines. Indexing 125
+        # pages of duplicated transcript would dilute the domain the same way
+        # the machine-translated copies did. "follow" is kept so the links out
+        # to the real transcript pages still pass value.
+        html.write('<!DOCTYPE html>\n<html lang="en">\n  <head>\n')
+        html.write('    <meta charset="UTF-8">\n')
+        html.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
+        html.write('    <meta name="robots" content="noindex,follow">\n')
+        html.write('    <title>' + speaker + ' - transcript excerpts</title>\n')
+        html.write('  </head>\n  <body>\n')
+        html.write('    <h1>' + speaker + '</h1>\n')
+        html.write('    <p>Every excerpt below also appears on the linked transcript page. '
+                   'This page collects one speaker\'s words for analysis; it is not indexed.</p>\n')
         html.write('        <a href="' + imagename + '"><img src="' + imagename + '" alt="word cloud for ' + speaker + '" height=150></img></a><br>\n')
 
     for excerpt in excerpts:
@@ -216,6 +237,8 @@ def supercut(speaker, useGPT=False, year=None, mkhtml=True):
         if text != "":
             wordcloud = WordCloud(max_font_size=40).generate(text)
             wordcloud.to_file("electeds/" + imagename)
+        # close the document that the head above opened
+        html.write('\n  </body>\n</html>\n')
         html.close()
 
     print(str(alltime/3600) + " hours of speech")
