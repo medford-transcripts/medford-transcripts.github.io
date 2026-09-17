@@ -93,7 +93,17 @@ CASES = [
     # --- both spellings are School Committee member Erika Reinfeld ---------
     ("Member Rheinfeldt spoke",          "Member Reinfeld spoke"),
     ("Member Reinfeldt spoke",           "Member Reinfeld spoke"),
+
+    # --- TWO DIFFERENT SITTING OFFICIALS, easily conflated -----------------
+    # Paul Ruseau (School Committee) vs Fred Dello Russo. The old unanchored
+    # rule "Russo" -> "Ruseau" renamed one as the other. Both directions
+    # matter and must stay separate.
+    ("Member Roussell.",                "Member Ruseau."),
+    ("Mr. Roussell?",                   "Mr. Ruseau?"),
+    ("Vice President Del Russo.",       "Vice President Del Russo."),
+    ("Mr. Del Russo.",                  "Mr. Del Russo."),
 ]
+
 
 
 

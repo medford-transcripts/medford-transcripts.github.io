@@ -624,6 +624,17 @@ def fix_common_errors(yt_id=None):
         # Erika Reinfeld; the old rules produced "Reinfeldt", also wrong
         "Rheinfeldt" : "Reinfeld",
         "Reinfeldt" : "Reinfeld",
+
+        # School Committee member Paul Ruseau, mis-heard as "Roussell".
+        # Contextual because the honorific is what makes it unambiguous --
+        # and note the SIBLING rule "Russo" -> "Ruseau" is deliberately NOT
+        # restored: "Russo" in the originals is "Mr. Del Russo" / "Vice
+        # President Del Russo", i.e. Fred Dello Russo, a DIFFERENT sitting
+        # official. That rule was renaming one official as another, which
+        # word-boundary anchoring now prevents.
+        "Member Roussell" : "Member Ruseau",
+        "Mr. Roussell" : "Mr. Ruseau",
+        "Mr Roussell" : "Mr. Ruseau",
     }
 
     if yt_id == None:
