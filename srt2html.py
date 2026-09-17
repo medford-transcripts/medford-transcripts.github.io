@@ -605,26 +605,44 @@ def match_files(title, minutes=False):
 
     return best_match[0]
 
-def make_redirect(dir):
+def make_redirect(dir, force=False):
+    """Write <dir>/index.html, a redirect to the transcript page.
+
+    Three bugs lived here, and because the function returned early whenever
+    the file already existed, none of them were ever repaired in the 2,238
+    stubs already on disk:
+
+      1. A line of PYTHON SOURCE leaked into the output. The literal text
+         `index_page.write("` appeared in the body of every stub, because it
+         was pasted inside the string rather than beside it.
+      2. window.location.replace was ASSIGNED rather than called, so the
+         JavaScript redirect silently did nothing.
+      3. Older stubs quoted the refresh url inside the attribute
+         (content="0; url="foo.html"), which breaks the meta refresh.
+
+    So the stubs were malformed, showed source code to anyone who landed on
+    one, and in many cases did not actually redirect.
+    """
     index_filename = os.path.join(dir,'index.html')
 
-    if os.path.exists(index_filename): return
+    if os.path.exists(index_filename) and not force: return
 
     with open(index_filename, "w", encoding="utf-8") as index_page:
 
         index_page.write('<!DOCTYPE HTML>\n')
         index_page.write('<html lang="en-US">\n')
-        index_page.write('    <head>\n')
-        index_page.write('       <meta charset="UTF-8">\n')
-        index_page.write('        <meta name="robots" content="noindex, follow">\n')
-        index_page.write('        <meta http-equiv="refresh" content="0; url=' + dir + '.html">\n')
-        index_page.write('        <script type="text/javascript">\n')
-        index_page.write('            window.location.replace = "' + dir + '.html"\n')
-        index_page.write('        </script>\n')
-        index_page.write('        <title>Page Redirection</title>\n')
-        index_page.write('    </head> index_page.write("<body>\n')
-        index_page.write('        If you are not redirected automatically, follow this <a href="' + dir + '.html">link</a>.\n')
-        index_page.write('    </body>\n')
+        index_page.write('  <head>\n')
+        index_page.write('    <meta charset="UTF-8">\n')
+        index_page.write('    <meta name="robots" content="noindex, follow">\n')
+        index_page.write('    <meta http-equiv="refresh" content="0; url=' + dir + '.html">\n')
+        index_page.write('    <title>Page Redirection</title>\n')
+        index_page.write('    <script type="text/javascript">\n')
+        index_page.write('      window.location.replace("' + dir + '.html");\n')
+        index_page.write('    </script>\n')
+        index_page.write('  </head>\n')
+        index_page.write('  <body>\n')
+        index_page.write('    If you are not redirected automatically, follow this <a href="' + dir + '.html">link</a>.\n')
+        index_page.write('  </body>\n')
         index_page.write('</html>\n')
 
 def make_index():
@@ -833,6 +851,26 @@ def make_sitemap():
     # machine-translated copies did. They stay published and linked, just not
     # advertised for indexing; noindex in the page head does the rest.
     files = [f for f in files if not f.replace(os.sep, "/").startswith("electeds/")]
+
+    # The per-directory index.html files are REDIRECT STUBS -- ~2,238 near-empty
+    # pages that bounce to the transcript beside them. They already carry
+    # noindex, so advertising them in the sitemap was contradictory: it asked
+    # Google to crawl 2,238 urls in order to be told not to index them. There
+    # is no reason to index anything but the original transcript.
+    files = [f for f in files
+             if os.path.basename(f) != "index.html"
+             or not re.match(r"20\d\d-\d\d-\d\d_", os.path.basename(os.path.dirname(f)))]
+
+    # Per-video heatmaps are not transcripts either, and there is no reason to
+    # index anything but the original transcript. They were 1,939 of the
+    # sitemap's urls -- nearly a third of the crawl budget spent on folium maps
+    # of where speakers live.
+    #
+    # Separately, these are slated for REMOVAL (plan.txt A22): the per-meeting
+    # map is noise in most meetings, and pinning a named resident's home per
+    # meeting is a real deterrent to speaking. The site-wide map keeps the
+    # analytic value. Dropping them from the sitemap is the first step.
+    files = [f for f in files if os.path.basename(f) != "heatmap.html"]
 
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')
