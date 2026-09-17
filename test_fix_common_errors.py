@@ -66,7 +66,35 @@ CASES = [
     # (a blanket \b would break these: \b next to a space asserts the
     #  opposite of what is wanted)
     ("item 15 dash 402",                "item 15-402"),
+
+    # --- CONTEXTUAL NAME RULES: mis-heard councilors get corrected... -------
+    ("Councilor Moxley?",               "Councilor Marks?"),
+    ("On motion by Councilor Maxwell.", "On motion by Councilor Marks."),
+    ("Councilor McKernan?",             "Councilor Lungo-Koehn?"),
+    ("President Bexar.",                "President Bears."),
+    ("Councilor Scarpalli",             "Councilor Scarpelli"),
+    # note the honorific is normalised too: "Councillor" -> "Councilor" is an
+    # existing rule, so both the spelling and the name get corrected
+    ("Councillor Maxx.",                "Councilor Marks."),
+
+    # --- ...but the SAME surnames on real people must NOT be touched -------
+    # This is the whole reason the rules are contextual. Only 38 of 111
+    # "Maxwell" uses follow an honorific; the rest are real people.
+    ("Fiona Maxwell, Shab Khan",        "Fiona Maxwell, Shab Khan"),
+    ("the 2019 Maxwell Teacher of the Year",
+     "the 2019 Maxwell Teacher of the Year"),
+    ("musical legends as Leon Beal and Walter Beasley",
+     "musical legends as Leon Beal and Walter Beasley"),
+    ("At left wing, number 10, Brianna Scholl.",
+     "At left wing, number 10, Brianna Scholl."),
+    ("home for both myself and my wife, Brianna.",
+     "home for both myself and my wife, Brianna."),
+
+    # --- both spellings are School Committee member Erika Reinfeld ---------
+    ("Member Rheinfeldt spoke",          "Member Reinfeld spoke"),
+    ("Member Reinfeldt spoke",           "Member Reinfeld spoke"),
 ]
+
 
 
 def main():
