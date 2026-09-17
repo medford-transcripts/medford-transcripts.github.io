@@ -45,6 +45,7 @@ QUEUE = "corrections_queue.json"
 COLUMN_HINTS = [
     ("suggestion",   ["corrected", "transcript", "instead", "should it say"]),
     ("reference",    ["reference", "do not edit"]),
+    ("contributor",  ["contributor", "your id", "nickname"]),
     ("submitted_at", ["timestamp"]),
 ]
 
@@ -89,9 +90,16 @@ def row_id(rec):
 
 
 def parse_reference(ref):
-    """'<video_id>@<seconds>' -> (video_id, seconds) or (None, None)."""
-    m = re.match(r"\s*([A-Za-z0-9_-]+)@([0-9.]+)\s*$", ref or "")
-    return (m.group(1), m.group(2)) if m else (None, None)
+    """'<video_id>@<seconds>[#<contributor>]' -> (video_id, seconds, contributor).
+
+    The contributor tag rides along on the reference when the form has no
+    dedicated question for it, so the feature works without another form
+    rebuild. If a 'contributor' column exists it wins.
+    """
+    m = re.match(r"\s*([A-Za-z0-9_-]+)@([0-9.]+)(?:#(.*))?\s*$", ref or "")
+    if not m:
+        return None, None, None
+    return m.group(1), m.group(2), (m.group(3) or "").strip() or None
 
 
 def original_line(video_id, timestamp):
@@ -290,7 +298,10 @@ def main():
             continue
         # everything is derived from the reference -- the form sends no
         # originals, so they come from the transcript
-        vid, t0 = parse_reference(rec.get("reference"))
+        vid, t0, who = parse_reference(rec.get("reference"))
+        # a dedicated form column beats the tag appended to the reference
+        if not rec.get("contributor"):
+            rec["contributor"] = who or ""
         rec["video_id"] = vid
         rec["original_timestamp"] = t0
         spk, txt = original_line(vid, t0) if vid else (None, None)
@@ -308,6 +319,15 @@ def main():
     print("already queued  : %d" % dupes)
     pend = sum(1 for v in items.values() if v.get("status") == "pending")
     print("pending review  : %d of %d total" % (pend, len(items)))
+
+    by_contrib = {}
+    for v in items.values():
+        who = (v.get("contributor") or "").strip() or "(none)"
+        by_contrib[who] = by_contrib.get(who, 0) + 1
+    if len(by_contrib) > 1 or "(none)" not in by_contrib:
+        print("\nsubmissions by contributor:")
+        for who, n in sorted(by_contrib.items(), key=lambda kv: -kv[1])[:10]:
+            print("   %-28s %d" % (who, n))
 
     by_target = {}
     for v in items.values():

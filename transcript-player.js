@@ -425,6 +425,68 @@
     .then(function (c) { if (c && c.enabled) { cfg = c; arm(); } })
     .catch(function () { /* no corrections UI; page is unaffected */ });
 
+
+  // ---- contributor id -----------------------------------------------------
+  // A random, opaque, per-browser token so submissions can be correlated:
+  // a power user who has sent fifty good corrections earns trust, and a troll
+  // sending garbage is visible as one source rather than N anonymous ones.
+  //
+  // Deliberately NOT a browser fingerprint. Fingerprinting is covert tracking,
+  // it is personal data under GDPR/CCPA with no consent flow here, and on a
+  // civic site whose whole concern is not deterring participation it is the
+  // wrong posture. It is also worse at the job -- fingerprints drift with
+  // browser updates and privacy browsers randomise them. A random token is
+  // honest, stable, and the contributor can see and reset it.
+  //
+  // Limits, stated plainly: it is per-BROWSER, not per-person (phone and
+  // laptop differ), and anyone can clear site data for a fresh one. It is a
+  // triage aid, never an access control.
+  var ID_KEY = "mt-contributor-id", NICK_KEY = "mt-contributor-nick";
+
+  function contributorId() {
+    var id = null;
+    try { id = localStorage.getItem(ID_KEY); } catch (e) { return null; }
+    if (!id) {
+      id = (window.crypto && crypto.randomUUID)
+        ? crypto.randomUUID().split("-")[0] + crypto.randomUUID().split("-")[0]
+        : Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 10);
+      try { localStorage.setItem(ID_KEY, id); } catch (e) { return null; }
+    }
+    return id;
+  }
+
+  function contributorNick() {
+    try { return localStorage.getItem(NICK_KEY) || ""; } catch (e) { return ""; }
+  }
+
+  function contributorTag() {
+    var id = contributorId();
+    if (!id) return "";
+    var nick = contributorNick();
+    return nick ? nick + "/" + id : id;
+  }
+
+  function manageIdentity() {
+    var id = contributorId() || "(unavailable)";
+    var nick = contributorNick();
+    var msg = "Your contributor ID is:\n\n    " + id + "\n\n" +
+      "It is a random token kept in this browser only -- not a fingerprint, " +
+      "and not linked to your identity. It lets repeat contributors build a " +
+      "track record.\n\nOptionally enter a display name, or leave blank. " +
+      "Type RESET to get a new ID.";
+    var answer = window.prompt(msg, nick);
+    if (answer === null) return;
+    try {
+      if (answer.trim().toUpperCase() === "RESET") {
+        localStorage.removeItem(ID_KEY);
+        localStorage.removeItem(NICK_KEY);
+        window.alert("New ID: " + contributorId());
+      } else {
+        localStorage.setItem(NICK_KEY, answer.trim());
+      }
+    } catch (e) { /* storage blocked; nothing to do */ }
+  }
+
   function prefill(line) {
     var f = cfg.fields, q = [];
     function add(key, val) {
@@ -443,7 +505,14 @@
     // These two values identify the line; ingest reads the originals back out
     // of the transcript, which is a better source than a round trip through an
     // editable text box.
-    add("reference", (mount.getAttribute("data-video-id") || "") + "@" + t);
+    var ref = (mount.getAttribute("data-video-id") || "") + "@" + t;
+    var who = contributorTag();
+    if (f["contributor"]) {
+      add("contributor", who);            // the form has its own question
+    } else if (who) {
+      ref = ref + "#" + who;              // otherwise ride along on the reference
+    }
+    add("reference", ref);
 
     return cfg.form_url + "?usp=pp_url&" + q.join("&");
   }
@@ -474,6 +543,7 @@
       var t = (line.textContent || "").trim();
       if (navigator.clipboard) navigator.clipboard.writeText(t).catch(function () {});
     });
+    item("Your contributor ID…", manageIdentity);
     item("Copy link to this moment", function () {
       var u = location.origin + location.pathname +
               "#t=" + (line.getAttribute("data-t") || "0");
