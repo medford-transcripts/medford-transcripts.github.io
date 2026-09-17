@@ -1,0 +1,67 @@
+# Deploy the site through GitHub Actions instead of the legacy Pages builder.
+#
+# WHY: every one of the 42 build failures in two years recorded a duration of
+# exactly 0 seconds. A build stopped at a timeout records the timeout; these
+# never ran at all. They are SUPERSEDED builds -- a push landing while a build
+# is in flight cancels it -- and the pattern is unmistakable in the log, where
+# each failure is followed minutes later by a successful build of a later
+# commit.
+#
+# That got steadily worse because the supersession window IS the build
+# duration, and build time grew 20x as the site grew: 39s in Oct 2024, 850s by
+# Aug 2026. A window that was 40 seconds wide became 14 minutes wide, while
+# the transcriber kept pushing once per video. In Dec 2025 repeated
+# supersession left the published site stale for 83 hours.
+#
+# THE FIX IS THE CONCURRENCY BLOCK BELOW, not the runner. cancel-in-progress:
+# false QUEUES a build behind the one already running instead of killing it,
+# so a burst of pushes produces a queue rather than a series of failures and
+# the site is never left stale on a dead build.
+#
+# Secondary benefits: a 6-hour job budget instead of the legacy builder's
+# opaque one, the build log is visible when something does break, and the
+# whole thing is per-repository config -- so a second municipality inherits it
+# rather than reproducing the same two years of failures.
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# THE POINT OF THIS FILE. One deployment at a time; later pushes queue rather
+# than cancel. Never set cancel-in-progress here -- that reintroduces exactly
+# the failure this replaces.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # the archive only ever appends; a shallow clone keeps checkout fast
+          # even though history is large
+          fetch-depth: 1
+
+      - uses: actions/configure-pages@v5
+
+      # The site is already static -- .nojekyll is committed, so nothing is
+      # built here. This packs the tree and hands it to Pages, which is also
+      # why it is faster than the legacy per-file build.
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

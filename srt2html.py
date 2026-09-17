@@ -145,6 +145,17 @@ def timestamp_url(yt_id, start, video_data=None):
     return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
 
 
+def web_path(path):
+    """A local filesystem path as a URL path.
+
+    os.path.join and os.path.splitext return backslashes on Windows, and this
+    project generates its site on Windows, so any such value dropped into an
+    href or src is wrong. site_url.py fixed this for ABSOLUTE urls after the
+    canonical-tag disaster; this is the same fix for RELATIVE ones.
+    """
+    return str(path).replace(chr(92), "/")
+
+
 def asset_prefix(page_dir):
     """Relative path from a page's directory back to the site root, e.g. "../".
 
@@ -668,9 +679,6 @@ def make_index():
         dir = os.path.dirname(htmlfile)
         make_redirect(dir)
 
-        srtfile = os.path.splitext(htmlfile)[0]+'.srt'
-        speaker_id_file = os.path.join(os.path.dirname(htmlfile),'speaker_ids.json')
-
         if "url" in video_data[yt_id].keys():
             url = video_data[yt_id]["url"]
         else:
@@ -681,22 +689,26 @@ def make_index():
         if video_data[yt_id]["meeting_type"] == "CC City Council":
             agenda_file = match_files(title)
             if agenda_file != "":
-                agenda_line = '<td><a href="' + agenda_file +'">Agenda</a></td>'
+                agenda_line = '<td><a href="' + web_path(agenda_file) +'">Agenda</a></td>'
 
             minutes_file = match_files(title,minutes=True)
             if minutes_file != "":
-                minutes_line = '<td><a href="' + minutes_file +'">Minutes</a></td>'
+                minutes_line = '<td><a href="' + web_path(minutes_file) +'">Minutes</a></td>'
 
-        # one row in the html table
+        # one row in the html table. web_path() on every local href: these are
+        # built with os.path.join/splitext, which emits BACKSLASHES on Windows,
+        # and they went straight into the markup -- 6,493 of 8,632 links on
+        # index.html. Browsers normalise a backslash to a slash for http(s)
+        # URLs so readers were unaffected, but the same mistake in a canonical
+        # tag is what cost ~27,000 pages from the index, and anything that is
+        # not a browser (feed readers, scripts, some crawlers) sees a 404.
         lines.append('      <tr>' +\
             '<td>' + date + '</td>' +\
             '<td><a href="' + url + '">[' + duration_string + ']</a></td>'+\
-            '<td><a href="' + htmlfile +'">' + title + '</a></td>'+\
+            '<td><a href="' + web_path(htmlfile) +'">' + title + '</a></td>'+\
             agenda_line +\
             minutes_line +\
             '<td>' + channel + '</td>'+\
-            '<td><a href="' + srtfile + '">SRT</a></td>'+\
-            '<td><a href="' + speaker_id_file + '">JSON</a></td>'+\
             '</tr>\n')
 
     lines.sort(reverse=True)
@@ -705,7 +717,12 @@ def make_index():
     index_page.write("    <table border=1>\n")
     # table header
     #index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Agenda</center></td><td><center>Minutes</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
+    # "Raw files" (SRT + speaker_ids.json) dropped 2026-09-17. The published
+    # .srt carries SPEAKER_nn labels, never names -- the map lives in
+    # speaker_ids.json and is resolved only when this HTML is written, so the
+    # raw file was strictly LESS useful than the page linked beside it. Both
+    # now live in the private provenance repo.
+    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Agenda</center></td><td><center>Minutes</center></td><td><center>Channel</center></td></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
