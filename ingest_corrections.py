@@ -312,6 +312,23 @@ def classify(rec):
     if any("time" in t for t in turns):
         changed.append("timestamp")
 
+    # TRUNCATION GUARD. The form's contract is that the submitted text REPLACES
+    # the original, so a submission that is just the original with the tail
+    # missing would silently delete transcript. The player used to cap the
+    # prefill at 1,200 characters while 9.5% of lines are longer, so this is a
+    # shape that has already been generated; the cap is now 6,000 and
+    # over-length lines are refused outright, but a guard here is what actually
+    # protects the data -- it holds for old queue entries, for hand-edited
+    # submissions, and for any future form change.
+    #
+    # Deliberately narrow: only a submission that is a strict PREFIX of the
+    # original counts. Someone genuinely shortening a line will almost always
+    # alter the words too, and this must not fire on real edits.
+    if len(turns) == 1 and was_x:
+        sub = turns[0]["text"].strip()
+        if sub and len(sub) < len(was_x) and was_x.startswith(sub):
+            changed.append("truncated")
+
     return changed or ["none"]
 
 
@@ -398,7 +415,8 @@ def main():
         # whether the content is well formed.
         tok = token_of(rec.get("contributor"))
         tg = rec.get("target") or []
-        if tok and tok in trusted and "unparsed" not in tg and tg != ["none"]:
+        if (tok and tok in trusted and "unparsed" not in tg
+                and "truncated" not in tg and tg != ["none"]):
             rec["status"] = "accepted"
             rec["accepted_by"] = "whitelist:" + trusted[tok]
             auto += 1

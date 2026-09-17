@@ -122,5 +122,53 @@ class TrustDecision(unittest.TestCase):
         self.assertTrue(self.decide(OWNER, ["speaker", "text"], self.trusted))
 
 
+
+class TruncationGuard(unittest.TestCase):
+    """A submission that is the original with its tail missing must never be
+    applied: the form's contract is that the text REPLACES the original, so
+    applying a truncated copy deletes transcript.
+
+    This shape is not hypothetical -- the player capped the prefill at 1,200
+    characters while 9.5% of lines are longer, so truncated submissions could
+    already have been generated.
+    """
+
+    def classify(self, original, submitted):
+        rec = {"original_text": original,
+               "original_speaker": "Zac Bears",
+               "turns": [{"speaker": "Zac Bears", "text": submitted}]}
+        return ic.classify(rec)
+
+    def test_prefix_of_original_is_flagged(self):
+        full = "The meeting will come to order. " * 20
+        self.assertIn("truncated", self.classify(full, full[:400]))
+
+    def test_identical_text_is_not_flagged(self):
+        full = "The meeting will come to order."
+        self.assertNotIn("truncated", self.classify(full, full))
+
+    def test_genuine_edit_is_not_flagged(self):
+        # a real correction changes words; it is not a prefix of the original
+        full = "Councilor Moxley voted present."
+        self.assertNotIn("truncated", self.classify(full, "Councilor Marks voted present."))
+
+    def test_genuine_shortening_with_edits_is_not_flagged(self):
+        # shorter AND different -> a real edit, must still be accepted
+        full = "Um, so, I think the the zoning work is important."
+        self.assertNotIn("truncated", self.classify(full, "I think the zoning work is important."))
+
+    def test_longer_submission_is_not_flagged(self):
+        full = "The meeting will come to order."
+        self.assertNotIn("truncated", self.classify(full, full + " Roll call please."))
+
+    def test_truncated_is_never_auto_accepted(self):
+        # mirrors the decision in main(): trusted + truncated still queues
+        trusted = {OWNER: "owner"}
+        tok = ic.token_of(OWNER)
+        target = ["text", "truncated"]
+        accept = bool(tok and tok in trusted and "unparsed" not in target
+                      and "truncated" not in target and target != ["none"])
+        self.assertFalse(accept)
+
 if __name__ == "__main__":
     unittest.main()

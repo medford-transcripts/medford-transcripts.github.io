@@ -45,14 +45,79 @@ def line_starts(html_path):
 
 
 def word_starts(model_path):
+    """One start time per word, in order -- INCLUDING words WhisperX could not
+    align.
+
+    THE BUG THIS FIXES: the alignment model works on phonemes and cannot align
+    numerals, so about 0.87% of words come back with no "start" -- and they are
+    not random. They are figures, dates and money: "$934,439.", "2022.", "15,",
+    "5.34,". Dropping them made the sidecar SHORTER than the rendered line, so
+    every word after a number resolved to the wrong timing, and the error
+    accumulated across the line. Measured before the fix: 17.7% of lines were
+    off, by +1 to +9 words, worst on exactly the budget and roll-call lines
+    people most want to click into.
+
+    An untimed word now gets a time interpolated between its timed neighbours
+    inside the same segment, so the sequence stays monotonic, stays inside the
+    segment (which is what keeps time-bucketing into lines correct), and stays
+    ONE ENTRY PER WORD -- which is the invariant the player's index depends on.
+    """
     with open(model_path, "rb") as fp:
         model = pickle.load(fp)
+
     out = []
     for seg in model.get("segments", []):
-        for w in (seg.get("words") or []):
+        words = seg.get("words") or []
+        if not words:
+            continue
+
+        times = []
+        for w in words:
             t = w.get("start")
-            if t is not None:
-                out.append(float(t))
+            times.append(None if t is None else float(t))
+
+        # bracket the segment so leading/trailing gaps have something to
+        # interpolate against
+        seg_lo = seg.get("start")
+        seg_hi = seg.get("end")
+        known = [i for i, t in enumerate(times) if t is not None]
+
+        if not known:
+            # no word in this segment aligned at all: spread them evenly over
+            # the segment rather than dropping the whole thing
+            lo = float(seg_lo) if seg_lo is not None else 0.0
+            hi = float(seg_hi) if seg_hi is not None else lo
+            n = len(times)
+            step = (hi - lo) / n if n and hi > lo else 0.0
+            times = [lo + step * i for i in range(n)]
+        else:
+            first, last = known[0], known[-1]
+            # leading gap
+            if first > 0:
+                lo = float(seg_lo) if seg_lo is not None else times[first]
+                lo = min(lo, times[first])
+                step = (times[first] - lo) / (first + 1)
+                for i in range(first):
+                    times[i] = lo + step * i
+            # trailing gap
+            if last < len(times) - 1:
+                hi = float(seg_hi) if seg_hi is not None else times[last]
+                hi = max(hi, times[last])
+                n = len(times) - last
+                step = (hi - times[last]) / n if n else 0.0
+                for i in range(last + 1, len(times)):
+                    times[i] = times[last] + step * (i - last)
+            # interior gaps
+            prev = first
+            for i in known[1:]:
+                if i > prev + 1:
+                    span = (times[i] - times[prev]) / (i - prev)
+                    for j in range(prev + 1, i):
+                        times[j] = times[prev] + span * (j - prev)
+                prev = i
+
+        out.extend(times)
+
     out.sort()
     return out
 

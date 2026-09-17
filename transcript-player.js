@@ -362,13 +362,79 @@
       if (before <= m[0].length) return times[0];
       head = head.slice(m[0].length);
     }
+    // Index of the word UNDER the pointer.
+    //
+    // head is the text before the click point, so counting its tokens gives
+    // the index of the NEXT word -- correct when the click lands on a space or
+    // at a word's leading edge, but one too far whenever it lands INSIDE a
+    // word, which is what clicking a word actually means. That was a
+    // consistent one-word-late seek on every ordinary click.
+    //
+    // If head ends on a non-space we are inside (or at the end of) that word,
+    // and its partial token has already been counted, so drop it.
     var n_words = (head.match(/\S+/g) || []).length;
-    var i = Math.max(0, Math.min(n_words, times.length - 1));
+    if (/\S$/.test(head)) n_words -= 1;
+
+    // times should hold one entry per rendered word, but text corrections can
+    // still change a word count after the sidecar was built. Scale rather than
+    // clamp: clamping pins every late click in the line to the final word,
+    // while scaling keeps the error proportional and small.
+    var i = n_words;
+    var domWords = (function () {
+      var full = text;
+      if (m) full = full.slice(m[0].length);
+      return (full.match(/\S+/g) || []).length;
+    })();
+    if (domWords > 0 && times.length !== domWords) {
+      i = Math.round(n_words * (times.length - 1) / Math.max(domWords - 1, 1));
+    }
+    i = Math.max(0, Math.min(i, times.length - 1));
     return times[i];
   }
 
   // ------------------------------------------------- highlight + autoscroll
   var current = -1;
+
+  // Scroll a line into the space BELOW the sticky header.
+  //
+  // scrollIntoView({block:"center"}) centres in the scrollport, which knows
+  // nothing about #mt-player being position:sticky. The header holds the video
+  // AND the "Spot an error?" hint, so on a laptop it can occupy well over half
+  // the viewport -- and "centre of the viewport" is then behind it. That is
+  // the bug: seeking scrolled the line you asked for underneath the banner.
+  //
+  // Measure the header at scroll time rather than assuming a height: it
+  // changes with the backend (a 16:9 video, a one-line audio bar, or nothing),
+  // with orientation, and with the CSS that drops sticky positioning on short
+  // viewports.
+  function headerHeight() {
+    if (!mount) return 0;
+    var pos = "";
+    try { pos = window.getComputedStyle(mount).position; } catch (e) { }
+    if (pos !== "sticky" && pos !== "fixed") return 0;   // not overlaying
+    var r = mount.getBoundingClientRect();
+    // only the part actually covering the top of the viewport counts
+    return Math.max(0, Math.min(r.bottom, r.height));
+  }
+
+  function scrollLineIntoView(el) {
+    var head = headerHeight();
+    var avail = Math.max(0, window.innerHeight - head);
+    var r = el.getBoundingClientRect();
+    var pageTop = (window.pageYOffset || document.documentElement.scrollTop || 0);
+
+    // centre within the visible band; a line taller than the band pins to its
+    // top, so the beginning stays readable instead of scrolling past it
+    var pad = r.height < avail ? (avail - r.height) / 2 : 0;
+    var target = pageTop + r.top - head - pad;
+    target = Math.max(0, target);
+
+    try {
+      window.scrollTo({ top: target, behavior: reduceMotion ? "auto" : "smooth" });
+    } catch (e) {
+      window.scrollTo(0, target);          // older browsers: no options object
+    }
+  }
 
   function indexFor(t) {
     var lo = 0, hi = starts.length - 1, best = -1;
@@ -439,12 +505,7 @@
       if (lines[current] && hl.checked) {
         lines[current].classList.add("mt-active");
         wordify(lines[current], current);
-        if (follow.checked) {
-          lines[current].scrollIntoView({
-            block: "center",
-            behavior: reduceMotion ? "auto" : "smooth"
-          });
-        }
+        if (follow.checked) scrollLineIntoView(lines[current]);
       }
     }
     if (hl.checked && wordTimes && lines[current] && lines[current].dataset.wordified) {
@@ -578,6 +639,9 @@
     } catch (e) { /* storage blocked; nothing to do */ }
   }
 
+  // Raw characters of transcript we are willing to put in a prefilled URL.
+  var MAX_PREFILL = 6000;
+
   function prefill(line) {
     var f = cfg.fields, q = [];
     function add(key, val) {
@@ -589,7 +653,29 @@
     // ONE editable box, carrying the speaker label inside the text. Fixing a
     // name and fixing the words are then the same action, and a multi-line
     // answer is a split into separate turns (the roll-call case).
-    add("suggestion", text.slice(0, 1200));
+    // PREFILL LENGTH. The form's contract is "the text you submit REPLACES the
+    // original paragraph", so a silently truncated prefill is a data-loss bug:
+    // the submitter fixes a typo near the start, submits, and the tail of the
+    // paragraph is gone. At the old 1,200-char cap that hit 9.5% of lines --
+    // they run to 6,482 characters, and the long ones are the monologues where
+    // a correction is most worth making.
+    //
+    // 6,000 raw characters encodes to roughly 9,000 in the query string, which
+    // every current browser and Forms itself accept comfortably, and covers all
+    // but about 0.1% of lines. Anything longer is refused rather than quietly
+    // cut -- see below. ingest_corrections.py carries an independent guard, so
+    // a truncated submission cannot be applied even if one reaches the sheet.
+    if (text.length > MAX_PREFILL) {
+      window.alert(
+        "This paragraph is " + text.length + " characters, too long to load " +
+        "into the correction form (limit " + MAX_PREFILL + ").\n\n" +
+        "Submitting a shortened copy would delete the rest of the paragraph " +
+        "from the transcript, so the form has not been opened.\n\n" +
+        "Please email the correction instead, or right-click a shorter line."
+      );
+      return null;
+    }
+    add("suggestion", text);
 
     // ONE opaque reference. Google Forms has no hidden fields, so every extra
     // context field is another box the submitter must look at and ignore.
@@ -624,7 +710,11 @@
     }
 
     item(cfg.menu_label || "Suggest a correction…", function () {
-      window.open(prefill(line), "_blank", "noopener");
+      // prefill() returns null when the paragraph is too long to carry
+      // safely; it has already explained why, so just do nothing rather
+      // than opening about:blank
+      var url = prefill(line);
+      if (url) window.open(url, "_blank", "noopener");
     });
 
     // Overriding the context menu removes the browser's own Copy, which is
