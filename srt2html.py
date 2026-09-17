@@ -940,6 +940,30 @@ def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=
     # To genuinely rebuild them, delete the heatmap.html files first.
     make_heatmap(yt_id, force=False)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
+
+    # WORD TIMINGS MUST FOLLOW THE PAGE THEY INDEX.
+    #
+    # The sidecar is one row per rendered <p class="line">, addressed by
+    # POSITION, so it is only valid for the exact HTML it was built from. Until
+    # now make_word_times was a manual tool that nothing called, which meant two
+    # silent failures: every newly transcribed video shipped with no sidecar at
+    # all, and any regeneration that changed the line structure left a stale one
+    # behind. The Mike/Chad split made the second visible -- it turned one
+    # rendered line into three, so the page had 132 lines against the sidecar's
+    # 130 and every line after the split read another line's timings.
+    #
+    # Rebuilding it here makes staleness impossible: the sidecar cannot outlive
+    # the page. make_word_times returns None when there is no model.pkl, which
+    # is the normal case for the ~360 v1 transcripts, and the player falls back
+    # to sentence-level seeking for those.
+    try:
+        import make_word_times
+        for d in glob.glob("20??-??-??_" + yt_id):
+            make_word_times.build(d)
+    except Exception as error:
+        # never let a timing sidecar break a transcript build
+        print("word timings failed for " + yt_id + ": " + str(error))
+
     # make the top level page with links to all transcripts
     if do_extras:
         make_committee_pages.make()

@@ -68,6 +68,22 @@
     fetch(src).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
         if (!rows) return;
+
+        // REFUSE A SIDECAR THAT DOES NOT MATCH THIS PAGE. Rows are addressed
+        // by position, so a sidecar built from a different version of the page
+        // does not degrade gracefully -- it silently shifts every line's
+        // timings after the point where the two diverge. A stale sidecar is
+        // worse than none, and falling back to sentence-level seeking is
+        // correct behaviour rather than a failure.
+        if (rows.length !== lines.length) {
+          if (window.console && console.warn) {
+            console.warn("mt-player: word timings are stale (" + rows.length +
+                         " rows for " + lines.length + " lines); " +
+                         "falling back to sentence-level seeking");
+          }
+          return;
+        }
+
         wordTimes = rows.map(function (row) {          // undo delta encoding
           var abs = [], acc = 0;
           for (var i = 0; i < row.length; i++) { acc += row[i]; abs.push(acc / 100); }
