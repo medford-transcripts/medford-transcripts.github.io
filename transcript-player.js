@@ -42,10 +42,28 @@
   // shipped -- they are already in the DOM.
   var wordTimes = null, wordsTried = false;
 
+  // The sidecar URL is DERIVED when data-words is absent, not required from
+  // the markup. srt2html only emits data-words if the .words.json already
+  // existed when the page was written, so a sidecar generated afterwards is
+  // invisible to every page built before it -- which is exactly what happened:
+  // the full regeneration ran first, the sidecars were built second, and
+  // word-level highlighting silently never activated anywhere.
+  //
+  // Deriving it decouples the two artifacts permanently. Adding sidecars later
+  // now works immediately instead of requiring a 90-minute rebuild of 2,272
+  // pages, and a missing sidecar is just a 404 we already tolerate.
+  function wordsUrl() {
+    var src = mount.getAttribute("data-words");
+    if (src) return src;
+    var path = location.pathname;
+    if (!/\.html?$/i.test(path)) return null;
+    return path.replace(/\.html?$/i, ".words.json");
+  }
+
   function loadWordTimes() {
     if (wordsTried) return;
     wordsTried = true;
-    var src = mount.getAttribute("data-words");
+    var src = wordsUrl();
     if (!src) return;
     fetch(src).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
@@ -219,10 +237,87 @@
     // let modified clicks (new tab) behave normally
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
-    var t = wordTimeAt(line, e);
-    if (t === null) t = parseFloat(line.getAttribute("data-t")) || 0;
+
+    // THREE TIERS, most precise first. Tier 2 is not optional: every line
+    // already carries sentence-level <a href> timestamps, and before the
+    // player existed those anchors WERE the navigation -- clicking one jumped
+    // to that sentence in the video. Intercepting the click and seeking to the
+    // paragraph start threw that away, which is a regression on long
+    // monologues where a paragraph can run for minutes.
+    var t = wordTimeAt(line, e);                      // 1. word   (sidecar)
+    if (t === null) t = anchorTimeAt(line, e);        // 2. sentence (<a href>)
+    if (t === null) t = parseFloat(line.getAttribute("data-t")) || 0;  // 3. line
     backend.seek(t);
   });
+
+
+  // Seconds encoded in a timestamp link, or null.
+  //
+  // Covers every shape timestamp_url() emits:
+  //   https://youtu.be/<id>&t=53.996s          (YouTube; &t= is intentional and
+  //                                             youtu.be does redirect it)
+  //   https://archive.org/details/<slug>&start=0.031
+  //   player.html?video=<id>&t=53.996
+  var TIME_IN_HREF = /[?&#](?:t|start)=([0-9.]+)/;
+
+  function hrefTime(a) {
+    var m = a && a.getAttribute && TIME_IN_HREF.exec(a.getAttribute("href") || "");
+    if (!m) return null;
+    var v = parseFloat(m[1]);
+    return isNaN(v) ? null : v;
+  }
+
+  // Time of the sentence containing the click: the last anchor at or before
+  // the click point. Resolved by DOM order against the caret, the same way
+  // wordTimeAt works, so it is correct wherever in the line the click lands
+  // rather than only when the anchor itself is hit.
+  function anchorTimeAt(line, e) {
+    var anchors = line.querySelectorAll("a[href]");
+    if (!anchors.length) return null;
+
+    // clicked directly on a link: unambiguous
+    var direct = e.target.closest && e.target.closest("a[href]");
+    if (direct && line.contains(direct)) {
+      var dt = hrefTime(direct);
+      if (dt !== null) return dt;
+    }
+
+    var caret = caretRangeAt(e);
+    if (!caret) return hrefTime(anchors[0]);
+
+    var best = null;
+    for (var i = 0; i < anchors.length; i++) {
+      var r = document.createRange();
+      r.selectNode(anchors[i]);
+      // START_TO_START <= 0 means the anchor begins at or before the caret
+      if (r.compareBoundaryPoints(Range.START_TO_START, caret) <= 0) {
+        var at = hrefTime(anchors[i]);
+        if (at !== null) best = at;
+      } else {
+        break;                       // anchors are in document order
+      }
+    }
+    return best !== null ? best : hrefTime(anchors[0]);
+  }
+
+  // A collapsed range at the pointer, across engines. Shared by the word and
+  // sentence resolvers so they agree about where the click landed.
+  function caretRangeAt(e) {
+    if (document.caretRangeFromPoint) {                 // WebKit/Blink
+      return document.caretRangeFromPoint(e.clientX, e.clientY);
+    }
+    if (document.caretPositionFromPoint) {              // Gecko
+      var pos = document.caretPositionFromPoint(e.clientX, e.clientY);
+      if (!pos) return null;
+      var r = document.createRange();
+      try {
+        r.setStart(pos.offsetNode, pos.offset);
+        r.collapse(true);
+      } catch (err) { return null; }
+      return r;
+    }
+    return null;
+  }
 
 
   // Time of the word under the pointer, or null.
@@ -242,15 +337,11 @@
     var times = wordTimes[idx];
     if (!times || !times.length) return null;
 
-    var node = null, offset = 0;
-    if (document.caretRangeFromPoint) {                 // WebKit/Blink
-      var r = document.caretRangeFromPoint(e.clientX, e.clientY);
-      if (r) { node = r.startContainer; offset = r.startOffset; }
-    } else if (document.caretPositionFromPoint) {       // Gecko
-      var pos = document.caretPositionFromPoint(e.clientX, e.clientY);
-      if (pos) { node = pos.offsetNode; offset = pos.offset; }
-    }
-    if (!node) return null;
+    // same caret resolution the sentence resolver uses, so the two tiers can
+    // never disagree about where the click landed
+    var caret = caretRangeAt(e);
+    if (!caret) return null;
+    var node = caret.startContainer, offset = caret.startOffset;
 
     // characters of the line's text preceding the click
     var before = 0, done = false;
