@@ -40,6 +40,26 @@ import urllib.request
 
 QUEUE = "corrections_queue.json"
 
+# Contributors whose submissions skip review. GITIGNORED ON PURPOSE: the file
+# holds bearer tokens, and this repository is public, so committing it would
+# publish the exact value that grants the privilege.
+#
+# WHAT A TOKEN IS WORTH, stated plainly so nobody mistakes it for auth. The
+# token is a random value in a contributor's localStorage. It is a fine
+# CORRELATION aid -- grouping one browser's submissions so a reviewer can see a
+# track record -- and it is NOT authentication:
+#   * anyone can copy a token they have seen and submit as its owner
+#   * every token ever submitted is recorded in the responses sheet, so anyone
+#     who can read that sheet can read the tokens in it
+#   * a token survives no further than the browser holding it
+# So this whitelist is exactly as strong as the secrecy of the responses sheet.
+# While that sheet is link-shared, the honest description is "obscurity", and
+# auto-accept is a convenience with a real if small integrity risk attached.
+# The fix is not a better token: it is form sign-in plus a private sheet, so
+# that identity is asserted by Google rather than by the submitter. See
+# TRUST.md. Until then, keep an eye on what gets auto-applied.
+TRUSTED = "trusted_contributors.json"
+
 # The sheet's column headers are the QUESTION TEXT, which the owner may reword
 # at any time. Match loosely on keywords rather than pinning exact strings.
 COLUMN_HINTS = [
@@ -81,6 +101,47 @@ def load_rows(text):
     mapping = map_columns(headers)
     missing = [f for f, _ in COLUMN_HINTS if f not in mapping]
     return list(reader), mapping, headers, missing
+
+
+def token_of(contributor):
+    """The opaque token out of a contributor tag.
+
+    transcript-player.js sends nick + "/" + token when a display name is set,
+    and a bare token otherwise. Trust decisions key on the TOKEN ONLY -- the
+    nick is typed by the submitter and anyone can type any name, so matching on
+    it would let a stranger inherit someone's standing by choosing their name.
+    """
+    who = (contributor or "").strip()
+    if not who:
+        return ""
+    return who.rsplit("/", 1)[-1].strip()
+
+
+def load_trusted(path=TRUSTED):
+    """{token: label} for contributors whose edits skip review.
+
+    Absent file means nobody is trusted, which is the right default: a missing
+    whitelist must never be read as an empty allow-all.
+    """
+    if not os.path.exists(path):
+        return {}
+    try:
+        with io.open(path, encoding="utf-8") as fp:
+            data = json.load(fp)
+    except (ValueError, OSError) as exc:
+        # Fail CLOSED and loudly. A malformed whitelist silently becoming an
+        # empty one would be fine; silently becoming a permissive one would
+        # not, and the operator needs to know either way.
+        sys.stderr.write("WARNING: %s is unreadable (%s); trusting nobody.\n"
+                         % (path, exc))
+        return {}
+
+    out = {}
+    for entry in data.get("contributors", []):
+        tok = (entry.get("token") or "").strip()
+        if tok:
+            out[tok] = (entry.get("label") or "").strip() or tok
+    return out
 
 
 def row_id(rec):
@@ -260,6 +321,10 @@ def main():
     src.add_argument("--url", help="published-to-web CSV url")
     src.add_argument("--csv", help="a downloaded CSV file")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--trusted", default=TRUSTED,
+                    help="whitelist file (default: %s)" % TRUSTED)
+    ap.add_argument("--no-trust", action="store_true",
+                    help="ignore the whitelist; queue everything for review")
     args = ap.parse_args()
 
     if args.url:
@@ -279,14 +344,28 @@ def main():
         print("The sheet headers are the question text; if you reworded a")
         print("question, add a hint for it in COLUMN_HINTS.")
 
-    queue = {"_comment": "Correction submissions pending review. Never auto-applied.",
+    queue = {"_comment": ("Correction submissions. status=pending needs review; "
+                          "status=accepted was auto-accepted from the trusted "
+                          "whitelist and records accepted_by. Applying is a "
+                          "separate step and every applied edit must land in "
+                          "its own revertible, attributed commit."),
              "items": {}}
     if os.path.exists(QUEUE):
         with open(QUEUE, encoding="utf-8") as fp:
             queue = json.load(fp)
     items = queue.setdefault("items", {})
 
-    added = dupes = 0
+    trusted = load_trusted(args.trusted)
+    if trusted:
+        print("\ntrusted contributors: %d (%s)"
+              % (len(trusted), ", ".join(sorted(trusted.values()))))
+        if args.no_trust:
+            print("--no-trust given: whitelist IGNORED, everything queues for review")
+            trusted = {}
+    else:
+        print("\ntrusted contributors: none (%s absent or empty)" % args.trusted)
+
+    added = dupes = auto = 0
     for raw in rows:
         rec = {field: (raw.get(col) or "").strip()
                for field, col in mapping.items()}
@@ -311,12 +390,27 @@ def main():
             rec["original_text"] = txt
         rec["turns"] = parse_turns(rec.get("suggestion")) or []
         rec["target"] = classify(rec)
-        rec["status"] = "pending"
+
+        # Trusted contributors skip review -- but only when the submission
+        # actually parsed. An unparsed or empty edit from a trusted account is
+        # still a broken edit, and auto-applying it would write nonsense into a
+        # transcript with nobody looking. Trust is about WHO, never about
+        # whether the content is well formed.
+        tok = token_of(rec.get("contributor"))
+        tg = rec.get("target") or []
+        if tok and tok in trusted and "unparsed" not in tg and tg != ["none"]:
+            rec["status"] = "accepted"
+            rec["accepted_by"] = "whitelist:" + trusted[tok]
+            auto += 1
+        else:
+            rec["status"] = "pending"
         items[rid] = rec
         added += 1
 
     print("\nnew submissions : %d" % added)
     print("already queued  : %d" % dupes)
+    if auto:
+        print("AUTO-ACCEPTED   : %d (trusted contributor, skipped review)" % auto)
     pend = sum(1 for v in items.values() if v.get("status") == "pending")
     print("pending review  : %d of %d total" % (pend, len(items)))
 

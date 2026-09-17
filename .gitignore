@@ -82,3 +82,12 @@ aligned.checkpoint.pkl
 # 2026-09-17. Keep them locally -- cross-video speaker matching needs them and
 # they are expensive to rebuild -- but never in a published tree.
 embeddings.pkl
+
+# Auto-accept whitelist: holds contributor bearer tokens, and this repo is
+# public. Committing it would publish the exact value that grants the
+# privilege. trusted_contributors.example.json is the tracked template.
+trusted_contributors.json
+
+# Correction queue: contains submitted free text from the public, pending
+# review. Keep triage local until a submission has actually been reviewed.
+corrections_queue.json

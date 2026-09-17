@@ -1,0 +1,25 @@
+{
+  "_comment": [
+    "TEMPLATE. Copy to trusted_contributors.json (which is gitignored) and",
+    "fill in real tokens. Never commit the real file: it holds bearer tokens",
+    "and this repository is public.",
+    "",
+    "Find your own token on any transcript page: right-click a line ->",
+    "'Your contributor ID...'. Copy the token only, not the display name.",
+    "",
+    "'label' is for your eyes in the ingest report. 'token' is what is",
+    "matched; the display name a contributor types is never matched, because",
+    "anyone can type any name.",
+    "",
+    "Auto-accept is only as strong as the secrecy of the responses sheet.",
+    "See TRUST.md for the sign-in migration that replaces this with real auth."
+  ],
+  "contributors": [
+    {
+      "token": "REPLACE_WITH_YOUR_TOKEN",
+      "label": "site owner",
+      "added": "2026-09-17",
+      "note": "submits through the public form like everyone else"
+    }
+  ]
+}
