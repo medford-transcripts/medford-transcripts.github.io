@@ -101,3 +101,27 @@ corrections_queue.json
 # are a different thing -- supercut.py still generates and links those, so they
 # stay tracked.
 20??-??-??_*/*.wordcloud.png
+
+# Provenance artifacts -- preserved in the PRIVATE repo
+# medford-transcripts/transcript_backup, never published.
+#
+# WHY NOT PUBLISHED. model.pkl is the ASR half of a 2-year 24/7 run and the
+# .srt variants are its intermediates; none has a reader. The working .srt
+# carries SPEAKER_nn labels and NEVER names -- the map lives in
+# speaker_ids.json and is resolved only when the HTML is written -- so the
+# "raw" file was strictly less useful than the page beside it. The two use
+# cases it existed for never materialised: the city's video curator was not
+# interested in re-uploading the SRTs, and nobody ever returned a corrected
+# speaker_ids.json. The correction form now covers the second at a far lower
+# bar.
+#
+# WHY NOT DELETED. These stay in the working tree; the pipeline reads them
+# locally. Untracking only stops PUBLISHING them, and the backup is what makes
+# a fresh clone able to rebuild.
+#
+# PDFs are deliberately NOT here: agendas, minutes and proposals are LINKED
+# from the site, and the civicclerk source is of unknown stability.
+model.pkl
+speaker_ids.json
+*.srt
+*.srt.orig
