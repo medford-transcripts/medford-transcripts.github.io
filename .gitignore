@@ -91,3 +91,11 @@ trusted_contributors.json
 # Correction queue: contains submitted free text from the public, pending
 # review. Keep triage local until a submission has actually been reviewed.
 corrections_queue.json
+
+# Per-transcript, per-speaker wordclouds: 10,295 files, 414 MB, and NOTHING
+# links to them. srt2html stopped generating them (the code at srt2html.py:513
+# is commented out) and the full regeneration dropped the last references, so
+# every one of these is an orphan served to nobody. The electeds/ wordclouds
+# are a different thing -- supercut.py still generates and links those, so they
+# stay tracked.
+20??-??-??_*/*.wordcloud.png
