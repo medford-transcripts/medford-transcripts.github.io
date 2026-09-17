@@ -1,17 +1,29 @@
 """
 Regression tests for the transcript replacement rules.
 
-These exist because the rules have now been wrong in TWO opposite directions,
+These exist because the rules have now been wrong in TWO OPPOSITE directions,
 and a change that fixes one silently breaks the other:
 
-  1. Unanchored str.replace() corrupted 935 of 2,273 transcripts, rewriting
-     residents' surnames -- Moxley -> Marksley, Maxwell -> Markswell,
-     McKernan -> Lungo-Koehnan, Beasley -> Bearsley.
+  1. Naive word-boundary anchoring stops correcting PLURALS and inflected
+     forms. The rule table contains no plural forms at all -- all 151
+     single-word rules relied on substring matching to pluralise for free --
+     so anchoring silently reverted "Councilors" to "counselors" archive-wide.
 
-  2. Naive word-boundary anchoring then stopped correcting PLURALS, because
-     the rule table contains no plural forms at all -- all 151 single-word
-     rules had been relying on substring matching to pluralise for free. That
-     would have reverted "Councilors" to "counselors" across the archive.
+  2. Unanchored substring matching fires INSIDE longer words. Mostly that was
+     doing useful work ("Councilor Moxley" -> Michael Marks, mis-heard), but
+     it also produced "guidance Councilors" for school guidance counselors,
+     and renamed Fred Dello Russo as Paul Ruseau -- two different sitting
+     officials.
+
+Correcting an earlier version of this note: it claimed the unanchored rules
+were "mangling residents' surnames", citing Moxley, Maxwell, McKernan and
+Beasley. That was wrong. Every one of those reads "Councilor <name>" in the
+transcripts: they are Whisper mis-hearing COUNCILORS, and the old behaviour
+was fixing them. Michael Marks, Zac Bears, Breanna Lungo-Koehn, Adam Knight,
+Justin Tseng and Richard Caraviello are all in councilors.json; "Moxley" and
+"Beasley" are not. The name rules are therefore CONTEXTUAL -- keyed on
+"Councilor Moxley", never bare "Moxley" -- because the bare form would rename
+real people: "Fiona Maxwell", "Walter Beasley" the musician, "Brianna Scholl".
 
 Both directions are covered below. Run before any rule change or sweep:
 
