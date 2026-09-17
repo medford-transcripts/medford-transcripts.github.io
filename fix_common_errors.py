@@ -643,6 +643,40 @@ def fix_common_errors(yt_id=None):
         "Van de Kloot" : "Van der Kloot",
         "Van de Klooth" : "Van der Kloot",
         "Van der Klooth" : "Van der Kloot",
+
+        # ---- REMAINDER: rules keyed on the OLD GARBLED OUTPUT ---------
+        # The bulk of these were fixed by rebuilding .srt from .srt.orig
+        # with the corrected rules. 28 files could not be rebuilt safely
+        # -- 11 carry hand corrections, 17 failed the safety check that
+        # the published text is exactly old_rules(.orig). Those still hold
+        # the garbled forms, and the rules above cannot help because they
+        # key on what Whisper HEARD ("Councilor Moxley"), which no longer
+        # appears in that text.
+        #
+        # So these key on the garbled form instead. Contextual for the
+        # same reason as the others, and safe to apply in place, which
+        # means the hand-corrected files keep their edits.
+        "Councilman Markson" : "Councilman Marks",
+        "Councilor Bearsley" : "Councilor Bears",
+        "Councilor Knightth" : "Councilor Knight",
+        "Councilor Lungo-Koehnan" : "Councilor Lungo-Koehn",
+        "Councilor Marksley" : "Councilor Marks",
+        "Councilor Markson" : "Councilor Marks",
+        "Councilor Markswell" : "Councilor Marks",
+        "Councilor Marksx" : "Councilor Marks",
+        "Councilor Scarpellilli" : "Councilor Scarpelli",
+        "President Bearson" : "President Bears",
+        "Vice President Bearsar" : "Vice President Bears",
+
+        # ---- last three stragglers, each a shape the generated rules missed
+        # (858 substitutions -> 3). Kept specific rather than generalised:
+        # a bare "Markson" -> "Marks" could rename a real Mr. Markson, and
+        # these are one-off occurrences, not a pattern worth widening for.
+        "President Caravielloli" : "President Caraviello",
+        "Mr. Markson" : "Mr. Marks",
+        # a plural honorific followed by a LIST -- the name is not adjacent to
+        # the honorific, so the contextual rules cannot reach it
+        "Falco, Markson" : "Falco, Marks",
     }
 
     if yt_id == None:
