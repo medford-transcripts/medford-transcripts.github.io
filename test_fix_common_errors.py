@@ -134,5 +134,16 @@ def main():
     return 1 if failures else 0
 
 
+def test_all_rules():
+    """pytest entry point.
+
+    The checks below are written as a script with their own main(), which
+    pytest does not collect -- so `pytest` reported success while silently
+    running none of these 31 assertions. This wrapper makes one command cover
+    every suite in the repo.
+    """
+    assert main() == 0
+
+
 if __name__ == "__main__":
     sys.exit(main())
