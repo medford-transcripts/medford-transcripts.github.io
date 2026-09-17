@@ -635,6 +635,14 @@ def fix_common_errors(yt_id=None):
         "Member Roussell" : "Member Ruseau",
         "Mr. Roussell" : "Mr. Ruseau",
         "Mr Roussell" : "Mr. Ruseau",
+
+        # School Committee member Paula Van der Kloot. The bare "de" -> "der"
+        # rule this replaces was far too broad -- it fired on any standalone
+        # "de", including inside a segment Whisper mis-detected as Welsh
+        # ("Yn ymwneud ag Ysgrifennydd Van der Klooth").
+        "Van de Kloot" : "Van der Kloot",
+        "Van de Klooth" : "Van der Kloot",
+        "Van der Klooth" : "Van der Kloot",
     }
 
     if yt_id == None:
