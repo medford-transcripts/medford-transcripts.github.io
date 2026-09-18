@@ -1,4 +1,5 @@
 import json, glob
+import re
 import os, time, datetime
 import dateutil.parser as dparser
 import yt_dlp 
@@ -225,94 +226,230 @@ def get_meeting_type(video):
 
     return None
 
-def identify_duplicate_videos(video_data=None, reset=False):
+# ---------------------------------------------------------------------------
+# TITLE STANDARDISATION -- the meeting date and a comparable "stem" of a title.
+#
+# Titles come from four sources with four conventions and plenty of typos:
+#   "Medford City Council 09-26-17"        "Medford, MA City Council - Sep. 26, 2017"
+#   "3.13.2024 MSC FY25 Budget Committee"  "Medford School Committee of the Whole 03-13-24"
+# Duplicate detection keys on the MEETING date, which is in the title 81% of
+# the time and is not the upload date (an unofficial channel often posts a day
+# late). dateutil's fuzzy parser was reading "Episode 56" and room numbers as
+# dates, so this is explicit about the formats that actually occur.
+# ---------------------------------------------------------------------------
+_MONTHS = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july", "august",
+     "september", "october", "november", "december"], 1)}
+_MONTHS.update({k[:3]: v for k, v in list(_MONTHS.items())})
+_MONTHS["sept"] = 9
 
-    if video_data is None:
+_DATE_PATS = [
+    ("ymd", re.compile(r"\b(20\d\d)[-./](\d{1,2})[-./](\d{1,2})\b")),
+    ("mdY", re.compile(r"\b(\d{1,2})[-./](\d{1,2})[-./](20\d\d)\b")),
+    ("mdy", re.compile(r"\b(\d{1,2})[-./](\d{1,2})[-./](\d\d)\b")),
+    ("MdY", re.compile(r"\b([A-Za-z]{3,9})\.? (\d{1,2})(?:st|nd|rd|th)?,? (20\d\d)\b")),
+    ("dMY", re.compile(r"\b(\d{1,2}) ([A-Za-z]{3,9}),? (20\d\d)\b")),
+    ("Mdy", re.compile(r"\b([A-Za-z]{3,9})\.? (\d{1,2})(?:st|nd|rd|th)?,? '?(\d\d)\b")),
+    ("mmddyy", re.compile(r"\b(\d{2})(\d{2})(\d{2})\b")),
+]
+
+
+def title_date(title, not_after=None):
+    """ISO meeting date found in a title, or None.
+
+    not_after: the upload date. A title date LATER than the upload is a typo
+    ("City Council 01-20-26" uploaded 2025-01-22), so it is ignored and the
+    next candidate tried -- the same guard the original dateutil path had.
+    """
+    t = title or ""
+    for kind, rx in _DATE_PATS:
+        for m in rx.finditer(t):
+            g = m.groups()
+            try:
+                if kind == "ymd":
+                    y, mo, d = int(g[0]), int(g[1]), int(g[2])
+                elif kind == "mdY":
+                    mo, d, y = int(g[0]), int(g[1]), int(g[2])
+                elif kind in ("mdy", "mmddyy"):
+                    mo, d, y = int(g[0]), int(g[1]), 2000 + int(g[2])
+                elif kind in ("MdY", "Mdy"):
+                    mo = _MONTHS.get(g[0].lower())
+                    d, y = int(g[1]), int(g[2])
+                    if y < 100:
+                        y += 2000
+                else:
+                    d, mo, y = int(g[0]), _MONTHS.get(g[1].lower()), int(g[2])
+                if mo is None:
+                    continue
+                iso = datetime.date(y, mo, d).isoformat()
+            except (ValueError, TypeError):
+                continue
+            if not (2005 <= y <= 2035):
+                continue
+            if not_after and iso > not_after:
+                continue
+            return iso
+    return None
+
+
+def meeting_date(entry):
+    """The date to dedup on: title date if it has one, else the stored date."""
+    return (title_date(entry.get("title"), not_after=entry.get("upload_date"))
+            or entry.get("date") or entry.get("upload_date"))
+
+
+_NOISE = re.compile(
+    r"\b(medford|meeting|regular|the|of|a|an|and|in|person|livestream|live|stream|"
+    r"virtual|remote|via|zoom|recording|full|session|special|city|ma|mass|"
+    r"unofficially|unofficial|posted|by|for|to|at|on)\b")
+
+
+def title_stem(title):
+    """Lowercased title with dates, punctuation and filler words removed."""
+    t = (title or "").lower()
+    for _, rx in _DATE_PATS:
+        t = rx.sub(" ", t)
+    t = re.sub(r"[^a-z0-9#]+", " ", t)
+    t = _NOISE.sub(" ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def titles_overlap(a, b):
+    """True if two titles share at least one meaningful word.
+
+    The guard that keeps type+date from pairing different meetings. Measured
+    on 76 candidate pairs: every true duplicate shared a word (Jaccard
+    0.2-1.0); the two false pairs -- "#CottonSwabChallenge" vs a council
+    meeting, "SEPAC" vs "Comprehensive Master Plan" -- shared none.
+    """
+    return bool(set(title_stem(a).split()) & set(title_stem(b).split()))
+
+
+def has_transcript(yt_id, entry):
+    d = (entry.get("upload_date") or "") + "_" + yt_id
+    return os.path.exists(os.path.join(d, d + ".srt"))
+
+
+# Source preference when NEITHER copy is transcribed yet: official channels,
+# then the MCM archive, then unofficial re-uploads.
+BEST_CHANNELS = ["City of Medford, Massachusetts", "Medford Public Schools",
+                 "Medford Community Media", "MCM Archive",
+                 "Mass Traction-US-Medford-1 - Government",
+                 "Select Medford, MA City Meetings"]
+MT_CHANNEL = "Mass Traction-US-Medford-1 - Government"
+
+
+def _rank(channel):
+    try:
+        return BEST_CHANNELS.index(channel)
+    except ValueError:
+        return 10
+
+
+def _dedup_protected(entry):
+    """Entries whose skip state is not ours to change."""
+    if entry.get("manual_correction"):
+        return True
+    # a skip WITHOUT duplicate_id was set by a person or by the truncated-audio
+    # guard, never by this function
+    return bool(entry.get("skip")) and not entry.get("duplicate_id")
+
+
+def identify_duplicate_videos(video_data=None, reset=False, apply=True):
+    """Mark duplicate recordings of the same meeting so only one is transcribed.
+
+    Same meeting_type + same MEETING date (from the title) + a different
+    channel => duplicates, provided the titles share at least one word. The
+    one exception to "different channel": Mass Traction posts a Livestream and
+    a recording of the same meeting.
+
+    WHICH COPY IS KEPT, in order:
+      1. the one that ALREADY HAS A TRANSCRIPT. The previous version applied
+         channel priority alone, and had hidden 66 finished transcripts --
+         Mass Traction copies transcribed before their MCM twins were ingested,
+         then skipped in favour of the archive copy, which was queued to be
+         transcribed AGAIN: 161 hours of audio, about 19 days of compute, to
+         reproduce work already done.
+      2. channel priority (BEST_CHANNELS)
+      3. the non-Livestream copy
+
+    A keeper that a previous run had skipped is un-skipped. Entries with
+    manual_correction, or a skip this function did not set, are never touched.
+
+    apply=False computes and returns the changes without mutating or saving.
+    """
+    own = video_data is None
+    if own:
         video_data = get_video_data()
 
-    best_channels = ["City of Medford, Massachusetts","Medford Public Schools","Medford Community Media","MCM Archive","Mass Traction-US-Medford-1 - Government","Select Medford, MA City Meetings"]
-    mtchannel ="Mass Traction-US-Medford-1 - Government"
-
-    if reset: 
-        for yt_id in video_data.keys():
-            # even a reset won't overwrite manually corrected entries
-            if "manual_correction" in video_data[yt_id].keys():
-                if video_data[yt_id]["manual_correction"]: 
-                    continue
-            video_data[yt_id].pop('skip', None)
-            video_data[yt_id].pop('duplicate_id', None)
-
-    for yt_id in video_data.keys():
-
-        if video_data[yt_id]["meeting_type"] is None:
-            continue
-        if video_data[yt_id]["meeting_type"] == "Campaign":
-            continue
-
-        for yt_id_trial in video_data.keys():
-
-            # don't match to self
-            if yt_id == yt_id_trial: continue
-
-            # don't match to uncategorized meetings
-            if video_data[yt_id_trial]["meeting_type"] is None:
+    if reset:
+        for yt_id, e in video_data.items():
+            if e.get("manual_correction"):
                 continue
+            e.pop("skip", None)
+            e.pop("duplicate_id", None)
 
-            # don't match to campaign meetings
-            if video_data[yt_id_trial]["meeting_type"] == "Campaign":
+    skip_types = {None, "Campaign", "News", "Medford Bytes", "Medford Happenings"}
+    groups = {}
+    for yt_id, e in video_data.items():
+        if e.get("meeting_type") in skip_types or not e.get("title") or not e.get("channel"):
+            continue
+        groups.setdefault((e["meeting_type"], meeting_date(e)), []).append(yt_id)
+
+    def prefer(yt_id):
+        e = video_data[yt_id]
+        return (0 if has_transcript(yt_id, e) else 1,
+                _rank(e["channel"].strip()),
+                1 if "Livestream" in (e.get("title") or "") else 0,
+                yt_id)
+
+    changes = {}          # yt_id -> {"skip": bool, "duplicate_id": str}
+    pairs = 0
+    for key, ids in groups.items():
+        if len(ids) < 2:
+            continue
+        keeper = min(ids, key=prefer)
+        k = video_data[keeper]
+        for other in ids:
+            if other == keeper:
                 continue
+            o = video_data[other]
+            same_channel = o["channel"].strip() == k["channel"].strip()
+            live = ("Livestream" in (o.get("title") or "")) or ("Livestream" in (k.get("title") or ""))
+            if same_channel and not (o["channel"].strip() == MT_CHANNEL and live):
+                continue
+            if not titles_overlap(o.get("title"), k.get("title")):
+                continue
+            pairs += 1
+            if not _dedup_protected(o):
+                changes[other] = {"skip": True, "duplicate_id": keeper}
+            if not _dedup_protected(k):
+                changes.setdefault(keeper, {"skip": False, "duplicate_id": other})
+
+    summary = {"pairs": pairs,
+               "skipped": sum(1 for y, c in changes.items() if c["skip"] and not video_data[y].get("skip")),
+               "unskipped": sum(1 for y, c in changes.items() if not c["skip"] and video_data[y].get("skip"))}
+    if not apply:
+        summary["changes"] = changes
+        return summary
+
+    def _apply(target):
+        for yt_id, c in changes.items():
+            if yt_id in target:
+                target[yt_id]["skip"] = c["skip"]
+                target[yt_id]["duplicate_id"] = c["duplicate_id"]
+    _apply(video_data)
+    if own:
+        fresh = get_video_data()         # reload right before saving
+        _apply(fresh)
+        save_video_data(fresh)
+    else:
+        save_video_data(video_data)
+    print("duplicates: %d pairs, %d newly skipped, %d un-skipped (kept because already transcribed)"
+          % (summary["pairs"], summary["skipped"], summary["unskipped"]))
+    return summary
 
 
-            # same type, same date, different channel => duplicate
-            # same type, same date, channel == Mass Traction, one livestream => duplicate
-            if (
-                (
-                    video_data[yt_id]["date"] == video_data[yt_id_trial]["date"]
-                    and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]
-                    and video_data[yt_id]["channel"] != video_data[yt_id_trial]["channel"]
-                )
-                or (
-                    video_data[yt_id]["date"] == video_data[yt_id_trial]["date"]
-                    and video_data[yt_id]["meeting_type"] == video_data[yt_id_trial]["meeting_type"]
-                    and video_data[yt_id]["channel"] == mtchannel
-                    and video_data[yt_id_trial]["channel"] == mtchannel
-                    and (
-                        "Livestream" in video_data[yt_id]["title"]
-                        or "Livestream" in video_data[yt_id_trial]["title"]
-                    )
-                )
-            ):
-                try:
-                    index = best_channels.index(video_data[yt_id]["channel"])
-                except ValueError:
-                    index = 10
-
-                try:
-                    trial_index = best_channels.index(video_data[yt_id_trial]["channel"])
-                except ValueError:
-                    trial_index = 10
-
-                if (index < trial_index) or (index == trial_index and "Livestream" in video_data[yt_id_trial]["title"]):
-                    video_data[yt_id]["duplicate_id"] = yt_id_trial
-                    video_data[yt_id_trial]["duplicate_id"] = yt_id
-                    video_data[yt_id_trial]["skip"] = True
-                    #print(yt_id_trial)
-                else:
-                    video_data[yt_id_trial]["duplicate_id"] = yt_id
-                    video_data[yt_id]["duplicate_id"] = yt_id_trial
-                    video_data[yt_id]["skip"] = True                    
-                    #print(yt_id)
-
-                #if yt_id == "DSAvAI2oq28" or yt_id_trial == 'DSAvAI2oq28': ipdb.set_trace()
-
-    #ipdb.set_trace()
-    save_video_data(video_data)
-
-
-
-'''
-sorts the meta data by a variety of prioritization schemes (default newest)
-'''
 def update_priority(newest=False, oldest=False, popularity=False, exp_decay=False, 
     linear_decay=True, shortest=False, longest=False):
 
@@ -483,6 +620,7 @@ def update_all(channel_file="channels_to_transcribe.txt", id_file="ids_to_transc
     for yt_id in video_data.keys():
         update_video_data_one(yt_id)
 
+    identify_duplicate_videos()
     update_priority(newest=True)
 
 '''
