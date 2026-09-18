@@ -528,7 +528,16 @@ def get_diarize_model(device):
         print("loading diarization pipeline (once per process)...")
         with open('hf_token.txt') as f:
             token = f.readline()
-        _diarize_model = whisperx.DiarizationPipeline(use_auth_token=token,
+        # model_name PINNED ON PURPOSE. This is the fork's current default, so
+        # nothing changes today -- but current whisperx main defaults to
+        # pyannote/speaker-diarization-community-1, a different clustering and
+        # embedding checkpoint. Inheriting that default on upgrade would put
+        # every NEW meeting in a different vector space from the 1,910
+        # existing embeddings.pkl files, and cross-video speaker matching
+        # would silently stop working. See plan 12.1.
+        _diarize_model = whisperx.DiarizationPipeline(
+                                        model_name="pyannote/speaker-diarization-3.1",
+                                        use_auth_token=token,
                                                       device=device)
     return _diarize_model
 
