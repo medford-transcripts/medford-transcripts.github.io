@@ -266,7 +266,8 @@ def apply_one(rec, blocks, mapping, report):
     if i is None:
         report.append("    SKIP: no block at t=%s" % rec["original_timestamp"])
         return False
-    span = line_span(blocks, i)
+    # group the way the PAGE groups -- by resolved name, not raw label
+    span = line_span(blocks, i, names=mapping)
     if not span:
         return False
     lo, hi = span

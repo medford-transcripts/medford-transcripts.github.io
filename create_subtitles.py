@@ -133,17 +133,31 @@ def salvage_truncated_mp3(yt_id, video_data, mp3file, duration):
                 print("  could not copy it into place: %s" % err)
 
     # 2. count the miss; stop retrying a hopeless item
+    #
+    # MUTATE THE CALLER'S DICT TOO, not just the file. download_audio reads
+    # video_data ONCE at its top, calls mp3_is_good (which lands here), and
+    # then -- on the re-download path -- saves ITS OWN snapshot back. A counter
+    # written only to disk is silently discarded by that save, which defeats
+    # exactly the infinite-retry bug this function exists to stop: the item
+    # would loop forever with the count reset to 1 every pass.
+    #
+    # Updating the caller's in-memory dict as well means the value survives
+    # whichever copy gets written last.
     try:
         vd = utils.get_video_data()
-        entry = vd.setdefault(yt_id, {})
-        n = int(entry.get("truncated_attempts") or 0) + 1
-        entry["truncated_attempts"] = n
-        if n >= MAX_TRUNCATED_ATTEMPTS and not entry.get("skip"):
-            entry["skip"] = True
-            entry["skip_reason"] = ("audio truncated: %.0fs of an expected %.0fs "
-                                    "after %d attempts" % (duration, want, n))
+        for target in (vd, video_data):
+            entry = target.setdefault(yt_id, {})
+            n = int(entry.get("truncated_attempts") or 0) + 1
+            entry["truncated_attempts"] = n
+            if n >= MAX_TRUNCATED_ATTEMPTS and not entry.get("skip"):
+                entry["skip"] = True
+                entry["skip_reason"] = ("audio truncated: %.0fs of an expected "
+                                        "%.0fs after %d attempts"
+                                        % (duration, want, n))
+        n = int((video_data.get(yt_id) or {}).get("truncated_attempts") or 0)
+        if n >= MAX_TRUNCATED_ATTEMPTS:
             print("  SKIPPING %s after %d truncated downloads -- %s"
-                  % (yt_id, n, entry["skip_reason"]))
+                  % (yt_id, n, video_data[yt_id].get("skip_reason", "")))
         utils.save_video_data(vd)
     except Exception as err:
         print("  could not record the truncated attempt: %s" % err)

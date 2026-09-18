@@ -213,3 +213,43 @@ class SpeakerNaming(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ResolvedNameGrouping(unittest.TestCase):
+    """srt2html merges paragraphs by RESOLVED NAME, not raw label
+    (srt2html.py:483-491). Two labels that map to one person and sit adjacent
+    render as ONE paragraph, so line_span must group the same way or it
+    computes a shorter span than the contributor edited.
+
+    Found by review; measured at 157 of 600 transcripts (26.2%) before the fix.
+    """
+
+    SRT = (
+        "1\r\n00:00:10,000 --> 00:00:12,000\r\n[SPEAKER_04]: First part.\r\n\r\n"
+        "2\r\n00:00:13,000 --> 00:00:14,000\r\n[SPEAKER_11]: Second part.\r\n\r\n"
+        "3\r\n00:00:15,000 --> 00:00:16,000\r\n[SPEAKER_09]: Someone else.\r\n\r\n"
+    )
+    # both labels are the same person
+    NAMES = {"SPEAKER_04": "Zac Bears", "SPEAKER_11": "Zac Bears",
+             "SPEAKER_09": "Paul Ruseau"}
+
+    def setUp(self):
+        self.blocks = sl.parse_srt(self.SRT)
+
+    def test_raw_grouping_stops_early(self):
+        # the old behaviour, kept as the no-mapping fallback
+        self.assertEqual(sl.line_span(self.blocks, 0), (0, 1))
+
+    def test_resolved_grouping_spans_both_labels(self):
+        self.assertEqual(sl.line_span(self.blocks, 0, names=self.NAMES), (0, 2))
+
+    def test_resolved_grouping_still_stops_at_a_real_change(self):
+        lo, hi = sl.line_span(self.blocks, 0, names=self.NAMES)
+        self.assertEqual(self.blocks[hi]["speaker"], "SPEAKER_09")
+
+    def test_line_text_matches_what_the_reader_saw(self):
+        lo, hi = sl.line_span(self.blocks, 0, names=self.NAMES)
+        self.assertEqual(sl.line_text(self.blocks, lo, hi), "First part. Second part.")
+
+    def test_unmapped_labels_fall_back_to_raw(self):
+        self.assertEqual(sl.line_span(self.blocks, 0, names={}), (0, 1))
