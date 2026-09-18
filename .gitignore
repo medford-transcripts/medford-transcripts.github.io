@@ -125,3 +125,11 @@ model.pkl
 speaker_ids.json
 *.srt
 *.srt.orig
+
+# speaker_provenance.json (2026-09-18): per-meeting sidecar recording how each
+# speaker_ids.json entry was set (manual / reference_voice / embedding_match /
+# propagated / unknown), with score, source cluster key, and previous value
+# for rollback (see speaker_provenance.py). Purely derived, never published;
+# stays local for the same file-count-drives-Pages-build-time reason as the
+# other per-meeting artifacts above (~2,280 more files would undo that win).
+speaker_provenance.json

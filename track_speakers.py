@@ -11,6 +11,7 @@ from scipy.stats import wasserstein_distance
 
 import numpy as np
 import utils
+import speaker_provenance as sp   # stdlib-only sidecar; see its module doc
 
 '''
 compute the cosine similarity of two vectors
@@ -82,9 +83,11 @@ def _cached_embeddings(path):
 def _reference_table(exclude_file):
     """(matrix, meta) for every named reference speaker except exclude_file.
 
-    meta[i] is (ref_yt_id, resolved_speaker_name), in GLOB ORDER. The original
-    iterated references in that order and broke ties with a strict '>', so
-    preserving the order preserves which match wins.
+    meta[i] is (ref_yt_id, resolved_speaker_name, ref_speaker_key), in GLOB
+    ORDER. The original iterated references in that order and broke ties
+    with a strict '>', so preserving the order preserves which match wins.
+    ref_speaker_key is additive (for provenance's "from" field only) -- it
+    does not participate in scoring, ordering, or tie-breaking.
     """
     vectors, meta = [], []
     for reference_file in glob.glob("*/embeddings.pkl"):
@@ -107,7 +110,7 @@ def _reference_table(exclude_file):
             if speaker_key not in ref_speaker_ids:
                 continue
             vectors.append(vec)
-            meta.append((ref_yt_id, ref_speaker_ids[speaker_key]))
+            meta.append((ref_yt_id, ref_speaker_ids[speaker_key], speaker_key))
 
     if not vectors:
         return np.zeros((0, 1)), []
@@ -131,22 +134,69 @@ def _similarities(matrix, query):
 
 '''
 This will propagate manual identifications throughout the speaker_id.json files
+
+ALL-OR-NOTHING: every file is read and every update computed in memory
+before anything is written to disk. The original wrote each file as it went,
+so an exception partway through left the corpus half-propagated with no
+marker that it had happened. Nothing here touches disk until the whole pass
+has finished computing.
+
+Within a pass, a file that has already been updated is read back from memory
+(read_ids below), so a later file that references it sees the NEW value --
+exactly what the old write-as-you-go code did. Chains still take one pass
+per hop for files globbed BEFORE their source, as before.
+
+Two guards protect hand-verified values, which is where corruption used to
+spread silently:
+  (a) an entry whose OWN recorded provenance source is "manual"
+      (speaker_provenance.json, written by `speaker_provenance.py
+      mark-manual`) is never overwritten, regardless of its current shape
+  (b) a cluster key that references a speaker pruned from the target file
+      (mapped_speaker not in mapped_ids) is skipped rather than raising --
+      the original did mapped_ids[mapped_speaker], a KeyError that is
+      latent on the current corpus (0 occurrences measured 2026-09-18) but
+      aborts mid-write the moment it fires
+
+Every value set here is recorded in the target's speaker_provenance.json as
+source "propagated" with from=<cluster key>, previous=<old value>, and the
+score of the source entry if it has one.
+
+Returns a dict summarizing what happened, for callers/tests that want to
+verify guards fired instead of grepping stdout.
 '''
 def propagate():
     files = glob.glob("*/speaker_ids.json")
 
-    # propagate updates in the referenced files
+    pending_speaker_ids = {}   # normpath(file) -> updated dict; only files with a change
+    pending_provenance = {}    # normpath(dir)  -> updated provenance dict
+    skipped_manual = []
+    skipped_missing = []
+
+    def read_ids(path):
+        # a file already updated in this pass is read from memory, so a later
+        # file sees an earlier file's new value (see docstring)
+        key = os.path.normpath(path)
+        if key in pending_speaker_ids:
+            return pending_speaker_ids[key]
+        with open(path, 'r') as fp:
+            return json.load(fp)
+
+    def read_provenance(directory):
+        key = os.path.normpath(directory)
+        if key in pending_provenance:
+            return pending_provenance[key]
+        return sp.load_provenance(directory)
+
+    # ---- collect: nothing below this point writes to disk ----
     for file in files:
         update = False
 
+        directory = os.path.dirname(file)
         yt_id = '_'.join(file.split('_')[1:]).split('\\')[0]
 
-        # read iexit(n the speaker mappings
-        with open(file, 'r') as fp:
-            speaker_ids = json.load(fp)
-
-        #print(yt_id)
-        #print(json.dumps(speaker_ids, indent=4))
+        # read in the speaker mappings
+        speaker_ids = read_ids(file)
+        provenance = read_provenance(directory)
 
         for speaker in speaker_ids.keys():
 
@@ -156,25 +206,62 @@ def propagate():
                     mapped_yt_id = speaker_ids[speaker][:11]
                     mapped_speaker = speaker_ids[speaker][12:]
 
-                    #print((speaker_ids[speaker], mapped_yt_id, mapped_speaker))
-
                     # read in the speaker mappings
                     mapped_file = glob.glob('*' + mapped_yt_id + '/speaker_ids.json')
-                    if len(mapped_file) == 1: 
-                        with open(mapped_file[0], 'r') as fp:
-                            mapped_ids = json.load(fp)
+                    if len(mapped_file) == 1:
+                        mapped_ids = read_ids(mapped_file[0])
+
+                        # GUARD (b): referenced speaker was pruned from its
+                        # file -- skip instead of KeyError-ing mid-pass
+                        if mapped_speaker not in mapped_ids:
+                            skipped_missing.append((file, speaker, speaker_ids[speaker]))
+                            continue
 
                         # if it's been updated, propagate it
                         if mapped_ids[mapped_speaker] != mapped_speaker:
-                            print(yt_id + ": " + speaker_ids[speaker] + " matches " + mapped_ids[mapped_speaker] + ")")
-                            speaker_ids[speaker] = mapped_ids[mapped_speaker]
+
+                            # GUARD (a): never overwrite a hand-verified entry
+                            if sp.is_manual(provenance, speaker):
+                                skipped_manual.append((file, speaker))
+                                continue
+
+                            old_value = speaker_ids[speaker]
+                            new_value = mapped_ids[mapped_speaker]
+
+                            print(yt_id + ": " + old_value + " matches " + new_value + ")")
+                            speaker_ids[speaker] = new_value
                             update = True
 
-        if update:
-            with open(file, "w") as fp:
-                json.dump(speaker_ids, fp, indent=4)
+                            mapped_dir = os.path.dirname(mapped_file[0])
+                            src_entry = read_provenance(mapped_dir).get(mapped_speaker, {})
+                            provenance[speaker] = sp.make_entry(
+                                new_value, "propagated",
+                                score=src_entry.get("score") if isinstance(src_entry, dict) else None,
+                                from_=mapped_yt_id + "_" + mapped_speaker,
+                                previous=old_value,
+                            )
 
-    return
+        if update:
+            pending_speaker_ids[os.path.normpath(file)] = speaker_ids
+            pending_provenance[os.path.normpath(directory)] = provenance
+
+    # ---- commit: everything above succeeded, now write it all ----
+    for file, speaker_ids in pending_speaker_ids.items():
+        sp.atomic_write_json(file, speaker_ids)   # same indent=4 as before
+
+    for directory, provenance in pending_provenance.items():
+        sp.save_provenance(directory, provenance)
+
+    if skipped_manual:
+        print(str(len(skipped_manual)) + " entries protected by manual provenance were left unchanged")
+    if skipped_missing:
+        print(str(len(skipped_missing)) + " cluster keys referenced a pruned speaker and were skipped")
+
+    return {
+        "updated_files": list(pending_speaker_ids.keys()),
+        "skipped_manual": skipped_manual,
+        "skipped_missing": skipped_missing,
+    }
 
 def change_name(old_name,new_name):
     jsonfiles = glob.glob("*/speaker_ids.json")
@@ -467,6 +554,10 @@ def match_embeddings(yt_id, threshold=0.7):
 
     #print(json.dumps(speaker_ids, indent=4))
 
+    # provenance sidecar: records score + source speaker for every value set
+    # below; written only if speaker_ids.json is (see the end of this function)
+    provenance = sp.load_provenance(dir)
+
     update = False
     ref_matrix, ref_meta = None, []
     for i, embedding in enumerate(embeddings.embeddings):
@@ -489,10 +580,11 @@ def match_embeddings(yt_id, threshold=0.7):
             ref_matrix, ref_meta = _reference_table(embedding_file)
 
         sims = _similarities(ref_matrix, np.asarray(embedding, dtype=np.float64))
-        for n, (ref_yt_id, ref_speaker) in enumerate(ref_meta):
+        for n, (ref_yt_id, ref_speaker, ref_speaker_key) in enumerate(ref_meta):
             score.append({
                 "yt_id": ref_yt_id,
                 "speaker": ref_speaker,
+                "speaker_key": ref_speaker_key,
                 "score": sims[n],
                 })
 
@@ -508,6 +600,10 @@ def match_embeddings(yt_id, threshold=0.7):
 
                 if match["score"] > best_score:
                     best_score = match["score"]
+                    # the specific reference speaker that produced this
+                    # match, for provenance's "from" -- does not affect
+                    # matching, only what gets recorded about it
+                    best_match_from = match["yt_id"] + "_" + match["speaker_key"]
 
                     if match["speaker"][:8] == "SPEAKER_":
                         # name assigned by diarization
@@ -522,6 +618,7 @@ def match_embeddings(yt_id, threshold=0.7):
 
                 if "SPEAKER_" not in match["speaker"] and match["score"] > best_named_score:
                     best_named_score = match["score"]
+                    best_named_match_from = match["yt_id"] + "_" + match["speaker_key"]
 
                     # manually assigned name
                     best_named_match = match["speaker"]
@@ -531,16 +628,30 @@ def match_embeddings(yt_id, threshold=0.7):
         if best_named_score > threshold:
             if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
                 if speaker_ids[embeddings.speaker[i]] != best_named_match:
+                    previous = speaker_ids[embeddings.speaker[i]]
                     speaker_ids[embeddings.speaker[i]] = best_named_match
                     update = True
+                    provenance[embeddings.speaker[i]] = sp.make_entry(
+                        best_named_match, "embedding_match",
+                        score=best_named_score,
+                        from_=best_named_match_from,
+                        previous=previous,
+                    )
             else:
                 #print("speaker ID already assigned")
                 pass
         elif best_score > threshold:
             if speaker_ids[embeddings.speaker[i]][:8] == "SPEAKER_":
                 if speaker_ids[embeddings.speaker[i]] != best_match:
+                    previous = speaker_ids[embeddings.speaker[i]]
                     speaker_ids[embeddings.speaker[i]] = best_match
                     update = True
+                    provenance[embeddings.speaker[i]] = sp.make_entry(
+                        best_match, "embedding_match",
+                        score=best_score,
+                        from_=best_match_from,
+                        previous=previous,
+                    )
             else:
                 #print("speaker ID already assigned")
                 pass
@@ -549,6 +660,7 @@ def match_embeddings(yt_id, threshold=0.7):
         #print(json.dumps(speaker_ids, indent=4))
         with open(jsonfile, "w") as fp:
             json.dump(speaker_ids, fp, indent=4)
+        sp.save_provenance(dir, provenance)
 
 def get_embeddings(yt_id='*', noisy_embedding=0.1):
 
