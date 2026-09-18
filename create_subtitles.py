@@ -83,6 +83,73 @@ def get_audio_absolute_path(base, allow_nonexist=False):
     if allow_nonexist: return local_name
     return None
 
+# How many times to tolerate a short download before marking an item skip.
+MAX_TRUNCATED_ATTEMPTS = 3
+
+
+def salvage_truncated_mp3(yt_id, video_data, mp3file, duration):
+    """Look for a complete copy of an mp3 that came back short, and record the
+    miss so a permanently broken item cannot loop forever.
+
+    WHY THIS EXISTS: MCM00000656 sat in an infinite retry for an unknown
+    period. Its audio/ copy was 10,223s against a true 16,135s, so mp3_is_good
+    returned False every pass, the downloader re-fetched, got the same short
+    file, and the cycle repeated -- burning a download slot each time and never
+    converging. The complete 16,135s audio was ALREADY ON DISK in the
+    transcript directory the whole time; nothing looked there.
+
+    Two guards, in order:
+
+      1. SALVAGE. The same audio often exists in the per-meeting directory as
+         well as audio/. If one of them matches the expected duration, copy it
+         into place rather than re-downloading gigabytes.
+
+      2. GIVE UP VISIBLY. Count consecutive failures in video_data. After
+         MAX_TRUNCATED_ATTEMPTS the item is marked skip with a reason, so it
+         stops consuming a slot on every pass and shows up in a report instead
+         of being silently retried forever. Skipping is recorded, never
+         inferred -- the owner's existing skip flags are intentional dedups and
+         must stay distinguishable from this.
+    """
+    want = video_data[yt_id].get("duration") or 0
+    base = video_data[yt_id]["upload_date"] + "_" + yt_id
+
+    # 1. is a complete copy already sitting somewhere?
+    for cand in (os.path.join(base, base + ".mp3"),
+                 os.path.join(audio_path, base + ".mp3"),
+                 os.path.join(audio_path_backup, base + ".mp3")):
+        try:
+            if not os.path.exists(cand) or os.path.samefile(cand, mp3file):
+                continue
+            d = float(ffmpeg.probe(cand)['format']['duration'])
+        except Exception:
+            continue
+        if abs(d - want) <= 15.0:
+            print("  salvaged a complete copy of %s from %s (%.1fs)" % (yt_id, cand, d))
+            try:
+                shutil.copyfile(cand, mp3file)
+                return True
+            except OSError as err:
+                print("  could not copy it into place: %s" % err)
+
+    # 2. count the miss; stop retrying a hopeless item
+    try:
+        vd = utils.get_video_data()
+        entry = vd.setdefault(yt_id, {})
+        n = int(entry.get("truncated_attempts") or 0) + 1
+        entry["truncated_attempts"] = n
+        if n >= MAX_TRUNCATED_ATTEMPTS and not entry.get("skip"):
+            entry["skip"] = True
+            entry["skip_reason"] = ("audio truncated: %.0fs of an expected %.0fs "
+                                    "after %d attempts" % (duration, want, n))
+            print("  SKIPPING %s after %d truncated downloads -- %s"
+                  % (yt_id, n, entry["skip_reason"]))
+        utils.save_video_data(vd)
+    except Exception as err:
+        print("  could not record the truncated attempt: %s" % err)
+    return False
+
+
 def mp3_is_good(yt_id, video_data):
 
     # if video_data doesn't have all the required info, it's bad
@@ -101,6 +168,7 @@ def mp3_is_good(yt_id, video_data):
         # I'm not sure what level of disagreement is acceptable. I've seen 12s discrepancies
         if abs((duration - video_data[yt_id]["duration"])) > 15.0:
             print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
+            salvage_truncated_mp3(yt_id, video_data, mp3file, duration)
             return False
     except:
         return False
@@ -168,10 +236,25 @@ def download_video(yt_id):
  download the Youtube audio at highest quality as an mp3
  yt_id   - youtube ID
 ''' 
+# Non-YouTube id prefixes. MCM000* are Medford Community Media items on
+# archive.org, fetched by download_mcm.py; XXXXXX* are podcast episodes from an
+# RSS feed. Neither is reachable through yt-dlp, and neither ever was.
+NON_YOUTUBE_PREFIXES = ("MCM000", "XXXXXX")
+
+
+def source_of(yt_id):
+    """Which downloader owns this id."""
+    if yt_id.startswith("MCM000"):
+        return "archive.org"
+    if yt_id.startswith("XXXXXX"):
+        return "podcast RSS"
+    return "youtube"
+
+
 def download_audio(yt_id, video=False):
 
     # not a youtube video, can't download in this function
-    if yt_id[0:6] == "XXXXXX" or yt_id[0:6] == "MCM000":
+    if source_of(yt_id) != "youtube":
         return
 
     # read info
@@ -484,10 +567,30 @@ def transcribe(yt_id, min_speakers=None, max_speakers=None, redo=False, download
         else: 
             print("Duration of " + yt_id + " is " + str(video_data[yt_id]["duration"]/60) + " minutes")         
             mp3file = utils.get_mp3filename(yt_id,video_data=video_data) 
+    elif source_of(yt_id) != "youtube":
+        # DO NOT ENTER THE YOUTUBE PATH AT ALL for an id no YouTube downloader
+        # can serve. This used to call download_audio(), which returned None on
+        # a prefix check, and the caller reported "Cannot download <id>" --
+        # indistinguishable in the log from a real download failure, once per
+        # id per pass. 675 MCM ids produced that line every cycle, which is how
+        # a genuinely broken yt-dlp stayed invisible for 200 days: real
+        # breakage looked exactly like routine noise.
+        #
+        # These ids are fetched by download_mcm.py (archive.org) or the RSS
+        # path. If the mp3 is not here yet, that is a WAIT, not a failure.
+        if not mp3_is_good(yt_id, video_data):
+            print("waiting on %s audio for %s (fetched separately, not by yt-dlp)"
+                  % (source_of(yt_id), yt_id))
+            return False
+        mp3file = utils.get_mp3filename(yt_id, video_data=video_data)
+        duration = video_data[yt_id]["duration"]
+        print("Duration of " + yt_id + " is " + str(duration/60) + " minutes")
+
     else:
         result = download_audio(yt_id)
         if result is None:
-            print("Cannot download " + yt_id + "; skipping")
+            print("YouTube download FAILED for " + yt_id + "; skipping "
+                  "(check yt-dlp is current -- a stale client 403s)")
             return False
 
         mp3file, duration = result
