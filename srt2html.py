@@ -22,6 +22,7 @@ import yt_dlp
 
 # imports from this repo
 import utils, supercut, fix_common_errors, heatmap, scrape
+import srt_lines
 import make_committee_pages
 from urllib.parse import quote
 from html import escape
@@ -143,6 +144,19 @@ def timestamp_url(yt_id, start, video_data=None):
         return url + "&start=" + str(start) if url else None
 
     return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
+
+
+def _normalised_srt_lines(text):
+    """SRT text as lines, with each block's body joined onto one line.
+
+    parse_srt keeps a wrapped body's embedded newline (fidelity is its job),
+    so the join happens here: only newlines become spaces, nothing else is
+    touched, and an unwrapped block round-trips byte-for-byte.
+    """
+    blocks = srt_lines.parse_srt(text)
+    for b in blocks:
+        b["text"] = b["text"].replace("\r\n", " ").replace("\n", " ")
+    return [l + "\n" for l in srt_lines.render_srt(blocks).split("\n")]
 
 
 def web_path(path):
@@ -421,7 +435,17 @@ def srt2html(yt_id,skip_translation=False, force=False):
     with open(srtfilename, 'r', encoding="utf-8") as file:
 
         # Read each line in the file
-        for line in file:
+        # NORMALISED FIRST. This scanner is line-oriented: a block's text is
+        # taken from the one physical line carrying "[Speaker]:", and any
+        # continuation line of the same block (no "[", no "-->") falls through
+        # to `else: continue` and is DROPPED from the page. Two blocks in the
+        # archive wrap that way and both published with their second line
+        # missing -- 2017-06-21_bBqhZIBc9dw ends a paragraph "...ladies and".
+        # Round-tripping through srt_lines joins each block's body onto one
+        # line, so the publisher and the correction tooling (which already
+        # use srt_lines) agree on what a block says. Each line keeps its
+        # trailing newline so the loop sees exactly what file iteration gave.
+        for line in _normalised_srt_lines(file.read()):
             line.strip()
 
             if "-->" in line:
