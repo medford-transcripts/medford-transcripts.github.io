@@ -38,6 +38,8 @@ import re
 import sys
 import urllib.request
 
+import srt_lines
+
 QUEUE = "corrections_queue.json"
 
 # Contributors whose submissions skip review. GITIGNORED ON PURPOSE: the file
@@ -164,39 +166,69 @@ def parse_reference(ref):
 
 
 def original_line(video_id, timestamp):
-    """(speaker, text) currently in the transcript at this timestamp.
+    """(speaker, text) AS THE PAGE SHOWED IT at this timestamp.
 
     The form sends only a reference, never the originals, so this is where
     they come from. Reading them from the transcript is strictly better than
-    round-tripping them through a text box the submitter can edit by accident.
+    round-tripping them through a text box the submitter can edit by accident
+    -- but it has to reproduce what the CONTRIBUTOR SAW, not what the SRT
+    happens to hold, or every comparison downstream is against the wrong text.
+
+    Two ways the old hand-rolled parse diverged from the page:
+
+      1. IT RETURNED THE RAW LABEL. The page resolves "[SPEAKER_04]" through
+         speaker_ids.json and displays "Mike Mastrobuoni", which is what the
+         form prefills. Comparing the submitted name against the raw label
+         made EVERY text-only correction to an already-named speaker look like
+         it also changed the speaker, polluting the review queue with a change
+         nobody made.
+
+      2. IT READ ONE PHYSICAL LINE. An SRT body can wrap across lines; the
+         parse took only the first, so the "original" was a truncated
+         fragment and the correction looked like a rewrite.
+
+    Using the shared parser fixes both and keeps ingest consistent with
+    apply_corrections, which matters because the two compare the same strings.
     """
     try:
         t = float(timestamp)
     except (TypeError, ValueError):
         return None, None
-    hits = glob.glob("20??-??-??_" + video_id + "/*_" + video_id + ".srt")
+
+    hits = [h for h in glob.glob("20??-??-??_" + video_id + "/*_" + video_id + ".srt")
+            if "_aligned" not in h and "_basic" not in h]
     if not hits:
         return None, None
 
-    best = (None, None)
-    best_start = None
-    with io.open(hits[0], encoding="utf-8", errors="replace") as fp:
-        start = None
-        for line in fp:
-            if "-->" in line:
-                try:
-                    hh, mm, rest = line.split()[0].split(":")
-                    ss, ms = rest.split(",")
-                    start = int(hh) * 3600 + int(mm) * 60 + int(ss) + int(ms) / 1000.0
-                except (ValueError, IndexError):
-                    start = None
-            elif start is not None and line.strip().startswith("["):
-                if start <= t + 0.05 and (best_start is None or start >= best_start):
-                    best_start = start
-                    body = line.strip()
-                    spk, _, txt = body.partition("]:")
-                    best = (spk.lstrip("[").strip(), txt.strip())
-    return best
+    directory = os.path.dirname(hits[0])
+    try:
+        blocks = srt_lines.parse_srt(
+            io.open(hits[0], encoding="utf-8", errors="replace").read())
+    except OSError:
+        return None, None
+
+    names = {}
+    ids_path = os.path.join(directory, "speaker_ids.json")
+    if os.path.exists(ids_path):
+        try:
+            with io.open(ids_path, encoding="utf-8") as fp:
+                names = json.load(fp)
+        except (OSError, ValueError):
+            names = {}
+
+    i = srt_lines.find_block(blocks, t)
+    if i is None:
+        return None, None
+
+    # the rendered paragraph, grouped the way the page groups it
+    span = srt_lines.line_span(blocks, i, names=names)
+    if not span:
+        return None, None
+    lo, hi = span
+
+    raw = blocks[lo]["speaker"]
+    speaker = names.get(raw, raw) if raw else None
+    return speaker, srt_lines.line_text(blocks, lo, hi)
 
 
 def original_speaker(video_id, timestamp):
