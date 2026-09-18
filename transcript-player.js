@@ -253,6 +253,7 @@
     // let modified clicks (new tab) behave normally
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
+    mount.setAttribute("data-mt-line", String(lines.indexOf(line)));
 
     // THREE TIERS, most precise first. Tier 2 is not optional: every line
     // already carries sentence-level <a href> timestamps, and before the
@@ -518,6 +519,9 @@
     if (i !== current) {
       if (lines[current]) { lines[current].classList.remove("mt-active"); clearWords(lines[current]); }
       current = i;
+      // Published on the mount so the corrections module (a separate
+      // scope) can act on the line that is playing without a mouse.
+      mount.setAttribute("data-mt-line", String(i));
       if (lines[current] && hl.checked) {
         lines[current].classList.add("mt-active");
         wordify(lines[current], current);
@@ -710,7 +714,19 @@
     return cfg.form_url + "?usp=pp_url&" + q.join("&");
   }
 
-  function close() { if (menu) { menu.remove(); menu = null; } }
+  // Where focus was before the menu opened, so closing it puts a keyboard
+  // user back where they were instead of dropping them at the top of the page.
+  var returnFocus = null;
+
+  function close() {
+    if (!menu) return;
+    menu.remove();
+    menu = null;
+    if (returnFocus && returnFocus.focus) {
+      try { returnFocus.focus(); } catch (e) { /* element gone */ }
+    }
+    returnFocus = null;
+  }
 
   function open(x, y, line) {
     close();
@@ -749,7 +765,13 @@
 
     menu.style.left = x + "px";
     menu.style.top = y + "px";
+    returnFocus = document.activeElement;
     document.body.appendChild(menu);
+    // Move focus INTO the menu. The items are real <button>s, so Tab
+    // walks them and Escape (handled in arm) closes; without this a
+    // keyboard user has opened a menu they cannot reach.
+    var first = menu.querySelector("button");
+    if (first) first.focus();
   }
 
   function arm() {
@@ -766,9 +788,39 @@
       if (e.key === "Escape") close();
     });
 
+    // THE ONLY DOOR USED TO BE A RIGHT-CLICK. That excludes keyboard-only
+    // users, and screen-reader users on phones (VoiceOver/TalkBack have no
+    // contextmenu gesture) -- exactly the people a public transcript archive
+    // exists to serve. A real <button>, always present in the sticky bar,
+    // opens the same menu for the line that is playing or was last clicked.
+    // The right-click stays as a shortcut; it is just no longer the only way.
+    function currentLine() {
+      var all = document.querySelectorAll("p.line[data-t]");
+      if (!all.length) return null;
+      var i = parseInt(mount.getAttribute("data-mt-line"), 10);
+      return (i >= 0 && i < all.length) ? all[i] : all[0];
+    }
+
     var hint = document.createElement("div");
     hint.className = "mt-hint";
-    hint.textContent = "Spot an error? Right-click any line to suggest a correction.";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mt-suggest";
+    btn.textContent = cfg.menu_label || "Suggest a correction\u2026";
+    btn.setAttribute("aria-haspopup", "menu");
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();                 // the document click handler would close it
+      var line = currentLine();
+      if (!line) return;
+      var r = btn.getBoundingClientRect();
+      open(r.left + window.pageXOffset, r.bottom + window.pageYOffset + 4, line);
+    });
+
+    hint.appendChild(document.createTextNode("Spot an error? "));
+    hint.appendChild(btn);
+    hint.appendChild(document.createTextNode(
+      " for the current line, or right-click any line."));
     mount.appendChild(hint);
   }
 })();

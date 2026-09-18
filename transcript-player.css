@@ -110,3 +110,17 @@ span.w.w-active {
   .mt-menu button:hover { background: #333; }
   .mt-hint { color: #999; }
 }
+
+/* The keyboard/touch route into corrections. Inline in the hint text, so it
+   reads as a sentence; visibly a button, so it is discoverable. */
+.mt-suggest {
+  font: inherit;
+  padding: 2px 8px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+.mt-suggest:focus-visible,
+.mt-menu button:focus-visible {
+  outline: 2px solid #1a5fb4;
+  outline-offset: 2px;
+}

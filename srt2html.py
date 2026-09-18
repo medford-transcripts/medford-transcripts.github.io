@@ -715,6 +715,7 @@ def make_index():
     shutil.copy("header.html", "index.html")
     index_page = open('index.html', 'a', encoding="utf-8")
     index_page.write("    <table border=1>\n")
+    index_page.write("      <caption>Meeting transcripts, newest first</caption>\n")
     # table header
     #index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
     # "Raw files" (SRT + speaker_ids.json) dropped 2026-09-17. The published
@@ -722,7 +723,7 @@ def make_index():
     # speaker_ids.json and is resolved only when this HTML is written, so the
     # raw file was strictly LESS useful than the page linked beside it. Both
     # now live in the private provenance repo.
-    index_page.write("      <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Agenda</center></td><td><center>Minutes</center></td><td><center>Channel</center></td></tr>\n")
+    index_page.write("      <tr><th scope='col'>Date</th><th scope='col'>Duration</th><th scope='col'>Title (click for transcript)</th><th scope='col'>Agenda</th><th scope='col'>Minutes</th><th scope='col'>Channel</th></tr>\n")
     for line in lines:
         index_page.write(line)
     index_page.write("    </table>\n")
