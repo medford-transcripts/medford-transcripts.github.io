@@ -397,9 +397,12 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
         groups.setdefault((e["meeting_type"], meeting_date(e)), []).append(yt_id)
 
     def prefer(yt_id):
+        # SOURCE PRIORITY DECIDES THE KEEPER, not transcription state. An
+        # earlier version let an already-transcribed copy win; the owner
+        # reversed that: Mass Traction is retiring and official/archive
+        # sources are preferred even when the unofficial copy is done.
         e = video_data[yt_id]
-        return (0 if has_transcript(yt_id, e) else 1,
-                _rank(e["channel"].strip()),
+        return (_rank(e["channel"].strip()),
                 1 if "Livestream" in (e.get("title") or "") else 0,
                 yt_id)
 
@@ -421,10 +424,20 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             if not titles_overlap(o.get("title"), k.get("title")):
                 continue
             pairs += 1
+            keeper_done = has_transcript(keeper, k)
+            other_done = has_transcript(other, o)
             if not _dedup_protected(o):
-                changes[other] = {"skip": True, "duplicate_id": keeper}
+                # Never hide the ONLY transcript. If the preferred copy is not
+                # transcribed yet but this one is, both stay visible until the
+                # keeper is done; the next run then skips this one.
+                changes[other] = {"skip": bool(keeper_done or not other_done),
+                                  "duplicate_id": keeper}
             if not _dedup_protected(k):
-                changes.setdefault(keeper, {"skip": False, "duplicate_id": other})
+                c = changes.setdefault(keeper, {"skip": False, "duplicate_id": other})
+                # An untranscribed keeper whose twin is already done goes to the
+                # BACK of the queue: it must still be transcribed from the
+                # preferred source, but behind meetings with no transcript at all.
+                c["backseat"] = bool(other_done and not keeper_done)
 
     summary = {"pairs": pairs,
                "skipped": sum(1 for y, c in changes.items() if c["skip"] and not video_data[y].get("skip")),
@@ -438,6 +451,11 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             if yt_id in target:
                 target[yt_id]["skip"] = c["skip"]
                 target[yt_id]["duplicate_id"] = c["duplicate_id"]
+                if "backseat" in c:
+                    if c["backseat"]:
+                        target[yt_id]["backseat"] = True
+                    else:
+                        target[yt_id].pop("backseat", None)
     _apply(video_data)
     if own:
         fresh = get_video_data()         # reload right before saving
@@ -445,7 +463,7 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
         save_video_data(fresh)
     else:
         save_video_data(video_data)
-    print("duplicates: %d pairs, %d newly skipped, %d un-skipped (kept because already transcribed)"
+    print("duplicates: %d pairs, %d newly skipped, %d un-skipped"
           % (summary["pairs"], summary["skipped"], summary["unskipped"]))
     return summary
 
@@ -500,6 +518,10 @@ def update_priority(newest=False, oldest=False, popularity=False, exp_decay=Fals
     for k in sort_ndx:
         sorted_dict[yt_ids[k]] = video_data[yt_ids[k]]
         sorted_dict[yt_ids[k]]["priority"] = priority[k]
+        # a preferred-source copy whose unofficial twin is already transcribed
+        # waits behind meetings that have no transcript at all
+        if sorted_dict[yt_ids[k]].get("backseat"):
+            sorted_dict[yt_ids[k]]["priority"] = priority[k] * 0.01
 
     save_video_data(sorted_dict)
 

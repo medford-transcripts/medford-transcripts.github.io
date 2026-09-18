@@ -90,16 +90,26 @@ class Dedup(unittest.TestCase):
         self.assertEqual(ch["B"], {"skip": True, "duplicate_id": "A"})
         self.assertEqual(ch["A"]["skip"], False)
 
-    def test_transcribed_copy_wins_over_priority(self):
-        """THE BUG: 66 finished Mass Traction transcripts were hidden and their
-        MCM twins queued for re-transcription."""
+    def test_lone_transcript_stays_visible_and_keeper_takes_back_seat(self):
+        """Mass Traction is retiring: the MCM copy is the keeper even though the
+        Mass Traction copy is the one already transcribed. Neither is hidden
+        until the keeper is done; the keeper is flagged to wait its turn."""
         self.transcribed("A", "2017-09-27")
         data = {"A": entry("Medford, MA City Council - Sep. 26, 2017", "Mass Traction-US-Medford-1 - Government",
                            "2017-09-27", skip=True, duplicate_id="B"),
                 "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26")}
         ch = self.run_dedup(data)
-        self.assertEqual(ch["A"], {"skip": False, "duplicate_id": "B"})     # un-skipped
-        self.assertEqual(ch["B"], {"skip": True, "duplicate_id": "A"})
+        self.assertEqual(ch["A"], {"skip": False, "duplicate_id": "B"})   # un-hidden
+        self.assertEqual(ch["B"], {"skip": False, "duplicate_id": "A", "backseat": True})
+
+    def test_once_keeper_is_transcribed_the_unofficial_copy_is_skipped(self):
+        self.transcribed("A", "2017-09-27")
+        self.transcribed("B", "2017-09-26")
+        data = {"A": entry("Medford, MA City Council - Sep. 26, 2017", "Mass Traction-US-Medford-1 - Government", "2017-09-27"),
+                "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26", backseat=True)}
+        ch = self.run_dedup(data)
+        self.assertEqual(ch["A"], {"skip": True, "duplicate_id": "B"})
+        self.assertEqual(ch["B"], {"skip": False, "duplicate_id": "A", "backseat": False})
 
     def test_manual_correction_is_untouched(self):
         data = {"A": entry("City Council 09-26-17", "City of Medford, Massachusetts", "2017-09-26"),
