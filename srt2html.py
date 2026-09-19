@@ -124,6 +124,17 @@ def timestamp_url(yt_id, start, video_data=None):
     """
     entry = (video_data or {}).get(yt_id, {})
 
+    # AN ARCHIVE.ORG COPY WINS OVER THE ID PREFIX. Routing on the prefix
+    # alone assumes a video's source never changes, and it does: meetings
+    # that lived only on a YouTube channel being retired get uploaded to
+    # archive.org and keep their YouTube id, because renaming would move
+    # every directory and break every link. See export_to_archive.py.
+    archive_url = entry.get("archive_url") or ""
+    if "/details/" in archive_url:
+        _ident = archive_url.rstrip("/").split("/details/")[-1]
+        if _ident:
+            return ("archive", _ident)
+    
     if yt_id[0:6] == "XXXXXX":            # Medford Bytes podcast
         # Our own player (player.html?video=...&t=...) rather than Spotify.
         # The audio URL comes straight from the RSS <enclosure>, so it is

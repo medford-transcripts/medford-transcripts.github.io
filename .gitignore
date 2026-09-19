@@ -133,3 +133,8 @@ speaker_ids.json
 # stays local for the same file-count-drives-Pages-build-time reason as the
 # other per-meeting artifacts above (~2,280 more files would undo that win).
 speaker_provenance.json
+
+# outbound correspondence drafts and the archive.org export staging area
+email.txt
+archive_export/
+archive_export.json
