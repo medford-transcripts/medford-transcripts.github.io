@@ -124,3 +124,28 @@ span.w.w-active {
   outline: 2px solid #1a5fb4;
   outline-offset: 2px;
 }
+
+/* Verification mode. Colour is a hint, never the only signal -- the status
+   line carries the counts, because ~8% of men have some colour deficiency and
+   a verifier working through 130 lines should not have to distinguish
+   green from amber at speed. */
+.mt-verify {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 0 2px;
+  font-size: 0.9em;
+}
+.mt-verify-status { font-variant-numeric: tabular-nums; }
+.mt-verify-help { opacity: 0.7; font-size: 0.85em; }
+.mt-verify-on { font-weight: 600; }
+
+p.line.mt-v-ok      { border-left: 4px solid #2a7f3f; padding-left: 8px; }
+p.line.mt-v-no      { border-left: 4px solid #b3261e; padding-left: 8px; }
+p.line.mt-v-unsure  { border-left: 4px dotted #8a6d00; padding-left: 8px; }
+p.line.mt-v-current { background: #fff8d6; outline: 2px solid #1a5fb4; }
+
+@media (prefers-reduced-motion: reduce) {
+  p.line.mt-v-current { outline-width: 3px; }
+}
