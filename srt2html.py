@@ -160,14 +160,20 @@ def _normalised_srt_lines(text):
 
 
 def web_path(path):
-    """A local filesystem path as a URL path.
+    """A local filesystem path as a URL path, percent-encoded.
 
-    os.path.join and os.path.splitext return backslashes on Windows, and this
-    project generates its site on Windows, so any such value dropped into an
-    href or src is wrong. site_url.py fixed this for ABSOLUTE urls after the
-    canonical-tag disaster; this is the same fix for RELATIVE ones.
+    Two separate hazards, both seen in this repo:
+      - os.path.join and os.path.splitext return BACKSLASHES on Windows, and
+        this site is generated on Windows. A backslash in a canonical tag is
+        what dropped ~27,000 pages from the search index.
+      - scraped document names contain spaces, commas and parentheses --
+        "2026.08.05 - Resident Services ... (Attachments Corrected).pdf".
+        Browsers encode those on the fly, but crawlers are stricter, and an
+        agenda that no crawler will fetch is an agenda nobody finds.
+
+    Same safe set as site_url.py, so relative and absolute URLs agree.
     """
-    return str(path).replace(chr(92), "/")
+    return quote(str(path).replace(chr(92), "/"), safe="/-_.~()[]@!$&'*+,;=")
 
 
 def asset_prefix(page_dir):
@@ -405,6 +411,18 @@ def srt2html(yt_id,skip_translation=False, force=False):
                        + ' data-video-id="' + escape(yt_id, quote=True) + '"'
                        + ' data-corrections="' + asset_prefix(dir) + 'corrections-config.json"'
                        + words_attr + '></div>\n')
+
+        # THE DOCUMENTS BELONG ON THE TRANSCRIPT PAGE. They were only ever
+        # linked from the index, so a reader who arrived from a search engine --
+        # which is most of them -- had no way to reach the agenda for the
+        # meeting they were reading.
+        docs = []
+        for label, kind in (("Agenda", "agendas"), ("Minutes", "minutes")):
+            for path in utils.meeting_documents(video_data.get(yt_id, {}), kind)[:1]:
+                docs.append('<a href="' + asset_prefix(dir) + web_path(path) + '">'
+                            + label + '</a>')
+        if docs:
+            html.write('    <p class="meeting-docs">' + ' &middot; '.join(docs) + '</p>\n')
 
         if links_to_languages:
             html.write(links_to_languages + '<br><br>\n')
@@ -708,16 +726,17 @@ def make_index():
         else:
             url = "https://youtu.be/" + yt_id
 
+        # EVERY meeting type, not just CC City Council. Matching is on
+        # (date, meeting_type) via utils, so a document is never attached to a
+        # different committee that met the same evening.
         minutes_line = '<td></td>'
         agenda_line = '<td></td>'
-        if video_data[yt_id]["meeting_type"] == "CC City Council":
-            agenda_file = match_files(title)
-            if agenda_file != "":
-                agenda_line = '<td><a href="' + web_path(agenda_file) +'">Agenda</a></td>'
-
-            minutes_file = match_files(title,minutes=True)
-            if minutes_file != "":
-                minutes_line = '<td><a href="' + web_path(minutes_file) +'">Minutes</a></td>'
+        agenda_files = utils.meeting_documents(video_data[yt_id], "agendas")
+        if agenda_files:
+            agenda_line = '<td><a href="' + web_path(agenda_files[0]) + '">Agenda</a></td>'
+        minutes_files = utils.meeting_documents(video_data[yt_id], "minutes")
+        if minutes_files:
+            minutes_line = '<td><a href="' + web_path(minutes_files[0]) + '">Minutes</a></td>'
 
         # one row in the html table. web_path() on every local href: these are
         # built with os.path.join/splitext, which emits BACKSLASHES on Windows,

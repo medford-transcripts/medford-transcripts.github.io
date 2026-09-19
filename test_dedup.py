@@ -154,3 +154,69 @@ class Dedup(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MeetingDocuments(unittest.TestCase):
+    """Agendas/minutes matched to the meeting they belong to.
+
+    The failure that matters is attaching a document to the WRONG committee:
+    a council meeting and a school committee meeting on the same evening each
+    matching the other's agenda. Date alone cannot tell them apart.
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.cwd = os.getcwd()
+        os.makedirs(os.path.join(self.tmp, "agendas"))
+        os.makedirs(os.path.join(self.tmp, "minutes"))
+        # meeting_types.json is read relative to cwd
+        import shutil
+        shutil.copy(os.path.join(self.cwd, "meeting_types.json"), self.tmp)
+        os.chdir(self.tmp)
+        utils._DOC_INDEX.clear()
+
+    def tearDown(self):
+        os.chdir(self.cwd)
+        utils._DOC_INDEX.clear()
+
+    def doc(self, kind, name):
+        open(os.path.join(kind, name), "w").close()
+        utils._DOC_INDEX.clear()
+
+    def test_matches_on_date_and_type(self):
+        self.doc("agendas", "2024.01.17 - City Council Agenda.pdf")
+        e = {"title": "Medford City Council 01-17-24", "date": "2024-01-17",
+             "meeting_type": "CC City Council"}
+        self.assertEqual(len(utils.meeting_documents(e, "agendas")), 1)
+
+    def test_does_not_attach_another_committees_agenda(self):
+        """Same evening, different committee: no link rather than a wrong one."""
+        self.doc("agendas", "2024.01.17 - Committee of the Whole Agenda.pdf")
+        e = {"title": "Medford City Council 01-17-24", "date": "2024-01-17",
+             "meeting_type": "CC City Council"}
+        self.assertEqual(utils.meeting_documents(e, "agendas"), [])
+
+    def test_untyped_meeting_gets_nothing(self):
+        self.doc("agendas", "2024.01.17 - City Council Agenda.pdf")
+        e = {"title": "something 01-17-24", "date": "2024-01-17", "meeting_type": None}
+        self.assertEqual(utils.meeting_documents(e, "agendas"), [])
+
+    def test_wrong_date_gets_nothing(self):
+        self.doc("agendas", "2024.01.17 - City Council Agenda.pdf")
+        e = {"title": "Medford City Council 01-24-24", "date": "2024-01-24",
+             "meeting_type": "CC City Council"}
+        self.assertEqual(utils.meeting_documents(e, "agendas"), [])
+
+    def test_prefers_the_version_with_attachments(self):
+        self.doc("agendas", "2024.01.17 - City Council Agenda No Attachments.pdf")
+        self.doc("agendas", "2024.01.17 - City Council Agenda With Attachments.pdf")
+        e = {"title": "Medford City Council 01-17-24", "date": "2024-01-17",
+             "meeting_type": "CC City Council"}
+        self.assertIn("With Attachments", utils.meeting_documents(e, "agendas")[0])
+
+    def test_minutes_are_separate_from_agendas(self):
+        self.doc("minutes", "2024.01.17 - City Council Report.pdf")
+        e = {"title": "Medford City Council 01-17-24", "date": "2024-01-17",
+             "meeting_type": "CC City Council"}
+        self.assertEqual(utils.meeting_documents(e, "agendas"), [])
+        self.assertEqual(len(utils.meeting_documents(e, "minutes")), 1)

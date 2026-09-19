@@ -355,6 +355,59 @@ def _dedup_protected(entry):
     return bool(entry.get("skip")) and not entry.get("duplicate_id")
 
 
+# ---------------------------------------------------------------------------
+# MEETING DOCUMENTS -- agendas and minutes matched to the meeting they belong to.
+#
+# The scraped filenames carry the same two facts the videos do, in the same
+# vocabulary: a date and a committee name.
+#     2024.01.17 - Committee of the Whole Agenda with Attachments.pdf
+#     2024.01.17 - Committee of the Whole Report, January 17, 2024.pdf
+# So the SAME classifier that types a video title types a document filename --
+# measured: all 486 agenda files classify, and 458 match exactly one meeting on
+# (date, meeting_type), 2 are ambiguous.
+#
+# The previous matcher keyed on date alone and then fuzzy-matched the title, and
+# was only ever called for CC City Council, so 312 meetings had an agenda on
+# disk and showed no link. Date alone is also not enough on its own: a council
+# meeting and a school committee meeting on the same evening would each match
+# the other's agenda.
+# ---------------------------------------------------------------------------
+_DOC_INDEX = {}
+
+
+def _document_index(kind):
+    """{(date, meeting_type): [paths]} for 'agendas' or 'minutes', cached."""
+    if kind in _DOC_INDEX:
+        return _DOC_INDEX[kind]
+    index = {}
+    for path in sorted(glob.glob(os.path.join(kind, "*"))):
+        name = os.path.splitext(os.path.basename(path))[0]
+        date = title_date(name)
+        if not date:
+            continue
+        index.setdefault((date, get_meeting_type_by_title(name)), []).append(path)
+    _DOC_INDEX[kind] = index
+    return index
+
+
+def meeting_documents(entry, kind="agendas"):
+    """Paths of the agendas (or minutes) for this meeting, best first.
+
+    Requires BOTH the date and the meeting type to agree, so a document is
+    never attached to a different committee that met the same day. Returns []
+    when the meeting has no type -- guessing from the date alone is how a
+    reader ends up reading the wrong agenda.
+    """
+    mt = entry.get("meeting_type")
+    if not mt:
+        return []
+    hits = list(_document_index(kind).get((meeting_date(entry), mt), []))
+    if len(hits) > 1:
+        # prefer the fuller document when a committee posts several
+        hits.sort(key=lambda p: (0 if "with attachment" in p.lower() else 1, p))
+    return hits
+
+
 def identify_duplicate_videos(video_data=None, reset=False, apply=True):
     """Mark duplicate recordings of the same meeting so only one is transcribed.
 
