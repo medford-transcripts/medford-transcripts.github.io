@@ -486,11 +486,18 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             keeper_done = has_transcript(keeper, k)
             other_done = has_transcript(other, o)
             if not _dedup_protected(o):
+                # WHY, not just WHAT. A bare skip:true is indistinguishable
+                # from an intentional dedup, a truncated download, or a human
+                # decision -- the same "nobody wrote it down" problem as the
+                # correction ledger and the speaker provenance sidecar.
                 # Never hide the ONLY transcript. If the preferred copy is not
                 # transcribed yet but this one is, both stay visible until the
                 # keeper is done; the next run then skips this one.
                 changes[other] = {"skip": bool(keeper_done or not other_done),
-                                  "duplicate_id": keeper}
+                                  "duplicate_id": keeper,
+                                  "duplicate_method": "metadata",
+                                  "skip_reason": "duplicate of %s (same type and "
+                                                 "meeting date, different channel)" % keeper}
             if not _dedup_protected(k):
                 c = changes.setdefault(keeper, {"skip": False, "duplicate_id": other})
                 # An untranscribed keeper whose twin is already done goes to the
@@ -510,6 +517,14 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             if yt_id in target:
                 target[yt_id]["skip"] = c["skip"]
                 target[yt_id]["duplicate_id"] = c["duplicate_id"]
+                if c["skip"]:
+                    target[yt_id]["duplicate_method"] = c.get("duplicate_method", "metadata")
+                    if c.get("skip_reason"):
+                        target[yt_id]["skip_reason"] = c["skip_reason"]
+                else:
+                    # un-skipped: the reason no longer applies
+                    if target[yt_id].get("duplicate_method") == "metadata":
+                        target[yt_id].pop("skip_reason", None)
                 if "backseat" in c:
                     if c["backseat"]:
                         target[yt_id]["backseat"] = True

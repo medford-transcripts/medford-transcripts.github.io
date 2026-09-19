@@ -959,6 +959,21 @@ def make_sitemap():
     # analytic value. Dropping them from the sitemap is the first step.
     files = [f for f in files if os.path.basename(f) != "heatmap.html"]
 
+    # Pages for SKIPPED videos are duplicate recordings of a meeting that is
+    # already published under another id. make_index already leaves them out;
+    # the sitemap globbed the filesystem and never consulted video_data, so it
+    # went on advertising them. Two urls carrying the same transcript is
+    # duplicate content, which is precisely what earns "crawled, currently not
+    # indexed". The pages stay reachable -- nothing 404s -- they are just no
+    # longer submitted for indexing.
+    _vd = utils.get_video_data()
+    def _is_skipped(path):
+        d = os.path.basename(os.path.dirname(path))
+        if not re.match(r"20\d\d-\d\d-\d\d_", d):
+            return False
+        return bool(_vd.get(d.split("_", 1)[1], {}).get("skip"))
+    files = [f for f in files if not _is_skipped(f)]
+
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')
     sitemap_root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"

@@ -87,7 +87,10 @@ class Dedup(unittest.TestCase):
         data = {"A": entry("City Council 09-26-17", "City of Medford, Massachusetts", "2017-09-26"),
                 "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26")}
         ch = self.run_dedup(data)
-        self.assertEqual(ch["B"], {"skip": True, "duplicate_id": "A"})
+        self.assertEqual(ch["B"]["skip"], True)
+        self.assertEqual(ch["B"]["duplicate_id"], "A")
+        self.assertEqual(ch["B"]["duplicate_method"], "metadata")
+        self.assertIn("duplicate of A", ch["B"]["skip_reason"])
         self.assertEqual(ch["A"]["skip"], False)
 
     def test_lone_transcript_stays_visible_and_keeper_takes_back_seat(self):
@@ -99,8 +102,10 @@ class Dedup(unittest.TestCase):
                            "2017-09-27", skip=True, duplicate_id="B"),
                 "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26")}
         ch = self.run_dedup(data)
-        self.assertEqual(ch["A"], {"skip": False, "duplicate_id": "B"})   # un-hidden
-        self.assertEqual(ch["B"], {"skip": False, "duplicate_id": "A", "backseat": True})
+        self.assertEqual(ch["A"]["skip"], False)                 # un-hidden
+        self.assertEqual(ch["A"]["duplicate_id"], "B")
+        self.assertEqual(ch["B"]["skip"], False)
+        self.assertEqual(ch["B"]["backseat"], True)
 
     def test_once_keeper_is_transcribed_the_unofficial_copy_is_skipped(self):
         self.transcribed("A", "2017-09-27")
@@ -108,8 +113,19 @@ class Dedup(unittest.TestCase):
         data = {"A": entry("Medford, MA City Council - Sep. 26, 2017", "Mass Traction-US-Medford-1 - Government", "2017-09-27"),
                 "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26", backseat=True)}
         ch = self.run_dedup(data)
-        self.assertEqual(ch["A"], {"skip": True, "duplicate_id": "B"})
-        self.assertEqual(ch["B"], {"skip": False, "duplicate_id": "A", "backseat": False})
+        self.assertEqual(ch["A"]["skip"], True)
+        self.assertEqual(ch["A"]["duplicate_id"], "B")
+        self.assertEqual(ch["B"]["skip"], False)
+        self.assertEqual(ch["B"]["backseat"], False)
+
+    def test_skip_records_why(self):
+        """A bare skip:true is indistinguishable from an intentional dedup, a
+        truncated download, or a human decision. Record the reason."""
+        data = {"A": entry("City Council 09-26-17", "City of Medford, Massachusetts", "2017-09-26"),
+                "B": entry("Medford City Council 09-26-17", "MCM Archive", "2017-09-26")}
+        ch = self.run_dedup(data)
+        self.assertEqual(ch["B"]["duplicate_method"], "metadata")
+        self.assertIn("same type and meeting date", ch["B"]["skip_reason"])
 
     def test_manual_correction_is_untouched(self):
         data = {"A": entry("City Council 09-26-17", "City of Medford, Massachusetts", "2017-09-26"),
