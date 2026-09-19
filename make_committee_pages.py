@@ -1,4 +1,5 @@
 from pathlib import Path
+import io
 import json
 import os
 import time
@@ -29,7 +30,8 @@ def make():
     )
     video_data = dict(sorted_items)
 
-    all_committees_table = open("committees/index.html", 'w', encoding="utf-8")
+    # Buffered; committed by write_atomic once the loop below completes.
+    all_committees_table = io.StringIO()
     all_committees_table.write('<table border=1>\n')
     all_committees_table.write('  <tr><td><center>Committee</center></td></td>\n')
 
@@ -92,7 +94,7 @@ def make():
         html.close()
 
     all_committees_table.write('</table>')
-    all_committees_table.close()
+    utils.write_atomic("committees/index.html", all_committees_table.getvalue())
 
 
 if __name__ == "__main__":

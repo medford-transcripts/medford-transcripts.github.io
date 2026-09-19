@@ -1,5 +1,6 @@
 import datetime, time 
 import os, shutil, asyncio
+import io
 import json, glob
 from xml.etree import cElementTree
 import re
@@ -792,8 +793,12 @@ def make_index():
     for line in lines:
         m = re.search(r"<td>(\d{4})-\d\d-\d\d</td>", line)
         lines_with_year.append(((m.group(1) if m else "other"), line))
-    shutil.copy("header.html", "index.html")
-    index_page = open('index.html', 'a', encoding="utf-8")
+    # index.html is the SITE'S FRONT PAGE. This used to copy header.html over
+    # it and then append, so the real page was destroyed before any of the work
+    # below had run and a failure left the front page as a bare header. Build
+    # it in memory and replace in one step -- see utils.write_atomic for the
+    # two election pages that shipped blank from this same pattern.
+    index_page = io.StringIO()
     # YEAR NAVIGATION. The index carries every meeting ever transcribed --
     # 2,241 links in 625 KB. Google does not reliably follow thousands of links
     # from one page, and PageRank split 2,241 ways gives each transcript almost
@@ -829,7 +834,9 @@ def make_index():
     index_page.write("    </table>\n")
     index_page.write('  </body>\n')
     index_page.write('</html>\n')
-    index_page.close()
+    with open("header.html", encoding="utf-8") as _hdr:
+        _header = _hdr.read()
+    utils.write_atomic("index.html", _header + index_page.getvalue())
 
 def make_resolution_tracker(do_scrape=True):
 
@@ -877,7 +884,9 @@ def make_resolution_tracker(do_scrape=True):
 
     video_data = utils.get_video_data()
     sorted_dict = dict(sorted(resolution_dict.items(), reverse=True))
-    html = open('resolutions.html', 'w', encoding="utf-8")
+    # Buffered: every resolution PDF below is parsed with pypdf AFTER this
+    # point, so one malformed PDF used to leave resolutions.html truncated.
+    html = io.StringIO()
 
 
 
@@ -950,7 +959,7 @@ def make_resolution_tracker(do_scrape=True):
 
 
     html.write('</table>\n')
-    html.close()
+    utils.write_atomic('resolutions.html', html.getvalue())
 
 def make_sitemap():
 

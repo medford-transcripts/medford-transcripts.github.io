@@ -10,33 +10,8 @@ import datetime
 from site_url import site_url
 
 
-@contextlib.contextmanager
-def atomic_write(path):
-    """Buffer a page in memory and write it only if the body completes.
-
-    Both generators here used to open the destination with "w" -- which
-    TRUNCATES IMMEDIATELY -- and then do the slow work inside the with block:
-    make_all_election_pages builds all 11 year pages (heatmaps and a word
-    count over every transcript; the file's own comment calls the fast path
-    "seconds, not hours"), and make_election_page walks the whole directory.
-    Any exception in there unwound the block and left a live page at 0 bytes.
-
-    It happened at least twice. election/index.html was committed empty on
-    2025-11-26 and restored; on 2026-09-17 it went empty again, together with
-    election/2021.html, when a run died partway through 2021 -- the loop runs
-    2025, 2023, 2021, so 2025 and 2023 came out fine and 2019 and earlier kept
-    their previous contents. Both blank pages then shipped to the live site.
-
-    Writing through a temp file and os.replace means a failed run leaves the
-    previous good page in place, which is the correct outcome: stale beats
-    blank.
-    """
-    buf = io.StringIO()
-    yield buf
-    tmp = path + ".tmp"
-    with open(tmp, "w") as out:
-        out.write(buf.getvalue())
-    os.replace(tmp, path)
+# atomic_write moved to utils (shared with srt2html and make_committee_pages).
+atomic_write = utils.atomic_write
 
 def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_words=False):
 

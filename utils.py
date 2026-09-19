@@ -1,6 +1,8 @@
 import json, glob
 import re
 import os, time, datetime
+import io as _io
+import contextlib
 import dateutil.parser as dparser
 import yt_dlp 
 
@@ -9,6 +11,45 @@ import ipdb
 # ward geometry
 from geopy.geocoders import Nominatim
 from shapely.geometry import shape, Point
+
+
+# ---------------------------------------------------------------- atomic write
+#
+# WHY THIS EXISTS. Several generators opened their destination with "w" --
+# which TRUNCATES IMMEDIATELY -- and then did minutes to hours of work before
+# writing anything: make_index walks every transcript, make_resolution_tracker
+# parses resolution PDFs with pypdf, make_all_election_pages builds 11 year
+# pages with a word count over the whole corpus. Any exception in there left a
+# live page at 0 bytes.
+#
+# That is not hypothetical. On 2026-09-17 election/index.html and
+# election/2021.html were both committed empty when a run died partway through
+# 2021, and election/index.html had already shipped empty once before, on
+# 2025-11-26. The blank pages reached the public site both times.
+#
+# Buffer first, replace last: a failed run leaves the previous good page in
+# place. Stale beats blank, and a half-written page never reaches the site.
+
+def write_atomic(path, text, encoding="utf-8", newline=None):
+    """Write text to path via a temp file and os.replace (atomic on Windows)."""
+    tmp = path + ".tmp"
+    d = os.path.dirname(path)
+    if d and not os.path.isdir(d):
+        os.makedirs(d, exist_ok=True)
+    with open(tmp, "w", encoding=encoding, newline=newline) as fp:
+        fp.write(text)
+    os.replace(tmp, path)
+
+
+@contextlib.contextmanager
+def atomic_write(path, encoding="utf-8", newline=None):
+    """Collect writes in memory; commit to `path` only if the body completes.
+
+    Drop-in for `with open(path, "w") as f:` -- the body still calls f.write().
+    """
+    buf = _io.StringIO()
+    yield buf
+    write_atomic(path, buf.getvalue(), encoding=encoding, newline=newline)
 
 
 '''
