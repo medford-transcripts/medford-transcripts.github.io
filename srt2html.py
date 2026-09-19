@@ -384,7 +384,27 @@ def srt2html(yt_id,skip_translation=False, force=False):
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
         html.write('    <title>' + text + '</title>\n')
 
-        html.write('    <link rel="canonical" href="' + site_url(htmlfilename) + '" />\n')
+        # CANONICAL. Self-referencing, EXCEPT on a duplicate recording: that
+        # page points at the copy we kept. Meetings are published twice here --
+        # an archive holding one session under two ids, a raw stream and its
+        # trim -- and two urls carrying the same transcript is duplicate
+        # content, which is what earns "crawled, currently not indexed".
+        #
+        # Dropping them from the sitemap stopped ADVERTISING the duplicates, but
+        # a crawler that already knows a url still finds one. A cross-page
+        # canonical consolidates the pair into a single ranking signal instead
+        # of merely hiding a page, and nothing 404s: the duplicate stays
+        # readable and simply declares which copy is authoritative.
+        canonical_file = htmlfilename
+        _entry = video_data.get(yt_id) or {}
+        _dup = _entry.get("duplicate_id")
+        if _dup and _entry.get("skip"):
+            _keeper = video_data.get(_dup) or {}
+            _kbase = (_keeper.get("upload_date") or "") + "_" + _dup
+            _kfile = os.path.join(_kbase, _kbase + ".html")
+            if os.path.exists(_kfile):
+                canonical_file = _kfile
+        html.write('    <link rel="canonical" href="' + site_url(canonical_file) + '" />\n')
         html.write('    <link rel="stylesheet" href="' + asset_prefix(dir) + 'transcript-player.css">\n')
         html.write('  </head>\n')
         html.write('  <body>\n')
