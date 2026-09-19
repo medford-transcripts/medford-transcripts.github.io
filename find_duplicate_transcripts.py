@@ -135,11 +135,73 @@ def candidate_pairs(video_data, have, window_days=2):
     return sorted(pairs)
 
 
+def all_pairs(sketches, max_docs=40, min_shared=40):
+    """Candidate pairs WITHOUT trusting the date, via an inverted index.
+
+    Date bucketing is fast but circular: it trusts the field we are trying to
+    clean, so two copies of one meeting with different bad dates are never
+    compared. Measured, that blind spot is real -- "MVTHS - Media Tech Shop
+    Profile" is posted twice 11 days apart at similarity 1.00, and "Shannon
+    Demos - Brooks Elementary School" 48 days apart, also 1.00.
+
+    All-pairs over 2,282 transcripts is 2.6M comparisons; an inverted index
+    makes it cheap because almost every pair shares nothing. A hash appearing
+    in more than max_docs transcripts is boilerplate (procedural language, the
+    pledge, roll-call phrasing) and is skipped -- it generates pairs without
+    discriminating between them.
+    """
+    inverted = collections.defaultdict(list)
+    for yt_id, sketch_set in sketches.items():
+        for h in sketch_set:
+            inverted[h].append(yt_id)
+
+    shared = collections.Counter()
+    for ids in inverted.values():
+        if len(ids) < 2 or len(ids) > max_docs:
+            continue
+        for i in range(len(ids)):
+            for j in range(i + 1, len(ids)):
+                shared[tuple(sorted((ids[i], ids[j])))] += 1
+    return [pair for pair, n in shared.items() if n >= min_shared]
+
+
+def days_apart(video_data, a, b):
+    da = utils.meeting_date(video_data.get(a, {}))
+    db = utils.meeting_date(video_data.get(b, {}))
+    try:
+        return abs((datetime.date.fromisoformat(da)
+                    - datetime.date.fromisoformat(db)).days)
+    except (TypeError, ValueError):
+        return None
+
+
+def date_evidence(video_data, yt_id):
+    """What the metadata says about this video's date, and how well supported.
+
+    A LIVESTREAM'S UPLOAD DATE IS ITS MEETING DATE -- you cannot stream a
+    meeting a year before it happens. That is what caught IxvjbChoNJk: titled
+    "Medford, MA School Committee - Jan. 22, 2017 [Livestream]" but uploaded
+    2018-01-22, the classic January year typo. Its duplicate from another
+    channel is dated 2018-01-22, and the two agree on everything but the year.
+    """
+    entry = video_data.get(yt_id, {})
+    title = entry.get("title") or ""
+    from_title = utils.title_date(title, not_after=entry.get("upload_date"))
+    upload = entry.get("upload_date")
+    if RAW_MARKER.search(title) and upload:
+        return upload, "livestream upload date"
+    if from_title:
+        return from_title, "title"
+    return entry.get("date"), "stored"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--threshold", type=float, default=0.30,
                     help="Jaccard above which a pair is a duplicate (default 0.30)")
     ap.add_argument("--window", type=int, default=2, help="days apart to still compare")
+    ap.add_argument("--all-pairs", action="store_true",
+                    help="ignore dates entirely; finds duplicates whose dates are wrong")
     ap.add_argument("--min-duration-ratio", type=float, default=0.5,
                     help="shorter/longer duration below which a pair is an "
                          "excerpt, not a duplicate (default 0.5)")
@@ -148,12 +210,17 @@ def main():
 
     video_data = utils.get_video_data()
     have = transcripts()
-    pairs = candidate_pairs(video_data, have, args.window)
     print("transcripts            : %d" % len(have))
-    print("candidate pairs        : %d" % len(pairs))
 
-    needed = {y for pair in pairs for y in pair}
-    sketches = {yt: sketch(have[yt]) for yt in sorted(needed)}
+    if args.all_pairs:
+        sketches = {yt: sketch(path) for yt, path in sorted(have.items())}
+        sketches = {k: v for k, v in sketches.items() if v}
+        pairs = all_pairs(sketches)
+    else:
+        pairs = candidate_pairs(video_data, have, args.window)
+        needed = {y for pair in pairs for y in pair}
+        sketches = {yt: sketch(have[yt]) for yt in sorted(needed)}
+    print("candidate pairs        : %d" % len(pairs))
 
     # DURATION GUARD. Jaccard alone mistakes an EXCERPT for a duplicate: a
     # 3-minute clip cut from a 52-minute meeting scored 0.71, and skipping it
@@ -186,6 +253,13 @@ def main():
                 or video_data.get(b, {}).get("duplicate_id") == a)
 
     fresh = [h for h in hits if not linked(h[1], h[2])]
+
+    # Pairs further apart than the window are still duplicates if the text says
+    # so -- that is the whole point of --all-pairs -- but the dates disagree,
+    # so one of them is wrong and a human should say which. Never auto-marked.
+    review = [h for h in fresh
+              if (days_apart(video_data, h[1], h[2]) or 0) > args.window]
+    fresh = [h for h in fresh if h not in review]
     print("pairs over threshold   : %d" % len(hits))
     print("  already marked       : %d" % (len(hits) - len(fresh)))
     print("  NOT marked           : %d" % len(fresh))
@@ -196,6 +270,19 @@ def main():
                                           (ea.get("title") or "")[:40]))
         print("        %-12s %-28s %s" % (b, (eb.get("channel") or "")[:28],
                                           (eb.get("title") or "")[:40]))
+
+    if review:
+        print()
+        print("  DATES DISAGREE -- duplicates whose dates are %d+ days apart." % args.window)
+        print("  One date is wrong; the text says they are the same recording.")
+        for score, a, b in review:
+            print()
+            for yt_id in (a, b):
+                entry = video_data.get(yt_id, {})
+                best, why = date_evidence(video_data, yt_id)
+                print("    %.2f %-12s stored %-10s -> %-10s (%-21s) %s"
+                      % (score, yt_id, entry.get("date"), best, why,
+                         (entry.get("title") or "")[:38]))
 
     if excerpts:
         print()
