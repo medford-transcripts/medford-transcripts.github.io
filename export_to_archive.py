@@ -7,11 +7,19 @@ whose host pays a monthly fee and wants to retire it -- held back only because
 those meetings are not archived elsewhere. 164 hours, 65 of them from 2014-2016,
 which is the thinnest-covered stretch of this archive.
 
-AND THE AUDIO IS ALREADY GONE: 0 of the 73 still have an mp3 on disk (it is
-swept after transcription). Today the only surviving copy of the source is the
-channel itself. If it goes down first, those meetings exist as a transcript
-with nothing to verify it against and no way to ever re-transcribe them. This
-is a race, not a cleanup.
+WHAT THE SOURCE SITUATION ACTUALLY IS. An earlier version of this note said
+the audio was gone -- 0 of the 73 with an mp3 on disk -- and framed the upload
+as a race. That was measured against the local audio/ directory only. All 73
+DO have audio, on the external drive: local audio/ holds 1,388 mp3s the drive
+does not, the drive holds 1,319 the working copy does not, and between them
+3,007 of 3,012 meetings are covered.
+
+So this is not a race, and the pages are not one outage from unverifiable.
+It is still worth doing: a drive in a house is a backup, not an archive, and
+the channel is the last PUBLIC copy. One personal account plus one personal
+drive is a poor resting place for a decade of a city's public record. Do it
+deliberately, not in a panic -- and do not tell the channel's host his is the
+only copy, because it is not.
 
 archive.org is the right home: free, permanent, already where Medford
 Community Media archives, and transcript-player.js already has an "archive"
@@ -20,7 +28,9 @@ backend.
 HONEST TRADE-OFF: archive.org's embed exposes no reliable seek API, so a page
 served from there is informational and line clicks fall back to the <a href>
 timestamps. Those 73 pages lose word-level click-to-seek. That is a real
-regression and much better than losing the source.
+regression and much better than losing the source -- and because the audio
+does survive, it is recoverable: re-transcribing from the drive restores
+word-level timing whenever it is worth the compute.
 
 SETUP (once):
     pip install internetarchive
