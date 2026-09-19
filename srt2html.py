@@ -755,8 +755,29 @@ def make_index():
             '</tr>\n')
 
     lines.sort(reverse=True)
+    # rows are "      <tr><td>YYYY-MM-DD</td>..." and already sorted newest
+    # first, so the year is simply the first date on each row
+    lines_with_year = []
+    for line in lines:
+        m = re.search(r"<td>(\d{4})-\d\d-\d\d</td>", line)
+        lines_with_year.append(((m.group(1) if m else "other"), line))
     shutil.copy("header.html", "index.html")
     index_page = open('index.html', 'a', encoding="utf-8")
+    # YEAR NAVIGATION. The index carries every meeting ever transcribed --
+    # 2,241 links in 625 KB. Google does not reliably follow thousands of links
+    # from one page, and PageRank split 2,241 ways gives each transcript almost
+    # nothing. With the sitemap unread, crawling this page IS discovery, so its
+    # shape matters.
+    #
+    # Rather than paginate (which would move every transcript one hop further
+    # from the root and break existing links to /index.html), the full table
+    # stays and gains in-page year anchors plus a jump list. Crawlers get
+    # structure and readers get a way to navigate 12 years of meetings without
+    # scrolling; no URL changes and nothing moves.
+    years = sorted({l[0] for l in lines_with_year}, reverse=True)
+    index_page.write('    <p class="years">Jump to year: '
+                     + " &middot; ".join('<a href="#y%s">%s</a>' % (y, y) for y in years)
+                     + "</p>\n")
     index_page.write("    <table border=1>\n")
     index_page.write("      <caption>Meeting transcripts, newest first</caption>\n")
     # table header
@@ -767,7 +788,12 @@ def make_index():
     # raw file was strictly LESS useful than the page linked beside it. Both
     # now live in the private provenance repo.
     index_page.write("      <tr><th scope='col'>Date</th><th scope='col'>Duration</th><th scope='col'>Title (click for transcript)</th><th scope='col'>Agenda</th><th scope='col'>Minutes</th><th scope='col'>Channel</th></tr>\n")
-    for line in lines:
+    current_year = None
+    for year, line in lines_with_year:
+        if year != current_year:
+            current_year = year
+            index_page.write('      <tr id="y%s"><th colspan="6" style="text-align:left">'
+                             '%s</th></tr>\n' % (year, year))
         index_page.write(line)
     index_page.write("    </table>\n")
     index_page.write('  </body>\n')
@@ -938,13 +964,33 @@ def make_sitemap():
     sitemap_root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
     # add urls
+    urls = []
     for file in files:
         timestamp = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(file)),'%Y-%m-%dT%H:%M:%SZ') 
         url = site_url(file)
+        urls.append(url)
         add_url(sitemap_root, url, timestamp)
 
     # save sitemap. xml extension will be added automatically
     save_sitemap(sitemap_root, "./sitemap")
+    # A PLAIN-TEXT SITEMAP ALONGSIDE THE XML.
+    #
+    # sitemap.txt was submitted to Search Console in Oct 2025 but has never
+    # existed in this repo, so it answered 404 with a 9 KB HTML error page and
+    # that row has read "Couldn't fetch" ever since. Writing it from the SAME
+    # url list as the XML makes the submission valid and keeps the two from
+    # ever disagreeing.
+    #
+    # It doubles as a controlled comparison: both are submitted, so if the txt
+    # reads and the xml does not, the fault is the XML rather than the site or
+    # the property.
+    #
+    # Format (sitemaps.org): one absolute URL per line, UTF-8, nothing else --
+    # no header, no comments, no blank lines. newline="\n" so generating on
+    # Windows does not emit CRLF.
+    with open("sitemap.txt", "w", encoding="utf-8", newline="\n") as fp:
+        for u in urls:
+            fp.write(u + "\n")
 
 def add_url(root_node, url, lastmod):
     doc = cElementTree.SubElement(root_node, "url")

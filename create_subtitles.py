@@ -772,6 +772,7 @@ GENERATED_PATHS = [
     "resolutions.html",
     "heatmap.html",
     "sitemap.xml",
+    "sitemap.txt",
     "video_data.json",
     "medford_index.json",
 ]
