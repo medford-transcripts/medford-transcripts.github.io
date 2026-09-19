@@ -33,7 +33,8 @@ WHERE EACH KIND OF CORRECTION GOES, which is not obvious from the queue:
 
 SAFETY, in the order it is checked:
   - only status "accepted" is ever applied; "pending" needs review first
-  - "truncated", "unparsed" and "none" are refused even if marked accepted
+  - "truncated", "unparsed", "none" and "verified" are refused even if
+    marked accepted ("verified" means the line was already right)
   - STALENESS: the block's current text must still match what was recorded at
     ingest. Transcripts get regenerated, and applying a correction written
     against text that has since changed would silently overwrite newer work.
@@ -57,7 +58,10 @@ import re
 import sys
 
 QUEUE = "corrections_queue.json"
-REFUSE = ("truncated", "unparsed", "none")
+# "verified" is a confirmation that the line is already correct:
+# there is nothing to apply, and applying it would be a no-op edit
+# that rewrites the file and churns git history for no change.
+REFUSE = ("truncated", "unparsed", "none", "verified")
 
 from srt_lines import (parse_srt, render_srt, find_block, line_span,
                        line_text, normalise as norm, to_timestamp)

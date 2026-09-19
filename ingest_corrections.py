@@ -361,7 +361,24 @@ def classify(rec):
         if sub and len(sub) < len(was_x) and was_x.startswith(sub):
             changed.append("truncated")
 
-    return changed or ["none"]
+    # NOTHING CHANGED = A VERIFICATION, not a failed submission.
+    #
+    # The form prefills the rendered line and its contract is "what you submit
+    # replaces the original". So submitting it UNEDITED says precisely "I read
+    # this line and it is already right" -- the positive signal the archive has
+    # never had. It needs no new form, no new field and no new endpoint: the
+    # same channel carries both meanings, told apart by comparing against the
+    # transcript, which ingest already does.
+    #
+    # Per-line is also the only granularity at which "verified" means anything.
+    # A claim over a larger span is not checkable and should not be recorded.
+    #
+    # GUARDED ON HAVING AN ORIGINAL. If original_text could not be read, an
+    # unchanged submission proves nothing -- there was no comparison. That stays
+    # "none" so it is never counted as evidence.
+    if not changed:
+        return ["verified"] if was_x else ["none"]
+    return changed
 
 
 def main():
@@ -414,7 +431,7 @@ def main():
     else:
         print("\ntrusted contributors: none (%s absent or empty)" % args.trusted)
 
-    added = dupes = auto = 0
+    added = dupes = auto = verified = 0
     for raw in rows:
         rec = {field: (raw.get(col) or "").strip()
                for field, col in mapping.items()}
@@ -447,7 +464,17 @@ def main():
         # whether the content is well formed.
         tok = token_of(rec.get("contributor"))
         tg = rec.get("target") or []
-        if (tok and tok in trusted and "unparsed" not in tg
+        is_trusted = bool(tok and tok in trusted)
+        if tg == ["verified"]:
+            # Nothing to apply -- apply_corrections refuses it -- but it is
+            # recorded, with contributor and timestamp, as positive evidence.
+            # Trust gates it for the same reason it gates edits: an unweighted
+            # "this is right" from an unknown account is worth very little, and
+            # a FALSE confirmation is worse than none, because it marks a line
+            # as checked when nobody checked it.
+            rec["status"] = "verified" if is_trusted else "pending"
+            verified += 1
+        elif (is_trusted and "unparsed" not in tg
                 and "truncated" not in tg and tg != ["none"]):
             rec["status"] = "accepted"
             rec["accepted_by"] = "whitelist:" + trusted[tok]
@@ -461,6 +488,8 @@ def main():
     print("already queued  : %d" % dupes)
     if auto:
         print("AUTO-ACCEPTED   : %d (trusted contributor, skipped review)" % auto)
+    if verified:
+        print("VERIFIED        : %d (submitted unchanged = confirmed correct)" % verified)
     pend = sum(1 for v in items.values() if v.get("status") == "pending")
     print("pending review  : %d of %d total" % (pend, len(items)))
 
@@ -506,8 +535,10 @@ def main():
             if "timestamp" in tg:
                 print("     time: %s -> %s"
                       % (v.get("original_timestamp"), turn.get("time")))
+        if tg == ["verified"]:
+            print("     VERIFIED unchanged: %s" % (v.get("original_text") or "")[:70])
         if tg == ["none"]:
-            print("     (nothing changed -- test or accidental submit)")
+            print("     (nothing changed AND no original found -- proves nothing)")
 
     if args.dry_run:
         print("\nDry run; %s not written." % QUEUE)
