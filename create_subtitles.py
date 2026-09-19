@@ -758,6 +758,64 @@ def request_git_push():
 # `git add <path>` stages every change under that path no matter when it
 # happened, so work left behind by a previous failed push, or edited by hand
 # afterwards, still gets picked up on the next run.
+# ---------------------------------------------------------------------------
+# STALE-SOURCE DETECTION
+#
+# A long-running pipeline pins its imports. Every module below is loaded once
+# at startup, so editing one is BOTH inert and actively harmful until this
+# process restarts: the new code never runs, and the old code keeps
+# regenerating the site over it.
+#
+# That is not hypothetical. On 2026-09-19 a process started the previous
+# evening rewrote index.html with a generator that predated six commits --
+# dropping the year anchors and reverting agenda links from 227 to 63 -- and
+# was about to push it. It was caught by hand with minutes to spare.
+#
+# WHY NOT importlib.reload: this pipeline publishes from a BACKGROUND THREAD
+# (finish_async). Reloading a module while another thread is executing its
+# functions leaves that thread holding old function objects against new module
+# globals. Reload also does not rebind `from x import y` names, resets module
+# state we rely on (the diarization model cache, the reference-embedding
+# cache), and would happily load a half-written file mid-save. Restarting the
+# process is the only clean way to pick up new code, and the .bat wrapper
+# already loops -- so the right move is to notice, finish the work in hand,
+# and exit.
+WATCHED_SOURCES = ["srt2html.py", "utils.py", "track_speakers.py",
+                   "create_subtitles.py", "fix_common_errors.py",
+                   "srt_lines.py", "make_committee_pages.py"]
+
+
+def _source_mtimes():
+    out = {}
+    for name in WATCHED_SOURCES:
+        try:
+            out[name] = os.path.getmtime(name)
+        except OSError:
+            pass
+    return out
+
+
+_SOURCE_MTIMES_AT_START = _source_mtimes()
+
+
+def sources_changed():
+    """Modules edited since this process imported them."""
+    now = _source_mtimes()
+    return sorted(name for name, mtime in now.items()
+                  if name in _SOURCE_MTIMES_AT_START
+                  and mtime > _SOURCE_MTIMES_AT_START[name] + 1.0)
+
+
+# Paths regenerated WHOLESALE from the entire corpus. Publishing these from a
+# stale process overwrites whatever the newer code produced, so they are held
+# back until a restart. The rest of GENERATED_PATHS is additive -- a new
+# transcript directory is new content, not a rewrite of someone else's work --
+# and is safe to publish either way.
+GLOBAL_REGENERATED = {"index.html", "sitemap.xml", "sitemap.txt",
+                      "resolutions.html", "heatmap.html", "committees",
+                      "committees.html", "electeds", "election"}
+
+
 GENERATED_PATHS = [
     "20*",              # transcript directories, <date>_<yt_id>/
     "t",                # restructured transcripts (Phase 3), if present
@@ -788,7 +846,16 @@ def push_to_git():
     srt2html.py without the new module it imported. See plan.txt.
     """
     # stage only generated content; ignore paths that don't exist yet
+    stale = sources_changed()
+    if stale:
+        print("SOURCE CHANGED SINCE STARTUP (%s) -- holding back the "
+              "site-wide files. This process would regenerate them with the "
+              "code it loaded at startup and overwrite the newer version. "
+              "New transcripts still publish; the rest waits for a restart."
+              % ", ".join(stale))
     for path in GENERATED_PATHS:
+        if stale and path in GLOBAL_REGENERATED:
+            continue
         subprocess.run(["git", "add", "--", path],
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -822,7 +889,15 @@ def push_to_git():
 
 # this mostly waits on google translate; do it in the background
 def finish_async(yt_id):
-    srt2html.do_one(yt_id=yt_id)
+    # do_extras rebuilds the index, committee pages, resolution tracker and
+    # sitemap from the WHOLE corpus. Doing that from stale code is what
+    # overwrites newer output, so when the sources have moved we publish this
+    # transcript alone and leave the site-wide files to the restarted process.
+    stale = sources_changed()
+    if stale:
+        print("SOURCE CHANGED (%s) -- publishing %s only, skipping the "
+              "site-wide rebuild until restart." % (", ".join(stale), yt_id))
+    srt2html.do_one(yt_id=yt_id, do_extras=not stale)
     request_git_push()
 
 def rebuild_from_model(yt_id):
@@ -994,6 +1069,18 @@ if __name__ == "__main__":
                 later = (datetime.datetime.now() + datetime.timedelta(seconds=time_to_sleep)).strftime("%Y-%m-%d %H:%M:%S")
                 if not failed:
                     print("Done with all videos; checking again at " + later)
+                # SELF-HEAL ON A CODE CHANGE. Restarting is the only clean way to
+                # pick up edited modules (see WATCHED_SOURCES), and transcribe.bat
+                # already loops -- so exit here, at the one moment nothing is in
+                # flight: the queue is empty, finish_async has drained, and the last
+                # push is done. The wrapper brings the process straight back on the
+                # new code, and the site-wide files it declined to publish while
+                # stale are rebuilt correctly by the fresh one.
+                _stale = sources_changed()
+                if _stale:
+                    print("SOURCE CHANGED (%s) -- exiting so the wrapper restarts on the new code." % ", ".join(_stale))
+                    sys.exit(0)
+                
                 time.sleep(time_to_sleep)
 
     else: 
