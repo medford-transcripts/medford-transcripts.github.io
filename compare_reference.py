@@ -191,6 +191,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("reference")
     ap.add_argument("--show", type=int, default=12)
+    ap.add_argument("--srt", help="score this .srt instead of the live one "
+                                  "(to compare a re-transcribe against its baseline)")
+    ap.add_argument("--ids", help="speaker_ids.json to go with --srt")
     args = ap.parse_args()
 
     yt_id = os.path.basename(args.reference).split("_")[1].split(".")[0]
@@ -200,14 +203,17 @@ def main():
         print("no video_data entry for %s" % yt_id)
         return 1
     base = (entry.get("upload_date") or "") + "_" + yt_id
-    srt_path = os.path.join(base, base + ".srt")
+    srt_path = args.srt or os.path.join(base, base + ".srt")
+    ids_path = args.ids or os.path.join(base, "speaker_ids.json")
+    if args.srt and not args.ids:
+        # the ids file normally sits beside the srt
+        ids_path = os.path.join(os.path.dirname(srt_path), "speaker_ids.json")
     if not os.path.exists(srt_path):
         print("no transcript at %s" % srt_path)
         return 1
 
     blocks = srt_lines.parse_srt(io.open(srt_path, encoding="utf-8", errors="replace").read())
     names = {}
-    ids_path = os.path.join(base, "speaker_ids.json")
     if os.path.exists(ids_path):
         import json
         names = json.load(io.open(ids_path, encoding="utf-8"))
@@ -231,6 +237,7 @@ def main():
 
     chain = anchors(ref_words, srt_words)
 
+    print("scoring           : %s" % srt_path)
     print("reference turns   : %d  (%d words)" % (len(turns), len(ref_words)))
     print("pipeline blocks   : %d  (%d words)" % (len(blocks), len(srt_words)))
     print("pipeline speakers : %d labels, %d named"
