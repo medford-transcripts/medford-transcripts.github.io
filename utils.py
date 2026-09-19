@@ -80,39 +80,45 @@ def update_video_data_one(yt_id):
                 video_data[yt_id]["view_count"] = info["view_count"]
                 #video_data[yt_id]["last_update"] = 0.0
 
-                now = datetime.datetime.now()
-
-                # get the date of the video use:
-                # 1) date in video_data
-                # 2) date parsed from title
-                # 3) upload date
-                # 4) current date
-                date = now
-                if "upload_date" in video_data[yt_id].keys(): 
-                    date = datetime.datetime.strptime(video_data[yt_id]["upload_date"],'%Y-%m-%d')
-
-                if "title" in video_data[yt_id].keys():
-                    try: 
-                        create_date = dparser.parse(video_data[yt_id]["title"],fuzzy=True)
-
-                        # sometimes the parser guesses too much. It can't be later the upload date
-                        if date > create_date:
-                            date = create_date
-
-                    except ValueError:
-                        #print('No parsable date in title of "' + video_data[yt_id]["title"] + '"')
-                        pass
-
-                if "date" in video_data[yt_id].keys():
-                    # you can hand edit the date in the video_data.json file for ones that fail to parse
-                    date = datetime.datetime.strptime(video_data[yt_id]["date"],'%Y-%m-%d')
-
-                video_data[yt_id]["date"] = date.strftime("%Y-%m-%d")  
-
-                # update video_data
+                # the meeting date is derived below, outside this block
                 save_video_data(video_data)
             except:
                 print(yt_id + " not ready yet")
+
+    # ---------------------------------------------------------------------
+    # MEETING DATE: DERIVED, NOT CACHED.
+    #
+    # This lived inside the metadata block above, and "date" is one of the
+    # required_keys guarding that block -- so the date was computed ONCE and
+    # never revisited. That is why hand-editing video_data.json works, but it
+    # froze the parser's mistakes exactly as firmly as a human's corrections,
+    # with nothing to tell the two apart. dateutil's fuzzy mode read "Mustang
+    # report 2 October 7, 2016" as 2007-10-02, and that stuck for years.
+    #
+    # It is now recomputed every run from title_date(), which knows the formats
+    # these titles actually use, so improving the parser fixes history instead
+    # of leaving 2,914 entries frozen. The expensive part -- the yt_dlp
+    # metadata fetch -- stays gated; this is a regex over a string already in
+    # memory.
+    #
+    # PRECEDENCE, and the order matters:
+    #   1. date_manual: true -> never touched. Declared human judgement.
+    #   2. a date in the title, not later than the upload date (that guard is
+    #      inherited: a title claiming a later date is a typo).
+    #   3. an existing stored date -- NOT the upload date. For the 673 videos
+    #      whose titles carry no date the stored value may be a hand
+    #      correction, and falling through to upload_date would silently
+    #      revert it. An unparseable title keeps whatever is already there.
+    #   4. upload_date, for entries that have nothing else.
+    if not video_data[yt_id].get("date_manual"):
+        derived = title_date(video_data[yt_id].get("title"),
+                             not_after=video_data[yt_id].get("upload_date"))
+        new_date = (derived
+                    or video_data[yt_id].get("date")
+                    or video_data[yt_id].get("upload_date"))
+        if new_date and new_date != video_data[yt_id].get("date"):
+            video_data[yt_id]["date"] = new_date
+            save_video_data(video_data)
 
     if "agenda" not in video_data[yt_id].keys():
         agendas = glob.glob("agendas/*.pdf") 
