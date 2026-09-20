@@ -662,6 +662,10 @@
     } catch (e) { /* storage blocked; nothing to do */ }
   }
 
+  // Shown only if corrections-config.json fails to load. Defined once:
+  // these were two separate literals and drifted when the label changed.
+  var MENU_LABEL = "Correct or verify this line\u2026";
+
   // Raw characters of transcript we are willing to put in a prefilled URL.
   var MAX_PREFILL = 6000;
 
@@ -744,7 +748,7 @@
       menu.appendChild(b);
     }
 
-    item(cfg.menu_label || "Suggest a correction…", function () {
+    item(cfg.menu_label || MENU_LABEL, function () {
       // prefill() returns null when the paragraph is too long to carry
       // safely; it has already explained why, so just do nothing rather
       // than opening about:blank
@@ -810,7 +814,7 @@
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "mt-suggest";
-    btn.textContent = cfg.menu_label || "Suggest a correction\u2026";
+    btn.textContent = cfg.menu_label || MENU_LABEL;
     btn.setAttribute("aria-haspopup", "menu");
     btn.addEventListener("click", function (e) {
       e.stopPropagation();                 // the document click handler would close it
