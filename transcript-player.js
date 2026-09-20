@@ -582,10 +582,6 @@
     try { localStorage.setItem(VERIFY_KEY, JSON.stringify(vState)); } catch (e) {}
   }
 
-  function vDone(i) {
-    return !!(vState[i] && vState[i].v);
-  }
-
   function vCount(kind) {
     var n = 0;
     for (var k in vState) { if (vState[k] && vState[k].v === kind) n++; }
@@ -594,13 +590,15 @@
 
   function vRender() {
     if (!vBar) return;
-    var reviewed = vCount("r"), skipped = vCount("s");
-    vStatus.textContent = (reviewed + skipped) + " of " + lines.length
-      + "  (" + reviewed + " sent, " + skipped + " skipped)";
+    var ok = vCount("y"), unsure = vCount("u"), wrong = vCount("n");
+    var done = ok + unsure + wrong;
+    vStatus.textContent = done + " of " + lines.length
+      + "  (" + ok + " ok, " + wrong + " wrong, " + unsure + " unsure)";
     for (var i = 0; i < lines.length; i++) {
       var st = vState[i] && vState[i].v;
-      lines[i].classList.toggle("mt-v-sent", st === "r");
-      lines[i].classList.toggle("mt-v-skipped", st === "s");
+      lines[i].classList.toggle("mt-v-ok", st === "y");
+      lines[i].classList.toggle("mt-v-no", st === "n");
+      lines[i].classList.toggle("mt-v-unsure", st === "u");
       lines[i].classList.toggle("mt-v-current", verifying && i === vIndex);
     }
   }
@@ -617,49 +615,18 @@
 
   function vNext() {
     var i = vIndex + 1;
-    while (i < lines.length && vDone(i)) i++;   // skip ones already handled
+    while (i < lines.length && vState[i] && vState[i].v) i++;   // skip answered
     vGoto(i);
   }
 
-  /* THE PLAYER DOES NOT JUDGE. It opens the prefilled form for this line and
-   * stops there. Whether the submission is a VERIFICATION or a CORRECTION is
-   * decided downstream by ingest_corrections.classify(), which compares what
-   * was submitted against the transcript: unchanged = verified, changed =
-   * corrected.
-   *
-   * There used to be separate "y" (correct) and "n" (wrong) verdicts -- "n"
-   * opened the form and "y" wrote to localStorage, where nothing ever read it.
-   * Two problems, both fixed by removing the distinction:
-   *
-   *   1. The verdict people press most often went nowhere. Hours of work could
-   *      end in a JSON file no tool ingests.
-   *   2. A single keypress marked a line verified. That is exactly how a line
-   *      gets recorded as checked by someone who did not check it, and it is
-   *      the main false-positive risk in the whole scheme. Opening the form and
-   *      having to submit it is friction worth keeping: at roughly a minute per
-   *      line, a few seconds of clicking is a rounding error, and speed is not
-   *      the property a gold standard is optimising for.
-   *
-   * It also removes a pre-commitment. You no longer decide right-or-wrong
-   * before looking; you open the line, read it, and either submit it untouched
-   * or edit it.
-   */
-  function vReview() {
+  function vMark(kind) {
     if (!verifying || vIndex < 0) return;
-    var url = prefill(lines[vIndex]);
-    if (!url) return;                       // over-length: prefill explained why
-    window.open(url, "_blank", "noopener");
-    vState[vIndex] = { v: "r", at: new Date().toISOString(), t: starts[vIndex] };
+    vState[vIndex] = { v: kind, at: new Date().toISOString(), t: starts[vIndex] };
     vSave();
-    vNext();
-  }
-
-  // Skipped: moved past without submitting. Local only, and never evidence --
-  // it records that you did not judge this line, which is not a judgement.
-  function vSkip() {
-    if (!verifying || vIndex < 0) return;
-    vState[vIndex] = { v: "s", at: new Date().toISOString(), t: starts[vIndex] };
-    vSave();
+    if (kind === "n") {
+      var url = prefill(lines[vIndex]);
+      if (url) window.open(url, "_blank", "noopener");
+    }
     vNext();
   }
 
@@ -671,6 +638,33 @@
     vRender();
   }
 
+  function vExport() {
+    var out = {
+      video_id: mount.getAttribute("data-video-id") || "",
+      page: location.pathname,
+      contributor: contributorTag ? contributorTag() : "",
+      exported_at: new Date().toISOString(),
+      lines: []
+    };
+    for (var i = 0; i < lines.length; i++) {
+      if (!vState[i] || !vState[i].v) continue;
+      out.lines.push({
+        index: i,
+        start: starts[i],
+        verdict: vState[i].v,
+        at: vState[i].at,
+        text: (lines[i].textContent || "").trim().slice(0, 2000)
+      });
+    }
+    var blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "verify-" + out.video_id + ".json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
   var vBar = document.createElement("div");
   vBar.className = "mt-verify";
   var vToggle = document.createElement("button");
@@ -678,9 +672,12 @@
   vToggle.textContent = "Verify…";
   var vStatus = document.createElement("span");
   vStatus.className = "mt-verify-status";
+  var vExportBtn = document.createElement("button");
+  vExportBtn.type = "button";
+  vExportBtn.textContent = "Export";
   var vHelp = document.createElement("span");
   vHelp.className = "mt-verify-help";
-  vHelp.textContent = "Enter open form · s skip · r replay · Esc exit";
+  vHelp.textContent = "y correct · n wrong · u unsure · Esc exit";
 
   vToggle.addEventListener("click", function () {
     verifying = !verifying;
@@ -695,8 +692,10 @@
       vFinish();
     }
   });
+  vExportBtn.addEventListener("click", vExport);
   vBar.appendChild(vToggle);
   vBar.appendChild(vStatus);
+  vBar.appendChild(vExportBtn);
   vBar.appendChild(vHelp);
   mount.appendChild(vBar);
   vRender();
@@ -705,11 +704,9 @@
     if (!verifying) return;
     if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
     var k = e.key.toLowerCase();
-    // y and n both open the SAME form with the SAME prefill; they are kept as
-    // aliases only for muscle memory. The player records nothing about which
-    // one was pressed, because it is not the player's call.
-    if (k === "y" || k === "n" || e.key === "Enter") { e.preventDefault(); vReview(); }
-    else if (k === "s" || k === "u") { e.preventDefault(); vSkip(); }
+    if (k === "y" || e.key === "Enter") { e.preventDefault(); vMark("y"); }
+    else if (k === "n") { e.preventDefault(); vMark("n"); }
+    else if (k === "u") { e.preventDefault(); vMark("u"); }
     else if (e.key === "Escape") { e.preventDefault(); vFinish(); }
     else if (k === "r") { e.preventDefault(); vGoto(vIndex); }   // replay
   });

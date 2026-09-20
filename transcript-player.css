@@ -141,13 +141,9 @@ span.w.w-active {
 .mt-verify-help { opacity: 0.7; font-size: 0.85em; }
 .mt-verify-on { font-weight: 600; }
 
-/* The marker records that a line was SENT to the form, not what the verdict
-   was -- the player does not know. Whether a submission was a verification or
-   a correction is decided downstream by comparing it against the transcript,
-   so colouring these green/red here would assert something the page cannot
-   know. Solid = submitted, dotted = skipped without judging. */
-p.line.mt-v-sent    { border-left: 4px solid #1a5fb4; padding-left: 8px; }
-p.line.mt-v-skipped { border-left: 4px dotted #8a6d00; padding-left: 8px; }
+p.line.mt-v-ok      { border-left: 4px solid #2a7f3f; padding-left: 8px; }
+p.line.mt-v-no      { border-left: 4px solid #b3261e; padding-left: 8px; }
+p.line.mt-v-unsure  { border-left: 4px dotted #8a6d00; padding-left: 8px; }
 p.line.mt-v-current { background: #fff8d6; outline: 2px solid #1a5fb4; }
 
 @media (prefers-reduced-motion: reduce) {
