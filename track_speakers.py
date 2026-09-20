@@ -437,7 +437,25 @@ def match_to_reference2(threshold=0.7, yt_id=None, voices_folder='voices_folder'
 
         yt_ids.append(yt_id)
         speakers.append(speaker)
-        jsonfiles.append(glob.glob('*' + yt_id + '*/speaker_ids.json')[0])
+        # A voiceprint in voices_folder can outlive the transcript it came
+        # from -- a directory gets renamed, or a speaker_ids.json is removed
+        # to force a clean re-transcribe. Indexing [0] on an empty glob then
+        # raised IndexError out of match_to_reference2, and because that runs
+        # AFTER transcribe() succeeds but BEFORE finish_async, every newly
+        # transcribed video stopped being published: the caller caught the
+        # exception, skipped srt2html and push_to_git, and moved on. Two
+        # meetings were transcribed and silently never published this way on
+        # 2026-09-19/20, and the priority queue stopped being consulted.
+        #
+        # One orphaned voiceprint must not cost the whole pass.
+        _json = glob.glob('*' + yt_id + '*/speaker_ids.json')
+        if not _json:
+            print('  no speaker_ids.json for ' + yt_id + '; skipping its voiceprint')
+            embeddings.pop()
+            yt_ids.pop()
+            speakers.pop()
+            continue
+        jsonfiles.append(_json[0])
         goodpklfiles.append(pklfile)
 
 
