@@ -7,6 +7,7 @@ import os
 import io
 import contextlib
 import datetime
+import time
 from site_url import site_url
 
 
@@ -15,7 +16,17 @@ atomic_write = utils.atomic_write
 
 def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_words=False):
 
-    now = datetime.datetime.utcnow()
+    # RUN START, as a raw epoch value.
+    #
+    # This used to be datetime.utcnow() compared against
+    # datetime.fromtimestamp(mtime), which is LOCAL. At UTC-4 a file written
+    # one second ago reads as four hours older than "now", so "is this file
+    # stale?" was always yes. make_election_page is called once per year, so
+    # every candidate page was rebuilt up to ELEVEN times per run -- the bulk
+    # of the runtime, spent regenerating files this same run had just written.
+    #
+    # Comparing epoch floats avoids the naive-datetime trap entirely.
+    run_started = time.time()
 
     with open("councilors.json", 'r') as fp:
         unsorted_directory = json.load(fp)
@@ -80,9 +91,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_
 
             if os.path.exists(fullmapname): 
                 mtime = os.path.getmtime(fullmapname)
-                modified_date = datetime.datetime.fromtimestamp(mtime)
-
-            if not os.path.exists(fullmapname) or (remake_heatmap and modified_date < now):
+            if not os.path.exists(fullmapname) or (remake_heatmap and mtime < run_started):
                 heatmap.electeds_heatmap(position, year=year)
 
             f.write('\n')
@@ -107,9 +116,7 @@ def make_election_page(year=None, remake_heatmap=False, remake_html=False, skip_
 
                 if os.path.exists(htmlname): 
                     mtime = os.path.getmtime(htmlname)
-                    modified_date = datetime.datetime.fromtimestamp(mtime)
-
-                if not os.path.exists(htmlname) or (remake_html and modified_date < now):
+                if not os.path.exists(htmlname) or (remake_html and mtime < run_started):
                     supercut.supercut(official,mkhtml=True)
 
                 if year in directory[official].keys():
