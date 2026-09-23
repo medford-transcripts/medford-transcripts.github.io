@@ -102,82 +102,111 @@ def save_file(url, filename):
         pass
         #print(filename + ' already exists')
 
+def _events(url_base, headers):
+    """Every event the API publishes, following OData paging.
+
+    REPLACES `for i in range(700)` over both /v1/Meetings/<i> and
+    /v1/Events/<i>. That guessed at two DIFFERENT id spaces -- an event id is
+    not an agenda id (Events/500 has agendaId 308) -- and it guessed 1,400
+    times per run to retrieve about 500 real objects.
+
+    Worse, it was a silent ceiling. /v1/Meetings/<n> answers HTTP 200 with
+    {"id": 0} and no items for an agenda that does not exist, so nothing could
+    distinguish "no such agenda" from "an agenda with nothing on it". The day
+    ids passed 700, resolutions would simply have stopped appearing with no
+    error -- which is exactly how `year > 25` in srt2html silently dropped
+    every 2026 resolution until 2026-09-23.
+
+    The endpoint supports $count and @odata.nextLink, so the list can just be
+    read. Measured 2026-09-23: 255 events, ids 89..510, agendaIds 25..314.
+    """
+    url = url_base + "/v1/Events?$orderby=eventDate asc"
+    out = []
+    while url:
+        r = requests.get(url, headers=headers, timeout=60)
+        r.raise_for_status()
+        data = r.json()
+        out += data.get("value") or []
+        url = data.get("@odata.nextLink")
+    return out
+
+
+def _meeting(url_base, headers, agenda_id):
+    """The agenda body for an agendaId, or None if the API has no such agenda."""
+    r = requests.get("%s/v1/Meetings/%s" % (url_base, agenda_id),
+                     headers=headers, timeout=60)
+    if r.status_code != 200:
+        return None
+    try:
+        data = r.json()
+    except ValueError:
+        return None
+    # the stub an unknown agenda returns
+    if not data.get("id") or not data.get("items"):
+        return None
+    return data
+
+
 def scrape(url_base="https://medfordma.api.civicclerk.com"):
 
     # if the file doesn't end in one of these, it's assumed to be a pdf
     expected_exts = ('.jpg','.pdf','.docx','.xlsx','.pptx','.doc','.mp3','.mp4','.webm')
 
-    # rather than looping arbitrarily over these, I should parse the upper level URL and follow the links
-    # which would be faster and more general
-    # but I did that (scrape_smart) and it misses a bunch of URLs, so maybe not
-    headers = {"User-Agent": "Mozilla/5.0"}  # Add other headers if needed
+    headers = {"User-Agent": "Mozilla/5.0"}
 
-    # hardcoding this 500 is going to be problematic in the future
-    for i in range(700):
+    def clean(name):
+        return name.replace("/", "").replace("?", "")
 
-        api_url = url_base + "/v1/Meetings/" + str(i+1)
+    events = _events(url_base, headers)
+    agenda_ids = sorted({e["agendaId"] for e in events if e.get("agendaId")})
+    print("civicclerk: %d events, %d agendas" % (len(events), len(agenda_ids)))
 
-        # other possible entry points:
-        #https://medfordma.api.civicclerk.com/v1
-        #https://medfordma.api.civicclerk.com/v1/Events
-        #https://medfordma.api.civicclerk.com/v1/EventCategories
-
-        response = requests.get(api_url, headers=headers)
-        data = response.json()
-
-        for item in data["items"]:
-            for child in item["childItems"]:
-
-                # these are other files
-                if "attachmentsList" in child.keys():
-                    for attachment in child["attachmentsList"]:
-                        pdfname = os.path.join("other_files",attachment["mediaFileName"].strip())
-                        pdfname = pdfname.replace("/","").replace("?","")
-                        url = attachment["pdfVersionFullPath"]
-                        try:
-                            save_file(url, pdfname)
-                        except:
-                            print("failed to download " + pdfname)
-
-                # these are the resolutions (mostly?)
-                if "reportsList" in child.keys():
-                    for report in child["reportsList"]:
-                        pdfname = os.path.join("resolutions",report["agendaObjItemReportName"].strip() + '.pdf')
-                        pdfname = pdfname.replace("/","").replace("?","")
-                        url = report["pdfMediaFullPath"]
-                        try:
-                            save_file(url, pdfname)
-                        except:
-                            print("failed to download " + pdfname)
-
-        api_url = "https://medfordma.api.civicclerk.com/v1/Events/" + str(i+1)
-        response = requests.get(api_url, headers=headers)
-        try:
-            data = response.json()
-        except:
-            continue
-
-        for publishedFile in data["publishedFiles"]:
-
-            if publishedFile["type"] == "Agenda":
-                dir = "agendas"
-            elif publishedFile["type"] == "Agenda Packet":
-                dir = "agendas"
-            elif publishedFile["type"] == "Minutes":
-                dir = "minutes"
+    # published files hang off the EVENT: agendas, packets, minutes
+    for event in events:
+        for published in event.get("publishedFiles") or []:
+            kind = published.get("type")
+            if kind in ("Agenda", "Agenda Packet"):
+                directory = "agendas"
+            elif kind == "Minutes":
+                directory = "minutes"
             else:
-                dir = "other_files"
+                directory = "other_files"
 
-            pdfname = os.path.join(dir,publishedFile["name"].strip())
-            if not pdfname.endswith(expected_exts): pdfname = pdfname + '.pdf'
-            pdfname = pdfname.replace("/","").replace("?","")
-
-            url = publishedFile["streamUrl"]
-
+            pdfname = os.path.join(directory, (published.get("name") or "").strip())
+            if not pdfname.endswith(expected_exts):
+                pdfname = pdfname + '.pdf'
             try:
-                save_file(url, pdfname)
-            except:
+                save_file(published["streamUrl"], clean(pdfname))
+            except Exception:
                 print("failed to download " + pdfname)
+
+    # resolutions and attachments hang off the AGENDA
+    for agenda_id in agenda_ids:
+        data = _meeting(url_base, headers, agenda_id)
+        if data is None:
+            continue
+        for item in data.get("items") or []:
+            for child in item.get("childItems") or []:
+
+                # other files
+                for attachment in child.get("attachmentsList") or []:
+                    pdfname = os.path.join(
+                        "other_files", (attachment.get("mediaFileName") or "").strip())
+                    try:
+                        save_file(attachment["pdfVersionFullPath"], clean(pdfname))
+                    except Exception:
+                        print("failed to download " + pdfname)
+
+                # the resolutions
+                for report in child.get("reportsList") or []:
+                    pdfname = os.path.join(
+                        "resolutions",
+                        (report.get("agendaObjItemReportName") or "").strip() + '.pdf')
+                    try:
+                        save_file(report["pdfMediaFullPath"], clean(pdfname))
+                    except Exception:
+                        print("failed to download " + pdfname)
+
 
 def find_key_by_url(clerk_dict: dict, target_url: str):
     for k, v in clerk_dict.items():
