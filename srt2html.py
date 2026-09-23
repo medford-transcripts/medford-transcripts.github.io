@@ -896,9 +896,19 @@ def make_resolution_tracker(do_scrape=True):
                     if resolution[2] != "-": 
                         resolution = resolution[:2] + '-' + resolution[2:]
 
-                    # eliminate confusion with other 5-digit numbers
+                    # Reject 5-digit numbers that are not resolutions, by
+                    # requiring a plausible two-digit YEAR prefix.
+                    #
+                    # The ceiling WAS the literal 25, which silently stopped
+                    # accepting resolutions on 2026-01-01: 80 resolution PDFs
+                    # numbered 26-xxx existed on disk and not one reached the
+                    # page, which is why it looked like it had not been
+                    # updated this year. A hardcoded year is a dated bomb;
+                    # derive it instead. +1 tolerates a document filed late in
+                    # one year under the next year's series.
                     year = float(resolution[:2])
-                    if year < 10 or year > 25: continue
+                    if year < 10 or year > (datetime.datetime.now().year % 100) + 1:
+                        continue
 
                     # is the resolution in my dictionary already?
                     if resolution in resolution_dict.keys():
