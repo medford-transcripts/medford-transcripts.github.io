@@ -3,48 +3,55 @@
     "https://www.medfordma.org/boards-commissions",
     "https://www.mps02155.org/about/school-committee"
   ],
-  "MPS High School Building Committee": [
-    "mchsbc",
-    "mhcsbc",
-    "msba",
-    "opm selection"
-  ],
+  "MPS High School Building Committee": {
+    "keywords": [
+      "mchsbc",
+      "mhcsbc",
+      "msba",
+      "opm selection"
+    ],
+    "link_on_front_page": true
+  },
   "CC Affordable Housing Trust Fund Board": [
     "affordable housing trust"
   ],
-  "CC Zoning Board of Appeals":[
+  "CC Zoning Board of Appeals": [
     "zoning board of appeals"
   ],
-  "CC Energy & Environment Committee":[
+  "CC Energy & Environment Committee": [
     "energy and environment"
   ],
-  "CC City Council Meeting of the Whole": [
-    "committee of the whole",
-    "cow"
-  ],
+  "CC City Council Meeting of the Whole": {
+    "keywords": [
+      "committee of the whole",
+      "cow"
+    ],
+    "link_on_front_page": true
+  },
   "MPS Meeting of the Whole": [
     "committee of the whole",
     "sc budget committee of the whole",
     "msc - committee of the whole",
     "cow"
   ],
-  "CC Human Rights Commission":[
+  "CC Human Rights Commission": [
     "human rights commission"
   ],
-  "CC Climate Equity Council":[
-   "climate equity council"
+  "CC Climate Equity Council": [
+    "climate equity council"
   ],
   "CC Housing Authority": [
+    "housing medford",
     "housing authority"
   ],
   "Medford Bytes": [
     "Medford Bytes"
   ],
-  "CC Resident Services and Public Engagement Committee":[
+  "CC Resident Services and Public Engagement Committee": [
     "resident services",
     "rspe"
   ],
-  "CC Administration and Finance Committee":[
+  "CC Administration and Finance Committee": [
     "administration and finance",
     "admin and finance"
   ],
@@ -61,7 +68,7 @@
     "(city council)",
     "(incumbent city council)"
   ],
-  "CC Listening Session":[
+  "CC Listening Session": [
     "listening session"
   ],
   "CC Park Commission": [
@@ -78,13 +85,13 @@
   "MPS Middle School Lottery": [
     "lottery"
   ],
-  "CC Welcoming Committee":[
+  "CC Welcoming Committee": [
     "welcoming committee"
   ],
-  "CC Elections Commission":[
+  "CC Elections Commission": [
     "elections commission"
   ],
-  "CC Education and Culture":[
+  "CC Education and Culture": [
     "education and culture"
   ],
   "MPS Behavioral Health & Special Education": [
@@ -92,7 +99,7 @@
     "special education",
     "behavioral subcommittee"
   ],
-  "CC Chevalier Commission":[
+  "CC Chevalier Commission": [
     "chevalier commission"
   ],
   "MPS Rules & Policy": [
@@ -101,52 +108,55 @@
     "rules and policy",
     "rules, policy"
   ],
-  "MPS School Committee Executive Session":[
+  "MPS School Committee Executive Session": [
     "sc executive session",
     "executive session"
   ],
-  "MPS School Committee": [
-    "school committee",
-    "school commmittee",
-    "msc "
-  ],
-  "CC Council on Aging":[
+  "MPS School Committee": {
+    "keywords": [
+      "school committee",
+      "school commmittee",
+      "msc "
+    ],
+    "link_on_front_page": true
+  },
+  "CC Council on Aging": [
     "council on aging"
   ],
-  "CC Hormel Stadium Commission":[
+  "CC Hormel Stadium Commission": [
     "hormel stadium commission"
   ],
-  "CC Board of Assessors":[
+  "CC Board of Assessors": [
     "board of assessors"
   ],
-  "CC Linkage Trust Committee":[
-   "linkage trust"
+  "CC Linkage Trust Committee": [
+    "linkage trust"
   ],
-  "CC Water and Sewer Commission":[
+  "CC Water and Sewer Commission": [
     "water and sewer"
   ],
-  "CC Historical Commission":[
+  "CC Historical Commission": [
     "historical commission",
     "historic district",
-    "historical district" 
+    "historical district"
   ],
-  "CC Commission for Persons with Disabilities":[
+  "CC Commission for Persons with Disabilities": [
     "persons with disabilities"
   ],
-  "CC Board of Health":[
-   "board of health"
+  "CC Board of Health": [
+    "board of health"
   ],
-  "CC Conservation Commission":[
-   "conservation commission"
+  "CC Conservation Commission": [
+    "conservation commission"
   ],
-  "CC Medford 5G":[
+  "CC Medford 5G": [
     "medford 5g meeting"
   ],
-  "MPS Building & Grounds":[
+  "MPS Building & Grounds": [
     "building and grounds",
     "building & grounds"
   ],
-  "MPS Superintendent Evaluation":[
+  "MPS Superintendent Evaluation": [
     "evaluation subcommittee",
     "superindendent interview",
     "finalists for superintendent"
@@ -156,7 +166,7 @@
     "strategic and capital",
     "strategic plan"
   ],
-  "CC and SC Joint Session":[
+  "CC and SC Joint Session": [
     "cc and sc joint"
   ],
   "MPS Budget": [
@@ -164,46 +174,45 @@
   ],
   "MPS Communications": [
     "communication"
-  ],  
-  "CC Bicycling Advisory Commission":[
-   "bicycling advisory",
-   "bicycle advisory"
   ],
-  "CC Traffic Commission":[
-   "traffic commission"
+  "CC Bicycling Advisory Commission": [
+    "bicycling advisory",
+    "bicycle advisory"
   ],
-  "CC Liquor License Commission":[
-   "liquor license"
+  "CC Traffic Commission": [
+    "traffic commission"
   ],
-  "CC Community Preservation Committee":[
-   "community preservation",
-   "cpc meeting"
+  "CC Liquor License Commission": [
+    "liquor license"
+  ],
+  "CC Community Preservation Committee": [
+    "community preservation",
+    "cpc meeting"
   ],
   "CC Public Health and Community Safety": [
     "public health and community safety",
     "phcs"
   ],
-  "CC Solid Waste Task Force":[
+  "CC Solid Waste Task Force": [
     "solid waste",
     "trash talk",
     "waste collection"
   ],
-  "CC Licensing, Permitting, and Signs":[
+  "CC Licensing, Permitting, and Signs": [
     "licensing, permitting and signs"
   ],
-  "CC Community Development Board": [
-    "community development",
-    "cdb",
-    "cbd",
-    "zoning q&a"
-  ],
-  "CC Cannabis Advisory Committee":[
-   "adult use marijuana",
-   "cannabis advisory committee"
-  ],
-  "CC Housing Authority": [
-    "housing medford",
-    "housing authority"
+  "CC Community Development Board": {
+    "keywords": [
+      "community development",
+      "cdb",
+      "cbd",
+      "zoning q&a"
+    ],
+    "link_on_front_page": true
+  },
+  "CC Cannabis Advisory Committee": [
+    "adult use marijuana",
+    "cannabis advisory committee"
   ],
   "MPS Diversity, Equity, & Inclusion": [
     "dei"
@@ -222,7 +231,7 @@
   "CC Public Works and Facilities": [
     "public works and facilities"
   ],
-  "MPS Facilities":[
+  "MPS Facilities": [
     "facilities"
   ],
   "CC Governance Committee": [
@@ -245,10 +254,13 @@
     "medford tech institute",
     "haitian flag day"
   ],
-  "CC City Council": [
-    "city council ",
-    "city councl",
-    "council records",
-    "regular meeting"
-  ]
+  "CC City Council": {
+    "keywords": [
+      "city council ",
+      "city councl",
+      "council records",
+      "regular meeting"
+    ],
+    "link_on_front_page": true
+  }
 }

@@ -2,6 +2,7 @@ import datetime, time
 import os, shutil, asyncio
 import io
 import json, glob
+import collections
 from xml.etree import cElementTree
 import re
 import argparse
@@ -814,6 +815,32 @@ def make_index():
     index_page.write('    <p class="years">Jump to year: '
                      + " &middot; ".join('<a href="#y%s">%s</a>' % (y, y) for y in years)
                      + "</p>\n")
+    # COMMITTEE SHORTCUTS, under the year jump list. The committees/ pages
+    # already group meetings by body, but nothing on the front page pointed
+    # at them, so the only route in was the full 2,241-row table.
+    #
+    # Which bodies appear is DATA, not code: any entry in meeting_types.json
+    # carrying "link_on_front_page": true is listed, in file order. A handful
+    # and not all 63 -- the reason the year anchors exist at all is that crawl
+    # budget and PageRank do not survive being split hundreds of ways from
+    # the root.
+    # ORDERED BY HOW MUCH EACH BODY MEETS, busiest first. A boolean cannot
+    # express order, and meeting_types.json CANNOT be reordered to imply one:
+    # get_meeting_type returns the FIRST keyword match, so moving keys would
+    # silently re-type meetings. Sorting by volume is data-driven, needs no
+    # second config field, and keeps itself right as the archive grows.
+    _n = collections.Counter(v.get("meeting_type") for v in video_data.values()
+                             if not v.get("skip"))
+    front = sorted((c for c in utils.front_page_committees()
+                    if os.path.exists(utils.committee_page(c))),
+                   key=lambda c: -_n.get(c, 0))
+    if front:
+        index_page.write('    <p class="committees">Browse by committee: '
+                         + " &middot; ".join(
+                             '<a href="%s">%s</a>' % (web_path(utils.committee_page(c)), c)
+                             for c in front)
+                         + ' &middot; <a href="committees/index.html">all committees</a></p>\n')
+
     index_page.write("    <table border=1>\n")
     index_page.write("      <caption>Meeting transcripts, newest first</caption>\n")
     # table header

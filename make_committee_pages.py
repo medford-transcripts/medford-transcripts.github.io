@@ -12,9 +12,11 @@ def make():
     utils.add_all_meeting_types()
     utils.identify_duplicate_videos()
 
-    with open("meeting_types.json", "r", encoding="utf-8") as fp:
-        meeting_type = json.load(fp)
-    meeting_type = dict(sorted(meeting_type.items(), key=lambda kv: kv[0]))
+    # via utils so this is indifferent to the per-committee-settings shape
+    # (see utils.meeting_type_config) and so "sources", which is a list of
+    # roster URLs rather than a committee, stops being given a page.
+    meeting_type = dict(sorted(utils.meeting_type_config().items(),
+                               key=lambda kv: kv[0]))
 
 
     video_data = utils.get_video_data()

@@ -225,11 +225,64 @@ def add_all_meeting_types(overwrite=False):
     if update:
         save_video_data(video_data)
 
+# ------------------------------------------------------- meeting type config
+#
+# meeting_types.json maps a committee name to its title keywords. An entry is
+# EITHER the legacy bare list:
+#       "CC Board of Health": ["board of health"]
+# or a dict carrying per-committee settings alongside them:
+#       "CC City Council": {"keywords": [...], "link_on_front_page": true}
+#
+# Both shapes are accepted so adding a setting to one committee does not
+# require rewriting the other sixty-three. Callers that only want keywords
+# should use meeting_type_keywords() and stay indifferent to the shape.
+#
+# "sources" is not a committee -- it lists the pages the roster came from --
+# and is excluded here. The old inline loops treated it as a keyword list, so
+# a title containing one of those URLs could be typed as "sources"; no real
+# title does, but the exclusion makes it impossible rather than unlikely.
+
+MEETING_TYPES_FILE = "meeting_types.json"
+_NOT_A_COMMITTEE = ("sources",)
+
+
+def meeting_type_config(path=MEETING_TYPES_FILE):
+    """{name: {"keywords": [...], ...}} -- both file shapes, normalised."""
+    with open(path, "r", encoding="utf-8") as fp:
+        raw = json.load(fp)
+    out = {}
+    for name, val in raw.items():
+        if name in _NOT_A_COMMITTEE:
+            continue
+        if isinstance(val, dict):
+            cfg = dict(val)
+            cfg.setdefault("keywords", [])
+        else:
+            cfg = {"keywords": val}
+        out[name] = cfg
+    return out
+
+
+def meeting_type_keywords(path=MEETING_TYPES_FILE):
+    """{name: [keyword, ...]} -- what the title-matching callers want."""
+    return {n: c["keywords"] for n, c in meeting_type_config(path).items()}
+
+
+def front_page_committees(path=MEETING_TYPES_FILE):
+    """Committee names flagged link_on_front_page, in file order."""
+    return [n for n, c in meeting_type_config(path).items()
+            if c.get("link_on_front_page")]
+
+
+def committee_page(name):
+    """Path of a committee's generated page (make_committee_pages:49)."""
+    return "committees/" + name.replace(" ", "_") + ".html"
+
+
 def get_meeting_type_by_title(title):
 
     t = title.lower()
-    with open("meeting_types.json", "r", encoding="utf-8") as fp:
-        meeting_type_map = json.load(fp)
+    meeting_type_map = meeting_type_keywords()
 
     # check against all keywords
     for meeting_type, keywords in meeting_type_map.items():
@@ -255,8 +308,7 @@ def get_meeting_type(video):
 
 
     t = video["title"].lower()
-    with open("meeting_types.json", "r", encoding="utf-8") as fp:
-        meeting_type_map = json.load(fp)
+    meeting_type_map = meeting_type_keywords()
 
     # some meetings can only be differentiated by channel and title
     if video["channel"].strip() == "Medford Public Schools":
