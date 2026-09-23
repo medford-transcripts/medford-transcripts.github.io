@@ -1056,6 +1056,25 @@ if __name__ == "__main__":
             else:
                 try:
                     download_rss_feed()
+                    # REGISTER new archive.org items BEFORE fetching audio.
+                    #
+                    # download_mcm has two halves. add_metadata() finds
+                    # identifiers the index has never seen, assigns the next
+                    # MCM id and writes the video_data entry. main() then
+                    # downloads audio -- but only for ids ALREADY in
+                    # video_data, because a new id cannot be there yet:
+                    #
+                    #     enum_id = enum_string(get_enum_number(identifier, index))
+                    #     if enum_id not in video_data.keys():
+                    #         print(enum_id + ' not found in video_data.json; skipping')
+                    #
+                    # Only main() was wired up; add_metadata() sat commented
+                    # out at download_mcm.py:463. So every genuinely new MCM
+                    # item was assigned an id, reported as 'not found', and
+                    # dropped -- and the index was never saved, so the next
+                    # run repeated it. No MCM video had been added since
+                    # 2025-10-14 while archive.org held three newer ones.
+                    download_mcm.add_metadata()
                     download_mcm.main()
                 except (KeyboardInterrupt, SystemExit):
                     raise
