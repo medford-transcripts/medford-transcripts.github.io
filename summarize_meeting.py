@@ -60,6 +60,7 @@ import utils
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_VERSION = "2023-06-01"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent"
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 DEFAULT_MODEL = "gemini-2.5-pro"
 
 # Two providers, because the economics differ in kind rather than degree.
@@ -82,12 +83,19 @@ KEY_FILES = {
                   "claude_key.txt", "anthropic_key.txt"),
     "gemini": (os.path.join("credentials", "gemini_key.txt"),
                "gemini_key.txt", "google_key.txt"),
+    "openai": (os.path.join("credentials", "openai_key.txt"), "openai_key.txt"),
 }
-ENV_VARS = {"anthropic": "ANTHROPIC_API_KEY", "gemini": "GEMINI_API_KEY"}
+ENV_VARS = {"anthropic": "ANTHROPIC_API_KEY", "gemini": "GEMINI_API_KEY",
+            "openai": "OPENAI_API_KEY"}
 
 
 def provider_for(model):
-    return "gemini" if model.lower().startswith("gemini") else "anthropic"
+    m = model.lower()
+    if m.startswith("gemini"):
+        return "gemini"
+    if m.startswith(("gpt-", "o1", "o3", "o4", "chatgpt")):
+        return "openai"
+    return "anthropic"
 # Generous ON PURPOSE. max_tokens is a guillotine, not a brief: at 2000 the
 # model simply stopped mid-JSON and the reply failed to parse. Brevity is the
 # prompt's job; this only has to be large enough that a well-behaved reply is
@@ -200,11 +208,21 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT):
     r = requests.post(GEMINI_URL % model, timeout=600,
                       params={"key": key},
                       headers={"content-type": "application/json"},
-                      json={"system_instruction": {"parts": [{"text": system}]},
+                      # camelCase, and NO temperature. Both matter: the v1beta
+                      # endpoint answers snake_case "system_instruction" and any
+                      # "temperature" on a 3.x reasoning model with HTTP 503
+                      # "experiencing high demand" -- which reads like capacity
+                      # and is actually an unsupported field. Cost an hour.
+                      json={"systemInstruction": {"parts": [{"text": system}]},
                             "contents": [{"parts": [{"text": user}]}],
-                            "generationConfig": {"maxOutputTokens": max_tokens,
-                                                 "responseMimeType": "application/json",
-                                                 "temperature": 0.2}})
+                            "generationConfig": {
+                                # Gemini 3.x spends THINKING tokens from this
+                                # same budget before emitting anything, so a
+                                # budget sized for the answer returns
+                                # finishReason=MAX_TOKENS with empty content.
+                                # Give it room; the prompt controls length.
+                                "maxOutputTokens": max(max_tokens, 32000),
+                                "responseMimeType": "application/json"}})
     if r.status_code != 200:
         raise RuntimeError("gemini %s: %s" % (r.status_code, r.text[:300]))
     d = r.json()
@@ -217,13 +235,60 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT):
         raise RuntimeError("gemini stopped early: %s" % why)
     text = "".join(pt.get("text", "")
                    for pt in (cands[0].get("content", {}).get("parts") or []))
+    if not text.strip():
+        raise RuntimeError(
+            "gemini returned no text (finishReason=%s). On 3.x this usually "
+            "means thinking consumed maxOutputTokens." % why)
     u = d.get("usageMetadata", {})
     return text, {"input_tokens": u.get("promptTokenCount"),
                   "output_tokens": u.get("candidatesTokenCount")}
 
 
+def ask_openai(model, system, user, key, max_tokens=MAX_OUTPUT):
+    """Chat Completions.
+
+    Two shapes exist and the split is by model generation, not by endpoint:
+    reasoning models take max_completion_tokens and REJECT temperature, older
+    ones take max_tokens. Rather than hardcode which is which -- a list that
+    goes stale, as claude-sonnet-5 and gemini-2.5-pro both did within a week --
+    try the modern shape and fall back on the specific complaint.
+    """
+    def call(body):
+        return requests.post(OPENAI_URL, timeout=600,
+                             headers={"Authorization": "Bearer " + key,
+                                      "content-type": "application/json"},
+                             json=body)
+
+    body = {"model": model,
+            "messages": [{"role": "system", "content": system},
+                         {"role": "user", "content": user}],
+            "max_completion_tokens": max(max_tokens, 32000),
+            "response_format": {"type": "json_object"}}
+    r = call(body)
+    if r.status_code == 400 and "max_completion_tokens" in r.text:
+        body.pop("max_completion_tokens")
+        body["max_tokens"] = max_tokens
+        r = call(body)
+    if r.status_code != 200:
+        raise RuntimeError("openai %s: %s" % (r.status_code, r.text[:300]))
+    d = r.json()
+    ch = (d.get("choices") or [{}])[0]
+    why = ch.get("finish_reason")
+    text = (ch.get("message") or {}).get("content") or ""
+    if not text.strip():
+        raise RuntimeError("openai returned no text (finish_reason=%s); on a "
+                           "reasoning model this usually means the token "
+                           "budget went on reasoning" % why)
+    u = d.get("usage", {})
+    return text, {"input_tokens": u.get("prompt_tokens"),
+                  "output_tokens": u.get("completion_tokens")}
+
+
 def ask(model, system, user, key, max_tokens=MAX_OUTPUT):
-    if provider_for(model) == "gemini":
+    p = provider_for(model)
+    if p == "openai":
+        return ask_openai(model, system, user, key, max_tokens)
+    if p == "gemini":
         return ask_gemini(model, system, user, key, max_tokens)
     return ask_anthropic(model, system, user, key, max_tokens)
 
