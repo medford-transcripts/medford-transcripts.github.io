@@ -35,6 +35,7 @@ from pathlib import Path
 # imports from this repo
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
 import download_mcm
+import backup_sync
 
 # requires a "hugging face" token called "hf_token.txt" 
 # in the top level directory with permissions for 
@@ -1076,6 +1077,27 @@ if __name__ == "__main__":
                     # 2025-10-14 while archive.org held three newer ones.
                     download_mcm.add_metadata()
                     download_mcm.main()
+
+                    # REPORT BACKUP DRIFT. The private transcript_backup repo
+                    # holds the only copies of what cannot be regenerated:
+                    # model.pkl and embeddings.pkl, and speaker_ids.json,
+                    # which is pure human judgement -- nothing rebuilds a
+                    # voice-cluster-to-real-name map from anything.
+                    #
+                    # It was filled by hand on 2026-09-17/18 and then nothing
+                    # kept it current. Five days later it was missing 2,847
+                    # files, 443 of them irrecoverable. A backup nobody
+                    # measures is a belief, not a backup -- so measure it
+                    # here, where the pipeline is already idle, and say so.
+                    # Reporting only: syncing pushes to a private remote and
+                    # is a decision for a person, not a background loop.
+                    try:
+                        n = backup_sync.drift()
+                        if n > 0:
+                            print('BACKUP IS %d FILES BEHIND -- run: '
+                                  'python backup_sync.py --apply --commit' % n)
+                    except Exception as e:
+                        print('backup drift check failed: ' + str(e))
                 except (KeyboardInterrupt, SystemExit):
                     raise
                 except Exception:
