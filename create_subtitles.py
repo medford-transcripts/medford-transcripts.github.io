@@ -35,6 +35,7 @@ from pathlib import Path
 # imports from this repo
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
 import download_mcm
+import download_castus
 import backup_sync
 
 # requires a "hugging face" token called "hf_token.txt" 
@@ -261,6 +262,8 @@ def source_of(yt_id):
     """Which downloader owns this id."""
     if yt_id.startswith("MCM000"):
         return "archive.org"
+    if yt_id.startswith("CAS000"):
+        return "castus"
     if yt_id.startswith("XXXXXX"):
         return "podcast RSS"
     return "youtube"
@@ -1077,6 +1080,17 @@ if __name__ == "__main__":
                     # 2025-10-14 while archive.org held three newer ones.
                     download_mcm.add_metadata()
                     download_mcm.main()
+
+                    # CASTUS is MCM's PRIMARY site; archive.org gets periodic
+                    # bulk dumps from it. Nothing here knew Castus existed, so
+                    # 22 boards and commissions -- Zoning Board of Appeals,
+                    # Conservation, Historical, Board of Health, Community
+                    # Preservation, Traffic -- looked like they had stopped
+                    # being recorded in late 2025. They had moved.
+                    #
+                    # Register before downloading, for the same reason as MCM.
+                    download_castus.add_metadata()
+                    download_castus.main(limit=4)
 
                     # REPORT BACKUP DRIFT. The private transcript_backup repo
                     # holds the only copies of what cannot be regenerated:

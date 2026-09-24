@@ -431,8 +431,18 @@ def has_transcript(yt_id, entry):
 
 # Source preference when NEITHER copy is transcribed yet: official channels,
 # then the MCM archive, then unofficial re-uploads.
+# Preference when the same meeting exists in several places. Official city
+# channels first, then MCM's own venues, then unofficial mirrors.
+#
+# MCM Castus is MCM's PRIMARY site and archive.org is periodic bulk dumps from
+# it -- so Castus is more current and more complete. It still ranks BELOW MCM
+# Archive here, because the question this list answers is "which copy should
+# the archive point at", and archive.org is a preservation institution with
+# stable URLs while Castus is an undocumented vendor API behind CloudFront.
+# Prefer the durable copy where one exists; use Castus for what it does not
+# have, which is most of the boards and commissions.
 BEST_CHANNELS = ["City of Medford, Massachusetts", "Medford Public Schools",
-                 "Medford Community Media", "MCM Archive",
+                 "Medford Community Media", "MCM Archive", "MCM Castus",
                  "Mass Traction-US-Medford-1 - Government",
                  "Select Medford, MA City Meetings"]
 MT_CHANNEL = "Mass Traction-US-Medford-1 - Government"
