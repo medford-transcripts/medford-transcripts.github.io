@@ -203,9 +203,28 @@ def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
                             "output_tokens": u.get("output_tokens")}
 
 
-def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT):
-    """responseMimeType forces valid JSON, so no code fence to strip."""
-    r = requests.post(GEMINI_URL % model, timeout=600,
+def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
+    """responseMimeType forces valid JSON, so no code fence to strip.
+
+    RETRIES ON 5xx. Gemini's free tier returns "experiencing high demand"
+    unpredictably -- measured on one meeting: 5% of the transcript succeeded,
+    25% and 50% failed, and the FULL 46k-token request succeeded, all within a
+    minute. It is not size, not the request shape, and not the daily quota
+    (that is a 429). It is capacity, and the only answer is to ask again.
+    """
+    for attempt in range(attempts):
+        r = _gemini_call(model, system, user, key, max_tokens)
+        if r.status_code not in (500, 502, 503, 504):
+            break
+        if attempt < attempts - 1:
+            wait = 5 * (2 ** attempt)
+            print("    gemini %s (transient); retrying in %ds" % (r.status_code, wait))
+            time.sleep(wait)
+    return _gemini_parse(r)
+
+
+def _gemini_call(model, system, user, key, max_tokens):
+    return requests.post(GEMINI_URL % model, timeout=600,
                       params={"key": key},
                       headers={"content-type": "application/json"},
                       # camelCase, and NO temperature. Both matter: the v1beta
@@ -223,6 +242,9 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT):
                                 # Give it room; the prompt controls length.
                                 "maxOutputTokens": max(max_tokens, 32000),
                                 "responseMimeType": "application/json"}})
+
+
+def _gemini_parse(r):
     if r.status_code != 200:
         raise RuntimeError("gemini %s: %s" % (r.status_code, r.text[:300]))
     d = r.json()
