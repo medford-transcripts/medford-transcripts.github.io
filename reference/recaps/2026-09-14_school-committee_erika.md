@@ -1,0 +1,29 @@
+# Unofficial Recap: School Committee Meeting 9/14/26
+
+*By u/Erika02155 (School Committee member Erika Reinfeld), posted to
+r/medfordma. Reproduced as a reference for structure. The first-person
+commentary and outside context are NOT modelled by generated summaries, and
+the generated ones should be considerably SHORTER than this -- see README.md.*
+
+*This meeting is `1wG48dRbAM0` in the archive, which makes it the one usable
+head-to-head test of a generated summary against a human one.*
+
+---
+
+And we're back! I hope you're all having a wonderful start to the year.
+
+In addition to the agenda itself, I give you the School Committee Meetings landing page, which now has links not just to agendas but also to the meeting materials (presentations, etc.). The recording is still on YouTube.
+
+Consent agenda - approved, with an amendment to recover the missing text from Member Graham's resolution last meeting regarding school building committee appointments.
+
+Mustang Moment - congratulations to McGlynn 4th grader Xandria on the publication of her book New World, coming soon to a school library near you! She showed us the book and described how it came to be—a drawing inspired a story which inspired a book. Can't wait to read it!
+
+Honors Pilot for Career Technical Education at Medford High School - Director Fallon described a new approach to giving CTE students honors credit for advanced work, including background and measures of success. In short: By redefining the CTE programs as student "majors," there is an opportunity to receive honors level GPA weighting for advanced coursework, co-op placement, and capstone projects. The pilot is being rolled out this year for 11th and 12th graders in Engineering & Robotics, Health Assisting, Film & Television Production, and Programming & Web Development. Questions from the committee were around students' ability to choose their advanced work, evidence of impact in other districts (answer: Medford is somewhat of a pioneer in this area), how this is presented to colleges, and teacher training/capacity for supporting students who pursue these approaches. [I think this is great and look forward to seeing how it all plays out and, hopefully, expands to other programs!]
+
+Opening of Schools - Dr. Galusi presented a run-down of happenings and data from the last three weeks. It included…deep breath…new hires (90 people!), enrollment stats (still in flux but as of the slide's creation, 4,012 students), after-school enrollment and waitlist stats (40% increase in the former, and 68% decrease in the latter), an overview of the collective charge to the community ("belonging through…"), preparations for the new school year (administrative retreat, new staff induction, professional development, and convocation), a first day snapshot (including Missituk Elementary on the news!), meet & greet/listening sessions with the new assistant superintendent of special education & student services (ongoing through October 5!), and the ever-important facilities & information technology (IT) update (physical spaces, instructional technology, student cybersafety, capital projects). Whew! Highlights for me were the highlighting of student contributions to the pre-school-year activities, including the very lovely student-designed "Belonging Through…" posters, and the well-received new approach to professional development. Other school committee members commented on the smoothness of the opening process, the lack of email complaints about buses and bathrooms, and the dramatic change in the MPS after-school landscape after multiple years of planning and hard work. We also heard questions from student representatives about the LineWize online protection software, the Open Architects data platform, food services staffing, and the district's block on student YouTube/Netflix/streaming access. As always, I am happy to answer questions about details in the comments.
+
+Superintendent Goals - Before I jump into these, I do want to present some context. Although these are the criteria for the school committee's annual evaluation of the superintendent, these often appear different than what people in managerial roles are used to evaluating their employees on. They fall into multiple categories (in this case, student learning and professional practice) and within each category, there are multiple focus areas. They are less about personal performance and more about collective progress across the difference (although obviously high quality work on the individual level is what ensures that these things happen). This presentation is the superintendent's opportunity to say "this is what I, and the district as a whole, am/are prioritizing this year" and the school committee's chance to confirm that our expectations are aligned. This recap is a top level summary of the seven goals/focus areas; each one had an articulated goal (usually framed in the context of district values—belonging, consistency, coherence) and actionable steps for achieving it. Those seven areas are: kindergarten and first grade literacy, middle school instructional materials, advanced coursework and equity, strategic planning, student support systems, district-wide communication coherence, and improvements to facilities and security. All in all, an ambitious list (particularly on top of all the other work that cannot be neglected), but very well thought out. Member Parks and I both had questions about the student learning goals, which can be viewed in the recording, but I, for one, am looking forward to seeing the draft strategic plan towards the end of the year, which I think will help put these in further context as to the longer-term trajectory for the district as well as those ground-level benchmarks and milestones.
+
+Condolences and adjournment
+
+Our next meeting is Monday, September 28. See you then!

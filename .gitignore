@@ -144,3 +144,7 @@ archive_export.json
 # plus voiceprints quarantined because their labels no longer mean the same
 # people. Not published -- see the voiceprint reasoning above.
 migration_backup/
+
+# Anthropic API key for summarize_meeting.py
+claude_key.txt
+anthropic_key.txt
