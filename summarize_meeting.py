@@ -50,18 +50,49 @@ import json
 import os
 import re
 import sys
+import time
 
 import requests
 
 import srt_lines
 import utils
 
-API_URL = "https://api.anthropic.com/v1/messages"
-API_VERSION = "2023-06-01"
-DEFAULT_MODEL = "claude-sonnet-5"
-KEY_FILES = (os.path.join("credentials", "claude_key.txt"),
-             "claude_key.txt", "anthropic_key.txt")
-MAX_OUTPUT = 2000   # 400 words needs far less; the cap keeps it honest
+ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_VERSION = "2023-06-01"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent"
+DEFAULT_MODEL = "gemini-2.5-pro"
+
+# Two providers, because the economics differ in kind rather than degree.
+# Anthropic has no free tier: the backlog costs $174 (Sonnet 5) to $348
+# (Opus 5.5), halved on the Batch API. Gemini has a genuine free tier -- 100
+# requests/day on 2.5 Pro, 250 on Flash -- which clears 2,232 meetings in
+# roughly 9 to 22 days at zero cost.
+#
+# NEITHER is covered by a consumer subscription. Claude Pro covers claude.ai
+# and Google One AI Premium covers gemini.google.com; both APIs are billed
+# separately. The free tier is Gemini's API free tier, not the paid plan.
+#
+# WHAT THE FREE TIER COSTS INSTEAD: Google uses free-tier inputs to improve
+# its products. That is normally disqualifying, and here it is not, because
+# every byte of this prompt -- transcript text and resolved speaker names --
+# is already published on the public site. Do not extend this to anything
+# that is not: addresses.json, the unreviewed correction queue, voiceprints.
+KEY_FILES = {
+    "anthropic": (os.path.join("credentials", "claude_key.txt"),
+                  "claude_key.txt", "anthropic_key.txt"),
+    "gemini": (os.path.join("credentials", "gemini_key.txt"),
+               "gemini_key.txt", "google_key.txt"),
+}
+ENV_VARS = {"anthropic": "ANTHROPIC_API_KEY", "gemini": "GEMINI_API_KEY"}
+
+
+def provider_for(model):
+    return "gemini" if model.lower().startswith("gemini") else "anthropic"
+# Generous ON PURPOSE. max_tokens is a guillotine, not a brief: at 2000 the
+# model simply stopped mid-JSON and the reply failed to parse. Brevity is the
+# prompt's job; this only has to be large enough that a well-behaved reply is
+# never cut off. A 500-word summary plus JSON structure is ~1.5k tokens.
+MAX_OUTPUT = 6000
 
 SYSTEM = """You summarise transcripts of Medford, Massachusetts public meetings \
 for a civic archive. The archive publishes the full transcript beside your \
@@ -105,18 +136,18 @@ Return ONLY valid JSON, no prose around it:
             "speakers": ["names actually identified in the transcript"]}]}"""
 
 
-def api_key():
-    for f in KEY_FILES:
+def api_key(provider="anthropic"):
+    for f in KEY_FILES[provider]:
         if os.path.exists(f):
             k = io.open(f, encoding="utf-8").read().strip()
             if k:
                 return k
-    k = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    k = os.environ.get(ENV_VARS[provider], "").strip()
     if k:
         return k
     raise SystemExit(
-        "No API key. Put it in credentials/claude_key.txt (that directory "
-        "is already gitignored) or set ANTHROPIC_API_KEY.")
+        "No %s key. Put it in %s (that directory is already gitignored) "
+        "or set %s." % (provider, KEY_FILES[provider][0], ENV_VARS[provider]))
 
 
 def transcript_dir(yt_id, video_data=None):
@@ -147,19 +178,54 @@ def timed_transcript(srt_path, names=None):
     return "\n".join(out), (blocks[-1].get("end") if blocks else 0)
 
 
-def ask(model, system, user, key, max_tokens=MAX_OUTPUT):
-    r = requests.post(API_URL, timeout=600,
+def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
+    r = requests.post(ANTHROPIC_URL, timeout=600,
                       headers={"x-api-key": key,
-                               "anthropic-version": API_VERSION,
+                               "anthropic-version": ANTHROPIC_VERSION,
                                "content-type": "application/json"},
                       json={"model": model, "max_tokens": max_tokens,
                             "system": system,
                             "messages": [{"role": "user", "content": user}]})
     if r.status_code != 200:
-        raise RuntimeError("API %s: %s" % (r.status_code, r.text[:300]))
+        raise RuntimeError("anthropic %s: %s" % (r.status_code, r.text[:300]))
     d = r.json()
     parts = [c.get("text", "") for c in d.get("content", []) if c.get("type") == "text"]
-    return "".join(parts), d.get("usage", {})
+    u = d.get("usage", {})
+    return "".join(parts), {"input_tokens": u.get("input_tokens"),
+                            "output_tokens": u.get("output_tokens")}
+
+
+def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT):
+    """responseMimeType forces valid JSON, so no code fence to strip."""
+    r = requests.post(GEMINI_URL % model, timeout=600,
+                      params={"key": key},
+                      headers={"content-type": "application/json"},
+                      json={"system_instruction": {"parts": [{"text": system}]},
+                            "contents": [{"parts": [{"text": user}]}],
+                            "generationConfig": {"maxOutputTokens": max_tokens,
+                                                 "responseMimeType": "application/json",
+                                                 "temperature": 0.2}})
+    if r.status_code != 200:
+        raise RuntimeError("gemini %s: %s" % (r.status_code, r.text[:300]))
+    d = r.json()
+    cands = d.get("candidates") or []
+    if not cands:
+        raise RuntimeError("gemini returned no candidates: %s" % json.dumps(d)[:240])
+    why = cands[0].get("finishReason")
+    if why and why not in ("STOP", "MAX_TOKENS"):
+        # SAFETY / RECITATION / OTHER -- say so rather than writing a partial
+        raise RuntimeError("gemini stopped early: %s" % why)
+    text = "".join(pt.get("text", "")
+                   for pt in (cands[0].get("content", {}).get("parts") or []))
+    u = d.get("usageMetadata", {})
+    return text, {"input_tokens": u.get("promptTokenCount"),
+                  "output_tokens": u.get("candidatesTokenCount")}
+
+
+def ask(model, system, user, key, max_tokens=MAX_OUTPUT):
+    if provider_for(model) == "gemini":
+        return ask_gemini(model, system, user, key, max_tokens)
+    return ask_anthropic(model, system, user, key, max_tokens)
 
 
 def parse_json(text):
@@ -235,12 +301,14 @@ def summarize(yt_id, model=DEFAULT_MODEL, dry_run=False, force=False,
         print("  dry run; no API call")
         return None
 
-    reply, usage = ask(model, SYSTEM, header + text, api_key())
+    reply, usage = ask(model, SYSTEM, header + text,
+                       api_key(provider_for(model)))
     summary = parse_json(reply)
     kept, dropped = verify(summary, duration)
     for it, why in dropped:
         print("  DROPPED %-40s (%s)" % (str(it.get("title"))[:40], why))
     out = {"video_id": yt_id,
+           "provider": provider_for(model),
            "generated_at": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
            "model": model,
            "transcript_sha": sha,
@@ -266,6 +334,10 @@ def main():
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--sleep", type=float, default=None,
+                    help="seconds between calls in --all. Default paces the "
+                         "Gemini FREE tier (5 RPM on 2.5 Pro, 10 on Flash); "
+                         "0 for paid tiers.")
     ap.add_argument("--out", help="write here instead of <base>.summary.json "
                                   "(for comparing two models side by side)")
     args = ap.parse_args()
@@ -280,10 +352,18 @@ def main():
     todo = [k for k, v in video_data.items()
             if not v.get("skip") and transcript_dir(k, video_data)[1]]
     todo.sort(key=lambda k: (video_data[k].get("date") or ""), reverse=True)
+    # Free-tier limits are per MINUTE and per DAY, and exceeding either
+    # returns 429 even when the other is fine. Pacing here is cheaper than
+    # retry logic, and an unattended backlog run has no reason to hurry.
+    pace = args.sleep
+    if pace is None:
+        pace = 13.0 if provider_for(args.model) == "gemini" else 0.0
     done = 0
     for yt_id in todo:
         if args.limit and done >= args.limit:
             break
+        if done and pace:
+            time.sleep(pace)
         try:
             if summarize(yt_id, args.model, args.dry_run, args.force, video_data):
                 done += 1
