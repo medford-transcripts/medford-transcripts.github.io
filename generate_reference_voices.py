@@ -207,7 +207,7 @@ def extract_embedding(clipname):
 
     # whisperX options
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    with open('hf_token.txt') as f: token = f.readline()
+    token = utils.read_credential('hf_token.txt')
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)    
 
     audio = whisperx.load_audio(clipname)
@@ -312,7 +312,7 @@ def get_reference_embeddings(voices_folder="voices_folder", update=False):
 
     # whisperX options
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    with open('hf_token.txt') as f: token = f.readline()
+    token = utils.read_credential('hf_token.txt')
     diarize_model = whisperx.DiarizationPipeline(use_auth_token=token, device=device)
 
     for speaker in os.listdir(voices_folder):

@@ -279,6 +279,40 @@ def committee_page(name):
     return "committees/" + name.replace(" ", "_") + ".html"
 
 
+# --------------------------------------------------------------------- secrets
+#
+# Credentials live in credentials/, which is gitignored. They used to sit in
+# the repo root next to the code, one filename per service, which made "is this
+# safe to commit" a question you had to answer per file rather than once.
+#
+# The root locations are still accepted so an existing checkout keeps working;
+# new keys should go in credentials/ only.
+
+CREDENTIAL_DIR = "credentials"
+
+
+def credential_path(name):
+    """Where a credential file actually is, or None."""
+    for p in (os.path.join(CREDENTIAL_DIR, name), name):
+        if os.path.exists(p):
+            return p
+    return None
+
+
+def read_credential(name, required=True):
+    """Contents of a credential file, stripped."""
+    p = credential_path(name)
+    if not p:
+        if required:
+            raise SystemExit(
+                "Missing %s. Put it in %s/%s -- that directory is gitignored. "
+                "See README.md for how to obtain it."
+                % (name, CREDENTIAL_DIR, name))
+        return None
+    with open(p, "r", encoding="utf-8") as fp:
+        return fp.read().strip()
+
+
 def get_meeting_type_by_title(title):
 
     t = title.lower()

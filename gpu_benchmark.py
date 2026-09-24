@@ -1,7 +1,8 @@
 """
 Does this GPU fit the pipeline, and how much faster is it?
 
-STANDALONE. Copy this file, one .mp3, and hf_token.txt to the GPU machine.
+STANDALONE. Copy this file, one .mp3, and hf_token.txt (from credentials/)
+to the GPU machine.
 It imports nothing from this repo.
 
 WHAT IT IS DECIDING. The card in question is an NVIDIA T400 with 4 GB. That is
@@ -104,7 +105,8 @@ def main():
     ap.add_argument("--model", default="large-v2")
     ap.add_argument("--batch-size", type=int, default=4,
                     help="lower this first if you hit OOM (CPU default is 8-16)")
-    ap.add_argument("--hf-token-file", default="hf_token.txt")
+    ap.add_argument("--hf-token-file", default=None,
+                    help="default: credentials/hf_token.txt, else hf_token.txt")
     ap.add_argument("--skip-diarization", action="store_true")
     args = ap.parse_args()
 
@@ -175,11 +177,19 @@ def main():
         print("3. DIARIZATION   (half the pipeline's compute -- the one that decides this)")
         print("=" * 62)
         try:
-            token = open(args.hf_token_file).read().strip()
+            hf = args.hf_token_file
+            if not hf:
+                for cand in (os.path.join("credentials", "hf_token.txt"),
+                             "hf_token.txt"):
+                    if os.path.exists(cand):
+                        hf = cand
+                        break
+            if not hf:
+                raise OSError("no hf_token.txt found")
+            token = open(hf).read().strip()
         except OSError:
-            print("  no %s; skipping. Diarization is 50%% of the work, so a run"
-                  % args.hf_token_file)
-            print("  without it does NOT tell you whether this card is enough.")
+            print("  no hf_token.txt; skipping. Diarization is 50% of the work,")
+            print("  so a run without it does NOT tell you if this card is enough.")
             token = None
         if token:
             torch.cuda.reset_peak_memory_stats()

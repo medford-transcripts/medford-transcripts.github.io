@@ -530,8 +530,7 @@ def get_diarize_model(device):
     global _diarize_model
     if _diarize_model is None:
         print("loading diarization pipeline (once per process)...")
-        with open('hf_token.txt') as f:
-            token = f.readline()
+        token = utils.read_credential('hf_token.txt')
         # model_name PINNED ON PURPOSE. This is the fork's current default, so
         # nothing changes today -- but current whisperx main defaults to
         # pyannote/speaker-diarization-community-1, a different clustering and
