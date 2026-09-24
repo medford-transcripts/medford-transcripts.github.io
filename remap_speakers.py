@@ -88,9 +88,94 @@ def is_named(v):
         and v != "Unidentified"
 
 
+def remap_names(old, new, min_overlap=0.5, apply=False):
+    """Carry speaker names from a pre-retranscription state onto the new one.
+
+    `old` and `new` are each a transcript directory (or an .srt path); each
+    must have a speaker_ids.json beside it. Returns:
+
+        {"recovered": [(new_label, old_label, name, overlap, seconds)],
+         "ambiguous": [...same shape, below min_overlap, NOT applied...],
+         "changed":   [(label, old_name, new_name, overlap)],
+         "old_labels","old_named","new_labels","new_named","applied"}
+
+    Call this whenever a transcript is regenerated -- a re-transcription, or
+    migrating a meeting onto a new pipeline. Diarization is not deterministic,
+    so the new run re-derives names from scratch and silently drops any that
+    only ever existed as manual work. `changed` is the other half of the
+    warning: a label can keep its number and mean a different person, which is
+    what makes voiceprints and cross-video cluster references keyed to
+    <yt_id>_SPEAKER_nn unsafe to carry across a regeneration.
+
+    Only UNNAMED labels are filled. A name the new run derived is never
+    overwritten -- this recovers lost work, it does not relitigate a fresh
+    decision.
+    """
+    old_s, new_s = spans(srt_of(old)), spans(srt_of(new))
+    old_n, new_n = names_of(old), names_of(new)
+
+    dur = {k: sum(e - s for s, e in v) for k, v in new_s.items()}
+    out = {"recovered": [], "ambiguous": [], "changed": [],
+           "old_labels": len(old_s), "new_labels": len(new_s),
+           "old_named": sum(1 for v in old_n.values() if is_named(v)),
+           "new_named": sum(1 for v in new_n.values() if is_named(v)),
+           "applied": 0}
+
+    for nk in sorted(new_s, key=lambda k: -dur.get(k, 0)):
+        scores = [(overlap(new_s[nk], old_s[ok]), ok) for ok in old_s]
+        scores.sort(reverse=True)
+        best, ok = scores[0] if scores else (0.0, None)
+        frac = best / dur[nk] if dur.get(nk) else 0.0
+        oldname, newname = old_n.get(ok), new_n.get(nk)
+
+        if is_named(newname):
+            if ok and is_named(oldname) and oldname != newname:
+                out["changed"].append((nk, oldname, newname, frac))
+            continue
+        if not (ok and is_named(oldname)):
+            continue
+        (out["ambiguous"] if frac < min_overlap else out["recovered"]).append(
+            (nk, ok, oldname, frac, dur[nk]))
+
+    if apply and out["recovered"]:
+        d = new if os.path.isdir(new) else os.path.dirname(new)
+        p = os.path.join(d, "speaker_ids.json")
+        ids = json.load(io.open(p, encoding="utf-8"))
+        for nk, ok, nm, frac, _ in out["recovered"]:
+            ids[nk] = nm
+        tmp = p + ".tmp"
+        with io.open(tmp, "w", encoding="utf-8", newline="") as fp:
+            json.dump(ids, fp, indent=4)
+        os.replace(tmp, p)
+        out["applied"] = len(out["recovered"])
+    return out
+
+
+def report(r):
+    """Print a remap_names() result."""
+    print("old: %d labels, %d named" % (r["old_labels"], r["old_named"]))
+    print("new: %d labels, %d named" % (r["new_labels"], r["new_named"]))
+    print()
+    print("RECOVERABLE names : %d" % len(r["recovered"]))
+    for nk, ok, nm, frac, d in r["recovered"]:
+        print("   %-12s <- %-12s %-24s overlap %3.0f%%  %5.0fs of speech"
+              % (nk, ok, nm, 100 * frac, d))
+    if r["ambiguous"]:
+        print("\ntoo ambiguous to carry over (reported, not applied):")
+        for nk, ok, nm, frac, d in r["ambiguous"]:
+            print("   %-12s ~ %-12s %-24s overlap %3.0f%%  %5.0fs"
+                  % (nk, ok, nm, 100 * frac, d))
+    if r["changed"]:
+        print("\nLABEL MEANING CHANGED between runs (both named these, differently):")
+        for nk, on, nn, frac in r["changed"]:
+            print("   %-12s old %-22s new %-22s overlap %3.0f%%" % (nk, on, nn, 100 * frac))
+        print("   ^ a voiceprint or cluster reference keyed to the OLD numbering")
+        print("     cannot be reused after a regeneration.")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--old", required=True, help="pre-retranscribe dir or .srt")
+    ap.add_argument("--old", required=True, help="pre-regeneration dir or .srt")
     ap.add_argument("--new", required=True, help="current dir")
     ap.add_argument("--min-overlap", type=float, default=0.5,
                     help="fraction of the NEW label's speech the old one must "
@@ -98,67 +183,12 @@ def main():
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 
-    old_s, new_s = spans(srt_of(args.old)), spans(srt_of(args.new))
-    old_n, new_n = names_of(args.old), names_of(args.new)
-    print("old: %d labels, %d named" % (len(old_s), sum(1 for v in old_n.values() if is_named(v))))
-    print("new: %d labels, %d named" % (len(new_s), sum(1 for v in new_n.values() if is_named(v))))
-    print()
-
-    dur = {k: sum(e - s for s, e in v) for k, v in new_s.items()}
-    proposals, weak, kept, relabelled = [], [], 0, []
-    for nk in sorted(new_s, key=lambda k: -dur.get(k, 0)):
-        scores = [(overlap(new_s[nk], old_s[ok]), ok) for ok in old_s]
-        scores.sort(reverse=True)
-        best, ok = scores[0] if scores else (0.0, None)
-        frac = best / dur[nk] if dur.get(nk) else 0.0
-        oldname = old_n.get(ok)
-        newname = new_n.get(nk)
-
-        if is_named(newname):
-            kept += 1
-            if ok and is_named(oldname) and oldname != newname:
-                relabelled.append((nk, ok, oldname, newname, frac))
-            continue
-        if not (ok and is_named(oldname)):
-            continue
-        if frac < args.min_overlap:
-            weak.append((nk, ok, oldname, frac, dur[nk]))
-            continue
-        proposals.append((nk, ok, oldname, frac, dur[nk]))
-
-    print("new labels already named (left alone) : %d" % kept)
-    print("RECOVERABLE names                     : %d" % len(proposals))
-    for nk, ok, nm, frac, d in proposals:
-        print("   %-12s <- %-12s %-24s overlap %3.0f%%  %5.0fs of speech"
-              % (nk, ok, nm, 100 * frac, d))
-    if weak:
-        print("\ntoo ambiguous to carry over (reported, not applied):")
-        for nk, ok, nm, frac, d in weak:
-            print("   %-12s ~ %-12s %-24s overlap %3.0f%%  %5.0fs"
-                  % (nk, ok, nm, 100 * frac, d))
-    if relabelled:
-        print("\nLABEL MEANING CHANGED between runs (both runs named these, differently):")
-        for nk, ok, on, nn, frac in relabelled:
-            print("   %-12s old %-22s new %-22s overlap %3.0f%%" % (nk, on, nn, 100 * frac))
-        print("   ^ this is why a voiceprint or cluster reference keyed to the")
-        print("     OLD numbering cannot be reused after a re-transcription.")
-
-    if not args.apply:
+    r = remap_names(args.old, args.new, args.min_overlap, args.apply)
+    report(r)
+    if args.apply:
+        print("\napplied %d names" % r["applied"])
+    else:
         print("\ndry run; pass --apply to write speaker_ids.json")
-        return 0
-    if not proposals:
-        print("\nnothing to apply")
-        return 0
-    d = args.new if os.path.isdir(args.new) else os.path.dirname(args.new)
-    p = os.path.join(d, "speaker_ids.json")
-    ids = json.load(io.open(p, encoding="utf-8"))
-    for nk, ok, nm, frac, _ in proposals:
-        ids[nk] = nm
-    tmp = p + ".tmp"
-    with io.open(tmp, "w", encoding="utf-8", newline="") as fp:
-        json.dump(ids, fp, indent=4)
-    os.replace(tmp, p)
-    print("\napplied %d names to %s" % (len(proposals), p))
     return 0
 
 
