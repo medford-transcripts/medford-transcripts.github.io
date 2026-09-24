@@ -75,12 +75,23 @@ Free, no card.
 Summaries need exactly one of the three. Pick on cost and quality; the code
 picks the provider from the model name, so there is no provider flag.
 
-**Free tiers: Gemini and OpenAI have one, Anthropic does not.** Both free tiers
-are paid for with your data -- Google uses free-tier inputs to improve its
-products, and OpenAI's free daily allowance requires opting in to sharing
-prompts and completions for training. Gemini's is on by default; OpenAI's is
-opt-in under Settings → Data controls. That trade is acceptable for this
-project only because everything sent is already published on the public site.
+**Free tiers, precisely:**
+
+| | free to start? | what it costs you |
+|---|---|---|
+| **Gemini** | **yes** -- no card, no balance | inputs used to improve Google's products |
+| **OpenAI** | no -- see below | prompts + completions used for training |
+| **Anthropic** | no free tier at all | -- |
+
+Only Gemini is free *to start*. OpenAI's "free daily tokens" are generous once
+unlocked -- up to 1M tokens/day on GPT-5/o-series/GPT-4.1 and 10M/day on
+mini and nano -- but they are a rebate on a funded account, not a way in.
+Enabling data sharing alone gets you `credit_balance_exhausted`, because the
+programme also requires **Usage tier 1 (reached by paying $5) and a positive
+balance**. Neither requirement is mentioned where you flip the switch.
+
+Either free tier is acceptable for this project only because everything sent is
+already published on the public site.
 
 > **A consumer subscription is NOT API access.** Claude Pro, ChatGPT Plus and
 > Google One AI Premium cover the chat websites. The APIs bill separately. This
@@ -128,11 +139,20 @@ Spend is bounded three ways, and the first is the one that matters:
   with a soft threshold that emails you and a hard threshold that stops calls.
 - **Project budgets** cap individual projects if you use them.
 
-There is also a **free tier you may be enrolled in automatically**: OpenAI
-grants a daily token allowance on some models if you opt in to sharing your
-prompts and completions for training. Check Settings → Data controls. Same
-trade as Gemini's free tier, and the same reasoning applies: fine for public
-meeting transcripts, not for anything else in this repo.
+**Free daily tokens** -- worth having, but they are not a free tier. Three
+things must all be true, and the console tells you about only the first:
+
+1. **Data sharing enabled** -- Settings → Data controls, and note it is set
+   **per project**, so enabling it on the wrong project does nothing for a key
+   belonging to another.
+2. **Usage tier 1**, which you reach by having paid $5.
+3. **A positive credit balance.** The free tokens do not draw from zero; with
+   an empty balance every call returns `credit_balance_exhausted` no matter
+   what the data-sharing toggle says.
+
+Once all three hold: up to 1M tokens/day on GPT-5, o-series and GPT-4.1, and
+10M/day on mini and nano models. Not available to Enterprise accounts or any
+organization with Zero Data Retention.
 
 ### What a summary run costs
 
