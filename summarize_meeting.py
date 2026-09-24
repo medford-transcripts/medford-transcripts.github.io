@@ -59,7 +59,8 @@ import utils
 API_URL = "https://api.anthropic.com/v1/messages"
 API_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-sonnet-5"
-KEY_FILES = ("claude_key.txt", "anthropic_key.txt")
+KEY_FILES = (os.path.join("credentials", "claude_key.txt"),
+             "claude_key.txt", "anthropic_key.txt")
 MAX_OUTPUT = 2000   # 400 words needs far less; the cap keeps it honest
 
 SYSTEM = """You summarise transcripts of Medford, Massachusetts public meetings \
@@ -78,9 +79,14 @@ passes", "approved", "tabled", "referred to committee").
 - Name a speaker only when the transcript makes the attribution clear.
 - BE CONCISE. This is the hard requirement. ONE sentence per item; a second \
 only when the outcome genuinely needs it. The whole summary should read in \
-under a minute -- roughly 250 to 400 words including the overview. Human \
+under a minute -- roughly 250 to 500 words including the overview. Human \
 recaps of these meetings run 900 to 2,000 words; yours should be a quarter \
 of that, because it sits ABOVE the full transcript rather than replacing it.
+- The length target is a target, not a cap. Go longer where a topic is \
+genuinely consequential or contested -- a major zoning change, a budget \
+decision, an ordinance with substantial public comment. Spend the extra \
+sentences THERE and take them back from the routine items. Never pad \
+something uncontested to reach a length.
 - Lead with the decision, not the discussion. "Approved X." "Tabled Y \
 because the petitioner was not present." "Referred Z to the Community \
 Development Board." The detail is in the transcript underneath.
@@ -109,8 +115,8 @@ def api_key():
     if k:
         return k
     raise SystemExit(
-        "No API key. Put it in claude_key.txt (gitignore it) or set "
-        "ANTHROPIC_API_KEY.")
+        "No API key. Put it in credentials/claude_key.txt (that directory "
+        "is already gitignored) or set ANTHROPIC_API_KEY.")
 
 
 def transcript_dir(yt_id, video_data=None):
@@ -190,13 +196,14 @@ def verify(summary, duration):
     return kept, dropped
 
 
-def summarize(yt_id, model=DEFAULT_MODEL, dry_run=False, force=False, video_data=None):
+def summarize(yt_id, model=DEFAULT_MODEL, dry_run=False, force=False,
+              video_data=None, out_path=None):
     video_data = video_data or utils.get_video_data()
     base, srt = transcript_dir(yt_id, video_data)
     if not srt:
         print("%s: no transcript" % yt_id)
         return None
-    dest = os.path.join(base, base + ".summary.json")
+    dest = out_path or os.path.join(base, base + ".summary.json")
     body = io.open(srt, encoding="utf-8", errors="replace").read()
     sha = hashlib.sha256(body.encode("utf-8", "replace")).hexdigest()[:16]
 
@@ -259,11 +266,14 @@ def main():
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--out", help="write here instead of <base>.summary.json "
+                                  "(for comparing two models side by side)")
     args = ap.parse_args()
 
     video_data = utils.get_video_data()
     if args.yt_id:
-        summarize(args.yt_id, args.model, args.dry_run, args.force, video_data)
+        summarize(args.yt_id, args.model, args.dry_run, args.force, video_data,
+                  args.out)
         return 0
     if not args.all:
         ap.error("give -i <yt_id> or --all")
