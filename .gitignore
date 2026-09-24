@@ -138,3 +138,9 @@ speaker_provenance.json
 email.txt
 archive_export/
 archive_export.json
+
+# Pre-regeneration snapshots (remap_speakers.snapshot). Local safety copies:
+# the old speaker_ids.json and .srt a migration needs to recover names from,
+# plus voiceprints quarantined because their labels no longer mean the same
+# people. Not published -- see the voiceprint reasoning above.
+migration_backup/
