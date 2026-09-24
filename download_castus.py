@@ -30,9 +30,10 @@ verifies the shape it got and raises rather than returning an empty list: a
 scraper that silently yields nothing is how the MCM gap hid for months (see
 download_mcm.add_metadata, which was never called and reported nothing).
 
-KNOWN LIMIT: the listing caps at 1,000 and ignores skip/offset/page, and the
-`search` parameter does not match titles. If the catalogue passes 1,000 this
-must be revisited; catalog() warns when it comes back exactly full.
+PAGING: the catalogue comes from the site's own "All Videos" endpoint, which
+reports a true total in `record` (2,606 on 2026-09-24). The obvious-looking
+/upload/search caps at 1,000 and ignores every paging parameter, so it quietly
+returned a third of the catalogue.
 
 Usage:
     python download_castus.py --list          # what is there, what is new
@@ -57,6 +58,12 @@ import download_mcm
 
 CONFIG_API = "https://837sc3bew0.execute-api.us-west-2.amazonaws.com"
 BASE = "https://imd0mxanj2.execute-api.us-west-2.amazonaws.com"
+# The PAGINATED catalogue, used by the site's "All Videos" page. Found by
+# reading Components/NewFuncComponents/AllVideos.js out of the published source
+# map -- cloud.castus.tv ships .map files, so the real source is readable and
+# guessing at endpoints is unnecessary.
+ALL_API = "https://tf4pr3wftk.execute-api.us-west-2.amazonaws.com/default/api/all"
+PAGE_SIZE = 500
 COMPANY = "medford"
 CHANNEL = "MCM Castus"
 INDEX_PATH = Path("castus_index.json")
@@ -78,20 +85,39 @@ def station_id(company=COMPANY):
     return uid
 
 
-def catalog(uid=None, limit=LIST_LIMIT):
-    """Every item the station publishes."""
+def catalog(uid=None, page_size=PAGE_SIZE):
+    """Every item the station publishes, paged.
+
+    WAS /upload/search, which caps at 1,000 and ignores skip/offset/page/parent
+    -- so it silently returned a third of the catalogue and no amount of
+    parameter-guessing moved it. The site's own "All Videos" page uses a
+    different host entirely and reports the true total in `record`: 2,606 as of
+    2026-09-24, against the 1,000 the other endpoint would admit to.
+
+    Paging is 1-based; page=0 returns HTTP 502.
+    """
     uid = uid or station_id()
-    r = requests.post(BASE + "/upload/search", headers=HEADERS,
-                      json={"_id": uid, "search": "", "limit": limit}, timeout=180)
-    r.raise_for_status()
-    payload = (r.json().get("response") or {}).get("payload") or {}
-    files = payload.get("files")
-    if files is None:
-        raise RuntimeError("Castus listing has no payload.files; the API changed")
-    if len(files) >= limit:
-        print("WARNING: listing came back exactly full (%d). The API ignores "
-              "skip/offset, so there may be more that cannot be reached." % limit)
-    return files
+    out, page, total = [], 1, None
+    while True:
+        r = requests.post(ALL_API, headers=HEADERS,
+                          json={"_id": uid, "page": page, "results": page_size},
+                          timeout=180)
+        r.raise_for_status()
+        d = r.json()
+        batch = d.get("allFiles")
+        if batch is None:
+            raise RuntimeError("Castus /api/all has no allFiles; the API changed")
+        if total is None:
+            total = d.get("record")
+            if total is None:
+                raise RuntimeError("Castus /api/all reported no record count")
+        out += batch
+        if not batch or len(out) >= total:
+            break
+        page += 1
+    if total is not None and len(out) < total:
+        print("WARNING: collected %d of %d items the API reports" % (len(out), total))
+    return out
 
 
 def title_of(f):

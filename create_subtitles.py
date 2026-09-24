@@ -1090,7 +1090,10 @@ if __name__ == "__main__":
                     #
                     # Register before downloading, for the same reason as MCM.
                     download_castus.add_metadata()
-                    download_castus.main(limit=4)
+                    # Unbounded in the DOWNLOADER (-d), whose whole job this
+                    # is; a few per pass in the transcriber, so fetching never
+                    # competes with the GPU-bound work for wall-clock.
+                    download_castus.main(limit=0 if opt.download_only else 4)
 
                     # REPORT BACKUP DRIFT. The private transcript_backup repo
                     # holds the only copies of what cannot be regenerated:
