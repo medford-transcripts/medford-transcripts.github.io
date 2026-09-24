@@ -74,7 +74,14 @@ def srt_of(path):
     cand = os.path.join(path, base + ".srt")
     if os.path.exists(cand):
         return cand
-    raise SystemExit("no .srt found at %s" % path)
+    # a snapshot directory carries the transcript's name, not its own (a git
+    # snapshot is suffixed "@git"), so fall back to whatever .srt is in there,
+    # ignoring the _aligned/_basic intermediates
+    loose = [f for f in glob.glob(os.path.join(path, "*.srt"))
+             if "_aligned" not in f and "_basic" not in f]
+    if len(loose) == 1:
+        return loose[0]
+    raise SystemExit("no unambiguous .srt at %s (found %d)" % (path, len(loose)))
 
 
 def names_of(path):
@@ -294,6 +301,80 @@ def snapshot(yt_id, root=BACKUP_ROOT):
         print("  WARNING: %d voiceprint files keyed to the current labels" % len(h["voiceprints"]))
     if h["manually_corrected"]:
         print("  WARNING: this transcript carries manual corrections")
+    return dest
+
+
+def _git(args):
+    import subprocess
+    r = subprocess.run(["git"] + args, capture_output=True)
+    return r.returncode, r.stdout
+
+
+def last_tracked_rev(path):
+    """A revision where `path` still exists, or None.
+
+    git log -1 on a removed path returns the commit that REMOVED it, where the
+    blob is already gone -- so fall back to its parent. speaker_ids.json and
+    the .srt were untracked wholesale in 647745967 ("Stop publishing
+    provenance artifacts"), which is exactly that case for 2,275 meetings.
+    """
+    code, out = _git(["log", "--format=%H", "-1", "--", path])
+    if code or not out.strip():
+        return None
+    rev = out.decode().strip().split("\n")[0]
+    for candidate in (rev, rev + "^"):
+        if _git(["cat-file", "-e", candidate + ":" + path.replace("\\", "/")])[0] == 0:
+            return candidate
+    return None
+
+
+def snapshot_from_git(yt_id, rev=None, root=BACKUP_ROOT):
+    """Recover a pre-regeneration state from git history instead of the disk.
+
+    THE POINT: the working copies of speaker_ids.json and the .srt are no
+    longer tracked -- they were untracked on 2026-09-17 to cut the published
+    file count -- but every version up to that commit is still in history.
+    2,275 meetings can therefore be snapshotted retroactively, including the
+    465 whose labels are cited by other meetings.
+
+    So a migration does NOT require having thought ahead, for anything that
+    existed before the untracking. What is NOT in git is any change made since
+    it: those exist only on disk, and for those snapshot() beforehand is still
+    the only option.
+
+    `rev` defaults to the newest revision that still carries each file.
+    """
+    src = _dir_of(yt_id)
+    base = os.path.basename(src)
+    dest = os.path.join(root, base + "@git")
+    os.makedirs(dest, exist_ok=True)
+    saved, missing = [], []
+    for name in (base + ".srt", "speaker_ids.json", "speaker_provenance.json"):
+        rel = (src + "/" + name).replace("\\", "/")
+        use = rev or last_tracked_rev(rel)
+        if not use:
+            missing.append(name)
+            continue
+        code, blob = _git(["show", use + ":" + rel])
+        if code:
+            missing.append(name)
+            continue
+        with open(os.path.join(dest, name), "wb") as fp:
+            fp.write(blob)
+        saved.append("%s@%s" % (name, use[:9]))
+
+    manifest = {"yt_id": yt_id, "source": "git", "rev": rev,
+                "captured_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                "saved": saved, "missing": missing, "hazards": hazards(yt_id)}
+    with io.open(os.path.join(dest, "manifest.json"), "w", encoding="utf-8", newline="") as fp:
+        json.dump(manifest, fp, indent=2)
+    print("git snapshot %s -> %s" % (yt_id, dest))
+    for s in saved:
+        print("   recovered %s" % s)
+    for m in missing:
+        print("   NOT IN HISTORY: %s" % m)
+    if not saved:
+        print("   nothing recoverable from git; snapshot() from disk before regenerating")
     return dest
 
 
