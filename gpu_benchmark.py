@@ -106,7 +106,7 @@ def main():
     ap.add_argument("--batch-size", type=int, default=4,
                     help="lower this first if you hit OOM (CPU default is 8-16)")
     ap.add_argument("--hf-token-file", default=None,
-                    help="default: credentials/hf_token.txt, else hf_token.txt")
+                    help="default: credentials/hf_token.txt")
     ap.add_argument("--skip-diarization", action="store_true")
     args = ap.parse_args()
 
@@ -179,11 +179,9 @@ def main():
         try:
             hf = args.hf_token_file
             if not hf:
-                for cand in (os.path.join("credentials", "hf_token.txt"),
-                             "hf_token.txt"):
-                    if os.path.exists(cand):
-                        hf = cand
-                        break
+                cand = os.path.join("credentials", "hf_token.txt")
+                if os.path.exists(cand):
+                    hf = cand
             if not hf:
                 raise OSError("no hf_token.txt found")
             token = open(hf).read().strip()

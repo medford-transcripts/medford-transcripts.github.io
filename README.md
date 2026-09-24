@@ -8,11 +8,15 @@ I've modified WhisperX to return the speaker embeddings, and use those embedding
 
 The transcriptions contain many errors (particularly in the speaker identifications), and manual corrections to the SRT files are occasionally made. Corrections will be gladly accepted, and any controversial corrections will be flagged as such. Beginning on 1/15/2025, I began saving the word-level timestamps in model.pkl and that will need to be edited to make corrections.
 
-The Spanish translation is still a work in progress. It appears large blocks of text (from long videos of one speaker) didn't translate at all. I also can't vouch for its accuracy. It's better than me, but that's not saying much. It wouldn't be hard to add more languages if that's useful, or if people have other translation tools they trust more, I can just delete it. 
+Translations are currently DISABLED. The googletrans library broke in a way that was worse than useless: half the target languages raised errors and the other half silently returned the English text unchanged, so ~20,000 pages were being served as `lang="ar"` or `lang="km"` with English in them. Those pages are no longer tracked or published. Older pages from before the breakage were genuinely translated. The intended path forward is to translate the short meeting summaries rather than whole transcripts -- cheap, and spot-checkable.
 
-If you'd like to submit corrections, please send me revised versions of the raw SRT file (which is time stamped by ~sentence for captions) or the JSON files to identify each speaker -- not the HTML (which is programmatically generated from those two).
+If you'd like to submit corrections, right-click any line on a transcript page and choose "Correct or verify this line". That opens a form pre-filled with the line you clicked; edit it and submit, or submit it unchanged to confirm the line is already right. Corrections are reviewed and applied with `ingest_corrections.py` / `apply_corrections.py`, and every change is a public commit, so a correction is exactly as visible as the original text.
 
-It takes about 3x real time (e.g., 3 hours for a 1-hour video) for me to make each transcript, so it'll take about 8 months (July 2025) to transcribe the backlog of videos I have already identified (it would be much faster if I had a GPU). I'm currently working on all videos on the CityofMedfordMass, medfordpublicschools464, medfordcommunitymedia391, InvestinMedford, and ALLMedford youtube channels, but if there are others, please let me know. 
+Transcription runs at about **2.2x real time on CPU** -- measured over three days of real running, not estimated -- so a 1-hour meeting costs about 2.2 hours of compute. Roughly half of that is diarization, not transcription.
+
+**These numbers are CPU-only.** This machine has no CUDA GPU, so WhisperX and pyannote both run on the processor. All three stages -- transcription, alignment and diarization -- are GPU-accelerated if one is present, and the code already selects CUDA automatically when `torch.cuda.is_available()`. A modest GPU should cut the backlog from months to days; `gpu_benchmark.py` measures exactly that on a given card before you commit to it, including whether the card has enough VRAM to hold the diarization models at all (which is what decides the real speedup -- accelerating only transcription caps out around 2x).
+
+Sources currently monitored: the CityofMedfordMass, medfordpublicschools464, medfordcommunitymedia391, InvestinMedford and ALLMedford YouTube channels; Medford Community Media's Internet Archive collection; and MCM's Castus VOD platform, which is their primary publication and carries the boards and commissions -- Zoning Board of Appeals, Conservation, Historical, Board of Health, Community Preservation, Traffic and others -- that appear nowhere else. If there are sources missing, please let me know.
 
 For the technically minded, you're welcome to use the source code for your own purposes (or to help me out). I tried to make it reasonably easy to follow, but it definitely takes some technical chops to get going. 
 
@@ -32,8 +36,10 @@ Two things are genuinely hard for a new operator: **getting a pyannote token**
 from "API billing" in a way that is not obvious). This section covers both.
 
 **Everything goes in `credentials/`, which is gitignored.** Nothing here should
-ever be committed. `utils.read_credential(name)` reads from `credentials/`
-first and falls back to the repo root so existing checkouts keep working.
+ever be committed. `utils.read_credential(name)` reads from `credentials/` and
+nowhere else -- there is deliberately no repo-root fallback, because a secret
+that can live in two places will eventually live in the wrong one, and the repo
+root is where an absent-minded `git add -A` commits it.
 
 ```
 credentials/
@@ -69,6 +75,13 @@ Free, no card.
 Summaries need exactly one of the three. Pick on cost and quality; the code
 picks the provider from the model name, so there is no provider flag.
 
+**Free tiers: Gemini and OpenAI have one, Anthropic does not.** Both free tiers
+are paid for with your data -- Google uses free-tier inputs to improve its
+products, and OpenAI's free daily allowance requires opting in to sharing
+prompts and completions for training. Gemini's is on by default; OpenAI's is
+opt-in under Settings → Data controls. That trade is acceptable for this
+project only because everything sent is already published on the public site.
+
 > **A consumer subscription is NOT API access.** Claude Pro, ChatGPT Plus and
 > Google One AI Premium cover the chat websites. The APIs bill separately. This
 > catches nearly everyone.
@@ -82,7 +95,7 @@ picks the provider from the model name, so there is no provider flag.
 
 Spend is capped by your prepaid balance as long as auto-reload is off.
 
-### Google Gemini — the only one with a real free tier
+### Google Gemini
 
 1. <https://aistudio.google.com/apikey> → **Create API key**.
 2. **The project you choose decides whether you stay free.** A project with
@@ -143,7 +156,8 @@ Only needed for age- or region-gated videos:
 yt-dlp --cookies-from-browser firefox --cookies credentials/cookies.txt
 ```
 
-This is a live session token. Never commit it.
+This is a live YouTube session token -- anyone holding it is signed in as you.
+Never commit it, and regenerate it rather than copying it between machines.
 
 ---
 

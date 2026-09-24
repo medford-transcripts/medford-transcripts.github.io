@@ -79,11 +79,11 @@ DEFAULT_MODEL = "gemini-2.5-pro"
 # is already published on the public site. Do not extend this to anything
 # that is not: addresses.json, the unreviewed correction queue, voiceprints.
 KEY_FILES = {
-    "anthropic": (os.path.join("credentials", "claude_key.txt"),
-                  "claude_key.txt", "anthropic_key.txt"),
-    "gemini": (os.path.join("credentials", "gemini_key.txt"),
-               "gemini_key.txt", "google_key.txt"),
-    "openai": (os.path.join("credentials", "openai_key.txt"), "openai_key.txt"),
+    # credentials/ only -- a secret that can live in two places eventually
+    # lives in the wrong one.
+    "anthropic": (os.path.join("credentials", "claude_key.txt"),),
+    "gemini": (os.path.join("credentials", "gemini_key.txt"),),
+    "openai": (os.path.join("credentials", "openai_key.txt"),),
 }
 ENV_VARS = {"anthropic": "ANTHROPIC_API_KEY", "gemini": "GEMINI_API_KEY",
             "openai": "OPENAI_API_KEY"}

@@ -285,18 +285,17 @@ def committee_page(name):
 # the repo root next to the code, one filename per service, which made "is this
 # safe to commit" a question you had to answer per file rather than once.
 #
-# The root locations are still accepted so an existing checkout keeps working;
-# new keys should go in credentials/ only.
+# credentials/ ONLY. The root fallback was removed deliberately: a secret that
+# can live in two places will eventually live in the wrong one, and the repo
+# root is the place where an absent-minded `git add -A` commits it.
 
 CREDENTIAL_DIR = "credentials"
 
 
 def credential_path(name):
     """Where a credential file actually is, or None."""
-    for p in (os.path.join(CREDENTIAL_DIR, name), name):
-        if os.path.exists(p):
-            return p
-    return None
+    p = os.path.join(CREDENTIAL_DIR, name)
+    return p if os.path.exists(p) else None
 
 
 def read_credential(name, required=True):

@@ -36,6 +36,10 @@ from pathlib import Path
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
 import download_mcm
 import download_castus
+
+# A live YouTube session. credentials/ is gitignored; nothing here is
+# ever safe to commit.
+COOKIES = os.path.join("credentials", "cookies.txt")
 import backup_sync
 
 # requires a "hugging face" token called "hf_token.txt" 
@@ -227,12 +231,12 @@ def download_video(yt_id):
 
     # getting cookies from chrome in windows is broken
     # generate the cookies if we haven't already:
-    # yt-dlp --cookies-from-browser firefox --cookies cookies.txt
-    if not os.path.exists("cookies.txt"):
+    # yt-dlp --cookies-from-browser firefox --cookies credentials/cookies.txt
+    if not os.path.exists(COOKIES):
         command = [
             "yt-dlp",
             "--cookies-from-browser","firefox",
-            "--cookies","cookies.txt"
+            "--cookies",COOKIES
             ]
         subprocess.run(command)
 
@@ -241,7 +245,7 @@ def download_video(yt_id):
     command = [
         "yt-dlp",
         "--cookies-from-browser", "firefox",
-        "--cookies","cookies.txt",
+        "--cookies",COOKIES,
         "--extractor-args", "youtube:player_client=default,web_safari;player_js_version=actual", # workaround as seen in #14680 (lower quality!) to address pending merge of #14157 
         "https://www.youtube.com/watch?v=" + yt_id
         ]
