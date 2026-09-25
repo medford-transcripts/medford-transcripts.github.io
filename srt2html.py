@@ -211,6 +211,72 @@ def asset_prefix(page_dir):
     return "" if rel == "." else rel + "/"
 
 
+def hhmmss(t):
+    t = int(t or 0)
+    h, m, s = t // 3600, (t % 3600) // 60, t % 60
+    return ("%d:%02d:%02d" % (h, m, s)) if h else ("%d:%02d" % (m, s))
+
+
+def summary_block(dir, filebasename, yt_id, video_data=None):
+    """The machine-generated agenda summary, or '' when there is none.
+
+    LABELLED AS MACHINE-WRITTEN, ALWAYS, and this is not decoration. The
+    archive's credibility rests on not asserting what it cannot verify, and a
+    summary is the one thing on the page that is not a record of what was
+    said. Measured across six models on one meeting, only Opus 5.5 got all
+    four checkable claims; the Gemini models reported the presenter and the
+    ASR's mis-hearing of a student's name faithfully but dropped both
+    enrolment figures. So the banner names the model that wrote it and points
+    at the transcript, which is directly below and is the actual record.
+
+    NO VOTE TALLIES reach here either -- summarize_meeting forbids them,
+    because roll-call turns are short and short-turn speaker attribution
+    measured 53-66% against a human reference versus 97% on substantive
+    speech.
+
+    Items carry data-t for in-page seeking AND a real href, so the link works
+    with JS off exactly like every transcript line does.
+    """
+    path = os.path.join(dir, filebasename + ".summary.json")
+    if not os.path.exists(path):
+        return ""
+    try:
+        with io.open(path, encoding="utf-8") as fp:
+            d = json.load(fp)
+    except (OSError, ValueError):
+        return ""                      # a bad sidecar must not break the page
+
+    overview = (d.get("overview") or "").strip()
+    items = d.get("items") or []
+    if not overview and not items:
+        return ""
+
+    model = escape(str(d.get("model") or "an AI model"))
+    out = ['  <section class="mt-summary" aria-label="AI-generated summary">\n']
+    out.append('    <p class="mt-summary-banner"><strong>AI-generated summary.</strong> '
+               'Written by ' + model + ' from the transcript below, which is the '
+               'record. It may be incomplete or wrong; it does not report votes. '
+               'Every item links to the moment it began.</p>\n')
+    if overview:
+        out.append('    <p class="mt-summary-overview">' + escape(overview) + '</p>\n')
+    if items:
+        out.append('    <ol class="mt-summary-items">\n')
+        for it in items:
+            title = escape((it.get("title") or "").strip())
+            body = escape((it.get("summary") or "").strip())
+            t = it.get("t")
+            if t is None:
+                continue
+            href = timestamp_url(yt_id, t, video_data) or ""
+            out.append('      <li><a href="' + escape(href, quote=True) + '"'
+                       ' data-t="' + escape(str(t), quote=True) + '" rel="nofollow">'
+                       + hhmmss(t) + '</a> <strong>' + title + '</strong>'
+                       + (" &mdash; " + body if body else "") + '</li>\n')
+        out.append('    </ol>\n')
+    out.append('  </section>\n')
+    return "".join(out)
+
+
 def player_source(yt_id, video_data=None):
     """(kind, src) for the in-page player, or (None, None) if unavailable.
 
@@ -468,6 +534,15 @@ def srt2html(yt_id,skip_translation=False, force=False):
                             + label + '</a>')
         if docs:
             html.write('    <p class="meeting-docs">' + ' &middot; '.join(docs) + '</p>\n')
+
+        # Above the transcript, below the player: it is an index INTO the
+        # record, so it belongs where a reader decides what to watch. English
+        # only for now -- translating a machine summary with a machine
+        # translator compounds two error rates, and the googletrans breakage
+        # (pages served as lang="ar" containing English) is the cautionary
+        # tale already in the README.
+        if language == "en":
+            html.write(summary_block(dir, filebasename, yt_id, video_data))
 
         if links_to_languages:
             html.write(links_to_languages + '<br><br>\n')

@@ -1,0 +1,84 @@
+{
+ "video_id": "O2nzoxaatsQ",
+ "provider": "gemini",
+ "generated_at": "2026-09-25T19:25:55Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": null,
+ "transcript_sha": "7171a02b1bb34fb9",
+ "overview": "The Medford Sustainability & MEP Systems Advisory Team met to review mechanical system options, lifecycle costs, and solar PV strategies for the Medford High School Project, tentatively endorsing an all-electric air-to-water heat pump system.",
+ "items": [
+  {
+   "title": "Meeting Introduction and Team Role",
+   "t": 326,
+   "summary": "Matt Rice introduced the team's advisory role in generating mechanical and sustainability recommendations for the upcoming October school building committee meeting.",
+   "speakers": [
+    "Matt Rice",
+    "Sam Riley",
+    "Kenneth Lord"
+   ]
+  },
+  {
+   "title": "Sustainability Goals and Requirements Refresher",
+   "t": 790,
+   "summary": "Martine Dion reviewed the project's baseline sustainability goals, including LEED Silver targets, specialized stretch energy code compliance, and city net-zero goals.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "HVAC Lifecycle Cost Analysis (LCCA)",
+   "t": 1189,
+   "summary": "The team analyzed a preliminary 50-year lifecycle cost study comparing 100% ground-source heat pumps, a hybrid geothermal/air-source system, and 100% air-to-water heat pumps against a fossil fuel baseline.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "Mechanical System Technical and Phasing Assessment",
+   "t": 3521,
+   "summary": "Emily Ehlers explained the physical layouts, maintenance lifespans, roof footprints, and multi-phase construction challenges of each mechanical system option.",
+   "speakers": [
+    "Emily Ehlers",
+    "Matt Rice",
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "HVAC System Advisory Selection",
+   "t": 4689,
+   "summary": "The advisory team reached a unanimous tentative recommendation to support Option 3, the 100% air-to-water heat pump system, due to lower upfront costs, simpler maintenance, and less disruptive phasing.",
+   "speakers": [
+    "Matt Rice",
+    "Paul Ruseau",
+    "Kenneth Lord",
+    "Emily Ehlers",
+    "Martine Dion",
+    "Andre Leroux",
+    "Jenny Graham",
+    "Kimberly Talbot",
+    "Alicia Hunt",
+    "Jessica Parks",
+    "Stella"
+   ]
+  },
+  {
+   "title": "Preliminary Photovoltaic (PV) System Assessment",
+   "t": 6240,
+   "summary": "Martine Dion presented preliminary solar PV output assessments for roof and parking canopy locations, contrasting the economics of third-party power purchase agreements with city ownership.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice",
+    "Andre Leroux",
+    "Kenneth Lord",
+    "Paul Ruseau"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32690,
+  "output_tokens": 639
+ }
+}

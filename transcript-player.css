@@ -13,7 +13,8 @@
 }
 
 #mt-player iframe,
-#mt-player audio {
+#mt-player audio,
+#mt-player video {
   width: 100%;
   max-width: 100%;
   display: block;
@@ -125,3 +126,55 @@ span.w.w-active {
   outline-offset: 2px;
 }
 
+
+/* ---------------------------------------------------------------- summary
+   The machine-generated agenda summary. Visually SET APART from the
+   transcript on purpose: everything else on the page is a record of what was
+   said, and this is not. The banner carries that in words; the border and
+   tint carry it at a glance, for a reader who is skimming. */
+.mt-summary {
+  border: 1px solid #d8d8d8;
+  border-left: 4px solid #8a8aa8;
+  background: #fafaff;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 0 0 18px 0;
+  font: 15px/1.5 system-ui, sans-serif;
+}
+
+.mt-summary-banner {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.mt-summary-overview {
+  margin: 0 0 10px 0;
+}
+
+.mt-summary-items {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.mt-summary-items li {
+  margin-bottom: 7px;
+}
+
+/* The timestamp reads as the control it is, and stays legible on its own */
+.mt-summary-items a[data-t] {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mt-summary {
+    background: #1e1e24;
+    border-color: #3a3a45;
+    border-left-color: #6e6e90;
+    color: #e6e6e6;
+  }
+  .mt-summary-banner { color: #a8a8b4; }
+}

@@ -257,6 +257,20 @@
   }
 
   // ------------------------------------------------------- click to seek
+  //
+  // Agenda items in the machine-generated summary seek too, but they are
+  // DELIBERATELY NOT p.line[data-t]. That selector is the transcript's own:
+  // `lines` is built from it for auto-follow and the word-timing sidecar is
+  // addressed by POSITION within it, so an extra element matching it would
+  // shift every subsequent line's timings. Separate hook, same backend.
+  document.addEventListener("click", function (e) {
+    var item = e.target.closest && e.target.closest(".mt-summary a[data-t]");
+    if (!item) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    backend.seek(parseFloat(item.getAttribute("data-t")) || 0);
+  });
+
   document.addEventListener("click", function (e) {
     var line = e.target.closest("p.line[data-t]");
     if (!line) return;
