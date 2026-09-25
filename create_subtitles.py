@@ -64,19 +64,51 @@ audio_path = "audio/"
 
 last_update = datetime.datetime(2000,1,1)
 
-# if the transcription is done, make sure the audio file is on the external drive
-def move_audio():
+# Once a transcript exists, the audio no longer needs to be on the system
+# drive. This function was written for exactly that and was never called from
+# anywhere, so 225 GB accumulated in audio/ and C: reached 2% free.
+#
+# COPY-VERIFY-DELETE rather than shutil.move: across drives a move is a copy
+# plus an unlink, and a failure partway leaves a TRUNCATED file on D: with the
+# source gone. Nothing would report that -- the pipeline would find the short
+# file, transcribe it, and publish a short transcript. Same silent-failure
+# shape as the rest of this codebase, so verify the size before deleting.
+def move_audio(verbose=True):
     video_data = utils.get_video_data()
+    moved = freed = failed = 0
+    now = time.time()
     for yt_id in video_data.keys():
-        base = video_data[yt_id]["upload_date"] + "_" + yt_id
-
-        mp3_external = audio_path_backup + base + ".mp3"
+        base = (video_data[yt_id].get("upload_date") or "") + "_" + yt_id
         mp3_local = audio_path + base + ".mp3"
+        mp3_external = audio_path_backup + base + ".mp3"
+        srtfile = os.path.join(base, base + ".srt")
+        if not (os.path.exists(srtfile) and os.path.exists(mp3_local)):
+            continue
+        # never touch a file the downloader may still be writing
+        if now - os.path.getmtime(mp3_local) < 900:
+            continue
+        try:
+            size = os.path.getsize(mp3_local)
+            if os.path.exists(mp3_external) and os.path.getsize(mp3_external) == size:
+                os.remove(mp3_local)
+            else:
+                os.makedirs(os.path.dirname(mp3_external), exist_ok=True)
+                shutil.copy2(mp3_local, mp3_external)
+                if os.path.getsize(mp3_external) != size:
+                    failed += 1
+                    continue
+                os.remove(mp3_local)
+            moved += 1
+            freed += size
+        except Exception as e:
+            failed += 1
+            if verbose:
+                print("  move_audio failed on %s: %s" % (base, str(e)[:80]))
+    if verbose and (moved or failed):
+        print("move_audio: relocated %d transcribed files (%.1f GB freed), %d failed"
+              % (moved, freed / 1024.0 ** 3, failed))
+    return moved
 
-        srtfile = base + "/" + base + ".srt"
-        if os.path.exists(srtfile):
-            if os.path.exists(mp3_local):
-                shutil.move(mp3_local,mp3_external)
 
 def get_audio_absolute_path(base, allow_nonexist=False):
 
@@ -1097,6 +1129,17 @@ if __name__ == "__main__":
                     # is; a few per pass in the transcriber, so fetching never
                     # competes with the GPU-bound work for wall-clock.
                     download_castus.main(limit=0 if opt.download_only else 4)
+
+                    # RELOCATE TRANSCRIBED AUDIO. Once a transcript exists the
+                    # mp3 does not need to be on the system drive, and
+                    # get_mp3filename already prefers the external copy. This
+                    # was written as move_audio() and never called, so 225 GB
+                    # accumulated and C: reached 2% free.
+                    #
+                    # Here, in the idle branch, is the right moment: nothing
+                    # is being transcribed, and the 15-minute guard inside
+                    # keeps it off anything the downloader is still writing.
+                    move_audio()
 
                     # REPORT BACKUP DRIFT. The private transcript_backup repo
                     # holds the only copies of what cannot be regenerated:

@@ -24,6 +24,7 @@ import yt_dlp
 
 # imports from this repo
 import utils, supercut, fix_common_errors, heatmap, scrape
+import download_castus
 import srt_lines
 import make_committee_pages
 from urllib.parse import quote
@@ -116,8 +117,9 @@ def translation_failure_count():
 def timestamp_url(yt_id, start, video_data=None):
     """Timestamped deep link into the source media for this yt_id.
 
-    The platform is implied by the id prefix, exactly as make_html() derives
-    on_youtube / on_spotify / on_archive. Returns None when no URL is known.
+    The platform is implied by the id prefix: XXXXXX podcast, MCM000
+    archive.org, CAS000 Castus, anything else a YouTube id. Returns None when
+    no URL is known.
 
     finish_speaker() used to hardcode https://youtu.be/<id> for the
     non-English branch, so every translated page of every MCM archive.org
@@ -155,6 +157,13 @@ def timestamp_url(yt_id, start, video_data=None):
     if yt_id[0:6] == "MCM000":            # MCM archive -> archive.org
         url = entry.get("url")
         return url + "&start=" + str(start) if url else None
+
+    if yt_id[0:6] == "CAS000":            # MCM Castus
+        # The Castus web player takes no time parameter, so the link goes to
+        # the item and NOT to a fabricated offset -- a ?t= it ignores would
+        # look like a seek that silently does nothing. In-page seeking still
+        # works: player_source() gives this page a real <video>.
+        return entry.get("url")
 
     return "https://youtu.be/" + yt_id + "&t=" + str(start) + "s"
 
@@ -220,6 +229,16 @@ def player_source(yt_id, video_data=None):
         url = entry.get("url") or ""
         ident = url.rstrip("/").split("/details/")[-1] if "/details/" in url else ""
         return ("archive", ident) if ident else (None, None)
+
+    if yt_id[0:6] == "CAS000":
+        # WITHOUT THIS a Castus id fell through to the YouTube branch below and
+        # the page embedded youtube.com/embed/CAS00000001, which renders as
+        # "this video is unavailable" -- a failure that looks like a dead video
+        # rather than a bug in this function. The Castus MP4 is a plain
+        # unsigned CloudFront object, so it plays in a <video> and seeks
+        # natively (better than the archive.org embed it sits beside).
+        src = download_castus.mp4_url(entry)
+        return ("video", src) if src else (None, None)
 
     return ("youtube", yt_id)
 
@@ -303,19 +322,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
         if "last_update" in video_data[yt_id].keys():
             last_update = video_data[yt_id]["last_update"]
 
-    # this is my hack to allow non-youtube sources....
-    if yt_id[0:6] == "XXXXXX": 
-        on_youtube = False
-        on_spotify = True
-        on_archive = False
-    elif yt_id[0:6] == "MCM000":
-        on_youtube = False
-        on_spotify = False
-        on_archive = True
-    else:
-        on_youtube = True
-        on_spotify  = False
-        on_archive = False
+    # (A source-flag block stood here -- on_youtube / on_spotify / on_archive,
+    # assigned three ways and READ NOWHERE. It was write-only for the whole of
+    # its life, and its "else: on_youtube = True" was actively misleading: it
+    # made a Castus id look handled by a branch that does nothing. The real
+    # dispatch is timestamp_url() and player_source(), both keyed on the id
+    # prefix; add new sources there.)
 
     # redo all videos updated before 2024-11-04 2:35 PM
     #last_update = datetime.datetime(2024,11,4,2,35).timestamp() 

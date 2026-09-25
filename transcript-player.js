@@ -26,7 +26,7 @@
   var mount = document.getElementById("mt-player");
   if (!mount) return;
 
-  var KIND = mount.getAttribute("data-kind");      // youtube | audio | archive
+  var KIND = mount.getAttribute("data-kind");  // youtube|audio|video|archive
   var SRC = mount.getAttribute("data-src");        // id or url
   var lines = Array.prototype.slice.call(
     document.querySelectorAll("p.line[data-t]")
@@ -95,12 +95,18 @@
   // ---------------------------------------------------------------- backends
   var backend = null;
 
-  function makeAudio() {
-    var el = document.createElement("audio");
+  // One backend for both <audio> and <video>: the media element API this uses
+  // (currentTime, play, timeupdate, loadedmetadata) is identical for the two,
+  // so only the tag name differs. Castus serves a plain unsigned MP4, which
+  // means its pages get real seeking rather than the informational-only
+  // treatment archive.org embeds are stuck with.
+  function makeMedia(tag) {
+    var el = document.createElement(tag);
     el.controls = true;
     el.preload = "metadata";
     el.src = SRC;
     el.style.width = "100%";
+    if (tag === "video") el.setAttribute("playsinline", "");
     mount.appendChild(el);
     return {
       el: el,
@@ -183,7 +189,8 @@
     };
   }
 
-  if (KIND === "audio") backend = makeAudio();
+  if (KIND === "audio") backend = makeMedia("audio");
+  else if (KIND === "video") backend = makeMedia("video");
   else if (KIND === "youtube") backend = makeYouTube();
   else if (KIND === "archive") backend = makeArchive();
   else return;

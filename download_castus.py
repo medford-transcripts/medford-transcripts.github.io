@@ -154,7 +154,38 @@ def upload_date(f):
     return (f.get("date") or "")[:10]
 
 
+def enumeration_order(files):
+    """Catalogue order for MINTING ids: oldest upload first.
+
+    THE ID NUMBER IS A PUBLIC, PERMANENT NAME -- it is the directory on disk
+    and the URL on the site -- so the order it is handed out in is a decision,
+    not an implementation detail. Every other source here numbers by upload
+    date ascending: download_mcm asks archive.org for "publicdate asc" and the
+    podcast ids follow episode order, so MCM00000001 and XXXXXX00001 are the
+    OLDEST items and the numbers read as a timeline.
+
+    Castus was enumerated in raw API order, which is newest-first, so the
+    first import ran the convention backwards: CAS00000001 was 2026-09-21,
+    the most recent item in the catalogue, and CAS00002534 the oldest.
+    Sorting here puts Castus on the same footing.
+
+    The tie-break on castus_id matters: several items share an upload date,
+    and without a deterministic second key the same catalogue could enumerate
+    two ways on two runs. The id only has to be stable, not meaningful.
+    """
+    return sorted(files, key=lambda f: (upload_date(f) or meeting_date(f) or "9999",
+                                        f.get("_id") or ""))
+
+
 def enum_id(castus_id, index):
+    """Stable CAS id for a Castus item.
+
+    The mapping lives in castus_index.json (tracked in git), keyed by the
+    Castus object id and NOT derived from video_data.json -- video_data is a
+    metadata cache that gets rebuilt, and an id that changed when it was
+    rebuilt would rename published URLs underneath readers. Once minted, a
+    number is never reissued or reordered: new items append.
+    """
     if castus_id in index:
         n = index[castus_id]
     else:
@@ -178,6 +209,29 @@ def save_index(index):
     os.replace(tmp, str(INDEX_PATH))
 
 
+# The CloudFront object an entry's video lives at. video_url() below is the
+# authoritative lookup but needs a live API round-trip, which a page render
+# cannot afford; this is the pattern that lookup returns, verified identical
+# for every item sampled. Unsigned and publicly readable (HTTP 200,
+# video/mp4), so it works in a plain <video> tag.
+MP4_PATTERN = "https://dlttx48mxf9m3.cloudfront.net/outputs/%s/Default/MP4/out_1080.mp4"
+
+
+def mp4_url(entry):
+    """Playable URL for a registered Castus entry, or None.
+
+    Prefers a resolved URL if one was stored; otherwise derives it. Derivation
+    is a guess about an undocumented vendor layout -- if Castus ever changes
+    it, every Castus page loses its player at once, which is at least loud.
+    """
+    if not entry:
+        return None
+    if entry.get("video_url"):
+        return entry["video_url"]
+    cid = entry.get("castus_id")
+    return (MP4_PATTERN % cid) if cid else None
+
+
 def video_url(castus_id):
     r = requests.post(BASE + "/upload/get", headers=HEADERS,
                       json={"file": castus_id, "type": "video", "user": ""}, timeout=60)
@@ -197,7 +251,7 @@ def add_metadata(dry_run=False):
     """
     index = load_index()
     video_data = utils.get_video_data()
-    files = catalog()
+    files = enumeration_order(catalog())
     print("castus catalogue: %d items" % len(files))
 
     added = 0

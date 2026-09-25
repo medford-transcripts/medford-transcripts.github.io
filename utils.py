@@ -453,8 +453,149 @@ def titles_overlap(a, b):
     on 76 candidate pairs: every true duplicate shared a word (Jaccard
     0.2-1.0); the two false pairs -- "#CottonSwabChallenge" vs a council
     meeting, "SEPAC" vs "Comprehensive Master Plan" -- shared none.
+
+    NO LONGER THE WHOLE TEST -- see same_recording(), which calls this. On a
+    corpus 30x larger than the one above, this predicate turned out to be
+    almost pure noise: of 2,471 cross-channel candidate pairs it passed 2,395,
+    and the words it passed on were "council", "committee", "school" -- the
+    meeting_type's OWN name, which the grouping key had already asserted. So
+    the pass side confirms nothing. Its only measurable effect was the 76
+    rejections, and checking those against the transcripts showed they were
+    true duplicates written as abbreviations: "msc" vs "school committee" (57
+    pairs), "cpc", "councl", "mhcsbc". Hence _committee_abbreviation below.
     """
     return bool(set(title_stem(a).split()) & set(title_stem(b).split()))
+
+
+# Types where (meeting_type, meeting_date) is NOT an identity for a recording,
+# because the publisher issues several unrelated videos under one type on one
+# day. These are still deduped -- they mirror across YouTube and Castus, which
+# is how "Medford Happenings - Laura O'Neil" (Castus) went undetected against
+# "Medford Happenings Episode 58 Laura O'Neill" (YouTube) -- but only on a
+# positive signal, never on the key alone. See same_recording().
+EPISODIC_TYPES = {"Campaign", "Medford Bytes", "Medford Happenings"}
+
+# Types where two entries are NEVER the same recording, so there is nothing for
+# dedup to find and every match would be a false one. Local news is several
+# outlets shooting their OWN footage of one event: their titles overlap on the
+# story ("superintendent", "high school stabbing") while the video differs, and
+# both of the corpus's cross-channel News pairs match on exactly those words.
+# None means no key at all -- guessing from a date is how a reader ends up
+# reading the wrong meeting.
+NEVER_DEDUP_TYPES = {None, "News"}
+
+
+# Words that name a PROGRAMME rather than an episode. Two different instalments
+# of a series share these, so they are evidence of nothing. "candidate" and
+# "profile" are here because a campaign season produces many "2025 Candidate
+# Profile - ..." videos from different committees on the same day.
+_PROGRAMME_WORDS = {"episode", "ep", "pt", "part", "show", "promo",
+                    "candidate", "profile"}
+
+
+def distinctive_title_tokens(title, meeting_type):
+    """Title words that could tell two videos of the same type/date apart.
+
+    Drops the meeting_type's own words (which every title of that type
+    repeats), programme words, bare numbers and single letters. For
+    "Medford Happenings Episode 58 Laura O'Neill" this leaves {laura, neill};
+    for the Castus mirror "Medford Happenings - Laura O'Neil", {laura, neil}.
+    """
+    drop = set(re.findall(r"[a-z0-9]+", (meeting_type or "").lower()))
+    drop |= _PROGRAMME_WORDS
+    return set(t for t in title_stem(title).split()
+               if t not in drop and len(t) > 1 and not t.isdigit())
+
+
+def _close(a, b):
+    """One-character typo tolerance, for titles like "Councl"."""
+    if abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) < 5 or len(b) < 5:
+        return a == b
+    if len(a) == len(b):
+        return sum(1 for x, y in zip(a, b) if x != y) <= 1
+    short, long = (a, b) if len(a) < len(b) else (b, a)
+    i = 0
+    for c in long:                       # one deletion
+        if i < len(short) and short[i] == c:
+            i += 1
+    return i >= len(short)
+
+
+def _committee_abbreviation(title, meeting_type):
+    """True if the title says nothing except the committee's own name.
+
+    "MSC", "CPC", "Councl", "School Committee" for an MPS School Committee
+    meeting all carry zero information beyond the meeting_type, so they cannot
+    be evidence that two recordings differ -- and demanding a shared word from
+    them is what lost 60 of the 76 true duplicates above. A title that names a
+    SUBJECT ("Salem Street CBD Continued Public Hearing") is not this, and
+    still has to overlap.
+    """
+    words = [w for w in re.findall(r"[a-z]+", (meeting_type or "").lower()) if w]
+    if not words:
+        return False
+    initials = "".join(w[0] for w in words)
+    for t in distinctive_title_tokens(title, meeting_type):
+        if any(_close(t, w) for w in words):
+            continue
+        # an acronym: each letter is the initial of a later type word
+        i = 0
+        for c in t:
+            j = initials.find(c, i)
+            if j < 0:
+                break
+            i = j + 1
+        else:
+            continue
+        return False                     # this token names something else
+    return True
+
+
+def same_duration(a, b, tol=3, floor=300):
+    """Same encode, to the second.
+
+    MCM retitles on Castus -- "Medford Happenings w/ John Petrella" is
+    published there as "Local Happenings Part 2" -- so titles cannot match
+    those, but the durations are 709s and 709s. The floor matters: a 30-second
+    campaign clip can coincide with another by chance, a 20-minute programme
+    cannot. Deliberately NOT used for full meetings, where a true duplicate can
+    legitimately differ 6x (a partial recording of the same council meeting
+    measured 0.166 of its twin's length at 0.886 text containment).
+    """
+    da, db = a.get("duration"), b.get("duration")
+    if not da or not db or max(da, db) < floor:
+        return False
+    return abs(da - db) <= tol
+
+
+def same_recording(a, b):
+    """Do two entries sharing meeting_type, meeting date and nothing else
+    (different channels) record the same thing?
+
+    The grouping key does nearly all the work for a MEETING: a committee meets
+    once on a given evening, so a second copy of that type and date from
+    another channel is that meeting. Checked against transcripts for the 33
+    cross-channel pairs where both copies happen to have been transcribed, all
+    33 were true duplicates (5-gram containment 0.74-1.00) -- the key produced
+    no false positives at all.
+
+    It does NOT hold for episodic content, where a programme airs a different
+    guest each week, so those need a positive signal: a distinctive shared word
+    or an identical duration.
+    """
+    mt = a.get("meeting_type")
+    if mt in EPISODIC_TYPES:
+        if distinctive_title_tokens(a.get("title"), mt) & \
+           distinctive_title_tokens(b.get("title"), mt):
+            return True
+        return same_duration(a, b)
+    if titles_overlap(a.get("title"), b.get("title")):
+        return True
+    # An abbreviation of the committee's own name is not a disagreement.
+    return (_committee_abbreviation(a.get("title"), mt)
+            or _committee_abbreviation(b.get("title"), mt))
 
 
 def has_transcript(yt_id, entry):
@@ -474,8 +615,17 @@ def has_transcript(yt_id, entry):
 # stable URLs while Castus is an undocumented vendor API behind CloudFront.
 # Prefer the durable copy where one exists; use Castus for what it does not
 # have, which is most of the boards and commissions.
+#
+# "Medford Happenings" and "Medford Bytes" are MCM's own programme channels on
+# YouTube, and Castus carries the same episodes -- usually RETITLED, so the
+# YouTube copy is the one whose title names the guest. They sit above Castus
+# because they are where the programme is published first, and below MCM
+# Archive for the same durability reason as everything else.
+# (Note the channel string in video_data is "Medford Bytes " with a trailing
+# space; every caller compares .strip(), so the list holds the clean name.)
 BEST_CHANNELS = ["City of Medford, Massachusetts", "Medford Public Schools",
-                 "Medford Community Media", "MCM Archive", "MCM Castus",
+                 "Medford Community Media", "MCM Archive",
+                 "Medford Happenings", "Medford Bytes", "MCM Castus",
                  "Mass Traction-US-Medford-1 - Government",
                  "Select Medford, MA City Meetings"]
 MT_CHANNEL = "Mass Traction-US-Medford-1 - Government"
@@ -495,6 +645,16 @@ def _dedup_protected(entry):
     # a skip WITHOUT duplicate_id was set by a person or by the truncated-audio
     # guard, never by this function
     return bool(entry.get("skip")) and not entry.get("duplicate_id")
+
+
+def _hidden_for_good(entry):
+    """Hidden, by a skip this function is not allowed to lift.
+
+    Not the same as _dedup_protected: an entry carrying manual_correction but
+    NOT skipped is visible, and makes a perfectly good keeper. What disqualifies
+    a keeper is being hidden with no way for this run to un-hide it.
+    """
+    return bool(entry.get("skip")) and _dedup_protected(entry)
 
 
 # ---------------------------------------------------------------------------
@@ -554,9 +714,18 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
     """Mark duplicate recordings of the same meeting so only one is transcribed.
 
     Same meeting_type + same MEETING date (from the title) + a different
-    channel => duplicates, provided the titles share at least one word. The
-    one exception to "different channel": Mass Traction posts a Livestream and
-    a recording of the same meeting.
+    channel => duplicates, if same_recording() agrees. The one exception to
+    "different channel": Mass Traction posts a Livestream and a recording of
+    the same meeting.
+
+    THE TEST IS NOT THE SAME FOR EVERY TYPE, and the reason is worth keeping.
+    Four types used to be excluded outright, on the theory that nothing would
+    duplicate them so any hit was a false positive. Castus broke that: MCM
+    publishes "Medford Happenings" to YouTube AND to Castus, so
+    "Medford Happenings Episode 58 Laura O'Neill" and the Castus mirror
+    "Medford Happenings - Laura O'Neil" sat side by side, undetected, and the
+    mirror was transcribed a second time. They are deduped now, but on a
+    positive signal only -- see EPISODIC_TYPES and NEVER_DEDUP_TYPES.
 
     WHICH COPY IS KEPT, in order:
       1. the one that ALREADY HAS A TRANSCRIPT. The previous version applied
@@ -584,10 +753,36 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             e.pop("skip", None)
             e.pop("duplicate_id", None)
 
-    skip_types = {None, "Campaign", "News", "Medford Bytes", "Medford Happenings"}
+    # STALE SKIPS FROM A RULE THAT NO LONGER APPLIES. A type that leaves the
+    # dedup set takes its old verdicts with it: this function stops grouping
+    # those entries, so it can also never un-skip them, and a wrong hide made
+    # under the previous rule would last forever with nothing to lift it.
+    # That is not hypothetical -- five News videos were hidden this way, in
+    # two mutual A->B->A pairs, so EVERY copy of the high-school stabbing
+    # story and the superintendent's retirement was invisible. They were never
+    # duplicates: local outlets shoot their own footage and merely share the
+    # subject ("superintendent", "high school"), which is why News is in
+    # NEVER_DEDUP_TYPES now.
+    #
+    # NOT untyped entries, though they are also in NEVER_DEDUP_TYPES. None has
+    # been excluded by every version of this function, so a dedup skip on an
+    # untyped entry was recorded while it still HAD a type -- it is a verdict
+    # this function can no longer re-check, not one it has reversed. Several
+    # are plainly right ("... (Unofficial)", "... (corrected version)"), and
+    # lifting them would put genuine duplicates back on the site.
+    stale = {}
+    for yt_id, e in video_data.items():
+        mt = e.get("meeting_type")
+        if mt is None or mt not in NEVER_DEDUP_TYPES:
+            continue
+        if e.get("skip") and e.get("duplicate_id") and not _dedup_protected(e):
+            stale[yt_id] = {"skip": False, "duplicate_id": e["duplicate_id"],
+                            "skip_reason": "un-skipped: %s is no longer deduped"
+                                           % (e.get("meeting_type") or "an untyped video")}
+
     groups = {}
     for yt_id, e in video_data.items():
-        if e.get("meeting_type") in skip_types or not e.get("title") or not e.get("channel"):
+        if e.get("meeting_type") in NEVER_DEDUP_TYPES or not e.get("title") or not e.get("channel"):
             continue
         groups.setdefault((e["meeting_type"], meeting_date(e)), []).append(yt_id)
 
@@ -601,12 +796,25 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
                 1 if "Livestream" in (e.get("title") or "") else 0,
                 yt_id)
 
-    changes = {}          # yt_id -> {"skip": bool, "duplicate_id": str}
+    changes = dict(stale)  # yt_id -> {"skip": bool, "duplicate_id": str}
     pairs = 0
     for key, ids in groups.items():
         if len(ids) < 2:
             continue
-        keeper = min(ids, key=prefer)
+        # NEVER HIDE A MEETING BEHIND A COPY THAT IS ITSELF HIDDEN. A keeper
+        # skipped WITHOUT a duplicate_id was hidden by a person or by the
+        # truncated-audio guard, and _dedup_protected refuses to un-skip it --
+        # so pointing the other copies at it removes the meeting from the site
+        # altogether. Found live: the MCM Archive copies of "Community
+        # Development Board 07-14-25" and the 2021 cannabis outreach session
+        # were already skipped, and the Castus copies had just been pointed at
+        # them, leaving no visible copy of either. Prefer an unskippable-away
+        # keeper; if every copy in the group is protected-skipped, leave the
+        # whole group alone rather than pick a dead keeper.
+        usable = [y for y in ids if not _hidden_for_good(video_data[y])]
+        if not usable:
+            continue
+        keeper = min(usable, key=prefer)
         k = video_data[keeper]
         for other in ids:
             if other == keeper:
@@ -616,7 +824,7 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             live = ("Livestream" in (o.get("title") or "")) or ("Livestream" in (k.get("title") or ""))
             if same_channel and not (o["channel"].strip() == MT_CHANNEL and live):
                 continue
-            if not titles_overlap(o.get("title"), k.get("title")):
+            if not same_recording(o, k):
                 continue
             pairs += 1
             keeper_done = has_transcript(keeper, k)
