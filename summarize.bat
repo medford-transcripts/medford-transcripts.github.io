@@ -33,9 +33,18 @@ cd /d "%~dp0"
 
 set "PY=C:\Users\jdeas\AppData\Local\Programs\Python\Python311\python.exe"
 set "SCRIPT=summarize_meeting.py"
-REM A provider, not a model: the ladder picks whichever one answers today.
-REM Pinning a name is what broke this before -- gemini-2.5-pro was the
-REM default here and is now a 404.
+REM A PROVIDER, NOT A MODEL, and do not be tempted to pin one here.
+REM
+REM Two reasons, the second being the expensive one:
+REM   1. Pinning a name is what broke this before. gemini-2.5-pro was the
+REM      hardcoded default and is now a 404, so every run produced nothing.
+REM   2. THE LADDER IS A QUOTA POOL. The free-tier allowance is 20 requests
+REM      per day keyed on the model FAMILY (quotaDimensions says
+REM      {'model': 'gemini-3-flash'}), so separate families have SEPARATE
+REM      buckets. Walking three is ~60 requests/night; pinning one is 20.
+REM
+REM The ladder already tries gemini-3.5-flash first, so this gets the
+REM preferred model AND the other buckets once its 20 are spent.
 set "ARGS=--all --model gemini"
 set "NAME=summaries"
 

@@ -130,9 +130,24 @@ def provider_for(model):
 # one changes the product, and a reader cannot tell from the page. Every
 # fallback prints, and the summary records what was asked for beside what
 # actually answered.
+# THE LADDER IS ALSO A QUOTA POOL, which is why the order is what it is and
+# why nothing here should be collapsed to a single pinned model. The free-tier
+# allowance is 20 requests/day keyed on the model FAMILY -- quotaDimensions
+# says {'model': 'gemini-3-flash'} -- so the families have SEPARATE buckets and
+# walking three of them is ~60 requests/day where pinning one is 20.
+#
+# Flash before Pro, against the usual instinct. Pro-class refuses even a
+# two-token probe on this free tier, so putting it first spends real requests
+# (5% of a day's output each) discovering that again every night. 3.5-flash is
+# GA rather than -preview and produced the first summaries in the corpus;
+# 3-flash-preview measured equivalent on the bakeoff -- 7 items each, both
+# naming Fallon and both faithfully reporting the "Andrea" ASR error -- so it
+# is a genuine second bucket, not a downgrade. Pro stays last rather than
+# leaving, because the day this key gets billing it becomes the right choice
+# and _WINNER will find it.
 MODEL_LADDER = {
-    "gemini": ["gemini-3.1-pro", "gemini-3-pro", "gemini-3.5-flash",
-               "gemini-3-flash", "gemini-2.5-flash"],
+    "gemini": ["gemini-3.5-flash", "gemini-3-flash", "gemini-3.1-pro",
+               "gemini-3-pro", "gemini-2.5-flash"],
     "openai": ["gpt-5", "gpt-5-mini", "gpt-5-nano"],
     "anthropic": ["claude-opus-5-5", "claude-opus-5", "claude-sonnet-5",
                   "claude-haiku-4-5"],
