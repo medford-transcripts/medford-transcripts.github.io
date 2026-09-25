@@ -372,24 +372,37 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
 
 
 def _retry_delay(r, cap=120):
-    """Seconds Google asks us to wait, or None if it did not say.
+    """Seconds Google asks us to wait, or None if waiting cannot help.
 
-    None means the quota does not refill on a timescale worth blocking for --
-    treat it as the daily cap and let the caller fail.
+    THE retryDelay ALONE IS A TRAP. Google attaches RetryInfo even to a
+    PER-DAY quota error -- measured: GenerateRequestsPerDayPerProjectPerModel
+    came back with "retryDelay: 50s", and no amount of waiting 50 seconds
+    restores a daily allowance that resets at midnight Pacific. Honouring it
+    blindly costs the full backoff (~4 minutes) on EVERY meeting of a backlog
+    run, for a model that cannot answer until tomorrow.
+
+    So the QuotaFailure violation decides, and RetryInfo only supplies the
+    number: a quotaId naming a per-day limit is terminal, everything else is
+    a short window worth waiting out.
     """
     try:
         details = r.json().get("error", {}).get("details", []) or []
     except ValueError:
         return None
+    delay = None
     for d in details:
-        if "RetryInfo" not in (d.get("@type") or ""):
-            continue
-        raw = str(d.get("retryDelay") or "").rstrip("s")
-        try:
-            return min(max(int(float(raw)), 1), cap)
-        except ValueError:
-            return None
-    return None
+        t = d.get("@type") or ""
+        if "QuotaFailure" in t:
+            for v in d.get("violations", []):
+                if "perday" in (v.get("quotaId") or "").lower():
+                    return None          # resets at midnight, not in 50s
+        elif "RetryInfo" in t:
+            raw = str(d.get("retryDelay") or "").rstrip("s")
+            try:
+                delay = min(max(int(float(raw)), 1), cap)
+            except ValueError:
+                delay = None
+    return delay
 
 
 def _gemini_call(model, system, user, key, max_tokens):
