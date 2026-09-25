@@ -760,6 +760,24 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
     print("  %d items, %d dropped, in/out tokens %s/%s -> %s"
           % (len(kept), len(dropped), usage.get("input_tokens"),
              usage.get("output_tokens"), dest))
+
+    # REBUILD THE PAGE, or the summary is invisible. srt2html reads this
+    # sidecar at render time, and the page was generated when the meeting was
+    # transcribed -- hours or months before this runs. Without this the
+    # nightly job would accumulate correct summaries that nobody can see,
+    # which is the exact failure shape this codebase keeps hitting: work that
+    # succeeds, logs success, and changes nothing.
+    #
+    # Imported lazily: srt2html pulls in whisperx-adjacent modules and a
+    # --dry-run should not pay for them.
+    if not out_path:
+        try:
+            import srt2html
+            srt2html.srt2html(yt_id, force=True)
+            print("  page rebuilt")
+        except Exception as e:
+            # never let rendering failure lose a summary that cost real quota
+            print("  WARNING: summary written but page NOT rebuilt: %s" % str(e)[:120])
     return out
 
 
