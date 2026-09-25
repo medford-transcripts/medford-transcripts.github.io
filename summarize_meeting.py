@@ -179,6 +179,12 @@ def list_models(provider, key):
     return ids
 
 
+def provider_of(spec):
+    """Provider for a spec that may be a provider name OR a model id."""
+    spec = (spec or DEFAULT_PROVIDER).strip()
+    return spec if spec in MODEL_LADDER else provider_for(spec)
+
+
 def candidates(spec, key=None):
     """Ordered model ids to try for `spec`.
 
@@ -214,6 +220,32 @@ def candidates(spec, key=None):
 
 class ModelUnavailable(RuntimeError):
     """This model will not answer today; try the next one on the ladder."""
+
+
+class DailyQuotaExhausted(RuntimeError):
+    """Every model for this provider is out of DAILY allowance. Stop.
+
+    Distinct from an ordinary failure on purpose. The --all loop treats a
+    per-meeting error as "skip it and carry on", which is right for a bad
+    transcript and catastrophic for an exhausted quota: it would walk the
+    whole ladder for each of 2,232 remaining meetings, fail every one, and
+    fill a log with activity while producing nothing. Hours of apparent work
+    and no output is this codebase's signature failure; make it stop instead.
+    """
+
+
+def _per_day_quota(r):
+    """True if this 429 is a per-DAY allowance rather than a short window."""
+    try:
+        details = r.json().get("error", {}).get("details", []) or []
+    except ValueError:
+        return False
+    for d in details:
+        if "QuotaFailure" in (d.get("@type") or ""):
+            for v in d.get("violations", []):
+                if "perday" in (v.get("quotaId") or "").lower():
+                    return True
+    return False
 
 
 def _terminal_for_model(status, body):
@@ -368,6 +400,9 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
             time.sleep(wait)
             continue
         break
+    if r.status_code == 429 and _per_day_quota(r):
+        raise DailyQuotaExhausted(
+            "%s: daily free-tier allowance exhausted (resets midnight Pacific)" % model)
     return _gemini_parse(r)
 
 
@@ -508,7 +543,7 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
     Raises the LAST error when every candidate fails, rather than a synthetic
     "all models failed": the real 404 or 429 text is what tells you why.
     """
-    tried, last = [], None
+    tried, last, capped = [], None, []
     for model in candidates(spec, key):
         # A model that already failed terminally this run is not retried. On
         # --all over 2,232 meetings the first candidate can be one whose daily
@@ -522,6 +557,13 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
             if tried:
                 print("  NOTE: fell back to %s after %s" % (model, ", ".join(tried)))
             return text, usage, model
+        except DailyQuotaExhausted as e:
+            print("  %s: daily allowance gone; trying the next model" % model)
+            _DEAD.add(model)
+            capped.append(model)
+            tried.append("%s(day)" % model)
+            last = e
+            continue
         except RuntimeError as e:
             msg = str(e)
             m = re.search(r"\b(\d{3})\b", msg[:60])
@@ -537,6 +579,13 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
                 _DEAD.add(model)
             tried.append("%s(%s)" % (model, status or "err"))
             last = e
+    # Every candidate refused, and at least one because its DAILY allowance is
+    # gone. Nothing this run does will change that, so say so in a way the
+    # caller can act on rather than logging 2,232 identical failures.
+    if capped:
+        raise DailyQuotaExhausted(
+            "all %s models are out of daily allowance (%s)"
+            % (provider_of(spec), ", ".join(capped)))
     raise last or RuntimeError("no model configured for %r" % spec)
 
 
@@ -708,6 +757,16 @@ def main():
         try:
             if summarize(yt_id, args.model, args.dry_run, args.force, video_data):
                 done += 1
+        except DailyQuotaExhausted as e:
+            # NOT "skip this one and carry on". Carrying on means walking the
+            # whole ladder for every remaining meeting and failing all of them.
+            print("\nSTOPPING: %s" % e)
+            print("summarised %d before the cap; %d still to do."
+                  % (done, len(todo) - done))
+            print("Re-run after the quota resets -- already-summarised meetings"
+                  " are skipped on the transcript SHA, so it resumes where it"
+                  " left off.")
+            return 0
         except Exception as e:
             print("  FAILED %s: %s" % (yt_id, str(e)[:160]))
     print("summarised %d" % done)
