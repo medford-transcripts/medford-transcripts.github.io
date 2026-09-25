@@ -351,6 +351,32 @@ def get_meeting_type(video):
             if any(kw in t for kw in keywords):
                 return possible_meeting
 
+    # A SCHOOL MARKER IN THE TITLE DECIDES, exactly as the channel does above.
+    #
+    # "School Committee of the Whole" contains "committee of the whole", and
+    # that keyword belongs to CC City Council Meeting of the Whole, which is
+    # listed earlier -- so 18 School Committee meetings were filed under the
+    # City Council, and "SC COW 6/14/21" with them. The channel rule above
+    # catches these only when they come from the Medford Public Schools
+    # channel; the same meeting re-published by MCM Archive or Castus fell
+    # through to the council.
+    #
+    # Joint sessions are excluded on purpose: they name both bodies, and
+    # "CC and SC Joint Session" is its own type rather than either one.
+    #
+    # DELIBERATELY NARROW -- it fires only when the title ALSO says "of the
+    # whole"/"cow", because that is the whole of the ambiguity. A first attempt
+    # applied it to any school-marked title and swallowed 29 Campaign videos:
+    # "2025 School Committee Candidate Forum" is a candidate forum, not a
+    # school committee meeting, and Campaign is matched later in the general
+    # loop. Widening this rule means re-checking that case.
+    _whole = ("committee of the whole" in t) or ("cow" in t)
+    if (_whole and "joint" not in t
+            and any(m in t for m in ("school committee", "sc cow", "msc "))):
+        for meeting_type, keywords in meeting_type_map.items():
+            if meeting_type.startswith("MPS") and any(kw in t for kw in keywords):
+                return meeting_type
+
     # now check the leftovers against all keywords
     for meeting_type, keywords in meeting_type_map.items():
         if any(kw in t for kw in keywords):
