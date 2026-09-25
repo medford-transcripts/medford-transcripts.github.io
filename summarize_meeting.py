@@ -61,13 +61,27 @@ ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_VERSION = "2023-06-01"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent"
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
-DEFAULT_MODEL = "gemini-2.5-pro"
+# A PROVIDER, NOT A MODEL. The default used to be "gemini-2.5-pro", which is
+# now retired (404 "no longer available to new users"), so every run that did
+# not pass --model silently produced nothing. Naming the provider and letting
+# MODEL_LADDER + the live model list decide keeps working across retirements.
+#
+# Measured 2026-09-25, and the reason the ladder is ordered as it is:
+#   3-flash-preview   OK
+#   3.5-flash         503 transient capacity
+#   2.5-flash         404 retired
+#   3.1-pro-preview   429 even for a two-token request
+#   pro-latest        429 (same model as 3.1-pro-preview)
+# Pro-class is not merely throttled on this free tier, it is unavailable --
+# worth knowing, because the backlog costing assumed 100 Pro requests/day.
+DEFAULT_PROVIDER = "gemini"
 
 # Two providers, because the economics differ in kind rather than degree.
 # Anthropic has no free tier: the backlog costs $174 (Sonnet 5) to $348
-# (Opus 5.5), halved on the Batch API. Gemini has a genuine free tier -- 100
-# requests/day on 2.5 Pro, 250 on Flash -- which clears 2,232 meetings in
-# roughly 9 to 22 days at zero cost.
+# (Opus 5.5), halved on the Batch API. Gemini has a genuine free tier --
+# Flash-class is the one actually reachable, and its allowance is the larger
+# of the two -- which clears 2,232 meetings in days rather than weeks at zero
+# cost.
 #
 # NEITHER is covered by a consumer subscription. Claude Pro covers claude.ai
 # and Google One AI Premium covers gemini.google.com; both APIs are billed
@@ -96,6 +110,121 @@ def provider_for(model):
     if m.startswith(("gpt-", "o1", "o3", "o4", "chatgpt")):
         return "openai"
     return "anthropic"
+
+
+# ---------------------------------------------------------------------------
+# ADAPTIVE MODEL SELECTION
+#
+# A PINNED MODEL NAME IS A TIME BOMB. "gemini-2.5-pro" was the default in this
+# file and is now 404 "no longer available to new users", so every run that
+# did not pass --model failed -- and it failed the way things fail here, by
+# quietly producing nothing rather than by complaining. Model names churn on a
+# timescale of months; this archive runs for years.
+#
+# So the default is a PREFERENCE ORDER matched as PREFIXES against whatever
+# the provider says it serves today, not a name. "gemini-3.1-pro" matches
+# "gemini-3.1-pro-preview" without anyone editing this file when the preview
+# suffix is dropped.
+#
+# THE ONE RULE: never downgrade silently. Falling from a Pro model to a nano
+# one changes the product, and a reader cannot tell from the page. Every
+# fallback prints, and the summary records what was asked for beside what
+# actually answered.
+MODEL_LADDER = {
+    "gemini": ["gemini-3.1-pro", "gemini-3-pro", "gemini-3.5-flash",
+               "gemini-3-flash", "gemini-2.5-flash"],
+    "openai": ["gpt-5", "gpt-5-mini", "gpt-5-nano"],
+    "anthropic": ["claude-opus-5-5", "claude-opus-5", "claude-sonnet-5",
+                  "claude-haiku-4-5"],
+}
+
+MODELS_URL = {
+    "gemini": "https://generativelanguage.googleapis.com/v1beta/models",
+    "openai": "https://api.openai.com/v1/models",
+    "anthropic": "https://api.anthropic.com/v1/models",
+}
+
+_MODEL_CACHE = {}          # provider -> [ids], for one process
+_DEAD = set()              # models that failed terminally in THIS process
+
+
+def list_models(provider, key):
+    """Model ids the provider says it serves, best-effort.
+
+    Returns [] rather than raising: an unreachable listing endpoint must not
+    stop a summary run that a pinned model would have completed.
+    """
+    if provider in _MODEL_CACHE:
+        return _MODEL_CACHE[provider]
+    ids = []
+    try:
+        if provider == "gemini":
+            r = requests.get(MODELS_URL[provider], timeout=60,
+                             params={"key": key, "pageSize": 200})
+            ids = [m["name"].split("/")[-1] for m in r.json().get("models", [])
+                   if "generateContent" in (m.get("supportedGenerationMethods") or [])]
+        elif provider == "openai":
+            r = requests.get(MODELS_URL[provider], timeout=60,
+                             headers={"Authorization": "Bearer " + key})
+            ids = [m["id"] for m in r.json().get("data", [])]
+        else:
+            r = requests.get(MODELS_URL[provider], timeout=60,
+                             headers={"x-api-key": key,
+                                      "anthropic-version": ANTHROPIC_VERSION})
+            ids = [m["id"] for m in r.json().get("data", [])]
+    except Exception as e:
+        print("  could not list %s models (%s); falling back to the ladder as written"
+              % (provider, str(e)[:70]))
+    _MODEL_CACHE[provider] = ids
+    return ids
+
+
+def candidates(spec, key=None):
+    """Ordered model ids to try for `spec`.
+
+    spec may be an exact model ("gemini-3-flash-preview"), a provider name
+    ("gemini"), or None for the default provider. An exact name is honoured
+    first and the rest of its provider's ladder follows it as fallback, so a
+    retired pin degrades into a working run instead of a crash -- loudly.
+    """
+    spec = (spec or DEFAULT_PROVIDER).strip()
+    provider = spec if spec in MODEL_LADDER else provider_for(spec)
+    live = list_models(provider, key) if key else []
+
+    out = []
+    if spec not in MODEL_LADDER:
+        out.append(spec)                       # an explicit request goes first
+    for pref in MODEL_LADDER.get(provider, []):
+        if live:
+            # prefix match, so "gemini-3.1-pro" finds "...-preview". Shortest
+            # match first: the plain id beats a -tts or -image variant.
+            hits = sorted((m for m in live if m.startswith(pref)), key=len)
+            hits = [m for m in hits
+                    if not any(b in m for b in ("-tts", "-image", "-audio", "customtools"))]
+            out.extend(hits[:1])
+        else:
+            out.append(pref)
+    seen, ordered = set(), []
+    for m in out:
+        if m not in seen:
+            seen.add(m)
+            ordered.append(m)
+    return ordered
+
+
+class ModelUnavailable(RuntimeError):
+    """This model will not answer today; try the next one on the ladder."""
+
+
+def _terminal_for_model(status, body):
+    """Is this a 'give up on THIS model' error rather than a retryable one?
+
+    404 = retired or misspelled. 429 that survived ask_gemini's own backoff =
+    a quota that does not refill in a useful window. 503 that survived its
+    retries = capacity that is not coming back promptly. All three mean move
+    on; none of them mean the run is over.
+    """
+    return status in (404, 429, 503) or "not_found" in (body or "").lower()
 # Generous ON PURPOSE. max_tokens is a guillotine, not a brief: at 2000 the
 # model simply stopped mid-JSON and the reply failed to parse. Brevity is the
 # prompt's job; this only has to be large enough that a well-behaved reply is
@@ -209,18 +338,58 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
     RETRIES ON 5xx. Gemini's free tier returns "experiencing high demand"
     unpredictably -- measured on one meeting: 5% of the transcript succeeded,
     25% and 50% failed, and the FULL 46k-token request succeeded, all within a
-    minute. It is not size, not the request shape, and not the daily quota
-    (that is a 429). It is capacity, and the only answer is to ask again.
+    minute. It is not size, not the request shape, and not the daily quota.
+    It is capacity, and the only answer is to ask again.
+
+    AND ON A RATE-LIMIT 429, WHICH IS NOT THE SAME AS THE DAILY CAP. This
+    function used to treat every 429 as terminal, on the assumption that a 429
+    meant the daily quota was gone. The free tier has FOUR separate quotas --
+    requests per day, requests per minute, input tokens per day, input tokens
+    per minute -- and three of them refill on their own. Google says which by
+    attaching RetryInfo: a per-minute limit comes back with a short retryDelay
+    (17s, measured), the daily cap comes back with none. Honour the delay it
+    gives and only give up when there is no delay to wait for, otherwise a
+    backlog run dies on the first busy minute.
     """
     for attempt in range(attempts):
         r = _gemini_call(model, system, user, key, max_tokens)
-        if r.status_code not in (500, 502, 503, 504):
-            break
-        if attempt < attempts - 1:
+        if r.status_code in (500, 502, 503, 504):
+            if attempt == attempts - 1:
+                break
             wait = 5 * (2 ** attempt)
             print("    gemini %s (transient); retrying in %ds" % (r.status_code, wait))
             time.sleep(wait)
+            continue
+        if r.status_code == 429:
+            wait = _retry_delay(r)
+            if wait is None or attempt == attempts - 1:
+                break               # daily cap, or out of attempts
+            print("    gemini 429 (rate limit); retrying in %ds" % wait)
+            time.sleep(wait)
+            continue
+        break
     return _gemini_parse(r)
+
+
+def _retry_delay(r, cap=120):
+    """Seconds Google asks us to wait, or None if it did not say.
+
+    None means the quota does not refill on a timescale worth blocking for --
+    treat it as the daily cap and let the caller fail.
+    """
+    try:
+        details = r.json().get("error", {}).get("details", []) or []
+    except ValueError:
+        return None
+    for d in details:
+        if "RetryInfo" not in (d.get("@type") or ""):
+            continue
+        raw = str(d.get("retryDelay") or "").rstrip("s")
+        try:
+            return min(max(int(float(raw)), 1), cap)
+        except ValueError:
+            return None
+    return None
 
 
 def _gemini_call(model, system, user, key, max_tokens):
@@ -306,13 +475,56 @@ def ask_openai(model, system, user, key, max_tokens=MAX_OUTPUT):
                   "output_tokens": u.get("completion_tokens")}
 
 
-def ask(model, system, user, key, max_tokens=MAX_OUTPUT):
+def ask_one(model, system, user, key, max_tokens=MAX_OUTPUT):
     p = provider_for(model)
     if p == "openai":
         return ask_openai(model, system, user, key, max_tokens)
     if p == "gemini":
         return ask_gemini(model, system, user, key, max_tokens)
     return ask_anthropic(model, system, user, key, max_tokens)
+
+
+def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
+    """Ask the best model that will actually answer. Returns (text, usage, model).
+
+    Walks the ladder from candidates(). A model that is retired, out of quota
+    or persistently at capacity is skipped -- AUDIBLY, because dropping from a
+    Pro model to a nano one changes the summary and the reader cannot tell.
+    The caller records which model answered.
+
+    Raises the LAST error when every candidate fails, rather than a synthetic
+    "all models failed": the real 404 or 429 text is what tells you why.
+    """
+    tried, last = [], None
+    for model in candidates(spec, key):
+        # A model that already failed terminally this run is not retried. On
+        # --all over 2,232 meetings the first candidate can be one whose daily
+        # quota is gone; without this, every meeting pays its full retry
+        # backoff (~3 minutes at a 40s retryDelay) before falling through to
+        # the model that was always going to answer.
+        if model in _DEAD:
+            continue
+        try:
+            text, usage = ask_one(model, system, user, key, max_tokens)
+            if tried:
+                print("  NOTE: fell back to %s after %s" % (model, ", ".join(tried)))
+            return text, usage, model
+        except RuntimeError as e:
+            msg = str(e)
+            m = re.search(r"\b(\d{3})\b", msg[:60])
+            status = int(m.group(1)) if m else 0
+            if not _terminal_for_model(status, msg):
+                raise
+            print("  %s unavailable (%s); trying the next model"
+                  % (model, (str(status) if status else msg[:40])))
+            # 503 is capacity and can clear within the minute, so that model
+            # stays in the running for the next meeting. 404 (retired) and 429
+            # (quota that outlived its own backoff) will not change today.
+            if status in (404, 429):
+                _DEAD.add(model)
+            tried.append("%s(%s)" % (model, status or "err"))
+            last = e
+    raise last or RuntimeError("no model configured for %r" % spec)
 
 
 def parse_json(text):
@@ -349,7 +561,7 @@ def verify(summary, duration):
     return kept, dropped
 
 
-def summarize(yt_id, model=DEFAULT_MODEL, dry_run=False, force=False,
+def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
               video_data=None, out_path=None):
     video_data = video_data or utils.get_video_data()
     base, srt = transcript_dir(yt_id, video_data)
@@ -388,16 +600,20 @@ def summarize(yt_id, model=DEFAULT_MODEL, dry_run=False, force=False,
         print("  dry run; no API call")
         return None
 
-    reply, usage = ask(model, SYSTEM, header + text,
-                       api_key(provider_for(model)))
+    provider = model if model in MODEL_LADDER else provider_for(model)
+    reply, usage, used = ask(model, SYSTEM, header + text, api_key(provider))
     summary = parse_json(reply)
     kept, dropped = verify(summary, duration)
     for it, why in dropped:
         print("  DROPPED %-40s (%s)" % (str(it.get("title"))[:40], why))
     out = {"video_id": yt_id,
-           "provider": provider_for(model),
+           "provider": provider_for(used),
            "generated_at": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
-           "model": model,
+           # WHAT ANSWERED, and what was asked for when they differ. A backlog
+           # run spanning a model retirement produces summaries from two
+           # models; without this the difference is invisible in the output.
+           "model": used,
+           "model_requested": (model if used != model else None),
            "transcript_sha": sha,
            "overview": (summary.get("overview") or "").strip(),
            "items": kept,
@@ -418,7 +634,13 @@ def main():
     ap.add_argument("-i", "--id", dest="yt_id")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--model", default=DEFAULT_MODEL)
+    ap.add_argument("--model", default=DEFAULT_PROVIDER,
+                    help="exact model id, or a provider name "
+                         "(gemini/openai/anthropic) to let the "
+                         "ladder pick the best one that answers")
+    ap.add_argument("--list-models", action="store_true",
+                    help="show what each provider serves today, "
+                         "and which the ladder would choose")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--sleep", type=float, default=None,
@@ -428,6 +650,25 @@ def main():
     ap.add_argument("--out", help="write here instead of <base>.summary.json "
                                   "(for comparing two models side by side)")
     args = ap.parse_args()
+
+    if args.list_models:
+        # What the ladder would actually pick today, per provider. Run this
+        # first when summaries stop appearing: a silent retirement shows up
+        # here as a ladder entry with no live match.
+        for provider in sorted(MODEL_LADDER):
+            try:
+                key = api_key(provider)
+            except Exception as e:
+                print("%-10s no key (%s)" % (provider, str(e)[:50]))
+                continue
+            live = list_models(provider, key)
+            chosen = candidates(provider, key)
+            print("\n%s -- %d models served" % (provider.upper(), len(live)))
+            for pref in MODEL_LADDER[provider]:
+                hit = next((m for m in chosen if m.startswith(pref)), None)
+                print("   %-22s -> %s" % (pref, hit or "(not served)"))
+            print("   would use: %s" % (chosen[0] if chosen else "NOTHING"))
+        return 0
 
     video_data = utils.get_video_data()
     if args.yt_id:
