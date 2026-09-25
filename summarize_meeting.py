@@ -146,6 +146,7 @@ MODELS_URL = {
 
 _MODEL_CACHE = {}          # provider -> [ids], for one process
 _DEAD = set()              # models that failed terminally in THIS process
+_WINNER = {}               # provider -> the model that last actually answered
 
 
 def list_models(provider, key):
@@ -198,6 +199,16 @@ def candidates(spec, key=None):
     live = list_models(provider, key) if key else []
 
     out = []
+    # WHAT ANSWERED LAST TIME GOES FIRST, and this is a quota decision rather
+    # than a speed one. A failed ladder walk costs 16 requests for no output
+    # (5 attempts each on three models, plus a 404) where a success costs 1 --
+    # and on a metered free tier those rejections are the scarce resource, not
+    # the wall clock. _DEAD already removes models that failed TERMINALLY, but
+    # a 503 model is deliberately not blacklisted (capacity does come back),
+    # so without this the ladder pays its 5-request 503 tax on every meeting
+    # for a model that is congested all evening.
+    if _WINNER.get(provider) and _WINNER[provider] not in _DEAD:
+        out.append(_WINNER[provider])
     if spec not in MODEL_LADDER:
         out.append(spec)                       # an explicit request goes first
     for pref in MODEL_LADDER.get(provider, []):
@@ -556,6 +567,7 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
             text, usage = ask_one(model, system, user, key, max_tokens)
             if tried:
                 print("  NOTE: fell back to %s after %s" % (model, ", ".join(tried)))
+            _WINNER[provider_of(spec)] = model
             return text, usage, model
         except DailyQuotaExhausted as e:
             print("  %s: daily allowance gone; trying the next model" % model)
