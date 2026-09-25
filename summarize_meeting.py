@@ -245,18 +245,57 @@ class DailyQuotaExhausted(RuntimeError):
     """
 
 
-def _per_day_quota(r):
-    """True if this 429 is a per-DAY allowance rather than a short window."""
+def quota_violations(r):
+    """[(quotaId, value)] for a 429. Google names exactly which limit broke.
+
+    FOUR QUOTAS, NOT ONE, and they are worth telling apart because the fix
+    differs. Observed ids, all -FreeTier:
+        GenerateRequestsPerMinutePerProjectPerModel      RPM
+        GenerateRequestsPerDayPerProjectPerModel         RPD
+        GenerateContentInputTokensPerModelPerMinute      TPM
+        GenerateContentInputTokensPerModelPerDay         TPD
+
+    WHICH ONE BINDS HERE: measured 2026-09-25, gemini-3-flash violated ONLY
+    RPD, with quotaValue 20. Twenty REQUESTS per day, and a two-token request
+    is refused exactly like a 46k-token one -- so throughput is bounded by the
+    number of calls, not their size, and every wasted retry costs 5% of the
+    day's output. That is the opposite of the intuition that a token-metered
+    tier would give, and it is why the retry policy matters more than prompt
+    length.
+
+    quotaDimensions also shows the limit is keyed on the model FAMILY
+    ("gemini-3-flash"), not the exact id, so switching between -preview and
+    the released name shares one allowance.
+    """
+    out = []
     try:
         details = r.json().get("error", {}).get("details", []) or []
     except ValueError:
-        return False
+        return out
     for d in details:
-        if "QuotaFailure" in (d.get("@type") or ""):
-            for v in d.get("violations", []):
-                if "perday" in (v.get("quotaId") or "").lower():
-                    return True
-    return False
+        if "QuotaFailure" not in (d.get("@type") or ""):
+            continue
+        for v in d.get("violations", []):
+            out.append((v.get("quotaId") or "", v.get("quotaValue")))
+    return out
+
+
+def _per_day_quota(r):
+    """True if this 429 is a per-DAY allowance rather than a short window."""
+    return any("perday" in q.lower() for q, _ in quota_violations(r))
+
+
+def _quota_note(r):
+    """Human-readable 'which limit, and what is it' for a log line."""
+    bits = []
+    for q, val in quota_violations(r):
+        ql = q.lower()
+        kind = ("daily requests" if "requestsperday" in ql else
+                "daily input tokens" if "tokens" in ql and "perday" in ql else
+                "requests/min" if "requestsperminute" in ql else
+                "input tokens/min" if "tokens" in ql else q)
+        bits.append("%s%s" % (kind, "" if val in (None, "") else "=%s" % val))
+    return ", ".join(bits) or "unspecified quota"
 
 
 def _terminal_for_model(status, body):
@@ -375,7 +414,7 @@ def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
                             "output_tokens": u.get("output_tokens")}
 
 
-def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
+def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3):
     """responseMimeType forces valid JSON, so no code fence to strip.
 
     RETRIES ON 5xx. Gemini's free tier returns "experiencing high demand"
@@ -413,7 +452,7 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=5):
         break
     if r.status_code == 429 and _per_day_quota(r):
         raise DailyQuotaExhausted(
-            "%s: daily free-tier allowance exhausted (resets midnight Pacific)" % model)
+            "%s: %s exhausted (resets midnight Pacific)" % (model, _quota_note(r)))
     return _gemini_parse(r)
 
 
@@ -430,6 +469,12 @@ def _retry_delay(r, cap=120):
     So the QuotaFailure violation decides, and RetryInfo only supplies the
     number: a quotaId naming a per-day limit is terminal, everything else is
     a short window worth waiting out.
+
+    WHY attempts DEFAULTS TO 3 AND NOT 5. The measured daily allowance is 20
+    REQUESTS per model (quotaValue on GenerateRequestsPerDayPerProjectPerModel),
+    so every attempt spends 5% of a day's output whether it succeeds or not.
+    Five attempts on one congested model was a quarter of the day for a single
+    meeting that might still fail. The retry budget is the throughput budget.
     """
     try:
         details = r.json().get("error", {}).get("details", []) or []
@@ -742,6 +787,21 @@ def main():
                 hit = next((m for m in chosen if m.startswith(pref)), None)
                 print("   %-22s -> %s" % (pref, hit or "(not served)"))
             print("   would use: %s" % (chosen[0] if chosen else "NOTHING"))
+            # A two-token probe of the top candidate. Costs one request, and
+            # it is the only way to learn the real limit: the models listing
+            # reports what is SERVED, never what is left.
+            if chosen and provider == "gemini":
+                try:
+                    r = requests.post(GEMINI_URL % chosen[0], timeout=45,
+                                      params={"key": key},
+                                      headers={"content-type": "application/json"},
+                                      json={"contents": [{"parts": [{"text": "hi"}]}]})
+                    if r.status_code == 429:
+                        print("   quota now: EXHAUSTED -- %s" % _quota_note(r))
+                    else:
+                        print("   quota now: answering (HTTP %s)" % r.status_code)
+                except Exception as e:
+                    print("   quota now: could not probe (%s)" % str(e)[:40])
         return 0
 
     video_data = utils.get_video_data()
