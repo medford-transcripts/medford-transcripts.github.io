@@ -155,8 +155,18 @@ def timestamp_url(yt_id, start, video_data=None):
         return url + "?t=" + str(start) if url else None
 
     if yt_id[0:6] == "MCM000":            # MCM archive -> archive.org
+        # "?start=", not "&start=". The youtu.be branch below gets away with a
+        # bare "&" because youtu.be treats the whole path as the id and splits
+        # it, handing YouTube a real query string -- verified:
+        #   youtu.be/<id>&t=181.479s -> youtube.com/watch?v=<id>&t=181.479s
+        # archive.org does no such thing. It resolves the slug and DISCARDS
+        # the "&start=31" as path noise, so the link landed on the right item
+        # at position zero: the right video, the wrong moment, with a 200 and
+        # nothing to indicate the seek had been dropped.
         url = entry.get("url")
-        return url + "&start=" + str(start) if url else None
+        if not url:
+            return None
+        return url + ("&" if "?" in url else "?") + "start=" + str(start)
 
     if yt_id[0:6] == "CAS000":            # MCM Castus
         # The Castus web player takes no time parameter, so the link goes to
