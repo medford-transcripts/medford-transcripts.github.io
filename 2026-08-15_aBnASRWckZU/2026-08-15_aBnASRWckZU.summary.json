@@ -1,0 +1,53 @@
+{
+ "video_id": "aBnASRWckZU",
+ "provider": "gemini",
+ "generated_at": "2026-09-26T07:22:31Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "ad39cf6bc5d20e1d",
+ "overview": "The opening night of the 2026 Medford Jazz Festival featured performances by the Debbie Lane group and the Reese Pike Trio at the West Medford Community Center. The event included reflections on the neighborhood's deep historical ties to jazz and announcements regarding the festival's weekend schedule.",
+ "items": [
+  {
+   "title": "Performance: Debbie Lane and Group",
+   "t": 192,
+   "summary": "Vocalist Debbie Lane and her quartet performed a set of standards and contemporary jazz arrangements including 'Mourning,' 'Walk Between the Raindrops,' 'Star Eyes,' 'Vertigo,' and 'Close to You.'",
+   "speakers": [
+    "Debbie Lane",
+    "Tim Blackman",
+    "Ethan Folk",
+    "Doug Tolan"
+   ]
+  },
+  {
+   "title": "Community History and Festival Remarks",
+   "t": 2927,
+   "summary": "Terry Carter discussed the historical significance of the West Medford Community Center and the neighborhood's jazz legacy, citing local residents like Terry Lynn Carrington and Alan Dawson.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Performance: Reese Pike Trio",
+   "t": 3303,
+   "summary": "The Reese Pike Trio performed jazz arrangements of 'West Side Story' alongside original compositions from Pike's thesis project on Mexican-American composer Maria Grieber. Pike read a poem by Anabel López as an introduction to the piece 'El Sueño.'",
+   "speakers": [
+    "Reese Pike",
+    "Jan Portish",
+    "Seba Ramirez"
+   ]
+  },
+  {
+   "title": "Closing Announcements",
+   "t": 6771,
+   "summary": "Jonathan Fagan thanked the organizers, volunteers, and performers before outlining the schedule for the festival's remaining outdoor sessions.",
+   "speakers": [
+    "Jonathan Fagan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10031,
+  "output_tokens": 459
+ }
+}

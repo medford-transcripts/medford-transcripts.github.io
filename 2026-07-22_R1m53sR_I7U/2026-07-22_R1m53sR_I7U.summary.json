@@ -1,0 +1,101 @@
+{
+ "video_id": "R1m53sR_I7U",
+ "provider": "gemini",
+ "generated_at": "2026-09-26T07:25:30Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "74ffabeb60c3af4c",
+ "overview": "The Advisory Team met to review sustainability strategies for the new high school, focusing on LEED certification versions, HVAC system selection, and solar energy configurations. The team recommended reverting to LEED v4 certification and established three specific HVAC configurations to be evaluated in the next phase of Life Cycle Cost Analysis.",
+ "items": [
+  {
+   "title": "LEED Certification and MSBA Reimbursement",
+   "t": 0,
+   "summary": "The team reviewed the extension of LEED v4 and noted that while MSBA requires Silver certification, additional reimbursement is tied to the specialized stretch energy code and specific material points rather than higher certification levels.",
+   "speakers": [
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "Recommendation to Revert to LEED v4",
+   "t": 139,
+   "summary": "The team recommended pursuing LEED v4 over v5 to avoid the challenges of a pilot rating system that has resulted in significant point denials in other projects.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "Photovoltaic (PV) and Net Zero Energy Strategy",
+   "t": 350,
+   "summary": "Participants discussed achieving Net Zero energy through a combination of roof-mounted panels and parking canopy structures, weighing Power Purchase Agreements against city ownership.",
+   "speakers": [
+    "Matt Rice",
+    "Martine Dion",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "HVAC System Selection and Fossil Fuel Logic",
+   "t": 526,
+   "summary": "The team analyzed all-electric HVAC options, explaining that the specialized stretch code makes fossil fuel systems cost-prohibitive due to required electrification infrastructure.",
+   "speakers": [
+    "Matt Rice",
+    "Martine Dion",
+    "Luke Preisner"
+   ]
+  },
+  {
+   "title": "Preliminary Life Cycle Cost Analysis (LCCA)",
+   "t": 1640,
+   "summary": "Initial modeling showed that while ground source heat pumps have higher upfront costs, they provide superior energy efficiency and lower operational costs over a 50-year timeline compared to air source systems.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "System Parameters for Schematic Design LCCA",
+   "t": 2223,
+   "summary": "The team established three HVAC study options: 100% ground source, a 50/50 hybrid system, and 100% air-to-water heat pumps.",
+   "speakers": [
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "Inclusion of Fossil Fuel Baseline",
+   "t": 2701,
+   "summary": "The team decided to include a fossil fuel baseline in future models that incorporates the mandatory costs of PV infrastructure to provide a transparent cost comparison for the community.",
+   "speakers": [
+    "Paul Ruseau",
+    "Sunny",
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "Exclusion of Variable Refrigerant Flow (VRF) Systems",
+   "t": 3415,
+   "summary": "The team recommended removing VRF systems from consideration due to environmental concerns regarding refrigerants and long-term maintenance resilience.",
+   "speakers": [
+    "Sunny",
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "Commissioning and Material Standards",
+   "t": 3786,
+   "summary": "The group discussed the importance of early commissioning and refined the project's healthy material goals to maximize MSBA reimbursement points.",
+   "speakers": [
+    "Jessica Parks",
+    "Martine Dion",
+    "Matt Rice",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 22094,
+  "output_tokens": 772
+ }
+}
