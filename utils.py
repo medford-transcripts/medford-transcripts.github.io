@@ -60,8 +60,11 @@ def get_video_data(jsonfile='video_data.json'):
 
     # read info
     if os.path.exists(jsonfile):
-        while os.path.exists('video_data.lock'):
-            time.sleep(1)
+        # READERS WAIT ON THIS LOCK TOO, which is why a leaked one is not a
+        # slow save but a stopped archive: the transcriber, srt2html and
+        # summarize_meeting all start by reading video_data, so every one of
+        # them blocks. Same staleness rules as the writer.
+        wait_for_lock()
         with open(jsonfile, 'r') as fp:
             video_data = json.load(fp)
     else: video_data = {}
@@ -78,21 +81,82 @@ Save updates to the video metadata back to the json file
 Do it in a thread-safe way to avoid corruption 
 of the metadata from simultaneous processes
 '''
-def save_video_data(video_data, jsonfile='video_data.json'):
+LOCK_STALE_SECONDS = 120
 
-    # wait until the lock is gone
-    while os.path.exists('video_data.lock'):
+
+def wait_for_lock(lock="video_data.lock"):
+    """Block until the lock is free, breaking it if its owner is gone."""
+    waited = 0.0
+    while os.path.exists(lock):
+        if _lock_is_stale(lock):
+            print("  breaking a stale %s (owner process is gone)" % lock)
+            try:
+                os.remove(lock)
+            except OSError:
+                pass
+            return
         time.sleep(1)
+        waited += 1.0
+        if waited >= LOCK_STALE_SECONDS:
+            print("  %s held for %ds; breaking it" % (lock, int(waited)))
+            try:
+                os.remove(lock)
+            except OSError:
+                pass
+            return
 
-    # create new lock
-    with open("video_data.lock", "w") as file:
-        file.write("lock")
 
-    # save the data
-    with open(jsonfile, "w") as fp:
-        json.dump(video_data, fp, indent=4)
+def save_video_data(video_data, jsonfile='video_data.json'):
+    """Write video_data.json under a lock that cannot outlive its owner.
 
-    os.remove("video_data.lock")
+    THE LOCK USED TO BE A DEAD MAN'S SWITCH. It held the four bytes "lock",
+    named no owner, and was removed only on the success path -- so a writer
+    killed between creating it and removing it left a file that every future
+    writer waited on FOREVER, in a bare `while os.path.exists(): sleep(1)`.
+    Observed: a regeneration process killed mid-save left a lock at 15:09, and
+    38 minutes later a fresh render sat at 0% CPU waiting on it. The
+    transcription loop had not tried to save yet; when it did it would have
+    hung the pipeline silently and indefinitely.
+    THREE FIXES, all of them about the lock dying with its owner:
+      1. it records the PID, so a stale lock is identifiable rather than
+         indistinguishable from a live one;
+      2. it is broken when that PID is gone, or after LOCK_STALE_SECONDS for
+         a PID we cannot check;
+      3. try/finally, so an exception during the write releases it.
+    """
+    lock = "video_data.lock"
+    wait_for_lock(lock)
+
+    with open(lock, "w") as fp:
+        fp.write(str(os.getpid()))
+    try:
+        # temp + replace: a crash mid-write used to leave a TRUNCATED
+        # video_data.json, which is the one file nothing here can rebuild.
+        tmp = jsonfile + ".tmp"
+        with open(tmp, "w") as fp:
+            json.dump(video_data, fp, indent=4)
+        os.replace(tmp, jsonfile)
+    finally:
+        try:
+            os.remove(lock)
+        except OSError:
+            pass
+
+
+def _lock_is_stale(lock):
+    """True if the lock names a process that is no longer running."""
+    try:
+        with open(lock) as fp:
+            pid = int((fp.read() or "").strip())
+    except (OSError, ValueError):
+        return False               # old-format or unreadable: let age decide
+    if pid == os.getpid():
+        return False
+    try:
+        import psutil
+        return not psutil.pid_exists(pid)
+    except ImportError:
+        return False               # cannot check: age is the only signal
 
 ''' 
 Update video_data.json with info from yt_id

@@ -186,3 +186,15 @@ span.w.w-active {
   margin: 0;
   font: 14px/1.5 system-ui, sans-serif;
 }
+
+/* Provenance byline under the h1. The disclosure used to be inside the
+   heading itself; it belongs on the page prominently, but not in the line
+   that tells a reader (and a search engine) which meeting this is. */
+.mt-byline {
+  margin: -6px 0 12px 0;
+  font: 13px/1.4 system-ui, sans-serif;
+  color: #666;
+}
+@media (prefers-color-scheme: dark) {
+  .mt-byline { color: #a8a8b4; }
+}

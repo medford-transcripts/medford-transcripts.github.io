@@ -159,6 +159,9 @@ def timestamp_url(yt_id, start, video_data=None):
         # bare "&" because youtu.be treats the whole path as the id and splits
         # it, handing YouTube a real query string -- verified:
         #   youtu.be/<id>&t=181.479s -> youtube.com/watch?v=<id>&t=181.479s
+        # and YouTube honours the FRACTIONAL seconds, confirmed in a browser.
+        # Both halves of that matter and both look wrong at a glance, so do
+        # not "tidy" the & into a ? or round the decimal away.
         # archive.org does no such thing. It resolves the slug and DISCARDS
         # the "&start=31" as path noise, so the link landed on the right item
         # at position zero: the right video, the wrong moment, with a 200 and
@@ -575,7 +578,11 @@ def srt2html(yt_id,skip_translation=False, force=False):
     print("Making HTML for " + yt_id)
 
     video_title = video_data[yt_id]["title"]
-    title = "Transcript for " + video_title + " (" + yt_id + ")"
+    # THE MEETING NAME LEADS. The id was appended to keep titles unique, but
+    # nothing searches for "Ewo7VA32tkU" and a raw 11-character token dilutes
+    # the strongest relevance signal the page has. Uniqueness comes from the
+    # meeting name plus its date, which the titles already carry.
+    title = video_title + " — Medford meeting transcript"
 
     translator = Translator()
     for language in languages.keys():
@@ -649,11 +656,27 @@ def srt2html(yt_id,skip_translation=False, force=False):
         html.write('  </head>\n')
         html.write('  <body>\n')
 
-        text = 'AI-generated transcript of ' + video_title
+        # THE DISCLOSURE MOVES TO A BYLINE, IT DOES NOT GO AWAY.
+        #
+        # The heading used to read "AI-generated transcript of <meeting>",
+        # which spent the page's most valuable line on five words nobody
+        # searches for and pushed the meeting name after them. The claim that
+        # a search engine demotes the phrase itself does not hold up -- there
+        # is no label-matching penalty; what gets demoted is mass-produced
+        # content with no use, judged on quality signals. Deleting the words
+        # would not have changed a single one of those signals, only the
+        # page's honesty, which is the whole basis of this archive.
+        #
+        # So the meeting name leads and the disclosure sits directly beneath
+        # it, still the first thing read after the title.
+        text = video_title
+        byline = 'AI-generated transcript — the recording is the record.'
         if language != 'en':
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
+            byline = translate_text(byline, dest=language, cachefile=basename + '.cache.json')
 
         html.write('  <h1>' + text + '</h1>\n')
+        html.write('  <p class="mt-byline">' + byline + '</p>\n')
 
         # In-page synced player. This is an ENHANCEMENT of the existing page,
         # not a new one: same URL, same canonical, all transcript text still in
@@ -674,14 +697,34 @@ def srt2html(yt_id,skip_translation=False, force=False):
             # rel="nofollow". A <noscript> child is ignored when scripts run
             # and fills the same box when they do not, so it fixes the empty
             # strip and the missing source link together.
+            # WHAT THE READER GETS DIFFERS BY SOURCE, so say which.
+            #
+            # Castus serves a plain unsigned MP4 (206, video/mp4, ranges), so
+            # a <video> element inside the noscript PLAYS with scripts off --
+            # a genuinely working fallback.
+            #
+            # YouTube and archive.org cannot do that. Both are JavaScript
+            # applications: with scripts disabled the link lands on a page
+            # whose player never initialises, which reads as a broken link
+            # rather than as a platform requirement. Our URL is correct --
+            # youtu.be/<id>&t=181.479s does redirect to
+            # youtube.com/watch?v=<id>&t=181.479s -- so the honest thing is to
+            # name the requirement rather than send the reader to a dead end
+            # and let them conclude the archive is broken.
             _src_url = source_url(yt_id, video_data)
             _fallback = ''
-            if _src_url:
+            if yt_id[0:6] == "CAS000" and kind == "video":
+                _fallback = ('<noscript><p class="mt-noscript">'
+                             '<video controls preload="metadata" playsinline '
+                             'style="width:100%;max-width:880px" src="'
+                             + escape(src, quote=True) + '"></video></p></noscript>')
+            elif _src_url:
                 _fallback = ('<noscript><p class="mt-noscript">'
                              '<a href="' + escape(_src_url, quote=True) + '">'
                              'Watch the original recording</a>'
-                             ' &mdash; the transcript below is the record.'
-                             '</p></noscript>')
+                             ' &mdash; note that the source player needs '
+                             'JavaScript. The transcript below does not, and '
+                             'it is the record.</p></noscript>')
             html.write('  <div id="mt-player" data-kind="' + kind
                        + '" data-src="' + escape(src, quote=True) + '"'
                        + ' data-video-id="' + escape(yt_id, quote=True) + '"'
