@@ -217,6 +217,115 @@ def hhmmss(t):
     return ("%d:%02d:%02d" % (h, m, s)) if h else ("%d:%02d" % (m, s))
 
 
+def load_summary(dir, filebasename):
+    """The summary sidecar as a dict, or None. Shared by the head and body."""
+    path = os.path.join(dir, filebasename + ".summary.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with io.open(path, encoding="utf-8") as fp:
+            return json.load(fp)
+    except (OSError, ValueError):
+        return None                    # a bad sidecar must not break the page
+
+
+def meta_description(summary, fallback, limit=160):
+    """The overview, trimmed at a word boundary, else the old boilerplate.
+
+    WHY THIS IS THE BIGGEST WIN THE SUMMARIES UNLOCK. Every one of the 2,309
+    pages carried the same sentence with only the title swapped -- "AI-
+    generated transcript of X, a video relevant to Medford Massachusetts local
+    politics." A templated description tells a search engine nothing it cannot
+    already read from the title, so it gets discarded and the snippet is
+    rewritten from whatever text the crawler happens to like. The overview is
+    the first sentence on any of these pages that actually says what the
+    meeting DID.
+    """
+    text = ((summary or {}).get("overview") or "").strip()
+    if not text:
+        return fallback
+    if len(text) > limit:
+        cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:")
+        text = cut + "…"
+    return text
+
+
+def _iso_duration(seconds):
+    s = int(seconds or 0)
+    if s <= 0:
+        return None
+    return "PT%dH%dM%dS" % (s // 3600, (s % 3600) // 60, s % 60)
+
+
+def video_jsonld(dir, filebasename, yt_id, summary, video_data=None):
+    """schema.org VideoObject, with the agenda items as Clip parts.
+
+    THE CLIPS ARE THE POINT. Clip/startOffset is how a page declares "key
+    moments", and it needs timestamps that are both present and TRUSTWORTHY --
+    which is exactly what summarize_meeting.verify() guarantees by dropping
+    any citation falling outside the meeting. Across the first 36 summaries it
+    dropped none, so the offsets here are the model's, checked against the
+    real duration.
+
+    Each clip points at the page's own #t= deep link, which transcript-player
+    already honours, rather than at YouTube: the claim is that THIS page
+    indexes that moment, and it does.
+
+    Emitted with whatever fields are derivable. thumbnailUrl exists only for
+    YouTube-hosted meetings; it is not fabricated for the archive.org, Castus
+    or podcast sources, so those get a VideoObject without one rather than an
+    invented image.
+    """
+    entry = (video_data or {}).get(yt_id) or {}
+    overview = ((summary or {}).get("overview") or "").strip()
+    if not overview:
+        return ""                      # nothing to say that the title does not
+
+    page = site_url(os.path.join(dir, filebasename + ".html")).replace("\\", "/")
+    data = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": entry.get("title") or filebasename,
+        "description": overview,
+        "url": page,
+    }
+    if entry.get("upload_date"):
+        data["uploadDate"] = entry["upload_date"]
+    dur = _iso_duration(entry.get("duration"))
+    if dur:
+        data["duration"] = dur
+
+    # YouTube ids are the ones with a derivable thumbnail and embed.
+    if not yt_id[0:6] in ("XXXXXX", "MCM000", "CAS000"):
+        data["thumbnailUrl"] = "https://i.ytimg.com/vi/%s/hqdefault.jpg" % yt_id
+        data["embedUrl"] = "https://www.youtube.com/embed/%s" % yt_id
+
+    items = (summary or {}).get("items") or []
+    clips, total = [], entry.get("duration") or 0
+    for i, it in enumerate(items):
+        t = it.get("t")
+        if t is None:
+            continue
+        nxt = None
+        for later in items[i + 1:]:
+            if later.get("t") is not None and later["t"] > t:
+                nxt = later["t"]
+                break
+        end = nxt if nxt is not None else (total if total and total > t else None)
+        clip = {"@type": "Clip",
+                "name": (it.get("title") or "").strip() or "Agenda item",
+                "startOffset": int(t),
+                "url": page + "#t=" + str(int(t))}
+        if end:
+            clip["endOffset"] = int(end)
+        clips.append(clip)
+    if clips:
+        data["hasPart"] = clips
+
+    return ('    <script type="application/ld+json">'
+            + json.dumps(data, ensure_ascii=False) + '</script>\n')
+
+
 def summary_block(dir, filebasename, yt_id, video_data=None):
     """The machine-generated agenda summary, or '' when there is none.
 
@@ -237,14 +346,9 @@ def summary_block(dir, filebasename, yt_id, video_data=None):
     Items carry data-t for in-page seeking AND a real href, so the link works
     with JS off exactly like every transcript line does.
     """
-    path = os.path.join(dir, filebasename + ".summary.json")
-    if not os.path.exists(path):
+    d = load_summary(dir, filebasename)
+    if not d:
         return ""
-    try:
-        with io.open(path, encoding="utf-8") as fp:
-            d = json.load(fp)
-    except (OSError, ValueError):
-        return ""                      # a bad sidecar must not break the page
 
     overview = (d.get("overview") or "").strip()
     items = d.get("items") or []
@@ -464,11 +568,25 @@ def srt2html(yt_id,skip_translation=False, force=False):
         if "keywords" in video_data[yt_id].keys():
             html.write('    <meta name="keywords" content="' + ','.join(video_data[yt_id]["keywords"]) + '">\n')
 
-        text = 'AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics.'        
+        text = 'AI-generated transcript of ' + video_title + ', a video relevant to Medford Massachusetts local politics.'
         if language != 'en':
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
-        html.write('    <meta name="description" content="' + text + '">\n')
+        # The summary's overview replaces that boilerplate where one exists.
+        # English only: the overview is not translated (see summary_block), so
+        # a translated page keeps the translated boilerplate rather than
+        # carrying an English description under lang="es".
+        _summary = load_summary(dir, filebasename) if language == 'en' else None
+        if _summary:
+            text = meta_description(_summary, text)
+
+        html.write('    <meta name="description" content="' + escape(text, quote=True) + '">\n')
+        # Social cards read og:description, not name=description.
+        html.write('    <meta property="og:title" content="'
+                   + escape(video_title, quote=True) + '">\n')
+        html.write('    <meta property="og:description" content="'
+                   + escape(text, quote=True) + '">\n')
+        html.write('    <meta property="og:type" content="video.other">\n')
 
         text = title    
         if language != 'en':
@@ -497,6 +615,10 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 canonical_file = _kfile
         html.write('    <link rel="canonical" href="' + site_url(canonical_file) + '" />\n')
         html.write('    <link rel="stylesheet" href="' + asset_prefix(dir) + 'transcript-player.css">\n')
+        # Structured data only on the copy we keep: a duplicate page whose
+        # canonical points elsewhere should not also claim to be the video.
+        if _summary and canonical_file == htmlfilename:
+            html.write(video_jsonld(dir, filebasename, yt_id, _summary, video_data))
         html.write('  </head>\n')
         html.write('  <body>\n')
 

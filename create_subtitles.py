@@ -1084,6 +1084,42 @@ if __name__ == "__main__":
             if not failed:
                 consecutive_failures = 0
 
+            # SELF-HEAL AT THE SEAM BETWEEN VIDEOS, not only when the queue
+            # empties. The identical check below has been in the idle branch
+            # for as long as the guard has existed and has fired EXACTLY ZERO
+            # times in every log, because that branch needs "Done with all
+            # videos" and the backlog is 2,200 meetings deep. So a process
+            # whose modules had been edited kept running for days: publishing
+            # each transcript but declining the site-wide rebuild "until
+            # restart", which left index.html a day stale with a transcribed
+            # Ward 1 meeting sitting unlinked, and three directories with no
+            # redirect stub.
+            #
+            # WHY EXIT RATHER THAN importlib.reload. create_subtitles owns
+            # _git_lock and _git_pending_lock; reloading it would build NEW
+            # Lock objects while a publish thread still holds the old one, so
+            # two threads could push at once -- the exact thing those locks
+            # prevent, failing silently. Add the from-imports reload cannot
+            # rebind, the whisperx models cached in _align_models, and the
+            # fact that __main__ cannot meaningfully reload itself, and a
+            # reloaded process is a half-new one that merely looks right.
+            # A restart costs ~7 minutes of model loading and is exact.
+            if not failed:
+                _stale = sources_changed()
+                if _stale:
+                    # Publish threads own the git push, and request_git_push
+                    # drains the pending flag before returning, so once they
+                    # are done nothing is queued.
+                    others = [t for t in threading.enumerate()
+                              if t is not threading.current_thread() and not t.daemon]
+                    if others:
+                        print("waiting for %d publish thread(s) before restart" % len(others))
+                        for t in others:
+                            t.join()
+                    print("SOURCE CHANGED (%s) -- exiting so the wrapper restarts "
+                          "on the new code." % ", ".join(_stale))
+                    sys.exit(0)
+
             if failed:
                 # back off: 60s, 120s, 240s ... capped at 30 min
                 time_to_sleep = min(BACKOFF_START * (2 ** (consecutive_failures - 1)),
