@@ -8,7 +8,9 @@ I've modified WhisperX to return the speaker embeddings, and use those embedding
 
 The transcriptions contain many errors (particularly in the speaker identifications), and manual corrections to the SRT files are occasionally made. Corrections will be gladly accepted, and any controversial corrections will be flagged as such. Beginning on 1/15/2025, I began saving the word-level timestamps in model.pkl and that will need to be edited to make corrections.
 
-Translations are currently DISABLED. The googletrans library broke in a way that was worse than useless: half the target languages raised errors and the other half silently returned the English text unchanged, so ~20,000 pages were being served as `lang="ar"` or `lang="km"` with English in them. Those pages are no longer tracked or published. Older pages from before the breakage were genuinely translated. The intended path forward is to translate the short meeting summaries rather than whole transcripts -- cheap, and spot-checkable.
+Translations are currently DISABLED. The googletrans library broke in a way that was worse than useless: half the target languages raised errors and the other half silently returned the English text unchanged, so ~20,000 pages were being served as `lang="ar"` or `lang="km"` with English in them. Those pages are no longer tracked or published. Older pages from before the breakage were genuinely translated. The intended path forward is to translate the short meeting summaries rather than whole transcripts -- cheap, and spot-checkable. Those summaries now exist (below), but are deliberately English-only for the moment: translating a machine summary with a machine translator compounds two error rates, and the breakage described above is exactly what that looks like when nobody checks.
+
+Each transcript page now opens with an **AI-generated agenda summary** -- an overview plus the items in the order they were taken up, each linking to the moment it began. It is labelled as machine-written, names the model that wrote it, and sits above the transcript, which remains the record. It reports outcomes when they are stated plainly ("the motion passes") but never says who voted which way: roll-call turns are short, and short-turn speaker attribution measures 53-66% against a human reference versus 97% on substantive speech. Timestamps are verified against the meeting's real duration before publication, and anything that falls outside is dropped rather than shown.
 
 If you'd like to submit corrections, right-click any line on a transcript page and choose "Correct or verify this line". That opens a form pre-filled with the line you clicked; edit it and submit, or submit it unchanged to confirm the line is already right. Corrections are reviewed and applied with `ingest_corrections.py` / `apply_corrections.py`, and every change is a public commit, so a correction is exactly as visible as the original text.
 
@@ -115,9 +117,46 @@ Spend is capped by your prepaid balance as long as auto-reload is off.
    the paid tier. Create a fresh project if you want the guarantee.
 3. Save to `credentials/gemini_key.txt`.
 
-Free tier is roughly 100 requests/day on Pro-class models and 250 on Flash,
-with a 1M-token context. Ample for ongoing meetings; a full backlog run takes
-days rather than hours because the **daily** cap binds, not tokens.
+**The free tier is 20 requests per day, per model family.** Not 100, not 250 —
+those were the `gemini-2.5` numbers, and 2.5 is now retired (the API answers
+404 "no longer available to new users"). Measured 2026-09-25 by reading the
+`quotaValue` Google attaches to the 429:
+
+```
+quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier
+value:   20
+dims:    {'model': 'gemini-3-flash', 'location': 'global'}
+```
+
+Three consequences, none of them obvious:
+
+- **It is request-bound, not token-bound.** A two-token probe is refused
+  exactly like a 46k-token transcript, so summary length costs nothing and
+  the number of *calls* is the entire budget. Every wasted retry is 5% of a
+  day's output, which is why `ask_gemini` retries 3 times and not 5.
+- **The allowance is keyed on the model FAMILY** (note `dims`), so
+  `-preview` and the released name share one bucket — you cannot get more by
+  switching names. But *different* families have *separate* buckets, which is
+  why `MODEL_LADDER` is a quota pool and not merely a fallback: walking two
+  flash families gives ~40 requests a night where pinning one gives 20.
+- **Pro-class is unavailable on the free tier**, not merely slow. It returns
+  429 for a two-token request.
+
+There are four quotas, and the `quotaId` says which one broke: requests and
+input-tokens, each per-minute and per-day. Only the per-day ones are terminal;
+the rest refill on their own. Google attaches a `retryDelay` even to the
+per-day error, so the delay alone is not a signal — see `_retry_delay()`.
+
+**Measured throughput: 36 summaries in 20 minutes**, on the first nightly run
+(21 from `gemini-3-flash-preview`, 17 from `gemini-3.5-flash`). Against ~2,240
+transcribed meetings that is about **two months** of nightly runs.
+
+**Run it at night.** Not for the quota reset, which is a fixed daily allowance
+whenever you spend it, but because congestion converts allowance into nothing:
+every 503 is a request that buys no summary. The 3:05 AM run logged 5 retries
+and **zero** 429s; a mid-afternoon attempt had every flash model returning 503
+for minutes at a time and burned the budget on retries before producing
+anything.
 
 The trade: **Google uses free-tier inputs to improve its products.** That is
 acceptable here only because every byte sent is already published on the public
@@ -161,12 +200,27 @@ token-dense at ~2.6 chars/token because of timestamps and numbers):
 
 | model | whole backlog | batch API | ongoing ~10/month |
 |---|---|---|---|
-| Gemini free tier | **$0** | — | **$0** |
+| Gemini free tier | **$0**, but ~2 months | — | **$0** |
 | Claude Sonnet 5 | $174 | $87 | $0.78 |
 | Claude Opus 5.5 | $348 | $174 | $1.56 |
 
-Ongoing cost is negligible on any of them. The backlog is the only real
-decision.
+**The dollar figures are not comparable across providers**, because the token
+counts are not. The same meeting measured 47,749 input tokens on Anthropic,
+36,326 on Gemini and 31,318 on OpenAI — the same text, three tokenisers. The
+Anthropic column is ~50% higher than OpenAI's partly for that reason rather
+than on price alone.
+
+Ongoing cost is negligible on any of them — about ten meetings a month, which
+the free tier absorbs comfortably. **The backlog is the only real decision**,
+and it is now a time-versus-money one: free and two months, or paid and a day.
+
+Worth weighing against a quality difference that is measured rather than
+assumed. On one meeting with a human-written recap to check against, only
+Opus 5.5 got all four checkable claims; the flash models named the presenter
+and faithfully reported an ASR error, but dropped both enrolment figures. If
+the summaries are going to serve as a retrieval index, that recall gap matters
+more than prose quality, and spending on a prioritised subset may beat running
+everything free.
 
 ## 3. YouTube cookies (optional)
 
@@ -188,12 +242,32 @@ python create_subtitles.py -c channels_to_transcribe.txt   # download + transcri
 python create_subtitles.py -d                              # download audio only
 python create_subtitles.py -t                              # transcribe only
 python srt2html.py -i <yt_id>                              # rebuild one page
-python summarize_meeting.py -i <yt_id> --model <model>      # one summary
+python summarize_meeting.py -i <yt_id>                     # one summary
+python summarize_meeting.py --all                          # until the quota runs out
+python summarize_meeting.py --list-models                  # what answers today
 ```
 
-In production two Windows scheduled tasks run continuously — "Download videos"
-(`download.bat`, `-d`) and "Transcribe Videos" (`transcribe.bat`, `-t`). Each
-wrapper loops, so killing the Python process restarts it on current code.
+`--model` takes a PROVIDER name (`gemini`, `openai`, `anthropic`) as well as an
+exact model id. Prefer the provider: the ladder then picks whichever model
+actually answers, which is the whole point — the old hardcoded default is now a
+404. Run `--list-models` first whenever summaries stop appearing; a silent
+retirement shows up there as a ladder entry with no live match.
+
+In production three Windows scheduled tasks run — "Download videos"
+(`download.bat`, `-d`) and "Transcribe Videos" (`transcribe.bat`, `-t`), which
+loop continuously, and "Summarize Meetings" (`summarize.bat`), which runs **once
+nightly at 3:05 AM**. The summary job is bounded by a daily API allowance rather
+than by CPU, so the useful unit of work is "spend today's quota, then stop"; it
+detects the cap itself and exits cleanly instead of grinding through thousands
+of meetings failing each one. It resumes the next night on its own, because each
+summary is cached on the transcript SHA.
+
+Killing the Python process restarts it on current code. It also restarts
+*itself*: when a module it imported has been edited, it finishes the video in
+flight, waits for the publish thread, and exits at the seam so the wrapper
+reloads it. Site-wide files (`index.html`, the sitemap, the committee pages)
+are held back until that happens, because regenerating them wholesale from
+stale code would overwrite newer output.
 
 ## A note on how this repo is maintained
 
