@@ -381,6 +381,23 @@ def summary_block(dir, filebasename, yt_id, video_data=None):
     return "".join(out)
 
 
+def source_url(yt_id, video_data=None):
+    """Where the original recording lives, with no timestamp. May be None.
+
+    Distinct from timestamp_url(), which deep-links INTO the video: this is
+    the plain "watch the original" address, and the page had none. Every
+    video link it carried was a per-sentence timestamp marked rel="nofollow",
+    so with JavaScript off there was no route to the source at all -- on an
+    archive whose credibility rests on pointing at the record.
+    """
+    entry = (video_data or {}).get(yt_id) or {}
+    if yt_id[0:6] in ("MCM000", "CAS000"):
+        return entry.get("url") or None
+    if yt_id[0:6] == "XXXXXX":
+        return entry.get("url") or entry.get("audio_url") or None
+    return "https://www.youtube.com/watch?v=" + yt_id
+
+
 def player_source(yt_id, video_data=None):
     """(kind, src) for the in-page player, or (None, None) if unavailable.
 
@@ -639,11 +656,27 @@ def srt2html(yt_id,skip_translation=False, force=False):
             words_attr = ''
             if os.path.exists(os.path.join(dir, filebasename + '.words.json')):
                 words_attr = ' data-words="' + filebasename + '.words.json"'
+            # NOSCRIPT FALLBACK, inside the mount on purpose. The div is empty
+            # in the HTML -- transcript-player.js builds the player into it --
+            # so with JavaScript off this rendered as a bare 17px bordered
+            # strip and the reader had no way to reach the recording: every
+            # other video link on the page is a per-sentence timestamp carrying
+            # rel="nofollow". A <noscript> child is ignored when scripts run
+            # and fills the same box when they do not, so it fixes the empty
+            # strip and the missing source link together.
+            _src_url = source_url(yt_id, video_data)
+            _fallback = ''
+            if _src_url:
+                _fallback = ('<noscript><p class="mt-noscript">'
+                             '<a href="' + escape(_src_url, quote=True) + '">'
+                             'Watch the original recording</a>'
+                             ' &mdash; the transcript below is the record.'
+                             '</p></noscript>')
             html.write('  <div id="mt-player" data-kind="' + kind
                        + '" data-src="' + escape(src, quote=True) + '"'
                        + ' data-video-id="' + escape(yt_id, quote=True) + '"'
                        + ' data-corrections="' + asset_prefix(dir) + 'corrections-config.json"'
-                       + words_attr + '></div>\n')
+                       + words_attr + '>' + _fallback + '</div>\n')
 
         # THE DOCUMENTS BELONG ON THE TRANSCRIPT PAGE. They were only ever
         # linked from the index, so a reader who arrived from a search engine --

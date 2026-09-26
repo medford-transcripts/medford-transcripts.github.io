@@ -178,3 +178,11 @@ span.w.w-active {
   }
   .mt-summary-banner { color: #a8a8b4; }
 }
+
+/* Shown only when scripts are off: the player mount is empty in the HTML, so
+   without this the box is a bare bordered strip and nothing on the page links
+   to the recording itself. */
+.mt-noscript {
+  margin: 0;
+  font: 14px/1.5 system-ui, sans-serif;
+}
