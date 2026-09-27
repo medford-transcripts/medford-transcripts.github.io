@@ -112,6 +112,26 @@ def provider_for(model):
     return "anthropic"
 
 
+def read_timeout(user, floor=600, cap=1800):
+    """Seconds to wait, scaled to the size of what we are asking about.
+
+    A FLAT 600s LOST THE LONGEST MEETINGS. A 4.5-hour joint Council/CDB
+    session (~271k chars) hit the read timeout and produced nothing -- and
+    that is not an outlier: 211 transcripts (9%) are that size or larger, the
+    biggest 611k, against a median of 98k.
+
+    WHY NOT SPLIT THE REQUEST IN TWO, which is the obvious alternative: every
+    attempt costs quota, including the failed ones, and the free-tier
+    allowance is 20 requests per model per day. Splitting doubles the cost of
+    exactly the meetings that are hardest to summarise, and a split whose
+    second half fails has spent two requests for nothing. Waiting longer costs
+    nothing at all. Splitting stays the fallback if generous timeouts still
+    fail, and it would need real work -- merging two item lists and
+    synthesising one overview without double-counting.
+    """
+    return min(cap, floor + len(user or "") // 500)
+
+
 # ---------------------------------------------------------------------------
 # ADAPTIVE MODEL SELECTION
 #
@@ -413,7 +433,7 @@ def timed_transcript(srt_path, names=None):
 
 
 def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
-    r = requests.post(ANTHROPIC_URL, timeout=600,
+    r = requests.post(ANTHROPIC_URL, timeout=read_timeout(user),
                       headers={"x-api-key": key,
                                "anthropic-version": ANTHROPIC_VERSION,
                                "content-type": "application/json"},
@@ -512,7 +532,7 @@ def _retry_delay(r, cap=120):
 
 
 def _gemini_call(model, system, user, key, max_tokens):
-    return requests.post(GEMINI_URL % model, timeout=600,
+    return requests.post(GEMINI_URL % model, timeout=read_timeout(user),
                       params={"key": key},
                       headers={"content-type": "application/json"},
                       # camelCase, and NO temperature. Both matter: the v1beta
@@ -564,7 +584,7 @@ def ask_openai(model, system, user, key, max_tokens=MAX_OUTPUT):
     try the modern shape and fall back on the specific complaint.
     """
     def call(body):
-        return requests.post(OPENAI_URL, timeout=600,
+        return requests.post(OPENAI_URL, timeout=read_timeout(user),
                              headers={"Authorization": "Bearer " + key,
                                       "content-type": "application/json"},
                              json=body)
@@ -867,6 +887,7 @@ def main():
     if pace is None:
         pace = 13.0 if provider_for(args.model) == "gemini" else 0.0
     done = 0
+    consecutive_failures = 0
     for yt_id in todo:
         if args.limit and done >= args.limit:
             break
@@ -887,6 +908,29 @@ def main():
             return 0
         except Exception as e:
             print("  FAILED %s: %s" % (yt_id, str(e)[:160]))
+            # EVERY ATTEMPT COSTS QUOTA, INCLUDING THE FAILED ONES. Measured
+            # 2026-09-25: three SUCCESSFUL full-transcript calls plus roughly
+            # forty failed attempts exhausted the daily allowance on three
+            # models. Three successes cannot reach a 20/day cap, so the
+            # rejections are what spent it.
+            #
+            # That is why this counter exists. Continuing past a transient
+            # 503 is right -- one blip should not end the night -- but a
+            # SUSTAINED outage would otherwise walk the whole ladder for each
+            # of 2,000+ remaining meetings, spending the entire day's
+            # allowance discovering the same thing over and over. Three
+            # consecutive total failures is enough to conclude the hour is
+            # not workable; the next hourly run will find out if that changed.
+            consecutive_failures += 1
+            if consecutive_failures >= 3:
+                print("\nSTOPPING: %d meetings in a row failed outright. Every "
+                      "attempt costs quota, so this run stops rather than "
+                      "spending the day's allowance on a bad window."
+                      % consecutive_failures)
+                print("summarised %d; %d still to do." % (done, len(todo) - done))
+                return 0
+        else:
+            consecutive_failures = 0
     print("summarised %d" % done)
     return 0
 
