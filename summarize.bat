@@ -13,12 +13,22 @@ REM  summarize_meeting.py detects that itself: a per-day 429 raises
 REM  DailyQuotaExhausted and the --all loop returns cleanly instead of
 REM  grinding. So this wrapper only has to run it and record the outcome.
 REM
-REM  WHY IT STARTS AT 3:05 AM EASTERN. Gemini's free-tier daily quotas
-REM  reset at midnight PACIFIC, which is 3 AM Eastern. Starting just after
-REM  the reset gets the whole day's allowance in one clean window, and it
-REM  is also when Google is least congested -- measured in the afternoon,
-REM  every flash model returned 503 "high demand" for minutes at a time,
-REM  which wastes wall clock and does nothing for throughput.
+REM  WHY IT STARTS AT 3:05 AM EASTERN AND THEN RETRIES HOURLY. Gemini's
+REM  free-tier daily quotas reset at midnight PACIFIC, which is 3 AM
+REM  Eastern, and that is also when Google is least congested -- measured
+REM  in the afternoon, every flash model returned 503 "high demand" for
+REM  minutes at a time.
+REM
+REM  Hourly retries are close to free, which is the part that is not
+REM  obvious. Only SUCCESSFUL calls consume the daily allowance: measured
+REM  2026-09-27, gemini-3.5-flash hit its per-day cap after 18 successful
+REM  summaries against a documented 20, while 5 x 503 along the way cost
+REM  nothing. So an attempt that finds congestion or an exhausted cap is
+REM  its own free probe -- there is no cheaper way to measure contention,
+REM  because any real measurement IS a generateContent call.
+REM
+REM  An idle hour therefore costs one process start, and a lucky hour
+REM  picks up allowance that a once-nightly run would have left unspent.
 REM
 REM  IT RESUMES BY ITSELF. Each summary is cached on the transcript SHA,
 REM  so a meeting already summarised is skipped; the next night simply
