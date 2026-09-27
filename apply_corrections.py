@@ -188,13 +188,27 @@ def _wnorm(w):
     return re.sub(r"[^a-z0-9]+", "", (w or "").lower())
 
 
+MIN_ANCHOR_RATIO = 0.5
+
+
 def measured_spans(words, lo_t, hi_t, turns):
     """[(start, end)] per turn from real word timings, or None.
 
-    None means "do not trust this" -- no words in range, or the turn text no
-    longer matches the audio -- and the caller subdivides instead. Returning
-    None is the safe answer: a wrong timestamp is worse than an approximate
-    one, because it links confidently to the wrong moment.
+    ANCHORS, NOT AN EXACT MATCH. Requiring every word to be identical threw
+    away the true timings for a whole block whenever one word was fixed -- and
+    a word substitution is the COMMONEST correction there is. "Erica
+    Eiderhoven" -> "Erica Uyterhoeven" changes one token; the surrounding
+    speech did not move, and neither did its clock.
+
+    So the corrected words are aligned to the spoken ones with difflib, and
+    each turn takes its start from the first word that still matches and its
+    end from the last. Matching blocks are monotone, so anchors cannot cross.
+
+    None still means "do not trust this", and the caller subdivides instead --
+    when nothing is in range, when a turn has no surviving anchor at all, or
+    when the rewrite is so complete that the alignment is guesswork. A
+    confidently wrong timestamp is worse than an approximate one, because it
+    links to the wrong moment without looking uncertain.
     """
     if not words or not turns:
         return None
@@ -203,19 +217,41 @@ def measured_spans(words, lo_t, hi_t, turns):
     if not span:
         return None
 
-    out, i = [], 0
-    for t in turns:
-        want = [x for x in (_wnorm(x) for x in (t.get("text") or "").split()) if x]
-        if not want:
-            return None
-        start_i = i
-        for tok in want:
-            while i < len(span) and not _wnorm(span[i]["word"]):
-                i += 1
-            if i >= len(span) or _wnorm(span[i]["word"]) != tok:
-                return None            # the words changed; timings are ambiguous
-            i += 1
-        out.append((span[start_i]["start"], span[i - 1].get("end") or span[i - 1]["start"]))
+    spoken = [_wnorm(w["word"]) for w in span]
+    corrected, owner = [], []
+    for ti, t in enumerate(turns):
+        for tok in (t.get("text") or "").split():
+            n = _wnorm(tok)
+            if n:
+                corrected.append(n)
+                owner.append(ti)
+    if not corrected:
+        return None
+
+    sm = difflib.SequenceMatcher(None, spoken, corrected, autojunk=False)
+    if sm.ratio() < MIN_ANCHOR_RATIO:
+        return None                    # too little survives to anchor on
+
+    # corrected-word index -> the spoken word it came from
+    c2o = {}
+    for i, j, n in sm.get_matching_blocks():
+        for k in range(n):
+            c2o[j + k] = i + k
+
+    hits = {}
+    for ci, ti in enumerate(owner):
+        oi = c2o.get(ci)
+        if oi is None:
+            continue
+        lo_i, hi_i = hits.get(ti, (oi, oi))
+        hits[ti] = (min(lo_i, oi), max(hi_i, oi))
+
+    out = []
+    for ti in range(len(turns)):
+        if ti not in hits:
+            return None                # this turn is entirely new text
+        a, b = hits[ti]
+        out.append((span[a]["start"], span[b].get("end") or span[b]["start"]))
     return out
 
 
