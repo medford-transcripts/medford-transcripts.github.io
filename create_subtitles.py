@@ -883,8 +883,12 @@ def push_to_git():
     to be in the working tree and commit them, mid-edit, as "add video". It did
     exactly that during the 2026-09-15 refactor, committing a half-finished
     srt2html.py without the new module it imported. See plan.txt.
+
+    The git mechanics now live in utils.git_publish, shared with the summary
+    publisher. This function keeps only the part that is genuinely the
+    transcriber's: deciding WHICH paths are safe to stage when its own modules
+    have been edited since startup.
     """
-    # stage only generated content; ignore paths that don't exist yet
     stale = sources_changed()
     if stale:
         print("SOURCE CHANGED SINCE STARTUP (%s) -- holding back the "
@@ -892,39 +896,11 @@ def push_to_git():
               "code it loaded at startup and overwrite the newer version. "
               "New transcripts still publish; the rest waits for a restart."
               % ", ".join(stale))
-    for path in GENERATED_PATHS:
-        if stale and path in GLOBAL_REGENERATED:
-            continue
-        subprocess.run(["git", "add", "--", path],
-                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    # commit only if something is actually staged -- `git commit` with nothing
-    # staged returns non-zero and spams the log every cycle
-    staged = subprocess.run(["git", "diff", "--cached", "--quiet"])
-    if staged.returncode != 0:
-        result = subprocess.run(["git", "commit", "-m", "add video"])
-        if result.returncode != 0:
-            print("git commit failed (rc=%d); not pushing" % result.returncode)
-            return
-    else:
-        print("nothing new to commit")
+    paths = [p for p in GENERATED_PATHS
+             if not (stale and p in GLOBAL_REGENERATED)]
+    utils.git_publish(paths, "add video")
 
-    # push regardless of whether we just committed: a previous push may have
-    # failed, leaving good commits stranded locally
-    ahead = subprocess.run(["git", "rev-list", "--count", "@{u}..HEAD"],
-                           capture_output=True, text=True)
-    try:
-        n_ahead = int((ahead.stdout or "0").strip() or 0)
-    except ValueError:
-        n_ahead = 1  # no upstream info; attempt the push anyway
-
-    if n_ahead == 0:
-        return
-
-    print("pushing %d commit(s)" % n_ahead)
-    if subprocess.run(["git", "push"]).returncode != 0:
-        print("git push FAILED; %d commit(s) still local, will retry next cycle"
-              % n_ahead)
 
 # this mostly waits on google translate; do it in the background
 def finish_async(yt_id):

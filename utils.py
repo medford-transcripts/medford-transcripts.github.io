@@ -1,6 +1,7 @@
 import json, glob
 import re
 import os, time, datetime
+import subprocess
 import io as _io
 import contextlib
 import dateutil.parser as dparser
@@ -1173,3 +1174,80 @@ def get_councilors_old(file="councilors.txt",mayor=False, city_council=False, sc
                 if entry != '':
                     councilors.append(entry.strip())
     return list(set(councilors))
+
+
+# ---------------------------------------------------------------------------
+# GIT PUBLISHING
+#
+# One implementation, because there are two publishers -- the transcriber
+# after each meeting, and the summary run after each batch -- and they had
+# drifted. The transcriber's copy still decided whether to push by asking
+#     git rev-list --count @{u}..HEAD
+# which compares against the last FETCHED ref, not the remote. That has
+# reported "0 unpushed" for a commit sitting only on this machine, so a
+# genuinely stranded commit looked published. It also never waited on
+# .git/index.lock and never rebased, both of which matter once a second
+# process can push.
+
+
+def git_wait_for_index_lock(timeout=300):
+    """Block while another git process holds the index. True if it cleared.
+
+    DOES NOT BREAK THE LOCK, deliberately, and this is the opposite of the
+    rule for video_data.lock. That one is ours and leaked when a process was
+    killed, so it has to be breakable. .git/index.lock belongs to git, and
+    removing one held by a live committer corrupts the index.
+    """
+    lock = os.path.join(".git", "index.lock")
+    waited = 0
+    while os.path.exists(lock):
+        if waited >= timeout:
+            print("  .git/index.lock still held after %ds; skipping this push"
+                  % timeout)
+            return False
+        time.sleep(2)
+        waited += 2
+    return True
+
+
+def _git(*args):
+    return subprocess.run(["git"] + list(args), capture_output=True, text=True)
+
+
+def git_publish(paths, message, rebase=True):
+    """Stage `paths`, commit if anything is staged, push, and VERIFY.
+
+    Returns True if the remote ends up holding our HEAD. Missing paths are
+    ignored, so a caller can list everything it might produce.
+    """
+    if not git_wait_for_index_lock():
+        return False
+
+    for path in paths:
+        _git("add", "--", path)
+
+    if _git("diff", "--cached", "--quiet").returncode != 0:
+        r = _git("commit", "-m", message)
+        if r.returncode != 0:
+            print("git commit failed: %s" % (r.stderr or r.stdout)[:160])
+            return False
+    else:
+        print("nothing new to commit")
+
+    # Push even with nothing newly committed: an earlier push may have failed
+    # and left good commits stranded locally.
+    if rebase:
+        _git("pull", "--rebase", "--quiet", "origin", "main")
+    r = _git("push", "--quiet", "origin", "main")
+    if r.returncode != 0:
+        print("git push FAILED: %s" % (r.stderr or r.stdout)[:160])
+
+    # THE HONEST CHECK. ls-remote asks the remote; everything else asks a
+    # cached ref and can agree with a push that never happened.
+    local = _git("rev-parse", "HEAD").stdout.strip()
+    out = _git("ls-remote", "origin", "main").stdout.split()
+    remote = out[0] if out else ""
+    if local and local == remote:
+        return True
+    print("PUSH DID NOT LAND: local %s, remote %s" % (local[:9], remote[:9]))
+    return False
