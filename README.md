@@ -50,6 +50,8 @@ credentials/
   gemini_key.txt      optional   Google, for summaries
   openai_key.txt      optional   OpenAI, for summaries
   cookies.txt         optional   YouTube session, for age/region-gated videos
+  google_service_account.json
+                      optional   reads a PRIVATE corrections sheet
 ```
 
 ## 1. HuggingFace token (required — the pipeline will not diarize without it)
@@ -232,6 +234,86 @@ yt-dlp --cookies-from-browser firefox --cookies credentials/cookies.txt
 
 This is a live YouTube session token -- anyone holding it is signed in as you.
 Never commit it, and regenerate it rather than copying it between machines.
+
+## 4. Corrections (optional — the right-click "correct this line" form)
+
+Transcripts contain errors, especially in speaker attribution, and the site
+lets any reader right-click a line and submit a fix. That menu only appears if
+`corrections-config.json` has a form behind it; without one the site works
+normally and the menu is simply absent.
+
+Nothing here is applied automatically. Submissions land in a local review
+queue, and every accepted change becomes a public commit — a correction is
+exactly as visible as the text it replaced. `TRUST.md` covers the trust model
+in full; this is only the setup.
+
+### 4a. The form
+
+1. Create a Google Form with two questions — the corrected line, and an
+   optional "who are you" / reference field.
+2. **Do not enable "Collect email addresses → Verified."** Requiring a Google
+   login to report a typo excludes exactly the people a civic archive exists
+   to serve. The form stays open to anyone.
+3. Link it to a responses spreadsheet (Responses → the Sheets icon).
+4. Put the form's URL and its two `entry.NNNNN` field ids into
+   `corrections-config.json`. To find the ids: open the live form, view
+   source, and search for `entry.` — each question has one.
+
+### 4b. Reading the responses
+
+Two ways, and they differ only in how the CSV is fetched:
+
+| | sheet sharing | credentials |
+|---|---|---|
+| `--url` | "anyone with the link can view" | none |
+| `--sheet-id` | **Restricted (invite only)** | service-account key |
+| `--csv` | anything | none — you download it by hand |
+
+```
+python ingest_corrections.py --url "https://docs.google.com/spreadsheets/d/<ID>/export?format=csv"
+python ingest_corrections.py --sheet-id <ID>
+python ingest_corrections.py --csv responses.csv
+```
+
+**Prefer the private sheet.** A link-shared responses sheet is an unmoderated
+public text box at a stable URL, and it publishes two things people do not
+expect: the free text anyone submits, and the contributor tokens that the
+trusted-contributor whitelist depends on. While that sheet is readable, the
+whitelist is only as strong as the secrecy of a URL.
+
+Making the sheet private changes **nothing** for submitters — sheet sharing
+and form sign-in are unrelated settings, and a private responses sheet with an
+open form is the Google default.
+
+### 4c. Service account, for a private sheet
+
+The Sheets API needs a credential; there is no anonymous read of a restricted
+sheet. Roughly five minutes:
+
+1. <https://console.cloud.google.com> → **New Project**.
+
+   > Consider a project SEPARATE from the one behind your Gemini key. The free
+   > Gemini tier depends on that project having no billing account attached,
+   > and keeping them apart means nothing you do here can affect summaries.
+   > Enabling the Sheets API does not itself require billing.
+
+2. **APIs & Services → Library** → "Google Sheets API" → **Enable**.
+3. **IAM & Admin → Service Accounts → Create service account**. Skip the
+   "grant access to project" step — project roles are irrelevant here.
+4. Open the new account → **KEYS → Add key → Create new key → JSON**. It
+   downloads once and cannot be re-downloaded; make a new key if you lose it.
+5. Save it as `credentials/google_service_account.json` (gitignored).
+6. **Share the sheet with the service account.** Copy `client_email` out of
+   the JSON — it looks like `name@project.iam.gserviceaccount.com` — then open
+   the sheet → **Share** → paste it → **Viewer** → untick "Notify people".
+
+   This is the step people miss, and it is the one that actually grants
+   access: project roles do not reach the sheet, only sharing does. Skipping
+   it gives HTTP 403, and the error prints the address you need.
+
+**Viewer, not Editor.** Ingest only reads, and the scope requested is
+`spreadsheets.readonly`, so a leaked key exposes submissions rather than
+allowing someone to alter or delete the submission record.
 
 ---
 

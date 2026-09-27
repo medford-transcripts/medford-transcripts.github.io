@@ -381,11 +381,111 @@ def classify(rec):
     return changed
 
 
+
+# ---------------------------------------------------------------------------
+# PRIVATE RESPONSES SHEET (service account)
+#
+# The CSV-export path above needs the sheet to be "anyone with the link can
+# view", and this file's own comments call that out as the weak point: every
+# token ever submitted is recorded in the responses sheet, so link-sharing
+# makes the trusted-contributor whitelist exactly as strong as the secrecy of
+# a URL. Making the sheet invite-only is the fix those comments recommend, and
+# it breaks the anonymous export -- Google answers with an HTML sign-in page
+# rather than an error, so the old path would have "succeeded" and parsed zero
+# rows.
+#
+# This reads the same sheet through the Sheets API and hands back CSV TEXT, so
+# load_rows() and everything after it -- header mapping, content-hash dedup,
+# the trust check, the review queue -- are untouched.
+
+SERVICE_ACCOUNT = os.path.join("credentials", "google_service_account.json")
+SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets.readonly"
+
+
+def _service_account_email(key_file):
+    """The address the sheet must be shared with, for error messages."""
+    try:
+        with io.open(key_file, encoding="utf-8") as fp:
+            return json.load(fp).get("client_email") or "(no client_email in key)"
+    except (OSError, ValueError):
+        return "(unreadable key file)"
+
+
+def fetch_sheet_csv(sheet_id, tab=None, key_file=SERVICE_ACCOUNT):
+    """Rows from a private responses sheet, rendered as CSV text.
+
+    READ-ONLY on purpose: the scope is spreadsheets.readonly, so a leaked key
+    cannot alter or delete the submission record. Ingest only ever reads.
+    """
+    if not os.path.exists(key_file):
+        raise SystemExit(
+            "no service-account key at %s\n"
+            "Create one in the Cloud console (IAM & Admin -> Service Accounts\n"
+            "-> your account -> KEYS -> Add key -> JSON) and save it there."
+            % key_file)
+
+    try:
+        from google.oauth2 import service_account
+        from googleapiclient.discovery import build
+    except ImportError as e:
+        raise SystemExit("google client libraries missing (%s); "
+                         "pip install google-auth google-api-python-client" % e)
+
+    creds = service_account.Credentials.from_service_account_file(
+        key_file, scopes=[SHEETS_SCOPE])
+    svc = build("sheets", "v4", credentials=creds, cache_discovery=False)
+
+    try:
+        if not tab:
+            # Default to the FIRST tab. Form responses land in one sheet whose
+            # name the owner may have changed ("Form Responses 1" is only the
+            # default), so ask rather than assume.
+            meta = svc.spreadsheets().get(spreadsheetId=sheet_id,
+                                          fields="sheets.properties.title").execute()
+            sheets = meta.get("sheets") or []
+            if not sheets:
+                raise SystemExit("spreadsheet %s has no sheets" % sheet_id)
+            tab = sheets[0]["properties"]["title"]
+        resp = svc.spreadsheets().values().get(
+            spreadsheetId=sheet_id, range=tab).execute()
+    except Exception as e:
+        status = getattr(getattr(e, "resp", None), "status", None)
+        if status in (403, 404):
+            raise SystemExit(
+                "cannot read sheet %s (HTTP %s).\n"
+                "The most likely cause is that it has not been SHARED with the\n"
+                "service account. Open the sheet -> Share -> add:\n"
+                "    %s\n"
+                "as Viewer. Project roles do not grant sheet access; only\n"
+                "sharing does." % (sheet_id, status, _service_account_email(key_file)))
+        raise
+
+    values = resp.get("values") or []
+    if not values:
+        raise SystemExit("sheet %s / tab %r returned no rows" % (sheet_id, tab))
+
+    # THE API RETURNS RAGGED ROWS -- trailing empty cells are omitted entirely,
+    # so a row ending in blanks comes back short. csv.DictReader would then
+    # silently shift every later column into the wrong field. Pad to the header
+    # width before rendering.
+    width = len(values[0])
+    out = io.StringIO()
+    w = csv.writer(out, lineterminator="\n")
+    for row in values:
+        w.writerow((row + [""] * width)[:width] if len(row) < width else row)
+    print("read %d rows from tab %r via the Sheets API" % (len(values) - 1, tab))
+    return out.getvalue()
+
+
 def main():
     ap = argparse.ArgumentParser()
     src = ap.add_mutually_exclusive_group(required=True)
     src.add_argument("--url", help="published-to-web CSV url")
     src.add_argument("--csv", help="a downloaded CSV file")
+    src.add_argument("--sheet-id",
+                     help="read a PRIVATE responses sheet via the Sheets API, "
+                          "using credentials/google_service_account.json")
+    ap.add_argument("--tab", help="worksheet name (default: the first tab)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--trusted", default=TRUSTED,
                     help="whitelist file (default: %s)" % TRUSTED)
@@ -393,9 +493,18 @@ def main():
                     help="ignore the whitelist; queue everything for review")
     args = ap.parse_args()
 
-    if args.url:
+    if args.sheet_id:
+        text = fetch_sheet_csv(args.sheet_id, args.tab)
+    elif args.url:
         req = urllib.request.Request(args.url, headers={"User-Agent": "Mozilla/5.0"})
         text = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+        # A LINK-SHARED SHEET THAT WENT PRIVATE ANSWERS WITH A SIGN-IN PAGE,
+        # not an error, so this path would otherwise "succeed" with zero rows.
+        if text.lstrip()[:9].lower().startswith("<!doctype") or "<html" in text[:400].lower():
+            raise SystemExit(
+                "that URL returned an HTML page, not CSV -- the sheet is no "
+                "longer link-shared.\nUse --sheet-id <ID> to read it through "
+                "the service account instead.")
     else:
         text = io.open(args.csv, encoding="utf-8", errors="replace").read()
 
