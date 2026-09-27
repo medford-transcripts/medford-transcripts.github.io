@@ -893,7 +893,8 @@ def main():
     pace = args.sleep
     if pace is None:
         pace = 13.0 if provider_for(args.model) == "gemini" else 0.0
-    done = 0
+    done = 0          # meetings processed, cached ones included
+    made = 0          # summaries actually GENERATED this run
     consecutive_failures = 0
     for yt_id in todo:
         if args.limit and done >= args.limit:
@@ -901,6 +902,8 @@ def main():
         try:
             if summarize(yt_id, args.model, args.dry_run, args.force, video_data):
                 done += 1
+                if not _CACHED:
+                    made += 1
             # PACE ONLY AFTER A REAL REQUEST. summarize() returns the cached
             # dict on a hit, which is truthy, so this used to sleep 13s between
             # meetings it never contacted the API about. A cache check is 3.7ms
@@ -913,8 +916,11 @@ def main():
             # NOT "skip this one and carry on". Carrying on means walking the
             # whole ladder for every remaining meeting and failing all of them.
             print("\nSTOPPING: %s" % e)
-            print("summarised %d before the cap; %d still to do."
-                  % (done, len(todo) - done))
+            # NEW summaries, not meetings walked past. `done` counts
+            # cache hits too, so it reported "summarised 74" on a run that
+            # generated 5 -- the same flattering arithmetic as the pacing bug.
+            print("generated %d new (%d already current); %d still to do."
+                  % (made, done - made, len(todo) - done))
             print("Re-run after the quota resets -- already-summarised meetings"
                   " are skipped on the transcript SHA, so it resumes where it"
                   " left off.")
@@ -940,11 +946,12 @@ def main():
                       "attempt costs quota, so this run stops rather than "
                       "spending the day's allowance on a bad window."
                       % consecutive_failures)
-                print("summarised %d; %d still to do." % (done, len(todo) - done))
+                print("generated %d new (%d already current); %d still to do."
+                      % (made, done - made, len(todo) - done))
                 return 0
         else:
             consecutive_failures = 0
-    print("summarised %d" % done)
+    print("generated %d new (%d already current)" % (made, done - made))
     return 0
 
 
