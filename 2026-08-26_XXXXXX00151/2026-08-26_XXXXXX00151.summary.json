@@ -1,108 +1,75 @@
 {
  "video_id": "XXXXXX00151",
  "provider": "gemini",
- "generated_at": "2026-09-26T07:17:48Z",
+ "generated_at": "2026-09-27T21:05:20Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "ddd07a1083d8a613",
- "overview": "State Representative Erika Uyterhoeven discussed her State Senate candidacy, emphasizing a platform of legislative transparency, housing affordability, and increased state support for municipal budgets. She reviewed her legislative record of challenging consolidated power on Beacon Hill and blocking corporate tax breaks while advocating for data privacy and healthcare reform.",
+ "transcript_sha": "7e3114c0808fbcc8",
+ "overview": "State Representative Erika Uyterhoeven discussed her candidacy for State Senate, focusing on her platform of legislative transparency, affordable housing, and universal social services. She detailed her track record of challenging the centralized power of State House leadership and her proposals for progressive revenue generation.",
  "items": [
   {
    "title": "Candidate Introduction",
-   "t": 51,
-   "summary": "State Representative Erika Uyterhoeven introduced herself as a candidate for State Senate and noted her favorite local establishment is Bob's Italian Food.",
+   "t": 44,
+   "summary": "Erika Uyterhoeven introduced herself as a candidate for State Senate and recommended Bob's Italian Food as a favorite Medford business.",
    "speakers": [
-    "Erika Uyterhoeven",
-    "Danielle Balocca"
+    "Danielle Balocca",
+    "Erika Uyterhoeven"
    ]
   },
   {
-   "title": "Reasons for Candidacy",
-   "t": 145,
-   "summary": "Uyterhoeven stated her run is motivated by the lack of transparency in the Massachusetts legislature and the need for a state government that prioritizes community needs over corporate lobbyists.",
+   "title": "Transparency and Strategic Reform",
+   "t": 131,
+   "summary": "Uyterhoeven critiqued the Massachusetts legislature's lack of transparency and detailed her strategy of building 'inside-outside' coalitions to force public record-keeping of legislative votes.",
    "speakers": [
     "Erika Uyterhoeven"
    ]
   },
   {
-   "title": "Legislative Transparency Strategy",
-   "t": 315,
-   "summary": "The candidate described her 'inside-outside' organizing strategy used to force roll-call votes and move stalled common-sense legislation out of committees.",
-   "speakers": [
-    "Erika Uyterhoeven"
-   ]
-  },
-  {
-   "title": "Affordability and Utility Reform",
+   "title": "Priorities for Social Services and Utilities",
    "t": 496,
-   "summary": "Policy priorities included implementing state-level Medicare for All, universal childcare, and expanding municipal light plants to lower energy costs.",
-   "speakers": [
-    "Erika Uyterhoeven",
-    "Danielle Balocca"
-   ]
-  },
-  {
-   "title": "Data Privacy and AI Regulation",
-   "t": 682,
-   "summary": "Uyterhoeven advocated for banning ICE's purchase of phone geolocation data and creating state-level ethical guardrails for AI usage and data centers.",
+   "summary": "Policy priorities discussed include implementing Medicare for All, universal childcare, and investing in municipal light plants to lower utility costs.",
    "speakers": [
     "Erika Uyterhoeven"
    ]
   },
   {
-   "title": "Housing Policy",
+   "title": "Digital Privacy and AI Regulation",
+   "t": 674,
+   "summary": "The candidate advocated for banning the sale of geolocation data to federal agencies and establishing state-level guardrails for the ethical use of AI and data center construction.",
+   "speakers": [
+    "Erika Uyterhoeven"
+   ]
+  },
+  {
+   "title": "Housing and Progressive Revenue",
    "t": 829,
-   "summary": "The discussion focused on the necessity of public investment in 100% permanently affordable housing projects rather than developer-driven market-rate construction.",
-   "speakers": [
-    "Erika Uyterhoeven"
-   ]
-  },
-  {
-   "title": "Legislative Record",
-   "t": 964,
-   "summary": "The candidate highlighted her history of securing $1.5 billion for public schools, banning exploitative rental broker fees, and blocking utility fee hikes.",
+   "summary": "Uyterhoeven called for state investment in permanently affordable housing and supported the Fair Share Amendment to fund local services without over-relying on municipal property taxes.",
    "speakers": [
     "Erika Uyterhoeven",
     "Danielle Balocca"
    ]
   },
   {
-   "title": "Consolidated Power and Lobbying",
+   "title": "State House Power Dynamics",
    "t": 1141,
-   "summary": "Uyterhoeven criticized the consolidated power of the 'three big decision makers' on Beacon Hill and the outsized access granted to utility and insurance lobbyists.",
-   "speakers": [
-    "Erika Uyterhoeven"
-   ]
-  },
-  {
-   "title": "Corporate Tax and Data Contracts",
-   "t": 1543,
-   "summary": "Specific examples were provided of blocking corporate offshore tax exemptions and raising alarms over state AI contracts that lacked immigrant data protections.",
-   "speakers": [
-    "Erika Uyterhoeven"
-   ]
-  },
-  {
-   "title": "Municipal Funding and Proposition 2 1/2",
-   "t": 1845,
-   "summary": "Uyterhoeven critiqued the structural budget deficits forced on cities by Proposition 2 1/2 and argued that state Fair Share Amendment revenue should relieve local property tax burdens.",
-   "speakers": [
-    "Erika Uyterhoeven"
-   ]
-  },
-  {
-   "title": "Primary Election Logistics",
-   "t": 2128,
-   "summary": "The candidate provided details for the September 1st primary election, including information on early voting and a scheduled results event at Sally O'Brien's.",
+   "summary": "The discussion focused on the outsized influence of corporate lobbyists and the consolidation of legislative power among the Speaker, Senate President, and Governor.",
    "speakers": [
     "Erika Uyterhoeven",
     "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Election Logistics",
+   "t": 2120,
+   "summary": "The candidate provided information on the September 1st primary, early voting at Medford City Hall, and volunteer opportunities for canvassing efforts.",
+   "speakers": [
+    "Erika Uyterhoeven"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 14072,
-  "output_tokens": 946
+  "input_tokens": 14073,
+  "output_tokens": 562
  }
 }
