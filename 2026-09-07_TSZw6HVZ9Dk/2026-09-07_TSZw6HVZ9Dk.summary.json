@@ -1,16 +1,16 @@
 {
  "video_id": "TSZw6HVZ9Dk",
  "provider": "gemini",
- "generated_at": "2026-09-26T07:16:21Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-27T20:05:17Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "b9895c0e5c9d40b6",
- "overview": "The Medford Community Development Board met to conduct a public hearing on a special permit for 70 Lincoln Road and to deliberate on a proposed zoning amendment for the Boston Avenue neighborhood corridor.",
+ "transcript_sha": "e3aae7b95bfec3a6",
+ "overview": "The board approved a special permit for a second dwelling at 70 Lincoln Road and finalized its recommendation to the City Council regarding the Boston Avenue Neighborhood Corridor District zoning amendment.",
  "items": [
   {
    "title": "70 Lincoln Road Special Permit",
    "t": 136,
-   "summary": "Approved a special permit to construct a second single-family structure at 70 Lincoln Road, with conditions requiring a landscape plan for tree preservation and replacement, as well as sidewalk reconstruction to city standards.",
+   "summary": "Approved a special permit to construct a second single-family structure on a lot with an existing home, with conditions requiring a tree replacement plan and the construction of a sidewalk to city standards.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -27,9 +27,9 @@
    ]
   },
   {
-   "title": "Boston Avenue Neighborhood Corridor Zoning Amendment",
+   "title": "Boston Avenue Neighborhood Corridor District Zoning",
    "t": 3330,
-   "summary": "Approved a recommendation to transmit the edited zoning ordinance to the City Council, noting a split within the board regarding the interpretation of a proposed 60-foot setback along North Street.",
+   "summary": "Voted to recommend the zoning amendment to the City Council as amended, which included correcting mapping for the St. Clement's property and establishing use standards for purpose-built student housing. The board forwarded a split recommendation specifically regarding whether the sixth-story step-back on North Street should be 10 feet or 60 feet.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -43,9 +43,9 @@
    ]
   },
   {
-   "title": "Postponement and Continuation of Public Hearing",
+   "title": "Administrative Continuances",
    "t": 13519,
-   "summary": "Approved continuing the public hearing to September 16, 2026, while postponing the developer incentive review to a future meeting.",
+   "summary": "Continued the public hearing on zoning amendments for vacant and foreclosed properties and the approval of past meeting minutes to September 16, 2026.",
    "speakers": [
     "Doug Carr",
     "Alicia Hunt",
@@ -58,7 +58,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 69217,
-  "output_tokens": 490
+  "input_tokens": 68951,
+  "output_tokens": 521
  }
 }
