@@ -182,6 +182,7 @@ MODELS_URL = {
 _MODEL_CACHE = {}          # provider -> [ids], for one process
 _DEAD = set()              # models that failed terminally in THIS process
 _WINNER = {}               # provider -> the model that last actually answered
+_CACHED = False            # did the last summarize() hit the cache?
 
 
 def list_models(provider, key):
@@ -736,6 +737,8 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
         print("%s: no transcript" % yt_id)
         return None
     dest = out_path or os.path.join(base, base + ".summary.json")
+    global _CACHED
+    _CACHED = False
     body = io.open(srt, encoding="utf-8", errors="replace").read()
     sha = hashlib.sha256(body.encode("utf-8", "replace")).hexdigest()[:16]
 
@@ -744,6 +747,10 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
             old = json.load(io.open(dest, encoding="utf-8"))
             if old.get("transcript_sha") == sha:
                 print("%s: current" % yt_id)
+                # CACHED, so no API call happened. The caller must know, or it
+                # applies the rate-limit pace to a meeting it never asked about
+                # -- see the pace check in main().
+                _CACHED = True
                 return old
         except ValueError:
             pass
@@ -891,11 +898,17 @@ def main():
     for yt_id in todo:
         if args.limit and done >= args.limit:
             break
-        if done and pace:
-            time.sleep(pace)
         try:
             if summarize(yt_id, args.model, args.dry_run, args.force, video_data):
                 done += 1
+            # PACE ONLY AFTER A REAL REQUEST. summarize() returns the cached
+            # dict on a hit, which is truthy, so this used to sleep 13s between
+            # meetings it never contacted the API about. A cache check is 3.7ms
+            # -- all 2,300 take 9 seconds -- but at 13s each the scan alone
+            # would be 8.3 HOURS, and an hourly run would never reach new work.
+            # Measured before the fix: 57 cache hits in 13 minutes.
+            if pace and not _CACHED:
+                time.sleep(pace)
         except DailyQuotaExhausted as e:
             # NOT "skip this one and carry on". Carrying on means walking the
             # whole ladder for every remaining meeting and failing all of them.
