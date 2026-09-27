@@ -75,6 +75,14 @@ echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
 
+REM PUBLISH WHAT THIS RUN PRODUCED. summarize_meeting rebuilds each page as
+REM soon as it writes the sidecar, but it does not commit -- so publication
+REM used to be a side effect of TRANSCRIPTION, whenever create_subtitles
+REM happened to stage 20*/ next. Measured 2026-09-27: 16 summaries waiting on
+REM a transcription that had nothing to do with them, and if transcription
+REM stalls they wait indefinitely.
+"%PY%" -u publish_summaries.py >> "%LOG%" 2>&1
+
 for /f %%t in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-ddTHH:mm:ss"') do set "NOW=%%t"
 >> "%LOG%" echo [%NOW%] EXITED with code %RC%
 
