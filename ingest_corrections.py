@@ -64,6 +64,11 @@ TRUSTED = "trusted_contributors.json"
 
 # The sheet's column headers are the QUESTION TEXT, which the owner may reword
 # at any time. Match loosely on keywords rather than pinning exact strings.
+# The contributor travels in the reference suffix -- "<id>@<secs>#<name>/<token>"
+# -- rather than in a question of its own, so the form has no column for it and
+# never had to. parse_reference() splits it out.
+OPTIONAL_FIELDS = {"contributor"}
+
 COLUMN_HINTS = [
     ("suggestion",   ["corrected", "transcript", "instead", "should it say"]),
     ("reference",    ["reference", "do not edit"]),
@@ -101,7 +106,13 @@ def load_rows(text):
     reader = csv.DictReader(io.StringIO(text))
     headers = reader.fieldnames or []
     mapping = map_columns(headers)
-    missing = [f for f, _ in COLUMN_HINTS if f not in mapping]
+    # OPTIONAL_FIELDS are not expected to have a column of their own, so an
+    # unmatched one is not a problem to report. A warning that fires on every
+    # single run teaches people to ignore warnings, which is worse than no
+    # warning at all -- and the three REQUIRED fields genuinely do break the
+    # ingest when a question is reworded.
+    missing = [f for f, _ in COLUMN_HINTS
+               if f not in mapping and f not in OPTIONAL_FIELDS]
     return list(reader), mapping, headers, missing
 
 

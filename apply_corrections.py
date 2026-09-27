@@ -136,7 +136,93 @@ def label_for_name(name, mapping):
 
 # ----------------------------------------------------------------- applying
 
-def realign(blocks, lo, hi, turns, mapping):
+
+# ---------------------------------------------------------------------------
+# MEASURED WORD TIMINGS
+#
+# A SPEAKER CORRECTION MUST NOT MOVE THE CLOCK. Splitting one block into
+# several turns used to subdivide the block's span by word count, which is a
+# guess -- and on a real case it was wrong by up to 2.2 seconds, placing a
+# later turn BEFORE the speech it follows:
+#
+#     "Completely open honors"   guessed 5782.419   measured 5783.512
+#     "Great, thank you"         guessed 5782.796   measured 5784.993
+#
+# But model.pkl already holds every word's true start and end, from alignment:
+#
+#     {'word': 'Completely', 'start': 5783.512, 'end': 5783.932, ...}
+#
+# and when a correction only reassigns WHO SPOKE, the words -- and therefore
+# their timings -- have not changed at all. So the boundaries are known, not
+# estimable. This matters most for roll calls, where the whole value of the
+# correction is being able to click a name and land on that vote, and where
+# nine interpolated turns in one block would drift together.
+#
+# Falls back to the old subdivision when there is no model.pkl (the ~360 v1
+# transcripts) or when the submitter also changed the words, since then the
+# mapping from new text to old timings is genuinely ambiguous.
+
+_WORDS_CACHE = {}
+
+
+def load_word_times(directory):
+    """[{word,start,end}] for a meeting, or [] when model.pkl is absent."""
+    if directory in _WORDS_CACHE:
+        return _WORDS_CACHE[directory]
+    path = os.path.join(directory, "model.pkl")
+    words = []
+    if os.path.exists(path):
+        try:
+            import pickle
+            with open(path, "rb") as fp:
+                m = pickle.load(fp)
+            words = [w for w in (m.get("word_segments") or [])
+                     if w.get("start") is not None]
+        except Exception as e:
+            print("    (could not read model.pkl: %s)" % str(e)[:70])
+    _WORDS_CACHE[directory] = words
+    return words
+
+
+def _wnorm(w):
+    return re.sub(r"[^a-z0-9]+", "", (w or "").lower())
+
+
+def measured_spans(words, lo_t, hi_t, turns):
+    """[(start, end)] per turn from real word timings, or None.
+
+    None means "do not trust this" -- no words in range, or the turn text no
+    longer matches the audio -- and the caller subdivides instead. Returning
+    None is the safe answer: a wrong timestamp is worse than an approximate
+    one, because it links confidently to the wrong moment.
+    """
+    if not words or not turns:
+        return None
+    span = [w for w in words
+            if lo_t - 0.01 <= w["start"] <= (hi_t if hi_t else lo_t) + 0.01]
+    if not span:
+        return None
+
+    out, i = [], 0
+    for t in turns:
+        want = [x for x in (_wnorm(x) for x in (t.get("text") or "").split()) if x]
+        if not want:
+            return None
+        start_i = i
+        for tok in want:
+            while i < len(span) and not _wnorm(span[i]["word"]):
+                i += 1
+            if i >= len(span) or _wnorm(span[i]["word"]) != tok:
+                return None            # the words changed; timings are ambiguous
+            i += 1
+        out.append((span[start_i]["start"], span[i - 1].get("end") or span[i - 1]["start"]))
+    return out
+
+
+def realign(blocks, lo, hi, turns, mapping, word_times=None):
+    # NOT named `words`: a loop below binds that to a list of word
+    # STRINGS, and shadowing this parameter made the measured-timing
+    # lookup silently receive the wrong data.
     """Rebuild the block span from the corrected turns, KEEPING the original
     block boundaries wherever the text still lines up.
 
@@ -234,9 +320,20 @@ def realign(blocks, lo, hi, turns, mapping):
             out[idxs[0]]["start"] = src["start"]
             out[idxs[0]]["end"] = src["end"]
             continue
-        # subdivide this block's span by word count
         lo_t = src["start"]
         hi_t = src["end"] if src["end"] and src["end"] > lo_t else lo_t + 0.5
+
+        # MEASURED FIRST. When the words are unchanged -- which is the whole of
+        # the speaker-attribution case, roll calls included -- model.pkl knows
+        # exactly where each turn begins, so there is nothing to estimate.
+        spans = measured_spans(word_times, lo_t, hi_t,
+                               [{"text": out[k]["text"]} for k in idxs])
+        if spans:
+            for n, k in enumerate(idxs):
+                out[k]["start"], out[k]["end"] = spans[n]
+            continue
+
+        # otherwise subdivide this block's span by word count
         counts = [len(out[k]["text"].split()) for k in idxs]
         total = float(sum(counts) or 1)
         acc = 0
@@ -263,7 +360,7 @@ def realign(blocks, lo, hi, turns, mapping):
     return out
 
 
-def apply_one(rec, blocks, mapping, report):
+def apply_one(rec, blocks, mapping, report, word_times=None):
     """Mutate blocks/mapping for one correction. Returns applied-count delta."""
     t = float(rec["original_timestamp"])
     i = find_block(blocks, t)
@@ -304,7 +401,7 @@ def apply_one(rec, blocks, mapping, report):
             report.append("    SPEAKER: %s -> \"%s\" in speaker_ids.json "
                           "(applies to every line by this voice)" % (label, want))
 
-    new = realign(blocks, lo, hi, turns, mapping)
+    new = realign(blocks, lo, hi, turns, mapping, word_times)
     if not new:
         return False
 
@@ -378,6 +475,7 @@ def main():
         text = io.open(srt, encoding="utf-8", errors="replace").read()
         blocks = parse_srt(text)
         mapping, ids_path = load_speaker_ids(directory)
+        word_times = load_word_times(directory)
         before_map = dict(mapping)
 
         # latest timestamp first: a split changes block indices after it
@@ -386,7 +484,7 @@ def main():
         n = map_only = 0
         for rid, rec in recs:
             report = []
-            ok = apply_one(rec, blocks, mapping, report)
+            ok = apply_one(rec, blocks, mapping, report, word_times)
             # Naming a voice in speaker_ids.json IS a real correction even when
             # no block moves -- it is the most valuable kind, because it names
             # every line that speaker says and propagates across meetings. But
