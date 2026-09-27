@@ -1,0 +1,73 @@
+{
+ "video_id": "CAS00002526",
+ "provider": "gemini",
+ "generated_at": "2026-09-27T07:11:09Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "81b65a63cb54970c",
+ "overview": "The Board of Health met to discuss local code enforcement, review municipal health clinic updates, and hold compliance hearings for tobacco sales violations. The board also heard a BSL-2 permit presentation from the Tufts University Bioinnovation Lab.",
+ "items": [
+  {
+   "title": "Acceptance of Minutes",
+   "t": 0,
+   "summary": "The board approved the minutes of the previous meeting.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "MCM00001745_SPEAKER_07"
+   ]
+  },
+  {
+   "title": "Updates on 40 Century Street and 8 Main Street",
+   "t": 21,
+   "summary": "The complaint against 40 Century Street was closed after all violations were corrected, and the board reviewed progress on rodent and fly issues at 8 Main Street.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "Raven",
+    "SPEAKER_00"
+   ]
+  },
+  {
+   "title": "Communicable Disease Report and Vaccine Clinic Updates",
+   "t": 127,
+   "summary": "The board discussed shifting to quarterly communicable disease reporting, reviewed community health van turnout, and noted upcoming flu and COVID-19 vaccine clinic dates.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "MCM00001812_SPEAKER_07",
+    "MCM00001745_SPEAKER_07"
+   ]
+  },
+  {
+   "title": "Tobacco Compliance Hearings",
+   "t": 362,
+   "summary": "Following tobacco compliance checks where nine outlets sold to minors, the board held hearings for second-offense violators McSheffrey's Mobile and NK Convenience, ultimately passing a motion to allow their seven-day permit suspensions to be served non-consecutively.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "Maureen Busby",
+    "SPEAKER_06",
+    "Joe DeFranco",
+    "Love Patel",
+    "MCM00001745_SPEAKER_07"
+   ]
+  },
+  {
+   "title": "Tufts Bioinnovation Lab BSL-2 Permit Application Presentation",
+   "t": 1758,
+   "summary": "Representatives from Tufts University presented a BSL-2 permit application and safety plan for a new 12,500-square-foot research and development incubator at 200 Boston Avenue.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "Adam Jenkins",
+    "MCM00001745_SPEAKER_07"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19314,
+  "output_tokens": 628
+ }
+}
