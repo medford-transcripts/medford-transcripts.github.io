@@ -614,7 +614,7 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
     Raises the LAST error when every candidate fails, rather than a synthetic
     "all models failed": the real 404 or 429 text is what tells you why.
     """
-    tried, last, capped = [], None, []
+    tried, last, capped, transient = [], None, [], []
     for model in candidates(spec, key):
         # A model that already failed terminally this run is not retried. On
         # --all over 2,232 meetings the first candidate can be one whose daily
@@ -649,12 +649,25 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
             # (quota that outlived its own backoff) will not change today.
             if status in (404, 429):
                 _DEAD.add(model)
+            if status == 503:
+                # capacity, not allowance: this model may well answer for
+                # the next meeting, so it must not end the run
+                transient.append(model)
             tried.append("%s(%s)" % (model, status or "err"))
             last = e
-    # Every candidate refused, and at least one because its DAILY allowance is
-    # gone. Nothing this run does will change that, so say so in a way the
-    # caller can act on rather than logging 2,232 identical failures.
-    if capped:
+    # STOP ONLY IF NOTHING CAN RECOVER, which is not the same as "something
+    # was capped". Measured on the second nightly run: gemini-3.5-flash had
+    # genuinely spent its 20 and was blacklisted, gemini-3.1-pro was capped,
+    # 2.5-flash is retired -- but gemini-3-flash-preview failed with a 503,
+    # having produced only 2 summaries and so holding ~18 requests still. The
+    # old test raised on `capped` alone, so one momentary capacity blip on the
+    # model that still had budget ended the whole run: 20 summaries that night
+    # against 36 the night before.
+    #
+    # A 503 means try again, so it is a reason to move to the next MEETING,
+    # not to abandon the night. Only when every candidate is permanently out
+    # -- per-day capped, or retired -- is there nothing left to do.
+    if capped and not transient:
         raise DailyQuotaExhausted(
             "all %s models are out of daily allowance (%s)"
             % (provider_of(spec), ", ".join(capped)))
