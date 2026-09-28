@@ -480,22 +480,32 @@ def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
 # costs nothing. The bucket is only full right after the daily reset at
 # midnight Pacific -- which is exactly the 03:05 Eastern run -- so that run,
 # and only that run, gets the old budget of 3.
-# REVISED 2026-09-28, the same day it was introduced, because it made things
-# worse. Measured: zero summaries in the eight runs after it shipped, against
-# roughly one an hour before. The logs show why --
-#     gemini-3.5-flash unavailable (503); trying the next model
-#     gemini-3-flash-preview: daily allowance gone
-#     gemini-3.1-pro-preview: daily allowance gone
-# The model that returned 503 was the one model that STILL HAD QUOTA, and a
-# budget of 1 abandoned it on the first blip.
+# BAIL ON THE FIRST 503. Reverted to 3 earlier today and back again, so the
+# reasoning is worth writing down properly.
 #
-# THE ARGUMENT FOR BAILING INVERTS WHEN 503s ARE COMMON. Spending three tokens
-# on one meeting is wasteful only if the token saved would otherwise buy a
-# summary elsewhere. At today's 67% 503 rate it would not -- the next meeting
-# 503s too -- and unused quota expires at midnight Pacific regardless, so
-# there is nothing to save it for. Retry when the model still has allowance;
-# that is the only state in which a retry can pay.
-TRANSIENT_ATTEMPTS = 3
+# THE ARGUMENT FOR RETRYING was that unused quota expires at midnight Pacific,
+# so there is nothing to save it for. That is WRONG here: it only holds if the
+# day would otherwise end with quota unspent. It does not. The backlog is
+# 2,105 meetings against 20-60 requests a day, so demand exceeds supply
+# permanently -- every token WILL be spent, and the only question is where.
+#
+# And where matters, because contention varies a great deal. Measured:
+#     Sat  36 summaries, 12% 503      Sun  57 at 25%      Mon  16 at 67%
+# A token spent into a 67% window buys a third of what it buys at the weekend.
+# Retrying three times into a bad hour converts quota that could have produced
+# a summary at a quieter one into nothing at all.
+#
+# This is the same policy the consecutive_failures guard in main() already
+# implements ("this run stops rather than spending the day's allowance on a bad
+# window") -- a budget of 3 simply burns three times as much before that guard
+# can trip.
+#
+# WHAT MISLED ME: zero summaries in the eight runs after the bail-out shipped.
+# But Monday was already producing zero by 08:05, BEFORE the change landed --
+# all 16 of the day's successes came from the 03:05-07:05 runs. The drought was
+# weekday contention, not the budget. A before/after comparison that straddles
+# a weekend boundary cannot separate the two.
+TRANSIENT_ATTEMPTS = 1
 RUN_STATE = os.path.join("logs", "summary_run_state.json")
 
 
@@ -548,11 +558,12 @@ def transient_budget(now=None):
                            json.dumps({"last_run": now.isoformat()}, indent=1))
     except (IOError, OSError):
         pass                    # advisory only; never fail a run over it
-    # Always 3 now -- see TRANSIENT_ATTEMPTS. The reset run is still
-    # identified and recorded, because a full bucket is worth knowing
-    # about, but it no longer earns a DIFFERENT budget: retrying a 503
-    # on a model that still has allowance is right at any hour.
-    return 3
+    # 3 only on the first run after the reset, when the bucket is full and
+    # tokens would otherwise overflow before the next run -- the one case
+    # where spending them on retries costs nothing. 1 otherwise: see
+    # TRANSIENT_ATTEMPTS for why saving them for a quieter hour beats
+    # retrying into a busy one.
+    return 3 if first else 1
 
 
 def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3,
