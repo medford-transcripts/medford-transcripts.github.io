@@ -2045,7 +2045,11 @@
         "castus_id": "6a208e6bd3b9c60002f88601",
         "view_count": 0,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "priority": 0.008430778532311507
+        "priority": 0.008430778532311507,
+        "skip": true,
+        "duplicate_id": "fKTK3cmlYsg",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of fKTK3cmlYsg (same type and meeting date, different channel)"
     },
     "XXXXXX00147": {
         "title": "Christine Barber for State Senate",
@@ -2872,10 +2876,14 @@
         "duration": 15785,
         "upload_date": "2026-06-02",
         "view_count": 145,
-        "date": "2026-05-02",
+        "date": "2026-06-02",
         "priority": 0.0066839108080003155,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "last_update": 1790615697.8107798
+        "last_update": 1790615697.8107798,
+        "date_manual": true,
+        "date_note": "title says 05-02-26 (a Saturday, and no agenda exists for it). It is the 2026-06-02 meeting: uploaded that day, a Committee of the Whole agenda exists for it, and the Castus twin CAS00002447 is 15,783s against this copy's 15,785s -- two seconds apart. A 5-for-6 typo in the month, not an off-by-days. Confirmed 2026-09-28.",
+        "skip": false,
+        "duplicate_id": "CAS00002447"
     },
     "CAS00002406": {
         "title": "Zoning Board of Appeals 04/30/26",
@@ -11368,7 +11376,9 @@
         "last_update": 1790454472.6430733,
         "meeting_type": "CC City Council Meeting of the Whole",
         "skip": false,
-        "duplicate_id": "CAS00002098"
+        "duplicate_id": "CAS00002098",
+        "date_manual": true,
+        "date_note": "VERIFIED CORRECT by the author 2026-09-28, not changed. Flagged by the agenda-gap check because no agenda exists for this date, but Committee of the Whole meets Tue or Wed, so a Wednesday is normal; uploaded the same day. No agenda was posted for it. date_manual is set so it is not re-flagged and the check is recorded."
     },
     "CAS00002101": {
         "title": "Community Development Board 04/16/25",
@@ -28389,7 +28399,9 @@
         "date": "2024-01-09",
         "meeting_type": "CC City Council",
         "duplicate_id": "CAS00001543",
-        "skip": false
+        "skip": false,
+        "date_manual": true,
+        "date_note": "VERIFIED CORRECT by the author 2026-09-28, not changed. Flagged by the agenda-gap check because no agenda exists for this date, but a Tuesday, which is when CC City Council meets. No agenda was posted for it. date_manual is set so it is not re-flagged and the check is recorded."
     },
     "CAS00001690": {
         "title": "Traffic Commission 01/09/24",
