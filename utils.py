@@ -763,6 +763,12 @@ def _rank(channel):
         return 10
 
 
+# Verdicts that came from comparing the TRANSCRIPTS. Two spellings exist:
+# find_duplicate_transcripts.py writes "transcript_similarity", and
+# verdicts entered by hand were recorded as "transcript".
+TRANSCRIPT_METHODS = ("transcript_similarity", "transcript")
+
+
 def _dedup_protected(entry):
     """Entries whose skip state is not ours to change."""
     if entry.get("manual_correction"):
@@ -783,7 +789,13 @@ def _dedup_protected(entry):
     # Only a transcript SKIP is protected. An entry this method left visible
     # is still an ordinary candidate, or the 34 already reversed could never
     # be re-hidden by re-running the transcript pass.
-    if entry.get("duplicate_method") == "transcript_similarity" and entry.get("skip"):
+    # BOTH SPELLINGS. find_duplicate_transcripts writes
+    # "transcript_similarity"; verdicts entered by hand were recorded as
+    # "transcript". Checking only the first let a metadata run overwrite the
+    # hand ones -- MCM00001327 was re-pointed from _ywkXQwBNaw (a cross-date
+    # pair only the transcript comparison can see) to CAS00001140 (same date,
+    # so the metadata grouping found it) within hours of being set.
+    if entry.get("duplicate_method") in TRANSCRIPT_METHODS and entry.get("skip"):
         return True
     # a skip WITHOUT duplicate_id was set by a person or by the truncated-audio
     # guard, never by this function
@@ -935,7 +947,12 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
         # reversed that: Mass Traction is retiring and official/archive
         # sources are preferred even when the unofficial copy is done.
         e = video_data[yt_id]
-        return (_rank(e["channel"].strip()),
+        # A DEAD SOURCE LOSES TO EVERYTHING -- see the same rule in
+        # find_duplicate_transcripts.rank(). Keeping a copy whose video the
+        # publisher withdrew leaves a page pointing at nothing while the
+        # working copy is hidden.
+        return (1 if e.get("source_unavailable") else 0,
+                _rank(e["channel"].strip()),
                 1 if "Livestream" in (e.get("title") or "") else 0,
                 yt_id)
 
@@ -959,6 +976,7 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
             continue
         keeper = min(usable, key=prefer)
         k = video_data[keeper]
+
         for other in ids:
             if other == keeper:
                 continue
@@ -991,6 +1009,52 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
                 # BACK of the queue: it must still be transcribed from the
                 # preferred source, but behind meetings with no transcript at all.
                 c["backseat"] = bool(other_done and not keeper_done)
+
+        # RUNS AFTER the loop above, not before: that loop writes
+        # changes[other] for every entry it considers, so an interim
+        # verdict set beforehand was simply overwritten.
+        # AN UNTRANSCRIBED KEEPER STILL NEEDS THE REST DEDUPED AGAINST EACH
+        # OTHER. The skip rule below refuses to hide the only transcript, so
+        # when the preferred copy has not been transcribed yet every
+        # transcribed copy stays visible -- and because each is only ever
+        # compared against the KEEPER, they are never compared against one
+        # another. The result is not one visible copy, it is all of them.
+        # Measured: 25 meeting groups, mostly late-2017 Mass Traction pairs,
+        # where a livestream and its trimmed re-post were both live because
+        # the MCM Archive copy they both lose to has no transcript.
+        #
+        # Serving several copies of one meeting is not harmless. supercut
+        # aggregates transcripts for the candidate excerpt pages, word counts
+        # and speaker stats, so a duplicate double-counts and a partial one
+        # skews the totals toward whatever it kept.
+        #
+        # So pick an INTERIM keeper from the transcribed copies by the same
+        # rules, and dedup the rest against it. The real keeper is untouched:
+        # it keeps its preference and its backseat flag, and once it is
+        # transcribed the next run promotes it.
+        if not has_transcript(keeper, k):
+            done = [y for y in usable if has_transcript(y, video_data[y])]
+            if len(done) > 1:
+                interim = min(done, key=prefer)
+                ik = video_data[interim]
+                for other in done:
+                    if other == interim or _dedup_protected(video_data[other]):
+                        continue
+                    o = video_data[other]
+                    same_channel = o["channel"].strip() == ik["channel"].strip()
+                    live = ("Livestream" in (o.get("title") or "")
+                            or "Livestream" in (ik.get("title") or ""))
+                    if same_channel and not (o["channel"].strip() == MT_CHANNEL and live):
+                        continue
+                    if not same_recording(o, ik):
+                        continue
+                    changes[other] = {
+                        "skip": True,
+                        "duplicate_id": interim,
+                        "duplicate_method": "metadata",
+                        "skip_reason": "duplicate of %s (same type and meeting date, "
+                                       "different channel); interim keeper while %s "
+                                       "is untranscribed" % (interim, keeper)}
 
     summary = {"pairs": pairs,
                "skipped": sum(1 for y, c in changes.items() if c["skip"] and not video_data[y].get("skip")),

@@ -100,6 +100,53 @@ def sketch(path, k=5, keep=400):
     return set(hashes[:keep])
 
 
+def _words(yt_id, video_data):
+    """Lowercased words of a transcript, speaker labels and timings stripped."""
+    e = video_data.get(yt_id) or {}
+    d = (e.get("upload_date") or "") + "_" + yt_id
+    path = os.path.join(d, d + ".srt")
+    if not os.path.exists(path):
+        return None
+    try:
+        text = io.open(path, encoding="utf-8", errors="replace").read()
+    except OSError:
+        return None
+    out = []
+    for block in srt_lines.parse_srt(text):
+        out.extend(WORD.findall((block["text"] or "").lower()))
+    return out
+
+
+def _leading_gap(loser, keeper, video_data, k=5, bins=10,
+                 covered=0.20, need_bins=1):
+    """Percent of `loser` sitting in a CONTIGUOUS barely-covered block, or 0.
+
+    Splits the loser into `bins` equal slices and asks, for each, how much of
+    it appears in the keeper. A truncated keeper leaves a run of slices at
+    near-zero coverage; ASR divergence leaves every slice mediocre and none
+    empty. Only a RUN counts, which is what separates the two.
+    """
+    wl, wk = _words(loser, video_data), _words(keeper, video_data)
+    if not wl or not wk or len(wl) < (k + 5) * bins:
+        return 0
+    kset = {" ".join(wk[i:i + k]) for i in range(len(wk) - k + 1)}
+    n = len(wl) - k + 1
+    cov = []
+    for b in range(bins):
+        lo, hi = b * n // bins, (b + 1) * n // bins
+        if hi <= lo:
+            cov.append(1.0)
+            continue
+        hit = sum(1 for i in range(lo, hi) if " ".join(wl[i:i + k]) in kset)
+        cov.append(hit / float(hi - lo))
+    # longest run of consecutive slices below the coverage floor
+    best = run = 0
+    for c in cov:
+        run = run + 1 if c < covered else 0
+        best = max(best, run)
+    return (best * 100) // bins if best >= need_bins else 0
+
+
 def transcripts():
     out = {}
     for path in glob.glob("20??-??-??_*/*.srt"):
@@ -269,6 +316,7 @@ def main():
     print("  already marked       : %d" % (len(hits) - len(fresh)))
     print("  NOT marked           : %d" % len(fresh))
     print()
+    skipped_for_review = []
     for score, a, b in fresh:
         ea, eb = video_data.get(a, {}), video_data.get(b, {})
         print("  %.2f  %-12s %-28s %s" % (score, a, (ea.get("channel") or "")[:28],
@@ -346,11 +394,20 @@ def main():
             # to drop to a worse source -- prefer the better channel and accept
             # the padding.
             #
-            # duration NEGATED: within a channel, ties go to the LONGER
-            # recording, which is usually the more complete one.
-            return (utils._rank(channel),
+            # A DEAD SOURCE OUTRANKS EVERYTHING, including channel priority.
+            # A keeper whose video the publisher has withdrawn is the worst
+            # possible outcome: the page stays up pointing at nothing while
+            # the copy that still plays is hidden. Found live -- Medford
+            # Community Media posted the 2025-12-15 Waste Collection forum
+            # twice, deleted the accidental upload, and dedup had kept the
+            # deleted one. Nothing sets this flag automatically yet; it is
+            # recorded by hand when a source is found gone.
+            return (1 if entry.get("source_unavailable") else 0,
+                    utils._rank(channel),
                     raw, trimmed,
                     0 if utils.has_transcript(yt_id, entry) else 1,
+                    # duration NEGATED: within a channel, ties go to the LONGER
+                    # recording, which is usually the more complete one.
                     -(entry.get("duration") or 0),
                     yt_id)
         keeper, loser = (a, b) if rank(a, ea) <= rank(b, eb) else (b, a)
@@ -359,6 +416,39 @@ def main():
             continue
         if entry.get("skip") and not entry.get("duplicate_id"):
             continue                      # a skip this tool did not set
+        # COMPLETENESS BEATS CHANNEL PREFERENCE -- by SWAPPING the keeper, not
+        # by publishing both.
+        #
+        # Serving two copies of one meeting is not a neutral hedge: every
+        # derived view ingests both. Candidate excerpt pages, word counts and
+        # speaker stats all double-count, and a truncated copy skews them
+        # toward whatever it kept. So the answer to "the preferred copy is
+        # missing the first 30%" is to publish the complete one INSTEAD, not
+        # as well.
+        #
+        # Measured: the MPS YouTube copies of the 2024-02-29 and 2024-05-07
+        # MSBA meetings each START LATE, missing the first 30% and 12% of the
+        # meeting -- the call to order and the roll call. The MCM Archive
+        # copies have them. Hiding the archive copy on channel preference
+        # would have removed those openings from the site.
+        #
+        # THE TEST IS THE SHAPE OF THE GAP, not its size, because the two
+        # failure modes look identical in aggregate. Poor audio makes two
+        # independent transcriptions of the SAME content diverge -- the
+        # 2025-09-15 pair differs on 48% of its 5-grams with word counts only
+        # 5% apart, and its coverage wanders (60/62/74/63/43/60/41/36/48/32)
+        # with no gap anywhere. A truncation leaves a CONTIGUOUS block at
+        # near-zero coverage and high coverage after it (0/9/5 then 85-93).
+        missing = _leading_gap(loser, keeper, video_data)
+        if missing:
+            entry["superset_of"] = keeper
+            entry["review_reason"] = (
+                "NOT hidden: holds %d%% of its content that %s lacks, in a "
+                "contiguous block -- the keeper appears to start late."
+                % (missing, keeper))
+            video_data[keeper]["incomplete_vs"] = loser
+            skipped_for_review.append((loser, keeper, missing))
+            continue
         entry["skip"] = True
         entry["duplicate_id"] = keeper
         entry["duplicate_method"] = "transcript_similarity"
