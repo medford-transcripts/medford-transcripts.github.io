@@ -194,21 +194,9 @@ def _normalised_srt_lines(text):
     return [l + "\n" for l in srt_lines.render_srt(blocks).split("\n")]
 
 
-def web_path(path):
-    """A local filesystem path as a URL path, percent-encoded.
-
-    Two separate hazards, both seen in this repo:
-      - os.path.join and os.path.splitext return BACKSLASHES on Windows, and
-        this site is generated on Windows. A backslash in a canonical tag is
-        what dropped ~27,000 pages from the search index.
-      - scraped document names contain spaces, commas and parentheses --
-        "2026.08.05 - Resident Services ... (Attachments Corrected).pdf".
-        Browsers encode those on the fly, but crawlers are stricter, and an
-        agenda that no crawler will fetch is an agenda nobody finds.
-
-    Same safe set as site_url.py, so relative and absolute URLs agree.
-    """
-    return quote(str(path).replace(chr(92), "/"), safe="/-_.~()[]@!$&'*+,;=")
+# web_path lives in utils so make_committee_pages can use it too: srt2html
+# imports make_committee_pages, so that module cannot import back.
+web_path = utils.web_path
 
 
 def asset_prefix(page_dir):

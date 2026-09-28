@@ -51,10 +51,16 @@ def make():
         htmlbasename = committee_name.replace(" ","_") + '.html'
         htmlname = 'committees/' + htmlbasename
 
-        html = open(htmlname, 'w', encoding="utf-8")
-        html.write('<table border=1>\n')
-        #html.write("  <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Agenda</center></td><td><center>Minutes</center></td><td><center>Channel</center></td><td colspan=2><center>Raw files</center></td></tr>\n")
-        html.write("  <tr><td><center>Date</center></td><td><center>Duration</center></td><td><center>Title (click for transcript)</center></td><td><center>Channel</center></td></tr>\n")
+        # ROWS ARE BUFFERED because the header depends on them: the Agenda and
+        # Minutes columns are written only if this committee actually has one.
+        # 492 agendas and 62 minutes spread over 63 committees means most
+        # bodies have neither, and a column of empty cells on every other page
+        # reads as "we lost the document" rather than "there isn't one".
+        # Each column is decided SEPARATELY -- minutes are far rarer than
+        # agendas, so a shared test would put an empty Minutes column on every
+        # page that has agendas.
+        rows = []
+        has_agenda = has_minutes = False
 
         nmeetings = 0
         for video in video_data.keys():
@@ -81,17 +87,50 @@ def make():
                 else:
                     url = "https://youtu.be/" + video
 
+                # The SAME matcher the front page uses (srt2html.make_index):
+                # it requires date AND meeting_type to agree, so a document is
+                # never stapled to a different committee that met the same
+                # evening. Links are "../" relative because these pages live
+                # in committees/.
+                agenda_cell = minutes_cell = '<td></td>'
+                agendas = utils.meeting_documents(video_data[video], "agendas")
+                if agendas:
+                    agenda_cell = ('<td><a href="../' + utils.web_path(agendas[0])
+                                   + '">Agenda</a></td>')
+                    has_agenda = True
+                minutes = utils.meeting_documents(video_data[video], "minutes")
+                if minutes:
+                    minutes_cell = ('<td><a href="../' + utils.web_path(minutes[0])
+                                    + '">Minutes</a></td>')
+                    has_minutes = True
+
                 nmeetings += 1
-                html.write('  <tr>\n')
-                html.write('    <td>' + video_data[video]["date"] + '</td>\n')
-                html.write('    <td><a href="' + url + '">[' + duration_string + ']</a></td>\n')
-                html.write('    <td><a href="../' + transcript_url + '">' + video_data[video]["title"] + '</a></td>\n')
-                html.write('    <td>' + video_data[video]["channel"] + '</td>\n')
-                html.write('  </tr>\n')
+                rows.append((
+                    '  <tr>\n'
+                    '    <td>' + video_data[video]["date"] + '</td>\n'
+                    '    <td><a href="' + url + '">[' + duration_string + ']</a></td>\n'
+                    '    <td><a href="../' + transcript_url + '">' + video_data[video]["title"] + '</a></td>\n',
+                    agenda_cell, minutes_cell,
+                    '    <td>' + video_data[video]["channel"] + '</td>\n'
+                    '  </tr>\n'))
 
         if nmeetings > 0:
             all_committees_table.write('<tr><td><a href="' + htmlbasename + '">' + committee_name + '</a></td></tr>\n')
 
+        html = open(htmlname, 'w', encoding="utf-8")
+        html.write('<table border=1>\n')
+        header = ["<th scope='col'>Date</th>",
+                  "<th scope='col'>Duration</th>",
+                  "<th scope='col'>Title (click for transcript)</th>"]
+        if has_agenda:  header.append("<th scope='col'>Agenda</th>")
+        if has_minutes: header.append("<th scope='col'>Minutes</th>")
+        header.append("<th scope='col'>Channel</th>")
+        html.write("  <tr>" + "".join(header) + "</tr>\n")
+        for lead, agenda_cell, minutes_cell, tail in rows:
+            html.write(lead)
+            if has_agenda:  html.write('    ' + agenda_cell + '\n')
+            if has_minutes: html.write('    ' + minutes_cell + '\n')
+            html.write(tail)
         html.write('</table>\n')
         html.close()
 

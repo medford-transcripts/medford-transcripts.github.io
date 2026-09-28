@@ -1,5 +1,6 @@
 import json, glob
 import re
+from urllib.parse import quote
 import os, time, datetime
 import subprocess
 import io as _io
@@ -12,6 +13,23 @@ import ipdb
 # ward geometry
 from geopy.geocoders import Nominatim
 from shapely.geometry import shape, Point
+
+
+def web_path(path):
+    """A local filesystem path as a URL path, percent-encoded.
+
+    Two separate hazards, both seen in this repo:
+      - os.path.join and os.path.splitext return BACKSLASHES on Windows, and
+        this site is generated on Windows. A backslash in a canonical tag is
+        what dropped ~27,000 pages from the search index.
+      - scraped document names contain spaces, commas and parentheses --
+        "2026.08.05 - Resident Services ... (Attachments Corrected).pdf".
+        Browsers encode those on the fly, but crawlers are stricter, and an
+        agenda that no crawler will fetch is an agenda nobody finds.
+
+    Same safe set as site_url.py, so relative and absolute URLs agree.
+    """
+    return quote(str(path).replace(chr(92), "/"), safe="/-_.~()[]@!$&'*+,;=")
 
 
 # ---------------------------------------------------------------- atomic write
@@ -226,9 +244,7 @@ def update_video_data_one(yt_id):
             video_data[yt_id]["date"] = new_date
             save_video_data(video_data)
 
-    if "agenda" not in video_data[yt_id].keys():
-        agendas = glob.glob("agendas/*.pdf") 
-        
+
 def pick_date(entry):
     return (
         entry.get("date")
