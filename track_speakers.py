@@ -80,6 +80,172 @@ def _cached_embeddings(path):
     return rows
 
 
+# ------------------------------------------------- self-consistency filter
+#
+# A REFERENCE THAT DOES NOT MATCH ITSELF MUST NOT VOUCH FOR ANYONE.
+#
+# The stored embedding is a MEAN over every segment attributed to a cluster.
+# When a speaker's segments are cleanly cut that mean is a voiceprint; when
+# they are not, it is a blend. The city clerk is the worst case in this corpus
+# and the reason is structural: he reads the roll, and members answer "Here" /
+# "Yes" in the gaps, so short responses land inside his segments and his mean
+# absorbs a slice of everyone who answered. A different set of members answers
+# at every meeting, so each meeting yields a DIFFERENT blend.
+#
+# Measured over 454 people with 5+ embeddings:
+#     median self-consistency (mean pairwise cosine of one person's own
+#     embeddings, across meetings)                              0.805
+#     Adam Hurtubise, n=808                                     0.406
+# He is the second least self-consistent identity in the corpus, behind only
+# "BBC Broadcast", which is not a person. 0.406 is BELOW the 0.7 threshold
+# match_embeddings uses to decide two clusters are the same human -- his
+# vectors would not match each other. That is how the city clerk came to be
+# identified in 613 meetings including a jazz festival, a podcast and campaign
+# videos, and how one 2024 meeting has FOUR separate clusters all labelled him.
+#
+# WHY THE EXISTING noisy_embedding FILTER DOES NOT CATCH IT. That test is
+# np.std(vector) < 0.15, applied to one vector at a time: averaging unlike
+# voices regresses toward the mean and flattens the vector. It is right, and
+# it catches 75% of his embeddings -- but ~200 pass, because a blend of the
+# clerk plus THIS meeting's five responders can be perfectly sharp on its own.
+# Flatness is a property of one vector; a blend that changes every meeting is
+# only visible by comparing a person against themselves.
+#
+# So this is a SECOND, INDEPENDENT dimension, not a replacement: keep the
+# per-vector flatness test, and additionally bar a named person from acting as
+# a reference when their own embeddings disagree with each other.
+# THE THRESHOLD IS 0.55, AND IT IS MEASURED, NOT INHERITED.
+#
+# The tempting value was 0.7 -- "a reference that cannot match itself at the
+# bar we use to call two clusters the same person should not vouch for anyone".
+# That is a tidy argument and the data refutes it. 0.7 is the bar for IS THIS
+# THE SAME PERSON; it is not the bar for IS THIS IDENTITY COHERENT, and using
+# one for the other cuts 19.3% of the reference pool -- Fred Dello Russo (248
+# embeddings), John Falco (210), Jenny Graham (363), Aaron Olapade (84). At
+# 0.75 it takes Zac Bears. Roll calls blend everyone a little, so a long tail
+# of perfectly real officials sits between 0.58 and 0.70 against a corpus
+# median of 0.805.
+#
+# Measured cost, over 453 people with 5+ embeddings and 17,807 named vectors:
+#     0.45 ->  5 people,  5.5% of vectors
+#     0.50 ->  8 people,  5.9%
+#     0.55 ->  8 people,  5.9%   <- identical set: a real gap in the
+#     0.60 -> 14 people,  8.8%      distribution, not a slice through it
+#     0.70 -> 45 people, 19.3%
+# 0.55 sits in that plateau and removes exactly the identities that are broken
+# rather than merely noisy: Adam Hurtubise (0.406), Marie Izzo (0.440),
+# Evangelista, Maria D'Orsi, and "BBC Broadcast" (0.071), which is not a
+# person at all. Hurtubise and Izzo are independently the top of the
+# bare-assent ranking -- two unrelated signals, text and acoustic, agreeing.
+SELF_CONSISTENCY_MIN = 0.55
+SELF_CONSISTENCY_MIN_N = 5      # below this there is no evidence either way
+_SELF_CONSISTENCY_CACHE = "speaker_self_consistency.json"
+_self_consistency = None
+
+
+def _corpus_fingerprint():
+    """Cheap signature of the embedding corpus, to invalidate the cache."""
+    n = size = 0
+    for p in glob.glob("*/embeddings.pkl"):
+        try:
+            st = os.stat(p)
+        except OSError:
+            continue
+        n += 1
+        size += st.st_size
+    return "%d:%d" % (n, size)
+
+
+def speaker_self_consistency(force=False):
+    """{name: [n, mean pairwise cosine]} for every named speaker.
+
+    One person's embeddings from different meetings should resemble each
+    other. Where they do not, the cluster is not a stable identity.
+    """
+    global _self_consistency
+    if _self_consistency is not None and not force:
+        return _self_consistency
+
+    fp = _corpus_fingerprint()
+    if not force and os.path.exists(_SELF_CONSISTENCY_CACHE):
+        try:
+            with open(_SELF_CONSISTENCY_CACHE, "r") as f:
+                blob = json.load(f)
+            if blob.get("fingerprint") == fp:
+                _self_consistency = blob.get("speakers", {})
+                return _self_consistency
+        except (OSError, ValueError):
+            pass
+
+    rows = {}
+    for pkl in glob.glob("*/embeddings.pkl"):
+        jsonfile = os.path.join(os.path.dirname(pkl), "speaker_ids.json")
+        if not os.path.exists(jsonfile):
+            continue
+        try:
+            with open(jsonfile, "r") as f:
+                ids = json.load(f)
+        except (OSError, ValueError):
+            continue
+        for key, vec in _cached_embeddings(pkl):
+            name = ids.get(key)
+            if not _is_named(name):
+                continue
+            v = np.asarray(vec, dtype=np.float64)
+            if v.ndim == 1 and v.size:
+                rows.setdefault(name, []).append(v)
+
+    out = {}
+    for name, vs in rows.items():
+        if len(vs) < 2:
+            out[name] = [len(vs), None]
+            continue
+        M = np.vstack(vs)
+        norms = np.linalg.norm(M, axis=1)
+        M = M[norms > 0]
+        norms = norms[norms > 0]
+        if M.shape[0] < 2:
+            out[name] = [len(vs), None]
+            continue
+        M = M / norms[:, None]
+        S = M.dot(M.T)
+        iu = np.triu_indices(S.shape[0], 1)
+        out[name] = [len(vs), float(np.mean(S[iu]))]
+
+    _self_consistency = out
+    try:
+        with open(_SELF_CONSISTENCY_CACHE, "w") as f:
+            json.dump({"fingerprint": fp, "speakers": out}, f, indent=1,
+                      sort_keys=True)
+    except OSError:
+        pass
+    return out
+
+
+def _is_named(name):
+    """A resolved HUMAN name, not a diarisation placeholder or a cross-ref."""
+    return (isinstance(name, str)
+            and not name.startswith("SPEAKER_")
+            and "_SPEAKER_" not in name
+            and name != "Unidentified")
+
+
+def unreliable_speakers(min_cos=None, min_n=None):
+    """Named speakers whose own embeddings disagree with each other.
+
+    Only names with enough samples to judge are returned: with fewer than
+    min_n embeddings there is no evidence, and absence of evidence must not
+    silently disable a real person.
+    """
+    min_cos = SELF_CONSISTENCY_MIN if min_cos is None else min_cos
+    min_n = SELF_CONSISTENCY_MIN_N if min_n is None else min_n
+    bad = set()
+    for name, (n, cos) in speaker_self_consistency().items():
+        if cos is not None and n >= min_n and cos < min_cos:
+            bad.add(name)
+    return bad
+
+
 def _reference_table(exclude_file):
     """(matrix, meta) for every named reference speaker except exclude_file.
 
@@ -90,6 +256,12 @@ def _reference_table(exclude_file):
     does not participate in scoring, ordering, or tie-breaking.
     """
     vectors, meta = [], []
+    # Named people whose own embeddings disagree with each other. They are
+    # dropped as REFERENCES only -- their transcripts and existing labels are
+    # untouched, and unnamed SPEAKER_nn chain links still work exactly as
+    # before, so cross-video linking is unaffected except that it can no
+    # longer be vouched for by a blended identity.
+    bad_refs = unreliable_speakers()
     for reference_file in glob.glob("*/embeddings.pkl"):
         if reference_file == exclude_file:            # don't compare to yourself
             continue
@@ -109,6 +281,8 @@ def _reference_table(exclude_file):
             # this speaker has been pruned from the ID file; skip it
             if speaker_key not in ref_speaker_ids:
                 continue
+            if ref_speaker_ids[speaker_key] in bad_refs:
+                continue          # self-inconsistent identity; see above
             vectors.append(vec)
             meta.append((ref_yt_id, ref_speaker_ids[speaker_key], speaker_key))
 
@@ -220,8 +394,10 @@ def propagate():
                         # if it's been updated, propagate it
                         if mapped_ids[mapped_speaker] != mapped_speaker:
 
-                            # GUARD (a): never overwrite a hand-verified entry
-                            if sp.is_manual(provenance, speaker):
+                            # GUARD (a): never overwrite a hand-verified entry,
+                            # nor a high-confidence backfill -- see
+                            # speaker_provenance.PROTECTED_SOURCES
+                            if sp.is_protected(provenance, speaker):
                                 skipped_manual.append((file, speaker))
                                 continue
 

@@ -51,6 +51,7 @@ import os
 import re
 import sys
 import time
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -450,7 +451,88 @@ def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
                             "output_tokens": u.get("output_tokens")}
 
 
-def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3):
+# ------------------------------------------------------- transient retry budget
+#
+# A 503 COSTS A TOKEN. Measured over 29 runs: 109 successes against 54 503s and
+# 85 per-day 429s. The two failures are not alike --
+#   * a per-day 429 is refused at the gate, against a bucket that is already
+#     empty, so it costs wall-clock and nothing else;
+#   * a 503 got PAST the gate. It spent a request and returned nothing.
+# The evidence is that total requests per post-reset run stayed near constant
+# (41, 26, 33) while successes swung 36 -> 21 -> 12, inversely with the 503
+# count. The bucket meters requests, not successes.
+#
+# So retrying a 503 three times spends three tokens to maybe buy one summary.
+# With refill around 2/hour, a token given away now is not replaced for half an
+# hour; the next hourly run would have spent it on a meeting that succeeds.
+# Bail on the first 503 and let the next run try -- it is an hour away, and
+# 503s clump (the 2026-09-28 03:05 run opened at 75% failure in its first
+# quarter and never recovered, while 2026-09-26 had its 503s in the middle and
+# then ran clean).
+#
+# THE ONE EXCEPTION is a full bucket, where the arithmetic inverts. Tokens that
+# would overflow before the next run are free, so spending them on retries
+# costs nothing. The bucket is only full right after the daily reset at
+# midnight Pacific -- which is exactly the 03:05 Eastern run -- so that run,
+# and only that run, gets the old budget of 3.
+TRANSIENT_ATTEMPTS = 1
+RUN_STATE = os.path.join("logs", "summary_run_state.json")
+
+
+def _last_quota_reset(now=None):
+    """The most recent midnight Pacific.
+
+    Computed from the tz database, never from a fixed offset, so it is correct
+    on a machine in any timezone and moves with DST on its own.
+
+    MEASURED, from our own logs rather than the docs: on 2026-09-28 the run at
+    00:05 UTC produced 1 summary while the run at 00:05 PDT produced 12, after
+    four consecutive zero runs at 20:05/21:05/22:05/23:05 PDT. All three daily
+    bursts (36, 21, 12) land at 00:05 PDT. So the reset is Pacific, not UTC.
+
+    WHAT IS *NOT* MEASURED: whether Google follows the Pacific WALL CLOCK or
+    simply pins to UTC-8 all year. Every log we have is from September, which
+    is PDT, and both hypotheses predict a 07:00 UTC reset in PDT -- they differ
+    only under PST, where wall clock means 08:00 UTC. This function assumes the
+    wall clock. If that is wrong the cost is small and self-limiting: for the
+    four winter months the elevated retry budget below would be handed to the
+    23:05 PST run instead of the 00:05 PST one, wasting about two requests a
+    day. Re-run the same log analysis after DST ends to settle it.
+    """
+    pac = ZoneInfo("America/Los_Angeles")
+    now = (now or datetime.datetime.now(datetime.timezone.utc)).astimezone(pac)
+    return now.replace(hour=0, minute=0, second=0, microsecond=0)
+
+
+def transient_budget(now=None):
+    """How many times to retry a 503, and record that this run happened.
+
+    3 for the first run after the daily reset (the bucket is full, so retries
+    spend capacity that would otherwise overflow), 1 for every run after it.
+    Falls back to 1 -- the cautious value -- if the state file is unreadable,
+    because over-spending a scarce bucket is the expensive mistake.
+    """
+    now = now or datetime.datetime.now(datetime.timezone.utc)
+    reset = _last_quota_reset(now)
+    first = True
+    try:
+        with io.open(RUN_STATE, encoding="utf-8") as f:
+            prev = json.load(f).get("last_run")
+        if prev:
+            first = datetime.datetime.fromisoformat(prev) < reset
+    except (IOError, OSError, ValueError, KeyError):
+        first = False           # unknown: assume the bucket is NOT full
+    try:
+        os.makedirs(os.path.dirname(RUN_STATE) or ".", exist_ok=True)
+        utils.write_atomic(RUN_STATE,
+                           json.dumps({"last_run": now.isoformat()}, indent=1))
+    except (IOError, OSError):
+        pass                    # advisory only; never fail a run over it
+    return 3 if first else 1
+
+
+def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3,
+               transient_attempts=None):
     """responseMimeType forces valid JSON, so no code fence to strip.
 
     RETRIES ON 5xx. Gemini's free tier returns "experiencing high demand"
@@ -469,10 +551,13 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3):
     gives and only give up when there is no delay to wait for, otherwise a
     backlog run dies on the first busy minute.
     """
+    tbudget = TRANSIENT_ATTEMPTS if transient_attempts is None else transient_attempts
+    transient_seen = 0
     for attempt in range(attempts):
         r = _gemini_call(model, system, user, key, max_tokens)
         if r.status_code in (500, 502, 503, 504):
-            if attempt == attempts - 1:
+            transient_seen += 1
+            if transient_seen >= tbudget or attempt == attempts - 1:
                 break
             wait = 5 * (2 ** attempt)
             print("    gemini %s (transient); retrying in %ds" % (r.status_code, wait))
@@ -842,6 +927,17 @@ def main():
     ap.add_argument("--out", help="write here instead of <base>.summary.json "
                                   "(for comparing two models side by side)")
     args = ap.parse_args()
+
+    # Set once per process, before any request: how hard to retry a 503. See
+    # TRANSIENT_ATTEMPTS. --list-models and --dry-run are excluded so that
+    # probing the ladder does not consume the "first run after reset" credit
+    # that the real run is meant to spend.
+    if not (args.list_models or args.dry_run):
+        global TRANSIENT_ATTEMPTS
+        TRANSIENT_ATTEMPTS = transient_budget()
+        if TRANSIENT_ATTEMPTS > 1:
+            print("first run since the daily reset: retrying 503s up to %d times"
+                  % TRANSIENT_ATTEMPTS)
 
     if args.list_models:
         # What the ladder would actually pick today, per provider. Run this

@@ -58,7 +58,19 @@ import os
 import tempfile
 from datetime import datetime, timezone
 
-SOURCES = {"manual", "reference_voice", "embedding_match", "propagated", "unknown"}
+SOURCES = {"manual", "reference_voice", "embedding_match", "propagated",
+           "backfill_high_confidence", "unknown"}
+
+# Sources propagate() will not overwrite.
+#
+# "backfill_high_confidence" is DELIBERATELY NOT "manual". The two need the
+# same protection and must stay tellable apart: "manual" asserts that a human
+# decided, and writing it for a machine-derived score would make that assertion
+# false forever, with no way to later separate "the author confirmed this" from
+# "a cosine was above 0.85 in September 2026". This repo has been bitten
+# repeatedly by values that keep looking authoritative after their basis is
+# gone; this is the same shape, so it gets its own name and carries its score.
+PROTECTED_SOURCES = {"manual", "backfill_high_confidence"}
 
 PROVENANCE_FILENAME = "speaker_provenance.json"
 SPEAKER_IDS_FILENAME = "speaker_ids.json"
@@ -178,10 +190,27 @@ def record(meeting_dir, speaker_key, value, source, score=None, from_=None,
 
 
 def is_manual(provenance, speaker_key):
-    """The guard predicate propagate() uses: True only if this key has a
-    recorded provenance whose source is exactly "manual"."""
+    """True only if this key's recorded source is exactly "manual".
+
+    Kept narrow on purpose -- it answers "did a human assert this?", which is
+    a different question from "may propagate() overwrite this?". Use
+    is_protected() for the guard.
+    """
     entry = provenance.get(speaker_key)
     return isinstance(entry, dict) and entry.get("source") == "manual"
+
+
+def is_protected(provenance, speaker_key):
+    """The guard predicate propagate() uses: this entry must not be overwritten.
+
+    True for a human assertion ("manual") AND for a high-confidence backfill,
+    which is machine-derived but corroborated well enough that a fresh match
+    should not silently replace it. See PROTECTED_SOURCES for why the two stay
+    separate values rather than collapsing into one.
+    """
+    entry = provenance.get(speaker_key)
+    return (isinstance(entry, dict)
+            and entry.get("source") in PROTECTED_SOURCES)
 
 
 # ---------------------------------------------------------------------------
