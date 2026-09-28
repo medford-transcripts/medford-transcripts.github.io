@@ -13,12 +13,15 @@
 }
 
 #mt-player iframe,
-#mt-player audio,
-#mt-player video {
+#mt-player audio {
   width: 100%;
   max-width: 100%;
   display: block;
 }
+
+/* <video> is sized by .mt-video, like every other video backend. It is NOT
+   listed above on purpose: "#mt-player video" outranks ".mt-video" on
+   specificity, so including it here silently defeated the 880px max-width. */
 
 /* Video backends (YouTube, archive.org) share one responsive 16:9 box.
    It scales to the column but is capped so the sticky header cannot eat the

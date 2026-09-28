@@ -105,8 +105,19 @@
     el.controls = true;
     el.preload = "metadata";
     el.src = SRC;
-    el.style.width = "100%";
-    if (tag === "video") el.setAttribute("playsinline", "");
+    if (tag === "video") {
+      // mt-video IS THE SIZE CAP, not decoration. It carries max-height 45vh
+      // (38 landscape, 32 on mobile), the 16:9 box and the 880px max-width
+      // that every other video backend gets. Without it a 1080p MP4 rendered
+      // at its natural height inside a position:sticky mount and swallowed
+      // the viewport -- and since preload="metadata" paints no frame, the
+      // page looked simply black. The iframe backends set this class; this
+      // one was added later and did not.
+      el.className = "mt-video";
+      el.setAttribute("playsinline", "");
+    } else {
+      el.style.width = "100%";
+    }
     mount.appendChild(el);
     return {
       el: el,
