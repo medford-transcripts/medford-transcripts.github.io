@@ -60,7 +60,12 @@ WORD = re.compile(r"[a-z']+")
 # 73m). The duration guard below would call those excerpts and let both stand;
 # these markers exempt them. The trimmed copy is the one worth keeping.
 RAW_MARKER = re.compile(r"livestream|live stream", re.I)
-TRIM_MARKER = re.compile(r"trimmed|unofficial", re.I)
+# Split out of the old TRIM_MARKER = "trimmed|unofficial". See rank() for why
+# the two must be scoped differently: "trimmed" is a general quality signal,
+# "unofficial" is Mass Traction's own label.
+TRIMMED_MARKER = re.compile(r"trimmed", re.I)
+UNOFFICIAL_MARKER = re.compile(r"unofficial", re.I)
+TRIM_MARKER = re.compile(r"trimmed|unofficial", re.I)   # kept: used elsewhere
 
 
 def raw_trim_pair(ta, tb):
@@ -302,13 +307,51 @@ def main():
         # same keeper rules as identify_duplicate_videos
         def rank(yt_id, entry):
             title = entry.get("title") or ""
-            # a raw stream loses to its trimmed version regardless of source:
-            # it is hours of dead air around the same meeting
-            return (1 if RAW_MARKER.search(title) else 0,
-                    0 if TRIM_MARKER.search(title) else 1,
-                    utils._rank((entry.get("channel") or "").strip()),
+            channel = (entry.get("channel") or "").strip()
+            # RAW-BEATS-TRIMMED IS A MASS TRACTION RULE, NOT A GENERAL ONE.
+            # Their "[Livestream]" copies open with an unrelated BBC broadcast
+            # before the meeting -- which is also why "BBC Broadcast" is the
+            # least self-consistent speaker label in the corpus -- and the
+            # "(Unofficially provided by MT)" copy is trimmed to the meeting
+            # itself. There the shorter copy is the better one. Everywhere
+            # else the opposite holds: a longer recording is usually the more
+            # complete one, so this must not apply to other channels.
+            # "trimmed" and "unofficial" are NOT the same signal, and the
+            # original TRIM_MARKER conflated them.
+            #
+            #   "trimmed" is GENERAL. Somebody deliberately cut a recording
+            #   down, and the result is the one worth publishing: Medford
+            #   Community Media posted "Inauguration 2025" at 36,735s and
+            #   "Inauguration 2025 -- trimmed" at 4,374s, and only the trimmed
+            #   one belongs on the site. Both copies are on the SAME channel,
+            #   so nothing else in this tuple can separate them.
+            #
+            #   "unofficial" is MASS TRACTION'S OWN LABEL, not a quality
+            #   claim. Treating it as general would let an unofficial copy
+            #   outrank an official source, since channel priority comes
+            #   later in this tuple.
+            mt = (channel == utils.MT_CHANNEL)
+            raw = 1 if (mt and RAW_MARKER.search(title)) else 0
+            trimmed = 0 if (TRIMMED_MARKER.search(title)
+                            or (mt and UNOFFICIAL_MARKER.search(title))) else 1
+            # CHANNEL PRIORITY COMES FIRST, ABOVE EVERYTHING. Everything after
+            # it is a SAME-CHANNEL tie-breaker, and that is the only situation
+            # those rules were ever meant to decide.
+            #
+            # It used to sit third, behind the raw/trimmed markers, so a title
+            # containing "Live Stream" could beat a better source. That is how
+            # "Medford Community Media Live Stream" (rank 2, the 12-07-22
+            # Conservation Commission, mostly dead air) came to be hidden in
+            # favour of the MCM Archive copy (rank 3). Dead air is not a reason
+            # to drop to a worse source -- prefer the better channel and accept
+            # the padding.
+            #
+            # duration NEGATED: within a channel, ties go to the LONGER
+            # recording, which is usually the more complete one.
+            return (utils._rank(channel),
+                    raw, trimmed,
                     0 if utils.has_transcript(yt_id, entry) else 1,
-                    entry.get("duration") or 0,
+                    -(entry.get("duration") or 0),
                     yt_id)
         keeper, loser = (a, b) if rank(a, ea) <= rank(b, eb) else (b, a)
         entry = video_data[loser]

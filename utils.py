@@ -532,7 +532,25 @@ def title_date(title, not_after=None):
 
 
 def meeting_date(entry):
-    """The date to dedup on: title date if it has one, else the stored date."""
+    """The date to dedup on: title date if it has one, else the stored date.
+
+    date_manual WINS OUTRIGHT, and it did not used to. add_video_data honours
+    the flag when it sets entry["date"], but this function -- which is what
+    meeting_documents() and identify_duplicate_videos() actually key on -- read
+    the title first regardless, so a hand correction never reached the two
+    places it matters most.
+
+    It failed silently and only in one direction. A title date LATER than the
+    upload date is rejected by the not_after guard, so the stored date wins by
+    accident and the correction appears to work (CAS00002454, CAS00000874).
+    A title date EARLIER than the upload passes the guard and overrides the
+    human: EgVeZVtzVUE is titled "City Council 01-06-25" but was uploaded
+    2026-01-06 and is the 2026 meeting -- 0.906 transcript containment with
+    MCM00001833, no agenda exists for 2025-01-06, and two do for 2026-01-06.
+    The stored date said 2026; this function kept answering 2025.
+    """
+    if entry.get("date_manual"):
+        return entry.get("date") or entry.get("upload_date")
     return (title_date(entry.get("title"), not_after=entry.get("upload_date"))
             or entry.get("date") or entry.get("upload_date"))
 
@@ -748,6 +766,24 @@ def _rank(channel):
 def _dedup_protected(entry):
     """Entries whose skip state is not ours to change."""
     if entry.get("manual_correction"):
+        return True
+    # A TRANSCRIPT VERDICT OUTRANKS A METADATA ONE, so this function may not
+    # reverse it. find_duplicate_transcripts.py compares what was actually
+    # SAID; this function compares titles, dates and durations. When they
+    # disagree the transcript is right, and it is right precisely in the cases
+    # metadata gets wrong -- a mistyped title, a partial recording, a
+    # livestream and its re-post.
+    #
+    # It was being reversed. Of 63 entries carrying
+    # duplicate_method: "transcript_similarity", 34 had been un-skipped by
+    # later metadata runs -- including Mass Traction livestream/unofficial
+    # pairs from 2017 whose skip_reason still reads "transcript similarity
+    # 0.98" while skip is False. Both copies were live on the site.
+    #
+    # Only a transcript SKIP is protected. An entry this method left visible
+    # is still an ordinary candidate, or the 34 already reversed could never
+    # be re-hidden by re-running the transcript pass.
+    if entry.get("duplicate_method") == "transcript_similarity" and entry.get("skip"):
         return True
     # a skip WITHOUT duplicate_id was set by a person or by the truncated-audio
     # guard, never by this function

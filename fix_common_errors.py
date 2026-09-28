@@ -14,6 +14,68 @@ RULE_EXCEPTIONS = {
     "counselor": [r"[Gg]uidance "],
     "Counselor": [r"[Gg]uidance "],
     "counsel":   [r"[Gg]uidance "],
+    # "lemming" is an English word as well as a mishearing of Councilor Matt
+    # Leming's name. One occurrence in the whole corpus is the animal --
+    #   "a significant effort not to join the lemmings, not to, as they march
+    #    off to the cliff and jump off"                        (2025-06-24)
+    # -- against ~2,500 that are the man. It shipped to the live site as "join
+    # the Lemings". Rather than weaken a rule that is right 2,500 times, the
+    # one phrase that introduces the metaphor is excluded.
+    # ALL FOUR KEYS need it, not just the plural ones. compile_rules gives the
+    # SINGULAR rule an optional trailing "s" (so "counselors" pluralises for
+    # free), which means "\blemming(s?)\b" matches "lemmings" too. Exempting
+    # only "lemmings" let the plural rule be blocked and then the singular rule
+    # matched the very same text and echoed the "s" back -- "Lemings" again.
+    "lemmings": [r"join the "],
+    "Lemmings": [r"join the "],
+    "lemming":  [r"join the "],
+    "Lemming":  [r"join the "],
+}
+
+
+# Rules that only became true on a date, keyed by the first date they hold.
+#
+# WHY THIS EXISTS. A title is not a fact about a name, it is a fact about a
+# name AT A TIME. "Councilor Maloney" -> "Councilor Mullane" is right for 2026
+# and wrong for every year before it: there was a real Councilor Maloney who
+# served from 1976, and the 2023 and 2024 meetings that memorialise him say
+# "Councilor Maloney served the city for over 25 years" and dedicate a meeting
+# "in Councilor Maloney's memory". A blanket rule rewrites a dead councilor's
+# memorial into a sitting one's name. "Councilor Layne" is the same shape, in
+# a 2017 resolution offered with President Caraviello.
+#
+# The date is taken from the FILENAME, which carries the upload date, not the
+# meeting date -- close enough here (the earliest affected 2026 meeting is well
+# clear of the boundary) but worth knowing if a rule is ever added whose start
+# date falls mid-January.
+DATED_REPLACEMENTS = {
+    # Liz Mullane was sworn in January 2026. Only the rules that assert she
+    # holds the SEAT are gated; the bare-surname ones stay ungated, because she
+    # existed before 2026 as a candidate and as a resident at public comment.
+    "2026-01-01": {
+        "Liz Malone" : "Liz Mullane",
+        "Council Malone" : "Councilor Mullane",
+        "Councilor Malone" : "Councilor Mullane",
+        "Councilor Maloney" : "Councilor Mullane",
+        "Chair Maloney" : "Chair Mullane",
+        "Councilor Millan" : "Councilor Mullane",
+        "Councilor Mullen" : "Councilor Mullane",
+        "Councilor Milley" : "Councilor Mullane",
+        "Councilor Malate" : "Councilor Mullane",
+        "Liz Malate" : "Liz Mullane",
+        "Councilor Moline" : "Councilor Mullane",
+        "Council Moline" : "Councilor Mullane",
+        "Chair Moline" : "Chair Mullane",
+        "chair Moline" : "Chair Mullane",
+        "Councilman Layne" : "Councilor Mullane",
+        "Councilor Layne" : "Councilor Mullane",
+        "Councilor Mulling" : "Councilor Mullane",
+        "Councilor Malaney" : "Councilor Mullane",
+        "Councilor Mulaney" : "Councilor Mullane",
+        "Councilor Mullan" : "Councilor Mullane",
+        "Councilor Millay" : "Councilor Mullane",
+        "Councilor Mulley" : "Councilor Mullane",
+    },
 }
 
 
@@ -326,8 +388,96 @@ def fix_common_errors(yt_id=None):
         "Council Lizard" : "Councilor Lazzaro",
         "Council Lazzaro" : "Councilor Lazzaro",
 
+        # ------------------------------------------- Councilor Liz Mullane
+        # Seated January 2026, so she post-dates every earlier pass over this
+        # file and NOTHING here covered her. Measured over the 210 canonical
+        # 2026 transcripts: 164 mentions spelled right against ~356 mangled --
+        # about 68% wrong, the worst ratio of any sitting councilor.
+        #
+        # SPLIT IN TWO, because the risk is not uniform.
+        #
+        # First, spellings that are not words and not anyone else's name. A
+        # bare rule is safe and catches every honorific at once ("Councilor",
+        # "Chair", "Liz", "Councilors"), including the possessive: the trailing
+        # \b that compile_rules adds sits happily before the apostrophe, so
+        # "Malayne's" becomes "Mullane's".
+        "Malayne" : "Mullane",
+        "Millane" : "Mullane",
+        "Mulane" : "Mullane",
+        "Mullain" : "Mullane",
+        "Mlayne" : "Mullane",
+        "Mallain" : "Mullane",
+        "Molayne" : "Mullane",
+        "Malaine" : "Mullane",
+        "Milane" : "Mullane",
+        "Mulvane" : "Mullane",
+        # From her CANDIDACY, not the seat: "I'd like to call Liz Mullay to the
+        # podium", 2025-10-16 candidate forum. The 2026 rules above were mined
+        # from 2026 transcripts, where "Councilor" primes the recogniser; the
+        # pre-election recordings mishear her differently, and those are worth
+        # catching -- it is the same person speaking before she held office.
+        # Keyed on the first name because "Mullay" alone is a real surname.
+        "Liz Mullay" : "Liz Mullane",
+
+        # Second, spellings that ARE real surnames or real words, where a bare
+        # rule would corrupt somebody. Those are keyed on the honorific AND
+        # gated to 2026 onward -- see DATED_REPLACEMENTS at the top of this
+        # file, and the Councilor Maloney memorial it exists to protect.
+        #
+        # "Malone" is the sharp case even so: PAUL MALONE is a real person with
+        # 117 mentions in the 2026 files alone, so only the councilor-shaped
+        # and first-name-shaped forms may be touched. "Lisa Malone" is left
+        # alone -- one occurrence, and it is not clear it is her.
+        #
+        # NOT "Milne" at all: its single occurrence in the corpus is
+        # "Andrew Milne", a real 2021 school committee candidate, and there is
+        # no "Councilor Milne" anywhere. A rule would only ever be wrong.
+
+        # ------------------------------------------------ Councilor Matt Leming
+        # "lemming" IS AN ENGLISH WORD, and the bare rule that used to be here
+        # rewrote it. Published, on the live site, from 2025-06-24:
+        #     "a significant effort not to join the Lemings, not to, as they
+        #      march off to the cliff and jump off"
+        # The speaker said "lemmings". compile_rules adds an optional trailing
+        # "s" and echoes it into the replacement, so the plural was carried
+        # through and a sitting councilor's name was spliced into a metaphor.
+        #
+        # Measured over the .srt.orig snapshots: ~2,500 uses follow a title or
+        # first name (Councilor 2067, Councillor 246, Matt 58, Chair 50,
+        # Council 21) and 6 are the animal ("a lemming" x3, "the lemming" x2,
+        # "the lemmings" x1). Anchoring keeps the 2,500 and protects the 6.
+        #
+        # THE RULE STAYS BARE, WITH ONE EXCEPTION. Anchoring it to titles was
+        # tried and is worse: "this is about the lemming motion" and "I
+        # completely heard lemming as Lazzaro" are the councilor with no title
+        # attached, and anchored rules silently stop correcting them. Measured
+        # across the .orig snapshots, exactly ONE occurrence is the animal --
+        # the cliff metaphor above -- against ~2,500 that are the man. So the
+        # bare rule is right, and the single counter-example is handled by a
+        # negative lookbehind in RULE_EXCEPTIONS.
+        #
+        # THE TRAILING-S FORMS COME FIRST, because the singular rule's
+        # optional-plural group echoes the "s" through and yields "Lemings".
+        # They map to a bare "Leming": of the three, one is possessive
+        # ("Councilor lemmings motion") and two are plain ("go back to
+        # counselor lemmings", "what counselor lemmings mentioned"), so
+        # dropping the "s" gets the NAME right in all three.
+        "Lemmings" : "Leming",
+        "lemmings" : "Leming",
         "Lemming" : "Leming",
         "lemming" : "Leming",
+        # REPAIR RULES, keyed on the CORRUPTED output the old bare rule left
+        # behind. Six files on the live site carry "Lemings", and the fixed
+        # rules above cannot reach them: the damage is already written, and
+        # "Lemings" is not a key. Same pattern as the "guidance Councilors"
+        # repairs further down -- correcting a rule does not correct what it
+        # already produced, so the old output needs its own rule.
+        # The metaphor is restored exactly (lowercase, plural); the rest are
+        # the councilor with a spurious "s" the plural echo carried through.
+        "join the Lemings" : "join the lemmings",
+        "Councilor Lemings" : "Councilor Leming",
+        "from Lemings" : "from Leming",
+        "Lemingston" : "Leming",
         "Lemmon" : "Leming",
         "Leving" : "Leming",
         "Councilor Lemingng" : "Councilor Leming",
@@ -715,8 +865,18 @@ def fix_common_errors(yt_id=None):
     srtfiles = glob.glob(path)
 
     patterns = compile_rules(replace_dict)
+    dated = [(start, compile_rules(rules))
+             for start, rules in sorted(DATED_REPLACEMENTS.items())]
 
     for srtfilename in srtfiles:
+        # Rules that only hold from a date onward. The filename carries the
+        # date, so this costs a regex and no metadata lookup.
+        m = re.search(r"(20\d\d-\d\d-\d\d)_", os.path.basename(srtfilename))
+        file_date = m.group(1) if m else "9999-99-99"
+        rules_here = list(patterns)
+        for start, pats in dated:
+            if file_date >= start:
+                rules_here.extend(pats)
 
         # back it up
         if not os.path.exists(srtfilename + '.orig'):
@@ -726,7 +886,7 @@ def fix_common_errors(yt_id=None):
         with open(srtfilename, 'r', encoding="utf-8") as f:
             text = f.read()
 
-        new_text = apply_rules(text, patterns)
+        new_text = apply_rules(text, rules_here)
 
         # write it out
         if new_text != text:
