@@ -2444,7 +2444,9 @@
         "date": "2026-05-19",
         "priority": 0.00754073839680201,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "last_update": 1790614483.6785495
+        "last_update": 1790614483.6785495,
+        "skip": false,
+        "duplicate_id": "CAS00002432"
     },
     "YSOHg9NmSPA": {
         "title": "05.18.2026 MSC Regular Meeting (In Person)",
@@ -2464,12 +2466,18 @@
         "channel": "MCM Castus",
         "duration": 12208,
         "upload_date": "2026-05-20",
-        "date": "2026-05-18",
+        "date": "2026-05-19",
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=6a0e16a84acf8100028baa19",
         "castus_id": "6a0e16a84acf8100028baa19",
         "view_count": 0,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "priority": 0.007484301239075282
+        "priority": 0.007484301239075282,
+        "date_manual": true,
+        "date_note": "title says 2026-05-18 (Mon) but the agenda for this body is dated 2026-05-19 (Tue), and CC City Council has met on a Tuesday 92-100 percent of the time every year since 2011. Two independent checks agree. Corrected before transcription so it dedups against the city copy. Confirmed by the author 2026-09-28.",
+        "skip": true,
+        "duplicate_id": "9vjyz8Up3VY",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of 9vjyz8Up3VY (same type and meeting date, different channel)"
     },
     "CAS00002431": {
         "title": "School Committee 05/18/26",
@@ -4573,12 +4581,18 @@
         "channel": "MCM Castus",
         "duration": 11182,
         "upload_date": "2026-02-25",
-        "date": "2026-02-25",
+        "date": "2026-02-24",
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=699f674ba2789600022b2470",
         "castus_id": "699f674ba2789600022b2470",
         "view_count": 0,
         "meeting_type": "CC City Council",
-        "priority": 0.004637939102564678
+        "priority": 0.004637939102564678,
+        "date_manual": true,
+        "date_note": "title says 2026-02-25 (Wed) but the agenda for this body is dated 2026-02-24 (Tue), and CC City Council has met on a Tuesday 92-100 percent of the time every year since 2011. Two independent checks agree. Corrected before transcription so it dedups against the city copy. Confirmed by the author 2026-09-28.",
+        "skip": true,
+        "duplicate_id": "OLDneqaxKDk",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of OLDneqaxKDk (same type and meeting date, different channel)"
     },
     "OLDneqaxKDk": {
         "title": "City Council 02-24-26",
@@ -4589,7 +4603,9 @@
         "date": "2026-02-24",
         "priority": 0.00461652792717316,
         "meeting_type": "CC City Council",
-        "last_update": 1790608784.9481351
+        "last_update": 1790608784.9481351,
+        "skip": false,
+        "duplicate_id": "CAS00002331"
     },
     "fTvN7dy32F0": {
         "title": "MCHSBC Full Monthly",
@@ -6565,12 +6581,18 @@
         "channel": "MCM Castus",
         "duration": 2667,
         "upload_date": "2025-10-23",
-        "date": "2025-10-22",
+        "date": "2025-10-21",
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=68fa78e309f1770002593150",
         "castus_id": "68fa78e309f1770002593150",
         "view_count": 0,
         "meeting_type": "CC City Council",
-        "priority": 0.0029272889998397727
+        "priority": 0.0029272889998397727,
+        "date_manual": true,
+        "date_note": "title says 2025-10-22 (Wed) but the agenda for this body is dated 2025-10-21 (Tue), and CC City Council has met on a Tuesday 92-100 percent of the time every year since 2011. Two independent checks agree. Corrected before transcription so it dedups against the city copy. Confirmed by the author 2026-09-28.",
+        "skip": true,
+        "duplicate_id": "sAkPmqbndfk",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of sAkPmqbndfk (same type and meeting date, different channel)"
     },
     "6f-1_mZrcDs": {
         "title": "Data Talk #1: Minimums, not Momentum",
@@ -6649,7 +6671,7 @@
         "last_update": 1790454376.5085459,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "CAS00002244"
+        "duplicate_id": "CAS00002245"
     },
     "CDjpOlSb3Do": {
         "title": "2025 Candidate Profile - City Council - Patrick Clerkin",
@@ -7282,12 +7304,18 @@
         "channel": "MCM Castus",
         "duration": 3195,
         "upload_date": "2025-10-08",
-        "date": "2025-10-08",
+        "date": "2025-10-07",
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=68e6d82d781bf10002b22530",
         "castus_id": "68e6d82d781bf10002b22530",
         "view_count": 0,
         "meeting_type": "CC City Council",
-        "priority": 0.002812045617015455
+        "priority": 0.002812045617015455,
+        "date_manual": true,
+        "date_note": "title says 2025-10-08 (Wed) but the agenda for this body is dated 2025-10-07 (Tue), and CC City Council has met on a Tuesday 92-100 percent of the time every year since 2011. Two independent checks agree. Corrected before transcription so it dedups against the city copy. Confirmed by the author 2026-09-28.",
+        "skip": true,
+        "duplicate_id": "vKjSCLc-dk0",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of vKjSCLc-dk0 (same type and meeting date, different channel)"
     },
     "MCM00001826": {
         "title": "Medford City Council 10-07-25",
@@ -7330,7 +7358,7 @@
         "priority": 0.002804160190641951,
         "last_update": 1790454421.7256453,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001826",
+        "duplicate_id": "CAS00002233",
         "skip": false
     },
     "P8rYkRI7D6M": {
