@@ -5231,7 +5231,11 @@
         "castus_id": "69713a7d5473440002ccedc5",
         "view_count": 0,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "priority": 0.003974357322204829
+        "priority": 0.003974357322204829,
+        "skip": true,
+        "duplicate_id": "rUwakbVv_oY",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of rUwakbVv_oY (same type and meeting date, different channel)"
     },
     "XXXXXX00144": {
         "title": "Tarik Samman for Congress",
@@ -10406,10 +10410,14 @@
         "duration": 13774,
         "upload_date": "2025-05-22",
         "view_count": 62,
-        "date": "2025-05-22",
+        "date": "2025-05-21",
         "priority": 0.0020217826546922216,
         "last_update": 1790453701.297346,
-        "meeting_type": "CC City Council Meeting of the Whole"
+        "meeting_type": "CC City Council Meeting of the Whole",
+        "date_manual": true,
+        "date_note": "titled 'Committee of the Whole Meeting via Zoom' with no date, so date fell back to upload_date 2025-05-22 (Thu). THE CHAIR SAYS 5/21 IN THE MEETING (author, 2026-09-28), and a Committee of the Whole agenda exists for 2025-05-21 (Wed).",
+        "skip": false,
+        "duplicate_id": "CAS00002141"
     },
     "CAS00002141": {
         "title": "City Council Committee of the Whole 05/21/25",
@@ -10421,7 +10429,11 @@
         "castus_id": "682f5def3da7f1000800e1ad",
         "view_count": 0,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "priority": 0.002017703297163701
+        "priority": 0.002017703297163701,
+        "skip": true,
+        "duplicate_id": "R3lNHO5Xbl8",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of R3lNHO5Xbl8 (same type and meeting date, different channel)"
     },
     "CAS00002140": {
         "title": "Community Development Board 05/21/25",
@@ -14311,10 +14323,14 @@
         "duration": 4255,
         "upload_date": "2026-01-20",
         "view_count": 36,
-        "date": "2025-01-20",
+        "date": "2026-01-20",
         "priority": 0.0016217627382398771,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "last_update": 1790607290.5962965
+        "last_update": 1790607290.5962965,
+        "date_manual": true,
+        "date_note": "title says 01-20-25 but this is the 2026 meeting. LIZ MULLANE IS PRESENT (diarized as SPEAKER_09 and addressed as 'Councilor Mullane' three times); she was seated January 2026, so she cannot be at a January 2025 council meeting. Corroborated: uploaded 2026-01-20 (same day), a CoW agenda exists for 2026-01-20, and 2025-01-20 was MLK Day. The outgoing-year typo, same as EgVeZVtzVUE (01-06-25 for 2026-01-06). Author confirmed the roster test 2026-09-28.",
+        "skip": false,
+        "duplicate_id": "CAS00002304"
     },
     "IByfBf6FgY8": {
         "title": "WMCC Presents A Martin Luther King Jr. Day: A Celebration",
