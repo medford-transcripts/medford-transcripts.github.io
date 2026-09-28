@@ -982,8 +982,15 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
                 continue
             o = video_data[other]
             same_channel = o["channel"].strip() == k["channel"].strip()
-            live = ("Livestream" in (o.get("title") or "")) or ("Livestream" in (k.get("title") or ""))
-            if same_channel and not (o["channel"].strip() == MT_CHANNEL and live):
+            # SAME-CHANNEL DEDUP IS ALLOWED FOR MASS TRACTION, FULL STOP.
+            # This used to additionally require "Livestream" in one of the
+            # titles, on the theory that their only same-channel duplicates
+            # were a livestream and its trimmed re-post. They are not: the
+            # 2015-05-26 council meeting is posted twice at 8,988s and
+            # 8,998s, and 2017-10-24 at 2,395s and 819s, all four labelled
+            # only "(Unofficially provided by MT)". The marker requirement
+            # left those pairs both published.
+            if same_channel and o["channel"].strip() != MT_CHANNEL:
                 continue
             if not same_recording(o, k):
                 continue
@@ -1042,9 +1049,9 @@ def identify_duplicate_videos(video_data=None, reset=False, apply=True):
                         continue
                     o = video_data[other]
                     same_channel = o["channel"].strip() == ik["channel"].strip()
-                    live = ("Livestream" in (o.get("title") or "")
-                            or "Livestream" in (ik.get("title") or ""))
-                    if same_channel and not (o["channel"].strip() == MT_CHANNEL and live):
+                    # same rule as above: Mass Traction may dedup against
+                    # itself without a "Livestream" marker
+                    if same_channel and o["channel"].strip() != MT_CHANNEL:
                         continue
                     if not same_recording(o, ik):
                         continue

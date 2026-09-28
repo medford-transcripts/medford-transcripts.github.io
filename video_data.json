@@ -77198,8 +77198,10 @@
         "date": "2017-10-24",
         "last_update": 1790453959.6343873,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000013",
-        "skip": false
+        "duplicate_id": "9Tzwvuy0OVQ",
+        "skip": true,
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of 9Tzwvuy0OVQ (same type and meeting date, different channel); interim keeper while MCM00000013 is untranscribed"
     },
     "MCM00000013": {
         "title": "Medford City Council 10-24-17",
@@ -80302,7 +80304,8 @@
         "priority": 0.0002569628578149971,
         "last_update": 1790453776.7620416,
         "meeting_type": "CC City Council",
-        "duplicate_id": "ZNvzfUzSiHE"
+        "duplicate_id": "ZNvzfUzSiHE",
+        "skip": false
     },
     "ZNvzfUzSiHE": {
         "title": "Medford, MA City Council - Feb. 2, 2016 (Unofficially provided by MT)",
@@ -81165,10 +81168,10 @@
         "priority": 0.00024133527868365985,
         "last_update": 1790454412.7530918,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001582",
-        "skip": false,
-        "duplicate_method": "transcript_similarity",
-        "skip_reason": "duplicate of 50f-AMbGHtg (transcript similarity 0.83)"
+        "duplicate_id": "50f-AMbGHtg",
+        "skip": true,
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of 50f-AMbGHtg (same type and meeting date, different channel); interim keeper while MCM00001582 is untranscribed"
     },
     "50f-AMbGHtg": {
         "title": "Medford City Council - May 26, 2015",
