@@ -1,45 +1,48 @@
 {
  "video_id": "IdtnKgt5ogU",
  "provider": "gemini",
- "generated_at": "2026-09-27T16:05:17Z",
+ "generated_at": "2026-09-29T12:07:13Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "9ceecf8167ed7db2",
- "overview": "The Medford City Council and Community Development Board held a joint public hearing to review proposed zoning changes for the Boston Avenue Neighborhood Corridor, focusing on three new sub-districts (BA1, BA2, and BA3). No final vote was taken, and the hearing was continued to June 11th to allow for further refinement of the height limits and use tables.",
+ "transcript_sha": "e3a0aa9a77f7e454",
+ "overview": "The City Council and Community Development Board held a joint public hearing to review the proposed Boston Avenue Neighborhood Corridor zoning project. The boards debated building heights and use regulations before continuing the hearing to June 11, 2026.",
  "items": [
   {
-   "title": "Presentation of Proposed Boston Avenue Zoning Districts",
+   "title": "Presentation of Boston Avenue Corridor Zoning",
    "t": 0,
-   "summary": "Consultants presented a plan to create three mixed-use sub-districts with base heights ranging from three to six stories, featuring incentive bonuses for additional height and new standards for drive-through pharmacies. The presentation included shadow studies and an analysis of non-conforming properties to justify the new dimensional standards.",
+   "summary": "Consultants presented the proposed Boston Avenue Neighborhood Corridor zoning project, which introduces three sub-districts (BA1, BA2, and BA3) designed to transition from neighborhoods to higher-intensity mixed-use areas. The plan includes a menu of community benefit incentives that allow developers to increase building heights in exchange for affordable housing or historic preservation.",
    "speakers": [
     "Emily Innes",
-    "Paula Ramos Martinez",
-    "Alicia Hunt"
+    "Paula Ramos Martinez"
    ]
   },
   {
-   "title": "Council and Board Discussion of Zoning Standards",
-   "t": 1776,
-   "summary": "The boards debated the proposed sub-district boundaries and dimensional standards, with Community Development Board Chair Doug Carr proposing significant height reductions in the BA2 and BA3 districts to protect neighborhood character. Members discussed removing parking mandates for lodgers, regulating 'purpose-built student housing,' and requiring special permits for medical offices and doggy daycares.",
+   "title": "Geographical Context and Landmarks",
+   "t": 2004,
+   "summary": "Planning staff identified landmarks for the proposed districts, noting that BA1 covers the area near Tufts University, BA3 includes the Whole Foods market, and BA2 covers South Boston Avenue near Ball Square. Staff recommended removing Walkling Court from the proposal as it is already being redeveloped under a separate planned development district.",
    "speakers": [
-    "Zac Bears",
     "Alicia Hunt",
-    "Emily Innes",
-    "Matt Leming",
-    "Anna Callahan",
-    "Liz Mullane",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Board Deliberation on Heights and Uses",
+   "t": 3616,
+   "summary": "The Community Development Board chair presented a counter-proposal to reduce maximum heights in BA2 and BA3 to 70 and 85 feet, respectively, to protect neighborhood character. Members debated the inclusion of drive-through pharmacies, private student housing, and the impact of zero-setback requirements on properties with topographical challenges.",
+   "speakers": [
     "Doug Carr",
     "Dina Caloggero",
     "Ari Fishman",
-    "Page Buldini",
     "Sean Beagan",
-    "John Anderson"
+    "John Anderson",
+    "Anna Callahan",
+    "Paige Buldini"
    ]
   },
   {
    "title": "Public Comment",
-   "t": 8318,
-   "summary": "Residents expressed strong opposition to 10-story buildings and private student housing, citing negative experiences with existing Tufts University structures and concerns over traffic congestion. Other commenters advocated for wider 12-foot sidewalks, increased green space, and higher density to support the Green Line extension.",
+   "t": 8327,
+   "summary": "Residents expressed opposition to the proposed maximum building heights and the potential for private student housing or fraternities to disrupt residential neighborhoods. Speakers also raised concerns regarding traffic congestion on Boston Avenue, sewer infrastructure capacity, and the lack of green space in the proposed 90% lot coverage allowance.",
    "speakers": [
     "Patricia Doherty",
     "Dean Tognarelli",
@@ -51,35 +54,29 @@
     "Erin DiBenedetto",
     "Judith Weinstock",
     "Narelle Marr",
-    "Jeremy Martin",
-    "Elizabeth Bayle",
     "Robert Carney",
     "Miranda Briseno",
     "Zachary Chertok",
+    "Jeremy Martin",
     "Meryl Perlson",
     "Sophie Ricks"
    ]
   },
   {
-   "title": "Continuance and Direction to Staff",
-   "t": 12507,
-   "summary": "The Council and Board voted to continue the joint public hearing to June 11th. The bodies directed city staff and consultants to compile a list of specific proposed amendments, including height limit changes and use table modifications, for evaluation at the next meeting.",
+   "title": "Direction to Staff and Continuation",
+   "t": 12534,
+   "summary": "The Council President compiled a list of potential amendments for planning staff to draft, including revised height limits, a definition for purpose-built student housing, and the removal of certain residential properties from BA1. The public hearing was continued to June 11, 2026, at which time the boards will vote on the specific revisions.",
    "speakers": [
     "Zac Bears",
     "Matt Leming",
-    "Doug Carr",
-    "Justin Tseng",
-    "Liz Mullane",
-    "Anna Callahan",
     "Alicia Hunt",
-    "Emily Innes",
-    "Sean Beagan"
+    "Emily Innes"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 72218,
-  "output_tokens": 796
+  "output_tokens": 833
  }
 }
