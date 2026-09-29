@@ -24,6 +24,7 @@ the translation and check_naming() refuses to run if it ever stops working.
 """
 
 import argparse
+import collections
 import html as _html
 import os
 import re
@@ -297,12 +298,251 @@ def collect(urls):
     return rows
 
 
+# ---------------------------------------------------------------------------
+# Google Drive: everything before 2022-11
+#
+# The tables only reach back to 2022-11-16. Earlier years are Drive folders,
+# one per academic year, labelled "Agendas" or "Minutes" -- so the KIND comes
+# from the folder and only the date and purpose have to be read out of the
+# filename, which is just as well, because the filenames are a mess.
+
+SERVICE_ACCOUNT = os.path.join("credentials", "google_service_account.json")
+DRIVE_SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
+
+MONTHS = ("january february march april may june july august september "
+          "october november december").split()
+_MONTH_RE = "|".join(m[:3] for m in MONTHS)
+
+# Expansions applied to what is left of a Drive filename after the date is
+# removed, IN ORDER. These exist because the school department abbreviates in
+# the filename in ways meeting_types.json has never seen.
+DRIVE_ABBREV = (
+    # the COW collision, third variant -- "Comm-of-Whole-Minutes-April-30"
+    (r"\bcomm(?:ittee)?[\s\-]*of[\s\-]*(?:the[\s\-]*)?whole\b", "MSC Meeting of the Whole"),
+    (r"\bcow\b", "MSC Meeting of the Whole"),
+    (r"\bbh[\s\-]*sped\b", "Behavioral Health & Special Education"),
+    (r"\br\s*&\s*p\b", "Rules & Policy"),
+    (r"\brules,?\s*polic(?:y|ies)(?:\s*and\s*equity)?\b", "Rules & Policy"),
+    (r"\brp\b", "Rules & Policy"),
+    # the keyword is SINGULAR ("building and grounds"); Drive writes the plural
+    (r"\bbuildings\b", "Building"),
+    (r"\bregular\s+school\s+committee\s+meeting\b", "Regular Meeting"),
+)
+
+# Dropped from the purpose: document-kind words (the folder already says which),
+# Drive's duplicate markers, and scan/status noise.
+DRIVE_NOISE = (
+    r"\b(?:notes?|minutes?|agenda|agendas|final|post|fi|approved|addendum|"
+    r"revised|draft|copy|doc|docx|posting|newspaper|item|ii|i)\b",
+    r"\(\s*\d+\s*\)",
+    r"[-_]\d+$",
+)
+
+
+def _drive_valid(y, m, d):
+    import datetime
+    try:
+        if y < 100:
+            y += 2000
+        if not (2005 <= y <= 2030):
+            return None
+        return datetime.date(y, m, d).isoformat()
+    except ValueError:
+        return None
+
+
+def drive_date(name):
+    """(iso, remainder) from a Drive filename; (None, name) when undated.
+
+    THE YEAR'S POSITION DISAMBIGUATES THE ORDER. One folder holds both
+    "2022.5.25" (Y.M.D) and "5.9.2022" (M.D.Y). A four-digit year is present in
+    nearly every name, so whichever end it sits at fixes the reading and there
+    is no US-versus-ISO guess to make.
+
+    UNDERSCORE IS A WORD CHARACTER, which cost ~20 files: "Notes_3.9.2022" has
+    no \\b before the 3, so every anchored pattern here missed it and the name
+    looked genuinely undated. It is separated before anything else runs.
+    """
+    s = os.path.splitext(name)[0]
+    s = re.sub(r"\(\s*\d+\s*\)", " ", s)
+    s = s.replace("_", " ")
+    s = re.sub(r"(?<=\d)(?=[A-Za-z])", " ", s)
+    s = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
+
+    attempts = (
+        # scanner output "201605271107" is YYYYMMDDhhmm
+        (r"\b(20[0-2]\d)(\d{2})(\d{2})\d{4}\b", lambda g: (g[0], g[1], g[2])),
+        (r"\b(\d{4})[.\-/ ](\d{1,2})[.\-/ ](\d{1,2})\b", lambda g: (g[0], g[1], g[2])),
+        (r"\b(\d{1,2})[.\-/ ](\d{1,2})[.\-/ ](\d{4})\b", lambda g: (g[2], g[0], g[1])),
+        (r"\b(\d{1,2})[.\-/ ](\d{1,2})[.\-/ ](\d{2})\b", lambda g: (g[2], g[0], g[1])),
+    )
+    for pat, order in attempts:
+        m = re.search(pat, s)
+        if m:
+            y, mo, d = order(m.groups())
+            got = _drive_valid(int(y), int(mo), int(d))
+            if got:
+                return got, (s[:m.start()] + " " + s[m.end():]).strip()
+    m = re.search(r"\b(%s)[a-z]*[.\-, ]+(\d{1,2})(?:st|nd|rd|th)?[.\-, ]+(\d{4})\b"
+                  % _MONTH_RE, s, re.I)
+    if m:
+        mon = [i for i, x in enumerate(MONTHS, 1) if x.startswith(m.group(1).lower())][0]
+        got = _drive_valid(int(m.group(3)), mon, int(m.group(2)))
+        if got:
+            return got, (s[:m.start()] + " " + s[m.end():]).strip()
+    return None, s
+
+
+def drive_purpose(remainder):
+    """The purpose phrase for a Drive file, from what the date left behind."""
+    p = remainder
+    for pat, repl in DRIVE_ABBREV:
+        p = re.sub(pat, repl, p, flags=re.I)
+    for pat in DRIVE_NOISE:
+        p = re.sub(pat, " ", p, flags=re.I)
+    p = re.sub(r"[\-_]+", " ", p)
+    p = re.sub(r"\s+", " ", p).strip(" -–,.")
+    return p
+
+
+def drive_service():
+    from google.oauth2 import service_account
+    from googleapiclient.discovery import build
+    creds = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT, scopes=DRIVE_SCOPES)
+    return build("drive", "v3", credentials=creds, cache_discovery=False)
+
+
+def drive_folders(pages):
+    """{folder id: label} for every Drive folder linked from the site."""
+    found = {}
+    for u in pages:
+        try:
+            h = fetch(u)
+        except Exception:
+            continue
+        for m in re.finditer(
+                r'<a[^>]+href="https://drive\.google\.com/drive/folders/([\w-]+)[^"]*"[^>]*>(.*?)</a>',
+                h, re.S):
+            found.setdefault(m.group(1), _text(m.group(2)))
+    return found
+
+
+def drive_list(svc, folder_id):
+    out, tok = [], None
+    while True:
+        r = svc.files().list(q="'%s' in parents and trashed=false" % folder_id,
+                             fields="nextPageToken, files(id,name,mimeType)",
+                             pageSize=200, pageToken=tok).execute()
+        out.extend(r.get("files", []))
+        tok = r.get("nextPageToken")
+        if not tok:
+            return out
+
+
+def drive_download(svc, file_id, path):
+    from googleapiclient.http import MediaIoBaseDownload
+    import io as _io
+    if os.path.exists(path):
+        return "skip"
+    buf = _io.BytesIO()
+    try:
+        dl = MediaIoBaseDownload(buf, svc.files().get_media(fileId=file_id))
+        done = False
+        while not done:
+            _, done = dl.next_chunk()
+    except Exception as e:
+        return "error %s" % str(e)[:60]
+    body = buf.getvalue()
+    if not body[:5].startswith(b"%PDF"):
+        return "not a pdf (%d bytes)" % len(body)
+    tmp = path + ".part"
+    with open(tmp, "wb") as f:
+        f.write(body)
+    os.replace(tmp, path)
+    return "saved"
+
+
+def drive_main(args):
+    """Collect the Drive-era documents that belong to meetings we have."""
+    svc = drive_service()
+    folders = drive_folders(discover_pages(fetch(INDEX)))
+    print("drive folders linked from the site: %d" % len(folders))
+
+    vd = utils.get_video_data()
+    meetings = {}
+    for yt, e in vd.items():
+        if e.get("skip"):
+            continue
+        meetings.setdefault(
+            (str(utils.meeting_date(e)), str(e.get("meeting_type"))), []).append(yt)
+
+    if args.apply:
+        for d in set(DEST.values()):
+            if not os.path.isdir(d):
+                os.makedirs(d)
+
+    stats = collections.Counter()
+    results = collections.Counter()
+    seen = set()
+    for fid, label in folders.items():
+        low = label.lower()
+        if "agenda" in low:
+            kind = "Agenda"
+        elif "minute" in low:
+            kind = "Minutes"
+        else:
+            stats["folders_skipped"] += 1     # "Meeting Materials" etc
+            continue
+        for f in drive_list(svc, fid):
+            if "pdf" not in f["mimeType"]:
+                continue
+            stats["files"] += 1
+            iso, remainder = drive_date(f["name"])
+            if not iso:
+                stats["undated"] += 1
+                continue
+            purpose = drive_purpose(remainder)
+            name = build_filename(iso, purpose, kind)
+            if name in seen:
+                stats["duplicate_name"] += 1
+                continue
+            seen.add(name)
+            mtype = str(utils.get_meeting_type_by_title(os.path.splitext(name)[0]))
+            hit = meetings.get((iso, mtype))
+            if not hit:
+                stats["no_meeting"] += 1
+                continue
+            stats["matched"] += 1
+            res = "dry"
+            if args.apply:
+                res = drive_download(svc, f["id"], os.path.join(DEST[kind], name))
+                results[res.split(" ")[0]] += 1
+            print("  %-56s %-26s %-8s %s" % (name[:56], mtype[:26], res[:8], hit[0]))
+
+    print()
+    print("pdfs seen %(files)d | undated %(undated)d | duplicate names %(duplicate_name)d"
+          % stats)
+    print("matched to a meeting we have: %(matched)d | no meeting: %(no_meeting)d" % stats)
+    if args.apply:
+        print("downloads: %s" % dict(results))
+    else:
+        print("\nDRY RUN -- nothing downloaded.")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true",
                     help="download the documents (default: report only)")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--drive", action="store_true",
+                    help="collect the pre-2022 Drive-era documents instead")
     args = ap.parse_args()
+
+    if args.drive:
+        return drive_main(args)
 
     bad = check_naming()
     if bad:
