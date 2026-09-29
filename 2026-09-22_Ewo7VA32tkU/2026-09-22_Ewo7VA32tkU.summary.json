@@ -1,108 +1,109 @@
 {
  "video_id": "Ewo7VA32tkU",
  "provider": "gemini",
- "generated_at": "2026-09-29T00:06:18Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-29T11:05:23Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "baae2eb83f864749",
- "overview": "The Medford Comprehensive High School Building Committee met to review and approve various space efficiency recommendations for the new school building and voted to eliminate a proposed learn-to-swim pool addition from the project scope.",
+ "transcript_sha": "2e2cf5b73870ea4a",
+ "overview": "The committee reviewed and voted on square footage efficiencies for academic, special education, and vocational spaces, resulting in an estimated $16.9 million in project savings. The body also voted to eliminate a proposed 'learn to swim' basin from the pool renovation to further manage the total project budget.",
  "items": [
   {
-   "title": "Approval of Minutes",
-   "t": 371,
-   "summary": "The committee approved the amended minutes of the September 10, 2026 meeting.",
+   "title": "Call to Order and Minutes",
+   "t": 184,
+   "summary": "Approved the September 10, 2026, meeting minutes as amended to clarify that the project adds 11 MEEP classrooms to the high school specifically.",
    "speakers": [
     "Jenny Graham",
-    "Michael Pardek",
-    "Aaron Olapade"
+    "Paul Malone"
    ]
   },
   {
-   "title": "Core Academic Spaces",
+   "title": "Core Academic Space Efficiencies",
    "t": 713,
-   "summary": "The committee approved a space efficiency recommendation to reduce general academic classroom sizes from 950 to 900 square feet.",
+   "summary": "Approved reducing the size of 48 general academic classrooms from 950 to 900 square feet to align with peer school districts. The committee rejected an amendment to size half the classrooms at 850 square feet in favor of maintaining a consistent 900-square-foot footprint.",
    "speakers": [
     "Matt Rice",
-    "Jenny Graham",
     "Maria D'Orsi",
     "Breanna Lungo-Koehn",
-    "Aaron Olapade",
-    "Marta Cabral",
-    "John Falco"
+    "Marta Cabral"
    ]
   },
   {
-   "title": "Medford Academy Space",
+   "title": "Medford Academy Spaces",
    "t": 2229,
-   "summary": "The committee approved reducing the two Medford Academy classrooms to 900 square feet to align with the general classroom size reduction.",
+   "summary": "Approved reducing Medford Academy classroom sizes to 900 square feet and sizing the workspace at 450 square feet to match general academic modules.",
    "speakers": [
     "Matt Rice",
     "Jenny Graham",
-    "Marta Cabral",
-    "Maria D'Orsi"
+    "Marta Cabral"
    ]
   },
   {
    "title": "Special Education Spaces",
    "t": 2664,
-   "summary": "The committee approved space efficiency plans for special education areas, which included classroom size adjustments and the elimination of two offices.",
+   "summary": "Approved space efficiencies across various special education programs, including resource rooms and administrative offices, resulting in a net reduction of 1,625 square feet.",
    "speakers": [
     "Matt Rice",
-    "Jenny Graham",
-    "Aaron Olapade",
-    "Maria D'Orsi"
+    "Maria D'Orsi",
+    "Jenny Graham"
    ]
   },
   {
-   "title": "Chapter 74 Vocational Spaces",
+   "title": "Chapter 74 CTE Spaces",
    "t": 3429,
-   "summary": "The committee approved space adjustments and reductions across various Chapter 74 vocational program shops, including health assisting and carpentry.",
+   "summary": "Approved revised shop and related classroom square footages for Career Technical Education programs, yielding 6,153 net square feet in savings. Adjustments included shared toilet facilities between shops and matching shop sizes to current student enrollment data.",
    "speakers": [
     "Matt Rice",
     "John Falco",
-    "Chad Fallon",
-    "Jenny Graham",
-    "Maria D'Orsi"
+    "Brian Hilliard",
+    "Chad Fallon"
    ]
   },
   {
    "title": "Non-Chapter 74 Lab Spaces",
    "t": 4899,
-   "summary": "The committee approved maintaining the current non-vocational technology and innovation lab space plans with no overall square footage changes.",
+   "summary": "Approved maintaining the square footage for non-vocational labs, including digital art, media technology, and a culinary-focused innovation lab, without further reductions.",
    "speakers": [
     "Matt Rice",
     "Jenny Graham",
-    "Maria D'Orsi",
+    "Kimberly Talbot",
     "Aaron Olapade"
    ]
   },
   {
    "title": "Media Center",
    "t": 5861,
-   "summary": "The committee approved the proposed media center space allocation designed in compliance with state guidelines.",
+   "summary": "Approved the media center layout and square footage, which remains within MSBA guidelines and incorporates collaborative quiet rooms and a small cafe space.",
    "speakers": [
     "Matt Rice",
     "Jenny Graham"
    ]
   },
   {
-   "title": "Learn-to-Swim Pool Addition Alternate",
+   "title": "Cost and Savings Summary",
+   "t": 6085,
+   "summary": "Reviewed a summary of the evening's approved efficiencies, which total over 15,000 gross square feet and approximately $16.9 million in potential savings.",
+   "speakers": [
+    "Matt Rice",
+    "Kimberly Talbot"
+   ]
+  },
+  {
+   "title": "Pool Design Update and Decision",
    "t": 6202,
-   "summary": "The committee voted to eliminate the proposed learn-to-swim basin addition from the project scope to avoid extra design costs and site layout constraints.",
+   "summary": "Voted to eliminate a proposed $7.6 million 'learn to swim' basin addition from the project scope to prioritize academic costs. The project will proceed with the base renovation of the existing pool facilities only.",
    "speakers": [
     "Kimberly Talbot",
     "Matt Rice",
     "Jenny Graham",
+    "Nicole Morell",
     "Breanna Lungo-Koehn",
-    "Maria D'Orsi",
-    "Phil Santos",
     "Cheryl Rodriguez"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42656,
-  "output_tokens": 747
+  "input_tokens": 42606,
+  "output_tokens": 1025
  }
 }

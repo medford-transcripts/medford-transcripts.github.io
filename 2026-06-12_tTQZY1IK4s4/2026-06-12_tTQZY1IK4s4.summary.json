@@ -1,16 +1,16 @@
 {
  "video_id": "tTQZY1IK4s4",
  "provider": "gemini",
- "generated_at": "2026-09-27T13:05:58Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-29T11:07:09Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "2bd46f191513b1a0",
- "overview": "The City Council and the Community Development Board held a joint public hearing on proposed zoning amendments for the Boston Avenue Neighborhood Corridor District. The bodies voted on several specific land-use permissions and requested detailed boundary and height options to be modeled for their next meeting.",
+ "transcript_sha": "68eb59639bb68061",
+ "overview": "The City Council and Community Development Board held a joint public hearing to deliberate on proposed zoning amendments for the Boston Avenue Neighborhood Corridor District. The bodies reached consensus on several land-use definitions and directed consultants to model specific massing and boundary options for a final vote at the next meeting.",
  "items": [
   {
    "title": "Public Comment",
-   "t": 614,
-   "summary": "Residents and developers shared feedback regarding housing density, student dormitories, neighborhood preservation, traffic, and public green space.",
+   "t": 613,
+   "summary": "Neighbors expressed concerns regarding home ownership, traffic, rodent control, and the potential impact of purpose-built student housing on neighborhood character.",
    "speakers": [
     "Laurie Krieger",
     "Derek DuPont",
@@ -28,23 +28,23 @@
    ]
   },
   {
-   "title": "Parking for Lodgers (Accessory Use #7)",
+   "title": "Parking for Lodgers",
    "t": 3448,
-   "summary": "Both bodies approved a motion to reduce the parking requirement for lodging accessory uses from one space to zero.",
+   "summary": "Approved a motion to reduce the parking requirement to zero for the accessory use of renting up to two rooms to lodgers.",
    "speakers": [
     "Emily Innes",
-    "Sean Beagan",
     "Ari Fishman",
     "Anna Callahan",
+    "Sean Beagan",
     "Alicia Hunt",
     "Dina Caloggero",
     "John Anderson"
    ]
   },
   {
-   "title": "Doggy Daycare and Neighborhood Medical Office Permitting",
-   "t": 4369,
-   "summary": "The bodies voted to require a special permit for doggy daycares, while keeping neighborhood medical offices allowed by right.",
+   "title": "Doggy Daycares and Medical Offices",
+   "t": 4352,
+   "summary": "Voted to require a special permit for doggy daycares while maintaining small neighborhood medical offices as a by-right use in all sub-districts.",
    "speakers": [
     "Emily Innes",
     "Matt Leming",
@@ -53,63 +53,73 @@
     "John Anderson",
     "Ari Fishman",
     "Emily Lazzaro",
-    "George Scarpelli",
-    "Anna Callahan"
+    "George Scarpelli"
    ]
   },
   {
-   "title": "Marijuana Uses and Service Stations",
+   "title": "Motor Vehicle Service Stations",
    "t": 5617,
-   "summary": "Both bodies voted to prohibit marijuana uses in the BA1, BA2, and BA3 sub-districts, while leaving service station prohibitions unchanged.",
+   "summary": "Confirmed that new gas stations and motor vehicle repair shops will remain prohibited uses within the proposed corridor district.",
    "speakers": [
     "Alicia Hunt",
-    "Emily Innes",
     "Matt Leming",
-    "Ari Fishman",
-    "Sean Beagan",
-    "Anna Callahan"
+    "Ari Fishman"
    ]
   },
   {
-   "title": "Purpose-Built Student Housing",
+   "title": "Marijuana-Related Uses",
+   "t": 5977,
+   "summary": "Approved changing marijuana-related uses to 'not allowed' in the district to maintain consistency with existing city-wide licensing ordinances.",
+   "speakers": [
+    "Emily Innes",
+    "Alicia Hunt",
+    "Sean Beagan"
+   ]
+  },
+  {
+   "title": "Purpose-Built Student Housing Standards",
    "t": 6387,
-   "summary": "The boards directed planning staff and consultants to draft a definition and standards for purpose-built student housing to be formally reviewed at the next meeting.",
+   "summary": "Directed the zoning consultants to draft a formal definition and use standards for private, taxable student housing, specifically excluding fraternities and sororities.",
    "speakers": [
     "Emily Innes",
     "Doug Carr",
     "Zac Bears",
     "Alicia Hunt",
     "Danielle Evans",
-    "George Scarpelli",
-    "Matt Leming",
-    "Emily Lazzaro"
+    "George Scarpelli"
    ]
   },
   {
-   "title": "Heights, Boundaries, and Massing Options (BA1, BA2, and BA3)",
-   "t": 7805,
-   "summary": "Following a presentation of shadow and massing studies, both bodies approved a motion to review specific height and boundary options on June 24th before adjourning.",
+   "title": "Height, Boundary, and Shadow Study Analysis",
+   "t": 7816,
+   "summary": "Reviewed shadow studies for sub-district BA3 and considered proposals to adjust boundaries near St. Clement's and certain residential blocks in BA1.",
    "speakers": [
     "Emily Innes",
     "Doug Carr",
-    "Liz Mullane",
     "Dina Caloggero",
-    "Emily Lazzaro",
     "John Anderson",
-    "Alicia Hunt",
-    "Sean Beagan",
     "Ari Fishman",
-    "Matt Leming",
-    "Zac Bears",
-    "Rocco DiRico",
-    "Justin Tseng",
     "Danielle Evans"
+   ]
+  },
+  {
+   "title": "Final Options for Sub-District Modeling",
+   "t": 12514,
+   "summary": "Directed the consultant to prepare three specific boundary and height modeling options for sub-districts BA1, BA2, and BA3 for final deliberation on June 24th.",
+   "speakers": [
+    "Zac Bears",
+    "Emily Innes",
+    "Matt Leming",
+    "Justin Tseng",
+    "Liz Mullane",
+    "Danielle Evans",
+    "Sean Beagan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 73674,
-  "output_tokens": 915
+  "output_tokens": 828
  }
 }
