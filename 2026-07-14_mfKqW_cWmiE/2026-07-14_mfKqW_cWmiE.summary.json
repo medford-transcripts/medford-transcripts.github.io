@@ -1,16 +1,16 @@
 {
  "video_id": "mfKqW_cWmiE",
  "provider": "gemini",
- "generated_at": "2026-09-27T07:21:33Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-29T06:19:15Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "8faba7e7aa6d762b",
- "overview": "The Medford City Council Committee of the Whole met to discuss a long-standing public tree ordinance. The committee voted to refer the amended ordinance to the regular meeting with outstanding questions for administration officials.",
+ "transcript_sha": "25df7306fd200495",
+ "overview": "The Committee of the Whole reviewed a long-standing public tree ordinance intended to protect and sustain the city's tree canopy. The committee voted to refer the ordinance to the regular meeting with amendments concerning resident notification and penalty calculations.",
  "items": [
   {
-   "title": "Public Tree Ordinance (Paper 19-070)",
+   "title": "Public Tree Ordinance (Item 19-070)",
    "t": 105,
-   "summary": "Referred the public tree ordinance to the regular meeting as amended, with additional questions directed to the Department of Public Works and KP Law regarding how canopy replacement penalties are calculated.",
+   "summary": "Referred the ordinance to the regular meeting with an amendment to refine resident notification requirements and instructions to clarify canopy loss penalty calculations with the Department of Public Works and legal counsel.",
    "speakers": [
     "Zac Bears",
     "Anna Callahan",
@@ -23,6 +23,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 6966,
-  "output_tokens": 174
+  "output_tokens": 181
  }
 }
