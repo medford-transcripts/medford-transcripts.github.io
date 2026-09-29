@@ -1,27 +1,28 @@
 {
  "video_id": "kLjqyRQ8eNw",
  "provider": "gemini",
- "generated_at": "2026-09-26T07:23:23Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-09-29T02:07:10Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "791ba7ffeeb96295",
- "overview": "The committee reviewed the draft city newsletter and finalized logistics and outreach strategies for the upcoming series of neighborhood ward meetings.",
+ "transcript_sha": "dc7e650a1702ce0b",
+ "overview": "The Resident Services and Public Engagement Committee met to finalize the June city council newsletter draft, assign drafting duties for upcoming newsletters, and plan logistics and outreach for upcoming neighborhood ward meetings.",
  "items": [
   {
-   "title": "City Newsletter Review",
+   "title": "City Council Newsletter Review",
    "t": 475,
-   "summary": "Chair Liz Mullane presented a draft newsletter covering budget highlights and public works updates, and the committee discussed methods for linking directly to final ordinance texts via MuniCode.",
+   "summary": "The committee reviewed the draft June newsletter, discussing how to link specific ordinances and agreeing to include pavement and pothole repair statistics from the Department of Public Works.",
    "speakers": [
     "Liz Mullane",
     "Marie Izzo",
     "Matt Leming",
-    "Anna Callahan"
+    "Anna Callahan",
+    "Justin Tseng"
    ]
   },
   {
-   "title": "Newsletter Assignment Schedule",
-   "t": 1072,
-   "summary": "Councilors established a rotating schedule for newsletter production through December, assigning specific months to individual members.",
+   "title": "Newsletter Drafting Schedule",
+   "t": 1062,
+   "summary": "Committee members volunteered for future monthly newsletter drafting assignments running through December.",
    "speakers": [
     "Liz Mullane",
     "Matt Leming",
@@ -32,7 +33,7 @@
   {
    "title": "Neighborhood Ward Meetings Planning",
    "t": 1227,
-   "summary": "The committee coordinated the fall ward meeting schedule and discussed outreach strategies including social media, news publications, and paper flyers to ensure resident participation.",
+   "summary": "The committee discussed hybrid meeting logistics with Medford Community Media and brainstormed various digital and physical outreach strategies to publicize the upcoming ward meetings.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan",
@@ -42,7 +43,7 @@
   {
    "title": "Noise Ordinance Update",
    "t": 1723,
-   "summary": "The committee briefly noted that the noise ordinance will be formally addressed during the next meeting in September.",
+   "summary": "The chair noted that the noise ordinance was not on the current agenda due to notice requirements and will be addressed at the next meeting in mid-September.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan"
@@ -52,6 +53,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 8508,
-  "output_tokens": 393
+  "output_tokens": 373
  }
 }
