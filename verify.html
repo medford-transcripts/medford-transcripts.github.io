@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help verify the record — Medford meeting transcripts</title>
+<meta name="description" content="Specific places where the Medford meeting transcript archive needs a human to check the machine's work, and how to submit a correction or a confirmation.">
+<link rel="canonical" href="https://medford-transcripts.github.io/verify.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#f7f6f3; --card:#fffefb; --ink:#16232b; --dim:#5c6b72; --rule:#d8dbd6;
+    --accent:#1f5673; --amber:#8f6200; --crimson:#8f2c2c;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#101a1f; --card:#16232b; --ink:#e7ebe8; --dim:#93a2a8; --rule:#2a3a42;
+      --accent:#7ab4d4; --amber:#d2a23c; --crimson:#d98a8a;
+    }
+  }
+  *{box-sizing:border-box}
+  body{background:var(--paper); color:var(--ink); margin:0;
+       font:16px/1.6 "IBM Plex Sans","Segoe UI",system-ui,sans-serif}
+  .wrap{max-width:58rem; margin:0 auto; padding:2.5rem 1.25rem 5rem;
+        display:flex; flex-direction:column; gap:2.25rem}
+  a{color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:1.1rem;
+         display:flex; flex-direction:column; gap:.55rem}
+  .eyebrow{font:500 .72rem/1 "IBM Plex Mono",monospace; letter-spacing:.14em;
+           text-transform:uppercase; color:var(--dim)}
+  h1{font:600 2.2rem/1.12 "Newsreader",Georgia,serif; margin:0; text-wrap:balance}
+  .lede{max-width:62ch; margin:0; color:var(--dim)}
+  h2{font:600 1.22rem/1.25 "Newsreader",Georgia,serif; margin:0}
+  section{display:flex; flex-direction:column; gap:.8rem}
+  .shead{display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap;
+         border-bottom:1px solid var(--rule); padding-bottom:.4rem}
+  .count{font:500 .74rem/1 "IBM Plex Mono",monospace; color:var(--dim)}
+  p{margin:0; max-width:64ch}
+  .box{background:var(--card); border:1px solid var(--rule); padding:1rem 1.15rem;
+       display:flex; flex-direction:column; gap:.6rem}
+  ul{margin:0; padding-left:1.15rem; display:flex; flex-direction:column; gap:.45rem}
+  ul.plain{list-style:none; padding:0; gap:1px; background:var(--rule)}
+  ul.plain li{background:var(--card); padding:.7rem .9rem;
+              border-left:3px solid var(--amber)}
+  .rid{font:500 .86rem/1.4 "IBM Plex Mono",monospace;
+       font-variant-numeric:tabular-nums}
+  .note{font-size:.9rem; color:var(--dim); max-width:70ch}
+  .scroll{overflow-x:auto; background:var(--card); border:1px solid var(--rule)}
+  table{border-collapse:collapse; width:100%; font-size:.88rem;
+        font-variant-numeric:tabular-nums}
+  th,td{text-align:left; padding:.45rem .7rem; border-bottom:1px solid var(--rule);
+        white-space:nowrap}
+  th{font:500 .7rem/1 "IBM Plex Mono",monospace; letter-spacing:.08em;
+     text-transform:uppercase; color:var(--dim)}
+  tr:last-child td{border-bottom:none}
+  td.mono{font-family:"IBM Plex Mono",monospace}
+  .bad{color:var(--crimson)}
+  .cta{display:inline-block; font-weight:500; border:1px solid var(--accent);
+       padding:.5em .9em; text-decoration:none}
+  .cta:hover{background:var(--accent); color:var(--paper)}
+  footer{border-top:1px solid var(--rule); padding-top:1rem; color:var(--dim);
+         font-size:.85rem; max-width:66ch}
+  @media (max-width:600px){ h1{font-size:1.75rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow"><a href="index.html">Medford meeting transcripts</a></div>
+  <h1>Help verify the record</h1>
+  <p class="lede">These transcripts are produced by machine, and the machine is wrong in
+    specific, findable ways. This page lists where a person&rsquo;s judgment would help most.
+    You do not need to be technical, and you do not need to fix anything &mdash; telling us
+    that a line is <em>already right</em> is as useful as telling us it is wrong.</p>
+</header>
+
+<section>
+  <div class="shead"><h2>How to submit</h2></div>
+  <div class="box">
+    <p>On any transcript page, <strong>right-click a line</strong> (or use the
+      &ldquo;Correct or verify this line&rdquo; button) and a form opens with that line
+      pre-filled. Edit it and submit, or <strong>submit it unchanged to confirm it is
+      correct</strong>. Every accepted change becomes a public commit, so a correction is
+      exactly as visible as the original text.</p>
+    <p><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSccxxAMO1H6UWnMOQjyFKyvlCsjw1sBQoKdeKF3uLRwjVG_iQ/viewform">Open the correction &amp; verification form</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><h2>Roll calls &mdash; who voted, and how</h2>
+    <span class="count">the highest-value gap</span></div>
+  <p>Speaker attribution is about <strong>97% accurate on ordinary speech and only
+    53&ndash;66% on short turns</strong>. Roll-call answers are short turns, which means the
+    most consequential thing in a meeting &mdash; who voted which way &mdash; is what the
+    pipeline is worst at. Summaries deliberately omit vote tallies for this reason.</p>
+  <p>If you are watching a roll call and the transcript attributes a
+    &ldquo;here&rdquo;, &ldquo;yes&rdquo; or &ldquo;no&rdquo; to the wrong person, that
+    correction is worth more than almost anything else on this page.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Measured across the archive</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>Names called in a roll call</td><td class="mono">19,872</td></tr>
+      <tr><td>With a response captured in the audio</td><td class="mono">17,838</td></tr>
+      <tr><td class="bad">With no response recorded at all</td><td class="mono bad">2,034</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Those 2,034 are not a transcription error and we cannot fix them by
+    re-processing: the clerk reads a name, the microphone was not on, and nothing was
+    recorded. The vote happened and the audio has no trace of it. If you know how a
+    particular vote went &mdash; from the posted minutes, from being in the room &mdash;
+    that is information the recording does not contain.</p>
+</section>
+
+<section>
+  <div class="shead"><h2>Who is speaking</h2>
+    <span class="count">14 labels look unreliable</span></div>
+  <p>Speakers are matched across meetings by voice. For a few labels the match is
+    demonstrably unstable &mdash; the same name is attached to recordings that do not sound
+    like each other, which usually means one label is covering more than one person. If you
+    recognise a voice and the name above it is wrong, say so.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Label</th><th>Consistency</th><th>Why it is suspect</th></tr></thead>
+    <tbody>
+      <tr><td>BBC Broadcast</td><td class="mono bad">0.07</td>
+        <td>not a person &mdash; broadcast audio before a meeting starts</td></tr>
+      <tr><td>Adam Hurtubise</td><td class="mono bad">0.41</td>
+        <td>the city clerk, but labelled in 613 meetings including boards he has no role in</td></tr>
+      <tr><td>Marie Izzo</td><td class="mono bad">0.44</td><td>also reads the roll</td></tr>
+      <tr><td>Evangelista, Ruseau, Puccio&hellip;</td><td class="mono">0.42&ndash;0.59</td>
+        <td>surname only; the archive holds several people for some surnames</td></tr>
+      <tr><td>Adam Knight</td><td class="mono">0.59</td><td>occasionally reads the roll</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Median consistency across the archive is 0.81, so these sit well below
+    everything else. The likely cause is mechanical: whoever reads the roll has other
+    people&rsquo;s one-word answers folded into their voice profile.</p>
+  <p class="note"><strong>Surnames are a known weak point.</strong> Speakers were first
+    identified by surname alone and the switch to full names was never finished, so 650
+    labels are still just a surname. For 49 of those the surname belongs to more than one
+    person in the archive &mdash; the corpus holds both a Richard and a Carol Caraviello,
+    nine different Murphys and seven McLaughlins &mdash; so these cannot be merged
+    automatically without risking putting one person&rsquo;s words under another&rsquo;s
+    name.</p>
+</section>
+
+<section>
+  <div class="shead"><h2>Meeting dates</h2><span class="count">2 unresolved</span></div>
+  <p>A mistyped date in a video title moves a meeting to the wrong day and stops it being
+    matched with its agenda. Eleven were corrected in September 2026 using four checks: a
+    missing agenda, the wrong weekday, which councillors were present, and the resolution
+    numbers cited. These two resist all four.</p>
+  <ul class="plain">
+    <li>
+      <div class="rid">City Council &mdash; titled 1/7/25</div>
+      <p class="note">Uploaded 7 January <strong>2026</strong>, a year after the date it
+        claims, and no council meeting took place that day. The council met 6 January 2026.
+        Two other January meetings were titled &ldquo;&ndash;25&rdquo; and proved to be
+        2026, so this is probably a third. Not yet transcribed, so we cannot check who was
+        in the room.</p>
+    </li>
+    <li>
+      <div class="rid">City Council &mdash; titled 08/01/25</div>
+      <p class="note">A Friday, and City Council has met on a Tuesday 92&ndash;100% of the
+        time every year since 2011. It is also only <strong>195 seconds long</strong>, so it
+        may not be a meeting recording at all.</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <div class="shead"><h2>The same meeting posted twice</h2>
+    <span class="count">35 to spot-check</span></div>
+  <p>Meetings are often published by several outlets, and about 75 duplicate pages were
+    removed in September 2026 by comparing transcripts rather than titles. What remains is
+    mostly a full meeting sitting alongside short clips of it, which is fine. A real
+    duplicate looks like <strong>two recordings of similar length</strong> on the same date.
+    If you spot one, the shorter copy is usually the one to drop &mdash; unless it is
+    <em>longer</em>, in which case it may contain part of the meeting the other is missing.</p>
+  <p class="note">One known example: the Charter Study Committee on 15 July 2024 has two
+    copies at 68 and 57 minutes.</p>
+</section>
+
+<section>
+  <div class="shead"><h2>What the archive cannot tell you</h2></div>
+  <p>Stated plainly, because it matters for how much weight to put on any single page:</p>
+  <ul>
+    <li><strong>Vote tallies are not summarised.</strong> Short-turn attribution is too weak
+      to publish who voted which way. Outcomes appear only when stated plainly on the
+      record (&ldquo;the motion passes&rdquo;).</li>
+    <li><strong>Minutes are mostly not published.</strong> The city posts an agenda for 95%
+      of meetings and minutes for 24% &mdash; 19% in 2024, falling to 9% in 2026. For most
+      recent meetings the transcript is the only account of what happened.</li>
+    <li><strong>Summaries are machine-written</strong> and cover about 5% of meetings so
+      far. Every one is marked as such.</li>
+    <li><strong>Speaker names are a best guess</strong> unless someone has confirmed them.
+      About 13,300 were assigned by hand; roughly 7,700 by automatic matching.</li>
+  </ul>
+</section>
+
+<footer>
+  Figures measured 28 September 2026 across 2,326 transcripts. This archive is unofficial
+  and is not affiliated with the City of Medford or Medford Public Schools; the recordings
+  belong to their publishers. If a source is missing, or something here is wrong, the
+  correction form above reaches a person.
+</footer>
+
+</div>
+</body>
+</html>
