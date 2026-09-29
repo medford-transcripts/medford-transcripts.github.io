@@ -3,9 +3,14 @@ Sync provenance artifacts into the private transcript_backup repo, and report
 how far the two have drifted.
 
 WHY THIS EXISTS. The backup holds the only copies of things that cannot be
-regenerated: model.pkl and embeddings.pkl (the ASR and diarization halves of a
-two-year run), and speaker_ids.json, which is pure human judgement -- nothing
-rebuilds a voice-cluster-to-real-name map from anything.
+regenerated AND cannot be published: model.pkl and embeddings.pkl, the ASR and
+diarization halves of a two-year run, the latter biometric.
+
+speaker_ids.json used to be here too, on the grounds that it is pure human
+judgement and nothing rebuilds a voice-cluster-to-real-name map from anything.
+The first half was right and the second half was the argument for TRACKING it,
+not for hiding it -- and it was never unpublishable, since the site prints that
+same map on every page. It moved into the main repo on 2026-09-29.
 
 It was populated by hand on 2026-09-17/18 and then nothing kept it current. By
 2026-09-23 the live tree had 2,301 speaker_ids.json against 2,275 in the
@@ -35,9 +40,16 @@ BACKUP = os.path.join("..", "transcript_backup")
 # Per meeting. Two rules: it must be IRRECOVERABLE (regenerating it costs
 # GPU-months, or it encodes a human decision), and it must not be publishable
 # (voiceprints are biometric; speaker_ids maps clusters to real names).
+# speaker_ids.json and speaker_provenance.json were dropped from this list on
+# 2026-09-29, when they went back into the main repo. They met the first test
+# (irrecoverable) but never the second: the cluster-to-name map is precisely
+# what every published page shows, so "not publishable" was never true of it.
+# Carrying them here made the only irreplaceable human-judgement artifact
+# depend on someone remembering to run this script, which twice they did not.
+# Git now holds them, with history and an offsite copy; this repo keeps what is
+# genuinely both irrecoverable AND unpublishable.
 ARTIFACTS = ("{base}.srt", "{base}.srt.orig", "{base}_aligned.srt",
-             "{base}_basic.srt", "speaker_ids.json", "speaker_provenance.json",
-             "model.pkl", "embeddings.pkl")
+             "{base}_basic.srt", "model.pkl", "embeddings.pkl")
 
 
 def meeting_dirs():

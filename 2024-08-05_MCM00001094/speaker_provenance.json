@@ -1,0 +1,82 @@
+{
+    "SPEAKER_00": {
+        "value": "SPEAKER_00",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_01": {
+        "value": "Doug Carr",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_03": {
+        "value": "Victor Schrader",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_04": {
+        "value": "Adam Hurtubise",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_05": {
+        "value": "Peter Miller",
+        "source": "backfill_high_confidence",
+        "score": 0.947288098161646,
+        "from": "MCM00001099_SPEAKER_02 (human-confirmed)",
+        "at": "2026-09-29T05:09:41Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_06": {
+        "value": "Ryan Hayward",
+        "source": "backfill_high_confidence",
+        "score": 0.8469880501144024,
+        "from": "CAS00002519_SPEAKER_09+CAS00002523_SPEAKER_06",
+        "at": "2026-09-29T04:30:17Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_07": {
+        "value": "Robin Stein",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_08": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_09": {
+        "value": "Kit Collins",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    }
+}

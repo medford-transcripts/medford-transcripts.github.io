@@ -1,0 +1,74 @@
+{
+    "SPEAKER_00": {
+        "value": "Kit Collins",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_01": {
+        "value": "Peter Miller",
+        "source": "backfill_high_confidence",
+        "score": 0.9133935922160273,
+        "from": "MCM00001099_SPEAKER_02 (human-confirmed)",
+        "at": "2026-09-29T05:09:41Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_02": {
+        "value": "SPEAKER_02",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_03": {
+        "value": "Adam Hurtubise",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_04": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_05": {
+        "value": "Doug Carr",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_06": {
+        "value": "MCM00001222_SPEAKER_04",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    },
+    "SPEAKER_07": {
+        "value": "Ryan Hayward",
+        "source": "backfill_high_confidence",
+        "score": 0.9532002142957398,
+        "from": "CAS00002519_SPEAKER_09+CAS00002523_SPEAKER_06",
+        "at": "2026-09-29T04:30:17Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_08": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:00Z",
+        "previous": null
+    }
+}

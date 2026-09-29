@@ -1,0 +1,42 @@
+{
+    "SPEAKER_00": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8998755167145354,
+        "from": "MCM00000507_SPEAKER_04",
+        "at": "2026-09-23T16:33:43Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "MCM00001456_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.9289636615048754,
+        "from": "MCM00001456_SPEAKER_01",
+        "at": "2026-09-23T16:33:43Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Alicia Hunt",
+        "source": "embedding_match",
+        "score": 0.9639848300563284,
+        "from": "MCM00000619_SPEAKER_01",
+        "at": "2026-09-23T16:33:43Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Patty Flynn",
+        "source": "embedding_match",
+        "score": 0.8470441685400936,
+        "from": "MCM00001456_SPEAKER_04",
+        "at": "2026-09-23T16:33:44Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.9663512461126176,
+        "from": "MCM00001456_SPEAKER_00",
+        "at": "2026-09-23T16:33:44Z",
+        "previous": "SPEAKER_04"
+    }
+}

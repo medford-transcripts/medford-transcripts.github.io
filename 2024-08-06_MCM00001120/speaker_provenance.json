@@ -1,0 +1,58 @@
+{
+    "SPEAKER_00": {
+        "value": "MCM00001807_SPEAKER_19",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:01Z",
+        "previous": null
+    },
+    "SPEAKER_01": {
+        "value": "Denis MacDougall",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:01Z",
+        "previous": null
+    },
+    "SPEAKER_02": {
+        "value": "Peter Miller",
+        "source": "backfill_high_confidence",
+        "score": 0.8935942915578368,
+        "from": "MCM00001099_SPEAKER_02 (human-confirmed)",
+        "at": "2026-09-29T05:09:41Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_03": {
+        "value": "Ryan Hayward",
+        "source": "backfill_high_confidence",
+        "score": 0.9298650533881991,
+        "from": "CAS00002519_SPEAKER_09+CAS00002523_SPEAKER_06",
+        "at": "2026-09-29T04:30:17Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_04": {
+        "value": "Doug Carr",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:01Z",
+        "previous": null
+    },
+    "SPEAKER_05": {
+        "value": "Jennifer Keenan",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:01Z",
+        "previous": null
+    },
+    "SPEAKER_06": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:01Z",
+        "previous": null
+    }
+}

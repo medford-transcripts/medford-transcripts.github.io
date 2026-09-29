@@ -1,0 +1,130 @@
+{
+    "SPEAKER_00": {
+        "value": "Joan Cyr",
+        "source": "embedding_match",
+        "score": 0.9130458759788835,
+        "from": "MCM00001775_SPEAKER_01",
+        "at": "2026-09-27T21:32:36Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Jeremy Martin",
+        "source": "embedding_match",
+        "score": 0.9777018342592843,
+        "from": "MCM00001723_SPEAKER_14",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Adam Hurtubise",
+        "source": "embedding_match",
+        "score": 0.8353042533071956,
+        "from": "MCM00001157_SPEAKER_13",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Roberta Cameron",
+        "source": "embedding_match",
+        "score": 0.9291123037986675,
+        "from": "MCM00001448_SPEAKER_04",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_05": {
+        "value": "Myisha Majumder",
+        "source": "embedding_match",
+        "score": 0.838062123385554,
+        "from": "MCM00001830_SPEAKER_20",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Ari Fishman",
+        "source": "embedding_match",
+        "score": 0.906901427766845,
+        "from": "CAS00002530_SPEAKER_05",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "Doug Carr",
+        "source": "embedding_match",
+        "score": 0.9237546267092478,
+        "from": "MCM00001448_SPEAKER_08",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9312108816918508,
+        "from": "EO-vAhUJAKo_SPEAKER_14",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_08"
+    },
+    "SPEAKER_09": {
+        "value": "Ryan Hayward",
+        "source": "manual",
+        "score": null,
+        "from": null,
+        "at": "2026-09-29T04:08:52Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_10": {
+        "value": "MCM00001830_SPEAKER_05",
+        "source": "embedding_match",
+        "score": 0.9085213761665042,
+        "from": "MCM00001830_SPEAKER_05",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_10"
+    },
+    "SPEAKER_11": {
+        "value": "Suzanne Galusi",
+        "source": "embedding_match",
+        "score": 0.700522545255817,
+        "from": "MCM00001830_SPEAKER_06",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_11"
+    },
+    "SPEAKER_12": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.8073322514701591,
+        "from": "MCM00001449_SPEAKER_02",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_12"
+    },
+    "SPEAKER_13": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.9540842513757535,
+        "from": "MCM00001630_SPEAKER_10",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_13"
+    },
+    "SPEAKER_14": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.881901988178401,
+        "from": "MCM00001447_SPEAKER_08",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_14"
+    },
+    "SPEAKER_15": {
+        "value": "Ada Gunning",
+        "source": "embedding_match",
+        "score": 0.705074617586828,
+        "from": "MCM00001588_SPEAKER_09",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_15"
+    },
+    "SPEAKER_16": {
+        "value": "Ada Gunning",
+        "source": "embedding_match",
+        "score": 0.9582638198158522,
+        "from": "MCM00001648_SPEAKER_11",
+        "at": "2026-09-27T21:32:37Z",
+        "previous": "SPEAKER_16"
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "SPEAKER_00": {
+        "value": "Matt Rice",
+        "source": "embedding_match",
+        "score": 0.9300049248906657,
+        "from": "fTvN7dy32F0_SPEAKER_01",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_02": {
+        "value": "Alicia Hunt",
+        "source": "embedding_match",
+        "score": 0.9720216843584405,
+        "from": "APyzZaULl-4_SPEAKER_04",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Martine Dion",
+        "source": "manual",
+        "score": null,
+        "from": "corrections_sheet:80ff3a3dea922107",
+        "at": "2026-09-29T11:36:28Z",
+        "previous": "Martine Dion"
+    },
+    "SPEAKER_04": {
+        "value": "Jessica Parks",
+        "source": "embedding_match",
+        "score": 0.9587759258254049,
+        "from": "R1m53sR_I7U_SPEAKER_03",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_06": {
+        "value": "Paul Garrity",
+        "source": "embedding_match",
+        "score": 0.9279382969062886,
+        "from": "v1jzPrb1DFs_SPEAKER_12",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "Adam Hurtubise",
+        "source": "embedding_match",
+        "score": 0.8813602623676889,
+        "from": "MCM00001363_SPEAKER_04",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8850856761566743,
+        "from": "MCM00001363_SPEAKER_05",
+        "at": "2026-09-22T20:34:56Z",
+        "previous": "SPEAKER_08"
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "SPEAKER_01": {
+        "value": "Raven",
+        "source": "embedding_match",
+        "score": 0.7402683961455849,
+        "from": "HaW-_4A8T8c_SPEAKER_00",
+        "at": "2026-09-26T10:26:00Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9049390059843369,
+        "from": "MCM00001823_SPEAKER_10",
+        "at": "2026-09-26T10:26:00Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "MCM00001812_SPEAKER_07",
+        "source": "embedding_match",
+        "score": 0.9066739639276865,
+        "from": "MCM00001437_SPEAKER_06",
+        "at": "2026-09-26T10:26:00Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "nqVIJ3wsDWg_SPEAKER_04",
+        "source": "embedding_match",
+        "score": 0.831452214492458,
+        "from": "nqVIJ3wsDWg_SPEAKER_04",
+        "at": "2026-09-26T10:26:00Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_08": {
+        "value": "David Pladziewicz",
+        "source": "manual",
+        "score": null,
+        "from": null,
+        "at": "2026-09-29T04:08:52Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_09": {
+        "value": "Maureen Busby",
+        "source": "embedding_match",
+        "score": 0.8974512589495961,
+        "from": "MCM00001439_SPEAKER_02",
+        "at": "2026-09-26T10:26:00Z",
+        "previous": "SPEAKER_09"
+    },
+    "SPEAKER_10": {
+        "value": "MCM00001745_SPEAKER_07",
+        "source": "embedding_match",
+        "score": 0.8498974050339172,
+        "from": "MCM00001437_SPEAKER_04",
+        "at": "2026-09-26T10:26:01Z",
+        "previous": "SPEAKER_10"
+    },
+    "SPEAKER_11": {
+        "value": "MaryAnn O'Connor",
+        "source": "manual",
+        "score": null,
+        "from": "corrections_sheet:2b07159504ecff39",
+        "at": "2026-09-29T11:36:29Z",
+        "previous": "MaryAnn O'Connor"
+    },
+    "SPEAKER_00": {
+        "value": "Deanna Earle",
+        "source": "manual",
+        "score": null,
+        "from": null,
+        "at": "2026-09-29T04:08:52Z",
+        "previous": null
+    }
+}

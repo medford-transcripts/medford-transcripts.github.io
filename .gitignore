@@ -121,18 +121,28 @@ corrections_queue.json
 #
 # PDFs are deliberately NOT here: agendas, minutes and proposals are LINKED
 # from the site, and the civicclerk source is of unknown stability.
+# speaker_ids.json WAS HERE and was moved back into the repo on 2026-09-29.
+# It was never excluded for privacy: the cluster-to-name map is exactly what
+# every published page already shows, so untracking it disclosed nothing. The
+# reason was tidiness plus Pages build time, and it did not survive contact
+# with the numbers -- 1.1 MB of speaker maps against the ~2,962 MB of generated
+# HTML this repo already tracks, i.e. 0.04% -- while it cost the one artifact
+# that cannot be regenerated its version history. Twice the manual backup was
+# found badly stale (339 files on 2026-09-23; 2,656 on 2026-09-29, 2,381 of
+# them irrecoverable), and a bulk relabel had no `git checkout` to undo it.
+# The ~4,650 extra files do lengthen the Pages build; that is the accepted cost.
 model.pkl
-speaker_ids.json
 *.srt
 *.srt.orig
 
 # speaker_provenance.json (2026-09-18): per-meeting sidecar recording how each
 # speaker_ids.json entry was set (manual / reference_voice / embedding_match /
 # propagated / unknown), with score, source cluster key, and previous value
-# for rollback (see speaker_provenance.py). Purely derived, never published;
-# stays local for the same file-count-drives-Pages-build-time reason as the
-# other per-meeting artifacts above (~2,280 more files would undo that win).
-speaker_provenance.json
+# for rollback (see speaker_provenance.py). Tracked again since 2026-09-29,
+# with speaker_ids.json: it is the audit trail for a file whose whole value is
+# being auditable, and keeping the record of who decided what in an untracked
+# sidecar was self-defeating. Note much of what it stores by hand -- previous
+# value, when, by whom -- is what git records natively.
 
 # outbound correspondence drafts and the archive.org export staging area
 email.txt

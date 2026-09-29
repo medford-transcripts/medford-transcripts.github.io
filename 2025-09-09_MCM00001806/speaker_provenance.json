@@ -1,0 +1,106 @@
+{
+    "SPEAKER_00": {
+        "value": "MCM00001767_SPEAKER_13",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_01": {
+        "value": "Kathleen Desmond",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_02": {
+        "value": "Doug Carr",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_03": {
+        "value": "Unidentified",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_04": {
+        "value": "ir8Km2ErkFk_SPEAKER_05",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_05": {
+        "value": "Jennifer Keenan",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_06": {
+        "value": "Theresa Dupont",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_07": {
+        "value": "MCM00001614_SPEAKER_01",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_08": {
+        "value": "Ryan Hayward",
+        "source": "backfill_high_confidence",
+        "score": 0.9762858131758243,
+        "from": "CAS00002519_SPEAKER_09+CAS00002523_SPEAKER_06",
+        "at": "2026-09-29T04:30:17Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_09": {
+        "value": "Ryan Hayward",
+        "source": "embedding_match",
+        "score": 0.7018197461271984,
+        "from": "CAS00002519_SPEAKER_09+CAS00002523_SPEAKER_06",
+        "at": "2026-09-29T04:30:18Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_10": {
+        "value": "Adam Hurtubise",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    },
+    "SPEAKER_11": {
+        "value": "Peter Miller",
+        "source": "backfill_high_confidence",
+        "score": 0.8542935278763366,
+        "from": "MCM00001099_SPEAKER_02 (human-confirmed)",
+        "at": "2026-09-29T05:09:41Z",
+        "previous": "Adam Hurtubise"
+    },
+    "SPEAKER_12": {
+        "value": "MCM00001222_SPEAKER_04",
+        "source": "unknown",
+        "score": null,
+        "from": null,
+        "at": "2026-09-18T18:53:17Z",
+        "previous": null
+    }
+}
