@@ -1,58 +1,41 @@
 {
  "video_id": "boyuFzjZmR4",
  "provider": "gemini",
- "generated_at": "2026-09-27T07:34:24Z",
+ "generated_at": "2026-09-29T10:06:35Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "25ee759dea517016",
- "overview": "The City Council Committee of the Whole conducted final public interviews for the position of City Clerk and voted to recommend Laurel Siegel for the appointment.",
+ "transcript_sha": "dfcfe1c69ed549aa",
+ "overview": "The City Council Committee of the Whole conducted public interviews for the position of City Clerk and voted to recommend Laurel Siegel for the appointment. The council also recognized the service of the interim clerk during the transition period.",
  "items": [
   {
-   "title": "Resolution 25149: City Clerk Recruitment and Interview Process",
+   "title": "Final Interviews for City Clerk",
    "t": 107,
-   "summary": "Councilor Callahan outlined the state-mandated public interview process consisting of four standard questions and councilor follow-ups for the two finalists.",
+   "summary": "The committee interviewed finalists Kevin Foley and Laurel Siegel, questioning them on their legal backgrounds, experience with modernization, and plans for the clerk’s office. Both candidates addressed public service, records management, and staff training.",
    "speakers": [
     "Zac Bears",
-    "Anna Callahan"
-   ]
-  },
-  {
-   "title": "Candidate Interview: Kevin Foley",
-   "t": 213,
-   "summary": "Kevin Foley discussed his background as a former city solicitor and elected official, emphasizing the need for organized records and a proactive approach to public service at the clerk's counter.",
-   "speakers": [
-    "Kevin Foley",
-    "Anna Callahan"
-   ]
-  },
-  {
-   "title": "Candidate Interview: Laurel Siegel",
-   "t": 1253,
-   "summary": "Laurel Siegel highlighted her experience as the city's CDBG manager and a longtime attorney, focusing on resolving the ordinance backlog and improving digital accessibility for city records.",
-   "speakers": [
-    "Laurel Siegel",
     "Anna Callahan",
-    "George Scarpelli"
+    "Kevin Foley",
+    "Laurel Siegel"
    ]
   },
   {
    "title": "Deliberation and Recommendation for City Clerk Appointment",
    "t": 1861,
-   "summary": "Approved a motion to recommend Laurel Siegel for the position of City Clerk and proceed with an employment offer following a straw poll of council members.",
+   "summary": "Councilors discussed the merits of both candidates, weighing their specific clerical and legal experience against the needs of the office and existing city staffing. The committee voted to recommend Laurel Siegel for the position and authorize a formal job offer.",
    "speakers": [
-    "Zac Bears",
     "Emily Lazzaro",
     "George Scarpelli",
     "Anna Callahan",
     "Matt Leming",
     "Liz Mullane",
-    "Justin Tseng"
+    "Justin Tseng",
+    "Zac Bears"
    ]
   },
   {
    "title": "Recognition of Acting City Clerk",
    "t": 3177,
-   "summary": "Council members formally thanked Acting Clerk Rich Eliseo for his ten months of service managing the office during the vacancy.",
+   "summary": "The council expressed gratitude to Acting City Clerk Rich Eliseo for his professional service and consistency during the ten-month vacancy in the department.",
    "speakers": [
     "Zac Bears",
     "Justin Tseng",
@@ -64,7 +47,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 17251,
-  "output_tokens": 494
+  "input_tokens": 17252,
+  "output_tokens": 420
  }
 }

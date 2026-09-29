@@ -1,158 +1,116 @@
 {
  "video_id": "P8rHfRVDKLQ",
  "provider": "gemini",
- "generated_at": "2026-09-27T12:17:52Z",
+ "generated_at": "2026-09-29T10:06:13Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "9a2334f76184b0fc",
- "overview": "The City Council and Community Development Board met in a joint hearing to deliberate on zoning amendments for the Boston Avenue Neighborhood Corridor District. Both bodies reached a consensus on building heights and student housing definitions, voting to close the public hearing and move toward final technical drafting.",
+ "transcript_sha": "97fc808f5c6ea357",
+ "overview": "The City Council and Community Development Board reached consensus on building heights, boundaries, and student housing regulations for the Boston Avenue Neighborhood Corridor District zoning amendments. Both bodies voted to close the public hearing and scheduled a final working session for August to prepare formal recommendations.",
  "items": [
   {
-   "title": "Presentation on Proposed Zoning Updates",
+   "title": "Presentation on Proposed Student Housing Standards",
    "t": 775,
-   "summary": "Director Alicia Hunt presented updates from the Community Development Board regarding revised parking requirements and a comprehensive definition for 'Purpose-Built Student Housing.'",
+   "summary": "PDS Director Alicia Hunt presented proposed standards for purpose-built student housing, including a 150-bed minimum requirement, 24/7 professional management, and annual occupancy reviews.",
    "speakers": [
     "Alicia Hunt"
    ]
   },
   {
-   "title": "Discussion of Student Housing Definition and Management",
-   "t": 1046,
-   "summary": "The boards reviewed proposed standards for private dormitories, including a minimum of 150 beds, on-site professional management, and an annual certificate of occupancy renewal process.",
-   "speakers": [
-    "Alicia Hunt",
-    "George Scarpelli",
-    "Sean Beagan",
-    "Dina Caloggero"
-   ]
-  },
-  {
-   "title": "Innes Associates Presentation on Heights and Boundaries",
+   "title": "Height Scenarios and Shadow Studies",
    "t": 2173,
-   "summary": "The consultants presented three height and boundary scenarios for each sub-district (BA1, BA2, and BA3) along with shadow studies to illustrate impacts on neighboring residential properties.",
+   "summary": "Innes Associates presented multiple height scenarios for sub-districts BA1, BA2, and BA3, accompanied by shadow studies modeling impact during February and June.",
    "speakers": [
     "Emily Innes",
-    "Paola Ramos-Martinez"
+    "Paula Ramos-Martinez"
    ]
   },
   {
    "title": "Public Hearing",
-   "t": 3965,
-   "summary": "Residents expressed concerns over excessive heights and potential traffic congestion, while property owners and developers argued for flexible density and high-density student housing to relieve pressure on the existing housing stock.",
-   "speakers": [
-    "Nick Giurleo",
-    "Chris Bennett",
-    "Kristen Lugowski",
-    "Laura Longsworth",
-    "Pat Gallagher",
-    "Jenny Gilbert",
-    "Lorraine Thornhill",
-    "David Roach",
-    "Maryanne Adduci",
-    "Jonah Dakota",
-    "Angela Murphy",
-    "Laurie Krieger",
-    "Rita Donnelly",
-    "Judy Weinstock",
-    "Jeremy Martin"
-   ]
+   "t": 3974,
+   "summary": "Residents and stakeholders provided testimony regarding building heights, traffic congestion on Boston Avenue, and the potential impact of private student housing on residential character.",
+   "speakers": []
   },
   {
-   "title": "Height Determination for Sub-District BA1",
-   "t": 7774,
-   "summary": "The Council and the Board approved Option A, setting the maximum height at three base stories with a one-story incentive.",
+   "title": "Sub-District BA1 Heights and Boundaries",
+   "t": 7804,
+   "summary": "Approved height Option A for BA1, setting the limit at three stories with a one-story incentive, and agreed to maintain the original sub-district boundaries without reductions.",
    "speakers": [
-    "Anna Callahan",
-    "George Scarpelli",
-    "Matt Leming",
-    "Liz Mullane",
+    "Zac Bears",
     "Doug Carr",
     "Page Buldini",
-    "Alicia Hunt",
-    "Danielle Evans",
     "Dina Caloggero",
     "Ari Fishman",
-    "Sean Beagan"
+    "Sean Beagan",
+    "Anna Callahan",
+    "George Scarpelli",
+    "Matt Leming"
    ]
   },
   {
-   "title": "Height Determination for Sub-District BA2",
+   "title": "Sub-District BA2 Heights and Setbacks",
    "t": 9770,
-   "summary": "Approved Option C, which allows four base stories with a three-story incentive in the center corridor and includes an amended minimum six-foot setback on Winchester Street.",
+   "summary": "Approved height Option C for BA2, featuring four stories with a three-story incentive in the center, and amended the proposal to include a deeper first-floor setback on Winchester Street.",
    "speakers": [
-    "Liz Mullane",
     "Emily Innes",
+    "Liz Mullane",
     "George Scarpelli",
-    "Zac Bears",
-    "Dina Caloggero",
     "Doug Carr",
+    "Dina Caloggero",
     "Page Buldini",
     "Ari Fishman",
     "Sean Beagan"
    ]
   },
   {
-   "title": "Height Determination for Sub-District BA3",
+   "title": "Sub-District BA3 Heights",
    "t": 11101,
-   "summary": "Approved Option A, establishing a five-story base with a two-story incentive to provide a transition from nearby ten-story university structures.",
+   "summary": "Approved height Option A for BA3, establishing a base of five stories with a two-story incentive.",
    "speakers": [
-    "Zac Bears",
-    "Emily Innes",
     "George Scarpelli",
+    "Emily Innes",
     "Anna Callahan",
     "Liz Mullane",
     "Page Buldini",
+    "Dina Caloggero",
     "Ari Fishman",
     "Sean Beagan",
     "Doug Carr",
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Purpose-Built Student Housing and Affordability Incentive",
+   "t": 12168,
+   "summary": "Approved the definition for purpose-built student housing with enhanced management plan requirements and directed staff to resolve technical issues within the affordability incentive table.",
+   "speakers": [
+    "Zac Bears",
+    "Doug Carr",
+    "Sean Beagan",
+    "Alicia Hunt",
+    "Ari Fishman",
     "Dina Caloggero"
    ]
   },
   {
-   "title": "Direction on Affordability Incentives and Boundaries",
-   "t": 12165,
-   "summary": "The bodies approved a request to fix technical mathematical errors in the affordability incentive table and voted to maintain the original district boundaries for BA1.",
-   "speakers": [
-    "Zac Bears",
-    "Doug Carr",
-    "Emily Innes"
-   ]
-  },
-  {
-   "title": "Approval of Purpose-Built Student Housing Standards",
-   "t": 12706,
-   "summary": "Approved the definition and use standards for student housing, with a directive for staff to refine requirements for management plan interactions with academic institutions.",
+   "title": "Closing of Public Hearing and Next Steps",
+   "t": 15770,
+   "summary": "Voted to close the public hearing and scheduled a Community Development Board working session for August 12 to finalize the formal recommendations to the City Council.",
    "speakers": [
     "Sean Beagan",
-    "Alicia Hunt",
-    "George Scarpelli",
-    "Liz Mullane",
-    "Ari Fishman",
-    "Dina Caloggero",
-    "Page Buldini"
-   ]
-  },
-  {
-   "title": "Closure of the Public Hearing",
-   "t": 14146,
-   "summary": "Both bodies voted to close the public hearing, noting that major policy decisions were settled and delegating final document cleanup to the Planning Department for an August review.",
-   "speakers": [
     "Doug Carr",
-    "Alicia Hunt",
-    "Zac Bears",
-    "George Scarpelli",
-    "Matt Leming",
-    "Sean Beagan",
     "Page Buldini",
-    "Ari Fishman",
     "Dina Caloggero",
+    "Ari Fishman",
+    "Zac Bears",
+    "Matt Leming",
+    "George Scarpelli",
     "Anna Callahan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 85284,
-  "output_tokens": 1356
+  "input_tokens": 85287,
+  "output_tokens": 1018
  }
 }
