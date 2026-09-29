@@ -1,16 +1,16 @@
 {
  "video_id": "18oqzZoi02k",
  "provider": "gemini",
- "generated_at": "2026-09-26T07:15:06Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-29T00:07:36Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "1daf12c0833e5676",
- "overview": "The Medford High School Building Committee met to approve minutes and invoices, and to vote on space programming and design recommendations for the dining facilities, the Curtis Tufts High School Program, and the Medford Early Education Program.",
+ "transcript_sha": "c25ca09b6d51baf8",
+ "overview": "The committee approved space allocations and programmatic designs for dining services, the Curtis Tufts program, and the Early Childhood Center. Discussions focused on balancing operational needs and reimbursable square footage for the new high school building.",
  "items": [
   {
    "title": "Approval of Minutes",
    "t": 359,
-   "summary": "The committee approved the minutes of the August 25, 2026 meeting with an amendment to incorporate discussion details regarding parking spaces.",
+   "summary": "Approved the August 25, 2026 meeting minutes with an amendment to include 500 parking spaces as a critical decision point for debt consideration.",
    "speakers": [
     "Jenny Graham",
     "Luke Preisner",
@@ -18,64 +18,64 @@
    ]
   },
   {
-   "title": "Approval of Invoices and Budget Update",
+   "title": "Budget Update and Approval of Invoices",
    "t": 561,
-   "summary": "The committee reviewed the feasibility study budget and approved two invoices for August services from Left Field and SMMA totaling $115,000.",
+   "summary": "Approved August invoices totaling $115,000 for Left Field and SMMA after reviewing the remaining feasibility study budget of approximately $226,370.",
    "speakers": [
-    "Jenny Graham"
+    "Jenny Graham",
+    "Jen Belanger"
    ]
   },
   {
-   "title": "Dining and Food Service Programming",
+   "title": "Dining and Food Service Review",
    "t": 884,
-   "summary": "The committee approved the dining and food service design recommendations, which feature a quiet dining area, a scramble servery, and dedicated dishwashing space.",
+   "summary": "Approved the dining and food service layout, which includes a scramble-style servery, a 400-square-foot quiet dining room, and a cafe snack shop in the media center. The committee discussed the necessity of the larger servery for operational efficiency and the sustainability benefits of dedicated dishwashing space.",
    "speakers": [
-    "Jenny Graham",
     "Matt Rice",
     "John Falco",
+    "Jenny Graham",
     "Luke Preisner"
    ]
   },
   {
-   "title": "Curtis Tufts High School Program Review",
+   "title": "Curtis Tufts Programmatic Review",
    "t": 2116,
-   "summary": "The committee approved Curtis Tufts program space recommendations to remove the games room and breakout rooms, while directing that classroom sizes be explored further.",
+   "summary": "Approved the Curtis Tufts program layout with a request to further investigate classroom sizes; the plan consolidates the program into approximately 6,000 net square feet within the high school. Members discussed the benefits of moving the program from its current isolated building to allow for better student access to CTE programs and shared facilities.",
    "speakers": [
-    "Jenny Graham",
     "Matt Rice",
+    "Jenny Graham",
     "John Falco",
-    "Aaron Olapade",
     "Luke Preisner",
     "Kimberly Talbot",
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Medford Early Education Program (MEEP) Programming",
-   "t": 3684,
-   "summary": "A motion to eliminate all MEEP spaces from the project was denied, after which the committee approved recommendations to eliminate the playroom and breakout rooms, reduce observation spaces, and downsize the laundry room.",
+   "title": "Medford Early Education Program (MEEP)",
+   "t": 3686,
+   "summary": "Approved several space reductions for the Early Childhood Center, including the removal of a playroom and two breakout rooms and a reduction in laundry space. A motion to eliminate the MEEP program from the high school project entirely was denied after committee members debated centralization versus neighborhood-based preschool models.",
    "speakers": [
-    "Jenny Graham",
     "Matt Rice",
+    "Jenny Graham",
     "Luke Preisner",
-    "Breanna Lungo-Koehn",
-    "John Falco"
+    "John Falco",
+    "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Upcoming Design Process and Community Forum",
-   "t": 5237,
-   "summary": "The committee reviewed the forthcoming design and site safety review schedule, and discussed the virtual community forum on sustainability scheduled for September 17.",
+   "title": "Design Update and Future Schedule",
+   "t": 5241,
+   "summary": "Reviewed the upcoming design schedule for site massing and exterior building features and announced a sustainability-themed community forum for September 17.",
    "speakers": [
-    "Jenny Graham",
     "Matt Rice",
+    "Jenny Graham",
     "Kimberly Talbot"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 31286,
-  "output_tokens": 598
+  "input_tokens": 31287,
+  "output_tokens": 693
  }
 }
