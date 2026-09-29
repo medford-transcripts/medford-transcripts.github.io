@@ -410,6 +410,22 @@ def classify(rec):
 # the trust check, the review queue -- are untouched.
 
 SERVICE_ACCOUNT = os.path.join("credentials", "google_service_account.json")
+
+# The responses-sheet id lives here rather than in the repo. It is not a
+# secret in the cryptographic sense -- it is the id of a sheet whose only
+# protection is that it is no longer link-shared -- but it also has no business
+# in a public repo, and having to re-derive it from a shell transcript once was
+# enough. credentials/ is gitignored (.gitignore:34).
+SHEET_ID_FILE = os.path.join("credentials", "corrections_sheet_id.txt")
+
+
+def saved_sheet_id(path=SHEET_ID_FILE):
+    """The stored responses-sheet id, or None. Never raises."""
+    try:
+        v = io.open(path, encoding="utf-8").read().strip()
+    except Exception:
+        return None
+    return v or None
 SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets.readonly"
 
 
@@ -490,12 +506,13 @@ def fetch_sheet_csv(sheet_id, tab=None, key_file=SERVICE_ACCOUNT):
 
 def main():
     ap = argparse.ArgumentParser()
-    src = ap.add_mutually_exclusive_group(required=True)
+    src = ap.add_mutually_exclusive_group(required=False)
     src.add_argument("--url", help="published-to-web CSV url")
     src.add_argument("--csv", help="a downloaded CSV file")
     src.add_argument("--sheet-id",
                      help="read a PRIVATE responses sheet via the Sheets API, "
-                          "using credentials/google_service_account.json")
+                          "using credentials/google_service_account.json "
+                          "(default: the id in " + SHEET_ID_FILE + ")")
     ap.add_argument("--tab", help="worksheet name (default: the first tab)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--trusted", default=TRUSTED,
@@ -503,6 +520,18 @@ def main():
     ap.add_argument("--no-trust", action="store_true",
                     help="ignore the whitelist; queue everything for review")
     args = ap.parse_args()
+
+    # No source given: fall back to the saved sheet id. Explicit about it,
+    # because silently reading a different sheet than the caller meant is
+    # exactly the kind of plausible-wrong-answer this repo keeps hitting.
+    if not (args.sheet_id or args.url or args.csv):
+        args.sheet_id = saved_sheet_id()
+        if not args.sheet_id:
+            raise SystemExit(
+                "no source given and no saved sheet id at %s. "
+                "Pass --sheet-id/--url/--csv, or write the id to that file."
+                % SHEET_ID_FILE)
+        print("using saved sheet id from %s" % SHEET_ID_FILE)
 
     if args.sheet_id:
         text = fetch_sheet_csv(args.sheet_id, args.tab)

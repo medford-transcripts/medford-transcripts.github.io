@@ -63,6 +63,7 @@ QUEUE = "corrections_queue.json"
 # that rewrites the file and churns git history for no change.
 REFUSE = ("truncated", "unparsed", "none", "verified")
 
+import speaker_provenance as SP
 from srt_lines import (parse_srt, render_srt, find_block, line_span,
                        line_text, normalise as norm, to_timestamp)
 
@@ -518,6 +519,7 @@ def main():
         recs.sort(key=lambda r: -float(r[1]["original_timestamp"]))
 
         n = map_only = 0
+        vid_rids = []
         for rid, rec in recs:
             report = []
             ok = apply_one(rec, blocks, mapping, report, word_times)
@@ -536,6 +538,7 @@ def main():
                 if ok:
                     n += 1
                 applied_ids.append(rid)
+                vid_rids.append(rid)
 
         if args.apply and (n or mapping != before_map):
             if n:
@@ -543,6 +546,23 @@ def main():
             if mapping != before_map:
                 write_atomic(ids_path,
                              json.dumps(mapping, indent=4, ensure_ascii=False) + chr(10))
+                # A CORRECTION IS A HUMAN ASSERTION, SO IT MUST SAY SO.
+                # Until now this wrote speaker_ids.json and nothing else, so a
+                # submitted name kept whatever provenance was already there --
+                # in practice "unknown" from an old backfill. is_protected()
+                # only honours "manual" and "backfill_high_confidence", so
+                # propagate() was free to overwrite the one kind of label we
+                # most need to keep. Same failure shape as the rest of this
+                # file's history: a value that looks authoritative while the
+                # guard that reads it cannot tell it apart from a guess.
+                src = "corrections_queue:" + ",".join(vid_rids) if vid_rids else "corrections_queue"
+                prov = SP.load_provenance(directory)
+                for key, value in mapping.items():
+                    if before_map.get(key) == value:
+                        continue
+                    SP.record(directory, key, value, "manual", from_=src,
+                              previous=before_map.get(key), provenance=prov)
+                SP.save_provenance(directory, prov)
             touched.append(video_id)
         print()
 
