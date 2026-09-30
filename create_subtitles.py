@@ -819,9 +819,31 @@ def request_git_push():
 # process is the only clean way to pick up new code, and the .bat wrapper
 # already loops -- so the right move is to notice, finish the work in hand,
 # and exit.
+# A MODULE THE WATCHED SET IMPORTS IS NOT AUTOMATICALLY WATCHED, and the two
+# additions below were found missing on 2026-09-29 by listing the imports of
+# everything here:
+#
+#   speaker_provenance.py defines is_protected() and PROTECTED_SOURCES, the
+#   guard track_speakers.propagate() consults before overwriting a label. Widen
+#   what counts as protected and a running loop goes on enforcing the OLD rules
+#   indefinitely -- it would keep overwriting the very labels the change was
+#   made to shield, which is exactly the failure this restart guard exists to
+#   prevent, one import away from being covered.
+#
+#   site_url.py builds every absolute URL on the site. It is the module whose
+#   backslash bug put ~27,000 pages out of Google's index, and that failure is
+#   invisible from inside the process, so a fix that does not reach a running
+#   loop keeps emitting bad canonicals for as long as the loop lives.
+#
+# download_castus.py, download_mcm.py, make_word_times.py and backup_sync.py
+# are also imported and deliberately NOT here: they change far more often and a
+# stale copy costs a re-fetch, not a silently wrong published page. Every entry
+# added makes restarts more frequent, and a restart mid-transcription throws
+# away the current meeting's work.
 WATCHED_SOURCES = ["srt2html.py", "utils.py", "track_speakers.py",
                    "create_subtitles.py", "fix_common_errors.py",
-                   "srt_lines.py", "make_committee_pages.py"]
+                   "srt_lines.py", "make_committee_pages.py",
+                   "speaker_provenance.py", "site_url.py"]
 
 
 def _source_mtimes():

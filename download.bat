@@ -37,7 +37,7 @@ echo ============================================================>> "%LOG%"
 echo [%NOW%] starting %SCRIPT% %ARGS%>> "%LOG%"
 echo ============================================================>> "%LOG%"
 
-echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)
+echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)>nul
 
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
@@ -45,15 +45,21 @@ set "RC=%ERRORLEVEL%"
 for /f %%t in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-ddTHH:mm:ss"') do set "NOW=%%t"
 >> "%LOG%" echo [%NOW%] EXITED with code %RC%
 
-REM Surface the failure on the console too, so it is visible at a glance
-REM if someone happens to be watching -- the log keeps it either way.
-echo.
-echo [%NOW%] %SCRIPT% %ARGS% EXITED with code %RC%. Last 40 log lines:
-echo ------------------------------------------------------------
-powershell -NoProfile -Command "Get-Content -LiteralPath '%LOG%' -Tail 40"
-echo ------------------------------------------------------------
-echo Restarting in %RESTART_SECONDS%s.  Full log: %LOG%
-echo.
+REM CONSOLE OUTPUT GOES TO NUL, DELIBERATELY. This loop runs detached under
+REM Task Scheduler with nobody reading its console, and a console whose buffer
+REM fills blocks cmd.exe on write -- which is how this wrapper wedged for 29
+REM hours on 2026-09-28: it logged "starting", launched python, and then never
+REM wrote EXITED and never looped, so Task Scheduler saw State=Running and
+REM restart-on-failure never fired. Same failure CLASS as the `pause` this file
+REM was rewritten to remove (see the header), reached by a different route.
+REM The log keeps everything; the console was only ever a convenience.
+>nul 2>&1 (
+  echo.
+  echo [%NOW%] %SCRIPT% %ARGS% EXITED with code %RC%. Last 40 log lines:
+  powershell -NoProfile -Command "Get-Content -LiteralPath '%LOG%' -Tail 40"
+  echo Restarting in %RESTART_SECONDS%s.  Full log: %LOG%
+  echo.
+)
 
 powershell -NoProfile -Command "Start-Sleep -Seconds %RESTART_SECONDS%"
 goto loop

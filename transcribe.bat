@@ -37,7 +37,7 @@ echo ============================================================>> "%LOG%"
 echo [%NOW%] starting %SCRIPT% %ARGS%>> "%LOG%"
 echo ============================================================>> "%LOG%"
 
-echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)
+echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)>nul
 
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
@@ -45,15 +45,19 @@ set "RC=%ERRORLEVEL%"
 for /f %%t in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-ddTHH:mm:ss"') do set "NOW=%%t"
 >> "%LOG%" echo [%NOW%] EXITED with code %RC%
 
-REM Surface the failure on the console too, so it is visible at a glance
-REM if someone happens to be watching -- the log keeps it either way.
-echo.
-echo [%NOW%] %SCRIPT% %ARGS% EXITED with code %RC%. Last 40 log lines:
-echo ------------------------------------------------------------
-powershell -NoProfile -Command "Get-Content -LiteralPath '%LOG%' -Tail 40"
-echo ------------------------------------------------------------
-echo Restarting in %RESTART_SECONDS%s.  Full log: %LOG%
-echo.
+REM CONSOLE OUTPUT GOES TO NUL, DELIBERATELY -- same reason as download.bat.
+REM This runs detached under Task Scheduler with nobody reading its console, and
+REM a console whose buffer fills blocks cmd.exe on write. download.bat wedged
+REM exactly that way for 29 hours on 2026-09-28: it logged "starting", launched
+REM python, then never wrote EXITED and never looped, so Task Scheduler saw
+REM State=Running and restart-on-failure never fired. The log keeps everything.
+>nul 2>&1 (
+  echo.
+  echo [%NOW%] %SCRIPT% %ARGS% EXITED with code %RC%. Last 40 log lines:
+  powershell -NoProfile -Command "Get-Content -LiteralPath '%LOG%' -Tail 40"
+  echo Restarting in %RESTART_SECONDS%s.  Full log: %LOG%
+  echo.
+)
 
 powershell -NoProfile -Command "Start-Sleep -Seconds %RESTART_SECONDS%"
 goto loop
