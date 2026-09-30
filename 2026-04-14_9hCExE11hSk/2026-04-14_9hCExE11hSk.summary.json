@@ -1,0 +1,39 @@
+{
+ "video_id": "9hCExE11hSk",
+ "provider": "gemini",
+ "generated_at": "2026-09-30T21:05:22Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "f0cb4d2ab946d83c",
+ "overview": "The committee approved the city council newsletter draft covering February through April and reviewed a draft strategy for hosting sixteen neighborhood ward meetings over the next two years.",
+ "items": [
+  {
+   "title": "City Council Newsletter",
+   "t": 337,
+   "summary": "Approved the combined February, March, and April newsletter draft with additions regarding budget priorities, the vacant property ordinance, and election commission equipment.",
+   "speakers": [
+    "Liz Mullane",
+    "Matt Leming",
+    "Anna Callahan",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Neighborhood Ward Meetings Strategy",
+   "t": 903,
+   "summary": "Reviewed a rollout plan for sixteen ward-based meetings, discussing logistical challenges including hybrid technology requirements, location accessibility in underserved areas, and councilor co-facilitation.",
+   "speakers": [
+    "Liz Mullane",
+    "Matt Leming",
+    "Anna Callahan",
+    "Justin Tseng",
+    "Micah Kesselman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10386,
+  "output_tokens": 253
+ }
+}
