@@ -34,6 +34,10 @@ from pathlib import Path
 
 # imports from this repo
 import srt2html, supercut, generate_reference_voices, utils, track_speakers
+# make_committee_pages for the startup site-wide rebuild below. Safe to import
+# here: srt2html imports it too, and it imports neither of them back (see the
+# note in utils.web_path about why that direction is one-way).
+import make_committee_pages
 import download_mcm
 import download_castus
 
@@ -1041,6 +1045,42 @@ if __name__ == "__main__":
     if opt.update:
         utils.update_all()
         sys.exit()
+
+    # REBUILD THE SITE-WIDE FILES ONCE, BEFORE TOUCHING THE QUEUE.
+    #
+    # When a watched source changes, a running process publishes the meeting it
+    # just finished and then REFUSES to regenerate index.html / committees/ /
+    # sitemap, because it would overwrite newer code's output with output from the
+    # code it loaded at startup (see sources_changed(), finish_async and
+    # push_to_git). That guard is right. What was missing is anyone to do the
+    # deferred work: the restarted process only rebuilt those files when it next
+    # happened to finish a pass with do_extras=True.
+    #
+    # Measured cost of that gap on 2026-09-29: the 9/28 School Committee meeting
+    # was transcribed and its own page published, then sat absent from index.html
+    # and its committee page -- reachable only by direct URL. For an archive whose
+    # transcript is the only public record of a meeting, unreachable is close to
+    # unpublished.
+    #
+    # A FRESHLY STARTED PROCESS HAS CURRENT CODE BY DEFINITION, so rebuilding here
+    # cannot overwrite anything newer, and it closes the window deterministically
+    # rather than depending on when a pass finishes. Costs a couple of minutes
+    # against the ~7 this loop already spends loading models. Never fatal: a
+    # failure here must not stop transcription, which is the actual job.
+    if not opt.update:
+        try:
+            t_rebuild = datetime.datetime.now()
+            print("startup: rebuilding the site-wide files "
+                  "(deferred by any source change while the last process ran)",
+                  flush=True)
+            make_committee_pages.make()
+            srt2html.make_index()
+            print("startup: site-wide rebuild done in %.0fs"
+                  % (datetime.datetime.now() - t_rebuild).total_seconds(), flush=True)
+        except Exception as _e:
+            print("startup: site-wide rebuild FAILED (%s: %s) -- continuing; the "
+                  "queue matters more than the index" % (type(_e).__name__, str(_e)[:120]),
+                  flush=True)
 
     # read info
     jsonfile = 'video_data.json'
