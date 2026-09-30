@@ -1,0 +1,748 @@
+{
+ "_comment": [
+  "Documents whose date came from the PDF TEXT rather than the filename.",
+  "A weaker source: 67% agreement at best confidence in validation, and",
+  "the text can carry the same typos as the titles. Recorded so these",
+  "files stay identifiable if a date turns out to be wrong."
+ ],
+ "documents": {
+  "2016.05.02 - School Committee May Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1Li5HADJr8NKWO7e4sayx79GNPBFCteqO",
+   "original_name": "agenda-May-2.pdf",
+   "folder_span": [
+    "2015-09-03",
+    "2016-06-20"
+   ],
+   "recorded": "2026-09-30"
+  },
+  "2015.11.16 - School Committee November Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1-p1963C8crljDjOUN_kT7cPIcbtKSF6E",
+   "original_name": "agenda-November-16.pdf",
+   "folder_span": [
+    "2015-09-03",
+    "2016-06-20"
+   ],
+   "recorded": "2026-09-30"
+  },
+  "2016.05.02 - School Committee MinutesMay22016 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1cI67g7PimOgc7lrtrMFwx1CZvOOViYgq",
+   "original_name": "MinutesMay22016.doc.pdf",
+   "folder_span": [
+    "2015-09-21",
+    "2016-08-29"
+   ],
+   "recorded": "2026-09-30"
+  },
+  "2018.01.03 - School Committee January 3, 3018 Organizational Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1fS1PKyYz6QyloT6drgQdgdJ_ik4LT089",
+   "original_name": "January 3, 3018 Minutes Organizational Meeting.pdf",
+   "folder_span": [
+    "2017-06-19",
+    "2018-06-04"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2016.05.09 - School Committee Building and Grounds May Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1d9e4qzagMyWp9_2hRhdOZQ8SbIWXgnvA",
+   "original_name": "Buildings-and-Grounds-May-9.pdf",
+   "folder_span": [
+    "2015-09-03",
+    "2016-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2016.04.25 - School Committee Medford Public Schoo21 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1tCrVr_og0NnTQQXqn1JiEvFRMC09decY",
+   "original_name": "Medford-Public-Schoo21.pdf",
+   "folder_span": [
+    "2015-09-03",
+    "2016-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2017.01.25 - School Committee MSC Meeting of the Whole Jan 25 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1W99i-R7AvXRSzyCTFDuk1nfURcdt-srr",
+   "original_name": "Comm-of-Whole-Minutes-Jan-25-2107.pdf",
+   "folder_span": [
+    "2016-09-12",
+    "2017-06-19"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2016.05.09 - School Committee Building and Grounds SubComm May Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1g7ZnMUHlmdqyJ_vCmrjdQ7-slpg1YOTY",
+   "original_name": "Buildings-and-Grounds-SubComm-Minutes-May-9.pdf",
+   "folder_span": [
+    "2015-09-21",
+    "2016-08-29"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2015.09.28 - School Committee Sept Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1DwQrbkI49n6g7II0INy1q5DB_ALey3Zd",
+   "original_name": "Minutes-Sept-28.pdf",
+   "folder_span": [
+    "2015-09-21",
+    "2016-08-29"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2015.05.18 - School Committee May Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1D8OHQlSmAazNbFqxVUeszYRCbBrBGAVW",
+   "original_name": "agenda-May-18.pdf",
+   "folder_span": [
+    "2014-09-08",
+    "2015-06-15"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.11.17 - School Committee November17 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1j9jKm_gzgKL5QnhCYq4jxhgXPajmfj9z",
+   "original_name": "agenda-November17.pdf",
+   "folder_span": [
+    "2014-09-08",
+    "2015-06-15"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2015.04.30 - School Committee MSC Meeting of the Whole April 30 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1naPO3y07t3KO08jp0QYff4EL7Svl7Qrs",
+   "original_name": "Comm-of-Whole-Minutes-April-30-1.pdf",
+   "folder_span": [
+    "2014-09-08",
+    "2015-06-11"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.09.29 - School Committee Sept Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1L0r2SKF3rVRJbDOpLVbyJt9L7Ett-ir5",
+   "original_name": "Minutes-Sept-29.pdf",
+   "folder_span": [
+    "2014-09-08",
+    "2015-06-11"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.05.05 - School Committee May Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1LkSwe7dZQUdlc5ovjkGBPKcrkNtK3ipj",
+   "original_name": "agenda-May-5.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.01.27 - School Committee February 24 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1L1UR101SpbWwd-ffnhGLOm73a6G_BF7L",
+   "original_name": "agenda-February-24-20143.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.01.30 - School Committee MSC Meeting of the Whole Feb 5 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1DgUNGhpOwRm-aUXVkclN9WTYWdJFhutv",
+   "original_name": "Comm-of-Whole-Feb-5-posting.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.01.06 - School Committee 2014 organz meeting Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1gIgpJwILbhB7ne8aVyU3onSdxRXIDOTM",
+   "original_name": "2014-organz-meeting-posting.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.11.18 - School Committee December 2 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1CkAKSVayerkQb9SjnEMPVP-_vndKhQzf",
+   "original_name": "agenda-December-2-3013.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.05.22 - School Committee May 22 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1NcqKrfAENFa96RiJUXf25TomPlwByysC",
+   "original_name": "May-22-Minutes.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.05.15 - School Committee MSC Meeting of the Whole May 15 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1p_-OurfCBIzmU1I-NgDMs1D3V_A9TiU1",
+   "original_name": "Comm-of-Whole-Minutes-May-15-1.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2014.04.30 - School Committee MSC Meeting of the Whole April Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1A-TV_5HV4OFBuUGM9JT_E1cr8yh3o_H9",
+   "original_name": "Comm-of-Whole-Minutes-April-30.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.10.29 - School Committee Oct 29 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "10BTeyWqCbyl-BYSAE7HgoTgdId8kuxOs",
+   "original_name": "Oct-29-Minutes.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.10.10 - School Committee Oct 10 Special Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1C52DReraS6ELhGOhiyrH2j9s_iPQ8Mxa",
+   "original_name": "Oct-10-Minutes-Special-Meeting.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.10.10 - School Committee Oct 10 MSC Meeting of the Whole Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1J5FDk5vA7JlKZ7Dos48BOmjsCTTyVzgC",
+   "original_name": "Oct-10-Comm-of-Whole-Minutes.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.09.30 - School Committee Sept 30 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1SYJAc8oJueHKUbC9wi_lpKQOarT68KVq",
+   "original_name": "Sept-30-Minutes.pdf",
+   "folder_span": [
+    "2013-09-09",
+    "2014-06-16"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.08.21 - School Committee Special Meeting Aug Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1Eagqlgolr-LjZmrE41bIzrpl_s_I3WP-",
+   "original_name": "Special-Meeting-Aug-23.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-08-21"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.03.14 - School Committee Postin Mar 14 curr subcommittee Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1SYWIxddeC5nUlVX2JORFCctXIcPyZDUC",
+   "original_name": "Postin-Mar-14-curr-subcommittee.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-08-21"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.03.11 - School Committee March 11 support services Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1WIuFI5fBvILYMs9mlaY6B7pfqeu2jLjG",
+   "original_name": "Posting-March-11-support-services.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-08-21"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.01.02 - School Committee 2013 organz meeting Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1_FRMYFFDnM3W9iOpVLDRCS9GD4LRfAjO",
+   "original_name": "2013-organz-meeting-posting.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-08-21"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.05.29 - School Committee MSC Meeting of the Whole May 29 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1YoSPAaJeLofgh7W8PWYQWx7-uA-JubvI",
+   "original_name": "Comm-of-Whole-May-29-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.05.22 - School Committee MSC Meeting of the Whole May 22 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1SumVN0ftTzxTJ5cAJ8NCjHdNChZf8TOQ",
+   "original_name": "Comm-of-Whole-May-22-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.05.16 - School Committee May 16 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1hGaz4h--b2sJ-JoUQl7Ek3L_278QHB9k",
+   "original_name": "May-16-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.04.24 - School Committee MSC Meeting of the Whole April 24 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1thcxsjwZzqgo1Js2grftcTluTfJsm8BO",
+   "original_name": "Comm-of-Whole-April-24-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.04.04 - School Committee MSC Meeting of the Whole April 4 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1V-39WzOb1C4wHJLAAPuFQV38IDwXjtPV",
+   "original_name": "Comm-of-Whole-April-4-minutes-2013.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.03.14 - School Committee Curr Subcomm March 14 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1PQFRrIOP82_qGB0nuXYgOdyc08hPBtAt",
+   "original_name": "Curr-Subcomm-minutes-March-14-13.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.01.24 - School Committee MSC Meeting of the Whole Jan 24 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1bwdba_-z91ojnqgZX03w6ne62ZjiCU_Y",
+   "original_name": "Comm-of-Whole-Jan-24-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2013.01.14 - School Committee MSC Meeting of the Whole Jan 14 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1wLiIfrzZQtc3aY4YtUPmVjL2yHvg3YTu",
+   "original_name": "Comm-of-Whole-Jan-14-minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2012.10.25 - School Committee MSC Meeting of the Whole 10.25.121 Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1SBXFwDqFP1jRORvV3FqziuTQLKBMI0w5",
+   "original_name": "Comm-of-Whole-10.25.121-Minutes.pdf",
+   "folder_span": [
+    "2012-09-10",
+    "2013-06-03"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2012.05.07 - School Committee MSC Meeting of the Whole May 14 15 16 2012 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1X3PP41IR4LZURNcMZJDaFncaOqRcNd65",
+   "original_name": "Comm-of-Whole-May-14-15-16-2012-posting.pdf",
+   "folder_span": [
+    "2011-09-12",
+    "2012-08-22"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2012.05.03 - School Committee MSC Meeting of the Whole May 8 and 10 2012 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1Y67aGAOTyJWSYu_q2Ia3SpZSxyHj-AGz",
+   "original_name": "Comm-of-Whole-May-8-and-10-2012-posting.pdf",
+   "folder_span": [
+    "2011-09-12",
+    "2012-08-22"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2012.01.09 - School Committee Jan 9 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "11J71Y0ACHBgs661VPlwRI3ZUfHZYMj8q",
+   "original_name": "agenda-Jan-9-20121.pdf",
+   "folder_span": [
+    "2011-09-12",
+    "2012-08-22"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2011.03.31 - School Committee March 31 MSC Meeting of the Whole Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1yHoxh0_3drLd8Q_UFP1WhKrPtXTaMotf",
+   "original_name": "March-31-committee-of-whole.pdf",
+   "folder_span": [
+    "2010-08-31",
+    "2011-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2011.04.06 - School Committee b+g sub committee 4.6 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1IR7DYBZTzVK0e1UWeplAnC9b2hrMm3bH",
+   "original_name": "b+g-sub-committee-posting-4.6.pdf",
+   "folder_span": [
+    "2010-08-31",
+    "2011-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2011.04.13 - School Committee MSC Meeting of the Whole 4.13 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1dihNFYD9C2VVPd9ptTnehXwoupNbayrj",
+   "original_name": "Comm-of-Whole-4.13.pdf",
+   "folder_span": [
+    "2010-08-31",
+    "2011-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2011.06.15 - School Committee MSC Meeting of the Whole 6.13 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1thTLIrVO1f__QfFHDZ7p7D1D1p4bRhBk",
+   "original_name": "Comm-of-Whole-6.13.pdf",
+   "folder_span": [
+    "2010-08-31",
+    "2011-06-20"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.05.17 - School Committee May 17 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1OG6kXt-LSiMPYvhqPKAou_kqS7vkecJk",
+   "original_name": "Agenda-May-17-10.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.05.13 - School Committee McGlynn Interviews Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1a9hK87H3Zei0T8_d0zwe9NnfcCj7imM1",
+   "original_name": "McGlynn-Interviews.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.05.12 - School Committee May 12 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1FhQAq-tsprmOEL8Sf9BQ9NYLQThA38fT",
+   "original_name": "May-12-agenda.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.04.15 - School Committee April 15 Com of Wh Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "10ySUEjvuGvEoTygZdbTnGDcRpQLTOsfj",
+   "original_name": "April-15-Agenda-Com-of-Wh.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.03.01 - School Committee MSC Meeting of the Whole Meeting March 15 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "182jIwAdR1Efd4KC7TXdinqAHKTC1A3lb",
+   "original_name": "Committee-of-the-Whole-Meeting-March-15-20101.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.01.04 - School Committee Microsoft Word Comm. of the Whole Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1WCSj1ENoJIr3ppTD-nj8GiO6lZhyfrY9",
+   "original_name": "Microsoft-Word-Comm.-of-the-Whole..pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2009.10.26 - School Committee Oct. 26 Agenda.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "13sAzPJGwoC96bGgoNH3gL3X4lh52wCO2",
+   "original_name": "Agenda-Oct.-26-09.pdf",
+   "folder_span": [
+    "2009-10-05",
+    "2010-06-07"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.05.03 - School Committee Reg. Mtg May 3 Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1m8ROTFJGbE_6u3LeCLy7322RON25SijP",
+   "original_name": "Reg.-Mtg-May-3-Meeting-minutes.pdf",
+   "folder_span": [
+    "2010-01-11",
+    "2010-05-17"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.04.26 - School Committee April 26 Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1eZ53M4zr520qPdzEBRfSPDbI9gDeVjeZ",
+   "original_name": "April-26-Meeting-Minutes.pdf",
+   "folder_span": [
+    "2010-01-11",
+    "2010-05-17"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.04.15 - School Committee April 15 Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "15mCN8ZW5uZh6IDaRh6Q9fZhOUi8a9Zhx",
+   "original_name": "April-15-Meeting-Minutes.pdf",
+   "folder_span": [
+    "2010-01-11",
+    "2010-05-17"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.04.05 - School Committee Regular Meeting April 5 Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1IYvBkxJ6x1WMb76sTdEdAUnA_1fNjGhm",
+   "original_name": "Regular-Meeting-April-5-Meeting-Minutes (1).pdf",
+   "folder_span": [
+    "2010-01-11",
+    "2010-05-17"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  },
+  "2010.02.08 - School Committee February 8 Meeting Minutes.pdf": {
+   "date_source": "pdf_text",
+   "confidence": 3,
+   "why": "meeting cue, near top",
+   "drive_id": "1mJGjUcSGW0lSuLjrfFiZ7teBbWj_wDyN",
+   "original_name": "February-8-Meeting-Minutes.pdf",
+   "folder_span": [
+    "2010-01-11",
+    "2010-05-17"
+   ],
+   "no_meeting_yet": true,
+   "recorded": "2026-09-30"
+  }
+ }
+}

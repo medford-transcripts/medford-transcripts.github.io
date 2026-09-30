@@ -420,6 +420,21 @@ def get_meeting_type(video):
     if video["channel"].strip() == "Medford Happenings":
         return "Medford Happenings"
 
+    # THE SHOW NAME IN THE TITLE, when the episode is published by someone else.
+    # "Medford Happenings - Charter Study Committee with Ron Giovino" came through
+    # MCM Castus, so the channel branch above did not fire, and the keyword map
+    # below matched BOTH "medford happenings" and "charter study committee" --
+    # first-match-wins handed a 37-minute interview show to the Charter Study
+    # Committee, putting it on that committee's page and into any candidate set
+    # derived from that body. Same shape as the COW collision in scrape_mps.py:
+    # two valid keywords, order decides, the wrong one is silently authoritative.
+    #
+    # Anchored to the START of the title so it cannot capture a meeting that merely
+    # mentions the show. Measured 2026-09-30: this re-types exactly ONE video and
+    # leaves the 120 already-correct episodes alone.
+    if video["title"].strip().lower().startswith("medford happenings"):
+        return "Medford Happenings"
+
 
     t = video["title"].lower()
     meeting_type_map = meeting_type_keywords()
