@@ -32,6 +32,10 @@ import sys
 
 import utils
 
+# chr(10) rather than a backslash-n literal: every attempt to write one
+# through this session's tooling collapsed it into a real newline mid-string.
+NL = chr(10)
+
 TEMPLATE = "verify_template.html"
 OUTPUT = "verify.html"
 SITE = "https://medford-transcripts.github.io/"
@@ -218,11 +222,22 @@ def rollcall_stats(vd, dirs):
         if mc:
             called += mc
             answered += ma
-            # >=10 names, so "every name went unanswered" means something
-            if ma == 0 and mc >= 10:
-                worst.append((str(utils.meeting_date(e)), str(e.get("title") or "")[:58],
-                              mc, page_url(d)))
-    worst.sort(key=lambda r: r[2])
+            # THRESHOLD OF 5, NOT 10. Medford's City Council and School Committee
+            # have SEVEN members and subcommittees three to five, so one roll call
+            # is 3-7 names. Requiring >=10 required TWO OR MORE roll calls in a
+            # single meeting before it could be reported as broken, which made
+            # "no meetings where every name went unanswered" nearly vacuous: a
+            # meeting whose only roll call failed entirely could not qualify. The
+            # eight meetings originally listed all had 10-41 names, i.e. they were
+            # multi-vote meetings; single-roll-call failures were never visible.
+            # EVERY meeting with a roll call, ranked later by VOTES MISSING.
+            # Ranking by percentage is the wrong instrument: a 42% meeting with 78
+            # names loses 45 votes, a 0% meeting with 5 names loses 5. The first is
+            # where an hour of someone's attention buys the most record back.
+            if mc >= 5:
+                worst.append((mc - ma, mc, ma, str(utils.meeting_date(e)),
+                              str(e.get("meeting_type") or "untyped"), page_url(d)))
+    worst.sort(reverse=True)
     return called, answered, worst
 
 
@@ -289,58 +304,49 @@ def build():
     missing = called - answered
     pairs = duplicate_pairs(vd, dirs)
 
+    missing_total = sum(w[0] for w in worst)
+    losing = [w for w in worst if w[0] > 0]
+
     fill = {
-        "OPEN_COUNT": "%d clusters open" % total_open,
-        "OPEN_COUNT_N": "%d" % total_open,
-        "SUSPECT_LABELS": consistency_rows(per_name),
-        "OPEN_BY_BODY": "\n".join(
-            '  <tr><td>%s</td><td class="mono">%d</td></tr>' % (esc(b), n)
-            for b, n in by_body.most_common(8)),
-        "OPEN_MEETINGS": "\n".join(meeting_rows),
-        "ROLLCALL_STATS": "\n".join([
-            '      <tr><td>Names called in a roll call</td><td class="mono">%s</td></tr>'
-            % format(called, ","),
-            '      <tr><td>With a response captured in the audio</td>'
-            '<td class="mono">%s</td></tr>' % format(answered, ","),
-            '      <tr><td class="bad">With no response recorded at all</td>'
-            '<td class="mono bad">%s</td></tr>' % format(missing, ","),
-        ]),
-        # AN EMPTY LIST IS GOOD NEWS AND MUST READ AS SUCH. Rendering "0
-        # meetings where every name was called..." above an empty table would
-        # look like the page failed to load. As of 2026-09-29 there are none:
-        # six of the eight previously listed now register answers, three of them
-        # from corrections submitted through this very page.
-        "ROLLCALL_WORST_SENTENCE":
-            ("No meetings currently have a roll call where every name went "
-             "unanswered &mdash; the last of them were resolved by corrections "
-             "submitted here.")
-            if not worst else
-            ("%d meetings where every name was called and no answer was "
-             "captured." % len(worst)),
-        # The follow-on clause only makes sense when something IS listed.
-        "ROLLCALL_WORST_TAIL":
-            "" if not worst else
-            (" If you can watch the video and hear the responses, those votes "
-             "are recoverable."),
-        "ROLLCALL_WORST": "\n".join(
-            '  <tr><td>%s &mdash; %s</td><td class="mono">%d</td>'
-            '<td class="mono bad">0%%</td>'
+        # Roll calls, ranked by VOTES MISSING. A dozen links, because the ask is
+        # "watch one roll call", not "read a report".
+        "ROLLCALL_COUNT": "%d meetings losing votes" % len(losing),
+        "ROLLCALL_LINKS": NL.join(
+            '  <tr><td class="mono">%s</td><td>%s</td>'
+            '<td class="mono bad">%d</td><td class="mono">%d of %d</td>'
             '<td><a href="%s">open transcript</a></td></tr>'
-            % (esc(date), esc(title), n, url)
-            for date, title, n, url in worst[-8:]) or
-            '  <tr><td colspan="4" class="note">none right now</td></tr>',
+            % (esc(date), esc(body), miss, ma, mc, url)
+            for miss, mc, ma, date, body, url in losing[:12])
+            or '  <tr><td colspan="5" class="note">none right now</td></tr>',
+        "ROLLCALL_STATS_LINE":
+            "Across the archive %s names were called in a roll call and %s had an "
+            "answer captured, leaving %s with no response recorded. %d meetings "
+            "are missing at least one."
+            % (format(called, ","), format(answered, ","),
+               format(called - answered, ","), len(losing)),
+
+        "OPEN_COUNT": "%d clusters open" % total_open,
+        "OPEN_MEETINGS": NL.join(meeting_rows[:12])
+            or '  <tr><td colspan="5" class="note">none right now</td></tr>',
+        "OPEN_BY_BODY_LINE":
+            "%d clusters across %d bodies. Worst affected: %s."
+            % (total_open, len(by_body),
+               "; ".join("%s (%d)" % (esc(b), n) for b, n in by_body.most_common(4))),
+
         "DUP_COUNT": "%d to spot-check" % len(pairs),
-        "DUP_ROWS": "\n".join(
+        "DUP_ROWS": NL.join(
             '  <tr><td class="mono">%s</td><td>%s</td><td>'
             '<a href="%s">%d&thinsp;s</a> &middot; <a href="%s">%d&thinsp;s</a></td></tr>'
             % (esc(date), esc(body), page_url(dirs[a[1]]), int(a[0]),
                page_url(dirs[b[1]]), int(b[0]))
-            for date, body, a, b in pairs[:5]),
-        "GENERATED": datetime.datetime.now().strftime("%-d %B %Y")
-        if os.name != "nt" else datetime.datetime.now().strftime("%d %B %Y").lstrip("0"),
+            for date, body, a, b in pairs[:12])
+            or '  <tr><td colspan="3" class="note">none right now</td></tr>',
+
+        "GENERATED": datetime.datetime.now().strftime("%d %B %Y").lstrip("0"),
     }
     return fill, dict(total_open=total_open, bodies=len(by_body), called=called,
-                      answered=answered, worst=len(worst), pairs=len(pairs))
+                      answered=answered, worst=len(losing), pairs=len(pairs),
+                      missing=missing_total)
 
 
 def main():
@@ -351,7 +357,7 @@ def main():
     fill, summary = build()
     print("open clusters      : %(total_open)d across %(bodies)d bodies" % summary)
     print("roll call          : %(called)d called, %(answered)d answered" % summary)
-    print("  meetings at 0%%    : %(worst)d" % summary)
+    print("  meetings losing votes: %(worst)d  (%(missing)d votes unrecorded)" % summary)
     print("duplicate pairs    : %(pairs)d" % summary)
 
     tpl = io.open(TEMPLATE, encoding="utf-8").read()
