@@ -23,7 +23,7 @@ from googletrans import Translator, constants
 import yt_dlp
 
 # imports from this repo
-import utils, supercut, fix_common_errors, heatmap, scrape
+import utils, supercut, fix_common_errors, scrape
 import download_castus
 import srt_lines
 import make_committee_pages
@@ -405,6 +405,31 @@ def summary_block(dir, filebasename, yt_id, video_data=None):
     return "".join(out)
 
 
+def committee_page(yt_id, video_data=None):
+    """(href, display name) of the committee page a meeting belongs to.
+
+    The meeting page had no way UP. Its only navigation was "Back to all
+    transcripts", which drops a reader out of the body they were reading and
+    into the full 6,000-row index; the committee pages that group meetings by
+    body existed but nothing linked to them from a transcript.
+
+    Derived, not stored: the path comes from utils.committee_page, the same
+    helper make_committee_pages names its output with, so this link cannot
+    drift from the generator. Untyped videos fall to "Other", the bucket
+    that generator files them under too.
+
+    Returns None when the page does not exist -- 960 of 6,054 videos have no
+    meeting_type and one type ("News") gets no page -- so a missing committee
+    costs the reader nothing rather than giving them a dead link.
+    """
+    entry = (video_data or {}).get(yt_id) or {}
+    name = (entry.get("meeting_type") or "").strip() or "Other"
+    path = utils.committee_page(name)          # the generator's own naming
+    if not os.path.exists(path):
+        return None
+    return "../" + path, name
+
+
 def source_url(yt_id, video_data=None):
     """Where the original recording lives, with no timestamp. May be None.
 
@@ -772,12 +797,13 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         html.write('    <a href="../index.html">' + text + '</a><br><br>\n')
 
-        if os.path.exists(os.path.join(dir,"heatmap.html")):
-            text = 'Heatmap of speakers'
+        ctte = committee_page(yt_id, video_data)
+        if ctte:
+            text = 'More from this committee'
             if language != 'en':
                 text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
-            html.write('    <a href="heatmap.html">' + text + '</a><br><br>\n')
+            html.write('    <a href="' + ctte[0] + '">' + text + ': ' + ctte[1] + '</a><br><br>\n')
 
         html.close()
 
@@ -948,6 +974,13 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         html = open(htmlfilename, 'a', encoding="utf-8")
         html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
+
+        ctte = committee_page(yt_id, video_data)
+        if ctte:
+            up = 'More from this committee'
+            if language != 'en':
+                up = translate_text(up, dest=language, cachefile=basename + '.cache.json')
+            html.write('  <a href="' + ctte[0] + '">' + up + ': ' + ctte[1] + '</a><br><br>\n')
         # loaded last and deferred: the transcript renders and is readable
         # (and indexable) whether or not this ever runs
         if language == 'en':
@@ -1336,10 +1369,10 @@ def make_sitemap():
     # sitemap's urls -- nearly a third of the crawl budget spent on folium maps
     # of where speakers live.
     #
-    # Separately, these are slated for REMOVAL (plan.txt A22): the per-meeting
-    # map is noise in most meetings, and pinning a named resident's home per
-    # meeting is a real deterrent to speaking. The site-wide map keeps the
-    # analytic value. Dropping them from the sitemap is the first step.
+    # REMOVED 2026-09-30 (plan.txt A22): the per-meeting map was noise in most
+    # meetings, and pinning a named resident's home per meeting is a real
+    # deterrent to speaking. The site-wide map keeps the analytic value. This
+    # filter stays as a guard against stragglers in unpublished directories.
     files = [f for f in files if os.path.basename(f) != "heatmap.html"]
 
     # Pages for SKIPPED videos are duplicate recordings of a meeting that is
@@ -1419,14 +1452,6 @@ def do_one(yt_id,skip_translation=False, force=False, do_scrape=True, do_extras=
     t0 = datetime.datetime.utcnow()
     fix_common_errors.fix_common_errors(yt_id=yt_id)
 
-    # NOT force: the heatmap depends only on speaker_ids.json + addresses.json,
-    # never on the transcript template, so a forced HTML rebuild has no reason
-    # to redraw it. And folium stamps a RANDOM element id into every map
-    # (map_<32 hex>), so redrawing an unchanged map produces a ~4 KB diff whose
-    # coordinate data is byte-identical -- ~8 MB of pure git noise across the
-    # 1,935 heatmaps on every full regeneration.
-    # To genuinely rebuild them, delete the heatmap.html files first.
-    make_heatmap(yt_id, force=False)
     srt2html(yt_id, skip_translation=skip_translation, force=force)
 
     # WORD TIMINGS MUST FOLLOW THE PAGE THEY INDEX.
@@ -1479,38 +1504,6 @@ def do_all(skip_translation=False, force=False):
         except Exception as error:
             print("Failed on " + yt_id)
             print(error)
-
-def make_heatmap(yt_id, force=False):
-
-    with open("addresses.json", 'r') as fp:
-        directory = json.load(fp)
-    addresses = []
-
-    srtfilename = glob.glob('*'+yt_id+'*/20??-??-??_' + yt_id + '.srt')[0]
-    htmlfilename = os.path.splitext(srtfilename)[0] + '.html'
-    dir = os.path.dirname(srtfilename)
-
-    # read in the speaker mappings
-    jsonfile = os.path.join(dir,'speaker_ids.json')
-    if not os.path.exists(jsonfile): return
-    with open(jsonfile, 'r') as fp:
-        speaker_ids = json.load(fp)
-
-    for speaker in list(speaker_ids.values()):
-        if speaker in directory.keys():
-            if directory[speaker] != "":
-                addresses.append(directory[speaker])
-        elif "SPEAKER_" in speaker:
-            pass
-        else:
-            print("No address found for " + speaker)
-
-    if len(addresses) > 0:
-        htmlname = os.path.join(dir,'heatmap.html')
-        if not os.path.exists(htmlname) or force:
-            heatmap.heatmap(addresses, htmlname=htmlname)
-    else:
-        print("No matching addresses; skipping heatmap")
 
 if __name__ == "__main__":
 
