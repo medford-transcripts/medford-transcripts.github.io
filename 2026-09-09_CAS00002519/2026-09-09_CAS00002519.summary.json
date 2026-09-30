@@ -1,16 +1,16 @@
 {
  "video_id": "CAS00002519",
  "provider": "gemini",
- "generated_at": "2026-09-27T23:05:31Z",
+ "generated_at": "2026-09-30T02:06:22Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "4914ee7ba95842a9",
- "overview": "The committee recommended funding for five community preservation projects covering archaeological surveys, historical restorations, and park lighting. Members also reviewed the FY26 budget and finalized the 2026 meeting calendar with an emphasis on project tracking and public outreach.",
+ "transcript_sha": "dac8fbfd848374f3",
+ "overview": "The Community Preservation Committee approved several major fiscal year 2026 funding recommendations, including park lighting and historical restorations, and authorized a small grant for a historic site survey.",
  "items": [
   {
    "title": "Brooks Estate Archaeological Survey",
    "t": 70,
-   "summary": "Recommended $10,000 for a desktop archaeological survey of the 57-acre Brooks Estate and cemetery parcel. Condition: project coordination with M-BELT and the cemetery trustees.",
+   "summary": "Approved a $10,000 small grant for an archaeological sensitivity report at the Brooks Estate and neighboring cemetery parcel. The approval includes a condition that the Historical Commission coordinate with conservation restriction holders and the Brooks Estate Land Trust.",
    "speakers": [
     "Roberta Cameron",
     "Ryan Hayward",
@@ -21,23 +21,22 @@
    ]
   },
   {
-   "title": "FY26 Budget Review",
+   "title": "Fiscal Year 2026 Budget and Project Overview",
    "t": 1435,
-   "summary": "Reviewed the funding availability for the fiscal year, confirming approximately $2.66 million in total assets against $2.58 million in proposed project allocations. The committee verified that sufficient reserves remain for off-cycle requests and small grants.",
+   "summary": "Reviewed the available funding for the remaining four fiscal year 2026 projects, confirming approximately $2.6 million in available reserves across various categories. The committee determined that the current budget could accommodate all remaining requests.",
    "speakers": [
-    "Roberta Cameron",
     "Theresa Dupont",
-    "Doug Carr",
     "Jeremy Martin",
     "Joan Cyr",
+    "Roberta Cameron",
     "Ada Gunning",
     "Myisha Majumder"
    ]
   },
   {
-   "title": "World War II Fountain Restoration",
+   "title": "Angel of Victory and Peace Fountain Restoration",
    "t": 3249,
-   "summary": "Recommended $167,800 for the restoration of the Angel of Victory and Peace fountain. Condition: the city must provide a long-term maintenance plan.",
+   "summary": "Approved $167,800 for the restoration of the World War II fountain. The recommendation requires the submission of a long-term maintenance plan.",
    "speakers": [
     "Theresa Dupont",
     "Roberta Cameron",
@@ -45,9 +44,9 @@
    ]
   },
   {
-   "title": "Cross Street Cemetery Monument Restoration",
-   "t": 3397,
-   "summary": "Recommended $126,500 for monument restoration and repairs to the perimeter wall at Cross Street Cemetery.",
+   "title": "Cross Street Cemetery Restoration Phase 2",
+   "t": 3407,
+   "summary": "Approved $126,500 for monument restoration and repairs to the perimeter wall. The committee increased the funding amount from a previously discussed lower tier to include the wall restoration.",
    "speakers": [
     "Theresa Dupont",
     "Roberta Cameron",
@@ -56,22 +55,22 @@
   },
   {
    "title": "Shiloh Baptist Church Window Restoration Phase 2",
-   "t": 3529,
-   "summary": "Recommended $150,000 for phase two of the stained glass window restoration. Conditions: identification of specific windows and submission of schematic drawings before disbursement; a motion to increase the grant amount by $35,000 was defeated.",
+   "t": 3535,
+   "summary": "Approved $150,000 for stained glass window restoration with conditions requiring schematic drawings and carpentry cost estimates before disbursement. A motion to increase the grant by $35,000 failed due to concerns regarding fiscal precedent and the scope of work.",
    "speakers": [
     "Theresa Dupont",
-    "Jeremy Martin",
     "Roberta Cameron",
-    "Ada Gunning",
     "Doug Carr",
+    "Ada Gunning",
+    "Jeremy Martin",
     "Joan Cyr",
     "Myisha Majumder"
    ]
   },
   {
    "title": "Tufts Park Field Lighting Improvements",
-   "t": 4141,
-   "summary": "Recommended $432,000 for upgraded lighting at Tufts Park Field 2. Conditions: future renovations must prioritize the retention and reuse of the new equipment or require repayment of the grant funds to the CPA reserve.",
+   "t": 4146,
+   "summary": "Approved $432,000 for lighting at Tufts Park Field 2. Conditions were added requiring the city to preserve and reuse the lighting equipment if future park renovations necessitate its removal.",
    "speakers": [
     "Theresa Dupont",
     "Roberta Cameron",
@@ -84,7 +83,7 @@
   {
    "title": "Application Process and 2026 Meeting Calendar",
    "t": 4684,
-   "summary": "Approved the 2026 meeting schedule and discussed improving the application process through earlier surveys and quarterly project updates. Members discussed increasing public engagement via park signage and tabling events.",
+   "summary": "Discussed strategies for improving community outreach and finalized the 2026 schedule, which includes an annual public hearing in March and a project presentation cycle in the autumn. Members suggested using QR codes in parks and community bulletin boards to solicit project ideas from residents.",
    "speakers": [
     "Roberta Cameron",
     "Myisha Majumder",
@@ -97,7 +96,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 30876,
-  "output_tokens": 914
+  "input_tokens": 30691,
+  "output_tokens": 836
  }
 }
