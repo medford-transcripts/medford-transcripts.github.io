@@ -42,6 +42,25 @@ medford_tmp/
 # aggregated and published; this raw mapping must never be.
 addresses*.json
 
+# RESIDENT NAME -> HOME ADDRESS DATA, same privacy class as addresses*.json.
+#
+# wards_dict.json holds 429 residents with street addresses and ward; ward_list
+# .txt groups residents by ward. Neither was ignored until 2026-09-30, so a
+# `git add -A` would have published home addresses to a public repo -- the exact
+# thing addresses*.json is excluded to prevent. Neither has ever been committed;
+# checked before adding these lines.
+#
+# The voter-roll candidate set (plan.txt 12.12) lands here too: it exists ONLY to
+# resolve a name a speaker stated aloud on the public record, is never published,
+# and must never be treated as a source of identities nobody gave.
+wards_dict.json
+ward_list.txt
+voter_roll*.json
+voter_roll*.csv
+street_list*.json
+street_list*.csv
+name_corroboration*.json
+
 # Retired per-language transcript copies (2026-09-16).
 # googletrans 3.4.0 is broken -- half the languages raise, the other half
 # silently return English -- so these became ~20,000 duplicate-English pages
