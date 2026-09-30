@@ -296,10 +296,33 @@ def video_jsonld(dir, filebasename, yt_id, summary, video_data=None):
     if dur:
         data["duration"] = dur
 
-    # YouTube ids are the ones with a derivable thumbnail and embed.
-    if not yt_id[0:6] in ("XXXXXX", "MCM000", "CAS000"):
+    # thumbnailUrl IS REQUIRED BY GOOGLE FOR VideoObject, and emitting the object
+    # without it earns a Search Console error while producing no rich result at
+    # all -- reported 2026-09-30 against 2026-09-18_CAS00002530. The earlier
+    # choice not to fabricate an image was right; the mistake was emitting an
+    # invalid object instead of no object. 28 pages were affected: 22 Castus and
+    # 6 podcast.
+    if yt_id[0:6] == "MCM000":
+        # archive.org serves a REAL thumbnail for every item, so this is derived,
+        # not invented: /services/img/<identifier> returns image/jpeg. The
+        # identifier comes from the item url, the same place timestamp_url reads.
+        ident = ""
+        m = re.search(r"/details/([^/?#]+)", str(entry.get("url") or ""))
+        if m:
+            ident = m.group(1)
+        if ident:
+            data["thumbnailUrl"] = "https://archive.org/services/img/%s" % ident
+    elif yt_id[0:6] not in ("XXXXXX", "CAS000"):
         data["thumbnailUrl"] = "https://i.ytimg.com/vi/%s/hqdefault.jpg" % yt_id
         data["embedUrl"] = "https://www.youtube.com/embed/%s" % yt_id
+
+    # Castus exposes no thumbnail endpoint (probed: three candidate paths, all
+    # 404) and the podcast entries carry only audio_url. With no honest image
+    # available, EMIT NOTHING rather than an invalid VideoObject. The Clip "key
+    # moments" are lost for those pages, but they were never being honoured:
+    # Google discards the whole object when a required property is missing.
+    if "thumbnailUrl" not in data:
+        return ""
 
     items = (summary or {}).get("items") or []
     clips, total = [], entry.get("duration") or 0
