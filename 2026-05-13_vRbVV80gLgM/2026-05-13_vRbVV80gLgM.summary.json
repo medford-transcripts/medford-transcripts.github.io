@@ -1,24 +1,16 @@
 {
  "video_id": "vRbVV80gLgM",
  "provider": "gemini",
- "generated_at": "2026-09-28T07:12:53Z",
+ "generated_at": "2026-09-30T07:13:18Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "975b9fefaf64b5bb",
- "overview": "The Medford City Council Committee of the Whole held its fourth preliminary budget hearing for fiscal year 2027 to review departmental requests and city liabilities. The committee discussed funding for new assessing software, facilities maintenance, debt service for school projects, and rising healthcare and insurance costs.",
+ "transcript_sha": "5bc278dffb4e93a1",
+ "overview": "The Committee of the Whole held its fourth preliminary budget meeting for fiscal year 2027 to review the proposed budgets for the Assessors, Facilities, Debt Service, Pensions, and Insurance departments.",
  "items": [
   {
-   "title": "26061: Annual Budget Process for Fiscal 27 Preliminary Budget Meeting Number 4",
+   "title": "26061 - Annual Budget Process: Assessing Department",
    "t": 160,
-   "summary": "The committee opened the meeting to review various city department budgets and kept the matter in committee following the discussion.",
-   "speakers": [
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Assessing Department Budget Review",
-   "t": 200,
-   "summary": "Chief Assessor Jared Yagjian discussed revaluation cycles and proposed purchasing aerial detection software to identify unpermitted property growth. The department is also focusing on increased outreach for veteran and senior tax exemptions.",
+   "summary": "Chief Assessor Jared Yagjian reported a mostly level-funded budget, noting that a digital flyover software for change detection and new growth identification was not funded but remains a priority for future years.",
    "speakers": [
     "Zac Bears",
     "Jared Yagjian",
@@ -26,9 +18,9 @@
    ]
   },
   {
-   "title": "Facilities Department Budget Review",
+   "title": "26061 - Annual Budget Process: Facilities Department",
    "t": 705,
-   "summary": "Director David McIntyre presented plans to shift toward preventative maintenance and discussed a future redesign of the City Council chambers to accommodate more members. The budget reflects an 8% increase in utility costs and rising repair expenses.",
+   "summary": "Facilities Director David McIntyre outlined a strategy to transition from reactive triage to preventative maintenance to control long-term costs. The council discussed custodial contract costs and the planned redesign of the City Council chambers to accommodate four additional members.",
    "speakers": [
     "Zac Bears",
     "David McIntyre",
@@ -37,47 +29,38 @@
    ]
   },
   {
-   "title": "Bonds and Interest (Debt Service) Budget Review",
+   "title": "26061 - Annual Budget Process: Bonds and Interest",
    "t": 1658,
-   "summary": "CFO Bob Dickinson reported on interest payments for the $225.7 million school HVAC borrowing and noted that city debt currently accounts for approximately 5% of the general fund.",
+   "summary": "CFO Bob Dickinson reported that debt service currently accounts for approximately 5% of the general fund, with upcoming costs primarily driven by interest on temporary notes for school HVAC projects.",
    "speakers": [
     "Zac Bears",
     "Bob Dickinson"
    ]
   },
   {
-   "title": "Pension Budget Review",
+   "title": "26061 - Annual Budget Process: Pensions",
    "t": 1854,
-   "summary": "CFO Dickinson confirmed the city remains on track to fully fund pension obligations by 2033 and discussed long-term strategies for addressing OPEB liabilities related to retiree health insurance.",
+   "summary": "The city remains on track to reach full pension funding by 2033, though officials noted the multi-hundred-million-dollar OPEB liability for retiree health insurance remains unfunded.",
    "speakers": [
     "Zac Bears",
     "Bob Dickinson"
    ]
   },
   {
-   "title": "Workers' Compensation Budget Review",
+   "title": "26061 - Annual Budget Process: Workers' Compensation and Insurance",
    "t": 2178,
-   "summary": "The committee reviewed a budget increase intended to cover higher medical evaluation costs and to formally budget for settlement payments. HR Director Lisa Crowley noted an increase in medical and physical therapy costs for injured employees.",
+   "summary": "Budget increases were attributed to rising medical costs for claimants and a 9% increase in GIC health insurance premiums. The committee requested historical data on workers' compensation settlements to better understand expenditure trends.",
    "speakers": [
     "Zac Bears",
     "Bob Dickinson",
-    "Lisa Crowley"
-   ]
-  },
-  {
-   "title": "Insurance Budget Review",
-   "t": 2588,
-   "summary": "Officials discussed a 9% increase in GIC health insurance premiums and the impact of school department payroll growth on city Medicare obligations. CFO Dickinson clarified that general liability insurance covers property and injury claims but not labor disputes or arbitrations.",
-   "speakers": [
-    "Zac Bears",
-    "Bob Dickinson",
-    "Lisa Crowley"
+    "Lisa Crowley",
+    "Liz Mullane"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 17896,
-  "output_tokens": 659
+  "output_tokens": 622
  }
 }

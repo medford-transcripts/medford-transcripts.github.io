@@ -1,40 +1,44 @@
 {
  "video_id": "UXjoTYnBHEI",
  "provider": "gemini",
- "generated_at": "2026-09-28T07:11:52Z",
+ "generated_at": "2026-09-30T07:10:32Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "7b45cf49b4e0047c",
- "overview": "The Medford City Council and Community Development Board held a joint meeting to review the draft zoning proposal for the Boston Avenue neighborhood corridor. The Council voted to refer the proposed amendments to the Community Development Board for further review and a formal public hearing.",
+ "transcript_sha": "52255789b9080575",
+ "overview": "The City Council and Community Development Board reviewed draft zoning amendments for the Boston Avenue corridor, hearing a consultant presentation on sub-districts, height incentives, and usage standards. The Council voted to refer the proposed district to the Community Development Board for further review and upcoming public hearings.",
  "items": [
   {
    "title": "Presentation on Boston Avenue Neighborhood Corridor District",
-   "t": 1274,
-   "summary": "Consultants from Innis Land Strategy Group presented a proposed zoning framework involving three sub-districts (BA1, BA2, and BA3) with varying height limits and density standards. The presentation detailed allowable uses, dimensional requirements, and a system of public benefit incentives for increased building height.",
+   "t": 1196,
+   "summary": "Consultants presented a proposal to create three sub-districts (BA1, BA2, and BA3) along Boston Avenue to facilitate mixed-use development with varying intensities, height incentives for public benefits, and specific dimensional standards for setbacks and green scores.",
    "speakers": [
-    "Paula Ramos Martinez",
-    "Alicia Hunt"
+    "Alicia Hunt",
+    "Paola Ramos Martinez"
    ]
   },
   {
-   "title": "Discussion of Definitions and Development Standards",
-   "t": 2641,
-   "summary": "Council and Board members discussed the distinction between lodging houses and co-living arrangements, expressing a desire to clarify definitions to protect low-income housing options while ensuring public safety. The discussion also covered parking minimums, the implementation of Transportation Management Association (TMA) memberships for parking reductions, and green space metrics.",
+   "title": "Council and Board Discussion of Proposed Zoning",
+   "t": 2628,
+   "summary": "Members discussed refining housing definitions for lodging houses and dormitories, implementing parking reductions through Transportation Management Association membership, and ensuring adequate transitions between new developments and existing residential neighborhoods.",
    "speakers": [
     "Anna Callahan",
-    "Alicia Hunt",
-    "Zac Bears",
     "Justin Tseng",
-    "Paula Ramos Martinez",
     "Liz Mullane",
-    "Danielle Evans",
-    "Matt Leming"
+    "Matt Leming",
+    "Sean Beagan",
+    "Doug Carr",
+    "Page Buldini",
+    "Dina Caloggero",
+    "Ari Fishman",
+    "John Anderson",
+    "Alicia Hunt",
+    "Danielle Evans"
    ]
   },
   {
-   "title": "Public Comment",
-   "t": 9492,
-   "summary": "A development consultant proposed adding a specific 'purpose-built student housing' use category to alleviate pressure on the local housing market. Residents expressed concerns regarding the scale of development, the impact of shadows on residential streets, and the need for clear visualizations of the proposed density.",
+   "title": "Public Comment on Corridor Zoning",
+   "t": 9542,
+   "summary": "Public testimony included requests for purpose-built student housing categories, concerns about the scale of high-density buildings compared to existing homes, and requests for clear visualizations of proposed height transitions.",
    "speakers": [
     "David Roach",
     "Judith Weinstock",
@@ -44,30 +48,30 @@
    ]
   },
   {
-   "title": "Tufts Institutional Zone Discussion",
+   "title": "Update on Tufts Institutional Zone (Paper 24-033)",
    "t": 11553,
-   "summary": "The bodies discussed the status of the Tufts Institutional Zone, deciding to focus on establishing a framework rather than a final vote before the end of the fiscal year. Members emphasized that the city should lead the drafting process rather than relying on the university to provide the initial regulatory language.",
+   "summary": "The bodies discussed the timeline for drafting a campus-specific institutional zone, deciding to prioritize a framework for further discussion in the fall rather than pursuing immediate approval.",
    "speakers": [
     "Alicia Hunt",
-    "Doug Carr",
     "Matt Leming",
+    "Doug Carr",
     "Sean Beagan",
     "John Anderson"
    ]
   },
   {
-   "title": "Referral of Paper 26093",
+   "title": "Referral of Paper 26-093",
    "t": 12527,
-   "summary": "Referred the proposed Boston Avenue neighborhood corridor district zoning amendments to the Community Development Board. The bodies confirmed that the official public hearing is scheduled for June 3rd.",
+   "summary": "Referred the proposed amendments for the Boston Avenue Neighborhood Corridor District to the Community Development Board.",
    "speakers": [
-    "Rich Eliseo",
-    "Zac Bears"
+    "Zac Bears",
+    "Anna Callahan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 59973,
-  "output_tokens": 706
+  "input_tokens": 59974,
+  "output_tokens": 667
  }
 }

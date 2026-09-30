@@ -1,27 +1,27 @@
 {
  "video_id": "3ypfWQqQ8Ws",
  "provider": "gemini",
- "generated_at": "2026-09-27T18:06:46Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-09-30T07:07:28Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "735a8df05c35845c",
- "overview": "The Medford City Council Committee of the Whole met to review the Fiscal Year 2027 preliminary budgets for the Elections, Legislative, Fire, and Library departments. Councilors discussed critical staffing shortages, wage disparities, and disputed funding cuts with the city administration.",
+ "transcript_sha": "c9dda4f4861bc17a",
+ "overview": "The Committee of the Whole held its sixth preliminary budget meeting for Fiscal Year 2027, reviewing proposals for the Elections, Legislative, Fire, and Library departments. The committee discussed staffing shortages, wage equity for part-time employees, and the implementation of positions required by the city charter.",
  "items": [
   {
-   "title": "Elections Department Budget Review",
+   "title": "Elections Department Budget",
    "t": 71,
-   "summary": "Elections Manager James Blatchford presented the department's budget, highlighting overtime increases for three upcoming elections and plans to introduce online census submission technology.",
+   "summary": "Elections Manager James Blatchford presented a budget increase for overtime to cover three upcoming elections and discussed goals for automating the city census and emergency planning.",
    "speakers": [
-    "James Blatchford",
     "Zac Bears",
+    "James Blatchford",
     "Emily Lazzaro",
     "Justin Tseng"
    ]
   },
   {
-   "title": "Legislative Department Budget Review",
+   "title": "Legislative Budget",
    "t": 1880,
-   "summary": "The committee discussed the legislative budget, with councilors criticizing the administration for cutting technology lines and failing to fund a charter-mandated legislative aid position.",
+   "summary": "Councilors debated an administration-proposed 12% cut to the legislative budget and the failure to fund a charter-mandated City Messenger/Legislative Aide position. The discussion included disagreements over budgetary actuals and the legality of cost-of-living raises for elected officials under the new charter.",
    "speakers": [
     "Zac Bears",
     "Nina Nazarian",
@@ -30,46 +30,46 @@
     "Emily Lazzaro",
     "Justin Tseng",
     "Matt Leming",
-    "Rich Eliseo",
-    "George Scarpelli"
+    "George Scarpelli",
+    "Rich Eliseo"
    ]
   },
   {
-   "title": "Fire Department Budget Review",
-   "t": 5221,
-   "summary": "Chief Todd Evans and fire union representatives presented on extreme call volumes, severe staffing shortages, and injury-driven overtime costs. The committee approved a motion requesting a detailed breakdown of the professional services budget line, including litigation and arbitration expenses.",
+   "title": "Fire Department Budget",
+   "t": 5239,
+   "summary": "Chief Todd Evans detailed critical staffing shortages, high run volumes for Engines 1 and 4, and the impact of injuries on overtime costs. Approved a motion to request a breakdown of the professional services line item, specifically regarding litigation and arbitration costs.",
    "speakers": [
-    "Todd Evans",
     "Zac Bears",
+    "Todd Evans",
     "Justin Tseng",
     "George Scarpelli",
     "Emily Lazzaro",
-    "Matt Leming",
-    "Liz Mullane",
     "Nina Nazarian",
+    "Matt Leming",
     "Brian Honeycutt",
     "Bob Jones"
    ]
   },
   {
-   "title": "Library Department Budget Review",
+   "title": "Library Budget",
    "t": 12147,
-   "summary": "Library Director Sam Sednick advocated for increasing the wages of underpaid part-time librarians and pointed out clerical errors in the administration's budget proposal. The committee approved a motion requesting an updated budget that includes a four-dollar-per-hour raise for part-time library staff.",
+   "summary": "Director Sam Sednick requested a $4 per hour raise for part-time staff to address significant pay disparities and identified errors in the personnel count within the administration's budget document. Approved a motion to request an updated budget featuring accurate personnel data and the requested wage increases.",
    "speakers": [
-    "Sam Sednick",
     "Zac Bears",
-    "Jenna Berry",
+    "Sam Sednick",
     "Justin Tseng",
     "Emily Lazzaro",
     "Anna Callahan",
+    "Jenna Berry",
     "George Scarpelli",
-    "Liz Mullane"
+    "Liz Mullane",
+    "Matt Leming"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 80306,
-  "output_tokens": 628
+  "input_tokens": 80308,
+  "output_tokens": 659
  }
 }

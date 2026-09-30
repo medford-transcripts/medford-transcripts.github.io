@@ -1,16 +1,16 @@
 {
  "video_id": "jbKzwV2kZnk",
  "provider": "gemini",
- "generated_at": "2026-09-28T07:13:37Z",
+ "generated_at": "2026-09-30T07:12:54Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "3899db55e03d501f",
- "overview": "The City Council commemorated the life of long-time community figure Lenny Gliona and approved a $450,000 grant for the Medford Square Redevelopment Project. Key decisions included authorizing the Fire Department's capital vehicle purchases and advancing a new Vacant Building Ordinance for its first reading.",
+ "transcript_sha": "8f55f0b9fd029834",
+ "overview": "The City Council commemorated the life of long-time political follower Leonard Glenn Gliona and approved a $1.69 million appropriation for a new fire ladder truck. The Council also advanced a new vacant building ordinance and accepted a state grant for archaeological work at a redevelopment site in Medford Square.",
  "items": [
   {
-   "title": "Resolution Commemorating Leonard Glenn Gliona",
+   "title": "Resolution to Commemorate Leonard Glenn Gliona",
    "t": 65,
-   "summary": "The Council commemorated the life of Lenny Gliona, a veteran and dedicated mentor in Medford politics. Approved.",
+   "summary": "Approved a resolution offering condolences and honoring the life of Lenny Gliona, a veteran and dedicated local political mentor. The Council held a moment of silence following remarks from every councilor and former Councilor Nicole Morell.",
    "speakers": [
     "Zac Bears",
     "Emily Lazzaro",
@@ -24,9 +24,9 @@
    ]
   },
   {
-   "title": "Unfinished Business and Records",
+   "title": "Records and Committee Reports",
    "t": 1537,
-   "summary": "Approved various committee reports and meeting records, and voted to place several outdated requests regarding zoning and local businesses on file.",
+   "summary": "Approved meeting records from April 28, 2026, and committee reports regarding Community Development Block Grants and the fiscal 2027 budget.",
    "speakers": [
     "Zac Bears",
     "Liz Mullane",
@@ -34,9 +34,9 @@
    ]
   },
   {
-   "title": "CDBG Action Plan Fiscal Year 2027 Public Hearing",
+   "title": "CDBG Action Plan for Fiscal 2027 Hearing",
    "t": 1645,
-   "summary": "The Council held a public hearing on the city's plan for an estimated $1,433,520 in federal block grant funds. Approved the submittal of the plan to HUD.",
+   "summary": "Approved the annual action plan for $1,433,520 in federal block grant funds after a public hearing and presentation by Grants Manager Laurel Siegel.",
    "speakers": [
     "Zac Bears",
     "Laurel Siegel",
@@ -44,9 +44,9 @@
    ]
   },
   {
-   "title": "Board Appointments and Food Truck Permits",
+   "title": "Appointments and Event Licenses",
    "t": 2017,
-   "summary": "Approved the appointment of Roberta Cameron to the Historic District Commission and granted food truck permits for the Medford Youth Girls Softball tournament at Tufts Park.",
+   "summary": "Approved the appointment of Roberta Cameron to the Historic District Commission and authorized food truck permits for a youth softball tournament at Tufts Park.",
    "speakers": [
     "Zac Bears",
     "Emily Lazzaro",
@@ -54,9 +54,9 @@
    ]
   },
   {
-   "title": "Fire Department Capital Stabilization Fund Appropriation",
+   "title": "Fire Department Capital Improvement Appropriations",
    "t": 2202,
-   "summary": "Approved the appropriation of approximately $2.1 million for a new ladder truck, equipment for two pumpers, and three administrative vehicles. Fire Chief Todd Evans noted the long procurement lead times and the need to replace vehicles from 2014 and 2015.",
+   "summary": "Approved $2,111,401.84 from the Capital Stabilization Fund for a new ladder truck, equipment for upcoming pumpers, and department administrative vehicles. Fire Chief Todd Evans explained that rising costs and four-year lead times necessitated the prompt purchase of the ladder truck.",
    "speakers": [
     "Zac Bears",
     "Todd Evans",
@@ -67,7 +67,7 @@
   {
    "title": "Personnel Ordinance Amendments",
    "t": 3113,
-   "summary": "Approved reclassifying the Assistant Network Administrator to a 40-hour week and authorized a 2.5% base salary increase for non-union personnel effective July 1, 2026.",
+   "summary": "Approved moving the Assistant Network Administrator position to a 40-hour work week and authorized a 2.5% wage increase for non-union personnel effective July 1, 2026.",
    "speakers": [
     "Zac Bears",
     "Lisa Crowley"
@@ -76,11 +76,11 @@
   {
    "title": "Proposed Vacant Building Ordinance",
    "t": 3533,
-   "summary": "Councilors proposed establishing a registry and escalating fee structure for vacant commercial properties to combat blight and encourage active tenancies. The draft ordinance was approved for first reading, while the associated repeal of the existing zoning section was referred to the Community Development Board.",
+   "summary": "Approved a new vacant building registration and fee ordinance for first reading to incentivize the occupancy of commercial storefronts. The Council referred the repeal of existing zoning-based vacant property rules to the Community Development Board for further review.",
    "speakers": [
     "Emily Lazzaro",
-    "Matt Leming",
     "Justin Tseng",
+    "Matt Leming",
     "George Scarpelli",
     "Liz Mullane",
     "Zac Bears",
@@ -93,18 +93,28 @@
   {
    "title": "Medford Square Redevelopment Project Grant",
    "t": 7611,
-   "summary": "Approved a $450,000 MassDevelopment grant to fund the archeological excavation and reinternment of human remains at a municipal site partially paved over during the construction of Interstate 93. Approved.",
+   "summary": "Accepted a $450,000 grant from MassDevelopment to fund archaeological excavation and the re-interment of human remains discovered at a former cemetery site. CPA Manager Theresa DuPont noted the site requires due diligence before redevelopment following an incomplete remains removal project in 1959.",
    "speakers": [
     "Zac Bears",
-    "Theresa Dupont",
+    "Theresa DuPont",
     "Anna Callahan",
     "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Unfinished Business and Adjournment",
+   "t": 8334,
+   "summary": "Placed two old items on file and adjourned following an announcement by Councilor Leming regarding his upcoming six-month military deployment.",
+   "speakers": [
+    "Zac Bears",
+    "Matt Leming",
+    "Simon Alcindor"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42933,
-  "output_tokens": 1021
+  "input_tokens": 42940,
+  "output_tokens": 1133
  }
 }
