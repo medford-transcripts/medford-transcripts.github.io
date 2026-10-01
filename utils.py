@@ -355,6 +355,58 @@ def front_page_committees(path=MEETING_TYPES_FILE):
             if c.get("link_on_front_page")]
 
 
+ROSTERS_FILE = "rosters.json"
+
+# Words that differ freely between what we call a committee and what the city
+# calls it: our meeting types carry a body prefix ("CC", "MPS") and both sides
+# use "Committee"/"Commission"/"Board" inconsistently.
+_BODY_PREFIX = re.compile(r"^(?:CC|MPS|SC)\s+", re.I)
+_BODY_NOISE = re.compile(r"\b(?:the|of|and|committee|commission|board|council|city)\b",
+                         re.I)
+
+
+def _body_key(name):
+    s = _BODY_PREFIX.sub("", name or "")
+    s = re.sub(r"[^a-z0-9 ]", " ", s.lower())
+    s = _BODY_NOISE.sub(" ", s)
+    return " ".join(s.split())
+
+
+def official_body_urls(path=ROSTERS_FILE):
+    """{meeting_type_key: official medfordma.org url} from rosters.json.
+
+    MATCHING IS EXACT ON THE NORMALISED NAME, never fuzzy, and the reason is
+    sitting in the data: the city publishes BOTH a "Historical Commission" and a
+    "Historic District Commission". They are different bodies with different
+    rosters, and any edit-distance or token-overlap match merges them -- which
+    would put the wrong official roster behind a committee's link, the exact
+    class of error the registry exists to prevent.
+
+    21 of 71 meeting types map. Most of the rest are City Council subcommittees
+    (Administration and Finance, Education and Culture) which have no
+    boards-commissions page to point at, so an unmapped type is the normal case
+    and callers must treat a miss as "no link", not as an error.
+    """
+    try:
+        with open(path, "r", encoding="utf-8") as fp:
+            bodies = json.load(fp).get("bodies") or {}
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for name, cfg in bodies.items():
+        url = (cfg or {}).get("url")
+        if url:
+            out.setdefault(_body_key(name), url)
+    return out
+
+
+def official_body_url(meeting_type, path=ROSTERS_FILE):
+    """The city's own page for a committee, or None when it publishes none."""
+    if not meeting_type:
+        return None
+    return official_body_urls(path).get(_body_key(meeting_type))
+
+
 def committee_page(name):
     """Path of a committee's generated page (make_committee_pages:49)."""
     return "committees/" + name.replace(" ", "_") + ".html"

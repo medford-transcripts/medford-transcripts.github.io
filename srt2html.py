@@ -380,9 +380,13 @@ def page_jsonld(dir, filebasename, yt_id, video_data=None, summary=None):
       surface. On the page that claim carries visible context; in structured
       data it is stripped of caveat and built for reuse.
 
-      rosters.json urls. The official body URL would be a good about.url, but
-      that file is 76% scraped site-navigation at the moment (see the note in
-      plan.txt) and this should not depend on it until it is fixed.
+      Person, still. about.sameAs names the BODY, which is a public
+      institution; naming the individuals who spoke is the line this does not
+      cross.
+
+    rosters.json was 76% scraped site navigation when this was first written,
+    which is why about carried no url. Fixed in 7489bd24a4, so the official
+    body URL is now derived from it via utils.official_body_url.
     """
     entry = (video_data or {}).get(yt_id) or {}
     page = site_url(os.path.join(dir, filebasename + ".html"))
@@ -422,7 +426,17 @@ def page_jsonld(dir, filebasename, yt_id, video_data=None, summary=None):
         webpage["isBasedOn"] = src
 
     if ctte:
-        webpage["about"] = {"@type": "GovernmentOrganization", "name": ctte[1]}
+        about = {"@type": "GovernmentOrganization", "name": ctte[1]}
+        # The city's own page for this body, when it publishes one. sameAs is
+        # the right relation: it identifies the same organisation at an
+        # authoritative URL, which is what lets a consumer resolve "CC
+        # Community Development Board" to a real municipal entity rather than a
+        # string we made up. 21 of 71 meeting types have one; the rest are City
+        # Council subcommittees with no such page, so a miss is normal.
+        official = utils.official_body_url(ctte[1])
+        if official:
+            about["sameAs"] = official
+        webpage["about"] = about
         webpage["isPartOf"] = {"@type": "CollectionPage",
                                "name": ctte[1],
                                "url": site_url(utils.committee_page(ctte[1]))}

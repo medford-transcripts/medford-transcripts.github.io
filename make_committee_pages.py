@@ -4,6 +4,9 @@ import json
 import os
 import time
 
+import re
+from html import escape
+from site_url import site_url, SITE_ROOT
 import utils
 
 def make():
@@ -34,6 +37,25 @@ def make():
 
     # Buffered; committed by write_atomic once the loop below completes.
     all_committees_table = io.StringIO()
+    # The committees hub is a real document for the same reason the
+    # per-committee pages are: it is in the sitemap and it is what every
+    # committee page's "All committees" link points at.
+    _hub_url = site_url('committees/index.html')
+    _hub_desc = ('Every Medford Massachusetts public body with a transcribed '
+                 'meeting, linking to its transcripts.')
+    _hub_ld = {'@context': 'https://schema.org', '@type': 'CollectionPage',
+               'name': 'Transcripts by committee', 'url': _hub_url,
+               'description': _hub_desc, 'inLanguage': 'en'}
+    all_committees_table.write('<!DOCTYPE html>' + chr(10) + '<html lang="en">' + chr(10))
+    all_committees_table.write('  <head>' + chr(10) + '    <meta charset="UTF-8">' + chr(10))
+    all_committees_table.write('    <meta name="viewport" content="width=device-width, initial-scale=1.0">' + chr(10))
+    all_committees_table.write('    <title>Transcripts by committee - Medford Transcripts</title>' + chr(10))
+    all_committees_table.write('    <meta name="description" content="' + escape(_hub_desc, quote=True) + '">' + chr(10))
+    all_committees_table.write('    <link rel="canonical" href="' + _hub_url + '" />' + chr(10))
+    all_committees_table.write('    <script type="application/ld+json">' + json.dumps(_hub_ld, ensure_ascii=False) + '</script>' + chr(10))
+    all_committees_table.write('  </head>' + chr(10) + '  <body>' + chr(10))
+    all_committees_table.write('    <h1>Transcripts by committee</h1>' + chr(10))
+    all_committees_table.write('    <p><a href="../index.html">All transcripts</a></p>' + chr(10))
     all_committees_table.write('<table border=1>\n')
     all_committees_table.write('  <tr><td><center>Committee</center></td></td>\n')
 
@@ -117,7 +139,64 @@ def make():
         if nmeetings > 0:
             all_committees_table.write('<tr><td><a href="' + htmlbasename + '">' + committee_name + '</a></td></tr>\n')
 
+        # A REAL DOCUMENT, not a bare <table>. These pages were fragments: no
+        # doctype, no lang, no charset, no <title>. All 74 are in the sitemap,
+        # and since ace582fc89 every transcript links to one and every
+        # breadcrumb names one, so they are now the hub of the internal link
+        # graph -- and a titleless fragment is a weak index candidate, which
+        # would undercut the breadcrumb pointing at it.
+        page_url = site_url(htmlname)
+        first = rows[-1][0] if rows else ""
+        last = rows[0][0] if rows else ""
+        span = ""
+        m_first = re.search(r"20\d\d-\d\d-\d\d", first)
+        m_last = re.search(r"20\d\d-\d\d-\d\d", last)
+        if m_first and m_last:
+            span = "%s to %s" % (m_first.group(0), m_last.group(0))
+        desc = ("%d transcribed %s meetings%s, Medford Massachusetts."
+                % (nmeetings, committee_name, ", " + span if span else ""))
+
+        crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+                  "itemListElement": [
+                      {"@type": "ListItem", "position": 1,
+                       "name": "All transcripts", "item": SITE_ROOT},
+                      {"@type": "ListItem", "position": 2,
+                       "name": committee_name, "item": page_url}]}
+        collection = {"@context": "https://schema.org", "@type": "CollectionPage",
+                      "name": committee_name, "url": page_url,
+                      "description": desc, "inLanguage": "en"}
+        official = utils.official_body_url(committee_name)
+        org = {"@type": "GovernmentOrganization", "name": committee_name}
+        if official:
+            org["sameAs"] = official
+        collection["about"] = org
+
         html = open(htmlname, 'w', encoding="utf-8")
+        html.write('<!DOCTYPE html>\n<html lang="en">\n  <head>\n')
+        html.write('    <meta charset="UTF-8">\n')
+        html.write('    <meta name="viewport" content="width=device-width, '
+                   'initial-scale=1.0">\n')
+        html.write('    <title>' + escape(committee_name, quote=True)
+                   + ' - Medford Transcripts</title>\n')
+        html.write('    <meta name="description" content="'
+                   + escape(desc, quote=True) + '">\n')
+        html.write('    <link rel="canonical" href="' + page_url + '" />\n')
+        for obj in (crumbs, collection):
+            html.write('    <script type="application/ld+json">'
+                       + json.dumps(obj, ensure_ascii=False) + '</script>\n')
+        html.write('  </head>\n  <body>\n')
+        html.write('    <h1>' + escape(committee_name) + '</h1>\n')
+        html.write('    <p>' + escape(desc) + '</p>\n')
+        if official:
+            # rel=nofollow matches how every other outbound source link on this
+            # site is marked; the point is to send a READER to the membership,
+            # contact and meeting schedule we do not republish.
+            html.write('    <p>Official city page: <a href="'
+                       + escape(official, quote=True) + '" rel="nofollow">'
+                       + escape(committee_name) + ' on medfordma.org</a> '
+                       '(membership, contact and meeting schedule)</p>\n')
+        html.write('    <p><a href="../index.html">All transcripts</a> &middot; '
+                   '<a href="index.html">All committees</a></p>\n')
         html.write('<table border=1>\n')
         header = ["<th scope='col'>Date</th>",
                   "<th scope='col'>Duration</th>",
@@ -132,9 +211,11 @@ def make():
             if has_minutes: html.write('    ' + minutes_cell + '\n')
             html.write(tail)
         html.write('</table>\n')
+        html.write('  </body>' + chr(10) + '</html>' + chr(10))
         html.close()
 
     all_committees_table.write('</table>')
+    all_committees_table.write(chr(10) + '  </body>' + chr(10) + '</html>' + chr(10))
     utils.write_atomic("committees/index.html", all_committees_table.getvalue())
 
 
