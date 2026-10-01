@@ -92,7 +92,12 @@ DATED_REPLACEMENTS = {
     # (owner). Bare "Kelly" stays untouched -- Kelly Catallo was a real 2021
     # candidate and residents named Kelly speak at public comment.
     "2024-01-01": {
+        # The capitalised forms. An existing rule covers "president Ferris"
+        # in LOWER case only, so 77 capitalised ones were passing through.
         "President Pierce" : "President Bears",
+        "President Paris" : "President Bears",
+        "President Ferris" : "President Bears",
+        "President Peers" : "President Bears",
         "president Pierce" : "President Bears",
         "Councilor Lennon" : "Councilor Leming",
         "Councilor Kelly" : "Councilor Callahan",
@@ -163,6 +168,21 @@ def apply_rules(text, patterns):
 def fix_common_errors(yt_id=None):
 
     replace_dict = {
+        # TITLE-ANCHORED, because the bare surname is not safe (owner).
+        #   Knights: "Councilor Knight's" is 175 and ALREADY CORRECT (Adam
+        #   Knight's motion), and "the Knights" / "Metro Knights" (13) is a
+        #   real plural -- a team. Only the titled form is a mishearing, 105.
+        #   Bramley: a real surname. 92 are "Member Bramley" and 8 are "Nicole
+        #   Bramley", where the given name disambiguates; "Jacqueline Bramley"
+        #   is someone else entirely and is left alone.
+        "Councilor Knights" : "Councilor Knight",
+        "Councilman Knights" : "Councilor Knight",
+        "Member Bramley" : "Member Branley",
+        "Nicole Bramley" : "Nicole Branley",
+        # Unambiguous on their own: no one is named Callaghan or Scarapelli in
+        # this corpus, and both sit beside names already ruled.
+        "Councilor Callaghan" : "Councilor Callahan",
+        "Scarapelli" : "Scarpelli",
         # SURNAME SPELLINGS, ungated: these fix how a name is SPELLED, not
         # which office someone holds, so they are true whenever the name
         # appears -- as a member, a candidate or a resident at public comment.
