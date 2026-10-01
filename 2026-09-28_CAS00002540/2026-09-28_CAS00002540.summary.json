@@ -1,16 +1,16 @@
 {
  "video_id": "CAS00002540",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:05:41Z",
+ "generated_at": "2026-10-01T09:05:46Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "65ed0ba86b512f49",
- "overview": "The board deliberated on dimensional relief requests for two proposed accessory dwelling units (ADUs), approved a use variance for a second single-family home with safety and landscaping conditions, and approved a change of non-conforming use for a new aesthetic spa.",
+ "transcript_sha": "1d117e0b82e233ff",
+ "overview": "The Board discussed local development applications, focusing heavily on state regulations for accessory dwelling units (ADUs). The Board postponed decisions on two ADU petitions on Vassar and Wellesley Streets but approved residential and commercial use requests on Sturgis Street and Riverside Avenue.",
  "items": [
   {
    "title": "1-3 Vassar Street",
    "t": 61,
-   "summary": "Continued the application of Christian Austin to construct two shed dormers and expand the attic space for a protected ADU to the October 29, 2026 meeting.",
+   "summary": "The Board continued the application to construct two shed dormers and expand attic space for a protected ADU to October 29, 2026. The continuance will allow the applicant to submit a modified, smaller design and allow the Board to seek further legal counsel regarding state ADU regulations.",
    "speakers": [
     "Denis MacDougall",
     "Andre Leroux",
@@ -20,13 +20,26 @@
     "Mary Lee",
     "Danielle Evans",
     "Patricia Chery",
-    "Bill Forte"
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "12 Wellesley Street",
+   "t": 5678,
+   "summary": "The Board continued the application to construct two shed dormers and expand the attic space for an ADU to October 29, 2026. The decision aligns with the Board's intent to evaluate both of the applicant's similar ADU proposals concurrently under updated state guidelines.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Kathleen Desmond",
+    "Yvette Velez",
+    "Patricia Chery",
+    "Mary Lee"
    ]
   },
   {
    "title": "60 Sturgis Street",
-   "t": 705,
-   "summary": "Approved a use variance to construct a second single-family dwelling on the lot, conditioned upon replacing an existing lead water service line and installing rear and side landscape screening.",
+   "t": 6705,
+   "summary": "The Board approved a use variance to construct a second single-family dwelling on the lot. The approval was granted with conditions requiring the replacement of an existing lead water line and the installation of landscape screening along the side and rear property lines.",
    "speakers": [
     "Denis MacDougall",
     "Paul Connolly",
@@ -35,49 +48,40 @@
     "Andre Leroux",
     "Chris D'Aveta",
     "Bill Forte",
-    "Mary Lee",
-    "Yvette Velez"
-   ]
-  },
-  {
-   "title": "12 Wellesley Street",
-   "t": 5678,
-   "summary": "Continued the application of Christian Austin to construct two shed dormers and expand the attic space for a protected ADU to the October 29, 2026 meeting.",
-   "speakers": [
-    "Denis MacDougall",
-    "Andre Leroux",
-    "Kathleen Desmond",
-    "Yvette Velez",
-    "Patricia Chery"
+    "Mark"
    ]
   },
   {
    "title": "583 Riverside Avenue",
    "t": 9103,
-   "summary": "Approved a special permit to change the non-conforming use from a real estate office to an aesthetic spa.",
+   "summary": "The Board approved a special permit to change the property's non-conforming use from a real estate office to an aesthetic spa. The business will operate strictly by appointment with a single client at a time, minimizing traffic and parking impacts.",
    "speakers": [
     "Denis MacDougall",
     "Maria Delomba",
-    "Andre Leroux",
     "Bill Forte",
+    "Andre Leroux",
     "Yvette Velez",
     "Mary Lee",
     "Chris D'Aveta"
    ]
   },
   {
-   "title": "August Meeting Minutes",
+   "title": "August Meeting Minutes and Adjournment",
    "t": 9612,
-   "summary": "Postponed the approval of the August meeting minutes.",
+   "summary": "The Board postponed the approval of the August meeting minutes and discussed upcoming training opportunities before adjourning.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux"
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "Bill Forte",
+    "Mary Lee",
+    "Kyla"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 52463,
-  "output_tokens": 643
+  "input_tokens": 52464,
+  "output_tokens": 677
  }
 }
