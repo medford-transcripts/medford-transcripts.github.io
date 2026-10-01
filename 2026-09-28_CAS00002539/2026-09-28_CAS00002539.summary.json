@@ -1,0 +1,65 @@
+{
+ "video_id": "CAS00002539",
+ "provider": "gemini",
+ "generated_at": "2026-10-01T15:07:33Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "0374efbbefc1fe3e",
+ "overview": "The advisory team met to evaluate mechanical, electrical, and plumbing (MEP) systems for the Medford High School project, focusing on lifecycle cost analyses and sustainability goals. The committee reached a consensus to recommend an all-electric air-to-water heat pump system and reviewed preliminary solar energy configurations to reach net-zero energy targets.",
+ "items": [
+  {
+   "title": "Project Goals and Sustainability Refresher",
+   "t": 15,
+   "summary": "The team reviewed requirements for LEED Silver certification and compliance with the specialized stretch energy code, which mandates all-electric pathways or electrification readiness.",
+   "speakers": [
+    "Matt Rice",
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "HVAC Lifecycle Cost Analysis (LCCA)",
+   "t": 869,
+   "summary": "Architects presented a 50-year cost analysis comparing ground-source heat pumps, air-to-water heat pumps, and a hybrid system against a fossil fuel baseline. The 100% ground-source option carried the highest initial cost and a 40-year simple payback period.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "Technical Systems and Construction Phasing",
+   "t": 3203,
+   "summary": "The team discussed the technical operation of heat pumps and the impact of construction phasing, noting that geothermal options would require temporary HVAC systems and potential Article 97 permitting for deed-restricted land.",
+   "speakers": [
+    "Emily Ehlers",
+    "Matt Rice"
+   ]
+  },
+  {
+   "title": "HVAC System Recommendation",
+   "t": 5641,
+   "summary": "The advisory team reached a unanimous consensus to recommend Option 3, a 100% air-to-water heat pump system, to the Building Committee due to lower upfront costs and reduced maintenance complexity.",
+   "speakers": [
+    "Jenny Graham",
+    "Kenneth Lord",
+    "Paul Ruseau",
+    "Alicia Hunt",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Preliminary Solar Photovoltaic (PV) Assessment",
+   "t": 5922,
+   "summary": "Consultants presented preliminary layouts for roof and parking canopies required to meet net-zero energy goals, comparing direct ownership versus Power Purchase Agreements (PPA). The discussion regarding PV lifecycle costs was deferred to the next meeting.",
+   "speakers": [
+    "Martine Dion",
+    "Andre Leroux",
+    "Kenneth Lord"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32145,
+  "output_tokens": 616
+ }
+}
