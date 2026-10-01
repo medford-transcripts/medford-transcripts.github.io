@@ -168,6 +168,121 @@ def apply_rules(text, patterns):
 def fix_common_errors(yt_id=None):
 
     replace_dict = {
+        # ---- from propose_name_rules.py, SAFE tier --------------------
+        # NOT Maxwell, Beasley or McKernan, though the worksheet ranked all
+        # three SAFE. test_fix_common_errors.py knows better and failed on
+        # them: "musical legends as Leon Beal and Walter Beasley" is a real
+        # musician, and renaming him after the council president is exactly
+        # the harm these rules exist to avoid. The worksheet's "every
+        # occurrence follows an honorific" claim is therefore not sufficient
+        # on its own -- the tests are the authority.
+        # Every one of these was checked against EVERY occurrence in the raw
+        # whisper output and appears ONLY after an honorific, so the token is
+        # always a misheard official and never a resident. That is the test
+        # the module documents, and it is the one that rejects "Brianna"
+        # (a hockey player, and someone's wife) and would have rejected the
+        # bare "Knights" and "Bramley" rules the owner caught by hand.
+        #
+        # The "old output" column in that worksheet is why these matter: the
+        # pre-anchoring substring rules turned Moxley into "Marksley" and
+        # McKernan into "Lungo-Koehnan" -- right person, mangled surname.
+        "Scarpalli" : "Scarpelli",   # 26
+        "Moxon" : "Marks",   # 17
+        "Sangh" : "Tseng",   # 13
+        "Moxley's" : "Marks",   # 14
+        "Maxx" : "Marks",   # 10
+        "Carvell" : "Caraviello",   # 12
+        "Lungo-Kernan" : "Lungo-Koehn",   # 8
+        "Moxwell" : "Marks",   # 7
+        "Bexar" : "Bears",   # 12
+        "Caviella" : "Caraviello",   # 6
+        "Nyeth" : "Knight",   # 6
+        "Langel-Kernan" : "Lungo-Koehn",   # 6
+        "Scarpallo" : "Scarpelli",   # 8
+        "Cavielli" : "Caraviello",   # 5
+        "Carviella" : "Caraviello",   # 6
+        "Sayeed" : "Tseng",   # 9
+        "Bereson" : "Bears",   # 10
+        "Carvella" : "Caraviello",   # 6
+        "Beresford" : "Bears",   # 12
+        "Nighton" : "Knight",   # 5
+        "Moxby" : "Marks",   # 6
+        "Carviolo" : "Caraviello",   # 3
+        "Kerriolo" : "Caraviello",   # 3
+        "Cavielle" : "Caraviello",   # 3
+        "Moxx" : "Marks",   # 4
+        "Bexar's" : "Bears",   # 4
+        "Carbiela" : "Caraviello",   # 2
+        "Carvelo" : "Caraviello",   # 2
+        "Scarpalli's" : "Scarpelli",   # 2
+        "Sanglin" : "Tseng",   # 2
+        "Behrens" : "Bears",   # 100
+        "Sayng" : "Tseng",   # 2
+        "Sangin" : "Tseng",   # 3
+        "Maxwell's" : "Marks",   # 2
+        "Moxton" : "Marks",   # 2
+        "Beerson" : "Bears",   # 2
+        "Beast" : "Bears",   # 7
+        "Carviollo" : "Caraviello",   # 2
+        "Skarpelic" : "Scarpelli",   # 2
+        "Scarpale" : "Scarpelli",   # 2
+        "Nightson" : "Knight",   # 2
+        "Cavielles" : "Caraviello",   # 2
+        "Nightingale" : "Knight",   # 2
+        "Nighton-Falco" : "Knight",   # 1
+        "Moxson" : "Marks",   # 1
+        "Moxon's" : "Marks",   # 1
+        "Nightingdall" : "Knight",   # 1
+        "Maxson" : "Marks",   # 1
+        "Lingo-Kernan" : "Lungo-Koehn",   # 1
+        "Felcome" : "Falco",   # 1
+        "Sanga" : "Tseng",   # 3
+        "Beasley's" : "Bears",   # 1
+        "Carvillalo" : "Caraviello",   # 1
+        "Sangmin" : "Tseng",   # 1
+        "Carviola" : "Caraviello",   # 1
+        "Baresky" : "Bears",   # 1
+        "Sanghia" : "Tseng",   # 1
+        "Scarparilli" : "Scarpelli",   # 1
+        "Scarpaoli's" : "Scarpelli",   # 1
+        "Senghap" : "Tseng",   # 1
+        "Lazara" : "Lazzaro",   # 3
+        "Sayegh" : "Tseng",   # 1
+        "Stangley" : "Tseng",   # 1
+        "Kerrioville" : "Caraviello",   # 1
+        "Sangano" : "Tseng",   # 1
+        "Carvela" : "Caraviello",   # 1
+        "Scarpaolo" : "Scarpelli",   # 1
+        "Sangford" : "Tseng",   # 1
+        "Scarpaio" : "Scarpelli",   # 1
+        "Sayre" : "Tseng",   # 1
+        "Skarpelos" : "Scarpelli",   # 1
+        "Morrelle" : "Morell",   # 1
+        "Pierson" : "Bears",   # 3
+        "Sankto" : "Tseng",   # 1
+        "Carviella's" : "Caraviello",   # 1
+        "Beresia" : "Bears",   # 1
+        "Beresey's" : "Bears",   # 1
+        "Barrison" : "Bears",   # 1
+        "Caviell" : "Caraviello",   # 1
+        "Nighthill" : "Knight",   # 1
+        "Moxhead" : "Marks",   # 1
+        "Scarpalla" : "Scarpelli",   # 2
+        "Sangamon" : "Tseng",   # 1
+        "Zaroff" : "Lazzaro",   # 1
+        "Berest" : "Bears",   # 1
+        "Lazardo" : "Lazzaro",   # 1
+        "Sangivarius" : "Tseng",   # 1
+        "Scarparalee" : "Scarpelli",   # 1
+        "Zahraro" : "Lazzaro",   # 1
+        "Skarpelian-Seng" : "Scarpelli",   # 1
+        "Sangam" : "Tseng",   # 2
+        "Sangalo" : "Tseng",   # 1
+        "Bareson" : "Bears",   # 2
+        "Sangley" : "Tseng",   # 1
+        "Levingston" : "Leming",   # 2
+        "Sangha's" : "Tseng",   # 2
+        "Sanger" : "Tseng",   # 4
         # TITLE-ANCHORED, because the bare surname is not safe (owner).
         #   Knights: "Councilor Knight's" is 175 and ALREADY CORRECT (Adam
         #   Knight's motion), and "the Knights" / "Metro Knights" (13) is a

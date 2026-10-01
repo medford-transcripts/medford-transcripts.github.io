@@ -438,6 +438,20 @@ def _service_account_email(key_file):
         return "(unreadable key file)"
 
 
+def list_sheet_tabs(sheet_id, key_file=SERVICE_ACCOUNT):
+    """Every worksheet name in the spreadsheet, in order. [] on any failure."""
+    try:
+        from google.oauth2 import service_account
+        from googleapiclient.discovery import build
+        creds = service_account.Credentials.from_service_account_file(
+            key_file, scopes=[SHEETS_SCOPE])
+        svc = build("sheets", "v4", credentials=creds, cache_discovery=False)
+        meta = svc.spreadsheets().get(spreadsheetId=sheet_id).execute()
+        return [s["properties"]["title"] for s in meta.get("sheets", [])]
+    except Exception:
+        return []
+
+
 def fetch_sheet_csv(sheet_id, tab=None, key_file=SERVICE_ACCOUNT):
     """Rows from a private responses sheet, rendered as CSV text.
 
@@ -534,7 +548,26 @@ def main():
         print("using saved sheet id from %s" % SHEET_ID_FILE)
 
     if args.sheet_id:
-        text = fetch_sheet_csv(args.sheet_id, args.tab)
+        # EVERY TAB, not just the first. Human submissions land in the form's
+        # own tab; machine-proposed corrections are written to a SEPARATE tab
+        # so the two never share a row range and the human record stays
+        # read-only to anything that only needs to propose. Both are the same
+        # schema and both land as "pending" -- a machine contributor is
+        # deliberately absent from trusted_contributors.json, so nothing it
+        # writes can auto-apply.
+        tabs = [args.tab] if args.tab else (list_sheet_tabs(args.sheet_id) or [None])
+        texts = []
+        for t in tabs:
+            try:
+                texts.append((t, fetch_sheet_csv(args.sheet_id, t)))
+            except SystemExit:
+                raise
+            except Exception as e:
+                print("  tab %r: SKIPPED (%s)" % (t, str(e)[:70]))
+        if not texts:
+            raise SystemExit("no readable tab in that spreadsheet")
+        text = texts[0][1]
+        extra_tabs = texts[1:]
     elif args.url:
         req = urllib.request.Request(args.url, headers={"User-Agent": "Mozilla/5.0"})
         text = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
@@ -549,6 +582,37 @@ def main():
         text = io.open(args.csv, encoding="utf-8", errors="replace").read()
 
     rows, mapping, headers, missing = load_rows(text)
+    for tname, ttext in (locals().get("extra_tabs") or []):
+        try:
+            r2, m2, _h2, _miss2 = load_rows(ttext)
+        except Exception as e:
+            print("  tab %r: unparseable (%s)" % (tname, str(e)[:60]))
+            continue
+        # The same FIELDS must resolve -- not the same header text. Header
+        # strings are question wording and COLUMN_HINTS exists precisely
+        # because they get reworded; comparing them rejected a tab that
+        # was correctly mapped. What would be unsafe is a tab missing a
+        # required field, because then a row means something else.
+        need = {k for k, _ in COLUMN_HINTS if k not in OPTIONAL_FIELDS}
+        absent = sorted(f for f in need if not m2.get(f))
+        if absent:
+            print("  tab %r: SKIPPED, no column for %s"
+                  % (tname, ", ".join(absent)))
+            continue
+        # REKEY to the first tab's header names. Everything downstream
+        # reads a row as row[mapping[field]], and mapping belongs to the
+        # first tab -- so a second tab whose question is worded even
+        # slightly differently yields None for every field. That failed
+        # silently: the rows arrived, "suggestion" came back empty, and
+        # all 40 were filed "unparsed" rather than reported as unread.
+        for row in r2:
+            fixed = dict(row)
+            for field, _ in COLUMN_HINTS:
+                src, dst = m2.get(field), mapping.get(field)
+                if src and dst and src != dst:
+                    fixed[dst] = row.get(src)
+            rows.append(fixed)
+        print("  tab %r: +%d row(s)" % (tname, len(r2)))
     print("sheet columns :", len(headers))
     print("rows          :", len(rows))
     print("\ncolumn mapping:")
