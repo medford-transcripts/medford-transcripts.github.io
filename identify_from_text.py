@@ -88,6 +88,84 @@ ASSENT = re.compile(r"^(here|yes|present|aye|no|i'm here|yep|absent)\b", re.I)
 
 SPK_LINE = re.compile(r"^\[([^\]]+)\]:\s*(.*)$")
 
+# ---------------------------------------------------------------------------
+# address cue, and the private parcel directory it indexes into
+#
+# A member of the public states a name AND usually an address, and the address is
+# the better index: a house number plus a street resolves to one or two people
+# (measured 1.30 candidates per building, 98% at two or fewer), where a name
+# against the corpus resolves to noise (29.6% wrong at 1,229 candidates).
+# Spoken street names need the same fuzzy matching as surnames -- "Playstead",
+# "Fellsway", "Capen" -- so they are matched against the 660 real Medford street
+# names rather than parsed open-vocabulary.
+
+STREET_TYPE = (r"street|st|road|rd|avenue|ave|lane|ln|drive|dr|place|pl|terrace|ter|"
+               r"way|circle|cir|court|ct|park|hill|square|sq|boulevard|blvd|row|path")
+ADDRESS = re.compile(r"\b(\d{1,4})\s+([A-Z][A-Za-z'\-]*(?:\s+[A-Z][A-Za-z'\-]*){0,3}"
+                     r"\s+(?:" + STREET_TYPE + r"))\b", re.I)
+
+# The parcel keys are the assessor's abbreviations ("BRADLEY RD"); speech is
+# "Bradley Road". Canonicalising both sides first means the fuzzy match is doing
+# real work on the NAME rather than burning its budget on the suffix.
+_ABBREV = {"STREET": "ST", "ROAD": "RD", "AVENUE": "AVE", "LANE": "LN",
+           "DRIVE": "DR", "PLACE": "PL", "TERRACE": "TER", "CIRCLE": "CIR",
+           "COURT": "CT", "SQUARE": "SQ", "BOULEVARD": "BLVD", "PARKWAY": "PKWY"}
+PARCELS_FILE = "street_list_parcels.json"
+
+
+def canonical_street(s):
+    out = re.sub(r"[^A-Za-z'\- ]", " ", (s or "").upper())
+    out = re.sub(r"\s+", " ", out).strip()
+    parts = out.split()
+    if parts and parts[-1] in _ABBREV:
+        parts[-1] = _ABBREV[parts[-1]]
+    return " ".join(parts)
+
+
+class Parcels(object):
+    """The private address -> owner-name directory. Absent is a valid state.
+
+    NEVER a source of names nobody gave: it only resolves the spelling of a name
+    a speaker stated aloud on the public record. Owners, not residents, so it
+    misses the ~40% of Medford that rents -- see build_parcel_directory.py.
+    """
+
+    def __init__(self, path=PARCELS_FILE):
+        self.streets, self.by_building, self.loaded = [], {}, False
+        try:
+            d = json.load(io.open(path, encoding="utf-8"))
+        except Exception:
+            return
+        self.streets = [canonical_street(s) for s in d.get("streets", [])]
+        self.by_building = {canonical_street_key(k): v
+                            for k, v in (d.get("by_building") or {}).items()}
+        self.loaded = bool(self.by_building)
+
+    def resolve_street(self, spoken):
+        """Spoken street -> a real Medford street name, or None."""
+        c = canonical_street(spoken)
+        if not c or not self.streets:
+            return None
+        if c in self.streets:
+            return c
+        r = process.extractOne(c, self.streets, scorer=fuzz.ratio, score_cutoff=85)
+        return r[0] if r else None
+
+    def candidates(self, number, spoken_street):
+        """Names recorded at that building. [] when unknown."""
+        st = self.resolve_street(spoken_street)
+        if not st:
+            return []
+        return list(self.by_building.get("%s %s" % (number, st)) or [])
+
+
+def canonical_street_key(key):
+    """'38 BRADLEY RD' -> '38 BRADLEY RD' with the street half canonicalised."""
+    m = re.match(r"^\s*(\d+[A-Za-z]?)\s+(.*)$", key or "")
+    if not m:
+        return canonical_street(key)
+    return "%s %s" % (m.group(1), canonical_street(m.group(2)))
+
 SOUNDEX_MAP = {}
 for _chars, _code in (("BFPV", "1"), ("CGJKQSXZ", "2"), ("DT", "3"),
                       ("L", "4"), ("MN", "5"), ("R", "6")):
@@ -151,16 +229,27 @@ def turns(srt_text):
 
 
 def cues_in(srt_text):
-    """Yield (speaker_key, stated_name, cue) for every identity cue found."""
+    """Yield (speaker_key, stated_name, cue, address_or_None) per identity cue."""
     turn_list, seq = turns(srt_text)
 
     # 1. self-introduction, in the OPENING of a turn only. People introduce
     #    themselves when they start speaking; searching the whole turn matches
     #    them naming somebody else later.
+    #
+    #    The address is looked for over a WIDER window than the name: public
+    #    comment runs "Good evening, my name is Jane Smith." / "I live at 12 Elm
+    #    Street." across several SRT blocks, so a two-block window found name and
+    #    address together only 364 times where a wider one finds far more.
     for spk, parts in turn_list:
         m = SELF_INTRO.search(" ".join(parts[:2]))
-        if m:
-            yield spk, m.group(1).strip(), "self_introduction"
+        if not m:
+            continue
+        addr = ADDRESS.search(" ".join(parts[:8]))
+        if addr:
+            yield spk, m.group(1).strip(), "self_introduction+address", \
+                (addr.group(1), addr.group(2))
+        else:
+            yield spk, m.group(1).strip(), "self_introduction", None
 
     # 2. a name called out, then a different speaker answers. This is the roll
     #    call and the chair calling on a member.
@@ -172,7 +261,7 @@ def cues_in(srt_text):
             if spk2 == spk:
                 continue
             cue = "roll_call" if ASSENT.match(text2) else "called_on"
-            yield spk2, m.group(1).strip(), cue
+            yield spk2, m.group(1).strip(), cue, None
 
 
 def match(stated, candidates):
@@ -234,17 +323,33 @@ def self_test():
     check("garbled declines", match("Yutori Arashi", cands), None)
     check("empty declines", match("", cands), None)
 
+    # address extraction, as spoken
+    m = ADDRESS.search("my name is Jane Smith and I live at 38 Bradley Road")
+    check("address number", m and m.group(1), "38")
+    check("address street", m and m.group(2), "Bradley Road")
+    m2 = ADDRESS.search("I'm at 12 Playstead Rd, Medford")
+    check("abbreviated street", m2 and m2.group(2), "Playstead Rd")
+    check("no address in plain speech",
+          ADDRESS.search("I have lived here for 30 years"), None)
+
+    # canonicalisation must make the assessor's form and the spoken form agree
+    check("canon road", canonical_street("Bradley Road"), "BRADLEY RD")
+    check("canon already-abbrev", canonical_street("BRADLEY RD"), "BRADLEY RD")
+    check("canon avenue", canonical_street("Hicks Avenue"), "HICKS AVE")
+    check("canon key", canonical_street_key("38 Bradley Road"), "38 BRADLEY RD")
+
     # THE BACKSPACE GUARD: a control character in a pattern is invisible and
     # silently matches nothing. Check the patterns are printable.
     for nm, pat in (("SELF_INTRO", SELF_INTRO), ("NAME_ONLY", NAME_ONLY),
-                    ("HONORIFIC", HONORIFIC), ("ASSENT", ASSENT)):
+                    ("HONORIFIC", HONORIFIC), ("ASSENT", ASSENT),
+                    ("ADDRESS", ADDRESS)):
         bad = [c for c in pat.pattern if ord(c) < 32]
         if bad:
             fails.append("%s contains control character(s) %r" % (nm, bad))
 
     for f in fails:
         print("  FAIL %s" % f)
-    print("self-test: %d checks, %d failed" % (14 + 4, len(fails)))
+    print("self-test: %d checks, %d failed" % (18 + 8, len(fails)))
     return 1 if fails else 0
 
 
@@ -268,6 +373,11 @@ def evaluate(limit=0):
     except Exception:
         pass
 
+    parcels = Parcels()
+    print("parcel directory: %s (%s buildings, %s streets)"
+          % ("loaded" if parcels.loaded else "ABSENT -- public speakers unresolvable",
+             format(len(parcels.by_building), ","), format(len(parcels.streets), ",")))
+    print()
     per_cue = collections.defaultdict(collections.Counter)
     n_meetings = 0
     for p in sorted(glob.glob("*/20??-??-??_*.srt")):
@@ -283,12 +393,26 @@ def evaluate(limit=0):
             continue
         n_meetings += 1
         cands = candidates_for(d, ids, roster)
-        for spk, stated, cue in cues_in(txt):
+        for spk, stated, cue, addr in cues_in(txt):
             truth = str(ids.get(spk) or "")
+            # THE ADDRESS LOOKUP IS THE POINT: it supplies a candidate set for
+            # someone in no roster, which is the case the officials-only set
+            # could never serve. Parcel names are tried FIRST because a
+            # household of one or two was measured at 0.0% wrong.
+            local = list(cands)
+            if addr and parcels.loaded:
+                near = parcels.candidates(addr[0], addr[1])
+                if near:
+                    per_cue[cue]["address_resolved"] += 1
+                    local = near + [c for c in cands if c not in near]
+                else:
+                    per_cue[cue]["address_unknown"] += 1
             if not is_named(truth):
                 per_cue[cue]["unnamed_cluster"] += 1
+                if addr and parcels.loaded and parcels.candidates(addr[0], addr[1]):
+                    per_cue[cue]["unnamed_but_address_resolved"] += 1
                 continue
-            got = match(stated, cands)
+            got = match(stated, local)
             if got is None:
                 per_cue[cue]["declined"] += 1
             elif got[0].lower() == truth.lower():
@@ -315,6 +439,12 @@ def evaluate(limit=0):
               % ("", c["correct_backfill_high_confidence"], c["wrong_backfill_high_confidence"]))
         print("%-18s   fuzzy tier          : %d right / %d wrong  (err %.1f%%)"
               % ("", c["correct_embedding_match"], c["wrong_embedding_match"], err))
+        if c["address_resolved"] or c["address_unknown"]:
+            print("%-18s   address -> building : %d resolved / %d unknown"
+                  % ("", c["address_resolved"], c["address_unknown"]))
+        if c["unnamed_but_address_resolved"]:
+            print("%-18s   UNNAMED clusters whose address resolves: %d"
+                  % ("", c["unnamed_but_address_resolved"]))
     print()
     print("'unnamed' counts cues landing on clusters with NO name yet -- the")
     print("identifications this would ADD. Nothing is written by --evaluate.")

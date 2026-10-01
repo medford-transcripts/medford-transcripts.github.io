@@ -58,6 +58,19 @@ STREET_TYPE = (r"(street|st|road|rd|avenue|ave|lane|ln|drive|dr|place|pl|terrace
                r"way|circle|cir|court|ct|park|hill|square|sq|boulevard|blvd|row|path)")
 ADDR_SPLIT = re.compile(r"^\s*(\d+[A-Za-z]?)\s+(.+?)\s*$")
 
+# Unit designators SITE_ADDR appends after the street. "U A" / "U B" is the form
+# that leaked through the first version and showed up as 8 streets ending "UB"
+# and 6 ending "UA" in the street list -- Unit A and Unit B, read as suffixes.
+UNIT_TAIL = re.compile(r"\s+(?:APT|UNIT|STE|FL|BLDG|REAR|#|U)\b.*$", re.I)
+
+
+def strip_unit(rest):
+    """The street portion of a SITE_ADDR, with any unit designator removed."""
+    s = UNIT_TAIL.sub("", rest or "")
+    s = re.sub(r"\s+\d+[A-Za-z]?$", "", s)        # "... ST 4B"
+    s = re.sub(r"[\s\-]+$", "", s)                # 6 streets ended in a hyphen
+    return re.sub(r"\s+", " ", s).strip()
+
 
 def dbf_fields(fp):
     fp.seek(0)
@@ -135,6 +148,20 @@ def build(zip_path):
     streets = collections.Counter()
     for r in dbf_rows(dbf, want):
         stats["parcels"] += 1
+
+        # THE STREET LIST COMES FROM *ALL* PARCELS, the household index only from
+        # residential ones. Resolving "is this a real Medford street?" is a
+        # different question from "who lives there", and building the street list
+        # behind the residential filter silently dropped every street with no
+        # residential parcels -- State St, Mall Rd, Kennedy Dr -- so spoken
+        # addresses on them could never resolve at all.
+        addr_all = re.sub(r"\s+", " ", (r.get("SITE_ADDR") or "")).strip().upper()
+        m_all = ADDR_SPLIT.match(addr_all)
+        if m_all:
+            st_all = strip_unit(m_all.group(2))
+            if st_all:
+                streets[st_all] += 1
+
         if not RESIDENTIAL.match(r.get("USE_CODE") or ""):
             stats["skipped_non_residential"] += 1
             continue
@@ -159,11 +186,7 @@ def build(zip_path):
         # candidates, and pretending otherwise would be a false precision.
         #   by_address  full address incl. unit -> 1.07 names, for exact lookups
         #   by_building number + street        -> what a spoken address matches
-        street = re.sub(r"\s+(?:APT|UNIT|STE|FL|BLDG|REAR|#)\b.*$", "", rest, flags=re.I)
-        street = re.sub(r"\s+\d+[A-Za-z]?$", "", street)          # trailing unit
-        street = re.sub(r"\s+[A-Za-z]$", "", street) if re.search(
-            r"\s\d", street) else street
-        street = re.sub(r"\s+", " ", street).strip()
+        street = strip_unit(rest)
         if not street:
             stats["address_unparseable"] += 1
             continue
