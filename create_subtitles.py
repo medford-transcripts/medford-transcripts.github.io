@@ -38,6 +38,8 @@ import srt2html, supercut, generate_reference_voices, utils, track_speakers
 # here: srt2html imports it too, and it imports neither of them back (see the
 # note in utils.web_path about why that direction is one-way).
 import make_committee_pages
+import identify_from_text
+import speaker_provenance
 import download_mcm
 import download_castus
 
@@ -847,7 +849,8 @@ def request_git_push():
 WATCHED_SOURCES = ["srt2html.py", "utils.py", "track_speakers.py",
                    "create_subtitles.py", "fix_common_errors.py",
                    "srt_lines.py", "make_committee_pages.py",
-                   "speaker_provenance.py", "site_url.py"]
+                   "speaker_provenance.py", "site_url.py",
+                   "identify_from_text.py"]
 
 
 def _source_mtimes():
@@ -961,6 +964,29 @@ def rebuild_from_model(yt_id):
     track_speakers.match_embeddings(yt_id)
     track_speakers.match_to_reference2(yt_id=yt_id)
     track_speakers.propagate()
+
+    # NAME WHAT IS LEFT FROM THE WORDS SPOKEN IN THE MEETING. Runs AFTER the
+    # embedding machinery deliberately: match_embeddings, match_to_reference2
+    # and propagate get first claim on every cluster, and this only fills what
+    # they left blank -- it cannot overwrite a human, a reference voice, an
+    # embedding match or a propagation. Before do_one so the names reach the
+    # page in the same pass.
+    #
+    # NEVER FATAL. A failure here must not cost a finished transcription, the
+    # same rule as the startup site-wide rebuild.
+    try:
+        _dir = speaker_provenance.find_meeting_dir(yt_id)
+        if _dir:
+            _got = identify_from_text.apply_to_meeting(
+                _dir, utils.get_video_data().get(yt_id) or {}, apply=True)
+            if _got:
+                print('identify_from_text: named %d speaker(s) in %s: %s'
+                      % (len(_got), yt_id,
+                         ', '.join(sorted(v[0] for v in _got.values()))),
+                      flush=True)
+    except Exception as _e:
+        print('identify_from_text FAILED for %s (%s: %s) -- continuing'
+              % (yt_id, type(_e).__name__, str(_e)[:120]), flush=True)
     srt2html.do_one(yt_id=yt_id)
     request_git_push()
 

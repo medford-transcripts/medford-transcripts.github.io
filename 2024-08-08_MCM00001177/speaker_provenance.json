@@ -128,11 +128,11 @@
         "previous": null
     },
     "SPEAKER_16": {
-        "value": "SPEAKER_16",
-        "source": "unknown",
+        "value": "Patricia Egan",
+        "source": "transcript_context",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:01Z",
+        "from": "identify_from_text:self_introduction+address/exact",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_17": {
@@ -152,11 +152,11 @@
         "previous": null
     },
     "SPEAKER_19": {
-        "value": "SPEAKER_19",
-        "source": "unknown",
+        "value": "John Granara",
+        "source": "transcript_context_fuzzy",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:01Z",
+        "from": "identify_from_text:self_introduction+address/partial_ratio",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_20": {

@@ -96,11 +96,11 @@
         "previous": null
     },
     "SPEAKER_12": {
-        "value": "SPEAKER_12",
-        "source": "unknown",
+        "value": "Brian Pilcher",
+        "source": "transcript_context",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:11Z",
+        "from": "identify_from_text:self_introduction+address/exact",
+        "at": "2026-10-01T03:22:08Z",
         "previous": null
     },
     "SPEAKER_13": {
@@ -248,19 +248,19 @@
         "previous": null
     },
     "SPEAKER_31": {
-        "value": "SPEAKER_31",
-        "source": "unknown",
+        "value": "Alexis Smith",
+        "source": "transcript_context",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:11Z",
+        "from": "identify_from_text:self_introduction+address/exact",
+        "at": "2026-10-01T03:22:08Z",
         "previous": null
     },
     "SPEAKER_32": {
-        "value": "SPEAKER_32",
-        "source": "unknown",
+        "value": "Linda Julien",
+        "source": "transcript_context_fuzzy",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:11Z",
+        "from": "identify_from_text:self_introduction+address/partial_ratio",
+        "at": "2026-10-01T03:22:08Z",
         "previous": null
     },
     "SPEAKER_33": {

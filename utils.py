@@ -400,6 +400,34 @@ def official_body_urls(path=ROSTERS_FILE):
     return out
 
 
+def body_roster(meeting_type, path=ROSTERS_FILE):
+    """[name] of the people the city lists on that body, or [] if unlisted.
+
+    THIS IS THE CLOSED CANDIDATE SET identify_from_text was waiting for, and the
+    size of the set is the whole ballgame: matching a stated name against two
+    candidates is 0.0% wrong, against 1,229 it is 29.6%. A per-body roster is
+    typically 3 to 13 names.
+
+    Exact normalised matching, for the reason in official_body_urls: the city
+    publishes both a Historical Commission and a Historic District Commission,
+    and merging them would hand a meeting the wrong body's members -- which is
+    worse than handing it none, because a wrong candidate set produces confident
+    wrong names rather than no match.
+    """
+    if not meeting_type:
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as fp:
+            bodies = json.load(fp).get("bodies") or {}
+    except (OSError, ValueError):
+        return []
+    key = _body_key(meeting_type)
+    for name, cfg in bodies.items():
+        if _body_key(name) == key:
+            return [m["name"] for m in (cfg or {}).get("members", []) if m.get("name")]
+    return []
+
+
 def official_body_url(meeting_type, path=ROSTERS_FILE):
     """The city's own page for a committee, or None when it publishes none."""
     if not meeting_type:

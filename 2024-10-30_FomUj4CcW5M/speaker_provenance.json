@@ -96,11 +96,11 @@
         "previous": null
     },
     "SPEAKER_12": {
-        "value": "Creamer",
-        "source": "unknown",
+        "value": "Elizabeth Creamer",
+        "source": "transcript_context",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:06Z",
+        "from": "identify_from_text:self_introduction+address/exact",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_13": {
@@ -176,11 +176,11 @@
         "previous": null
     },
     "SPEAKER_22": {
-        "value": "Warden",
-        "source": "unknown",
+        "value": "Cynthia Wardan",
+        "source": "transcript_context_fuzzy",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:06Z",
+        "from": "identify_from_text:self_introduction+address/partial_ratio",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_23": {

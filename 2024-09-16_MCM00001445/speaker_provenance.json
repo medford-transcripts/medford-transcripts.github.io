@@ -16,11 +16,11 @@
         "previous": null
     },
     "SPEAKER_02": {
-        "value": "MCM00001483_SPEAKER_23",
-        "source": "unknown",
+        "value": "Aaron Brandes",
+        "source": "transcript_context",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:03Z",
+        "from": "identify_from_text:self_introduction+address/exact",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_03": {
@@ -192,11 +192,11 @@
         "previous": null
     },
     "SPEAKER_24": {
-        "value": "AXh4iBqkQq0_SPEAKER_02",
-        "source": "unknown",
+        "value": "Tony Nardella",
+        "source": "transcript_context_fuzzy",
         "score": null,
-        "from": null,
-        "at": "2026-09-18T18:53:03Z",
+        "from": "identify_from_text:self_introduction+address/partial_ratio",
+        "at": "2026-10-01T03:22:07Z",
         "previous": null
     },
     "SPEAKER_25": {

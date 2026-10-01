@@ -59,7 +59,8 @@ import tempfile
 from datetime import datetime, timezone
 
 SOURCES = {"manual", "reference_voice", "embedding_match", "propagated",
-           "backfill_high_confidence", "unknown"}
+           "backfill_high_confidence", "transcript_context",
+           "transcript_context_fuzzy", "unknown"}
 
 # Sources propagate() will not overwrite.
 #
@@ -70,7 +71,21 @@ SOURCES = {"manual", "reference_voice", "embedding_match", "propagated",
 # "a cosine was above 0.85 in September 2026". This repo has been bitten
 # repeatedly by values that keep looking authoritative after their basis is
 # gone; this is the same shape, so it gets its own name and carries its score.
-PROTECTED_SOURCES = {"manual", "backfill_high_confidence"}
+# "transcript_context" is an EXACT name match inside a SMALL CLOSED candidate
+# set -- a body roster (median 7 names) or an interview show's host plus the
+# guest named in its title (2 to 3). It gets its own name for the same reason
+# backfill_high_confidence does: its basis is the words spoken in the meeting,
+# not a cosine and not a human, and a source name that misdescribes its basis
+# outlives the evidence for it.
+#
+# Measured on the title cue across 124 extractions: 65 agreed exactly with an
+# already-labelled speaker, 12 were spelling variants of one, 47 filled a
+# cluster nobody had named, and NONE contradicted a meeting whose speakers
+# were all already known.
+#
+# The fuzzy tier is deliberately NOT protected: partial_ratio at 80 measured
+# 2.9% wrong, so an embedding match should stay free to correct it.
+PROTECTED_SOURCES = {"manual", "backfill_high_confidence", "transcript_context"}
 
 PROVENANCE_FILENAME = "speaker_provenance.json"
 SPEAKER_IDS_FILENAME = "speaker_ids.json"
