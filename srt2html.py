@@ -29,7 +29,7 @@ import srt_lines
 import make_committee_pages
 from urllib.parse import quote
 from html import escape
-from site_url import site_url
+from site_url import site_url, SITE_ROOT
 
 # ---------------------------------------------------------------------------
 # TRANSLATIONS ARE OFF.
@@ -348,6 +348,90 @@ def video_jsonld(dir, filebasename, yt_id, summary, video_data=None):
 
     return ('    <script type="application/ld+json">'
             + json.dumps(data, ensure_ascii=False) + '</script>\n')
+
+
+def page_jsonld(dir, filebasename, yt_id, video_data=None, summary=None):
+    """BreadcrumbList + WebPage for a transcript page.
+
+    DELIBERATELY NOT A VideoObject. These pages are read for their text, not
+    watched: the asset is thousands of pages of unique long-form transcript
+    matching long-tail queries, which is ordinary web indexing. video_jsonld
+    still runs where a real thumbnail exists, but it is summary-gated and
+    source-gated, so most pages carried NO structured data at all until now.
+
+    The breadcrumb is the only part of this with a visible payoff -- Google
+    renders the trail in place of a raw URL -- and it is honest only because
+    the page now actually links to its committee. Declaring a hierarchy a page
+    does not navigate is the kind of claim that earns a manual action.
+
+    WHAT IS LEFT OUT, and why:
+
+      Event. The meeting IS an event, and "about: {Event}" is the natural
+      modelling, but Google requires location on an Event and we do not know
+      it. Most of these are hybrid, the physical room is not recorded in
+      video_data, and inventing "Medford City Hall" would be the same mistake
+      as inventing a video thumbnail -- which is what put a missing-thumbnail
+      error in Search Console in the first place. An entity with a required
+      field we cannot fill is worse than no entity.
+
+      Person. Naming speakers as Person entities would publish a
+      machine-readable claim that a named individual said a specific sentence,
+      off ASR plus diarization with the error rates verify.html exists to
+      surface. On the page that claim carries visible context; in structured
+      data it is stripped of caveat and built for reuse.
+
+      rosters.json urls. The official body URL would be a good about.url, but
+      that file is 76% scraped site-navigation at the moment (see the note in
+      plan.txt) and this should not depend on it until it is fixed.
+    """
+    entry = (video_data or {}).get(yt_id) or {}
+    page = site_url(os.path.join(dir, filebasename + ".html"))
+    title = (entry.get("title") or filebasename).strip()
+    ctte = committee_page(yt_id, video_data)
+
+    crumbs = [{"@type": "ListItem", "position": 1,
+               "name": "All transcripts", "item": SITE_ROOT}]
+    if ctte:
+        crumbs.append({"@type": "ListItem", "position": 2, "name": ctte[1],
+                       "item": site_url(utils.committee_page(ctte[1]))})
+    crumbs.append({"@type": "ListItem", "position": len(crumbs) + 1,
+                   "name": title, "item": page})
+
+    breadcrumb = {"@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  "itemListElement": crumbs}
+
+    webpage = {"@context": "https://schema.org",
+               "@type": "WebPage",
+               "name": title,
+               "url": page,
+               "inLanguage": "en"}
+
+    desc = meta_description(summary, title)
+    if desc:
+        webpage["description"] = desc
+
+    date = entry.get("date") or entry.get("upload_date")
+    if date:
+        webpage["datePublished"] = date
+
+    # The recording this transcript was made from. isBasedOn is the honest
+    # relation: the page is derived from that source, it does not host it.
+    src = source_url(yt_id, video_data)
+    if src:
+        webpage["isBasedOn"] = src
+
+    if ctte:
+        webpage["about"] = {"@type": "GovernmentOrganization", "name": ctte[1]}
+        webpage["isPartOf"] = {"@type": "CollectionPage",
+                               "name": ctte[1],
+                               "url": site_url(utils.committee_page(ctte[1]))}
+
+    out = []
+    for obj in (breadcrumb, webpage):
+        out.append('    <script type="application/ld+json">'
+                   + json.dumps(obj, ensure_ascii=False) + '</script>')
+    return "".join(s + chr(10) for s in out)
 
 
 def summary_block(dir, filebasename, yt_id, video_data=None):
@@ -689,6 +773,10 @@ def srt2html(yt_id,skip_translation=False, force=False):
         # canonical points elsewhere should not also claim to be the video.
         if _summary and canonical_file == htmlfilename:
             html.write(video_jsonld(dir, filebasename, yt_id, _summary, video_data))
+        # Every transcript gets these; video_jsonld above is gated on having
+        # a summary AND a real thumbnail, so most pages had nothing at all.
+        if canonical_file == htmlfilename:
+            html.write(page_jsonld(dir, filebasename, yt_id, video_data, _summary))
         html.write('  </head>\n')
         html.write('  <body>\n')
 
