@@ -53,6 +53,12 @@ DATED_REPLACEMENTS = {
     # holds the SEAT are gated; the bare-surname ones stay ungated, because she
     # existed before 2026 as a candidate and as a resident at public comment.
     "2026-01-01": {
+        # Mullane again, from the roll-call inventory: 116 "Malauulu" and
+        # 34 "Malay", both overwhelmingly 2026. "Malay" is also an ordinary
+        # word, which is exactly why the title has to be part of the rule.
+        "Councilor Malauulu" : "Councilor Mullane",
+        "Councilor Malay" : "Councilor Mullane",
+        "Council Malauulu" : "Councilor Mullane",
         "Liz Malone" : "Liz Mullane",
         "Council Malone" : "Councilor Mullane",
         "Councilor Malone" : "Councilor Mullane",
@@ -75,6 +81,22 @@ DATED_REPLACEMENTS = {
         "Councilor Mullan" : "Councilor Mullane",
         "Councilor Millay" : "Councilor Mullane",
         "Councilor Mulley" : "Councilor Mullane",
+    },
+    # Bears took the gavel in 2024 and Leming and Callahan were seated that
+    # January, so these three assert offices that did not exist before then.
+    # "President Pierce" is the single biggest unfixed mangling in the
+    # corpus at 192 occurrences, and it appears ONLY in 2024-2026 -- which is
+    # exactly Bears's presidency, so the gate is corroborated rather than
+    # guessed. "Councilor Kelly" is Callahan: in every roll call that calls
+    # Kelly, Callahan is absent and Kelly sits in her alphabetical slot
+    # (owner). Bare "Kelly" stays untouched -- Kelly Catallo was a real 2021
+    # candidate and residents named Kelly speak at public comment.
+    "2024-01-01": {
+        "President Pierce" : "President Bears",
+        "president Pierce" : "President Bears",
+        "Councilor Lennon" : "Councilor Leming",
+        "Councilor Kelly" : "Councilor Callahan",
+        "Council Kelly" : "Councilor Callahan",
     },
 }
 
@@ -141,6 +163,37 @@ def apply_rules(text, patterns):
 def fix_common_errors(yt_id=None):
 
     replace_dict = {
+        # SURNAME SPELLINGS, ungated: these fix how a name is SPELLED, not
+        # which office someone holds, so they are true whenever the name
+        # appears -- as a member, a candidate or a resident at public comment.
+        # Same reasoning the Mullane block records for its bare-surname rules.
+        #
+        # MASTROBUONI IS SPELLED OUT IN OUR OWN CORPUS by the man himself:
+        #   "Best way to reach me is MikeMastroboni.com, M-I-K-E, and then
+        #    Mastroboni is M-A-S-T-R-O-B-U-O-N-I."
+        # The correct spelling appears ZERO times in the transcripts; 318 say
+        # "Mastroboni". councilors.json had it wrong too ("Mastrobouni") and is
+        # corrected in the same commit. His website is one word, so the word
+        # boundary leaves "MikeMastroboni.com" alone.
+        "Mastroboni" : "Mastrobuoni",
+        "Mastrobone" : "Mastrobuoni",
+        "Mastrobonni" : "Mastrobuoni",
+        "Mastrobrioni" : "Mastrobuoni",
+        "Mastrobianni" : "Mastrobuoni",
+        "Mastraboni" : "Mastrobuoni",
+        "Mastromoni" : "Mastrobuoni",
+        "Master Boney" : "Mastrobuoni",
+        # NOT "Mastone": that is a different, real family -- "Mia Mastone" (80)
+        # and "Tegan Mastone" (14) -- and it was the highest-count candidate at
+        # 54. Mapping it would have renamed them.
+        #
+        # Lungo-Koehn, whose hyphenated name ASR splits into two words.
+        "Long and Kern" : "Lungo-Koehn",
+        "Lowell-Kern" : "Lungo-Koehn",
+        # Scarpelli, a third variant alongside the existing ones.
+        "Scott Felly" : "Scarpelli",
+        "Scalpelli" : "Scarpelli",
+        "Scapelli" : "Scarpelli",
         "Councillor" : "Councilor",
         "Counselor" : "Councilor",
         "counselor" : "Councilor", 
