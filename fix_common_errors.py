@@ -183,9 +183,20 @@ def fix_common_errors(yt_id=None):
         "Mastraboni" : "Mastrobuoni",
         "Mastromoni" : "Mastrobuoni",
         "Master Boney" : "Mastrobuoni",
-        # NOT "Mastone": that is a different, real family -- "Mia Mastone" (80)
-        # and "Tegan Mastone" (14) -- and it was the highest-count candidate at
-        # 54. Mapping it would have renamed them.
+        # NOT "Mastone" -> Mastrobuoni: it is a real surname, MUSTONE, which
+        # ASR also mangles. Mea Quinn Mustone sat on the School Committee
+        # 2015-2023 and is named 1,392 times correctly against 274 as
+        # "Mastone", so the surname gets its own rule below rather than
+        # being folded into a name it has nothing to do with.
+        "Mastone" : "Mustone",
+        "Mastones" : "Mustones",
+        # Her given name is MEA, rendered "Mia" 130 times. Only the forms
+        # carrying her middle name are corrected: "Mia Quinn Mustone" can
+        # only be her. A bare "Mia Mustone" is left alone, because TEGAN
+        # MUSTONE is a different person -- "our Medford High School
+        # freshman, Tegan Mustone" -- and a family shares a surname.
+        "Mia Quinn Mustone" : "Mea Quinn Mustone",
+        "Mia Quinn Mastone" : "Mea Quinn Mustone",
         #
         # Lungo-Koehn, whose hyphenated name ASR splits into two words.
         "Long and Kern" : "Lungo-Koehn",
