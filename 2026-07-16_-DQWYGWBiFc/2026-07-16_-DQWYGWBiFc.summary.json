@@ -1,28 +1,28 @@
 {
  "video_id": "-DQWYGWBiFc",
  "provider": "gemini",
- "generated_at": "2026-09-27T07:19:25Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-02T20:05:46Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "59f8dbdcc260677a",
- "overview": "The Public Health and Community Safety Committee met to discuss and ultimately approved a draft ordinance regarding law enforcement identification and masking restrictions.",
+ "transcript_sha": "416a784dfb5b5065",
+ "overview": "The committee discussed and approved an ordinance to regulate law enforcement identification and masking within the city. The measure aims to codify standard identification protocols and ensure officer accountability to build public trust.",
  "items": [
   {
-   "title": "Resolution 26031: Ordinance Requiring Law Enforcement Identification and Restricting Masking",
+   "title": "Ordinance to Require Law Enforcement Identification and Limit Masking",
    "t": 264,
-   "summary": "The committee discussed and approved a proposed ordinance restricting law enforcement officers from wearing masks except under specific exemptions, requiring visible identification, and establishing protocols for verifying the credentials of other law enforcement agencies.",
+   "summary": "Approved a measure that prohibits law enforcement officers from wearing masks or disguises while on duty except in specific medical, tactical, religious, or weather-related circumstances. The ordinance also requires officers to display visible identification and establishes a protocol for verifying the identity of individuals claiming to be law enforcement during enforcement actions.",
    "speakers": [
     "Emily Lazzaro",
     "Anna Callahan",
     "Justin Tseng",
     "Hilah Darcy",
-    "Cyan McDermott"
+    "Sian McDermott"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 7893,
-  "output_tokens": 170
+  "output_tokens": 199
  }
 }
