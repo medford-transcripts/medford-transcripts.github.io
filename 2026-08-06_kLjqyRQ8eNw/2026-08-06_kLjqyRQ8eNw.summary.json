@@ -1,16 +1,16 @@
 {
  "video_id": "kLjqyRQ8eNw",
  "provider": "gemini",
- "generated_at": "2026-09-29T02:07:10Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-02T18:05:44Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "dc7e650a1702ce0b",
- "overview": "The Resident Services and Public Engagement Committee met to finalize the June city council newsletter draft, assign drafting duties for upcoming newsletters, and plan logistics and outreach for upcoming neighborhood ward meetings.",
+ "transcript_sha": "a1c36b589e83f205",
+ "overview": "The committee finalized the June municipal newsletter and established a rotation for councilors to author future editions through the end of the year. Members also coordinated logistics and outreach strategies for upcoming hybrid neighborhood ward meetings and scheduled a preliminary discussion of the noise ordinance for mid-September.",
  "items": [
   {
-   "title": "City Council Newsletter Review",
+   "title": "City Newsletter Review",
    "t": 475,
-   "summary": "The committee reviewed the draft June newsletter, discussing how to link specific ordinances and agreeing to include pavement and pothole repair statistics from the Department of Public Works.",
+   "summary": "Approved the June newsletter draft with revisions to include links to recent personnel and compensation ordinances and a summary of Department of Public Works paving activity.",
    "speakers": [
     "Liz Mullane",
     "Marie Izzo",
@@ -20,9 +20,9 @@
    ]
   },
   {
-   "title": "Newsletter Drafting Schedule",
+   "title": "Newsletter Production Schedule",
    "t": 1062,
-   "summary": "Committee members volunteered for future monthly newsletter drafting assignments running through December.",
+   "summary": "Adopted a monthly rotation schedule for councilors to draft the municipal newsletter from September through December 2026.",
    "speakers": [
     "Liz Mullane",
     "Matt Leming",
@@ -33,7 +33,7 @@
   {
    "title": "Neighborhood Ward Meetings Planning",
    "t": 1227,
-   "summary": "The committee discussed hybrid meeting logistics with Medford Community Media and brainstormed various digital and physical outreach strategies to publicize the upcoming ward meetings.",
+   "summary": "Finalized logistics for upcoming hybrid neighborhood ward meetings, including coordination with Medford Community Media and a multi-channel communication plan involving city departments and community organizations.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan",
@@ -43,7 +43,7 @@
   {
    "title": "Noise Ordinance Update",
    "t": 1723,
-   "summary": "The chair noted that the noise ordinance was not on the current agenda due to notice requirements and will be addressed at the next meeting in mid-September.",
+   "summary": "Postponed the noise ordinance discussion to a mid-September meeting to ensure sufficient time for public notice.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan"
@@ -52,7 +52,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 8508,
-  "output_tokens": 373
+  "input_tokens": 8509,
+  "output_tokens": 391
  }
 }
