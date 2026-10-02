@@ -42,6 +42,21 @@ medford_tmp/
 # aggregated and published; this raw mapping must never be.
 addresses*.json
 
+# CITY STAFF ROSTER -- same handling as addresses*.json, for the same reason.
+#
+# staff.json is 99 city employees with their posts and 95 work email addresses,
+# all of it already public on medfordma.org/departments. The objection is not
+# secrecy, it is AGGREGATION: the city publishes it one department page at a
+# time, and a single committed file turns that into a ready-made mailing list
+# for every city employee. Running scrape_staff.py is itself enough of a
+# roadblock.
+#
+# scrape_staff.py IS committed -- the method is the useful part and anyone can
+# re-derive the file in a couple of minutes. Only the assembled roster is held
+# back. Titles reach the published pages the way addresses reach the heatmaps:
+# a name and a post beside a speaker, never the contact details.
+staff.json
+
 # RESIDENT NAME -> HOME ADDRESS DATA, same privacy class as addresses*.json.
 #
 # wards_dict.json holds 429 residents with street addresses and ward; ward_list
