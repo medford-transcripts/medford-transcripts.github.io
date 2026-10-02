@@ -1,0 +1,42 @@
+{
+ "video_id": "CAS00002504",
+ "provider": "gemini",
+ "generated_at": "2026-10-01T23:05:44Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "02352a31986b79c9",
+ "overview": "The Climate Equity Council met to receive presentations on Medford's affordable housing initiatives and the status of recent environmental and recreation grant applications. Lacking a quorum, the council did not take any formal actions but discussed future meeting logistics and goals.",
+ "items": [
+  {
+   "title": "Affordable Housing Presentation",
+   "t": 0,
+   "summary": "Housing Planner Katherine Buckingham presented an overview of Medford's affordable housing definitions, inclusionary zoning rules, and the Affordable Housing Trust Fund's action plan and local programs.",
+   "speakers": [
+    "Katherine Buckingham",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Grants and Projects Update",
+   "t": 2913,
+   "summary": "Amanda Centrella provided updates on several regional grant applications, noting that funding was awarded for a community depaving project but denied for the open space plan update and Tufts Park stormwater improvements.",
+   "speakers": [
+    "Amanda Centrella",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Future Agenda Setting and Council Discussion",
+   "t": 3320,
+   "summary": "The council, lacking a quorum to take formal action, discussed future meeting topics, outreach event dates, and methods to improve communication and track council goals.",
+   "speakers": [
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23858,
+  "output_tokens": 303
+ }
+}
