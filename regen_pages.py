@@ -30,11 +30,24 @@ them once at the end -- srt2html.make_index() and make_committee_pages.make().
 
 import argparse
 import glob
+import sys
 import io
 import os
 import time
 
 PROGRESS = "regen_progress.txt"
+
+
+def progress_paths():
+    """Every worker's progress file.
+
+    EACH SHARD WRITES ITS OWN. A single shared file would have four processes
+    appending concurrently, and an interleaved write loses ids -- which here
+    means silently rebuilding pages twice, or worse, recording one that did not
+    finish. Separate files make the append safe without a lock, and reading is
+    just the union.
+    """
+    return sorted(glob.glob(PROGRESS.replace(".txt", "*.txt")))
 
 
 def meeting_dirs():
@@ -46,17 +59,27 @@ def meeting_dirs():
     return out
 
 
-def done_ids(path=PROGRESS):
-    try:
-        return set(io.open(path, encoding="utf-8").read().split())
-    except OSError:
-        return set()
+def done_ids():
+    out = set()
+    for p in progress_paths():
+        try:
+            out |= set(io.open(p, encoding="utf-8").read().split())
+        except OSError:
+            pass
+    return out
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--status", action="store_true")
+    # THE REBUILD IS CPU-BOUND AND SINGLE-THREADED: measured at 98% of one core
+    # with a flat 0.54 GB working set, on a box with 8 logical cores. Memory is
+    # binary here -- enough not to be killed, and nothing above that helps --
+    # so the only lever on wall time is running more of them.
+    ap.add_argument("--workers", type=int, default=1)
+    ap.add_argument("--shard", type=int, default=0)
+    ap.add_argument("--of", type=int, default=1)
     args = ap.parse_args()
 
     all_m = meeting_dirs()
@@ -66,6 +89,25 @@ def main():
           % (len(all_m), len(done), len(todo)))
     if args.status:
         return 0
+    if args.workers > 1:
+        import subprocess
+        procs = []
+        for i in range(args.workers):
+            procs.append(subprocess.Popen(
+                [sys.executable, __file__, "--shard", str(i),
+                 "--of", str(args.workers)]))
+            print("  started worker %d/%d (pid %d)"
+                  % (i + 1, args.workers, procs[-1].pid), flush=True)
+        rc = 0
+        for p in procs:
+            rc |= p.wait()
+        print("all workers finished (rc=%d)" % rc)
+        return rc
+
+    # interleaved rather than blocked, so a long meeting does not land every
+    # one of its neighbours on the same worker
+    if args.of > 1:
+        todo = [t for n, t in enumerate(todo) if n % args.of == args.shard]
     if args.limit:
         todo = todo[:args.limit]
 
@@ -88,7 +130,9 @@ def main():
                         raise
                     time.sleep(2 + 3 * attempt)
             # appended ONLY on success, so a crash mid-page retries it
-            with io.open(PROGRESS, "a", encoding="utf-8") as fp:
+            shard_file = (PROGRESS if args.of == 1 else
+                          PROGRESS.replace(".txt", "_%d.txt" % args.shard))
+            with io.open(shard_file, "a", encoding="utf-8") as fp:
                 fp.write(yt + "\n")
             ok += 1
         except Exception as e:
