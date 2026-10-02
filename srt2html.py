@@ -577,6 +577,44 @@ def player_source(yt_id, video_data=None):
     return ("youtube", yt_id)
 
 
+# PARAGRAPH BREAKS INSIDE A LONG TURN.
+#
+# A speaker's whole turn renders as ONE <p>, and the median turn is 26 words
+# so that is usually right -- but the 90th percentile is 237 words and the
+# longest in the corpus is 7,763. Those are unreadable walls.
+#
+# THE BREAK IS MEASURED, NOT EDITORIAL. SRT blocks carry a start and an end,
+# so the silence between two of them is a fact about the recording rather than
+# a judgement about the content. A break marks a place the speaker actually
+# stopped. Nothing is added to, removed from or reordered in the text -- the
+# only change is a </p><p> between two blocks that were already adjacent.
+#
+# Blocks are SENTENCE-level (see apply_corrections.realign, which preserves
+# those boundaries because every timestamp anchor on the page points at one),
+# so a break can never land mid-sentence.
+#
+# Both thresholds measured over 14,113 within-speaker gaps across 12 meetings:
+#   gap    p50 0.60s, p90 1.84s, p95 2.60s -- 1.5s is a real pause, not a beat
+#   words  below 80 a turn does not need splitting, and requiring it leaves
+#          the median 26-word turn untouched
+# Together they split 13% of turns; a 927-word turn becomes about 5.7
+# paragraphs of ~163 words. At a 3.0s threshold it stays a 400-word wall.
+PARA_GAP_SECONDS = 1.5
+PARA_MIN_WORDS = 80
+
+
+def para_break(at):
+    """Close a paragraph and open the next AS A LINE.
+
+    A bare <p> was wrong: every rendered line carries class="line" and a
+    data-t, which is what transcript-player.js syncs against and what the
+    correction form uses to locate the text a reader is editing. Without them
+    a continuation paragraph is invisible to both -- the reader sees the
+    break, but clicking it offers the whole turn.
+    """
+    return '</p>' + chr(10) + '    <p class="line" data-t="' + str(at) + '">'
+
+
 def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=None, languages={"en" : "English"}, video_data=None):
 
     if text == '': return
@@ -916,6 +954,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
     speaker = ""
     text = ""
     htmltext = ""
+    para_words = 0
     t0 = datetime.datetime(1900,1,1)    
     with open(srtfilename, 'r', encoding="utf-8") as file:
 
@@ -997,7 +1036,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 if this_speaker == speaker:
                     # same speaker; append to previous text
                     text += this_text
+                    if ((this_start - stop) > PARA_GAP_SECONDS
+                            and para_words >= PARA_MIN_WORDS):
+                        htmltext += para_break(this_start)
+                        para_words = 0
                     htmltext += this_html_text
+                    para_words += len(this_text.split())
 
                 else:
                     finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, htmltext=htmltext, languages=languages, video_data=video_data)
@@ -1007,6 +1051,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
                     text = this_text
                     htmltext = this_html_text
                     speaker = this_speaker
+                    para_words = len(this_text.split())
 
                 stop = this_stop
 

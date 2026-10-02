@@ -32,6 +32,22 @@ TS_RE = re.compile(r"(\d+):(\d\d):(\d\d)[,.](\d{1,3})")
 SPEAKER_RE = re.compile(r"^\[([^\]]*)\]:\s*(.*)$", re.S)
 
 
+# A RENDERED LINE IS NOW A PARAGRAPH, NOT A WHOLE TURN.
+#
+# srt2html breaks a long turn at a measured pause (srt2html.PARA_BREAK), so
+# the unit a reader sees -- and therefore the unit a contributor is asked to
+# correct -- stops at that break. These thresholds live in this module rather
+# than in srt2html because line_span() MUST agree with the renderer: the whole
+# reason this file exists is that a span wider than what the reader saw either
+# rejects a good correction as stale or writes a paragraph into part of its
+# blocks and duplicates the rest.
+#
+# Without this, a correction to one paragraph of a 7,763-word turn would open
+# the entire wall in the form.
+PARA_GAP_SECONDS = 1.5
+PARA_MIN_WORDS = 80
+
+
 def to_seconds(ts):
     """'00:01:23,456' -> 83.456. None if it does not look like a timestamp."""
     m = TS_RE.search(ts or "")
@@ -128,8 +144,17 @@ def line_span(blocks, i, names=None):
         return names.get(spk, spk)
 
     want = resolved(i)
+    words = len((blocks[i].get("text") or "").split())
     j = i + 1
     while j < len(blocks) and resolved(j) == want:
+        # stop where the RENDERER starts a new paragraph
+        prev_end = blocks[j - 1].get("end")
+        this_start = blocks[j].get("start")
+        if (prev_end is not None and this_start is not None
+                and (this_start - prev_end) > PARA_GAP_SECONDS
+                and words >= PARA_MIN_WORDS):
+            break
+        words += len((blocks[j].get("text") or "").split())
         j += 1
     return (i, j)
 
