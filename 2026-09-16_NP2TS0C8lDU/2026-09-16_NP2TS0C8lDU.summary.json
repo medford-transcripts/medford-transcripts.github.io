@@ -1,16 +1,26 @@
 {
  "video_id": "NP2TS0C8lDU",
  "provider": "gemini",
- "generated_at": "2026-09-29T00:06:39Z",
+ "generated_at": "2026-10-02T17:08:36Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "6a4e28fbb0dd63b5",
- "overview": "The Resident Services and Public Engagement Committee approved the summer municipal newsletter, reviewed scheduling and coordination for upcoming neighborhood ward meetings, and discussed potential regulatory models to modernize the city's 1974 noise ordinance.",
+ "transcript_sha": "fe50d4c1e56f04cc",
+ "overview": "The Resident Services and Public Engagement Committee met to approve the summer newsletter, coordinate outreach for upcoming ward meetings, and discuss options for updating the city's 1974 noise ordinance.",
  "items": [
   {
-   "title": "Summer Municipal Newsletter",
-   "t": 65,
-   "summary": "Approved and released the summer newsletter summarizing City Council activities and meetings from July and August.",
+   "title": "Summer Newsletter",
+   "t": 66,
+   "summary": "Approved and released the municipal newsletter covering city council activities and resolutions from July and August.",
+   "speakers": [
+    "Liz Mullane",
+    "Anna Callahan",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Ward Meetings",
+   "t": 397,
+   "summary": "Reviewed scheduling, logistics, and outreach strategies for upcoming neighborhood ward meetings starting with Ward 1 on September 23rd.",
    "speakers": [
     "Liz Mullane",
     "George Scarpelli",
@@ -18,18 +28,9 @@
    ]
   },
   {
-   "title": "Neighborhood Ward Meetings Schedule",
-   "t": 397,
-   "summary": "Reviewed coordination logistics, publicity tactics, and school venue setups for the upcoming series of neighborhood ward meetings.",
-   "speakers": [
-    "Liz Mullane",
-    "George Scarpelli"
-   ]
-  },
-  {
-   "title": "Noise Ordinance Revision",
+   "title": "Noise Ordinance Update",
    "t": 792,
-   "summary": "Discussed updating the city's outdated 1974 noise ordinance using comparison models from neighboring municipalities and kept the matter in committee to develop a draft and consult stakeholders.",
+   "summary": "Kept in committee a resolution to update the city's noise ordinance after reviewing regulatory approaches from peer municipalities and discussing enforcement challenges.",
    "speakers": [
     "Liz Mullane",
     "Justin Tseng",
@@ -42,6 +43,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 11806,
-  "output_tokens": 325
+  "output_tokens": 321
  }
 }

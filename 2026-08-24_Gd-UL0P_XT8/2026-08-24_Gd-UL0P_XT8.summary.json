@@ -1,25 +1,25 @@
 {
  "video_id": "Gd-UL0P_XT8",
  "provider": "gemini",
- "generated_at": "2026-09-29T01:09:02Z",
+ "generated_at": "2026-10-02T17:11:30Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "be310cee4a581388",
- "overview": "The Medford School Committee approved an updated district Wellness Policy and a $22.7 million schematic design for HVAC electrification and roof repairs at Roberts Elementary. The committee also reallocated nearly $460,000 in capital funds toward intercom systems and mechanical repairs while passing several resolutions concerning student assessments, e-bike safety, and federal internet funding.",
+ "transcript_sha": "1cd0f522786f6949",
+ "overview": "The School Committee approved a $22.7 million schematic design for Roberts Elementary renovations and reallocated capital funds for various maintenance projects. The committee also updated its operating rules, honored a long-serving administrator upon retirement, and adopted several resolutions regarding school safety and federal funding.",
  "items": [
   {
    "title": "Consent Agenda",
    "t": 110,
-   "summary": "Approved the consent agenda, including a $35,000 donation from the Cummings Foundation and amended meeting minutes from July 20, 2026.",
+   "summary": "Approved the consent agenda, including a $35,000 donation from the Cummings Foundation and meeting minutes amended to clarify sustainability goals for the high school project.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Jessica Parks"
    ]
   },
   {
-   "title": "Retirement Recognition of Joan Bowen",
+   "title": "Recognition of Joan Bowen",
    "t": 241,
-   "summary": "The committee and administration honored Director of Student Services Joan Bowen for her 33 years of service to Medford Public Schools upon her retirement.",
+   "summary": "The committee and administration honored Director of Student Services Joan Bowen for her 33 years of service to the district upon her retirement.",
    "speakers": [
     "Suzanne Galusi",
     "Breanna Lungo-Koehn",
@@ -32,9 +32,9 @@
    ]
   },
   {
-   "title": "MPS Wellness Policy Update",
+   "title": "MPS Wellness Policy",
    "t": 1204,
-   "summary": "Approved the updated district Wellness Policy, which aligns with Department of Elementary and Secondary Education (DESE) standards for nutrition, physical activity, and social-emotional health.",
+   "summary": "Approved the updated district wellness policy following a presentation on nutrition, physical activity, and social-emotional health standards required for state compliance.",
    "speakers": [
     "Jennifer Silva",
     "Suzanne Galusi",
@@ -46,21 +46,20 @@
   {
    "title": "Roberts Elementary HVAC and Roof Schematic Design",
    "t": 2080,
-   "summary": "Approved the schematic design for an estimated $22.7 million renovation of the Roberts Elementary roof and HVAC systems, utilizing air-to-water heat pump technology for building electrification.",
+   "summary": "Approved the $22.7 million schematic design for HVAC electrification and roof replacement at Roberts Elementary School, which is eligible for a 53.32% reimbursement rate from the MSBA.",
    "speakers": [
     "Kenneth Lord",
     "Alex Luizis",
     "Goshi",
+    "Stratton",
     "Griffin St. Onge",
-    "Stratton Griffin",
-    "Breanna Lungo-Koehn",
-    "Jenny Graham"
+    "Breanna Lungo-Koehn"
    ]
   },
   {
    "title": "FY27 Capital Projects Adjustments",
    "t": 4428,
-   "summary": "Approved the reallocation of $210,000 in project savings to district-wide intercom systems and $250,000 to various mechanical, drainage, and athletic turf repairs.",
+   "summary": "Reallocated approximately $460,000 in unused capital and supplemental state funds toward school intercom systems, chiller repairs, turf improvements, and hot water tank replacements.",
    "speakers": [
     "Kenneth Lord",
     "Jenny Graham",
@@ -72,43 +71,43 @@
   {
    "title": "Resolution 2026-06: School Committee Rules",
    "t": 5041,
-   "summary": "Approved the updated School Committee rules incorporating edits from prior sessions.",
+   "summary": "Approved updated operating rules for the School Committee reflecting edits discussed in previous meetings.",
    "speakers": [
     "Paul Ruseau",
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Resolution 2026-20: Student Assessment Landscape",
+   "title": "Resolution 2026-20: Assessment Landscape Report",
    "t": 5156,
-   "summary": "Referred a request for a comprehensive report on the district's standardized testing and assessment schedule to the Subcommittee for Curriculum and Instruction.",
+   "summary": "Referred a review of district-wide student testing and preparation schedules to the Subcommittee for Curriculum and Instruction.",
    "speakers": [
-    "Erika Reinfeld",
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Erika Reinfeld"
    ]
   },
   {
    "title": "Resolution 2026-21: E-Bike Safety Education",
    "t": 5264,
-   "summary": "Approved a resolution to provide students and families with educational materials regarding e-bike laws and safety practices within the first month of the school year.",
+   "summary": "Approved a resolution to provide educational materials to students and families regarding the laws and safety practices for e-bikes and other micromobility devices.",
    "speakers": [
-    "Erika Reinfeld",
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Erika Reinfeld"
    ]
   },
   {
-   "title": "Resolution 2026-22: High School Building Committee Appointments",
+   "title": "Resolution 2026-22: MCHS Building Committee Membership",
    "t": 5414,
-   "summary": "Appointed several new voting and non-voting members to the Medford Comprehensive High School Building Committee through June 2027.",
+   "summary": "Updated the membership of the Medford Comprehensive High School Building Committee for the schematic design phase, appointing several new voting and non-voting members.",
    "speakers": [
-    "Jenny Graham",
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Jenny Graham"
    ]
   },
   {
-   "title": "Resolution 2026-23: E-Rate Program Support",
+   "title": "Resolution 2026-23: Support of the E-Rate Program",
    "t": 5616,
-   "summary": "Approved a resolution urging the FCC to preserve and fully fund the E-Rate program, which provides approximately $278,000 in annual internet subsidies for the district.",
+   "summary": "Approved a resolution urging the FCC to preserve and fully fund the E-Rate program, which provides approximately $278,000 in annual technology and broadband discounts to the district.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Paul Ruseau"
@@ -117,7 +116,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 33720,
-  "output_tokens": 1066
+  "input_tokens": 33722,
+  "output_tokens": 1151
  }
 }
