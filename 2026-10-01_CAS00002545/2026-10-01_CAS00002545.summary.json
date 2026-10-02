@@ -1,25 +1,25 @@
 {
  "video_id": "CAS00002545",
  "provider": "gemini",
- "generated_at": "2026-10-02T04:05:22Z",
+ "generated_at": "2026-10-02T15:05:45Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "53a5206fae8bfb73",
- "overview": "The committee reviewed and refined a draft Request for Proposals (RFP) for a new zoning consultant to lead the next phase of the city’s zoning updates project. The council discussed selection oversight, the volume of public meetings, and amended the scope regarding design standards before authorizing the Planning Director to proceed with the procurement.",
+ "transcript_sha": "53979b974f828345",
+ "overview": "The Committee of the Whole reviewed and amended a draft Request for Proposals (RFP) to hire a new consultant for the city’s multi-year zoning update project. The committee authorized the Planning Department to proceed with the procurement process after incorporating edits regarding design standards, meeting frequency, and selection transparency.",
  "items": [
   {
-   "title": "Introduction of Draft RFP and Procurement Process",
+   "title": "Zoning Update Project RFP Presentation",
    "t": 55,
-   "summary": "Director of Planning Alicia Hunt presented a draft RFP for a new zoning consultant and explained that the city would use a qualifications-based selection process rather than a low-bid model. The project intends to hire both a technical zoning consultant and a communications consultant to manage outreach.",
+   "summary": "Director of Planning and Development Alicia Hunt presented a draft RFP for a new zoning consultant, detailing a qualifications-based procurement process and a timeline targeting a February 2027 start date.",
    "speakers": [
     "Zac Bears",
     "Alicia Hunt"
    ]
   },
   {
-   "title": "Selection Committee and Decision-Making Process",
+   "title": "Selection Committee and Decision-Making",
    "t": 792,
-   "summary": "The committee discussed the composition of the review team, with members emphasizing that the full City Council and Community Development Board should have an opportunity to review finalists before a selection is finalized. Councilors raised concerns about maintaining legislative authority over zoning decisions relative to appointed boards and the administration.",
+   "summary": "The committee discussed the composition of the review team and requested that finalists be presented to the City Council and Community Development Board for public review before a final selection is made.",
    "speakers": [
     "Zac Bears",
     "Alicia Hunt",
@@ -28,19 +28,9 @@
    ]
   },
   {
-   "title": "RFP Timeline and Deadlines",
-   "t": 1865,
-   "summary": "Director Hunt outlined a procurement schedule targeting a mid-February start date, noting that the submission deadline would likely be set for late December or January to avoid holiday conflicts. The council reached a consensus to prioritize a thorough review over an immediate release of the document.",
-   "speakers": [
-    "Alicia Hunt",
-    "Anna Callahan",
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Amendments to Design Standards and Guidelines",
-   "t": 2404,
-   "summary": "Councilors debated whether the inclusion of 'design standards' was too restrictive, leading to an amendment to include 'design guidelines' and a requirement that the consultant analyze how such policies affect project feasibility. The revised scope requires the consultant to work with both boards to determine the best approach for Medford's character.",
+   "title": "Design Standards and Guidelines",
+   "t": 947,
+   "summary": "Councilors debated the inclusion of design standards, ultimately amending the scope to ensure any proposed standards consider project feasibility and allow for building material flexibility.",
    "speakers": [
     "Emily Lazzaro",
     "Alicia Hunt",
@@ -49,9 +39,9 @@
    ]
   },
   {
-   "title": "Public Engagement and Meeting Requirements",
-   "t": 3072,
-   "summary": "The committee compared the proposed public process to previous cycles, discussing a high volume of potential meetings and the risk of public fatigue. Members adjusted the language to allow consultants to propose an effective engagement methodology based on their professional experience rather than adhering to a rigid meeting count.",
+   "title": "Public Engagement and Meeting Frequency",
+   "t": 3401,
+   "summary": "The committee reviewed the proposed meeting schedule and modified the language to allow consultants to propose their own effective public engagement strategies based on professional experience.",
    "speakers": [
     "Alicia Hunt",
     "Anna Callahan",
@@ -60,9 +50,9 @@
    ]
   },
   {
-   "title": "Technical Edits and Authorization to Proceed",
+   "title": "Technical RFP Edits and Data Ownership",
    "t": 5783,
-   "summary": "Approved a motion authorizing the Planning Director to move forward with the RFP process after incorporating technical edits regarding contract length, interview protocols, and document summaries. The motion was approved.",
+   "summary": "Councilors discussed technical requirements including contract duration, GIS data ownership, and the reduction of hard copy requirements to three sets.",
    "speakers": [
     "Justin Tseng",
     "Alicia Hunt",
@@ -70,9 +60,17 @@
    ]
   },
   {
+   "title": "Authorization to Proceed",
+   "t": 6316,
+   "summary": "Approved a motion to authorize the Planning Director to move forward with the RFP process incorporating the feedback and amendments discussed during the meeting.",
+   "speakers": [
+    "Zac Bears"
+   ]
+  },
+  {
    "title": "Public Comment",
    "t": 6351,
-   "summary": "Residents spoke in favor of design flexibility, the use of guidelines over rigid standards, and the importance of joint meetings between the City Council and the Community Development Board.",
+   "summary": "Residents provided feedback supporting flexible design guidelines over rigid standards and encouraged the use of joint meetings to maintain consistency between boards.",
    "speakers": [
     "Jeremy Martin",
     "Judith Weinstock"
@@ -82,6 +80,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 32489,
-  "output_tokens": 883
+  "output_tokens": 719
  }
 }
