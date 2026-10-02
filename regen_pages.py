@@ -32,6 +32,7 @@ import argparse
 import glob
 import sys
 import io
+import json
 import os
 import time
 
@@ -48,6 +49,82 @@ def progress_paths():
     just the union.
     """
     return sorted(glob.glob(PROGRESS.replace(".txt", "*.txt")))
+
+
+def page_is_complete(d):
+    """Did this page finish being written?
+
+    MTIME IS NOT COMPLETION. srt2html writes the head, appends the body over
+    several passes and closes the document last, so a process killed partway
+    leaves a file with a FRESH timestamp and a truncated body. Recovering a
+    progress list from mtimes alone therefore marks half-written pages as done
+    and they are never rebuilt.
+
+    The footer is written last, so a closing </body></html> is the marker that
+    the whole pass ran.
+    """
+    h = os.path.join(d, os.path.basename(d) + ".html")
+    try:
+        page = io.open(h, encoding="utf-8", errors="replace").read()
+    except OSError:
+        return False
+    if "</body>" not in page[-400:] or "</html>" not in page[-400:]:
+        return False
+
+    # THE SIDECAR MUST MATCH THE PAGE IT INDEXES. do_one writes the html and
+    # THEN builds .words.json, so a process killed between the two leaves a
+    # page that passes every check above beside a sidecar built for the old
+    # line count. transcript-player addresses rows by position and refuses a
+    # mismatch outright, so the whole page silently drops to sentence-level
+    # seeking -- which is how this was found: the owner noticed clicking a word
+    # jumped to the start of its paragraph.
+    #
+    # Pages with no model.pkl have no sidecar at all (370 of them) and are
+    # correctly line-level; only a sidecar that EXISTS and disagrees is a fault.
+    w = os.path.join(d, os.path.basename(d) + ".words.json")
+    if os.path.exists(w):
+        try:
+            rows = len(json.load(io.open(w, encoding="utf-8")))
+        except Exception:
+            return False
+        if rows != page.count('<p class="line" data-t='):
+            return False
+    return True
+
+
+def verify(prune=False):
+    """Check every id in the progress file actually produced a finished page."""
+    done = done_ids()
+    # A video id can appear under TWO directories when upload_date changed after
+    # the first was created -- afnvZAYk2_M is named for its meeting date in one
+    # and its upload date in the other. Only one gets a page, and the other is
+    # an orphan holding an srt and a model. Reporting it as "incomplete" every
+    # run teaches you to ignore the check, so name it instead.
+    byid = {}
+    for d, yt in meeting_dirs():
+        byid.setdefault(yt, []).append(d)
+    bad, orphan = [], []
+    for d, yt in meeting_dirs():
+        if yt not in done or page_is_complete(d):
+            continue
+        sibling_has_page = any(page_is_complete(o) for o in byid[yt] if o != d)
+        (orphan if sibling_has_page else bad).append((yt, d))
+    if orphan:
+        print("orphan directories (a sibling holds the published page): %d" % len(orphan))
+        for yt, d in orphan:
+            print("   %s" % d)
+    bad = [yt for yt, d in bad]
+    print("marked done: %d   incomplete: %d" % (len(done), len(bad)))
+    for yt in bad[:10]:
+        print("   %s" % yt)
+    if bad and prune:
+        keep = sorted(done - set(bad))
+        for p in progress_paths():
+            os.remove(p)
+        with io.open(PROGRESS, "w", encoding="utf-8") as fp:
+            fp.write(chr(10).join(keep) + chr(10))
+        print("pruned %d; they will be rebuilt" % len(bad))
+    return len(bad)
 
 
 def meeting_dirs():
@@ -73,6 +150,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--verify", action="store_true",
+                    help="check the progress list against finished pages")
+    ap.add_argument("--prune", action="store_true",
+                    help="with --verify, drop incomplete pages so they rebuild")
     # THE REBUILD IS CPU-BOUND AND SINGLE-THREADED: measured at 98% of one core
     # with a flat 0.54 GB working set, on a box with 8 logical cores. Memory is
     # binary here -- enough not to be killed, and nothing above that helps --
@@ -87,6 +168,8 @@ def main():
     todo = [(d, y) for d, y in all_m if y not in done]
     print("meetings: %d   already rebuilt: %d   remaining: %d"
           % (len(all_m), len(done), len(todo)))
+    if args.verify:
+        return 1 if verify(prune=args.prune) and not args.prune else 0
     if args.status:
         return 0
     if args.workers > 1:
