@@ -879,7 +879,7 @@ def sources_changed():
 # back until a restart. The rest of GENERATED_PATHS is additive -- a new
 # transcript directory is new content, not a rewrite of someone else's work --
 # and is safe to publish either way.
-GLOBAL_REGENERATED = {"index.html", "sitemap.xml", "sitemap.txt",
+GLOBAL_REGENERATED = {"index.html", "sitemap.xml",
                       "resolutions.html", "heatmap.html", "committees",
                       "committees.html", "electeds", "election"}
 
@@ -898,7 +898,6 @@ GENERATED_PATHS = [
     "resolutions.html",
     "heatmap.html",
     "sitemap.xml",
-    "sitemap.txt",
     "video_data.json",
     "medford_index.json",
 ]

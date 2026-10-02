@@ -110,9 +110,14 @@ def main():
         body = json.dumps({"host": HOST, "key": key,
                            "keyLocation": "%s%s.txt" % (SITE, key),
                            "urlList": chunk}).encode("utf-8")
+        # A User-Agent is REQUIRED in practice. Without one the endpoint
+        # answered 403 ("key not valid") for the full corpus while accepting a
+        # single url, which sends you hunting the key file -- and the key file
+        # was byte-perfect: 32 bytes, text/plain, matching exactly.
         req = urllib.request.Request(
             ENDPOINT, data=body,
-            headers={"Content-Type": "application/json; charset=utf-8"})
+            headers={"Content-Type": "application/json; charset=utf-8",
+                     "User-Agent": "medford-transcripts/1.0 (+%s)" % SITE})
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
                 # 200 accepted, 202 accepted pending key validation

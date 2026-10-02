@@ -1550,25 +1550,17 @@ def make_sitemap():
         add_url(sitemap_root, url, timestamp)
 
     # save sitemap. xml extension will be added automatically
-    save_sitemap(sitemap_root, "./sitemap")
-    # A PLAIN-TEXT SITEMAP ALONGSIDE THE XML.
+    # ONE SITEMAP, the XML. A sitemap.txt was written here as well, because a
+    # 2025 submission of that path predated the file, answered 404 and left an
+    # entry reading "Couldn't fetch" that the Search Console UI gives no way to
+    # remove. Writing the file from this same url list made that entry valid
+    # and kept the two in sync.
     #
-    # sitemap.txt was submitted to Search Console in Oct 2025 but has never
-    # existed in this repo, so it answered 404 with a 9 KB HTML error page and
-    # that row has read "Couldn't fetch" ever since. Writing it from the SAME
-    # url list as the XML makes the submission valid and keeps the two from
-    # ever disagreeing.
-    #
-    # It doubles as a controlled comparison: both are submitted, so if the txt
-    # reads and the xml does not, the fault is the XML rather than the site or
-    # the property.
-    #
-    # Format (sitemaps.org): one absolute URL per line, UTF-8, nothing else --
-    # no header, no comments, no blank lines. newline="\n" so generating on
-    # Windows does not emit CRLF.
-    with open("sitemap.txt", "w", encoding="utf-8", newline="\n") as fp:
-        for u in urls:
-            fp.write(u + "\n")
+    # It also served as a controlled comparison, and that comparison has now
+    # returned its answer: BOTH were submitted, both valid, both live, and the
+    # API reported lastDownloaded NEVER for each -- so the failure was never the
+    # file or the format. The owner has since deleted both entries, which
+    # retires the workaround and the experiment together.
 
 def add_url(root_node, url, lastmod):
     doc = cElementTree.SubElement(root_node, "url")
