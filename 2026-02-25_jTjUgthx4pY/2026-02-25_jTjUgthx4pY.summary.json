@@ -1,39 +1,40 @@
 {
  "video_id": "jTjUgthx4pY",
  "provider": "gemini",
- "generated_at": "2026-10-02T01:05:20Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-03T19:06:19Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "e99620037b76a793",
- "overview": "The Medford City Council and Community Development Board convened a joint meeting to discuss the Medford Square zoning amendments, but voted to continue the hearing to March 3, 2026, due to severe, persistent technical difficulties in the chambers.",
+ "transcript_sha": "4458fb8bedfa8c20",
+ "subject": "Medford Square Zoning Amendments",
+ "overview": "The City Council and Community Development Board convened for a joint public hearing regarding proposed zoning changes for Medford Square. Due to persistent audio failures and technical difficulties with the hybrid meeting format, the bodies voted to continue the hearing to a later date.",
  "items": [
   {
-   "title": "Call to Order and Roll Call",
-   "t": 3205,
-   "summary": "The joint meeting of the Medford City Council and Community Development Board was called to order following a half-hour delay caused by technical issues.",
+   "title": "Meeting Opening and Technical Issues",
+   "t": 2109,
+   "summary": "The meeting experienced significant delays and audio feedback issues that hindered communication between in-person participants and those on Zoom.",
    "speakers": [
     "Emily Lazzaro",
-    "Doug Carr",
-    "Danielle Evans"
+    "Matt Leming",
+    "Zac Bears",
+    "George Scarpelli"
    ]
   },
   {
-   "title": "Continued Public Hearing on Medford Square Zoning Amendments",
+   "title": "Medford Square Zoning Amendments",
    "t": 3476,
-   "summary": "Following a brief presentation by the chair summarizing key zoning issues, both bodies voted to continue the public hearing and adjourn to March 3, 2026, at 6:00 p.m. due to unmanageable audio and video feed issues.",
+   "summary": "Continued the public hearing to March 3, 2026, because unmanageable technical difficulties prevented a full discussion on parking ratios, transit definitions, and the 2011 Medford Square parking study.",
    "speakers": [
     "Doug Carr",
     "Emily Lazzaro",
     "Matt Leming",
-    "Zac Bears"
+    "Zac Bears",
+    "Marie Izzo"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 7910,
-  "output_tokens": 288
- },
- "subject": "Medford Square Zoning Amendments Public Hearing",
- "subject_source": "summary"
+  "input_tokens": 8193,
+  "output_tokens": 296
+ }
 }
