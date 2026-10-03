@@ -1,0 +1,45 @@
+{
+ "video_id": "CAS00002547",
+ "provider": "gemini",
+ "generated_at": "2026-10-03T22:05:22Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "ed933eaf5abd024a",
+ "subject": "High School Solar and HVAC Recommendations",
+ "overview": "The advisory team voted on key design recommendations for the Medford High School building project, approving an air-to-water heat pump mechanical system and a solar power purchase agreement.",
+ "items": [
+  {
+   "title": "Air-Source Heat Pump System Recommendation",
+   "t": 41,
+   "summary": "The team voted unanimously to recommend the roof-mounted air-to-water heat pump mechanical system, known as Option 3, to the building committee.",
+   "speakers": [
+    "Matt Rice",
+    "Kimberly Talbot",
+    "Kenneth Lord",
+    "Paul Ruseau",
+    "Alicia Hunt",
+    "Martine Dion"
+   ]
+  },
+  {
+   "title": "Solar Photovoltaic System Selection",
+   "t": 584,
+   "summary": "Following a detailed review of financial models and incentives, the team voted to recommend a 100% power purchase agreement (Option PV2) to maximize net-zero energy readiness, contingent on further design and pool-heating compliance reviews.",
+   "speakers": [
+    "Martine Dion",
+    "Matt Rice",
+    "Andre Leroux",
+    "Paul Ruseau",
+    "Alicia Hunt",
+    "Kenneth Lord",
+    "Jessica Parks",
+    "Kimberly Talbot"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26708,
+  "output_tokens": 327
+ }
+}
