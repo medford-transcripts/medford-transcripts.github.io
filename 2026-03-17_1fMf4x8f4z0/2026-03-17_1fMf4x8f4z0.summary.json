@@ -1,30 +1,30 @@
 {
  "video_id": "1fMf4x8f4z0",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:17:51Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T12:06:14Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "5e1271f44545e154",
- "overview": "The Planning and Permitting Committee met to discuss technical cleanup of the Medford Zoning Ordinance and progress a proposed vacant building ordinance. The committee voted to keep the zoning cleanup in committee for further drafting while referring the vacant building ordinance to the full City Council for a public presentation.",
+ "transcript_sha": "7035ecb543bca564",
+ "overview": "The Planning and Permitting Committee met to review proposed technical and procedural cleanup amendments to the Medford Zoning Ordinance and to discuss updates to the draft vacant building ordinance.",
  "items": [
   {
-   "title": "Proposed amendments to the Medford Zoning Ordinance",
-   "t": 724,
-   "summary": "The committee discussed a tiered list of clerical and technical corrections to the zoning ordinance, including fixing outdated references and standardizing definitions for structures and dwellings. The item was kept in committee to allow staff time to finalize a comprehensive redlined draft for a target meeting date of April 29.",
+   "title": "Zoning Ordinance Technical and Procedural Cleanup",
+   "t": 681,
+   "summary": "The committee discussed a list of copy edits, formatting updates, and changes to definitions regarding buildings, structures, and dwellings, ultimately voting to keep the matter in committee to allow staff to compile the edits into structured tiers.",
    "speakers": [
     "Matt Leming",
     "Alicia Hunt",
     "Scott Vandewalle",
     "Danielle Evans",
     "Anna Callahan",
-    "Zac Bears",
-    "Christian"
+    "Liz Mullane",
+    "Zac Bears"
    ]
   },
   {
    "title": "Proposed Vacant Building Ordinance",
    "t": 4343,
-   "summary": "Referred the proposed vacant building ordinance to a regular meeting of the City Council pending legal review and minor technical edits. The updated draft includes a tiered registration fee structure based on square footage, exemptions for properties with legal title disputes, and a plan to move the ordinance from the zoning code to the general building code.",
+   "summary": "The committee reviewed revisions to the proposed ordinance, including definitions of local property management, tiered registration fees for larger commercial properties, and expanded enforcement discretion. The motion to refer the item to a regular City Council meeting pending legal review and further edits was approved.",
    "speakers": [
     "Matt Leming",
     "Zac Bears",
@@ -39,7 +39,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 37786,
-  "output_tokens": 391
+  "input_tokens": 37784,
+  "output_tokens": 339
  }
 }

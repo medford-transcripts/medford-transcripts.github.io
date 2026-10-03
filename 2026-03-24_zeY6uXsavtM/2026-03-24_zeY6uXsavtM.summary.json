@@ -1,16 +1,16 @@
 {
  "video_id": "zeY6uXsavtM",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:14:32Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T12:05:19Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "4b9731663767d339",
- "overview": "The City Council Committee of the Whole met to discuss and establish collective recommendations for the Fiscal Year 2027 annual budget. The council reviewed various departmental priorities and referred the finalization of the recommendations to the regular council meeting.",
+ "transcript_sha": "59f2935ea5f3fd55",
+ "overview": "The Medford City Council Committee of the Whole met to discuss and compile councilors' priorities for the fiscal year 2027 annual budget process.",
  "items": [
   {
-   "title": "Annual Budget Process for Fiscal Year 2027",
+   "title": "FY 2027 Budget Recommendations to the Mayor (Paper 26-061)",
    "t": 953,
-   "summary": "Referred the budget recommendations to the regular meeting following a discussion of priorities including full funding for public schools, infrastructure improvements, a fire department dive team, and increased librarian wages. Councilors also advocated for several new municipal positions, including a grant writer, an inclusion specialist, a city solicitor, and a city messenger to assist with legislative tasks.",
+   "summary": "The committee discussed councilors' budget priorities—including school funding, department staffing, infrastructure, public safety, and arts programs—and voted to refer the recommendations to the regular city council meeting.",
    "speakers": [
     "Zac Bears",
     "Emily Lazzaro",
@@ -28,7 +28,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 17958,
-  "output_tokens": 255
+  "input_tokens": 17957,
+  "output_tokens": 218
  }
 }
