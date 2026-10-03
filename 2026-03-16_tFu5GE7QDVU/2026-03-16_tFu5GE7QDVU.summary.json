@@ -1,48 +1,47 @@
 {
  "video_id": "tFu5GE7QDVU",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:19:09Z",
+ "generated_at": "2026-10-03T14:05:20Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "cba58af66660316c",
- "overview": "The Medford School Committee met to ratify collective bargaining agreements, approve a modified late-entry schedule pilot for MCAS testing days, and review enrollment and revenue projections for the upcoming fiscal year 2027 budget.",
+ "transcript_sha": "1183ebdbc3a6df1c",
+ "overview": "The Medford School Committee approved an MCAS late-entry testing pilot for Medford High School, reviewed enrollment and revenue projections for the FY27 budget, and passed resolutions concerning extreme cold weather protocols and strategic planning.",
  "items": [
   {
-   "title": "Executive Session & Cafeteria Workers Contract Ratification",
+   "title": "Executive Session",
    "t": 147,
-   "summary": "The committee entered executive session to discuss collective bargaining and subsequently ratified the contract with the Medford School Cafeteria workers.",
+   "summary": "The committee entered executive session to discuss collective bargaining negotiations with SEIU Local 88 cafeteria workers, later returning to announce the ratification of their contract.",
    "speakers": [
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
    ]
   },
   {
    "title": "Consent Agenda",
    "t": 1107,
-   "summary": "Approved bills, payrolls, budget transfers, donations, and the March 2, 2026 meeting minutes.",
+   "summary": "Approved routine bills, payrolls, budget transfers, donations, and the meeting minutes from March 2, 2026.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Winter Sports Recognition",
+   "title": "Mustang Moment: Winter Sports Recognition",
    "t": 1184,
-   "summary": "The committee and athletic staff recognized the achievements of winter sport athletes, Greater Boston League champions, and GBL All-Stars.",
+   "summary": "The committee recognized local winter sports athletes, GBL champions, and All-Stars alongside Athletic Director Rob O'Leary and varsity team coaches.",
    "speakers": [
     "Suzanne Galusi",
     "Rob O'Leary",
     "Mary Judge",
-    "O'Keefe",
-    "Nicole",
-    "Kelly",
+    "Nicole O'Keefe",
     "Brittany Lanzilli",
     "Joe Donlon",
     "Murphy"
    ]
   },
   {
-   "title": "MCAS Flex Pilot Program",
+   "title": "MHS MCAS Flex Pilot",
    "t": 2582,
-   "summary": "Approved a pilot program implementing a late-entry schedule for non-testing high school students during 10th-grade math MCAS testing days in May 2026.",
+   "summary": "Approved a pilot program implementing a late-entry schedule for non-testing juniors and seniors and specialized seminars for freshmen during May math MCAS exams.",
    "speakers": [
     "Suzanne Galusi",
     "David Bloch",
@@ -57,34 +56,34 @@
    ]
   },
   {
-   "title": "Enrollment and Revenue Projections for FY27 Budget",
+   "title": "FY27 Enrollment and Revenue Estimates Report",
    "t": 5061,
-   "summary": "Received a financial update detailing declining enrollment trends, projected state aid, special revenue funds, and anticipated cost increases for the upcoming budget process.",
+   "summary": "Received a detailed presentation analyzing declining enrollment projections, Chapter 70 state aid allocations, revolving fund balances, and upcoming budget cost drivers.",
    "speakers": [
     "Suzanne Galusi",
     "Noel Velez",
     "Gerry McCue",
     "Breanna Lungo-Koehn",
     "Jenny Graham",
+    "Paul Ruseau",
     "Mike Mastrobuoni",
     "Jessica Parks",
-    "Paul Ruseau",
     "Alachie Yeager"
    ]
   },
   {
-   "title": "Resolution on Extreme Cold Temperature Mitigation",
+   "title": "Resolution: Extreme Cold Temperature Mitigation Plan",
    "t": 8993,
-   "summary": "Approved a resolution directing the school district to create a cold-weather mitigation and activity relocation plan.",
+   "summary": "Approved a resolution directing the district to establish a cold weather safety plan, including relocation protocols for classrooms with vulnerable heating and electrical systems.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Erika Reinfeld"
    ]
   },
   {
-   "title": "Resolution on Strategic Planning Subcommittee",
+   "title": "Resolution: Strategic Planning Subcommittee",
    "t": 9075,
-   "summary": "Approved a resolution directing the strategic planning subcommittee to convene and establish a timeline and deliverables for a new community-informed strategic plan.",
+   "summary": "Approved a resolution tasking the strategic planning subcommittee to meet and define the process, deliverables, and timeline for the development of a community-informed strategic plan.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Erika Reinfeld"
@@ -93,7 +92,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 45340,
-  "output_tokens": 731
+  "input_tokens": 45345,
+  "output_tokens": 742
  }
 }
