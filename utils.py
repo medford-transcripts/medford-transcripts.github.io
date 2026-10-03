@@ -473,14 +473,31 @@ def read_credential(name, required=True):
         return fp.read().strip()
 
 
+def kw_text(s):
+    """Title text normalised for keyword matching.
+
+    "&" AND "and" ARE THE SAME WORD HERE. The city writes both, often for the
+    same body in the same month -- "Water & Sewer Commission 07/11/23" against
+    the keyword "water and sewer" -- and a plain substring test sees two
+    different strings. Four bodies were left entirely untyped by this:
+    Water and Sewer, Public Health and Community Safety, Zoning, Planning and
+    Development, and Elderly Affairs and Housing.
+    """
+    return re.sub(r"\s+", " ", (s or "").lower().replace("&", " and "))
+
+
+def kw_hit(text, keywords):
+    t = kw_text(text)
+    return any(kw_text(k) in t for k in keywords)
+
+
 def get_meeting_type_by_title(title):
 
-    t = title.lower()
     meeting_type_map = meeting_type_keywords()
 
     # check against all keywords
     for meeting_type, keywords in meeting_type_map.items():
-        if any(kw in t for kw in keywords):
+        if kw_hit(title, keywords):
             return meeting_type
 
 def get_meeting_type(video):
@@ -524,7 +541,7 @@ def get_meeting_type(video):
         possible_meetings = ["MPS Meeting of the Whole","MPS Facilities","MPS Budget"]
         for possible_meeting in possible_meetings:
             keywords = meeting_type_map[possible_meeting]
-            if any(kw in t for kw in keywords):
+            if kw_hit(t, keywords):
                 return possible_meeting
 
     # A SCHOOL MARKER IN THE TITLE DECIDES, exactly as the channel does above.
@@ -550,12 +567,12 @@ def get_meeting_type(video):
     if (_whole and "joint" not in t
             and any(m in t for m in ("school committee", "sc cow", "msc "))):
         for meeting_type, keywords in meeting_type_map.items():
-            if meeting_type.startswith("MPS") and any(kw in t for kw in keywords):
+            if meeting_type.startswith("MPS") and kw_hit(t, keywords):
                 return meeting_type
 
     # now check the leftovers against all keywords
     for meeting_type, keywords in meeting_type_map.items():
-        if any(kw in t for kw in keywords):
+        if kw_hit(t, keywords):
             return meeting_type
 
     return None

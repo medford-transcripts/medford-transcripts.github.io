@@ -101,7 +101,8 @@
             "(city council)",
             "(incumbent city council)",
             "voter forum",
-            "representative debate"
+            "representative debate",
+            "mayoral forum"
         ]
     },
     "CC Listening Session": [
@@ -154,9 +155,13 @@
     "CC Council on Aging": [
         "council on aging"
     ],
-    "CC Hormel Stadium Commission": [
-        "hormel stadium commission"
-    ],
+    "CC Hormel Stadium Commission": {
+        "keywords": [
+            "hormel stadium commission",
+            "hormel commission",
+            "hormel stadium committee"
+        ]
+    },
     "CC Board of Assessors": [
         "board of assessors"
     ],
@@ -171,15 +176,21 @@
         "historic district",
         "historical district"
     ],
-    "CC Commission for Persons with Disabilities": [
-        "persons with disabilities"
-    ],
+    "CC Commission for Persons with Disabilities": {
+        "keywords": [
+            "persons with disabilities",
+            "disabilities commission"
+        ]
+    },
     "CC Board of Health": [
         "board of health"
     ],
-    "CC Conservation Commission": [
-        "conservation commission"
-    ],
+    "CC Conservation Commission": {
+        "keywords": [
+            "conservation commission",
+            "conservation committee"
+        ]
+    },
     "CC Medford 5G": [
         "medford 5g meeting"
     ],
@@ -291,7 +302,7 @@
     },
     "Jazz Festival": {
         "keywords": [
-            "jazz fest"
+            "medford jazz fest"
         ],
         "compose_title": false
     },
