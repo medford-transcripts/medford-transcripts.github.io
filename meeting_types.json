@@ -73,7 +73,8 @@
         "keywords": [
             "Medford Bytes"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "CC Resident Services and Public Engagement Committee": {
         "keywords": [
@@ -298,13 +299,15 @@
             "medford happenings",
             "medford happenins"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "Jazz Festival": {
         "keywords": [
             "medford jazz fest"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "West Medford Community Center": {
         "keywords": [
@@ -320,7 +323,8 @@
             "medford tech institute",
             "haitian flag day"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "CC Ordinances and Rules": [
         "ordinances and rules",
@@ -375,16 +379,18 @@
     },
     "Looking Back at Medford History": {
         "keywords": [
-            "looking back at medford history"
+            "looking back"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "MPS District Videos": {
         "keywords": [
             "staff appreciation",
             "teacher appreciation"
         ],
-        "compose_title": false
+        "compose_title": false,
+        "kind": "program"
     },
     "Community Meeting": {
         "keywords": [
@@ -407,19 +413,81 @@
         "keywords": [
             "city highlights from",
             "highlights from mayor"
-        ]
+        ],
+        "kind": "program"
     },
     "Mayor's COVID-19 Updates": {
         "keywords": [
             "covid-19 update",
             "covid19 update",
             "covid 19 update"
-        ]
+        ],
+        "kind": "program"
     },
     "MPS Superintendent Updates": {
         "keywords": [
             "superintendent update",
             "superintendent message"
-        ]
+        ],
+        "kind": "program"
+    },
+    "CC Comprehensive Plan": {
+        "keywords": [
+            "comprehensive master plan",
+            "comprehensive plan",
+            "master plan",
+            "plan steering committee"
+        ],
+        "kind": "committee"
+    },
+    "MPS Special Education Parent Advisory Council": {
+        "keywords": [
+            "sepac"
+        ],
+        "kind": "committee"
+    },
+    "The Stevie B Show": {
+        "keywords": [
+            "stevie b"
+        ],
+        "kind": "program",
+        "compose_title": false
+    },
+    "Rat Tales": {
+        "keywords": [
+            "rat tales"
+        ],
+        "kind": "program",
+        "compose_title": false
+    },
+    "Spotlight on Medford": {
+        "keywords": [
+            "spotlight on medford"
+        ],
+        "kind": "program",
+        "compose_title": false
+    },
+    "Medford Community Chorale": {
+        "keywords": [
+            "community chorale"
+        ],
+        "kind": "program",
+        "compose_title": false
+    },
+    "St. Raphael Parish": {
+        "keywords": [
+            "st. raphael",
+            "st raphael"
+        ],
+        "kind": "service",
+        "compose_title": false
+    },
+    "Grace Church": {
+        "keywords": [
+            "grace church",
+            "grace episcopal"
+        ],
+        "kind": "service",
+        "compose_title": false
     }
 }

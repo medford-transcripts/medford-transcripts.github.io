@@ -56,8 +56,14 @@ def make():
     all_committees_table.write('  </head>' + chr(10) + '  <body>' + chr(10))
     all_committees_table.write('    <h1>Transcripts by committee</h1>' + chr(10))
     all_committees_table.write('    <p><a href="../index.html">All transcripts</a></p>' + chr(10))
-    all_committees_table.write('<table border=1>\n')
-    all_committees_table.write('  <tr><td><center>Committee</center></td></td>\n')
+    all_committees_table.write(
+        '    <p>Active bodies first. Everything ever transcribed is still '
+        'listed below them.</p>' + chr(10))
+    # ROWS ARE GROUPED, NOT JUST LISTED. 86 bodies in one alphabetical table
+    # puts the Zoning Board next to a programme that last aired in 2019, so the
+    # thing a reader wants most is the hardest to find. Collected here and
+    # emitted in sections below, once each body's last meeting date is known.
+    index_rows = []
 
     #import ipdb
     #ipdb.set_trace()
@@ -136,8 +142,6 @@ def make():
                     '    <td>' + video_data[video]["channel"] + '</td>\n'
                     '  </tr>\n'))
 
-        if nmeetings > 0:
-            all_committees_table.write('<tr><td><a href="' + htmlbasename + '">' + committee_name + '</a></td></tr>\n')
 
         # A REAL DOCUMENT, not a bare <table>. These pages were fragments: no
         # doctype, no lang, no charset, no <title>. All 74 are in the sitemap,
@@ -155,6 +159,19 @@ def make():
             span = "%s to %s" % (m_first.group(0), m_last.group(0))
         desc = ("%d transcribed %s meetings%s, Medford Massachusetts."
                 % (nmeetings, committee_name, ", " + span if span else ""))
+
+        if nmeetings > 0:
+            _cfg = (utils.meeting_type_config().get(committee_name) or {}) \
+                   if committee is not None else {}
+            index_rows.append({
+                "name": committee_name,
+                "href": htmlbasename,
+                "n": nmeetings,
+                "last": m_last.group(0) if m_last else "",
+                # "Other" is the no-type bucket, not a body; it sorts last
+                "kind": _cfg.get("kind", "committee") if committee is not None
+                        else "other",
+            })
 
         crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList",
                   "itemListElement": [
@@ -214,7 +231,40 @@ def make():
         html.write('  </body>' + chr(10) + '</html>' + chr(10))
         html.close()
 
-    all_committees_table.write('</table>')
+    # ACTIVE MEANS A MEETING IN THE LAST YEAR, computed from the transcripts
+    # rather than flagged by hand, so it stays true with nobody maintaining it:
+    # a body that resumes meeting moves back up on the next build, and one that
+    # stops drifts down a year later. time is already imported; datetime is not.
+    cutoff = time.strftime("%Y-%m-%d", time.localtime(time.time() - 365 * 86400))
+    SECTIONS = (
+        ("Active bodies", "met in the last 12 months",
+         lambda r: r["kind"] == "committee" and r["last"] >= cutoff),
+        ("Past bodies", "no meeting in the last 12 months",
+         lambda r: r["kind"] == "committee" and r["last"] < cutoff),
+        ("Programs and broadcasts", "not public bodies",
+         lambda r: r["kind"] in ("program", "service")),
+        ("Uncategorized", "not yet assigned to a body",
+         lambda r: r["kind"] == "other"),
+    )
+    for heading, note, pick in SECTIONS:
+        group = [r for r in index_rows if pick(r)]
+        if not group:
+            continue
+        group.sort(key=lambda r: (-r["n"], r["name"]))
+        all_committees_table.write(
+            '    <h2>' + escape(heading) + ' <small>(' + escape(note)
+            + ')</small></h2>' + chr(10))
+        all_committees_table.write('<table border=1>' + chr(10))
+        all_committees_table.write(
+            '  <tr><td><center>Body</center></td>'
+            '<td><center>Meetings</center></td>'
+            '<td><center>Most recent</center></td></tr>' + chr(10))
+        for r in group:
+            all_committees_table.write(
+                '  <tr><td><a href="' + r["href"] + '">' + escape(r["name"])
+                + '</a></td><td>' + str(r["n"]) + '</td><td>'
+                + escape(r["last"] or "") + '</td></tr>' + chr(10))
+        all_committees_table.write('</table>' + chr(10))
     all_committees_table.write(chr(10) + '  </body>' + chr(10) + '</html>' + chr(10))
     utils.write_atomic("committees/index.html", all_committees_table.getvalue())
 
