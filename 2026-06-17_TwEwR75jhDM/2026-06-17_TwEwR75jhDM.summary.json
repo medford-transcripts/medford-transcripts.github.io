@@ -1,16 +1,16 @@
 {
  "video_id": "TwEwR75jhDM",
  "provider": "gemini",
- "generated_at": "2026-09-27T12:20:50Z",
+ "generated_at": "2026-10-03T04:06:06Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "312c6cce64d17f69",
- "overview": "The committee reviewed the 2025 Annual Surveillance Report from the Medford Police Department, focusing on body-worn camera data, privacy safeguards, and the use of external surveillance technologies. The committee discussed the impact of these tools on the community before approving the report.",
+ "transcript_sha": "ab8df996daa7af82",
+ "overview": "The committee reviewed the 2025 Citizen Control over Public Surveillance (CCOPS) annual report detailing the Medford Police Department's use of body-worn cameras and external surveillance data. The council discussed audit compliance, privacy protections, and the methodology for assessing community impacts.",
  "items": [
   {
    "title": "2025 Annual Surveillance Report",
-   "t": 352,
-   "summary": "Police Chief Jack Buckley presented the report, noting that the department recorded over 32,000 body-worn camera videos in 2025 and utilizes external data like Flock cameras and facial recognition for serious investigations despite not owning the equipment. Councilors and public commenters questioned the department on data retention, the process for auditing officer compliance, and the methodology for assessing whether surveillance technology disproportionately impacts specific demographic groups. Approved the report and kept the paper in committee.",
+   "t": 337,
+   "summary": "Chief Jack Buckley presented the annual report, highlighting that the department recorded over 32,000 body-worn camera videos in 2025 and uses external data like facial recognition and GPS tracking for serious criminal investigations only. Councilors and residents questioned the department on internal audit procedures, policy for camera activation failures, and the methodology used to determine that no communities were disproportionately impacted by surveillance.",
    "speakers": [
     "Emily Lazzaro",
     "Jack Buckley",
@@ -19,11 +19,22 @@
     "Barry Ingber",
     "Justin Tseng"
    ]
+  },
+  {
+   "title": "Report Approval and Adjournment",
+   "t": 3757,
+   "summary": "Approved the report and kept the paper in committee.",
+   "speakers": [
+    "Emily Lazzaro",
+    "Anna Callahan",
+    "Marie Izzo",
+    "Justin Tseng"
+   ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 19313,
-  "output_tokens": 253
+  "output_tokens": 325
  }
 }
