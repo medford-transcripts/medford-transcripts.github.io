@@ -1,0 +1,26 @@
+{
+    "SPEAKER_01": {
+        "value": "John Petrella",
+        "source": "embedding_match",
+        "score": 0.9761597317571226,
+        "from": "_2Cz4ZglgzA_SPEAKER_02",
+        "at": "2026-10-03T00:52:38Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8228373269355459,
+        "from": "9OS3NR5k7Rs_SPEAKER_03",
+        "at": "2026-10-03T00:52:38Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_06": {
+        "value": "-Ad9b17iUII_SPEAKER_03",
+        "source": "embedding_match",
+        "score": 0.7110529221745674,
+        "from": "XXXXXX00068_SPEAKER_01",
+        "at": "2026-10-03T00:52:39Z",
+        "previous": "SPEAKER_06"
+    }
+}
