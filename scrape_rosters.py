@@ -52,10 +52,17 @@ OUT = "rosters.json"
 MEMBER = re.compile(
     r"^\s*([A-Z][A-Za-z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]*){1,3})\s*,\s*(.+?)\s*$")
 TERM = re.compile(r"term\s+expires?\s*:?\s*([0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4})", re.I)
+# "X Appointee" names WHO APPOINTED the person, not the post they hold. Without
+# the trailing guard, "Mayor Appointee" read as the role "Mayor" and put 17
+# people in the mayor's chair -- six of them on the Community Fund Committee at
+# once, where the page says "Mayor Appointee Term expires 12/31/26" beside each
+# name. Only Breanna Lungo-Koehn, an ex-officio member, actually holds it.
 TITLE = re.compile(r"\b(chair(?:person|man|woman)?|vice[\s\-]?chair|clerk|secretary|"
                    r"city councilor|councillor|councilor|alderman|mayor|chief|"
                    r"treasurer|president|director|staff liaison|associate member|"
-                   r"alternate|full member|member)\b", re.I)
+                   r"alternate|full member|member)\b"
+                   r"(?!\s*(?:appointee|appointment|designee|nominee|"
+                   r"representative|rep\b))", re.I)
 VACANT = re.compile(r"\bvacan(?:t|cy)\b", re.I)
 
 # TYPOS IN THE SOURCE, corrected on the way in. NOT stored as aliases: an alias
@@ -258,7 +265,13 @@ def parse_bold(page, body_name=""):
         text = _norm(blk.get_text(" "))
         if TITLE.search(text) or TERM.search(text):
             anchored = True
-        tags = blk.select("strong, b")
+        # EMPTY BOLDS ARE NOT BOUNDARIES. The context walk below stops at the
+        # next bold tag, and the CMS wedges whitespace-only <b> between a name
+        # and its role -- "<em>Interim</em><b> </b><em>Chair</em>" on the
+        # building page. Treating that spacer as the next person's name cut the
+        # walk short and lost both the role and the term date, silently: the
+        # person still parsed, just stripped of everything after their name.
+        tags = [t for t in blk.select("strong, b") if _norm(t.get_text(" "))]
         for idx, t in enumerate(tags):
             name, trailing = _split_name(_norm(t.get_text(" ")))
             name = SOURCE_TYPOS.get(name, name)
@@ -475,9 +488,30 @@ def self_test():
     for nm, pat in (("MEMBER", MEMBER), ("TERM", TERM), ("TITLE", TITLE)):
         if [c for c in pat.pattern if ord(c) < 32]:
             fails.append("%s contains a control character" % nm)
+    # A whitespace-only <b> between a name and its role must not end the walk.
+    # Verbatim shape from /departments/building-department. This failed quietly
+    # in the worst way: the person still parsed, just with no role and no term.
+    spacer = ('<div class="fsContent"><div class="fsElementContent">'
+              "<p><b>Bill Forte</b><br><em>Interim</em><b> </b><em>Chair</em>"
+              "<br>term expires 6/30/28</p>"
+              "<p><b>Deb Nee</b><br><em>Member</em></p>"
+              "<p><b>Amy Tenaglia</b><br><em>Member</em></p>"
+              "</div></div>")
+    check("empty <b> does not truncate the role",
+          parse_roster(spacer, "Test Commission")[0], ("Bill Forte", ["Chair"], "6/30/28"))
+    # verbatim from the Community Fund Committee page
+    check("'Mayor Appointee' is not the role Mayor",
+          sorted({m.group(1).title()
+                  for m in TITLE.finditer("Mayor Appointee Term expires 12/31/26")}),
+          [])
+    check("the actual mayor still reads as Mayor",
+          sorted({m.group(1).title()
+                  for m in TITLE.finditer("Mayor Breanna Lungo-Koehn")}),
+          ["Mayor"])
+
     for f in fails:
         print("  FAIL %s" % f)
-    print("self-test: 28 checks, %d failed" % len(fails))
+    print("self-test: 31 checks, %d failed" % len(fails))
     return 1 if fails else 0
 
 
