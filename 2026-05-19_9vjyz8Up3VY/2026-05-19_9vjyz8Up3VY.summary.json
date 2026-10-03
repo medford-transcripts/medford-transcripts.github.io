@@ -1,19 +1,19 @@
 {
  "video_id": "9vjyz8Up3VY",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:09:47Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:13:54Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "cbb5b6187018c5eb",
- "overview": "The Committee of the Whole conducted its fifth preliminary budget hearing for Fiscal Year 2027, reviewing departmental accomplishments and funding requests for media, health, planning, and executive offices. While most budgets saw routine cost-of-living adjustments, the session was marked by a contentious debate regarding the Law Department’s litigation strategy and lack of transparency.",
+ "transcript_sha": "34b1dde040ededb9",
+ "overview": "The City Council Committee of the Whole held its fifth preliminary budget meeting for Fiscal Year 2027 to review various municipal department and commission budgets. The committee voted to refer the discussed budget questions and statements of support to the administration and keep the matter in committee.",
  "items": [
   {
-   "title": "Medford Community Media",
+   "title": "Cable and Medford Community Media Budget Review",
    "t": 390,
-   "summary": "Director Kevin Harrington presented a $276,101.97 budget featuring a new full-time production coordinator and a transition to funding the department through a Special Revenue Fund utilizing PEG fees. The department plans to upgrade chamber and studio equipment and produce outreach videos for city departments.",
+   "summary": "Reviewed the Medford Community Media budget, which includes a proposed full-time production coordinator position funded through a newly proposed special revenue account.",
    "speakers": [
-    "Zac Bears",
     "Kevin Harrington",
+    "Zac Bears",
     "Matt Leming",
     "Justin Tseng",
     "Nina Nazarian",
@@ -21,58 +21,66 @@
    ]
   },
   {
-   "title": "Board of Health and Civil Defense",
+   "title": "Health, Animal Control, and Civil Defense Budget Review",
    "t": 2552,
-   "summary": "Director MaryAnn O'Connor detailed the department's heavy reliance on grant funding for human services and requested that the departments be renamed 'Health and Human Services' and 'Emergency Management' to better reflect their missions. The Council spoke in support of both name changes and reviewed increases for CitizenServe data conversion and a $30,000 rodent control program.",
+   "summary": "Reviewed the Health department budget and approved a motion supporting the renaming of the Board of Health to the Health and Human Services Department.",
    "speakers": [
-    "Zac Bears",
     "MaryAnn O'Connor",
+    "Zac Bears",
     "Emily Lazzaro",
     "George Scarpelli",
     "Nina Nazarian"
    ]
   },
   {
-   "title": "Planning, Development, Sustainability, and Associated Commissions",
+   "title": "Planning, Development, Sustainability, and Associated Commissions Budget Review",
    "t": 4618,
-   "summary": "Director Alicia Hunt outlined progress on the Medford Square transom project and climate resilience initiatives, noting that the climate planner position will transition to full city funding in April 2027. The Council reviewed stipend increases for the Community Development Board and routine budget requests for the Bicycle, Conservation, and Historical commissions.",
+   "summary": "Reviewed the Planning, Development, and Sustainability budget and associated commission budgets, discussing park upgrades, climate grants, and linkage fee calculations.",
    "speakers": [
-    "Zac Bears",
     "Alicia Hunt",
+    "Zac Bears",
     "Matt Leming",
     "Emily Lazzaro",
     "Nina Nazarian"
    ]
   },
   {
-   "title": "Executive, License, and Hormel Commissions",
-   "t": 7827,
-   "summary": "Chief of Staff Nina Nazarian presented the executive budget, noting that communication staff funding is shifting to other revenue sources and Zoom and website costs are moving from ARPA to the General Fund. The License Commission budget saw a slight reduction due to the removal of redundant lines, while the Hormel Commission budget remained flat.",
+   "title": "Executive, License, and Hormel Commissions Budget Review",
+   "t": 7832,
+   "summary": "Reviewed the Executive, License Commission, and Hormel Commission budgets, focusing on personnel funding adjustments and Medford Arts Council funding.",
    "speakers": [
-    "Zac Bears",
     "Nina Nazarian",
+    "Zac Bears",
     "Emily Lazzaro",
     "Justin Tseng"
    ]
   },
   {
-   "title": "Law Department",
+   "title": "Law Department Budget Review",
    "t": 8798,
-   "summary": "Councilors proposed cutting $300,000 from the Law Department budget—eliminating the City Solicitor and Professional Services lines—due to frustrations over litigation losses and the administration's failure to provide a requested litigation report. The Chief of Staff argued that these cuts would impair essential legal services and stated that staff cannot fulfill the Council's transparency requests while simultaneously processing a massive public records request.",
+   "summary": "Debated the Law Department budget, with council members raising concerns over litigation transparency, staff turnover, and suggesting cuts to legal services and the vacant solicitor position.",
    "speakers": [
-    "Zac Bears",
     "Nina Nazarian",
+    "Zac Bears",
     "George Scarpelli",
     "Emily Lazzaro",
     "Justin Tseng",
-    "Matt Leming",
-    "MaryAnn O'Connor"
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Budget Referrals and Adjournment",
+   "t": 12419,
+   "summary": "Approved a motion to refer the discussed budget questions and statements of support to the administration and keep the paper in committee.",
+   "speakers": [
+    "Zac Bears",
+    "Rich Eliseo"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 64701,
-  "output_tokens": 843
+  "output_tokens": 632
  }
 }

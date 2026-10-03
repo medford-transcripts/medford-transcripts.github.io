@@ -1,16 +1,16 @@
 {
  "video_id": "u2ZdaSTENbc",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:09:18Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:13:18Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "2904af0afd3c6a38",
- "overview": "The committee approved the April City Council newsletter and discussed a proposed schedule and potential locations for neighborhood ward meetings beginning in September 2026.",
+ "transcript_sha": "e7f44fe3a4b4ddca",
+ "overview": "The Resident Services and Public Engagement Committee met to review and approve the April City Council newsletter and to discuss planning and scheduling for upcoming neighborhood ward meetings.",
  "items": [
   {
-   "title": "Resolution to publish the city council newsletter",
+   "title": "Resolution to publish the City Council newsletter",
    "t": 312,
-   "summary": "Approved the April edition of the city council newsletter, which summarizes recent council business, school repair requests, and departmental budget comparisons. Chair Liz Mullane highlighted the inclusion of specific financial data, and Councilor Justin Tseng suggested adding direct links to budget charts for enhanced resident engagement.",
+   "summary": "The committee approved the April draft of the City Council newsletter summarizing council activities, department budget requests, and school repairs.",
    "speakers": [
     "Liz Mullane",
     "Justin Tseng",
@@ -20,7 +20,7 @@
   {
    "title": "Resolution to schedule neighborhood ward meetings",
    "t": 795,
-   "summary": "The committee reviewed a proposed calendar for neighborhood ward meetings running from September through May and kept the matter in committee to finalize dates and locations. Members discussed the importance of hybrid meeting options and identified potential venues within Wards 4 and 5, including local schools and the South Medford Fire Station.",
+   "summary": "The committee discussed scheduling, host assignments, and potential locations for ward meetings starting in September, and voted to keep the matter in committee.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan",
@@ -32,6 +32,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 5026,
-  "output_tokens": 296
+  "output_tokens": 213
  }
 }

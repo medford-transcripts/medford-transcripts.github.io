@@ -1,27 +1,27 @@
 {
  "video_id": "3ypfWQqQ8Ws",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:07:28Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:11:40Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "c9dda4f4861bc17a",
- "overview": "The Committee of the Whole held its sixth preliminary budget meeting for Fiscal Year 2027, reviewing proposals for the Elections, Legislative, Fire, and Library departments. The committee discussed staffing shortages, wage equity for part-time employees, and the implementation of positions required by the city charter.",
+ "transcript_sha": "21ca63a44a28aeca",
+ "overview": "The Medford City Council Committee of the Whole held its sixth preliminary budget meeting for Fiscal Year 2027 to review the elections, legislative, fire, and library department budgets. The committee debated various cuts and funding discrepancies and approved motions requesting revised figures and expenditure breakdowns for multiple departments.",
  "items": [
   {
-   "title": "Elections Department Budget",
+   "title": "FY 2027 Preliminary Budget: Elections Department",
    "t": 71,
-   "summary": "Elections Manager James Blatchford presented a budget increase for overtime to cover three upcoming elections and discussed goals for automating the city census and emergency planning.",
+   "summary": "Elections Director James Blatchford presented the Elections Department budget, detailing increases in election overtime for upcoming cycles and ongoing efforts to digitize the municipal census.",
    "speakers": [
-    "Zac Bears",
     "James Blatchford",
     "Emily Lazzaro",
-    "Justin Tseng"
+    "Justin Tseng",
+    "Zac Bears"
    ]
   },
   {
-   "title": "Legislative Budget",
+   "title": "FY 2027 Preliminary Budget: Legislative Department",
    "t": 1880,
-   "summary": "Councilors debated an administration-proposed 12% cut to the legislative budget and the failure to fund a charter-mandated City Messenger/Legislative Aide position. The discussion included disagreements over budgetary actuals and the legality of cost-of-living raises for elected officials under the new charter.",
+   "summary": "The Council discussed the administration's proposed legislative budget, objecting to a 12 percent overall cut and the omission of funding for a charter-mandated council assistant position.",
    "speakers": [
     "Zac Bears",
     "Nina Nazarian",
@@ -30,20 +30,21 @@
     "Emily Lazzaro",
     "Justin Tseng",
     "Matt Leming",
-    "George Scarpelli",
-    "Rich Eliseo"
+    "Rich Eliseo",
+    "George Scarpelli"
    ]
   },
   {
-   "title": "Fire Department Budget",
-   "t": 5239,
-   "summary": "Chief Todd Evans detailed critical staffing shortages, high run volumes for Engines 1 and 4, and the impact of injuries on overtime costs. Approved a motion to request a breakdown of the professional services line item, specifically regarding litigation and arbitration costs.",
+   "title": "FY 2027 Preliminary Budget: Fire Department",
+   "t": 5221,
+   "summary": "Approved a motion to request a breakdown of actual FY 2026 expenditures and FY 2027 projections for professional services following a presentation on the department's staffing shortages and high run volumes.",
    "speakers": [
-    "Zac Bears",
     "Todd Evans",
+    "Zac Bears",
     "Justin Tseng",
     "George Scarpelli",
     "Emily Lazzaro",
+    "Liz Mullane",
     "Nina Nazarian",
     "Matt Leming",
     "Brian Honeycutt",
@@ -51,25 +52,24 @@
    ]
   },
   {
-   "title": "Library Budget",
+   "title": "FY 2027 Preliminary Budget: Library Department",
    "t": 12147,
-   "summary": "Director Sam Sednick requested a $4 per hour raise for part-time staff to address significant pay disparities and identified errors in the personnel count within the administration's budget document. Approved a motion to request an updated budget featuring accurate personnel data and the requested wage increases.",
+   "summary": "Approved a motion to request an updated library budget reflecting a four-dollar hourly raise for part-time hourly staff to address pay equity concerns.",
    "speakers": [
+    "Sam Sednek",
     "Zac Bears",
-    "Sam Sednick",
+    "Jenna Berry",
     "Justin Tseng",
     "Emily Lazzaro",
     "Anna Callahan",
-    "Jenna Berry",
     "George Scarpelli",
-    "Liz Mullane",
-    "Matt Leming"
+    "Liz Mullane"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 80308,
-  "output_tokens": 659
+  "input_tokens": 80306,
+  "output_tokens": 554
  }
 }

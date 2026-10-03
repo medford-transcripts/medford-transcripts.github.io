@@ -1,16 +1,16 @@
 {
  "video_id": "jMy4r_5VbVA",
  "provider": "gemini",
- "generated_at": "2026-09-29T11:07:59Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:08:39Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "ca1212f6fa46fc33",
- "overview": "The Medford City Council Committee of the Whole received a presentation from the Medford Arts Council and Arts Collaborative Medford regarding the state of arts and culture in the city. Participants discussed the need for a dedicated city arts liaison and increased financial investment to support local artists and community programming.",
+ "transcript_sha": "bc7760e523793d33",
+ "overview": "The Committee of the Whole met to receive and discuss a presentation from the Medford Arts Council and Arts Collaborative Medford regarding local arts advocacy and requested municipal support.",
  "items": [
   {
-   "title": "Resolution 26107: Presentation on Arts and Culture Support",
+   "title": "Resolution 26-107: City Support for Arts and Culture",
    "t": 124,
-   "summary": "Approved a resolution to receive a status report from the Medford Arts Council and Arts Collaborative Medford on local grant demand and facility usage. Representatives and public speakers advocated for a dedicated city arts coordinator to manage logistical hurdles, such as permitting, and requested a permanent increase in the city's arts budget.",
+   "summary": "Representatives from the Medford Arts Council and Arts Collaborative Medford presented on local arts programming, requesting increased municipal funding and a dedicated arts liaison staff position to coordinate community events. The motion to approve the resolution passed following extensive public comment.",
    "speakers": [
     "Zac Bears",
     "Laura Jasinski",
@@ -21,13 +21,16 @@
     "Justin Tseng",
     "Anna Callahan",
     "May Marquebreuck",
+    "Stephanie",
     "Gary Roberts",
-    "Elliot Jokelson",
-    "Dr. Trey Winner",
+    "Elliot Jogelson",
+    "Trey Winner",
+    "Alyssa",
     "Laura Duggan",
     "Pete Nersestian",
     "Timothy Lambert",
     "Simon Alcindor",
+    "Ross Catlin",
     "Susan Altman",
     "Sheila Ahrens"
    ]
@@ -36,6 +39,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 33345,
-  "output_tokens": 313
+  "output_tokens": 294
  }
 }

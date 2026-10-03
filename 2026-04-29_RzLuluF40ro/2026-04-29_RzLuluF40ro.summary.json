@@ -1,19 +1,19 @@
 {
  "video_id": "RzLuluF40ro",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:18:10Z",
+ "generated_at": "2026-10-03T07:18:06Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "f1fbdb13b059e7db",
- "overview": "The Committee of the Whole held its second preliminary budget meeting for Fiscal Year 2027 to review departmental operations and funding requirements. The committee discussed budget proposals for Human Resources, the Council on Aging, Diversity, Equity and Inclusion, and Recreation, ultimately keeping the matter in committee.",
+ "transcript_sha": "755bc7cebb4e493b",
+ "overview": "The Committee of the Whole held its second preliminary budget meeting for Fiscal Year 2027 to review the needs and goals of four city departments. The council discussed departmental transitions from ARPA funding, pending infrastructure projects, and the implementation of a city-wide compensation and classification study.",
  "items": [
   {
-   "title": "Human Resources Budget Review",
+   "title": "Human Resources Department Budget Review",
    "t": 604,
-   "summary": "Director Lisa Crowley presented budget increases for training and subscriptions necessitated by the expiration of ARPA funds and updated the council on the city-wide compensation and classification study. The council requested a follow-up meeting to review the 60 documents comprising the full study and its proposed salary realignments.",
+   "summary": "Director Lisa Crowley presented the HR budget, noting increases for advertising and training programs previously funded by ARPA. The council requested an executive summary of a recently completed compensation and classification study and a copy of updated salary schedules.",
    "speakers": [
-    "Zac Bears",
     "Lisa Crowley",
+    "Zac Bears",
     "Emily Lazzaro",
     "George Scarpelli",
     "Justin Tseng",
@@ -21,50 +21,51 @@
    ]
   },
   {
-   "title": "Council on Aging Budget Review",
+   "title": "Council on Aging Department Budget Review",
    "t": 1801,
-   "summary": "Director Pam Kelly detailed a slight budget increase to expand social worker hours from 25 to 30 per week and noted the success of food pantry and grab-and-go meal programs. A long-term goal for the department includes conducting a feasibility study for a new senior center facility.",
+   "summary": "Director Pam Kelly detailed a slight budget increase to expand social worker hours and highlighted successes in rebranding the senior center and managing food insecurity programs. Kelly stated her long-term goal of conducting a feasibility study for a new senior center building to accommodate the city's growing elderly population.",
    "speakers": [
-    "Zac Bears",
     "Pam Kelly",
     "Emily Lazzaro",
-    "Liz Mullane"
+    "Liz Mullane",
+    "Zac Bears"
    ]
   },
   {
-   "title": "Diversity, Equity and Inclusion Budget Review",
+   "title": "Diversity, Equity, and Inclusion Office Budget Review",
    "t": 2794,
-   "summary": "Director Frances Nwajei discussed budget adjustments for staffing and event costs as ARPA funding ends and emphasized compliance with upcoming federal web accessibility guidelines. The department is also overseeing Americans with Disabilities Act compliance for City Hall renovations and new private developments.",
+   "summary": "Director Frances Nwajei discussed the necessity of moving a disability specialist and language access services from ARPA funding into the general budget as federal grants expire. The office is currently focused on internal facility compliance, reviewing development plans, and preparing for new federal web accessibility guidelines.",
    "speakers": [
-    "Zac Bears",
     "Frances Nwajei",
+    "Zac Bears",
     "Emily Lazzaro"
    ]
   },
   {
    "title": "Recreation Department Budget Review",
    "t": 3510,
-   "summary": "Director Kevin Bailey reported on expanding teen programming and rink revenue via online booking apps while addressing significant water damage issues affecting the recreation center's gym floor. Councilors discussed the difficulty of filling a part-time office manager position and advocated for future investment in permanent park restrooms.",
+   "summary": "Director Kevin Bailey outlined new initiatives for teen programming and revenue generation at the LoConte Rink while reporting that contractual increases are driven by a settled Teamsters union agreement. The council discussed difficulties in hiring part-time staff and received an update on water mitigation efforts required for the recreation center's gym floor.",
    "speakers": [
-    "Zac Bears",
     "Kevin Bailey",
+    "Zac Bears",
     "Emily Lazzaro",
     "Matt Leming"
    ]
   },
   {
-   "title": "Budget Calendar and Meeting Scheduling",
+   "title": "Upcoming Meeting Schedule and Adjournment",
    "t": 4995,
-   "summary": "The committee and the Chief of Staff coordinated upcoming meeting dates for the remainder of the budget season and discussed the transmission of departmental data to the council.",
+   "summary": "The committee and Chief of Staff Nina Nazarian coordinated upcoming budget and zoning meeting dates. Approved keeping the budget item in committee and adjourning.",
    "speakers": [
     "Zac Bears",
-    "Nina Nazarian"
+    "Nina Nazarian",
+    "Emily Lazzaro"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 25852,
-  "output_tokens": 684
+  "input_tokens": 25850,
+  "output_tokens": 624
  }
 }

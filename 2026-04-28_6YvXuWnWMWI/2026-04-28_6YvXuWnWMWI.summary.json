@@ -1,38 +1,116 @@
 {
  "video_id": "6YvXuWnWMWI",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:19:47Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-03T07:18:33Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "c0e9224aea05cb94",
- "overview": "The Medford City Council Committee of the Whole met to discuss the Community Development Block Grant (CDBG) Annual Action Plan for Fiscal Year 2027. The committee heard presentations from various local public service agencies applying for funding and voted to refer the plan to the regular City Council meeting.",
+ "transcript_sha": "39df606b88f6c673",
+ "overview": "The Committee of the Whole reviewed the Fiscal Year 2027 Community Development Block Grant (CDBG) Annual Action Plan, which proposes allocating approximately $1.733 million in federal funds. Representatives from city departments and non-profit partners presented funding requests for housing assistance, elder services, food security, and multilingual mental health programs.",
  "items": [
   {
-   "title": "Community Development Block Grant Action Plan for Fiscal Year 2027 (Item 26-074)",
+   "title": "CDBG Action Plan Overview",
    "t": 450,
-   "summary": "The committee reviewed the proposed allocation of approximately $1.733 million in CDBG funds and heard program updates from nine local public service organizations. The committee voted to refer the action plan to the May 12, 2026, regular meeting.",
+   "summary": "Grants Manager Laurel Siegel presented the $1.433 million allocation for Program Year 52, which includes funding for administration, public services, and infrastructure projects.",
    "speakers": [
     "Zac Bears",
-    "Laurel Siegel",
+    "Laurel Siegel"
+   ]
+  },
+  {
+   "title": "ABCD Housing and Fuel Assistance",
+   "t": 682,
+   "summary": "Joshua White described programs for rental arrears and financial literacy, noting that the fuel assistance application period ends on April 30.",
+   "speakers": [
     "Joshua White",
-    "George Scarpelli",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Housing Families Legal Services",
+   "t": 837,
+   "summary": "Jayna Stafford outlined the legal aid program that provides eviction prevention and financial advocacy for Medford families facing housing instability.",
+   "speakers": [
     "Jayna Stafford",
     "Emily Lazzaro",
     "Matt Leming",
-    "Liz Mullane",
+    "Liz Mullane"
+   ]
+  },
+  {
+   "title": "Council on Aging Services",
+   "t": 1466,
+   "summary": "Director Pam Kelly detailed the use of funds for social work outreach, a handyman program for home safety, and subsidized recreational transportation for seniors.",
+   "speakers": [
     "Pam Kelly",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Medford Public Schools After-School Scholarships",
+   "t": 1831,
+   "summary": "The committee reviewed a proposal to provide tuition assistance for up to 20 low-income families requiring after-school care.",
+   "speakers": [
+    "Laurel Siegel"
+   ]
+  },
+  {
+   "title": "Mystic Valley Elder Services Nutrition Program",
+   "t": 1896,
+   "summary": "Carla Madute requested support for Meals on Wheels and congregate dining programs to help offset a 30% reduction in federal nutrition funding.",
+   "speakers": [
     "Carla Madute",
-    "Anna Callahan",
+    "Liz Mullane"
+   ]
+  },
+  {
+   "title": "Mystic Community Market Food Security",
+   "t": 2156,
+   "summary": "The committee heard a presentation on the market's food distribution efforts, which served nearly 5,000 residents and distributed 1.5 million pounds of food last year.",
+   "speakers": [
+    "Lisa",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "RISE Multicultural Mental Health Support",
+   "t": 2363,
+   "summary": "Monica presented a new proposal for multilingual mental health support circles designed to reduce isolation and emotional distress among immigrant seniors.",
+   "speakers": [
     "Monica",
-    "John Keegan",
+    "Zac Bears",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "SCM Community Transport",
+   "t": 2734,
+   "summary": "John Keegan discussed door-to-door medical and social transportation services, including new shuttles to Target and Walmart funded by external grants.",
+   "speakers": [
+    "John Keegan"
+   ]
+  },
+  {
+   "title": "The Welcome Project ESOL Program",
+   "t": 2983,
+   "summary": "Mary Beauchard and Suwani Lima explained the English for Parents program that helps immigrant caregivers build language skills to navigate the school system.",
+   "speakers": [
     "Mary Beauchard",
     "Suwani Lima"
+   ]
+  },
+  {
+   "title": "Plan Review and Adjournment",
+   "t": 3115,
+   "summary": "The committee referred the plan to the May 12 regular meeting for a final vote following the close of the public comment period.",
+   "speakers": [
+    "Laurel Siegel",
+    "Zac Bears"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 14756,
-  "output_tokens": 293
+  "input_tokens": 14753,
+  "output_tokens": 1032
  }
 }

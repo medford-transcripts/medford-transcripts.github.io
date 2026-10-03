@@ -1,80 +1,85 @@
 {
  "video_id": "YSOHg9NmSPA",
  "provider": "gemini",
- "generated_at": "2026-09-28T07:10:04Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:14:22Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "38f17c22c941572c",
- "overview": "The School Committee voted to opt out of the state's school choice program for the upcoming year and authorized a comprehensive assessment of transition services for students with disabilities. Members also discussed a significant deed restriction impacting the new high school project and highlights from the district's vocational programs.",
+ "transcript_sha": "f38a181b637e020a",
+ "overview": "The Medford School Committee approved the 2026-2027 meeting schedule, voted to opt out of the state's school choice program, and approved updates to its restraint and bullying prevention policies. The committee also discussed a newly discovered property deed restriction affecting the high school building project and passed a resolution to assess the district's Project Transition program.",
  "items": [
   {
    "title": "Consent Agenda",
    "t": 113,
-   "summary": "Approved various items including payroll, budget transfers, and meeting minutes, as well as a 2027 world language trip to France and Italy.",
+   "summary": "The committee approved the consent agenda, which included bills, payroll, budget transfers, meeting minutes, and student field trips.",
    "speakers": [
     "Jenny Graham",
-    "Paul Ruseau",
+    "Aaron Olapade",
     "Suzanne Galusi"
    ]
   },
   {
-   "title": "Mustang Moment: Career Technical Education",
+   "title": "Mustang Moment: Career Technical Education Showcase",
    "t": 312,
-   "summary": "Superintendent and staff highlighted student achievements in electrical, biotechnology, and health assisting programs, noting high certification pass rates and union placements.",
+   "summary": "The Superintendent and Career Technical Education staff highlighted accomplishments of students in the electrical, biotechnology, and health assisting programs.",
    "speakers": [
     "Suzanne Galusi",
     "Chad Fallon",
     "Rich Cormio",
     "Jayden Giang",
-    "Erika Reinfeld"
+    "Erika Reinfeld",
+    "Jenny Graham"
    ]
   },
   {
-   "title": "School Choice Participation 2026-2027",
+   "title": "FY 2026-2027 School Choice Program Participation",
    "t": 900,
-   "summary": "Approved the recommendation to remain a no-school-choice district to maintain resources and instructional focus for Medford residents.",
+   "summary": "The committee voted to opt out of the Commonwealth's external school choice program for the upcoming school year to maintain instructional focus on local residents.",
    "speakers": [
     "Suzanne Galusi",
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Mike Mastrobuoni"
+   ]
+  },
+  {
+   "title": "School Committee Meeting Schedule for 2026-2027",
+   "t": 1106,
+   "summary": "The committee approved the 2026-2027 meeting schedule with an amendment to add a meeting on June 14th.",
+   "speakers": [
+    "Suzanne Galusi",
+    "Erika Reinfeld",
+    "Jenny Graham",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Medford Public Schools Handbooks Review",
+   "t": 1403,
+   "summary": "The committee discussed updates to school handbooks, including new academic honesty policies and elementary recess guidelines, and voted to table the item until June 8th for revisions.",
+   "speakers": [
+    "Suzanne Galusi",
+    "Jenny Graham",
+    "Erika Reinfeld",
     "Paul Ruseau",
     "Mike Mastrobuoni"
    ]
   },
   {
-   "title": "2026-2027 Meeting Schedule",
-   "t": 1106,
-   "summary": "Approved the meeting calendar with an amendment to include an additional meeting on June 14, 2027.",
-   "speakers": [
-    "Suzanne Galusi",
-    "Erika Reinfeld",
-    "Jenny Graham"
-   ]
-  },
-  {
-   "title": "Medford Public Schools Handbooks",
-   "t": 1398,
-   "summary": "Tabled approval of the 2026-2027 handbooks to June 8 to address concerns regarding inconsistent attendance policies, the use of recess as a punishment, and the inclusion of private addresses.",
-   "speakers": [
-    "Suzanne Galusi",
-    "Paul Ruseau",
-    "Erika Reinfeld",
-    "Mike Mastrobuoni",
-    "Jenny Graham"
-   ]
-  },
-  {
-   "title": "Restraint Policy and Bullying Prevention Plan",
+   "title": "MPS Restraint Policy and Bullying Prevention Plan Updates",
    "t": 2547,
-   "summary": "Approved updated language for the district's bullying prevention plan and restraint policy to align with new state regulations and civil rights criteria.",
+   "summary": "The committee approved updated language for the district's bullying prevention plan and restraint policy to align with Department of Elementary and Secondary Education regulations.",
    "speakers": [
+    "Jenny Graham",
     "Joan Bowen",
     "Jessica Parks",
-    "Erika Reinfeld"
+    "Erika Reinfeld",
+    "Paul Ruseau"
    ]
   },
   {
-   "title": "MSBA Project Update",
+   "title": "Massachusetts School Building Authority Project Update",
    "t": 3136,
-   "summary": "Discussed MSBA feedback on the high school educational plan and a recently discovered 999-year deed restriction on parts of the site that may require an Article 97 legislative process or design revisions.",
+   "summary": "The administration and project consultants reviewed feedback from the MSBA and discussed a 999-year DCR deed restriction on the property that affects current high school design options.",
    "speakers": [
     "Jenny Graham",
     "Suzanne Galusi",
@@ -82,26 +87,29 @@
     "Paul Ruseau",
     "Mike Mastrobuoni",
     "Breanna Lungo-Koehn",
+    "Jessica Parks",
+    "Jen Carlson",
     "Matt Rice",
     "Aaron Olapade"
    ]
   },
   {
-   "title": "Project Transition Program Resolution",
+   "title": "Resolution on Project Transition Program Assessment",
    "t": 5200,
-   "summary": "Approved a resolution requesting a comprehensive assessment of the Project Transition program to improve community-based work experiences and post-exit employment outcomes for students with disabilities.",
+   "summary": "The committee approved a resolution directing the administration to conduct a comprehensive assessment of the Project Transition program for young adults with disabilities by December 2026.",
    "speakers": [
     "Jenny Graham",
     "Aaron Olapade",
     "Patricia Chery",
     "Suzanne Galusi",
-    "Erika Reinfeld"
+    "Erika Reinfeld",
+    "Paul Ruseau"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 29075,
-  "output_tokens": 946
+  "input_tokens": 29078,
+  "output_tokens": 894
  }
 }

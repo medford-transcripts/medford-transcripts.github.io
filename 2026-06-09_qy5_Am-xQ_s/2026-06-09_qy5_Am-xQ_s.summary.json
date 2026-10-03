@@ -1,16 +1,16 @@
 {
  "video_id": "qy5_Am-xQ_s",
  "provider": "gemini",
- "generated_at": "2026-09-29T11:07:37Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:08:15Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "25094a69dc73b700",
- "overview": "The Council approved a new standard compensation ordinance for contracted services and updated several personnel classifications. The body also conducted extensive discussions on the fiscal year 2027 budget, ultimately tabling it along with several financial appropriations pending further legal expenditure data.",
+ "transcript_sha": "5d632b7e6b04b6ea",
+ "overview": "At this meeting, the City Council approved the Standard Compensation Ordinance on third reading and authorized several municipal and school appropriations. The council also tabled the proposed fiscal year 2027 budget and a free cash housing appropriation to their next meeting on June 23rd.",
  "items": [
   {
    "title": "Approval of Records and Committee Reports",
    "t": 746,
-   "summary": "Approved meeting records from May and June 2026 and reports from the Committee of the Whole regarding fiscal year 2027 budget hearings.",
+   "summary": "Approved the minutes of previous regular and joint meetings and the Committee of the Whole reports on the fiscal year 2027 budget as amended.",
    "speakers": [
     "Zac Bears",
     "Justin Tseng",
@@ -18,11 +18,12 @@
    ]
   },
   {
-   "title": "Standard Compensation Ordinance",
+   "title": "Standard Compensation Ordinance (Paper 25189)",
    "t": 899,
-   "summary": "Approved the third reading of an ordinance establishing a wage floor and benefits for contracted janitorial and security services despite administrative requests for further delay. Supporters emphasized the need for worker stability and living wages while the administration cited concerns regarding legal terminology and liability.",
+   "summary": "Approved on third reading an ordinance creating a wage floor and successorship protections for contracted janitorial and security services, moving forward despite an administrative request to postpone.",
    "speakers": [
     "Zac Bears",
+    "Nina Nazarian",
     "Paul Righi",
     "Emily Lazzaro",
     "Anna Callahan",
@@ -35,9 +36,9 @@
    ]
   },
   {
-   "title": "Personnel Ordinance Amendments for Department Heads",
+   "title": "Personnel Ordinance Amendments (Paper 26084)",
    "t": 2957,
-   "summary": "Approved the third reading of classification changes for the Director of Elections, Director of Diversity, Equity and Inclusion, and Director of Veteran Services. The Council maintained its previous decision to place all three positions in the same compensation tier based on a third-party study, rejecting administrative concerns regarding internal equity and tenure.",
+   "summary": "Approved on third reading the compensation classification adjustments aligning the Director of Elections, Director of Diversity Equity Inclusion, and Director of Veteran Services into the same compensation bracket.",
    "speakers": [
     "Emily Lazzaro",
     "Lisa Crowley",
@@ -51,9 +52,9 @@
    ]
   },
   {
-   "title": "Grant of Location: National Grid",
+   "title": "Grant of Location: National Grid (Paper 26108)",
    "t": 5542,
-   "summary": "Approved a petition by National Grid to install an underground electric conduit between 3960 and 4000 Mystic Valley Parkway subject to engineering conditions.",
+   "summary": "Approved a petition by National Grid to install an underground electrical conduit on Mystic Valley Parkway, subject to several conditions from the engineering department.",
    "speakers": [
     "Zac Bears",
     "Ruben",
@@ -61,9 +62,9 @@
    ]
   },
   {
-   "title": "Coldstone Creamery Extended Hours",
+   "title": "Extended Hours License: Coldstone Creamery (Paper 26109)",
    "t": 5804,
-   "summary": "Approved extending summer operating hours for Scoopology LLC until 1:00 a.m. daily, with a 21-day review period to monitor community impacts.",
+   "summary": "Approved a common victualler's license amendment allowing Coldstone Creamery to remain open until 1:00 AM daily during the summer, subject to a 21-day review period.",
    "speakers": [
     "Zac Bears",
     "Emily Lazzaro",
@@ -72,9 +73,9 @@
    ]
   },
   {
-   "title": "MBTA Bus Network Redesign Resolution",
+   "title": "Resolution on MBTA Bus Network Redesign (Paper 26110)",
    "t": 6270,
-   "summary": "Approved a resolution to conduct public outreach and solicit feedback on MBTA proposals for modifying bus routes 80, 94, and 96.",
+   "summary": "Approved a resolution requesting neighborhood communication on the MBTA's proposed bus route changes and urging the transit agency to hold an in-person meeting in Medford.",
    "speakers": [
     "Zac Bears",
     "Justin Tseng",
@@ -84,26 +85,18 @@
    ]
   },
   {
-   "title": "Affordable Housing Trust Fund Board Reappointment",
+   "title": "Board Appointment and Food Truck Permits (Papers 26111 & 26112)",
    "t": 6845,
-   "summary": "Approved the reappointment of Lisa Ann Davidson as chair of the Affordable Housing Trust Fund Board.",
-   "speakers": [
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Medford Square Fest Food Truck Permits",
-   "t": 6901,
-   "summary": "Approved the permit for June 13, 2026, but tabled permits for later dates to facilitate further discussion regarding impacts on brick-and-mortar restaurants.",
+   "summary": "Approved the reappointment of Lisa Ann Davidson to the Affordable Housing Trust Fund Board and approved the food truck permit for June 13th while tabling subsequent dates.",
    "speakers": [
     "Zac Bears",
     "George Scarpelli"
    ]
   },
   {
-   "title": "Water and Sewer Enterprise Fund Retained Earnings",
+   "title": "Water and Sewer Fund Appropriation (Paper 26113)",
    "t": 7242,
-   "summary": "Approved the appropriation of $5.5 million for the design and construction of water main replacements on several city streets. The City Engineer noted this work addresses low-pressure zones and precedes upcoming paving projects.",
+   "summary": "Approved the appropriation of $5.5 million from the Water and Sewer Enterprise Fund retained earnings to fund water main replacement projects.",
    "speakers": [
     "Zac Bears",
     "Owen Wartella",
@@ -113,27 +106,28 @@
    ]
   },
   {
-   "title": "Schools Special Purpose Override Stabilization Fund",
+   "title": "School Stabilization Fund Appropriation (Paper 26114)",
    "t": 7968,
-   "summary": "Approved an appropriation of approximately $1.1 million to support teacher contracts, athletic stipends, and enhanced extracurricular programming at Medford Public Schools.",
+   "summary": "Approved the transfer of $1,085,549 from the School Special Purpose Override Stabilization Fund to support school department budgets.",
    "speakers": [
     "Zac Bears",
     "Noel Velez"
    ]
   },
   {
-   "title": "PEG Access and Cable Related Special Revenue Fund",
+   "title": "PEG Access Special Revenue Fund (Paper 26115)",
    "t": 8231,
-   "summary": "Voted to establish a special revenue fund to reserve cable franchise fees for PEG access services and oversight starting in fiscal year 2027.",
+   "summary": "Approved the establishment of a PEG Access and Cable Related Special Revenue Fund starting in fiscal year 2027.",
    "speakers": [
     "Zac Bears",
-    "Nina Nazarian"
+    "Nina Nazarian",
+    "Emily Lazzaro"
    ]
   },
   {
-   "title": "Fiscal Year 2027 General Fund and Enterprise Budgets",
+   "title": "FY 2027 Budget Submission (Paper 26061)",
    "t": 8375,
-   "summary": "Tabled the $217 million general fund budget and several free cash appropriations until June 23, 2026. Councilors requested more comprehensive data on legal expenditures and questioned the administration's proposal to tie funding for various city priorities to the preservation of the law department budget.",
+   "summary": "Tabled the proposed $217 million general fund budget and related enterprise budgets to June 23rd to allow for further review and to request more detailed information regarding legal expenditures.",
    "speakers": [
     "Zac Bears",
     "Nina Nazarian",
@@ -143,11 +137,19 @@
     "Liz Mullane",
     "Matt Leming"
    ]
+  },
+  {
+   "title": "Free Cash Appropriation: Affordable Housing Trust (Paper 26105)",
+   "t": 10422,
+   "summary": "Tabled a pending free cash appropriation for the Affordable Housing Trust to the June 23rd meeting.",
+   "speakers": [
+    "Zac Bears"
+   ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 51935,
+  "input_tokens": 51929,
   "output_tokens": 1291
  }
 }

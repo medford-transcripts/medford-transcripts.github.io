@@ -1,55 +1,30 @@
 {
  "video_id": "OIWMkmBz29E",
  "provider": "gemini",
- "generated_at": "2026-09-28T07:09:06Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:12:58Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "981575264f395517",
- "overview": "The committee met to review annual surveillance reports required by city ordinance but was unable to complete the police report review due to the department's absence. The body discussed data storage and privacy concerns regarding parking enforcement technology before voting to table the matter for a follow-up meeting.",
+ "transcript_sha": "0cf2b1a2dada7c44",
+ "overview": "The committee met to discuss the annual surveillance reports from the police and parking departments, but voted to keep the matter in committee due to the absence of police department representatives.",
  "items": [
   {
-   "title": "Police Department Surveillance Report Delay",
+   "title": "Annual Surveillance Reports",
    "t": 677,
-   "summary": "Chair Lazzaro reported that the Police Department submitted its mandatory annual surveillance report two months late and criticized the Chief of Police for failing to attend the meeting or respond to inquiries.",
-   "speakers": [
-    "Emily Lazzaro"
-   ]
-  },
-  {
-   "title": "Parking Department Surveillance Report",
-   "t": 1087,
-   "summary": "Parking Director Sarah McDermott presented her department's report, stating that License Plate Recognition (LPR) data is city-owned, stored in a secure cloud, and automatically blurs faces to protect privacy.",
+   "summary": "The committee discussed the parking department's automated license plate reader report with Parking Director Sarah McDermod, but voted to keep the matter in committee to schedule a future meeting with the police department, whose representatives were absent.",
    "speakers": [
     "Emily Lazzaro",
-    "Sarah McDermod"
-   ]
-  },
-  {
-   "title": "Public Comment on Surveillance and Data Privacy",
-   "t": 1460,
-   "summary": "Members of the public expressed concern over the indefinite storage of surveillance data and potential information sharing between city departments and third-party vendors.",
-   "speakers": [
+    "Sarah McDermod",
     "Julie Flynn",
     "Marie Izzo",
-    "Sarah McDermod",
-    "Emily Lazzaro"
-   ]
-  },
-  {
-   "title": "Committee Discussion and Motion to Table",
-   "t": 1907,
-   "summary": "Approved a motion to keep the matter in committee and schedule a follow-up meeting to compel attendance and testimony from the Police Department regarding their surveillance activities.",
-   "speakers": [
     "Justin Tseng",
     "Matt Leming",
-    "Liz Mullane",
-    "Emily Lazzaro"
+    "Liz Mullane"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 9102,
-  "output_tokens": 463
+  "input_tokens": 9101,
+  "output_tokens": 186
  }
 }

@@ -1,16 +1,16 @@
 {
  "video_id": "9hCExE11hSk",
  "provider": "gemini",
- "generated_at": "2026-09-30T21:05:22Z",
+ "generated_at": "2026-10-03T07:21:09Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "f0cb4d2ab946d83c",
- "overview": "The committee approved the city council newsletter draft covering February through April and reviewed a draft strategy for hosting sixteen neighborhood ward meetings over the next two years.",
+ "transcript_sha": "b2f78dd565d7ffdc",
+ "overview": "The committee approved a draft of the new City Council newsletter and reviewed a strategy document for hosting neighborhood ward meetings across Medford's eight wards.",
  "items": [
   {
    "title": "City Council Newsletter",
    "t": 337,
-   "summary": "Approved the combined February, March, and April newsletter draft with additions regarding budget priorities, the vacant property ordinance, and election commission equipment.",
+   "summary": "Approved a draft of the city council newsletter summarizing activities from February through April, with instructions for the chair to rotate future drafting duties among councilors.",
    "speakers": [
     "Liz Mullane",
     "Matt Leming",
@@ -19,9 +19,9 @@
    ]
   },
   {
-   "title": "Neighborhood Ward Meetings Strategy",
+   "title": "Neighborhood Ward Meetings Resolution",
    "t": 903,
-   "summary": "Reviewed a rollout plan for sixteen ward-based meetings, discussing logistical challenges including hybrid technology requirements, location accessibility in underserved areas, and councilor co-facilitation.",
+   "summary": "Discussed a strategy to host at least one meeting in each of the city's eight wards over the next two years, focusing on location logistics and hybrid technology requirements. The matter remains in committee for further coordination of dates and councilor assignments.",
    "speakers": [
     "Liz Mullane",
     "Matt Leming",
@@ -33,7 +33,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 10386,
-  "output_tokens": 253
+  "input_tokens": 10387,
+  "output_tokens": 270
  }
 }

@@ -1,66 +1,74 @@
 {
  "video_id": "vRbVV80gLgM",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:13:18Z",
+ "generated_at": "2026-10-03T07:16:20Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "5bc278dffb4e93a1",
- "overview": "The Committee of the Whole held its fourth preliminary budget meeting for fiscal year 2027 to review the proposed budgets for the Assessors, Facilities, Debt Service, Pensions, and Insurance departments.",
+ "transcript_sha": "a8d46199a010137c",
+ "overview": "The Committee of the Whole conducted its fourth preliminary budget hearing for Fiscal Year 2027, reviewing the departments for Assessing, Facilities, Debt Service, Pensions, and Insurance.",
  "items": [
   {
-   "title": "26061 - Annual Budget Process: Assessing Department",
-   "t": 160,
-   "summary": "Chief Assessor Jared Yagjian reported a mostly level-funded budget, noting that a digital flyover software for change detection and new growth identification was not funded but remains a priority for future years.",
+   "title": "Assessing Department Budget",
+   "t": 200,
+   "summary": "Chief Assessor Jared Yagjian presented a level-funded budget focused on promoting senior exemptions and expressed interest in future software for aerial growth detection.",
    "speakers": [
-    "Zac Bears",
     "Jared Yagjian",
-    "Emily Lazzaro"
+    "Emily Lazzaro",
+    "Zac Bears"
    ]
   },
   {
-   "title": "26061 - Annual Budget Process: Facilities Department",
+   "title": "Facilities Department Budget",
    "t": 705,
-   "summary": "Facilities Director David McIntyre outlined a strategy to transition from reactive triage to preventative maintenance to control long-term costs. The council discussed custodial contract costs and the planned redesign of the City Council chambers to accommodate four additional members.",
+   "summary": "Director David McIntyre outlined a plan to transition to preventative maintenance to reduce long-term costs and discussed rising utility rates and custodial contract standards.",
    "speakers": [
-    "Zac Bears",
     "David McIntyre",
     "Liz Mullane",
-    "Emily Lazzaro"
+    "Emily Lazzaro",
+    "Zac Bears"
    ]
   },
   {
-   "title": "26061 - Annual Budget Process: Bonds and Interest",
-   "t": 1658,
-   "summary": "CFO Bob Dickinson reported that debt service currently accounts for approximately 5% of the general fund, with upcoming costs primarily driven by interest on temporary notes for school HVAC projects.",
+   "title": "Bonds and Interest",
+   "t": 1700,
+   "summary": "CFO Bob Dickinson reported a $1 million interest payment on temporary notes for school HVAC projects and noted the city's debt service remains at approximately 5% of the general fund.",
    "speakers": [
-    "Zac Bears",
     "Bob Dickinson"
    ]
   },
   {
-   "title": "26061 - Annual Budget Process: Pensions",
+   "title": "Pensions",
    "t": 1854,
-   "summary": "The city remains on track to reach full pension funding by 2033, though officials noted the multi-hundred-million-dollar OPEB liability for retiree health insurance remains unfunded.",
+   "summary": "Dickinson stated the city is on track to fully fund pension obligations by 2033, though the separate liability for retiree health insurance remains unfunded.",
    "speakers": [
-    "Zac Bears",
-    "Bob Dickinson"
+    "Bob Dickinson",
+    "Zac Bears"
    ]
   },
   {
-   "title": "26061 - Annual Budget Process: Workers' Compensation and Insurance",
+   "title": "Workers' Compensation",
    "t": 2178,
-   "summary": "Budget increases were attributed to rising medical costs for claimants and a 9% increase in GIC health insurance premiums. The committee requested historical data on workers' compensation settlements to better understand expenditure trends.",
+   "summary": "HR Director Lisa Crowley and CFO Bob Dickinson addressed a nearly 20% increase in the workers' compensation budget driven by rising medical evaluation costs and permanent disability claims.",
    "speakers": [
-    "Zac Bears",
     "Bob Dickinson",
     "Lisa Crowley",
-    "Liz Mullane"
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Insurance Budget",
+   "t": 2594,
+   "summary": "The committee reviewed a 9% increase in insurance costs primarily due to GIC healthcare rates and expanded Medicare costs for school employees. The matter was kept in committee.",
+   "speakers": [
+    "Bob Dickinson",
+    "Lisa Crowley",
+    "Zac Bears"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 17896,
-  "output_tokens": 622
+  "output_tokens": 611
  }
 }

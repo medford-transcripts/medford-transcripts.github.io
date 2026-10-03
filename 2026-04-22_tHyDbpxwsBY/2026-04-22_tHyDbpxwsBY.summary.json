@@ -1,30 +1,72 @@
 {
  "video_id": "tHyDbpxwsBY",
  "provider": "gemini",
- "generated_at": "2026-09-30T13:12:09Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-03T07:20:23Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "c2eb0f133700e43b",
- "overview": "The City Council Committee of the Whole held its first preliminary budget meeting for fiscal year 2027. The committee reviewed proposed budgets for the Treasurer-Collector, Finance and Procurement, and Information Technology departments, and voted to keep the matter in committee.",
+ "transcript_sha": "1b98f4083ed2c9cb",
+ "overview": "The City Council convened its first preliminary budget hearing for fiscal year 2027 to review the Treasurer-Collector, Finance and Procurement, and Information Technology budgets. No formal decisions were made as the budget items were referred back to committee for further review.",
  "items": [
   {
-   "title": "Item 26-061: FY 2027 Annual Budget Process - Preliminary Meeting 1",
+   "title": "Opening of Annual Budget Process (Item 26-061)",
    "t": 457,
-   "summary": "The committee reviewed the proposed FY 2027 budgets for the Treasurer-Collector, Finance and Procurement, and Information Technology departments, discussing staffing, legacy data cleanup, and cybersecurity before voting to keep the matter in committee.",
+   "summary": "The council called to order the first of several preliminary budget meetings scheduled through mid-May to review departmental recommendations for the fiscal 2027 budget cycle.",
+   "speakers": [
+    "Zac Bears",
+    "Marie Izzo",
+    "Nina Nazarian",
+    "Luke Preisner"
+   ]
+  },
+  {
+   "title": "Treasurer-Collector Budget Review",
+   "t": 571,
+   "summary": "Treasurer-Collector Judy Johnston detailed a budget increase driven by contractual salary step raises, a shift to a part-time clerk position, and an additional $7,000 for postage costs.",
+   "speakers": [
+    "Zac Bears",
+    "Judy Johnston",
+    "Matt Leming",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Finance and Procurement Budget Review",
+   "t": 1161,
+   "summary": "Director Bob Dickinson discussed contractual increases and ongoing efforts to resolve legacy grant deficits in the city’s accounting system. The department highlighted challenges with staff retention due to state agencies offering higher pay and remote work flexibility.",
+   "speakers": [
+    "Zac Bears",
+    "Bob Dickinson",
+    "Matt Leming",
+    "Nina Nazarian",
+    "Luke Preisner"
+   ]
+  },
+  {
+   "title": "Information Technology Budget Review",
+   "t": 3097,
+   "summary": "Director Rich Lane presented an IT budget that absorbs approximately $165,000 for cybersecurity and software licensing previously funded by federal ARPA grants. The department also updated the council on citywide fiber installation and the transition to new network infrastructure at City Hall.",
+   "speakers": [
+    "Rich Lane",
+    "Zac Bears",
+    "Matt Leming",
+    "Justin Tseng",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Adjournment",
+   "t": 4403,
+   "summary": "The Chief of Staff noted ongoing work to close the current budget gap and find additional funding for the school department before the meeting adjourned.",
    "speakers": [
     "Zac Bears",
     "Nina Nazarian",
-    "Luke Preisner",
-    "Judy Johnston",
-    "Matt Leming",
-    "Bob Dickinson",
-    "Justin Tseng"
+    "Marie Izzo"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 20707,
-  "output_tokens": 222
+  "input_tokens": 20708,
+  "output_tokens": 631
  }
 }

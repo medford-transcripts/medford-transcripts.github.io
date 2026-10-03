@@ -1,16 +1,16 @@
 {
  "video_id": "kjKizgNO-oM",
  "provider": "gemini",
- "generated_at": "2026-09-27T17:07:14Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:10:44Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "4a68dc2d6f7f4f58",
- "overview": "The Medford Comprehensive High School Building Committee reviewed preliminary financial modeling for city-wide capital projects and projected property tax impacts of various debt exclusion levels. The committee also analyzed updated cost estimates for specific site options and a 50-year life cycle cost study of proposed HVAC systems.",
+ "transcript_sha": "b1c91d7db3ceb5c9",
+ "overview": "The Medford Comprehensive High School Building Committee met to review the city's capital debt plan and projected tax impacts, examine updated Preferred Schematic Report (PSR) cost estimates, and evaluate a 50-year life cycle cost analysis comparing HVAC systems.",
  "items": [
   {
    "title": "Approval of Minutes",
    "t": 200,
-   "summary": "The committee approved the minutes from the previous meeting with one minor name correction.",
+   "summary": "The committee approved the minutes from the previous meeting with a spelling correction.",
    "speakers": [
     "Jenny Graham",
     "Kenneth Lord",
@@ -18,9 +18,9 @@
    ]
   },
   {
-   "title": "Project and MSBA Updates",
+   "title": "Project Updates and MSBA Collaboration",
    "t": 285,
-   "summary": "Chairman Graham reported that the MSBA confirmed the project is not in violation of regulations following the removal of site Option D and discussed the MSBA request to explore a 9-12 only enrollment option for comparison purposes.",
+   "summary": "Jenny Graham reported on a productive meeting with the MSBA, clarifying that a requested study of a 9-12 only option was purely for comparison and that the agency is satisfied with the city's handling of the site's deed restriction.",
    "speakers": [
     "Jenny Graham",
     "Matt Rice"
@@ -29,27 +29,18 @@
   {
    "title": "City Capital Projects and Cost Impact Presentation",
    "t": 675,
-   "summary": "City officials presented a broad overview of Medford’s $900 million capital project needs, modeling the potential tax impacts of debt exclusions ranging from $440 million to $607 million for different residential and commercial property types.",
-   "speakers": [
-    "Breanna Lungo-Koehn",
-    "Bob Dickinson",
-    "Jared Yagjian",
-    "Paul Righi",
-    "Luke Preisner"
-   ]
-  },
-  {
-   "title": "Discussion of City Financial Data",
-   "t": 2968,
-   "summary": "Committee members and residents discussed the financial presentation, with several participants questioning the framing of city debt against school needs and requesting more data on revenue growth and the educational vision for the project.",
+   "summary": "Medford city administrators presented the municipal capital plan and projected tax impacts of potential high school debt exclusions, prompting a lengthy discussion with the committee and public regarding project scope, residential tax burdens, and municipal spending priorities.",
    "speakers": [
     "Jenny Graham",
+    "Breanna Lungo-Koehn",
+    "Bob Dickinson",
+    "Emily Lazzaro",
+    "Luke Preisner",
+    "Jared Yagjian",
     "Nicole Morell",
     "Paul Righi",
     "Michelle Barkson",
-    "Breanna Lungo-Koehn",
     "Zachary Chertok",
-    "Ellen Rushman",
     "Susan Wilson",
     "Ada Gunning",
     "Miranda Briseno",
@@ -57,29 +48,26 @@
     "Jessica Parks",
     "Chris Bennett",
     "Harrison Green",
-    "Maria Daniel",
     "Zoe Moutsos",
-    "Tanya Sherman",
-    "Carrie Babbage",
     "Sophie Ricks",
-    "Jared Yagjian"
+    "Adele Sands"
    ]
   },
   {
-   "title": "PSR Cost Estimates and MSBA Reimbursement",
-   "t": 6507,
-   "summary": "The project team presented refined cost estimates for the C2.2a and C3.4a options and clarified that the project's effective MSBA reimbursement rate will likely increase as incentive points are finalized during schematic design.",
+   "title": "PSR Cost Estimates Review",
+   "t": 6990,
+   "summary": "The project team presented updated Preferred Schematic Report cost estimates for the revised C2.2a and C3.4a design options, ranging from $716 million to $817 million depending on the selected program scope.",
    "speakers": [
     "Jenny Graham",
-    "Luke Preisner",
     "Adele Sands",
-    "Emily Lazzaro"
+    "Libby Brown",
+    "Zachary Chertok"
    ]
   },
   {
-   "title": "Project Timeline Update",
+   "title": "Project Timeline Review",
    "t": 7292,
-   "summary": "The committee reviewed the schedule leading up to a preferred option selection on June 10 and the subsequent Preferred Schematic Report submission on June 25.",
+   "summary": "The project team reviewed the key milestones leading up to the submission of the Preferred Schematic Report and the anticipated citywide vote in May 2027.",
    "speakers": [
     "Jenny Graham",
     "Adele Sands",
@@ -87,22 +75,21 @@
    ]
   },
   {
-   "title": "Evaluation Criteria Matrix and Life Cycle Cost Analysis",
+   "title": "Evaluation Criteria and Life Cycle Cost Analysis",
    "t": 7928,
-   "summary": "Sustainability consultants presented a 50-year life cycle cost analysis comparing geothermal and air-to-water heat pump systems, finding that while geothermal is more efficient, it currently carries a $28 million incremental upfront cost.",
+   "summary": "The project team presented the updated evaluation criteria matrix and a 50-year life cycle cost analysis comparing geothermal ground-source and air-to-water heat pump systems, including their respective carbon and solar PV impacts.",
    "speakers": [
     "Jenny Graham",
     "Matt Rice",
-    "Martine Dionne",
+    "Martine Dion",
     "Kenneth Lord",
-    "Zachary Chertok",
-    "Suni Dillard"
+    "Zachary Chertok"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 51723,
-  "output_tokens": 955
+  "input_tokens": 51725,
+  "output_tokens": 818
  }
 }

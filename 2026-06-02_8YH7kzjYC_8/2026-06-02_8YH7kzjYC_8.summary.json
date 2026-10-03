@@ -1,34 +1,35 @@
 {
  "video_id": "8YH7kzjYC_8",
  "provider": "gemini",
- "generated_at": "2026-09-27T17:06:47Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:11:04Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "1f10c63a457634a6",
- "overview": "The School Committee met to vote on entering an executive session to address a labor grievance, litigation strategy, and contract negotiations for non-union administrative personnel.",
+ "transcript_sha": "5144fa4c9461fc89",
+ "overview": "The Medford School Committee convened and voted to enter executive session to address collective bargaining, potential litigation, and contract negotiations with non-union personnel, opting not to reconvene in public session.",
  "items": [
   {
-   "title": "Call to Order and Roll Call",
+   "title": "Meeting Opening and Roll Call",
    "t": 22,
-   "summary": "The meeting was called to order, the roll was called, and the committee performed the Pledge of Allegiance.",
+   "summary": "Mayor Lungo-Koehn called the 11th regular meeting of the Medford School Committee to order and established a quorum.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Paul Ruseau"
    ]
   },
   {
-   "title": "Executive Session",
+   "title": "Vote to Enter Executive Session",
    "t": 114,
-   "summary": "Approved a motion to enter executive session and not reconvene in public to discuss a Massachusetts Teachers Association grievance, strategy for potential litigation, and contract negotiations for non-union administrative staff including principals and directors.",
+   "summary": "The Committee approved a motion to enter executive session to discuss collective bargaining with the Massachusetts Teachers Association, potential litigation strategy, and contract negotiations with non-union personnel.",
    "speakers": [
     "Breanna Lungo-Koehn",
-    "Erika Reinfeld"
+    "Erika Reinfeld",
+    "Paul Ruseau"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 2163,
-  "output_tokens": 233
+  "input_tokens": 2164,
+  "output_tokens": 229
  }
 }

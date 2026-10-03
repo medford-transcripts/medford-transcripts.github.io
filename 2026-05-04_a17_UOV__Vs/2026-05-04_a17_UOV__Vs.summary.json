@@ -1,45 +1,61 @@
 {
  "video_id": "a17_UOV__Vs",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:16:59Z",
+ "generated_at": "2026-10-03T07:17:42Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "f66752d66622271c",
- "overview": "The School Committee approved a major expansion and restructuring of the district's after-school programs and renewed the superintendent's contract for three years. The committee also voted to support state legislation resolving pension discrepancies for veteran educators.",
+ "transcript_sha": "45033480918c574f",
+ "overview": "The School Committee approved a significant expansion and restructuring of the district's after-school programs based on recommendations from the BASIC collaborative, including increased capacity and new tuition rates. Additionally, the committee approved a three-year contract for the superintendent and a resolution supporting state legislation for teacher retirement benefits.",
  "items": [
   {
    "title": "Consent Agenda",
    "t": 122,
-   "summary": "Approved various budget transfers, a $700 PTO donation to the Fine Arts and Music program, and previous meeting minutes.",
+   "summary": "Approved the consent agenda, including bills, payrolls, budget transfers, a $700 PTO donation for a fine arts field trip, and meeting minutes from April 13, 2026.",
    "speakers": [
     "Jenny Graham"
    ]
   },
   {
-   "title": "Mustang Moment: World Language and English Learning",
-   "t": 209,
-   "summary": "Students from the World Language and English Learning departments shared personal testimonials regarding the value of biliteracy and cultural exchange.",
+   "title": "Mustang Moment: World Language Department",
+   "t": 200,
+   "summary": "World Language Director Katia Martigorena and several students from Medford High and Andrews Middle School presented on the benefits of multilingualism and personal academic experiences.",
    "speakers": [
     "Suzanne Galusi",
     "Katia Martigorena",
-    "Chelsea McNiff",
-    "Jayden Vil"
+    "Carissa Pirafore",
+    "Emma",
+    "Cooper Hsu",
+    "Lina",
+    "William",
+    "Fadson Ludière",
+    "Lennox Lafleur",
+    "Jayden Vil",
+    "Sofia Derez",
+    "Amandine Jones",
+    "Noeli",
+    "Lily Chen",
+    "Grace Chen",
+    "Sophie Levine",
+    "Nia",
+    "Ilyas Alkesh",
+    "Victor Manges"
    ]
   },
   {
    "title": "Mustang Moment: Brooks Elementary Songwriting Project",
    "t": 1665,
-   "summary": "Third-grade students performed an original song about Medford's history and future created during a 10-year recurring creative writing residency.",
+   "summary": "Principal Shannon Demos and musician Laura Brereton presented an original song about Medford's history and future performed by third-grade students from the Brooks Elementary School.",
    "speakers": [
     "Suzanne Galusi",
     "Shannon Demos",
-    "Laura Brereton"
+    "Laura Brereton",
+    "Ryan Surratt"
    ]
   },
   {
-   "title": "After School Program Review and Recommendations",
+   "title": "After School Update and BASIC Recommendations",
    "t": 2503,
-   "summary": "Approved a comprehensive plan to increase enrollment capacity by 150 seats, establish full-time site directors, and implement specialist-led enrichment activities. The reform addresses high waitlists and creates a more structured, multi-age programming model across elementary sites.",
+   "summary": "Approved a proposal from the Belmont Afterschool Enrichment Collaborative (BASIC) to increase district after-school capacity by 150 seats and transition to a model featuring full-time site directors and specialized curriculum leaders.",
    "speakers": [
     "Suzanne Galusi",
     "Andrew Mountford",
@@ -50,43 +66,47 @@
     "Erika Reinfeld",
     "Aaron Olapade",
     "Mike Mastrobuoni",
+    "Alachie Yeager",
+    "Ryan Surratt",
+    "Christine DesAutels",
     "Ada Gunning",
     "Ellen Rushman"
    ]
   },
   {
-   "title": "MPS After School Rate Card",
+   "title": "Medford Public Schools After School Rate Card",
    "t": 10469,
-   "summary": "Approved a new tuition rate card featuring flexible daily scheduling and a rate increase of approximately 10% to fund expanded staffing and benefits.",
+   "summary": "Approved a new tuition schedule that introduces multi-day flexibility and adjusts rates to fund the expanded staffing and enrichment activities recommended in the BASIC report.",
    "speakers": [
     "Suzanne Galusi",
     "Will Pipicelli",
     "Erika Reinfeld",
-    "Jessica Parks"
+    "Jessica Parks",
+    "Jenny Graham"
    ]
   },
   {
    "title": "Superintendent's Three-Year Contract",
    "t": 11084,
-   "summary": "Approved a three-year contract for Superintendent Suzanne Galusi following executive session negotiations.",
+   "summary": "Approved a three-year contract for Superintendent Suzanne Galusi following previous negotiations in executive session.",
    "speakers": [
     "Jenny Graham",
     "Suzanne Galusi"
    ]
   },
   {
-   "title": "Resolution Supporting Teacher Retirement Benefits",
+   "title": "Resolution in Support of House Bill H4361",
    "t": 11157,
-   "summary": "Approved a resolution endorsing Massachusetts House Bill H.4361 and Senate Bill S.1884 to provide a one-time pension buy-in opportunity for veteran teachers affected by previous administrative errors.",
+   "summary": "Approved a resolution supporting state legislation that provides a one-time opportunity for veteran teachers hired before 2001 to opt into the Retirement Plus pension program.",
    "speakers": [
     "Jenny Graham",
     "Jessica Parks"
    ]
   },
   {
-   "title": "Condolences and Adjournment",
+   "title": "Condolences",
    "t": 11447,
-   "summary": "Offered condolences to the family of Leonard Len Gliona and announced upcoming budget hearings before adjourning.",
+   "summary": "The committee offered condolences to the family of Leonard 'Len' Gliona, a lifelong Medford resident and relative of several district staff members.",
    "speakers": [
     "Jenny Graham"
    ]
@@ -94,7 +114,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 57381,
-  "output_tokens": 862
+  "input_tokens": 57386,
+  "output_tokens": 1040
  }
 }

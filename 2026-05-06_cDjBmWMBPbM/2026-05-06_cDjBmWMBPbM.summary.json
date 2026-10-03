@@ -1,38 +1,28 @@
 {
  "video_id": "cDjBmWMBPbM",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:16:07Z",
+ "generated_at": "2026-10-03T07:17:11Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "36a6f29fefb9a711",
- "overview": "The committee reviewed the first draft of the Boston Avenue corridor rezoning, adjusting building height incentives and usage rules for the proposed sub-districts. The committee amended the proposal to prohibit specific car-oriented uses and referred the draft to a joint meeting with the Community Development Board.",
+ "transcript_sha": "c145a2e0878cb648",
+ "overview": "The committee reviewed the first draft of the Boston Avenue corridor rezoning proposal and the institutional zoning framework for Tufts University. The council voted to prohibit certain drive-through uses and referred the amended draft for a joint meeting with the Community Development Board.",
  "items": [
   {
-   "title": "Presentation of Boston Avenue Rezoning Draft",
+   "title": "Boston Avenue Rezoning Presentation",
    "t": 680,
-   "summary": "Innes Land Strategy Group presented a draft rezoning plan for the Boston Avenue corridor, introducing three sub-districts categorized by development intensity.",
+   "summary": "Emily Innes presented a draft rezoning plan for the Boston Avenue corridor, proposing three mixed-use sub-districts focused on transit-oriented development near Green Line stations.",
    "speakers": [
-    "Emily Innes",
-    "Matt Leming"
+    "Matt Leming",
+    "Emily Innes"
    ]
   },
   {
-   "title": "Sub-district Naming and Use Standards",
-   "t": 1843,
-   "summary": "Adopted the naming convention of BA1, BA2, and BA3 for the sub-districts and debated the inclusion of co-housing and student housing types.",
+   "title": "District Naming and Use Table Amendments",
+   "t": 1770,
+   "summary": "The committee agreed to rename the sub-districts BA1, BA2, and BA3; the council approved an amendment to prohibit drive-through restaurants and gas stations in all three districts.",
    "speakers": [
     "Emily Innes",
-    "Zac Bears",
-    "Alicia Hunt",
-    "Anna Callahan",
-    "Liz Mullane"
-   ]
-  },
-  {
-   "title": "Amendment to Prohibit Drive-Throughs and Gas Stations",
-   "t": 2641,
-   "summary": "Approved an amendment to the draft proposal to list drive-through eating establishments and gas stations as prohibited uses in all three sub-districts.",
-   "speakers": [
+    "Matt Leming",
     "Zac Bears",
     "Alicia Hunt",
     "Emily Lazzaro",
@@ -41,20 +31,20 @@
    ]
   },
   {
-   "title": "Dimensional Standards and Height Incentives",
+   "title": "Dimensional Standards and Incentive Heights",
    "t": 3944,
-   "summary": "Discussed the height incentive structure and adjusted the proposed limits to 3+1 stories for BA1, 4+3 for BA2, and 6+2 for BA3.",
+   "summary": "Councilors debated height limits and recommended a base of three stories for BA1, four for BA2, and six for BA3, with incentives allowing maximum heights of four, seven, and eight stories respectively.",
    "speakers": [
-    "Matt Leming",
     "Emily Innes",
+    "Matt Leming",
     "Zac Bears",
     "Alicia Hunt"
    ]
   },
   {
-   "title": "Environmental Standards and Green Score",
+   "title": "Green Scores and Environmental Requirements",
    "t": 5543,
-   "summary": "Reviewed the increased green score requirement of 25 points, designed to incentivize larger trees and better stormwater management than previous zoning.",
+   "summary": "The proposal increases the 'green score' requirement to 25 points to incentivize larger trees and bioswales in comparison to the Medford Square standards.",
    "speakers": [
     "Emily Innes",
     "Paula Ramos Martinez",
@@ -63,19 +53,9 @@
    ]
   },
   {
-   "title": "Parking Reductions and Sidewalk Requirements",
-   "t": 6045,
-   "summary": "Discussed sidewalk widening requirements and parking minimum reductions based on proximity to the Green Line extension.",
-   "speakers": [
-    "Emily Innes",
-    "Zac Bears",
-    "Alicia Hunt"
-   ]
-  },
-  {
    "title": "Tufts University Institutional Zoning",
-   "t": 6788,
-   "summary": "Evaluated preliminary concepts for a separate institutional zone for the Tufts campus, including sub-areas for campus core and neighborhood-facing edges.",
+   "t": 6793,
+   "summary": "The committee discussed a framework for a new institutional zone covering the Tufts campus, including sub-areas for campus core versus residential-facing properties.",
    "speakers": [
     "Emily Innes",
     "Alicia Hunt",
@@ -86,18 +66,16 @@
   {
    "title": "Public Comment",
    "t": 7679,
-   "summary": "Residents expressed concerns regarding building heights, the definition of dormitories versus apartments, and the need for site plan reviews for smaller projects.",
+   "summary": "Residents expressed concerns regarding excessive building heights, potential shadow impacts on the Hillside neighborhood, and the definition of private versus university-owned dormitories.",
    "speakers": [
     "Jeremy Martin",
-    "Judith Weinstock",
-    "Danielle Evans",
-    "Alicia Hunt"
+    "Judith Weinstock"
    ]
   },
   {
-   "title": "Referral to Regular Meeting",
+   "title": "Committee Referral",
    "t": 8919,
-   "summary": "Referred the amended rezoning proposal to the regular City Council meeting and scheduled it for joint review with the Community Development Board.",
+   "summary": "Referred the amended Boston Avenue rezoning proposal to the full City Council for a joint discussion with the Community Development Board.",
    "speakers": [
     "Matt Leming",
     "Zac Bears",
@@ -107,7 +85,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 43105,
-  "output_tokens": 798
+  "input_tokens": 43104,
+  "output_tokens": 699
  }
 }

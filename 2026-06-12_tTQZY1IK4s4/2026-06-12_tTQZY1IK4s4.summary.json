@@ -1,17 +1,19 @@
 {
  "video_id": "tTQZY1IK4s4",
  "provider": "gemini",
- "generated_at": "2026-09-29T11:07:09Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:07:42Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "68eb59639bb68061",
- "overview": "The City Council and Community Development Board held a joint public hearing to deliberate on proposed zoning amendments for the Boston Avenue Neighborhood Corridor District. The bodies reached consensus on several land-use definitions and directed consultants to model specific massing and boundary options for a final vote at the next meeting.",
+ "transcript_sha": "7bcdf0d42302898f",
+ "overview": "The City Council and Community Development Board convened a joint public hearing to evaluate and vote on amendments to the proposed Boston Avenue Neighborhood Corridor District zoning, approving several use classification changes and directing consultants on options for upcoming height and boundary modeling.",
  "items": [
   {
-   "title": "Public Comment",
-   "t": 613,
-   "summary": "Neighbors expressed concerns regarding home ownership, traffic, rodent control, and the potential impact of purpose-built student housing on neighborhood character.",
+   "title": "Public Hearing and Public Comment on Boston Avenue Zoning",
+   "t": 352,
+   "summary": "Consultant Emily Innes presented an overview of the Corridor zoning process, followed by public testimony addressing density, traffic, owner-occupancy trends, safety along the rail line, and student housing.",
    "speakers": [
+    "Zac Bears",
+    "Emily Innes",
     "Laurie Krieger",
     "Derek DuPont",
     "Adrienne Landau",
@@ -28,9 +30,9 @@
    ]
   },
   {
-   "title": "Parking for Lodgers",
-   "t": 3448,
-   "summary": "Approved a motion to reduce the parking requirement to zero for the accessory use of renting up to two rooms to lodgers.",
+   "title": "Accessory Lodging Parking Mandate",
+   "t": 3339,
+   "summary": "Both bodies approved an amendment reducing the parking requirement for accessory lodging rooms to zero.",
    "speakers": [
     "Emily Innes",
     "Ari Fishman",
@@ -42,9 +44,9 @@
    ]
   },
   {
-   "title": "Doggy Daycares and Medical Offices",
-   "t": 4352,
-   "summary": "Voted to require a special permit for doggy daycares while maintaining small neighborhood medical offices as a by-right use in all sub-districts.",
+   "title": "Special Permit for Doggy Daycares",
+   "t": 4346,
+   "summary": "Both bodies approved requiring a special permit from the Community Development Board for doggy daycares in the BA1, BA2, and BA3 districts.",
    "speakers": [
     "Emily Innes",
     "Matt Leming",
@@ -53,73 +55,94 @@
     "John Anderson",
     "Ari Fishman",
     "Emily Lazzaro",
-    "George Scarpelli"
+    "George Scarpelli",
+    "Anna Callahan"
    ]
   },
   {
-   "title": "Motor Vehicle Service Stations",
-   "t": 5617,
-   "summary": "Confirmed that new gas stations and motor vehicle repair shops will remain prohibited uses within the proposed corridor district.",
+   "title": "Neighborhood Medical Office Permitting",
+   "t": 5106,
+   "summary": "Both bodies voted to retain neighborhood medical offices as a by-right use in all three sub-districts.",
+   "speakers": [
+    "Emily Lazzaro",
+    "Emily Innes",
+    "Dina Caloggero",
+    "John Anderson"
+   ]
+  },
+  {
+   "title": "Service Stations and Auto Repair Uses",
+   "t": 5611,
+   "summary": "The joint bodies maintained the proposed prohibition on new motor vehicle light service stations and repair establishments in the district.",
    "speakers": [
     "Alicia Hunt",
+    "Zac Bears",
     "Matt Leming",
     "Ari Fishman"
    ]
   },
   {
-   "title": "Marijuana-Related Uses",
+   "title": "Marijuana Uses",
    "t": 5977,
-   "summary": "Approved changing marijuana-related uses to 'not allowed' in the district to maintain consistency with existing city-wide licensing ordinances.",
+   "summary": "Both bodies approved an amendment to classify marijuana uses as 'not allowed' in all three sub-districts for consistency with other municipal ordinances.",
    "speakers": [
     "Emily Innes",
     "Alicia Hunt",
-    "Sean Beagan"
+    "Sean Beagan",
+    "Zac Bears",
+    "Liz Mullane",
+    "Anna Callahan"
    ]
   },
   {
-   "title": "Purpose-Built Student Housing Standards",
-   "t": 6387,
-   "summary": "Directed the zoning consultants to draft a formal definition and use standards for private, taxable student housing, specifically excluding fraternities and sororities.",
+   "title": "High-Frequency Transit Definition",
+   "t": 6267,
+   "summary": "The joint bodies declined to pursue citywide changes to the high-frequency transit definition during this localized corridor amendment process.",
    "speakers": [
     "Emily Innes",
-    "Doug Carr",
+    "Zac Bears",
+    "John Anderson"
+   ]
+  },
+  {
+   "title": "Purpose-Built Student Housing",
+   "t": 6387,
+   "summary": "The bodies directed planning staff and consultants to draft a formal definition and standards for purpose-built student housing to prepare for a vote at the June 24th meeting.",
+   "speakers": [
+    "Emily Innes",
     "Zac Bears",
     "Alicia Hunt",
     "Danielle Evans",
-    "George Scarpelli"
-   ]
-  },
-  {
-   "title": "Height, Boundary, and Shadow Study Analysis",
-   "t": 7816,
-   "summary": "Reviewed shadow studies for sub-district BA3 and considered proposals to adjust boundaries near St. Clement's and certain residential blocks in BA1.",
-   "speakers": [
-    "Emily Innes",
-    "Doug Carr",
-    "Dina Caloggero",
-    "John Anderson",
-    "Ari Fishman",
-    "Danielle Evans"
-   ]
-  },
-  {
-   "title": "Final Options for Sub-District Modeling",
-   "t": 12514,
-   "summary": "Directed the consultant to prepare three specific boundary and height modeling options for sub-districts BA1, BA2, and BA3 for final deliberation on June 24th.",
-   "speakers": [
-    "Zac Bears",
-    "Emily Innes",
+    "George Scarpelli",
     "Matt Leming",
+    "Emily Lazzaro",
+    "Liz Mullane"
+   ]
+  },
+  {
+   "title": "Boundary and Height Options for BA1, BA2, and BA3",
+   "t": 7775,
+   "summary": "Following a presentation of massing and shadow studies, both bodies agreed on specific boundary configurations and height limits to be modeled for decision-making on June 24th.",
+   "speakers": [
+    "Emily Innes",
+    "Dina Caloggero",
+    "Emily Lazzaro",
+    "John Anderson",
+    "Alicia Hunt",
+    "Sean Beagan",
+    "Ari Fishman",
+    "Matt Leming",
+    "Rocco DiRico",
+    "Zac Bears",
     "Justin Tseng",
     "Liz Mullane",
-    "Danielle Evans",
-    "Sean Beagan"
+    "Danielle Evans"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 73674,
-  "output_tokens": 828
+  "input_tokens": 73641,
+  "output_tokens": 1216
  }
 }

@@ -1,31 +1,31 @@
 {
  "video_id": "q2WvOKcufgc",
  "provider": "gemini",
- "generated_at": "2026-09-30T19:09:05Z",
+ "generated_at": "2026-10-03T07:21:32Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "7a1bcf895f850748",
- "overview": "The committee debated competing drafts of an ordinance to establish wage and benefit floors for contracted city services and approved a request for a formal policy on how the council accesses legal advice.",
+ "transcript_sha": "736550a5ce94c2ee",
+ "overview": "The Committee of the Whole deliberated on amendments to the Medford Standard Compensation Ordinance to establish wage and benefit floors for contracted service workers. The council also addressed significant disputes with the administration regarding access to neutral legal counsel and the confidentiality of draft legislation.",
  "items": [
   {
-   "title": "Standard Compensation Ordinance (Item 25189)",
+   "title": "Standard Compensation Ordinance Amendment",
    "t": 403,
-   "summary": "The committee discussed an ordinance setting wage floors and labor standards for contracted janitorial and security services, ultimately voting to report a version including labor peace and worker retention provisions to the regular session.",
+   "summary": "The council discussed a redlined draft of an ordinance intended to set fair wage standards, labor peace requirements, and worker retention policies for city-contracted janitorial and security services. Debate centered on policy differences between a draft provided by city legal counsel and an expanded version proposed by council leadership.",
    "speakers": [
     "Zac Bears",
     "George Scarpelli",
+    "Rama Varanasi",
+    "Peter Enrich",
     "Justin Tseng",
     "Anna Callahan",
     "Nina Nazarian",
-    "Matt Leming",
-    "Rahma Varanasi",
-    "Peter Enrich"
+    "Matt Leming"
    ]
   },
   {
-   "title": "Legal Advice Access Policy",
+   "title": "Request for Legal Advice Policy",
    "t": 5182,
-   "summary": "Approved a motion requesting that the administration provide a written policy detailing the procedures for the City Council and individual councilors to receive legal advice from city-contracted counsel.",
+   "summary": "Approved a motion requesting that the administration provide a formal written policy detailing the procedures for the City Council and individual members to request and receive legal advice. This followed a dispute over whether draft legal reviews are subject to attorney-client privilege or public record.",
    "speakers": [
     "Anna Callahan",
     "Nina Nazarian",
@@ -36,17 +36,25 @@
   },
   {
    "title": "Public Participation",
-   "t": 5399,
-   "summary": "Residents and a former city official commented on the need for a dedicated city solicitor and suggested modifications to the 90-day contractor transition period.",
+   "t": 5413,
+   "summary": "Residents spoke in favor of hiring an in-house city solicitor to provide independent legal guidance and suggested technical adjustments to the contract transition timelines in the proposed ordinance.",
    "speakers": [
     "Ralph Klein",
     "Paul Righi"
+   ]
+  },
+  {
+   "title": "Referral of Standard Compensation Ordinance",
+   "t": 5681,
+   "summary": "Approved a motion to report the updated redlined version of the ordinance to the regular City Council session for final consideration.",
+   "speakers": [
+    "Justin Tseng"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 25782,
-  "output_tokens": 316
+  "output_tokens": 514
  }
 }

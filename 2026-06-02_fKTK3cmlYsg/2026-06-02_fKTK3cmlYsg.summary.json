@@ -1,49 +1,29 @@
 {
  "video_id": "fKTK3cmlYsg",
  "provider": "gemini",
- "generated_at": "2026-09-30T05:05:27Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:10:12Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "7faaed567ca2cc8f",
- "overview": "The Committee of the Whole held its seventh preliminary budget meeting for fiscal year 2027 to review the Mayor's overview and specific departmental budgets. The council focused on a $2.18 million funding gap for public schools, legal expenditure transparency, and staffing levels across the Police and Public Works departments.",
+ "transcript_sha": "77ce5153b192a28c",
+ "overview": "The City Council Committee of the Whole held its seventh preliminary budget meeting for fiscal year 2027, reviewing department proposals and keeping the budget paper in committee.",
  "items": [
   {
-   "title": "Mayor's FY27 Budget Presentation",
+   "title": "Fiscal Year 2027 Budget Overview",
    "t": 149,
-   "summary": "Mayor Lungo-Koehn presented a $218.2 million general fund budget, emphasizing investments in infrastructure, climate resiliency, and Medford Square redevelopment. She noted that rising health insurance, pensions, and special education transportation continue to place significant pressure on the operating budget.",
+   "summary": "Mayor Breanna Lungo-Koehn presented an overview of the proposed $218.2 million general fund and $30.0 million water and sewer enterprise fund operating budgets.",
    "speakers": [
     "Zac Bears",
-    "Breanna Lungo-Koehn"
-   ]
-  },
-  {
-   "title": "Council Discussion on Funding Gaps and Staffing",
-   "t": 1543,
-   "summary": "Councilors expressed frustration over the late delivery of major department budgets and discussed potential solutions for a $240,000 deficit in the Medford Family Network. Discussion also addressed the need for competitive library staff pay, recruitment for a city solicitor, and long-term revenue forecasting for new developments.",
-   "speakers": [
+    "Breanna Lungo-Koehn",
     "Emily Lazzaro",
     "Liz Mullane",
-    "Breanna Lungo-Koehn",
     "Justin Tseng",
-    "Nina Nazarian",
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Review of Legal Costs and KP Law Services",
-   "t": 2888,
-   "summary": "The council debated the transparency of legal expenses, which are currently distributed across various departmental professional service lines. The administration defended the current costs as lower than peer cities and highlighted successful litigation defense, while the council requested a centralized report on all legal settlements and vendor fees.",
-   "speakers": [
-    "Justin Tseng",
-    "Breanna Lungo-Koehn",
-    "Zac Bears",
     "Nina Nazarian"
    ]
   },
   {
-   "title": "Parking Department Budget Review",
+   "title": "Parking Department Budget",
    "t": 5762,
-   "summary": "Director McDermod reported that citation revenue exceeded $1.7 million by the end of April, marking a significant increase in productivity over the previous year. The department is preparing an RFP for a new parking management system to address resident complaints and improve merchant processing fee structures.",
+   "summary": "Parking Director Sarah McDermod presented the department's budget, noting a net increase in professional services due to citation system contracts and merchant processing fees.",
    "speakers": [
     "Zac Bears",
     "Sarah McDermod",
@@ -52,27 +32,27 @@
    ]
   },
   {
-   "title": "Medford Police and Traffic Division Budget Review",
+   "title": "Medford Police Department Budget",
    "t": 7021,
-   "summary": "The police budget increased by over 17% due to the implementation of settled collective bargaining agreements covering multiple years of retroactive raises. Officials discussed the impact of staffing shortages on the traffic division and the department's goal to reach 105 funded positions to reduce reliance on forced overtime.",
+   "summary": "Lieutenant Joseph Gagliardi and Captain Paul Covino presented the police budget, which includes a 17.24% salary increase to fund settled collective bargaining agreements.",
    "speakers": [
     "Zac Bears",
     "Joseph Gagliardi",
     "Paul Covino",
     "Nina Nazarian",
-    "Liz Mullane",
     "Emily Lazzaro",
     "Anna Callahan",
-    "McGilvey"
+    "McGilvey",
+    "Liz Mullane"
    ]
   },
   {
-   "title": "Medford Public Schools Budget Review",
-   "t": 9647,
-   "summary": "The school administration presented a $89.9 million budget, noting a $2.18 million gap between projected needs and the Mayor's preliminary allocation. A significant disagreement remains between school and city officials over whether $2.1 million in override stabilization funds should be counted toward the recurring permanent base budget.",
+   "title": "Medford Public Schools Budget",
+   "t": 9645,
+   "summary": "Superintendent Suzanne Galusi, Finance Director Noel Velez, and Budget Analyst Gerry McCue presented the school operating budget proposal and discussed a projected $2.18 million deficit.",
    "speakers": [
-    "Suzanne Galusi",
     "Zac Bears",
+    "Suzanne Galusi",
     "Noel Velez",
     "Gerry McCue",
     "Anna Callahan",
@@ -81,23 +61,23 @@
    ]
   },
   {
-   "title": "Department of Public Works Budget Review",
-   "t": 13230,
-   "summary": "Director McGivern highlighted progress on lead service line removal and the deployment of an in-house paving crew funded by the override. Discussion included a $10.5 million waste disposal contract, a new urban forest management plan, and the challenges of retaining specialized mechanics at municipal pay scales.",
+   "title": "Department of Public Works Budget",
+   "t": 13228,
+   "summary": "DPW Director Tim McGivern presented the public works general fund and enterprise fund budgets, highlighting progress in lead line removal, roadway paving, and waste contracts.",
    "speakers": [
-    "Tim McGivern",
     "Zac Bears",
+    "Tim McGivern",
     "Emily Lazzaro",
-    "Liz Mullane",
+    "Nina Nazarian",
     "Justin Tseng",
-    "Anna Callahan",
-    "Nina Nazarian"
+    "Liz Mullane",
+    "Anna Callahan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 83362,
-  "output_tokens": 1097
+  "input_tokens": 83364,
+  "output_tokens": 595
  }
 }

@@ -1,25 +1,25 @@
 {
  "video_id": "dSzXUwSjz8I",
  "provider": "gemini",
- "generated_at": "2026-09-29T11:06:40Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:06:34Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "188e9c0a746d1fed",
- "overview": "The Resident Services and Public Engagement Committee met to approve the draft May City Council newsletter and coordinate a schedule for neighborhood ward meetings at local schools for the fall of 2026.",
+ "transcript_sha": "45a6cf72ed84c0ff",
+ "overview": "The Resident Services and Public Engagement Committee met to review and approve the May draft of the City Council newsletter and coordinate tentative schedules for upcoming neighborhood ward meetings.",
  "items": [
   {
    "title": "City Council Newsletter",
    "t": 177,
-   "summary": "Approved the May edition of the newsletter, which summarizes budget deliberations and adds a new section for city project highlights. The paper was kept in committee for future monthly drafts.",
+   "summary": "The committee approved the draft of the May newsletter summarizing council activities and budget adjustments, voting to keep the matter in committee.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan"
    ]
   },
   {
-   "title": "Neighborhood Ward Meetings Schedule",
+   "title": "Neighborhood Ward Meetings",
    "t": 568,
-   "summary": "The committee discussed a tentative schedule for ward meetings to be held at local schools from September through December 2026. Chair Mullane will confirm these dates with school officials and finish scheduling meetings for 2027.",
+   "summary": "Members discussed and coordinated tentative fall 2026 dates with school officials to host neighborhood ward meetings at local schools.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan",
@@ -31,6 +31,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 4499,
-  "output_tokens": 258
+  "output_tokens": 199
  }
 }

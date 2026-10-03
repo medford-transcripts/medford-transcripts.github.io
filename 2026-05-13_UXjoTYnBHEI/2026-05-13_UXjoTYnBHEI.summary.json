@@ -1,45 +1,31 @@
 {
  "video_id": "UXjoTYnBHEI",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:10:32Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:15:10Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "52255789b9080575",
- "overview": "The City Council and Community Development Board reviewed draft zoning amendments for the Boston Avenue corridor, hearing a consultant presentation on sub-districts, height incentives, and usage standards. The Council voted to refer the proposed district to the Community Development Board for further review and upcoming public hearings.",
+ "transcript_sha": "0eebd188d86504dc",
+ "overview": "The Medford City Council and Community Development Board met in a joint session to review and discuss proposed zoning amendments for the Boston Avenue corridor and the Tufts Institutional Zone.",
  "items": [
   {
-   "title": "Presentation on Boston Avenue Neighborhood Corridor District",
-   "t": 1196,
-   "summary": "Consultants presented a proposal to create three sub-districts (BA1, BA2, and BA3) along Boston Avenue to facilitate mixed-use development with varying intensities, height incentives for public benefits, and specific dimensional standards for setbacks and green scores.",
+   "title": "Boston Avenue Neighborhood Corridor District Zoning (Paper 26093)",
+   "t": 869,
+   "summary": "Referred the proposed zoning amendments for the Boston Avenue Neighborhood Corridor District to the Community Development Board following a presentation on dimensional standards, sub-districts, and parking, as well as extensive feedback from board members, councilors, and the public.",
    "speakers": [
+    "Zac Bears",
+    "Doug Carr",
+    "Dina Caloggero",
     "Alicia Hunt",
-    "Paola Ramos Martinez"
-   ]
-  },
-  {
-   "title": "Council and Board Discussion of Proposed Zoning",
-   "t": 2628,
-   "summary": "Members discussed refining housing definitions for lodging houses and dormitories, implementing parking reductions through Transportation Management Association membership, and ensuring adequate transitions between new developments and existing residential neighborhoods.",
-   "speakers": [
+    "Paula Ramos Martinez",
     "Anna Callahan",
     "Justin Tseng",
     "Liz Mullane",
+    "Danielle Evans",
     "Matt Leming",
     "Sean Beagan",
-    "Doug Carr",
     "Page Buldini",
-    "Dina Caloggero",
     "Ari Fishman",
     "John Anderson",
-    "Alicia Hunt",
-    "Danielle Evans"
-   ]
-  },
-  {
-   "title": "Public Comment on Corridor Zoning",
-   "t": 9542,
-   "summary": "Public testimony included requests for purpose-built student housing categories, concerns about the scale of high-density buildings compared to existing homes, and requests for clear visualizations of proposed height transitions.",
-   "speakers": [
     "David Roach",
     "Judith Weinstock",
     "Jeremy Martin",
@@ -48,30 +34,22 @@
    ]
   },
   {
-   "title": "Update on Tufts Institutional Zone (Paper 24-033)",
+   "title": "Tufts Institutional Zone Discussion",
    "t": 11553,
-   "summary": "The bodies discussed the timeline for drafting a campus-specific institutional zone, deciding to prioritize a framework for further discussion in the fall rather than pursuing immediate approval.",
-   "speakers": [
-    "Alicia Hunt",
-    "Matt Leming",
-    "Doug Carr",
-    "Sean Beagan",
-    "John Anderson"
-   ]
-  },
-  {
-   "title": "Referral of Paper 26-093",
-   "t": 12527,
-   "summary": "Referred the proposed amendments for the Boston Avenue Neighborhood Corridor District to the Community Development Board.",
+   "summary": "Discussed the timeline and goals for drafting the Tufts Institutional Zone zoning ordinance, with members agreeing that the process should not be rushed before the end of June.",
    "speakers": [
     "Zac Bears",
-    "Anna Callahan"
+    "Alicia Hunt",
+    "Doug Carr",
+    "Matt Leming",
+    "Sean Beagan",
+    "John Anderson"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 59974,
-  "output_tokens": 667
+  "input_tokens": 59972,
+  "output_tokens": 402
  }
 }

@@ -1,31 +1,31 @@
 {
  "video_id": "y94cUzx0pcQ",
  "provider": "gemini",
- "generated_at": "2026-09-30T07:08:59Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T07:12:34Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "a5103bf185ac9c48",
- "overview": "The City Council Committee of the Whole reviewed a major presentation on the Wellington Transformation Study and voted to enter executive session regarding ongoing litigation.",
+ "transcript_sha": "4acf57bc840908e5",
+ "overview": "The Medford City Council Committee of the Whole reviewed a presentation on the Wellington Transformation Study and approved a motion to enter executive session to discuss litigation strategy.",
  "items": [
   {
-   "title": "Wellington Transformation Study",
+   "title": "Presentation on the Wellington Transformation Study (Paper 26095)",
    "t": 55,
-   "summary": "Consultants presented a vision for transforming the Wellington area into a vibrant, walkable, mixed-use commercial center featuring smaller block sizes and 'TuffTech' industrial space. Councilors discussed the market feasibility of the proposals, community engagement efforts, and the net fiscal impact of various housing and commercial development scenarios; the item was kept in committee.",
+   "summary": "Kept the paper in committee after receiving a presentation from planning consultants regarding future land use, design, and economic development strategies for the Wellington neighborhood.",
    "speakers": [
     "Zac Bears",
     "Kayla",
     "Rhiannon Sinclair",
-    "Justina",
     "Justin Tseng",
     "George Scarpelli",
     "Anna Callahan",
+    "Justina",
     "Liz Mullane"
    ]
   },
   {
-   "title": "Executive Session - Turtog v. City of Medford",
+   "title": "Executive Session for Litigation Strategy (Paper 26053)",
    "t": 4501,
-   "summary": "The committee voted to enter executive session to discuss litigation strategy regarding Turtog v. City of Medford because an open meeting could have a detrimental effect on the city's position.",
+   "summary": "Approved a motion to enter executive session to discuss litigation strategy for Turtog v. City of Medford et al.",
    "speakers": [
     "Zac Bears"
    ]
@@ -34,6 +34,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 22306,
-  "output_tokens": 299
+  "output_tokens": 263
  }
 }
