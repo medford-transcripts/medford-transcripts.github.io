@@ -1,71 +1,93 @@
 {
  "video_id": "-40wKgx6pDo",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:14:11Z",
+ "generated_at": "2026-10-03T09:07:37Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "ff909650f2c7197f",
- "overview": "The City Council and Community Development Board held a joint public hearing to review revised zoning amendments for Medford Square, focusing on height limits, historic preservation, and parking flexibility. The bodies voted to continue the public hearing to March 31, 2026, to allow for final technical adjustments before a final vote in late April.",
+ "transcript_sha": "8d1c6e62578c0dcf",
+ "overview": "The City Council and Community Development Board held a joint meeting to review revised zoning amendments for Medford Square, focusing on district boundaries, height limits, and historic preservation incentives. Both bodies voted to continue the public hearing to April 21, 2026, while coordinating final technical adjustments to parking and daylighting standards.",
  "items": [
   {
-   "title": "Call to Order and Minutes",
-   "t": 296,
-   "summary": "The City Council and Community Development Board called their respective meetings to order and approved the records of the March 3, 2026, special joint meeting.",
+   "title": "Approval of Records",
+   "t": 373,
+   "summary": "Approved the records of the special joint meeting held on March 3, 2026.",
    "speakers": [
     "Zac Bears",
-    "Rich Eliseo",
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Hearing 26023: Medford Square Zoning Amendments",
+   "t": 500,
+   "summary": "Reviewed proposed amendments to Chapter 94 regarding Medford Square zoning, featuring a presentation on revised sub-district maps and dimensional standards.",
+   "speakers": [
+    "Zac Bears",
     "Doug Carr",
-    "Matt Leming",
+    "Emily Innes"
+   ]
+  },
+  {
+   "title": "Zoning Map and Height Standards Discussion",
+   "t": 660,
+   "summary": "Discussed boundary changes including the removal of certain residential parcels and height reductions in sub-districts MS1 and MS2 to protect historic and residential contexts.",
+   "speakers": [
+    "Emily Innes",
+    "Page Buldini",
+    "Emily Lazzaro",
     "Danielle Evans"
    ]
   },
   {
-   "title": "Public Hearing: Medford Square Zoning Amendments (Paper 26-023)",
-   "t": 500,
-   "summary": "Innes Land Group presented a revised draft of the Medford Square ordinance that includes new sub-district classifications (MS1-MS4), refined height limits for topography, and incentives for historic facade preservation and small business rent stability. The boards discussed extending the shared parking radius to 750 feet and creating 'daylight minimum' standards to protect natural light for existing residents; the hearing was continued to March 31, 2026.",
+   "title": "Parking, Incentives, and Historic Preservation",
+   "t": 838,
+   "summary": "Evaluated new incentive structures for community solar, public parking, and the adaptive reuse of historic buildings, including a proposed 'daylight minimum' to protect sun access for neighbors.",
    "speakers": [
-    "Zac Bears",
-    "Doug Carr",
     "Emily Innes",
-    "Matt Leming",
     "John Anderson",
     "Sean Beagan",
     "Alicia Hunt",
-    "Danielle Evans",
-    "Page Buldini",
-    "Emily Lazzaro",
-    "Dina Caloggero",
-    "Ari Fishman",
-    "Liz Mullane",
-    "Anna Callahan",
-    "George Scarpelli"
+    "Doug Carr",
+    "Ari Fishman"
    ]
   },
   {
-   "title": "Public Participation",
-   "t": 7635,
-   "summary": "Residents advocated for prioritizing commercial uses like bookstores and cafes over banks and medical offices, while others urged the removal of parking minimums to reduce housing costs and encourage a walkable downtown.",
+   "title": "Public Comment",
+   "t": 7623,
+   "summary": "Heard testimony regarding the need for more commercial focus over residential density, the saturation of banks in the Square, and the impact of government-mandated parking minimums on housing affordability.",
    "speakers": [
     "Nick Giurleo",
     "Kaitlin Robinson"
    ]
   },
   {
-   "title": "Medford Square City Hall Overlay District (Paper 26-058)",
-   "t": 11215,
-   "summary": "The boards reviewed a proposal for a 'Transom' project overlay district covering three city-owned parcels, which will include a parking garage and specific waivers not applicable to the broader square. Further design presentation and a public hearing on this overlay were scheduled for the March 31 joint meeting.",
+   "title": "Hearing Continuation and Procedural Timeline",
+   "t": 8014,
+   "summary": "Voted to continue the public hearing to April 21, 2026, to allow consultants to incorporate specific technical tweaks into a final draft before a final Council vote scheduled for late April.",
    "speakers": [
     "Zac Bears",
     "Doug Carr",
+    "Danielle Evans",
+    "Matt Leming",
     "Alicia Hunt",
-    "Sean Beagan",
-    "John Anderson"
+    "Liz Mullane",
+    "Anna Callahan",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Item 26058: Medford Square City Hall Overlay District",
+   "t": 11251,
+   "summary": "Briefly introduced the 'Transom' project overlay district for discussion, noting that detailed zoning waivers and design introductions will be presented at the next joint meeting.",
+   "speakers": [
+    "Zac Bears",
+    "Alicia Hunt",
+    "Sean Beagan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 63484,
-  "output_tokens": 693
+  "input_tokens": 63482,
+  "output_tokens": 823
  }
 }

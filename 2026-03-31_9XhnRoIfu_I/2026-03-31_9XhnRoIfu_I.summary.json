@@ -1,16 +1,25 @@
 {
  "video_id": "9XhnRoIfu_I",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:13:40Z",
+ "generated_at": "2026-10-03T09:07:13Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "3d66ac788751165f",
- "overview": "The City Council and Community Development Board held a joint meeting to advance zoning reforms for Medford Square, including a specific overlay for the redevelopment of parking lots behind City Hall. Both bodies closed public hearings on several items and established a revised legislative calendar through June 2026.",
+ "transcript_sha": "25c6a0eb9557d234",
+ "overview": "The Medford City Council and Community Development Board held a joint special meeting to advance the Medford Square zoning process and the City Hall parking lot redevelopment project. The bodies finalized the public hearing for the City Hall overlay district and established a zoning meeting calendar through June 2026.",
  "items": [
   {
+   "title": "Meeting Records",
+   "t": 251,
+   "summary": "Approved the records of the special joint meeting held on March 25, 2026.",
+   "speakers": [
+    "Zac Bears",
+    "Matt Leming"
+   ]
+  },
+  {
    "title": "Public Hearing: Medford Square Zoning (Paper 26023)",
-   "t": 441,
-   "summary": "The City Council voted to close its public hearing on the proposed Medford Square zoning amendments following public testimony regarding tree canopy protections and design standards. The Community Development Board voted to continue its portion of the public hearing to April 15.",
+   "t": 378,
+   "summary": "The City Council voted to close its public hearing on the Medford Square zoning amendments, while the Community Development Board continued its hearing to April 15 to incorporate final technical changes. Public testimony addressed design reviews, urban tree canopy protections, and the need for group gathering spaces in the square.",
    "speakers": [
     "Zac Bears",
     "Doug Carr",
@@ -19,14 +28,14 @@
     "Lisa Serio",
     "Tom Lincoln",
     "Andrew Castagnetti",
-    "Alicia Hunt",
-    "Matt Leming"
+    "Matt Leming",
+    "Alicia Hunt"
    ]
   },
   {
-   "title": "Public Hearing: Medford Square City Hall Overlay District (Paper 26058)",
+   "title": "Public Hearing: City Hall Overlay District/Transom Project (Paper 26058)",
    "t": 1672,
-   "summary": "The Community Development Board recommended approval of a zoning overlay for three city-owned lots to facilitate a proposed 300-unit mixed-use development by Transom Real Estate. Both bodies voted to close the public hearing after amending the proposal to align its allowed uses with the broader Medford Square district and ensuring a freestanding parking garage is allowed by right.",
+   "summary": "The Community Development Board recommended approval of the overlay district with amendments to align use tables with current Medford Square drafts, and both bodies voted to close their respective public hearings. The proposal by Transom Real Estate includes 300 residential units, a parking garage with 150 spaces reserved for the city, and a ground-floor urban grocery store.",
    "speakers": [
     "Alicia Hunt",
     "Peter Spellios",
@@ -36,31 +45,33 @@
     "Danielle Evans",
     "Anna Callahan",
     "George Scarpelli",
+    "Doug Carr",
     "John Anderson",
     "Sean Beagan",
     "Page Buldini",
     "Dina Caloggero",
-    "Ari Goffman-Fishman",
+    "Ari Fishman",
     "Andrew Castagnetti",
     "Tom Lincoln",
     "Sheila Ehrens"
    ]
   },
   {
-   "title": "Updated Zoning Meeting Schedule (Paper 26052)",
+   "title": "Zoning Meeting Schedule (Paper 26052)",
    "t": 8413,
-   "summary": "Approved a revised schedule for joint and committee meetings through June 2026 to ensure the completion of Boston Avenue and Tufts University zoning reviews before consultant contracts expire.",
+   "summary": "Approved an updated meeting calendar through June 2026 to coordinate upcoming public information sessions and joint hearings for the Tufts University and Boston Avenue zoning phases.",
    "speakers": [
     "Zac Bears",
     "Matt Leming",
     "Page Buldini",
-    "Alicia Hunt"
+    "Alicia Hunt",
+    "Doug Carr"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 47368,
-  "output_tokens": 589
+  "output_tokens": 568
  }
 }

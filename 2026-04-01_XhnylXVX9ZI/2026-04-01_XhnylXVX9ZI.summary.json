@@ -1,16 +1,16 @@
 {
  "video_id": "XhnylXVX9ZI",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:12:49Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T09:06:47Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "5b1613b8a10ec554",
- "overview": "The Committee of the Whole reviewed the Department of Public Works' response to the January 2026 snowstorms and discussed long-term staffing and equipment needs before entering an executive session to discuss litigation strategy.",
+ "transcript_sha": "9968bf077e494d04",
+ "overview": "The Medford City Council Committee of the Whole met to review the municipal response and operational challenges of the January 2026 snowstorms before entering executive session to discuss litigation strategy.",
  "items": [
   {
-   "title": "Evaluation of January 2026 Snow Response",
+   "title": "Snow Removal Response and Evaluation (Papers 26-028 and 26-029)",
    "t": 339,
-   "summary": "Received and placed on file reports evaluating the January 2026 snow response, which highlighted a significant reduction in available contractors and the failure of aging sidewalk clearing equipment. Commissioner McGivern discussed long-term staffing decreases, the implementation of GIS-based route mapping, and the potential purchase of a high-capacity snowblower attachment to improve response during future severe weather events.",
+   "summary": "The Committee reviewed the DPW Commissioner's report on the January 2026 snowstorm response, focusing on contractor availability, equipment upgrades, and sidewalk clearance, before voting to receive and place the papers on file.",
    "speakers": [
     "Zac Bears",
     "Anna Callahan",
@@ -21,9 +21,9 @@
    ]
   },
   {
-   "title": "Executive Session: Litigation Strategy",
-   "t": 4387,
-   "summary": "Approved a motion to enter executive session to discuss litigation strategy regarding papers 26-053 and 26-065.",
+   "title": "Executive Session for Litigation Strategy (Papers 26-053 and 26-065)",
+   "t": 4386,
+   "summary": "The Committee voted to enter executive session to discuss litigation strategy pursuant to Massachusetts General Laws Chapter 30A, Section 21A(3).",
    "speakers": [
     "Zac Bears"
    ]
@@ -32,6 +32,6 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 23892,
-  "output_tokens": 307
+  "output_tokens": 280
  }
 }

@@ -1,50 +1,44 @@
 {
  "video_id": "PJ8jELaZnCc",
  "provider": "gemini",
- "generated_at": "2026-10-01T07:15:22Z",
+ "generated_at": "2026-10-03T09:08:00Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "71c9b8610e12ba77",
- "overview": "The Medford City Council established the fiscal year 2027 budget schedule and approved a petition to remove the Police Chief and Deputy positions from civil service law. The Council also expressed support for an updated ordinance regarding the Commission for Persons with Disabilities and addressed several business licensing matters.",
+ "transcript_sha": "8d987a302e075bf4",
+ "overview": "The City Council approved a petition to remove police leadership from civil service and referred a modernized ordinance for the Commission for Persons with Disabilities to legal review. The Council also finalized its collective recommendations and schedule for the Fiscal Year 2027 budget process.",
  "items": [
   {
-   "title": "Announcements and Records",
+   "title": "Meeting Records and Committee Reports",
    "t": 17,
-   "summary": "Approved the meeting records from March 10, 2026.",
+   "summary": "Approved the meeting records of March 10, 2026, and reports from the Planning and Permitting Committee concerning the vacant building ordinance and zoning cleanup.",
    "speakers": [
     "Zac Bears",
-    "Anna Callahan"
-   ]
-  },
-  {
-   "title": "Planning and Permitting Committee Report",
-   "t": 55,
-   "summary": "Approved a report detailing progress on a vacant building ordinance and a cleanup of city zoning codes.",
-   "speakers": [
+    "Anna Callahan",
     "Matt Leming"
    ]
   },
   {
-   "title": "Update to Commission for Persons with Disabilities Ordinance",
+   "title": "Medford Commission for Persons with Disabilities Ordinance",
    "t": 201,
-   "summary": "Referred a proposal to modernize ordinance language and clarify the commission's role to legal review with an expression of council support. The update removes stigmatizing language and defines the commission's involvement in municipal accessibility planning.",
+   "summary": "Referred a resolution to update the Commission for Persons with Disabilities ordinance to legal review with Council support; the proposal aims to modernize terminology and clarify the commission's role.",
    "speakers": [
+    "Zac Bears",
     "Matt Leming",
     "Emily Lazzaro",
     "Justin Tseng",
     "Anthony Andreottola",
     "Frances Nwajei",
     "Nicholas Kadinga",
-    "George Scarpelli",
-    "Zac Bears"
+    "George Scarpelli"
    ]
   },
   {
-   "title": "License Amendment for Ho-Win Palace",
+   "title": "License Amendment: Ho-Win Palace",
    "t": 1809,
-   "summary": "Approved an extension of operating hours until 1:00 a.m. for Ho-Win Palace, subject to a 30-60-90 day review period.",
+   "summary": "Approved an amendment to the common victualler's license for Ho-Win Palace to extend operating hours until 1:00 a.m., subject to a standard 30-60-90 day review.",
    "speakers": [
-    "Raymond",
+    "Zac Bears",
+    "Raymond (Ho-Win Palace)",
     "George Scarpelli",
     "Anna Callahan"
    ]
@@ -52,7 +46,7 @@
   {
    "title": "Fiscal Year 2027 Budget Process",
    "t": 2057,
-   "summary": "Adopted the schedule for the fiscal year 2027 budget cycle and authorized the Council President to submit collective recommendations to the Mayor regarding school funding, residential exemptions, and department staffing.",
+   "summary": "Approved the Fiscal Year 2027 budget schedule and authorized the Council President to submit a collective memo of departmental recommendations to the mayor.",
    "speakers": [
     "Zac Bears",
     "George Scarpelli",
@@ -60,38 +54,40 @@
    ]
   },
   {
-   "title": "Update on Inclusion Specialist Hiring",
+   "title": "Inclusion Specialist Update",
    "t": 2476,
-   "summary": "Referred a request for an update on the hiring of a city inclusion specialist to the Education and Culture Committee.",
+   "summary": "Referred a resolution to the Education and Culture subcommittee to request a progress update from the administration regarding the hiring of a city inclusion specialist.",
    "speakers": [
+    "Zac Bears",
     "George Scarpelli"
    ]
   },
   {
-   "title": "Exemption of Police Leadership from Civil Service",
+   "title": "Civil Service Exemption: Police Leadership",
    "t": 2736,
-   "summary": "Approved a petition for special legislation to exempt the positions of Police Chief and Deputy Police Chief from civil service law to allow for a broader candidate search. The change follows a collective bargaining agreement supported by the superior officers' union.",
+   "summary": "Approved a petition for special legislation to exempt the positions of Police Chief and Deputy Police Chief from civil service regulations, a measure supported by both the administration and police unions.",
    "speakers": [
+    "Zac Bears",
     "George Scarpelli",
     "Emily Lazzaro",
-    "Jack Buckley",
-    "Zac Bears"
+    "Jack Buckley"
    ]
   },
   {
-   "title": "Food Truck Permit and Adjournment",
+   "title": "Food Truck Permits: Charlie Dogs",
    "t": 3293,
-   "summary": "Approved a seasonal food truck permit for Trolley Dogs at Hormel Stadium to serve during Boston Glory home games.",
+   "summary": "Approved food truck permits for Charlie Dogs to operate at Hormel Stadium during Boston Glory games through August 2026.",
    "speakers": [
+    "Zac Bears",
     "George Scarpelli",
-    "Luke",
+    "Luke (Boston Glory)",
     "Anna Callahan"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 19438,
-  "output_tokens": 852
+  "input_tokens": 19437,
+  "output_tokens": 818
  }
 }
