@@ -489,7 +489,7 @@ def get_meeting_type(video):
     news_channels = ["WCVB Channel 5 Boston","CBS Boston","NBC10 Boston"]
 
     if video["channel"].strip() in campaign_channels:
-        return "Campaign"
+        return "Election"
 
     if video["channel"].strip() in news_channels:
         return "News"

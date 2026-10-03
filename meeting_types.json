@@ -16,7 +16,8 @@
         "link_on_front_page": true,
         "related": [
             "MPS High School Building Project"
-        ]
+        ],
+        "label": "MCHSBC"
     },
     "MPS High School Building Project": {
         "keywords": [
@@ -48,13 +49,16 @@
         "link_on_front_page": true,
         "label": "COW"
     },
-    "MPS Meeting of the Whole": [
-        "committee of the whole",
-        "sc budget committee of the whole",
-        "msc - committee of the whole",
-        "msc meeting of the whole",
-        "cow"
-    ],
+    "MPS Meeting of the Whole": {
+        "keywords": [
+            "committee of the whole",
+            "sc budget committee of the whole",
+            "msc - committee of the whole",
+            "msc meeting of the whole",
+            "cow"
+        ],
+        "label": "MSC COW"
+    },
     "CC Human Rights Commission": [
         "human rights commission"
     ],
@@ -71,16 +75,19 @@
         ],
         "compose_title": false
     },
-    "CC Resident Services and Public Engagement Committee": [
-        "resident services",
-        "rspe",
-        "resident service"
-    ],
+    "CC Resident Services and Public Engagement Committee": {
+        "keywords": [
+            "resident services",
+            "rspe",
+            "resident service"
+        ],
+        "label": "RSPEC"
+    },
     "CC Administration and Finance Committee": [
         "administration and finance",
         "admin and finance"
     ],
-    "Campaign": {
+    "Election": {
         "keywords": [
             "invest in medford",
             "candidate profile",
@@ -105,9 +112,12 @@
         "park commission",
         "parks commission"
     ],
-    "MPS Curriculum, Instruction, Assessment & Accountability": [
-        "curriculum"
-    ],
+    "MPS Curriculum, Instruction, Assessment & Accountability": {
+        "keywords": [
+            "curriculum"
+        ],
+        "label": "Curriculum"
+    },
     "MPS Advisory Committee to Rename Columbus School": [
         "rename the columbus school"
     ],
@@ -215,10 +225,13 @@
         "community preservation",
         "cpc meeting"
     ],
-    "CC Public Health and Community Safety": [
-        "public health and community safety",
-        "phcs"
-    ],
+    "CC Public Health and Community Safety": {
+        "keywords": [
+            "public health and community safety",
+            "phcs"
+        ],
+        "label": "PHCS"
+    },
     "CC Solid Waste Task Force": [
         "solid waste",
         "trash talk",
@@ -235,15 +248,19 @@
             "cbd",
             "zoning q&a"
         ],
-        "link_on_front_page": true
+        "link_on_front_page": true,
+        "label": "CDB"
     },
     "CC Cannabis Advisory Committee": [
         "adult use marijuana",
         "cannabis advisory committee"
     ],
-    "MPS Diversity, Equity, & Inclusion": [
-        "dei"
-    ],
+    "MPS Diversity, Equity, & Inclusion": {
+        "keywords": [
+            "dei"
+        ],
+        "label": "DEI"
+    },
     "MPS Family Engagement & Communication": [
         "fe&c",
         "communications and family engagement"
@@ -272,12 +289,18 @@
         ],
         "compose_title": false
     },
-    "Jazz Festival": [
-        "jazz festival"
-    ],
-    "West Medford Community Center": [
-        "wmcc"
-    ],
+    "Jazz Festival": {
+        "keywords": [
+            "jazz fest"
+        ],
+        "compose_title": false
+    },
+    "West Medford Community Center": {
+        "keywords": [
+            "wmcc"
+        ],
+        "label": "WMCC"
+    },
     "High School Student Videos": {
         "keywords": [
             "mvths",
@@ -338,12 +361,6 @@
             "regular meeting"
         ],
         "link_on_front_page": true
-    },
-    "Medford Jazz Festival": {
-        "keywords": [
-            "jazz fest"
-        ],
-        "compose_title": false
     },
     "Looking Back at Medford History": {
         "keywords": [
