@@ -389,8 +389,24 @@ adjourn, recesses, and who seconded what.
 - Every item needs the start time in SECONDS, taken from the [NNNN] marker at \
 the start of the line where that item begins.
 
+SUBJECT. Also return a subject line naming the ONE matter this meeting will be \
+remembered for -- "Salem Street Corridor Rezoning", "Police Union Wage \
+Agreement", "Elementary School Overcrowding". Rules:
+- At most about eight words. A noun phrase, not a sentence: no verb, no \
+trailing full stop, no date, and do not name the body -- the page already \
+says which committee met and when.
+- RETURN AN EMPTY STRING when no single matter dominates. A regular council \
+meeting that moved licences, a resolution, a wage agreement and an ordinance \
+has no one subject, and guessing at one tells a reader this meeting was about \
+something it was not. An empty string is the correct answer more often than \
+not, and it costs nothing -- the city's own title is used instead.
+- Never use a procedural heading as the subject: not "Consent Agenda", \
+"Approval of Minutes", "Executive Session", "Reports of Committees" or \
+"Public Participation". If that is all the meeting did, return an empty string.
+
 Return ONLY valid JSON, no prose around it:
-{"overview": "1-2 sentences: what this body met about and what it decided",
+{"subject": "the one matter, <=8 words, or an empty string",
+ "overview": "1-2 sentences: what this body met about and what it decided",
  "items": [{"title": "short agenda-style title",
             "t": <seconds, integer>,
             "summary": "ONE sentence, two at most",
@@ -827,6 +843,126 @@ def parse_json(text):
     return json.loads(t[i:j + 1])
 
 
+# A subject line only earns its place if it says something the page does not
+# already say. Procedural headings are the main way a model fills the field
+# when it should have declined: "Consent Agenda" is true of most meetings and
+# tells a reader nothing about this one.
+SUBJECT_BOILERPLATE = re.compile(
+    r"^\W*(consent agenda|approval of (the )?minutes|minutes|roll call|"
+    r"call to order|executive session|open session|reports? of committees|"
+    r"public (participation|comment)|announcements|adjournment|"
+    r"regular meeting|special meeting|committee of the whole|"
+    r"meeting records[\w\s]*|routine[\w\s]*|approval of invoices|"
+    r"general business|old business|new business|miscellaneous)\W*$", re.I)
+SUBJECT_MAX_WORDS = 12
+SUBJECT_MAX_CHARS = 80
+
+
+def clean_subject(raw, meeting_type="", source_title=""):
+    """The subject line, or "" when it does not earn its place.
+
+    RETURNS "" RATHER THAN A BEST EFFORT, because the fallback -- the city's
+    own title -- is always available and always defensible. A wrong subject is
+    worse than no subject: it is our sentence, in our voice, telling a reader
+    what a public meeting was about.
+
+    Rejected: procedural headings, anything sentence-shaped, anything that just
+    restates the body's own name, and anything long enough to be prose.
+    """
+    s = re.sub(r"\s+", " ", (raw or "")).strip().strip('"').strip()
+    s = re.sub(r"\s*[.;,]+$", "", s)
+    if not s:
+        return ""
+    if len(s) > SUBJECT_MAX_CHARS or len(s.split()) > SUBJECT_MAX_WORDS:
+        return ""
+    if SUBJECT_BOILERPLATE.match(s):
+        return ""
+    # just the body again, e.g. "School Committee" under MPS School Committee
+    body = set(re.findall(r"[a-z]{3,}", (meeting_type or "").lower()))
+    words = set(re.findall(r"[a-z]{3,}", s.lower()))
+    if words and words <= body | {"medford", "city", "meeting", "committee",
+                                  "commission", "board", "council", "regular",
+                                  "special", "subcommittee", "session"}:
+        return ""
+    return s
+
+
+def self_test_subject():
+    """Literal assertions for clean_subject and the display-title fallback.
+
+    Every case below is a way the field can be filled when it should have been
+    declined, taken from what the summaries on disk actually contain: 49 of 246
+    have a procedural heading as their FIRST item, which is exactly what a model
+    reaches for when no single matter dominates.
+    """
+    import utils
+    fails = []
+
+    def ck(label, got, want):
+        if got != want:
+            fails.append("%s: got %r want %r" % (label, got, want))
+
+    ck("real subject kept",
+       clean_subject("Salem Street Corridor Rezoning", "CC City Council"),
+       "Salem Street Corridor Rezoning")
+    ck("empty stays empty", clean_subject("", "CC City Council"), "")
+    ck("None stays empty", clean_subject(None, "CC City Council"), "")
+    ck("consent agenda rejected",
+       clean_subject("Consent Agenda", "MPS School Committee"), "")
+    ck("approval of minutes rejected",
+       clean_subject("Approval of Minutes", "CC City Council"), "")
+    ck("executive session rejected",
+       clean_subject("Executive Session", "MPS School Committee"), "")
+    ck("procedural prose rejected",
+       clean_subject("Meeting Records and Routine Procedural Matters",
+                     "CC City Council"), "")
+    ck("body name alone rejected",
+       clean_subject("School Committee", "MPS School Committee"), "")
+    ck("body plus generic words rejected",
+       clean_subject("Medford City Council Regular Meeting", "CC City Council"), "")
+    ck("a sentence is not a title",
+       clean_subject("The committee discussed a list of copy edits and formatting "
+                     "updates regarding dwellings", "CC City Council"), "")
+    ck("trailing stop stripped",
+       clean_subject("Police Union Wage Agreement.", "CC City Council"),
+       "Police Union Wage Agreement")
+    ck("quotes stripped",
+       clean_subject('"Elementary School Overcrowding"', "MPS School Committee"),
+       "Elementary School Overcrowding")
+
+    base = {"title": "City Council 12-02-25", "meeting_type": "CC City Council",
+            "date": "2025-12-02", "upload_date": "2025-12-03"}
+    ck("composed when subject, body and a real date are all present",
+       utils.display_title("x", dict(base), subject="Salem Street Corridor Rezoning"),
+       "City Council: Salem Street Corridor Rezoning - 2025-12-02")
+    ck("no subject falls back to the city's title",
+       utils.display_title("x", dict(base), subject=""), "City Council 12-02-25")
+    # 6% of committee titles carry no date, so entry["date"] IS the upload date.
+    # Printing it as the meeting date would be our error, not the city's.
+    nodate = {"title": "MCHSBC Full Committee Meeting",
+              "meeting_type": "MPS High School Building Committee",
+              "date": "2026-08-25", "upload_date": "2026-08-25"}
+    ck("a guessed date falls back",
+       utils.display_title("x", dict(nodate), subject="Feasibility Study Contract"),
+       "MCHSBC Full Committee Meeting")
+    ck("a hand-set date is trusted",
+       utils.display_title("x", dict(nodate, date_manual=True),
+                           subject="Feasibility Study Contract"),
+       "High School Building Committee: Feasibility Study Contract - 2026-08-25")
+    ck("no meeting_type falls back",
+       utils.display_title("x", {"title": "Medford Happenings - Laura O'Neil",
+                                 "meeting_type": "", "date": "2024-01-02",
+                                 "upload_date": "2024-01-02"},
+                           subject="Something"),
+       "Medford Happenings - Laura O'Neil")
+    ck("routing prefix stripped", utils.body_label("CC City Council"), "City Council")
+
+    for f in fails:
+        print("  FAIL %s" % f)
+    print("subject self-test: %d checks, %d failed" % (18, len(fails)))
+    return 1 if fails else 0
+
+
 def verify(summary, duration):
     """Drop items whose timestamp cannot be real. Returns (kept, dropped)."""
     kept, dropped = [], []
@@ -909,6 +1045,9 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
            "model": used,
            "model_requested": (model if used != model else None),
            "transcript_sha": sha,
+           "subject": clean_subject(summary.get("subject"),
+                                    entry.get("meeting_type"),
+                                    entry.get("title")),
            "overview": (summary.get("overview") or "").strip(),
            "items": kept,
            "dropped": len(dropped),
@@ -955,6 +1094,8 @@ def main():
                          "and which the ladder would choose")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--self-test", action="store_true",
+                    help="check the subject-line rules and exit")
     ap.add_argument("--sleep", type=float, default=None,
                     help="seconds between calls in --all. Default paces the "
                          "Gemini FREE tier (5 RPM on 2.5 Pro, 10 on Flash); "
@@ -962,6 +1103,8 @@ def main():
     ap.add_argument("--out", help="write here instead of <base>.summary.json "
                                   "(for comparing two models side by side)")
     args = ap.parse_args()
+    if args.self_test:
+        return self_test_subject()
 
     # Set once per process, before any request: how hard to retry a 503. See
     # TRANSIENT_ATTEMPTS. --list-models and --dry-run are excluded so that

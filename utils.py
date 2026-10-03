@@ -656,6 +656,78 @@ _NOISE = re.compile(
     r"unofficially|unofficial|posted|by|for|to|at|on)\b")
 
 
+def body_label(meeting_type):
+    """How a body is named in a display title: "CC City Council" -> "City Council".
+
+    The prefixes are internal routing, not something to show a reader.
+    """
+    mt = (meeting_type or "").strip()
+    for p in ("CC ", "MPS ", "MSC "):
+        if mt.startswith(p):
+            mt = mt[len(p):]
+            break
+    return mt
+
+
+def meeting_subject(yt_id, entry=None, video_data=None):
+    """The summary's subject line for this meeting, or "".
+
+    Read from the summary sidecar rather than video_data, because that is where
+    it is written and it changes whenever the transcript does.
+    """
+    entry = entry if entry is not None else (
+        (video_data or get_video_data()).get(yt_id) or {})
+    base = "%s_%s" % (entry.get("upload_date"), yt_id)
+    path = os.path.join(base, base + ".summary.json")
+    if not os.path.exists(path):
+        return ""
+    try:
+        with _io.open(path, encoding="utf-8") as fp:
+            return (json.load(fp).get("subject") or "").strip()
+    except Exception:
+        return ""
+
+
+def display_title(yt_id, entry=None, video_data=None, subject=None):
+    """What to show a reader: "City Council: Salem Street Rezoning - 2025-12-02".
+
+    THE CITY'S TITLE IS THE DEFAULT AND THE FALLBACK. We do not restate the
+    city's own titles in our words -- a title like "06.24.2017 MSC Special
+    Meeting" is wrong, but it is wrong in the public record and ours to quote,
+    not to correct. This function replaces it ONLY when the summary found a
+    single dominant matter, because naming the subject is information the city
+    never published and is worth owning.
+
+    So it composes rather than standardises, and it needs all three of:
+      - a subject line that survived clean_subject()
+      - a body name, from meeting_type
+      - a date we did not guess (in the title, or set by hand)
+
+    That last one matters: 6% of committee titles carry no date, so their
+    stored date is the UPLOAD date. Printing that as the meeting date would
+    assert a precision we do not have -- and unlike the city's vague title, the
+    error would be ours.
+    """
+    entry = entry if entry is not None else (
+        (video_data or get_video_data()).get(yt_id) or {})
+    source = entry.get("title") or yt_id
+    if subject is None:
+        subject = meeting_subject(yt_id, entry, video_data)
+    if not subject:
+        return source
+    body = body_label(entry.get("meeting_type"))
+    if not body:
+        return source
+    dated = entry.get("date_manual") or title_date(
+        entry.get("title"), not_after=entry.get("upload_date"))
+    if not dated:
+        return source
+    date = (entry.get("date") or "")[:10]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
+        return source
+    return "%s: %s - %s" % (body, subject, date)
+
+
 def title_stem(title):
     """Lowercased title with dates, punctuation and filler words removed."""
     t = (title or "").lower()
