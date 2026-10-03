@@ -395,6 +395,9 @@ Agreement", "Elementary School Overcrowding". Rules:
 - At most about eight words. A noun phrase, not a sentence: no verb, no \
 trailing full stop, no date, and do not name the body -- the page already \
 says which committee met and when.
+- TITLE CASE: "Salem Street Corridor Rezoning", not "Salem street corridor \
+rezoning". Keep acronyms exactly as spoken on the record -- ICE, CDBG, MCAS, \
+ADA, MSBA, CPA -- and keep short joining words lowercase ("Rules of Order").
 - RETURN AN EMPTY STRING when no single matter dominates. A regular council \
 meeting that moved licences, a resolution, a wage agreement and an ordinance \
 has no one subject, and guessing at one tells a reader this meeting was about \

@@ -72,6 +72,14 @@ echo ============================================================>> "%LOG%"
 
 echo [%NOW%] starting %SCRIPT% %ARGS%  (logging to %LOG%)
 
+REM BACKFILL FIRST, while there is still allowance to spend. The subject
+REM field was added after 248 summaries had been written; deriving those
+REM from the summaries already on disk is ~2 requests, where asking again
+REM from the transcripts is 248 and about four days of quota. It is a
+REM no-op once every summary carries a subject, and it exits 0 when there
+REM is no allowance, so it is safe to attempt every hour.
+"%PY%" -u backfill_subjects.py --apply >> "%LOG%" 2>&1
+
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
 
