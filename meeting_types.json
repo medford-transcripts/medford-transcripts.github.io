@@ -1,307 +1,368 @@
 {
-  "sources": [
-    "https://www.medfordma.org/boards-commissions",
-    "https://www.mps02155.org/about/school-committee"
-  ],
-  "MPS High School Building Committee": {
-    "keywords": [
-      "mchsbc",
-      "mhcsbc",
-      "msba",
-      "opm selection",
-      "high school building committee"
+    "sources": [
+        "https://www.medfordma.org/boards-commissions",
+        "https://www.mps02155.org/about/school-committee"
     ],
-    "link_on_front_page": true
-  },
-  "CC Affordable Housing Trust Fund Board": [
-    "affordable housing trust"
-  ],
-  "CC Zoning Board of Appeals": [
-    "zoning board of appeals"
-  ],
-  "CC Energy & Environment Committee": [
-    "energy and environment"
-  ],
-  "CC City Council Meeting of the Whole": {
-    "keywords": [
-      "committee of the whole",
-      "cow"
+    "MPS High School Building Committee": {
+        "keywords": [
+            "mchsbc",
+            "mhcsbc",
+            "msba",
+            "opm selection",
+            "high school building committee",
+            "mhscbc",
+            "hs building committee"
+        ],
+        "link_on_front_page": true,
+        "related": [
+            "MPS High School Building Project"
+        ]
+    },
+    "MPS High School Building Project": {
+        "keywords": [
+            "mhs building project",
+            "mhs advisory",
+            "building project community",
+            "design option",
+            "advisory team meeting",
+            "mhs building"
+        ],
+        "related": [
+            "MPS High School Building Committee"
+        ]
+    },
+    "CC Affordable Housing Trust Fund Board": [
+        "affordable housing trust"
     ],
-    "link_on_front_page": true
-  },
-  "MPS Meeting of the Whole": [
-    "committee of the whole",
-    "sc budget committee of the whole",
-    "msc - committee of the whole",
-    "msc meeting of the whole",
-    "cow"
-  ],
-  "CC Human Rights Commission": [
-    "human rights commission"
-  ],
-  "CC Climate Equity Council": [
-    "climate equity council"
-  ],
-  "CC Housing Authority": [
-    "housing medford",
-    "housing authority"
-  ],
-  "Medford Bytes": [
-    "Medford Bytes"
-  ],
-  "CC Resident Services and Public Engagement Committee": [
-    "resident services",
-    "rspe",
-    "resident service"
-  ],
-  "CC Administration and Finance Committee": [
-    "administration and finance",
-    "admin and finance"
-  ],
-  "Campaign": [
-    "invest in medford",
-    "candidate profile",
-    "candidate forum",
-    "candidates forum",
-    "candidate for school committee",
-    "candidate for mayor",
-    "mayoral debate",
-    "for city council",
-    "city council candidate",
-    "(city council)",
-    "(incumbent city council)"
-  ],
-  "CC Listening Session": [
-    "listening session"
-  ],
-  "CC Park Commission": [
-    "parks and rec",
-    "park commission",
-    "parks commission"
-  ],
-  "MPS Curriculum, Instruction, Assessment & Accountability": [
-    "curriculum"
-  ],
-  "MPS Advisory Committee to Rename Columbus School": [
-    "rename the columbus school"
-  ],
-  "MPS Middle School Lottery": [
-    "lottery"
-  ],
-  "CC Welcoming Committee": [
-    "welcoming committee"
-  ],
-  "CC Elections Commission": [
-    "elections commission"
-  ],
-  "CC Education and Culture": [
-    "education and culture"
-  ],
-  "MPS Behavioral Health & Special Education": [
-    "behavioral health",
-    "special education",
-    "behavioral subcommittee"
-  ],
-  "CC Chevalier Commission": [
-    "chevalier commission"
-  ],
-  "MPS Rules & Policy": [
-    "rules & policy",
-    "rules & policies",
-    "rules and policy",
-    "rules, policy"
-  ],
-  "MPS School Committee Executive Session": [
-    "sc executive session",
-    "executive session"
-  ],
-  "CC Council on Aging": [
-    "council on aging"
-  ],
-  "CC Hormel Stadium Commission": [
-    "hormel stadium commission"
-  ],
-  "CC Board of Assessors": [
-    "board of assessors"
-  ],
-  "CC Linkage Trust Committee": [
-    "linkage trust"
-  ],
-  "CC Water and Sewer Commission": [
-    "water and sewer"
-  ],
-  "CC Historical Commission": [
-    "historical commission",
-    "historic district",
-    "historical district"
-  ],
-  "CC Commission for Persons with Disabilities": [
-    "persons with disabilities"
-  ],
-  "CC Board of Health": [
-    "board of health"
-  ],
-  "CC Conservation Commission": [
-    "conservation commission"
-  ],
-  "CC Medford 5G": [
-    "medford 5g meeting"
-  ],
-  "MPS Building & Grounds": [
-    "building and grounds",
-    "building & grounds"
-  ],
-  "MPS Superintendent Evaluation": [
-    "evaluation subcommittee",
-    "superindendent interview",
-    "finalists for superintendent",
-    "superintendent interview",
-    "superintendent evaluation"
-  ],
-  "MPS Strategic & Capital Planning": [
-    "strategic & capital",
-    "strategic and capital",
-    "strategic plan"
-  ],
-  "CC and SC Joint Session": [
-    "cc and sc joint"
-  ],
-  "MPS Budget": [
-    "budget"
-  ],
-  "MPS Communications": [
-    "communication"
-  ],
-  "CC Bicycling Advisory Commission": [
-    "bicycling advisory",
-    "bicycle advisory"
-  ],
-  "CC Traffic Commission": [
-    "traffic commission"
-  ],
-  "CC Liquor License Commission": [
-    "liquor license"
-  ],
-  "CC Community Preservation Committee": [
-    "community preservation",
-    "cpc meeting"
-  ],
-  "CC Public Health and Community Safety": [
-    "public health and community safety",
-    "phcs"
-  ],
-  "CC Solid Waste Task Force": [
-    "solid waste",
-    "trash talk",
-    "waste collection"
-  ],
-  "CC Licensing, Permitting, and Signs": [
-    "licensing, permitting and signs",
-    "licensing, permitting, and signs"
-  ],
-  "CC Community Development Board": {
-    "keywords": [
-      "community development",
-      "cdb",
-      "cbd",
-      "zoning q&a"
+    "CC Zoning Board of Appeals": [
+        "zoning board of appeals"
     ],
-    "link_on_front_page": true
-  },
-  "CC Cannabis Advisory Committee": [
-    "adult use marijuana",
-    "cannabis advisory committee"
-  ],
-  "MPS Diversity, Equity, & Inclusion": [
-    "dei"
-  ],
-  "MPS Family Engagement & Communication": [
-    "fe&c",
-    "communications and family engagement"
-  ],
-  "CC Planning and Permitting": [
-    "planning and permitting",
-    "plannning and permitting"
-  ],
-  "CC Charter Study Committee": [
-    "charter study"
-  ],
-  "CC Public Works and Facilities": [
-    "public works and facilities",
-    "public works subcommittee"
-  ],
-  "MPS Facilities": [
-    "facilities"
-  ],
-  "CC Governance Committee": [
-    "governance committee"
-  ],
-  "Medford Happenings": [
-    "medford happenings",
-    "medford happenins"
-  ],
-  "Jazz Festival": [
-    "jazz festival"
-  ],
-  "West Medford Community Center": [
-    "wmcc"
-  ],
-  "High School Student Videos": [
-    "mvths",
-    "medford high school",
-    "mustang report",
-    "medford tech institute",
-    "haitian flag day"
-  ],
-  "CC Ordinances and Rules": [
-    "ordinances and rules",
-    "rules and ordinances",
-    "ordinances & rules"
-  ],
-  "CC Zoning, Planning and Development": [
-    "zoning, planning and development",
-    "zoning, planning, and development",
-    "zoning subcommittee"
-  ],
-  "CC Elderly Affairs and Housing": [
-    "elderly affairs",
-    "elderly and housing"
-  ],
-  "CC Housing": [
-    "housing subcommittee",
-    "housing subcommitee"
-  ],
-  "CC Business, Cultural Arts and Economic Development": [
-    "business, cultural arts",
-    "business, economic development",
-    "cultural arts"
-  ],
-  "CC Climate, Sustainability and Transportation": [
-    "climate, sustainability",
-    "climate, sustainability and transportation",
-    "transportation subcommittee"
-  ],
-  "CC Military and Veterans Affairs": [
-    "military and veterans"
-  ],
-  "CC Caucus": [
-    "council caucus"
-  ],
-  "MPS School Committee": {
-    "keywords": [
-      "school committee",
-      "school commmittee",
-      "msc "
+    "CC Energy & Environment Committee": [
+        "energy and environment"
     ],
-    "link_on_front_page": true
-  },
-  "CC City Council": {
-    "keywords": [
-      "city council ",
-      "city councl",
-      "council records",
-      "regular meeting"
+    "CC City Council Meeting of the Whole": {
+        "keywords": [
+            "committee of the whole",
+            "cow"
+        ],
+        "link_on_front_page": true,
+        "label": "COW"
+    },
+    "MPS Meeting of the Whole": [
+        "committee of the whole",
+        "sc budget committee of the whole",
+        "msc - committee of the whole",
+        "msc meeting of the whole",
+        "cow"
     ],
-    "link_on_front_page": true
-  }
+    "CC Human Rights Commission": [
+        "human rights commission"
+    ],
+    "CC Climate Equity Council": [
+        "climate equity council"
+    ],
+    "CC Housing Authority": [
+        "housing medford",
+        "housing authority"
+    ],
+    "Medford Bytes": {
+        "keywords": [
+            "Medford Bytes"
+        ],
+        "compose_title": false
+    },
+    "CC Resident Services and Public Engagement Committee": [
+        "resident services",
+        "rspe",
+        "resident service"
+    ],
+    "CC Administration and Finance Committee": [
+        "administration and finance",
+        "admin and finance"
+    ],
+    "Campaign": {
+        "keywords": [
+            "invest in medford",
+            "candidate profile",
+            "candidate forum",
+            "candidates forum",
+            "candidate for school committee",
+            "candidate for mayor",
+            "mayoral debate",
+            "for city council",
+            "city council candidate",
+            "(city council)",
+            "(incumbent city council)",
+            "voter forum",
+            "representative debate"
+        ]
+    },
+    "CC Listening Session": [
+        "listening session"
+    ],
+    "CC Park Commission": [
+        "parks and rec",
+        "park commission",
+        "parks commission"
+    ],
+    "MPS Curriculum, Instruction, Assessment & Accountability": [
+        "curriculum"
+    ],
+    "MPS Advisory Committee to Rename Columbus School": [
+        "rename the columbus school"
+    ],
+    "MPS Middle School Lottery": [
+        "lottery"
+    ],
+    "CC Welcoming Committee": [
+        "welcoming committee"
+    ],
+    "CC Elections Commission": [
+        "elections commission"
+    ],
+    "CC Education and Culture": [
+        "education and culture"
+    ],
+    "MPS Behavioral Health & Special Education": [
+        "behavioral health",
+        "special education",
+        "behavioral subcommittee"
+    ],
+    "CC Chevalier Commission": [
+        "chevalier commission"
+    ],
+    "MPS Rules & Policy": [
+        "rules & policy",
+        "rules & policies",
+        "rules and policy",
+        "rules, policy"
+    ],
+    "MPS School Committee Executive Session": [
+        "sc executive session",
+        "executive session"
+    ],
+    "CC Council on Aging": [
+        "council on aging"
+    ],
+    "CC Hormel Stadium Commission": [
+        "hormel stadium commission"
+    ],
+    "CC Board of Assessors": [
+        "board of assessors"
+    ],
+    "CC Linkage Trust Committee": [
+        "linkage trust"
+    ],
+    "CC Water and Sewer Commission": [
+        "water and sewer"
+    ],
+    "CC Historical Commission": [
+        "historical commission",
+        "historic district",
+        "historical district"
+    ],
+    "CC Commission for Persons with Disabilities": [
+        "persons with disabilities"
+    ],
+    "CC Board of Health": [
+        "board of health"
+    ],
+    "CC Conservation Commission": [
+        "conservation commission"
+    ],
+    "CC Medford 5G": [
+        "medford 5g meeting"
+    ],
+    "MPS Building & Grounds": [
+        "building and grounds",
+        "building & grounds"
+    ],
+    "MPS Superintendent Evaluation": [
+        "evaluation subcommittee",
+        "superindendent interview",
+        "finalists for superintendent",
+        "superintendent interview",
+        "superintendent evaluation"
+    ],
+    "MPS Strategic & Capital Planning": {
+        "keywords": [
+            "strategic & capital",
+            "strategic and capital",
+            "strategic plan",
+            "strategy planning"
+        ]
+    },
+    "CC and SC Joint Session": [
+        "cc and sc joint"
+    ],
+    "MPS Budget": [
+        "budget"
+    ],
+    "MPS Communications": [
+        "communication"
+    ],
+    "CC Bicycling Advisory Commission": [
+        "bicycling advisory",
+        "bicycle advisory"
+    ],
+    "CC Traffic Commission": [
+        "traffic commission"
+    ],
+    "CC Liquor License Commission": [
+        "liquor license"
+    ],
+    "CC Community Preservation Committee": [
+        "community preservation",
+        "cpc meeting"
+    ],
+    "CC Public Health and Community Safety": [
+        "public health and community safety",
+        "phcs"
+    ],
+    "CC Solid Waste Task Force": [
+        "solid waste",
+        "trash talk",
+        "waste collection"
+    ],
+    "CC Licensing, Permitting, and Signs": [
+        "licensing, permitting and signs",
+        "licensing, permitting, and signs"
+    ],
+    "CC Community Development Board": {
+        "keywords": [
+            "community development",
+            "cdb",
+            "cbd",
+            "zoning q&a"
+        ],
+        "link_on_front_page": true
+    },
+    "CC Cannabis Advisory Committee": [
+        "adult use marijuana",
+        "cannabis advisory committee"
+    ],
+    "MPS Diversity, Equity, & Inclusion": [
+        "dei"
+    ],
+    "MPS Family Engagement & Communication": [
+        "fe&c",
+        "communications and family engagement"
+    ],
+    "CC Planning and Permitting": [
+        "planning and permitting",
+        "plannning and permitting"
+    ],
+    "CC Charter Study Committee": [
+        "charter study"
+    ],
+    "CC Public Works and Facilities": [
+        "public works and facilities",
+        "public works subcommittee"
+    ],
+    "MPS Facilities": [
+        "facilities"
+    ],
+    "CC Governance Committee": [
+        "governance committee"
+    ],
+    "Medford Happenings": {
+        "keywords": [
+            "medford happenings",
+            "medford happenins"
+        ],
+        "compose_title": false
+    },
+    "Jazz Festival": [
+        "jazz festival"
+    ],
+    "West Medford Community Center": [
+        "wmcc"
+    ],
+    "High School Student Videos": {
+        "keywords": [
+            "mvths",
+            "medford high school",
+            "mustang report",
+            "medford tech institute",
+            "haitian flag day"
+        ],
+        "compose_title": false
+    },
+    "CC Ordinances and Rules": [
+        "ordinances and rules",
+        "rules and ordinances",
+        "ordinances & rules"
+    ],
+    "CC Zoning, Planning and Development": [
+        "zoning, planning and development",
+        "zoning, planning, and development",
+        "zoning subcommittee"
+    ],
+    "CC Elderly Affairs and Housing": [
+        "elderly affairs",
+        "elderly and housing"
+    ],
+    "CC Housing": [
+        "housing subcommittee",
+        "housing subcommitee"
+    ],
+    "CC Business, Cultural Arts and Economic Development": [
+        "business, cultural arts",
+        "business, economic development",
+        "cultural arts"
+    ],
+    "CC Climate, Sustainability and Transportation": [
+        "climate, sustainability",
+        "climate, sustainability and transportation",
+        "transportation subcommittee"
+    ],
+    "CC Military and Veterans Affairs": [
+        "military and veterans"
+    ],
+    "CC Caucus": [
+        "council caucus"
+    ],
+    "MPS School Committee": {
+        "keywords": [
+            "school committee",
+            "school commmittee",
+            "msc "
+        ],
+        "link_on_front_page": true
+    },
+    "CC City Council": {
+        "keywords": [
+            "city council ",
+            "city councl",
+            "council records",
+            "regular meeting"
+        ],
+        "link_on_front_page": true
+    },
+    "Medford Jazz Festival": {
+        "keywords": [
+            "jazz fest"
+        ],
+        "compose_title": false
+    },
+    "Looking Back at Medford History": {
+        "keywords": [
+            "looking back at medford history"
+        ],
+        "compose_title": false
+    },
+    "MPS District Videos": {
+        "keywords": [
+            "staff appreciation",
+            "teacher appreciation"
+        ],
+        "compose_title": false
+    },
+    "Community Meeting": {
+        "keywords": [
+            "community meeting",
+            "community forum",
+            "public information meeting"
+        ]
+    }
 }

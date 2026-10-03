@@ -656,17 +656,55 @@ _NOISE = re.compile(
     r"unofficially|unofficial|posted|by|for|to|at|on)\b")
 
 
-def body_label(meeting_type):
+def body_label(meeting_type, config=None):
     """How a body is named in a display title: "CC City Council" -> "City Council".
 
-    The prefixes are internal routing, not something to show a reader.
+    The prefixes are internal routing, not something to show a reader. A type
+    may also set an explicit "label" in meeting_types.json, which wins: the
+    composed titles were running to 118 characters, and almost all of that was
+    the body name -- "City Council Meeting of the Whole" is 33 characters
+    before anything specific to the meeting starts. That one is labelled COW,
+    which is what the transcripts themselves call it.
     """
     mt = (meeting_type or "").strip()
+    if not mt:
+        return ""
+    cfg = config if config is not None else meeting_type_config()
+    lab = (cfg.get(mt) or {}).get("label")
+    if lab:
+        return lab
     for p in ("CC ", "MPS ", "MSC "):
         if mt.startswith(p):
             mt = mt[len(p):]
             break
     return mt
+
+
+def composes_title(meeting_type, config=None):
+    """False for bodies whose own titles are better than anything we compose.
+
+    AN INTERVIEW OR A PERFORMANCE NAMES ITS GUEST, and that is what a reader
+    searches for: "Medford Happenings Episode 37 Laura O'Neill" beats "Medford
+    Happenings: Senior Services Outreach", and "Medford Jazz Fest 2026 -
+    Vertigo Trio" beats "Medford Jazz Festival: Vertigo Trio Performance".
+
+    This has to be declared rather than left to chance. Happenings and Bytes
+    were excluded only by ACCIDENT -- their titles carry no parseable date, so
+    display_title fell back for an unrelated reason. One date_manual on an
+    episode would have started composing over the guest's name.
+    """
+    if not meeting_type:
+        return True
+    cfg = config if config is not None else meeting_type_config()
+    return (cfg.get(meeting_type) or {}).get("compose_title", True) is not False
+
+
+def related_types(meeting_type, config=None):
+    """Bodies to cross-link from this one, e.g. the project beside its committee."""
+    if not meeting_type:
+        return []
+    cfg = config if config is not None else meeting_type_config()
+    return list((cfg.get(meeting_type) or {}).get("related") or [])
 
 
 def meeting_subject(yt_id, entry=None, video_data=None):
@@ -715,7 +753,10 @@ def display_title(yt_id, entry=None, video_data=None, subject=None):
         subject = meeting_subject(yt_id, entry, video_data)
     if not subject:
         return source
-    body = body_label(entry.get("meeting_type"))
+    cfg = meeting_type_config()
+    if not composes_title(entry.get("meeting_type"), cfg):
+        return source
+    body = body_label(entry.get("meeting_type"), cfg)
     if not body:
         return source
     dated = entry.get("date_manual") or title_date(
