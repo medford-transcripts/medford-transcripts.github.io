@@ -1,53 +1,32 @@
 {
  "video_id": "boyuFzjZmR4",
  "provider": "gemini",
- "generated_at": "2026-09-29T10:06:35Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-03T03:05:17Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "dfcfe1c69ed549aa",
- "overview": "The City Council Committee of the Whole conducted public interviews for the position of City Clerk and voted to recommend Laurel Siegel for the appointment. The council also recognized the service of the interim clerk during the transition period.",
+ "transcript_sha": "ddd28a739d90cb47",
+ "overview": "The City Council Committee of the Whole met to conduct final interviews for the position of City Clerk and voted to recommend offering the position to finalist Laurel Siegel.",
  "items": [
   {
-   "title": "Final Interviews for City Clerk",
+   "title": "Resolution 25149: City Clerk Recruitment and Hiring Process",
    "t": 107,
-   "summary": "The committee interviewed finalists Kevin Foley and Laurel Siegel, questioning them on their legal backgrounds, experience with modernization, and plans for the clerk’s office. Both candidates addressed public service, records management, and staff training.",
+   "summary": "The committee conducted public interviews with finalists Kevin Foley and Laurel Siegel, and subsequently approved a motion to recommend and offer the City Clerk position to Siegel. The Council also recognized and thanked Acting Clerk Rich Eliseo for his service.",
    "speakers": [
     "Zac Bears",
     "Anna Callahan",
     "Kevin Foley",
-    "Laurel Siegel"
-   ]
-  },
-  {
-   "title": "Deliberation and Recommendation for City Clerk Appointment",
-   "t": 1861,
-   "summary": "Councilors discussed the merits of both candidates, weighing their specific clerical and legal experience against the needs of the office and existing city staffing. The committee voted to recommend Laurel Siegel for the position and authorize a formal job offer.",
-   "speakers": [
+    "Laurel Siegel",
     "Emily Lazzaro",
     "George Scarpelli",
-    "Anna Callahan",
     "Matt Leming",
     "Liz Mullane",
-    "Justin Tseng",
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Recognition of Acting City Clerk",
-   "t": 3177,
-   "summary": "The council expressed gratitude to Acting City Clerk Rich Eliseo for his professional service and consistency during the ten-month vacancy in the department.",
-   "speakers": [
-    "Zac Bears",
-    "Justin Tseng",
-    "George Scarpelli",
-    "Anna Callahan",
-    "Emily Lazzaro"
+    "Justin Tseng"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 17252,
-  "output_tokens": 420
+  "output_tokens": 207
  }
 }
