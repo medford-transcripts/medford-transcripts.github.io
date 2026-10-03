@@ -1,25 +1,25 @@
 {
  "video_id": "NB6J2xX2Dt4",
  "provider": "gemini",
- "generated_at": "2026-10-01T20:06:53Z",
+ "generated_at": "2026-10-03T15:05:51Z",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "244427d9bdaa0441",
- "overview": "The City Council and Community Development Board met to refine the proposed Medford Square zoning updates, focusing on historic preservation, parking flexibility, and development incentives. The bodies issued formal guidance to the project consultant to prepare a revised proposal and a specific development overlay for the March 25 public hearing.",
+ "transcript_sha": "c5523acdb0be9dcd",
+ "overview": "The City Council and Community Development Board met in a joint session to approve a zoning update schedule and discuss proposed amendments for Medford Square, specifically regarding parking, historic preservation, and building dimensions.",
  "items": [
   {
-   "title": "Meeting Minutes",
+   "title": "Approval of Minutes",
    "t": 267,
-   "summary": "Approved the minutes of the special joint meeting held on January 21, 2026.",
+   "summary": "Approved the records of the special joint meeting held on January 21, 2026.",
    "speakers": [
     "Zac Bears",
     "Matt Leming"
    ]
   },
   {
-   "title": "Zoning Meeting Schedule",
+   "title": "Proposed Zoning Meeting Schedule",
    "t": 325,
-   "summary": "Approved a proposed zoning meeting schedule through May 2026 to provide clarity on consultant deliverables and public feedback deadlines.",
+   "summary": "Approved a tentative schedule for zoning updates and public information sessions through May 2026 to provide clarity for consultants and the public.",
    "speakers": [
     "Matt Leming",
     "Doug Carr",
@@ -29,34 +29,20 @@
    ]
   },
   {
-   "title": "Medford Square Zoning Recap",
+   "title": "Medford Square Zoning Amendments Hearing",
    "t": 1292,
-   "summary": "Planning staff presented a recap of proposed Medford Square zoning changes, including shadow studies, daylight minimums, and updates to the use table regarding municipal parking and accessory dwelling units.",
+   "summary": "Continued the public hearing on Medford Square zoning with presentations on proposed use tables, dimensional standards, and strategies for protecting historic assets while encouraging density.",
    "speakers": [
     "Alicia Hunt",
-    "Danielle Evans"
+    "Doug Carr",
+    "John Anderson",
+    "Theresa DuPont"
    ]
   },
   {
-   "title": "Historic Resource Protection and Adaptive Reuse",
-   "t": 2063,
-   "summary": "CDB Chair Doug Carr presented strategies for integrating parking into zoning and using incentives to encourage the creative reimagination and preservation of historic buildings in the square.",
-   "speakers": [
-    "Doug Carr"
-   ]
-  },
-  {
-   "title": "Historic District Establishment Process",
-   "t": 2847,
-   "summary": "The Community Preservation Manager provided an overview of the 12-to-24-month legal process required to implement a local historic district.",
-   "speakers": [
-    "Theresa Dupont"
-   ]
-  },
-  {
-   "title": "Public Hearing and Correspondence",
-   "t": 3236,
-   "summary": "The bodies read a letter from the Chamber of Commerce and heard public testimony regarding the trade-offs between parking mandates and walkability, as well as the importance of arts integration and historic incentives.",
+   "title": "Public Comment and Correspondence",
+   "t": 3224,
+   "summary": "The body heard feedback from the Chamber of Commerce and residents regarding parking mandates, the impact of new zoning on small businesses, and the preservation of historic architecture.",
    "speakers": [
     "Zac Bears",
     "Roberta Cameron",
@@ -72,7 +58,7 @@
   {
    "title": "Guidance to Zoning Consultant",
    "t": 4513,
-   "summary": "Approved a joint motion directing Innis Associates to prepare a revised proposal including flexible parking options, historic preservation overlays, arts incentives, and refined dimensional requirements.",
+   "summary": "Approved a motion directing Innis Land Group to revise the Medford Square proposal with options for parking flexibility, historic preservation incentives, arts use changes, and updated definitions for high-frequency transit.",
    "speakers": [
     "Zac Bears",
     "Matt Leming",
@@ -81,32 +67,24 @@
     "John Anderson",
     "Dina Caloggero",
     "Ari Fishman",
-    "Danielle Evans"
+    "Danielle Evans",
+    "Alicia Hunt"
    ]
   },
   {
-   "title": "Transom Project Overlay Discussion",
-   "t": 7113,
-   "summary": "Planning staff recommended a specific zoning overlay for the Transom development parcels to provide the time certainty necessary for the planned grocery store and senior center parking solution.",
+   "title": "Transom Project Update",
+   "t": 8413,
+   "summary": "Staff provided an update on a planned zoning overlay for the Transom development parcels to facilitate a grocery store and parking for the senior center.",
    "speakers": [
     "Alicia Hunt",
     "John Anderson",
     "Dina Caloggero"
-   ]
-  },
-  {
-   "title": "Continuation and Adjournment",
-   "t": 8761,
-   "summary": "Voted to continue the public hearing on Medford Square zoning to March 25, 2026, and adjourned the meeting.",
-   "speakers": [
-    "Zac Bears",
-    "Doug Carr"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 43677,
-  "output_tokens": 969
+  "output_tokens": 623
  }
 }
