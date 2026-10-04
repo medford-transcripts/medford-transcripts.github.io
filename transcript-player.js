@@ -517,22 +517,33 @@
     var nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
 
-    var skippedPrefix = false;
+    // EVERYTHING UP TO AND INCLUDING THE "]:" IS PREFIX, however many words it
+    // runs to. The previous rule skipped a part only if it STARTED with "[" or
+    // ENDED with "]:", which silently works for a two-word name and fails for
+    // anything longer: in "[Fred Dello Russo]:" the middle word "Dello" fell
+    // through, took a timing of its own, and shifted every word after it on
+    // that line. 31 identified speakers have three or more parts -- Paulette
+    // Van der Kloot (167 videos), Stephanie Muccini Burke (134), Mea Quinn
+    // Mustone (130), Fred Dello Russo (110) -- so 666 speaker/video pairs had
+    // word highlighting and click-to-seek off by one or two words throughout.
+    //
+    // This also has to hold before a role can be shown beside a name, since
+    // "[Chief of Staff Nina Nazarian]:" is six parts.
+    //
+    // The matching rule in timeAtPoint() below is the regex
+    // /^\s*\[[^\]]*\]:?\s*/, which was always length-agnostic -- the two were
+    // inconsistent, despite the comment there claiming they agree.
+    var skippedPrefix = !/^\s*\[/.test(el.textContent || "");
     nodes.forEach(function (node) {
       var text = node.nodeValue;
       if (!text.trim()) return;
       var frag = document.createDocumentFragment();
-      // the leading "[Speaker]: " prefix is not spoken -- don't consume a timing
       var parts = text.split(/(\s+)/);
       parts.forEach(function (part) {
         if (!part.trim()) { frag.appendChild(document.createTextNode(part)); return; }
-        if (!skippedPrefix && /\]:?$/.test(part)) {
+        if (!skippedPrefix) {
           frag.appendChild(document.createTextNode(part));
-          skippedPrefix = true;
-          return;
-        }
-        if (!skippedPrefix && /^\[/.test(part)) {
-          frag.appendChild(document.createTextNode(part));
+          if (/\]:?$/.test(part)) skippedPrefix = true;
           return;
         }
         var span = document.createElement("span");
