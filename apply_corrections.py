@@ -64,6 +64,7 @@ QUEUE = "corrections_queue.json"
 REFUSE = ("truncated", "unparsed", "none", "verified")
 
 import speaker_provenance as SP
+import titles
 from srt_lines import (parse_srt, render_srt, find_block, line_span,
                        line_text, normalise as norm, to_timestamp)
 
@@ -331,6 +332,14 @@ def realign(blocks, lo, hi, turns, mapping, word_times=None):
     for (bi, ti), words in groups:
         src = blocks[bi if bi is not None else lo]
         name = turns[ti]["speaker"].strip()
+        # UNDO A PRINTED ROLE BEFORE TRUSTING THE LABEL. The page may show
+        # "[Councilor Anna Callahan]:" where the .srt says "[Anna Callahan]:",
+        # and what the form submits replaces the paragraph. The form restores
+        # the bare name itself, but a reader with a cached copy of the old
+        # transcript-player.js cannot, and this is the layer that can refuse
+        # it. Only strips a role we actually print off a name this video
+        # already knows -- see titles.strip_role.
+        name = titles.strip_role(name, set(mapping.values()) | set(mapping))
         label = label_for_name(name, mapping) or name
         out.append({
             "start": src["start"], "end": src["end"],

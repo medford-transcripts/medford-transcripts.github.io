@@ -1,0 +1,682 @@
+{
+  "_comment": [
+    "Name -> city post, for rendering a role beside a speaker.",
+    "Derived from staff.json by scrape_staff.py; TRACKED on purpose, while staff.json is not. Contact details are deliberately absent: the titles are public context, an aggregated address list is not.",
+    "first_seen/last_seen are when we OBSERVED the post, not when it was held. See scrape_staff.carry_dates."
+  ],
+  "source": "https://www.medfordma.org/departments",
+  "scraped": "2026-10-03",
+  "people": {
+    "Patrick Hogan": {
+      "title": "Animal Control Officer/Animal Inspector",
+      "department": "Animal Control",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "history": [
+        {
+          "title": "Animal Control/Animal Inspector",
+          "department": "Animal Control",
+          "first_seen": null,
+          "last_seen": null
+        }
+      ]
+    },
+    "Jared Yagjian": {
+      "title": "Chief Assessor",
+      "department": "Assessor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Jeremy Ferreira": {
+      "title": "Assistant Assessor",
+      "department": "Assessor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Rita Danilchuk": {
+      "title": "Administrative Assessor",
+      "department": "Assessor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Maria DeGiovanni": {
+      "title": "Supervisor of Data/Office Manager",
+      "department": "Assessor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Bill Forte": {
+      "title": "Interim Building Commissioner",
+      "department": "Building Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Steve Randazzo": {
+      "title": "Superintendent of Wires",
+      "department": "Building Department",
+      "first_seen": "2025-05-21",
+      "last_seen": "2026-10-03"
+    },
+    "Amy Tenaglia": {
+      "title": "Head Clerk",
+      "department": "Building Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Kathy Aluia": {
+      "title": "Principal Clerk",
+      "department": "Building Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Dennis McDonald": {
+      "title": "Code Enforcement Officer",
+      "department": "Building Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Stephen Brogan": {
+      "title": "Superintendent",
+      "department": "Cemetery",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Deb Nee": {
+      "title": "Principal Clerk",
+      "department": "Cemetery",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Laurel Siegel": {
+      "title": "City Clerk",
+      "department": "City Clerk",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Rich Eliseo": {
+      "title": "Assistant City Clerk",
+      "department": "City Clerk",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Lisa Young": {
+      "title": "Head Clerk",
+      "department": "City Clerk",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "MaryAnn O'Connor": {
+      "title": "Director",
+      "department": "Civil Defense/Emergency Management",
+      "first_seen": "2020-12-15",
+      "last_seen": "2026-10-03"
+    },
+    "Judith Johnston": {
+      "title": "Treasurer/Collector",
+      "department": "Collector/Treasurer",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Wendy Pompeo": {
+      "title": "Assistant Treasurer/Collector",
+      "department": "Collector/Treasurer",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Tanya Arruda": {
+      "title": "Manager",
+      "department": "Credit Union",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Deborah Petrone": {
+      "title": "Customer Service Specialist",
+      "department": "Credit Union",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Diane Costa": {
+      "title": "Customer Service Specialist",
+      "department": "Credit Union",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Timothy J. McGivern": {
+      "title": "Commissioner",
+      "department": "Department of Public Works (DPW)",
+      "first_seen": "2022-04-19",
+      "last_seen": "2026-10-03"
+    },
+    "Scott Brinch": {
+      "title": "Deputy Commissioner",
+      "department": "Department of Public Works (DPW)",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Jeanine Feeley": {
+      "title": "Office Manager",
+      "department": "Department of Public Works (DPW)",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Azzery Ferrara": {
+      "title": "Principal Clerk",
+      "department": "Department of Public Works (DPW)",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Frances N. Nwajei": {
+      "title": "Director of Diversity, Equity and Inclusion ADA Coordinator",
+      "department": "Diversity, Equity and Inclusion (DEI)",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Nicholas Karinge": {
+      "title": "Disability Specialist",
+      "department": "Diversity, Equity and Inclusion (DEI)",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Joan Limone": {
+      "title": "Senior Election Clerk",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Rita Donnelly": {
+      "title": "Part-Time Elections Clerk",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Henry Milorin": {
+      "title": "Elections Commissioner",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "party": "Democrat",
+      "term_expires": "2030-03-31",
+      "title_source": "derived from body name"
+    },
+    "William J. O'Keefe": {
+      "title": "Elections Commissioner",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "party": "Republican",
+      "term_expires": "2030-03-31",
+      "title_source": "derived from body name"
+    },
+    "Marc Davidson": {
+      "title": "Elections Commissioner",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "party": "Democrat",
+      "term_expires": "2028-03-31",
+      "title_source": "derived from body name"
+    },
+    "Gino DeSimone": {
+      "title": "Elections Commissioner",
+      "department": "Elections Commission",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "party": "Republican",
+      "term_expires": "2028-03-31",
+      "title_source": "derived from body name"
+    },
+    "Owen Wartella": {
+      "title": "City Engineer",
+      "department": "Engineering",
+      "first_seen": "2022-05-04",
+      "last_seen": "2026-10-03"
+    },
+    "Todd Blake": {
+      "title": "Director of Traffic and Transportation",
+      "department": "Engineering",
+      "first_seen": "2021-07-21",
+      "last_seen": "2026-10-03"
+    },
+    "Sierra Schatz": {
+      "title": "Assistant City Engineer",
+      "department": "Engineering",
+      "first_seen": "2026-06-23",
+      "last_seen": "2026-10-03"
+    },
+    "Tim Myland": {
+      "title": "Assistant City Engineer",
+      "department": "Engineering",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Sterling Bell": {
+      "title": "Engineering Aide",
+      "department": "Engineering",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Danae Kristiansen": {
+      "title": "Project Manager",
+      "department": "Engineering",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Billie-Jo Maltacea": {
+      "title": "Head Clerk",
+      "department": "Engineering",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Bob Dickinson": {
+      "title": "Finance Director",
+      "department": "Finance",
+      "first_seen": "2022-06-07",
+      "last_seen": "2026-10-03"
+    },
+    "Philiana Lima": {
+      "title": "Asst. Finance Director",
+      "department": "Finance",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Cynthia Burke": {
+      "title": "Office Manager",
+      "department": "Finance",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Diane Barry": {
+      "title": "Principal Clerk",
+      "department": "Finance",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Michael Roberts": {
+      "title": "Federal Funds Manager",
+      "department": "Finance",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "aliases": [
+        "Mike Roberts"
+      ]
+    },
+    "Todd Evans": {
+      "title": "Fire Chief",
+      "department": "Fire Department",
+      "first_seen": "2024-05-15",
+      "last_seen": "2026-10-03"
+    },
+    "Christine Armour": {
+      "title": "Office Manager",
+      "department": "Fire Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Michael Wentzell": {
+      "title": "Superintendent of Equipment",
+      "department": "Fleet Maintenance Garage",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Catherine Dhingra": {
+      "title": "Assistant Director",
+      "department": "Health and Human Services Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Rose Marie Mitrano": {
+      "title": "Principal Clerk",
+      "department": "Health and Human Services Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Janet Esposito": {
+      "title": "Junior Clerk",
+      "department": "Health and Human Services Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Raven Beck": {
+      "title": "Sanitarian",
+      "department": "Inspectional Services & Environmental Health",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Joshua Hunter": {
+      "title": "Sanitarian",
+      "department": "Inspectional Services & Environmental Health",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Deanna Earle": {
+      "title": "Sanitarian",
+      "department": "Inspectional Services & Environmental Health",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Andreea Ilisei": {
+      "title": "Public Health Nurse",
+      "department": "Public Health Nursing",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Samia Bennett": {
+      "title": "Special Projects Coordinator & Youth/Families Connector",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Jason Stone": {
+      "title": "Social Services Coordinator",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-09-15",
+      "last_seen": "2026-10-03"
+    },
+    "Chris Summa": {
+      "title": "Recovery Coach",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-10-03"
+    },
+    "Patrick Donovan": {
+      "title": "Health Equity Coordinator",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Matisse Monty": {
+      "title": "Regional Prevention Strategist",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Joseph Johnson": {
+      "title": "Prevention and Wellness Coordinator",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Natasha Barthe": {
+      "title": "Haitian-Creole Community Liaison",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Darline Raymond": {
+      "title": "Haitian-Creole Community Liaison",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Stacey Moore": {
+      "title": "Community Liaison",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2024-12-10",
+      "last_seen": "2026-10-03"
+    },
+    "Marileia Barroso": {
+      "title": "Brazilian-Portuguese Community Liaison",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Charbel Hayek": {
+      "title": "Financial Security Connector",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Hala Fay": {
+      "title": "Food Systems Connector",
+      "department": "Office of Prevention & Outreach",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Stephen Tenaglia": {
+      "title": "Highway Foreman",
+      "department": "Highway",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Brett Zografos": {
+      "title": "Director of Human Resources",
+      "department": "Human Resources",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Noel Kennedy": {
+      "title": "Benefits Administrator",
+      "department": "Human Resources",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Darsy Rodriguez": {
+      "title": "Human Resources Administrator",
+      "department": "Human Resources",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Jodi Kader": {
+      "title": "Part-time Clerk",
+      "department": "Human Resources",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Rich Lane": {
+      "title": "IT Director",
+      "department": "Information Technology (IT)",
+      "first_seen": "2023-06-07",
+      "last_seen": "2026-10-03"
+    },
+    "Janice Spencer": {
+      "title": "Office Manager/Confidential Secretary",
+      "department": "Law Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Breanna Lungo-Koehn": {
+      "title": "Mayor",
+      "department": "Mayor's Office",
+      "first_seen": "2020-01-06",
+      "last_seen": "2026-10-03"
+    },
+    "Daria Tejera": {
+      "title": "Executive Assistant to the Mayor",
+      "department": "Mayor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Nina Nazarian": {
+      "title": "Chief of Staff",
+      "department": "Mayor's Office",
+      "first_seen": "2022-01-04",
+      "last_seen": "2026-10-03"
+    },
+    "Steve Smirti": {
+      "title": "Director of Communications",
+      "department": "Mayor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Lisa Colaianni": {
+      "title": "Director of Community Affairs",
+      "department": "Mayor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Ana Golia": {
+      "title": "Communications Specialist",
+      "department": "Mayor's Office",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Kevin Harrington": {
+      "title": "Station Manager",
+      "department": "Medford Community Media",
+      "first_seen": "2023-06-06",
+      "last_seen": "2026-10-03"
+    },
+    "Jim Corbett": {
+      "title": "Program Coordinator",
+      "department": "Medford Community Media",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Pamela Kelly": {
+      "title": "Director of Elder Affairs",
+      "department": "Medford Senior Center",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Elizabeth Waitt": {
+      "title": "Office Manager and Clerk",
+      "department": "Medford Senior Center",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Grace Albert": {
+      "title": "Community Outreach Coordinator",
+      "department": "Medford Senior Center",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Nike Gregory": {
+      "title": "Social Worker",
+      "department": "Medford Senior Center",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Mark Camirand": {
+      "title": "Building Maintenance",
+      "department": "Medford Senior Center",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Sarah McDermod": {
+      "title": "Director",
+      "department": "Parking Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Michael Viola": {
+      "title": "Meter Working Foreperson",
+      "department": "Parking Department",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Alicia Hunt": {
+      "title": "Director",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2020-04-07",
+      "last_seen": "2026-10-03"
+    },
+    "Danielle Evans": {
+      "title": "Senior Planner",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2023-02-01",
+      "last_seen": "2026-10-03"
+    },
+    "Theresa Dupont": {
+      "title": "Community Preservation Manager",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Katherine Buckingham": {
+      "title": "Housing Planner",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Samantha Riley": {
+      "title": "Climate Planner",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Kayla Myros": {
+      "title": "Economic Development Planner",
+      "department": "Planning, Development & Sustainability",
+      "first_seen": "2026-01-28",
+      "last_seen": "2026-10-03"
+    },
+    "Fiona Maxwell": {
+      "title": "Chief Procurement Officer",
+      "department": "Procurement",
+      "first_seen": "2022-10-26",
+      "last_seen": "2026-10-03"
+    },
+    "Kellie Cavanaugh": {
+      "title": "Assistant Purchasing Agent",
+      "department": "Procurement",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Darlene Luke": {
+      "title": "Head Clerk",
+      "department": "Procurement",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Kevin J. Bailey": {
+      "title": "Director of Recreation",
+      "department": "Recreation",
+      "first_seen": "2023-09-19",
+      "last_seen": "2026-10-03"
+    },
+    "Danny Fowkes": {
+      "title": "Assistant Director of Recreation",
+      "department": "Recreation",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Christine Feeley": {
+      "title": "Program Manager",
+      "department": "Recreation",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Mark Minervini": {
+      "title": "Executive Director",
+      "department": "Retirement",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Michelle LaJoie": {
+      "title": "Assistant Administrator, Records Access Officer",
+      "department": "Retirement",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Jennifer Intoppa": {
+      "title": "Retiree Analyst",
+      "department": "Retirement",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Veronica Shaw": {
+      "title": "Director",
+      "department": "Veterans Services",
+      "first_seen": "2024-01-16",
+      "last_seen": "2026-10-03"
+    },
+    "Darlene White": {
+      "title": "Senior Clerk",
+      "department": "Veterans Services",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Noel Ayala": {
+      "title": "Superintendent of Water and Sewer",
+      "department": "Water & Sewer",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    },
+    "Michael Malerba": {
+      "title": "Code Enforcement Officer / Sealer of Weights & Measures",
+      "department": "Weights & Measures",
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03"
+    }
+  }
+}

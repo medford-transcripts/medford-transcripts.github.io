@@ -24,6 +24,7 @@ import yt_dlp
 
 # imports from this repo
 import utils, supercut, fix_common_errors, scrape
+import titles
 import download_castus
 import srt_lines
 import make_committee_pages
@@ -286,7 +287,7 @@ def video_jsonld(dir, filebasename, yt_id, summary, video_data=None):
     data = {
         "@context": "https://schema.org",
         "@type": "VideoObject",
-        "name": entry.get("title") or filebasename,
+        "name": utils.display_title(yt_id, entry) or filebasename,
         "description": overview,
         "url": page,
     }
@@ -390,7 +391,7 @@ def page_jsonld(dir, filebasename, yt_id, video_data=None, summary=None):
     """
     entry = (video_data or {}).get(yt_id) or {}
     page = site_url(os.path.join(dir, filebasename + ".html"))
-    title = (entry.get("title") or filebasename).strip()
+    title = (utils.display_title(yt_id, entry) or filebasename).strip()
     ctte = committee_page(yt_id, video_data)
 
     crumbs = [{"@type": "ListItem", "position": 1,
@@ -621,6 +622,17 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
 
     #ipdb.set_trace()
 
+    # THE ROLE IS PRINTED, THE NAME IS WHAT WE COUNT. speaker_stats keys on the
+    # bare name below; keying it on the decorated label would split one person
+    # into "Councilor X" and "X" wherever a term boundary or a missing roster
+    # changed the role, and every per-speaker total and word cloud with it.
+    #
+    # Resolved per meeting DATE, so a 2015 page says "Councilor Lungo-Koehn"
+    # and a 2026 page says "Mayor". Only full names resolve -- see titles.py.
+    _entry = (video_data or {}).get(yt_id) or {}
+    shown = titles.label_cached(speaker, _entry.get("meeting_type"),
+                                (_entry.get("date") or "")[:10])
+
     for language in languages.keys():
         if language == 'en':
             htmlfilename = basename + '.html'
@@ -629,8 +641,18 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
             # The <a href> inside htmltext is deliberately KEPT: without JS,
             # and for crawlers, the line behaves exactly as it always has.
             # (The old markup also emitted a stray unmatched </a> here.)
-            html.write('    <p class="line" data-t="' + str(start) + '">['
-                       + speaker + ']: ' + htmltext + '</p>\n\n')
+            # data-speaker CARRIES THE BARE NAME, and the correction form needs
+            # it. prefill() sends the line's whole textContent -- label included
+            # and on purpose, so fixing a name and fixing the words are one
+            # action -- and that text REPLACES the paragraph in the .srt. With a
+            # role printed inside the brackets, a submitted correction would
+            # write "[Councilor Anna Callahan]:" back into the transcript and
+            # from there into speaker_ids, stats and every candidate set built
+            # from them. The attribute lets the form restore the label the SRT
+            # actually uses before sending.
+            html.write('    <p class="line" data-t="' + str(start)
+                       + '" data-speaker="' + escape(speaker, quote=True)
+                       + '">[' + shown + ']: ' + htmltext + '</p>\n\n')
             html.close()
         else: 
             htmlfilename = basename + '.' + language + '.html'
@@ -641,9 +663,9 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
             url = timestamp_url(yt_id, start, video_data)
             if url:
                 html.write('    <p><a href="' + url + '" rel="nofollow">')
-                html.write("[" + speaker + "]</a>: " + text + "</p>\n\n")
+                html.write("[" + shown + "]</a>: " + text + "</p>\n\n")
             else:
-                html.write("    <p>[" + speaker + "]: " + text + "</p>\n\n")
+                html.write("    <p>[" + shown + "]: " + text + "</p>\n\n")
             html.close()
 
     # let's do some stats by speaker
@@ -749,7 +771,13 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
     print("Making HTML for " + yt_id)
 
-    video_title = video_data[yt_id]["title"]
+    # THE SUBJECT LEADS WHERE WE HAVE ONE. display_title composes
+    # "COW: City Clerk Selection - 2026-06-23" when the summary found a single
+    # dominant matter, and otherwise returns the city's own title untouched --
+    # including every case where the date is really the upload date. The city's
+    # title is never rewritten in video_data; this is a display decision only,
+    # so title_stem, meeting_date and dedup are unaffected.
+    video_title = utils.display_title(yt_id, video_data=video_data)
     # THE MEETING NAME LEADS. The id was appended to keep titles unique, but
     # nothing searches for "Ewo7VA32tkU" and a raw 11-character token dilutes
     # the strongest relevance signal the page has. Uniqueness comes from the

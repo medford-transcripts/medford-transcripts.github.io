@@ -924,6 +924,35 @@ def main():
         io.open(OUT, "w", encoding="utf-8", newline="\n").write(
             json.dumps(out, indent=2, ensure_ascii=False) + "\n")
         print("wrote %s (%d people)" % (OUT, len(people)))
+
+        # A TRACKED FILE WITH THE TITLES AND NONE OF THE CONTACT DETAILS.
+        # staff.json is gitignored because one file holding 95 work addresses
+        # is a ready-made mailing list -- but the titles are what the
+        # transcripts need, and a renderer that reads an untracked file would
+        # silently produce different pages on a machine that lacks it. So the
+        # name, post, department and observed dates are split out and tracked;
+        # the addresses and the email_agrees flag stay behind.
+        titles = {"_comment": [
+            "Name -> city post, for rendering a role beside a speaker.",
+            "Derived from staff.json by scrape_staff.py; TRACKED on purpose, "
+            "while staff.json is not. Contact details are deliberately absent: "
+            "the titles are public context, an aggregated address list is not.",
+            "first_seen/last_seen are when we OBSERVED the post, not when it "
+            "was held. See scrape_staff.carry_dates."],
+            "source": INDEX,
+            "scraped": time.strftime("%Y-%m-%d"),
+            "people": {}}
+        for v in people.values():
+            rec = {k: v.get(k) for k in
+                   ("title", "department", "first_seen", "last_seen",
+                    "left_site", "party", "term_expires", "title_source",
+                    "aliases", "history") if v.get(k)}
+            titles["people"][v["name"]] = rec
+        io.open("staff_titles.json", "w", encoding="utf-8",
+                newline="\n").write(
+            json.dumps(titles, indent=2, ensure_ascii=False) + "\n")
+        print("wrote staff_titles.json (%d people, no contact details)"
+              % len(titles["people"]))
     return 0
 
 

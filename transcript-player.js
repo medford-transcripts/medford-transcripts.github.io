@@ -720,6 +720,18 @@
     var text = (line.textContent || "").trim();
     var t = line.getAttribute("data-t") || "0";
 
+    // RESTORE THE LABEL THE TRANSCRIPT USES, not the one on screen. The page
+    // may print a role -- "[Councilor Anna Callahan]:" -- while the .srt says
+    // "[Anna Callahan]:". What is submitted REPLACES the paragraph, so sending
+    // the displayed label would write the role into the transcript and from
+    // there into speaker_ids and everything derived from it. data-speaker
+    // carries the bare name; pages rendered before it existed simply have no
+    // attribute, and are left exactly as they were.
+    var bare = line.getAttribute("data-speaker");
+    if (bare) {
+      text = text.replace(/^\s*\[[^\]]*\]:?\s*/, "[" + bare + "]: ");
+    }
+
     // ONE editable box, carrying the speaker label inside the text. Fixing a
     // name and fixing the words are then the same action, and a multi-line
     // answer is a split into separate turns (the roll-call case).
