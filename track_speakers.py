@@ -404,6 +404,20 @@ def propagate():
                             old_value = speaker_ids[speaker]
                             new_value = mapped_ids[mapped_speaker]
 
+                            # NOTHING PROPAGATES TO ITSELF. A few files point a
+                            # speaker at its OWN fully-qualified name -- inside
+                            # CQBdm6oNORM, SPEAKER_08 -> "CQBdm6oNORM_SPEAKER_08"
+                            # -- which is semantically the same as SPEAKER_08 ->
+                            # SPEAKER_08, still unknown. But it satisfies the
+                            # "has it been updated" test above, so every run
+                            # wrote the value back over itself, set update=True
+                            # and stamped a fresh "at" into provenance. 9 files
+                            # churned on every pipeline pass, and the diff is
+                            # timestamp-only, which is exactly the kind of noise
+                            # that hides a real provenance change in review.
+                            if new_value == old_value:
+                                continue
+
                             print(yt_id + ": " + old_value + " matches " + new_value + ")")
                             speaker_ids[speaker] = new_value
                             update = True

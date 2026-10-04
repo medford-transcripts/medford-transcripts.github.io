@@ -1,10 +1,10 @@
 {
     "SPEAKER_02": {
         "value": "Laura Swan",
-        "source": "manual",
+        "source": "propagated",
         "score": null,
-        "from": "corrections_queue:441908724bba243b,f247efc38fa17648",
-        "at": "2026-10-04T18:28:28Z",
+        "from": "h56i5SspnTk_SPEAKER_08",
+        "at": "2026-10-04T19:34:15Z",
         "previous": "h56i5SspnTk_SPEAKER_08"
     },
     "SPEAKER_03": {
@@ -78,5 +78,13 @@
         "from": "corrections_queue:441908724bba243b,f247efc38fa17648",
         "at": "2026-10-04T18:28:28Z",
         "previous": null
+    },
+    "SPEAKER_01": {
+        "value": "Erik Vangsness",
+        "source": "manual",
+        "score": null,
+        "from": "corrections_queue:441908724bba243b,f247efc38fa17648",
+        "at": "2026-10-04T19:29:33Z",
+        "previous": "SPEAKER_01"
     }
 }

@@ -138,6 +138,110 @@ def label_for_name(name, mapping):
 
 SPEAKER_N = re.compile(r"^SPEAKER_(\d+)$")
 
+# A cross-video placeholder, parsed exactly the way track_speakers.propagate()
+# parses it: an 11-character video id, an underscore, then the speaker key.
+# Keeping the two in step matters -- a reference this recognises but propagate
+# does not would be named in a home nothing ever reads.
+CROSS_REF = re.compile(r"^(.{11})_(SPEAKER_\d+)$")
+
+
+def cluster_home(mapping, label, hops=8):
+    """Follow a placeholder to the file that actually owns the cluster.
+
+    THE PLACEHOLDER *IS* THE CLUSTER IDENTITY. track_speakers writes
+    "SPEAKER_02 -> h56i5SspnTk_SPEAKER_08" to say "this voice is the one first
+    seen as SPEAKER_08 in that meeting" -- an identification, just not a human
+    one. Several meetings point at the same placeholder, which is how one name
+    can reach all of them.
+
+    SO NAMING IT LOCALLY IS WORSE THAN DOING NOTHING TWICE OVER: it names this
+    meeting only, AND it overwrites the reference, cutting this meeting out of
+    the cluster. Measured here: h56i5SspnTk_SPEAKER_08 is pointed at by two
+    other meetings besides the one being corrected, and MCM00001753_SPEAKER_02
+    by seven. Writing the name into the HOME file instead lets propagate()
+    carry it to every referrer, with no embedding work at all.
+
+    Returns (directory, speaker_key, path) for the home, or None when the value
+    is not a placeholder. Follows a chain, with a hop cap in case of a cycle.
+    """
+    seen = set()
+    cur = (mapping or {}).get(label, label)
+    home = None
+    for _ in range(hops):
+        m = CROSS_REF.match(str(cur or ""))
+        if not m:
+            break
+        vid, spk = m.group(1), m.group(2)
+        if (vid, spk) in seen:
+            break                      # cycle; stop at the last good hop
+        seen.add((vid, spk))
+        hits = glob.glob("20??-??-??_" + vid + "/speaker_ids.json")
+        if len(hits) != 1:
+            break                      # unresolvable; caller falls back
+        path = hits[0]
+        try:
+            with io.open(path, encoding="utf-8") as fp:
+                ids = json.load(fp)
+        except (ValueError, OSError):
+            break
+        if spk not in ids:
+            break
+        home = (os.path.dirname(path), spk, path)
+        nxt = ids[spk]
+        if nxt == spk or nxt == cur:
+            break                      # points at itself: this is the home
+        cur = nxt
+    return home
+
+
+def queue_home_write(home_writes, report, home, name, ref):
+    """Queue one cross-file name, once.
+
+    BOTH naming paths can resolve the same placeholder for the same
+    correction -- the single-turn speaker branch and the split's claim branch
+    -- and the first version reported and queued it twice. Harmless on write
+    (the second is a no-op) but it read like two separate edits.
+    """
+    key = (home[2], home[1], name)
+    if any((h[2], h[1], n) == key for h, n, _r in home_writes):
+        return
+    home_writes.append((home, name, ref))
+    report.append("    SPEAKER: %s -> \"%s\" in %s/speaker_ids.json "
+                  "(the cluster's home; propagate carries it to every "
+                  "meeting pointing at %s)" % (home[1], name, home[0], ref))
+
+
+def name_cluster_home(home, name, from_):
+    """Write a human name into the file that owns the cluster, with provenance.
+
+    CALLED ONLY UNDER --apply. An earlier version wrote the moment it resolved
+    a placeholder, so a DRY RUN edited another meeting's speaker_ids.json and
+    provenance -- the one thing a dry run must never do, and worse here than
+    usual because the file it touches is not the one being reported on.
+    Resolution (cluster_home) is read-only; this is the write, and main()
+    defers every one of these until it knows it is applying.
+
+    Returns True when it wrote. The local reference is deliberately LEFT ALONE
+    so propagate() resolves it -- that is what carries the name to every other
+    meeting pointing at the same placeholder.
+    """
+    directory, spk, path = home
+    try:
+        with io.open(path, encoding="utf-8") as fp:
+            ids = json.load(fp)
+    except (ValueError, OSError):
+        return False
+    if ids.get(spk) == name:
+        return False
+    prev = ids.get(spk)
+    ids[spk] = name
+    write_atomic(path, json.dumps(ids, indent=4, ensure_ascii=False) + chr(10))
+    prov = SP.load_provenance(directory)
+    SP.record(directory, spk, name, "manual", from_=from_, previous=prev,
+              provenance=prov)
+    SP.save_provenance(directory, prov)
+    return True
+
 
 def mint_label(mapping, blocks=()):
     """A fresh SPEAKER_NN for a person this meeting has no id for.
@@ -294,7 +398,8 @@ def measured_spans(words, lo_t, hi_t, turns):
     return out
 
 
-def realign(blocks, lo, hi, turns, mapping, word_times=None, minted=None):
+def realign(blocks, lo, hi, turns, mapping, word_times=None, minted=None,
+            claimed=None, claimed_home=None):
     # NOT named `words`: a loop below binds that to a list of word
     # STRINGS, and shadowing this parameter made the measured-timing
     # lookup silently receive the wrong data.
@@ -368,29 +473,81 @@ def realign(blocks, lo, hi, turns, mapping, word_times=None, minted=None):
     out = []
     if minted is None:
         minted = []
+    if claimed is None:
+        claimed = []
+    if claimed_home is None:
+        claimed_home = []
+
+    # WHICH LABEL EACH TURN GETS, decided per TURN and not per block, because
+    # claiming a cluster is a statement about the whole voice.
+    #
+    # THE ORDER MATTERS AND IT COST A REAL MISTAKE. Erik Vangsness's words sat
+    # in SPEAKER_01, an unidentified cluster with 60 blocks across the meeting
+    # -- he is the architect presenting the whole site plan. Naming a brand-new
+    # id instead captured the 2 blocks of the split and left the other 57
+    # anonymous, and a minted id has NO EMBEDDING, so track_speakers could
+    # never carry him to another meeting. The cluster is the thing worth
+    # naming; that is the entire point of keeping names out of the .srt.
+    #
+    # So, for a name this meeting does not already know:
+    #   1. reuse an existing label for that name       (Matt Rice -> SPEAKER_07)
+    #   2. else claim the UNNAMED source cluster these words came from, which
+    #      names every other block that voice speaks and gives propagate()
+    #      an embedding to match on
+    #   3. else mint, which is the dead end: it only happens when the words
+    #      were diarized onto a cluster already named someone else, so there
+    #      is no voice of our own to claim.
+    words_from = {}                        # turn -> {source label: word count}
     for (bi, ti), words in groups:
         src = blocks[bi if bi is not None else lo]
-        name = turns[ti]["speaker"].strip()
-        # UNDO A PRINTED ROLE BEFORE TRUSTING THE LABEL. The page may show
-        # "[Councilor Anna Callahan]:" where the .srt says "[Anna Callahan]:",
-        # and what the form submits replaces the paragraph. The form restores
-        # the bare name itself, but a reader with a cached copy of the old
-        # transcript-player.js cannot, and this is the layer that can refuse
-        # it. Only strips a role we actually print off a name this video
-        # already knows -- see titles.strip_role.
-        name = titles.strip_role(name, set(mapping.values()) | set(mapping))
-        # An id for the .srt, a name for speaker_ids.json -- never the reverse.
-        # A name nobody in this meeting has an id for gets a fresh one rather
-        # than being written into the block; see mint_label.
+        tally = words_from.setdefault(ti, {})
+        lbl = src.get("speaker") or ""
+        tally[lbl] = tally.get(lbl, 0) + len(words)
+
+    turn_label = {}
+    for ti, t in enumerate(turns):
+        name = titles.strip_role((t.get("speaker") or "").strip(),
+                                 set(mapping.values()) | set(mapping))
+        # UNDO A PRINTED ROLE BEFORE TRUSTING THE LABEL (above). The page may
+        # show "[Councilor Anna Callahan]:" where the .srt says
+        # "[Anna Callahan]:", and what the form submits replaces the paragraph.
+        if not name:
+            turn_label[ti] = None
+            continue
+        if SPEAKER_N.match(name) or name in mapping:
+            turn_label[ti] = name          # already an id, use it as-is
+            continue
         label = label_for_name(name, mapping)
-        if not label and name and not SPEAKER_N.match(name):
-            label = mint_label(mapping, blocks)
-            mapping[label] = name
-            minted.append((label, name))
-        label = label or name
+        if not label:
+            # claim the unnamed cluster that contributed the most words
+            cands = [(n, l) for l, n in (words_from.get(ti) or {}).items()
+                     if l and is_unnamed(l, mapping)]
+            if cands:
+                label = max(cands)[1]
+                # A CLAIMED CLUSTER MAY ITSELF BE A PLACEHOLDER, and then the
+                # name belongs in its home, not here. Overwriting the
+                # reference locally names one meeting and cuts this one out of
+                # the cluster -- exactly the mistake the single-turn path
+                # above was fixed for. Reported to the caller, which defers
+                # the cross-file write until --apply.
+                home = cluster_home(mapping, label)
+                if home:
+                    claimed_home.append((label, name, home, mapping.get(label)))
+                else:
+                    mapping[label] = name
+                    claimed.append((label, name))
+            else:
+                label = mint_label(mapping, blocks)
+                mapping[label] = name
+                minted.append((label, name))
+        turn_label[ti] = label
+
+    for (bi, ti), words in groups:
+        src = blocks[bi if bi is not None else lo]
         out.append({
             "start": src["start"], "end": src["end"],
-            "speaker": label, "text": " ".join(words),
+            "speaker": turn_label.get(ti) or (turns[ti].get("speaker") or "").strip(),
+            "text": " ".join(words),
         })
 
     # TIMING. Each output block inherits its source block's start AND END, so a
@@ -453,7 +610,8 @@ def realign(blocks, lo, hi, turns, mapping, word_times=None, minted=None):
     return out
 
 
-def apply_one(rec, blocks, mapping, report, word_times=None):
+def apply_one(rec, blocks, mapping, report, word_times=None, prov_from="",
+              home_writes=None):
     """Mutate blocks/mapping for one correction. Returns applied-count delta."""
     t = float(rec["original_timestamp"])
     i = find_block(blocks, t)
@@ -481,6 +639,8 @@ def apply_one(rec, blocks, mapping, report, word_times=None):
 
     turns = rec.get("turns") or []
     target = rec.get("target") or []
+    if home_writes is None:
+        home_writes = []
     if not turns:
         return False
 
@@ -490,15 +650,29 @@ def apply_one(rec, blocks, mapping, report, word_times=None):
         label = blocks[lo]["speaker"]
         want = turns[0]["speaker"].strip()
         if is_unnamed(label, mapping):
-            mapping[label] = want
-            report.append("    SPEAKER: %s -> \"%s\" in speaker_ids.json "
-                          "(applies to every line by this voice)" % (label, want))
+            # A PLACEHOLDER GETS NAMED AT HOME, not here -- see cluster_home.
+            home = cluster_home(mapping, label)
+            if home:
+                queue_home_write(home_writes, report, home, want,
+                                 mapping.get(label))
+            else:
+                mapping[label] = want
+                report.append("    SPEAKER: %s -> \"%s\" in speaker_ids.json "
+                              "(applies to every line by this voice)" % (label, want))
 
-    minted = []
-    new = realign(blocks, lo, hi, turns, mapping, word_times, minted)
+    minted, claimed, claimed_home = [], [], []
+    new = realign(blocks, lo, hi, turns, mapping, word_times, minted, claimed,
+                  claimed_home)
+    for _lbl, _nm, _home, _ref in claimed_home:
+        queue_home_write(home_writes, report, _home, _nm, _ref)
+    for _lbl, _nm in claimed:
+        _n = sum(1 for b in blocks if (b.get("speaker") or "") == _lbl)
+        report.append("    SPEAKER: %s -> \"%s\" in speaker_ids.json "
+                      "(names all %d block(s) by this voice)" % (_lbl, _nm, _n))
     for _lbl, _nm in minted:
         report.append("    NEW SPEAKER: %s -> \"%s\" in speaker_ids.json "
-                      "(no id for this voice; minted one)" % (_lbl, _nm))
+                      "(words were diarized onto another voice; no cluster "
+                      "to claim)" % (_lbl, _nm))
     if not new:
         return False
 
@@ -561,6 +735,11 @@ def main():
         return 0
 
     applied_ids, touched = [], []
+    # OTHER meetings whose cluster home we named. They need regenerating
+    # too -- and so does every meeting propagate() then carries the name
+    # to, which is the point of naming the home rather than the local
+    # label.
+    touched_homes = set()
     for video_id, recs in sorted(todo.items()):
         srt = srt_for(video_id)
         print("%s  (%d correction%s)" % (video_id, len(recs), "" if len(recs) == 1 else "s"))
@@ -580,9 +759,15 @@ def main():
 
         n = map_only = 0
         vid_rids = []
+        # Names destined for ANOTHER meeting's speaker_ids.json -- the home of
+        # a cluster this meeting only references. Collected here, written below
+        # and only under --apply.
+        home_writes = []
         for rid, rec in recs:
             report = []
-            ok = apply_one(rec, blocks, mapping, report, word_times)
+            ok = apply_one(rec, blocks, mapping, report, word_times,
+                           prov_from="corrections_queue:" + rid,
+                           home_writes=home_writes)
             # Naming a voice in speaker_ids.json IS a real correction even when
             # no block moves -- it is the most valuable kind, because it names
             # every line that speaker says and propagates across meetings. But
@@ -599,6 +784,16 @@ def main():
                     n += 1
                 applied_ids.append(rid)
                 vid_rids.append(rid)
+
+        # THE CROSS-FILE WRITES, held back until we know we are applying.
+        # These land in ANOTHER meeting's directory, so a dry run that
+        # performed them would edit a file it never even reported on.
+        if args.apply:
+            for home, name, ref in home_writes:
+                if name_cluster_home(home, name, "corrections_queue"):
+                    print("  wrote %s -> \"%s\" in %s (cluster home for %s)"
+                          % (home[1], name, home[2], ref))
+                    touched_homes.add(home[0])
 
         if args.apply and (n or mapping != before_map):
             if n:
@@ -637,6 +832,14 @@ def main():
         items[rid]["status"] = "applied"
     with io.open(args.queue, "w", encoding="utf-8") as fp:
         json.dump(queue, fp, indent=2, ensure_ascii=False)
+
+    if touched_homes:
+        print()
+        print("cluster homes named in OTHER meetings (regenerate these too, and")
+        print("run track_speakers.propagate() to carry the name to every")
+        print("meeting that references them):")
+        for h in sorted(touched_homes):
+            print("    " + h)
 
     if touched:
         print("\nNow regenerate the pages:")
