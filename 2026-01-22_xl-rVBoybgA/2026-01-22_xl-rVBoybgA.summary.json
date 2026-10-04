@@ -1,38 +1,39 @@
 {
  "video_id": "xl-rVBoybgA",
  "provider": "gemini",
- "generated_at": "2026-10-02T07:08:44Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:07:39Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "deb3186ed920036e",
- "overview": "The Medford City Council and Community Development Board convened a joint meeting to restart the zoning update process for Medford Square following a 2025 project pause. The bodies established procedural rules for joint sessions and reviewed revised proposals for a new Medford Square mixed-use district focused on height incentives and boundary modifications.",
+ "transcript_sha": "edf5155a10755324",
+ "subject": "Medford Square Rezoning",
+ "overview": "The Medford City Council and Community Development Board met in a joint session to establish rules of order and conduct a public hearing on proposed zoning amendments for the Medford Square district. Both bodies adopted the joint session rules and voted to continue the public hearing to February 25, 2026.",
  "items": [
   {
-   "title": "Joint Session Procedural Rules (26-022)",
+   "title": "Paper 26-022: Joint Session Rules Resolution",
    "t": 630,
-   "summary": "Approved a resolution adopting rules for joint meetings between the City Council and Community Development Board, aligning procedures with those used in joint sessions with the School Committee.",
+   "summary": "Approved the resolution to adopt rules of order governing joint sessions between the City Council and the Community Development Board.",
    "speakers": [
-    "Zac Bears",
     "Matt Leming",
+    "Zac Bears",
     "Doug Carr"
    ]
   },
   {
-   "title": "Medford Square Zoning Ordinance Amendments (26-023)",
+   "title": "Paper 26-023: Proposed Amendments to Medford Zoning Ordinance - Medford Square",
    "t": 872,
-   "summary": "Opened a public hearing on proposed amendments to Chapter 94 to create a Medford Square District featuring mixed-use sub-districts with height incentives up to nine stories in specific areas. Discussion centered on balancing development urgency with historic preservation, the efficacy of parking minimums in a walkable square, and the impact of residential density on local businesses. The hearing was continued to February 25, 2026, to allow for further board deliberation and community engagement.",
+   "summary": "Continued the public hearing on proposed zoning ordinance and map amendments for the Medford Square mixed-use district to February 25, 2026, following a consultant presentation and discussion regarding boundaries, parking, and historic preservation.",
    "speakers": [
     "Zac Bears",
     "Doug Carr",
     "Emily Innes",
     "Matt Leming",
     "Ari Fishman",
+    "Liz Mullane",
     "Dina Caloggero",
     "John Anderson",
     "Page Buldini",
-    "Alicia Hunt",
-    "Sean Beagan",
     "Danielle Evans",
+    "Alicia Hunt",
     "Nick Uhlig",
     "Ekaterini",
     "Nick Giurleo",
@@ -48,9 +49,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 48856,
-  "output_tokens": 473
- },
- "subject": "Medford Square Zoning Update",
- "subject_source": "summary"
+  "input_tokens": 49139,
+  "output_tokens": 422
+ }
 }

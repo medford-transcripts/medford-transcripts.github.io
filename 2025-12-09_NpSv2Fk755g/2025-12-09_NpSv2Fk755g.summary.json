@@ -1,16 +1,17 @@
 {
  "video_id": "NpSv2Fk755g",
  "provider": "gemini",
- "generated_at": "2026-10-02T09:06:56Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:12:05Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "1d1fac9c9765762c",
- "overview": "The committee discussed a proposal to authorize a 20-year contract for solar panel installation at McGlynn School to secure federal tax credits. The council reviewed the financial benefits of a power purchase agreement versus ownership and referred the matter to the regular meeting.",
+ "transcript_sha": "3bd15d7d33e7f139",
+ "subject": "McGlynn School Solar Panel Contract",
+ "overview": "The Committee of the Whole discussed a request to authorize a 20-year solar power purchase agreement for the McGlynn School roof. The committee referred the matter to the regular City Council meeting.",
  "items": [
   {
-   "title": "Authorization of contract period for McGlynn School solar panels",
+   "title": "Authorization of 20-Year McGlynn School Solar Contract",
    "t": 615,
-   "summary": "Referred the request for a 20-year contract with Select Energy to the regular meeting following a discussion on energy cost savings, federal tax credit deadlines, and roof maintenance liability. Councilors requested a detailed cost analysis comparing leasing to ownership before the final vote.",
+   "summary": "Referred to the regular meeting a request to authorize a 20-year solar power purchase agreement with Select Energy at the McGlynn School. Administration representatives explained that signing by year-end secures federal tax credits, while councilors raised questions about roof warranties and the financial comparison to direct city ownership.",
    "speakers": [
     "Zac Bears",
     "Brenda Pike",
@@ -22,9 +23,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 8226,
-  "output_tokens": 208
- },
- "subject": "McGlynn School Solar Panel Contract",
- "subject_source": "summary"
+  "input_tokens": 8510,
+  "output_tokens": 207
+ }
 }

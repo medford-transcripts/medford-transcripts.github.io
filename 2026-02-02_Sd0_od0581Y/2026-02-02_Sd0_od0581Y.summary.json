@@ -1,47 +1,50 @@
 {
  "video_id": "Sd0_od0581Y",
  "provider": "gemini",
- "generated_at": "2026-10-02T07:05:52Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:06:23Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "e93cc60c70c1fe32",
- "overview": "The School Committee voted to appoint Interim Superintendent Dr. Suzanne Galusi as the permanent superintendent, citing her high performance and the need for leadership continuity. The committee also approved the foundational educational plan for the Medford High School building project.",
+ "transcript_sha": "d00e10afc121d343",
+ "subject": "Appointment of Permanent Superintendent",
+ "overview": "The School Committee met to discuss key district initiatives and voted to appoint interim Superintendent Dr. Suzanne Galusi as the permanent superintendent, pending successful contract negotiations.",
  "items": [
   {
    "title": "Consent Agenda",
    "t": 71,
-   "summary": "Approved routine bills, payrolls, capital purchases, grants, and field trips, as well as a $1,000 donation to the orchestra program and meeting minutes from January 26, 2026.",
+   "summary": "Approved routine bills, payrolls, capital purchases, grants, field trips, minutes, and a $1,000 donation to the orchestra program.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Mustang Moments: Best Buddies and Project 351",
-   "t": 142,
-   "summary": "Students and advisors presented updates on the Medford High School Best Buddies program's inclusion efforts and the Project 351 ambassadors' participation in statewide service initiatives.",
+   "title": "Mustang Moments",
+   "t": 109,
+   "summary": "The committee received updates on the Medford High School Best Buddies program and celebrated the district's Project 351 student ambassadors.",
    "speakers": [
     "Suzanne Galusi",
-    "John Scarry",
+    "John Skerry",
     "Savannah",
     "Nora",
     "Catherine Began",
-    "Nick Tucci"
+    "Nick Tucci",
+    "Ali Matarazzo",
+    "Jovi LaFer"
    ]
   },
   {
    "title": "Medford High School Building Project Educational Plan",
    "t": 1236,
-   "summary": "Approved the proposed educational plan for the high school building project, which serves as the guiding document for the MSBA process. The committee granted the superintendent authority to make non-substantive changes as needed prior to the submission deadline.",
+   "summary": "Approved the educational plan for the Medford High School building project with an amendment allowing the superintendent to make non-substantive adjustments prior to submission.",
    "speakers": [
     "Suzanne Galusi",
     "Jenny Graham",
-    "Breanna Lungo-Koehn"
+    "Paul Ruseau"
    ]
   },
   {
-   "title": "Appointment of Permanent Superintendent",
+   "title": "Permanent Superintendent Appointment",
    "t": 1408,
-   "summary": "The committee voted to appoint Dr. Suzanne Galusi as the permanent superintendent pending successful contract negotiations, opting to forgo an external search in favor of district stability. Members highlighted her performance during her year as interim, her role in major ongoing projects, and consistent support from staff and the community.",
+   "summary": "Following a discussion on stability, performance evaluations, and the potential disruption of an external search, the committee voted to appoint Dr. Suzanne Galusi as the permanent superintendent pending successful contract negotiations.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Jenny Graham",
@@ -56,9 +59,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 19395,
-  "output_tokens": 490
- },
- "subject": "Appointment of Permanent Superintendent",
- "subject_source": "summary"
+  "input_tokens": 19680,
+  "output_tokens": 506
+ }
 }

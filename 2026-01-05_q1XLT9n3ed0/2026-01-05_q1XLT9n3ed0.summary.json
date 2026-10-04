@@ -1,33 +1,45 @@
 {
  "video_id": "q1XLT9n3ed0",
  "provider": "gemini",
- "generated_at": "2026-10-02T07:12:58Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:10:04Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "28492555b2026d88",
- "overview": "The Medford School Committee reviewed the Interim Superintendent's self-evaluation and goals, approved the 2026-2027 district calendar, and received a comprehensive status update on the high school building project. The committee also passed a resolution to maintain current officers until the next scheduled meeting.",
+ "transcript_sha": "aaf67a67ceb54a77",
+ "subject": "",
+ "overview": "The Medford School Committee received a self-evaluation and goals update from the interim superintendent, approved the 2026-2027 school year calendar, and reviewed the educational planning progress of the high school building project.",
  "items": [
   {
-   "title": "Resolution on Committee Officers",
+   "title": "Postponement of Officer Elections",
    "t": 49,
-   "summary": "Approved a resolution to continue the current term of officers for 2026 and 2027 until the next scheduled election.",
+   "summary": "The Committee approved a resolution to defer the election of its officers for the 2026-2027 term to the next scheduled meeting, keeping the existing officers in place in the interim.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Paul Ruseau"
    ]
   },
   {
-   "title": "Consent Agenda",
-   "t": 201,
-   "summary": "Approved routine business including bills, payroll, donations, grants, field trips, and the minutes from December 15, 2025.",
+   "title": "Swearing-In Clarification",
+   "t": 177,
+   "summary": "Member Graham explained that she and Member Olapade would abstain from votes during the meeting because they missed the afternoon window to be officially sworn in.",
    "speakers": [
+    "Jenny Graham",
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Interim Superintendent's Evaluation and Goals",
+   "title": "Consent Agenda",
+   "t": 201,
+   "summary": "The Committee approved the consent agenda, which included payroll approvals, capital purchases, donations, grants, field trips, and minutes from the December 15, 2025 meeting.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Erika Reinfeld",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Interim Superintendent Evaluation and Goals",
    "t": 281,
-   "summary": "Interim Superintendent Suzanne Galusi presented a self-evaluation of her first year and proposed future goals centered on instructional excellence, operational stability, and fostering a district-wide sense of belonging. The committee discussed improvements in district communications, the implementation of the OpenArchitects data platform, and the reorganization of central leadership.",
+   "summary": "Interim Superintendent Dr. Suzanne Galusi presented her self-evaluation and goals, detailing efforts to establish academic stability, reorganize leadership, improve school safety protocols, and roll out the OpenArchitects data analytics platform.",
    "speakers": [
     "Suzanne Galusi",
     "Paul Ruseau",
@@ -37,14 +49,16 @@
     "Aaron Olapade",
     "Jessica Parks",
     "Mike Mastrobuoni",
-    "Simon Alcindor"
+    "Simon Alcindor",
+    "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "2026-2027 District Calendar",
+   "title": "Approval of the 2026-2027 School Year Calendar",
    "t": 6131,
-   "summary": "Approved Option A for the 2026-2027 school year calendar, which sets the first day for students on September 2, 2027. The calendar maintains Good Friday as a school day, though the Superintendent noted this decision may be revisited after observing the current year's experience.",
+   "summary": "The Committee approved Option A for the 2026-2027 school district calendar, setting the first day of school for September 2, 2026, and scheduling high school graduation for June 4, 2027.",
    "speakers": [
+    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
     "Paul Ruseau",
     "Jenny Graham"
@@ -52,8 +66,8 @@
   },
   {
    "title": "Medford Comprehensive High School Building Committee Update",
-   "t": 6589,
-   "summary": "The committee received an update on the high school feasibility study, including recent site surveying for ledge and the completion of educational visioning sessions involving students and staff. A formal educational plan will be presented on January 26 for approval on February 2 to meet Massachusetts School Building Authority deadlines.",
+   "t": 6579,
+   "summary": "Member Graham detailed the project's educational planning sessions, site surveying, space requirements, and the timeline for upcoming community design forums.",
    "speakers": [
     "Jenny Graham",
     "Erika Reinfeld",
@@ -61,19 +75,18 @@
    ]
   },
   {
-   "title": "Condolences",
-   "t": 9002,
-   "summary": "The committee expressed condolences for Robert S. Bloch, Rose Marie Heinig, Robert F. McCarthy, and Herbert Wells, Jr.",
+   "title": "Student Advisory Council and Condolences",
+   "t": 8910,
+   "summary": "Student representative Alachie Yeager invited high school students to share community concerns, followed by the Committee reading condolences for several former educators and relatives of school staff.",
    "speakers": [
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Alachie Yeager"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42930,
-  "output_tokens": 659
- },
- "subject": "",
- "subject_source": "summary"
+  "input_tokens": 43214,
+  "output_tokens": 740
+ }
 }

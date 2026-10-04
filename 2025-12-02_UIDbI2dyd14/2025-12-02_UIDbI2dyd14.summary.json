@@ -1,16 +1,17 @@
 {
  "video_id": "UIDbI2dyd14",
  "provider": "gemini",
- "generated_at": "2026-10-02T09:09:09Z",
+ "generated_at": "2026-10-04T07:13:00Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "c1544e519063c552",
- "overview": "The Medford School Committee met to review community feedback on space utilization, receive an update on the high school building project, and approve a solar power purchase agreement. The committee also approved a policy governing generative artificial intelligence and entered executive session for collective bargaining.",
+ "transcript_sha": "4c3ce973427ad148",
+ "subject": "",
+ "overview": "The Medford School Committee approved a solar power purchase agreement and adopted a policy on generative artificial intelligence. The committee also reviewed community feedback on school overcrowding solutions and received updates on the high school building project.",
  "items": [
   {
    "title": "Executive Session",
    "t": 108,
-   "summary": "Approved entering executive session to discuss collective bargaining with the Medford Teachers Association regarding a grievance.",
+   "summary": "The committee voted to enter executive session to discuss a collective bargaining grievance with the Medford Teachers Association.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Paul Ruseau"
@@ -18,8 +19,8 @@
   },
   {
    "title": "Consent Agenda",
-   "t": 3669,
-   "summary": "Approved the consent agenda, which included bills, payrolls, capital purchases, donations, grants, field trips, and minutes.",
+   "t": 3664,
+   "summary": "The committee approved routine business, including bills, payrolls, capital purchases, donations, grants, field trips, and past meeting minutes.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
@@ -27,10 +28,11 @@
   {
    "title": "Mustang Moment: Roberts Rampage Newspaper",
    "t": 3696,
-   "summary": "Students and staff from Roberts Elementary School presented their student-run newspaper, the Roberts Rampage.",
+   "summary": "Students and staff from the Roberts Elementary School presented their newly established student-run newspaper, \"The Roberts Rampage.\"",
    "speakers": [
     "Suzanne Galusi",
     "Michelle Crowell",
+    "Jen Devlin",
     "Owen Jetty Walsh",
     "Mary Massa",
     "Kieran Naconeyer",
@@ -42,21 +44,22 @@
    ]
   },
   {
-   "title": "McGlynn and Andrews Solar Projects Presentation",
+   "title": "McGlynn and Andrews Solar Projects",
    "t": 4370,
-   "summary": "Approved a power purchase agreement for a solar project at the McGlynn school, with a directive to investigate expanding the agreement to other schools.",
+   "summary": "The committee approved a power purchase agreement for solar installations at the McGlynn School and supported exploring expansions to other upcoming school roof projects.",
    "speakers": [
     "Brenda Pike",
     "Paul Ruseau",
     "Aaron Olapade",
     "Jenny Graham",
+    "Erika Reinfeld",
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Community Input and Space Utilization Presentation",
+   "title": "Space Utilization and Overcrowding Update",
    "t": 4955,
-   "summary": "Superintendent Galusi presented findings from a community survey regarding proposed K-4 and middle school space reconfiguration options.",
+   "summary": "Superintendent Galusi presented findings from a community survey regarding proposed middle school reconfiguration models to address elementary overcrowding.",
    "speakers": [
     "Suzanne Galusi",
     "Breanna Lungo-Koehn",
@@ -64,19 +67,20 @@
    ]
   },
   {
-   "title": "MHS Building Project (MSBA) Update",
+   "title": "Medford High School Building Project Update",
    "t": 6097,
-   "summary": "Member Graham provided an update on the Medford High School project, outlining the design contract signature, educational visioning, and upcoming community advisory teams.",
+   "summary": "Member Graham provided an update on the design process for the high school building project, including the schedule for educational visioning and community advisory teams.",
    "speakers": [
     "Jenny Graham",
+    "Breanna Lungo-Koehn",
     "Erika Reinfeld",
     "John Intoppa"
    ]
   },
   {
-   "title": "Generative AI Policy Second Reading",
+   "title": "Policy on Generative AI in Schools",
    "t": 7072,
-   "summary": "Approved the second reading of a policy regulating the use of generative artificial intelligence in the district.",
+   "summary": "The committee approved the second reading of a policy regulating the use of generative artificial intelligence in Medford Public Schools.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Erika Reinfeld",
@@ -88,7 +92,7 @@
   {
    "title": "Condolences and Announcements",
    "t": 8148,
-   "summary": "The committee expressed condolences to the families of Anna M. Frontavera and Janice Rumley-Ahearn, and announced upcoming municipal events.",
+   "summary": "The committee expressed condolences to the families of retired teacher Anna M. Frontavene and Janice Rumley-Ahearn before adjourning.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
@@ -96,9 +100,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 23614,
-  "output_tokens": 868
- },
- "subject": "",
- "subject_source": "summary"
+  "input_tokens": 23898,
+  "output_tokens": 741
+ }
 }

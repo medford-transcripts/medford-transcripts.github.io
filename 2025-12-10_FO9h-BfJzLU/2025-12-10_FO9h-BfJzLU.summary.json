@@ -1,16 +1,17 @@
 {
  "video_id": "FO9h-BfJzLU",
  "provider": "gemini",
- "generated_at": "2026-10-02T09:06:37Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:11:45Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "eced27fdb2eacc87",
- "overview": "The committee reviewed and finalized the draft for the Medford City Council newsletter. The approved version includes updates on recent council business regarding waste collection and municipal solar infrastructure.",
+ "transcript_sha": "80c010a629ab46d9",
+ "subject": "City Council Newsletter Draft",
+ "overview": "The Resident Services and Public Engagement Committee met to review and amend the draft of the Medford City Council newsletter, ultimately approving the draft with updates on a trash collection resolution, a school solar panel project, and other commemorations.",
  "items": [
   {
    "title": "Medford City Council Newsletter Draft",
    "t": 1153,
-   "summary": "Approved the council newsletter draft with added summaries regarding a resolution on bi-weekly trash collection and a proposed 20-year solar power agreement for the McGlynn School. The committee authorized the chair to incorporate additional commemorations and acknowledgements into the final version prior to publication.",
+   "summary": "The committee discussed and approved the draft newsletter with amendments to include details about a November trash collection resolution and a December Committee of the Whole meeting regarding solar panels at the McGlynn School, while allowing the chair to append recent commemorations and acknowledgements.",
    "speakers": [
     "Matt Leming",
     "Justin Tseng",
@@ -20,9 +21,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 4038,
-  "output_tokens": 171
- },
- "subject": "City Council Newsletter Draft",
- "subject_source": "summary"
+  "input_tokens": 4322,
+  "output_tokens": 189
+ }
 }

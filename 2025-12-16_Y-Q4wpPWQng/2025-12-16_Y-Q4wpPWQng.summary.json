@@ -1,16 +1,17 @@
 {
  "video_id": "Y-Q4wpPWQng",
  "provider": "gemini",
- "generated_at": "2026-10-02T08:07:26Z",
+ "generated_at": "2026-10-04T07:10:26Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "42a3c184685a91f5",
- "overview": "The Planning and Permitting Committee met to discuss a draft condominium conversion ordinance designed to regulate rental housing conversions and protect tenants. The committee voted to keep the matter in committee to allow for further consultation with city departments.",
+ "transcript_sha": "f132065e8cd1f1f9",
+ "subject": "Condominium Conversion Ordinance",
+ "overview": "The committee reviewed a preliminary draft of a condominium conversion ordinance aimed at preserving rental housing stock and protecting tenants from displacement. The paper was kept in committee to allow for further consultation with city staff.",
  "items": [
   {
-   "title": "Paper 22-321: Condominium Conversion Ordinance",
+   "title": "Condominium Conversion Ordinance",
    "t": 1004,
-   "summary": "The committee reviewed a draft ordinance that proposes tenant notification periods, relocation payments, and the creation of a condominium review board to oversee permitting. The item was kept in committee pending a decision-points memo and future consultation with the Planning, Development, and Sustainability department and the Building Commissioner.",
+   "summary": "Chair Kit Collins presented a draft ordinance that proposes tenant relocation payments, notification requirements, and the creation of a condominium and cooperative review board. The motion to keep the paper in committee passed, pending a forthcoming decision-points memo and future discussions with planning and building officials.",
    "speakers": [
     "Kit Collins",
     "Zac Bears",
@@ -20,9 +21,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 11112,
-  "output_tokens": 189
- },
- "subject": "Condominium Conversion Ordinance",
- "subject_source": "summary"
+  "input_tokens": 11396,
+  "output_tokens": 186
+ }
 }

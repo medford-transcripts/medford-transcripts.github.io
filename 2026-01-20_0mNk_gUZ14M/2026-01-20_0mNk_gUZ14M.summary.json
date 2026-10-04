@@ -1,16 +1,17 @@
 {
  "video_id": "0mNk_gUZ14M",
  "provider": "gemini",
- "generated_at": "2026-10-02T07:09:11Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T07:08:37Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "9a44de447f38e7e7",
- "overview": "The Council approved a resolution condemning the killing of a bystander by federal immigration agents in Minneapolis and referred the development of local safety protocols to committee. The body also authorized $300,000 for a school feasibility study and passed a first reading of an ordinance banning municipal use of face surveillance technology.",
+ "transcript_sha": "546e1a6ded1d913a",
+ "subject": "ICE Actions and Constitutional Rights",
+ "overview": "The Council approved a resolution condemning a recent ICE killing in Minneapolis and referred related local policy reviews to committee. Additionally, the Council approved capital funding for a school repair study and passed a first reading of an ordinance banning face surveillance technology.",
  "items": [
   {
-   "title": "Resolution on the passing of Clarence Ed Ligon Jr.",
+   "title": "Clarence Ed Ligon Condolences",
    "t": 957,
-   "summary": "Approved a resolution expressing condolences to the family of Clarence Ed Ligon Jr. and held a moment of silence for the community leader.",
+   "summary": "Approved a resolution sending deep condolences to the family of West Medford community pillar Clarence \"Ed\" Ligon, Jr.",
    "speakers": [
     "Zac Bears",
     "Justin Tseng",
@@ -18,9 +19,19 @@
    ]
   },
   {
-   "title": "Meeting Records and License Approvals",
+   "title": "Meeting Minutes and Committee Reports",
    "t": 1195,
-   "summary": "Approved the records of the January 6, 2026 meeting and granted a common victualler's license to Annie's Pizzeria.",
+   "summary": "Approved the minutes of the January 6, 2026 meeting and the Committee of the Whole report regarding EMS changes and the city clerk hiring process.",
+   "speakers": [
+    "Zac Bears",
+    "Emily Lazzaro",
+    "Rich Eliseo"
+   ]
+  },
+  {
+   "title": "Common Victualler's License for Annie's Pizzeria",
+   "t": 1362,
+   "summary": "Approved a common victualler's license for KNC Made LLC, doing business as Annie's Pizzeria, at 213 Middlesex Avenue.",
    "speakers": [
     "Zac Bears",
     "George Scarpelli",
@@ -28,44 +39,26 @@
    ]
   },
   {
-   "title": "Committee Reports on EMS and City Clerk Hiring",
-   "t": 1268,
-   "summary": "Approved committee reports regarding a requested pause on ambulance service changes and the recruitment process for the City Clerk position.",
-   "speakers": [
-    "Zac Bears"
-   ]
-  },
-  {
-   "title": "Executive Session: De Silva v. City of Medford",
+   "title": "Litigation Executive Session",
    "t": 1680,
-   "summary": "The Council entered executive session to discuss strategy regarding the litigation of De Silva v. City of Medford.",
+   "summary": "Voted to enter executive session to discuss strategy regarding De Silva v. City of Medford litigation.",
    "speakers": [
     "Zac Bears"
    ]
   },
   {
-   "title": "Capital Stabilization Fund: Roberts Elementary Study",
+   "title": "Roberts Elementary School Feasibility Study Funding",
    "t": 2215,
-   "summary": "Approved a $300,000 appropriation for a feasibility study and design costs for a potential roof and heat pump replacement project at Roberts Elementary School.",
+   "summary": "Approved a $300,000 appropriation from the Capital Stabilization Fund for an MSBA feasibility study on a roof and heat pump project at Roberts Elementary School, and scheduled a future committee meeting to review all ongoing school building projects.",
    "speakers": [
     "Zac Bears",
     "Emily Lazzaro"
    ]
   },
   {
-   "title": "Committee of the Whole on School Building Projects",
-   "t": 2690,
-   "summary": "Approved a motion to hold a committee meeting with the administration and public school representatives to review the status and funding of several ongoing school building projects.",
-   "speakers": [
-    "Zac Bears",
-    "Emily Lazzaro",
-    "Justin Tseng"
-   ]
-  },
-  {
-   "title": "Resolution Condemning the Killing of Renee Nicole Goode",
+   "title": "Resolution on ICE Actions and Constitutional Rights",
    "t": 2768,
-   "summary": "Approved a resolution condemning the death of a bystander during a federal immigration action in Minneapolis and referred the development of safety protocols for documenting law enforcement activity to the Public Health and Community Safety Committee. Councilors and numerous residents discussed community fear, the role of local police during federal actions, and the need for clear guidelines to protect residents' rights and safety.",
+   "summary": "Approved a resolution condemning the killing of Renee Nicole Goode by ICE in Minneapolis and reaffirming residents' right to document law enforcement, while referring proposed local policing strategies and school protections to the Committee on Public Health and Community Safety.",
    "speakers": [
     "Zac Bears",
     "Justin Tseng",
@@ -92,21 +85,21 @@
    ]
   },
   {
-   "title": "Resolution to Increase City Employee Vacation Time",
+   "title": "Employee Vacation Ordinance Amendment",
    "t": 9398,
-   "summary": "Referred a proposal to amend the municipal code to increase vacation time for employees in their first five years of service to the Administration and Finance Committee.",
+   "summary": "Referred a proposed ordinance change to increase vacation time for city employees in their first five years of service to the Administration and Finance Committee.",
    "speakers": [
     "Zac Bears",
     "Matt Leming"
    ]
   },
   {
-   "title": "Ordinance Banning Face Surveillance Technology",
+   "title": "Face Surveillance Technology Ban Ordinance",
    "t": 9680,
-   "summary": "Passed for first reading an ordinance that prohibits city departments from using, acquiring, or accessing face surveillance technology.",
+   "summary": "Passed on first reading a proposed ordinance banning municipal acquisition, possession, or use of face surveillance systems.",
    "speakers": [
-    "Zac Bears",
     "Justin Tseng",
+    "Zac Bears",
     "Micah Kesselman",
     "Barry Ingber"
    ]
@@ -114,9 +107,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42552,
-  "output_tokens": 1086
- },
- "subject": "",
- "subject_source": "summary"
+  "input_tokens": 42832,
+  "output_tokens": 869
+ }
 }

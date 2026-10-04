@@ -1,34 +1,27 @@
 {
  "video_id": "UHZzywcUcK0",
  "provider": "gemini",
- "generated_at": "2026-10-02T09:08:03Z",
+ "generated_at": "2026-10-04T07:12:33Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "5811d247ad7fba3b",
- "overview": "The City Council adopted a zoning map amendment for the Salem Street corridor alongside a negotiated plan to restart the city's zoning updates. The Council also received a presentation on the Affordable Housing Trust's five-year action plan and approved library union wage increases, a tree-planting donation, and historical preservation funding.",
+ "transcript_sha": "e13551ff53ab633c",
+ "subject": "Salem Street Neighborhood Corridor Rezoning",
+ "overview": "The City Council approved a zoning map change for the Salem Street corridor and endorsed a joint agreement with the Mayor to restructure the city's broader zoning project. The Council also accepted a major forestry donation, approved library union wage increases, and greenlit CPA funding for church accessibility upgrades.",
  "items": [
   {
-   "title": "Approval of Minutes",
-   "t": 2410,
-   "summary": "Approved the minutes of the November 18, 2025 meeting.",
+   "title": "Meeting Records and Committee Reports",
+   "t": 2415,
+   "summary": "The Council approved the meeting records of November 18, 2025, and accepted committee reports regarding police department ICE activity and a real estate development presentation.",
    "speakers": [
     "Zac Bears",
-    "Anna Callahan"
-   ]
-  },
-  {
-   "title": "Reports of Committees",
-   "t": 2449,
-   "summary": "Approved committee reports concerning police department reporting on ICE activity and a real estate development presentation in the Committee of the Whole.",
-   "speakers": [
-    "Zac Bears",
+    "Anna Callahan",
     "Emily Lazzaro"
    ]
   },
   {
-   "title": "Salem Street Corridor Zoning Map Change (Paper 25160)",
+   "title": "Salem Street Corridor Rezoning Map Change",
    "t": 2537,
-   "summary": "Adopted the zoning map amendment changing specified Salem Street and Park Street parcels from MX2 to MX1, alongside a B-paper endorsing a joint press release with the mayor that outlines the framework for restarting the city's zoning project.",
+   "summary": "Following the approval of a B-paper endorsing a joint update process with the Mayor, the Council adopted a zoning map amendment changing the designation of parcels in the Salem Street and Park Street node from MX2 to MX1.",
    "speakers": [
     "Zac Bears",
     "Matt Leming",
@@ -39,9 +32,9 @@
    ]
   },
   {
-   "title": "Affordable Housing Trust Action Plan and Guidelines (Paper 25181)",
+   "title": "Affordable Housing Trust Action Plan and Guidelines",
    "t": 4207,
-   "summary": "Placed on file the Affordable Housing Trust Fund Action Plan and Guidelines for 2025–2030 following a detailed presentation on local housing demographics and a lengthy discussion on outreach and funding strategies.",
+   "summary": "The Affordable Housing Trust presented its Action Plan and Guidelines for 2025 to 2030, which the Council voted to receive and place on file after extensive discussion.",
    "speakers": [
     "Zac Bears",
     "Roberta Cameron",
@@ -59,18 +52,18 @@
    ]
   },
   {
-   "title": "Library Union Wage Adjustment (Paper 25182)",
+   "title": "Library Union Wage Adjustment",
    "t": 9249,
-   "summary": "Approved and ordained proposed multi-year wage adjustments for the library union, waiving the three readings.",
+   "summary": "The Council ordained proposed wage adjustments for the library union, establishing annual salary increases of 3%, 2.5%, and 2.25% through fiscal year 2028.",
    "speakers": [
     "Zac Bears",
     "George Scarpelli"
    ]
   },
   {
-   "title": "Trees Medford Donation Acceptance (Paper 25183)",
-   "t": 9347,
-   "summary": "Approved the acceptance of a $25,000 donation from Trees Medford to the Forestry Division for public tree planting.",
+   "title": "Trees Medford Donation",
+   "t": 9349,
+   "summary": "The Council accepted a $25,000 cash donation from Trees Medford to fund public tree plantings.",
    "speakers": [
     "Zac Bears",
     "Theresa Dupont",
@@ -78,9 +71,9 @@
    ]
   },
   {
-   "title": "Community Preservation Committee Appropriation for Shiloh Baptist Church (Paper 25184)",
-   "t": 9636,
-   "summary": "Approved the appropriation of $55,000 from the CPA Historic Preservation Reserve to support the ongoing ADA improvement project at the Shiloh Baptist Church.",
+   "title": "Shiloh Baptist Church Appropriation",
+   "t": 9630,
+   "summary": "The Council approved a $55,000 appropriation from the CPA Historic Preservation Reserve for ongoing ADA accessibility improvements at the Shiloh Baptist Church.",
    "speakers": [
     "Zac Bears",
     "Theresa Dupont",
@@ -91,9 +84,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 39830,
-  "output_tokens": 863
- },
- "subject": "",
- "subject_source": "summary"
+  "input_tokens": 40113,
+  "output_tokens": 697
+ }
 }
