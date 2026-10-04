@@ -1011,7 +1011,20 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
             elif "[" in line:
                 # text
-                this_speaker = line.split()[0].split("[")[-1].split("]")[0]
+                # THE WHOLE BRACKETED LABEL, not its first word. This used to be
+                #     line.split()[0].split("[")[-1].split("]")[0]
+                # which takes the first WHITESPACE token, so "[SPEAKER_07]:"
+                # survived and "[Erik Vangsness]:" rendered as "Erik".
+                #
+                # Latent until a correction put a multi-word name INTO the .srt.
+                # That only happens when a split introduces a speaker who has no
+                # diarization id of their own -- every other name reaches the
+                # page through speaker_ids, where the label is a key and never
+                # contains a space. It is the roll-call shape, so the proposal
+                # queue would have hit it 40 more times.
+                _m = re.match(r"^\s*\[([^\]]*)\]", line)
+                this_speaker = (_m.group(1).strip() if _m
+                                else line.split()[0].split("[")[-1].split("]")[0])
                 this_text = ":".join(line.split(":")[1:])
 
                 this_html_text = this_text
