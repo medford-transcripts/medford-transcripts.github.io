@@ -1,38 +1,21 @@
 {
  "video_id": "CAS00002546",
  "provider": "gemini",
- "generated_at": "2026-10-04T18:05:23Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-04T19:05:23Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "e3479f51a1c1877a",
- "subject": "Medford High School Revised Site Layout",
- "overview": "The advisory team met to review and discuss key elements of the Medford High School building project. The team voted to recommend the updated site layout featuring distributed parking and a rotated field to the School Building Committee.",
+ "transcript_sha": "5ba68d10b047e440",
+ "subject": "Updated High School Site Layout Recommendation",
+ "overview": "The advisory team recommended an updated site plan to the School Building Committee that decentralizes parking and rotates the main athletic field to improve pedestrian safety. The meeting also covered the Breezeway pedestrian shortcut, athletic field configurations, and the placement of emergency assistance towers.",
  "items": [
   {
-   "title": "Meeting Introduction and Agenda Review",
-   "t": 11,
-   "summary": "Matt Rice opened the fourth meeting of the advisory team to review key design updates and establish a recommendation for the School Building Committee.",
-   "speakers": [
-    "Matt Rice",
-    "Laura Swan"
-   ]
-  },
-  {
-   "title": "Parking Program Review",
+   "title": "Parking Program and Site Layout Recommendation",
    "t": 263,
-   "summary": "Laura Swan presented the 477-space parking program, noting that Ken has the authority to modify the baseline count if school program sizes change.",
+   "summary": "The team recommended an updated site layout to the School Building Committee that redistributes 477 parking spaces and rotates the rectangular field to improve sightlines and safety. Designers addressed concerns regarding traffic flow, bus priority, and the placement of solar canopies in the parking lots.",
    "speakers": [
-    "Laura Swan",
-    "Matt Rice"
-   ]
-  },
-  {
-   "title": "Updated Site Layout Recommendation",
-   "t": 487,
-   "summary": "The advisory team voted to recommend proceeding with the updated site layout, which features a rotated field, distributed parking, and dual drop-off loops.",
-   "speakers": [
-    "Laura Swan",
     "Matt Rice",
+    "Laura Swan",
+    "Erik Vangsness",
     "Alicia Hunt",
     "Brian Hilliard",
     "Tim McGivern",
@@ -40,47 +23,38 @@
    ]
   },
   {
-   "title": "Track and Field Plans",
-   "t": 2785,
-   "summary": "The design team presented plans for the synthetic turf track and field, including bleachers, a concession building, and initial clearance from the DCR regarding restricted land use.",
+   "title": "Athletic Field and Accessibility Design",
+   "t": 2132,
+   "summary": "Designers reviewed plans for a synthetic turf field with an eight-lane straightaway, confirming that the Department of Conservation and Recreation allows support structures on the deed-restricted land. The team verified that all field access, seating, and parking will be fully ADA compliant, with distributed accessible spaces near all major entrances.",
    "speakers": [
     "Matt Rice",
-    "Kimberly Talbot"
+    "Erik Vangsness",
+    "Nick"
    ]
   },
   {
-   "title": "ECC Breezeway Concept",
-   "t": 3033,
-   "summary": "Matt Rice outlined the proposed ECC Breezeway concept, which creates a pedestrian shortcut, preschool access, and a dedicated entrance for the Curtis Tufts program.",
+   "title": "Pedestrian Breezeway and Specialized Entrances",
+   "t": 3029,
+   "summary": "Architecture representatives introduced a 'Breezeway' outdoor pass-through at the second-floor level to provide a pedestrian shortcut and separate identity for the Curtis Tufts and preschool programs. The design utilizes sloped walkways to maintain accessibility while accommodating site topography.",
    "speakers": [
     "Matt Rice",
     "Laura Swan"
    ]
   },
   {
-   "title": "Call for Assistance Stations",
+   "title": "Safety and Call for Assistance Stations",
    "t": 3285,
-   "summary": "Mike Cabral reviewed proposed locations for emergency blue light call for assistance stations across campus parking lots and athletic fields.",
+   "summary": "The team identified locations for emergency 'Call for Assistance' blue-light towers and AEDs in parking lots and athletic fields to ensure communication with first responders in isolated areas. Members suggested adding a station near the pool and the trailhead for the Mustang Loop path.",
    "speakers": [
     "Mike Cabral",
-    "Matt Rice",
-    "Brian Hilliard"
-   ]
-  },
-  {
-   "title": "Next Steps and Adjournment",
-   "t": 3413,
-   "summary": "The team outlined next steps, including further coordination on site circulation with the district and scheduling a subsequent meeting for early November.",
-   "speakers": [
-    "Matt Rice",
-    "Kimberly Talbot",
-    "Tim McGivern"
+    "Brian Hilliard",
+    "Matt Rice"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 18944,
-  "output_tokens": 628
+  "output_tokens": 582
  }
 }
