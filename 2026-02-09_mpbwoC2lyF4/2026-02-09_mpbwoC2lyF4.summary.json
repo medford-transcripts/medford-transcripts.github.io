@@ -1,45 +1,46 @@
 {
  "video_id": "mpbwoC2lyF4",
  "provider": "gemini",
- "generated_at": "2026-10-02T03:06:27Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-04T02:06:27Z",
+ "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "c035dd46df2e5396",
- "overview": "The Committee reviewed comprehensive district assessment data and outlined strategies for academic rigor while approving an April vacation camp and a process for updating committee rules.",
+ "transcript_sha": "3e5aebec2b590d61",
+ "subject": "MCAS Results and Accountability",
+ "overview": "The Medford School Committee received an extensive presentation on district MCAS and ACCESS data, approved a spring vacation camp, and established a timeline for revising committee rules.",
  "items": [
   {
    "title": "Executive Session",
    "t": 44,
-   "summary": "Approved a motion to enter executive session to discuss contract negotiations for the superintendent of schools.",
+   "summary": "Approved entering executive session to discuss contract negotiations with non-union personnel.",
    "speakers": [
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
    ]
   },
   {
    "title": "Consent Agenda",
-   "t": 2264,
-   "summary": "Approved routine business including bills, payroll, grants, and a $2,000 PTO donation for athletic mats.",
+   "t": 2251,
+   "summary": "Approved the consent agenda, which included bills, payroll, capital purchases, grants, field trips, meeting minutes, and a $2,000 PTO donation.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Mustang Moment: Middle School Select Band",
-   "t": 2308,
-   "summary": "Students from the Middle School Select Band performed three musical pieces and presented personal testimonials regarding the impact of the music program on their education.",
+   "title": "Mustang Moment",
+   "t": 2303,
+   "summary": "Heard a musical presentation and student testimonies from the middle school select band program.",
    "speakers": [
+    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
-    "Emma Baptist",
-    "Noah",
-    "Liliana",
-    "Ben"
+    "Emma Baptist"
    ]
   },
   {
-   "title": "MCAS Results and Accountability Report",
+   "title": "MCAS Results and Accountability",
    "t": 3172,
-   "summary": "Administrators presented 2025 assessment data showing moderate progress toward state targets while highlighting persistent performance gaps between low-income students and their peers. The report detailed an 'instructional vision' focusing on high-quality materials and grade-level tasks to move beyond national trends where students earn high grades on below-grade-level assignments.",
+   "summary": "Received a detailed presentation from academic directors regarding recent MCAS and English learner growth scores, alongside plans for implementing new analytical data tools and targeted learning interventions.",
    "speakers": [
+    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
     "Kim Talbot",
     "Nicole Chiesa",
@@ -56,25 +57,25 @@
   {
    "title": "MAPS April Vacation Camp Approval",
    "t": 8484,
-   "summary": "Approved a four-day April vacation camp at the Brooks School utilizing a sliding scale fee structure.",
+   "summary": "Approved a proposal to run an April vacation camp at the Brooks School featuring a sliding scale fee structure.",
    "speakers": [
-    "Suzanne Galusi",
-    "Breanna Lungo-Koehn"
+    "Breanna Lungo-Koehn",
+    "Suzanne Galusi"
    ]
   },
   {
-   "title": "New Business: School Committee Rules",
-   "t": 8600,
-   "summary": "Approved Resolution 2026-6, which establishes a timeline for members to submit and review amendments to the committee's governing rules by March 2026.",
+   "title": "Resolution 2026-6: School Committee Rules Review",
+   "t": 8592,
+   "summary": "Approved a resolution establishing a timeline for committee members to submit and compile recommended amendments to the body's rules of order.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Paul Ruseau"
    ]
   },
   {
-   "title": "Condolences",
-   "t": 8718,
-   "summary": "Recognized the passing of former school crossing guard Linda C. Magaldi Iacona and longtime cafeteria worker Mary Ann Cerrone Mahoney.",
+   "title": "Condolences and Moments of Silence",
+   "t": 8716,
+   "summary": "Expressed condolences to the families of former municipal employees Linda C. Magaldi Iacona and Mary Ann Cerrone Mahoney, followed by a moment of silence.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
@@ -82,9 +83,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 31942,
-  "output_tokens": 750
- },
- "subject": "",
- "subject_source": "summary"
+  "input_tokens": 32227,
+  "output_tokens": 739
+ }
 }

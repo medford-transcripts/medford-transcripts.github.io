@@ -1,16 +1,17 @@
 {
  "video_id": "pqAf_i55F28",
  "provider": "gemini",
- "generated_at": "2026-10-02T03:05:17Z",
+ "generated_at": "2026-10-04T02:05:25Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "d54999a65bc5a449",
- "overview": "The committee discussed a proposed resolution concerning law enforcement identification and Fourth Amendment rights, ultimately voting to keep the paper in committee for further research and stakeholder feedback.",
+ "transcript_sha": "8d1724e2c8b80488",
+ "subject": "Law Enforcement Identification Resolution",
+ "overview": "The committee met to discuss a resolution requiring law enforcement identification and protecting Fourth Amendment rights. The committee voted to keep the paper in committee to gather feedback from local police, legal advocates, and community organizations.",
  "items": [
   {
-   "title": "Paper 26-031: Resolution to Require Law Enforcement Identification and Protect Fourth Amendment Rights",
+   "title": "Resolution to Require Law Enforcement Identification and Protect Fourth Amendment Rights",
    "t": 1628,
-   "summary": "The committee voted to keep in committee a proposed resolution restricting officer mask-wearing and reinforcing Fourth Amendment protections, allowing sponsors to seek feedback from local police, legal experts, and community advocacy groups.",
+   "summary": "Kept Paper 26-031 in committee to allow sponsors and residents to refine its legal language and seek feedback from the police department, the ACLU, and local community groups.",
    "speakers": [
     "Emily Lazzaro",
     "Anna Callahan",
@@ -26,9 +27,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 12997,
-  "output_tokens": 211
- },
- "subject": "Law Enforcement Identification and Fourth Amendment Rights",
- "subject_source": "summary"
+  "input_tokens": 13281,
+  "output_tokens": 223
+ }
 }
