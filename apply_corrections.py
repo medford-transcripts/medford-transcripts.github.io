@@ -136,6 +136,43 @@ def label_for_name(name, mapping):
     return None
 
 
+SPEAKER_N = re.compile(r"^SPEAKER_(\d+)$")
+
+
+def mint_label(mapping, blocks=()):
+    """A fresh SPEAKER_NN for a person this meeting has no id for.
+
+    A HUMAN NAME MUST NEVER REACH THE .SRT. The .srt carries diarization
+    labels and speaker_ids.json carries the identifications -- that separation
+    is what lets one edit name every line a voice says and propagate across
+    meetings, and it is how the hand edits that predate this tool were made.
+
+    A split is the one case with no id to use: the new speaker's words were
+    diarized onto somebody else's cluster, so they have no label of their own.
+    This used to fall back to writing the NAME into the block, which looks
+    like it works -- the page even renders it -- while quietly producing a
+    transcript whose labels are a mix of ids and names, a speaker_ids.json
+    that does not mention the person, and nothing for propagate() to carry.
+
+    So a new id is minted instead and the name is recorded against it. The
+    number clears every label already in the mapping AND every label in the
+    file, because a block can carry an id that speaker_ids.json never listed.
+    """
+    used = set()
+    for k in mapping:
+        m = SPEAKER_N.match(k or "")
+        if m:
+            used.add(int(m.group(1)))
+    for b in blocks:
+        m = SPEAKER_N.match((b.get("speaker") or "") if isinstance(b, dict) else "")
+        if m:
+            used.add(int(m.group(1)))
+    n = 0
+    while n in used:
+        n += 1
+    return "SPEAKER_%02d" % n
+
+
 # ----------------------------------------------------------------- applying
 
 
@@ -257,7 +294,7 @@ def measured_spans(words, lo_t, hi_t, turns):
     return out
 
 
-def realign(blocks, lo, hi, turns, mapping, word_times=None):
+def realign(blocks, lo, hi, turns, mapping, word_times=None, minted=None):
     # NOT named `words`: a loop below binds that to a list of word
     # STRINGS, and shadowing this parameter made the measured-timing
     # lookup silently receive the wrong data.
@@ -329,6 +366,8 @@ def realign(blocks, lo, hi, turns, mapping, word_times=None):
             groups.append((key, [w]))
 
     out = []
+    if minted is None:
+        minted = []
     for (bi, ti), words in groups:
         src = blocks[bi if bi is not None else lo]
         name = turns[ti]["speaker"].strip()
@@ -340,7 +379,15 @@ def realign(blocks, lo, hi, turns, mapping, word_times=None):
         # it. Only strips a role we actually print off a name this video
         # already knows -- see titles.strip_role.
         name = titles.strip_role(name, set(mapping.values()) | set(mapping))
-        label = label_for_name(name, mapping) or name
+        # An id for the .srt, a name for speaker_ids.json -- never the reverse.
+        # A name nobody in this meeting has an id for gets a fresh one rather
+        # than being written into the block; see mint_label.
+        label = label_for_name(name, mapping)
+        if not label and name and not SPEAKER_N.match(name):
+            label = mint_label(mapping, blocks)
+            mapping[label] = name
+            minted.append((label, name))
+        label = label or name
         out.append({
             "start": src["start"], "end": src["end"],
             "speaker": label, "text": " ".join(words),
@@ -447,7 +494,11 @@ def apply_one(rec, blocks, mapping, report, word_times=None):
             report.append("    SPEAKER: %s -> \"%s\" in speaker_ids.json "
                           "(applies to every line by this voice)" % (label, want))
 
-    new = realign(blocks, lo, hi, turns, mapping, word_times)
+    minted = []
+    new = realign(blocks, lo, hi, turns, mapping, word_times, minted)
+    for _lbl, _nm in minted:
+        report.append("    NEW SPEAKER: %s -> \"%s\" in speaker_ids.json "
+                      "(no id for this voice; minted one)" % (_lbl, _nm))
     if not new:
         return False
 
