@@ -1,27 +1,28 @@
 {
  "video_id": "SpqLTwFKFqc",
  "provider": "gemini",
- "generated_at": "2026-10-02T03:06:04Z",
+ "generated_at": "2026-10-04T00:05:45Z",
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
- "transcript_sha": "098aef8f947e3591",
- "overview": "The Resident Services and Public Engagement Committee approved the monthly City Council newsletter draft and discussed planning strategies, locations, and formatting for future resident listening sessions and neighborhood ward meetings.",
+ "transcript_sha": "1727e505a34cd839",
+ "subject": "",
+ "overview": "The committee met to review the monthly City Council newsletter and discuss proposals for holding public listening sessions and neighborhood ward meetings.",
  "items": [
   {
    "title": "City Council Newsletter Review",
    "t": 349,
-   "summary": "Approved the monthly newsletter for publication and circulation, pending edits to incorporate late December updates and clarify specific resolutions.",
+   "summary": "Approved the City Council newsletter for publication and circulation, subject to edits that incorporate late December council meetings and refine specific resolution descriptions.",
    "speakers": [
     "Liz Mullane",
-    "Justin Tseng",
     "Matt Leming",
+    "Justin Tseng",
     "Anna Callahan"
    ]
   },
   {
    "title": "Resolution to Establish City Council Listening Sessions",
    "t": 965,
-   "summary": "Referred the resolution to establish listening sessions back to committee after discussing digital and physical outreach strategies and potential redundancy with proposed ward meetings.",
+   "summary": "Kept the resolution in committee following discussion on resident outreach methods and potential redundancies with proposed neighborhood ward meetings.",
    "speakers": [
     "Liz Mullane",
     "Anna Callahan",
@@ -31,8 +32,8 @@
   },
   {
    "title": "Resolution to Schedule Neighborhood Ward Meetings",
-   "t": 1440,
-   "summary": "Referred the resolution to committee after discussing meeting formats, scheduling priorities starting with Wards 8 and 4, and techniques to ensure balanced public participation.",
+   "t": 1446,
+   "summary": "Kept the resolution in committee after discussing meeting formats, potential locations, and planning a pilot program starting with Wards 8 and 4.",
    "speakers": [
     "Liz Mullane",
     "Matt Leming",
@@ -45,9 +46,7 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 16027,
-  "output_tokens": 317
- },
- "subject": "City Council Newsletter and Ward Meeting Planning",
- "subject_source": "summary"
+  "input_tokens": 16311,
+  "output_tokens": 310
+ }
 }
