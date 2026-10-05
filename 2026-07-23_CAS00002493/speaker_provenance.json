@@ -1,0 +1,34 @@
+{
+    "SPEAKER_00": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9649598315831476,
+        "from": "XiF9aKpKIOI_SPEAKER_03",
+        "at": "2026-10-05T02:42:03Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "XiF9aKpKIOI_SPEAKER_00",
+        "source": "embedding_match",
+        "score": 0.9945074108045464,
+        "from": "XiF9aKpKIOI_SPEAKER_00",
+        "at": "2026-10-05T02:42:03Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Charlie Hartnett",
+        "source": "embedding_match",
+        "score": 0.9999489814473276,
+        "from": "XiF9aKpKIOI_SPEAKER_01",
+        "at": "2026-10-05T02:42:03Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "John Petrella",
+        "source": "embedding_match",
+        "score": 0.9998960888045286,
+        "from": "XiF9aKpKIOI_SPEAKER_02",
+        "at": "2026-10-05T02:42:03Z",
+        "previous": "SPEAKER_03"
+    }
+}
