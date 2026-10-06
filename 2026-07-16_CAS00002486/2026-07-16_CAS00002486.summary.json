@@ -1,70 +1,74 @@
 {
  "video_id": "CAS00002486",
  "provider": "gemini",
- "generated_at": "2026-10-06T08:05:21Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-06T09:05:32Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "7ce4261073d9c0be",
- "subject": "Medford High School Outdoor Amenities",
- "overview": "The Community Preservation Committee recommended funding for the Osgood House restoration and additional contingency funds for the Playstead digital scoreboard. The committee also discussed potential funding and bonding strategies for the Medford High School rebuilding project and reviewed upcoming eligibility forms.",
+ "transcript_sha": "9ab09c6fdef0763f",
+ "subject": "Medford High School Project Funding Strategy",
+ "overview": "The committee recommended funding for the Osgood House restoration and Playstead scoreboard contingency while establishing a subcommittee to evaluate long-term CPA support for the Medford High School construction project.",
  "items": [
   {
-   "title": "Osgood House Exterior Restoration",
-   "t": 90,
-   "summary": "Approved a recommendation of $10,000 for the Unitarian Universalist Church to restore the exterior of the historic Osgood House using fiberglass gutters and storm windows.",
+   "title": "Osgood House Restoration Funding",
+   "t": 116,
+   "summary": "Approved a recommendation for $10,000 to the Unitarian Universalist Church for exterior repairs and the installation of fiberglass gutters at the historic Osgood House.",
    "speakers": [
-    "Liz Ammons",
     "Roberta Cameron",
-    "Jeremy Martin",
-    "Theresa Dupont"
+    "Liz Ammons",
+    "Theresa Dupont",
+    "Jeremy Martin"
    ]
   },
   {
-   "title": "Playstead Digital Scoreboard Contingency Funding",
+   "title": "Playstead Digital Scoreboard Contingency",
    "t": 546,
-   "summary": "Approved an additional $32,000 in contingency funding for the digital baseball scoreboard at Playstead Park after construction bids returned higher than expected.",
+   "summary": "Approved $32,000 in additional contingency funding for the digital scoreboard at Playstead Park after project bids exceeded the initial allocation.",
    "speakers": [
     "Theresa Dupont",
-    "Roberta Cameron",
     "Myisha Majumder",
     "Ari Fishman",
     "Ada Gunning",
     "Reggie Graham",
-    "Zac Bears",
-    "Losa Julie Genevieve"
+    "Zac Bears"
    ]
   },
   {
-   "title": "Medford High School Outdoor Amenities Project Introduction",
+   "title": "Medford High School Project Introduction",
    "t": 1343,
-   "summary": "Discussed potential partnership opportunities and long-term bonding options for outdoor recreation and open space elements of the Medford High School reconstruction project. The committee agreed to establish a subcommittee to coordinate a funding strategy.",
+   "summary": "Discussed potential CPA funding for non-reimbursable elements of the high school building project, such as playgrounds, grass fields, and site trees. The committee agreed to form a subcommittee to develop a specific funding and bonding strategy for the multi-year project.",
    "speakers": [
     "Jenny Graham",
     "Roberta Cameron",
+    "Theresa Dupont",
     "Doug Carr",
     "Jeremy Martin",
-    "Reggie Graham",
     "Ari Fishman",
-    "Theresa Dupont"
+    "Reggie Graham"
    ]
   },
   {
-   "title": "Administrative Updates and Meeting Minutes",
-   "t": 5035,
-   "summary": "Reviewed upcoming Eligibility Determination Forms for the new grant cycle, discussed options for an August social gathering, and approved the minutes from the June 9 meeting.",
+   "title": "Administrative Updates and Potential Project List",
+   "t": 5039,
+   "summary": "Reviewed a list of approximately $3.4 million in preliminary project requests for the upcoming cycle, including City Hall limestone restoration, firehouse repairs, and park improvements.",
    "speakers": [
     "Theresa Dupont",
     "Roberta Cameron",
-    "Ari Fishman",
     "Jeremy Martin",
-    "Reggie Graham",
-    "Ada Gunning"
+    "Ari Fishman"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 5821,
+   "summary": "Approved the minutes from the June 9 meeting.",
+   "speakers": [
+    "Roberta Cameron"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 31326,
-  "output_tokens": 500
+  "input_tokens": 31324,
+  "output_tokens": 534
  }
 }
