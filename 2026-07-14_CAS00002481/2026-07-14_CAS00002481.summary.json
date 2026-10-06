@@ -1,29 +1,28 @@
 {
  "video_id": "CAS00002481",
  "provider": "gemini",
- "generated_at": "2026-10-06T12:53:33Z",
- "model": "gemini-3.5-flash",
+ "generated_at": "2026-10-06T16:05:35Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "001be9f138713161",
+ "transcript_sha": "648a16aca1ff858f",
  "subject": "South Medford Connector Section 106 Review",
- "overview": "The Historical Commission held a public comment session on the Section 106 review for the South Medford Connector community path, appointed a new liaison to the Brooks Estate Land Trust, and discussed upcoming zoning protections for historic buildings.",
+ "overview": "The commission appointed a new liaison to the Medford Brooks Estate Land Trust and discussed the South Medford Connector community path project. Members also reviewed zoning incentives for historic preservation and received progress reports on ongoing archaeological and cemetery surveys.",
  "items": [
   {
-   "title": "Appointment to MBELT Board",
-   "t": 149,
-   "summary": "Appointed former commissioner Ben Johnson as the commission's liaison to the Medford Brooks Estate Land Trust (MBELT).",
+   "title": "Medford Brooks Estate Land Trust Appointment",
+   "t": 150,
+   "summary": "The commission appointed former commissioner Ben Johnson as the official liaison to the Medford Brooks Estate Land Trust.",
    "speakers": [
     "Jennifer Keenan",
     "Carly Nessen",
     "Ben Johnson",
-    "Ryan Hayward",
-    "Peter Miller"
+    "Ryan Hayward"
    ]
   },
   {
    "title": "South Medford Connector Section 106 Review",
-   "t": 474,
-   "summary": "Reviewed and received public comments on the proposed MassDOT community path near Route 16 and Route 93, with speakers advocating for safety, mobility, and future passive recreational access to the Mystic River corridor.",
+   "t": 479,
+   "summary": "Commissioners and members of the public discussed the proposed community path between the General Lawrence Bridge and Winthrop Street, focusing on the desire for passive recreation and river access.",
    "speakers": [
     "Ryan Hayward",
     "Jennifer Keenan",
@@ -42,47 +41,36 @@
   {
    "title": "Zoning Update",
    "t": 2369,
-   "summary": "Discussed the draft Boston Avenue and Medford Square zoning reforms, focusing on the future identification and protection of historically significant buildings.",
+   "summary": "The commission reviewed the status of Boston Avenue zoning reform and the development of incentives for preserving significant historic structures.",
    "speakers": [
-    "Jennifer Keenan",
-    "Doug Carr"
+    "Doug Carr",
+    "Jennifer Keenan"
    ]
   },
   {
-   "title": "Hagner Center Demolition Discussion",
+   "title": "Hegner Center Demolition",
    "t": 2645,
-   "summary": "Noted the anticipated demolition application for the Hagner Center and heard resident complaints about safety and dumping on the property.",
+   "summary": "The commission noted the city's intent to demolish the facility and heard public comment regarding the site's condition and federal funding.",
    "speakers": [
     "Jennifer Keenan",
-    "Ryan Hayward",
     "Cindy Watson"
    ]
   },
   {
-   "title": "Old Business and Updates",
-   "t": 2878,
-   "summary": "Reviewed status updates on commission vacancies, school inventory, properties under demo delay, and historical preservation projects at the Brooks Estate, Thomas Brooks Park, Cross Street Cemetery, and Hastings Heights.",
+   "title": "Project Updates and Meeting Minutes",
+   "t": 2887,
+   "summary": "The commission reviewed ongoing archaeological surveys at the Brooks Estate, cemetery radar projects, and approved the June 2026 meeting minutes.",
    "speakers": [
     "Jennifer Keenan",
     "Ryan Hayward",
     "Doug Carr",
     "Peter Miller"
    ]
-  },
-  {
-   "title": "Approval of Minutes",
-   "t": 3277,
-   "summary": "Approved the meeting minutes from June 2026.",
-   "speakers": [
-    "Jennifer Keenan",
-    "Peter Miller",
-    "Kit Collins"
-   ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 18885,
-  "output_tokens": 600
+  "output_tokens": 574
  }
 }
