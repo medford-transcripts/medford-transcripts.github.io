@@ -1,0 +1,54 @@
+{
+ "video_id": "CAS00002479",
+ "provider": "gemini",
+ "generated_at": "2026-10-06T22:05:30Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5bec072b06d10dce",
+ "subject": "",
+ "overview": "The CC Historical Commission met to review and approve certificates of appropriateness for properties at 21-20 (21 Pro Ev) and 20 Hillside Ave, and approved the June meeting minutes.",
+ "items": [
+  {
+   "title": "Certificate of Appropriateness for 21-20 (21 Pro Ev)",
+   "t": 123,
+   "summary": "Approved the modified certificate of appropriateness to construct a standalone accessory dwelling unit and carriage house garage at 21-20.",
+   "speakers": [
+    "SPEAKER_06",
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "James",
+    "Joe"
+   ]
+  },
+  {
+   "title": "Certificate of Appropriateness for 20 Hillside Ave",
+   "t": 1358,
+   "summary": "Approved the certificate of appropriateness for window replacement and exterior alterations at 20 Hillside Ave, with amendments to shingle over a deleted window location.",
+   "speakers": [
+    "SPEAKER_07",
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "Susan Wilson",
+    "James",
+    "Joe"
+   ]
+  },
+  {
+   "title": "June Minutes and Administrative Updates",
+   "t": 2575,
+   "summary": "Approved the June 18th meeting minutes and agreed to cancel the August meeting, scheduling the next meeting for September 10th.",
+   "speakers": [
+    "Theresa Dupont",
+    "Kyla Branco",
+    "Joe",
+    "James",
+    "Roberta Cameron"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19124,
+  "output_tokens": 356
+ }
+}
