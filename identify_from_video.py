@@ -124,6 +124,39 @@ def speech_in(video_data, yt, speaker):
     return mine, words, secs
 
 
+_N = r"[A-Z][a-zA-Z'\-]{1,}(?:\s+[A-Z][a-zA-Z'\-]{1,}){0,3}"
+SELF_ID = [re.compile(p) for p in (
+    # [Mm] rather than re.I: the flag would also make the NAME group
+    # case-insensitive, and capitalisation is most of what distinguishes a
+    # name from the words around it.
+    r"\b[Mm]y name is\s+(" + _N + r")",
+    r"\bI'?m\s+(" + _N + r")\s*[,.]",
+    r"(" + _N + r"),\s*\d+\s+[A-Z][a-z]+",
+)]
+
+
+def transcript_says(blocks):
+    """The name this cluster gives for itself, if any.
+
+    THIS IS THE SWEEP'S OWN GROUND TRUTH. 110 of the 676 substantive
+    unidentified clusters state a name in their own words. Running the video
+    path over those too costs nothing extra and turns the sweep into its own
+    measurement: where the frame and the transcript both produce a name, their
+    agreement IS the error rate, with no separate labelling pass to arrange.
+
+    A disagreement is informative in both directions -- the overlay carries a
+    chosen display name and the transcript carries what ASR heard, so
+    "Lauretta" against "Loretta" is the overlay being right, while a frame
+    naming the previous speaker would be the overlay being wrong.
+    """
+    own = " ".join((b.get("text") or "") for b in blocks)
+    for rx in SELF_ID:
+        hit = rx.findall(own)
+        if hit:
+            return hit[0]
+    return None
+
+
 def is_subcommittee(entry):
     """Jason's steer: subcommittees are more often fully remote."""
     mt = (entry.get("meeting_type") or "")
@@ -277,6 +310,7 @@ def main():
 
     for r in todo:
         mine, _w, _s = speech_in(vd, r["home"], r["speaker"])
+        says = transcript_says(mine)
         times = frame_times(mine, args.frames)
         print("%s  (%d meetings, %s)" % (r["placeholder"], r["meetings"], r["title"][:40]))
         for t in times:
@@ -290,6 +324,7 @@ def main():
                                  "home": r["home"], "speaker": r["speaker"],
                                  "t": t, "frame": dest,
                                  "meetings": r["meetings"],
+                                 "transcript_says": says,
                                  "read": None})
     with io.open(MANIFEST, "w", encoding="utf-8", newline="\n") as fp:
         json.dump(manifest, fp, indent=2, ensure_ascii=False)
