@@ -2,6 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Read PRINCIPLES.md first
+
+PRINCIPLES.md holds the standing constraints on this archive -- who may be
+identified, what is never published, and why identification tools propose
+rather than decide. They are not per-feature preferences to be re-litigated:
+if a change would violate one, the change is wrong. The shortest version:
+this archive makes GOVERNMENT legible to the public, never individuals
+legible to institutions.
+
 ## What this project does
 
 This is a civic transparency project that automatically transcribes Medford, MA government meeting videos (City Council, School Committee, etc.) from YouTube and other sources, then publishes the transcripts as a static GitHub Pages site. The pipeline covers audio download, AI transcription (WhisperX), speaker diarization and identification, HTML generation with multi-language translation, and optional "supercut" video clips of individual speakers.
