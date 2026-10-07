@@ -983,6 +983,8 @@ def srt2html(yt_id,skip_translation=False, force=False):
     text = ""
     htmltext = ""
     para_words = 0
+    # The first block has nothing before it, so no paragraph can start there.
+    prev_block_text = ""
     t0 = datetime.datetime(1900,1,1)    
     with open(srtfilename, 'r', encoding="utf-8") as file:
 
@@ -1077,8 +1079,14 @@ def srt2html(yt_id,skip_translation=False, force=False):
                 if this_speaker == speaker:
                     # same speaker; append to previous text
                     text += this_text
+                    # ends_sentence comes from srt_lines so the two CANNOT
+                    # drift: line_span() mirrors this decision to find the text
+                    # a correction refers to, and a renderer that breaks where
+                    # line_span does not makes every correction on that
+                    # paragraph stale.
                     if ((this_start - stop) > PARA_GAP_SECONDS
-                            and para_words >= PARA_MIN_WORDS):
+                            and para_words >= PARA_MIN_WORDS
+                            and srt_lines.ends_sentence(prev_block_text)):
                         htmltext += para_break(this_start)
                         para_words = 0
                     htmltext += this_html_text
@@ -1095,6 +1103,9 @@ def srt2html(yt_id,skip_translation=False, force=False):
                     para_words = len(this_text.split())
 
                 stop = this_stop
+                # the block the gap is measured FROM; ends_sentence asks
+                # whether IT finished a sentence, not whether this one starts
+                prev_block_text = this_text
 
             else: continue
 

@@ -47,6 +47,31 @@ SPEAKER_RE = re.compile(r"^\[([^\]]*)\]:\s*(.*)$", re.S)
 PARA_GAP_SECONDS = 1.5
 PARA_MIN_WORDS = 80
 
+# A PAUSE IS NOT A PARAGRAPH IF THE SENTENCE IS STILL OPEN. A gap plus a word
+# count alone broke mid-sentence: speakers pause to think, and WhisperX ends a
+# block wherever the audio does, so "...and the reason we" / [1.8s] /
+# "decided to table it..." met both thresholds and split the clause in two.
+# Requiring the preceding block to END a sentence costs nothing -- a real
+# paragraph boundary in speech lands after a finished thought anyway -- and it
+# is the difference between a break a reader does not notice and one that
+# looks like a transcription error.
+#
+# Trailing quotes and brackets are allowed after the stop so a quoted sentence
+# still ends one. An abbreviation ("Mr.", "St.", "No.") would end a sentence
+# falsely, so the common ones are excluded.
+SENTENCE_END = re.compile(r"[.!?][\"')\]]*\s*$")
+ABBREV_END = re.compile(
+    r"(?:^|\s)(?:Mr|Mrs|Ms|Dr|St|Ave|Rd|No|Jr|Sr|vs|etc|Inc|Ltd|Co|Corp|"
+    r"Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|[A-Z])\.\s*$")
+
+
+def ends_sentence(text):
+    """True when this block finishes a sentence, so a break after it reads."""
+    t = (text or "").rstrip()
+    if not SENTENCE_END.search(t):
+        return False
+    return not ABBREV_END.search(t)
+
 
 def to_seconds(ts):
     """'00:01:23,456' -> 83.456. None if it does not look like a timestamp."""
@@ -152,7 +177,8 @@ def line_span(blocks, i, names=None):
         this_start = blocks[j].get("start")
         if (prev_end is not None and this_start is not None
                 and (this_start - prev_end) > PARA_GAP_SECONDS
-                and words >= PARA_MIN_WORDS):
+                and words >= PARA_MIN_WORDS
+                and ends_sentence(blocks[j - 1].get("text"))):
             break
         words += len((blocks[j].get("text") or "").split())
         j += 1

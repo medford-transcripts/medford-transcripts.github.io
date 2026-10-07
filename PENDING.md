@@ -1,0 +1,113 @@
+# Pending
+
+Open items with the measurement that established them, so none of this is
+re-derived. Standing rule: file it here before it is compacted away.
+
+Last updated 2026-10-07.
+
+## Open, blocked on Jason
+
+- **Parcel directory is lossy; re-run it.** `54 Dwyer Cr` is absent from
+  `street_list_parcels.json` in both indexes (the street jumps 50 → 57), and
+  no Teixeira or Fairchild appears anywhere in it, though both are on the
+  address per Jason. `build_parcel_directory.py` silently drops a parcel when
+  the use-code is not residential OR the owner parses as an entity
+  (`LLC|TRUST|REALTY|…`), so "Teixeira Daniel Trust" would vanish.
+  **Blocked:** `download.massgis.digital.mass.gov` resolves (16.15.252.219) but
+  resets the connection from this machine, while `medfordma.org` returns 200 —
+  so it is that host specifically. Needs the zip fetched by hand:
+  `L3_SHP_M176_MEDFORD.zip`. Then re-run with per-address rejection logging.
+  **Why it matters:** the parcel file is how a spoken name gets its spelling
+  verified. Of 77 clusters that state a name + address, only 25 addresses were
+  found and 7 names verified. That 7 is a floor set by this gap, not a measure
+  of the method.
+
+## Open, actionable
+
+- **Official city-page links reach only 22 of 88 meeting types.**
+  `official_body_url()` IS wired into `make_committee_pages.py:185` and 22
+  committee pages carry a link, so this was never dropped — it under-matches.
+  `utils._body_key()` is exact-match only, and the city names bodies
+  differently from our meeting types. 18 roster bodies match nothing:
+  Historic District Commission, License Commission (vs our "Liquor License
+  Commission"), Parks Commission (vs "Park Commission"), Small Cell Committee,
+  Library Trustees, Cemetery Trustees, Retirement, Airplane Noise Advisory,
+  Commission of Trust Funds, Commission on Parking Policy, Community Fund
+  Committee, Community Garden Commission, Consumer Advisory Commission, Fire
+  Department Facilities Task Force, Keep Medford Beautiful, Neighborhood
+  Ambassadors, Promote/Prevent/Support Behavioral Health, Civic Auditorium.
+  Fix is an alias map, not fuzzy matching — "Historic District Commission" and
+  "Historical Commission" are two REAL and DIFFERENT bodies, so a fuzzy match
+  would conflate them.
+
+- **Paragraph breaks land mid-sentence.** `PARA_GAP_SECONDS`/`PARA_MIN_WORDS`
+  in `srt_lines.py` fire on a timing gap alone. Require sentence-ending
+  punctuation on the preceding block as well.
+
+- **Long monologues are hard to scan** — no visual anchor for who is speaking.
+  Indent continuation blocks (n>1), or repeat the byline. Note: continuation
+  lines carry NO `data-speaker`, which is correct (nothing for the correction
+  form to rewrite) but means a repeated byline must come from the renderer,
+  not the attribute.
+
+- **11 corrections sit `accepted` but unapplied**, all from Jason's desktop
+  token, 2026-09-27..29: `YV6lriLOtwQ`, `Ewo7VA32tkU` (3), `CAS00002526` (3),
+  `CAS00002522`, `CAS00002523`, `MCM00001099` (2). Deliberately not applied —
+  he asked only for the phone submissions.
+
+- **40 machine roll-call proposals are `pending`** review in the queue.
+
+## Speaker identification — measured, not yet built
+
+Of the top 400 unidentified cross-matched clusters:
+
+| | |
+|---|---|
+| thin (matcher artifacts) | 63 |
+| substantive | 328 |
+| → no name cue in the transcript at all | **232 (71%)** |
+| → state name + address | 77 |
+| → self-name, no address | 19 |
+| address found in parcel file | 25 of 77 |
+| owner name agrees | 7 |
+
+- **`toid.py`'s ranking is misleading.** It sorts by how many meetings
+  reference a cluster, and the top entries are artifacts:
+  `U1EIl_L-LWc_SPEAKER_00` is 1 block / 17 words / 4 seconds matched into 31
+  meetings; `o9F0qYH9Geo_SPEAKER_05` is 6 words of "Thank you." across 28.
+  Short turns carry almost no speaker information. Rank by meetings × speech
+  volume, or apply a floor (>=50 words AND >=20s) as done in the table above.
+
+- **The Zoom overlay works and is the only route to the 71%.** Verified on
+  `nqVIJ3wsDWg` t=12677: the frame reads "Talking: BDan Fairchild", matching
+  his spoken "B. Daniel Fairchild". 10 s of video is ~244 KB via yt-dlp
+  `--download-sections`, one ffmpeg call for the frame. It is also MORE
+  reliable than the text: the transcript's own intro cue produced
+  "Lessenhaupt", which was the PREVIOUS speaker being thanked.
+
+- **Two overlay formats seen, and one blind spot.**
+  - 2020-12-01 City Council: participant name bottom-left ("Breanna
+    Lungo-Koehn") on a full-screen speaker view.
+  - 2022-06-14: "Talking: Council Chambers" bottom-right — names the ROOM, not
+    the person, when the feed is the in-room camera.
+  - 2024-12-11: Zoom **screen-share** (a document) — no name anywhere. During
+    presentations there is nothing to read.
+  - Pre-2020 (e.g. 2019-04-01) is in-person chamber video with no annotation.
+
+- **Jason's steer (2026-10-07):** post-2020 most meetings are hybrid or
+  Zoom-only, so one speaker at the podium does not mean the next is also
+  in-person. **Subcommittee meetings are more often Zoom — start there**,
+  especially for a cluster that appears in both a subcommittee and a main
+  meeting.
+
+- Frame grab is ~20-40 s per meeting, dominated by throttled download
+  (~20 KB/s). For production, pull ONE frame at a timestamp where the target
+  cluster is known to be speaking — one frame per cluster, not per meeting.
+
+## Also noted
+
+- `city_council_president` has only 2 entries in `councilors.json`; the gavel
+  is missing from most years.
+- Orphan directory `2025-08-28_afnvZAYk2_M`.
+- 363 published pages have no `.words.json` because they have no `model.pkl`.
+  They never worked; regenerating cannot fix them. See the memory note.

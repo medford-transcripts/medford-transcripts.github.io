@@ -201,3 +201,25 @@ span.w.w-active {
 @media (prefers-color-scheme: dark) {
   .mt-byline { color: #a8a8b4; }
 }
+
+/* A TURN IS ONE PARAGRAPH OR MANY, AND A READER HAS TO SEE WHICH.
+   A long monologue breaks into several paragraphs, and with every paragraph
+   flush left there is no way to tell, while scanning, where one speaker stops
+   and the next starts -- the name is buried at the top of a wall of text.
+
+   Continuation paragraphs are indented so the speaker line stays flush left
+   and the eye can find it. No markup change and no repeated byline: a
+   continuation is exactly a p.line with no data-speaker, because only the
+   first paragraph of a turn carries the label. That also keeps the name out
+   of textContent, which is what the correction form submits -- a repeated
+   byline would be written back into the .srt as if it had been spoken. */
+p.line:not([data-speaker]) {
+  margin-left: 2.2em;
+}
+/* On a page rendered BEFORE data-speaker existed, no line carries the
+   attribute, so every paragraph indents equally. Those pages do have
+   continuation paragraphs -- they just cannot be told apart -- so the result
+   is a uniform left margin: no benefit, no harm, and no distinction lost that
+   the page could have shown anyway. The corpus sweep re-renders them; this
+   note is here so the symptom is recognisable rather than mysterious if one
+   is missed. */
