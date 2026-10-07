@@ -51,17 +51,40 @@ against anything outside this corpus:
 This does not defeat a court order or a compromised machine, and nothing
 does. It defeats the realistic failure: templates escaping on their own.
 
-## 4. Tools propose; a human decides
+## 4. Automation must earn its confidence by measurement
 
-No turnkey "identify everyone" path. `identify_from_video.py` writes frames
-and a manifest for a person to read; `identify_from_text.py` queues proposals
-for review. Keep that property deliberately — a fully automated identifier is
-the artifact that lowers the barrier for someone else to do this badly, and
-review is cheap compared to a name attached to the wrong person.
+Identification at scale REQUIRES automation. 2,300 meetings and 676
+unidentified clusters will not be reviewed by hand, and the fidelity every
+other feature depends on comes from identifying speakers — not from being
+cautious about identifying them. An archive that stays anonymous to stay safe
+has failed at its own purpose.
 
-A name on the wrong speaker is a false claim about a real person, published.
-That is this project's worst failure mode and the reason for the closed
-candidate set, the full-name-only rule, and the provenance tiers.
+What is NOT permitted is automation whose error rate nobody has measured.
+This project's history is a list of passes that were confidently wrong:
+
+- a title cue reported "0 contradictions" and was 29% wrong, because it scored
+  the unverifiable remainder as success and wrote five organisations in as
+  speakers
+- open-vocabulary name extraction measured 95.7% disagreement and invented
+  29,342 "distinct speakers" in a city with 1,229
+- closed-set error is a function of candidate-set size: 0.0% wrong at two
+  candidates, 29.6% at 1,229
+- short-turn attribution measures 53-66% against a human reference, against
+  97% on substantive speech
+
+So: measure the error rate against ground truth before a pass writes anything,
+state the number, and gate on it. Automate freely above the line. Queue for
+review below it — not because review is virtuous, but because an unmeasured
+rate is an unknown quantity of false claims about real people, published under
+our name.
+
+A REVIEW GATE IS NOT A SECURITY CONTROL. Anyone forking this deletes it in one
+line, and the barrier to misuse was never that step. The reason for review is
+correctness, and it applies to us.
+
+A name on the wrong speaker is this project's worst failure mode, and the
+reason for the closed candidate set, the full-name-only rule, and the
+provenance tiers in §5.
 
 ## 5. Corrections and provenance are append-only in spirit
 
