@@ -111,3 +111,54 @@ Of the top 400 unidentified cross-matched clusters:
 - Orphan directory `2025-08-28_afnvZAYk2_M`.
 - 363 published pages have no `.words.json` because they have no `model.pkl`.
   They never worked; regenerating cannot fix them. See the memory note.
+
+
+## Face matching — measured 2026-10-07, not built
+
+Jason's framing is wider than identification: use face as a CONFIRMATION
+signal for embedding matches, to raise confidence, safely lower the match
+threshold, detect blended clusters, and possibly improve diarization.
+
+**Coverage, of 676 substantive unidentified clusters:**
+
+| route | clusters |
+|---|---|
+| names itself in the transcript | 110 |
+| no cue, post-2020, YouTube-hosted | 218 |
+| no cue, post-2020, other host (MCM/CAS) | 229 |
+| no cue, **pre-2020** | 119 |
+
+The 119 pre-2020 have NO Zoom overlay to read -- video identification there is
+face or nothing. The 229 on MCM/CAS need their own slicing path before any
+video route works at all. So the Zoom overlay alone reaches at most 218, and
+only the remote speakers among them.
+
+**Confirmation opportunity, from 856 scored embedding matches:**
+
+    min 0.701  p10 0.785  median 0.924  p90 0.993
+    0.70-0.75:  54      0.85-0.90: 139
+    0.75-0.80:  46      0.90-1.00: 547
+
+~100 matches (12%) sit in the weak 0.70-0.80 tail -- exactly the band a second
+signal would confirm or reject. The floor at 0.701 is the threshold itself:
+nothing below was ever attempted, so a corroborating signal is what would let
+it drop safely.
+
+Also: **30,655 labels carry provenance "unknown"** against 856 embedding_match.
+The unknown pool dwarfs everything and is its own problem.
+
+**THE DESIGN THAT AVOIDS THE BIOMETRIC DATABASE.** The confirmation use case
+needs face COMPARISON, not face IDENTIFICATION: "do these two speaking moments
+show the same person?" is a same/different judgement inside our own corpus, and
+it never requires a name/face link. If the only thing persisted is the pairwise
+verdict -- which is what a speaker_ids cross-reference already is -- and the
+templates are discarded, there is no face database at rest to leak, subpoena or
+inherit. Naming still comes from the Zoom overlay, the transcript, or Jason.
+
+That converts "I won't abuse this" into "this cannot be abused that way."
+Jason's own words: "the only thing preventing me from doing that is my
+discretion." A policy; this would be a property.
+
+Open questions before building: scope strictly to speaking moments; decide
+whether templates are ever written to disk (recommend no); keep it out of the
+public repo either way, as voiceprints already are.
