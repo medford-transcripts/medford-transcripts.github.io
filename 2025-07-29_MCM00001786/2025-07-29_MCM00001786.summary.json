@@ -1,0 +1,31 @@
+{
+ "video_id": "MCM00001786",
+ "provider": "gemini",
+ "generated_at": "2026-10-07T07:08:43Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "5d9f014322c111fd",
+ "subject": "",
+ "overview": "The Mystic Valley Development Commission failed to reach a quorum and tabled the meeting. No official business was conducted.",
+ "items": [
+  {
+   "title": "Notice of Meeting and Remote Participation",
+   "t": 76,
+   "summary": "The notice of the meeting and state provisions for remote participation were read into the record.",
+   "speakers": []
+  },
+  {
+   "title": "Roll Call and Adjournment",
+   "t": 392,
+   "summary": "The meeting was tabled until a future date because only one member was present, failing to meet the required quorum.",
+   "speakers": [
+    "Jared Yagjian"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3268,
+  "output_tokens": 171
+ }
+}

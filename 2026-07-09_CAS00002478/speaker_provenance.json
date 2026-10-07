@@ -1,0 +1,26 @@
+{
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.874131625498512,
+        "from": "CAS00002508_SPEAKER_03",
+        "at": "2026-10-06T23:14:46Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9453257216935226,
+        "from": "CAS00002508_SPEAKER_02",
+        "at": "2026-10-06T23:14:46Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_05": {
+        "value": "SxgiOOMwDHY_SPEAKER_23",
+        "source": "embedding_match",
+        "score": 0.9645083297916703,
+        "from": "CAS00002508_SPEAKER_01",
+        "at": "2026-10-06T23:14:46Z",
+        "previous": "SPEAKER_05"
+    }
+}

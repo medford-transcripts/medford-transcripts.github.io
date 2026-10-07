@@ -1,0 +1,74 @@
+{
+    "SPEAKER_00": {
+        "value": "Robert Paine",
+        "source": "embedding_match",
+        "score": 0.8644667276977673,
+        "from": "MCM00001823_SPEAKER_01",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_02": {
+        "value": "John Rogers",
+        "source": "embedding_match",
+        "score": 0.8143073473580226,
+        "from": "CAS00002522_SPEAKER_00",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "rov34HMcKiU_SPEAKER_27",
+        "source": "embedding_match",
+        "score": 0.9359534872519697,
+        "from": "MCM00001831_SPEAKER_03",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_05": {
+        "value": "O2nzoxaatsQ_SPEAKER_09",
+        "source": "embedding_match",
+        "score": 0.895047425341575,
+        "from": "CAS00002531_SPEAKER_10",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Barry Ingber",
+        "source": "embedding_match",
+        "score": 0.8679979200829203,
+        "from": "MCM00000566_SPEAKER_03",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "Lois Grossman",
+        "source": "embedding_match",
+        "score": 0.9510931099878235,
+        "from": "MCM00001823_SPEAKER_03",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "Lauretta James",
+        "source": "propagated",
+        "score": null,
+        "from": "EO-vAhUJAKo_SPEAKER_21",
+        "at": "2026-10-07T10:45:29Z",
+        "previous": "EO-vAhUJAKo_SPEAKER_21"
+    },
+    "SPEAKER_09": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9088607496542509,
+        "from": "MCM00001758_SPEAKER_08",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_09"
+    },
+    "SPEAKER_11": {
+        "value": "Josh Ekhart-Lee",
+        "source": "embedding_match",
+        "score": 0.8870273136900271,
+        "from": "eWg7lyFP5WI_SPEAKER_28",
+        "at": "2026-10-07T07:57:36Z",
+        "previous": "SPEAKER_11"
+    }
+}
