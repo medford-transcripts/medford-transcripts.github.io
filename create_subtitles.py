@@ -208,6 +208,48 @@ def salvage_truncated_mp3(yt_id, video_data, mp3file, duration):
     return False
 
 
+# A download is short by a FRACTION, not by a fixed number of seconds. The old
+# rule was abs(got - want) > 15, with a comment admitting the number was a
+# guess, and measuring what it had actually rejected showed two faults.
+#
+# TOO STRICT ON LONG MEETINGS. Four items were skipped at 0.15-0.39% short --
+# 18s, 19s, 19s and 24s, all of them on recordings over 80 minutes, all from
+# YouTube sources whose own metadata is approximate. One of them, qrkId2z2FiU,
+# was the only sliceable copy of the 2026-10-05 School Committee meeting, so
+# rejecting it handed the meeting to a Castus copy that no video tooling can
+# read. The three genuinely broken files missed 35%, 28% and 81%, so a
+# proportional floor separates them with enormous room to spare.
+#
+# AND "LONGER THAN EXPECTED" IS NOT TRUNCATION AT ALL. abs() punished four
+# Castus items whose audio ran 4% to 32% LONGER than the duration scraped for
+# them. Longer audio cannot be missing content; it means the metadata is wrong,
+# which is routine for Castus. Transcribing them loses nothing. Only an absurd
+# overshoot suggests the wrong file entirely, so that is where the bound goes.
+SHORT_TOLERANCE_FRACTION = 0.01     # 1% of the meeting
+SHORT_TOLERANCE_FLOOR = 15.0        # ...but never stricter than the old rule
+LONG_TOLERANCE_FRACTION = 0.60      # longer is fine; wildly longer is a wrong file
+
+
+def audio_is_complete(got, want, yt_id=""):
+    """Is this mp3 the whole meeting? Short and long are not symmetric."""
+    want = float(want or 0)
+    if want <= 0:
+        return True                 # nothing to compare against
+    if got >= want:
+        if got - want > want * LONG_TOLERANCE_FRACTION:
+            print("%s mp3 is %.0fs against an expected %.0fs -- too long to be "
+                  "the same recording" % (yt_id, got, want))
+            return False
+        return True                 # metadata understates it; not truncation
+    missing = want - got
+    allowed = max(SHORT_TOLERANCE_FLOOR, want * SHORT_TOLERANCE_FRACTION)
+    if missing > allowed:
+        print("%s mp3 is short by %.0fs of %.0fs (%.2f%%, allowed %.0fs)"
+              % (yt_id, missing, want, 100.0 * missing / want, allowed))
+        return False
+    return True
+
+
 def mp3_is_good(yt_id, video_data):
 
     # if video_data doesn't have all the required info, it's bad
@@ -223,9 +265,8 @@ def mp3_is_good(yt_id, video_data):
     # if the mp3 duration doesn't match the video duration, it's bad
     try:
         duration = float(ffmpeg.probe(mp3file)['format']['duration'])
-        # I'm not sure what level of disagreement is acceptable. I've seen 12s discrepancies
-        if abs((duration - video_data[yt_id]["duration"])) > 15.0:
-            print(yt_id + ' mp3 file exists, but its length (' + str(duration) + ') does not match YouTube duration (' + str(video_data[yt_id]["duration"]) + ')')
+        want = video_data[yt_id]["duration"]
+        if not audio_is_complete(duration, want, yt_id):
             salvage_truncated_mp3(yt_id, video_data, mp3file, duration)
             return False
     except:
