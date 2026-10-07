@@ -1538,20 +1538,80 @@ def get_councilors_old(file="councilors.txt",mayor=False, city_council=False, sc
 # process can push.
 
 
+# A git index lock older than this with NO git process alive is not held by
+# anybody. Generous on purpose: a real commit on this repo takes seconds, so
+# ten minutes is far past any legitimate hold and still refuses to race a
+# committer that is merely slow.
+GIT_LOCK_STALE_SECONDS = 600
+
+
+def _any_git_running():
+    """Is ANY git process alive on this machine?
+
+    THE LOCK ITSELF CANNOT ANSWER THIS. video_data.lock records its owner's
+    PID, so _lock_is_stale() just asks whether that process still exists.
+    .git/index.lock is ZERO BYTES -- git names no owner -- so the only way to
+    know whether a live committer holds it is to ask the OS whether a git
+    process exists at all. If none does, nothing can be holding it.
+
+    Returns True when it cannot tell, so an unanswerable question never
+    becomes permission to delete.
+    """
+    try:
+        import psutil
+    except ImportError:
+        return True                      # cannot check: assume held
+    try:
+        for p in psutil.process_iter(["name"]):
+            n = (p.info.get("name") or "").lower()
+            if n in ("git", "git.exe"):
+                return True
+        return False
+    except Exception:
+        return True
+
+
 def git_wait_for_index_lock(timeout=300):
     """Block while another git process holds the index. True if it cleared.
 
-    DOES NOT BREAK THE LOCK, deliberately, and this is the opposite of the
-    rule for video_data.lock. That one is ours and leaked when a process was
-    killed, so it has to be breakable. .git/index.lock belongs to git, and
-    removing one held by a live committer corrupts the index.
+    BREAKS A LOCK THAT IS PROVABLY ABANDONED, which this did not used to do.
+    The old rule was "never break it", reasoning that removing a lock held by
+    a live committer corrupts the index -- true, but it treats "a lock exists"
+    and "a committer is alive" as the same fact, and they are not.
+
+    They came apart on 2026-10-06: a lock was created at 18:07:23, the same
+    second as the last successful commit, and was still there 13 hours later
+    with ZERO git processes running. Every push in between failed silently,
+    101 tracked files went uncommitted, and nothing reached the site -- the
+    exact dead-man's-switch failure video_data.lock was fixed for, in the one
+    lock we had decided not to fix.
+
+    So the two conditions are checked SEPARATELY and both must hold before
+    anything is removed: no git process anywhere, AND the lock older than
+    GIT_LOCK_STALE_SECONDS. Either alone is not enough -- a git process might
+    be between locks, and a young lock belongs to a committer that is merely
+    slow. If psutil is missing the answer is "held", so an unanswerable
+    question never becomes permission to delete.
     """
     lock = os.path.join(".git", "index.lock")
     waited = 0
     while os.path.exists(lock):
+        try:
+            age = time.time() - os.path.getmtime(lock)
+        except OSError:
+            return True                  # vanished while we looked
+        if age >= GIT_LOCK_STALE_SECONDS and not _any_git_running():
+            print("  .git/index.lock is %d minutes old and no git process is "
+                  "running; breaking it" % (age / 60))
+            try:
+                os.remove(lock)
+            except OSError as exc:
+                print("  could not remove it: %s" % exc)
+                return False
+            return True
         if waited >= timeout:
-            print("  .git/index.lock still held after %ds; skipping this push"
-                  % timeout)
+            print("  .git/index.lock still held after %ds (age %ds); "
+                  "skipping this push" % (timeout, age))
             return False
         time.sleep(2)
         waited += 2
