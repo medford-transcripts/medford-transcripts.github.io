@@ -162,3 +162,46 @@ discretion." A policy; this would be a property.
 Open questions before building: scope strictly to speaking moments; decide
 whether templates are ever written to disk (recommend no); keep it out of the
 public repo either way, as voiceprints already are.
+
+
+## Biohash the voice embeddings too — filed 2026-10-07, sequencing matters
+
+Jason asked whether the keyed-projection idea applies to `embeddings.pkl` as
+well as to any future face templates. It does, and the case is STRONGER there:
+
+- The voiceprints already exist, on disk, today. Face templates are
+  hypothetical; this is a live exposure.
+- Same mathematics. Speaker embeddings are fixed-length vectors compared by
+  cosine similarity, so a secret orthogonal projection preserves the metric
+  and `track_speakers.match_embeddings()` works unchanged on transformed
+  vectors. The 0.70 threshold keeps its meaning.
+- It makes a leak CANCELABLE. Today a voiceprint leak is permanent — you
+  cannot reissue someone's voice. Under a keyed projection you re-key and the
+  leaked templates are inert.
+
+**DO NOT RUN THIS WHILE THE MATCHER IS IN USE.** Every stored embedding has to
+be transformed once, and every later comparison must use the same R. Mixing
+transformed and untransformed vectors does not raise an error — it silently
+returns wrong similarity scores, which is this project's recurring failure
+shape. Requirements before starting:
+
+  1. a version marker inside the pickle, so a mismatch is loud rather than
+     silent, and the matcher refuses rather than guesses
+  2. a quiet window: the transcription loop and any video sweep stopped, since
+     both call the matcher
+  3. R stored in `credentials/`, and NOT in the same backup as the templates —
+     co-locating them collapses the entire benefit
+  4. a before/after check that match scores are preserved on a held-out set;
+     an orthogonal projection should reproduce them to float precision
+
+**Consider the cheaper option first.** The durable product of the embeddings
+is the `speaker_ids` cross-reference graph, not the vectors. If the vectors
+are only needed to match NEW meetings against old ones, the question is
+whether all of them must be retained or only a representative set per
+identified person. Fewer templates beats better-protected templates, and it
+is less work.
+
+Scope note: this protects against LEAK, not against USE. Transformed
+embeddings still identify speakers — that is the point, and per PRINCIPLES.md
+§4 the capability is wanted. The threat it addresses is templates escaping on
+their own: a bad commit, a backup, a stolen drive.
