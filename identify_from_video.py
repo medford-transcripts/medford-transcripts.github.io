@@ -1083,8 +1083,15 @@ def record(lines):
             # "Jankow iPad iOS 13.1.2 GSYP" while the cluster self-identifies
             # as "John Jankowski". Four characters is the floor, so a short
             # prefix cannot collide its way into a confirmation.
-            hit = low in parts or any(
-                len(low) >= 4 and p.startswith(low) for p in parts)
+            # Handles routinely drop the spaces -- "kirkjohnson", "dguarino",
+            # "annemarie@foodtruckfestivalsofamerica.com" against a spoken
+            # "Anne Marie Eigner". Five characters against the concatenated
+            # name, so a short handle cannot collide into a confirmation.
+            flat = "".join(parts)
+            hit = (low in parts
+                   or any(len(low) >= 4 and p.startswith(low) for p in parts)
+                   or (len(low) >= 5 and flat.startswith(low))
+                   or (len(low) >= 5 and low in flat))
             if says and hit:
                 a["verdict"] = "confirmed"
                 a["name"] = says
