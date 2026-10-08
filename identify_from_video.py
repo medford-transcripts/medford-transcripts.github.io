@@ -40,6 +40,14 @@ WHAT THE SAMPLE SHOWED, which is what this script has to cope with:
     exactly where the SRT has the target, SPEAKER_08 and SPEAKER_05 -- against
     name tags "Christopher Bader", "Emily Hedeman", "Danielle Evans, PDS".
     Three confirmations in one tile.
+  * THE IN-ROOM FEED IS SOMETIMES LOGGED IN UNDER A PERSON'S NAME, and that
+    is the most dangerous case in this whole list, because it looks exactly
+    like a correct read and no guard can reject it -- it IS a real name.
+    YeIUKo9SmWU reads "Kevin Harrington" on every strip while the DESK
+    NAMEPLATE in the same shot reads "Melanie McLaughlin": the tag names
+    whoever set up the room's Zoom client, not whoever is speaking. The tell
+    is that it never changes while the camera and the speaker do. Treat a
+    label that is constant across a camera move as a room label.
   * A BROADCAST CHYRON IS NOT A ZOOM OVERLAY, and must not be read as one.
     -Ad9b17iUII is "Medford Happenings", a produced TV programme whose lower
     thirds read "Liam Murphy / AAU Jr OLYMPIC MEDALIST" and "MICHAEL LEUNG /
