@@ -488,6 +488,11 @@ def clean_overlay_name(text):
     """
     t = (text or "").strip()
     t = re.sub(r"\s*\((?:[^()]*)\)\s*$", "", t)        # trailing (RIW)
+    # Zoom TRUNCATES a long display name, so the affiliation often arrives with
+    # its closing bracket cut off: "Jessica Wall (Anderson & Kr...". The closed
+    # form above cannot match that, and the stray "(" then fails plausible_name
+    # -- a good read thrown away by punctuation.
+    t = re.sub(r"\s*\([^()]*$", "", t)
     # PRONOUNS COME OFF BEFORE THE SLASH SPLIT, or the split eats half of them
     # and leaves the first one stuck to the name: "Divya Anand she/her" would
     # become "Divya Anand she", which is a plausible-looking wrong name -- the
