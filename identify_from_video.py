@@ -470,6 +470,13 @@ def clean_overlay_name(text):
     """
     t = (text or "").strip()
     t = re.sub(r"\s*\((?:[^()]*)\)\s*$", "", t)        # trailing (RIW)
+    # PRONOUNS COME OFF BEFORE THE SLASH SPLIT, or the split eats half of them
+    # and leaves the first one stuck to the name: "Divya Anand she/her" would
+    # become "Divya Anand she", which is a plausible-looking wrong name -- the
+    # worst kind, because nothing downstream would question it.
+    t = re.sub(r"[,(\s]*\b(?:she|he|they|ze|xe)\s*/\s*"
+               r"(?:her|hers|him|his|them|theirs?|zir|xem)\b"
+               r"(?:\s*/\s*\w+)?\)?", "", t, flags=re.I)
     t = re.split(r"\s*[|/]\s*", t)[0]                  # Name | Firm
     t = re.sub(r"\s*[-–—]\s+.*$", "", t)     # Name - Role
     t = re.sub(r"(\w)-\s+.*$", r"\1", t)               # Name- Role, no space
