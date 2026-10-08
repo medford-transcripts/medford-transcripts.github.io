@@ -146,5 +146,38 @@ ck("tile with no readable frames returns None",
    None)
 
 print()
+
+# --- concurrency: a long sweep must not clobber a record() between downloads -
+# This is not hypothetical. The first full run lost two names exactly this way:
+# sweep() loaded the state dict once, ran for minutes, and wrote the whole
+# thing back after each cluster, discarding verdicts recorded in between.
+ifv.save_state({})
+sweep_memory = ifv.load_state()                    # what a long sweep holds
+sweep_memory["AAAAAAAAAAA_SPEAKER_00"] = {"placeholder": "AAAAAAAAAAA_SPEAKER_00",
+                                          "status": "pending_read", "attempts": []}
+ifv.save_clusters({"AAAAAAAAAAA_SPEAKER_00":
+                   sweep_memory["AAAAAAAAAAA_SPEAKER_00"]})
+
+# ... meanwhile --record names a DIFFERENT cluster and writes it
+ifv.save_clusters({"BBBBBBBBBBB_SPEAKER_01": {"placeholder": "BBBBBBBBBBB_SPEAKER_01",
+                                              "status": "named", "name": "Heather McKinnon",
+                                              "attempts": []}})
+
+# ... and the sweep, still holding its stale dict, saves its next cluster
+sweep_memory["CCCCCCCCCCC_SPEAKER_02"] = {"placeholder": "CCCCCCCCCCC_SPEAKER_02",
+                                          "status": "pending_read", "attempts": []}
+ifv.save_clusters({"CCCCCCCCCCC_SPEAKER_02":
+                   sweep_memory["CCCCCCCCCCC_SPEAKER_02"]})
+
+after = ifv.load_state()
+ck("the recorded name survives the sweep's next save",
+   (after.get("BBBBBBBBBBB_SPEAKER_01") or {}).get("name"), "Heather McKinnon")
+ck("the sweep's own clusters are all still there",
+   sorted(after), ["AAAAAAAAAAA_SPEAKER_00", "BBBBBBBBBBB_SPEAKER_01",
+                   "CCCCCCCCCCC_SPEAKER_02"])
+ck("the lock is released", os.path.exists(os.path.join(ifv.FRAMES, "sweep.lock")),
+   False)
+
+print()
 print("%d failures" % len(fails))
 sys.exit(1 if fails else 0)

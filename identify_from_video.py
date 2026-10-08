@@ -118,6 +118,13 @@ NOT_A_PERSON = re.compile(
     r"^(council chambers?|chambers?|city hall|conference room|room \w+|"
     r"zoom|meeting|host|co-?host|unknown|guest|ipad|iphone|android|user)\b",
     re.I)
+# A DEVICE name is not a person either, and it does not come first: Zoom's
+# default for a phone is "<owner>'s iPhone", which sails past NOT_A_PERSON
+# because that anchors at the start. "MD'orsi's iPhone" named a tile in the
+# very first gallery read -- it looks exactly like a two-word name.
+A_DEVICE = re.compile(
+    r"\b(i[Pp]hone|iPad|Android|Galaxy|Pixel|laptop|phone|tablet|"
+    r"computer|desktop|pc|mac(?:book)?)\s*$", re.I)
 
 
 def cluster_counts(video_data):
@@ -392,10 +399,32 @@ def grab(yt, seconds, dest, window=12, every=4):
     return sorted(glob.glob(dest.replace(".png", "_*.png")))
 
 
+def clean_overlay_name(text):
+    """Strip the affiliation people hang off a Zoom display name.
+
+    Observed in the first five reads, which is why this exists: "Michael
+    Barone, Jr. (RIW)", "Libby Brown | Goody Clancy", "Marta Cabral- MHS
+    Principal". Without this, plausible_name() refuses all three and three good
+    reads are recorded as rejections -- a silent coverage loss that would have
+    looked like the overlay failing rather than the parser.
+
+    The affiliation is dropped rather than kept: a role belongs in the roster
+    files, which resolve it BY MEETING DATE, and freezing "MHS Principal" into
+    a name would outlive the job.
+    """
+    t = (text or "").strip()
+    t = re.sub(r"\s*\((?:[^()]*)\)\s*$", "", t)        # trailing (RIW)
+    t = re.split(r"\s*[|/]\s*", t)[0]                  # Name | Firm
+    t = re.sub(r"\s*[-–—]\s+.*$", "", t)     # Name - Role
+    t = re.sub(r"(\w)-\s+.*$", r"\1", t)               # Name- Role, no space
+    t = re.sub(r",\s*(Jr|Sr|II|III|IV)\.?$", r" \1", t, flags=re.I)
+    return t.strip().strip(",").strip()
+
+
 def plausible_name(text):
     """Is an overlay string a person? "Council Chambers" is not."""
-    t = (text or "").strip()
-    if not t or NOT_A_PERSON.match(t):
+    t = clean_overlay_name(text)
+    if not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t):
         return False
     return bool(re.match(r"^[A-Za-z][A-Za-z.'\-]*(?:\s+[A-Za-z.'\-]+){1,3}$", t))
 
@@ -412,8 +441,41 @@ def load_state():
 
 
 def save_state(state):
-    with io.open(STATE, "w", encoding="utf-8", newline="\n") as fp:
+    tmp = STATE + ".tmp"
+    with io.open(tmp, "w", encoding="utf-8", newline="\n") as fp:
         json.dump(state, fp, indent=2, ensure_ascii=False, sort_keys=True)
+    os.replace(tmp, STATE)
+
+
+def save_clusters(updates):
+    """Merge these clusters into the file on disk, under a lock.
+
+    A WHOLE-FILE WRITE FROM EITHER SIDE DESTROYS THE OTHER'S WORK. --sweep runs
+    for hours holding the state dict in memory, and --record runs between its
+    downloads; the first full run clobbered two names that had just been
+    recorded, because the sweep's next save wrote back a dict loaded before
+    they existed. Exactly the hazard CLAUDE.md records for create_subtitles.py
+    saving all of video_data without re-reading.
+
+    So neither side ever writes the whole file from memory: both re-read, merge
+    only the clusters they actually changed, and write under the same
+    owner-aware lock video_data.json uses, so a killed writer cannot wedge it.
+    """
+    lock = os.path.join(FRAMES, "sweep.lock")
+    os.makedirs(FRAMES, exist_ok=True)
+    utils.wait_for_lock(lock)
+    with io.open(lock, "w", encoding="utf-8") as fp:
+        fp.write(str(os.getpid()))
+    try:
+        state = load_state()
+        state.update(updates)
+        save_state(state)
+    finally:
+        try:
+            os.remove(lock)
+        except OSError:
+            pass
+    return state
 
 
 def strip_tile(frames, dest, fraction=STRIP_FRACTION):
@@ -513,7 +575,7 @@ def sweep(video_data, rows, counts, limit=0, per=3):
             # every readable meeting tried and none named them
             rec["status"] = "exhausted"
             exhausted += 1
-            save_state(state)
+            save_clusters({ph: rec})
             continue
         if limit and grabbed >= limit:
             break
@@ -550,7 +612,7 @@ def sweep(video_data, rows, counts, limit=0, per=3):
             pending.append(ph)
             grabbed += 1
             print("    %d frames -> %s" % (len(pngs), attempt["tile"]))
-        save_state(state)                  # after each cluster: an interrupted
+        save_clusters({ph: rec})           # after each cluster: an interrupted
                                            # sweep loses one download, not all
     print()
     print("grabbed %d, download-failed %d, exhausted %d, awaiting a read %d"
@@ -573,6 +635,7 @@ def record(lines):
     """Take read verdicts; a name ends the cluster, a failure triggers fallback."""
     state = load_state()
     named = failed = bad = promoted = 0
+    touched = set()
     for raw in lines:
         raw = raw.strip()
         if not raw or raw.startswith("#"):
@@ -584,6 +647,7 @@ def record(lines):
             continue
         ph, verdict = parts[0], parts[1].strip()
         rec = state.get(ph)
+        touched.add(ph)
         if not rec:
             print("  ? %s is not in the sweep" % ph)
             bad += 1
@@ -615,15 +679,17 @@ def record(lines):
             failed += 1
         elif plausible_name(verdict):
             a["verdict"] = "name"
-            a["name"] = verdict
+            a["name"] = clean_overlay_name(verdict)
+            a["overlay"] = verdict
             rec["status"] = "named"
-            rec["name"] = verdict
+            rec["name"] = a["name"]
             says = rec.get("transcript_says")
             if says:
                 # surname agreement, because the overlay carries a chosen
                 # display name and the transcript carries what ASR heard
                 rec["agrees"] = bool(
-                    says.split()[-1].lower() == verdict.split()[-1].lower())
+                    says.split()[-1].lower()
+                    == a["name"].split()[-1].lower())
             named += 1
         else:
             # plausible_name() refuses it. A room label typed in as though it
@@ -635,7 +701,7 @@ def record(lines):
             a["name"] = verdict
             rec["status"] = "retry"
             failed += 1
-    save_state(state)
+    save_clusters({k: state[k] for k in touched if k in state})
     print("recorded %d names, %d failures, %d promoted to a full-frame read, "
           "%d unparsed" % (named, failed, promoted, bad))
     return 1 if bad else 0
