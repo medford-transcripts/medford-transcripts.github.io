@@ -31,6 +31,20 @@ WHAT THE SAMPLE SHOWED, which is what this script has to cope with:
     read named a voice in 30 meetings, and corrected the spelling the ASR had
     as "Loretta".
   * pre-2020 -- in-person chamber video, no annotation at all. Skipped.
+  * LIVE CAPTIONS WITH AVATAR INITIALS, and they are the best signal of all.
+    When Zoom captions are on, each caption line carries the speaker's
+    initials in a coloured chip. That is Zoom attributing the utterance
+    directly, so unlike the active-speaker tile it has NO view-switch lag and
+    works on turns far too short to move the view. On O1CMBj7JDes_SPEAKER_03
+    every target strip was "weak" by duration, yet the chips read CB / EH / DE
+    exactly where the SRT has the target, SPEAKER_08 and SPEAKER_05 -- against
+    name tags "Christopher Bader", "Emily Hedeman", "Danielle Evans, PDS".
+    Three confirmations in one tile.
+  * A SLIDE IS NOT AN OVERLAY. UdfiATpNBs8_SPEAKER_12 shared a deck whose
+    visible line read "10. Nicole Morell" -- a bullet in the content, not a
+    Zoom label. Text inside a screen share names nothing, and reading it as a
+    speaker is how the earlier title-cue pass wrote organisations in as
+    people. Only the chrome Zoom draws counts.
 
 JASON'S STEER, 2026-10-07: after 2020 most meetings are hybrid or Zoom-only,
 so a speaker at the podium does not mean the next one is too. SUBCOMMITTEE
@@ -196,7 +210,10 @@ SELF_ID = [re.compile(p) for p in (
     # [Mm] rather than re.I: the flag would also make the NAME group
     # case-insensitive, and capitalisation is most of what distinguishes a
     # name from the words around it.
-    r"\b[Mm]y name is\s+(" + _N + r")",
+    # "My name's Barbara Vivian" -- the contraction, which the "is" form misses
+    # entirely. Found on 6zUtu0XZLH4_SPEAKER_05, whose frames all read "Council
+    # Chambers": the video route is blind in the room, and the text names her.
+    r"\b[Mm]y name(?:'s| is)\s+(" + _N + r")",
     r"\bI'?m\s+(" + _N + r")\s*[,.]",
     r"(" + _N + r"),\s*\d+\s+[A-Z][a-z]+",
     # "I'm the architect, Jacob Levine, representing ..." -- the role comes
