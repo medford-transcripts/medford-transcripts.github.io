@@ -227,6 +227,10 @@ SELF_ID = [re.compile(p) for p in (
     # swallow "This is Medford City Council" -- and plausible_name() below is
     # the backstop for whatever it does swallow.
     r"\b[Tt]his is\s+(" + _N + r")\s*(?:,|\s+(?:with|from)\b)",
+    # "Again for the record, Eric Dubrul with Bohler Engineering" -- the
+    # formula people use when a chair asks them to state a name. Seen on
+    # 39QZXkKLDII_SPEAKER_10 and KdVL9syClrc.
+    r"for the record,?\s+(" + _N + r")\s*(?:,|\s+(?:with|from)\b)",
 )]
 
 
@@ -803,6 +807,56 @@ def retile():
     return 0
 
 
+def reground(video_data):
+    """Recompute every cluster's transcript ground truth, and re-score.
+
+    The self-ID patterns widen as the reads turn up new phrasings, and a
+    cluster whose ground truth was computed under the old set keeps a stale
+    answer -- usually None, which silently shrinks the sample the error rate
+    is measured on. This re-derives all of them from the meetings already
+    attempted, so widening a pattern improves the measurement retroactively
+    instead of only for clusters swept afterwards.
+
+    It also DROPS ground truth that no longer passes plausible_name(). Two
+    clusters were carrying "Sarah" and "City Hall" from before that guard
+    existed, and "City Hall" scored against a real name is a manufactured
+    disagreement.
+    """
+    state = load_state()
+    fixed, gained, dropped = {}, 0, 0
+    for ph, rec in state.items():
+        was = rec.get("transcript_says")
+        now = None
+        for a in rec.get("attempts") or []:
+            mine, _w, _s = speech_in(video_data, a.get("yt") or "",
+                                     a.get("speaker") or "")
+            now = transcript_says(mine)
+            if now:
+                break
+        if now == was:
+            continue
+        rec["transcript_says"] = now
+        if rec.get("status") == "named" and rec.get("name"):
+            if now:
+                rec["agrees"], rec["agreement"] = surname_agreement(
+                    now, rec["name"])
+            else:
+                rec.pop("agrees", None)
+                rec.pop("agreement", None)
+        if now and not was:
+            gained += 1
+            print("  + %-26s %-20s (named %s)"
+                  % (ph, now, rec.get("name") or "-"))
+        elif was and not now:
+            dropped += 1
+            print("  - %-26s dropped %r" % (ph, was))
+        fixed[ph] = rec
+    if fixed:
+        save_clusters(fixed)
+    print("ground truth: %d gained, %d dropped" % (gained, dropped))
+    return 0
+
+
 def record(lines):
     """Take read verdicts; a name ends the cluster, a failure triggers fallback."""
     state = load_state()
@@ -1024,12 +1078,16 @@ def main():
                     help="images awaiting a read")
     ap.add_argument("--retile", action="store_true",
                     help="rebuild pending tiles from frames on disk")
+    ap.add_argument("--reground", action="store_true",
+                    help="recompute transcript ground truth and re-score")
     args = ap.parse_args()
 
     if args.status:
         return report()
     if args.retile:
         return retile()
+    if args.reground:
+        return reground(utils.get_video_data())
     if args.pending:
         return pending_reads()
     if args.record:
