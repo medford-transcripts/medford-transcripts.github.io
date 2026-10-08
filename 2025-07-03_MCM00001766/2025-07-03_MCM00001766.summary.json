@@ -1,0 +1,50 @@
+{
+ "video_id": "MCM00001766",
+ "provider": "gemini",
+ "generated_at": "2026-10-08T07:09:07Z",
+ "model": "gemini-3.5-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "023ccaec583d414b",
+ "subject": "",
+ "overview": "The committee approved the city council's May newsletter for publication, reviewed the results of the FY26 budget public engagement survey, and received an update on a recent constituent listening session.",
+ "items": [
+  {
+   "title": "May Newsletter Review",
+   "t": 61,
+   "summary": "The committee reviewed, edited, and approved the May newsletter for publication and public circulation.",
+   "speakers": [
+    "Matt Leming",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "FY26 Budget Survey Report",
+   "t": 864,
+   "summary": "Councilor Tseng presented qualitative and demographic data from 110 responses to the FY26 budget survey, which highlighted schools and roads as top resident priorities. The committee voted to distribute the report publicly and place the paper on file.",
+   "speakers": [
+    "Matt Leming",
+    "Justin Tseng",
+    "Emily Lazzaro",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Senior Center Listening Session Update",
+   "t": 2740,
+   "summary": "Councilors Lazzaro and Tseng reported on their recent constituent listening session at the senior center, which focused primarily on infrastructure concerns and navigating municipal contact information. The paper was kept in committee.",
+   "speakers": [
+    "Matt Leming",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Anna Callahan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15305,
+  "output_tokens": 341
+ }
+}
