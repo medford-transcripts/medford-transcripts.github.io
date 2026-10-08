@@ -169,6 +169,39 @@ def is_subcommittee(entry):
                 and mt not in ("CC City Council", "MPS School Committee"))
 
 
+def meetings_for(video_data, placeholder, refs):
+    """Every meeting this cluster speaks in, best place to read a name first.
+
+    THE HOME MEETING IS NOT ALWAYS THE RIGHT ONE. The home is wherever the
+    placeholder happened to be minted, and if the speaker was AT THE PODIUM
+    there, the overlay names the room -- "Talking: Council Chambers" -- and no
+    timestamp in that meeting will ever do better, because the label describes
+    the camera feed rather than the person. Measured: three of nine reads
+    failed this way, and a second frame in the same meeting changed nothing.
+
+    But a cluster referenced by 18 meetings has 18 chances, and the same person
+    who sat in the chamber one week dialled in the next. So the meetings are
+    ranked and tried in order: fully-remote-looking subcommittees first, then
+    by date within the peak-Zoom window.
+    """
+    m = CROSS.match(placeholder)
+    out = []
+    seen = set()
+    for yt, spk in [(m.group(1), m.group(2))] + list(refs):
+        if (yt, spk) in seen:
+            continue
+        seen.add((yt, spk))
+        e = video_data.get(yt) or {}
+        if not YT_ID.match(yt) or yt.startswith(("MCM", "CAS", "XXXXXX")):
+            continue                      # cannot be sliced yet
+        date = (e.get("date") or "")[:10]
+        if date < FIRST_REMOTE_DATE:
+            continue                      # no overlay exists
+        out.append((not is_subcommittee(e), date, yt, spk))
+    out.sort()
+    return [(yt, spk) for _sub, _d, yt, spk in out]
+
+
 def candidates(video_data, limit=0):
     """Ranked clusters worth spending a download on."""
     rows = []
@@ -201,27 +234,84 @@ def candidates(video_data, limit=0):
     return rows[:limit] if limit else rows
 
 
-def frame_times(blocks, n=3):
-    """Timestamps to sample, inside the longest turns.
+def dialogue_times(all_blocks, speaker, n=3):
+    """Moments where the target is in CONVERSATION, not presenting.
 
-    SEVERAL, BECAUSE ONE IS NOT ENOUGH. A frame can land on a screen share,
-    where Zoom draws no name at all. Sampling the longest turns -- and a moment
-    INSIDE each, not at its edge -- gives the best chance of catching the
-    speaker view while the right person is talking.
+    A SCREEN SHARE IS A MONOLOGUE, so the way to avoid landing on one is to
+    pick moments that cannot be a monologue: a turn by the target with a
+    DIFFERENT speaker immediately before and after it. Somebody mid-presentation
+    does not get interrupted on both sides.
+
+    This was the single biggest miss in the first sample -- 4 of 5 failures
+    were screen shares, because frame_times() had taken the LONGEST turns, and
+    a long turn is exactly a presentation.
     """
-    longest = sorted(blocks, key=lambda b: (b.get("end") or 0) - (b.get("start") or 0),
-                     reverse=True)[:n]
     out = []
-    for b in longest:
+    for i, b in enumerate(all_blocks):
+        if (b.get("speaker") or "") != speaker:
+            continue
+        if i == 0 or i + 1 >= len(all_blocks):
+            continue
+        before = all_blocks[i - 1].get("speaker") or ""
+        after = all_blocks[i + 1].get("speaker") or ""
+        if before == speaker or after == speaker:
+            continue                       # inside a run of their own turns
         s, e = b.get("start") or 0, b.get("end") or 0
         if e - s < 1.5:
             continue
-        out.append(int(s + (e - s) * 0.5))
-    return out
+        out.append((e - s, int(s + (e - s) * 0.5)))
+    # longest of the genuinely conversational moments: still needs enough
+    # speech for the active-speaker view to have switched to them
+    out.sort(reverse=True)
+    return [t for _d, t in out[:n]]
 
 
-def grab(yt, seconds, dest, window=4):
-    """One frame at `seconds`. Returns True on success."""
+def frame_times(blocks, n=3):
+    """Timestamps to sample, spread across turn LENGTHS rather than taking the
+    longest.
+
+    SAMPLING THE LONGEST TURNS SELECTS FOR THE ONE VIEW WITH NO NAME ON IT.
+    The first version took the three longest turns, reasoning that a long turn
+    is the safest place to land. Measured on nine clusters, that produced 4
+    screen shares out of 5 misses: a long turn is a PRESENTATION, and while
+    someone presents Zoom shows their slides, not their name card. The sampler
+    was selecting against its own purpose.
+
+    So the sample spreads instead:
+      * the speaker's FIRST turn -- usually the introduction, on camera,
+        before any share starts
+      * a SHORT turn -- answering a question, rarely during their own share
+      * a long turn, which is still the best case when nobody is sharing
+
+    Each lands mid-block rather than at an edge, so the frame is inside the
+    speech rather than on the handover.
+    """
+    usable = [b for b in blocks
+              if ((b.get("end") or 0) - (b.get("start") or 0)) >= 1.5]
+    if not usable:
+        return []
+    by_time = sorted(usable, key=lambda b: b.get("start") or 0)
+    by_len = sorted(usable, key=lambda b: (b.get("end") or 0) - (b.get("start") or 0))
+    picks, seen = [], set()
+    for b in (by_time[0], by_len[len(by_len) // 3], by_len[-1]):
+        s, e = b.get("start") or 0, b.get("end") or 0
+        t = int(s + (e - s) * 0.5)
+        if t not in seen:
+            seen.add(t)
+            picks.append(t)
+    return picks[:n]
+
+
+def grab(yt, seconds, dest, window=12, every=4):
+    """Frames across a `window` of video. Returns the list written.
+
+    SEVERAL FRAMES PER DOWNLOAD, because the download is the expensive part and
+    the frames are free. A 12-second slice costs about the same as a 4-second
+    one at these bitrates, and sampling it every few seconds spans a view
+    change -- a share ending, the active-speaker tile switching, a name card
+    appearing -- where a single frame caught whatever was on screen at one
+    instant.
+    """
     import yt_dlp
     tmp = dest + ".slice"
     for p in glob.glob(tmp + ".*"):
@@ -243,19 +333,22 @@ def grab(yt, seconds, dest, window=4):
     media = glob.glob(tmp + ".*")
     if not media:
         return False
+    pattern = dest.replace(".png", "_%02d.png")
     try:
         subprocess.run([FFMPEG, "-hide_banner", "-loglevel", "error", "-y",
-                        "-i", media[0], "-frames:v", "1", dest], check=True)
+                        "-i", media[0], "-vf", "fps=1/%d" % every,
+                        "-frames:v", str(max(1, window // every)), pattern],
+                       check=True)
     except Exception as exc:
         print("    ffmpeg failed: %s" % str(exc)[:70])
-        return False
+        return []
     finally:
         for p in media:
             try:
                 os.remove(p)
             except OSError:
                 pass
-    return os.path.exists(dest)
+    return sorted(glob.glob(dest.replace(".png", "_*.png")))
 
 
 def plausible_name(text):
