@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Start with RESUME.md
+
+RESUME.md is the handover from the last working session: what is half-done,
+the single command to continue it, and the rules that were paid for in
+mistakes rather than reasoning. Read it before starting anything, so the same
+ground is not re-derived. PENDING.md is the older backlog behind it.
+
 ## Read PRINCIPLES.md first
 
 PRINCIPLES.md holds the standing constraints on this archive -- who may be
