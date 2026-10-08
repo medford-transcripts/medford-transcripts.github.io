@@ -955,7 +955,7 @@ def apply_named(apply=False):
             continue                       # already applied
         last = (rec.get("attempts") or [{}])[-1]
         plan.append({"placeholder": ph, "name": name, "dir": hdir,
-                     "key": hspk, "path": hpath, "ids": ids, "prov": prov,
+                     "key": hspk, "path": hpath,
                      "read_in": last.get("yt"), "overlay": last.get("overlay")})
 
     for p in plan:
@@ -971,13 +971,28 @@ def apply_named(apply=False):
     if not plan:
         return 0
 
+    # GROUP BY FILE BEFORE WRITING. Three clusters can share one home meeting
+    # -- WpieqDvHvyY owns Michael Parker, Quinlan Locke and Mark Junghans --
+    # and loading speaker_ids.json separately for each one means every write
+    # starts from a copy taken before the others wrote. The last one through
+    # wins and the rest vanish silently. It cost 11 of 50 names on the first
+    # run, and it is the same load-modify-write-a-stale-copy mistake as the
+    # concurrent sweep/record clobber. One read and one write per FILE.
+    byfile = collections.OrderedDict()
     for p in plan:
-        p["ids"][p["key"]] = p["name"]
-        sp.atomic_write_json(p["path"], p["ids"])
-        sp.record(p["dir"], p["key"], p["name"], "video_overlay",
-                  from_=p.get("read_in"), provenance=p["prov"])
-        sp.save_provenance(p["dir"], p["prov"])
-    print("wrote %d homes" % len(plan))
+        byfile.setdefault(p["path"], []).append(p)
+    for path, items in byfile.items():
+        hdir = items[0]["dir"]
+        with io.open(path, encoding="utf-8") as fp:
+            ids = json.load(fp)
+        prov = sp.load_provenance(hdir)
+        for p in items:
+            ids[p["key"]] = p["name"]
+            sp.record(hdir, p["key"], p["name"], "video_overlay",
+                      from_=p.get("read_in"), provenance=prov)
+        sp.atomic_write_json(path, ids)
+        sp.save_provenance(hdir, prov)
+    print("wrote %d names across %d home files" % (len(plan), len(byfile)))
 
     import track_speakers
     print("propagating...")
