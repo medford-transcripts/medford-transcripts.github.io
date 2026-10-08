@@ -96,6 +96,18 @@ FAILED = ("room", "blank", "share", "unreadable", "download_failed", "rejected",
 # active-speaker border rendered in the broadcast encode). The tier is kept
 # because it costs no download, and report() counts what it actually yields.
 STAGES = ("strip", "full")
+# One download covers GRAB_WINDOW seconds and ffmpeg samples it every
+# GRAB_EVERY, so frame k of a slice starting at t sits at t + (k-1)*GRAB_EVERY.
+# They are constants rather than defaults buried in grab() because
+# frame_legend() reconstructs those times to say who was talking in each strip,
+# and a legend that drifted from the grabber would mislabel every read.
+GRAB_WINDOW = 12
+GRAB_EVERY = 4
+# Seconds of continuous speech before Zoom's active-speaker view can be trusted
+# to have switched to the person talking. Below this the tile on screen may
+# still be the PREVIOUS speaker, so the strip is marked weak and does not
+# support a name on its own.
+MIN_TURN_FOR_VIEW = 3.0
 
 # An 11-character video id, an underscore, the speaker key -- the same shape
 # track_speakers.propagate() parses, kept identical on purpose.
@@ -282,7 +294,7 @@ def candidates(video_data, limit=0):
     return rows[:limit] if limit else rows
 
 
-def dialogue_times(all_blocks, speaker, n=3):
+def dialogue_times(all_blocks, speaker, n=3, floor=MIN_TURN_FOR_VIEW):
     """Moments where the target is in CONVERSATION, not presenting.
 
     A SCREEN SHARE IS A MONOLOGUE, so the way to avoid landing on one is to
@@ -305,7 +317,7 @@ def dialogue_times(all_blocks, speaker, n=3):
         if before == speaker or after == speaker:
             continue                       # inside a run of their own turns
         s, e = b.get("start") or 0, b.get("end") or 0
-        if e - s < 1.5:
+        if e - s < floor:
             continue
         out.append((e - s, int(s + (e - s) * 0.5)))
     # longest of the genuinely conversational moments: still needs enough
@@ -314,7 +326,7 @@ def dialogue_times(all_blocks, speaker, n=3):
     return [t for _d, t in out[:n]]
 
 
-def frame_times(blocks, n=3):
+def frame_times(blocks, n=3, floor=MIN_TURN_FOR_VIEW):
     """Timestamps to sample, spread across turn LENGTHS rather than taking the
     longest.
 
@@ -335,7 +347,7 @@ def frame_times(blocks, n=3):
     speech rather than on the handover.
     """
     usable = [b for b in blocks
-              if ((b.get("end") or 0) - (b.get("start") or 0)) >= 1.5]
+              if ((b.get("end") or 0) - (b.get("start") or 0)) >= floor]
     if not usable:
         return []
     by_time = sorted(usable, key=lambda b: b.get("start") or 0)
@@ -350,7 +362,7 @@ def frame_times(blocks, n=3):
     return picks[:n]
 
 
-def grab(yt, seconds, dest, window=12, every=4):
+def grab(yt, seconds, dest, window=GRAB_WINDOW, every=GRAB_EVERY):
     """Frames across a `window` of video. Returns the list written.
 
     SEVERAL FRAMES PER DOWNLOAD, because the download is the expensive part and
@@ -418,7 +430,45 @@ def clean_overlay_name(text):
     t = re.sub(r"\s*[-–—]\s+.*$", "", t)     # Name - Role
     t = re.sub(r"(\w)-\s+.*$", r"\1", t)               # Name- Role, no space
     t = re.sub(r",\s*(Jr|Sr|II|III|IV)\.?$", r" \1", t, flags=re.I)
+    # ", Chair" / ", member" / ", Ward 3" -- a role appended after a comma.
+    # Done AFTER the suffix rewrite above, so "Barone, Jr." is already " Jr"
+    # and cannot be eaten here.
+    t = re.sub(r",.*$", "", t)
+    # A personal honorific is not part of the name. Only these -- NOT civic
+    # roles like "Councilor", which titles.strip_role() handles against the
+    # known-names set, because a role is resolved from the rosters BY MEETING
+    # DATE and must never be frozen into a speaker name.
+    t = re.sub(r"^(?:Dr|Mr|Mrs|Ms|Miss|Rev|Prof|Hon|Sir|Atty)\.?\s+", "", t,
+               flags=re.I)
     return t.strip().strip(",").strip()
+
+
+def surname_agreement(says, name):
+    """Compare the spoken name to the overlay name. (agrees, how).
+
+    EXACT EQUALITY WOULD OVERSTATE THE ERROR RATE, which is the one number this
+    sweep exists to produce. The two sources are not the same kind of thing:
+    the overlay is a display name the person typed, and the transcript is what
+    ASR heard them say. "Georges Fischer" against a spoken "George Fisher" is
+    not the overlay being wrong -- it is the overlay CORRECTING the spelling,
+    which is the same case as "Lauretta" against the ASR's "Loretta", and the
+    reason the overlay is worth reading at all.
+
+    So three outcomes, counted separately rather than collapsed: exact, variant
+    (a near-identical surname, scored as agreement because it is one), and
+    disagree -- a different person, which is the only real error.
+    """
+    import difflib
+    a = (says or "").split()
+    b = (name or "").split()
+    if not a or not b:
+        return False, "unknown"
+    sa, sb = a[-1].lower().strip(".,"), b[-1].lower().strip(".,")
+    if sa == sb:
+        return True, "exact"
+    if difflib.SequenceMatcher(None, sa, sb).ratio() >= 0.8:
+        return True, "variant"
+    return False, "disagree"
 
 
 def plausible_name(text):
@@ -547,7 +597,11 @@ def sample_times(video_data, yt, speaker, n):
     allb = parse_meeting(video_data, yt)
     mine = [b for b in allb if (b.get("speaker") or "") == speaker]
     times = dialogue_times(allb, speaker, n)
-    for t in frame_times(mine, n):
+    if not times:
+        # a cluster of consistently short turns still deserves an attempt; the
+        # legend marks those strips weak so the read cannot lean on them
+        times = dialogue_times(allb, speaker, n, floor=1.5)
+    for t in frame_times(mine, n) or frame_times(mine, n, floor=1.5):
         if len(times) >= n:
             break
         if t not in times:
@@ -685,11 +739,8 @@ def record(lines):
             rec["name"] = a["name"]
             says = rec.get("transcript_says")
             if says:
-                # surname agreement, because the overlay carries a chosen
-                # display name and the transcript carries what ASR heard
-                rec["agrees"] = bool(
-                    says.split()[-1].lower()
-                    == a["name"].split()[-1].lower())
+                rec["agrees"], rec["agreement"] = surname_agreement(
+                    says, a["name"])
             named += 1
         else:
             # plausible_name() refuses it. A room label typed in as though it
@@ -705,6 +756,51 @@ def record(lines):
     print("recorded %d names, %d failures, %d promoted to a full-frame read, "
           "%d unparsed" % (named, failed, promoted, bad))
     return 1 if bad else 0
+
+
+FRAME_AT = re.compile(r"_t(\d+)_(\d+)\.png$")
+
+
+def frame_legend(video_data, attempt, target):
+    """Who the TRANSCRIPT says is talking in each strip, top to bottom.
+
+    THE WINDOW CAN CROSS SPEAKERS, and when it does the tile is unreadable
+    without this. O1CMBj7JDes_SPEAKER_00's second window showed three different
+    people in 12 seconds -- "Sharad Bajracharya, Member", "Jacquie McPherson,
+    Chair", "Amanda Centrella she/her, City Staff" -- and nothing in the image
+    says which one is the cluster being named. Guessing there is precisely the
+    one-in-three error §4 exists to prevent.
+
+    But the frame times are deterministic, so the SRT can say it: strip k of a
+    slice starting at t is at t + (k-1)*GRAB_EVERY, and the block covering that
+    second names the speaker. The read stops being "which of these people is
+    it" and becomes "what name is on the strip the target is talking in".
+    """
+    blocks = parse_meeting(video_data, attempt.get("yt") or "")
+    out = []
+    for p in attempt.get("frames") or []:
+        m = FRAME_AT.search(p)
+        if not m:
+            continue
+        t = int(m.group(1)) + (int(m.group(2)) - 1) * GRAB_EVERY
+        spk, text, dur = "", "", 0.0
+        for b in blocks:
+            if (b.get("start") or 0) <= t <= (b.get("end") or 0):
+                spk = b.get("speaker") or ""
+                text = " ".join((b.get("text") or "").split())[:46]
+                dur = (b.get("end") or 0) - (b.get("start") or 0)
+                break
+        out.append({"frame": os.path.basename(p), "t": t, "speaker": spk,
+                    "is_target": spk == target, "text": text,
+                    "dur": round(dur, 1),
+                    # Zoom switches the active-speaker view on SUSTAINED
+                    # speech, so a two-word "Thank you very much." can leave
+                    # the PREVIOUS speaker's tile on screen. A strip on a turn
+                    # that short names the wrong person as often as the right
+                    # one -- the same place short-turn attribution already
+                    # measures 53-66% against a human reference.
+                    "weak": spk == target and dur < MIN_TURN_FOR_VIEW})
+    return out
 
 
 def pending_reads():
@@ -723,11 +819,20 @@ def pending_reads():
         stage = a.get("stage", "strip")
         imgs = [a["tile"]] if stage == "strip" and a.get("tile") else a.get("frames") or []
         rows.append((ph, stage, state[ph].get("transcript_says"), imgs))
+    vd = utils.get_video_data()
     for ph, stage, says, imgs in rows:
+        a = open_attempt(state[ph])
         print("%s  [%s]%s" % (ph, stage,
                               "  transcript says: %s" % says if says else ""))
         for p in imgs:
             print("    %s" % p)
+        # strips run top to bottom in the same order as the frames
+        for i, leg in enumerate(frame_legend(vd, a, a.get("speaker") or ""), 1):
+            print("    strip %d  t=%-6d %-12s %4.1fs %s %s"
+                  % (i, leg["t"], leg["speaker"] or "-", leg["dur"],
+                     ("<== TARGET (weak)" if leg["weak"] else "<== TARGET")
+                     if leg["is_target"] else "                 ",
+                     leg["text"]))
     print()
     print("%d attempts awaiting a read" % len(rows))
     return 0
@@ -761,16 +866,19 @@ def report():
             and r.get("transcript_says")]
     print()
     if both:
-        agree = sum(1 for r in both if r.get("agrees"))
+        how = collections.Counter(r.get("agreement") or "unknown" for r in both)
+        wrong = how.get("disagree", 0)
         print("ground truth: %d clusters named by BOTH frame and transcript"
               % len(both))
-        print("  surnames agree   %d" % agree)
-        print("  disagree         %d  (%.1f%% error)"
-              % (len(both) - agree, 100.0 * (len(both) - agree) / len(both)))
+        print("  exact surname    %d" % how.get("exact", 0))
+        print("  spelling variant %d   (overlay correcting the ASR, not an error)"
+              % how.get("variant", 0))
+        print("  DISAGREE         %d   (%.1f%% error)"
+              % (wrong, 100.0 * wrong / len(both)))
         for r in both:
-            if not r.get("agrees"):
-                print("    %-26s frame %-22s transcript %s"
-                      % (r["placeholder"], r.get("name"),
+            if r.get("agreement") in ("variant", "disagree"):
+                print("    %-9s %-26s frame %-22s transcript %s"
+                      % (r.get("agreement"), r["placeholder"], r.get("name"),
                          r.get("transcript_says")))
     else:
         print("ground truth: no cluster yet named by both frame and transcript")
