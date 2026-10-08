@@ -196,3 +196,9 @@ anthropic_key.txt
 # derived cache written by track_speakers.speaker_self_consistency()
 speaker_self_consistency.json
 regen_progress.txt
+
+# Frames pulled from meeting video to read a Zoom name overlay. These are
+# photographs of people in a public repo -- the same reason embeddings.pkl and
+# addresses.json are not tracked. sweep.json lives here too: it is the sweep's
+# working record, and the measurement it produces is reported in PENDING.md.
+video_id_frames/

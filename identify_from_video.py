@@ -63,7 +63,39 @@ import srt_lines
 
 FRAMES = "video_id_frames"
 MANIFEST = os.path.join(FRAMES, "manifest.json")
+STATE = os.path.join(FRAMES, "sweep.json")
 FFMPEG = os.environ.get("FFMPEG", "ffmpeg")
+
+# The overlay only ever occupies a band along the bottom of the frame -- the
+# participant name bottom-left, "Talking: <name>" bottom-right. Cropping to
+# that band and stacking a cluster's frames into ONE image is what makes a
+# 277-cluster sweep affordable to read: one image per cluster-attempt instead
+# of one per frame, and the strip keeps full pixel detail where a downscaled
+# whole frame loses the very text being read.
+STRIP_FRACTION = 0.18
+# Verdicts that mean "this meeting will never name this person", so the next
+# sweep should try the next meeting. "room" is the important one: the overlay
+# named the camera feed, and no other timestamp in that meeting can do better.
+FAILED = ("room", "blank", "share", "unreadable", "download_failed", "rejected",
+          "ambiguous", "partial")
+# Gallery view defeats the strip crop: several names are visible and the green
+# active-speaker border -- the only thing that says which one is talking -- is
+# at the TILE edge, above the band. Naming the cluster from a strip like that
+# would be a one-in-four guess, which is the closed-set error §4 exists to
+# avoid. So "gallery" is not a failure: it promotes the SAME attempt to a
+# full-frame read, which costs nothing because the frames are already on disk.
+#
+# DO NOT HARVEST THE GALLERY. A gallery frame shows every participant's display
+# name at once, and it is tempting to keep them as a per-meeting candidate set,
+# since closed-set error falls steeply with set size. That set is an ATTENDANCE
+# RECORD of people who never spoke, which PRINCIPLES.md §2 forbids outright --
+# "never identify, never index, never count". Read the frame for the ACTIVE
+# SPEAKER and keep nothing else from it.
+#
+# Measured: the first promotion did not resolve (s093VSbtp08, 12 tiles, no
+# active-speaker border rendered in the broadcast encode). The tier is kept
+# because it costs no download, and report() counts what it actually yields.
+STAGES = ("strip", "full")
 
 # An 11-character video id, an underscore, the speaker key -- the same shape
 # track_speakers.propagate() parses, kept identical on purpose.
@@ -106,18 +138,27 @@ def cluster_counts(video_data):
     return out
 
 
-def speech_in(video_data, yt, speaker):
-    """(blocks, words, seconds) that this cluster speaks in its home meeting."""
+def parse_meeting(video_data, yt):
+    """Every block of one meeting's SRT, or [] if there is no transcript.
+
+    Separate from speech_in() because dialogue_times() needs the speakers
+    AROUND the target, not just the target's own turns.
+    """
     e = video_data.get(yt) or {}
     d = "%s_%s" % (e.get("upload_date"), yt)
     p = os.path.join(d, d + ".srt")
     if not os.path.exists(p):
-        return [], 0, 0.0
+        return []
     try:
         with io.open(p, encoding="utf-8", errors="replace") as fp:
-            blocks = srt_lines.parse_srt(fp.read())
+            return srt_lines.parse_srt(fp.read())
     except Exception:
-        return [], 0, 0.0
+        return []
+
+
+def speech_in(video_data, yt, speaker):
+    """(blocks, words, seconds) that this cluster speaks in one meeting."""
+    blocks = parse_meeting(video_data, yt)
     mine = [b for b in blocks if (b.get("speaker") or "") == speaker]
     words = sum(len((b.get("text") or "").split()) for b in mine)
     secs = sum((b.get("end") or 0) - (b.get("start") or 0) for b in mine)
@@ -359,13 +400,342 @@ def plausible_name(text):
     return bool(re.match(r"^[A-Za-z][A-Za-z.'\-]*(?:\s+[A-Za-z.'\-]+){1,3}$", t))
 
 
+def load_state():
+    if os.path.exists(STATE):
+        try:
+            with io.open(STATE, encoding="utf-8") as fp:
+                return json.load(fp)
+        except ValueError:
+            print("  %s is not valid JSON; refusing to overwrite it" % STATE)
+            raise
+    return {}
+
+
+def save_state(state):
+    with io.open(STATE, "w", encoding="utf-8", newline="\n") as fp:
+        json.dump(state, fp, indent=2, ensure_ascii=False, sort_keys=True)
+
+
+def strip_tile(frames, dest, fraction=STRIP_FRACTION):
+    """Crop each frame to its bottom band and stack the bands into one image."""
+    from PIL import Image
+    strips = []
+    for p in frames:
+        try:
+            im = Image.open(p)
+        except Exception:
+            continue
+        w, h = im.size
+        strips.append(im.crop((0, int(h * (1.0 - fraction)), w, h)).convert("RGB"))
+    if not strips:
+        return None
+    w = max(s.size[0] for s in strips)
+    gap = 3
+    tile = Image.new("RGB", (w, sum(s.size[1] for s in strips)
+                             + gap * (len(strips) - 1)), (255, 0, 255))
+    y = 0
+    for s in strips:
+        tile.paste(s, (0, y))            # magenta seams, so a join between two
+        y += s.size[1] + gap             # strips is never read as content
+    tile.save(dest)
+    return dest
+
+
+def open_attempt(rec):
+    """The attempt still waiting on a read, if any."""
+    for a in rec.get("attempts", []):
+        if a.get("verdict") is None:
+            return a
+    return None
+
+
+def next_meeting(video_data, placeholder, refs, rec):
+    """The next meeting to try for this cluster -- THIS IS THE FALLBACK.
+
+    meetings_for() ranks every meeting the cluster speaks in; this walks that
+    ranking and returns the first one not already attempted. So a cluster whose
+    best meeting answered "Talking: Council Chambers" advances to its second
+    meeting on the next sweep WITHOUT anyone choosing it, which is the whole
+    point of keeping state: the reader only ever answers "is there a name in
+    this image", and the script owns which meeting that image came from and
+    when to give up.
+
+    Measured 2026-10-07: 199 of 277 candidates (72%) have a second meeting to
+    fall back to. The other 78 are single-referrer or their referrers are
+    MCM/CAS-hosted, which cannot be sliced until a Castus slicer exists.
+
+    A "room" verdict bars the WHOLE meeting, not just the speaker key that was
+    tried: "Talking: Council Chambers" describes the camera feed, so no other
+    timestamp or local label in that meeting can do better. Any other failure
+    bars only the exact (meeting, speaker key) pair, because a cluster split
+    across two keys in one meeting has two genuinely different sets of
+    timestamps to land on.
+    """
+    dead = {a.get("yt") for a in rec.get("attempts", [])
+            if a.get("verdict") == "room"}
+    done = {(a.get("yt"), a.get("speaker")) for a in rec.get("attempts", [])}
+    for yt, spk in meetings_for(video_data, placeholder, refs):
+        if yt not in dead and (yt, spk) not in done:
+            return yt, spk
+    return None, None
+
+
+def sample_times(video_data, yt, speaker, n):
+    """Timestamps to grab: conversational moments first, spread turns to fill."""
+    allb = parse_meeting(video_data, yt)
+    mine = [b for b in allb if (b.get("speaker") or "") == speaker]
+    times = dialogue_times(allb, speaker, n)
+    for t in frame_times(mine, n):
+        if len(times) >= n:
+            break
+        if t not in times:
+            times.append(t)
+    return times, mine
+
+
+def sweep(video_data, rows, counts, limit=0, per=3):
+    """Grab one attempt's frames for every cluster that is due one."""
+    state = load_state()
+    os.makedirs(FRAMES, exist_ok=True)
+    pending, grabbed, exhausted, failed = [], 0, 0, 0
+    for r in rows:
+        ph = r["placeholder"]
+        rec = state.setdefault(ph, {"placeholder": ph, "status": "new",
+                                    "meetings": r["meetings"],
+                                    "transcript_says": None, "attempts": []})
+        if rec.get("status") in ("named", "exhausted"):
+            continue
+        if open_attempt(rec):
+            pending.append(ph)             # already waiting on a read
+            continue
+        yt, spk = next_meeting(video_data, ph, counts.get(ph, []), rec)
+        if not yt:
+            # every readable meeting tried and none named them
+            rec["status"] = "exhausted"
+            exhausted += 1
+            save_state(state)
+            continue
+        if limit and grabbed >= limit:
+            break
+        times, mine = sample_times(video_data, yt, spk, per)
+        if rec.get("transcript_says") is None:
+            rec["transcript_says"] = transcript_says(mine)
+        rank = len(rec["attempts"]) + 1
+        print("%s  attempt %d: %s %s t=%s"
+              % (ph, rank, yt, spk, ",".join(str(t) for t in times) or "-"))
+        attempt = {"yt": yt, "speaker": spk, "rank": rank,
+                   "date": ((video_data.get(yt) or {}).get("date") or "")[:10],
+                   "times": times, "frames": [], "tile": None,
+                   "stage": "strip",
+                   "verdict": None, "name": None}
+        pngs = []
+        for t in times:
+            dest = os.path.join(FRAMES, "%s_%s_t%d.png" % (yt, spk, t))
+            got = grab(yt, t, dest)
+            if got:
+                pngs.extend(got)
+        if not pngs:
+            # a failed download is a failed attempt, so the cluster falls back
+            # to its next meeting rather than stalling here
+            attempt["verdict"] = "download_failed"
+            rec["attempts"].append(attempt)
+            rec["status"] = "retry"
+            failed += 1
+        else:
+            attempt["frames"] = pngs
+            attempt["tile"] = strip_tile(
+                pngs, os.path.join(FRAMES, "tile_%s_a%d.png" % (ph, rank)))
+            rec["attempts"].append(attempt)
+            rec["status"] = "pending_read"
+            pending.append(ph)
+            grabbed += 1
+            print("    %d frames -> %s" % (len(pngs), attempt["tile"]))
+        save_state(state)                  # after each cluster: an interrupted
+                                           # sweep loses one download, not all
+    print()
+    print("grabbed %d, download-failed %d, exhausted %d, awaiting a read %d"
+          % (grabbed, failed, exhausted, len(pending)))
+    if pending:
+        print()
+        print("Read each tile, then record verdicts:")
+        print("  python identify_from_video.py --record - <<'EOF'")
+        print("  <placeholder>  <name as the overlay spells it>")
+        print("  <placeholder>  room        # overlay named the feed, not a person")
+        print("  <placeholder>  blank       # screen share or no overlay")
+        print("  EOF")
+        print("A failed verdict advances that cluster to its next meeting on")
+        print("the following --sweep. Nothing is written to speaker_ids.json")
+        print("here; naming goes through apply_corrections at the cluster HOME.")
+    return 0
+
+
+def record(lines):
+    """Take read verdicts; a name ends the cluster, a failure triggers fallback."""
+    state = load_state()
+    named = failed = bad = promoted = 0
+    for raw in lines:
+        raw = raw.strip()
+        if not raw or raw.startswith("#"):
+            continue
+        parts = raw.split(None, 1)         # placeholders never contain a space
+        if len(parts) != 2:
+            print("  ? cannot parse %r" % raw[:60])
+            bad += 1
+            continue
+        ph, verdict = parts[0], parts[1].strip()
+        rec = state.get(ph)
+        if not rec:
+            print("  ? %s is not in the sweep" % ph)
+            bad += 1
+            continue
+        a = open_attempt(rec)
+        if not a:
+            print("  ? %s has no attempt awaiting a read" % ph)
+            bad += 1
+            continue
+        low = verdict.lower()
+        if low in ("gallery", "tiles") and a.get("stage", "strip") == "strip":
+            # promote to a full-frame read of the SAME frames: free, and the
+            # active-speaker border is the only thing that disambiguates
+            a["stage"] = "full"
+            promoted += 1
+            continue
+        if low.startswith(("partial:", "first:", "handle:")):
+            # a display name that is not a full name -- "Caroline", "PNoone".
+            # Real information, and too little to write a name on: keep the
+            # fragment for a later closed-set resolution and fall back anyway.
+            a["verdict"] = "partial"
+            a["name"] = verdict.split(":", 1)[1].strip()
+            rec.setdefault("fragments", []).append(a["name"])
+            rec["status"] = "retry"
+            failed += 1
+        elif low in FAILED or low in ("none", "no", "nothing", "gallery", "tiles"):
+            a["verdict"] = low if low in FAILED else "blank"
+            rec["status"] = "retry"
+            failed += 1
+        elif plausible_name(verdict):
+            a["verdict"] = "name"
+            a["name"] = verdict
+            rec["status"] = "named"
+            rec["name"] = verdict
+            says = rec.get("transcript_says")
+            if says:
+                # surname agreement, because the overlay carries a chosen
+                # display name and the transcript carries what ASR heard
+                rec["agrees"] = bool(
+                    says.split()[-1].lower() == verdict.split()[-1].lower())
+            named += 1
+        else:
+            # plausible_name() refuses it. A room label typed in as though it
+            # were a person is exactly the mistake this rule exists to catch,
+            # so the read does not get the last word -- the cluster falls back.
+            print("  ! %s: %r is not a plausible person; recorded as rejected"
+                  % (ph, verdict[:40]))
+            a["verdict"] = "rejected"
+            a["name"] = verdict
+            rec["status"] = "retry"
+            failed += 1
+    save_state(state)
+    print("recorded %d names, %d failures, %d promoted to a full-frame read, "
+          "%d unparsed" % (named, failed, promoted, bad))
+    return 1 if bad else 0
+
+
+def pending_reads():
+    """What is waiting on a read, and which image answers it.
+
+    A strip-stage attempt is answered by its one tile. A full-stage attempt was
+    promoted out of gallery view and is answered by the original frames, where
+    the active-speaker border is visible -- no new download either way.
+    """
+    state = load_state()
+    rows = []
+    for ph in sorted(state):
+        a = open_attempt(state[ph])
+        if not a:
+            continue
+        stage = a.get("stage", "strip")
+        imgs = [a["tile"]] if stage == "strip" and a.get("tile") else a.get("frames") or []
+        rows.append((ph, stage, state[ph].get("transcript_says"), imgs))
+    for ph, stage, says, imgs in rows:
+        print("%s  [%s]%s" % (ph, stage,
+                              "  transcript says: %s" % says if says else ""))
+        for p in imgs:
+            print("    %s" % p)
+    print()
+    print("%d attempts awaiting a read" % len(rows))
+    return 0
+
+
+def report():
+    """Where the sweep stands, and the error rate against the transcript."""
+    state = load_state()
+    if not state:
+        print("no sweep state yet (%s)" % STATE)
+        return 0
+    by = collections.Counter(r.get("status") or "new" for r in state.values())
+    print("clusters in sweep: %d" % len(state))
+    for k in ("named", "retry", "pending_read", "exhausted", "new"):
+        if by.get(k):
+            print("  %-13s %4d" % (k, by[k]))
+    tries = collections.Counter(len(r.get("attempts") or []) for r in state.values())
+    print()
+    print("attempts per cluster: %s"
+          % ", ".join("%d:%d" % (k, tries[k]) for k in sorted(tries)))
+    # what the fallback bought: names that came from an attempt after the first
+    late = sum(1 for r in state.values() if r.get("status") == "named"
+               and any(a.get("verdict") == "name" and a.get("rank", 1) > 1
+                       for a in r.get("attempts") or []))
+    print("named on a fallback meeting (attempt >1): %d" % late)
+    rooms = sum(1 for r in state.values()
+                for a in r.get("attempts") or [] if a.get("verdict") == "room")
+    print("attempts that named the room instead of a person: %d" % rooms)
+    # the measurement: where the frame and the transcript both produced a name
+    both = [r for r in state.values() if r.get("status") == "named"
+            and r.get("transcript_says")]
+    print()
+    if both:
+        agree = sum(1 for r in both if r.get("agrees"))
+        print("ground truth: %d clusters named by BOTH frame and transcript"
+              % len(both))
+        print("  surnames agree   %d" % agree)
+        print("  disagree         %d  (%.1f%% error)"
+              % (len(both) - agree, 100.0 * (len(both) - agree) / len(both)))
+        for r in both:
+            if not r.get("agrees"):
+                print("    %-26s frame %-22s transcript %s"
+                      % (r["placeholder"], r.get("name"),
+                         r.get("transcript_says")))
+    else:
+        print("ground truth: no cluster yet named by both frame and transcript")
+        print("  (that overlap IS the error rate; it grows as the sweep runs)")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true", help="ranked candidates only")
     ap.add_argument("--cluster", help="one placeholder, e.g. abc12345678_SPEAKER_04")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--frames", type=int, default=3, help="frames per cluster")
+    ap.add_argument("--sweep", action="store_true",
+                    help="grab one attempt per due cluster, with fallback")
+    ap.add_argument("--record", metavar="FILE",
+                    help="read verdicts; '-' for stdin")
+    ap.add_argument("--status", action="store_true", help="sweep progress")
+    ap.add_argument("--pending", action="store_true",
+                    help="images awaiting a read")
     args = ap.parse_args()
+
+    if args.status:
+        return report()
+    if args.pending:
+        return pending_reads()
+    if args.record:
+        if args.record == "-":
+            return record(sys.stdin)
+        with io.open(args.record, encoding="utf-8") as fp:
+            return record(fp)
 
     vd = utils.get_video_data()
     rows = candidates(vd)
@@ -375,6 +745,9 @@ def main():
             print("no candidate matches %r (too little speech, pre-2020, or "
                   "not a YouTube id)" % args.cluster)
             return 1
+
+    if args.sweep:
+        return sweep(vd, rows, cluster_counts(vd), args.limit, args.frames)
 
     if args.list or not (args.cluster or args.limit):
         print("%-26s %5s %6s %6s %-11s %-4s %s"
