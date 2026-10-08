@@ -107,7 +107,14 @@ GRAB_EVERY = 4
 # to have switched to the person talking. Below this the tile on screen may
 # still be the PREVIOUS speaker, so the strip is marked weak and does not
 # support a name on its own.
-MIN_TURN_FOR_VIEW = 3.0
+#
+# RAISED FROM 3.0 ON DIRECT EVIDENCE. 8msxsKW1z_4_SPEAKER_26 contradicted
+# itself inside one tile: a 3.9-second turn read "Talking: Alicia Hunt", while
+# three strips inside a 15.6-second turn by the same cluster read "Margaret
+# Moran" on both overlay formats at once. 3.9s cleared the old threshold and
+# still named the previous speaker, so the threshold was wrong, not the
+# overlay. A quick interjection is exactly when the view has not caught up.
+MIN_TURN_FOR_VIEW = 5.0
 
 # An 11-character video id, an underscore, the speaker key -- the same shape
 # track_speakers.propagate() parses, kept identical on purpose.
@@ -192,6 +199,17 @@ SELF_ID = [re.compile(p) for p in (
     r"\b[Mm]y name is\s+(" + _N + r")",
     r"\bI'?m\s+(" + _N + r")\s*[,.]",
     r"(" + _N + r"),\s*\d+\s+[A-Z][a-z]+",
+    # "I'm the architect, Jacob Levine, representing ..." -- the role comes
+    # first and the pattern above stops at it. Found in the legend for
+    # O1CMBj7JDes_SPEAKER_04, whose frames are all screen share: the video
+    # route is blind there and the text names him outright. The role segment
+    # is required to be lower-case so this cannot swallow a different name.
+    r"\bI'?m\s+(?:the|a|an)\s+[a-z][a-z ]{2,30},\s+(" + _N + r")",
+    # "This is Ben Minnix with Eagle Brook Engineering", "this is Andre LaRue,
+    # the chair". The trailing with/from/comma is required so this cannot
+    # swallow "This is Medford City Council" -- and plausible_name() below is
+    # the backstop for whatever it does swallow.
+    r"\b[Tt]his is\s+(" + _N + r")\s*(?:,|\s+(?:with|from)\b)",
 )]
 
 
@@ -211,9 +229,14 @@ def transcript_says(blocks):
     """
     own = " ".join((b.get("text") or "") for b in blocks)
     for rx in SELF_ID:
-        hit = rx.findall(own)
-        if hit:
-            return hit[0]
+        for hit in rx.findall(own):
+            # GROUND TRUTH THAT IS WRONG CORRUPTS THE ONE NUMBER THIS SWEEP
+            # PRODUCES. An earlier pass scraped a firm's logo out of a frame
+            # and scored it as a name, so every hit goes through the same
+            # person test the overlay reads do -- which also enforces the
+            # full-name-only rule, since a lone surname cannot be checked.
+            if plausible_name(hit):
+                return clean_overlay_name(hit)
     return None
 
 
