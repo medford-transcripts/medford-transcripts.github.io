@@ -40,6 +40,14 @@ WHAT THE SAMPLE SHOWED, which is what this script has to cope with:
     exactly where the SRT has the target, SPEAKER_08 and SPEAKER_05 -- against
     name tags "Christopher Bader", "Emily Hedeman", "Danielle Evans, PDS".
     Three confirmations in one tile.
+  * A BROADCAST CHYRON IS NOT A ZOOM OVERLAY, and must not be read as one.
+    -Ad9b17iUII is "Medford Happenings", a produced TV programme whose lower
+    thirds read "Liam Murphy / AAU Jr OLYMPIC MEDALIST" and "MICHAEL LEUNG /
+    SWIM COACH". Those name whoever is being INTRODUCED and persist across
+    turns -- they do not track the active speaker the way Zoom's overlay
+    does, so the strip-to-target alignment that makes this sweep safe does not
+    hold. It is a real signal and a separate one, with its own error rate that
+    nobody has measured; §4 says do not spend it until someone has.
   * A SLIDE IS NOT AN OVERLAY. UdfiATpNBs8_SPEAKER_12 shared a deck whose
     visible line read "10. Nicole Morell" -- a bullet in the content, not a
     Zoom label. Text inside a screen share names nothing, and reading it as a
