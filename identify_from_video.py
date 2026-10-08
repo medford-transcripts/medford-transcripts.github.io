@@ -1043,7 +1043,15 @@ def record(lines):
             # route was wanted for. The NAME RECORDED IS THE TRANSCRIPT'S,
             # because that is the source that actually carries a full name.
             parts = [p.lower().strip(".,") for p in says.split()]
-            if says and frag.lower().strip(".,") in parts:
+            low = frag.lower().strip(".,")
+            # A PREFIX COUNTS, because display names get truncated and
+            # abbreviated. XA7wYJ4TI4w_SPEAKER_13's active-speaker tile read
+            # "Jankow iPad iOS 13.1.2 GSYP" while the cluster self-identifies
+            # as "John Jankowski". Four characters is the floor, so a short
+            # prefix cannot collide its way into a confirmation.
+            hit = low in parts or any(
+                len(low) >= 4 and p.startswith(low) for p in parts)
+            if says and hit:
                 a["verdict"] = "confirmed"
                 a["name"] = says
                 rec["name"] = says
