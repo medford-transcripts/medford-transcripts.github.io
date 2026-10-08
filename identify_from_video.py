@@ -288,7 +288,10 @@ SELF_ID = [re.compile(p) for p in (
     # the chair". The trailing with/from/comma is required so this cannot
     # swallow "This is Medford City Council" -- and plausible_name() below is
     # the backstop for whatever it does swallow.
-    r"\b[Tt]his is\s+(" + _N + r")\s*(?:,|\s+(?:with|from)\b)",
+    # The trailing form matters: "This is Ben Wilson." ends the sentence, and
+    # requiring a comma or with/from missed it on v8aFu2OAn8o_SPEAKER_15, whose
+    # frames are a blank camera-off card -- the text was the only route.
+    r"\b[Tt]his is\s+(" + _N + r")\s*(?:[,.]|\s+(?:with|from)\b|$)",
     # "Again for the record, Eric Dubrul with Bohler Engineering" -- the
     # formula people use when a chair asks them to state a name. Seen on
     # 39QZXkKLDII_SPEAKER_10 and KdVL9syClrc.
@@ -560,8 +563,8 @@ def clean_overlay_name(text):
     # roles like "Councilor", which titles.strip_role() handles against the
     # known-names set, because a role is resolved from the rosters BY MEETING
     # DATE and must never be frozen into a speaker name.
-    t = re.sub(r"^(?:Dr|Mr|Mrs|Ms|Miss|Rev|Prof|Hon|Sir|Atty)\.?\s+", "", t,
-               flags=re.I)
+    t = re.sub(r"^(?:Dr|Mr|Mrs|Ms|Miss|Rev|Prof|Hon|Sir|Atty|Attorney)\.?\s+",
+               "", t, flags=re.I)
     t = t.strip().strip(",").strip()
     # People type their Zoom name in lower case -- "christy ortins", "jenny
     # graham", "kirkjohnson". A byline reading "christy ortins" beside every
