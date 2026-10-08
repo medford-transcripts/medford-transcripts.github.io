@@ -895,13 +895,25 @@ def reground(video_data):
     fixed, gained, dropped = {}, 0, 0
     for ph, rec in state.items():
         was = rec.get("transcript_says")
-        now = None
+        # ACROSS ALL ATTEMPTS, NOT THE FIRST ONE THAT HITS. A cluster speaking
+        # in several meetings states its name in each, and ASR mangles it
+        # differently every time: aBgYkA4WX0I heard "It's John Carroll Lamont
+        # Warren, 35 Clayton Avenue" while two other meetings heard plainly
+        # "It's John Carroll and I'm at 35" and "It's John Carroll from 35
+        # Clayton Avenue". Taking whichever came first made the garbled one the
+        # ground truth. The one that RECURS is the real name; ties break toward
+        # the shorter, since ASR adds words far more often than it drops them.
+        seen = []
         for a in rec.get("attempts") or []:
             mine, _w, _s = speech_in(video_data, a.get("yt") or "",
                                      a.get("speaker") or "")
-            now = transcript_says(mine)
-            if now:
-                break
+            hit = transcript_says(mine)
+            if hit:
+                seen.append(hit)
+        now = None
+        if seen:
+            tally = collections.Counter(seen)
+            now = sorted(tally, key=lambda n: (-tally[n], len(n)))[0]
         if now == was:
             continue
         rec["transcript_says"] = now
