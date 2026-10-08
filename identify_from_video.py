@@ -191,7 +191,15 @@ AN_ORG = re.compile(
     r"design|studio|law|realty|properties|development|solutions|services|"
     r"institutes?|universit(?:y|ies)|colleges?|schools?|departments?|dept|"
     r"offices?|committees?|commissions?|boards?|councils?|authorit(?:y|ies)|"
-    r"agenc(?:y|ies)|team|staff)\.?\s*$", re.I)
+    r"agenc(?:y|ies)|team|staff|"
+    # nonprofits and civic groups name their Zoom account after the ORG --
+    # "Somerville Homelessness Coalition" is three capitalised words and sailed
+    # straight through until this was added. The speaker was a real person
+    # representing it, and the account names nobody.
+    r"coalitions?|alliances?|foundations?|societ(?:y|ies)|associations?|"
+    r"networks?|unions?|trusts?|funds?|cent(?:er|re)s?|projects?|"
+    r"initiatives?|collectives?|clubs?|leagues?|ministries|church(?:es)?|"
+    r"corps|chapter|caucus|coop|cooperatives?)\.?\s*$", re.I)
 # AN ADDRESS IS NOT A PERSON EITHER. "Headland Way" reached transcript_says()
 # as ground truth for DNuiAY3aRNM_SPEAKER_03 -- two capitalised words, no org
 # word, straight through. The self-ID patterns look for a name beside a street
