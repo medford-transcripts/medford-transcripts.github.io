@@ -60,7 +60,7 @@ from datetime import datetime, timezone
 
 SOURCES = {"manual", "reference_voice", "embedding_match", "propagated",
            "backfill_high_confidence", "transcript_context",
-           "transcript_context_fuzzy", "unknown"}
+           "transcript_context_fuzzy", "video_overlay", "unknown"}
 
 # Sources propagate() will not overwrite.
 #
@@ -85,6 +85,20 @@ SOURCES = {"manual", "reference_voice", "embedding_match", "propagated",
 #
 # The fuzzy tier is deliberately NOT protected: partial_ratio at 80 measured
 # 2.9% wrong, so an embedding match should stay free to correct it.
+#
+# "video_overlay" is the name Zoom DREW ON THE FRAME while this cluster was
+# speaking -- the platform's own attribution, read from a strip whose timestamp
+# the SRT places inside the target's turn. Its own name, again for the reason
+# above: the basis is a pixel, not a cosine and not a human, and it has a
+# failure mode none of the others share (the active-speaker view lags, so a
+# short turn can show the PREVIOUS speaker -- which is what MIN_TURN_FOR_VIEW
+# guards).
+#
+# NOT PROTECTED, deliberately. Measured 0 disagreements against 14 clusters the
+# transcript also names, with 7 exact surnames and 7 spelling variants where
+# the overlay CORRECTED the ASR. That is a good number and far too small a
+# sample to freeze a name against future correction -- n=14 is the whole basis.
+# Promote it only when the sweep finishes and the count is worth the claim.
 PROTECTED_SOURCES = {"manual", "backfill_high_confidence", "transcript_context"}
 
 PROVENANCE_FILENAME = "speaker_provenance.json"

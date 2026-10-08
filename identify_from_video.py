@@ -864,6 +864,85 @@ def reground(video_data):
     return 0
 
 
+def apply_named(apply=False):
+    """Write every named cluster at its HOME, then propagate.
+
+    THE NAME GOES TO THE HOME, NEVER THE LOCAL LABEL. A placeholder like
+    "8kUnsaXIsWQ_SPEAKER_06" IS the cluster's identity -- several meetings
+    point at it, which is how one name reaches all of them. Writing the name
+    into the referring meeting instead names that one meeting AND destroys the
+    reference, cutting it out of the cluster. So this resolves the home with
+    apply_corrections.cluster_home() and writes there; propagate() then carries
+    it to every referrer on its own.
+
+    NOTHING IS WRITTEN WITHOUT --apply. A dry run that wrote to another
+    meeting's files is a mistake this project has already made once.
+    """
+    import apply_corrections
+    import speaker_provenance as sp
+
+    state = load_state()
+    named = {k: v for k, v in state.items()
+             if v.get("status") == "named" and v.get("name")}
+    plan, skipped = [], []
+    for ph in sorted(named):
+        rec = named[ph]
+        name = rec["name"]
+        home = apply_corrections.cluster_home({}, ph)
+        if not home:
+            skipped.append((ph, name, "no home resolves for this placeholder"))
+            continue
+        hdir, hspk, hpath = home
+        try:
+            with io.open(hpath, encoding="utf-8") as fp:
+                ids = json.load(fp)
+        except (ValueError, OSError) as exc:
+            skipped.append((ph, name, "unreadable home: %s" % exc))
+            continue
+        prov = sp.load_provenance(hdir)
+        if sp.is_protected(prov, hspk):
+            # §5: a machine may always propose, never silently replace a human
+            skipped.append((ph, name, "home is PROTECTED (%s)"
+                            % (prov.get(hspk, {}) or {}).get("source")))
+            continue
+        current = ids.get(hspk)
+        if current and sp.is_named(current) and current != name:
+            skipped.append((ph, name, "home already named %r" % current))
+            continue
+        if current == name:
+            continue                       # already applied
+        last = (rec.get("attempts") or [{}])[-1]
+        plan.append({"placeholder": ph, "name": name, "dir": hdir,
+                     "key": hspk, "path": hpath, "ids": ids, "prov": prov,
+                     "read_in": last.get("yt"), "overlay": last.get("overlay")})
+
+    for p in plan:
+        print("  %-26s -> %-24s %s[%s]"
+              % (p["placeholder"], p["name"], p["dir"], p["key"]))
+    for ph, name, why in skipped:
+        print("  SKIP %-26s %-20s %s" % (ph, name, why))
+    print()
+    print("%d to write, %d skipped" % (len(plan), len(skipped)))
+    if not apply:
+        print("DRY RUN -- nothing written. Re-run with --apply.")
+        return 0
+    if not plan:
+        return 0
+
+    for p in plan:
+        p["ids"][p["key"]] = p["name"]
+        sp.atomic_write_json(p["path"], p["ids"])
+        sp.record(p["dir"], p["key"], p["name"], "video_overlay",
+                  from_=p.get("read_in"), provenance=p["prov"])
+        sp.save_provenance(p["dir"], p["prov"])
+    print("wrote %d homes" % len(plan))
+
+    import track_speakers
+    print("propagating...")
+    track_speakers.propagate()
+    return 0
+
+
 def record(lines):
     """Take read verdicts; a name ends the cluster, a failure triggers fallback."""
     state = load_state()
@@ -1113,6 +1192,10 @@ def main():
                     help="rebuild pending tiles from frames on disk")
     ap.add_argument("--reground", action="store_true",
                     help="recompute transcript ground truth and re-score")
+    ap.add_argument("--apply", action="store_true",
+                    help="write named clusters at their HOME, then propagate")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="with --apply: show the plan, write nothing")
     args = ap.parse_args()
 
     if args.status:
@@ -1121,6 +1204,8 @@ def main():
         return retile()
     if args.reground:
         return reground(utils.get_video_data())
+    if args.apply or args.dry_run:
+        return apply_named(apply=args.apply and not args.dry_run)
     if args.pending:
         return pending_reads()
     if args.record:
