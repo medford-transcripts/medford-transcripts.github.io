@@ -1397,6 +1397,24 @@ def make_index():
                              '%s</th></tr>\n' % (year, year))
         index_page.write(line)
     index_page.write("    </table>\n")
+    # THE LICENCE LIVES HERE, at the foot of the page, not in the top nav.
+    # It has to be readable by a person and not only present in the JSON-LD --
+    # a grant that exists solely in structured data tells a crawler the
+    # transcripts are reusable and tells a journalist nothing. But it is a
+    # footer fact, not a headline: nobody arrives here to read the licence.
+    # CC0 covers the TRANSCRIPTS; LICENSE.txt is BSD 3-Clause and governs the
+    # CODE, which is a separate thing and says so.
+    index_page.write(
+        '    <hr>\n'
+        '    <footer style="margin:1.5em 0;font-size:0.9em;line-height:1.6">\n'
+        '      <a rel="license" '
+        'href="https://creativecommons.org/publicdomain/zero/1.0/">'
+        'Transcripts are CC0 &mdash; public domain, reuse freely</a>.\n'
+        '      The transcripts are machine-generated and may contain errors; '
+        '<a href="verify.html">corrections are welcome</a>.\n'
+        '      Source code is BSD 3-Clause. Meeting recordings remain the '
+        'property of their publishers.\n'
+        '    </footer>\n')
     index_page.write('  </body>\n')
     index_page.write('</html>\n')
     with open("header.html", encoding="utf-8") as _hdr:
