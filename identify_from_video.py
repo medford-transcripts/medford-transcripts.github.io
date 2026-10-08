@@ -568,19 +568,58 @@ def save_clusters(updates):
     return state
 
 
+def band_of(im, fraction=STRIP_FRACTION, center=False):
+    """The bottom band of a frame, or the middle one."""
+    w, h = im.size
+    # derived from the bottom edge, so both bands are the exact same height
+    # and a tile's height does not depend on which band each frame got
+    top_of_bottom = int(h * (1.0 - fraction))
+    tall = h - top_of_bottom
+    top = (h - tall) // 2 if center else top_of_bottom
+    return im.crop((0, top, w, top + tall)).convert("RGB")
+
+
+def camera_is_off(im, threshold=26.0):
+    """Is this frame a camera-off tile rather than a picture of a room?
+
+    WHEN THE CAMERA IS OFF THE NAME IS IN THE MIDDLE, NOT THE BOTTOM. Zoom
+    fills the tile with the display name in large type, which the docstring
+    above calls the easiest case of all -- and the bottom-band crop throws it
+    away, so the easiest case was reading as a blank. ih84fneWXk0_SPEAKER_00
+    came back as six black strips with nothing but captions on them.
+
+    Mean luminance separates the two cleanly: a camera-off tile is near-black
+    or flat grey, while any real video of a room is not.
+    """
+    from PIL import ImageStat
+    try:
+        return ImageStat.Stat(im.convert("L")).mean[0] < threshold
+    except Exception:
+        return False
+
+
 def strip_tile(frames, dest, fraction=STRIP_FRACTION):
-    """Crop each frame to its bottom band and stack the bands into one image."""
+    """Crop each frame to one band and stack the bands into one image.
+
+    ONE BAND PER FRAME, ALWAYS. The band may be the bottom or the middle, but
+    the count and order must mirror `frames` exactly, because frame_legend()
+    maps strip k to frame k to say who was talking in it. An extra strip for
+    some frames and not others would silently shift that mapping and mislabel
+    every read below it -- so a dark frame SUBSTITUTES the middle band rather
+    than adding one. Returns (dest, bands) so the legend can say which is which.
+    """
     from PIL import Image
-    strips = []
+    strips, bands = [], []
     for p in frames:
         try:
             im = Image.open(p)
         except Exception:
             continue
-        w, h = im.size
-        strips.append(im.crop((0, int(h * (1.0 - fraction)), w, h)).convert("RGB"))
+        center = camera_is_off(im)
+        strips.append(band_of(im, fraction, center=center))
+        bands.append("center" if center else "bottom")
     if not strips:
-        return None
+        return None, []
     w = max(s.size[0] for s in strips)
     gap = 3
     tile = Image.new("RGB", (w, sum(s.size[1] for s in strips)
@@ -590,7 +629,7 @@ def strip_tile(frames, dest, fraction=STRIP_FRACTION):
         tile.paste(s, (0, y))            # magenta seams, so a join between two
         y += s.size[1] + gap             # strips is never read as content
     tile.save(dest)
-    return dest
+    return dest, bands
 
 
 def open_attempt(rec):
@@ -699,7 +738,7 @@ def sweep(video_data, rows, counts, limit=0, per=3):
             failed += 1
         else:
             attempt["frames"] = pngs
-            attempt["tile"] = strip_tile(
+            attempt["tile"], attempt["bands"] = strip_tile(
                 pngs, os.path.join(FRAMES, "tile_%s_a%d.png" % (ph, rank)))
             rec["attempts"].append(attempt)
             rec["status"] = "pending_read"
@@ -722,6 +761,37 @@ def sweep(video_data, rows, counts, limit=0, per=3):
         print("A failed verdict advances that cluster to its next meeting on")
         print("the following --sweep. Nothing is written to speaker_ids.json")
         print("here; naming goes through apply_corrections at the cluster HOME.")
+    return 0
+
+
+def retile():
+    """Rebuild every open attempt's tile from frames already on disk.
+
+    Free -- no download -- so a change to how a band is chosen can be applied
+    to work already grabbed instead of discarding it. Only attempts still
+    awaiting a read are touched; a verdict already given stands.
+    """
+    state = load_state()
+    fixed, moved = {}, 0
+    for ph, rec in state.items():
+        a = open_attempt(rec)
+        if not a or not a.get("frames") or not a.get("tile"):
+            continue
+        have = [p for p in a["frames"] if os.path.exists(p)]
+        if len(have) != len(a["frames"]):
+            continue                       # frames pruned; leave it alone
+        tile, bands = strip_tile(a["frames"], a["tile"])
+        if tile:
+            if "center" in bands:
+                moved += 1
+                print("  %-26s camera-off strips: %d of %d"
+                      % (ph, bands.count("center"), len(bands)))
+            a["tile"], a["bands"] = tile, bands
+            fixed[ph] = rec
+    if fixed:
+        save_clusters(fixed)
+    print("retiled %d attempts; %d have camera-off strips read from the "
+          "CENTRE of the frame instead of the bottom" % (len(fixed), moved))
     return 0
 
 
@@ -831,6 +901,7 @@ def frame_legend(video_data, attempt, target):
                 dur = (b.get("end") or 0) - (b.get("start") or 0)
                 break
         out.append({"frame": os.path.basename(p), "t": t, "speaker": spk,
+                    "band": (attempt.get("bands") or ["bottom"] * 99)[len(out)],
                     "is_target": spk == target, "text": text,
                     "dur": round(dur, 1),
                     # Zoom switches the active-speaker view on SUSTAINED
@@ -868,8 +939,9 @@ def pending_reads():
             print("    %s" % p)
         # strips run top to bottom in the same order as the frames
         for i, leg in enumerate(frame_legend(vd, a, a.get("speaker") or ""), 1):
-            print("    strip %d  t=%-6d %-12s %4.1fs %s %s"
-                  % (i, leg["t"], leg["speaker"] or "-", leg["dur"],
+            print("    strip %d%s t=%-6d %-12s %4.1fs %s %s"
+                  % (i, "*" if leg["band"] == "center" else " ",
+                     leg["t"], leg["speaker"] or "-", leg["dur"],
                      ("<== TARGET (weak)" if leg["weak"] else "<== TARGET")
                      if leg["is_target"] else "                 ",
                      leg["text"]))
@@ -939,10 +1011,14 @@ def main():
     ap.add_argument("--status", action="store_true", help="sweep progress")
     ap.add_argument("--pending", action="store_true",
                     help="images awaiting a read")
+    ap.add_argument("--retile", action="store_true",
+                    help="rebuild pending tiles from frames on disk")
     args = ap.parse_args()
 
     if args.status:
         return report()
+    if args.retile:
+        return retile()
     if args.pending:
         return pending_reads()
     if args.record:

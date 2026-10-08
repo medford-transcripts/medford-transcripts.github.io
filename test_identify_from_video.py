@@ -132,18 +132,33 @@ ck("name not overwritten", ifv.load_state()[PH]["name"], "Laura Swan")
 # --- strip_tile -------------------------------------------------------------
 from PIL import Image
 pngs = []
-for i, c in enumerate([(20, 30, 40), (60, 70, 80), (10, 10, 10)]):
+for i, c in enumerate([(40, 50, 60), (60, 70, 80), (90, 80, 70)]):
     p = os.path.join(tmp, "f_%02d.png" % i)
     Image.new("RGB", (1280, 720), c).save(p)
     pngs.append(p)
-out = ifv.strip_tile(pngs, os.path.join(tmp, "tile.png"))
+out, bands = ifv.strip_tile(pngs, os.path.join(tmp, "tile.png"))
 w, h = Image.open(out).size
 band = int(720 * (1.0 - ifv.STRIP_FRACTION))
 ck("tile width is the frame width", w, 1280)
 ck("tile stacks 3 bands plus seams", h, 3 * (720 - band) + 6)
 ck("tile with no readable frames returns None",
    ifv.strip_tile([os.path.join(tmp, "nope.png")], os.path.join(tmp, "t2.png")),
-   None)
+   (None, []))
+ck("lit frames use the bottom band", bands, ["bottom", "bottom", "bottom"])
+
+# a camera-off tile puts the name in the MIDDLE, so the band moves there --
+# but the count must stay one per frame or frame_legend() mislabels everything
+dark = os.path.join(tmp, "dark.png")
+Image.new("RGB", (1280, 720), (4, 4, 6)).save(dark)
+ck("a near-black frame is detected as camera-off",
+   ifv.camera_is_off(Image.open(dark)), True)
+ck("a lit frame is not", ifv.camera_is_off(Image.open(pngs[1])), False)
+_out, mixed = ifv.strip_tile([pngs[1], dark, pngs[1]], os.path.join(tmp, "m.png"))
+ck("the band moves to the centre only for the dark frame", mixed,
+   ["bottom", "center", "bottom"])
+ck("still exactly one strip per frame", len(mixed), 3)
+_w2, h2 = Image.open(_out).size
+ck("mixed tile is still 3 bands tall", h2, 3 * (720 - band) + 6)
 
 print()
 
