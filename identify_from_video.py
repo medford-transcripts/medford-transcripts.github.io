@@ -506,7 +506,15 @@ def surname_agreement(says, name):
     sa, sb = a[-1].lower().strip(".,"), b[-1].lower().strip(".,")
     if sa == sb:
         return True, "exact"
-    if difflib.SequenceMatcher(None, sa, sb).ratio() >= 0.8:
+    ratio = difflib.SequenceMatcher(None, sa, sb).ratio()
+    # An exact FIRST name is evidence in its own right, so an unusual surname
+    # the ASR mangled still reads as the same person. WpieqDvHvyY_SPEAKER_15:
+    # the frame says "Mark Junghans - VHB" and the transcript "Mark Anhansen,
+    # VHB" -- same first name, same affiliation in the same breath, surname
+    # distance 0.63. Scoring that as a different person would overstate the
+    # error rate, which is the one number this sweep exists to produce.
+    same_first = a[0].lower().strip(".,") == b[0].lower().strip(".,")
+    if ratio >= 0.8 or (same_first and ratio >= 0.55):
         return True, "variant"
     return False, "disagree"
 
@@ -982,6 +990,9 @@ def report():
         wrong = how.get("disagree", 0)
         print("ground truth: %d clusters named by BOTH frame and transcript"
               % len(both))
+        print("  (this compares TWO NOISY SOURCES. A disagreement means at")
+        print("   least one is wrong, not that the frame is -- the transcript")
+        print("   is ASR. Every non-exact case is listed so it can be judged.)")
         print("  exact surname    %d" % how.get("exact", 0))
         print("  spelling variant %d   (overlay correcting the ASR, not an error)"
               % how.get("variant", 0))
