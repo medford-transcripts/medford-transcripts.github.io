@@ -184,6 +184,16 @@ AN_ORG = re.compile(
     r"institutes?|universit(?:y|ies)|colleges?|schools?|departments?|dept|"
     r"offices?|committees?|commissions?|boards?|councils?|authorit(?:y|ies)|"
     r"agenc(?:y|ies)|team|staff)\.?\s*$", re.I)
+# AN ADDRESS IS NOT A PERSON EITHER. "Headland Way" reached transcript_says()
+# as ground truth for DNuiAY3aRNM_SPEAKER_03 -- two capitalised words, no org
+# word, straight through. The self-ID patterns look for a name beside a street
+# number, so a street is exactly what they are most likely to catch by
+# mistake, and a street scored against a real name is a manufactured
+# disagreement in the one measurement this sweep produces.
+A_STREET = re.compile(
+    r"\b(street|st|avenue|ave|road|rd|lane|ln|drive|dr|circle|cir|court|ct|"
+    r"terrace|ter|place|pl|way|boulevard|blvd|parkway|pkwy|square|sq|"
+    r"highway|hwy|path|row|park)\.?\s*$", re.I)
 
 
 def cluster_counts(video_data):
@@ -564,7 +574,8 @@ def surname_agreement(says, name):
 def plausible_name(text):
     """Is an overlay string a person? "Council Chambers" is not."""
     t = clean_overlay_name(text)
-    if not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t) or AN_ORG.search(t):
+    if (not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t)
+            or AN_ORG.search(t) or A_STREET.search(t)):
         return False
     return bool(re.match(r"^[A-Za-z][A-Za-z.'\-]*(?:\s+[A-Za-z.'\-]+){1,3}$", t))
 
