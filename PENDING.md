@@ -278,3 +278,19 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
 - Self-ID patterns widened from the legends (contraction, role-first, "this is
   X with Y", "for the record, X with Y"); all now pass through
   plausible_name(), which had been letting "City Hall" through as ground truth.
+
+### Two unmeasured signals seen during the sweep, filed not spent
+
+- **The Zoom MUTE ICON is a hard exclusion.** A muted participant produces no
+  audio, so a tile showing the mic-slash cannot be the voice at that instant.
+  Seen on 3V2QNiwuc-M_SPEAKER_00, where it ruled out one of the two visible
+  tiles. That is a fact about the platform rather than a heuristic, and it
+  would narrow gallery frames the active-speaker border does not resolve --
+  but the band crops, so "the only unmuted tile VISIBLE" is not "the only
+  unmuted tile". Worth building with the full frame, not the strip.
+- **Physical desk nameplates in chamber video.** 63m6ohF-DtU framed "Kathy
+  Kreatz / School Committee" on the dais. If the in-room camera reliably
+  frames the person speaking, the nameplate in front of them identifies them
+  -- which would reach the in-room speakers the Zoom overlay never can, and
+  they are a large share of the failures. Needs the camera-follows-speaker
+  assumption measured before it is worth anything.
