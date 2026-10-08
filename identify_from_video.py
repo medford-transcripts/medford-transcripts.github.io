@@ -532,7 +532,15 @@ def clean_overlay_name(text):
     # DATE and must never be frozen into a speaker name.
     t = re.sub(r"^(?:Dr|Mr|Mrs|Ms|Miss|Rev|Prof|Hon|Sir|Atty)\.?\s+", "", t,
                flags=re.I)
-    return t.strip().strip(",").strip()
+    t = t.strip().strip(",").strip()
+    # People type their Zoom name in lower case -- "christy ortins", "jenny
+    # graham", "kirkjohnson". A byline reading "christy ortins" beside every
+    # other properly-cased speaker looks like a transcription error rather
+    # than how she wrote it. Only when there is NO capital anywhere, so a
+    # deliberate "McKinnon" or "O'Connor" is never touched.
+    if t and not any(c.isupper() for c in t):
+        t = " ".join(w[:1].upper() + w[1:] for w in t.split())
+    return t
 
 
 def surname_agreement(says, name):
@@ -1167,7 +1175,7 @@ def frame_legend(video_data, attempt, target):
     return out
 
 
-def pending_reads():
+def pending_reads(limit=0):
     """What is waiting on a read, and which image answers it.
 
     A strip-stage attempt is answered by its one tile. A full-stage attempt was
@@ -1184,7 +1192,10 @@ def pending_reads():
         imgs = [a["tile"]] if stage == "strip" and a.get("tile") else a.get("frames") or []
         rows.append((ph, stage, state[ph].get("transcript_says"), imgs))
     vd = utils.get_video_data()
-    for ph, stage, says, imgs in rows:
+    # the legend re-parses each meeting's SRT, so showing all 170 pending takes
+    # minutes; --limit keeps the read loop responsive
+    shown = rows[:limit] if limit else rows
+    for ph, stage, says, imgs in shown:
         a = open_attempt(state[ph])
         print("%s  [%s]%s" % (ph, stage,
                               "  transcript says: %s" % says if says else ""))
@@ -1199,7 +1210,7 @@ def pending_reads():
                      if leg["is_target"] else "                 ",
                      leg["text"]))
     print()
-    print("%d attempts awaiting a read" % len(rows))
+    print("%d attempts awaiting a read (showing %d)" % (len(rows), len(shown)))
     return 0
 
 
@@ -1294,7 +1305,7 @@ def main():
     if args.apply or args.dry_run:
         return apply_named(apply=args.apply and not args.dry_run)
     if args.pending:
-        return pending_reads()
+        return pending_reads(args.limit)
     if args.record:
         if args.record == "-":
             return record(sys.stdin)
