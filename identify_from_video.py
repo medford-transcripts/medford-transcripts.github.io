@@ -107,8 +107,12 @@ FAILED = ("room", "blank", "share", "unreadable", "download_failed", "rejected",
 # SPEAKER and keep nothing else from it.
 #
 # Measured: the first promotion did not resolve (s093VSbtp08, 12 tiles, no
-# active-speaker border rendered in the broadcast encode). The tier is kept
-# because it costs no download, and report() counts what it actually yields.
+# active-speaker border rendered in the broadcast encode), the second did.
+# Csi-YZOcLIg_SPEAKER_01 read as two camera-off name cards side by side in the
+# band -- "Bill Gigs" and "iPhone", unresolvable -- and the full frame put a
+# green active-speaker border around a DIFFERENT tile entirely, Howard
+# Greenspan. Naming from the band there would have been wrong, not merely
+# uncertain. The tier costs no download and report() counts what it yields.
 STAGES = ("strip", "full")
 # One download covers GRAB_WINDOW seconds and ffmpeg samples it every
 # GRAB_EVERY, so frame k of a slice starting at t sits at t + (k-1)*GRAB_EVERY.
