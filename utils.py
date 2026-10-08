@@ -1659,3 +1659,31 @@ def git_publish(paths, message, rebase=True):
         return True
     print("PUSH DID NOT LAND: local %s, remote %s" % (local[:9], remote[:9]))
     return False
+
+
+def site_footer(prefix=""):
+    """The licence footer, for the bottom of EVERY page.
+
+    It started on the index only, and the index ends with a 2,000-row table --
+    so in practice nobody ever reached it. A licence a reader cannot find is
+    the same problem as a licence that lives only in the JSON-LD: it tells a
+    crawler the transcripts are reusable and tells the journalist nothing.
+
+    `prefix` is the relative path back to the site root, from asset_prefix(),
+    so this works at the root, in a meeting directory, and in committees/.
+
+    CC0 covers the TRANSCRIPTS. LICENSE.txt is BSD 3-Clause and governs the
+    CODE, which is a separate thing and says so. The recordings belong to
+    whoever published them and are only linked, never rehosted.
+    """
+    return (
+        '    <hr>\n'
+        '    <footer style="margin:1.5em 0;font-size:0.9em;line-height:1.6">\n'
+        '      <a rel="license" '
+        'href="https://creativecommons.org/publicdomain/zero/1.0/">'
+        'Transcripts are CC0 &mdash; public domain, reuse freely</a>.\n'
+        '      Machine-generated, so they contain errors; '
+        '<a href="%sverify.html">corrections are welcome</a>.\n'
+        '      Source code is BSD 3-Clause. Meeting recordings remain the '
+        'property of their publishers.\n'
+        '    </footer>\n' % prefix)

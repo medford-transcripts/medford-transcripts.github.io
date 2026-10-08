@@ -7,6 +7,7 @@ import time
 import re
 from html import escape
 from site_url import site_url, SITE_ROOT
+
 import utils
 
 def make():
@@ -228,6 +229,7 @@ def make():
             if has_minutes: html.write('    ' + minutes_cell + '\n')
             html.write(tail)
         html.write('</table>\n')
+        html.write(utils.site_footer('../'))
         html.write('  </body>' + chr(10) + '</html>' + chr(10))
         html.close()
 
@@ -265,6 +267,7 @@ def make():
                 + '</a></td><td>' + str(r["n"]) + '</td><td>'
                 + escape(r["last"] or "") + '</td></tr>' + chr(10))
         all_committees_table.write('</table>' + chr(10))
+    all_committees_table.write(utils.site_footer('../'))
     all_committees_table.write(chr(10) + '  </body>' + chr(10) + '</html>' + chr(10))
     utils.write_atomic("committees/index.html", all_committees_table.getvalue())
 
