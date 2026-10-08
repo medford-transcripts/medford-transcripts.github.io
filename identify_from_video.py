@@ -162,6 +162,20 @@ NOT_A_PERSON = re.compile(
 A_DEVICE = re.compile(
     r"\b(i[Pp]hone|iPad|Android|Galaxy|Pixel|laptop|phone|tablet|"
     r"computer|desktop|pc|mac(?:book)?)\s*$", re.I)
+# AN ORGANISATION IS NOT A PERSON, and it is the failure this project has
+# already made: an earlier title-cue pass wrote five organisations in as
+# speakers. "SL Haus Group" sat on O1CMBj7JDes_SPEAKER_04's target strip --
+# three capitalised words, letters only, straight through plausible_name().
+# The architect's own name was Jacob Levine; the firm is what he typed into
+# Zoom. Several people share a firm's connection, so the name on it identifies
+# nobody.
+AN_ORG = re.compile(
+    r"\b(group|llc|llp|inc|corp|corporation|co|company|associates|assoc|"
+    r"partners|architects?|engineering|engineers?|consulting|consultants?|"
+    r"design|studio|law|realty|properties|development|solutions|services|"
+    r"institutes?|universit(?:y|ies)|colleges?|schools?|departments?|dept|"
+    r"offices?|committees?|commissions?|boards?|councils?|authorit(?:y|ies)|"
+    r"agenc(?:y|ies)|team|staff)\.?\s*$", re.I)
 
 
 def cluster_counts(video_data):
@@ -537,7 +551,7 @@ def surname_agreement(says, name):
 def plausible_name(text):
     """Is an overlay string a person? "Council Chambers" is not."""
     t = clean_overlay_name(text)
-    if not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t):
+    if not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t) or AN_ORG.search(t):
         return False
     return bool(re.match(r"^[A-Za-z][A-Za-z.'\-]*(?:\s+[A-Za-z.'\-]+){1,3}$", t))
 
