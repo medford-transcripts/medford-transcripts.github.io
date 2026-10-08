@@ -3,7 +3,7 @@
 Open items with the measurement that established them, so none of this is
 re-derived. Standing rule: file it here before it is compacted away.
 
-Last updated 2026-10-07.
+Last updated 2026-10-08.
 
 ## Open, blocked on Jason
 
@@ -205,3 +205,76 @@ Scope note: this protects against LEAK, not against USE. Transformed
 embeddings still identify speakers — that is the point, and per PRINCIPLES.md
 §4 the capability is wanted. The threat it addresses is templates escaping on
 their own: a bad commit, a backup, a stolen drive.
+
+## Video sweep -- RUNNING. Automatic fallback built; 0 wrong names so far
+
+`identify_from_video.py` is now a resumable queue, not a one-shot grab. State
+in `video_id_frames/sweep.json` (gitignored with the frames -- they are
+photographs of people).
+
+    --sweep     grab one attempt per due cluster, advancing on failure
+    --pending   what is awaiting a read, with a per-strip legend
+    --record -  take verdicts from stdin
+    --retile    rebuild tiles from frames on disk (free)
+    --reground  recompute transcript ground truth and re-score
+    --status    progress and the error measurement
+
+**The fallback is automatic in the advance, not the verdict.** The reader
+answers only "is there a name in this image"; the script owns which meeting
+that image came from, when to retry and when to give up. A "room" verdict bars
+the WHOLE meeting (the label describes the camera feed); any other failure
+bars only that (meeting, speaker key) pair. VERIFIED END TO END: one cluster
+read as gallery view in meeting 1 and moved itself to another, where it came
+back unanimous.
+
+**Reads are tiled strips.** One band per frame, stacked into one image with
+magenta seams -- one read per cluster-attempt instead of one per frame, which
+is what makes 277 candidates affordable. A camera-off frame substitutes the
+CENTRE band, because Zoom puts the name card there; that one change turned six
+black strips into a clean "Michael Downs".
+
+**The legend is what made reads determinate.** Strip k of a slice starting at
+t is at t + (k-1)*GRAB_EVERY, so the SRT says who was talking in each strip.
+It has self-validated repeatedly: non-target strips name the speaker the SRT
+has at that second ("Andre Leroux, Chair" on "this is Andre LaRue, the chair").
+
+**MEASURED SO FAR: 29 named, 14 with transcript ground truth -- 7 exact, 7
+spelling variants, 0 disagreements.** Every variant is the overlay CORRECTING
+the ASR on an unusual surname (Dubrule/Dubrul, Rettenmeier/Rattenmayer,
+Junghans/Anhansen, Caracci/Karachi, Champy/Champey, Zachrison/Zacherson,
+Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
+
+### Rules the reads established, each on evidence
+
+- `MIN_TURN_FOR_VIEW = 5.0s`. A 3.9s turn read "Alicia Hunt" while a 15.6s turn
+  by the same cluster read "Margaret Moran" on both overlay formats. Zoom
+  switches the active-speaker view on SUSTAINED speech, so a short interjection
+  shows the PREVIOUS speaker.
+- **Live-caption avatar initials are the best signal.** They are Zoom
+  attributing the utterance, so no view-switch lag, and they work on turns far
+  too short to move the view. CB/EH/DE matched the SRT's three speakers exactly
+  on one tile.
+- **Never read text inside a screen share.** "10. Nicole Morell" was a bullet
+  on a shared slide. Only the chrome Zoom draws counts.
+- **Never harvest a gallery frame's roster** -- an attendance record of people
+  who never spoke, forbidden by PRINCIPLES.md §2.
+- Pronouns come off BEFORE the "/" split, or "Divya Anand she/her" becomes
+  "Divya Anand she" -- a plausible-looking wrong name, the worst kind.
+- `weak:<name>` holds a candidate seen only on short turns without publishing
+  it; a repeat from a different meeting is corroboration rather than a rule
+  invented to justify the first read.
+
+### Open
+
+- **The sweep is NOT finished.** ~92 of 277 candidates touched. Resume with
+  `--sweep --limit 20` in a loop (bounded runs: one long process was killed for
+  memory), then `--pending`, read, `--record -`.
+- **Nothing has been written to speaker_ids.json yet.** Naming goes through
+  the cluster HOME via apply_corrections so propagate() carries it.
+- Coverage ceiling: screen shares and in-room cameras are blind. Of reads so
+  far the common failures are screen share, "Council Chambers", and display
+  names that are not full names ("Caroline", "PNoone", "Sarah M_TGE",
+  "Jack's iPhone" -- rejected by A_DEVICE).
+- Self-ID patterns widened from the legends (contraction, role-first, "this is
+  X with Y", "for the record, X with Y"); all now pass through
+  plausible_name(), which had been letting "City Hall" through as ground truth.
