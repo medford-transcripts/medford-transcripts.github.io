@@ -91,7 +91,7 @@ STRIP_FRACTION = 0.18
 # sweep should try the next meeting. "room" is the important one: the overlay
 # named the camera feed, and no other timestamp in that meeting can do better.
 FAILED = ("room", "blank", "share", "unreadable", "download_failed", "rejected",
-          "ambiguous", "partial")
+          "ambiguous", "partial", "weak")
 # Gallery view defeats the strip crop: several names are visible and the green
 # active-speaker border -- the only thing that says which one is talking -- is
 # at the TILE edge, above the band. Naming the cluster from a strip like that
@@ -890,7 +890,25 @@ def record(lines):
             a["stage"] = "full"
             promoted += 1
             continue
-        if low.startswith(("partial:", "first:", "handle:")):
+        if low.startswith("weak:"):
+            # A PLAUSIBLE NAME, BUT ONLY ON STRIPS TOO SHORT TO TRUST. Not
+            # thrown away and not asserted: the candidate is kept and the
+            # cluster still falls back, so if another meeting produces the
+            # same name independently that is corroboration rather than a rule
+            # invented to justify the first read. 8oEn2KkMIiU_SPEAKER_07 read
+            # "Katie McCue" on two weak strips 4,500 seconds apart -- strong
+            # enough to be worth keeping, not strong enough to publish.
+            cand = clean_overlay_name(verdict.split(":", 1)[1])
+            a["verdict"] = "weak"
+            a["name"] = cand
+            prior = rec.setdefault("candidates", [])
+            prior.append(cand)
+            if prior.count(cand) > 1:
+                print("  * %s: %r seen on %d separate attempts"
+                      % (ph, cand, prior.count(cand)))
+            rec["status"] = "retry"
+            failed += 1
+        elif low.startswith(("partial:", "first:", "handle:")):
             # a display name that is not a full name -- "Caroline", "PNoone".
             # Real information, and too little to write a name on: keep the
             # fragment for a later closed-set resolution and fall back anyway.
@@ -1032,6 +1050,14 @@ def report():
                and any(a.get("verdict") == "name" and a.get("rank", 1) > 1
                        for a in r.get("attempts") or []))
     print("named on a fallback meeting (attempt >1): %d" % late)
+    # candidates seen on strips too weak to publish; a repeat across separate
+    # attempts is corroboration the next sweep can turn into a name
+    held = {k: r["candidates"] for k, r in state.items() if r.get("candidates")}
+    if held:
+        print("weak candidates held (not published): %d" % len(held))
+        for k, c in sorted(held.items()):
+            mark = " <== REPEATED" if len(c) > len(set(c)) else ""
+            print("    %-26s %s%s" % (k, ", ".join(c), mark))
     rooms = sum(1 for r in state.values()
                 for a in r.get("attempts") or [] if a.get("verdict") == "room")
     print("attempts that named the room instead of a person: %d" % rooms)
