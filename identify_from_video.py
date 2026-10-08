@@ -275,6 +275,10 @@ SELF_ID = [re.compile(p) for p in (
     # formula people use when a chair asks them to state a name. Seen on
     # 39QZXkKLDII_SPEAKER_10 and KdVL9syClrc.
     r"for the record,?\s+(" + _N + r")\s*(?:,|\s+(?:with|from)\b)",
+    # "It's John Carroll and I'm at 35 Clayton Avenue" -- the form people use
+    # when a chair asks for name and address. aBgYkA4WX0I_SPEAKER_08, whose
+    # Zoom account is "Jack's iPhone", so the overlay can never name him.
+    r"\b[Ii]t'?s\s+(" + _N + r")\s*(?:,|\s+and\b)",
 )]
 
 
