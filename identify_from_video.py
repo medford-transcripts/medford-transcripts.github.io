@@ -171,6 +171,16 @@ NOT_A_PERSON = re.compile(
     r"^(council chambers?|chambers?|city hall|conference room|room \w+|"
     r"zoom|meeting|host|co-?host|unknown|guest|ipad|iphone|android|user)\b",
     re.I)
+# A FORM OF ADDRESS IS NOT A NAME, and it looks exactly like one: two
+# capitalised words, no org word, no street word. "Madam Chair" reached
+# transcript_says() as ground truth for rHW3832dHik_SPEAKER_20. Speakers say
+# these constantly ("Thank you, Madam Chair"), so the self-ID patterns meet
+# them far more often than they meet an actual name.
+AN_ADDRESS_FORM = re.compile(
+    r"^(?:madam|madame|mister|mr|mrs|ms|sir|your)\s+"
+    r"(?:chair(?:man|woman|person)?|president|mayor|honou?r|speaker|"
+    r"councill?or|clerk|director|superintendent|secretary|treasurer|"
+    r"vice\s+\w+)\s*$", re.I)
 # A DEVICE name is not a person either, and it does not come first: Zoom's
 # default for a phone is "<owner>'s iPhone", which sails past NOT_A_PERSON
 # because that anchors at the start. "MD'orsi's iPhone" named a tile in the
@@ -603,7 +613,8 @@ def plausible_name(text):
     """Is an overlay string a person? "Council Chambers" is not."""
     t = clean_overlay_name(text)
     if (not t or NOT_A_PERSON.match(t) or A_DEVICE.search(t)
-            or AN_ORG.search(t) or A_STREET.search(t)):
+            or AN_ORG.search(t) or A_STREET.search(t)
+            or AN_ADDRESS_FORM.match(t)):
         return False
     return bool(re.match(r"^[A-Za-z][A-Za-z.'\-]*(?:\s+[A-Za-z.'\-]+){1,3}$", t))
 
