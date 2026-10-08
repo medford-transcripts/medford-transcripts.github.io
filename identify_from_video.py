@@ -998,9 +998,31 @@ def record(lines):
             # a display name that is not a full name -- "Caroline", "PNoone".
             # Real information, and too little to write a name on: keep the
             # fragment for a later closed-set resolution and fall back anyway.
+            frag = verdict.split(":", 1)[1].strip()
+            a["name"] = frag
+            says = rec.get("transcript_says") or ""
+            # A FRAGMENT THAT MATCHES AN INDEPENDENT NAME IS A CONFIRMATION.
+            # 4tHK4pb62ys_SPEAKER_06's overlay reads only "marissa", which is
+            # no use alone -- but that cluster self-identifies as "Marissa
+            # Isbell" in its own speech, and the two sources are independent:
+            # one is a display name the person typed into Zoom, the other is
+            # what they said out loud. Agreement on the first name makes the
+            # transcript's full name the identification and the frame the
+            # corroboration, which is exactly the confirmation role the video
+            # route was wanted for. The NAME RECORDED IS THE TRANSCRIPT'S,
+            # because that is the source that actually carries a full name.
+            parts = [p.lower().strip(".,") for p in says.split()]
+            if says and frag.lower().strip(".,") in parts:
+                a["verdict"] = "confirmed"
+                a["name"] = says
+                rec["name"] = says
+                rec["status"] = "named"
+                rec["agrees"], rec["agreement"] = True, "frame_confirms_fragment"
+                print("  = %s: frame %r confirms transcript %r" % (ph, frag, says))
+                named += 1
+                continue
             a["verdict"] = "partial"
-            a["name"] = verdict.split(":", 1)[1].strip()
-            rec.setdefault("fragments", []).append(a["name"])
+            rec.setdefault("fragments", []).append(frag)
             rec["status"] = "retry"
             failed += 1
         elif low in FAILED or low in ("none", "no", "nothing", "gallery", "tiles"):
