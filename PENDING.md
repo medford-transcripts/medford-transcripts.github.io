@@ -294,3 +294,15 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   -- which would reach the in-room speakers the Zoom overlay never can, and
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
+
+## 40 truncated translation pages, found 2026-10-08
+
+The licence-footer backfill could not touch 40 pages because they have no
+`</body>` to insert before -- they are stubs from failed translation runs,
+not damage from that pass. `2013-06-05_LlmLze0ItRE.pt-BR.html` is 205 bytes;
+the `2016-12-21_JW2qCmyiOow` set is ~2 KB each across ar/es/ht/km/ko/pt/ru.
+They are published and indexed in that state. Regenerating the affected
+meetings with `srt2html.py -i <id> -f` should rebuild them, but that path has
+been killed for memory twice on this machine while the transcription loop is
+running, so it wants a quiet window. List them with the backfill's own check:
+a page under `20*_*/` with no `rel="license"` is one of these 40.
