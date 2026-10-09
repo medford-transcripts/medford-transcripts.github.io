@@ -1405,6 +1405,24 @@ def make_index():
         _header = _hdr.read()
     utils.write_atomic("index.html", _header + index_page.getvalue())
 
+    # THE SEARCH INDEX IS PART OF THE FRONT PAGE, so it is rebuilt with it.
+    # The box in header.html searches search_index.json in the reader's
+    # browser; if that file is older than the table above it, a meeting is
+    # listed and unfindable. 7.3 s for 2,260 meetings.
+    #
+    # Lazy import and never fatal: a failure here must leave the front page
+    # standing with a slightly stale index, not destroy it. Imported inside
+    # the function for the same reason summarize_meeting imports srt2html
+    # that way -- nothing that merely renders a page should pay for it.
+    try:
+        import build_search_index
+        payload, nbytes = build_search_index.build(video_data=video_data)
+        print("search index: %d meetings, %d with a summary, %.2f MB"
+              % (payload["n"], payload["with_summary"], nbytes / 1e6))
+    except Exception as e:
+        print("WARNING: front page written but search index NOT rebuilt: %s"
+              % str(e)[:160])
+
 def make_resolution_tracker(do_scrape=True):
 
     # update meeting files from https://medfordma.civicclerk.com
@@ -1603,7 +1621,28 @@ def make_sitemap():
         urls.append(url)
         add_url(sitemap_root, url, timestamp)
 
-    # save sitemap. xml extension will be added automatically
+    # WRITE IT. This line was lost on 2026-10-02 in 7a280f855b, "Retire
+    # sitemap.txt": that commit removed `save_sitemap(sitemap_root,
+    # "./sitemap")` along with the sitemap.txt write it meant to retire, and
+    # save_sitemap was what wrote the XML too. For the seven days after, this
+    # function globbed 2,500 files, filtered them five ways, built the whole
+    # tree and threw it away -- no exception, no output, and sitemap.xml
+    # frozen at its 10-02 mtime while index.html and committees/ (rebuilt in
+    # the same do_extras block, immediately before this) stayed current. 151
+    # published pages went unadvertised.
+    #
+    # The failure shape is the one this codebase keeps hitting: work that
+    # runs, reports nothing wrong, and changes nothing. Hence the print --
+    # a silent generator is indistinguishable from a skipped one in a log.
+    #
+    # write_atomic, like every other generated file here: a sitemap truncated
+    # by an interrupted write is a sitemap that de-lists the whole archive.
+    buf = io.BytesIO()
+    cElementTree.ElementTree(sitemap_root).write(buf, encoding="utf-8",
+                                                 xml_declaration=True)
+    utils.write_atomic("sitemap.xml", buf.getvalue().decode("utf-8"))
+    print("sitemap: %d urls" % len(urls))
+
     # ONE SITEMAP, the XML. A sitemap.txt was written here as well, because a
     # 2025 submission of that path predated the file, answered 404 and left an
     # entry reading "Couldn't fetch" that the Search Console UI gives no way to

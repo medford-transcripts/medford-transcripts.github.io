@@ -223,3 +223,83 @@ p.line:not([data-speaker]) {
    the page could have shown anyway. The corpus sweep re-renders them; this
    note is here so the symptom is recognisable rather than mysterious if one
    is missed. */
+
+
+/* ----------------------------------------------- committee overview
+   The standing overview at the top of a committee page. Deliberately the
+   SAME box as the per-meeting summary (.mt-summary), because it is the same
+   kind of thing and carries the same warning: everything else on the site is
+   a record of what was said, and this is not. It is one step further removed
+   -- written from the per-meeting summaries rather than from a transcript --
+   which the banner says in words. */
+.mt-overview h2 {
+  font: 600 15px/1.4 system-ui, sans-serif;
+  margin: 14px 0 6px 0;
+}
+
+.mt-overview-thread {
+  margin: 0 0 12px 0;
+}
+
+.mt-overview-thread h3 {
+  font: 600 15px/1.4 system-ui, sans-serif;
+  margin: 0 0 3px 0;
+  display: inline;
+}
+
+/* "ongoing" / "settled" reads as metadata, not as part of the claim */
+.mt-status {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+  margin-left: 6px;
+}
+
+.mt-overview-thread p {
+  margin: 4px 0 4px 0;
+}
+
+/* THE CITATIONS ARE THE LOAD-BEARING PART, so they are listed rather than
+   folded into the prose: each one opens the meeting at the moment it came
+   from, and a reader checking a claim should not have to hunt for them. */
+.mt-cites {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mt-cites li {
+  display: inline;
+}
+
+.mt-cites li + li::before {
+  content: " \00b7 ";
+  color: #888;
+}
+
+.mt-cites a {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.mt-periods {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 14px;
+}
+
+.mt-periods li {
+  margin-bottom: 6px;
+}
+
+.mt-periods .mt-period-label {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mt-status { color: #a8a8b4; }
+  .mt-cites li + li::before { color: #777; }
+}

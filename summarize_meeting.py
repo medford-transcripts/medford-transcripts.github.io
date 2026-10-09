@@ -36,9 +36,16 @@ TIMESTAMPS ARE VERIFIED, not trusted: any item whose citation falls outside the
 meeting, or which the model returned without one, is dropped before writing.
 A summary that links to the wrong moment is worse than one that does not link.
 
+WHAT IT SUMMARISES FIRST. A free daily allowance makes ORDER the only lever
+there is, so --all is tiered rather than date-sorted: meetings from the last
+30 days, then whatever summary_priority.txt names (a meeting_type or an id, in
+rank order), then the backlog newest-first. --plan shows the queue without
+spending anything.
+
 Usage:
     python summarize_meeting.py -i <yt_id> [--model claude-sonnet-5] [--dry-run]
     python summarize_meeting.py --all [--limit N]
+    python summarize_meeting.py --plan 30          # the queue, no API calls
 """
 
 import argparse
@@ -428,6 +435,20 @@ def api_key(provider="anthropic"):
     raise SystemExit(
         "No %s key. Put it in %s (that directory is already gitignored) "
         "or set %s." % (provider, KEY_FILES[provider][0], ENV_VARS[provider]))
+
+
+def printable(s):
+    """Text that cannot crash a print on this console.
+
+    ONE title in 2,261 is outside cp1252 (`gT4_C1uPttA`, 2025-09-27), which is
+    what a Windows console and the redirected .bat logs encode in -- and the
+    traceback is raised by print, so it would have killed the whole nightly
+    run on reaching that one meeting rather than skipping it. Titles come
+    from the city verbatim (PRINCIPLES #6) and the next import can add
+    another, so the fix belongs at the output, not in the data.
+    """
+    enc = getattr(sys.stdout, "encoding", None) or "ascii"
+    return str(s).encode(enc, "replace").decode(enc, "replace")
 
 
 def transcript_dir(yt_id, video_data=None):
@@ -948,10 +969,15 @@ def self_test_subject():
     ck("a guessed date falls back",
        utils.display_title("x", dict(nodate), subject="Feasibility Study Contract"),
        "MCHSBC Full Committee Meeting")
+    # "MCHSBC", not "High School Building Committee": meeting_types.json sets
+    # an explicit label for this body, which body_label honours over the
+    # prefix-stripped type -- the same choice as COW, and for the same reason
+    # (the composed titles were running to 118 characters). The expectation
+    # here predated that label and had been reporting FAIL on every run.
     ck("a hand-set date is trusted",
        utils.display_title("x", dict(nodate, date_manual=True),
                            subject="Feasibility Study Contract"),
-       "High School Building Committee: Feasibility Study Contract - 2026-08-25")
+       "MCHSBC: Feasibility Study Contract - 2026-08-25")
     ck("no meeting_type falls back",
        utils.display_title("x", {"title": "Medford Happenings - Laura O'Neil",
                                  "meeting_type": "", "date": "2024-01-02",
@@ -1027,8 +1053,9 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
               "begins with [seconds].\n\n" % (entry.get("title") or "",
                                               entry.get("meeting_type") or "",
                                               entry.get("date") or ""))
-    print("%s: %s (%.1f h, ~%dk chars)" % (yt_id, entry.get("title") or "",
-                                           (duration or 0) / 3600.0, len(text) // 1000))
+    print("%s: %s (%.1f h, ~%dk chars)"
+          % (yt_id, printable(entry.get("title") or ""),
+             (duration or 0) / 3600.0, len(text) // 1000))
     if dry_run:
         print("  dry run; no API call")
         return None
@@ -1083,6 +1110,97 @@ def summarize(yt_id, model=DEFAULT_PROVIDER, dry_run=False, force=False,
     return out
 
 
+# WHY AN ORDER FILE AND NOT JUST A DATE SORT. --all used to be strictly
+# date-descending, which is right for keeping up and useless for filling a
+# hole: the High School Building Committee's founding months (Apr-Sep 2024,
+# the meetings where it was constituted, wrote its rules and picked an OPM)
+# sat roughly 1,700 meetings deep behind a queue that moves 2-20 a night, so
+# a committee overview could not be written for the body that most needs one.
+#
+# A free daily allowance makes ORDER the only lever there is. Nothing here
+# makes the backlog shorter; it decides what today's twenty requests buy.
+PRIORITY_FILE = "summary_priority.txt"
+RECENT_DAYS = 30
+
+
+def read_priority(path=PRIORITY_FILE):
+    """Meeting types and ids to summarise ahead of the backlog, in rank order.
+
+    One entry per line -- a meeting_type name ("MPS High School Building
+    Committee") or a bare video id -- with # comments and blanks ignored.
+    File ORDER is rank, so a second body listed below MHSBC is reached only
+    once MHSBC is current. Same idiom as ids_to_transcribe.txt.
+    """
+    if not os.path.exists(path):
+        return []
+    out = []
+    for line in io.open(path, encoding="utf-8"):
+        line = line.split("#", 1)[0].strip()
+        if line and line not in out:
+            out.append(line)
+    return out
+
+
+def _recent_cutoff(days=RECENT_DAYS, today=None):
+    today = today or datetime.date.today()
+    return (today - datetime.timedelta(days=days)).strftime("%Y-%m-%d")
+
+
+def rank(yt_id, video_data, entries, cutoff):
+    """(tier, sub-rank) for the --all queue. Lower sorts earlier.
+
+    Tier 0 recent meetings, tier 1 the priority file in its own order,
+    tier 2 the backlog. A recent MHSBC meeting is tier 0, which is where it
+    belongs either way.
+
+    RECENCY IS BY MEETING DATE, not by when the transcript landed, because
+    the Castus import backfills 2018 recordings continuously -- those are new
+    to the archive and not news to a reader. The cost is that a meeting whose
+    date was mis-parsed misses tier 0 (`10.6.25` read as 2025 and dropped the
+    transcription priority ~160x before `date_manual` fixed it), so a stale
+    date is now two bugs rather than one.
+    """
+    e = video_data.get(yt_id) or {}
+    if (e.get("date") or e.get("upload_date") or "") >= cutoff:
+        return (0, 0)
+    for i, entry in enumerate(entries):
+        if entry == yt_id or entry == e.get("meeting_type"):
+            return (1, i)
+    return (2, 0)
+
+
+def order_todo(todo, video_data, entries, days=RECENT_DAYS, today=None):
+    """todo sorted by tier, newest first inside each tier.
+
+    Two passes rather than one composite key: date descending, then a STABLE
+    sort by tier, which keeps the date order within a tier without having to
+    invert a date string.
+    """
+    cutoff = _recent_cutoff(days, today)
+    todo = sorted(todo, key=lambda k: (video_data[k].get("date")
+                                       or video_data[k].get("upload_date")
+                                       or ""), reverse=True)
+    todo.sort(key=lambda k: rank(k, video_data, entries, cutoff))
+    return todo
+
+
+def report_priority(entries, video_data):
+    """Warn about an entry that matches nothing.
+
+    A typo'd committee name is silently a no-op, and silent no-ops are this
+    codebase's recurring failure: the work runs, logs success, and changes
+    nothing. One line at startup is the whole fix.
+    """
+    types = {(v.get("meeting_type") or "") for v in video_data.values()}
+    for entry in entries:
+        if entry in types:
+            continue
+        if entry in video_data:
+            continue
+        print("  WARNING: priority entry matches no meeting_type or id: %r"
+              % entry)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--id", dest="yt_id")
@@ -1105,6 +1223,15 @@ def main():
                          "0 for paid tiers.")
     ap.add_argument("--out", help="write here instead of <base>.summary.json "
                                   "(for comparing two models side by side)")
+    ap.add_argument("--priority-file", default=PRIORITY_FILE,
+                    help="meeting types / ids to summarise ahead of the "
+                         "backlog, in rank order. Default %s" % PRIORITY_FILE)
+    ap.add_argument("--recent-days", type=int, default=RECENT_DAYS,
+                    help="a meeting this new goes first regardless of the "
+                         "priority file. Default %d" % RECENT_DAYS)
+    ap.add_argument("--plan", type=int, metavar="N", default=0,
+                    help="print the first N of the --all queue with their "
+                         "tiers and exit. No API calls.")
     args = ap.parse_args()
     if args.self_test:
         return self_test_subject()
@@ -1113,7 +1240,10 @@ def main():
     # TRANSIENT_ATTEMPTS. --list-models and --dry-run are excluded so that
     # probing the ladder does not consume the "first run after reset" credit
     # that the real run is meant to spend.
-    if not (args.list_models or args.dry_run):
+    # --plan is excluded for the same reason --list-models is: transient_budget
+    # RECORDS the run, and inspecting the queue must not spend the "first run
+    # after the reset" retry credit that the real run is meant to have.
+    if not (args.list_models or args.dry_run or args.plan):
         global TRANSIENT_ATTEMPTS
         TRANSIENT_ATTEMPTS = transient_budget()
         if TRANSIENT_ATTEMPTS > 1:
@@ -1159,11 +1289,36 @@ def main():
         summarize(args.yt_id, args.model, args.dry_run, args.force, video_data,
                   args.out)
         return 0
-    if not args.all:
-        ap.error("give -i <yt_id> or --all")
+    if not (args.all or args.plan):
+        ap.error("give -i <yt_id>, --all, or --plan N")
     todo = [k for k, v in video_data.items()
             if not v.get("skip") and transcript_dir(k, video_data)[1]]
-    todo.sort(key=lambda k: (video_data[k].get("date") or ""), reverse=True)
+    entries = read_priority(args.priority_file)
+    if entries:
+        report_priority(entries, video_data)
+    todo = order_todo(todo, video_data, entries, args.recent_days)
+
+    if args.plan:
+        # What today's allowance would buy, in order, and whether each is
+        # already current -- a cached meeting costs nothing, so the number
+        # that matters is how many UNWRITTEN ones are near the front.
+        cutoff = _recent_cutoff(args.recent_days)
+        labels = {0: "recent", 1: "priority", 2: "backlog"}
+        pending = 0
+        for yt_id in todo[:args.plan]:
+            e = video_data[yt_id]
+            tier, sub = rank(yt_id, video_data, entries, cutoff)
+            base = transcript_dir(yt_id, video_data)[0]
+            have = os.path.exists(os.path.join(base, base + ".summary.json"))
+            pending += 0 if have else 1
+            print("%-8s %-10s %-12s %s %s"
+                  % (labels[tier] + (":%d" % sub if tier == 1 else ""),
+                     e.get("date") or e.get("upload_date") or "", yt_id,
+                     "have" if have else "WANT",
+                     printable((e.get("title") or "")[:52])))
+        print("\n%d of the first %d need a summary; %d in the queue overall."
+              % (pending, min(args.plan, len(todo)), len(todo)))
+        return 0
     # Free-tier limits are per MINUTE and per DAY, and exceeding either
     # returns 429 even when the other is fine. Pacing here is cheaper than
     # retry logic, and an unattended backlog run has no reason to hurry.

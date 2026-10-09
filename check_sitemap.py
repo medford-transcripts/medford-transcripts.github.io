@@ -97,16 +97,34 @@ def main():
             missing.append(u)
 
     # --- published English transcripts not listed? ---
+    #
+    # SKIPPED VIDEOS ARE NOT ORPHANS. They are duplicate recordings of a
+    # meeting published under another id, and make_sitemap leaves them out on
+    # purpose -- two urls carrying the same transcript is the duplicate
+    # content that earns "crawled, currently not indexed". This check did not
+    # apply the same filter, so it reported 115 permanent orphans and ended
+    # every run with "VERDICT: sitemap has issues".
+    #
+    # That is worse than a cosmetic annoyance: it is why nobody noticed that
+    # make_sitemap stopped WRITING anything on 2026-10-02 (7a280f855b). A
+    # checker that always complains is a checker nobody reads. The two must
+    # agree on what "published" means, or neither can be trusted.
+    import utils
+    video_data = utils.get_video_data()
     listed = set(locs)
     orphans = []
     for d in sorted(glob.glob("20??-??-??_*")):
         if not os.path.isdir(d):
             continue
         page = os.path.join(d, d + ".html")
-        if os.path.exists(page):
-            want = SITE_ROOT + d + "/" + d + ".html"
-            if want not in listed:
-                orphans.append(want)
+        if not os.path.exists(page):
+            continue
+        yt_id = d.split("_", 1)[1] if "_" in d else d
+        if (video_data.get(yt_id) or {}).get("skip"):
+            continue
+        want = SITE_ROOT + d + "/" + d + ".html"
+        if want not in listed:
+            orphans.append(want)
 
     # --- composition ---
     translated = sum(1 for u in locs

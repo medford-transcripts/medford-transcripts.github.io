@@ -10,6 +10,109 @@ from site_url import site_url, SITE_ROOT
 
 import utils
 
+
+def overview_block(committee_name):
+    """The standing overview for this body, or '' when none is written.
+
+    READ FROM THE SIDECAR, NOT GENERATED HERE. summarize_committee.py writes
+    committees/<slug>.overview.json; this only renders it. Same split as the
+    per-meeting summary (summarize_meeting writes, srt2html renders), and it
+    matters more here: make() runs on every publish from a loop that imported
+    this module days ago, so it must never be able to reach an API.
+
+    LABELLED AS MACHINE-WRITTEN AND AS SECOND-HAND. The per-meeting summary
+    banner says "written from the transcript below, which is the record".
+    This one cannot say that -- it is written from those summaries, two
+    inferences from what was said -- so it says so, and every statement
+    carries links into the meetings it came from.
+    """
+    path = os.path.join("committees",
+                        committee_name.replace(" ", "_") + ".overview.json")
+    if not os.path.exists(path):
+        return ""
+    try:
+        d = json.load(io.open(path, encoding="utf-8"))
+    except (ValueError, IOError, OSError):
+        return ""
+    overview = (d.get("overview") or "").strip()
+    threads = d.get("threads") or []
+    periods = [p for p in (d.get("periods") or []) if (p.get("narrative") or "").strip()]
+    if not overview and not threads:
+        return ""
+
+    def cites(entry):
+        items = entry.get("citations") or []
+        if not items:
+            return ""
+        # TWO MOMENTS IN ONE MEETING would otherwise render as
+        # "2025-02-11 . 2025-02-11", which reads as a mistake. Where a meeting
+        # is cited more than once in the same list, the time distinguishes
+        # them; where it is cited once, the date alone is less noise.
+        repeated = {c.get("video_id") for c in items
+                    if sum(1 for o in items
+                           if o.get("video_id") == c.get("video_id")) > 1}
+        out = ['      <ul class="mt-cites">\n']
+        for c in items:
+            base, t = c.get("base") or "", c.get("t")
+            if not base or t is None:
+                continue
+            href = "../%s/%s.html#t=%d" % (base, base, int(t))
+            label = c.get("date") or base[:10]
+            if c.get("video_id") in repeated:
+                label += time.strftime(" %H:%M", time.gmtime(int(t)))
+            # The item title is the accessible name, so "2026-03-17" is not
+            # the whole of what a screen reader announces.
+            out.append('        <li><a href="' + escape(href, quote=True)
+                       + '" title="' + escape(c.get("title") or "", quote=True)
+                       + '">' + escape(label) + '</a></li>\n')
+        out.append('      </ul>\n')
+        return "".join(out) if len(out) > 2 else ""
+
+    model = escape(str(d.get("model") or "an AI model"))
+    span = d.get("span") or ["", ""]
+    out = ['    <section class="mt-summary mt-overview" '
+           'aria-label="AI-generated overview of this body\'s work">\n']
+    out.append('      <p class="mt-summary-banner"><strong>AI-generated '
+               'overview.</strong> Written by ' + model + ' from this '
+               "archive's per-meeting summaries, which were themselves "
+               'written from the transcripts &mdash; so it is two steps from '
+               'the record, and may be incomplete or wrong. It does not '
+               'report votes. Every statement links to the meetings it came '
+               'from; those are the record. Based on ' + str(d.get("n_meetings") or 0)
+               + ' summarised meetings, ' + escape(span[0]) + ' to '
+               + escape(span[-1]) + '.</p>\n')
+    if overview:
+        out.append('      <p class="mt-summary-overview">' + escape(overview)
+                   + '</p>\n')
+    if threads:
+        out.append('      <h2>Lines of work</h2>\n')
+        for th in threads:
+            out.append('      <div class="mt-overview-thread">\n')
+            out.append('      <h3>' + escape((th.get("name") or "").strip())
+                       + '</h3>')
+            status = (th.get("status") or "").strip()
+            if status:
+                out.append('<span class="mt-status">' + escape(status)
+                           + '</span>')
+            out.append('\n')
+            body = (th.get("summary") or "").strip()
+            if body:
+                out.append('      <p>' + escape(body) + '</p>\n')
+            out.append(cites(th))
+            out.append('      </div>\n')
+    if periods:
+        out.append('      <h2>By period</h2>\n')
+        out.append('      <ul class="mt-periods">\n')
+        for p in periods:
+            out.append('        <li><span class="mt-period-label">'
+                       + escape((p.get("period") or "").strip())
+                       + '</span> ' + escape((p.get("narrative") or "").strip())
+                       + '\n' + cites(p) + '        </li>\n')
+        out.append('      </ul>\n')
+    out.append('    </section>\n')
+    return "".join(out)
+
+
 def make():
 
     # update meeting types and identify duplicates
@@ -196,6 +299,10 @@ def make():
                    'initial-scale=1.0">\n')
         html.write('    <title>' + escape(committee_name, quote=True)
                    + ' - Medford Transcripts</title>\n')
+        # The site's only stylesheet, and every selector in it is class- or
+        # id-scoped, so linking it here styles the overview box and changes
+        # nothing about the table that was already on the page.
+        html.write('    <link rel="stylesheet" href="../transcript-player.css">\n')
         html.write('    <meta name="description" content="'
                    + escape(desc, quote=True) + '">\n')
         html.write('    <link rel="canonical" href="' + page_url + '" />\n')
@@ -215,6 +322,10 @@ def make():
                        '(membership, contact and meeting schedule)</p>\n')
         html.write('    <p><a href="../index.html">All transcripts</a> &middot; '
                    '<a href="index.html">All committees</a></p>\n')
+        # ABOVE THE TABLE. A reader who does not already know what this body
+        # does cannot learn it from 100 rows of dated meeting titles, which is
+        # all the page was.
+        html.write(overview_block(committee_name))
         html.write('<table border=1>\n')
         header = ["<th scope='col'>Date</th>",
                   "<th scope='col'>Duration</th>",

@@ -1,0 +1,15 @@
+# Names the search index carries regardless of how rarely they speak.
+#
+# WHY THIS EXISTS. The default policy is "on a city roster, or speaks at 5+
+# meetings" (build_search_index.MIN_MEETINGS). Officials from OUTSIDE Medford
+# city government fail BOTH tests at once: no local roster lists them, and
+# they appear a handful of times. Sampling the band just below the threshold
+# turned one up immediately, which is the case this file was created for.
+#
+# Add someone here only for acting in an official capacity -- a public office,
+# an agency, a professional role before the body (PRINCIPLES #2). Not for
+# being a frequent or notable member of the public.
+#
+# search_names_exclude.txt wins over this file.
+
+Pat Jehlen          # State Senator, Second Middlesex; 4 meetings

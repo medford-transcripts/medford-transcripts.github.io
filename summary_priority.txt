@@ -1,0 +1,15 @@
+# What summarize_meeting.py --all buys with today's free allowance, after
+# anything that met in the last 30 days (that tier is automatic, see
+# --recent-days). One entry per line: a meeting_type name exactly as it
+# appears in meeting_types.json, or a bare video id. ORDER IS RANK -- a body
+# listed below another is reached only once the one above it is current.
+#
+# A typo'd name is a silent no-op, so --all warns at startup about any entry
+# matching no meeting_type and no id. Check with:
+#
+#     python summarize_meeting.py --plan 30
+#
+# MHSBC first because it is the body an overview is most wanted for and the
+# worst served by a date sort: a 100-meeting, 2024-2026 project whose
+# founding months sat ~1,700 deep in the queue.
+MPS High School Building Committee

@@ -3,7 +3,7 @@
 Open items with the measurement that established them, so none of this is
 re-derived. Standing rule: file it here before it is compacted away.
 
-Last updated 2026-10-08.
+Last updated 2026-10-09.
 
 ## Open, blocked on Jason
 
@@ -294,6 +294,67 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   -- which would reach the in-room speakers the Zoom overlay never can, and
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
+
+## Tier 2 search: full transcript text -- not built, 2026-10-09
+
+`search_index.json` covers titles, bodies, dates, 465 names and the summaries
+(0.89 MB, shipped whole). It does NOT cover transcript text: 2,376 English
+pages hold ~207 MB, about 35M words, and the front page says so rather than
+implying coverage it does not have.
+
+The shape is settled -- a term-sharded postings index emitted from the SRTs by
+srt2html, fetched a shard at a time, which is Pagefind's trick without
+Pagefind's HTML crawl. Expect 50-150 MB on disk. **The browser is not the
+constraint** (one or two shards per query); the repo is, since `.git` is
+already 8.3 GB and the shards would churn on every publish. So the open
+question is WHERE the artifacts live -- same repo, an orphan branch, a second
+repo served from Pages -- not which library to use.
+
+Two smaller things fall out of the same work:
+
+- **The sitemap is 7 days stale**: 151 published English pages are not listed
+  (`python check_sitemap.py` reports it). Own-search does nothing for
+  discoverability -- an in-browser index is invisible to Google -- so the
+  crawler side is still worth keeping current.
+- **Watch `search_names_include.txt`.** Officials from outside city government
+  fail both the roster test and the 5-meeting recurrence test. Pat Jehlen
+  (state senator, 4 meetings) is in there; MSBA staff and the federal
+  delegation are the likely next ones. A periodic sample of the 3-4 meeting
+  band is how they get found.
+
+## Committee overviews -- built 2026-10-09, three gaps it exposed
+
+`summarize_committee.py` writes a body's standing overview from the archive's
+own per-meeting summaries (not the transcripts: every earlier attempt from
+full transcripts came back weighted on one meeting, which is structural, since
+millions of characters means truncation decides the answer). Rendered by
+`make_committee_pages.overview_block`. Open items:
+
+- **The two-stage pass for large bodies is NOT built.** One request holds
+  400k characters; the Building Committee needs 96k for 58 meetings, so it
+  fits. City Council does not -- 504 meetings, 40 summarised so far and
+  climbing -- and will need a digest per period, then a digest of the digests.
+  `summarize_committee` refuses with a message naming this rather than
+  silently truncating. Build it when a body first exceeds the cap; an untested
+  path that never runs is how unmeasured passes accumulate here.
+
+- **Duplicate detection misses the ONE-DAY OFFSET, and 17 MHSBC rows show
+  it.** Castus dates a meeting the day the city posted it and YouTube the day
+  it happened, so `CAS00002553` (10/05/26) and `CP5ho6yZUqo` (10.6) are the
+  same meeting with no `duplicate_id` between them. Effect today: the
+  committee tables count those meetings twice. Effect if it is ever fixed the
+  wrong way: `summarize_committee` would weight a meeting double, which is the
+  exact bias it exists to remove -- it warns when two summarised meetings name
+  each other, and that check does not fire on an unflagged pair.
+
+- **Two MHSBC subcommittee meetings are typed `MPS School Committee`.**
+  `MCM00000887` (2024-05-07 Rules & Onboarding) and `MCM00001714` (2025-01-23
+  Communications & Engagement) are the only copies the archive holds of those
+  two meetings, and both route to the parent body, so the Building Committee
+  page under-counts and its overview cannot cite them. The Castus copies
+  (`CAS00001702`, `CAS00002005`) ARE typed correctly but are untranscribed.
+  Fix is a keyword or a per-id override, not a retype of the MCM titles --
+  those are the city's words (PRINCIPLES #6).
 
 ## 40 truncated translation pages, found 2026-10-08
 

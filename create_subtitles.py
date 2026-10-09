@@ -920,7 +920,7 @@ def sources_changed():
 # back until a restart. The rest of GENERATED_PATHS is additive -- a new
 # transcript directory is new content, not a rewrite of someone else's work --
 # and is safe to publish either way.
-GLOBAL_REGENERATED = {"index.html", "sitemap.xml",
+GLOBAL_REGENERATED = {"index.html", "sitemap.xml", "search_index.json",
                       "resolutions.html", "heatmap.html", "committees",
                       "committees.html", "electeds", "election"}
 
@@ -939,6 +939,10 @@ GENERATED_PATHS = [
     "resolutions.html",
     "heatmap.html",
     "sitemap.xml",
+    # Written beside index.html by make_index; the front page's search box is
+    # dead without it, and a meeting published but missing from it is listed
+    # and unfindable.
+    "search_index.json",
     "video_data.json",
     "medford_index.json",
 ]

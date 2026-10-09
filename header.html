@@ -26,28 +26,325 @@
 <!-- <a href="candidates_2025.html">2025 Candidate excerpts</a><br> -->
 <a href="election/index.html">Election pages, 2005-2025</a><br><br>
 
-    <!-- This adds a google search bar that automatically searches only this site -->
-    <center>
-    <form action="https://www.google.com/search" target="_blank" method="get">
-       <form action="https://www.bing.com/search" target="_blank" method="get"> 
+    <!-- OUR OWN SEARCH, not a handoff to Google.
 
-        Search transcripts: 
-        <input type="search" name="q">
-        <input type="submit" value="Go">
-        Note: this only searches pages Bing/Google have indexed, which is very incomplete
+         This box used to submit to Google with `site:`, under a note that
+         said "this only searches pages Bing/Google have indexed, which is
+         very incomplete". That was true and it was the problem: the archive
+         is 2,376 English pages and 207 MB of transcript text, a crawler has
+         reached some unknown fraction of it, and nobody here can see which
+         fraction. Search is the whole reason for transcribing a meeting, so
+         it cannot be delegated to an index we cannot inspect.
+
+         The index is search_index.json, written by build_search_index.py as
+         a byproduct of generating the pages, and searched HERE, in the
+         reader's browser. No server, no query log, nothing typed in this box
+         leaves the machine it is typed on.
+
+         The two nested form tags that used to be here were invalid markup;
+         the inner Bing one had been inert since the day it was written.
+         (Written without angle brackets on purpose: a tag inside a comment
+         is invisible to a browser but not to a script counting tags, and it
+         made this page look like it still had the nesting bug.)
+
+         Both markup and script are INLINE on purpose. index.html is
+         regenerated from this file by srt2html.make_index and published by
+         the transcription loop, while a separate .js asset is committed by
+         hand -- so an external file could be referenced by a published page
+         hours before it existed. Self-contained front page, no such window. -->
+    <section class="mt-search">
+      <form id="mt-search-form" role="search" action="index.html" method="get">
+        <label for="mt-q">Search <span id="mt-search-n">the</span> meetings:</label>
+        <input type="search" id="mt-q" name="q" autocomplete="off"
+               placeholder="a topic, a body, a councilor, a date">
+        <button type="submit">Search</button>
       </form>
-    </center>
+      <p class="mt-search-note">
+        This is <strong>our own search index</strong>, not Google's. Google and
+        Bing have indexed only part of this archive and we cannot see or
+        control which part, so this searches an index we build ourselves and
+        it runs entirely in your browser &mdash; nothing you type here is sent
+        anywhere.
+        <span id="mt-search-scope">It covers meeting titles, bodies and dates,
+        the officials, staff and regular participants who spoke, and the AI
+        summaries of the meetings that have one.</span>
+        It does not yet search the full text of the transcripts; for that, open
+        a meeting and use your browser's find.
+      </p>
+      <p id="mt-search-status" class="mt-search-status" role="status" aria-live="polite"></p>
+      <ol id="mt-search-results" class="mt-search-results"></ol>
+      <noscript>
+        <p>Search here needs JavaScript, because the index is searched in your
+        browser rather than on a server. Without it, Google's partial index of
+        this site is the alternative:</p>
+        <form action="https://www.google.com/search" method="get" target="_blank">
+          <input type="search" name="q" aria-label="Search this site with Google">
+          <input type="hidden" name="as_sitesearch" value="medford-transcripts.github.io">
+          <button type="submit">Search with Google</button>
+        </form>
+      </noscript>
+    </section>
+
+    <style>
+      /* Scoped to .mt-search / #mt-search-*, so nothing here touches the
+         index table below it. Matches the tone of transcript-player.css,
+         which this page does not link. */
+      .mt-search { margin: 0 0 18px 0; font: 15px/1.5 system-ui, sans-serif; }
+      .mt-search form { margin: 0 0 6px 0; }
+      .mt-search label { font-weight: 600; }
+      .mt-search input[type=search] {
+        padding: 5px 8px; font-size: 15px; min-width: 18em; max-width: 100%;
+      }
+      .mt-search button { padding: 5px 12px; font-size: 15px; }
+      .mt-search-note { font-size: 13px; color: #555; margin: 0 0 8px 0;
+                        max-width: 62em; }
+      .mt-search-status { font-size: 13px; color: #555; margin: 0 0 6px 0; }
+      .mt-search-results { list-style: none; margin: 0; padding: 0;
+                           max-width: 62em; }
+      .mt-search-results li { margin: 0 0 12px 0; }
+      .mt-r-title { font-weight: 600; }
+      .mt-r-meta { font-size: 13px; color: #555; font-variant-numeric: tabular-nums; }
+      .mt-r-snip { margin: 3px 0 0 0; font-size: 14px; }
+      .mt-r-moments { font-size: 13px; margin: 2px 0 0 0; padding: 0;
+                      list-style: none; }
+      .mt-r-moments li { display: inline; margin: 0; }
+      .mt-r-moments li + li::before { content: " \00b7 "; color: #888; }
+      .mt-search mark { background: #fff2a8; color: inherit; }
+      @media (prefers-color-scheme: dark) {
+        .mt-search-note, .mt-search-status, .mt-r-meta { color: #a8a8b4; }
+        .mt-search mark { background: #6b5d00; color: #fff; }
+      }
+    </style>
 
     <script>
-      var form = document.querySelector("form");
+    (function () {
+      "use strict";
+      var INDEX_URL = "search_index.json";
+      var MAX_RESULTS = 100;
 
+      var form = document.getElementById("mt-search-form");
+      var box = document.getElementById("mt-q");
+      var status = document.getElementById("mt-search-status");
+      var list = document.getElementById("mt-search-results");
+      var scope = document.getElementById("mt-search-scope");
+      var countLabel = document.getElementById("mt-search-n");
+
+      var data = null, loading = null, pending = null, timer = null;
+
+      function esc(s) {
+        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+
+      /* Terms, honouring "quoted phrases" so `"high school"` is one term
+         rather than two that match separately all over the archive. */
+      function terms(q) {
+        var out = [], re = /"([^"]+)"|(\S+)/g, m;
+        while ((m = re.exec(q))) {
+          var t = (m[1] || m[2] || "").toLowerCase().trim();
+          if (t) out.push(t);
+        }
+        return out;
+      }
+
+      /* Field weights, highest first: a name or a title is a much stronger
+         signal than the same word buried in a summary paragraph. A match on
+         a word BOUNDARY counts for more than one inside a longer word, which
+         is what keeps "art" from ranking above "Arts Council". */
+      var FIELDS = [["t", 8], ["s", 6], ["k", 4], ["b", 3], ["o", 2], ["d", 2]];
+
+      function prep(d) {
+        /* One lowercase haystack per field, built once. 2,260 docs scanned
+           per keystroke with indexOf is about 3 ms -- an inverted index would
+           be faster and is not needed at this size, and it would have to be
+           built in the browser anyway. */
+        d._f = {
+          t: (d.t || "").toLowerCase(),
+          b: (d.b || "").toLowerCase(),
+          o: (d.o || "").toLowerCase(),
+          d: (d.d || ""),
+          s: (d.s || []).join(" ").toLowerCase(),
+          k: (d.k || []).map(function (x) { return x[0]; }).join(" ").toLowerCase()
+        };
+        d._all = d._f.t + " " + d._f.b + " " + d._f.o + " " + d._f.d + " " +
+                 d._f.s + " " + d._f.k;
+        return d;
+      }
+
+      function score(d, ts) {
+        var total = 0;
+        for (var i = 0; i < ts.length; i++) {
+          var t = ts[i];
+          if (d._all.indexOf(t) < 0) return 0;      /* AND across terms */
+          var best = 0;
+          for (var j = 0; j < FIELDS.length; j++) {
+            var f = FIELDS[j][0], w = FIELDS[j][1], h = d._f[f];
+            var at = h.indexOf(t);
+            if (at < 0) continue;
+            var boundary = at === 0 || !/[a-z0-9]/.test(h.charAt(at - 1));
+            var s = w * (boundary ? 1.5 : 1);
+            if (s > best) best = s;
+          }
+          total += best;
+        }
+        return total;
+      }
+
+      function highlight(text, ts) {
+        var out = esc(text);
+        for (var i = 0; i < ts.length; i++) {
+          var safe = esc(ts[i]).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          out = out.replace(new RegExp("(" + safe + ")", "gi"), "<mark>$1</mark>");
+        }
+        return out;
+      }
+
+      function hhmmss(n) {
+        var h = Math.floor(n / 3600), m = Math.floor((n % 3600) / 60),
+            s = Math.floor(n % 60), p = function (x) { return (x < 10 ? "0" : "") + x; };
+        return h ? h + ":" + p(m) + ":" + p(s) : m + ":" + p(s);
+      }
+
+      /* The snippet is chosen by WHERE the match is, so a result explains why
+         it is a result: a summary item that matched beats the generic
+         overview, and a title-only match needs no snippet at all. */
+      function snippet(d, ts) {
+        var hit = null;
+        if (d.o) {
+          var lo = d._f.o;
+          for (var i = 0; i < ts.length; i++) {
+            if (lo.indexOf(ts[i]) >= 0) { hit = d.o; break; }
+          }
+        }
+        if (!hit) return "";
+        if (hit.length > 260) hit = hit.slice(0, 257) + "…";
+        return hit;
+      }
+
+      function moments(d, ts) {
+        if (!d.k) return [];
+        var out = [];
+        for (var i = 0; i < d.k.length && out.length < 3; i++) {
+          var title = d.k[i][0], lo = title.toLowerCase();
+          for (var j = 0; j < ts.length; j++) {
+            if (lo.indexOf(ts[j]) >= 0) { out.push(d.k[i]); break; }
+          }
+        }
+        return out;
+      }
+
+      function render(hits, ts, q) {
+        list.innerHTML = "";
+        if (!q) { status.textContent = ""; return; }
+        if (!hits.length) {
+          status.textContent = 'Nothing matches "' + q + '". The full text of '
+            + 'the transcripts is not searchable here yet, only titles, '
+            + 'bodies, officials and summaries.';
+          return;
+        }
+        status.textContent = hits.length === 1 ? "1 meeting matches."
+          : hits.length + " meetings match"
+            + (hits.length > MAX_RESULTS ? "; showing the first " + MAX_RESULTS : "")
+            + ".";
+        var html = [];
+        for (var i = 0; i < hits.length && i < MAX_RESULTS; i++) {
+          var d = hits[i], href = encodeURI(d.u + "/" + d.u + ".html");
+          var meta = [d.d];
+          if (d.b) meta.push(esc(d.b));
+          if (d.n) meta.push(hhmmss(d.n));
+          var row = '<li><a class="mt-r-title" href="' + href + '">'
+                  + highlight(d.t, ts) + "</a>"
+                  + '<div class="mt-r-meta">' + meta.join(" &middot; ") + "</div>";
+          var sn = snippet(d, ts);
+          if (sn) row += '<p class="mt-r-snip">' + highlight(sn, ts) + "</p>";
+          var ms = moments(d, ts);
+          if (ms.length) {
+            row += '<ul class="mt-r-moments">';
+            for (var k = 0; k < ms.length; k++) {
+              row += '<li><a href="' + href + "#t=" + ms[k][1] + '">'
+                   + hhmmss(ms[k][1]) + " " + highlight(ms[k][0], ts) + "</a></li>";
+            }
+            row += "</ul>";
+          }
+          html.push(row + "</li>");
+        }
+        list.innerHTML = html.join("");
+      }
+
+      function run(q) {
+        q = (q || "").trim();
+        if (!data) { pending = q; load(); return; }
+        if (!q) { render([], [], ""); return; }
+        var ts = terms(q), hits = [];
+        for (var i = 0; i < data.docs.length; i++) {
+          var s = score(data.docs[i], ts);
+          if (s > 0) { data.docs[i]._s = s; hits.push(data.docs[i]); }
+        }
+        /* Score first, then NEWEST first among equals: for a body or a person
+           the recent meeting is almost always the one being looked for. */
+        hits.sort(function (a, b) {
+          return (b._s - a._s) || (a.d < b.d ? 1 : a.d > b.d ? -1 : 0);
+        });
+        render(hits, ts, q);
+      }
+
+      function load() {
+        if (loading) return loading;
+        status.textContent = "Loading the search index…";
+        loading = fetch(INDEX_URL).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        }).then(function (j) {
+          data = j;
+          for (var i = 0; i < data.docs.length; i++) prep(data.docs[i]);
+          if (countLabel) countLabel.textContent = data.n.toLocaleString();
+          if (scope) {
+            scope.textContent = "It covers the titles, bodies and dates of all "
+              + data.n.toLocaleString() + " meetings, the "
+              + (data.n_names ? data.n_names.toLocaleString() + " " : "")
+              + "officials, staff and regular participants who spoke in them, "
+              + "and the AI summaries of the "
+              + data.with_summary.toLocaleString() + " that have one so far "
+              + "(more are written every night).";
+          }
+          status.textContent = "";
+          if (pending !== null) { var q = pending; pending = null; run(q); }
+        }).catch(function (e) {
+          loading = null;
+          status.textContent = "The search index did not load (" + e.message
+            + "). Reloading the page may fix it.";
+        });
+        return loading;
+      }
+
+      /* Loaded on FIRST USE, not on page load: most visitors come for the
+         table below and should not pay 170 KB for a box they never touch. */
+      box.addEventListener("focus", load, { once: true });
+      box.addEventListener("input", function () {
+        clearTimeout(timer);
+        var q = box.value;
+        timer = setTimeout(function () { run(q); }, 120);
+      });
       form.addEventListener("submit", function (e) {
-                             e.preventDefault();
-                             var search = form.querySelector("input[type=search]");
-                             search.value = search.value + " site:https://medford-transcripts.github.io/";
-                             form.submit();
-                             }
-                           );
+        e.preventDefault();
+        clearTimeout(timer);
+        /* ?q= in the URL makes a search linkable and shareable, and is what
+           the deep link below reads on arrival. replaceState, not pushState:
+           typing is not navigation and should not fill the back button. */
+        try {
+          var u = new URL(window.location.href);
+          if (box.value.trim()) u.searchParams.set("q", box.value.trim());
+          else u.searchParams.delete("q");
+          window.history.replaceState(null, "", u);
+        } catch (err) { /* older browser: the search still works */ }
+        run(box.value);
+      });
+
+      var initial = null;
+      try { initial = new URL(window.location.href).searchParams.get("q"); }
+      catch (err) { initial = null; }
+      if (initial) { box.value = initial; run(initial); }
+    })();
     </script>
 
     <!-- ----------------------------------------------------------------------- -->
