@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "ecaa39a3bc90b581",
- "subject": "",
+ "subject": "Residential Zoning Relief Applications",
  "overview": "The board evaluated three residential zoning requests involving building height and setback non-conformities. While the board approved vertical additions on Monument and Gaston Streets, it continued a proposal for a two-family conversion on 2nd Street to address concerns regarding story limits and building massing.",
  "items": [
   {
@@ -69,5 +69,6 @@
  "usage": {
   "input_tokens": 27730,
   "output_tokens": 609
- }
+ },
+ "subject_source": "summary"
 }

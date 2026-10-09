@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "5bec072b06d10dce",
- "subject": "",
+ "subject": "Hillside Avenue Certificates of Appropriateness",
  "overview": "The CC Historical Commission met to review and approve certificates of appropriateness for properties at 21-20 (21 Pro Ev) and 20 Hillside Ave, and approved the June meeting minutes.",
  "items": [
   {
@@ -50,5 +50,6 @@
  "usage": {
   "input_tokens": 19124,
   "output_tokens": 356
- }
+ },
+ "subject_source": "summary"
 }

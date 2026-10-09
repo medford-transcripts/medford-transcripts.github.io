@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "888f7b0e12b49e0d",
- "subject": "",
+ "subject": "Residential Zoning Variances and Special Permits",
  "overview": "The Medford Zoning Board of Appeals elected Mike Caldera as its new chair and approved several residential development applications, including variances for a townhouse development on Elm Street, a third-floor addition on Pickard Street, and special permits for projects on Lincoln Street and Riverside Avenue.",
  "items": [
   {
@@ -102,5 +102,6 @@
  "usage": {
   "input_tokens": 40322,
   "output_tokens": 711
- }
+ },
+ "subject_source": "summary"
 }

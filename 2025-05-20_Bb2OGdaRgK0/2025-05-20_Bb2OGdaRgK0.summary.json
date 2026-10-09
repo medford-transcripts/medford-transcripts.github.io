@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "f2f84baf0d789766",
- "subject": "",
+ "subject": "Controversial Land Use and Development Projects",
  "overview": "Host John Petrella interviewed land use attorney Harley Racer about several controversial local developments, including the Salem Street rezoning, a proposed methadone clinic, and the Dover Amendment dispute on St. Clair Road.",
  "items": [
   {
@@ -67,5 +67,6 @@
  "usage": {
   "input_tokens": 7117,
   "output_tokens": 604
- }
+ },
+ "subject_source": "summary"
 }

@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "e9f4381f18f78d1d",
- "subject": "",
+ "subject": "High School Project Management and Designer Selection",
  "overview": "The Medford High School Building Committee introduced Left Field as the selected Owner's Project Manager and approved the draft Request for Services to begin the designer selection process.",
  "items": [
   {
@@ -53,5 +53,6 @@
  "usage": {
   "input_tokens": 35222,
   "output_tokens": 386
- }
+ },
+ "subject_source": "summary"
 }

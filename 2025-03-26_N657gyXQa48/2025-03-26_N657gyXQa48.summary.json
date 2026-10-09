@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "ea06db4ea7942eae",
- "subject": "",
+ "subject": "Medford Square and ADU Zoning Proposals",
  "overview": "The committee met with zoning consultants from Innes Associates to review proposed zoning changes for Medford Square and discuss an updated draft of the city's Accessory Dwelling Unit (ADU) ordinance. No votes were taken, and both items remain in committee for further revision.",
  "items": [
   {
@@ -51,5 +51,6 @@
  "usage": {
   "input_tokens": 42084,
   "output_tokens": 367
- }
+ },
+ "subject_source": "summary"
 }

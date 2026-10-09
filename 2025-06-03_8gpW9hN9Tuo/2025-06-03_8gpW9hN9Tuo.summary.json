@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "330978855c36b493",
- "subject": "",
+ "subject": "School Administrative Appointments and Restructuring",
  "overview": "The School Committee approved key administrative appointments, restructured the facilities department, and announced the ratification of a contract with the administrators' union.",
  "items": [
   {
@@ -64,5 +64,6 @@
  "usage": {
   "input_tokens": 9582,
   "output_tokens": 506
- }
+ },
+ "subject_source": "summary"
 }

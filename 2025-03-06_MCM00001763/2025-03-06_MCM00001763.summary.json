@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "4fe842b7d46bf5c2",
- "subject": "",
+ "subject": "Housing Trust Action Plan and Project Funding",
  "overview": "The board discussed preparations for an upcoming trust action plan community meeting, approved an amended draft developer funding application, and voted to support the sale of city-owned parcels to generate funding for the trust. The board also amended and approved its upcoming meeting schedule.",
  "items": [
   {
@@ -61,5 +61,6 @@
  "usage": {
   "input_tokens": 26432,
   "output_tokens": 451
- }
+ },
+ "subject_source": "summary"
 }

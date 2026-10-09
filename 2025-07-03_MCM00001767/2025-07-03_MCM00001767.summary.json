@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "2e969a51c9ab70c9",
- "subject": "",
+ "subject": "Residential Zoning Relief Applications",
  "overview": "The Medford Zoning Board of Appeals approved several residential zoning reliefs, including additions and front yard parking spaces, and granted a six-month variance extension for 38 Harvard Avenue.",
  "items": [
   {
@@ -106,5 +106,6 @@
  "usage": {
   "input_tokens": 32080,
   "output_tokens": 741
- }
+ },
+ "subject_source": "summary"
 }

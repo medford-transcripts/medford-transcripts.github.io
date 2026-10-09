@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "023ccaec583d414b",
- "subject": "",
+ "subject": "Resident Communication and Budget Engagement",
  "overview": "The committee approved the city council's May newsletter for publication, reviewed the results of the FY26 budget public engagement survey, and received an update on a recent constituent listening session.",
  "items": [
   {
@@ -46,5 +46,6 @@
  "usage": {
   "input_tokens": 15305,
   "output_tokens": 341
- }
+ },
+ "subject_source": "summary"
 }

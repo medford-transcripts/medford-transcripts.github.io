@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "53b8ea3b27bf5d28",
- "subject": "",
+ "subject": "Park Permits and Public Art Installation",
  "overview": "The Parks Commission approved several seasonal field permits for youth soccer, kickball, and club training, and authorized moving a public art installation to Brooks Park. A proposed contract with the USTA regarding smart court access was tabled pending legal review by the City Solicitor.",
  "items": [
   {
@@ -79,5 +79,6 @@
  "usage": {
   "input_tokens": 13651,
   "output_tokens": 615
- }
+ },
+ "subject_source": "summary"
 }

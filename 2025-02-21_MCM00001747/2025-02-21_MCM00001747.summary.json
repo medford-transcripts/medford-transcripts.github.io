@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "7ada4cf2f733d9e2",
- "subject": "",
+ "subject": "Liquor Licenses and Restaurant Operating Hours",
  "overview": "The commission approved several one-day licenses for community events and a new wine and malt license for a restaurant in Medford Square. The meeting concluded with a policy discussion regarding the administrative coordination of restaurant operating hours between different city departments.",
  "items": [
   {
@@ -84,5 +84,6 @@
  "usage": {
   "input_tokens": 21962,
   "output_tokens": 703
- }
+ },
+ "subject_source": "summary"
 }

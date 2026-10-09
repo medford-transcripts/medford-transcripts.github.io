@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "a3109b38416bdefc",
- "subject": "",
+ "subject": "City Council Candidate Forum",
  "overview": "The Medford Democratic City Committee hosted a forum for candidates seeking at-large seats in the 2025 City Council election. Candidates presented their platforms and priorities for the upcoming term, with discussion primarily focusing on citywide rezoning efforts, housing affordability, and fiscal management.",
  "items": [
   {
@@ -159,5 +159,6 @@
  "usage": {
   "input_tokens": 19059,
   "output_tokens": 1295
- }
+ },
+ "subject_source": "summary"
 }

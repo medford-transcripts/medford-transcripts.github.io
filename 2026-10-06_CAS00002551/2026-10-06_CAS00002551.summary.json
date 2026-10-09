@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "e4ce8a9a0b70d391",
- "subject": "",
+ "subject": "Maple Park Avenue and Mystic Avenue Demolitions",
  "overview": "The Medford Historical Commission held public hearings for 15 Maple Park Avenue and 71 Mystic Avenue, determining in both cases that the properties were not preferably preserved and allowing demolition plans to proceed.",
  "items": [
   {
@@ -68,5 +68,6 @@
  "usage": {
   "input_tokens": 15613,
   "output_tokens": 502
- }
+ },
+ "subject_source": "summary"
 }

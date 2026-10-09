@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "d8153a1e4ac05b81",
- "subject": "",
+ "subject": "Parking Department Policies and Regulations",
  "overview": "The committee reviewed the parking department's surveillance technology policies, the status of the Green Line Extension parking zone, and proposed changes to City Hall parking regulations.",
  "items": [
   {
@@ -56,5 +56,6 @@
  "usage": {
   "input_tokens": 20027,
   "output_tokens": 448
- }
+ },
+ "subject_source": "summary"
 }

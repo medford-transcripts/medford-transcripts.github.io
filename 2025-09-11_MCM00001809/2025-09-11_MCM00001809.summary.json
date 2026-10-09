@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "9967213c8a745291",
- "subject": "",
+ "subject": "Traffic Safety and Parking Variances",
  "overview": "The Medford Traffic Commission met to consider several parking permit variances, crosswalk daylighting, and a proposal for on-street electric vehicle charging stations. The Commission denied a parking variance on Winthrop Street but approved related traffic safety and neighborhood connectivity measures, approved a parking variance on Henry Street, and received public feedback on the proposed charging station locations.",
  "items": [
   {
@@ -123,5 +123,6 @@
  "usage": {
   "input_tokens": 36230,
   "output_tokens": 961
- }
+ },
+ "subject_source": "summary"
 }

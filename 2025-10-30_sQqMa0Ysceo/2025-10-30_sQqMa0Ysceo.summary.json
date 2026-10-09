@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "00aeb74b4450cafd",
- "subject": "",
+ "subject": "Review of Municipal Operations and Ballot Initiatives",
  "overview": "Former City Councilors Robert Penta and Michael Marks critiqued current municipal operations and discussed major ballot initiatives facing the city. The discussion focused on proposed zoning changes, charter reform, and the condition of public infrastructure and safety facilities.",
  "items": [
   {
@@ -68,5 +68,6 @@
  "usage": {
   "input_tokens": 22174,
   "output_tokens": 462
- }
+ },
+ "subject_source": "summary"
 }

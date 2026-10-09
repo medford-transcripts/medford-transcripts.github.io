@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "1727e505a34cd839",
- "subject": "",
+ "subject": "City Council Communication and Public Engagement",
  "overview": "The committee met to review the monthly City Council newsletter and discuss proposals for holding public listening sessions and neighborhood ward meetings.",
  "items": [
   {
@@ -48,5 +48,6 @@
  "usage": {
   "input_tokens": 16311,
   "output_tokens": 310
- }
+ },
+ "subject_source": "summary"
 }

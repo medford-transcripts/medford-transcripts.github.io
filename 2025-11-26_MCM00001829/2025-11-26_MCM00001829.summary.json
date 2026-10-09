@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "6b34dd997670b849",
- "subject": "",
+ "subject": "EV Charging and Residential Parking Regulations",
  "overview": "The Commission approved a new location for on-street EV charging stations, established resident permit parking on Pinkham Road, and granted several residential parking variances for residents on major thoroughfares.",
  "items": [
   {
@@ -134,5 +134,6 @@
  "usage": {
   "input_tokens": 32860,
   "output_tokens": 1220
- }
+ },
+ "subject_source": "summary"
 }

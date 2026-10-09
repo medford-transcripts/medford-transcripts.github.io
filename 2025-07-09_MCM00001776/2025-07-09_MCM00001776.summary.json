@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "350e9f9306c3140b",
- "subject": "",
+ "subject": "Traffic Safety and Parking Regulations",
  "overview": "The Commission approved several handicap parking signs and authorized traffic pattern changes for Osborne Road and Pearl Street. Members also held preliminary discussions on updating commercial vehicle parking regulations and the city's 48-hour parking limit.",
  "items": [
   {
@@ -89,5 +89,6 @@
  "usage": {
   "input_tokens": 69049,
   "output_tokens": 728
- }
+ },
+ "subject_source": "summary"
 }

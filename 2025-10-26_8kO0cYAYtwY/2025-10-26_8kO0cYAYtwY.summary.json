@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "eba17aba56e9426e",
- "subject": "",
+ "subject": "Rick Caraviello City Council Candidacy",
  "overview": "Host John Petrella interviewed city council candidate Rick Caraviello regarding municipal zoning changes and the funding of a proposed new Medford High School.",
  "items": [
   {
@@ -49,5 +49,6 @@
  "usage": {
   "input_tokens": 5691,
   "output_tokens": 350
- }
+ },
+ "subject_source": "summary"
 }

@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "c10871333add6250",
- "subject": "",
+ "subject": "Patrick Clerkin City Council Candidacy",
  "overview": "Host John Petrella interviewed Medford City Council candidate Patrick Clerkin to discuss his campaign platforms and vision for the city. Clerkin highlighted issues regarding municipal communication, budget priorities, zoning, school renovations, and local infrastructure improvements.",
  "items": [
   {
@@ -94,5 +94,6 @@
  "usage": {
   "input_tokens": 10479,
   "output_tokens": 728
- }
+ },
+ "subject_source": "summary"
 }

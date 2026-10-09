@@ -5,7 +5,7 @@
  "model": "gemini-3.5-flash",
  "model_requested": "gemini",
  "transcript_sha": "cd7e7849a9773467",
- "subject": "",
+ "subject": "Zoning Relief and Special Permit Applications",
  "overview": "The Medford Zoning Board of Appeals met to review and vote on several zoning relief applications, including variances and special permits for residential additions, use changes, and commercial projects.",
  "items": [
   {
@@ -102,5 +102,6 @@
  "usage": {
   "input_tokens": 40745,
   "output_tokens": 686
- }
+ },
+ "subject_source": "summary"
 }
