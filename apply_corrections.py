@@ -765,15 +765,23 @@ def main():
         home_writes = []
         for rid, rec in recs:
             report = []
+            _homes_before = len(home_writes)
             ok = apply_one(rec, blocks, mapping, report, word_times,
                            prov_from="corrections_queue:" + rid,
                            home_writes=home_writes)
+            # NAMING A CLUSTER AT ITS HOME IS A REAL CORRECTION, even though it
+            # changes neither this .srt nor this mapping -- it is the most
+            # valuable kind, because propagate() then carries the name to every
+            # meeting that references the placeholder. Without this the row was
+            # never marked applied and sat "accepted" forever, re-running on
+            # every pass.
+            homed_here = len(home_writes) > _homes_before
             # Naming a voice in speaker_ids.json IS a real correction even when
             # no block moves -- it is the most valuable kind, because it names
             # every line that speaker says and propagates across meetings. But
             # it must NOT count as a block change, or the SRT gets rewritten
             # (and reformatted) for an edit that never touched it.
-            named = mapping != before_map and not ok
+            named = (mapping != before_map or homed_here) and not ok
             if named:
                 map_only += 1
             print("  t=%s  %s" % (rec["original_timestamp"], "+".join(rec.get("target") or [])))
