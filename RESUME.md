@@ -93,6 +93,21 @@ prefer a loop of short bounded processes over one long one regardless.
   pages by direct insertion (`backfill_footer.py`), because a full srt2html
   pass redoes nine-language translation and was killed for memory twice.
 
+## Check this first: are the tables current?
+
+A transcript page can publish without anything LINKING to it. On 2026-10-08
+the 10/6 MHSBC meeting published at 22:05 while `index.html` and the committee
+pages were last built at 17:44, so it was reachable only by guessing its URL.
+The pipeline normally rebuilds them on publish and did not here -- possibly a
+casualty of the same memory pressure that killed three other runs that
+evening, possibly a real gap.
+
+    ls -l index.html committees/index.html      # compare against the newest 20*/ page
+    python -c "import srt2html; srt2html.make_index()"
+    python make_committee_pages.py
+
+Cheap to run, and an orphaned page is invisible to readers and to search.
+
 ## Open, in rough priority order
 
 1. **101 retry clusters** (above).
