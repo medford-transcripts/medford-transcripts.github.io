@@ -41,6 +41,20 @@ processes were killed for memory during this session.
 When new names land: `--dry-run`, then `--apply` (idempotent -- re-running
 only adds), then regenerate the affected meetings with `srt2html.py -i <id> -f`.
 
+### 96 pages still need regenerating -- do this first
+
+The names are in `speaker_ids.json` and propagated, but **96 meetings have
+stale HTML**, so those names are not on the site yet. The regeneration run was
+killed for memory partway (380 of 476 meetings are current). The exact list is
+in `regen_remaining.txt`:
+
+    while read -r id; do python srt2html.py -i "$id" -f; done < regen_remaining.txt
+
+Regenerate when the box is quiet -- `srt2html -f` redoes the nine-language
+translation per page and is what keeps getting OOM-killed. Recompute the list
+any time: a meeting is stale when its `.html` is older than its
+`speaker_ids.json`.
+
 ### Do not re-litigate these; they were each paid for
 
 - **Name the cluster HOME, never the local label.** A placeholder IS the
