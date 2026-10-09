@@ -55,6 +55,12 @@ translation per page and is what keeps getting OOM-killed. Recompute the list
 any time: a meeting is stale when its `.html` is older than its
 `speaker_ids.json`.
 
+**What "quiet" means here.** The transcription process was holding **5.97 GB**
+on the evening of 2026-10-08, which is what killed three long runs (this
+regeneration, the footer backfill, and a sweep batch). Check with
+`Get-Process python | select Id,WorkingSet64` before starting a long pass, and
+prefer a loop of short bounded processes over one long one regardless.
+
 ### Do not re-litigate these; they were each paid for
 
 - **Name the cluster HOME, never the local label.** A placeholder IS the
@@ -90,13 +96,15 @@ any time: a meeting is stale when its `.html` is older than its
 ## Open, in rough priority order
 
 1. **101 retry clusters** (above).
-2. **The 10/6 MHSBC meeting** (`CP5ho6yZUqo`). Its title says "10.6.25", so
-   `title_date()` read it as **2025** and priority dropped ~160x, parking a
-   two-day-old meeting at the back of the queue. Fixed with `date_manual:
-   True` -- the supported override; a bare `date` edit is re-derived away on
-   the next refresh. It then started: ASR 13:24, alignment 14:09, diarization
-   running from 14:09. **Check whether the final `.srt` ever appeared.** Its
-   `priority` also reads 0 and I never established what zeroed it.
+2. ~~The 10/6 MHSBC meeting~~ **DONE** (`CP5ho6yZUqo`). Its title says
+   "10.6.25", so `title_date()` read it as **2025** and priority dropped
+   ~160x, parking a two-day-old meeting at the back of the queue. Fixed with
+   `date_manual: True` -- the supported override; a bare `date` edit is
+   re-derived away on the next refresh. It then ran the whole way: ASR 13:24,
+   alignment 14:09, diarization finished 20:47, final `.srt` 21:07, HTML
+   published 22:05. Diarization took ~6.5 h on a 3h34m recording.
+   Loose end: its `priority` reads 0 and I never established what zeroed it.
+   It did not block anything -- the date fix is what got it picked up.
 3. **40 truncated translation pages**, published and indexed as stubs (one is
    205 bytes). Pre-existing; the footer backfill surfaced them. See PENDING.md.
 4. **32 corrections sit accepted-but-unapplied**, and `ingest_corrections.py`
