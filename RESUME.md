@@ -55,6 +55,91 @@ The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
 a check that always fails is not a check. Worth looking at `bing_status.py`
 and the other validators for the same shape.
 
+## Committee overviews: rolling out to the active bodies -- 2026-10-10
+
+Three things landed; the last one is waiting on allowance, not on code.
+
+### 1. The duplicate is recorded in video_data.json now
+
+No new heuristic was needed: `find_duplicate_transcripts.py` already compares
+TRANSCRIPTS for pairs whose meeting dates are within a few days, which is
+exactly the one-day Castus/YouTube offset. It had never been applied.
+
+    python find_duplicate_transcripts.py          # report
+    python find_duplicate_transcripts.py --apply
+
+140 pairs over threshold, 123 already marked, 17 not. Applied: **10 newly
+hidden, every keeper visible with a published page, 0 meetings lost their only
+copy** (verified by diffing video_data.json before and after).
+
+Reviewed before applying, and one looked alarming and was not: `MCM00000991`
+"Community Development Board 01-04-23" against `MCM00001037` "Community
+Preservation Committee 01-04-23" at 0.85 -- different BODIES. Same date, same
+duration to the second (7742s), and MCM00001037's transcript opens "This
+hearing of the Medford Community Development Board". The archive mis-titled
+it; the metadata rule could never catch it because it groups on
+(meeting_type, date) and the types disagree.
+
+**It is durable.** `_dedup_protected` already refuses to let a metadata run
+reverse a transcript verdict (someone paid for that: 34 of 63 had been
+un-skipped before the guard existed), and a publish-time `apply=False` dry run
+confirms it touches none of the new ones. The residual risk is the one in
+CLAUDE.md: `save_video_data` writes the caller's WHOLE in-memory dict, so a
+loop that loaded video_data before this will clobber it on its next save.
+Re-running --apply restores it, and restarting the loops ends the exposure.
+
+Three of the ten are MHSBC, so that body is 78 meetings / 62 summarised, not
+81/67 -- **the live overview is now stale and over-counts.** It regenerates
+automatically (sources_sha changed), first in the --active queue.
+
+### 2. CC and MPS summarise by two-year TERM
+
+Medford elects its council and school committee in November of odd years and
+terms begin that January, so "2024-2025" and "2026-2027" are real units: the
+membership, chair and priorities all reset at the boundary, which a calendar
+quarter cuts straight across. Default is by PREFIX -- "CC ", "MPS ", "MSC " ->
+term, everything else -> quarter -- overridable per body in
+meeting_types.json with `"period_style"`.
+
+**One override set, and it is a judgement to revisit:** MPS High School
+Building Committee -> "quarter". Terms collapse its 10 periods into 2, and its
+members are appointed to a construction project rather than elected to a
+two-year term. One line in meeting_types.json to change it back.
+
+Most bodies show only 2 term periods today because summaries reach back to
+2025; older terms appear as the backlog fills.
+
+### 3. --active writes them in priority order; 19 bodies qualify
+
+    python summarize_committee.py --active [--limit N]
+
+Active = a meeting in the last 365 days, computed with the SAME cutoff
+make_committee_pages uses for its "Active bodies" section, so the two pages
+cannot disagree. Plus `MIN_SUMMARIES = 5`, because a roll-up over four
+meetings says nothing the four summaries do not and rule 2 has nothing to
+spread. Minus NOT_A_BODY (Election, Community Meeting, West Medford Community
+Center) -- the system prompt opens "You write the standing overview of a
+public body", which is plainly false for a coverage category or a venue.
+
+19 qualify, every one inside MAX_INPUT_CHARS; the largest is City Council at
+~120k chars for 45 summarised meetings. One request each, cached on
+sources_sha, resumable: it stops cleanly on quota and the next run continues.
+
+**Status: 0 of 19 written.** The allowance went on the 8 backfills, 2 MHSBC
+overviews, 3 bakeoff fixtures and the cron's 12 summaries. Re-run later today
+-- it refills continuously.
+
+**Open question for Jason:** whether to wire `--active --limit 1 or 2` into
+summarize.bat after the per-meeting pass. It would fill these in by itself,
+but every overview request is one that does NOT write one of the 1,691
+remaining per-meeting summaries, and those are what the overviews are built
+from. Not wired without a decision.
+
+Found in passing: `P8rYkRI7D6M` and `MCM00001824` are flagged duplicates of
+each other, both unskipped and both summarised, so MPS School Committee
+double-counts that meeting. The warning fires; the cause is the keeper rule
+leaving both visible when the keeper was untranscribed at the time.
+
 ## The free-tier allowance refills CONTINUOUSLY -- stop waiting for 3 AM
 
 Corrected by Jason 2026-10-10, and the session had the evidence already:

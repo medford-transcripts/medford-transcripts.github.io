@@ -46,6 +46,7 @@ import io
 import json
 import os
 import sys
+import time
 
 import summarize_meeting as sm
 import utils
@@ -211,17 +212,57 @@ def _day(date):
         return None
 
 
-def period_of(date):
-    """Calendar quarter, which is the coarsest label a reader still reads as a
-    date. Months make 30 periods of a 2.5-year project; years make three."""
+# A body's work divides by WHO WAS SITTING, where that is knowable. Medford
+# elects its City Council and School Committee in November of odd years and
+# the terms begin that January following, so 2024-2025 and 2026-2027 are real
+# units: the membership, the chair and the priorities all reset at the
+# boundary. Quarters cut across that and tell a reader nothing.
+#
+# Default by PREFIX because the prefixes already encode it -- "CC " is the
+# council side and "MPS " the school side, and a standing committee of either
+# is staffed by members serving those same two-year terms. meeting_types.json
+# may override per body with "period_style": "quarter" | "term".
+PERIOD_STYLES = ("term", "quarter")
+
+
+def period_style(committee, config=None):
+    """"term" or "quarter" for this body. Config wins over the prefix default."""
+    cfg = config if config is not None else utils.meeting_type_config()
+    want = ((cfg.get(committee) or {}).get("period_style") or "").strip().lower()
+    if want in PERIOD_STYLES:
+        return want
+    return "term" if (committee or "").startswith(("CC ", "MPS ", "MSC ")) \
+        else "quarter"
+
+
+def term_of(year):
+    """The two-year term containing `year`, as "2024-2025".
+
+    Terms begin in January of EVEN years here, following a November election
+    in the odd year before. So an odd year belongs to the term that started
+    the year before it.
+    """
+    start = year if year % 2 == 0 else year - 1
+    return "%d-%d" % (start, start + 1)
+
+
+def period_of(date, style="quarter"):
+    """The period label for a meeting date.
+
+    Quarter is the coarsest label a reader still reads as a date: months make
+    30 periods of a 2.5-year project and years make three. Term is coarser
+    still and means something the calendar does not -- see PERIOD_STYLES.
+    """
     try:
         y, m = int(date[:4]), int(date[5:7])
     except (ValueError, IndexError):
         return "undated"
+    if style == "term":
+        return "%s term" % term_of(y)
     return "%d Q%d" % (y, (m - 1) // 3 + 1)
 
 
-def build_prompt(committee, meetings):
+def build_prompt(committee, meetings, style=None):
     """The prompt, and the label -> citation index that verifies the answer.
 
     Periods are headed in the prompt so the model sees the shape of the
@@ -229,6 +270,7 @@ def build_prompt(committee, meetings):
     what structurally forces the overview to cover 2024 as well as last month.
     """
     index = {}
+    style = style or period_style(committee)
     out = [
         "Body: %s" % committee,
         "Meetings held by the archive: %d, from %s to %s."
@@ -240,7 +282,7 @@ def build_prompt(committee, meetings):
     ]
     last_period = None
     for n, m in enumerate(meetings, 1):
-        period = period_of(m["date"])
+        period = period_of(m["date"], style)
         if period != last_period:
             out.append("")
             out.append("=== PERIOD %s ===" % period)
@@ -278,7 +320,8 @@ def build_prompt(committee, meetings):
                                         " -- " + body if body else ""))
     out.append("")
     out.append("Periods, in order: %s"
-               % ", ".join(sorted({period_of(m["date"]) for m in meetings})))
+               % ", ".join(sorted({period_of(m["date"], style)
+                                   for m in meetings})))
     return "\n".join(out), index
 
 
@@ -331,7 +374,7 @@ def verify(answer, index):
     return threads, periods, dropped
 
 
-def coverage(threads, periods, meetings):
+def coverage(threads, periods, meetings, style="quarter"):
     """How evenly the overview draws on the body's meetings.
 
     THE NUMBER THIS SCRIPT IS JUDGED BY. meetings_cited over of_meetings is
@@ -351,7 +394,8 @@ def coverage(threads, periods, meetings):
             "max_share": round(top[1] / float(total), 3) if total else 0.0,
             "most_cited": top[0] if top else None,
             "periods_covered": len([p for p in periods if p["narrative"]]),
-            "of_periods": len({period_of(m["date"]) for m in meetings})}
+            "of_periods": len({period_of(m["date"], style)
+                               for m in meetings})}
 
 
 def report(cov, dropped):
@@ -419,10 +463,12 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
         except ValueError:
             pass
 
-    user, index = build_prompt(committee, meetings)
-    print("%s: %d meetings, %d citable items, %d periods, ~%dk chars"
+    style = period_style(committee)
+    user, index = build_prompt(committee, meetings, style)
+    print("%s: %d meetings, %d citable items, %d %s periods, ~%dk chars"
           % (sm.printable(committee), len(meetings), len(index),
-             len({period_of(m["date"]) for m in meetings}), len(user) // 1000))
+             len({period_of(m["date"], style) for m in meetings}), style,
+             len(user) // 1000))
     if len(user) > MAX_INPUT_CHARS:
         print("  TOO BIG for one request (%dk chars, cap %dk). This body needs "
               "the two-stage pass that is not built yet; see PENDING.md."
@@ -437,7 +483,7 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
                                 max_tokens=MAX_OUTPUT)
     answer = sm.parse_json(reply)
     threads, periods, dropped = verify(answer, index)
-    cov = coverage(threads, periods, meetings)
+    cov = coverage(threads, periods, meetings, style)
 
     out = {"committee": committee,
            "provider": sm.provider_for(used),
@@ -447,6 +493,7 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
                "%Y-%m-%dT%H:%M:%SZ"),
            "sources_sha": sha,
            "n_meetings": len(meetings),
+           "period_style": style,
            "span": [meetings[0]["date"], meetings[-1]["date"]],
            "overview": (answer.get("overview") or "").strip(),
            "threads": threads,
@@ -457,6 +504,52 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
     report(cov, dropped)
     utils.write_atomic(dest, json.dumps(out, indent=1, ensure_ascii=False))
     print("  %d threads, %d periods -> %s" % (len(threads), len(periods), dest))
+    return out
+
+
+# A roll-up over four meetings tells a reader nothing the four per-meeting
+# summaries do not already say, and rule 2 ("spread the weight") has nothing
+# to spread. Measured against the active list: 21 of 30 active bodies clear
+# this, and the ones below it are bodies the archive has barely caught yet.
+MIN_SUMMARIES = 5
+
+# NOT PUBLIC BODIES, though meeting_types.json gives them no "kind" to say so.
+# The system prompt opens "You write the standing overview of a public body",
+# which is simply false for these: Election is campaign and forum coverage
+# across many bodies, Community Meeting is a venue label, and the WMCC is a
+# community organisation whose videos are programming rather than governance.
+# An overview of any of them would be a confident answer to a question nobody
+# asked.
+NOT_A_BODY = {"Election", "Community Meeting", "West Medford Community Center"}
+
+
+def active_bodies(video_data=None, days=365, min_summaries=MIN_SUMMARIES):
+    """Public bodies worth an overview, best-covered first.
+
+    ACTIVE IS COMPUTED, NOT FLAGGED -- the same definition and cutoff
+    make_committee_pages uses for its "Active bodies" section, so the two
+    pages never disagree about which bodies are current.
+    """
+    video_data = video_data or utils.get_video_data()
+    cfg = utils.meeting_type_config()
+    cutoff = time.strftime("%Y-%m-%d", time.localtime(time.time() - days * 86400))
+    last = {}
+    for e in video_data.values():
+        c = e.get("meeting_type")
+        if not c or e.get("skip"):
+            continue
+        d = e.get("date") or e.get("upload_date") or ""
+        if d > last.get(c, ""):
+            last[c] = d
+    out = []
+    for c, s, n in summarisable(video_data):
+        if c in NOT_A_BODY or s < min_summaries:
+            continue
+        if (cfg.get(c) or {}).get("kind", "committee") != "committee":
+            continue
+        if last.get(c, "") < cutoff:
+            continue
+        out.append((c, s, n, last.get(c, "")))
     return out
 
 
@@ -494,6 +587,13 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--list", action="store_true",
                     help="summary coverage per body, best covered first")
+    ap.add_argument("--active", action="store_true",
+                    help="write an overview for every ACTIVE public body with "
+                         "%d+ summarised meetings, best covered first"
+                         % MIN_SUMMARIES)
+    ap.add_argument("--limit", type=int, default=0,
+                    help="with --active, stop after N bodies that needed a "
+                         "request (cached ones do not count)")
     args = ap.parse_args()
 
     video_data = utils.get_video_data()
@@ -504,8 +604,43 @@ def main():
                 continue
             print("%-45s %9d %9d" % (sm.printable(c)[:45], s, n))
         return 0
+    if args.active:
+        rows = active_bodies(video_data)
+        print("%d active bodies with %d+ summaries" % (len(rows), MIN_SUMMARIES))
+        made = failed = 0
+        for c, s_, n, last in rows:
+            if args.limit and made >= args.limit:
+                print("stopping at --limit %d; re-run to continue (each "
+                      "overview is cached on its sources)" % args.limit)
+                break
+            print("--- %s (%d of %d meetings summarised, last %s)"
+                  % (sm.printable(c), s_, n, last))
+            try:
+                before = os.path.exists(overview_path(c))
+                got = summarise_committee(c, args.model, args.dry_run,
+                                          args.force, args.check, video_data)
+                # CACHED OVERVIEWS ARE FREE, so they must not count against
+                # --limit -- the same arithmetic bug summarize_meeting had,
+                # where a limit was spent on meetings it never asked about.
+                if got and not (before and not args.force
+                                and got.get("sources_sha")):
+                    made += 1
+                elif got is None:
+                    failed += 1
+            except sm.DailyQuotaExhausted as e:
+                print("STOPPING: %s" % e)
+                print("The allowance refills continuously, so re-running "
+                      "later today will continue; overviews already written "
+                      "are skipped on their sources_sha.")
+                break
+            except Exception as e:
+                failed += 1
+                print("  FAILED: %s" % str(e)[:160])
+        print("%d written, %d failed" % (made, failed))
+        return 0
+
     if not args.committee:
-        ap.error("give -c <committee> or --list")
+        ap.error("give -c <committee>, --active or --list")
 
     known = {e.get("meeting_type") for e in video_data.values()}
     if args.committee not in known:

@@ -105,7 +105,8 @@
         "truncated_attempts": 1,
         "date_corrected": "title says 10.6.25; live-streamed 2026-10-06 and the MCHSBC met 9.10.26 and 9.22.26, so the year is a typo",
         "date_manual": true,
-        "last_update": 1791511559.1060429
+        "last_update": 1791511559.1060429,
+        "duplicate_id": "CAS00002553"
     },
     "CAS00002554": {
         "title": "Oak Grove Cemetery Board of Trustees 10/06/26",
@@ -188,7 +189,11 @@
         "view_count": 0,
         "meeting_type": "MPS High School Building Committee",
         "priority": 0.17912078638131065,
-        "last_update": 1791603307.7430706
+        "last_update": 1791603307.7430706,
+        "duplicate_id": "CP5ho6yZUqo",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of CP5ho6yZUqo (transcript similarity 0.50)"
     },
     "CAS00002548": {
         "title": "Medford Happenings - Liam Murphy",
@@ -533,7 +538,8 @@
         "upload_date": "2026-09-23",
         "view_count": 5,
         "meeting_type": null,
-        "last_update": 1791086516.834034
+        "last_update": 1791086516.834034,
+        "duplicate_id": "CAS00002539"
     },
     "CAS00002534": {
         "title": "City Council Ward 1 Meeting 09/23/26",
@@ -572,7 +578,11 @@
         "view_count": 0,
         "meeting_type": "MPS High School Building Committee",
         "priority": 0.05687368220651976,
-        "last_update": 1791086537.086866
+        "last_update": 1791086537.086866,
+        "duplicate_id": "O2nzoxaatsQ",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of O2nzoxaatsQ (transcript similarity 0.73)"
     },
     "Ewo7VA32tkU": {
         "title": "9.22.26 MCHSBC Full Meeting",
@@ -1228,7 +1238,8 @@
         "date": "2026-08-21",
         "priority": 0.019769556177749684,
         "meeting_type": "Medford Happenings",
-        "last_update": 1791086387.3711357
+        "last_update": 1791086387.3711357,
+        "duplicate_id": "CAS00002505"
     },
     "WDlvELcdJa0": {
         "title": "Mystic Valley Voter Forum",
@@ -1252,7 +1263,11 @@
         "view_count": 0,
         "meeting_type": "Medford Happenings",
         "priority": 0.019386297676750583,
-        "last_update": 1791086383.4857576
+        "last_update": 1791086383.4857576,
+        "duplicate_id": "Qn99OrgtJfs",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of Qn99OrgtJfs (transcript similarity 0.75)"
     },
     "CAS00002504": {
         "title": "Climate Equity Council 08/19/26",
@@ -1357,7 +1372,8 @@
         "date": "2026-08-11",
         "priority": 0.01650632832638182,
         "meeting_type": "Medford Happenings",
-        "last_update": 1791144161.5785549
+        "last_update": 1791144161.5785549,
+        "duplicate_id": "CAS00002500"
     },
     "CAS00002501": {
         "title": "Historical Commission 08/10/26",
@@ -1383,7 +1399,11 @@
         "view_count": 0,
         "meeting_type": "Medford Happenings",
         "priority": 0.016238293718799097,
-        "last_update": 1791144157.436233
+        "last_update": 1791144157.436233,
+        "duplicate_id": "F-zb2piBEb8",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of F-zb2piBEb8 (transcript similarity 0.85)"
     },
     "kLjqyRQ8eNw": {
         "title": "City Council Resident Services and Public Engagement Committee 08-05-26",
@@ -1531,7 +1551,8 @@
         "date": "2026-07-23",
         "priority": 0.01256552529137645,
         "meeting_type": "MPS High School Building Committee",
-        "last_update": 1791086352.259546
+        "last_update": 1791086352.259546,
+        "duplicate_id": "CAS00002491"
     },
     "CAS00002493": {
         "title": "Medford Happenings - Lt. Charlie Hartnett",
@@ -1544,7 +1565,11 @@
         "view_count": 0,
         "meeting_type": "Medford Happenings",
         "priority": 0.01256552529137645,
-        "last_update": 1791169562.0899358
+        "last_update": 1791169562.0899358,
+        "duplicate_id": "XiF9aKpKIOI",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of XiF9aKpKIOI (transcript similarity 0.88)"
     },
     "R1m53sR_I7U": {
         "title": "MHS Advisory Team - Sustainability & MEP Systems",
@@ -1581,7 +1606,11 @@
         "view_count": 0,
         "meeting_type": "MPS High School Building Committee",
         "priority": 0.012409592246151761,
-        "last_update": 1791198405.6507308
+        "last_update": 1791198405.6507308,
+        "duplicate_id": "TVmYzv820i8",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of TVmYzv820i8 (transcript similarity 0.78)"
     },
     "XiF9aKpKIOI": {
         "title": "Medford Happenings Episode 50 Charlie Hartnett",
@@ -1592,7 +1621,8 @@
         "date": "2026-07-21",
         "priority": 0.012257481893884072,
         "meeting_type": "Medford Happenings",
-        "last_update": 1791144125.7872226
+        "last_update": 1791144125.7872226,
+        "duplicate_id": "CAS00002493"
     },
     "CAS00002490": {
         "title": "Board of Health 07/21/26",
@@ -1658,7 +1688,8 @@
         "date": "2026-07-16",
         "priority": 0.01154963470264108,
         "meeting_type": "CC Public Health and Community Safety",
-        "last_update": 1791086337.4992027
+        "last_update": 1791086337.4992027,
+        "duplicate_id": "CAS00002485"
     },
     "7aH06uh3ViM": {
         "title": "Community Development Board 07-15-26",
@@ -1700,7 +1731,11 @@
         "view_count": 0,
         "meeting_type": "CC Public Health and Community Safety",
         "priority": 0.011417763702753205,
-        "last_update": 1791255974.4699063
+        "last_update": 1791255974.4699063,
+        "duplicate_id": "-DQWYGWBiFc",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of -DQWYGWBiFc (transcript similarity 0.81)"
     },
     "qAw603Lq-Os": {
         "title": "City Council 07-14-26",
@@ -1891,7 +1926,8 @@
         "date": "2026-07-01",
         "priority": 0.009844183800090538,
         "meeting_type": "Medford Happenings",
-        "last_update": 1791086326.1430423
+        "last_update": 1791086326.1430423,
+        "duplicate_id": "CAS00002472"
     },
     "XXXXXX00149": {
         "title": "Paul Ruseau",
@@ -1917,7 +1953,11 @@
         "view_count": 0,
         "meeting_type": "Medford Happenings",
         "priority": 0.009654110130979188,
-        "last_update": 1791396449.0920846
+        "last_update": 1791396449.0920846,
+        "duplicate_id": "q69UGGsxQbk",
+        "skip": true,
+        "duplicate_method": "transcript_similarity",
+        "skip_reason": "duplicate of q69UGGsxQbk (transcript similarity 0.78)"
     },
     "CAS00002482": {
         "title": "Zoning Board of Appeals 06/25/26",
@@ -26991,7 +27031,7 @@
         "priority": 0.001047578034964891,
         "meeting_type": "MPS School Committee",
         "last_update": 1791081420.786483,
-        "duplicate_id": "3PnEMQz0yA4",
+        "duplicate_id": "MCM00000932",
         "skip": false,
         "duplicate_method": "transcript_similarity",
         "skip_reason": "kept over 3PnEMQz0yA4 despite the channel rule: that copy is missing the first 30 percent (decile coverage 0/9/5, then 85-93) of the meeting. Completeness beats channel preference, and serving BOTH would double-count in supercut excerpts, word counts and speaker stats. Confirmed by the author."
@@ -27115,10 +27155,10 @@
         "priority": 0.0010464817636552945,
         "meeting_type": "MPS School Committee",
         "last_update": 1791138615.7883704,
-        "duplicate_id": "CAS00001598",
-        "skip": false,
+        "duplicate_id": "MCM00000931",
+        "skip": true,
         "duplicate_method": "transcript_similarity",
-        "skip_reason": "duplicate of 3PnEMQz0yA4 (transcript similarity 0.47)"
+        "skip_reason": "duplicate of MCM00000931 (transcript similarity 1.00)"
     },
     "MCM00000514": {
         "title": "Medford Charter Study Commmittee - Subcommittee 02-28-24",
@@ -42185,8 +42225,8 @@
         "priority": 0.0007269645868231632,
         "meeting_type": "CC Community Preservation Committee",
         "last_update": 1791081540.8256476,
-        "duplicate_id": "CAS00001165",
-        "skip": false,
+        "duplicate_id": "MCM00000991",
+        "skip": true,
         "duplicate_method": "transcript_similarity",
         "skip_reason": "duplicate of MCM00000991 (transcript similarity 0.85)"
     },
@@ -42201,7 +42241,7 @@
         "priority": 0.0007269645868231632,
         "meeting_type": "CC Community Development Board",
         "last_update": 1791138675.7963634,
-        "duplicate_id": "CAS00001195",
+        "duplicate_id": "MCM00001037",
         "skip": false
     },
     "CAS00001162": {
@@ -77785,10 +77825,10 @@
         "priority": 0.00030935015563206925,
         "last_update": 1791077873.4951649,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "XE9EudnPjZw",
+        "duplicate_id": "eOruUd5h8M4",
         "skip": true,
-        "skip_reason": "duplicate of XE9EudnPjZw (same type and meeting date, different channel)",
-        "duplicate_method": "metadata"
+        "skip_reason": "duplicate of eOruUd5h8M4 (transcript similarity 0.73)",
+        "duplicate_method": "transcript_similarity"
     },
     "eOruUd5h8M4": {
         "title": "Medford, MA School Committee - Dec. 4, 2017 (Unofficially provided by MT)",
@@ -77800,7 +77840,7 @@
         "priority": 0.00030935015563206925,
         "last_update": 1791077759.8014512,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "XE9EudnPjZw",
+        "duplicate_id": "81TW9SO-xRE",
         "skip": true,
         "skip_reason": "duplicate of XE9EudnPjZw (same type and meeting date, different channel)",
         "duplicate_method": "metadata"
@@ -78322,7 +78362,7 @@
         "priority": 0.00030343646423365626,
         "last_update": 1791077679.1383636,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "YlxkC9ZcZAw",
+        "duplicate_id": "7numIqSXrqc",
         "skip": true,
         "skip_reason": "duplicate of YlxkC9ZcZAw (same type and meeting date, different channel)",
         "duplicate_method": "metadata"
@@ -78337,10 +78377,10 @@
         "priority": 0.00030343646423365626,
         "last_update": 1791077557.3324585,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "YlxkC9ZcZAw",
+        "duplicate_id": "WsdkVhZ-zp4",
         "skip": true,
-        "skip_reason": "duplicate of YlxkC9ZcZAw (same type and meeting date, different channel)",
-        "duplicate_method": "metadata"
+        "skip_reason": "duplicate of WsdkVhZ-zp4 (transcript similarity 0.85)",
+        "duplicate_method": "transcript_similarity"
     },
     "YZSq1wrD6fo": {
         "title": "Chevalier Theater Announcement October 2, 2017",
@@ -78486,10 +78526,10 @@
         "priority": 0.0003021528853888508,
         "last_update": 1791077598.4117684,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "gXzvDPklqhM",
+        "duplicate_id": "VPiAObMovvI",
         "skip": true,
-        "skip_reason": "duplicate of gXzvDPklqhM (same type and meeting date, different channel)",
-        "duplicate_method": "metadata"
+        "skip_reason": "duplicate of VPiAObMovvI (transcript similarity 0.70)",
+        "duplicate_method": "transcript_similarity"
     },
     "VPiAObMovvI": {
         "title": "Medford, MA School Committee - Sep. 18, 2017 (Unofficially provided by MT)",
@@ -78501,7 +78541,7 @@
         "date": "2017-09-18",
         "last_update": 1791077614.678147,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "gXzvDPklqhM",
+        "duplicate_id": "1QXm88AbHUw",
         "skip": true,
         "skip_reason": "duplicate of gXzvDPklqhM (same type and meeting date, different channel)",
         "duplicate_method": "metadata"
@@ -78960,10 +79000,10 @@
         "priority": 0.00029107142832653803,
         "last_update": 1791077351.5200348,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "69E5Q7WOK_c",
+        "duplicate_id": "w0sagWRQcPk",
         "skip": true,
-        "skip_reason": "duplicate of 69E5Q7WOK_c (same type and meeting date, different channel)",
-        "duplicate_method": "metadata"
+        "skip_reason": "duplicate of w0sagWRQcPk (transcript similarity 0.77)",
+        "duplicate_method": "transcript_similarity"
     },
     "w0sagWRQcPk": {
         "title": "Medford, MA School Committee - May 15, 2017 (Unofficially provided by MT)",
@@ -78975,7 +79015,7 @@
         "date": "2017-05-15",
         "last_update": 1791077361.9745855,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "69E5Q7WOK_c",
+        "duplicate_id": "2j8KjuogAZY",
         "skip": true,
         "skip_reason": "duplicate of 69E5Q7WOK_c (same type and meeting date, different channel)",
         "duplicate_method": "metadata"
