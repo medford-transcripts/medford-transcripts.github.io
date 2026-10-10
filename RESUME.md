@@ -92,10 +92,20 @@ engine that no longer exists. Both current engines need a fresh run:
 `model` field in each file now records what ANSWERED -- the bakeoff is
 self-certifying in a way the September one was not.
 
-**Decision rule, set before seeing the result:** 3.8 picks up the figures ->
-promote it to first, it is a real gain on the facts that matter most. 3.8 ties
-at 2 of 4 -> leave 3.6 first, because it wrote the corpus and churn buys
-nothing, and keep 3.8 as the extra bucket it already is.
+**Decision rule, set before seeing the result (revised -- Jason's call, and
+the better reading):** the rubric is four binary claims on ONE meeting, so a
+TIE is weak evidence of equality, not evidence against the prior that a newer
+model in a family is better. Treating a coarse metric as decisive is its own
+mistake. **So 3.8 goes first on the prior and the bakeoff is a VETO, not a
+gate: it keeps the lead unless it scores strictly WORSE than 3.6.**
+
+Already applied to MODEL_LADDER, so the 3 AM run uses it. Unwinding is cheap
+and precise if the veto fires -- every summary now records which engine
+answered, so "which ones did 3.8 write" is a query rather than a guess:
+
+    python -c "import glob,io,json; print([p for p in glob.glob('20*/*.summary.json') if json.load(io.open(p,encoding='utf-8')).get('model')=='gemini-3.8-flash'])"
+
+then re-run those with `-i <id> --force`.
 
 Worth noticing either way: no Gemini flash model has EVER got the enrolment
 figures, so if those numbers are the priority, model order within Gemini may

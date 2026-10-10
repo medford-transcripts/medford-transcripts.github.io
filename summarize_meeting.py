@@ -194,12 +194,21 @@ MODEL_LADDER = {
     # looking like two -- which is the one assumption this design cannot
     # afford to get wrong. Hence 3.6 and 3.8 and no 3.5 or 3.7.
     #
-    # 3.6 stays FIRST because it is what has been writing the corpus all
-    # along: every summary that says "gemini-3.5-flash" was served by it. So
-    # this is a truthful rename, not a change of product. Whether 3.8 is
-    # BETTER is unmeasured -- compare_summaries.py is the tool, and until it
-    # has run 3.8 is additional allowance rather than a promotion.
-    "gemini": ["gemini-3.6-flash", "gemini-3.8-flash", "gemini-3-flash",
+    # 3.8 FIRST, ON THE PRIOR, which is Jason's call and the right reading of
+    # the evidence we have. The bakeoff rubric is four binary claims on ONE
+    # meeting: a TIE on it is weak evidence of equality, not evidence against
+    # "the newer model in a family is usually better". Treating a coarse
+    # measurement as decisive is its own error.
+    #
+    # So the order is the prior and compare_summaries.py is a VETO rather than
+    # a gate: 3.8 keeps the lead unless it scores strictly WORSE than 3.6 on
+    # the rubric. Cheap to unwind if it does -- every summary now records
+    # which engine answered, so the ones to redo are a query, not a guess.
+    #
+    # Still worth remembering what the rubric showed: no Gemini flash model
+    # has ever recovered the enrolment figures that Opus 5.5 gets. If those
+    # numbers are the priority, the lever is the provider, not 3.6 vs 3.8.
+    "gemini": ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash",
                "gemini-3.1-pro", "gemini-3-pro"],
     "openai": ["gpt-5", "gpt-5-mini", "gpt-5-nano"],
     "anthropic": ["claude-opus-5-5", "claude-opus-5", "claude-sonnet-5",
