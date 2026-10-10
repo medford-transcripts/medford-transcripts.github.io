@@ -1,0 +1,42 @@
+{
+    "SPEAKER_00": {
+        "value": "Peter Miller",
+        "source": "embedding_match",
+        "score": 0.7187704359806033,
+        "from": "MCM00001795_SPEAKER_04",
+        "at": "2026-10-10T06:37:53Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_04": {
+        "value": "MCM00001828_SPEAKER_03",
+        "source": "embedding_match",
+        "score": 0.9455373480474082,
+        "from": "MCM00001798_SPEAKER_04",
+        "at": "2026-10-10T06:37:53Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.9669977848115071,
+        "from": "CAS00002486_SPEAKER_13",
+        "at": "2026-10-10T06:37:53Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Roberta Cameron",
+        "source": "embedding_match",
+        "score": 0.8432241427628913,
+        "from": "8msxsKW1z_4_SPEAKER_02",
+        "at": "2026-10-10T06:37:53Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8914569191224729,
+        "from": "MCM00001169_SPEAKER_16",
+        "at": "2026-10-10T06:37:54Z",
+        "previous": "SPEAKER_07"
+    }
+}
