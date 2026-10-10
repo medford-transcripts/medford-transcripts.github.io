@@ -1,0 +1,42 @@
+{
+ "video_id": "a6bZISOstiw",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T04:08:20Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d836094382f261ae",
+ "subject": "",
+ "overview": "The committee discussed Department of Public Works staffing and capital plans following the passage of the Question 7 override, as well as a proposed volunteer tree planting program. No formal legislative votes were taken beyond procedural adjournment.",
+ "items": [
+  {
+   "title": "Resolution to Receive an Update on Roads (Paper 24-492)",
+   "t": 138,
+   "summary": "DPW Commissioner Tim McGivern and City Engineer Owen Wartella outlined plans to allocate $500,000 from the override to add three highway division staff and purchase equipment to bring spot road and sidewalk repairs in-house, freeing capital funds for larger resurfacing projects.",
+   "speakers": [
+    "Anna Callahan",
+    "Tim McGivern",
+    "Matt Leming",
+    "Owen Wartella",
+    "Zac Bears",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Resolution to Establish a Volunteer Tree Planting Program (Paper 24-493)",
+   "t": 1991,
+   "summary": "The committee discussed creating a volunteer tree planting initiative to offset annual canopy loss, with DPW Commissioner Tim McGivern noting the key prerequisite would be funding a volunteer coordinator position or partnering with outside organizations.",
+   "speakers": [
+    "Anna Callahan",
+    "Tim McGivern",
+    "Emily Lazzaro",
+    "Amanda Bowen"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15965,
+  "output_tokens": 343,
+  "model_version": "gemini-3.8-flash"
+ }
+}
