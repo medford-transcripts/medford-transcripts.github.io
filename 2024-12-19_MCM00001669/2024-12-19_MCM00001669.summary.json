@@ -1,0 +1,87 @@
+{
+ "video_id": "MCM00001669",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:18:32Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b4abcea0371bbf92",
+ "subject": "",
+ "overview": "The Medford Bicycle Advisory Commission elected new officers, reviewed safety hazards along the Route 16 Auburn Street bridge corridor, and voted to support lowering speed limits on state-owned roads in Medford to 25 miles per hour.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 66,
+   "summary": "Approved the minutes from the previous meeting.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Nuzzo-Mueller"
+   ]
+  },
+  {
+   "title": "Announcements and Police Outreach",
+   "t": 85,
+   "summary": "Voted to authorize Emily O'Brien to represent the commission in upcoming discussions with the mayor and police chief regarding cyclist harassment, crash reporting, and law enforcement training.",
+   "speakers": [
+    "Bruce Kulik",
+    "Emily O'Brien",
+    "Ernie Meunier",
+    "Daniel Nuzzo-Mueller"
+   ]
+  },
+  {
+   "title": "Election of Officers",
+   "t": 1552,
+   "summary": "Elected Daniel Nuzzo-Mueller as Chair and Emily O'Brien as Vice Chair, while voting to postpone the election of a secretary to the January meeting.",
+   "speakers": [
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Daniel Nuzzo-Mueller",
+    "Ernie Meunier",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Route 16 Auburn Street Walkthrough Recap",
+   "t": 2423,
+   "summary": "Summarized a multi-agency site walkthrough highlighting guardrail crashes, narrow shared paths, and missing signal phases at Route 16 and Auburn Street, followed by a review of state crash cluster data.",
+   "speakers": [
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Daniel Nuzzo-Mueller",
+    "Lea Grazi",
+    "Noam Raveni",
+    "Ernie Meunier"
+   ]
+  },
+  {
+   "title": "Bluebikes Federal Expansion Grant",
+   "t": 4450,
+   "summary": "Noted a $21.6 million regional federal grant allocated through the Metropolitan Area Planning Council for Bluebikes expansion and transit shuttles.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Nuzzo-Mueller",
+    "Bruce Kulik",
+    "Ernie Meunier"
+   ]
+  },
+  {
+   "title": "Infrastructure Updates and State Road Speed Limit Endorsement",
+   "t": 4585,
+   "summary": "Voted to endorse lowering speed limits on state-owned roads in Medford to 25 miles per hour, received an update on pending city bike rack installations, and discussed a recent pedestrian crash on Mystic Valley Parkway.",
+   "speakers": [
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Lea Grazi",
+    "Ernie Meunier",
+    "Noam Raveni",
+    "Daniel Nuzzo-Mueller"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33207,
+  "output_tokens": 738,
+  "model_version": "gemini-3.6-flash"
+ }
+}

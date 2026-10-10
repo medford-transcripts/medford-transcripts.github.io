@@ -1,0 +1,55 @@
+{
+ "video_id": "MCM00001696",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:22:54Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "9f8800a649edd37f",
+ "subject": "Election of New Commission Officers",
+ "overview": "The commission elected Joe Rodane as Chair and Hasitha as Vice Chair following the retirement of long-time chair Christopher Bader. Members also discussed the final filing requirements for the South Street Historic District and technical difficulties regarding website migration.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 13,
+   "summary": "Approved minutes from the previous meeting, which detailed a chimney cap application and the handling of an open meeting law complaint.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "South Street Historic District Status",
+   "t": 155,
+   "summary": "Noted that the district map must be filed with the Registrar of Deeds to finalize the official status of the South Street Historic District.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "Website Migration and Maintenance",
+   "t": 195,
+   "summary": "Discussed the city's lack of technical resources to migrate the commission's website from its current third-party host to city-managed servers.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "Election of Officers",
+   "t": 527,
+   "summary": "Elected Joe Rodane as Chair and Hasitha as Vice Chair following the retirement of Christopher Bader; the position of Secretary remains vacant.",
+   "speakers": [
+    "Christopher Bader",
+    "Joe Rodane",
+    "Charlotte Scuderi",
+    "James Mackey",
+    "Emery McGowan",
+    "Hasitha"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5491,
+  "output_tokens": 404,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "video_id": "MCM00001660",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:20:19Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9533a16e9e6b3499",
+ "subject": "",
+ "overview": "The Medford Board of Health heard a biological agent permit presentation from MorphoCeuticals, received an update on a $72,000 youth gambling research grant, and reviewed recent seasonal vaccination efforts.",
+ "items": [
+  {
+   "title": "Approval of October 2024 Minutes",
+   "t": 1,
+   "summary": "The board approved the minutes from the October 2024 meeting.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "MorphoCeuticals Permit Application Presentation",
+   "t": 58,
+   "summary": "MorphoCeuticals presented an overview of its research facility and safety protocols for using regulated biological agents at 200 Boston Avenue, with permit issuance pending final application review.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Maestan Bogheri"
+   ]
+  },
+  {
+   "title": "Mass Gaming Commission Grant Award",
+   "t": 1035,
+   "summary": "Health department staff announced a $72,000 grant from the Mass Gaming Commission to conduct a needs assessment on gambling impacts among 18- to 20-year-olds.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Flu and COVID-19 Vaccination Clinics Update",
+   "t": 1199,
+   "summary": "Staff provided an update on completed fall vaccination clinics and noted ongoing vaccine delivery for homebound residents and young children.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Jill"
+   ]
+  },
+  {
+   "title": "Tabled Business: Nicotine Generation Regulation",
+   "t": 1324,
+   "summary": "The board maintained tabled status on the proposed nicotine generation regulation to monitor actions in other communities and proposed state legislation.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7752,
+  "output_tokens": 488,
+  "model_version": "gemini-3.6-flash"
+ }
+}

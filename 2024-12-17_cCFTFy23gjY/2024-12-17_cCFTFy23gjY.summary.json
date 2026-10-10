@@ -1,0 +1,30 @@
+{
+ "video_id": "cCFTFy23gjY",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:20:38Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1bea5818616fb1e6",
+ "subject": "2025 City Council Leadership Caucus",
+ "overview": "The Committee of the Whole met to designate city council leadership for the 2025 term. The committee designated Zac Bears as President-Elect and Kit Collins as Vice President-Elect.",
+ "items": [
+  {
+   "title": "2025 City Council Leadership Designation",
+   "t": 786,
+   "summary": "The committee designated Kit Collins as Vice President-Elect and Zac Bears as President-Elect for 2025, with formal confirmation votes scheduled for the first regular meeting in January.",
+   "speakers": [
+    "Zac Bears",
+    "Emily Lazzaro",
+    "Kit Collins",
+    "Justin Tseng",
+    "Matt Leming"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2720,
+  "output_tokens": 157,
+  "model_version": "gemini-3.6-flash"
+ }
+}

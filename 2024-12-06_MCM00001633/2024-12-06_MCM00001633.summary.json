@@ -1,0 +1,54 @@
+{
+ "video_id": "MCM00001633",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:28:21Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "9deaf03d42a2f905",
+ "subject": "",
+ "overview": "The board reviewed and approved two residential relief requests involving a special permit for a front porch reconstruction and a variance for a home addition.",
+ "items": [
+  {
+   "title": "3 Pleasant Street Special Permit",
+   "t": 42,
+   "summary": "Approved a special permit to allow the reconstruction of an enclosed front porch within the front yard setback following a fire that destroyed the original home. The board found the modification would not be more detrimental to the neighborhood as the porch is being set back further from the street than the previous structure.",
+   "speakers": [
+    "Denis MacDougall",
+    "Phil Messina",
+    "Mary Lee",
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "Scott Vandewalle"
+   ]
+  },
+  {
+   "title": "97 Winchester Road Variance",
+   "t": 1184,
+   "summary": "Approved a variance for a 1.8-foot encroachment into the rear yard setback to allow for a 100-square-foot addition containing an office and code-compliant basement stairs. The board cited the diagonal orientation of the house on the lot as a hardship that made avoiding the setback corner impossible during renovation.",
+   "speakers": [
+    "Denis MacDougall",
+    "Robert Caruso",
+    "Scott Vandewalle",
+    "Yvette Velez",
+    "Chris D'Aveta",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 2042,
+   "summary": "The board discussed the January 2nd meeting quorum and upcoming cases, including a lot split at 970 Fellsway. Updates on pending minutes and the review of the rules of order were deferred to a future meeting.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mary Lee",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12001,
+  "output_tokens": 451,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

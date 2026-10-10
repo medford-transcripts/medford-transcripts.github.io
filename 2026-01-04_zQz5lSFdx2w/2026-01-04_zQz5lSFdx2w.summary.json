@@ -1,0 +1,64 @@
+{
+ "video_id": "zQz5lSFdx2w",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:15:40Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2d430bfe259b2be4",
+ "subject": "",
+ "overview": "Host Laura Duggan presented the 2025 Christmas special of Looking Back at Medford History, featuring a North Pole sketch where Santa's brothers temporarily manage holiday preparations during Santa's vacation. The episode concluded with a musical performance and a reading of 'The Night Before Christmas.'",
+ "items": [
+  {
+   "title": "Host Introduction and Departure for the North Pole",
+   "t": 26,
+   "summary": "Host Laura Duggan opens the 2025 Christmas special and uses a travel app to journey to the North Pole.",
+   "speakers": [
+    "Laura Duggan"
+   ]
+  },
+  {
+   "title": "Visit with Santa and Arrival of the Claus Brothers",
+   "t": 232,
+   "summary": "Duggan delivers cookies and a wish list to Santa and Mrs. Claus before Santa's brothers, Elvis and Brady, arrive for a visit.",
+   "speakers": [
+    "Laura Duggan"
+   ]
+  },
+  {
+   "title": "Santa's Vacation and Workshop Handover",
+   "t": 449,
+   "summary": "Santa and Mrs. Claus depart for a one-week vacation to Hawaii, leaving Elvis and Brady in charge of workshop preparations.",
+   "speakers": []
+  },
+  {
+   "title": "Workshop Difficulties and Outside Assistance",
+   "t": 588,
+   "summary": "After the brothers struggle with gift wrapping and inadvertently let the reindeer loose, Duggan arranges outside help to keep preparations on schedule.",
+   "speakers": [
+    "Laura Duggan"
+   ]
+  },
+  {
+   "title": "Santa's Return and 'Blue Christmas' Performance",
+   "t": 932,
+   "summary": "Santa and Mrs. Claus return to the North Pole to find the preparations completed, and the brothers perform the song 'Blue Christmas.'",
+   "speakers": [
+    "Laura Duggan"
+   ]
+  },
+  {
+   "title": "Reading of 'The Night Before Christmas'",
+   "t": 1170,
+   "summary": "Duggan concludes the holiday broadcast with a reading of Clement C. Moore's 'The Night Before Christmas.'",
+   "speakers": [
+    "Laura Duggan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10766,
+  "output_tokens": 516,
+  "model_version": "gemini-3.8-flash"
+ }
+}

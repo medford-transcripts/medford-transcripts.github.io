@@ -1,0 +1,61 @@
+{
+ "video_id": "CAS00002559",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:06:26Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1641649e8f690a18",
+ "subject": "",
+ "overview": "The Historic District Commission heard an educational presentation on the use of PVC millwork in historic preservation, discussed ongoing recruitment efforts to fill board vacancies, and approved past meeting minutes.",
+ "items": [
+  {
+   "title": "Presentation on PVC Millwork Applications",
+   "t": 46,
+   "summary": "Tyler from Intex Millwork Solutions presented on the performance, milling, painting requirements, and structural reinforcement of cellular PVC products used in historic architectural replications.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "SPEAKER_02",
+    "Peter Miller",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Board Recruitment Efforts",
+   "t": 2391,
+   "summary": "The commission discussed outreach strategies to fill two vacant seats, including tabling at community festivals, hosting a city board open house, and directing applicants to the city website.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 2839,
+   "summary": "The commission voted to accept the meeting minutes from July 9.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Future Business and Historic District Planning",
+   "t": 3052,
+   "summary": "Members confirmed the November meeting date and agreed to add an overview of the process for designating new local historic districts to the next agenda.",
+   "speakers": [
+    "Theresa Dupont",
+    "MCM00001828_SPEAKER_03",
+    "Roberta Cameron",
+    "Peter Miller"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21409,
+  "output_tokens": 444,
+  "model_version": "gemini-3.8-flash"
+ }
+}

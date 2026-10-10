@@ -1,0 +1,69 @@
+{
+ "video_id": "MCM00001662",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:18:58Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8e0486120d4f5deb",
+ "subject": "",
+ "overview": "The Medford Liquor License Commission met to consider license surrenders, entertainment and ownership modifications, police incident reports, and annual liquor license renewals. The commission conditionally approved applications for Snappy Patty's and Mitsuba Sakaya, accepted a license surrender, and approved the 2025 renewal list.",
+ "items": [
+  {
+   "title": "Chili Gardens License Surrender",
+   "t": 33,
+   "summary": "Approved the surrender of the liquor license and entertainment license for Chili Gardens at 41 Riverside Avenue.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Snappy Patty's Entertainment License Application",
+   "t": 154,
+   "summary": "Conditionally approved an application for additional forms of entertainment at Snappy Patty's, subject to submitting an updated seating sketch and obtaining remaining signatures from the building department and Board of Health.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "SPEAKER_01"
+   ]
+  },
+  {
+   "title": "Razzo's Bar & Grill Incident Review",
+   "t": 509,
+   "summary": "Reviewed a police incident report from Thanksgiving Eve and determined that Razzo's Bar & Grill committed no liquor violations and took appropriate measures during the incident.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Rory Lockowitz"
+   ]
+  },
+  {
+   "title": "Mitsuba Sakaya Ownership Transfer",
+   "t": 1062,
+   "summary": "Conditionally approved a change of officers and 40% transfer of ownership for Mitsuba Sakaya Sushi Bar and Grill, contingent on receiving corrected application paperwork, Articles of Organization, and bank financial statements within seven days.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Meihuei Hu",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "2025 Liquor License Renewals",
+   "t": 3502,
+   "summary": "Approved the 2025 annual liquor license renewals across all license classes, accepted the seasonal population certification, and noted the non-renewal of Mola Bakery and Cafe.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 30979,
+  "output_tokens": 607,
+  "model_version": "gemini-3.6-flash"
+ }
+}

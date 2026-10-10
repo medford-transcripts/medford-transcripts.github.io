@@ -1,0 +1,35 @@
+{
+ "video_id": "pUMtYvwLQbQ",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T07:23:42Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "bf556a2265e32831",
+ "subject": "CCOPS Ordinance Amendments",
+ "overview": "The committee met to review and approve technical amendments to the Community Control Over Public Surveillance (CCOPS) ordinance. The committee voted to report the matter out of committee with changes intended to strengthen privacy protections and data oversight.",
+ "items": [
+  {
+   "title": "CCOPS Ordinance Technical Amendments",
+   "t": 509,
+   "summary": "Approved amendments to the Community Control Over Public Surveillance (CCOPS) ordinance and reported the matter out of committee. The changes regulate the destruction of illegally obtained data, remove law enforcement exemptions for bulk surveillance data acquisition, and include a request for legal definitions of bulk and synthetic data.",
+   "speakers": [
+    "Emily Lazzaro",
+    "Kit Collins",
+    "Anna Callahan",
+    "Justin Tseng",
+    "Matt Leming",
+    "Barry Ingber",
+    "David Harris",
+    "Jean Zotter",
+    "Jennifer Yanko",
+    "Ellen Epstein"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11752,
+  "output_tokens": 196,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
