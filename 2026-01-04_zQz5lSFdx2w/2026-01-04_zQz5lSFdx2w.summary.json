@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "2d430bfe259b2be4",
- "subject": "",
+ "subject": "Christmas Special",
  "overview": "Host Laura Duggan presented the 2025 Christmas special of Looking Back at Medford History, featuring a North Pole sketch where Santa's brothers temporarily manage holiday preparations during Santa's vacation. The episode concluded with a musical performance and a reading of 'The Night Before Christmas.'",
  "items": [
   {
@@ -60,5 +60,6 @@
   "input_tokens": 10766,
   "output_tokens": 516,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

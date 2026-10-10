@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "80d99d4824b00faf",
- "subject": "",
+ "subject": "Municipal Inauguration Ceremony",
  "overview": "Medford convened its municipal inauguration ceremony to swear in the mayor, City Council, and School Committee. The event featured addresses from local and federal leaders, the mayor's State of the City address, and an update on the Medford High School building project.",
  "items": [
   {
@@ -112,5 +112,6 @@
   "input_tokens": 18921,
   "output_tokens": 881,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
