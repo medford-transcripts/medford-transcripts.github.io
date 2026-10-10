@@ -59,7 +59,48 @@ change of product. **3.8-flash was unreachable before this** and is net new
 allowance; it earned itself within minutes, picking up a meeting after 3.6
 returned 503.
 
-Whether 3.8 is BETTER than 3.6 is unmeasured. compare_summaries.py is the tool.
+### Should 3.8 go first? Measure it; the number is not enough
+
+Jason's instinct (bigger number = better) is a fair prior and it has already
+failed once on this exact task: `gemini-3-flash-preview` TIED `gemini-3.5-flash`
+on the rubric -- 7 items each, the same 2 of 4 checkable claims, both faithfully
+reporting the ASR's "Andrea". The higher number bought nothing.
+
+What the bakeoff actually shows, scored against a sitting member's own recap of
+`1wG48dRbAM0` (2026-09-14 School Committee):
+
+                   407->568  212->68  Fallon  student
+    gemini-3-flash     -        -       yes     yes
+    gemini-3.5-flash   -        -       yes     yes
+    gpt-5             yes      yes       -       -
+    opus55            yes      yes      yes     yes
+    sonnet5            -        -       yes     yes
+
+Every Gemini flash model DROPS BOTH ENROLMENT FIGURES -- the most checkable
+facts in the meeting -- and only Opus 5.5 has ever got all four. So the
+question for 3.8 is narrow: does it pick up the numbers?
+
+Two requests answer it, and the existing `gemini-3.5-flash.json` fixture is
+from 2026-09-24, before the redirect, so it is probably the real 3.5 -- an
+engine that no longer exists. Both current engines need a fresh run:
+
+    python summarize_meeting.py -i 1wG48dRbAM0 --model gemini-3.6-flash --out _summary_test/gemini-3.6-flash.json
+    python summarize_meeting.py -i 1wG48dRbAM0 --model gemini-3.8-flash --out _summary_test/gemini-3.8-flash.json
+    python compare_summaries.py
+
+`--out` skips the page rebuild, so a fixture never touches the site, and the
+`model` field in each file now records what ANSWERED -- the bakeoff is
+self-certifying in a way the September one was not.
+
+**Decision rule, set before seeing the result:** 3.8 picks up the figures ->
+promote it to first, it is a real gain on the facts that matter most. 3.8 ties
+at 2 of 4 -> leave 3.6 first, because it wrote the corpus and churn buys
+nothing, and keep 3.8 as the extra bucket it already is.
+
+Worth noticing either way: no Gemini flash model has EVER got the enrolment
+figures, so if those numbers are the priority, model order within Gemini may
+not be the lever at all -- that is an argument about Opus and $348, not about
+3.6 vs 3.8.
 
 Also fixed: `--limit` counted cache hits, so with the queue now tiered (97
 current meetings ahead of the first unwritten one) `--limit 8` stopped after 8
