@@ -1,0 +1,50 @@
+{
+    "SPEAKER_01": {
+        "value": "CAS00002529_SPEAKER_00",
+        "source": "embedding_match",
+        "score": 0.7431823875058613,
+        "from": "CAS00002529_SPEAKER_00",
+        "at": "2026-10-10T08:43:03Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_03": {
+        "value": "Denis MacDougall",
+        "source": "embedding_match",
+        "score": 0.9775604687181664,
+        "from": "CAS00002529_SPEAKER_02",
+        "at": "2026-10-10T08:43:04Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_06": {
+        "value": "Jeremy Martin",
+        "source": "embedding_match",
+        "score": 0.921092576526856,
+        "from": "CAS00002557_SPEAKER_08",
+        "at": "2026-10-10T08:43:04Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "CAS00002529_SPEAKER_07",
+        "source": "embedding_match",
+        "score": 0.8343110998683372,
+        "from": "CAS00002494_SPEAKER_10",
+        "at": "2026-10-10T08:43:04Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "Heather",
+        "source": "embedding_match",
+        "score": 0.9131248583120033,
+        "from": "CAS00002529_SPEAKER_05",
+        "at": "2026-10-10T08:43:04Z",
+        "previous": "SPEAKER_08"
+    },
+    "SPEAKER_09": {
+        "value": "Heidi Davis",
+        "source": "embedding_match",
+        "score": 0.9433491792651356,
+        "from": "MCM00001813_SPEAKER_05",
+        "at": "2026-10-10T08:43:04Z",
+        "previous": "SPEAKER_09"
+    }
+}
