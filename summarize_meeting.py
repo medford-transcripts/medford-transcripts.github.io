@@ -312,7 +312,13 @@ class ModelUnavailable(RuntimeError):
 
 
 class DailyQuotaExhausted(RuntimeError):
-    """Every model for this provider is out of DAILY allowance. Stop.
+    """Every model for this provider is out of DAILY allowance. Stop THIS RUN.
+
+    "Daily" is Google's word, not a calendar day: the window rolls, so
+    capacity returns through the day as earlier requests age out (measured
+    2026-10-09 -- exhausted at 08:07 ET, answering freely at 23:30 ET with no
+    reset in between). So this ends the RUN, not the night, and the hourly
+    schedule is what turns that into throughput.
 
     Distinct from an ordinary failure on purpose. The --all loop treats a
     per-meeting error as "skip it and carry on", which is right for a bad
@@ -678,8 +684,22 @@ def ask_gemini(model, system, user, key, max_tokens=MAX_OUTPUT, attempts=3,
             continue
         break
     if r.status_code == 429 and _per_day_quota(r):
+        # "PER-DAY" IS A ROLLING WINDOW, NOT A CALENDAR DAY, so do not tell the
+        # operator to come back at midnight. Measured 2026-10-09: every gemini
+        # model reported its daily allowance gone at 08:07 ET, and at 23:30 ET
+        # -- the SAME quota day Pacific, no reset in between -- 3.6 and 3.8
+        # both answered a dozen requests. Capacity returns continuously as
+        # earlier requests age out of the window.
+        #
+        # This also explains the bursts _last_quota_reset was built on
+        # (36, 21, 12 all landing at 00:05 PDT) WITHOUT a calendar reset: if
+        # the allowance is spent in one burst, it refills ~24h after that
+        # burst, so heavy use at 00:05 makes the next opening appear at 00:05.
+        # Self-reinforcing, and indistinguishable from a daily reset unless
+        # you try at another hour -- which is what happened tonight.
         raise DailyQuotaExhausted(
-            "%s: %s exhausted (resets midnight Pacific)" % (model, _quota_note(r)))
+            "%s: %s exhausted (refills continuously; retry later today)"
+            % (model, _quota_note(r)))
     return _gemini_parse(r)
 
 
@@ -1413,9 +1433,14 @@ def main():
             # generated 5 -- the same flattering arithmetic as the pacing bug.
             print("generated %d new (%d already current); %d still to do."
                   % (made, done - made, len(todo) - done))
-            print("Re-run after the quota resets -- already-summarised meetings"
-                  " are skipped on the transcript SHA, so it resumes where it"
-                  " left off.")
+            # NOT "wait for the reset". The per-day allowance is a rolling
+            # window (see ask_gemini), so the next hourly run an hour from now
+            # is a real chance rather than a formality -- which is exactly
+            # what summarize.bat was already built to exploit.
+            print("The allowance refills continuously, so the next hourly run"
+                  " may well get through -- already-summarised meetings are"
+                  " skipped on the transcript SHA, so it resumes where it left"
+                  " off.")
             return 0
         except Exception as e:
             print("  FAILED %s: %s" % (yt_id, str(e)[:160]))

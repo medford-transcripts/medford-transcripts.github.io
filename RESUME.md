@@ -1,3 +1,30 @@
+**DONE 2026-10-10.** v1 shipped ten period narratives with no citations: the
+model cited periods as whole meetings ("M09") and only ITEM labels were in the
+index, so verification dropped all 24. The model was right and the vocabulary
+was too small. Both kinds are citable now and the rule says which to use.
+
+v2, measured: **97 citations across 44 of 67 meetings, 10 of 10 periods cited,
+heaviest single meeting 6.2%, 0 dropped** -- against v1's 35 citations over 28
+meetings at 8.6%. The weighting problem that made every earlier attempt
+unusable is solved and the number is on the page's sidecar. Written by
+gemini-3.6-flash after 3.8 returned 503.
+
+Rendered and link-checked: 97 citation links in the committee page, 0 broken,
+7 threads, 10 periods. (Interesting: the model used ITEM labels for the
+periods this time, so the whole-meeting path is available but unused -- what
+fixed v1 was the explicit rule as much as the wider vocabulary.)
+
+Content holds the line: no vote tallies, no first person, and the checkable
+specifics a reader wants are all cited -- Left Field as OPM, SMMA as designer,
+Suffolk as CM at Risk, Option C2.2A, the 1967 deed restriction, enrolment
+certified at 1,395, $699M total project cost, air-to-water heat pumps over
+geothermal.
+
+**The remaining known flaw is the duplicate, not the model.** CAS00002553 and
+CP5ho6yZUqo are one meeting, so the overview says 67 meetings for 66 and
+weights 10/6 twice -- it is the most-cited meeting at 6.2%. summarize_committee
+prints POSSIBLE DUPLICATE and drops neither; see PENDING.md.
+
 # Resume here
 
 Written 2026-10-08, added to 2026-10-09. Picks up where the session stopped.
@@ -27,6 +54,139 @@ and nobody read it. Both sides now agree on what published means:
 The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
 a check that always fails is not a check. Worth looking at `bing_status.py`
 and the other validators for the same shape.
+
+## The free-tier allowance refills CONTINUOUSLY -- stop waiting for 3 AM
+
+Corrected by Jason 2026-10-10, and the session had the evidence already:
+every gemini model reported its daily allowance gone at 08:07 ET, and at
+23:30 ET -- the same quota day Pacific, no reset in between -- 3.6 and 3.8
+answered a dozen requests. The "per-day" quota is a ROLLING WINDOW; capacity
+comes back through the day as earlier requests age out.
+
+This also explains the bursts `_last_quota_reset` was built on (36, 21, 12,
+all at 00:05 PDT) without any calendar reset: spend the allowance in one burst
+and it refills ~24h after that burst, so heavy use at 00:05 makes the next
+opening appear at 00:05. Self-reinforcing, and indistinguishable from a daily
+reset unless you try at another hour.
+
+**Practical effect: when a run stops on quota, try again rather than shelving
+it.** Two things that were "blocked until 3 AM" ran immediately on retry --
+the committee overview and the 3.8 bakeoff, below. `DailyQuotaExhausted` now
+says "refills continuously; retry later today" and the --all stop message
+points at the next hourly run, which is what summarize.bat was always built to
+exploit. The classification itself was already right: `_per_day_quota()` only
+fires on a real `perday` violation and per-minute 429s get backoff.
+
+## Gemini 3.5 deprecation: the summaries were naming the wrong author
+
+Google's notice ("3.5 Flash deprecated, traffic auto-redirected to 3.6") turned
+out to matter for provenance, not for uptime. Probed 2026-10-09, reading
+`modelVersion` back off each response:
+
+    gemini-3.5-flash        -> served by gemini-3.6-flash
+    gemini-3.7-flash        -> served by gemini-3.8-flash
+    gemini-3-flash-preview  -> itself
+
+**Three engines behind five names, and the listing still advertises the
+retired ones**, so the only way to tell an alias from an engine is to ask and
+read the answer. `_gemini_parse` ignored `modelVersion` and `ask()` returned
+the id it REQUESTED, so **250 summaries say "gemini-3.5-flash"** when the
+recent ones were written by 3.6 -- a false claim in our own voice, printed on
+the page banner (PRINCIPLES #5). All three providers now record what answered;
+when it differs from what was asked, the run says so.
+
+Those 250 labels are NOT retroactively fixable: the redirect date is unknown,
+so early ones are honest and later ones are not, and there is no way to tell
+them apart. Leave them; new ones are accurate.
+
+**The ladder was also walking the same bucket twice while looking like two.**
+Its whole premise is that families have separate daily allowances, so an alias
+beside its target is the one mistake it cannot afford. Now one entry per
+engine: 3.6, then 3.8, then 3-flash-preview, then pro. 3.6 stays first because
+it is what has been writing the corpus all along -- a truthful rename, not a
+change of product. **3.8-flash was unreachable before this** and is net new
+allowance; it earned itself within minutes, picking up a meeting after 3.6
+returned 503.
+
+### 3.8 is first, and the bakeoff did not veto it -- RESOLVED 2026-10-10
+
+Jason's call: order by the prior (newer is usually better) and treat the rubric
+as a VETO rather than a gate, because four binary claims on one meeting is weak
+evidence of equality. Ran it the same night:
+
+                   407->568  212->68  Fallon  student  words  out-tokens
+    gemini-3-flash     -        -       yes     yes      252     802
+    gemini-3.5-flash   -        -       yes     yes      240     758
+    gemini-3.8-flash   -        -       yes     yes      192     682
+    gpt-5             yes      yes       -       -       335    5401
+    opus55            yes      yes      yes     yes      418    2090
+    sonnet5            -        -       yes     yes      282    1940
+
+**3.8 ties at 2 of 4 -- no regression, so the veto does not fire and 3.8 keeps
+the lead.** It is noticeably terser (192 words against 240 and 252) at equal
+item count; nothing checkable was lost, but that is the thing to watch.
+
+**A 3.6 fixture could not be obtained: three consecutive 503s** while 3.8
+answered instantly every time. That is a practical argument for the order
+independent of quality -- 3.8 is the engine that is actually available. It also
+demonstrated the provenance fix working: the run labelled `3.6` fell back and
+the file recorded `model=gemini-3.8-flash`, so a fixture that would silently
+have been wrong named itself. Delete and retry when 3.6 is reachable; the
+rubric is unchanged by its absence.
+
+Still true, and bigger than 3.6-vs-3.8: **no Gemini flash model has ever
+recovered the enrolment figures** (407->568, 212->68) that Opus 5.5 and gpt-5
+both get. Three generations now score identically on them. If those numbers
+matter, the lever is the PROVIDER, not the flash version -- worth deciding as
+a tier (Opus for Budget and the Building Committee, free-tier Flash for the
+rest), and it is the one open quality question here.
+
+## The sitemap had stopped being written -- fixed 2026-10-09
+
+Seven days stale, and not a scheduling problem: `make_sitemap()` globbed 2,500
+files, filtered them five ways, built the whole XML tree and **never wrote
+it**. 7a280f855b ("Retire sitemap.txt", 2026-10-02) deleted
+`save_sitemap(sitemap_root, "./sitemap")` along with the sitemap.txt write it
+meant to retire -- and that one call wrote the XML too. No exception, no log
+line, sitemap.xml frozen at its 10-02 mtime while index.html and committees/
+-- rebuilt in the same `do_extras` block, immediately before it -- stayed
+current. 151 published pages went unadvertised.
+
+Now writes via `utils.write_atomic` and prints `sitemap: N urls`, because a
+silent generator is indistinguishable from a skipped one in a log.
+
+**The checker should have caught it, and could not.** `check_sitemap.py`
+counted the 115 `skip=True` duplicate recordings as orphans -- make_sitemap
+excludes them on purpose -- so every run ended "VERDICT: sitemap has issues"
+and nobody read it. Both sides now agree on what published means:
+
+    python check_sitemap.py        # 2,416 urls, 0 orphans: "sitemap is clean"
+
+The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
+a check that always fails is not a check. Worth looking at `bing_status.py`
+and the other validators for the same shape.
+
+## The free-tier allowance refills CONTINUOUSLY -- stop waiting for 3 AM
+
+Corrected by Jason 2026-10-10, and the session had the evidence already:
+every gemini model reported its daily allowance gone at 08:07 ET, and at
+23:30 ET -- the same quota day Pacific, no reset in between -- 3.6 and 3.8
+answered a dozen requests. The "per-day" quota is a ROLLING WINDOW; capacity
+comes back through the day as earlier requests age out.
+
+This also explains the bursts `_last_quota_reset` was built on (36, 21, 12,
+all at 00:05 PDT) without any calendar reset: spend the allowance in one burst
+and it refills ~24h after that burst, so heavy use at 00:05 makes the next
+opening appear at 00:05. Self-reinforcing, and indistinguishable from a daily
+reset unless you try at another hour.
+
+**Practical effect: when a run stops on quota, try again rather than shelving
+it.** Two things that were "blocked until 3 AM" ran immediately on retry --
+the committee overview and the 3.8 bakeoff, below. `DailyQuotaExhausted` now
+says "refills continuously; retry later today" and the --all stop message
+points at the next hourly run, which is what summarize.bat was always built to
+exploit. The classification itself was already right: `_per_day_quota()` only
+fires on a real `perday` violation and per-minute 429s get backoff.
 
 ## Gemini 3.5 deprecation: the summaries were naming the wrong author
 
