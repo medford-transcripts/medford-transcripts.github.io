@@ -1,0 +1,70 @@
+{
+ "video_id": "MCM00001624",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T11:07:55Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4ba78672356bbfaf",
+ "subject": "Medford Wine and Spirits License Suspension",
+ "overview": "The commission approved multiple one-day licenses and a business transfer before holding a disciplinary hearing on underage alcohol sales at Medford Wine and Spirits, issuing a 10-day license suspension.",
+ "items": [
+  {
+   "title": "Tufts University One-Day Licenses",
+   "t": 24,
+   "summary": "Approved two one-day liquor licenses for Tufts University events scheduled for December 5.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Winter Extravaganza One-Day License",
+   "t": 248,
+   "summary": "Approved a one-day wine and malt license for the City Hall Winter Extravaganza on December 4, subject to submission of liquor liability insurance.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Medford Arts Collaborative One-Day Licenses",
+   "t": 504,
+   "summary": "Approved two one-day licenses for Arts Collaborative events on December 12 and December 19, subject to insurance verification.",
+   "speakers": [
+    "Robert Delafano",
+    "Susan Altman",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Yoki X, Inc. License Transfer and Entertainment License",
+   "t": 865,
+   "summary": "Approved the transfer of the alcohol license and granted an entertainment license for devices for Yoki X, Inc. at 62 Station Landing.",
+   "speakers": [
+    "Robert Delafano",
+    "Sylvia Guzman",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Disciplinary Hearing: Medford Wine and Spirits",
+   "t": 1225,
+   "summary": "Following police testimony regarding three sales of alcohol to minors, the commission imposed a 10-day license suspension effective November 27 through December 7, 2024, and ordered employee ID and TIPS training within 60 days.",
+   "speakers": [
+    "Robert Delafano",
+    "Patrick Smith",
+    "Allan Martorana",
+    "Vatsal Patel",
+    "Kiran Patel",
+    "Rory Lockowitz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 35137,
+  "output_tokens": 530,
+  "model_version": "gemini-3.8-flash"
+ }
+}
