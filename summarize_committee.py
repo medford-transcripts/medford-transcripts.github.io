@@ -81,8 +81,10 @@ what is it working on now, and where do I go to check.
 
 RULES, and the first is the one that matters most:
 
-1. CITE BY LABEL. Every item in the input carries a label like M07#4. Use \
-those labels verbatim in "cite" lists. Never write a timestamp, a date or a \
+1. CITE BY LABEL. Two kinds exist and both are in the input: M07 is a whole \
+meeting, M07#4 is one item within it. Cite the item when the claim is about \
+that item, and the meeting when it is about the meeting as a whole. Use the \
+labels verbatim in "cite" lists. Never write a timestamp, a date or a \
 URL as a citation. A label you did not see in the input will be discarded, \
 and any statement left with no citation is discarded with it.
 
@@ -119,7 +121,7 @@ has been meeting over, and where its work stands at the most recent meeting.",
   "periods": [
     {"period": "the period label exactly as given in the input",
      "narrative": "1-2 sentences on what this period was about.",
-     "cite": ["M07#4"]}
+     "cite": ["M07", "M09#2"]}
   ]
 }
 
@@ -172,7 +174,41 @@ def source_summaries(committee, video_data=None):
         if dup in chosen:
             print("  WARNING: %s and %s are the same meeting and both carry a "
                   "summary; it will be weighted twice." % (m["yt_id"], dup))
+
+    # THE UNFLAGGED PAIRS ARE THE ONES THAT BITE, and one did. Castus dates a
+    # meeting the day the city posted it and YouTube the day it happened, so
+    # CAS00002553 (10/05/26) and CP5ho6yZUqo (10.6) are one meeting with no
+    # duplicate_id between them. Both got summarised on 2026-10-09 and the
+    # overview counted 67 meetings for 66.
+    #
+    # WARNS, DOES NOT DROP. Dropping needs a test that cannot be wrong, and
+    # date-plus-duration is not it: CAS00002546 and CAS00002547 are two
+    # DIFFERENT advisory team meetings on the same day. Losing a real meeting
+    # to a clever heuristic is worse than counting one twice, so this reports
+    # and a person decides (PRINCIPLES #4).
+    for i, a in enumerate(out):
+        for b in out[i + 1:]:
+            da = (video_data.get(a["yt_id"]) or {}).get("duration") or 0
+            db = (video_data.get(b["yt_id"]) or {}).get("duration") or 0
+            if not da or not db:
+                continue
+            close_date = abs((_day(a["date"]) or 0) - (_day(b["date"]) or 0)) <= 2
+            close_len = abs(da - db) <= 0.02 * max(da, db)
+            if close_date and close_len and a["date"] != b["date"]:
+                print("  POSSIBLE DUPLICATE: %s (%s, %ds) and %s (%s, %ds) "
+                      "-- same length a day apart, and neither is flagged. If "
+                      "they are one meeting it is weighted twice."
+                      % (a["yt_id"], a["date"], da, b["yt_id"], b["date"], db))
     return out
+
+
+def _day(date):
+    """Date string to an ordinal, or None. Dates here are already validated."""
+    try:
+        return datetime.date(int(date[:4]), int(date[5:7]),
+                             int(date[8:10])).toordinal()
+    except (ValueError, TypeError, IndexError):
+        return None
 
 
 def period_of(date):
@@ -211,6 +247,15 @@ def build_prompt(committee, meetings):
             last_period = period
         tag = "M%02d" % n
         d = m["summary"]
+        # THE MEETING ITSELF IS CITABLE, not only its items. The first run
+        # cited periods as "M09" -- the whole meeting, which is the natural
+        # unit for "what was this quarter about" -- and verification dropped
+        # all 24 of them because only item labels were in the index. All ten
+        # period narratives shipped with no citation at all. The model was
+        # right and the vocabulary was too small.
+        index[tag] = {"video_id": m["yt_id"], "t": None, "date": m["date"],
+                      "base": m["base"], "meeting_title": m["title"],
+                      "title": m["title"]}
         out.append("")
         out.append("%s  %s  %s" % (tag, m["date"], m["title"]))
         subject = (d.get("subject") or "").strip()
@@ -260,7 +305,9 @@ def verify(answer, index):
                 continue
             seen.add(label)
             cites.append(dict(hit, label=label))
-        cites.sort(key=lambda c: (c["date"], c["t"]))
+        # t is None for a whole-meeting citation, which sorts before any
+        # moment inside that meeting rather than raising on None < int.
+        cites.sort(key=lambda c: (c["date"], -1 if c["t"] is None else c["t"]))
         return cites
 
     threads = []

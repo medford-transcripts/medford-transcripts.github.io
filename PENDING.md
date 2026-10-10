@@ -346,6 +346,13 @@ millions of characters means truncation decides the answer). Rendered by
   wrong way: `summarize_committee` would weight a meeting double, which is the
   exact bias it exists to remove -- it warns when two summarised meetings name
   each other, and that check does not fire on an unflagged pair.
+  **THIS HAPPENED the same day, 2026-10-09**: `CAS00002553` was transcribed
+  and summarised alongside `CP5ho6yZUqo`, so the Building Committee page now
+  reads 67 meetings for 66 and the first overview weighted that meeting twice.
+  `summarize_committee` now prints POSSIBLE DUPLICATE for a same-length pair a
+  day apart (12,701 s vs 12,846 s caught it) and deliberately drops NEITHER,
+  because `CAS00002546`/`CAS00002547` prove two real meetings can share a
+  date. The durable fix belongs in the dedup, not in the consumer.
 
 - **Two MHSBC subcommittee meetings are typed `MPS School Committee`.**
   `MCM00000887` (2024-05-07 Rules & Onboarding) and `MCM00001714` (2025-01-23

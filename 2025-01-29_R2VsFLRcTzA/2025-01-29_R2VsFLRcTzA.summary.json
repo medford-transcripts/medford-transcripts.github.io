@@ -1,0 +1,41 @@
+{
+ "video_id": "R2VsFLRcTzA",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T03:36:24Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "75bd8e690ec1e837",
+ "subject": "",
+ "overview": "The Resident Services and Public Engagement Committee approved the City Council's monthly newsletter with revisions. The committee also voted to send a set of inquiry questions to the mayor and department heads to evaluate staff capacity and data availability for a potential municipal open data policy.",
+ "items": [
+  {
+   "title": "Monthly Council Newsletter",
+   "t": 188,
+   "summary": "The committee reviewed and approved the draft monthly City Council newsletter with several text and scheduling edits.",
+   "speakers": [
+    "Matt Leming",
+    "Justin Tseng",
+    "Anna Callahan",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Open Data Policy Development",
+   "t": 1026,
+   "summary": "The committee discussed establishing a citywide open data policy and voted to submit survey questions to the administration regarding departmental data sets, staff capacity, and cost considerations.",
+   "speakers": [
+    "Matt Leming",
+    "Justin Tseng",
+    "Anna Callahan",
+    "Emily Lazzaro",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12581,
+  "output_tokens": 221,
+  "model_version": "gemini-3.6-flash"
+ }
+}

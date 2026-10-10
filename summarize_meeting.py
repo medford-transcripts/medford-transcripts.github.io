@@ -179,8 +179,28 @@ MODEL_LADDER = {
     # ladder it is what the FAILED line reports -- so a meeting that
     # actually died of 503s and per-day caps was logged as a 404,
     # hiding the real cause.
-    "gemini": ["gemini-3.5-flash", "gemini-3-flash", "gemini-3.1-pro",
-               "gemini-3-pro"],
+    #
+    # ONE ENTRY PER ENGINE, NOT PER NAME -- updated 2026-10-09 after Google's
+    # "3.5 Flash is deprecated and auto-redirected" notice. The listing still
+    # advertises the retired names, so the only way to tell an engine from an
+    # alias is to ask and read modelVersion back. Measured:
+    #
+    #   gemini-3.5-flash       -> served by gemini-3.6-flash
+    #   gemini-3.7-flash       -> served by gemini-3.8-flash
+    #   gemini-3-flash-preview -> itself
+    #
+    # Three engines behind five names. The ladder is a QUOTA POOL, so listing
+    # an alias beside its target would walk the SAME bucket twice while
+    # looking like two -- which is the one assumption this design cannot
+    # afford to get wrong. Hence 3.6 and 3.8 and no 3.5 or 3.7.
+    #
+    # 3.6 stays FIRST because it is what has been writing the corpus all
+    # along: every summary that says "gemini-3.5-flash" was served by it. So
+    # this is a truthful rename, not a change of product. Whether 3.8 is
+    # BETTER is unmeasured -- compare_summaries.py is the tool, and until it
+    # has run 3.8 is additional allowance rather than a promotion.
+    "gemini": ["gemini-3.6-flash", "gemini-3.8-flash", "gemini-3-flash",
+               "gemini-3.1-pro", "gemini-3-pro"],
     "openai": ["gpt-5", "gpt-5-mini", "gpt-5-nano"],
     "anthropic": ["claude-opus-5-5", "claude-opus-5", "claude-sonnet-5",
                   "claude-haiku-4-5"],
@@ -493,7 +513,9 @@ def ask_anthropic(model, system, user, key, max_tokens=MAX_OUTPUT):
     parts = [c.get("text", "") for c in d.get("content", []) if c.get("type") == "text"]
     u = d.get("usage", {})
     return "".join(parts), {"input_tokens": u.get("input_tokens"),
-                            "output_tokens": u.get("output_tokens")}
+                            "output_tokens": u.get("output_tokens"),
+                            # see _gemini_parse: record what ANSWERED
+                            "model_version": d.get("model")}
 
 
 # ------------------------------------------------------- transient retry budget
@@ -731,8 +753,16 @@ def _gemini_parse(r):
             "gemini returned no text (finishReason=%s). On 3.x this usually "
             "means thinking consumed maxOutputTokens." % why)
     u = d.get("usageMetadata", {})
+    # modelVersion IS WHAT ANSWERED, and it is not always what was asked for.
+    # Measured 2026-10-09, after Google's deprecation notice: a request for
+    # gemini-3.5-flash is served by gemini-3.6-flash, and one for
+    # gemini-3.7-flash by gemini-3.8-flash -- silently, HTTP 200, no warning
+    # in the body. Recording the REQUESTED id made every summary since the
+    # redirect name an author that did not write it, on the page banner, which
+    # is a claim in our own voice about provenance (PRINCIPLES #5).
     return text, {"input_tokens": u.get("promptTokenCount"),
-                  "output_tokens": u.get("candidatesTokenCount")}
+                  "output_tokens": u.get("candidatesTokenCount"),
+                  "model_version": d.get("modelVersion")}
 
 
 def ask_openai(model, system, user, key, max_tokens=MAX_OUTPUT):
@@ -772,7 +802,9 @@ def ask_openai(model, system, user, key, max_tokens=MAX_OUTPUT):
                            "budget went on reasoning" % why)
     u = d.get("usage", {})
     return text, {"input_tokens": u.get("prompt_tokens"),
-                  "output_tokens": u.get("completion_tokens")}
+                  "output_tokens": u.get("completion_tokens"),
+                  # see _gemini_parse: record what ANSWERED
+                  "model_version": d.get("model")}
 
 
 def ask_one(model, system, user, key, max_tokens=MAX_OUTPUT):
@@ -808,8 +840,20 @@ def ask(spec, system, user, key, max_tokens=MAX_OUTPUT):
             text, usage = ask_one(model, system, user, key, max_tokens)
             if tried:
                 print("  NOTE: fell back to %s after %s" % (model, ", ".join(tried)))
+            # _WINNER keeps the REQUESTED id, because that is what the next
+            # call has to put in a URL -- an alias is a valid thing to ask
+            # for, and resolving it ourselves would pin us to whatever it
+            # happens to point at today.
             _WINNER[provider_of(spec)] = model
-            return text, usage, model
+            # But what we REPORT is what answered. A provider may redirect an
+            # alias silently (gemini-3.5-flash -> gemini-3.6-flash, measured
+            # 2026-10-09), and this file's standing rule is that a model
+            # substitution is never silent: it changes the summary and a
+            # reader cannot tell from the page.
+            served = usage.get("model_version") or model
+            if served != model:
+                print("  NOTE: %s is served by %s" % (model, served))
+            return text, usage, served
         except DailyQuotaExhausted as e:
             print("  %s: daily allowance gone; trying the next model" % model)
             _DEAD.add(model)
@@ -1329,7 +1373,14 @@ def main():
     made = 0          # summaries actually GENERATED this run
     consecutive_failures = 0
     for yt_id in todo:
-        if args.limit and done >= args.limit:
+        # LIMIT COUNTS WHAT IT GENERATES, not what it walks past. `done`
+        # includes cache hits, so with the queue now TIERED -- 97 current
+        # meetings ahead of the first unwritten one -- `--limit 8` used to
+        # stop after 8 cache hits and summarise nothing at all. Third time
+        # this counter has been wrong in the same direction (see the pacing
+        # comment below and the "summarised 74" report): `done` is a scan
+        # position, `made` is the work.
+        if args.limit and made >= args.limit:
             break
         try:
             if summarize(yt_id, args.model, args.dry_run, args.force, video_data):

@@ -28,6 +28,50 @@ The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
 a check that always fails is not a check. Worth looking at `bing_status.py`
 and the other validators for the same shape.
 
+## Gemini 3.5 deprecation: the summaries were naming the wrong author
+
+Google's notice ("3.5 Flash deprecated, traffic auto-redirected to 3.6") turned
+out to matter for provenance, not for uptime. Probed 2026-10-09, reading
+`modelVersion` back off each response:
+
+    gemini-3.5-flash        -> served by gemini-3.6-flash
+    gemini-3.7-flash        -> served by gemini-3.8-flash
+    gemini-3-flash-preview  -> itself
+
+**Three engines behind five names, and the listing still advertises the
+retired ones**, so the only way to tell an alias from an engine is to ask and
+read the answer. `_gemini_parse` ignored `modelVersion` and `ask()` returned
+the id it REQUESTED, so **250 summaries say "gemini-3.5-flash"** when the
+recent ones were written by 3.6 -- a false claim in our own voice, printed on
+the page banner (PRINCIPLES #5). All three providers now record what answered;
+when it differs from what was asked, the run says so.
+
+Those 250 labels are NOT retroactively fixable: the redirect date is unknown,
+so early ones are honest and later ones are not, and there is no way to tell
+them apart. Leave them; new ones are accurate.
+
+**The ladder was also walking the same bucket twice while looking like two.**
+Its whole premise is that families have separate daily allowances, so an alias
+beside its target is the one mistake it cannot afford. Now one entry per
+engine: 3.6, then 3.8, then 3-flash-preview, then pro. 3.6 stays first because
+it is what has been writing the corpus all along -- a truthful rename, not a
+change of product. **3.8-flash was unreachable before this** and is net new
+allowance; it earned itself within minutes, picking up a meeting after 3.6
+returned 503.
+
+Whether 3.8 is BETTER than 3.6 is unmeasured. compare_summaries.py is the tool.
+
+Also fixed: `--limit` counted cache hits, so with the queue now tiered (97
+current meetings ahead of the first unwritten one) `--limit 8` stopped after 8
+cache hits and summarised nothing. Third time that counter has been wrong in
+the same direction.
+
+### What this bought
+
+**The MHSBC summary gap is CLOSED** -- 0 transcribed-but-unsummarised, so the
+committee overview now spans 2024-05-01 to 2026-10-06 across 67 meetings
+instead of starting in Feb 2025.
+
 ## The site has its own search now -- 2026-10-09
 
 The front page used to hand the query to Google with `site:`, under a note
@@ -167,8 +211,23 @@ Verified on a fixture with real citation labels: a bad label is dropped from
 all three threads, 8 of 8 periods covered, 18 of 18 rendered links resolve to
 a real page. The API call is the only untested part.
 
-    python summarize_committee.py -c "MPS High School Building Committee"
+    python summarize_committee.py -c "MPS High School Building Committee" --force
     python make_committee_pages.py          # renders it above the table
+
+**RUN THAT --force ONCE MORE AFTER 3 AM ET**, and this is the only loose end.
+The overview on disk is v1 and its ten period narratives carry NO citations:
+the model cited periods as whole meetings ("M09"), which is the natural unit
+for "what was this quarter about", and only ITEM labels were in the index, so
+verification dropped all 24. The model was right and the vocabulary was too
+small. Both kinds are now citable and the renderer links a whole-meeting
+citation without a #t= fragment -- but the regeneration needs a request, and
+the day's gemini allowance went on the 8 backfills plus v1.
+
+v1 is otherwise good, and its measured spread is the thing this was built to
+fix: **35 citations across 28 of 67 meetings, heaviest single meeting 8.6%**.
+The threads carry 5-6 citations each. Nothing about v1 is published --
+`committees/*.overview.json` is deliberately NOT in the commit, and the
+committee pages were not regenerated, so no reader sees an uncited period.
 
 **Do it in that order and AFTER the backfill**, because the span today is
 2025-02-11 to 2026-10-06: without those 8 meetings the overview silently omits

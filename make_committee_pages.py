@@ -54,12 +54,17 @@ def overview_block(committee_name):
         out = ['      <ul class="mt-cites">\n']
         for c in items:
             base, t = c.get("base") or "", c.get("t")
-            if not base or t is None:
+            if not base:
                 continue
-            href = "../%s/%s.html#t=%d" % (base, base, int(t))
+            # t is None for a WHOLE-MEETING citation -- the natural unit for
+            # "what was this quarter about" -- which links to the page with no
+            # fragment rather than being dropped for lacking a moment.
+            href = "../%s/%s.html" % (base, base)
             label = c.get("date") or base[:10]
-            if c.get("video_id") in repeated:
-                label += time.strftime(" %H:%M", time.gmtime(int(t)))
+            if t is not None:
+                href += "#t=%d" % int(t)
+                if c.get("video_id") in repeated:
+                    label += time.strftime(" %H:%M", time.gmtime(int(t)))
             # The item title is the accessible name, so "2026-03-17" is not
             # the whole of what a screen reader announces.
             out.append('        <li><a href="' + escape(href, quote=True)
