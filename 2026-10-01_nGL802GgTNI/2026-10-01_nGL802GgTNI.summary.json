@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "aed175a2944ae6a7",
- "subject": "",
+ "subject": "High School Schematic Design Recommendations",
  "overview": "Two advisory teams for the Medford High School project met to evaluate schematic design options, voting to recommend an updated site layout, an air-to-water heat pump HVAC system, and a power purchase agreement model for solar photovoltaics to the School Building Committee.",
  "items": [
   {
@@ -96,5 +96,6 @@
   "input_tokens": 44738,
   "output_tokens": 822,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
