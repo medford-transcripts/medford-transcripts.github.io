@@ -1,0 +1,51 @@
+{
+ "video_id": "MCM00001724",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T01:05:33Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "aabf9c64d41d6cce",
+ "subject": "",
+ "overview": "The board approved a special permit for a residential addition on Arlington Street and continued a hearing for a multi-unit development on Elm Street. Members also acknowledged the resignation of the board's chair and discussed the process for electing a successor.",
+ "items": [
+  {
+   "title": "85 Elm Street (Case A-2024-25)",
+   "t": 43,
+   "summary": "Continued the matter to the February meeting at the request of the applicant. Attorney Kathleen Desmond stated the owner needed more time to prepare financial evidence following a fire that displaced tenants at another property.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Kathleen Desmond"
+   ]
+  },
+  {
+   "title": "171 Arlington Street (Case A-2025-01)",
+   "t": 187,
+   "summary": "Approved a special permit to extend an existing non-conforming side yard setback for a residential addition. The board determined the project would not cause substantial detriment to the neighborhood, noting the addition faces a neighbor's parking area rather than a house.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Alexander Wong-Berman",
+    "Lauren Mayo",
+    "Chris D'Aveta",
+    "Andre Leroux",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 1641,
+   "summary": "Acknowledged the resignation of Chair Jamie Thompson and planned an election for a new chair at the next meeting. Staff reported on testing AI software to assist with the backlog of meeting minutes.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10784,
+  "output_tokens": 433
+ }
+}
