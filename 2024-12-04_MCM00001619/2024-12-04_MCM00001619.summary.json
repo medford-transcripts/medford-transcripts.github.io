@@ -1,0 +1,70 @@
+{
+ "video_id": "MCM00001619",
+ "provider": "gemini",
+ "generated_at": "2026-10-10T16:10:57Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "724b48a507c62737",
+ "subject": "",
+ "overview": "The Medford Liquor License Commission approved two one-day liquor licenses for Event Them and conditionally approved a change of operating hours for Main Street Liquor. The commission also approved a change of category application for Desisto Enterprises and discussed upcoming violation hearings and licensing issues regarding The Porch.",
+ "items": [
+  {
+   "title": "One-Day License: Event Them (Dec 6, 2024)",
+   "t": 13,
+   "summary": "Approved a one-day liquor license for Event Them for a beer and board games event on December 6, 2024.",
+   "speakers": [
+    "Robert Delafano",
+    "Bryan MacAuslan",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "One-Day License: Event Them and Cuisine en Locale (Dec 14, 2024)",
+   "t": 207,
+   "summary": "Approved a one-day liquor license for a collaborative musical event on December 14, 2024.",
+   "speakers": [
+    "Robert Delafano",
+    "Bryan MacAuslan",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Change of Hours: NN Liquor Co-op d/b/a Main Street Liquor",
+   "t": 391,
+   "summary": "Conditionally approved an application to change operating hours to 10:00 a.m. to 10:00 p.m. seven days a week, subject to the submission of a no-fee transmittal form.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Kusum Latha",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Change of Category: Desisto Enterprises",
+   "t": 781,
+   "summary": "Approved a change of category application for Desisto Enterprises at 313 Mystic Avenue to allow full liquor service in the function room bar.",
+   "speakers": [
+    "Robert Delafano",
+    "SPEAKER_03",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Commission Discussion: Administrative Reviews, Upcoming Hearings, and The Porch",
+   "t": 1098,
+   "summary": "The commission reviewed paperwork for 116 Riverside Catering, tabled an unattended change of manager application for Ocean State Job Lot to December, and discussed hearing procedures for upcoming underage compliance violations as well as license surrender procedures regarding The Porch.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 20073,
+  "output_tokens": 654,
+  "model_version": "gemini-3.8-flash"
+ }
+}
