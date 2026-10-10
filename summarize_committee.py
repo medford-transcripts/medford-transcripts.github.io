@@ -71,6 +71,14 @@ MAX_OUTPUT = 8000
 # one meeting on the only thing that mattered.
 CONCENTRATION_WARN = 0.25
 
+# DID THE LAST CALL SPEND A REQUEST? The --active loop cannot infer it: an
+# overview that existed but was REGENERATED (its sources changed) looks
+# exactly like a cache hit from the outside, and counting it as free would let
+# --limit 2 make an unbounded number of API calls. Same shape and same reason
+# as summarize_meeting._CACHED, which was added after a limit was spent on
+# meetings nothing was ever asked about.
+_CACHED = False
+
 SYSTEM = """You write the standing overview of a public body for a civic \
 transcript archive in Medford, Massachusetts. Your input is the archive's own \
 per-meeting summaries, in chronological order, covering every meeting of that \
@@ -441,6 +449,8 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
         return None
     dest = overview_path(committee)
     sha = sources_sha(meetings)
+    global _CACHED
+    _CACHED = False
 
     if check:
         if not os.path.exists(dest):
@@ -459,6 +469,7 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
             old = json.load(io.open(dest, encoding="utf-8"))
             if old.get("sources_sha") == sha:
                 print("%s: current (%d meetings)" % (committee, len(meetings)))
+                _CACHED = True
                 return old
         except ValueError:
             pass
@@ -616,17 +627,18 @@ def main():
             print("--- %s (%d of %d meetings summarised, last %s)"
                   % (sm.printable(c), s_, n, last))
             try:
-                before = os.path.exists(overview_path(c))
                 got = summarise_committee(c, args.model, args.dry_run,
                                           args.force, args.check, video_data)
                 # CACHED OVERVIEWS ARE FREE, so they must not count against
                 # --limit -- the same arithmetic bug summarize_meeting had,
-                # where a limit was spent on meetings it never asked about.
-                if got and not (before and not args.force
-                                and got.get("sources_sha")):
-                    made += 1
-                elif got is None:
+                # where a limit was spent on meetings nothing was asked about.
+                # _CACHED rather than "did the file exist", because a
+                # REGENERATED overview also already existed and did cost a
+                # request.
+                if got is None:
                     failed += 1
+                elif not _CACHED:
+                    made += 1
             except sm.DailyQuotaExhausted as e:
                 print("STOPPING: %s" % e)
                 print("The allowance refills continuously, so re-running "
@@ -636,7 +648,27 @@ def main():
             except Exception as e:
                 failed += 1
                 print("  FAILED: %s" % str(e)[:160])
-        print("%d written, %d failed" % (made, failed))
+        print("%d %s, %d failed"
+              % (made, "would be written" if (args.dry_run or args.check)
+                 else "written", failed))
+        # REBUILD THE PAGES, or the overview is invisible. Nothing else in
+        # this path renders them: summarize_meeting rebuilds its own page when
+        # it writes a sidecar, and the equivalent here is the committee pages,
+        # which are otherwise regenerated only when a TRANSCRIPTION finishes.
+        # Without this the hourly job would accumulate correct overviews that
+        # no reader can see -- the failure this codebase keeps repeating.
+        #
+        # Once per batch, not once per overview: make() regenerates all 90
+        # pages and the hub every time it runs.
+        if made and not (args.dry_run or args.check):
+            try:
+                import make_committee_pages
+                make_committee_pages.make()
+                print("committee pages rebuilt")
+            except Exception as e:
+                # never lose an overview that cost real quota to a render error
+                print("WARNING: overviews written but pages NOT rebuilt: %s"
+                      % str(e)[:160])
         return 0
 
     if not args.committee:

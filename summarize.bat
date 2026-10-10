@@ -80,6 +80,29 @@ REM no-op once every summary carries a subject, and it exits 0 when there
 REM is no allowance, so it is safe to attempt every hour.
 "%PY%" -u backfill_subjects.py --apply >> "%LOG%" 2>&1
 
+REM COMMITTEE OVERVIEWS GO FIRST, AND THE ORDER IS THE WHOLE DECISION.
+REM
+REM Whatever runs first gets the allowance, so this is a statement about what
+REM the allowance is FOR. Jason's call, 2026-10-10: a committee overview --
+REM even one built from a quarter of that body's meetings -- is more useful to
+REM a reader than another summary of an individual meeting from two years ago.
+REM The overviews will be redone when the per-meeting coverage is fuller; the
+REM 1,691-meeting backlog is not going anywhere in the meantime.
+REM
+REM IT SELF-BALANCES, which is why a fixed limit is safe here. Each overview
+REM is cached on the sha of the summaries it was built from, so once the 19
+REM active bodies have one this step spends ZERO requests per hour and the
+REM whole allowance flows back to the backlog by itself. It only wakes up
+REM again when a body's summaries actually change -- a new meeting, or a
+REM backfilled old one -- which is exactly when its overview is stale.
+REM
+REM --limit 2 rather than unbounded: 19 bodies at two an hour is about ten
+REM hours to fill in, and it leaves room in every run for the newest meetings,
+REM which sit at the head of summarize_meeting's tiered queue. Starving those
+REM would leave a fresh meeting published with no summary, which is the one
+REM gap a reader actually notices.
+"%PY%" -u summarize_committee.py --active --limit 2 >> "%LOG%" 2>&1
+
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
 

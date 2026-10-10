@@ -129,11 +129,37 @@ sources_sha, resumable: it stops cleanly on quota and the next run continues.
 overviews, 3 bakeoff fixtures and the cron's 12 summaries. Re-run later today
 -- it refills continuously.
 
-**Open question for Jason:** whether to wire `--active --limit 1 or 2` into
-summarize.bat after the per-meeting pass. It would fill these in by itself,
-but every overview request is one that does NOT write one of the 1,691
-remaining per-meeting summaries, and those are what the overviews are built
-from. Not wired without a decision.
+**WIRED 2026-10-10, and the ORDER is the decision.** summarize.bat now runs
+`summarize_committee.py --active --limit 2` BEFORE the per-meeting pass,
+because whatever runs first gets the allowance. Jason's reasoning: a committee
+overview built from a quarter of a body's meetings is more useful to a reader
+than another summary of an individual meeting from two years ago, and the
+overviews get redone as coverage improves.
+
+It self-balances, which is what makes a fixed limit safe. Each overview is
+cached on the sha of the summaries behind it, so once the 20 active bodies
+have one this step costs ZERO requests an hour and the allowance flows back to
+the backlog on its own -- waking only when a body's summaries actually change,
+which is exactly when its overview is stale. `--limit 2` leaves room in every
+run for the newest meetings at the head of the tiered queue; starving those
+would publish a fresh meeting with no summary, the one gap a reader notices.
+
+Two gaps closed to make that work, both the "succeeds and changes nothing"
+shape this codebase keeps hitting:
+
+- **Nothing rebuilt the committee pages.** summarize_meeting re-renders its
+  page when it writes a sidecar; the equivalent here is the committee pages,
+  otherwise regenerated only when a TRANSCRIPTION finishes. The --active
+  batch now calls make_committee_pages.make() once at the end, when it wrote
+  something.
+- **publish_summaries did not stage `committees`.** Without it an overview
+  would wait for a transcription to sweep that path -- and that is held back
+  whenever a source file changed after the loop started, so "wait" can mean
+  days.
+
+Also fixed: `--limit` counted a REGENERATED overview as free, because from
+outside it looks identical to a cache hit. `_CACHED` now says which, mirroring
+summarize_meeting; without it `--limit 2` could have made unbounded calls.
 
 Found in passing: `P8rYkRI7D6M` and `MCM00001824` are flagged duplicates of
 each other, both unskipped and both summarised, so MPS School Committee

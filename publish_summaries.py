@@ -30,13 +30,20 @@ import utils
 # The sidecar and the page rebuilt from it, both inside the transcript
 # directory -- plus the search index, which a summary run also changes.
 #
+# committees/ is here because summarize.bat now writes COMMITTEE OVERVIEWS in
+# the same run (summarize_committee --active), and those land in
+# committees/*.overview.json with the 90 pages rebuilt around them. Without
+# this they would wait for a transcription to sweep `committees` out of
+# GENERATED_PATHS -- which is held back whenever a source file has changed
+# since that loop started, so "wait for a transcription" can mean days.
+#
 # WHY THE INDEX IS HERE AND NOT IN summarize_meeting. The front page searches
 # search_index.json in the reader's browser, and a summary is a large part of
 # what makes a meeting findable there: 545 of 2,260 meetings have one today
 # and ~1,700 are still to come, so the index goes stale on almost every run.
 # Rebuilding it per SUMMARY would cost 7.3 s each; rebuilding once per RUN,
 # here, where the committing already happens, costs 7.3 s a night.
-PATHS = ["20*", "search_index.json"]
+PATHS = ["20*", "search_index.json", "committees"]
 
 
 def pending():
