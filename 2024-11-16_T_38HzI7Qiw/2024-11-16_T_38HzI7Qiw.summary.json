@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "faa5f2ac4dbbcbda",
- "subject": "",
+ "subject": "Fresh Fridays Words and Music",
  "overview": "The West Medford Community Center hosted its monthly Fresh Fridays Words and Music program, featuring a discussion on the center's leadership and upcoming initiatives followed by a musical performance.",
  "items": [
   {
@@ -48,5 +48,6 @@
   "input_tokens": 26582,
   "output_tokens": 384,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

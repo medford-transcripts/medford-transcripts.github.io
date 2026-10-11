@@ -1,30 +1,31 @@
 {
  "committee": "MPS High School Building Committee",
  "provider": "gemini",
- "model": "gemini-3.6-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-10T04:05:17Z",
- "sources_sha": "867065f511f9641e",
- "n_meetings": 67,
+ "generated_at": "2026-10-11T01:06:00Z",
+ "sources_sha": "c3e91667b9df132d",
+ "n_meetings": 63,
+ "period_style": "quarter",
  "span": [
   "2024-05-01",
   "2026-10-06"
  ],
- "overview": "The MPS High School Building Committee convenes to manage and execute the Massachusetts School Building Authority (MSBA) building project for Medford High School. Commencing its inaugural meeting in May 2024, the committee guided the project through early eligibility requirements, project management procurement, design team selection, and feasibility studies. Across its meeting history, the committee systematically evaluated dozens of building options, space efficiency proposals, site layouts, and mechanical systems. Following the selection of a preferred schematic design, the committee finalized space reductions and selected a Construction Manager at Risk to advance the project toward its next design phase. At its most recent meeting in October 2026, the committee approved contract negotiations with Suffolk as Construction Manager at Risk, adopted mechanical and solar recommendations, and established a revised total project cost estimate of approximately $699 million.",
+ "overview": "The MPS High School Building Committee manages Medford’s participation in the Massachusetts School Building Authority (MSBA) core program to renovate or replace the city's aging high school facility. Since its inaugural meeting in May 2024, the committee has overseen project management selection, certified enrollment targets, and conducted exhaustive site and facility investigations. Its work involves balancing a visionary educational plan, including expanded vocational programming, against the technical and financial constraints of the state reimbursement process. As of October 2026, the committee has selected a preferred design schematic and a construction management firm to prepare for a city-wide budget vote scheduled for May 2027.",
  "threads": [
   {
-   "name": "Owner's Project Manager (OPM) Selection",
-   "status": "settled",
-   "summary": "In mid-2024, the committee initiated preparation for procuring an Owner's Project Manager (OPM) under MSBA Module 2 requirements [M07#3]. An OPM Selection Committee was formed in September 2024 [M08#4], leading to the drafting and approval of a Request for Services detailing evaluation criteria and project scope [M09#1, M10#3]. Left Field was formally introduced and selected as the project's OPM in May 2025 [M11#2]. The committee subsequently approved the official contract for Left Field in June 2025 following MSBA review [M12#2].",
+   "name": "Project Leadership and Procurement",
+   "status": "ongoing",
+   "summary": "The committee established procurement processes early, forming subcommittees to select an Owner's Project Manager (OPM) and a project designer. After selecting Left Field as the OPM in May 2025, the body moved to evaluate design proposals from multiple firms, ultimately awarding the contract to SMMA in late 2025. In late 2026, the committee concluded a two-phase procurement for a Construction Manager at Risk, voting to enter contract negotiations with Suffolk.",
    "citations": [
     {
-     "video_id": "5M4jH9XTbUU",
-     "t": 758,
-     "date": "2024-07-17",
-     "base": "2024-07-18_5M4jH9XTbUU",
-     "meeting_title": "MCHSBC Full Meeting July 17, 2024",
-     "title": "Module 2 Preparation",
-     "label": "M07#3"
+     "video_id": "A1IveHErhfY",
+     "t": 6084,
+     "date": "2024-05-01",
+     "base": "2024-05-01_A1IveHErhfY",
+     "meeting_title": "MSBA Building Committee",
+     "title": "Subcommittee Formation and Assignments",
+     "label": "M01#4"
     },
     {
      "video_id": "0u-fMI_TT0Q",
@@ -36,24 +37,6 @@
      "label": "M08#4"
     },
     {
-     "video_id": "bHomKoTW3J8",
-     "t": 119,
-     "date": "2025-02-11",
-     "base": "2025-02-11_bHomKoTW3J8",
-     "meeting_title": "OPM Selection Committee Meeting",
-     "title": "Overview of MSBA Module 2 Requirements",
-     "label": "M09#1"
-    },
-    {
-     "video_id": "L-37LV9dgxU",
-     "t": 877,
-     "date": "2025-02-24",
-     "base": "2025-02-24_L-37LV9dgxU",
-     "meeting_title": "MSBA Full Meeting - Post Attendance",
-     "title": "OPM Request for Services Review",
-     "label": "M10#3"
-    },
-    {
      "video_id": "Gg7MfqcnomU",
      "t": 411,
      "date": "2025-05-12",
@@ -61,58 +44,6 @@
      "meeting_title": "MHCSBC Full Meeting - May 12, 2025",
      "title": "Introduction of OPM and Left Field Presentation",
      "label": "M11#2"
-    },
-    {
-     "video_id": "s093VSbtp08",
-     "t": 307,
-     "date": "2025-06-02",
-     "base": "2025-06-02_s093VSbtp08",
-     "meeting_title": "MSBA Full Meeting (Vote)",
-     "title": "Left Field OPM Contract Approval",
-     "label": "M12#2"
-    }
-   ]
-  },
-  {
-   "name": "Designer Procurement and Architectural Team Selection",
-   "status": "settled",
-   "summary": "The committee approved a draft Request for Services in May 2025 to initiate the search for a project designer [M11#3]. After reviewing the MSBA selection schedule and evaluation criteria [M13#2, M14#1], the committee evaluated four design proposals submitted by firms including DLR, Perkins&Will, AI3, and SMMA in September 2025 [M15#4]. SMMA was ranked as the top firm by the Designer Selection Panel [M16#2]. In November 2025, the committee formally approved the feasibility study contract with SMMA [M17#3].",
-   "citations": [
-    {
-     "video_id": "Gg7MfqcnomU",
-     "t": 3444,
-     "date": "2025-05-12",
-     "base": "2025-05-12_Gg7MfqcnomU",
-     "meeting_title": "MHCSBC Full Meeting - May 12, 2025",
-     "title": "Review and Approval of Designer Request for Services",
-     "label": "M11#3"
-    },
-    {
-     "video_id": "eVGy96zbLTU",
-     "t": 1748,
-     "date": "2025-06-11",
-     "base": "2025-06-11_eVGy96zbLTU",
-     "meeting_title": "MCHSBC Full Meeting",
-     "title": "Designer Procurement Schedule and Educational Plan",
-     "label": "M13#2"
-    },
-    {
-     "video_id": "AhbnPsYYkrc",
-     "t": 0,
-     "date": "2025-08-11",
-     "base": "2025-08-11_AhbnPsYYkrc",
-     "meeting_title": "MSBA Full Committee Meeting",
-     "title": "Designer Selection Process and Evaluation",
-     "label": "M14#1"
-    },
-    {
-     "video_id": "mtlACKVIlfY",
-     "t": 532,
-     "date": "2025-09-15",
-     "base": "2025-09-15_mtlACKVIlfY",
-     "meeting_title": "MHCSBC Full Meeting",
-     "title": "Review of Designer Proposals",
-     "label": "M15#4"
     },
     {
      "video_id": "T0WlE3L4gXY",
@@ -124,20 +55,29 @@
      "label": "M16#2"
     },
     {
-     "video_id": "EjYtsXUKFn4",
-     "t": 458,
-     "date": "2025-11-24",
-     "base": "2025-11-24_EjYtsXUKFn4",
-     "meeting_title": "MCHSBC Full Monthly",
-     "title": "Approval of SMMA Contract",
-     "label": "M17#3"
+     "video_id": "CT9F89z4GEc",
+     "t": 0,
+     "date": "2026-06-12",
+     "base": "2026-06-12_CT9F89z4GEc",
+     "meeting_title": "MCHSBC Subcommittee",
+     "title": "CMR Process Overview",
+     "label": "M53#1"
+    },
+    {
+     "video_id": "CP5ho6yZUqo",
+     "t": 629,
+     "date": "2026-10-06",
+     "base": "2026-10-06_CP5ho6yZUqo",
+     "meeting_title": "10.6.25 MCHSBC Full",
+     "title": "Selection of Construction Manager at Risk",
+     "label": "M63#3"
     }
    ]
   },
   {
-   "name": "Building Design Options and Feasibility Alternatives",
+   "name": "Design Alternatives and Option Narrowing",
    "status": "settled",
-   "summary": "The project team presented 29 initial conceptual design options in January 2026 covering code upgrades, renovations, and new construction [M23#6], which were compiled into the Preliminary Design Program submitted to the MSBA [M27#3]. To meet an expedited state timeline, the committee evaluated options against a scoring matrix and narrowed the alternatives down to six finalists in March 2026 [M32#2, M34#4]. In May 2026, a 1967 deed restriction forced the elimination and reconfiguration of several concepts [M48#2]. The committee voted in June 2026 to select Option C2.2A as the preferred schematic design [M52#10] and authorized the Preferred Schematic Report submission to the MSBA [M54#3].",
+   "summary": "Beginning with 29 conceptual models in early 2026, the committee evaluated a wide range of code upgrades, renovations, and new construction scenarios. This list was narrowed to six finalists in March 2026, which were subjected to rigorous comparative analysis regarding construction phasing, student disruption, and site impact. In June 2026, the committee voted to advance Option C2.2A as the preferred schematic design, citing its cost-effectiveness and preservation of athletic facilities.",
    "citations": [
     {
      "video_id": "-lAwBjJUa7k",
@@ -149,24 +89,6 @@
      "label": "M23#6"
     },
     {
-     "video_id": "fTvN7dy32F0",
-     "t": 796,
-     "date": "2026-02-23",
-     "base": "2026-02-23_fTvN7dy32F0",
-     "meeting_title": "MCHSBC Full Monthly",
-     "title": "Preliminary Design Program (PDP) Submission",
-     "label": "M27#3"
-    },
-    {
-     "video_id": "-ixpTUy1PFo",
-     "t": 388,
-     "date": "2026-03-17",
-     "base": "2026-03-17_-ixpTUy1PFo",
-     "meeting_title": "3.17.26 MHCSBC Full Committee",
-     "title": "MSBA Schedule and Timeline Update",
-     "label": "M32#2"
-    },
-    {
      "video_id": "4dOL1TIbGJA",
      "t": 1610,
      "date": "2026-03-23",
@@ -176,13 +98,22 @@
      "label": "M34#4"
     },
     {
-     "video_id": "uHVWn-xZoqc",
-     "t": 890,
-     "date": "2026-05-20",
-     "base": "2026-05-20_uHVWn-xZoqc",
-     "meeting_title": "MCHSBC Monthly Meeting",
-     "title": "Deed Restriction and Design Option Modifications",
-     "label": "M48#2"
+     "video_id": "aYErMMhoMsI",
+     "t": 31,
+     "date": "2026-04-14",
+     "base": "2026-04-14_aYErMMhoMsI",
+     "meeting_title": "Overview of MHS Building Project Designs",
+     "title": "Narrowing of Design Options",
+     "label": "M42#1"
+    },
+    {
+     "video_id": "tNLdVUwRKPM",
+     "t": 1572,
+     "date": "2026-06-04",
+     "base": "2026-06-04_tNLdVUwRKPM",
+     "meeting_title": "MHS Building Project Community Forum #5",
+     "title": "Presentation of Six Alternatives",
+     "label": "M50#4"
     },
     {
      "video_id": "c6Y6iezvU4o",
@@ -192,92 +123,22 @@
      "meeting_title": "6.10.26 MCHSBC Full Monthly",
      "title": "Selection of Preferred Schematic Design",
      "label": "M52#10"
-    },
-    {
-     "video_id": "B16QgbwlQNo",
-     "t": 1324,
-     "date": "2026-06-18",
-     "base": "2026-06-18_B16QgbwlQNo",
-     "meeting_title": "6.18.26 MCHSBC",
-     "title": "Preferred Schematic Report (PSR) Submission",
-     "label": "M54#3"
     }
    ]
   },
   {
-   "name": "Construction Manager at Risk Procurement",
+   "name": "Educational Programming and Scope",
    "status": "ongoing",
-   "summary": "Early feasibility documents noted the potential use of a Construction Manager at Risk delivery method [M09#2]. In June 2026, a dedicated subcommittee reviewed procurement guidelines and authorized the drafting of a Request for Qualifications (RFQ) [M53#1, M53#10], which was approved by the full committee [M54#4]. Following proposal reviews and ranking, the committee voted in October 2026 to enter formal contract negotiations with top-ranked firm Suffolk to serve as Construction Manager at Risk [M66#3, M67#3].",
+   "summary": "A core objective of the project is expanding Chapter 74 vocational programs and integrating previously isolated services. The committee approved studying nine new or expanded trades, including cybersecurity and plumbing, and reached agreements to co-locate the Curtis Tufts program, the Medford Early Education Program, and a Teen Health Center within the new facility. Space summary reviews in late 2026 focused on aligning these specialized programs with MSBA square footage guidelines.",
    "citations": [
     {
-     "video_id": "bHomKoTW3J8",
-     "t": 522,
-     "date": "2025-02-11",
-     "base": "2025-02-11_bHomKoTW3J8",
-     "meeting_title": "OPM Selection Committee Meeting",
-     "title": "Draft Request for Services Walkthrough",
-     "label": "M09#2"
-    },
-    {
-     "video_id": "CT9F89z4GEc",
-     "t": 0,
-     "date": "2026-06-12",
-     "base": "2026-06-12_CT9F89z4GEc",
-     "meeting_title": "MCHSBC Subcommittee",
-     "title": "CMR Process Overview",
-     "label": "M53#1"
-    },
-    {
-     "video_id": "CT9F89z4GEc",
-     "t": 4065,
-     "date": "2026-06-12",
-     "base": "2026-06-12_CT9F89z4GEc",
-     "meeting_title": "MCHSBC Subcommittee",
-     "title": "Authorization to Finalize RFQ",
-     "label": "M53#10"
-    },
-    {
-     "video_id": "B16QgbwlQNo",
-     "t": 3920,
-     "date": "2026-06-18",
-     "base": "2026-06-18_B16QgbwlQNo",
-     "meeting_title": "6.18.26 MCHSBC",
-     "title": "CM at Risk RFQ Approval",
-     "label": "M54#4"
-    },
-    {
-     "video_id": "CAS00002553",
-     "t": 478,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
-     "title": "Construction Manager at Risk Selection",
-     "label": "M66#3"
-    },
-    {
-     "video_id": "CP5ho6yZUqo",
-     "t": 629,
-     "date": "2026-10-06",
-     "base": "2026-10-06_CP5ho6yZUqo",
-     "meeting_title": "10.6.25 MCHSBC Full",
-     "title": "Selection of Construction Manager at Risk",
-     "label": "M67#3"
-    }
-   ]
-  },
-  {
-   "name": "Space Summary, Vocational Expansion, and Project Cost Reductions",
-   "status": "ongoing",
-   "summary": "The committee early on studied expanding Chapter 74 vocational programs and aligning building square footage with state guidelines [M03#4, M05#3]. Detailed space summaries were developed comparing existing facilities to MSBA templates, accounting for expanded CTE requirements [M20#5, M29#1]. As preliminary cost estimates exceeded initial projections, the committee established formal space reduction procedures in April 2026 [M45#4]. Subsequent approvals systematically trimmed square footage across administrative, athletic, auditorium, academic, and vocational spaces [M58#9, M62#8, M66#5]. By October 2026, cumulative space efficiency decisions lowered the estimated total project cost to approximately $699 million [M66#5, M67#12].",
-   "citations": [
-    {
-     "video_id": "rzmG_N2g03Y",
-     "t": 3559,
-     "date": "2024-05-14",
-     "base": "2024-05-14_rzmG_N2g03Y",
-     "meeting_title": "MSBA Full Committee Meeting",
-     "title": "Chapter 74 Vocational Program Capacity",
-     "label": "M03#4"
+     "video_id": "A1IveHErhfY",
+     "t": 4805,
+     "date": "2024-05-01",
+     "base": "2024-05-01_A1IveHErhfY",
+     "meeting_title": "MSBA Building Committee",
+     "title": "MSBA Process and Eligibility Phase Overview",
+     "label": "M01#3"
     },
     {
      "video_id": "dFRUMZnF2Cc",
@@ -289,40 +150,74 @@
      "label": "M05#3"
     },
     {
-     "video_id": "h56i5SspnTk",
-     "t": 2201,
-     "date": "2025-12-22",
-     "base": "2025-12-22_h56i5SspnTk",
-     "meeting_title": "MCHSBC Full 12.22.25",
-     "title": "Space Summary and Educational Program",
-     "label": "M20#5"
+     "video_id": "TVmYzv820i8",
+     "t": 3413,
+     "date": "2026-07-23",
+     "base": "2026-07-23_TVmYzv820i8",
+     "meeting_title": "MCHSBC Full Committee",
+     "title": "Teen Health Center Update",
+     "label": "M56#5"
     },
     {
-     "video_id": "1YwANSZvxRw",
-     "t": 12,
-     "date": "2026-03-16",
-     "base": "2026-03-16_1YwANSZvxRw",
-     "meeting_title": "MHS Building Project - CTE Spaces",
-     "title": "Career and Technical Education Space Requirements",
-     "label": "M29#1"
+     "video_id": "18oqzZoi02k",
+     "t": 2116,
+     "date": "2026-09-10",
+     "base": "2026-09-10_18oqzZoi02k",
+     "meeting_title": "9.10.26 MCHSBC Full Meeting",
+     "title": "Curtis Tufts Programmatic Review",
+     "label": "M58#4"
+    },
+    {
+     "video_id": "18oqzZoi02k",
+     "t": 3686,
+     "date": "2026-09-10",
+     "base": "2026-09-10_18oqzZoi02k",
+     "meeting_title": "9.10.26 MCHSBC Full Meeting",
+     "title": "Medford Early Education Program (MEEP)",
+     "label": "M58#5"
+    },
+    {
+     "video_id": "CP5ho6yZUqo",
+     "t": 6707,
+     "date": "2026-10-06",
+     "base": "2026-10-06_CP5ho6yZUqo",
+     "meeting_title": "10.6.25 MCHSBC Full",
+     "title": "Chapter 74 CTE and Teen Health Center Reviews",
+     "label": "M63#8"
+    }
+   ]
+  },
+  {
+   "name": "Fiscal Management and Cost Reductions",
+   "status": "ongoing",
+   "summary": "Following initial estimates that ranged as high as $935 million, the committee initiated a systematic review of 'space efficiencies' to manage the total project cost. Successive rounds of reductions in 2026 targeted administrative offices, classroom sizes, and non-reimbursable areas like the pool basin, resulting in tens of millions in savings. By October 2026, these efforts brought the estimated project cost down to approximately $699 million.",
+   "citations": [
+    {
+     "video_id": "JRjQVQGpaeY",
+     "t": 4791,
+     "date": "2026-02-11",
+     "base": "2026-02-11_JRjQVQGpaeY",
+     "meeting_title": "MCHSBC Full",
+     "title": "Comparative Cost Analysis of Design Alternatives",
+     "label": "M26#5"
     },
     {
      "video_id": "zpgwA5uHibk",
-     "t": 3049,
+     "t": 8292,
      "date": "2026-04-27",
      "base": "2026-04-27_zpgwA5uHibk",
      "meeting_title": "4.27.26 Medford HS Building Committee Meeting",
-     "title": "Resolution: Space Change Proposal Procedure",
-     "label": "M45#4"
+     "title": "Category A Space Change Proposals",
+     "label": "M45#6"
     },
     {
      "video_id": "gy7C3zrS2D0",
-     "t": 5374,
+     "t": null,
      "date": "2026-08-25",
      "base": "2026-08-25_gy7C3zrS2D0",
      "meeting_title": "MCHSBC Full Committee Meeting",
-     "title": "Auditorium Seating Reduction",
-     "label": "M58#9"
+     "title": "MCHSBC Full Committee Meeting",
+     "label": "M57"
     },
     {
      "video_id": "Ewo7VA32tkU",
@@ -331,32 +226,32 @@
      "base": "2026-09-22_Ewo7VA32tkU",
      "meeting_title": "9.22.26 MCHSBC Full Meeting",
      "title": "Cost and Savings Summary",
-     "label": "M62#8"
+     "label": "M61#8"
     },
     {
-     "video_id": "CAS00002553",
-     "t": 2522,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
-     "title": "High School Space Efficiency Review",
-     "label": "M66#5"
+     "video_id": "Ewo7VA32tkU",
+     "t": 6202,
+     "date": "2026-09-22",
+     "base": "2026-09-22_Ewo7VA32tkU",
+     "meeting_title": "9.22.26 MCHSBC Full Meeting",
+     "title": "Pool Design Update and Decision",
+     "label": "M61#9"
     },
     {
      "video_id": "CP5ho6yZUqo",
-     "t": 10163,
+     "t": null,
      "date": "2026-10-06",
      "base": "2026-10-06_CP5ho6yZUqo",
      "meeting_title": "10.6.25 MCHSBC Full",
-     "title": "Public Participation",
-     "label": "M67#12"
+     "title": "10.6.25 MCHSBC Full",
+     "label": "M63"
     }
    ]
   },
   {
-   "name": "Sustainability, Energy, and Mechanical Systems",
+   "name": "Sustainability and Building Systems",
    "status": "settled",
-   "summary": "Initial design kickoff targeted MSBA reimbursement bonuses by adhering to specialized stretch codes and LEED standards [M16#5, M19#2, M24#6]. Environmental modeling included a 50-year Life Cycle Cost Analysis comparing geothermal ground-source, air-to-water heat pump, and hybrid HVAC systems [M49#6, M56#6]. In September 2026, the advisory team recommended an all-electric 100% air-to-water heat pump system over geothermal options due to lower upfront costs and technical feasibility [M63#4]. The committee formally adopted the air-to-water heat pump system alongside a 100% solar Power Purchase Agreement for roof and parking canopy photovoltaics in October 2026 [M65#1, M66#4].",
+   "summary": "The committee established aggressive sustainability goals, targeting LEED certification and compliance with specialized stretch energy codes. After conducting a 50-year life cycle cost analysis comparing geothermal systems with air-source heat pumps, the advisory teams recommended a roof-mounted air-to-water heat pump system. This was finalized alongside a Net Zero energy strategy utilizing solar photovoltaics through a power purchase agreement.",
    "citations": [
     {
      "video_id": "T0WlE3L4gXY",
@@ -369,91 +264,125 @@
     },
     {
      "video_id": "izVdDtzaCdw",
-     "t": 1595,
+     "t": 2027,
      "date": "2025-12-16",
      "base": "2025-12-16_izVdDtzaCdw",
      "meeting_title": "MHS Advisory  Team - Sustainability / MEP",
-     "title": "Sustainability Givens & Regulatory Baselines",
-     "label": "M19#2"
-    },
-    {
-     "video_id": "UdfiATpNBs8",
-     "t": 6487,
-     "date": "2026-01-15",
-     "base": "2026-01-15_UdfiATpNBs8",
-     "meeting_title": "MHS Advisory Team - Exterior & Interior Design / Sustainability / MEP Systems",
-     "title": "LEED Certification and Energy Targets",
-     "label": "M24#6"
-    },
-    {
-     "video_id": "kjKizgNO-oM",
-     "t": 7928,
-     "date": "2026-06-01",
-     "base": "2026-06-02_kjKizgNO-oM",
-     "meeting_title": "6.1.26 MCHSBC Meeting (Zoom Only)",
-     "title": "Evaluation Criteria and Life Cycle Cost Analysis",
-     "label": "M49#6"
+     "title": "Sustainability & MEP Priority Goals Discussion",
+     "label": "M19#3"
     },
     {
      "video_id": "R1m53sR_I7U",
-     "t": 2223,
+     "t": 1640,
      "date": "2026-07-22",
      "base": "2026-07-22_R1m53sR_I7U",
      "meeting_title": "MHS Advisory Team - Sustainability & MEP Systems",
-     "title": "System Parameters for Schematic Design LCCA",
-     "label": "M56#6"
+     "title": "Preliminary Life Cycle Cost Analysis (LCCA)",
+     "label": "M55#5"
     },
     {
-     "video_id": "CAS00002539",
-     "t": 5641,
-     "date": "2026-09-23",
-     "base": "2026-09-28_CAS00002539",
-     "meeting_title": "MHS Building Project: Sustainability & MEP Advisory Team Meeting #6 09/23/26",
-     "title": "HVAC System Recommendation",
-     "label": "M63#4"
-    },
-    {
-     "video_id": "CAS00002547",
-     "t": 41,
+     "video_id": "nGL802GgTNI",
+     "t": 4669,
      "date": "2026-10-01",
-     "base": "2026-10-02_CAS00002547",
-     "meeting_title": "MHS Building Project: Sustainability & MEP Advisory Team Meeting #7  10/01/26",
-     "title": "Air-Source Heat Pump System Recommendation",
-     "label": "M65#1"
+     "base": "2026-10-01_nGL802GgTNI",
+     "meeting_title": "Oct. 1: Site, Safety & Security + Sustainability & MEP Systems Advisory Team Meetings",
+     "title": "HVAC System Recommendation",
+     "label": "M62#5"
     },
     {
-     "video_id": "CAS00002553",
-     "t": 1263,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
+     "video_id": "nGL802GgTNI",
+     "t": 5250,
+     "date": "2026-10-01",
+     "base": "2026-10-01_nGL802GgTNI",
+     "meeting_title": "Oct. 1: Site, Safety & Security + Sustainability & MEP Systems Advisory Team Meetings",
+     "title": "Solar Photovoltaic System Options",
+     "label": "M62#6"
+    },
+    {
+     "video_id": "CP5ho6yZUqo",
+     "t": 1416,
+     "date": "2026-10-06",
+     "base": "2026-10-06_CP5ho6yZUqo",
+     "meeting_title": "10.6.25 MCHSBC Full",
      "title": "HVAC and Solar System Recommendations",
-     "label": "M66#4"
+     "label": "M63#4"
     }
    ]
   },
   {
-   "name": "Community Engagement, Advisory Teams, and Public Outreach",
+   "name": "Site Challenges and Constraints",
    "status": "ongoing",
-   "summary": "A Communications and Community Engagement subcommittee was established at the inaugural meeting to manage public outreach, surveys, and website development [M01#4, M02#4, M03#3]. In late 2025, the committee launched four specialized advisory teams—Sustainability, Safety, Design, and Equity—to gather stakeholder input [M17#7, M21#7]. Outreach efforts expanded in 2026 to include multi-lingual community forums, citywide mailers, and student-produced videos [M25#2, M34#3]. The committee and advisory groups continued hosting public forums through September 2026 to collect feedback on climate, energy, and site plans [M60#1].",
+   "summary": "Technical investigations revealed significant site obstacles, including an 80-foot grade change, the absence of modern fire protection, and failing mechanical systems in the existing 1970s structure. In 2026, the committee addressed a 1967 deed restriction on portions of the campus, which necessitated the elimination of certain design options and coordination with state environmental agencies. Site planning continues to balance athletic field layouts with parking needs and solar canopy installations.",
    "citations": [
     {
-     "video_id": "A1IveHErhfY",
-     "t": 6084,
-     "date": "2024-05-01",
-     "base": "2024-05-01_A1IveHErhfY",
-     "meeting_title": "MSBA Building Committee",
-     "title": "Subcommittee Formation and Assignments",
-     "label": "M01#4"
+     "video_id": "h56i5SspnTk",
+     "t": 1046,
+     "date": "2025-12-22",
+     "base": "2025-12-22_h56i5SspnTk",
+     "meeting_title": "MCHSBC Full 12.22.25",
+     "title": "Existing Conditions Investigations",
+     "label": "M20#4"
     },
     {
+     "video_id": "h56i5SspnTk",
+     "t": 3191,
+     "date": "2025-12-22",
+     "base": "2025-12-22_h56i5SspnTk",
+     "meeting_title": "MCHSBC Full 12.22.25",
+     "title": "Site Analysis and Circulation",
+     "label": "M20#6"
+    },
+    {
+     "video_id": "CH7OeH8n9X8",
+     "t": 2791,
+     "date": "2026-01-01",
+     "base": "2026-01-07_CH7OeH8n9X8",
+     "meeting_title": "Medford High School Building Project Community Forum #1",
+     "title": "Site Investigations and Technical Findings",
+     "label": "M21#6"
+    },
+    {
+     "video_id": "uHVWn-xZoqc",
+     "t": 890,
+     "date": "2026-05-20",
+     "base": "2026-05-20_uHVWn-xZoqc",
+     "meeting_title": "MCHSBC Monthly Meeting",
+     "title": "Deed Restriction and Design Option Modifications",
+     "label": "M48#2"
+    },
+    {
+     "video_id": "nGL802GgTNI",
+     "t": 430,
+     "date": "2026-10-01",
+     "base": "2026-10-01_nGL802GgTNI",
+     "meeting_title": "Oct. 1: Site, Safety & Security + Sustainability & MEP Systems Advisory Team Meetings",
+     "title": "Parking Program and Updated Site Layout",
+     "label": "M62#1"
+    },
+    {
+     "video_id": "CP5ho6yZUqo",
+     "t": 8756,
+     "date": "2026-10-06",
+     "base": "2026-10-06_CP5ho6yZUqo",
+     "meeting_title": "10.6.25 MCHSBC Full",
+     "title": "Site and Parking Alternates",
+     "label": "M63#10"
+    }
+   ]
+  },
+  {
+   "name": "Community Engagement and Communications",
+   "status": "ongoing",
+   "summary": "To ensure transparency, the committee launched a dedicated project website and established a formal communications plan involving citywide mailers, surveys, and multi-lingual community forums. The committee utilized student-produced videos to document building deficiencies and held specialized breakout sessions on climate and water efficiency. Outreach efforts are timed to milestones such as the narrowing of design options and the upcoming debt exclusion vote.",
+   "citations": [
+    {
      "video_id": "wosXaL38meE",
-     "t": 3768,
+     "t": 405,
      "date": "2024-05-09",
      "base": "2024-05-09_wosXaL38meE",
      "meeting_title": "MSBA Communications and Community Engagement",
-     "title": "Plan Recommendation and Role Assignments",
-     "label": "M02#4"
+     "title": "Website Draft and Strategy",
+     "label": "M02#1"
     },
     {
      "video_id": "rzmG_N2g03Y",
@@ -465,31 +394,22 @@
      "label": "M03#3"
     },
     {
-     "video_id": "EjYtsXUKFn4",
-     "t": 4760,
-     "date": "2025-11-24",
-     "base": "2025-11-24_EjYtsXUKFn4",
-     "meeting_title": "MCHSBC Full Monthly",
-     "title": "Formation of Advisory Teams",
-     "label": "M17#7"
-    },
-    {
-     "video_id": "CH7OeH8n9X8",
-     "t": 3367,
-     "date": "2026-01-01",
-     "base": "2026-01-07_CH7OeH8n9X8",
-     "meeting_title": "Medford High School Building Project Community Forum #1",
-     "title": "Community Engagement and Advisory Teams",
-     "label": "M21#7"
+     "video_id": "0u-fMI_TT0Q",
+     "t": 2229,
+     "date": "2024-09-19",
+     "base": "2024-09-19_0u-fMI_TT0Q",
+     "meeting_title": "MSBA Full and CE SubCommittee Meeting",
+     "title": "Communications and Community Engagement Strategy",
+     "label": "M08#5"
     },
     {
      "video_id": "0bvpsciatgg",
-     "t": 1125,
+     "t": 3528,
      "date": "2026-01-28",
      "base": "2026-01-28_0bvpsciatgg",
      "meeting_title": "01.28.2026 MCHSBC Communications Subcommittee Meeting",
-     "title": "Outreach Channels and Community Engagement",
-     "label": "M25#2"
+     "title": "Community Meeting Calendar and Milestones",
+     "label": "M25#4"
     },
     {
      "video_id": "4dOL1TIbGJA",
@@ -502,12 +422,12 @@
     },
     {
      "video_id": "5hO92nxl8ic",
-     "t": 4,
+     "t": null,
      "date": "2026-09-22",
      "base": "2026-09-22_5hO92nxl8ic",
      "meeting_title": "MHS Building Project Comunity Forum #6: Climate, Energy, & Atmosphere Discussion",
-     "title": "First Breakout Session: Climate, Energy, and Atmosphere Discussion",
-     "label": "M60#1"
+     "title": "MHS Building Project Comunity Forum #6: Climate, Energy, & Atmosphere Discussion",
+     "label": "M59"
     }
    ]
   }
@@ -515,501 +435,330 @@
  "periods": [
   {
    "period": "2024 Q2",
-   "narrative": "The committee launched its inaugural meeting, established operating rules and subcommittees, and prepared required documentation for the MSBA eligibility phase [M01#3, M03#2]. Members evaluated potential high school sites and approved educational profile and Chapter 74 vocational expansion submissions [M04#1, M05#3, M06#4].",
+   "narrative": "The committee convened for inaugural meetings to begin the MSBA eligibility phase, establishing subcommittees and receiving legal training on transparency requirements.",
    "citations": [
     {
      "video_id": "A1IveHErhfY",
-     "t": 4805,
+     "t": null,
      "date": "2024-05-01",
      "base": "2024-05-01_A1IveHErhfY",
      "meeting_title": "MSBA Building Committee",
-     "title": "MSBA Process and Eligibility Phase Overview",
-     "label": "M01#3"
+     "title": "MSBA Building Committee",
+     "label": "M01"
     },
     {
-     "video_id": "rzmG_N2g03Y",
-     "t": 381,
-     "date": "2024-05-14",
-     "base": "2024-05-14_rzmG_N2g03Y",
-     "meeting_title": "MSBA Full Committee Meeting",
-     "title": "Committee Operating Rules and Onboarding",
-     "label": "M03#2"
+     "video_id": "wosXaL38meE",
+     "t": null,
+     "date": "2024-05-09",
+     "base": "2024-05-09_wosXaL38meE",
+     "meeting_title": "MSBA Communications and Community Engagement",
+     "title": "MSBA Communications and Community Engagement",
+     "label": "M02"
     },
     {
      "video_id": "bv-PbDpiP-8",
-     "t": 211,
+     "t": null,
      "date": "2024-05-30",
      "base": "2024-05-30_bv-PbDpiP-8",
      "meeting_title": "MHCSBC FInance Suboommittee",
-     "title": "Potential High School Sites",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "dFRUMZnF2Cc",
-     "t": 3786,
-     "date": "2024-06-05",
-     "base": "2024-06-05_dFRUMZnF2Cc",
-     "meeting_title": "MCHSBC Full Meeting",
-     "title": "Chapter 74 Viability Form",
-     "label": "M05#3"
-    },
-    {
-     "video_id": "zIDY2XMKUO4",
-     "t": 485,
-     "date": "2024-06-13",
-     "base": "2024-06-13_zIDY2XMKUO4",
-     "meeting_title": "MHCSBC Full Meeting",
-     "title": "Educational Profile Approval",
-     "label": "M06#4"
+     "title": "MHCSBC FInance Suboommittee",
+     "label": "M04"
     }
    ]
   },
   {
    "period": "2024 Q3",
-   "narrative": "The committee completed state-required eligibility deliverables and formed an OPM Selection Committee to manage upcoming public procurement [M07#2, M08#4]. Communications efforts focused on district surveys, website content, and touring regional high schools [M08#3, M08#6].",
+   "narrative": "Deliverables for the eligibility phase were submitted to the state, and the body approved the formation of a selection committee for project management.",
    "citations": [
     {
      "video_id": "5M4jH9XTbUU",
-     "t": 266,
+     "t": null,
      "date": "2024-07-17",
      "base": "2024-07-18_5M4jH9XTbUU",
      "meeting_title": "MCHSBC Full Meeting July 17, 2024",
-     "title": "Eligibility Phase Status Report",
-     "label": "M07#2"
+     "title": "MCHSBC Full Meeting July 17, 2024",
+     "label": "M07"
     },
     {
      "video_id": "0u-fMI_TT0Q",
-     "t": 750,
+     "t": null,
      "date": "2024-09-19",
      "base": "2024-09-19_0u-fMI_TT0Q",
      "meeting_title": "MSBA Full and CE SubCommittee Meeting",
-     "title": "Timeline and Building Tours",
-     "label": "M08#3"
-    },
-    {
-     "video_id": "0u-fMI_TT0Q",
-     "t": 834,
-     "date": "2024-09-19",
-     "base": "2024-09-19_0u-fMI_TT0Q",
-     "meeting_title": "MSBA Full and CE SubCommittee Meeting",
-     "title": "OPM Selection Committee Formation",
-     "label": "M08#4"
-    },
-    {
-     "video_id": "0u-fMI_TT0Q",
-     "t": 2726,
-     "date": "2024-09-19",
-     "base": "2024-09-19_0u-fMI_TT0Q",
-     "meeting_title": "MSBA Full and CE SubCommittee Meeting",
-     "title": "Community and Board Surveys",
-     "label": "M08#6"
+     "title": "MSBA Full and CE SubCommittee Meeting",
+     "label": "M08"
     }
    ]
   },
   {
    "period": "2025 Q1",
-   "narrative": "The OPM Selection Committee drafted and finalized the Request for Services for an Owner's Project Manager [M09#2, M09#10]. The full committee approved the RFS and expanded the selection subcommittee after the MSBA certified student enrollment at 1,395 [M10#2, M10#3, M10#4].",
+   "narrative": "The MSBA certified an enrollment projection of 1,395 students while the committee finalized the Request for Services to hire an Owner's Project Manager.",
    "citations": [
     {
      "video_id": "bHomKoTW3J8",
-     "t": 522,
+     "t": null,
      "date": "2025-02-11",
      "base": "2025-02-11_bHomKoTW3J8",
      "meeting_title": "OPM Selection Committee Meeting",
-     "title": "Draft Request for Services Walkthrough",
-     "label": "M09#2"
-    },
-    {
-     "video_id": "bHomKoTW3J8",
-     "t": 3888,
-     "date": "2025-02-11",
-     "base": "2025-02-11_bHomKoTW3J8",
-     "meeting_title": "OPM Selection Committee Meeting",
-     "title": "Referral of RFS to Full Committee",
-     "label": "M09#10"
+     "title": "OPM Selection Committee Meeting",
+     "label": "M09"
     },
     {
      "video_id": "L-37LV9dgxU",
-     "t": 204,
+     "t": null,
      "date": "2025-02-24",
      "base": "2025-02-24_L-37LV9dgxU",
      "meeting_title": "MSBA Full Meeting - Post Attendance",
-     "title": "MSBA Phase 1 Update",
-     "label": "M10#2"
-    },
-    {
-     "video_id": "L-37LV9dgxU",
-     "t": 877,
-     "date": "2025-02-24",
-     "base": "2025-02-24_L-37LV9dgxU",
-     "meeting_title": "MSBA Full Meeting - Post Attendance",
-     "title": "OPM Request for Services Review",
-     "label": "M10#3"
-    },
-    {
-     "video_id": "L-37LV9dgxU",
-     "t": 2593,
-     "date": "2025-02-24",
-     "base": "2025-02-24_L-37LV9dgxU",
-     "meeting_title": "MSBA Full Meeting - Post Attendance",
-     "title": "OPM Selection Committee Expansion",
-     "label": "M10#4"
+     "title": "MSBA Full Meeting - Post Attendance",
+     "label": "M10"
     }
    ]
   },
   {
    "period": "2025 Q2",
-   "narrative": "The committee hired Left Field as Owner's Project Manager, approved their contract, and initiated the designer procurement process [M11#2, M11#3, M12#2]. Project management conducted preliminary alternate site reviews and established a schedule for designer selection [M13#1, M13#2].",
+   "narrative": "Left Field was hired as the project's OPM, and the committee initiated a peer review of alternative city sites for the new school.",
    "citations": [
     {
      "video_id": "Gg7MfqcnomU",
-     "t": 411,
+     "t": null,
      "date": "2025-05-12",
      "base": "2025-05-12_Gg7MfqcnomU",
      "meeting_title": "MHCSBC Full Meeting - May 12, 2025",
-     "title": "Introduction of OPM and Left Field Presentation",
-     "label": "M11#2"
-    },
-    {
-     "video_id": "Gg7MfqcnomU",
-     "t": 3444,
-     "date": "2025-05-12",
-     "base": "2025-05-12_Gg7MfqcnomU",
-     "meeting_title": "MHCSBC Full Meeting - May 12, 2025",
-     "title": "Review and Approval of Designer Request for Services",
-     "label": "M11#3"
+     "title": "MHCSBC Full Meeting - May 12, 2025",
+     "label": "M11"
     },
     {
      "video_id": "s093VSbtp08",
-     "t": 307,
+     "t": null,
      "date": "2025-06-02",
      "base": "2025-06-02_s093VSbtp08",
      "meeting_title": "MSBA Full Meeting (Vote)",
-     "title": "Left Field OPM Contract Approval",
-     "label": "M12#2"
+     "title": "MSBA Full Meeting (Vote)",
+     "label": "M12"
     },
     {
      "video_id": "eVGy96zbLTU",
-     "t": 0,
+     "t": null,
      "date": "2025-06-11",
      "base": "2025-06-11_eVGy96zbLTU",
      "meeting_title": "MCHSBC Full Meeting",
-     "title": "Alternative Site Peer Review",
-     "label": "M13#1"
-    },
-    {
-     "video_id": "eVGy96zbLTU",
-     "t": 1748,
-     "date": "2025-06-11",
-     "base": "2025-06-11_eVGy96zbLTU",
-     "meeting_title": "MCHSBC Full Meeting",
-     "title": "Designer Procurement Schedule and Educational Plan",
-     "label": "M13#2"
+     "title": "MCHSBC Full Meeting",
+     "label": "M13"
     }
    ]
   },
   {
    "period": "2025 Q3",
-   "narrative": "The committee reviewed designer evaluation criteria, narrowed prospective site options, and reviewed four architectural design proposals [M14#1, M14#3, M15#4].",
+   "narrative": "The committee reviewed designer proposals and advanced educational planning through teacher study tours of peer high schools.",
    "citations": [
     {
      "video_id": "AhbnPsYYkrc",
-     "t": 0,
+     "t": null,
      "date": "2025-08-11",
      "base": "2025-08-11_AhbnPsYYkrc",
      "meeting_title": "MSBA Full Committee Meeting",
-     "title": "Designer Selection Process and Evaluation",
-     "label": "M14#1"
-    },
-    {
-     "video_id": "AhbnPsYYkrc",
-     "t": 2345,
-     "date": "2025-08-11",
-     "base": "2025-08-11_AhbnPsYYkrc",
-     "meeting_title": "MSBA Full Committee Meeting",
-     "title": "Site Selection Options Review",
-     "label": "M14#3"
+     "title": "MSBA Full Committee Meeting",
+     "label": "M14"
     },
     {
      "video_id": "mtlACKVIlfY",
-     "t": 532,
+     "t": null,
      "date": "2025-09-15",
      "base": "2025-09-15_mtlACKVIlfY",
      "meeting_title": "MHCSBC Full Meeting",
-     "title": "Review of Designer Proposals",
-     "label": "M15#4"
+     "title": "MHCSBC Full Meeting",
+     "label": "M15"
     }
    ]
   },
   {
    "period": "2025 Q4",
-   "narrative": "Top-ranked design firm SMMA kicked off the feasibility study phase, leading educational visioning and site investigations [M16#2, M16#3, M17#5]. The committee approved SMMA's contract, established four community advisory teams, and reviewed initial space summary data and building deficiencies [M17#3, M17#7, M20#4, M20#5].",
+   "narrative": "SMMA began the feasibility phase, conducting engineering walkthroughs and launching specialized advisory teams for safety, design, and sustainability.",
    "citations": [
     {
      "video_id": "T0WlE3L4gXY",
-     "t": 2215,
+     "t": null,
      "date": "2025-10-27",
      "base": "2025-10-27_T0WlE3L4gXY",
      "meeting_title": "1-.27.2025 MHCSBC",
-     "title": "Designer Selection Panel Review",
-     "label": "M16#2"
-    },
-    {
-     "video_id": "T0WlE3L4gXY",
-     "t": 2971,
-     "date": "2025-10-27",
-     "base": "2025-10-27_T0WlE3L4gXY",
-     "meeting_title": "1-.27.2025 MHCSBC",
-     "title": "SMMA Team Introduction and Roadmap",
-     "label": "M16#3"
+     "title": "1-.27.2025 MHCSBC",
+     "label": "M16"
     },
     {
      "video_id": "EjYtsXUKFn4",
-     "t": 458,
+     "t": null,
      "date": "2025-11-24",
      "base": "2025-11-24_EjYtsXUKFn4",
      "meeting_title": "MCHSBC Full Monthly",
-     "title": "Approval of SMMA Contract",
-     "label": "M17#3"
-    },
-    {
-     "video_id": "EjYtsXUKFn4",
-     "t": 4760,
-     "date": "2025-11-24",
-     "base": "2025-11-24_EjYtsXUKFn4",
-     "meeting_title": "MCHSBC Full Monthly",
-     "title": "Formation of Advisory Teams",
-     "label": "M17#7"
+     "title": "MCHSBC Full Monthly",
+     "label": "M17"
     },
     {
      "video_id": "h56i5SspnTk",
-     "t": 1046,
+     "t": null,
      "date": "2025-12-22",
      "base": "2025-12-22_h56i5SspnTk",
      "meeting_title": "MCHSBC Full 12.22.25",
-     "title": "Existing Conditions Investigations",
-     "label": "M20#4"
-    },
-    {
-     "video_id": "h56i5SspnTk",
-     "t": 2201,
-     "date": "2025-12-22",
-     "base": "2025-12-22_h56i5SspnTk",
-     "meeting_title": "MCHSBC Full 12.22.25",
-     "title": "Space Summary and Educational Program",
-     "label": "M20#5"
+     "title": "MCHSBC Full 12.22.25",
+     "label": "M20"
     }
    ]
   },
   {
    "period": "2026 Q1",
-   "narrative": "The committee hosted community forums, reviewed 29 conceptual design alternatives, and submitted the Preliminary Design Program to the MSBA [M21#1, M23#6, M27#3]. Members updated evaluation criteria and selected six design options to move forward for detailed study [M27#4, M34#4].",
+   "narrative": "The committee analyzed 29 design alternatives and submitted its Preliminary Design Program to the MSBA after extensive community feedback sessions.",
    "citations": [
     {
      "video_id": "CH7OeH8n9X8",
-     "t": 6,
+     "t": null,
      "date": "2026-01-01",
      "base": "2026-01-07_CH7OeH8n9X8",
      "meeting_title": "Medford High School Building Project Community Forum #1",
-     "title": "Introductions and Project Background",
-     "label": "M21#1"
+     "title": "Medford High School Building Project Community Forum #1",
+     "label": "M21"
     },
     {
      "video_id": "-lAwBjJUa7k",
-     "t": 1932,
+     "t": null,
      "date": "2026-01-14",
      "base": "2026-01-14_-lAwBjJUa7k",
      "meeting_title": "MCHSBC Interim",
-     "title": "Presentation of High-Level Cost Alternatives",
-     "label": "M23#6"
+     "title": "MCHSBC Interim",
+     "label": "M23"
     },
     {
      "video_id": "fTvN7dy32F0",
-     "t": 796,
+     "t": null,
      "date": "2026-02-23",
      "base": "2026-02-23_fTvN7dy32F0",
      "meeting_title": "MCHSBC Full Monthly",
-     "title": "Preliminary Design Program (PDP) Submission",
-     "label": "M27#3"
-    },
-    {
-     "video_id": "fTvN7dy32F0",
-     "t": 1829,
-     "date": "2026-02-23",
-     "base": "2026-02-23_fTvN7dy32F0",
-     "meeting_title": "MCHSBC Full Monthly",
-     "title": "Evaluation Criteria: Space Optimization and Education",
-     "label": "M27#4"
+     "title": "MCHSBC Full Monthly",
+     "label": "M27"
     },
     {
      "video_id": "4dOL1TIbGJA",
-     "t": 1610,
+     "t": null,
      "date": "2026-03-23",
      "base": "2026-03-23_4dOL1TIbGJA",
      "meeting_title": "MCHSBC Full Monthly",
-     "title": "Selection of Design Alternatives",
-     "label": "M34#4"
+     "title": "MCHSBC Full Monthly",
+     "label": "M34"
     }
    ]
   },
   {
    "period": "2026 Q2",
-   "narrative": "After a 1967 deed restriction required design modifications, the committee selected Option C2.2A as its preferred schematic design [M48#2, M52#10]. The body authorized the Preferred Schematic Report submission and approved releasing an RFQ for a Construction Manager at Risk [M54#3, M54#4].",
+   "narrative": "Finalists were narrowed down to a single preferred design, Option C2.2A, while the committee managed the impacts of a historical deed restriction on the property.",
    "citations": [
     {
+     "video_id": "ffjTstx7Xxg",
+     "t": null,
+     "date": "2026-04-01",
+     "base": "2026-04-14_ffjTstx7Xxg",
+     "meeting_title": "Design Option D 1.1 - MHS Building Project",
+     "title": "Design Option D 1.1 - MHS Building Project",
+     "label": "M35"
+    },
+    {
      "video_id": "uHVWn-xZoqc",
-     "t": 890,
+     "t": null,
      "date": "2026-05-20",
      "base": "2026-05-20_uHVWn-xZoqc",
      "meeting_title": "MCHSBC Monthly Meeting",
-     "title": "Deed Restriction and Design Option Modifications",
-     "label": "M48#2"
+     "title": "MCHSBC Monthly Meeting",
+     "label": "M48"
     },
     {
      "video_id": "c6Y6iezvU4o",
-     "t": 5876,
+     "t": null,
      "date": "2026-06-10",
      "base": "2026-06-11_c6Y6iezvU4o",
      "meeting_title": "6.10.26 MCHSBC Full Monthly",
-     "title": "Selection of Preferred Schematic Design",
-     "label": "M52#10"
+     "title": "6.10.26 MCHSBC Full Monthly",
+     "label": "M52"
     },
     {
      "video_id": "B16QgbwlQNo",
-     "t": 1324,
+     "t": null,
      "date": "2026-06-18",
      "base": "2026-06-18_B16QgbwlQNo",
      "meeting_title": "6.18.26 MCHSBC",
-     "title": "Preferred Schematic Report (PSR) Submission",
-     "label": "M54#3"
-    },
-    {
-     "video_id": "B16QgbwlQNo",
-     "t": 3920,
-     "date": "2026-06-18",
-     "base": "2026-06-18_B16QgbwlQNo",
-     "meeting_title": "6.18.26 MCHSBC",
-     "title": "CM at Risk RFQ Approval",
-     "label": "M54#4"
+     "title": "6.18.26 MCHSBC",
+     "label": "M54"
     }
    ]
   },
   {
    "period": "2026 Q3",
-   "narrative": "The committee advanced schematic design work, receiving positive feedback from the MSBA on its educational plan [M55#4, M57#4]. Members approved substantial space efficiency reductions across academic, vocational, and community programs to manage costs and voted to proceed with renovating the base pool facility [M58#9, M59#5, M62#8, M62#9].",
+   "narrative": "The body voted on significant space and cost reductions across academic and vocational programs to align with city debt capacity.",
    "citations": [
     {
-     "video_id": "CAS00002491",
-     "t": 1347,
+     "video_id": "R1m53sR_I7U",
+     "t": null,
      "date": "2026-07-22",
-     "base": "2026-07-23_CAS00002491",
-     "meeting_title": "School Committee MCHSBC 07/22/26",
-     "title": "MSBA Facilities Assessment Subcommittee Update",
-     "label": "M55#4"
-    },
-    {
-     "video_id": "TVmYzv820i8",
-     "t": 1570,
-     "date": "2026-07-23",
-     "base": "2026-07-23_TVmYzv820i8",
-     "meeting_title": "MCHSBC Full Committee",
-     "title": "FAS Meeting Update",
-     "label": "M57#4"
+     "base": "2026-07-22_R1m53sR_I7U",
+     "meeting_title": "MHS Advisory Team - Sustainability & MEP Systems",
+     "title": "MHS Advisory Team - Sustainability & MEP Systems",
+     "label": "M55"
     },
     {
      "video_id": "gy7C3zrS2D0",
-     "t": 5374,
+     "t": null,
      "date": "2026-08-25",
      "base": "2026-08-25_gy7C3zrS2D0",
      "meeting_title": "MCHSBC Full Committee Meeting",
-     "title": "Auditorium Seating Reduction",
-     "label": "M58#9"
-    },
-    {
-     "video_id": "18oqzZoi02k",
-     "t": 3686,
-     "date": "2026-09-10",
-     "base": "2026-09-10_18oqzZoi02k",
-     "meeting_title": "9.10.26 MCHSBC Full Meeting",
-     "title": "Medford Early Education Program (MEEP)",
-     "label": "M59#5"
+     "title": "MCHSBC Full Committee Meeting",
+     "label": "M57"
     },
     {
      "video_id": "Ewo7VA32tkU",
-     "t": 6085,
+     "t": null,
      "date": "2026-09-22",
      "base": "2026-09-22_Ewo7VA32tkU",
      "meeting_title": "9.22.26 MCHSBC Full Meeting",
-     "title": "Cost and Savings Summary",
-     "label": "M62#8"
-    },
-    {
-     "video_id": "Ewo7VA32tkU",
-     "t": 6202,
-     "date": "2026-09-22",
-     "base": "2026-09-22_Ewo7VA32tkU",
-     "meeting_title": "9.22.26 MCHSBC Full Meeting",
-     "title": "Pool Design Update and Decision",
-     "label": "M62#9"
+     "title": "9.22.26 MCHSBC Full Meeting",
+     "label": "M61"
     }
    ]
   },
   {
    "period": "2026 Q4",
-   "narrative": "The committee voted to enter contract negotiations with Suffolk as Construction Manager at Risk and adopted recommendations for an air-to-water heat pump HVAC system and solar PPA [M66#3, M66#4]. Final space adjustments lowered the estimated total project cost to approximately $699 million [M66#5, M67#12].",
+   "narrative": "Suffolk was selected as the construction manager, and the committee finalized schematic designs for high-efficiency HVAC and solar systems.",
    "citations": [
     {
-     "video_id": "CAS00002553",
-     "t": 478,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
-     "title": "Construction Manager at Risk Selection",
-     "label": "M66#3"
-    },
-    {
-     "video_id": "CAS00002553",
-     "t": 1263,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
-     "title": "HVAC and Solar System Recommendations",
-     "label": "M66#4"
-    },
-    {
-     "video_id": "CAS00002553",
-     "t": 2522,
-     "date": "2026-10-05",
-     "base": "2026-10-07_CAS00002553",
-     "meeting_title": "School Committee MCHSBC 10/05/26",
-     "title": "High School Space Efficiency Review",
-     "label": "M66#5"
+     "video_id": "nGL802GgTNI",
+     "t": null,
+     "date": "2026-10-01",
+     "base": "2026-10-01_nGL802GgTNI",
+     "meeting_title": "Oct. 1: Site, Safety & Security + Sustainability & MEP Systems Advisory Team Meetings",
+     "title": "Oct. 1: Site, Safety & Security + Sustainability & MEP Systems Advisory Team Meetings",
+     "label": "M62"
     },
     {
      "video_id": "CP5ho6yZUqo",
-     "t": 10163,
+     "t": null,
      "date": "2026-10-06",
      "base": "2026-10-06_CP5ho6yZUqo",
      "meeting_title": "10.6.25 MCHSBC Full",
-     "title": "Public Participation",
-     "label": "M67#12"
+     "title": "10.6.25 MCHSBC Full",
+     "label": "M63"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 97,
-  "meetings_cited": 44,
-  "of_meetings": 67,
-  "max_share": 0.062,
-  "most_cited": "CAS00002553",
+  "citations": 69,
+  "meetings_cited": 40,
+  "of_meetings": 63,
+  "max_share": 0.087,
+  "most_cited": "CP5ho6yZUqo",
   "periods_covered": 10,
   "of_periods": 10
  },
  "usage": {
-  "input_tokens": 24312,
-  "output_tokens": 3547,
-  "model_version": "gemini-3.6-flash"
+  "input_tokens": 22922,
+  "output_tokens": 2035,
+  "model_version": "gemini-3-flash-preview"
  }
 }
