@@ -1,0 +1,58 @@
+{
+ "video_id": "MCM00001600",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T09:10:58Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "952f60164afd6b0f",
+ "subject": "",
+ "overview": "The board approved a dimensional variance for a residential garage on Judkins Road and determined that refinements to a major 350-unit Chapter 40B development at 4000 Mystic Valley Parkway were insubstantial changes.",
+ "items": [
+  {
+   "title": "32 Judkins Road",
+   "t": 16,
+   "summary": "Approved a six-foot side yard setback variance for a one-car garage to resolve significant flooding and drainage issues caused by the property's unique topography and pie-shaped lot. Several neighbors spoke in support of the project, citing the applicants' status as long-term residents and the need for flood mitigation.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kimberly Rupert",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Danielle Evans",
+    "Chris D'Aveta",
+    "Robert Mello",
+    "Tim [Unknown]",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "4000 Mystic Valley Parkway",
+   "t": 1736,
+   "summary": "Voted to find that proposed design refinements to a previously approved 350-unit multifamily development, including relocating bike and trash rooms for better exterior access and shifting rooftop amenities, constituted insubstantial changes under 40B regulations. The applicant noted that the unit count, parking spaces, and building height remain unchanged from the original permit.",
+   "speakers": [
+    "Denis MacDougall",
+    "Tim Alexander",
+    "Mike Caldera",
+    "Mary Lee",
+    "Chris D'Aveta",
+    "Attorney Chris Grenier"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 3481,
+   "summary": "Tentatively scheduled the next meeting for December 5 to avoid the Thanksgiving holiday and tabled the approval of meeting minutes until the next session.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 20578,
+  "output_tokens": 497,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
