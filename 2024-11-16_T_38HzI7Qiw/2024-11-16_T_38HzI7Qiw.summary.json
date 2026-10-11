@@ -1,0 +1,52 @@
+{
+ "video_id": "T_38HzI7Qiw",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T00:05:34Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "faa5f2ac4dbbcbda",
+ "subject": "",
+ "overview": "The West Medford Community Center hosted its monthly Fresh Fridays Words and Music program, featuring a discussion on the center's leadership and upcoming initiatives followed by a musical performance.",
+ "items": [
+  {
+   "title": "Welcome and Poetry Reading",
+   "t": 810,
+   "summary": "Terry Carter opened the program with remarks on center activities and recited his poem 'Picket Fences' reflecting on neighborhood history and gentrification.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Conversation with Executive Director Lisa Crossman",
+   "t": 1477,
+   "summary": "Executive Director Lisa Crossman discussed stepping into leadership, preparations for the center's 90th anniversary, launching the Circles USA poverty reduction initiative, and building sustainable funding.",
+   "speakers": [
+    "Terry Carter",
+    "Lisa Crossman"
+   ]
+  },
+  {
+   "title": "Musical Performance by Donna McElroy",
+   "t": 3856,
+   "summary": "Vocalist Donna McElroy performed a set of traditional hymns, spirituals, and jazz standards interspersed with personal reflections and storytelling.",
+   "speakers": [
+    "Terry Carter",
+    "Donna McElroy"
+   ]
+  },
+  {
+   "title": "Community Announcements and Closing",
+   "t": 7013,
+   "summary": "Carter closed the evening by announcing upcoming events, including senior lunches, a vaccine clinic, and the holiday Black Vendor Fair.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26582,
+  "output_tokens": 384,
+  "model_version": "gemini-3.8-flash"
+ }
+}
