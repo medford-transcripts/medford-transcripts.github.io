@@ -295,6 +295,49 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
 
+## Same date, very different lengths: WORD COUNT is the discriminator
+
+Jason's triage, 2026-10-11: same date and vastly different lengths is either
+two meetings concatenated (keep the longer), dead air (keep by source
+priority), or two same-day meetings (keep both). Applied to the Building
+Committee's four unresolved cases, and one measurement makes it mechanical
+WHERE EITHER COPY IS TRANSCRIBED:
+
+    MCM00000884 (3831s) vs dFRUMZnF2Cc (6898s) -- 44% apart on duration
+      words: 7,961 vs 8,085          -> 1.5% apart on CONTENT
+      5-gram Jaccard 0.667, containment 0.807
+      dFRUMZnF2Cc opens "yeah it libby can you hear us now... it's really
+      funky" -- about 50 minutes of pre-meeting sound check
+
+So **duration is the wrong axis and word count is the right one**:
+
+| branch | signature |
+|---|---|
+| dead air | word counts ~equal, durations differ |
+| concatenated | the shorter ones' words SUM to the longer's; high containment, low Jaccard each way |
+| two meetings | word counts differ AND Jaccard is low both ways |
+
+Resolved with it (all five marked `duplicate_method: manual_rule`,
+`manual_correction` so no metadata pass reverses a human rule):
+
+- `CAS00001740` -> `dFRUMZnF2Cc` (dead air; official source wins)
+- `CAS00002256` -> `T0WlE3L4gXY` (dead air, 6933s vs 8663s, no same-body
+  sibling sums to the longer; official Medford Public Schools over Castus)
+- `CAS00001863`, `CAS00001864`, `MCM00001454` -> `0u-fMI_TT0Q` (concatenated:
+  1257 + 1830 = 3087s, 92% of the merged 3350s; keep the longer)
+- `CAS00002457` KEPT: 3038s on 06/11 vs CT9F89z4GEc 4178s on 06/12, nothing
+  sums, so two separate meetings. Recorded in `dedup_reviewed` so it is not
+  re-litigated.
+
+**The trap this hit, worth keeping:** the first attempt pointed CAS00001740 at
+MCM00000884, which is itself skipped -- hiding a meeting behind a hidden copy.
+identify_duplicate_videos has an explicit guard for exactly that; a hand edit
+does not. Always chain to the VISIBLE keeper.
+
+Not automated: the word-count test needs one copy transcribed, and the
+outstanding Castus items are not. Where neither is transcribed, duration plus
+the same-body sum test is all there is.
+
 ## The one-day offset rule, now specified by measurement -- 2026-10-11
 
 Jason asked how many of the Building Committee's outstanding meetings are
