@@ -71,6 +71,38 @@ MAX_OUTPUT = 8000
 # one meeting on the only thing that mattered.
 CONCENTRATION_WARN = 0.25
 
+# A roll-up over four meetings tells a reader nothing the four per-meeting
+# summaries do not already say, and rule 2 ("spread the weight") has nothing
+# to spread. Measured against the active list: 21 of 30 active bodies clear
+# this, and the ones below it are bodies the archive has barely caught yet.
+MIN_SUMMARIES = 5
+
+# HOW STALE BEFORE IT IS WORTH A REQUEST. sources_sha changes the moment ANY
+# of a body's summaries is written or rewritten, so on its own it would make
+# the hourly job regenerate an overview for every body that gained a single
+# meeting -- up to a dozen requests a day, forever, to move a sentence. That
+# is the churn that would eat the allowance the overviews were given priority
+# over. Jason, 2026-10-10: "we'll redo the committee level overviews when the
+# summaries are more complete".
+#
+# So an existing overview is left alone until the body has gained this many
+# summaries. A body with NO overview is never held back by it.
+MIN_NEW_SUMMARIES = 5
+
+# Bodies to write before the rest, in rank order -- same idiom as
+# summary_priority.txt and ids_to_transcribe.txt. Everything not listed keeps
+# the default order (best-covered first).
+PRIORITY_FILE = "overview_priority.txt"
+
+# NOT PUBLIC BODIES, though meeting_types.json gives them no "kind" to say so.
+# The system prompt opens "You write the standing overview of a public body",
+# which is simply false for these: Election is campaign and forum coverage
+# across many bodies, Community Meeting is a venue label, and the WMCC is a
+# community organisation whose videos are programming rather than governance.
+# An overview of any of them would be a confident answer to a question nobody
+# asked.
+NOT_A_BODY = {"Election", "Community Meeting", "West Medford Community Center"}
+
 # DID THE LAST CALL SPEND A REQUEST? The --active loop cannot infer it: an
 # overview that existed but was REGENERATED (its sources changed) looks
 # exactly like a cache hit from the outside, and counting it as free would let
@@ -442,7 +474,8 @@ def sources_sha(meetings):
 
 
 def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
-                        force=False, check=False, video_data=None):
+                        force=False, check=False, video_data=None,
+                        min_new=MIN_NEW_SUMMARIES):
     meetings = source_summaries(committee, video_data)
     if not meetings:
         print("%s: no summarised meetings" % committee)
@@ -469,6 +502,20 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
             old = json.load(io.open(dest, encoding="utf-8"))
             if old.get("sources_sha") == sha:
                 print("%s: current (%d meetings)" % (committee, len(meetings)))
+                _CACHED = True
+                return old
+            # SHA-CHANGED IS NOT THE SAME AS WORTH REDOING. Measured on the
+            # 21:05 run of 2026-10-10: the Building Committee regenerated
+            # because it had gained ONE summary, 62 -> 63, spending a request
+            # to move a sentence. At a dozen new summaries a day across 20
+            # bodies that is most of the allowance, forever, and the whole
+            # point of putting overviews first was to spend it on bodies that
+            # have none yet.
+            gained = len(meetings) - (old.get("n_meetings") or 0)
+            if gained < min_new:
+                print("%s: current enough (%d meetings, %+d since the "
+                      "overview; redone at %+d)"
+                      % (committee, len(meetings), gained, min_new))
                 _CACHED = True
                 return old
         except ValueError:
@@ -518,20 +565,18 @@ def summarise_committee(committee, model=sm.DEFAULT_PROVIDER, dry_run=False,
     return out
 
 
-# A roll-up over four meetings tells a reader nothing the four per-meeting
-# summaries do not already say, and rule 2 ("spread the weight") has nothing
-# to spread. Measured against the active list: 21 of 30 active bodies clear
-# this, and the ones below it are bodies the archive has barely caught yet.
-MIN_SUMMARIES = 5
 
-# NOT PUBLIC BODIES, though meeting_types.json gives them no "kind" to say so.
-# The system prompt opens "You write the standing overview of a public body",
-# which is simply false for these: Election is campaign and forum coverage
-# across many bodies, Community Meeting is a venue label, and the WMCC is a
-# community organisation whose videos are programming rather than governance.
-# An overview of any of them would be a confident answer to a question nobody
-# asked.
-NOT_A_BODY = {"Election", "Community Meeting", "West Medford Community Center"}
+
+def priority_bodies(path=PRIORITY_FILE):
+    """Body names to write first, in file order. # comments ignored."""
+    if not os.path.exists(path):
+        return []
+    out = []
+    for line in io.open(path, encoding="utf-8"):
+        line = line.split("#", 1)[0].strip()
+        if line and line not in out:
+            out.append(line)
+    return out
 
 
 def active_bodies(video_data=None, days=365, min_summaries=MIN_SUMMARIES):
@@ -561,6 +606,10 @@ def active_bodies(video_data=None, days=365, min_summaries=MIN_SUMMARIES):
         if last.get(c, "") < cutoff:
             continue
         out.append((c, s, n, last.get(c, "")))
+    # PRIORITY FIRST, in file order; the rest keep best-covered-first. A
+    # stable sort on the rank alone preserves that for everything unlisted.
+    rank = {name: i for i, name in enumerate(priority_bodies())}
+    out.sort(key=lambda r: rank.get(r[0], len(rank)))
     return out
 
 
@@ -596,6 +645,11 @@ def main():
     ap.add_argument("--check", action="store_true",
                     help="measure the overview already on disk; no API call")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--min-new", type=int, default=MIN_NEW_SUMMARIES,
+                    dest="min_new",
+                    help="how many new summaries a body must gain before an "
+                         "EXISTING overview is redone. 0 redoes on any "
+                         "change. Default %d" % MIN_NEW_SUMMARIES)
     ap.add_argument("--list", action="store_true",
                     help="summary coverage per body, best covered first")
     ap.add_argument("--active", action="store_true",
@@ -628,7 +682,8 @@ def main():
                   % (sm.printable(c), s_, n, last))
             try:
                 got = summarise_committee(c, args.model, args.dry_run,
-                                          args.force, args.check, video_data)
+                                          args.force, args.check, video_data,
+                                          args.min_new)
                 # CACHED OVERVIEWS ARE FREE, so they must not count against
                 # --limit -- the same arithmetic bug summarize_meeting had,
                 # where a limit was spent on meetings nothing was asked about.
@@ -679,7 +734,8 @@ def main():
         print("No body named %r. Try --list." % args.committee)
         return 1
     out = summarise_committee(args.committee, args.model, args.dry_run,
-                              args.force, args.check, video_data)
+                              args.force, args.check, video_data,
+                              args.min_new)
     if args.dry_run and args.show_prompt and out:
         print()
         print(sm.printable(out["prompt"]))

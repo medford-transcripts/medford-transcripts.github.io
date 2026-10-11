@@ -1,0 +1,8 @@
+# Bodies whose committee overview is written before the rest, in this order.
+# Everything unlisted keeps the default order (best-covered first).
+#
+# Same idiom as summary_priority.txt and ids_to_transcribe.txt. A name must
+# match a meeting_type exactly; summarize_committee --active --dry-run shows
+# the resulting order without spending anything.
+CC Zoning Board of Appeals
+CC City Council

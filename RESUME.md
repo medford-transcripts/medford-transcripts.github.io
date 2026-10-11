@@ -55,6 +55,34 @@ The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
 a check that always fails is not a check. Worth looking at `bing_status.py`
 and the other validators for the same shape.
 
+## Overview rollout: working, and rate-limited -- measured 2026-10-11
+
+**It is generating.** Wired at 10-10 18:39; in the six runs since, the cron
+regenerated the Building Committee (21:05) and wrote MPS School Committee
+(22:05). The other four runs found no allowance at all. Two of twenty done,
+and the limit is quota rather than wiring.
+
+**Why only two, and the hole in the original reasoning.** Running the overview
+step first inside one invocation protects nothing when the per-meeting pass is
+UNBOUNDED: `--all` drains the day's allowance every hour, so the next run's
+overview step hits a wall. Order within a run says nothing about order across
+runs. Fixed by giving the per-meeting pass a per-run ceiling
+(`--all --limit 6`), which spreads the same daily allowance over the 24 runs
+instead of letting the early ones take it; the overview step goes to
+`--limit 4`, so the remaining 18 fill in over about five runs that get through.
+
+**MIN_NEW_SUMMARIES = 5, and this one is measured.** At 21:05 the Building
+Committee regenerated because it had gained ONE summary, 62 -> 63 -- a request
+spent to move a sentence. sources_sha changes on any write, so unchecked that
+is a dozen regenerations a day forever, consuming exactly the allowance the
+overviews were given priority over. An existing overview now waits until its
+body gains five summaries; a body with NO overview is never held back.
+
+**overview_priority.txt** sets the order, same idiom as summary_priority.txt:
+Zoning Board of Appeals first (Jason's call), then City Council, then
+best-covered. Verified with --dry-run; Zoning's own run at 00:40 found 3.8 and
+3.6 both 503 and pro exhausted, so it goes to the next run with capacity.
+
 ## Committee overviews: rolling out to the active bodies -- 2026-10-10
 
 Three things landed; the last one is waiting on allowance, not on code.

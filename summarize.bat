@@ -55,7 +55,17 @@ REM      buckets. Walking three is ~60 requests/night; pinning one is 20.
 REM
 REM The ladder already tries gemini-3.5-flash first, so this gets the
 REM preferred model AND the other buckets once its 20 are spent.
-set "ARGS=--all --model gemini"
+REM --limit 6 IS WHAT MAKES THE OVERVIEW STEP ABOVE REACHABLE. Running first
+REM inside a single invocation protects nothing when this pass is unbounded:
+REM it drains the day's allowance every hour, so the NEXT run's overview step
+REM finds a wall. Measured over the first six wired runs (2026-10-10 19:05 to
+REM 10-11 00:05): four hit "out of daily allowance" immediately and only two
+REM got a request. A per-run ceiling spreads the same daily allowance across
+REM the 24 runs instead of letting the early ones take it all.
+REM
+REM 6 and not 2: the queue is tiered, so the first unwritten meetings are the
+REM newest ones, and those are the summaries a reader notices missing.
+set "ARGS=--all --limit 6 --model gemini"
 set "NAME=summaries"
 
 if not exist "logs" mkdir "logs"
@@ -96,12 +106,14 @@ REM whole allowance flows back to the backlog by itself. It only wakes up
 REM again when a body's summaries actually change -- a new meeting, or a
 REM backfilled old one -- which is exactly when its overview is stale.
 REM
-REM --limit 2 rather than unbounded: 19 bodies at two an hour is about ten
-REM hours to fill in, and it leaves room in every run for the newest meetings,
-REM which sit at the head of summarize_meeting's tiered queue. Starving those
-REM would leave a fresh meeting published with no summary, which is the one
-REM gap a reader actually notices.
-"%PY%" -u summarize_committee.py --active --limit 2 >> "%LOG%" 2>&1
+REM --limit 4 rather than unbounded: 18 bodies still need one, so this fills
+REM them in over about five runs while leaving the per-meeting pass below its
+REM own ceiling. It cannot run away, because an EXISTING overview is only
+REM redone once its body has gained MIN_NEW_SUMMARIES (see summarize_committee)
+REM -- without that rule a body gaining one summary would spend a request to
+REM move a sentence, which is what happened to the Building Committee at 21:05
+REM on 2026-10-10.
+"%PY%" -u summarize_committee.py --active --limit 4 >> "%LOG%" 2>&1
 
 "%PY%" -u "%SCRIPT%" %ARGS% >> "%LOG%" 2>&1
 set "RC=%ERRORLEVEL%"
