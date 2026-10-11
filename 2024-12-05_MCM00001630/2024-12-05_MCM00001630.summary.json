@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "b1d26ebee6ed8198",
- "subject": "",
+ "subject": "Riverside Plaza Shade Structure Funding",
  "overview": "The Community Preservation Committee reviewed funding availability, project priorities, and an application from ABCD for the Medford Move-In program. The committee expedited and approved a recommendation for $144,250 in matching funds for the Riverside Plaza shade structure project.",
  "items": [
   {
@@ -73,5 +73,6 @@
   "input_tokens": 32040,
   "output_tokens": 673,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

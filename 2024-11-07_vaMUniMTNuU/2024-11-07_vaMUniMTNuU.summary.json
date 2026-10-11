@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "78d20d6b802dc448",
- "subject": "",
+ "subject": "Interview With Library Director Barbara Kerr",
  "overview": "Host John Petrella interviewed Charlotte and William Bloomberg Medford Public Library Director Barbara Kerr on Medford Happenings. Kerr reviewed the library's post-construction operations, expanded community programming, digital collections, and room reservation services.",
  "items": [
   {
@@ -84,5 +84,6 @@
   "input_tokens": 8939,
   "output_tokens": 658,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

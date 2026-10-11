@@ -1,0 +1,48 @@
+{
+ "video_id": "XXXXXX00114",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T08:15:48Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "34b7735f1ad3181e",
+ "subject": "Community Hoops",
+ "overview": "Tufts University basketball players Mikayla Paquette and Callie O'Brien discussed Community Hoops, a nonprofit offering youth basketball clinics in Medford and community programs in South Africa. They highlighted efforts to make basketball training accessible to youth of all skill levels.",
+ "items": [
+  {
+   "title": "Guest Introductions and Local Dining",
+   "t": 37,
+   "summary": "Tufts basketball players Mikayla Paquette and Callie O'Brien introduced themselves and highlighted Semolina as their favorite Medford restaurant.",
+   "speakers": [
+    "Danielle Balocca",
+    "Mikayla Paquette",
+    "Callie O'Brien"
+   ]
+  },
+  {
+   "title": "Community Hoops Mission and Structure",
+   "t": 151,
+   "summary": "Paquette and O'Brien outlined the two-part structure of Community Hoops, which operates Sunday youth skill development clinics at Tufts and youth engagement programs across three sites in Johannesburg, South Africa.",
+   "speakers": [
+    "Danielle Balocca",
+    "Mikayla Paquette",
+    "Callie O'Brien"
+   ]
+  },
+  {
+   "title": "Program Accessibility, Clinics, and Upcoming Season",
+   "t": 341,
+   "summary": "The guests explained that clinics are open to youth of all skill levels via online signups, discussed using basketball to teach off-court life skills, and previewed their upcoming season for the Tufts basketball team.",
+   "speakers": [
+    "Danielle Balocca",
+    "Mikayla Paquette",
+    "Callie O'Brien"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5152,
+  "output_tokens": 360,
+  "model_version": "gemini-3.8-flash"
+ }
+}
