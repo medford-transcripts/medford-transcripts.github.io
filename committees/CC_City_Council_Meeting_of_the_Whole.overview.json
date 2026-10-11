@@ -1,0 +1,466 @@
+{
+ "committee": "CC City Council Meeting of the Whole",
+ "provider": "gemini",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "generated_at": "2026-10-11T07:09:11Z",
+ "sources_sha": "1967d85913583ea6",
+ "n_meetings": 44,
+ "period_style": "term",
+ "span": [
+  "2024-11-20",
+  "2026-09-30"
+ ],
+ "overview": "The Medford City Council Committee of the Whole convenes the full council membership to conduct detailed reviews of municipal ordinances, annual budgets, charter provisions, and major civic projects prior to action in regular council sessions. Across 44 meetings between November 2024 and September 2026, the committee held extensive preliminary budget hearings across city departments and advanced legislation regarding tree protection, standard worker compensation, and municipal elections. The body also evaluated major infrastructure and development initiatives, including school HVAC bonding, Medford Square parking lot ground leases, and Community Preservation Act appropriations. Most recently, the committee authorized advancing a Request for Proposals for a planning consultant to lead the next phase of the city's zoning updates project.",
+ "threads": [
+  {
+   "name": "Annual municipal operating budgets",
+   "status": "ongoing",
+   "summary": "In March 2025, the committee compiled eight priority areas for the fiscal year 2026 budget, followed by multiple departmental preliminary hearings reviewing rising fixed costs, software modernization, and public school funding gaps. The committee resumed this process in March 2026 by forwarding council budget priorities for fiscal year 2027 to the full council. Across April, May, and June 2026, members held recurring departmental hearings examining personnel contracts, the expiration of ARPA grant funds, health insurance increases, and school department deficits. At its most recent preliminary budget review in June 2026, the committee evaluated the mayor's proposed $218.2 million general fund budget alongside police, public works, and school department requests.",
+   "citations": [
+    {
+     "video_id": "DtNTjLLICLg",
+     "t": 563,
+     "date": "2025-03-18",
+     "base": "2025-03-18_DtNTjLLICLg",
+     "meeting_title": "City Council Committee of the Whole 03-18-25",
+     "title": "Resolution 25-039: Fiscal Year 2026 Budget Schedule and Recommendations",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "pMp24GBph-w",
+     "t": 1298,
+     "date": "2025-04-29",
+     "base": "2025-04-29_pMp24GBph-w",
+     "meeting_title": "City Council Committee of the Whole 04-29-25",
+     "title": "Fiscal Year 2026 Budget Outlook",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "IP1sqjGemck",
+     "t": 8295,
+     "date": "2025-05-27",
+     "base": "2025-05-28_IP1sqjGemck",
+     "meeting_title": "City Council Committee of the Whole 05-27-25",
+     "title": "Medford Public Schools Budget",
+     "label": "M16#4"
+    },
+    {
+     "video_id": "zeY6uXsavtM",
+     "t": 953,
+     "date": "2026-03-24",
+     "base": "2026-03-24_zeY6uXsavtM",
+     "meeting_title": "City Council Committee of the Whole 03-24-26",
+     "title": "FY 2027 Budget Recommendations to the Mayor (Paper 26-061)",
+     "label": "M25#1"
+    },
+    {
+     "video_id": "tHyDbpxwsBY",
+     "t": 457,
+     "date": "2026-04-21",
+     "base": "2026-04-22_tHyDbpxwsBY",
+     "meeting_title": "City Council Committee of the Whole 04-21-26",
+     "title": "Opening of Annual Budget Process (Item 26-061)",
+     "label": "M29#1"
+    },
+    {
+     "video_id": "fKTK3cmlYsg",
+     "t": 149,
+     "date": "2026-06-02",
+     "base": "2026-06-02_fKTK3cmlYsg",
+     "meeting_title": "City Council Committee of the Whole 05-02-26",
+     "title": "Fiscal Year 2027 Budget Overview",
+     "label": "M39#1"
+    },
+    {
+     "video_id": "fKTK3cmlYsg",
+     "t": 9645,
+     "date": "2026-06-02",
+     "base": "2026-06-02_fKTK3cmlYsg",
+     "meeting_title": "City Council Committee of the Whole 05-02-26",
+     "title": "Medford Public Schools Budget",
+     "label": "M39#4"
+    }
+   ]
+  },
+  {
+   "name": "Tree preservation and protection ordinances",
+   "status": "ongoing",
+   "summary": "In November 2024, the committee reviewed three draft ordinances establishing a municipal Tree Committee, updating public shade tree rules, and creating private property tree zoning regulations, referring them to city staff and working groups for operational and cost review. The committee amended and approved the Tree Committee ordinance in July 2025, referring it to the full City Council. Work on shade tree regulations resumed in July 2026 when the committee amended the public tree ordinance regarding sidewalk removal notifications and referred the paper to the regular meeting with outstanding questions for public works staff and legal counsel.",
+   "citations": [
+    {
+     "video_id": "0fZ4E0HakWA",
+     "t": 565,
+     "date": "2024-11-20",
+     "base": "2024-11-21_0fZ4E0HakWA",
+     "meeting_title": "City Council Committee of the Whole 11-20-24",
+     "title": "Tree Committee and Public Tree Ordinances",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "0fZ4E0HakWA",
+     "t": 3450,
+     "date": "2024-11-20",
+     "base": "2024-11-21_0fZ4E0HakWA",
+     "meeting_title": "City Council Committee of the Whole 11-20-24",
+     "title": "Private Tree Ordinance",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "1dIxixg8FHg",
+     "t": 1246,
+     "date": "2025-07-15",
+     "base": "2025-07-16_1dIxixg8FHg",
+     "meeting_title": "City Council Committee of the Whole 07-15-25",
+     "title": "Tree Committee Ordinance",
+     "label": "M18#1"
+    },
+    {
+     "video_id": "mfKqW_cWmiE",
+     "t": 105,
+     "date": "2026-07-14",
+     "base": "2026-07-14_mfKqW_cWmiE",
+     "meeting_title": "City Council Committee of the Whole 07-14-26",
+     "title": "Public Tree Ordinance (Paper 19-070)",
+     "label": "M42#1"
+    }
+   ]
+  },
+  {
+   "name": "Community Preservation Act funding allocations",
+   "status": "settled",
+   "summary": "In January 2025, the committee reviewed eight fiscal year 2025 Community Preservation Act project recommendations totaling over $1.8 million for affordable housing, cemetery improvements, and park facilities. After severing the Unitarian Universalist Church restoration proposal, the committee voted to refer all eight project recommendations to the regular City Council meeting for formal approval. In January 2026, the body reviewed eleven recommendations for fiscal year 2026 totaling approximately $2.4 million across housing, historic preservation, and open space projects, voting to refer the entire appropriation package favorably to the regular council meeting.",
+   "citations": [
+    {
+     "video_id": "cNtcjeG3bMI",
+     "t": 527,
+     "date": "2025-01-21",
+     "base": "2025-01-21_cNtcjeG3bMI",
+     "meeting_title": "City Council Committee of the Whole 01-21-25",
+     "title": "Community Preservation Act funding overview and project presentations",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "cNtcjeG3bMI",
+     "t": 3695,
+     "date": "2025-01-21",
+     "base": "2025-01-21_cNtcjeG3bMI",
+     "meeting_title": "City Council Committee of the Whole 01-21-25",
+     "title": "Referral of Unitarian Universalist Church restoration project",
+     "label": "M05#2"
+    },
+    {
+     "video_id": "cNtcjeG3bMI",
+     "t": 3814,
+     "date": "2025-01-21",
+     "base": "2025-01-21_cNtcjeG3bMI",
+     "meeting_title": "City Council Committee of the Whole 01-21-25",
+     "title": "Referral of remaining Community Preservation Act funding recommendations",
+     "label": "M05#3"
+    },
+    {
+     "video_id": "rUwakbVv_oY",
+     "t": 1435,
+     "date": "2026-01-20",
+     "base": "2026-01-20_rUwakbVv_oY",
+     "meeting_title": "City Council Committee of the Whole 01-20-25",
+     "title": "Fiscal Year 2026 CPA Appropriation Requests Overview",
+     "label": "M22#1"
+    },
+    {
+     "video_id": "rUwakbVv_oY",
+     "t": 4132,
+     "date": "2026-01-20",
+     "base": "2026-01-20_rUwakbVv_oY",
+     "meeting_title": "City Council Committee of the Whole 01-20-25",
+     "title": "Committee Recommendation and Adjournment",
+     "label": "M22#13"
+    }
+   ]
+  },
+  {
+   "name": "Comprehensive zoning and land use planning",
+   "status": "ongoing",
+   "summary": "During its governing agenda review in December 2024, the committee monitored zoning updates along the Mystic Avenue and Salem Street corridors. In November 2025, the committee reviewed a proposal to redevelop three municipal parking lots in Medford Square under a 99-year ground lease for mixed-use housing, commercial retail, and parking. The committee later examined neighborhood design and economic development strategies from the Wellington Transformation Study in May 2026, and evaluated draft linkage fee recommendations for commercial developments in August 2026. In September 2026, the committee approved advancing a Request for Proposals to hire a consultant for the next multi-year phase of Medford's zoning updates project.",
+   "citations": [
+    {
+     "video_id": "DqMvnghi1-4",
+     "t": 2564,
+     "date": "2024-12-18",
+     "base": "2024-12-18_DqMvnghi1-4",
+     "meeting_title": "City Council Committee of the Whole 12-18-24",
+     "title": "Planning and Permitting Committee Review",
+     "label": "M03#4"
+    },
+    {
+     "video_id": "ObzNxwbGKmg",
+     "t": 3138,
+     "date": "2025-11-18",
+     "base": "2025-11-18_ObzNxwbGKmg",
+     "meeting_title": "City Council Committee of the Whole 11-18-25",
+     "title": "Discussion on Medford Square Parking Lots Redevelopment Proposal",
+     "label": "M19#1"
+    },
+    {
+     "video_id": "y94cUzx0pcQ",
+     "t": 55,
+     "date": "2026-05-26",
+     "base": "2026-05-27_y94cUzx0pcQ",
+     "meeting_title": "City Council Committee of the Whole 05-26-26",
+     "title": "Presentation on the Wellington Transformation Study (Paper 26095)",
+     "label": "M35#1"
+    },
+    {
+     "video_id": "FCSEVB7kB-Q",
+     "t": 74,
+     "date": "2026-08-04",
+     "base": "2026-08-05_FCSEVB7kB-Q",
+     "meeting_title": "City Council Committee of the Whole 08-04-26",
+     "title": "Affordable Housing Linkage Nexus Study Report Presentation",
+     "label": "M43#1"
+    },
+    {
+     "video_id": "eB_wVwTf6cQ",
+     "t": 773,
+     "date": "2026-09-30",
+     "base": "2026-09-30_eB_wVwTf6cQ",
+     "meeting_title": "City Council Committee of the Whole 09-30-26",
+     "title": "Item 24033 - Zoning Updates Project RFP",
+     "label": "M44#1"
+    }
+   ]
+  },
+  {
+   "name": "Standard compensation ordinance",
+   "status": "settled",
+   "summary": "In January 2026, the committee tabled a proposed standard compensation ordinance establishing wage and benefit floors for contracted city services. In February 2026, the item remained in committee while the administration and procurement staff assessed wage data availability and legal impacts on existing janitorial and security service contracts. In April 2026, the council debated revisions between an administration draft and council leadership's version regarding wage standards, labor peace requirements, and worker retention, voting to report the updated redlined ordinance to the regular City Council session.",
+   "citations": [
+    {
+     "video_id": "buR1554iquY",
+     "t": 8850,
+     "date": "2026-01-13",
+     "base": "2026-01-13_buR1554iquY",
+     "meeting_title": "City Council Committee of the Whole 01-13-26",
+     "title": "Standard Compensation Ordinance",
+     "label": "M21#2"
+    },
+    {
+     "video_id": "4KDvUm83npc",
+     "t": 488,
+     "date": "2026-02-03",
+     "base": "2026-02-03_4KDvUm83npc",
+     "meeting_title": "City Council Committee of the Whole 02-03-26",
+     "title": "Standard Compensation Ordinance Amendment",
+     "label": "M23#1"
+    },
+    {
+     "video_id": "q2WvOKcufgc",
+     "t": 403,
+     "date": "2026-04-14",
+     "base": "2026-04-14_q2WvOKcufgc",
+     "meeting_title": "City Council Committee of the Whole 04-14-26",
+     "title": "Standard Compensation Ordinance Amendment",
+     "label": "M28#1"
+    },
+    {
+     "video_id": "q2WvOKcufgc",
+     "t": 5681,
+     "date": "2026-04-14",
+     "base": "2026-04-14_q2WvOKcufgc",
+     "meeting_title": "City Council Committee of the Whole 04-14-26",
+     "title": "Referral of Standard Compensation Ordinance",
+     "label": "M28#4"
+    }
+   ]
+  },
+  {
+   "name": "City Clerk recruitment and appointment",
+   "status": "settled",
+   "summary": "In January 2026, the committee voted to repost the job listing for the vacant City Clerk position without minimum requirements to broaden the candidate pool. The committee subsequently reviewed the clerk's office operational budget in May 2026, noting strains created by staffing vacancies and storage needs. In June 2026, the committee conducted public interviews with finalists Kevin Foley and Laurel Siegel, voting to recommend and offer the City Clerk position to Siegel.",
+   "citations": [
+    {
+     "video_id": "buR1554iquY",
+     "t": 15293,
+     "date": "2026-01-13",
+     "base": "2026-01-13_buR1554iquY",
+     "meeting_title": "City Council Committee of the Whole 01-13-26",
+     "title": "City Clerk Recruitment Process",
+     "label": "M21#3"
+    },
+    {
+     "video_id": "vVaeOH2WOZ4",
+     "t": 2224,
+     "date": "2026-05-06",
+     "base": "2026-05-06_vVaeOH2WOZ4",
+     "meeting_title": "City Council Committee of the Whole 05-06-26",
+     "title": "City Clerk's Office Budget Review",
+     "label": "M32#3"
+    },
+    {
+     "video_id": "boyuFzjZmR4",
+     "t": 107,
+     "date": "2026-06-23",
+     "base": "2026-06-23_boyuFzjZmR4",
+     "meeting_title": "City Council Committee of the Whole 06-23-26",
+     "title": "Resolution 25149: City Clerk Recruitment and Hiring Process",
+     "label": "M41#1"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "The committee focused on governing agenda goals, draft charter composition recommendations, tree protection proposals, and departmental hearings for the fiscal year 2026 municipal budget.",
+   "citations": [
+    {
+     "video_id": "0fZ4E0HakWA",
+     "t": 565,
+     "date": "2024-11-20",
+     "base": "2024-11-21_0fZ4E0HakWA",
+     "meeting_title": "City Council Committee of the Whole 11-20-24",
+     "title": "Tree Committee and Public Tree Ordinances",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "DqMvnghi1-4",
+     "t": 382,
+     "date": "2024-12-18",
+     "base": "2024-12-18_DqMvnghi1-4",
+     "meeting_title": "City Council Committee of the Whole 12-18-24",
+     "title": "Review of 2024-2025 Council Governing Agenda",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "l8nn1rt7aY0",
+     "t": 6831,
+     "date": "2025-03-04",
+     "base": "2025-03-04_l8nn1rt7aY0",
+     "meeting_title": "City Council Committee of the Whole 03-04-25",
+     "title": "Vote on Council Representation Model",
+     "label": "M06#2"
+    },
+    {
+     "video_id": "DtNTjLLICLg",
+     "t": 563,
+     "date": "2025-03-18",
+     "base": "2025-03-18_DtNTjLLICLg",
+     "meeting_title": "City Council Committee of the Whole 03-18-25",
+     "title": "Resolution 25-039: Fiscal Year 2026 Budget Schedule and Recommendations",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "pMp24GBph-w",
+     "t": 1298,
+     "date": "2025-04-29",
+     "base": "2025-04-29_pMp24GBph-w",
+     "meeting_title": "City Council Committee of the Whole 04-29-25",
+     "title": "Fiscal Year 2026 Budget Outlook",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "1dIxixg8FHg",
+     "t": 1246,
+     "date": "2025-07-15",
+     "base": "2025-07-16_1dIxixg8FHg",
+     "meeting_title": "City Council Committee of the Whole 07-15-25",
+     "title": "Tree Committee Ordinance",
+     "label": "M18#1"
+    },
+    {
+     "video_id": "ObzNxwbGKmg",
+     "t": 3138,
+     "date": "2025-11-18",
+     "base": "2025-11-18_ObzNxwbGKmg",
+     "meeting_title": "City Council Committee of the Whole 11-18-25",
+     "title": "Discussion on Medford Square Parking Lots Redevelopment Proposal",
+     "label": "M19#1"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The committee conducted departmental reviews for the fiscal year 2027 operating budget, appointed a new City Clerk, advanced Community Preservation Act appropriations, and initiated procurement for citywide zoning updates.",
+   "citations": [
+    {
+     "video_id": "buR1554iquY",
+     "t": 15293,
+     "date": "2026-01-13",
+     "base": "2026-01-13_buR1554iquY",
+     "meeting_title": "City Council Committee of the Whole 01-13-26",
+     "title": "City Clerk Recruitment Process",
+     "label": "M21#3"
+    },
+    {
+     "video_id": "rUwakbVv_oY",
+     "t": 4132,
+     "date": "2026-01-20",
+     "base": "2026-01-20_rUwakbVv_oY",
+     "meeting_title": "City Council Committee of the Whole 01-20-25",
+     "title": "Committee Recommendation and Adjournment",
+     "label": "M22#13"
+    },
+    {
+     "video_id": "zeY6uXsavtM",
+     "t": 953,
+     "date": "2026-03-24",
+     "base": "2026-03-24_zeY6uXsavtM",
+     "meeting_title": "City Council Committee of the Whole 03-24-26",
+     "title": "FY 2027 Budget Recommendations to the Mayor (Paper 26-061)",
+     "label": "M25#1"
+    },
+    {
+     "video_id": "q2WvOKcufgc",
+     "t": 5681,
+     "date": "2026-04-14",
+     "base": "2026-04-14_q2WvOKcufgc",
+     "meeting_title": "City Council Committee of the Whole 04-14-26",
+     "title": "Referral of Standard Compensation Ordinance",
+     "label": "M28#4"
+    },
+    {
+     "video_id": "fKTK3cmlYsg",
+     "t": 149,
+     "date": "2026-06-02",
+     "base": "2026-06-02_fKTK3cmlYsg",
+     "meeting_title": "City Council Committee of the Whole 05-02-26",
+     "title": "Fiscal Year 2027 Budget Overview",
+     "label": "M39#1"
+    },
+    {
+     "video_id": "boyuFzjZmR4",
+     "t": 107,
+     "date": "2026-06-23",
+     "base": "2026-06-23_boyuFzjZmR4",
+     "meeting_title": "City Council Committee of the Whole 06-23-26",
+     "title": "Resolution 25149: City Clerk Recruitment and Hiring Process",
+     "label": "M41#1"
+    },
+    {
+     "video_id": "eB_wVwTf6cQ",
+     "t": 773,
+     "date": "2026-09-30",
+     "base": "2026-09-30_eB_wVwTf6cQ",
+     "meeting_title": "City Council Committee of the Whole 09-30-26",
+     "title": "Item 24033 - Zoning Updates Project RFP",
+     "label": "M44#1"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
+ "coverage": {
+  "citations": 42,
+  "meetings_cited": 22,
+  "of_meetings": 44,
+  "max_share": 0.071,
+  "most_cited": "fKTK3cmlYsg",
+  "periods_covered": 2,
+  "of_periods": 2
+ },
+ "usage": {
+  "input_tokens": 12587,
+  "output_tokens": 1578,
+  "model_version": "gemini-3.8-flash"
+ }
+}

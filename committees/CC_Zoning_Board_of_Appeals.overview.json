@@ -1,0 +1,410 @@
+{
+ "committee": "CC Zoning Board of Appeals",
+ "provider": "gemini",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "generated_at": "2026-10-11T07:07:26Z",
+ "sources_sha": "3d36763d214bec58",
+ "n_meetings": 11,
+ "period_style": "term",
+ "span": [
+  "2024-12-05",
+  "2026-09-24"
+ ],
+ "overview": "The Medford Zoning Board of Appeals is a municipal regulatory body that reviews and decides requests for zoning relief, including dimensional variances, use variances, and special permits under city and state zoning rules. The board evaluates residential expansions, lot subdivisions, commercial conversions, and compliance with evolving zoning standards. Across the 11 meetings held in the archive, the board's work spans from December 2024 through September 2026. At its most recent meeting in September 2026, the board granted relief for a second dwelling on a residential lot and a commercial use change, while continuing multiple accessory dwelling unit petitions for design revisions and legal review.",
+ "threads": [
+  {
+   "name": "Accessory dwelling unit petitions",
+   "status": "ongoing",
+   "summary": "The board evaluated multiple proposals seeking relief to construct accessory dwelling units (ADUs), including companion requests at 1-3 Vassar Street and 12 Wellesley Street involving third-story dormer expansions. In July 2026, the board approved a rear yard setback variance for an ADU addition on Fulton Street while continuing the Vassar and Wellesley cases to examine state zoning standards. The Vassar and Wellesley hearings were continued again in August 2026 to ensure voting consistency. At the September 2026 meeting, the board postponed both petitions to October 2026 to permit the applicant to submit smaller designs and allow for additional legal consultation regarding state ADU rules.",
+   "citations": [
+    {
+     "video_id": "CAS00002495",
+     "t": 2626,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Attic Expansion and ADU Variance at 1-3 Vassar Street",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "CAS00002495",
+     "t": 6609,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Setback Variances for ADU Addition at 621 Fulton Street",
+     "label": "M09#6"
+    },
+    {
+     "video_id": "CAS00002509",
+     "t": 85,
+     "date": "2026-08-27",
+     "base": "2026-08-28_CAS00002509",
+     "meeting_title": "Zoning Board of Appeals 08/27/26",
+     "title": "1-3 Vassar Street and 12-14 Wellesley Street",
+     "label": "M10#1"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 61,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "1-3 Vassar Street",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 5678,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "12 Wellesley Street",
+     "label": "M11#2"
+    }
+   ]
+  },
+  {
+   "name": "Redevelopment of 85 Elm Street",
+   "status": "settled",
+   "summary": "The board reviewed an application by 835 Elm Street LLC to demolish a nonconforming motor vehicle repair station and construct a three-unit townhouse. In January 2025, the hearing was continued twice: first to allow the applicant to provide detailed site costs and updated renderings, and subsequently following an emergency displacement at another property owned by the applicant. In February 2025, the board approved the requested use and dimensional variances to proceed with the townhouse project.",
+   "citations": [
+    {
+     "video_id": "MCM00001697",
+     "t": 41,
+     "date": "2025-01-02",
+     "base": "2025-01-03_MCM00001697",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-02-25",
+     "title": "85 Elm Street (Case A-2024-25)",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "MCM00001724",
+     "t": 43,
+     "date": "2025-01-30",
+     "base": "2025-01-31_MCM00001724",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-30-25",
+     "title": "85 Elm Street (Case A-2024-25)",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 321,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "85 Elm Street",
+     "label": "M04#3"
+    }
+   ]
+  },
+  {
+   "name": "Two-family conversion at 121 Second Street",
+   "status": "settled",
+   "summary": "The board heard a petition to replace an existing single-family dwelling at 121 Second Street with a two-family structure. After an initial continuance in June 2025, the board continued the hearing again in July 2025 to request redesigns addressing third-floor story limits and stormwater management on pervious surfaces. In August 2025, after the petitioner submitted updated plans reducing building height and massing, the board approved variances for lot area, width, depth, setbacks, and coverage.",
+   "citations": [
+    {
+     "video_id": "MCM00001767",
+     "t": 65,
+     "date": "2025-06-26",
+     "base": "2025-07-03_MCM00001767",
+     "meeting_title": "Medford Zoning Board Of Appeals 06 26 25",
+     "title": "121 2nd Street",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "MCM00001791",
+     "t": 36,
+     "date": "2025-07-31",
+     "base": "2025-08-01_MCM00001791",
+     "meeting_title": "Zoning Board Of Appeals 07/31/25",
+     "title": "121 2nd Street Two-Family Conversion",
+     "label": "M06#1"
+    },
+    {
+     "video_id": "MCM00001802",
+     "t": 46,
+     "date": "2025-08-28",
+     "base": "2025-08-29_MCM00001802",
+     "meeting_title": "Medford Zoning Board Of Appeals 08-28-25",
+     "title": "121 Second Street",
+     "label": "M07#1"
+    }
+   ]
+  },
+  {
+   "name": "Second dwellings on single lots",
+   "status": "ongoing",
+   "summary": "The board regularly considered applications to establish additional standalone residences on residential parcels. In January 2025, it approved lot area and width variances to construct a single-family home on an undersized divided lot at 7 Grant Avenue. In June 2026, the board approved a use variance to build a second single-family dwelling on an oversized parcel at 70 Lincoln Road, subject to further review by the Community Development Board. In September 2026, the board approved another use variance for a second dwelling at 60 Sturgis Street with conditions requiring water service replacement and boundary screening.",
+   "citations": [
+    {
+     "video_id": "MCM00001697",
+     "t": 5182,
+     "date": "2025-01-02",
+     "base": "2025-01-03_MCM00001697",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-02-25",
+     "title": "7 Grant Avenue (Case A-2024-27)",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "CAS00002482",
+     "t": 337,
+     "date": "2026-06-25",
+     "base": "2026-07-14_CAS00002482",
+     "meeting_title": "Zoning Board of Appeals 06/25/26",
+     "title": "70 Lincoln Road",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 6705,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "60 Sturgis Street",
+     "label": "M11#3"
+    }
+   ]
+  },
+  {
+   "name": "Nonconforming commercial use conversions",
+   "status": "ongoing",
+   "summary": "The board reviewed several requests to convert or modify nonconforming commercial spaces across the city. In January 2025, it approved a special permit to convert a first-floor commercial unit at 612–614 Main Street into residential housing. In June 2026, the board granted a special permit to transition a nonconforming real estate office into a community cafe at 121 Boston Avenue. In September 2026, the board approved a special permit to convert another real estate office at 583 Riverside Avenue into an appointment-only aesthetic spa.",
+   "citations": [
+    {
+     "video_id": "MCM00001697",
+     "t": 7035,
+     "date": "2025-01-02",
+     "base": "2025-01-03_MCM00001697",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-02-25",
+     "title": "612–614 Main Street (Case A-2024-28)",
+     "label": "M02#4"
+    },
+    {
+     "video_id": "CAS00002482",
+     "t": 6012,
+     "date": "2026-06-25",
+     "base": "2026-07-14_CAS00002482",
+     "meeting_title": "Zoning Board of Appeals 06/25/26",
+     "title": "121 Boston Avenue",
+     "label": "M08#8"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 9103,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "583 Riverside Avenue",
+     "label": "M11#4"
+    }
+   ]
+  },
+  {
+   "name": "Cannabis business permitting",
+   "status": "settled",
+   "summary": "In June 2025, the board held administrative discussions concerning renewal procedures for five-year marijuana special permits. In June 2026, an application for a special permit to add delivery services at an existing dispensary at 114 Mystic Avenue was introduced and continued while awaiting municipal legal counsel. In July 2026, the board approved the special permit allowing cannabis delivery operations from the site.",
+   "citations": [
+    {
+     "video_id": "MCM00001767",
+     "t": 5723,
+     "date": "2025-06-26",
+     "base": "2025-07-03_MCM00001767",
+     "meeting_title": "Medford Zoning Board Of Appeals 06 26 25",
+     "title": "Administrative Updates",
+     "label": "M05#8"
+    },
+    {
+     "video_id": "CAS00002482",
+     "t": 31,
+     "date": "2026-06-25",
+     "base": "2026-07-14_CAS00002482",
+     "meeting_title": "Zoning Board of Appeals 06/25/26",
+     "title": "114 Mystic Avenue",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "CAS00002495",
+     "t": 376,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Special Permit for Cannabis Delivery at 114 Mystic Avenue",
+     "label": "M09#1"
+    }
+   ]
+  },
+  {
+   "name": "Board administration and governance",
+   "status": "ongoing",
+   "summary": "The board handled ongoing administrative matters, including board membership, minute approvals, and leadership organization. In early 2025, the board noted the resignation of Chair Jamie Thompson and subsequently elected Mike Caldera as chair. Throughout 2025, members tracked vacant seats and tested AI software to manage a backlog of meeting minutes. Minute approvals were repeatedly tabled during 2026 due to voting quorums, and members discussed upcoming training sessions in September 2026.",
+   "citations": [
+    {
+     "video_id": "MCM00001633",
+     "t": 2042,
+     "date": "2024-12-05",
+     "base": "2024-12-06_MCM00001633",
+     "meeting_title": "Medford Zoning Board Of Appeals 12-05-24",
+     "title": "Administrative Updates",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "MCM00001724",
+     "t": 1641,
+     "date": "2025-01-30",
+     "base": "2025-01-31_MCM00001724",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-30-25",
+     "title": "Administrative Updates",
+     "label": "M03#3"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 57,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "Election of Board Chair",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "MCM00001791",
+     "t": 4583,
+     "date": "2025-07-31",
+     "base": "2025-08-01_MCM00001791",
+     "meeting_title": "Zoning Board Of Appeals 07/31/25",
+     "title": "Administrative Items and Minutes",
+     "label": "M06#4"
+    },
+    {
+     "video_id": "CAS00002482",
+     "t": 6865,
+     "date": "2026-06-25",
+     "base": "2026-07-14_CAS00002482",
+     "meeting_title": "Zoning Board of Appeals 06/25/26",
+     "title": "Approval of Meeting Minutes",
+     "label": "M08#9"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 9612,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "August Meeting Minutes and Adjournment",
+     "label": "M11#5"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "During this period, the board navigated a leadership transition by electing a new chair, addressed backlogged minutes, and resolved multiple residential variance requests including multi-unit redevelopment on Elm Street and Second Street.",
+   "citations": [
+    {
+     "video_id": "MCM00001633",
+     "t": null,
+     "date": "2024-12-05",
+     "base": "2024-12-06_MCM00001633",
+     "meeting_title": "Medford Zoning Board Of Appeals 12-05-24",
+     "title": "Medford Zoning Board Of Appeals 12-05-24",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 57,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "Election of Board Chair",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 321,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "85 Elm Street",
+     "label": "M04#3"
+    },
+    {
+     "video_id": "MCM00001802",
+     "t": 46,
+     "date": "2025-08-28",
+     "base": "2025-08-29_MCM00001802",
+     "meeting_title": "Medford Zoning Board Of Appeals 08-28-25",
+     "title": "121 Second Street",
+     "label": "M07#1"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The board adjudicated commercial alterations, cannabis delivery, and secondary residential construction on single lots, while focusing extensively on accessory dwelling unit applications under state zoning regulations.",
+   "citations": [
+    {
+     "video_id": "CAS00002482",
+     "t": 337,
+     "date": "2026-06-25",
+     "base": "2026-07-14_CAS00002482",
+     "meeting_title": "Zoning Board of Appeals 06/25/26",
+     "title": "70 Lincoln Road",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "CAS00002495",
+     "t": 376,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Special Permit for Cannabis Delivery at 114 Mystic Avenue",
+     "label": "M09#1"
+    },
+    {
+     "video_id": "CAS00002495",
+     "t": 2626,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Attic Expansion and ADU Variance at 1-3 Vassar Street",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 61,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "1-3 Vassar Street",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "CAS00002540",
+     "t": 6705,
+     "date": "2026-09-24",
+     "base": "2026-09-28_CAS00002540",
+     "meeting_title": "Zoning Board of Appeals 09/24/26",
+     "title": "60 Sturgis Street",
+     "label": "M11#3"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
+ "coverage": {
+  "citations": 35,
+  "meetings_cited": 11,
+  "of_meetings": 11,
+  "max_share": 0.2,
+  "most_cited": "CAS00002540",
+  "periods_covered": 2,
+  "of_periods": 2
+ },
+ "usage": {
+  "input_tokens": 4700,
+  "output_tokens": 1595,
+  "model_version": "gemini-3.8-flash"
+ }
+}
