@@ -1,0 +1,63 @@
+{
+ "video_id": "MCM00001628",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T11:08:09Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "52632aff18fa46f9",
+ "subject": "Thomas Brooks Park Master Plan Update",
+ "overview": "The Medford Historical Commission reviewed past restorations and presented conceptual plans for future phases at Thomas Brooks Park, including upcoming phase two construction funded by the Community Preservation Commission. Commission members gathered public input regarding neighborhood access, tree preservation, traffic safety, and park maintenance.",
+ "items": [
+  {
+   "title": "Master Plan and Phase One Overview",
+   "t": 0,
+   "summary": "Commission Chair Jennifer Keenan and consultant Peter Hedlund reviewed completed Phase One park work, including the restoration of Pomp's Wall, repairs to the Grove Street fieldstone wall, and initial archaeological excavations.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Peter Hedlund"
+   ]
+  },
+  {
+   "title": "Phase Three History Walk Concept Design",
+   "t": 797,
+   "summary": "Peter Hedlund presented proposed Phase Three concepts, including an accessible history walk with five historic markers, stone block outlines marking the former Brooks estate house, and lilac plantings along Pomp's Wall.",
+   "speakers": [
+    "Peter Hedlund"
+   ]
+  },
+  {
+   "title": "Phase Two Construction Update",
+   "t": 1938,
+   "summary": "Ryan Hayward detailed Phase Two projects supported by Community Preservation Commission grant funding, including additional archaeological research, tree trimming and deadwood removal, ADA sidewalk connections, crosswalk striping, and park signage.",
+   "speakers": [
+    "Ryan Hayward"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 2630,
+   "summary": "Residents and abutters shared feedback regarding park entry points near Newton Road, loss of train sound barriers due to tree removals, traffic concerns on Grove Street, invasive species control, and methods for improving meeting notifications.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Peter Hedlund",
+    "Zoe Moutsos",
+    "John Ardizzone",
+    "Frank Miller",
+    "Diane Noel",
+    "Alicia Hunt",
+    "Terrodon Collins",
+    "Olga Cady",
+    "Bill Stevens",
+    "Bobby Nicotero",
+    "Elyse Jennings"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 35135,
+  "output_tokens": 442,
+  "model_version": "gemini-3.6-flash"
+ }
+}

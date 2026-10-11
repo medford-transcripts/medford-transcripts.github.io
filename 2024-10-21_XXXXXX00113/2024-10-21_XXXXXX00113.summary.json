@@ -1,0 +1,47 @@
+{
+ "video_id": "XXXXXX00113",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T11:09:46Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "8cd402b4825e6b61",
+ "subject": "Oktoberfest 2024 Community Recap",
+ "overview": "Medford Bites recapped the city's recent Oktoberfest celebration and shared community feedback gathered during the event. The episode featured highlights from local businesses and reflections from residents on the city's schools, dining, and culture.",
+ "items": [
+  {
+   "title": "Introduction and Oktoberfest Event Recap",
+   "t": 9,
+   "summary": "Host Danielle Balocca recapped her experience at the Chamber of Commerce Oktoberfest, highlighting local food vendors and youth activities.",
+   "speakers": [
+    "Danielle Balocca",
+    "Chelli Keshavan"
+   ]
+  },
+  {
+   "title": "Sponsor Spotlight: Chevalier Theatre",
+   "t": 183,
+   "summary": "The program promoted the upcoming 'Gazillion Bubble Show' scheduled for its Medford debut at the Chevalier Theatre on December 8th.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Community Voices: What I Love About Medford",
+   "t": 320,
+   "summary": "Residents and local officials shared positive testimonials regarding the city's public schools, the library, recreational sports leagues, and local inclusivity.",
+   "speakers": [
+    "Danielle Balocca",
+    "Jack",
+    "Page Buldini",
+    "Alicia Hunt",
+    "Justin Tseng"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4547,
+  "output_tokens": 346,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

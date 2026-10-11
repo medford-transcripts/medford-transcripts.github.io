@@ -1,0 +1,340 @@
+{
+ "committee": "CC Board of Health",
+ "provider": "gemini",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "generated_at": "2026-10-11T11:06:29Z",
+ "sources_sha": "daa1401a682108d2",
+ "n_meetings": 6,
+ "period_style": "term",
+ "span": [
+  "2024-12-17",
+  "2026-09-15"
+ ],
+ "overview": "The Medford Board of Health is a municipal regulatory and administrative body responsible for oversight of biological agent permits, property health code enforcement, tobacco regulation, communicable disease tracking, and public health grants. Across six recorded meetings from December 2024 through September 2026, the board reviewed municipal health programs, evaluated facility safety protocols, and enforced local sanitary regulations. Key areas of work included youth substance and gambling prevention research, seasonal vaccination outreach, mobile health care delivery, and commercial property inspections. At its September 2026 meeting, the board reviewed communicable disease reports, adjudicated tobacco compliance violations, tracked property pest control progress, and received a BSL-2 permit presentation for 200 Boston Avenue.",
+ "threads": [
+  {
+   "name": "Biological agent permitting",
+   "status": "ongoing",
+   "summary": "The board evaluates facility permit applications and safety protocols for entities using biological agents in Medford. In December 2024, MorphoCeuticals presented its facility overview and safety protocols for regulated biological agents at 200 Boston Avenue. In September 2026, the board received a BSL-2 permit presentation from Tufts University and BioLabs for a food and materials research incubator at the same address.",
+   "citations": [
+    {
+     "video_id": "MCM00001660",
+     "t": 58,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "MorphoCeuticals Permit Application Presentation",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 1765,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Tufts University Bioinnovation Lab Presentation",
+     "label": "M06#5"
+    }
+   ]
+  },
+  {
+   "name": "Vaccination clinics and mobile health care",
+   "status": "ongoing",
+   "summary": "The board oversees public health vaccination campaigns and mobile medical services for city residents. Updates on seasonal flu and COVID-19 vaccine delivery were received in December 2024, followed by the approval of updated standing orders for fall clinics in September 2025. In July 2026, the board announced a new monthly mobile health van clinic at Clipper Ship Park to deliver health screenings and vaccines. By September 2026, the board reviewed the launch of seasonal vaccine clinics and upcoming community care van visits.",
+   "citations": [
+    {
+     "video_id": "MCM00001660",
+     "t": 1199,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "Flu and COVID-19 Vaccination Clinics Update",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001812",
+     "t": 698,
+     "date": "2025-09-16",
+     "base": "2025-09-17_MCM00001812",
+     "meeting_title": "Medford Board Of Health 09-16-25",
+     "title": "Vaccine Standing Orders",
+     "label": "M04#3"
+    },
+    {
+     "video_id": "CAS00002490",
+     "t": 2465,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Mobile Health Van and Department Updates",
+     "label": "M05#5"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 127,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Communicable Disease Report, Care Van, and Vaccine Clinics Update",
+     "label": "M06#3"
+    }
+   ]
+  },
+  {
+   "name": "Youth prevention and gambling assessment",
+   "status": "ongoing",
+   "summary": "The board manages grant funding dedicated to youth substance use prevention and research into young adult gambling behaviors. In December 2024, staff announced a $72,000 Mass Gaming Commission grant to study gambling impacts on 18- to 20-year-olds, with preliminary survey results presented in September 2025. In July 2025, the board introduced new staff positions funded by an Attorney General grant for youth peer education on substance use prevention. By July 2026, youth prevention coordinators reported on summer programming and a substance use diversion program that served 50 students during the school year.",
+   "citations": [
+    {
+     "video_id": "MCM00001660",
+     "t": 1035,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "Mass Gaming Commission Grant Award",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "MCM00001784",
+     "t": 1765,
+     "date": "2025-07-15",
+     "base": "2025-07-29_MCM00001784",
+     "meeting_title": "Medford Board Of Health 07-15-25",
+     "title": "Office of Prevention and Outreach Updates",
+     "label": "M03#4"
+    },
+    {
+     "video_id": "MCM00001812",
+     "t": 963,
+     "date": "2025-09-16",
+     "base": "2025-09-17_MCM00001812",
+     "meeting_title": "Medford Board Of Health 09-16-25",
+     "title": "Young Adult Gambling Assessment Presentation",
+     "label": "M04#5"
+    },
+    {
+     "video_id": "CAS00002490",
+     "t": 640,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Youth Prevention Activities",
+     "label": "M05#3"
+    }
+   ]
+  },
+  {
+   "name": "Tobacco and substance regulation",
+   "status": "ongoing",
+   "summary": "The board monitors and enforces regulations covering nicotine products, synthetic substances, and local retail compliance. A proposed nicotine generation regulation was tabled in December 2024 to monitor surrounding communities and state legislation. In September 2025, health officials detailed plans for regional scans regarding synthetic THC products and Kratom. In September 2026, the board held tobacco compliance hearings for second-offense violations, approving non-consecutive seven-day suspensions and $2,000 fines for two local retail establishments.",
+   "citations": [
+    {
+     "video_id": "MCM00001660",
+     "t": 1324,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "Tabled Business: Nicotine Generation Regulation",
+     "label": "M01#5"
+    },
+    {
+     "video_id": "MCM00001812",
+     "t": 11,
+     "date": "2025-09-16",
+     "base": "2025-09-17_MCM00001812",
+     "meeting_title": "Medford Board Of Health 09-16-25",
+     "title": "Synthetic Hemp and Kratom Regulation Discussion",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 362,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Tobacco Compliance Hearings",
+     "label": "M06#4"
+    }
+   ]
+  },
+  {
+   "name": "Property code enforcement and vector control",
+   "status": "ongoing",
+   "summary": "The board exercises statutory authority to resolve unsanitary housing conditions, standing water, and rodent infestations. During a July 2025 rezoning discussion, board members emphasized their authority to address site-specific health issues. In July 2026, the board closed a code enforcement complaint for 40 Century Street while issuing warnings of potential condemnation to management at 208 Main Street due to severe rat infestations and trash accumulation. In September 2026, property inspection updates confirmed that 40th Century Street corrected all violations and 8 Main Street made substantial progress on pest remediation.",
+   "citations": [
+    {
+     "video_id": "MCM00001784",
+     "t": 426,
+     "date": "2025-07-15",
+     "base": "2025-07-29_MCM00001784",
+     "meeting_title": "Medford Board Of Health 07-15-25",
+     "title": "Discussion on Infrastructure and Health Impacts",
+     "label": "M03#3"
+    },
+    {
+     "video_id": "CAS00002490",
+     "t": 3,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Minutes and 40 Century Street Update",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "CAS00002490",
+     "t": 1366,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Brooks Park Apartments Code Violations",
+     "label": "M05#4"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 24,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Property Violations Follow-Up",
+     "label": "M06#2"
+    }
+   ]
+  },
+  {
+   "name": "Communicable disease tracking",
+   "status": "ongoing",
+   "summary": "The board monitors reportable disease trends across the city and region. In July 2025, stable flu and COVID-19 levels were reported alongside a minor increase in foodborne illness cases addressed through restaurant inspections. Regional data presented in September 2025 highlighted a summer increase in enteric diseases. By September 2026, the board formally noted its transition to quarterly communicable disease reporting.",
+   "citations": [
+    {
+     "video_id": "MCM00001784",
+     "t": 2138,
+     "date": "2025-07-15",
+     "base": "2025-07-29_MCM00001784",
+     "meeting_title": "Medford Board Of Health 07-15-25",
+     "title": "Monthly Reportable Disease Update",
+     "label": "M03#5"
+    },
+    {
+     "video_id": "MCM00001812",
+     "t": 909,
+     "date": "2025-09-16",
+     "base": "2025-09-17_MCM00001812",
+     "meeting_title": "Medford Board Of Health 09-16-25",
+     "title": "Monthly Reportable Disease Updates",
+     "label": "M04#4"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 127,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Communicable Disease Report, Care Van, and Vaccine Clinics Update",
+     "label": "M06#3"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "During this term, the board initiated reviews of biological permit applications, assessed young adult gambling behaviors through grant funding, and evaluated potential public health impacts associated with citywide rezoning.",
+   "citations": [
+    {
+     "video_id": "MCM00001660",
+     "t": 58,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "MorphoCeuticals Permit Application Presentation",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "MCM00001660",
+     "t": 1035,
+     "date": "2024-12-17",
+     "base": "2024-12-18_MCM00001660",
+     "meeting_title": "Medford Board of Health 12-17-24",
+     "title": "Mass Gaming Commission Grant Award",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "MCM00001784",
+     "t": 54,
+     "date": "2025-07-15",
+     "base": "2025-07-29_MCM00001784",
+     "meeting_title": "Medford Board Of Health 07-15-25",
+     "title": "City Rezoning Initiative Update",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "MCM00001812",
+     "t": 963,
+     "date": "2025-09-16",
+     "base": "2025-09-17_MCM00001812",
+     "meeting_title": "Medford Board Of Health 09-16-25",
+     "title": "Young Adult Gambling Assessment Presentation",
+     "label": "M04#5"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "In this term, the board enforced property sanitary codes for severe pest violations, launched a mobile health van clinic, adjudicated local tobacco compliance violations, and received a BSL-2 lab permit application.",
+   "citations": [
+    {
+     "video_id": "CAS00002490",
+     "t": 1366,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Brooks Park Apartments Code Violations",
+     "label": "M05#4"
+    },
+    {
+     "video_id": "CAS00002490",
+     "t": 2465,
+     "date": "2026-07-21",
+     "base": "2026-07-21_CAS00002490",
+     "meeting_title": "Board of Health 07/21/26",
+     "title": "Mobile Health Van and Department Updates",
+     "label": "M05#5"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 362,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Tobacco Compliance Hearings",
+     "label": "M06#4"
+    },
+    {
+     "video_id": "CAS00002526",
+     "t": 1765,
+     "date": "2026-09-15",
+     "base": "2026-09-17_CAS00002526",
+     "meeting_title": "Board of Health 09/15/26",
+     "title": "Tufts University Bioinnovation Lab Presentation",
+     "label": "M06#5"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
+ "coverage": {
+  "citations": 28,
+  "meetings_cited": 5,
+  "of_meetings": 6,
+  "max_share": 0.25,
+  "most_cited": "CAS00002526",
+  "periods_covered": 2,
+  "of_periods": 2
+ },
+ "usage": {
+  "input_tokens": 2740,
+  "output_tokens": 1376,
+  "model_version": "gemini-3.6-flash"
+ }
+}
