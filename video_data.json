@@ -14753,7 +14753,11 @@
         "castus_id": "679d36c70e696bf3aac3fb0d",
         "view_count": 0,
         "meeting_type": "MPS High School Building Committee",
-        "priority": 0.001596589643692314
+        "priority": 0.001596589643692314,
+        "skip": true,
+        "duplicate_id": "MCM00001714",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of MCM00001714 (same type and meeting date, different channel)"
     },
     "MCM00001714": {
         "title": "Medford School Committee Subcommittee 01-23-25",
@@ -14764,8 +14768,11 @@
         "date": "2025-01-23",
         "url": "https://archive.org/details/sc-subcommittee-01-23-25",
         "priority": 0.001596589643692314,
-        "meeting_type": "MPS School Committee",
-        "last_update": 1791603677.223805
+        "meeting_type": "MPS High School Building Committee",
+        "last_update": 1791603677.223805,
+        "meeting_type_manual": true,
+        "skip": false,
+        "duplicate_id": "CAS00002005"
     },
     "CAS00002004": {
         "title": "City Council Governance Committee 01/22/25",
@@ -23913,7 +23920,11 @@
         "castus_id": "679d36d10e696bf3aac3fb32",
         "view_count": 0,
         "meeting_type": "MPS High School Building Committee",
-        "priority": 0.0011269700642799639
+        "priority": 0.0011269700642799639,
+        "skip": true,
+        "duplicate_id": "MCM00000887",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of MCM00000887 (same type and meeting date, different channel)"
     },
     "CAS00001700": {
         "title": "City Council Resident Services and Public Engagement Committee 05/07/24",
@@ -24006,13 +24017,14 @@
         "view_count": 10,
         "date": "2024-05-07",
         "url": "https://archive.org/details/sc-subcommittee-05-07-24",
-        "meeting_type": "MPS School Committee",
+        "meeting_type": "MPS High School Building Committee",
         "priority": 0.0011269700642799639,
         "last_update": 1791138542.3738084,
-        "duplicate_id": "M_PcKAypdrM",
+        "duplicate_id": "CAS00001702",
         "skip": false,
         "duplicate_method": "transcript_similarity",
-        "skip_reason": "kept over M_PcKAypdrM despite the channel rule: that copy is missing the first ~12 percent (decile coverage 0/48, then 82-91) of the meeting. Completeness beats channel preference, and serving BOTH would double-count in supercut excerpts, word counts and speaker stats. Confirmed by the author."
+        "skip_reason": "kept over M_PcKAypdrM despite the channel rule: that copy is missing the first ~12 percent (decile coverage 0/48, then 82-91) of the meeting. Completeness beats channel preference, and serving BOTH would double-count in supercut excerpts, word counts and speaker stats. Confirmed by the author.",
+        "meeting_type_manual": true
     },
     "CAS00001699": {
         "title": "School Committee - Special Budget Meeting 05/06/24",

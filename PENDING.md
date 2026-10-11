@@ -295,6 +295,49 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
 
+## The one-day offset rule, now specified by measurement -- 2026-10-11
+
+Jason asked how many of the Building Committee's outstanding meetings are
+unidentified duplicates. Of the 16 then outstanding, **every one was MCM
+Castus** -- not a single MCM Archive item -- and:
+
+| | |
+|---|---|
+| duplicates of an already-published meeting | 11 |
+| two Castus meetings vs one merged YouTube video | 2 |
+| genuinely unresolved on length | 3 |
+
+**The 11.** Nine match a published MHSBC meeting; two matched published copies
+filed under `MPS School Committee` at 0.0% duration difference
+(`CAS00001702`=`MCM00000887`, `CAS00002005`=`MCM00001714`) and are FIXED --
+the MCM copies are re-typed into the body, the Castus twins auto-skipped, so
+published went 63 -> 65 and outstanding 16 -> 14.
+
+**Why the other nine are invisible to both passes:** eight are +-1 day with
+duration within 5%, so `identify_duplicate_videos` cannot group them
+(exact-date key) and `find_duplicate_transcripts` cannot compare them (the
+Castus copy is untranscribed, so there is nothing to compare). The ninth,
+`CAS00002415` vs `CH7OeH8n9X8`, is 5516s against 5513s -- 0.1% -- but SIX days
+apart, because the YouTube copy's date is wrong.
+
+So the rule to add: same body, within N days, duration within 5%. Eight of the
+nine need N=2; the forum needs N>=7. **The guard it must not break:**
+`CAS00002546`/`CAS00002547` are two DIFFERENT advisory-team meetings on the
+same date, so duration has to do the separating, and a date-only widening is
+unsafe.
+
+**The segmentation case is not a duplicate and should not be treated as one.**
+`CAS00001863` (1257s, Comms & Engagement) and `CAS00001864` (1830s, MCHSBC)
+are two separate 2024-09-18 subcommittee meetings; the YouTube copy
+`0u-fMI_TT0Q` (3350s) is BOTH concatenated -- 3087s of 3350s, 92%. The Castus
+pair is the better-segmented record. Hiding them loses the segmentation;
+transcribing them duplicates text already published in the merged video.
+A judgement, not a rule.
+
+**Still unresolved, same date or +-1 day but lengths disagree:**
+`CAS00001740` (3831s vs 6898s, 44%), `CAS00002256` (6933s, 20% same day),
+`CAS00002457` (3038s vs 3038/27%).
+
 ## 16 duplicate pairs are flagged but NEITHER copy is hidden -- 2026-10-11
 
 Found while reading the first 19 committee overviews. An entry can carry
