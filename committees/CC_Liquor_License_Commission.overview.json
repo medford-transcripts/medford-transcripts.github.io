@@ -1,0 +1,396 @@
+{
+ "committee": "CC Liquor License Commission",
+ "provider": "gemini",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "generated_at": "2026-10-11T10:06:28Z",
+ "sources_sha": "a1c7705c8a095663",
+ "n_meetings": 7,
+ "period_style": "term",
+ "span": [
+  "2024-10-23",
+  "2026-09-16"
+ ],
+ "overview": "The Medford Liquor License Commission regulates the sale, service, and licensing of alcoholic beverages in the City of Medford. The commission oversees permanent and temporary liquor licenses, approves operational and structural modifications, reviews police incident reports, and conducts disciplinary hearings for license violations. The archive covers seven meetings held between October 23, 2024, and September 16, 2026. At its most recent meeting, the commission approved multiple temporary licenses and permanent license amendments, and took under advisement a disciplinary hearing concerning alcohol service to a minor.",
+ "threads": [
+  {
+   "name": "One-day liquor licenses",
+   "status": "ongoing",
+   "summary": "The commission regularly reviews and votes on applications for one-day alcohol licenses for community, institutional, and private events across Medford. Approvals have covered events hosted by entities such as Medford Brewing Company, Arts Collaborative, Tufts University, and the City Hall Winter Extravaganza, frequently conditioned on the receipt of liquor liability insurance. Later meetings maintained approvals for community gatherings, church events, library events, and local festivals. At the most recent meeting, the commission authorized one-day licenses for multiple events including the Harvester Energy Festival, Oktoberfest, and library receptions.",
+   "citations": [
+    {
+     "video_id": "MCM00001597",
+     "t": 42,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001597",
+     "meeting_title": "Medford Liquor License Commission 10-23-24",
+     "title": "Medford Brewing Company One-Day License",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00001597",
+     "t": 246,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001597",
+     "meeting_title": "Medford Liquor License Commission 10-23-24",
+     "title": "Arts Collaborative One-Day Licenses",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "MCM00001624",
+     "t": 24,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Tufts University One-Day Licenses",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001624",
+     "t": 248,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Winter Extravaganza One-Day License",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 66,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "One-Day License: Mary Queen of Peace Parish",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 50,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "One-Day License: Chef Jason's Catered Events",
+     "label": "M06#2"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 72,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "One-Day License: Harvester Energy Festival",
+     "label": "M07#2"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 1444,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "One-Day Licenses: Medford Public Library",
+     "label": "M07#6"
+    }
+   ]
+  },
+  {
+   "name": "Disciplinary hearings and compliance enforcement",
+   "status": "ongoing",
+   "summary": "The commission conducts disciplinary proceedings and reviews incident reports concerning alleged liquor law violations and underage alcohol sales. In November 2024, following police testimony on underage sales, the commission ordered a 10-day license suspension and mandatory training for Medford Wine and Spirits, while clearing Razzo's Bar & Grill of violations following a separate police report review. In January 2025, the commission held a hearing on four allegations of underage alcohol sales at Main Street Liquors and took the matter under advisement. Most recently, the commission took under advisement allegations against the Great American Beer Hall regarding alcohol service and consumption by a 19-year-old minor.",
+   "citations": [
+    {
+     "video_id": "MCM00001624",
+     "t": 1225,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Disciplinary Hearing: Medford Wine and Spirits",
+     "label": "M03#5"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 509,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "Razzo's Bar & Grill Incident Review",
+     "label": "M04#3"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 1022,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "Disciplinary Hearing: Main Street Liquors",
+     "label": "M05#5"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 2721,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "Disciplinary Hearing: Great American Beer Hall",
+     "label": "M07#10"
+    }
+   ]
+  },
+  {
+   "name": "Permanent license transfers, renewals, and modifications",
+   "status": "ongoing",
+   "summary": "The commission manages permanent licenses through annual renewal cycles, transfers, category modifications, and surrender filings. Actions have included category changes for Desisto Enterprises, license transfers for Yoki X, Inc. and Mitsuba Sakaya Sushi Bar and Grill, and the accepted surrender of Chili Gardens' license. In December 2024, the commission approved the complete 2025 annual liquor license renewals across all classes and approved a new wine and malt license for Buns House in February 2025. In September 2026, the commission approved a change of location for Medford's Cappy's Inc. and premises alteration and license type changes for Medford Brewing Company.",
+   "citations": [
+    {
+     "video_id": "MCM00001619",
+     "t": 781,
+     "date": "2024-11-20",
+     "base": "2024-12-04_MCM00001619",
+     "meeting_title": "Medford Liquor License Commission 11-20-24",
+     "title": "Change of Category: Desisto Enterprises",
+     "label": "M02#4"
+    },
+    {
+     "video_id": "MCM00001624",
+     "t": 865,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Yoki X, Inc. License Transfer and Entertainment License",
+     "label": "M03#4"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 33,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "Chili Gardens License Surrender",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 3502,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "2025 Liquor License Renewals",
+     "label": "M04#5"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 1108,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "New Wine and Malt License: Buns House",
+     "label": "M06#5"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 2007,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "License Amendment: Medford's Cappy's Inc.",
+     "label": "M07#8"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 2255,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "License Amendment: Medford Brewing Company",
+     "label": "M07#9"
+    }
+   ]
+  },
+  {
+   "name": "Entertainment licensing and operating hours",
+   "status": "ongoing",
+   "summary": "The commission reviews applications for entertainment devices and coordinates operating hours for licensed establishments. Early meetings addressed legal requirements and pending opinions for New Year's Eve hour extensions, conditional hours changes for Main Street Liquor, and entertainment permits for Snappy Patty's and El Tacuba. In February 2025, the commission approved television entertainment for Buns House and discussed streamlining common victualler operating hours with liquor service regulations. At the most recent meeting, hours and operational conditions continued alongside entertainment approvals.",
+   "citations": [
+    {
+     "video_id": "MCM00001597",
+     "t": 757,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001597",
+     "meeting_title": "Medford Liquor License Commission 10-23-24",
+     "title": "New Year's Eve Operating Hours",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001619",
+     "t": 391,
+     "date": "2024-11-20",
+     "base": "2024-12-04_MCM00001619",
+     "meeting_title": "Medford Liquor License Commission 11-20-24",
+     "title": "Change of Hours: NN Liquor Co-op d/b/a Main Street Liquor",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 154,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "Snappy Patty's Entertainment License Application",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 760,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "Entertainment License: El Tacuba",
+     "label": "M05#3"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 1433,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "Entertainment License: Buns House",
+     "label": "M06#6"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 1983,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "General Business and Policy Discussion",
+     "label": "M06#7"
+    }
+   ]
+  },
+  {
+   "name": "Ocean State Job Lot management change application",
+   "status": "unclear",
+   "summary": "The commission repeatedly reviewed an application for a change of manager for Ocean State Job Lot. The item was first tabled in November 2024 because the applicant was unattended. In January 2025, the commission tabled the matter once again due to the applicant's absence. In February 2025, the item was skipped for a third time because no representative appeared to testify on behalf of the application.",
+   "citations": [
+    {
+     "video_id": "MCM00001619",
+     "t": 1098,
+     "date": "2024-11-20",
+     "base": "2024-12-04_MCM00001619",
+     "meeting_title": "Medford Liquor License Commission 11-20-24",
+     "title": "Commission Discussion: Administrative Reviews, Upcoming Hearings, and The Porch",
+     "label": "M02#5"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 976,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "Change of Manager: Ocean State Job Lot",
+     "label": "M05#4"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 246,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "Management Change: Ocean State Job Lot",
+     "label": "M06#3"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "The commission conducted business regarding one-day licenses, annual renewals, restaurant license modifications, and disciplinary enforcement for underage alcohol sales.",
+   "citations": [
+    {
+     "video_id": "MCM00001597",
+     "t": null,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001597",
+     "meeting_title": "Medford Liquor License Commission 10-23-24",
+     "title": "Medford Liquor License Commission 10-23-24",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001624",
+     "t": 1225,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Disciplinary Hearing: Medford Wine and Spirits",
+     "label": "M03#5"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 3502,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "2025 Liquor License Renewals",
+     "label": "M04#5"
+    },
+    {
+     "video_id": "MCM00001747",
+     "t": 1108,
+     "date": "2025-02-20",
+     "base": "2025-02-21_MCM00001747",
+     "meeting_title": "Medford Liquor License Commission 02-20-25",
+     "title": "New Wine and Malt License: Buns House",
+     "label": "M06#5"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The commission considered multiple fall event licenses, approved licensee location and beverage category amendments, and held an underage service disciplinary hearing.",
+   "citations": [
+    {
+     "video_id": "CAS00002528",
+     "t": null,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "Liquor License Commission 09/16/26",
+     "label": "M07"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 2007,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "License Amendment: Medford's Cappy's Inc.",
+     "label": "M07#8"
+    },
+    {
+     "video_id": "CAS00002528",
+     "t": 2721,
+     "date": "2026-09-16",
+     "base": "2026-09-17_CAS00002528",
+     "meeting_title": "Liquor License Commission 09/16/26",
+     "title": "Disciplinary Hearing: Great American Beer Hall",
+     "label": "M07#10"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
+ "coverage": {
+  "citations": 35,
+  "meetings_cited": 7,
+  "of_meetings": 7,
+  "max_share": 0.229,
+  "most_cited": "CAS00002528",
+  "periods_covered": 2,
+  "of_periods": 2
+ },
+ "usage": {
+  "input_tokens": 3553,
+  "output_tokens": 1256,
+  "model_version": "gemini-3.8-flash"
+ }
+}

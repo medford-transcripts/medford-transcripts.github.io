@@ -1,0 +1,41 @@
+{
+ "video_id": "EOItPyTno-c",
+ "provider": "gemini",
+ "generated_at": "2026-10-11T10:09:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "e09e06152e226566",
+ "subject": "",
+ "overview": "The committee edited and approved the Medford City Council newsletter for October 2024 and received an update on the status of a new Human Rights Commission ordinance.",
+ "items": [
+  {
+   "title": "October 2024 City Council Newsletter",
+   "t": 263,
+   "summary": "Approved the draft monthly newsletter after reviewing committee descriptions, incorporating grammatical edits from members, and adding a commemoration for Larry Lepore.",
+   "speakers": [
+    "Matt Leming",
+    "Anna Callahan",
+    "Justin Tseng",
+    "Emily Lazzaro",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Human Rights Commission Ordinance Update",
+   "t": 524,
+   "summary": "Kept the matter in committee after receiving an update that a draft ordinance is currently under review by the Mayor and the Diversity, Equity, and Inclusion Director.",
+   "speakers": [
+    "Justin Tseng",
+    "Matt Leming",
+    "Steve Schnapp",
+    "Emily Lazzaro"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6582,
+  "output_tokens": 241,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
