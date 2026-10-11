@@ -344,7 +344,7 @@
         "upload_date": "2026-10-01",
         "view_count": 12,
         "skip": false,
-        "duplicate_id": "CAS00002546",
+        "duplicate_id": "CAS00002547",
         "truncated_attempts": 1,
         "last_update": 1791662816.2373996
     },
@@ -2172,8 +2172,13 @@
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=6a348bc7a678be0002c34022",
         "castus_id": "6a348bc7a678be0002c34022",
         "view_count": 0,
-        "meeting_type": "MPS School Committee",
-        "priority": 0.008670393734970501
+        "meeting_type": "MPS High School Building Committee",
+        "priority": 0.008670393734970501,
+        "meeting_type_manual": true,
+        "skip": true,
+        "duplicate_id": "B16QgbwlQNo",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of B16QgbwlQNo (same type and meeting date, different channel)"
     },
     "CAS00002466": {
         "title": "Historic District Commission 06/18/26",
@@ -2196,7 +2201,9 @@
         "date": "2026-06-18",
         "priority": 0.008670393734970501,
         "last_update": 1791086293.3599741,
-        "meeting_type": "MPS High School Building Committee"
+        "meeting_type": "MPS High School Building Committee",
+        "skip": false,
+        "duplicate_id": "CAS00002465"
     },
     "3oq8f8TyuOQ": {
         "title": "Medford Happenings Episode 46 Sharon Deyeso",
@@ -2353,8 +2360,9 @@
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=6a2b48f48d186a0002a259bd",
         "castus_id": "6a2b48f48d186a0002a259bd",
         "view_count": 0,
-        "meeting_type": "MPS School Committee",
-        "priority": 0.00817427448687782
+        "meeting_type": "MPS High School Building Committee",
+        "priority": 0.00817427448687782,
+        "meeting_type_manual": true
     },
     "CAS00002459": {
         "title": "City Council Community Development Board  Joint Meeting 06/11/26",
@@ -2406,8 +2414,13 @@
         "url": "https://cloud.castus.tv/vod/medford/?page=HOME&video=6a2b41ea78c12700028f806f",
         "castus_id": "6a2b41ea78c12700028f806f",
         "view_count": 0,
-        "meeting_type": "MPS School Committee",
-        "priority": 0.008107997489856814
+        "meeting_type": "MPS High School Building Committee",
+        "priority": 0.008107997489856814,
+        "meeting_type_manual": true,
+        "skip": true,
+        "duplicate_id": "c6Y6iezvU4o",
+        "duplicate_method": "metadata",
+        "skip_reason": "duplicate of c6Y6iezvU4o (same type and meeting date, different channel)"
     },
     "c6Y6iezvU4o": {
         "title": "6.10.26 MCHSBC Full Monthly",
@@ -2418,7 +2431,9 @@
         "date": "2026-06-10",
         "priority": 0.008107997489856814,
         "meeting_type": "MPS High School Building Committee",
-        "last_update": 1791086268.5821307
+        "last_update": 1791086268.5821307,
+        "skip": false,
+        "duplicate_id": "CAS00002456"
     },
     "li3unG8W3gM": {
         "title": "Medford Happenings Episode 45 Liz Ammons and John Anderson",
@@ -3556,7 +3571,7 @@
         "meeting_type": "CC City Council Meeting of the Whole",
         "last_update": 1791086136.9167418,
         "skip": false,
-        "duplicate_id": "CAS00002402"
+        "duplicate_id": "CAS00002398"
     },
     "x_cZbd-R2Gw": {
         "title": "Sustainability & MEP Advisory Team: LEED Discussion",
@@ -3781,7 +3796,7 @@
         "priority": 0.005769174764429735,
         "meeting_type": "CC City Council Meeting of the Whole",
         "last_update": 1791143911.5400198,
-        "duplicate_id": "qP0YKPV0kVg",
+        "duplicate_id": "CAS00002391",
         "skip": false
     },
     "qP0YKPV0kVg": {
@@ -5544,7 +5559,7 @@
         "meeting_type": "CC City Council Meeting of the Whole",
         "last_update": 1791143713.7909534,
         "skip": false,
-        "duplicate_id": "CAS00002369"
+        "duplicate_id": "CAS00002316"
     },
     "fy4uXt-Ba5U": {
         "title": "City Council 02-03-26",
@@ -6106,7 +6121,7 @@
         "meeting_type": "MPS School Committee",
         "last_update": 1791097804.877656,
         "skip": false,
-        "duplicate_id": "MCM00001832"
+        "duplicate_id": "CAS00002293"
     },
     "brfcP1Wifvc": {
         "title": "MHS Advisory Teams - Ed Planning & Equity / Site, Safety & Security #2",
@@ -6935,7 +6950,7 @@
         "last_update": 1791098082.1396952,
         "meeting_type": "Medford Happenings",
         "skip": false,
-        "duplicate_id": "CAS00002259"
+        "duplicate_id": "CAS00002258"
     },
     "CAS00002257": {
         "title": "Affordable Housing Trust 11/05/25",
@@ -7260,7 +7275,7 @@
         "last_update": 1791143382.754438,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "CAS00002245"
+        "duplicate_id": "CAS00002244"
     },
     "o4xm49LNAj0": {
         "title": "Data Talk #6: Finding Bright Spots",
@@ -7888,7 +7903,7 @@
         "priority": 0.002714919724185805,
         "last_update": 1791184397.0343797,
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001827",
+        "duplicate_id": "CAS00002234",
         "skip": false
     },
     "MCM00001827": {
@@ -7944,7 +7959,7 @@
         "priority": 0.0027075688919963323,
         "last_update": 1791184470.2654216,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00002233",
+        "duplicate_id": "MCM00001826",
         "skip": false
     },
     "MCM00001825": {
@@ -8206,7 +8221,7 @@
         "priority": 0.002657206896861549,
         "last_update": 1791198476.4026978,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001820",
+        "duplicate_id": "CAS00002227",
         "skip": false
     },
     "F1G_uayzNSg": {
@@ -8219,7 +8234,7 @@
         "priority": 0.002657206896861549,
         "last_update": 1791187569.3692787,
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001819",
+        "duplicate_id": "CAS00002226",
         "skip": false
     },
     "MCM00001819": {
@@ -8440,7 +8455,7 @@
         "priority": 0.0026018966745531983,
         "last_update": 1791270389.609855,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001815",
+        "duplicate_id": "CAS00002220",
         "skip": false
     },
     "JGsQ-T4cCS4": {
@@ -8572,7 +8587,7 @@
         "priority": 0.0025684820500300838,
         "last_update": 1791270505.4198704,
         "skip": false,
-        "duplicate_id": "CAS00002223"
+        "duplicate_id": "CAS00002219"
     },
     "MCM00001817": {
         "title": "Medford Community Development Block Grant Public Hearing 9/17/25",
@@ -8782,7 +8797,7 @@
         "priority": 0.0025167678653403303,
         "last_update": 1791270686.4796627,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001808",
+        "duplicate_id": "CAS00002208",
         "skip": false
     },
     "MCM00001807": {
@@ -8880,7 +8895,7 @@
         "priority": 0.0025104496463428595,
         "last_update": 1791270771.3005397,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001805",
+        "duplicate_id": "CAS00002205",
         "skip": false
     },
     "XXXXXX00137": {
@@ -9569,7 +9584,7 @@
         "priority": 0.0023183835370320922,
         "last_update": 1791335199.843381,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001793",
+        "duplicate_id": "CAS00002184",
         "skip": false
     },
     "MCM00001793": {
@@ -9613,7 +9628,7 @@
         "priority": 0.00231302106706939,
         "last_update": 1791335228.6620574,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001792",
+        "duplicate_id": "CAS00002183",
         "skip": false
     },
     "MCM00001792": {
@@ -10335,7 +10350,7 @@
         "priority": 0.00210821458737986,
         "last_update": 1791371175.1407187,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001764",
+        "duplicate_id": "CAS00002153",
         "skip": false
     },
     "MCM00001764": {
@@ -10763,7 +10778,7 @@
         "meeting_type": "CC Resident Services and Public Engagement Committee",
         "last_update": 1791444078.9604807,
         "skip": false,
-        "duplicate_id": "CAS00002160"
+        "duplicate_id": "CAS00002148"
     },
     "CAS00002147": {
         "title": "School Committee of the Whole - Special Meeting 06/03/25",
@@ -11302,7 +11317,7 @@
         "priority": 0.0019367270648816693,
         "last_update": 1791444722.0356905,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001765",
+        "duplicate_id": "CAS00002164",
         "date_manual": true,
         "date_note": "titled 'Medford City Council Meeting via Zoom' with no date, so date fell back to upload_date 2025-05-14. It is the 05-13 meeting: 0.886 containment with MCM00001765 'City Council 05-13-25', word counts 28,199 vs 28,294, and the CC City Council agenda is dated 2025-05-13 (2025-05-14 has only Planning and Permitting). Confirmed by the author 2026-09-28",
         "skip": false
@@ -11511,7 +11526,7 @@
         "priority": 0.0019144801121909222,
         "last_update": 1791444855.859886,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "DObjiEFtXck",
+        "duplicate_id": "CAS00002121",
         "skip": false
     },
     "CAS00002119": {
@@ -12451,7 +12466,7 @@
         "priority": 0.0017942529561624733,
         "last_update": 1791475656.500949,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "rUHv9xQGeWo",
+        "duplicate_id": "CAS00002079",
         "skip": false
     },
     "MCM00001771": {
@@ -12646,7 +12661,7 @@
         "priority": 0.001771997079179075,
         "last_update": 1791486449.2671263,
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001772",
+        "duplicate_id": "CAS00002072",
         "skip": false
     },
     "MCM00001772": {
@@ -12922,7 +12937,7 @@
         "priority": 0.0017472284100647278,
         "last_update": 1791529590.0986931,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001774",
+        "duplicate_id": "CAS00002060",
         "skip": false
     },
     "MCM00001774": {
@@ -13201,7 +13216,7 @@
         "priority": 0.001708423334833232,
         "last_update": 1791529738.887932,
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001761",
+        "duplicate_id": "CAS00002045",
         "skip": false
     },
     "XMjhyZWt-ek": {
@@ -13225,7 +13240,7 @@
         "priority": 0.001708423334833232,
         "last_update": 1791529787.9898198,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001760",
+        "duplicate_id": "CAS00002047",
         "skip": false
     },
     "MCM00001760": {
@@ -13312,7 +13327,7 @@
         "priority": 0.0017055096024306572,
         "last_update": 1791529874.203199,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001759",
+        "duplicate_id": "CAS00002044",
         "skip": false
     },
     "x-wCLjtQBdU": {
@@ -13511,7 +13526,7 @@
         "priority": 0.0016882338086003613,
         "last_update": 1791529975.8100574,
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001751",
+        "duplicate_id": "CAS00002037",
         "skip": false
     },
     "8Kto7egzLDI": {
@@ -13524,7 +13539,7 @@
         "priority": 0.0016882338086003613,
         "last_update": 1791530006.66676,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001752",
+        "duplicate_id": "CAS00002038",
         "skip": false
     },
     "MCM00001751": {
@@ -13627,7 +13642,7 @@
         "priority": 0.0016853884787898427,
         "last_update": 1791530081.7543964,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001749",
+        "duplicate_id": "CAS00002036",
         "skip": false
     },
     "ZG6Mf3yqBkQ": {
@@ -13640,7 +13655,7 @@
         "priority": 0.0016853884787898427,
         "last_update": 1791530108.5155897,
         "meeting_type": "CC Education and Culture",
-        "duplicate_id": "MCM00001750",
+        "duplicate_id": "CAS00002034",
         "skip": false
     },
     "MCM00001749": {
@@ -13786,7 +13801,7 @@
         "priority": 0.001668515894003258,
         "last_update": 1791530234.8183267,
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00001746",
+        "duplicate_id": "CAS00002031",
         "skip": false
     },
     "MCM00001746": {
@@ -13872,7 +13887,7 @@
         "priority": 0.0016492532570943675,
         "last_update": 1791530289.4040713,
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001739",
+        "duplicate_id": "CAS00002028",
         "skip": false
     },
     "MCM00001739": {
@@ -13988,7 +14003,7 @@
         "priority": 0.001646537699430653,
         "last_update": 1791530401.3843124,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001735",
+        "duplicate_id": "CAS00002026",
         "skip": false
     },
     "MCM00001735": {
@@ -14108,7 +14123,7 @@
         "priority": 0.001643831069603056,
         "last_update": 1791530482.9736135,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001734",
+        "duplicate_id": "CAS00002021",
         "skip": false
     },
     "XXXXXX00121": {
@@ -14236,7 +14251,7 @@
         "priority": 0.0016304303096043057,
         "last_update": 1791540362.0834093,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001728",
+        "duplicate_id": "CAS00002019",
         "skip": false
     },
     "MCM00001728": {
@@ -14331,7 +14346,7 @@
         "priority": 0.0016277763337325317,
         "last_update": 1791547587.081715,
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001727",
+        "duplicate_id": "CAS00002017",
         "skip": false
     },
     "MCM00001726": {
@@ -14538,7 +14553,7 @@
         "priority": 0.0016120321668698537,
         "last_update": 1791603342.3237112,
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001720",
+        "duplicate_id": "CAS00002012",
         "skip": false
     },
     "z9B9_JzAXRA": {
@@ -14551,7 +14566,7 @@
         "priority": 0.0016120321668698537,
         "last_update": 1791603362.7254033,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001719",
+        "duplicate_id": "CAS00002013",
         "skip": false
     },
     "R2VsFLRcTzA": {
@@ -14564,7 +14579,7 @@
         "priority": 0.0016120321668698537,
         "last_update": 1791603385.252257,
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001721",
+        "duplicate_id": "CAS00002011",
         "skip": false
     },
     "MCM00001719": {
@@ -14666,7 +14681,7 @@
         "priority": 0.0016094377015244232,
         "last_update": 1791603613.1680422,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001718",
+        "duplicate_id": "CAS00002007",
         "skip": false
     },
     "MCM00001718": {
@@ -14710,7 +14725,7 @@
         "priority": 0.0016068515740204408,
         "last_update": 1791603641.501576,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001717",
+        "duplicate_id": "CAS00002006",
         "skip": false
     },
     "MCM00001717": {
@@ -14794,7 +14809,7 @@
         "priority": 0.0015940446085786738,
         "last_update": 1791605256.1795518,
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00001713",
+        "duplicate_id": "CAS00002004",
         "skip": false
     },
     "kOuBy-MtMpc": {
@@ -14807,7 +14822,7 @@
         "priority": 0.0015940446085786738,
         "last_update": 1791605226.069309,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001712",
+        "duplicate_id": "CAS00002003",
         "skip": false
     },
     "MCM00001712": {
@@ -14882,7 +14897,7 @@
         "priority": 0.0015915076743508632,
         "last_update": 1791605300.6778564,
         "meeting_type": "CC Public Works and Facilities",
-        "duplicate_id": "MCM00001711",
+        "duplicate_id": "CAS00002001",
         "skip": false
     },
     "cNtcjeG3bMI": {
@@ -14895,7 +14910,7 @@
         "priority": 0.0015915076743508632,
         "last_update": 1791605282.4012618,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001710",
+        "duplicate_id": "CAS00002002",
         "skip": false
     },
     "MCM00001710": {
@@ -15033,7 +15048,7 @@
         "date": "2025-01-15",
         "last_update": 1791616103.6837752,
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001704",
+        "duplicate_id": "CAS00001994",
         "skip": false
     },
     "ZQDZZh_VfdI": {
@@ -15046,7 +15061,7 @@
         "priority": 0.001576454042113156,
         "last_update": 1791616043.9369211,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001709",
+        "duplicate_id": "CAS00001996",
         "skip": false
     },
     "MCM00001704": {
@@ -15151,7 +15166,7 @@
         "last_update": 1791616208.3745334,
         "date": "2025-01-14",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001703",
+        "duplicate_id": "CAS00001995",
         "skip": false
     },
     "F41aZM7C-XA": {
@@ -15164,7 +15179,7 @@
         "date": "2025-01-14",
         "last_update": 1791616172.4275265,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001702",
+        "duplicate_id": "CAS00001992",
         "skip": false
     },
     "MCM00001702": {
@@ -15253,7 +15268,7 @@
         "last_update": 1791616342.324457,
         "date": "2025-01-13",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001716",
+        "duplicate_id": "CAS00001991",
         "skip": false
     },
     "MCM00001705": {
@@ -15395,7 +15410,7 @@
         "last_update": 1791616461.5792372,
         "date": "2025-01-07",
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00001699",
+        "duplicate_id": "CAS00001989",
         "skip": false
     },
     "MCM00001699": {
@@ -15698,7 +15713,7 @@
         "last_update": 1791616795.727605,
         "date": "2024-12-18",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001667",
+        "duplicate_id": "CAS00001979",
         "skip": false
     },
     "fZTCR91cjd8": {
@@ -15711,7 +15726,7 @@
         "priority": 0.0015098099539794937,
         "last_update": 1791616768.827565,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001668",
+        "duplicate_id": "CAS00001978",
         "skip": false
     },
     "MCM00001662": {
@@ -15884,7 +15899,7 @@
         "last_update": 1791616895.5027218,
         "date": "2024-12-17",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001666",
+        "duplicate_id": "CAS00001980",
         "skip": false
     },
     "cCFTFy23gjY": {
@@ -15897,7 +15912,7 @@
         "last_update": 1791616838.680081,
         "date": "2024-12-17",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001661",
+        "duplicate_id": "CAS00001967",
         "skip": false
     },
     "MCM00001660": {
@@ -15912,7 +15927,7 @@
         "meeting_type": "CC Board of Health",
         "last_update": 1791616820.0594032,
         "skip": false,
-        "duplicate_id": "CAS00001965"
+        "duplicate_id": "CAS00001963"
     },
     "MCM00001661": {
         "title": "Medford City Council Committee Of The Whole 12-17-24",
@@ -15983,7 +15998,7 @@
         "last_update": 1791616920.1478965,
         "date": "2024-12-16",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001659",
+        "duplicate_id": "CAS00001968",
         "skip": false
     },
     "MCM00001659": {
@@ -16117,7 +16132,7 @@
         "last_update": 1791617068.2732458,
         "date": "2024-12-11",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001649",
+        "duplicate_id": "CAS00001961",
         "skip": false
     },
     "yfpMOktT6KA": {
@@ -16130,7 +16145,7 @@
         "last_update": 1791617045.9273565,
         "date": "2024-12-11",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001651",
+        "duplicate_id": "CAS00001959",
         "skip": false
     },
     "pUMtYvwLQbQ": {
@@ -16143,7 +16158,7 @@
         "last_update": 1791617023.1316216,
         "date": "2024-12-11",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001650",
+        "duplicate_id": "CAS00001960",
         "skip": false
     },
     "MCM00001649": {
@@ -16279,7 +16294,7 @@
         "last_update": 1791617166.1028328,
         "date": "2024-12-10",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001647",
+        "duplicate_id": "CAS00001955",
         "skip": false
     },
     "F83fBWNvQ1Q": {
@@ -16292,7 +16307,7 @@
         "last_update": 1791617147.3691134,
         "date": "2024-12-10",
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00001646",
+        "duplicate_id": "CAS00001956",
         "skip": false
     },
     "MCM00001646": {
@@ -16590,7 +16605,7 @@
         "last_update": 1791619592.9152179,
         "date": "2024-12-03",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001632",
+        "duplicate_id": "CAS00001947",
         "skip": false
     },
     "kojaidJyMMQ": {
@@ -16603,7 +16618,7 @@
         "last_update": 1791617382.5154958,
         "date": "2024-12-03",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001622",
+        "duplicate_id": "CAS00001946",
         "skip": false
     },
     "MCM00001622": {
@@ -16691,7 +16706,7 @@
         "last_update": 1791626813.3501096,
         "date": "2024-12-02",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001609",
+        "duplicate_id": "CAS00001945",
         "skip": false
     },
     "MCM00001609": {
@@ -16817,7 +16832,7 @@
         "last_update": 1791633972.7158844,
         "date": "2024-11-26",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001608",
+        "duplicate_id": "CAS00001942",
         "skip": false
     },
     "MCM00001608": {
@@ -16976,7 +16991,7 @@
         "last_update": 1791641176.4120562,
         "priority": 0.0014485720365442305,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001620",
+        "duplicate_id": "CAS00001935",
         "skip": false
     },
     "S3LvuQi6-yY": {
@@ -17001,7 +17016,7 @@
         "priority": 0.0014485720365442305,
         "last_update": 1791649490.7882276,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001621",
+        "duplicate_id": "CAS00001934",
         "skip": false
     },
     "MCM00001619": {
@@ -17106,7 +17121,7 @@
         "last_update": 1791662856.5271432,
         "priority": 0.0014464767108294107,
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001616",
+        "duplicate_id": "CAS00001931",
         "skip": false
     },
     "7gllzJBT7FA": {
@@ -17119,7 +17134,7 @@
         "last_update": 1791652012.2039928,
         "priority": 0.0014464767108294107,
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001617",
+        "duplicate_id": "CAS00001932",
         "skip": false
     },
     "MCM00001616": {
@@ -17239,7 +17254,7 @@
         "last_update": 1791669973.572453,
         "priority": 0.0014443874380388729,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001613",
+        "duplicate_id": "CAS00001928",
         "skip": false
     },
     "MCM00001613": {
@@ -17362,7 +17377,7 @@
         "priority": 0.0014340309565419327,
         "date": "2024-11-13",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001612",
+        "duplicate_id": "CAS00001922",
         "skip": false
     },
     "MCM00001611": {
@@ -17460,7 +17475,7 @@
         "last_update": 1791702806.8526444,
         "date": "2024-11-12",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001606",
+        "duplicate_id": "CAS00001920",
         "skip": false
     },
     "MCM00001606": {
@@ -17557,7 +17572,7 @@
         "priority": 0.0014197789082012909,
         "last_update": 1791706490.25982,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001605",
+        "duplicate_id": "CAS00001918",
         "skip": false
     },
     "MCM00001605": {
@@ -17640,7 +17655,7 @@
         "priority": 0.0014157587792934078,
         "date": "2024-11-04",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001604",
+        "duplicate_id": "CAS00001916",
         "skip": false
     },
     "MCM00001604": {
@@ -17684,7 +17699,7 @@
         "priority": 0.0014058073587427313,
         "last_update": 1791706592.1432495,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001603",
+        "duplicate_id": "CAS00001914",
         "skip": false
     },
     "MCM00001603": {
@@ -17728,7 +17743,7 @@
         "priority": 0.001403833838801692,
         "date": "2024-10-29",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001602",
+        "duplicate_id": "CAS00001913",
         "skip": false
     },
     "bQ7rGA39hAo": {
@@ -17913,7 +17928,7 @@
         "priority": 0.001392108107986125,
         "date": "2024-10-23",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001599",
+        "duplicate_id": "CAS00001908",
         "skip": false
     },
     "MCM00001597": {
@@ -18017,7 +18032,7 @@
         "priority": 0.0013901728371080847,
         "date": "2024-10-22",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001587",
+        "duplicate_id": "CAS00001905",
         "skip": false
     },
     "IuW-bxYxNyo": {
@@ -18130,7 +18145,7 @@
         "priority": 0.0013882429394823095,
         "date": "2024-10-21",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001589",
+        "duplicate_id": "CAS00001901",
         "skip": false
     },
     "MCM00001589": {
@@ -18258,7 +18273,7 @@
         "priority": 0.0013786732723016805,
         "date": "2024-10-16",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001590",
+        "duplicate_id": "CAS00001898",
         "skip": false
     },
     "MCM00001590": {
@@ -18501,7 +18516,7 @@
         "priority": 0.0013654952694812632,
         "date": "2024-10-09",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001592",
+        "duplicate_id": "CAS00001891",
         "skip": false
     },
     "5pNSZMGM6Qk": {
@@ -18514,7 +18529,7 @@
         "priority": 0.0013654952694812632,
         "date": "2024-10-09",
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00001744",
+        "duplicate_id": "CAS00001888",
         "skip": false
     },
     "18j4n2ij1pI": {
@@ -18571,7 +18586,7 @@
         "priority": 0.0013654952694812632,
         "last_update": 1791085233.5828414,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001591",
+        "duplicate_id": "CAS00001889",
         "skip": false
     },
     "MCM00001591": {
@@ -18688,7 +18703,7 @@
         "last_update": 1791082873.4675748,
         "date": "2024-10-08",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001594",
+        "duplicate_id": "CAS00001886",
         "skip": false
     },
     "MCM00001593": {
@@ -18807,7 +18822,7 @@
         "priority": 0.0013617762713679735,
         "date": "2024-10-07",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001585",
+        "duplicate_id": "CAS00001883",
         "skip": false
     },
     "MCM00001585": {
@@ -18957,7 +18972,7 @@
         "priority": 0.0013525668044691431,
         "date": "2024-10-02",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001551",
+        "duplicate_id": "CAS00001881",
         "skip": false
     },
     "MCM00001551": {
@@ -19047,7 +19062,7 @@
         "last_update": 1791139836.919185,
         "date": "2024-10-01",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001550",
+        "duplicate_id": "CAS00001877",
         "skip": false
     },
     "nmhVrAiqiHw": {
@@ -19060,7 +19075,7 @@
         "last_update": 1791082677.8009572,
         "date": "2024-10-01",
         "meeting_type": "CC Public Works and Facilities",
-        "duplicate_id": "MCM00001549",
+        "duplicate_id": "CAS00001878",
         "skip": false
     },
     "MCM00001548": {
@@ -19206,7 +19221,7 @@
         "last_update": 1791139821.402722,
         "date": "2024-09-25",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001543",
+        "duplicate_id": "CAS00001873",
         "skip": false
     },
     "MCM00001542": {
@@ -19291,7 +19306,7 @@
         "last_update": 1791082651.0867348,
         "date": "2024-09-24",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00001541",
+        "duplicate_id": "CAS00001870",
         "skip": false
     },
     "MCM00001541": {
@@ -19360,7 +19375,7 @@
         "priority": 0.001336299890613408,
         "date": "2024-09-23",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00001537",
+        "duplicate_id": "CAS00001869",
         "skip": false
     },
     "MCM00001537": {
@@ -19666,7 +19681,7 @@
         "last_update": 1791139556.890733,
         "date": "2024-09-17",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001451",
+        "duplicate_id": "CAS00001860",
         "skip": false
     },
     "k65YPGeaIcs": {
@@ -19679,7 +19694,7 @@
         "last_update": 1791082417.3367827,
         "date": "2024-09-17",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001450",
+        "duplicate_id": "CAS00001861",
         "skip": false
     },
     "MCM00001450": {
@@ -19768,7 +19783,7 @@
         "last_update": 1791139493.3175504,
         "date": "2024-09-11",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001425",
+        "duplicate_id": "CAS00001853",
         "skip": false
     },
     "MCM00001425": {
@@ -19840,7 +19855,7 @@
         "last_update": 1791082327.4678676,
         "date": "2024-09-10",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001406",
+        "duplicate_id": "CAS00001852",
         "skip": false
     },
     "MCM00001390": {
@@ -20079,7 +20094,7 @@
         "priority": 0.0013032117382512543,
         "last_update": 1791085170.005159,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001442",
+        "duplicate_id": "CAS00001847",
         "skip": false
     },
     "MCM00001353": {
@@ -20265,7 +20280,7 @@
         "priority": 0.0012798607249697514,
         "last_update": 1791085174.0468976,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001272",
+        "duplicate_id": "CAS00001840",
         "skip": false
     },
     "MCM00001261": {
@@ -20470,7 +20485,7 @@
         "last_update": 1791139799.847209,
         "date": "2024-08-14",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00001183",
+        "duplicate_id": "CAS00001837",
         "skip": false
     },
     "MCM00001183": {
@@ -20544,7 +20559,7 @@
         "last_update": 1791139022.219673,
         "date": "2024-08-13",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00001181",
+        "duplicate_id": "CAS00001835",
         "skip": false
     },
     "MCM00001181": {
@@ -20588,7 +20603,7 @@
         "last_update": 1791081876.99365,
         "date": "2024-08-13",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00001182",
+        "duplicate_id": "CAS00001834",
         "date_manual": true,
         "date_note": "title says 08-14-24 but the CC City Council agenda is dated 2024-08-13 (08-14 has only Planning and Permitting), and this is 0.886 5-gram containment with MCM00001182 'Medford City Council 08-13-24'. Confirmed by the author 2026-09-28",
         "skip": false
@@ -20694,7 +20709,7 @@
         "priority": 0.0012573317908859993,
         "last_update": 1791085166.343982,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001161",
+        "duplicate_id": "CAS00001832",
         "skip": false
     },
     "MCM00001161": {
@@ -20927,7 +20942,7 @@
         "last_update": 1791138680.9316773,
         "date": "2024-07-24",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000971",
+        "duplicate_id": "CAS00001824",
         "skip": false
     },
     "MCM00000971": {
@@ -20985,7 +21000,7 @@
         "priority": 0.0012340574950808056,
         "date": "2024-07-23",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000970",
+        "duplicate_id": "CAS00001823",
         "skip": false
     },
     "MCM00000970": {
@@ -21128,7 +21143,7 @@
         "priority": 0.0012249872667731657,
         "last_update": 1791142867.5914717,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001070",
+        "duplicate_id": "CAS00001818",
         "skip": false
     },
     "MCM00000918": {
@@ -21245,7 +21260,7 @@
         "meeting_type": "CC Charter Study Committee",
         "last_update": 1791138580.0244732,
         "skip": false,
-        "duplicate_id": "CAS00001802"
+        "duplicate_id": "CAS00001803"
     },
     "MCM00000912": {
         "title": "Medford Charter Study Committee Final Report Subcommittee 07-15-24",
@@ -21345,7 +21360,7 @@
         "priority": 0.0012043331676388238,
         "date": "2024-07-03",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000936",
+        "duplicate_id": "CAS00001791",
         "skip": false
     },
     "MCM00000936": {
@@ -21550,7 +21565,7 @@
         "last_update": 1791138438.9415617,
         "date": "2024-06-26",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000906",
+        "duplicate_id": "CAS00001775",
         "skip": false
     },
     "RmvL56DRR5k": {
@@ -21563,7 +21578,7 @@
         "last_update": 1791081257.748475,
         "date": "2024-06-26",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000908",
+        "duplicate_id": "CAS00001774",
         "skip": false
     },
     "FGwns8hP0DA": {
@@ -21576,7 +21591,7 @@
         "priority": 0.001194265116007689,
         "last_update": 1791142558.8358583,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001069",
+        "duplicate_id": "CAS00001773",
         "skip": false
     },
     "MCM00000906": {
@@ -21705,7 +21720,7 @@
         "priority": 0.0011928405481520716,
         "date": "2024-06-25",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000905",
+        "duplicate_id": "CAS00001771",
         "skip": false
     },
     "-vjCj0xS-sU": {
@@ -21718,7 +21733,7 @@
         "last_update": 1791081251.3508549,
         "date": "2024-06-25",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000907",
+        "duplicate_id": "CAS00001772",
         "skip": false
     },
     "MCM00000905": {
@@ -21855,7 +21870,7 @@
         "priority": 0.0011914193748119419,
         "date": "2024-06-24",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000900",
+        "duplicate_id": "CAS00001768",
         "date_manual": true,
         "skip": false
     },
@@ -22044,7 +22059,7 @@
         "last_update": 1791138342.2470324,
         "date": "2024-06-12",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000766",
+        "duplicate_id": "CAS00001752",
         "skip": false
     },
     "MCM00000764": {
@@ -22159,7 +22174,7 @@
         "priority": 0.001173247586040955,
         "date": "2024-06-11",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000763",
+        "duplicate_id": "CAS00001751",
         "skip": false
     },
     "MCM00000763": {
@@ -22233,7 +22248,7 @@
         "priority": 0.0011718726892371602,
         "date": "2024-06-10",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000962",
+        "duplicate_id": "CAS00001748",
         "skip": false
     },
     "MCM00000962": {
@@ -22401,7 +22416,7 @@
         "last_update": 1791081144.5374732,
         "date": "2024-06-05",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00000765",
+        "duplicate_id": "CAS00001744",
         "skip": false
     },
     "dFRUMZnF2Cc": {
@@ -22426,7 +22441,7 @@
         "priority": 0.001165046259769551,
         "last_update": 1791142691.540446,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001068",
+        "duplicate_id": "CAS00001743",
         "skip": false
     },
     "MCM00000765": {
@@ -22542,7 +22557,7 @@
         "priority": 0.0011623379049121383,
         "date": "2024-06-03",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000959",
+        "duplicate_id": "CAS00001739",
         "skip": false
     },
     "MCM00000770": {
@@ -22705,7 +22720,7 @@
         "last_update": 1791138122.0194302,
         "date": "2024-05-28",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000749",
+        "duplicate_id": "CAS00001731",
         "skip": false
     },
     "MCM00000749": {
@@ -22825,7 +22840,7 @@
         "last_update": 1791080981.1731052,
         "date": "2024-05-22",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000683",
+        "duplicate_id": "CAS00001728",
         "skip": false
     },
     "4ZHb2ZhCwFo": {
@@ -22838,7 +22853,7 @@
         "last_update": 1791138078.8058171,
         "date": "2024-05-22",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000682",
+        "duplicate_id": "CAS00001729",
         "skip": false
     },
     "MCM00000682": {
@@ -22985,7 +23000,7 @@
         "last_update": 1791081035.094281,
         "date": "2024-05-21",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000680",
+        "duplicate_id": "CAS00001722",
         "skip": false
     },
     "3ydN2g0zgEA": {
@@ -22998,7 +23013,7 @@
         "last_update": 1791138074.0072217,
         "date": "2024-05-21",
         "meeting_type": "CC Administration and Finance Committee",
-        "duplicate_id": "MCM00000681",
+        "duplicate_id": "CAS00001723",
         "skip": false
     },
     "MCM00000680": {
@@ -23357,7 +23372,7 @@
         "last_update": 1791081123.0296812,
         "date": "2024-05-15",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000628",
+        "duplicate_id": "CAS00001714",
         "skip": false
     },
     "kB9FUBQF7vM": {
@@ -23370,7 +23385,7 @@
         "last_update": 1791081077.5655246,
         "date": "2024-05-15",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000629",
+        "duplicate_id": "CAS00001715",
         "skip": false
     },
     "5GOoqKbpo08": {
@@ -23383,7 +23398,7 @@
         "priority": 0.0011372229944492044,
         "last_update": 1791142507.0456314,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001066",
+        "duplicate_id": "CAS00001713",
         "skip": false
     },
     "MCM00000628": {
@@ -23545,7 +23560,7 @@
         "last_update": 1791138292.8015046,
         "date": "2024-05-14",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000627",
+        "duplicate_id": "CAS00001711",
         "skip": false
     },
     "iBf2dgSfOhY": {
@@ -23558,7 +23573,7 @@
         "last_update": 1791138249.4591756,
         "date": "2024-05-14",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000626",
+        "duplicate_id": "CAS00001710",
         "skip": false
     },
     "MCM00000626": {
@@ -23811,7 +23826,7 @@
         "last_update": 1791138305.231221,
         "date": "2024-05-08",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000546",
+        "duplicate_id": "CAS00001703",
         "skip": false
     },
     "XAi78zu0WWM": {
@@ -23937,7 +23952,7 @@
         "last_update": 1791138255.6112883,
         "date": "2024-05-07",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000527",
+        "duplicate_id": "CAS00001701",
         "skip": false
     },
     "yQHm3T4_jqM": {
@@ -23950,7 +23965,7 @@
         "last_update": 1791081103.8055377,
         "date": "2024-05-07",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000528",
+        "duplicate_id": "CAS00001700",
         "skip": false
     },
     "MCM00000527": {
@@ -24070,7 +24085,7 @@
         "priority": 0.0011257014324642595,
         "date": "2024-05-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000963",
+        "duplicate_id": "CAS00001698",
         "skip": false
     },
     "MCM00000572": {
@@ -24217,7 +24232,7 @@
         "last_update": 1791138152.8610456,
         "date": "2024-05-01",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00001740",
+        "duplicate_id": "CAS00001692",
         "skip": false
     },
     "qpYuRWvZecM": {
@@ -24230,7 +24245,7 @@
         "priority": 0.001119400876612736,
         "last_update": 1791142871.5487628,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001065",
+        "duplicate_id": "CAS00001693",
         "skip": false
     },
     "MCM00001065": {
@@ -24333,7 +24348,7 @@
         "last_update": 1791080949.1698084,
         "date": "2024-04-30",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000420",
+        "duplicate_id": "CAS00001684",
         "skip": false
     },
     "TWmAoWQ2xQE": {
@@ -24346,7 +24361,7 @@
         "last_update": 1791138172.2134542,
         "date": "2024-04-30",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000358",
+        "duplicate_id": "CAS00001685",
         "skip": false
     },
     "MCM00000358": {
@@ -24435,7 +24450,7 @@
         "priority": 0.0011169003581327703,
         "date": "2024-04-29",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000949",
+        "duplicate_id": "CAS00001680",
         "skip": false
     },
     "MCM00000949": {
@@ -24565,7 +24580,7 @@
         "last_update": 1791138127.3832426,
         "date": "2024-04-24",
         "meeting_type": "CC Public Works and Facilities",
-        "duplicate_id": "MCM00000474",
+        "duplicate_id": "CAS00001674",
         "skip": false
     },
     "9NPhwNPODcU": {
@@ -24578,7 +24593,7 @@
         "last_update": 1791080895.0142922,
         "date": "2024-04-24",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000475",
+        "duplicate_id": "CAS00001675",
         "skip": false
     },
     "kCdGHg1OaMo": {
@@ -24706,7 +24721,7 @@
         "last_update": 1791080874.079915,
         "date": "2024-04-23",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000419",
+        "duplicate_id": "CAS00001671",
         "skip": false
     },
     "ES1ix-enmPA": {
@@ -24719,7 +24734,7 @@
         "last_update": 1791080900.596878,
         "date": "2024-04-23",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000473",
+        "duplicate_id": "CAS00001670",
         "skip": false
     },
     "MCM00000419": {
@@ -24931,7 +24946,7 @@
         "last_update": 1791138225.0894148,
         "date": "2024-04-17",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000412",
+        "duplicate_id": "CAS00001664",
         "skip": false
     },
     "O1CMBj7JDes": {
@@ -24944,7 +24959,7 @@
         "priority": 0.0011021287422891166,
         "last_update": 1791142646.7799919,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001064",
+        "duplicate_id": "CAS00001663",
         "skip": false
     },
     "MCM00000412": {
@@ -25017,7 +25032,7 @@
         "last_update": 1791080965.0306168,
         "date": "2024-04-16",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000237",
+        "duplicate_id": "CAS00001662",
         "skip": false
     },
     "MCM00000237": {
@@ -25146,7 +25161,7 @@
         "last_update": 1791138134.8274963,
         "date": "2024-04-10",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000472",
+        "duplicate_id": "CAS00001657",
         "skip": false
     },
     "MCM00000472": {
@@ -25279,7 +25294,7 @@
         "priority": 0.001091303925483482,
         "date": "2024-04-08",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000951",
+        "duplicate_id": "CAS00001649",
         "skip": false
     },
     "MCM00000951": {
@@ -25435,7 +25450,7 @@
         "priority": 0.0010853815199168197,
         "last_update": 1791142781.541474,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001005",
+        "duplicate_id": "CAS00001647",
         "skip": false
     },
     "MCM00000521": {
@@ -25493,7 +25508,7 @@
         "last_update": 1791138208.186388,
         "date": "2024-04-02",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000236",
+        "duplicate_id": "CAS00001644",
         "skip": false
     },
     "MCM00000236": {
@@ -25688,7 +25703,7 @@
         "last_update": 1791081096.1513307,
         "date": "2024-03-27",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000470",
+        "duplicate_id": "CAS00001639",
         "skip": false
     },
     "MCM00000470": {
@@ -25808,7 +25823,7 @@
         "last_update": 1791138086.844977,
         "date": "2024-03-26",
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "MCM00000469",
+        "duplicate_id": "CAS00001633",
         "skip": false
     },
     "rdoYPQwM75Q": {
@@ -25821,7 +25836,7 @@
         "last_update": 1791081089.4311771,
         "date": "2024-03-26",
         "meeting_type": "CC Administration and Finance Committee",
-        "duplicate_id": "MCM00000468",
+        "duplicate_id": "CAS00001634",
         "skip": false
     },
     "MCM00000468": {
@@ -26022,7 +26037,7 @@
         "last_update": 1791079902.7052538,
         "date": "2024-03-20",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000924",
+        "duplicate_id": "CAS00001626",
         "skip": false
     },
     "YorlYaO9Sys": {
@@ -26035,7 +26050,7 @@
         "last_update": 1791138215.6671195,
         "date": "2024-03-20",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000416",
+        "duplicate_id": "CAS00001630",
         "skip": false
     },
     "rHW3832dHik": {
@@ -26048,7 +26063,7 @@
         "priority": 0.0010691356390087165,
         "last_update": 1791142885.2146158,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001002",
+        "duplicate_id": "CAS00001629",
         "skip": false
     },
     "MCM00000416": {
@@ -26180,7 +26195,7 @@
         "last_update": 1791138271.193693,
         "date": "2024-03-19",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000235",
+        "duplicate_id": "CAS00001625",
         "skip": false
     },
     "wtwrOMEbog0": {
@@ -26193,7 +26208,7 @@
         "last_update": 1791138285.0884657,
         "date": "2024-03-19",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "MCM00000418",
+        "duplicate_id": "CAS00001624",
         "skip": false
     },
     "MCM00000235": {
@@ -26282,7 +26297,7 @@
         "last_update": 1791079896.1938844,
         "date": "2024-03-18",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000950",
+        "duplicate_id": "CAS00001620",
         "skip": false
     },
     "MCM00000942": {
@@ -26451,7 +26466,7 @@
         "date": "2024-03-13",
         "meeting_type": "MPS Meeting of the Whole",
         "skip": false,
-        "duplicate_id": "MCM00000782"
+        "duplicate_id": "CAS00001616"
     },
     "tjJJRZXm810": {
         "title": "City Council Planning and Permitting Committee 03-13-24",
@@ -26463,7 +26478,7 @@
         "last_update": 1791138278.7739847,
         "date": "2024-03-13",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "MCM00000466",
+        "duplicate_id": "CAS00001615",
         "skip": false
     },
     "4GMpYr5oF1s": {
@@ -26476,7 +26491,7 @@
         "last_update": 1791080886.0272982,
         "date": "2024-03-13",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "MCM00000467",
+        "duplicate_id": "CAS00001614",
         "skip": false
     },
     "Y80UYOHFTMY": {
@@ -26489,7 +26504,7 @@
         "priority": 0.0010611937188358194,
         "last_update": 1791142713.0699248,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001004",
+        "duplicate_id": "CAS00001610",
         "skip": false
     },
     "MCM00000466": {
@@ -26624,7 +26639,7 @@
         "last_update": 1791081018.0859516,
         "date": "2024-03-12",
         "meeting_type": "CC City Council",
-        "duplicate_id": "MCM00000234",
+        "duplicate_id": "CAS00001608",
         "skip": false
     },
     "V64stR284Pc": {
@@ -26637,7 +26652,7 @@
         "last_update": 1791138177.3182843,
         "date": "2024-03-12",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "MCM00000465",
+        "duplicate_id": "CAS00001609",
         "skip": false
     },
     "MCM00000234": {
@@ -26805,7 +26820,7 @@
         "last_update": 1791080942.4311228,
         "date": "2024-03-06",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001604",
+        "duplicate_id": "MCM00000414",
         "skip": false
     },
     "MCM00000414": {
@@ -26919,7 +26934,7 @@
         "last_update": 1791079866.48912,
         "date": "2024-03-04",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001601",
+        "duplicate_id": "MCM00000952",
         "skip": false
     },
     "MCM00000515": {
@@ -27081,7 +27096,7 @@
         "last_update": 1791080935.5975835,
         "date": "2024-02-28",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "CAS00001596",
+        "duplicate_id": "MCM00000464",
         "skip": false
     },
     "MCM00000464": {
@@ -27217,7 +27232,7 @@
         "last_update": 1791138141.1469631,
         "date": "2024-02-27",
         "meeting_type": "CC Administration and Finance Committee",
-        "duplicate_id": "CAS00001593",
+        "duplicate_id": "MCM00000463",
         "skip": false
     },
     "MCM00000463": {
@@ -27362,7 +27377,7 @@
         "last_update": 1791080973.1051724,
         "date": "2024-02-21",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001590",
+        "duplicate_id": "MCM00000415",
         "skip": false
     },
     "aBgYkA4WX0I": {
@@ -27375,7 +27390,7 @@
         "priority": 0.0010380604705620435,
         "last_update": 1791142725.8804476,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001589",
+        "duplicate_id": "MCM00001000",
         "skip": false
     },
     "MCM00000415": {
@@ -27507,7 +27522,7 @@
         "last_update": 1791138068.5784428,
         "date": "2024-02-20",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001587",
+        "duplicate_id": "MCM00000233",
         "skip": false
     },
     "dcCBbf5sPdI": {
@@ -27520,7 +27535,7 @@
         "last_update": 1791138231.4421413,
         "date": "2024-02-20",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001588",
+        "duplicate_id": "MCM00000417",
         "skip": false
     },
     "MCM00000233": {
@@ -27681,7 +27696,7 @@
         "last_update": 1791081083.7341444,
         "date": "2024-02-14",
         "meeting_type": "CC Governance Committee",
-        "duplicate_id": "CAS00001580",
+        "duplicate_id": "MCM00000462",
         "skip": false
     },
     "3l8qmINEpLQ": {
@@ -27694,7 +27709,7 @@
         "last_update": 1791080879.874792,
         "date": "2024-02-14",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "CAS00001581",
+        "duplicate_id": "MCM00000461",
         "skip": false
     },
     "MCM00000461": {
@@ -27862,7 +27877,7 @@
         "last_update": 1791081045.4969242,
         "date": "2024-02-13",
         "meeting_type": "CC Public Health and Community Safety",
-        "duplicate_id": "CAS00001574",
+        "duplicate_id": "MCM00000460",
         "skip": false
     },
     "gDDTQFTjREc": {
@@ -27875,7 +27890,7 @@
         "last_update": 1791138238.8696454,
         "date": "2024-02-13",
         "meeting_type": "CC Resident Services and Public Engagement Committee",
-        "duplicate_id": "CAS00001575",
+        "duplicate_id": "MCM00000459",
         "skip": false
     },
     "MCM00000459": {
@@ -27996,7 +28011,7 @@
         "last_update": 1791079852.9804096,
         "date": "2024-02-12",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001572",
+        "duplicate_id": "MCM00000961",
         "skip": false
     },
     "MCM00000961": {
@@ -28077,7 +28092,7 @@
         "priority": 0.0010231905985629783,
         "last_update": 1791142681.036038,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001570",
+        "duplicate_id": "MCM00001003",
         "skip": false
     },
     "MCM00001003": {
@@ -28121,7 +28136,7 @@
         "last_update": 1791080930.031293,
         "date": "2024-02-06",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001568",
+        "duplicate_id": "MCM00000232",
         "skip": false
     },
     "2dmRw3Tp0tA": {
@@ -28221,7 +28236,7 @@
         "last_update": 1791079847.1675472,
         "date": "2024-02-05",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001567",
+        "duplicate_id": "MCM00000953",
         "skip": false
     },
     "MCM00000569": {
@@ -28309,7 +28324,7 @@
         "last_update": 1791080988.809749,
         "date": "2024-01-31",
         "meeting_type": "CC Public Works and Facilities",
-        "duplicate_id": "CAS00001563",
+        "duplicate_id": "MCM00000457",
         "skip": false
     },
     "FrIQvitIEmA": {
@@ -28322,7 +28337,7 @@
         "last_update": 1791138109.4382656,
         "date": "2024-01-31",
         "meeting_type": "CC Planning and Permitting",
-        "duplicate_id": "CAS00001564",
+        "duplicate_id": "MCM00000456",
         "skip": false
     },
     "MCM00000456": {
@@ -28440,7 +28455,7 @@
         "last_update": 1791138048.5289934,
         "date": "2024-01-30",
         "meeting_type": "CC Administration and Finance Committee",
-        "duplicate_id": "CAS00001561",
+        "duplicate_id": "MCM00000455",
         "skip": false
     },
     "MCM00000455": {
@@ -28514,7 +28529,7 @@
         "last_update": 1791137084.4078634,
         "date": "2024-01-29",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001559",
+        "duplicate_id": "MCM00000947",
         "skip": false
     },
     "MCM00000947": {
@@ -28618,7 +28633,7 @@
         "last_update": 1791081070.5813751,
         "date": "2024-01-24",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001558",
+        "duplicate_id": "MCM00000413",
         "skip": false
     },
     "MCM00000413": {
@@ -28704,7 +28719,7 @@
         "last_update": 1791138102.8201334,
         "date": "2024-01-23",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001554",
+        "duplicate_id": "MCM00000231",
         "skip": false
     },
     "MCM00000231": {
@@ -28790,7 +28805,7 @@
         "last_update": 1791081060.5261621,
         "date": "2024-01-17",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001550",
+        "duplicate_id": "MCM00000411",
         "skip": false
     },
     "MCM00000411": {
@@ -28975,7 +28990,7 @@
         "last_update": 1791080912.3419259,
         "date": "2024-01-09",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001543",
+        "duplicate_id": "MCM00000230",
         "skip": false,
         "date_manual": true,
         "date_note": "VERIFIED CORRECT by the author 2026-09-28, not changed. Flagged by the agenda-gap check because no agenda exists for this date, but a Tuesday, which is when CC City Council meets. No agenda was posted for it. date_manual is set so it is not re-flagged and the check is recorded."
@@ -29067,7 +29082,7 @@
         "last_update": 1791079830.1930614,
         "date": "2024-01-08",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001542",
+        "duplicate_id": "MCM00000954",
         "skip": false
     },
     "MCM00000568": {
@@ -29254,7 +29269,7 @@
         "priority": 0.000974340721525921,
         "last_update": 1791085086.680792,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001533",
+        "duplicate_id": "MCM00000999",
         "skip": false
     },
     "MCM00000453": {
@@ -29358,7 +29373,7 @@
         "last_update": 1791139942.812703,
         "date": "2023-12-19",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001521",
+        "duplicate_id": "MCM00000228",
         "skip": false
     },
     "R05RUR--lkc": {
@@ -29371,7 +29386,7 @@
         "last_update": 1791082780.0332243,
         "date": "2023-12-19",
         "meeting_type": "CC Caucus",
-        "duplicate_id": "CAS00001522",
+        "duplicate_id": "MCM00000229",
         "skip": false
     },
     "MCM00000228": {
@@ -29492,7 +29507,7 @@
         "last_update": 1791079820.311001,
         "date": "2023-12-18",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001520",
+        "duplicate_id": "MCM00000957",
         "skip": false
     },
     "MCM00000940": {
@@ -29679,7 +29694,7 @@
         "last_update": 1791140021.2671847,
         "date": "2023-12-12",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001510",
+        "duplicate_id": "MCM00000227",
         "skip": false
     },
     "MCM00000227": {
@@ -29865,7 +29880,7 @@
         "last_update": 1791082806.0423472,
         "date": "2023-12-06",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001499",
+        "duplicate_id": "MCM00000409",
         "skip": false
     },
     "o3BXgn2s6XE": {
@@ -29878,7 +29893,7 @@
         "priority": 0.0009612288201751081,
         "last_update": 1791142850.9398,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001063",
+        "duplicate_id": "CAS00001653",
         "skip": false
     },
     "MCM00000409": {
@@ -29951,7 +29966,7 @@
         "last_update": 1791082860.392881,
         "date": "2023-12-05",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001498",
+        "duplicate_id": "MCM00000395",
         "skip": false
     },
     "MCM00000395": {
@@ -30007,7 +30022,7 @@
         "last_update": 1791079808.8554873,
         "date": "2023-12-04",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001495",
+        "duplicate_id": "MCM00000958",
         "skip": false
     },
     "MCM00000562": {
@@ -30173,7 +30188,7 @@
         "last_update": 1791139971.8204968,
         "date": "2023-11-29",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001489",
+        "duplicate_id": "MCM00000396",
         "skip": false
     },
     "MCM00000396": {
@@ -30468,7 +30483,7 @@
         "last_update": 1791079798.0340638,
         "date": "2023-11-20",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001475",
+        "duplicate_id": "MCM00000956",
         "skip": false
     },
     "MCM00000956": {
@@ -30596,7 +30611,7 @@
         "date": "2023-11-15",
         "priority": 0.0009422095614870442,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001474",
+        "duplicate_id": "MCM00000382",
         "last_update": 1791143567.340339,
         "skip": false
     },
@@ -30610,7 +30625,7 @@
         "priority": 0.0009422095614870442,
         "last_update": 1791085286.3743982,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001062",
+        "duplicate_id": "CAS00001654",
         "skip": false
     },
     "MCM00000382": {
@@ -30729,7 +30744,7 @@
         "last_update": 1791082751.5626962,
         "date": "2023-11-14",
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001469",
+        "duplicate_id": "MCM00000400",
         "skip": false
     },
     "3gvhm0AovZU": {
@@ -30742,7 +30757,7 @@
         "date": "2023-11-14",
         "last_update": 1791139877.3801763,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001470",
+        "duplicate_id": "MCM00000225",
         "skip": false
     },
     "MCM00000225": {
@@ -31118,7 +31133,7 @@
         "last_update": 1791137028.2567983,
         "date": "2023-11-01",
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001458",
+        "duplicate_id": "MCM00000778",
         "skip": false
     },
     "MCM00000567": {
@@ -31503,7 +31518,7 @@
         "last_update": 1791082787.8850856,
         "date": "2023-10-24",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001437",
+        "duplicate_id": "MCM00000224",
         "skip": false
     },
     "MCM00000224": {
@@ -31719,7 +31734,7 @@
         "priority": 0.0009179912380745397,
         "last_update": 1791085134.5657136,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001061",
+        "duplicate_id": "CAS00001655",
         "skip": false
     },
     "MCM00001061": {
@@ -31803,7 +31818,7 @@
         "date": "2023-10-17",
         "last_update": 1791139914.8124142,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001433",
+        "duplicate_id": "MCM00000223",
         "skip": false
     },
     "MCM00000223": {
@@ -31863,7 +31878,7 @@
         "last_update": 1791137000.7200143,
         "date": "2023-10-16",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001431",
+        "duplicate_id": "MCM00000946",
         "skip": false
     },
     "MCM00000946": {
@@ -31944,7 +31959,7 @@
         "date": "2023-10-11",
         "priority": 0.0009121299469793526,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001429",
+        "duplicate_id": "MCM00000390",
         "last_update": 1791085790.9445918,
         "skip": false
     },
@@ -32237,7 +32252,7 @@
         "priority": 0.0009063430286486876,
         "last_update": 1791085151.8803294,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001502",
+        "duplicate_id": "MCM00000988",
         "skip": false
     },
     "MCM00000988": {
@@ -32280,7 +32295,7 @@
         "date": "2023-10-03",
         "priority": 0.0009055223148113725,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001421",
+        "duplicate_id": "MCM00000399",
         "last_update": 1791143529.1213543,
         "skip": false
     },
@@ -32305,7 +32320,7 @@
         "date": "2023-10-03",
         "last_update": 1791140038.7343938,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001423",
+        "duplicate_id": "MCM00000222",
         "skip": false
     },
     "MCM00000222": {
@@ -32409,7 +32424,7 @@
         "last_update": 1791136964.1439543,
         "date": "2023-10-02",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001422",
+        "duplicate_id": "MCM00000960",
         "skip": false
     },
     "MCM00000558": {
@@ -32687,7 +32702,7 @@
         "priority": 0.0008949867190194573,
         "last_update": 1791142670.0697663,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001060",
+        "duplicate_id": "CAS00001656",
         "skip": false
     },
     "MCM00001060": {
@@ -32715,7 +32730,7 @@
         "date": "2023-09-19",
         "last_update": 1791082735.4186442,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001418",
+        "duplicate_id": "MCM00000221",
         "skip": false
     },
     "MCM00000221": {
@@ -32772,7 +32787,7 @@
         "last_update": 1791136942.7800446,
         "date": "2023-09-18",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001417",
+        "duplicate_id": "MCM00000955",
         "skip": false
     },
     "MCM00000955": {
@@ -32932,7 +32947,7 @@
         "date": "2023-09-12",
         "priority": 0.0008886242637057367,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001414",
+        "duplicate_id": "MCM00000384",
         "last_update": 1791143513.5566387,
         "skip": false
     },
@@ -33020,7 +33035,7 @@
         "last_update": 1791136932.656574,
         "date": "2023-09-11",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001413",
+        "duplicate_id": "MCM00000948",
         "skip": false
     },
     "MCM00000948": {
@@ -33149,7 +33164,7 @@
         "priority": 0.0008839114726165272,
         "last_update": 1791142528.7245522,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001497",
+        "duplicate_id": "MCM00000986",
         "skip": false
     },
     "MCM00000986": {
@@ -33192,7 +33207,7 @@
         "date": "2023-09-05",
         "priority": 0.0008831308631147984,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001409",
+        "duplicate_id": "MCM00000403",
         "last_update": 1791143505.2719102,
         "skip": false
     },
@@ -33206,7 +33221,7 @@
         "last_update": 1791139903.1132586,
         "date": "2023-09-05",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001410",
+        "duplicate_id": "MCM00000220",
         "skip": false
     },
     "MCM00000220": {
@@ -33447,7 +33462,7 @@
         "priority": 0.000867803187554031,
         "last_update": 1791085325.0549278,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001492",
+        "duplicate_id": "MCM00000989",
         "skip": false
     },
     "MCM00000989": {
@@ -33504,7 +33519,7 @@
         "date": "2023-08-15",
         "priority": 0.000867050758142344,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001403",
+        "duplicate_id": "MCM00000404",
         "last_update": 1791085804.0060446,
         "skip": false
     },
@@ -33518,7 +33533,7 @@
         "date": "2023-08-15",
         "last_update": 1791139860.8761487,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001404",
+        "duplicate_id": "MCM00000219",
         "skip": false
     },
     "MCM00000219": {
@@ -33593,7 +33608,7 @@
         "last_update": 1791136910.2957277,
         "date": "2023-08-14",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001402",
+        "duplicate_id": "MCM00000937",
         "skip": false
     },
     "MCM00000937": {
@@ -33809,7 +33824,7 @@
         "priority": 0.000857386588155685,
         "last_update": 1791085230.7191389,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001407",
+        "duplicate_id": "MCM00000992",
         "skip": false
     },
     "MCM00000992": {
@@ -33909,7 +33924,7 @@
         "priority": 0.0008515457568665786,
         "last_update": 1791085799.4776332,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001399",
+        "duplicate_id": "MCM00000394",
         "skip": false
     },
     "T_HHfs4XuPQ": {
@@ -33935,7 +33950,7 @@
         "date": "2023-07-25",
         "last_update": 1791140029.171655,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001398",
+        "duplicate_id": "MCM00000218",
         "skip": false
     },
     "MCM00000218": {
@@ -34040,7 +34055,7 @@
         "last_update": 1791136901.9904408,
         "date": "2023-07-19",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001394",
+        "duplicate_id": "MCM00000921",
         "skip": false
     },
     "pNq06c2r0cA": {
@@ -34053,7 +34068,7 @@
         "priority": 0.0008472170921468039,
         "last_update": 1791085317.4917188,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001393",
+        "duplicate_id": "MCM00000995",
         "skip": false
     },
     "MCM00000921": {
@@ -34254,7 +34269,7 @@
         "date": "2023-07-11",
         "last_update": 1791082776.0332897,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001385",
+        "duplicate_id": "MCM00000217",
         "skip": false
     },
     "MCM00000217": {
@@ -34638,7 +34653,7 @@
         "priority": 0.0008275850544533368,
         "last_update": 1791142597.7820957,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001374",
+        "duplicate_id": "MCM00000994",
         "skip": false
     },
     "MCM00000994": {
@@ -34724,7 +34739,7 @@
         "last_update": 1791139965.5986984,
         "date": "2023-06-20",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001372",
+        "duplicate_id": "MCM00000203",
         "skip": false
     },
     "MCM00000203": {
@@ -35048,7 +35063,7 @@
         "last_update": 1791079636.3312354,
         "date": "2023-06-12",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001360",
+        "duplicate_id": "MCM00000822",
         "skip": false
     },
     "AyMsYF9M5k8": {
@@ -35061,7 +35076,7 @@
         "last_update": 1791136877.3020494,
         "date": "2023-06-12",
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001359",
+        "duplicate_id": "MCM00000788",
         "skip": false
     },
     "LlwTB8QFHJs": {
@@ -35264,7 +35279,7 @@
         "priority": 0.0008181063185823604,
         "last_update": 1791085208.9510987,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001376",
+        "duplicate_id": "MCM00000996",
         "skip": false
     },
     "MCM00000377": {
@@ -35338,7 +35353,7 @@
         "date": "2023-06-06",
         "last_update": 1791082745.5789669,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001353",
+        "duplicate_id": "MCM00000216",
         "skip": false
     },
     "MCM00000216": {
@@ -35428,7 +35443,7 @@
         "last_update": 1791136867.9136405,
         "date": "2023-06-05",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001352",
+        "duplicate_id": "MCM00000828",
         "skip": false
     },
     "CftWif4v9Wc": {
@@ -35454,7 +35469,7 @@
         "last_update": 1791079617.9030435,
         "date": "2023-06-05",
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001350",
+        "duplicate_id": "MCM00000917",
         "skip": false
     },
     "MCM00000563": {
@@ -35658,7 +35673,7 @@
         "date": "2023-05-31",
         "priority": 0.0008134479104546961,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001347",
+        "duplicate_id": "MCM00000378",
         "last_update": 1791143550.6514697,
         "skip": false
     },
@@ -35702,7 +35717,7 @@
         "date": "2023-05-30",
         "priority": 0.0008127867507706365,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001346",
+        "duplicate_id": "MCM00000381",
         "last_update": 1791143499.400957,
         "skip": false
     },
@@ -35909,7 +35924,7 @@
         "date": "2023-05-23",
         "priority": 0.0008081885561168827,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001339",
+        "duplicate_id": "MCM00000393",
         "last_update": 1791143524.0098827,
         "skip": false
     },
@@ -35923,7 +35938,7 @@
         "date": "2023-05-23",
         "last_update": 1791139987.9896467,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001342",
+        "duplicate_id": "MCM00000205",
         "skip": false
     },
     "MCM00000205": {
@@ -36099,7 +36114,7 @@
         "priority": 0.0008042884557622987,
         "last_update": 1791142485.788895,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001332",
+        "duplicate_id": "MCM00000987",
         "skip": false
     },
     "MCM00000873": {
@@ -36234,7 +36249,7 @@
         "date": "2023-05-16",
         "priority": 0.0008036420957021609,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001330",
+        "duplicate_id": "MCM00000398",
         "last_update": 1791085812.1136487,
         "skip": false
     },
@@ -36320,7 +36335,7 @@
         "date": "2023-05-15",
         "meeting_type": "MPS Meeting of the Whole",
         "skip": false,
-        "duplicate_id": "CAS00001327"
+        "duplicate_id": "MCM00000791"
     },
     "XXXXXX00074": {
         "title": "Brooks Elementary CCSR",
@@ -36345,7 +36360,7 @@
         "priority": 0.0008029967736921088,
         "last_update": 1791136842.3728445,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001328",
+        "duplicate_id": "MCM00000829",
         "skip": false
     },
     "MCM00000624": {
@@ -36512,7 +36527,7 @@
         "date": "2023-05-09",
         "last_update": 1791082819.0134573,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001323",
+        "duplicate_id": "MCM00000215",
         "skip": false
     },
     "MCM00000215": {
@@ -36790,7 +36805,7 @@
         "date": "2023-05-03",
         "last_update": 1791136829.426736,
         "meeting_type": "MPS Behavioral Health & Special Education",
-        "duplicate_id": "CAS00001317",
+        "duplicate_id": "MCM00000832",
         "skip": false
     },
     "4riQefjC9k8": {
@@ -36803,7 +36818,7 @@
         "priority": 0.000795332975927936,
         "last_update": 1791085082.0887187,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001338",
+        "duplicate_id": "MCM00000998",
         "skip": false
     },
     "MCM00000449": {
@@ -36933,7 +36948,7 @@
         "last_update": 1791079579.7572875,
         "date": "2023-05-01",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001314",
+        "duplicate_id": "MCM00000824",
         "skip": false
     },
     "MCM00000565": {
@@ -37091,7 +37106,7 @@
         "date": "2023-04-26",
         "priority": 0.0007909296091294867,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001308",
+        "duplicate_id": "MCM00000391",
         "last_update": 1791085825.0305989,
         "skip": false
     },
@@ -37105,7 +37120,7 @@
         "priority": 0.0007909296091294867,
         "last_update": 1791142637.6961308,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001307",
+        "duplicate_id": "MCM00000985",
         "skip": false
     },
     "MCM00000391": {
@@ -37223,7 +37238,7 @@
         "date": "2023-04-25",
         "last_update": 1791139929.1413362,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001304",
+        "duplicate_id": "MCM00000214",
         "skip": false
     },
     "MCM00000214": {
@@ -37376,7 +37391,7 @@
         "last_update": 1791136809.9729574,
         "meeting_type": "West Medford Community Center",
         "skip": false,
-        "duplicate_id": "CAS00001302"
+        "duplicate_id": "CAS00001632"
     },
     "CAS00001302": {
         "title": "WMCC 8th Annual Legislative Brunch April 2023",
@@ -37490,7 +37505,7 @@
         "meeting_type": "CC City Council Meeting of the Whole",
         "last_update": 1791137336.3180785,
         "skip": false,
-        "duplicate_id": "CAS00001298"
+        "duplicate_id": "CAS00001297"
     },
     "MCM00000402": {
         "title": "City Council ComMedford City Council Committee Of The Whole 04-18-23",
@@ -37618,7 +37633,7 @@
         "date": "2023-04-12",
         "priority": 0.0007822675491926399,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001293",
+        "duplicate_id": "MCM00000392",
         "last_update": 1791143538.2173188,
         "skip": false
     },
@@ -37788,7 +37803,7 @@
         "date": "2023-04-11",
         "last_update": 1791139909.6032026,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001286",
+        "duplicate_id": "MCM00000213",
         "skip": false
     },
     "MCM00000213": {
@@ -37905,7 +37920,7 @@
         "last_update": 1791079544.1754613,
         "date": "2023-04-10",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001285",
+        "duplicate_id": "MCM00000830",
         "skip": false
     },
     "MCM00000830": {
@@ -38160,7 +38175,7 @@
         "last_update": 1791079523.1145134,
         "date": "2023-04-03",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001277",
+        "duplicate_id": "MCM00000826",
         "skip": false
     },
     "bPsPwj5vBSI": {
@@ -38173,7 +38188,7 @@
         "last_update": 1791079531.3499932,
         "date": "2023-04-03",
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001276",
+        "duplicate_id": "MCM00000784",
         "skip": false
     },
     "MCM00000784": {
@@ -38482,7 +38497,7 @@
         "date": "2023-03-28",
         "last_update": 1791082699.8630528,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001266",
+        "duplicate_id": "MCM00000212",
         "skip": false
     },
     "MCM00000212": {
@@ -38815,7 +38830,7 @@
         "date": "2023-03-21",
         "last_update": 1791082853.533955,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001255",
+        "duplicate_id": "MCM00000204",
         "skip": false
     },
     "MCM00000204": {
@@ -38961,7 +38976,7 @@
         "last_update": 1791079493.40924,
         "date": "2023-03-20",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001254",
+        "duplicate_id": "MCM00000825",
         "skip": false
     },
     "MCM00000825": {
@@ -39034,7 +39049,7 @@
         "date": "2023-03-15",
         "priority": 0.000765500417400712,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001253",
+        "duplicate_id": "MCM00000408",
         "last_update": 1791085818.7140205,
         "skip": false
     },
@@ -39318,7 +39333,7 @@
         "date": "2023-03-08",
         "priority": 0.0007614203442612663,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001242",
+        "duplicate_id": "MCM00000383",
         "last_update": 1791143558.5039592,
         "skip": false
     },
@@ -39459,7 +39474,7 @@
         "last_update": 1791079474.102365,
         "date": "2023-03-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001239",
+        "duplicate_id": "MCM00000795",
         "skip": false
     },
     "MCM00000560": {
@@ -39786,7 +39801,7 @@
         "date": "2023-02-28",
         "priority": 0.0007568103379567263,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001226",
+        "duplicate_id": "MCM00000405",
         "last_update": 1791085807.9611337,
         "skip": false
     },
@@ -39800,7 +39815,7 @@
         "last_update": 1791140003.4042375,
         "date": "2023-02-28",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001227",
+        "duplicate_id": "MCM00000207",
         "skip": false
     },
     "MCM00000207": {
@@ -39887,7 +39902,7 @@
         "last_update": 1791079457.064742,
         "date": "2023-02-27",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001228",
+        "duplicate_id": "MCM00000819",
         "skip": false
     },
     "MCM00000613": {
@@ -40032,7 +40047,7 @@
         "date": "2023-02-21",
         "priority": 0.0007528221329467293,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001222",
+        "duplicate_id": "MCM00000385",
         "last_update": 1791085768.3933692,
         "skip": false
     },
@@ -40267,7 +40282,7 @@
         "date": "2023-02-15",
         "priority": 0.000749436976487837,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001218",
+        "duplicate_id": "MCM00000387",
         "last_update": 1791085785.233529,
         "skip": false
     },
@@ -40377,7 +40392,7 @@
         "date": "2023-02-14",
         "last_update": 1791139888.9801376,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001214",
+        "duplicate_id": "MCM00000211",
         "skip": false
     },
     "MCM00000211": {
@@ -40534,7 +40549,7 @@
         "date": "2023-02-08",
         "priority": 0.0007455259037335251,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001207",
+        "duplicate_id": "MCM00000386",
         "last_update": 1791085778.2665272,
         "skip": false
     },
@@ -40694,7 +40709,7 @@
         "last_update": 1791079427.689475,
         "date": "2023-02-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001202",
+        "duplicate_id": "MCM00000823",
         "skip": false
     },
     "BSAjmRA8UYk": {
@@ -40707,7 +40722,7 @@
         "date": "2023-02-06",
         "last_update": 1791079417.003267,
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001201",
+        "duplicate_id": "MCM00000792",
         "skip": false
     },
     "MCM00000566": {
@@ -40899,7 +40914,7 @@
         "last_update": 1791079411.1950846,
         "date": "2023-02-01",
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00001200",
+        "duplicate_id": "MCM00000786",
         "skip": false
     },
     "43e2jY84pIA": {
@@ -40923,7 +40938,7 @@
         "priority": 0.0007416554403366142,
         "last_update": 1791085122.1933692,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001006",
+        "duplicate_id": "CAS00001651",
         "skip": false
     },
     "MCM00000786": {
@@ -41014,7 +41029,7 @@
         "date": "2023-01-31",
         "priority": 0.0007411057951917453,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001198",
+        "duplicate_id": "MCM00000380",
         "last_update": 1791143577.411239,
         "skip": false
     },
@@ -41028,7 +41043,7 @@
         "date": "2023-01-31",
         "last_update": 1791082835.8162258,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001199",
+        "duplicate_id": "MCM00000206",
         "skip": false
     },
     "MCM00000206": {
@@ -41299,7 +41314,7 @@
         "date": "2023-01-24",
         "priority": 0.0007372809727804598,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001188",
+        "duplicate_id": "MCM00000397",
         "last_update": 1791085773.3071573,
         "skip": false
     },
@@ -41399,7 +41414,7 @@
         "priority": 0.000734033837689029,
         "last_update": 1791142861.416238,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001184",
+        "duplicate_id": "MCM00000993",
         "skip": false
     },
     "MCM00000407": {
@@ -41472,7 +41487,7 @@
         "date": "2023-01-17",
         "priority": 0.0007334954272256552,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001183",
+        "duplicate_id": "MCM00000410",
         "last_update": 1791143532.7497547,
         "skip": false
     },
@@ -41486,7 +41501,7 @@
         "date": "2023-01-17",
         "last_update": 1791082801.0074942,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001182",
+        "duplicate_id": "MCM00000210",
         "skip": false
     },
     "MCM00000210": {
@@ -41768,7 +41783,7 @@
         "meeting_type": "CC Human Rights Commission",
         "last_update": 1791139179.452421,
         "skip": false,
-        "duplicate_id": "CAS00001172"
+        "duplicate_id": "CAS00001526"
     },
     "MCM00001546": {
         "title": "Medford Welcoming Committee 01-11-23",
@@ -41842,7 +41857,7 @@
         "date": "2023-01-10",
         "last_update": 1791082710.477946,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001170",
+        "duplicate_id": "MCM00000209",
         "skip": false
     },
     "MCM00000209": {
@@ -41975,7 +41990,7 @@
         "last_update": 1791079398.4735432,
         "date": "2023-01-09",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001166",
+        "duplicate_id": "MCM00000821",
         "skip": false
     },
     "MCM00000564": {
@@ -42093,7 +42108,7 @@
         "date": "2023-01-05",
         "last_update": 1791079384.213642,
         "meeting_type": "CC Charter Study Committee",
-        "duplicate_id": "CAS00001194",
+        "duplicate_id": "MCM00000504",
         "skip": false
     },
     "MCM00000504": {
@@ -42258,7 +42273,7 @@
         "date": "2023-01-03",
         "priority": 0.000726039771294457,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001162",
+        "duplicate_id": "MCM00000401",
         "last_update": 1791085814.8851306,
         "skip": false
     },
@@ -42476,7 +42491,7 @@
         "priority": 0.0007187341571315428,
         "last_update": 1791083494.5564818,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001158",
+        "duplicate_id": "_LyLALihqlE",
         "skip": false
     },
     "MCM00000169": {
@@ -42520,7 +42535,7 @@
         "priority": 0.0007182179493590734,
         "date": "2022-12-19",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001157",
+        "duplicate_id": "MCM00000820",
         "skip": false
     },
     "KjdopmIB9R0": {
@@ -42598,7 +42613,7 @@
         "date": "2022-12-14",
         "priority": 0.0007156479931884198,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001153",
+        "duplicate_id": "MCM00000332",
         "last_update": 1791143574.2349446,
         "skip": false
     },
@@ -43082,7 +43097,7 @@
         "priority": 0.0007115741005717873,
         "last_update": 1791083598.68284,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001137",
+        "duplicate_id": "MCM00000182",
         "skip": false
     },
     "MCM00000182": {
@@ -43158,7 +43173,7 @@
         "last_update": 1791079342.5908237,
         "date": "2022-12-05",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001136",
+        "duplicate_id": "MCM00000804",
         "skip": false
     },
     "ssV32LgKHvc": {
@@ -43326,7 +43341,7 @@
         "date": "2022-11-29",
         "last_update": 1791083303.8636532,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001131",
+        "duplicate_id": "MCM00000198",
         "skip": false
     },
     "MCM00000198": {
@@ -43518,7 +43533,7 @@
         "date": "2022-11-21",
         "last_update": 1791136590.3949788,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001123",
+        "duplicate_id": "MCM00000814",
         "skip": false
     },
     "MCM00000814": {
@@ -43632,7 +43647,7 @@
         "meeting_type": "CC Cannabis Advisory Committee",
         "last_update": 1791139433.7784734,
         "skip": false,
-        "duplicate_id": "CAS00001112"
+        "duplicate_id": "CAS00001117"
     },
     "CAS00001118": {
         "title": "Community Meeting: 573 Fellsway and 20 Revere Beach Parkway Development 11/17/22",
@@ -43862,7 +43877,7 @@
         "date": "2022-11-15",
         "last_update": 1791083087.1294823,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001111",
+        "duplicate_id": "MCM00000196",
         "skip": false
     },
     "MCM00000196": {
@@ -44015,7 +44030,7 @@
         "priority": 0.0006986484567439773,
         "last_update": 1791142896.3623369,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001129",
+        "duplicate_id": "MCM00001059",
         "skip": false
     },
     "MCM00001059": {
@@ -44118,7 +44133,7 @@
         "date": "2022-11-09",
         "priority": 0.0006981606878568468,
         "meeting_type": "CC City Council Meeting of the Whole",
-        "duplicate_id": "CAS00001105",
+        "duplicate_id": "MCM00000337",
         "last_update": 1791143518.7976387,
         "skip": false
     },
@@ -44235,7 +44250,7 @@
         "last_update": 1791136575.814517,
         "date": "2022-11-07",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001102",
+        "duplicate_id": "MCM00000807",
         "skip": false
     },
     "qi5mNKAxLlE": {
@@ -44491,7 +44506,7 @@
         "priority": 0.0006914027448339752,
         "last_update": 1791142755.5260148,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001093",
+        "duplicate_id": "MCM00001053",
         "skip": false
     },
     "MCM00000330": {
@@ -44625,7 +44640,7 @@
         "date": "2022-10-25",
         "last_update": 1791083268.5605464,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001092",
+        "duplicate_id": "MCM00000170",
         "skip": false
     },
     "MCM00000170": {
@@ -44901,7 +44916,7 @@
         "last_update": 1791079294.2183905,
         "date": "2022-10-17",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001084",
+        "duplicate_id": "MCM00000799",
         "skip": false
     },
     "MCM00000799": {
@@ -44989,7 +45004,7 @@
         "priority": 0.0006847743764652545,
         "last_update": 1791142616.492167,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001097",
+        "duplicate_id": "MCM00001056",
         "skip": false
     },
     "MCM00001056": {
@@ -45048,7 +45063,7 @@
         "date": "2022-10-11",
         "last_update": 1791140338.764965,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001082",
+        "duplicate_id": "MCM00000179",
         "skip": false
     },
     "MCM00000179": {
@@ -45216,7 +45231,7 @@
         "priority": 0.0006805799828646466,
         "date": "2022-10-03",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001077",
+        "duplicate_id": "MCM00000818",
         "skip": false
     },
     "MCM00000550": {
@@ -45452,7 +45467,7 @@
         "date": "2022-09-27",
         "last_update": 1791140282.3510408,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001072",
+        "duplicate_id": "MCM00000189",
         "skip": false
     },
     "MCM00000189": {
@@ -45757,7 +45772,7 @@
         "last_update": 1791079263.785864,
         "date": "2022-09-19",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001063",
+        "duplicate_id": "MCM00000812",
         "skip": false
     },
     "MCM00000812": {
@@ -45945,7 +45960,7 @@
         "date": "2022-09-13",
         "last_update": 1791082766.4889717,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001059",
+        "duplicate_id": "MCM00000183",
         "skip": false
     },
     "MCM00000183": {
@@ -46049,7 +46064,7 @@
         "last_update": 1791079255.0481763,
         "date": "2022-09-12",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00001053",
+        "duplicate_id": "MCM00000800",
         "skip": false
     },
     "MCM00000548": {
@@ -46177,7 +46192,7 @@
         "priority": 0.0006691939821421607,
         "last_update": 1791142816.3322587,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001160",
+        "duplicate_id": "MCM00000983",
         "skip": false
     },
     "MCM00000983": {
@@ -46483,7 +46498,7 @@
         "priority": 0.0006599200767174445,
         "last_update": 1791142496.6032696,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001050",
+        "duplicate_id": "MCM00001055",
         "skip": false
     },
     "MCM00001055": {
@@ -46732,7 +46747,7 @@
         "date": "2022-08-09",
         "last_update": 1791140245.7632604,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001031",
+        "duplicate_id": "MCM00000167",
         "skip": false
     },
     "MCM00000167": {
@@ -46977,7 +46992,7 @@
         "date": "2022-07-19",
         "last_update": 1791083218.1489992,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001013",
+        "duplicate_id": "MCM00000176",
         "skip": false
     },
     "MCM00000176": {
@@ -47064,7 +47079,7 @@
         "priority": 0.0006450218757176634,
         "last_update": 1791085110.577635,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00001034",
+        "duplicate_id": "MCM00001052",
         "skip": false
     },
     "MCM00001052": {
@@ -47487,7 +47502,7 @@
         "date": "2022-06-28",
         "last_update": 1791083521.5238564,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00001002",
+        "duplicate_id": "MCM00000178",
         "skip": false
     },
     "MCM00000178": {
@@ -47626,7 +47641,7 @@
         "priority": 0.0006359967753913703,
         "last_update": 1791085192.493472,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "MCM00001067",
+        "duplicate_id": "CAS00001735",
         "skip": false
     },
     "MCM00000341": {
@@ -47724,7 +47739,7 @@
         "date": "2022-06-21",
         "last_update": 1791140198.0113697,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000990",
+        "duplicate_id": "MCM00000177",
         "skip": false
     },
     "MCM00000177": {
@@ -47957,7 +47972,7 @@
         "date": "2022-06-14",
         "last_update": 1791083068.23523,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000984",
+        "duplicate_id": "MCM00000175",
         "skip": false
     },
     "MCM00000175": {
@@ -48044,7 +48059,7 @@
         "last_update": 1791079194.0339422,
         "date": "2022-06-13",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000982",
+        "duplicate_id": "MCM00000798",
         "skip": false
     },
     "kZGTRaqmFyM": {
@@ -48344,7 +48359,7 @@
         "date": "2022-06-07",
         "last_update": 1791140188.6479442,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000977",
+        "duplicate_id": "MCM00000174",
         "skip": false
     },
     "MCM00000174": {
@@ -48443,7 +48458,7 @@
         "last_update": 1791079173.426994,
         "date": "2022-06-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000970",
+        "duplicate_id": "MCM00000805",
         "skip": false
     },
     "MCM00000549": {
@@ -48553,7 +48568,7 @@
         "date": "2022-05-31",
         "last_update": 1791083049.0888696,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000967",
+        "duplicate_id": "MCM00000190",
         "skip": false
     },
     "MCM00000190": {
@@ -48749,7 +48764,7 @@
         "date": "2022-05-24",
         "last_update": 1791082999.6704333,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000964",
+        "duplicate_id": "MCM00000187",
         "skip": false
     },
     "MCM00000187": {
@@ -48899,7 +48914,7 @@
         "meeting_type": "CC City Council Meeting of the Whole",
         "last_update": 1791137312.4688745,
         "skip": false,
-        "duplicate_id": "CAS00000957"
+        "duplicate_id": "CAS00000955"
     },
     "CAS00000955": {
         "title": "City Council Committee of the Whole 05/18/22",
@@ -48943,7 +48958,7 @@
         "date": "2022-05-17",
         "last_update": 1791140206.919118,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000958",
+        "duplicate_id": "MCM00000180",
         "skip": false
     },
     "MCM00000180": {
@@ -49043,7 +49058,7 @@
         "priority": 0.000621374661005131,
         "last_update": 1791085130.4145024,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000954",
+        "duplicate_id": "MCM00001054",
         "skip": false
     },
     "MCM00000810": {
@@ -49169,7 +49184,7 @@
         "date": "2022-05-10",
         "last_update": 1791083010.6409106,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000952",
+        "duplicate_id": "MCM00000168",
         "skip": false
     },
     "MCM00000168": {
@@ -49398,7 +49413,7 @@
         "priority": 0.0006167756756883661,
         "last_update": 1791085347.8052638,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000949",
+        "duplicate_id": "MCM00001058",
         "skip": false
     },
     "MCM00000437": {
@@ -49478,7 +49493,7 @@
         "date": "2022-05-03",
         "last_update": 1791140220.9244545,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000947",
+        "duplicate_id": "MCM00000200",
         "skip": false
     },
     "MCM00000200": {
@@ -49551,7 +49566,7 @@
         "last_update": 1791136434.8200824,
         "date": "2022-05-02",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000945",
+        "duplicate_id": "MCM00000809",
         "skip": false
     },
     "MCM00000556": {
@@ -49809,7 +49824,7 @@
         "date": "2022-04-26",
         "last_update": 1791140216.1805005,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000941",
+        "duplicate_id": "MCM00000186",
         "skip": false
     },
     "MCM00000186": {
@@ -49896,7 +49911,7 @@
         "date": "2022-04-25",
         "last_update": 1791136417.2165797,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000937",
+        "duplicate_id": "MCM00000802",
         "skip": false
     },
     "MCM00000802": {
@@ -50000,7 +50015,7 @@
         "date": "2022-04-19",
         "last_update": 1791140178.4785793,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000935",
+        "duplicate_id": "MCM00000185",
         "skip": false
     },
     "MCM00000185": {
@@ -50181,7 +50196,7 @@
         "date": "2022-04-12",
         "last_update": 1791140166.5956914,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000931",
+        "duplicate_id": "MCM00000202",
         "skip": false
     },
     "MCM00000202": {
@@ -50280,7 +50295,7 @@
         "last_update": 1791079085.4889722,
         "date": "2022-04-11",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000928",
+        "duplicate_id": "MCM00000817",
         "skip": false
     },
     "MCM00000817": {
@@ -50365,7 +50380,7 @@
         "date": "2022-04-05",
         "last_update": 1791083042.9904337,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000925",
+        "duplicate_id": "MCM00000188",
         "skip": false
     },
     "MCM00000188": {
@@ -50452,7 +50467,7 @@
         "date": "2022-04-04",
         "last_update": 1791079078.7436488,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000923",
+        "duplicate_id": "MCM00000816",
         "skip": false
     },
     "MCM00000552": {
@@ -50673,7 +50688,7 @@
         "date": "2022-03-29",
         "last_update": 1791140256.0940287,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000918",
+        "duplicate_id": "MCM00000171",
         "skip": false
     },
     "MCM00000171": {
@@ -50835,7 +50850,7 @@
         "date": "2022-03-22",
         "last_update": 1791083030.7492251,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000912",
+        "duplicate_id": "MCM00000181",
         "skip": false
     },
     "MCM00000181": {
@@ -50916,7 +50931,7 @@
         "date": "2022-03-21",
         "last_update": 1791079065.507165,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000910",
+        "duplicate_id": "MCM00000806",
         "skip": false
     },
     "MCM00000806": {
@@ -51098,7 +51113,7 @@
         "last_update": 1791083663.8034084,
         "date": "2022-03-15",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000899",
+        "duplicate_id": "MCM00000201",
         "skip": false
     },
     "MCM00000201": {
@@ -51404,7 +51419,7 @@
         "date": "2022-03-08",
         "last_update": 1791140229.3304253,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000887",
+        "duplicate_id": "MCM00000197",
         "skip": false
     },
     "MCM00000197": {
@@ -51490,7 +51505,7 @@
         "date": "2022-03-07",
         "last_update": 1791079049.5242062,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000886",
+        "duplicate_id": "MCM00000811",
         "skip": false
     },
     "MCM00000184": {
@@ -51727,7 +51742,7 @@
         "date": "2022-02-28",
         "last_update": 1791136362.3243833,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000884",
+        "duplicate_id": "MCM00000803",
         "skip": false
     },
     "oD24TLkMsgk": {
@@ -51951,7 +51966,7 @@
         "date": "2022-02-22",
         "last_update": 1791083021.029471,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000876",
+        "duplicate_id": "MCM00000172",
         "skip": false
     },
     "MCM00000172": {
@@ -52106,7 +52121,7 @@
         "date": "2022-02-15",
         "last_update": 1791140482.945333,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000873",
+        "duplicate_id": "MCM00000192",
         "skip": false
     },
     "MCM00000192": {
@@ -52372,7 +52387,7 @@
         "priority": 0.0005860513853570708,
         "last_update": 1791083638.0994911,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000861",
+        "duplicate_id": "MCM00000173",
         "skip": false
     },
     "MCM00000173": {
@@ -52498,7 +52513,7 @@
         "date": "2022-02-07",
         "last_update": 1791136342.802454,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000858",
+        "duplicate_id": "MCM00000813",
         "skip": false
     },
     "MCM00000554": {
@@ -52693,7 +52708,7 @@
         "date": "2022-02-01",
         "last_update": 1791140490.7093682,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000854",
+        "duplicate_id": "MCM00000194",
         "skip": false
     },
     "MCM00000194": {
@@ -52837,7 +52852,7 @@
         "last_update": 1791140677.3126543,
         "date": "2022-01-25",
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000848",
+        "duplicate_id": "MCM00000195",
         "skip": false
     },
     "MCM00000195": {
@@ -52923,7 +52938,7 @@
         "date": "2022-01-24",
         "last_update": 1791136324.532406,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000844",
+        "duplicate_id": "MCM00000797",
         "skip": false
     },
     "OqhVXheg_Mw": {
@@ -53139,7 +53154,7 @@
         "date": "2022-01-18",
         "last_update": 1791140605.2227008,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000838",
+        "duplicate_id": "MCM00000193",
         "skip": false
     },
     "MCM00000193": {
@@ -53181,7 +53196,7 @@
         "priority": 0.0005789264912406297,
         "meeting_type": "CC Traffic Commission",
         "skip": false,
-        "duplicate_id": "CAS00000840"
+        "duplicate_id": "CAS00001539"
     },
     "CAS00001539": {
         "title": "Traffic Commission 01/18/22",
@@ -53280,7 +53295,7 @@
         "priority": 0.0005772555485941457,
         "last_update": 1791142553.6201952,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000839",
+        "duplicate_id": "MCM00001071",
         "skip": false
     },
     "HmBWgU9QDwQ": {
@@ -53494,7 +53509,7 @@
         "date": "2022-01-11",
         "last_update": 1791083441.8696382,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000832",
+        "duplicate_id": "MCM00000191",
         "skip": false
     },
     "MCM00000191": {
@@ -53580,7 +53595,7 @@
         "last_update": 1791078995.3138227,
         "date": "2022-01-10",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000833",
+        "duplicate_id": "MCM00000796",
         "skip": false
     },
     "MCM00000796": {
@@ -53740,7 +53755,7 @@
         "date": "2022-01-04",
         "last_update": 1791083170.6942296,
         "meeting_type": "CC City Council",
-        "duplicate_id": "CAS00000827",
+        "duplicate_id": "MCM00000166",
         "skip": false
     },
     "MCM00000166": {
@@ -53932,7 +53947,7 @@
         "date": "2021-12-20",
         "last_update": 1791136298.0427046,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000816",
+        "duplicate_id": "MCM00000801",
         "skip": false
     },
     "KdVL9syClrc": {
@@ -53960,7 +53975,7 @@
         "priority": 0.0005693674560376655,
         "last_update": 1791142511.6790807,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000821",
+        "duplicate_id": "MCM00001014",
         "skip": false
     },
     "MCM00000801": {
@@ -54300,7 +54315,7 @@
         "priority": 0.0005658236785649313,
         "last_update": 1791085202.4313529,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000810",
+        "duplicate_id": "MCM00001007",
         "skip": false
     },
     "MCM00001007": {
@@ -54420,7 +54435,7 @@
         "priority": 0.00056486483686527,
         "date": "2021-12-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000807",
+        "duplicate_id": "MCM00000725",
         "skip": false
     },
     "MCM00000725": {
@@ -54632,7 +54647,7 @@
         "priority": 0.0005591793433907785,
         "last_update": 1791085262.631522,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000800",
+        "duplicate_id": "MCM00001008",
         "skip": false
     },
     "MCM00001008": {
@@ -54870,7 +54885,7 @@
         "date": "2021-11-15",
         "last_update": 1791136266.1322913,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000799",
+        "duplicate_id": "MCM00000734",
         "skip": false
     },
     "MCM00000734": {
@@ -55063,7 +55078,7 @@
         "date": "2021-11-08",
         "last_update": 1791136255.8581858,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000793",
+        "duplicate_id": "MCM00000732",
         "skip": false
     },
     "Sog9mTxuN90": {
@@ -55891,7 +55906,7 @@
         "date": "2021-10-18",
         "last_update": 1791078894.7646742,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000764",
+        "duplicate_id": "MCM00000689",
         "skip": false
     },
     "MCM00000689": {
@@ -56176,7 +56191,7 @@
         "date": "2021-10-04",
         "last_update": 1791136206.2284734,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000758",
+        "duplicate_id": "MCM00000744",
         "skip": false
     },
     "MCM00000535": {
@@ -56510,7 +56525,7 @@
         "priority": 0.000541907020318158,
         "last_update": 1791142663.0537832,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000757",
+        "duplicate_id": "MCM00001011",
         "skip": false
     },
     "MCM00001011": {
@@ -56715,7 +56730,7 @@
         "date": "2021-09-13",
         "last_update": 1791136193.926735,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000742",
+        "duplicate_id": "MCM00000751",
         "skip": false
     },
     "MCM00000536": {
@@ -57280,7 +57295,7 @@
         "priority": 0.0005298476378234657,
         "last_update": 1791142705.1230981,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000723",
+        "duplicate_id": "MCM00001012",
         "skip": false
     },
     "MCM00001012": {
@@ -57802,7 +57817,7 @@
         "priority": 0.0005253935810578479,
         "meeting_type": "CC Cannabis Advisory Committee",
         "skip": false,
-        "duplicate_id": "CAS00000700"
+        "duplicate_id": "CAS00000715"
     },
     "MCM00001392": {
         "title": "Medford Adult Use Marijuana Community Outreach 07-26-21",
@@ -57869,7 +57884,7 @@
         "priority": 0.0005240170052033529,
         "last_update": 1791142799.5936952,
         "meeting_type": "CC Community Development Board",
-        "duplicate_id": "CAS00000693",
+        "duplicate_id": "MCM00001009",
         "skip": false
     },
     "MCM00001009": {
@@ -58467,7 +58482,7 @@
         "date": "2021-06-24",
         "last_update": 1791136178.3821006,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000674",
+        "duplicate_id": "MCM00000752",
         "skip": false
     },
     "MCM00000278": {
@@ -58764,7 +58779,7 @@
         "last_update": 1791078861.9343355,
         "date": "2021-06-14",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000669",
+        "duplicate_id": "MCM00000666",
         "skip": false
     },
     "JcaRW85lvs0": {
@@ -60017,7 +60032,7 @@
         "date": "2021-05-10",
         "last_update": 1791136086.6805832,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000633",
+        "duplicate_id": "MCM00000690",
         "skip": false
     },
     "MCM00000690": {
@@ -60714,7 +60729,7 @@
         "date": "2021-04-26",
         "last_update": 1791078709.7074645,
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00000612",
+        "duplicate_id": "MCM00000793",
         "skip": false
     },
     "6kKbcFkpEqA": {
@@ -60727,7 +60742,7 @@
         "date": "2021-04-26",
         "last_update": 1791136045.4063222,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000611",
+        "duplicate_id": "MCM00000720",
         "skip": false
     },
     "MCM00000720": {
@@ -61228,7 +61243,7 @@
         "date": "2021-04-12",
         "last_update": 1791078704.0094628,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000593",
+        "duplicate_id": "MCM00000670",
         "skip": false
     },
     "MCM00000670": {
@@ -61670,7 +61685,7 @@
         "priority": 0.0004949674148539892,
         "meeting_type": "CC Housing Authority",
         "skip": false,
-        "duplicate_id": "CAS00000579"
+        "duplicate_id": "CAS00000608"
     },
     "CAS00000608": {
         "title": "Medford Housing Authority 03/31/21",
@@ -61920,7 +61935,7 @@
         "date": "2021-03-22",
         "last_update": 1791078680.7735145,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000568",
+        "duplicate_id": "MCM00000718",
         "skip": false
     },
     "x6UMczRpx7Y": {
@@ -61933,7 +61948,7 @@
         "date": "2021-03-22",
         "last_update": 1791136015.0332289,
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00000569",
+        "duplicate_id": "MCM00000773",
         "skip": false
     },
     "_HgTBqsKoGQ": {
@@ -62506,7 +62521,7 @@
         "last_update": 1791135970.064893,
         "date": "2021-03-08",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000554",
+        "duplicate_id": "MCM00000673",
         "skip": false
     },
     "MCM00000423": {
@@ -62877,7 +62892,7 @@
         "date": "2021-03-01",
         "last_update": 1791078639.5314856,
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00000541",
+        "duplicate_id": "MCM00000785",
         "skip": false
     },
     "MCM00000481": {
@@ -63195,7 +63210,7 @@
         "date": "2021-02-22",
         "last_update": 1791135947.352004,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000524",
+        "duplicate_id": "MCM00000697",
         "skip": false
     },
     "MCM00000697": {
@@ -63700,7 +63715,7 @@
         "date": "2021-02-08",
         "last_update": 1791078623.662155,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000501",
+        "duplicate_id": "MCM00000675",
         "skip": false
     },
     "MCM00000675": {
@@ -63729,7 +63744,7 @@
         "priority": 0.00048278042532174493,
         "meeting_type": "CC Historical Commission",
         "skip": false,
-        "duplicate_id": "CAS00000504"
+        "duplicate_id": "CAS00000505"
     },
     "MCM00001284": {
         "title": "Medford Historic District Commission 02-08-21",
@@ -63924,7 +63939,7 @@
         "date": "2021-02-03",
         "last_update": 1791135926.7311225,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000495",
+        "duplicate_id": "MCM00000899",
         "skip": false
     },
     "MCM00000301": {
@@ -64227,7 +64242,7 @@
         "date": "2021-01-25",
         "last_update": 1791078600.1703568,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000485",
+        "duplicate_id": "MCM00000699",
         "skip": false
     },
     "j0VVw7Ha8DI": {
@@ -64240,7 +64255,7 @@
         "date": "2021-01-25",
         "last_update": 1791135921.768415,
         "meeting_type": "MPS Meeting of the Whole",
-        "duplicate_id": "CAS00000484",
+        "duplicate_id": "MCM00000776",
         "skip": false
     },
     "MCM00000699": {
@@ -64816,7 +64831,7 @@
         "date": "2021-01-11",
         "last_update": 1791135907.637135,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "CAS00000463",
+        "duplicate_id": "MCM00000688",
         "skip": false
     },
     "MCM00000688": {
@@ -65480,7 +65495,7 @@
         "priority": 0.00047051405659807394,
         "meeting_type": "CC Comprehensive Plan",
         "skip": false,
-        "duplicate_id": "CAS00000435"
+        "duplicate_id": "CAS00000434"
     },
     "MCM00001467": {
         "title": "Medford Comprehensive Master Plan Interviews 12-16-20-715pm",
@@ -66460,7 +66475,7 @@
         "priority": 0.00046461168571537606,
         "meeting_type": "CC Housing Authority",
         "skip": false,
-        "duplicate_id": "CAS00000398"
+        "duplicate_id": "CAS00000402"
     },
     "MCM00001515": {
         "title": "Medford Housing Authority Public Hearing 11-19-20",
@@ -69170,7 +69185,7 @@
         "priority": 0.0004437866508561959,
         "meeting_type": "CC Historical Commission",
         "skip": false,
-        "duplicate_id": "CAS00000288"
+        "duplicate_id": "CAS00000289"
     },
     "MCM00001277": {
         "title": "Medford Historic District Commission 08-10-20",
@@ -72156,7 +72171,7 @@
         "date": "2020-04-20",
         "last_update": 1791078410.6615613,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000935",
+        "duplicate_id": "MCM00000712",
         "skip": false
     },
     "MCM00000712": {
@@ -72440,7 +72455,7 @@
         "last_update": 1791078387.9558344,
         "date": "2020-04-06",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000930",
+        "duplicate_id": "MCM00000730",
         "skip": false
     },
     "a7nti5izX0Y": {
@@ -74682,7 +74697,7 @@
         "last_update": 1791135605.5287454,
         "date": "2019-06-24",
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000745",
+        "duplicate_id": "MCM00000743",
         "skip": false
     },
     "MCM00000743": {
@@ -75549,7 +75564,7 @@
         "date": "2019-02-26",
         "last_update": 1791078247.0022335,
         "meeting_type": "CC Community Preservation Committee",
-        "duplicate_id": "CAS00000060",
+        "duplicate_id": "MCM00001019",
         "skip": false
     },
     "MCM00001019": {
@@ -76914,7 +76929,7 @@
         "date": "2018-05-21",
         "last_update": 1791078165.4449873,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000687",
+        "duplicate_id": "ACxsV5H4ehA",
         "skip": false
     },
     "ACxsV5H4ehA": {
@@ -77541,7 +77556,7 @@
         "date": "2018-01-22",
         "last_update": 1791077857.6548555,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "IxvjbChoNJk",
+        "duplicate_id": "MCM00000737",
         "skip": false
     },
     "MCM00000737": {
@@ -77675,7 +77690,7 @@
         "priority": 3.1071967182839244e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "DZsOi_61ST8",
+        "duplicate_id": "iFIQoDUm-og",
         "backseat": true
     },
     "TZU2d7XxyA0": {
@@ -77688,7 +77703,7 @@
         "date": "2017-12-18",
         "last_update": 1791077827.9422905,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000726",
+        "duplicate_id": "rpuG18WtRwY",
         "skip": false
     },
     "rpuG18WtRwY": {
@@ -77759,7 +77774,7 @@
         "url": "https://archive.org/details/12-12-17-city-council-meeting",
         "priority": 3.1004531158611666e-06,
         "meeting_type": "CC City Council",
-        "duplicate_id": "mgC3PACaQmc",
+        "duplicate_id": "qZO7pLjaumo",
         "skip": false,
         "backseat": true
     },
@@ -77773,7 +77788,7 @@
         "url": "https://archive.org/details/12-05-17-medford-city-council-meeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "_Q1KmNS3O8k",
+        "duplicate_id": "WGpYlC7_Nvc",
         "backseat": true,
         "priority": 3.093738721559922e-06
     },
@@ -77815,7 +77830,7 @@
         "date": "2017-12-04",
         "last_update": 1791077891.3167872,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000706",
+        "duplicate_id": "eOruUd5h8M4",
         "skip": false,
         "duplicate_method": "transcript_similarity",
         "skip_reason": "duplicate of eOruUd5h8M4 (transcript similarity 0.75)"
@@ -77875,7 +77890,7 @@
         "url": "https://archive.org/details/11-28-17-medford-city-council-meeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "hpwDO7TBAHE",
+        "duplicate_id": "AW1lkvnNQcg",
         "backseat": true,
         "priority": 3.0870533460294297e-06
     },
@@ -78001,7 +78016,7 @@
         "priority": 3.073768902025941e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "Gnut-gH1atc",
+        "duplicate_id": "IQQM4nQO9UA",
         "backseat": true
     },
     "ccLb1HokqOc": {
@@ -78063,7 +78078,7 @@
         "url": "https://archive.org/details/10-24-17-medford-city-council-meeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "9Tzwvuy0OVQ",
+        "duplicate_id": "Zdo0mXKcWx0",
         "backseat": true,
         "priority": 3.0540552360059813e-06
     },
@@ -78116,7 +78131,7 @@
         "url": "https://archive.org/details/10-17-17-medford-citycouncilmeeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "c7aHV1_-sJM",
+        "duplicate_id": "0Vc0VDUwAtI",
         "backseat": true,
         "priority": 3.0475400869742878e-06
     },
@@ -78180,7 +78195,7 @@
         "date": "2017-10-16",
         "last_update": 1791077684.5239594,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000741",
+        "duplicate_id": "RdeZPdj6ap0",
         "skip": false
     },
     "RdeZPdj6ap0": {
@@ -78299,7 +78314,7 @@
         "url": "https://archive.org/details/10-03-17-medford-city-council-meeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "CUlBWgAp9_8",
+        "duplicate_id": "iE4eK_fbeHg",
         "backseat": true,
         "priority": 3.034592826373861e-06
     },
@@ -78352,7 +78367,7 @@
         "date": "2017-10-02",
         "last_update": 1791077586.7309997,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "MCM00000716",
+        "duplicate_id": "7numIqSXrqc",
         "skip": false
     },
     "YZSq1wrD6fo": {
@@ -78436,7 +78451,7 @@
         "url": "https://archive.org/details/20172609medfordcitycouncil",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "pq2sA59Wqso",
+        "duplicate_id": "3rLlhNFiQKU",
         "backseat": true,
         "priority": 3.0281603627740726e-06
     },
@@ -78478,7 +78493,7 @@
         "url": "https://archive.org/details/2017-09-19-medfordcitycouncilmeeting",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "MjGBHu28DvM",
+        "duplicate_id": "CtRL2YQa7iI",
         "backseat": true,
         "priority": 3.0217551114359504e-06
     },
@@ -78542,7 +78557,7 @@
         "date": "2017-09-18",
         "last_update": 1791077533.5602956,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "1QXm88AbHUw",
+        "duplicate_id": "VPiAObMovvI",
         "skip": false
     },
     "VPiAObMovvI": {
@@ -78613,7 +78628,7 @@
         "url": "https://archive.org/details/08-15-17-medfordcitycouncil",
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "7sg70fldaE8",
+        "duplicate_id": "-8Uy-JvGvpg",
         "backseat": true,
         "priority": 2.9901310581055223e-06
     },
@@ -78711,7 +78726,7 @@
         "priority": 2.9469533520561436e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "D3kEu2_5mwc",
+        "duplicate_id": "zSHhVpiqwJA",
         "backseat": true
     },
     "bBqhZIBc9dw": {
@@ -78775,7 +78790,7 @@
         "priority": 2.9408866929277248e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "l7j4K8jolL8",
+        "duplicate_id": "7NOaplsgIuU",
         "backseat": true
     },
     "7XGMs-cDtEA": {
@@ -78817,7 +78832,7 @@
         "priority": 2.9348449603848633e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "kGliI9h-Ql4",
+        "duplicate_id": "7XGMs-cDtEA",
         "backseat": true
     },
     "rOaW9S_6SPE": {
@@ -78870,7 +78885,7 @@
         "priority": 2.9288280011156273e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "4oI-i0j4VnY",
+        "duplicate_id": "DXZ3Y2L8Tik",
         "backseat": true
     },
     "i42WuXCHMQM": {
@@ -78923,7 +78938,7 @@
         "priority": 2.9228356630627813e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "hQQ4PYNrfCE",
+        "duplicate_id": "PYJEJj7Mrko",
         "backseat": true
     },
     "df7KI7XVxCQ": {
@@ -78992,7 +79007,7 @@
         "priority": 2.910924248574092e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "PZwU6Za1SNY",
+        "duplicate_id": "Buu0dDHgsRo",
         "backseat": true
     },
     "69E5Q7WOK_c": {
@@ -79005,7 +79020,7 @@
         "date": "2017-05-15",
         "last_update": 1791077476.6205244,
         "meeting_type": "MPS School Committee",
-        "duplicate_id": "2j8KjuogAZY",
+        "duplicate_id": "w0sagWRQcPk",
         "skip": false
     },
     "w0sagWRQcPk": {
@@ -79077,7 +79092,7 @@
         "priority": 2.905004874182753e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "UJBcHvzH4YE",
+        "duplicate_id": "3ikc9Lg8Y0c",
         "backseat": true
     },
     "mex41hYCPiQ": {
@@ -79119,7 +79134,7 @@
         "priority": 2.8991095250719665e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "aTcx-mFr9SQ",
+        "duplicate_id": "mex41hYCPiQ",
         "backseat": true
     },
     "2Xo4xfl-Zsw": {
@@ -79227,7 +79242,7 @@
         "priority": 2.8815661755837703e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "gGuuN9ZzYSw",
+        "duplicate_id": "TtARn8tfOxM",
         "backseat": true
     },
     "F3DOtPQD5VQ": {
@@ -79318,7 +79333,7 @@
         "priority": 2.875765479609303e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "djVjfHvwilk",
+        "duplicate_id": "43IdaIBcFp0",
         "backseat": true
     },
     "GnKIPou12eI": {
@@ -79444,7 +79459,7 @@
         "priority": 2.8527943704109183e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "GKa8WTFzAII",
+        "duplicate_id": "kYO2fzmzlk8",
         "backseat": true
     },
     "J5xdcQvg5bk": {
@@ -79525,7 +79540,7 @@
         "priority": 2.84710881920296e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "2hZdDePQb_Y",
+        "duplicate_id": "eMn9IArfaTE",
         "backseat": true
     },
     "neHid2Oyy-4": {
@@ -79605,7 +79620,7 @@
         "priority": 2.835805433878485e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "Y06IqPvQxlY",
+        "duplicate_id": "uOl8IpBqQPs",
         "backseat": true
     },
     "-PNN_I18g2E": {
@@ -79685,8 +79700,7 @@
         "priority": 2.824591445401387e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "l57EqMhB2JU",
-        "backseat": true
+        "duplicate_id": "u7r73CCT980"
     },
     "WGXTX-2t8pY": {
         "title": "Medford, MA City Council - Jan. 24, 2017 (Unofficially provided by MT)",
@@ -82051,7 +82065,7 @@
         "priority": 2.405965823627289e-06,
         "meeting_type": "CC City Council",
         "skip": false,
-        "duplicate_id": "ufxEwxM3_BY",
+        "duplicate_id": "50f-AMbGHtg",
         "backseat": true
     },
     "-Ufepi4QYj4": {

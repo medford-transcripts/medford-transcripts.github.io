@@ -55,6 +55,41 @@ The lesson is the one already in PRINCIPLES #4, arriving from a new direction:
 a check that always fails is not a check. Worth looking at `bing_status.py`
 and the other validators for the same shape.
 
+## "MHSBC dropped meetings" -- it did not, but a keyword bug had hidden 3
+
+Jason remembered >100 and the page showed 78. Both were right about different
+things: **103 entries are typed to the body and 79 are distinct meetings** --
+the rest are duplicate copies across Castus, MCM Archive and YouTube. 63 of
+the 79 are transcribed and published, and all 63 carry a summary. The other 16
+are awaiting transcription.
+
+**The real bug.** The keyword list carried THREE scrambled spellings of the
+acronym -- `mchsbc`, `mhcsbc`, `mhscbc` -- and not `mhsbc`, the correct one.
+The typos were added as they turned up and the right spelling never was. So
+three meetings titled "School Committee MHSBC .." fell through to the parent
+`MPS School Committee`, which matches on "school committee".
+
+Fixed the list, and re-typed those three BY ID. **Not**
+`add_all_meeting_types(overwrite=True)`: typing is sticky by design, and an
+overwrite pass would re-type the whole corpus from today's keyword lists and
+move meetings nobody asked about. `meeting_type_manual` is set so a refresh
+cannot undo it.
+
+**Being mis-filed is what hid them from the dedup**, which groups on
+(meeting_type, meeting_date) -- so a Castus copy sitting in the wrong body can
+never meet its YouTube twin. On re-typing, two immediately paired and were
+hidden: CAS00002456 = c6Y6iezvU4o (6.10.26) and CAS00002465 = B16QgbwlQNo
+(6.18.26). Net 78 -> 79, which is the honest count rather than a bigger one.
+
+CAS00002457 (06/11/26) is still visible with no same-date counterpart; the
+6/12 subcommittee meeting is one day away, so it is probably the same offset
+problem again and it is untranscribed, so no transcript comparison can settle
+it.
+
+**Worth looking for the same class elsewhere:** a body whose own acronym is
+missing from its keyword list loses meetings silently to whichever type
+matches a generic word in the title.
+
 ## Overview rollout: working, and rate-limited -- measured 2026-10-11
 
 **It is generating.** Wired at 10-10 18:39; in the six runs since, the cron
