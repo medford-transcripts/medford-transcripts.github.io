@@ -295,6 +295,53 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
 
+## The date+duration dedup rule MEASURED 0% PRECISION -- do not ship it
+
+Jason asked why the one-day-offset duplicates were being filed instead of
+fixed, so it was built and measured before applying. The result says do not
+apply it corpus-wide.
+
+**Rule tested:** same meeting_type, meeting dates within 2 days, durations
+within 5%, not already linked. Validated against transcripts (5-gram
+containment >= 0.30) on every candidate pair where BOTH copies happen to be
+transcribed:
+
+    176 candidate pairs; 24 validatable -> 0 true, 24 FALSE  (0.0%)
+
+The false positives name the reason: `Election` and `Jazz Festival` publish
+many similar-length videos on one day -- candidate profiles, festival sets --
+so duration agreement there is coincidence. Adding the constraint the metadata
+pass already has (DIFFERENT channel) and restricting to public bodies:
+
+    72 candidate pairs; 1 validatable -> 0 true, 1 FALSE  (0.0%)
+    the one: TYJHfPvQgEo / MCM00000873, 2 days apart, 2.4% length,
+             containment 0.001 -- two genuinely different School Committee
+             meetings two days apart
+
+**The absence of evidence is itself the finding.** Only 1 of 72 candidates has
+both copies transcribed, because whenever both ARE transcribed the existing
+passes already catch them. So the remaining 71 are precisely the population
+with no evidence either way, and the single data point available contradicts
+the rule. 2 days is too loose for a body that meets often.
+
+**What was done instead:** the Building Committee's 9 were reviewed ONE AT A
+TIME and marked `manual_rule` + `manual_correction`, each against a keeper
+verified visible, published and summarised:
+
+    +1d  3.0%  CAS00001686 -> A1IveHErhfY     +0d  2.6%  CAS00002130 -> Gg7MfqcnomU
+    +1d  3.1%  CAS00001708 -> rzmG_N2g03Y     +0d  1.0%  CAS00002416 -> mtlACKVIlfY
+    +1d  1.0%  CAS00001736 -> bv-PbDpiP-8     +1d  1.5%  CAS00002292 -> h56i5SspnTk
+    +1d  0.4%  CAS00001754 -> zIDY2XMKUO4     +6d  0.1%  CAS00002415 -> CH7OeH8n9X8
+    +1d  0.2%  CAS00002349 -> -ixpTUy1PFo
+
+Building Committee: 66 visible, 65 published, **1 outstanding** (CAS00002457,
+left as a separate meeting). Down from 16.
+
+**For the other 71 a different signal is needed, not a looser threshold.**
+Candidates: fetch only the audio length and first minute rather than the whole
+recording; or transcribe ONE of each pair and let find_duplicate_transcripts
+decide, which costs one transcription to clear a pair instead of two.
+
 ## Same date, very different lengths: WORD COUNT is the discriminator
 
 Jason's triage, 2026-10-11: same date and vastly different lengths is either
