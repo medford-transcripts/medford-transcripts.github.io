@@ -69,7 +69,23 @@ MAX_OUTPUT = 8000
 # 1.7% each, so a quarter of all citations landing on one meeting is the
 # failure the earlier attempts showed, not a committee that genuinely spent
 # one meeting on the only thing that mattered.
+#
+# AN ABSOLUTE SHARE ALONE IS BACKWARDS, measured across the first 19 bodies
+# on 2026-10-11. It flags exactly the wrong ones:
+#
+#   Board of Health   n=6   max 25.0%  even 16.7%  ratio 1.5x
+#   Zoning            n=11  max 20.0%  even  9.1%  ratio 2.2x
+#   MPS School Cttee  n=51  max 10.9%  even  2.0%  ratio 5.6x
+#   Building Cttee    n=63  max  8.7%  even  1.6%  ratio 5.5x
+#
+# A six-meeting body cannot cite anything at less than 16.7%, so 25% there is
+# near-even and no failure at all, while 8.7% across 63 meetings is one
+# meeting carrying five times its share. So BOTH have to be high to warn:
+# the absolute share, which says a reader would notice, AND the ratio to an
+# even spread, which says the model actually favoured one meeting. On these
+# 19 nothing trips it, which is the correct answer -- they are all spread.
 CONCENTRATION_WARN = 0.25
+CONCENTRATION_RATIO_WARN = 2.5
 
 # A roll-up over four meetings tells a reader nothing the four per-meeting
 # summaries do not already say, and rule 2 ("spread the weight") has nothing
@@ -428,10 +444,16 @@ def coverage(threads, periods, meetings, style="quarter"):
             per_meeting[c["video_id"]] = per_meeting.get(c["video_id"], 0) + 1
     total = sum(per_meeting.values())
     top = max(per_meeting.items(), key=lambda kv: kv[1]) if per_meeting else None
+    share = round(top[1] / float(total), 3) if total else 0.0
+    even = 1.0 / max(len(meetings), 1)
     return {"citations": total,
             "meetings_cited": len(per_meeting),
             "of_meetings": len(meetings),
-            "max_share": round(top[1] / float(total), 3) if total else 0.0,
+            "max_share": share,
+            # RECORDED, not just tested, so a later run can be compared with
+            # this one instead of the threshold being re-argued.
+            "even_share": round(even, 4),
+            "concentration_ratio": round(share / even, 2) if even else 0.0,
             "most_cited": top[0] if top else None,
             "periods_covered": len([p for p in periods if p["narrative"]]),
             "of_periods": len({period_of(m["date"], style)
@@ -442,12 +464,15 @@ def report(cov, dropped):
     print("  %d citations over %d of %d meetings; %d of %d periods covered"
           % (cov["citations"], cov["meetings_cited"], cov["of_meetings"],
              cov["periods_covered"], cov["of_periods"]))
-    print("  heaviest single meeting: %.1f%% of citations (%s)"
-          % (100 * cov["max_share"], cov["most_cited"]))
-    if cov["max_share"] > CONCENTRATION_WARN:
-        print("  WARNING: that is above the %.0f%% concentration this is meant "
-              "to avoid -- read it before publishing."
-              % (100 * CONCENTRATION_WARN))
+    # Tolerant of overviews written before these fields existed.
+    even = cov.get("even_share") or (1.0 / max(cov.get("of_meetings") or 1, 1))
+    ratio = cov.get("concentration_ratio") or (cov["max_share"] / even if even else 0)
+    print("  heaviest single meeting: %.1f%% of citations, %.1fx an even "
+          "share (%s)" % (100 * cov["max_share"], ratio, cov["most_cited"]))
+    if cov["max_share"] > CONCENTRATION_WARN and ratio > CONCENTRATION_RATIO_WARN:
+        print("  WARNING: %.0f%% of citations on one meeting AND %.1fx an even "
+              "share -- that is the concentration this exists to avoid. Read "
+              "it before publishing." % (100 * cov["max_share"], ratio))
     if cov["periods_covered"] < cov["of_periods"]:
         print("  WARNING: %d periods have no narrative, so the overview is not "
               "covering the whole span."

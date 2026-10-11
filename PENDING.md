@@ -295,6 +295,37 @@ Fischer/Fisher). That comparison is two noisy sources, not frame-vs-truth.
   they are a large share of the failures. Needs the camera-follows-speaker
   assumption measured before it is worth anything.
 
+## 16 duplicate pairs are flagged but NEITHER copy is hidden -- 2026-10-11
+
+Found while reading the first 19 committee overviews. An entry can carry
+`duplicate_id` pointing at another published entry with **neither** marked
+skip, so both pages are live and both get summarised:
+
+    pairs flagged duplicate, both copies published : 16
+    of those, both also summarised                 :  7
+      MPS School Committee 3, High School Building Committee 2,
+      MPS Rules & Policy 1, MPS Strategic & Capital Planning 1
+
+Effect: those bodies' overviews double-count a meeting. The Building
+Committee's 63 is really 61 (`AhbnPsYYkrc`/`MCM00001794`,
+`L-37LV9dgxU`/`MCM00001748`).
+
+**Neither existing pass fixes it.** `identify_duplicate_videos` reports 0
+pending changes because it groups on (meeting_type, meeting_date) and these
+pairs disagree about the date -- the same blindness as the Castus offset.
+`find_duplicate_transcripts` counts a pair as "already marked" when
+duplicate_id exists, **without checking whether either copy is actually
+hidden**, so its 123-of-140 "already marked" includes these. That is the
+residue `_dedup_protected`'s own comment describes: pairs whose skip_reason
+still reads "transcript similarity 0.98" while skip is False.
+
+**The repair is cheap and needs no new similarity judgement**: for a pair
+already asserted to be duplicates, apply the existing keeper rules
+(`prefer()` / BEST_CHANNELS / already-transcribed) and skip the loser. It
+hides up to 16 published pages, so it wants a decision rather than a quiet
+apply. Better still, fix `find_duplicate_transcripts`' "already marked" test
+to mean "one of them is hidden", which stops the class recurring.
+
 ## Tier 2 search: full transcript text -- not built, 2026-10-09
 
 `search_index.json` covers titles, bodies, dates, 465 names and the summaries
