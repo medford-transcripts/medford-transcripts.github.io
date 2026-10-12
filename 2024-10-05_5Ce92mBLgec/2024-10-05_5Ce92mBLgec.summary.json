@@ -1,0 +1,61 @@
+{
+ "video_id": "5Ce92mBLgec",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T11:19:30Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "bab17a5d2b7d79ad",
+ "subject": "Inaugural Fresh Fridays: Arts Collaborative Medford",
+ "overview": "The West Medford Community Center hosted the inaugural live 'Fresh Fridays Words and Music' program, featuring the leadership of the new Arts Collaborative Medford and a live musical performance. The event included community historical reflections and announcements for upcoming local seasonal events.",
+ "items": [
+  {
+   "title": "Introduction and Poetry Performance",
+   "t": 0,
+   "summary": "Terry Carter opened the rebranded program with reflections on arts accessibility and a performance of his poem, 'The Deep End of the Ocean.'",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Arts Collaborative Medford Interview",
+   "t": 164,
+   "summary": "Regina Parkinson, Executive Director of Arts Collaborative Medford, described the new center's facilities on Mystic Avenue and its mission to support local artists through studios and community partnerships.",
+   "speakers": [
+    "Terry Carter",
+    "Regina Parkinson"
+   ]
+  },
+  {
+   "title": "Community Center Historical Reflections",
+   "t": 1900,
+   "summary": "Terry Carter shared personal and historical memories of the West Medford Community Center's original 'Quonset Hut' building and its role in the neighborhood.",
+   "speakers": [
+    "Terry Carter",
+    "Regina Parkinson"
+   ]
+  },
+  {
+   "title": "Community Announcements",
+   "t": 2331,
+   "summary": "The center announced upcoming initiatives, including a vaccine clinic on October 16, a 'Pumpkin Smash' on November 2, and the annual Black Vendor and Holiday Fair on November 23.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Lydia Harrell Musical Performance",
+   "t": 2549,
+   "summary": "Vocalist Lydia Harrell and multi-instrumentalist Shindig performed a set of original music and soul and folk covers by artists including Stevie Wonder and Billie Holiday.",
+   "speakers": [
+    "Terry Carter",
+    "Lydia Harrell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26504,
+  "output_tokens": 473,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

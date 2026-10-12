@@ -1,26 +1,26 @@
 {
  "video_id": "CAS00002461",
  "provider": "gemini",
- "generated_at": "2026-10-12T09:05:49Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-10-12T11:10:40Z",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "a293e5da20b13a09",
- "subject": "40 Century Street Condemnation Hearing",
- "overview": "The Board of Health voted to stay a condemnation order for a residential property to allow for safety repairs and heard a comprehensive report on the city's health equity and outreach programs.",
+ "transcript_sha": "c5e4e4214044c8d7",
+ "subject": "",
+ "overview": "The Board of Health stayed condemnation proceedings for 40 Century Street for 30 days to allow safety repairs to proceed, received updates on outreach programs and disease surveillance, and honored retiring member Kathleen Charbonnier.",
  "items": [
   {
    "title": "Approval of Minutes",
    "t": 14,
-   "summary": "Approved the minutes from the May 2026 meeting.",
+   "summary": "The Board approved the meeting minutes from May 2026.",
    "speakers": [
     "David Pladziewicz",
     "MaryAnn O'Connor"
    ]
   },
   {
-   "title": "40 Century Street Sanitary Code Hearing",
+   "title": "40 Century Street Non-Emergency Condemnation Hearing",
    "t": 47,
-   "summary": "The board voted for a 30-day stay of a non-emergency condemnation at 40 Century Street to allow a landlord to repair 22 violations, including conditions deemed to endanger such as missing handrails and electrical issues. Counsel for the landlord and the elderly tenants agreed that relocation would be detrimental due to the tenants' ongoing medical treatments.",
+   "summary": "The Board voted to stay condemnation of 40 Century Street for 30 days pending re-inspection, with priority placed on addressing fall risks and other immediate safety hazards.",
    "speakers": [
     "David Pladziewicz",
     "MaryAnn O'Connor",
@@ -31,48 +31,40 @@
    ]
   },
   {
-   "title": "Office of Prevention and Outreach Presentation",
+   "title": "Medford Connects and Outreach Team Update",
    "t": 990,
-   "summary": "Staff presented a review of community engagement initiatives, including multilingual outreach, ESOL council coordination, youth employment programs, and Haitian senior social groups.",
+   "summary": "Catherine Dhingra and Patrick Donovan presented the Medford Connects team's work over the past six months, focusing on multilingual community outreach, immigrant support, ESOL programming, and health resource navigation.",
    "speakers": [
     "MaryAnn O'Connor",
     "Catherine Dhingra",
-    "Patrick Donovan"
-   ]
-  },
-  {
-   "title": "Reportable Disease Update",
-   "t": 2199,
-   "summary": "The public health nurse reported that influenza rates are comparable to the five-year average while COVID-19 cases have declined, and provided updates on available booster doses and vaccines.",
-   "speakers": [
-    "Jill",
-    "MaryAnn O'Connor"
-   ]
-  },
-  {
-   "title": "Recognition of Kathleen Chabonier",
-   "t": 2326,
-   "summary": "The board recognized member Kathleen Chabonier with a mayoral citation for over a decade of service upon her retirement.",
-   "speakers": [
-    "MaryAnn O'Connor",
-    "Kathleen Chabonier",
+    "Patrick Donovan",
     "David Pladziewicz"
    ]
   },
   {
-   "title": "Mass General Brigham Health Van",
-   "t": 2513,
-   "summary": "The health department is coordinating with Mass General Brigham to bring a mobile health van to the city in August for primary care screenings and checkups.",
+   "title": "Reportable Disease Report",
+   "t": 2199,
+   "summary": "Public health nurse Jill presented year-to-date reportable disease surveillance data and noted upcoming vaccination efforts.",
    "speakers": [
     "MaryAnn O'Connor",
+    "Jill"
+   ]
+  },
+  {
+   "title": "Board Member Recognition and Other Business",
+   "t": 2326,
+   "summary": "The Board recognized long-serving member Kathleen Charbonnier upon her upcoming retirement and discussed coordination with the Mass General Brigham mobile health van.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Kathleen Charbonnier",
     "David Pladziewicz"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 15501,
-  "output_tokens": 667,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 15500,
+  "output_tokens": 559,
+  "model_version": "gemini-3.8-flash"
  }
 }
