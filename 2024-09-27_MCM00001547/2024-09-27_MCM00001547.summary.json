@@ -1,0 +1,43 @@
+{
+ "video_id": "MCM00001547",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T14:06:52Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7a5c9ee8ee5f3ca3",
+ "subject": "39 Taft Street Residential Addition",
+ "overview": "The board approved a special permit for a residential expansion on Taft Street and adjusted its meeting schedule for the upcoming holiday season.",
+ "items": [
+  {
+   "title": "39 Taft Street Special Permit",
+   "t": 60,
+   "summary": "Approved a special permit for 39 Taft Street to allow a second-story addition and side extensions on a pre-existing non-conforming single-family home.",
+   "speakers": [
+    "Denis MacDougall",
+    "Lubna Kiadi",
+    "Scott Vandewalle",
+    "Chris D'Aveta",
+    "Yvette Velez",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Administrative Items and Scheduling",
+   "t": 1049,
+   "summary": "Tabled the July meeting minutes, rescheduled the October and November meetings to avoid holiday conflicts, and received an update on drafting new board rules and regulations.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Yvette Velez",
+    "Chris D'Aveta",
+    "Scott Vandewalle"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9114,
+  "output_tokens": 235,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
