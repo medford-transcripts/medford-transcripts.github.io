@@ -1,0 +1,51 @@
+{
+ "video_id": "CAS00002457",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T18:06:09Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a7ccd8a13bea1899",
+ "subject": "Construction Manager at Risk RFQ",
+ "overview": "The subcommittee coordinated the procurement schedule and reviewed draft qualification materials for a Construction Manager at Risk for the high school project. Members authorized two committee representatives to give final approval on the draft RFQ before forwarding it to the full building committee.",
+ "items": [
+  {
+   "title": "CMR Procurement Timeline and Meeting Scheduling",
+   "t": 0,
+   "summary": "The subcommittee reviewed the proposed procurement schedule for the Construction Manager at Risk and aligned member availability for review sessions and firm interviews across July, August, and September.",
+   "speakers": [
+    "Matt Gulino",
+    "Jenny Graham",
+    "Brian Hilliard",
+    "Kenneth Lord",
+    "Adele Sands"
+   ]
+  },
+  {
+   "title": "Review of Draft RFQ",
+   "t": 1478,
+   "summary": "Members reviewed sections of the draft RFQ, providing revisions regarding hard copy distribution, project labor agreement language, LEED target phrasing, and criteria for evaluating past project experience.",
+   "speakers": [
+    "Jenny Graham",
+    "Matt Gulino",
+    "Kenneth Lord",
+    "Adele Sands",
+    "Brian Hilliard"
+   ]
+  },
+  {
+   "title": "Authorization to Finalize RFQ",
+   "t": 2917,
+   "summary": "Approved a motion authorizing Jenny Graham and Kenneth Lord to incorporate member feedback via email and give final approval to send the RFQ to the full building committee.",
+   "speakers": [
+    "Jenny Graham",
+    "Kenneth Lord"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16949,
+  "output_tokens": 290,
+  "model_version": "gemini-3.8-flash"
+ }
+}
