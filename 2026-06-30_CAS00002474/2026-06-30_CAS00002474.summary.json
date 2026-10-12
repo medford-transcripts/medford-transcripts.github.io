@@ -1,0 +1,66 @@
+{
+ "video_id": "CAS00002474",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T00:05:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "21c376315e90aad1",
+ "subject": "",
+ "overview": "The Commission for Persons with Disabilities approved the May meeting minutes and discussed potential scheduling adjustments for future disability fairs. Director of Traffic and Transportation Todd Blake presented updates on pedestrian signal accessibility upgrades and proposed MBTA bus route changes.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 221,
+   "summary": "Approved the minutes from the May meeting.",
+   "speakers": [
+    "Nicholas Karinge",
+    "qy5_Am-xQ_s_SPEAKER_04"
+   ]
+  },
+  {
+   "title": "Disability Fair Timing Discussion",
+   "t": 282,
+   "summary": "The commission reviewed proposals to adjust the event hours or move the fair to the fall, deciding to revisit the schedule when planning resumes in the autumn.",
+   "speakers": [
+    "Nicholas Karinge",
+    "Susan Bibbins",
+    "MCM00001818_SPEAKER_06",
+    "Kate Ryan",
+    "qy5_Am-xQ_s_SPEAKER_04",
+    "Andreottola"
+   ]
+  },
+  {
+   "title": "ADA Transition Plan and IHCD Survey Updates",
+   "t": 861,
+   "summary": "Nicholas Karinge reported that the Institute for Human Centered Design completed an accessibility survey of City Hall and noted that the city applied for an implementation grant.",
+   "speakers": [
+    "Nicholas Karinge",
+    "Susan Bibbins",
+    "Kate Ryan",
+    "MCM00001818_SPEAKER_06",
+    "Andreottola"
+   ]
+  },
+  {
+   "title": "Traffic, Accessible Pedestrian Signals, and Bus Route Updates",
+   "t": 1895,
+   "summary": "Director of Traffic and Transportation Todd Blake detailed plans to install accessible pedestrian signal buttons at multiple intersections and discussed ongoing advocacy regarding MBTA bus routes 80, 94, and 96.",
+   "speakers": [
+    "Todd Blake",
+    "Kate Ryan",
+    "Andreottola",
+    "MCM00001818_SPEAKER_06",
+    "qy5_Am-xQ_s_SPEAKER_04",
+    "Nicholas Karinge",
+    "Susan Bibbins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21179,
+  "output_tokens": 570,
+  "model_version": "gemini-3.8-flash"
+ }
+}
