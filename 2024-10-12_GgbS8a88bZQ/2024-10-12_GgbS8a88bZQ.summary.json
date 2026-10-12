@@ -1,0 +1,59 @@
+{
+ "video_id": "GgbS8a88bZQ",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T07:06:29Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7f0412120a45d235",
+ "subject": "Proposition 2 1/2 Override Ballot Questions",
+ "overview": "The informational broadcast featured presentations from a community forum examining the city's upcoming Proposition 2 1/2 operating override and debt exclusion ballot questions. Speakers presented arguments against adopting the ballot measures, citing municipal reserve levels, taxpayer impacts, and design deficiencies in the planned fire headquarters.",
+ "items": [
+  {
+   "title": "Program Introduction",
+   "t": 22,
+   "summary": "Host John Petrella introduces recorded presentations from an All-Medford community meeting examining upcoming ballot questions six, seven, and eight.",
+   "speakers": [
+    "John Petrella"
+   ]
+  },
+  {
+   "title": "Community Meeting Welcome",
+   "t": 160,
+   "summary": "George Scarpelli opens the forum and introduces speakers invited to offer perspectives on the Proposition 2 1/2 override and debt exclusion proposals.",
+   "speakers": [
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Presentation on Education Overrides",
+   "t": 282,
+   "summary": "Former superintendent Roy Belson presents arguments against the proposed school overrides, contending that the city possesses sufficient free cash reserves, maintains competitive spending and salaries, and faces impending capital costs for a future high school project.",
+   "speakers": [
+    "Roy Belson"
+   ]
+  },
+  {
+   "title": "Presentation on Fire Headquarters Debt Exclusion",
+   "t": 1714,
+   "summary": "Firefighters union secretary Danielle Marcellino outlines the union's opposition to the $30 million fire headquarters debt exclusion, stating that firefighters were excluded from the planning process and that the proposed facility design lacks essential operational and training space.",
+   "speakers": [
+    "George Scarpelli",
+    "Danielle Marcellino"
+   ]
+  },
+  {
+   "title": "Program Conclusion",
+   "t": 2365,
+   "summary": "Petrella closes the broadcast with station information and viewer resources.",
+   "speakers": [
+    "John Petrella"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12292,
+  "output_tokens": 467,
+  "model_version": "gemini-3.8-flash"
+ }
+}
