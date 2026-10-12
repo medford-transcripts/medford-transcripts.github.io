@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "ce90975a8b56ce2d",
- "subject": "",
+ "subject": "Superintendent Contract Negotiations",
  "overview": "The Medford School Committee convened for a special meeting and voted to enter executive session regarding contract negotiations with the superintendent of schools.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 2156,
   "output_tokens": 139,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
