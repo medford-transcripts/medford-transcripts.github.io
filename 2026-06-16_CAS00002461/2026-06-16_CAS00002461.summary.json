@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "c5e4e4214044c8d7",
- "subject": "",
+ "subject": "40 Century Street Condemnation Hearing",
  "overview": "The Board of Health stayed condemnation proceedings for 40 Century Street for 30 days to allow safety repairs to proceed, received updates on outreach programs and disease surveillance, and honored retiring member Kathleen Charbonnier.",
  "items": [
   {
@@ -66,5 +66,6 @@
   "input_tokens": 15500,
   "output_tokens": 559,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
