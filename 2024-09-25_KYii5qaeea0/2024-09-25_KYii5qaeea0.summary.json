@@ -1,0 +1,41 @@
+{
+ "video_id": "KYii5qaeea0",
+ "provider": "gemini",
+ "generated_at": "2026-10-12T21:08:08Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "2cdce685585b3d7f",
+ "subject": "Newsletter and Resident Procedural Guide",
+ "overview": "The committee reviewed and approved a quarterly newsletter for publication and referred a new procedural guide for residents to the full City Council.",
+ "items": [
+  {
+   "title": "Resolution to publish a City Council newsletter",
+   "t": 80,
+   "summary": "Approved for publication the July–September 2024 City Council newsletter after refining descriptions of rodent control legislation and the charter review process.",
+   "speakers": [
+    "Matt Leming",
+    "Emily Lazzaro",
+    "Anna Callahan",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Resolution to create a resident guide to City Council procedures",
+   "t": 1685,
+   "summary": "Referred the draft procedural guide to the full City Council for approval, incorporating edits to define legislative terms and clarify that residents may use a sign-up sheet rather than standing in line to speak.",
+   "speakers": [
+    "Matt Leming",
+    "Justin Tseng",
+    "Anna Callahan",
+    "Emily Lazzaro",
+    "Ilene Lerner"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10885,
+  "output_tokens": 278,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
