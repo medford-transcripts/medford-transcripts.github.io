@@ -1,0 +1,34 @@
+{
+ "video_id": "Sdrmk9tzgf8",
+ "provider": "gemini",
+ "generated_at": "2026-10-13T07:14:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "410a8e50b1654cfa",
+ "subject": "Proposition 2 1/2 Ballot Questions",
+ "overview": "Community organization All Medford hosted an informational session discussing the upcoming municipal ballot questions on Proposition 2 1/2 overrides and a debt exclusion. Former Superintendent Roy Belson presented an analysis of city finances, school spending, and tax impacts, arguing against the operating overrides.",
+ "items": [
+  {
+   "title": "Opening Remarks and Introduction",
+   "t": 15,
+   "summary": "George Scarpelli introduced the forum regarding the upcoming ballot questions for school and public works overrides and a fire headquarters debt exclusion, welcoming former superintendent Roy Belson.",
+   "speakers": [
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Presentation on Proposition 2 1/2 Ballot Questions",
+   "t": 139,
+   "summary": "Roy Belson evaluated the city's financial standing, per-pupil expenditures, and reserves, arguing that Medford possesses sufficient free cash and competitive metrics to avoid an operational tax override.",
+   "speakers": [
+    "Roy Belson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8277,
+  "output_tokens": 248,
+  "model_version": "gemini-3.8-flash"
+ }
+}
