@@ -1,0 +1,77 @@
+{
+ "video_id": "CAS00002449",
+ "provider": "gemini",
+ "generated_at": "2026-10-13T23:05:55Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "66dd180aea0a52bd",
+ "subject": "Medford Historical Society and Museum Overview",
+ "overview": "Host John Petrella interviewed Liz Ammons and John Anderson from the Medford Historical Society and Museum about the organization's history, programs, and community outreach. The guests discussed current exhibits, membership options, and their extensive photograph archives.",
+ "items": [
+  {
+   "title": "Introduction and Guest Backgrounds",
+   "t": 24,
+   "summary": "Host John Petrella introduced volunteer guests Liz Ammons and John Anderson, who described their personal backgrounds and volunteer roles with the Medford Historical Society.",
+   "speakers": [
+    "John Petrella",
+    "Ammons",
+    "John Anderson"
+   ]
+  },
+  {
+   "title": "Museum Operations, Location, and Mission",
+   "t": 179,
+   "summary": "Anderson and Ammons outlined the museum's location at 10 Governors Avenue, its Sunday open hours, free admission, membership pricing, and mission to provide an inclusive history of Medford.",
+   "speakers": [
+    "John Petrella",
+    "John Anderson",
+    "Ammons"
+   ]
+  },
+  {
+   "title": "History of the Medford Historical Society",
+   "t": 409,
+   "summary": "Anderson recounted the society's founding in 1896, the construction of its building in 1916 by Moses Mann, and its mid-century decline and subsequent revivals.",
+   "speakers": [
+    "John Petrella",
+    "John Anderson"
+   ]
+  },
+  {
+   "title": "Museum Exhibits and Civil War Photography Collection",
+   "t": 713,
+   "summary": "Ammons described recent exhibits on local migration and 1776, while Anderson detailed the history and digitization of the museum's extensive Grand Army of the Republic Civil War photograph collection stored at Tufts.",
+   "speakers": [
+    "John Petrella",
+    "Ammons",
+    "John Anderson"
+   ]
+  },
+  {
+   "title": "Community Outreach, Volunteers, and School Programs",
+   "t": 1276,
+   "summary": "Ammons and Anderson discussed volunteer opportunities, public lectures at the library, and educational partnerships involving Medford High School interns and elementary school field trips.",
+   "speakers": [
+    "John Petrella",
+    "John Anderson",
+    "Ammons"
+   ]
+  },
+  {
+   "title": "South Medford Racetracks Discussion and Show Closing",
+   "t": 1758,
+   "summary": "Petrella and the guests briefly discussed the historic South Medford horse racetracks and research archives before Petrella delivered closing announcements for the program.",
+   "speakers": [
+    "John Petrella",
+    "John Anderson",
+    "Ammons"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11839,
+  "output_tokens": 663,
+  "model_version": "gemini-3.8-flash"
+ }
+}
