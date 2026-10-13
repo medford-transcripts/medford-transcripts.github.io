@@ -229,6 +229,50 @@ each other, both unskipped and both summarised, so MPS School Committee
 double-counts that meeting. The warning fires; the cause is the keeper rule
 leaving both visible when the keeper was untranscribed at the time.
 
+## Video sweep, session of 2026-10-13: +2 names, 16 tiles read
+
+Two cycles of --sweep 8 / read / --record. **Ben Wilson** (v8aFu2OAn8o
+SPEAKER_15) and **Humayun Morshed** (wPYt766Eu-g SPEAKER_08), both applied and
+propagated; 103 pages went stale as a result and are regenerating.
+
+**14 of 16 were failures, and the breakdown is the useful part:** 4 "room"
+(Talking: Council Chambers) and 10 "blank" -- every blank a SCREEN SHARE, SMMA
+and LeftField decks for the Building Committee. That is a specific, repeating
+blind spot: the design presentations are exactly the meetings where the sweep
+grabs nothing, because the slide is on screen the whole time the consultant
+talks.
+
+**Two reads that were nearly mistakes, both covered by the standing rule:**
+
+- `tile_s093VSbtp08_SPEAKER_01_a5` is an org-chart slide reading "Landscape
+  Architect / Security Systems Consultant / Project Manager / Project
+  Director", and the TRANSCRIPT for that cluster says "Jen Carlson". Reading
+  a role off a slide and pairing it with a transcript name would have
+  manufactured an identification. Recorded blank.
+- `tile_s093VSbtp08_SPEAKER_01_a4` showed "10. Nicole Morell" -- a numbered
+  list item on a deck, not Zoom chrome. Recorded blank.
+
+**Ben Wilson is the first read that VALIDATED ITSELF from inside the tile.**
+Strip 3 shows "David Blumberg, Chair" against SPEAKER_02's line "Is it
+paintable?" while all five TARGET strips show "Ben Wilson, BH+A" -- the label
+CHANGES with the speaker, which is the exact inverse of the stuck-label
+failure (a room feed logged in under a person's name). Worth adding to the
+sweep as a confidence signal: a tile containing two different overlay names
+aligned to two different speakers is self-corroborating.
+
+**Humayun Morshed corrects the ASR**, which had "Humayun Moshe" -- the 18th
+such variant. He is a public commenter who states his own name and address on
+the record (PRINCIPLES #2).
+
+### One for a human, 30 seconds of work
+
+`ir8Km2ErkFk_SPEAKER_29` reads **`prabithanatarajan`** -- a Zoom display name,
+camera off, filling the frame across all six strips. `plausible_name()`
+rejected it for having no space, which is right as a default and wrong here:
+the split is almost certainly "Prabitha Natarajan", but that is an inference
+about where a word boundary falls in a real person's name, and nothing in the
+transcript corroborates it. Confirm it and record by hand, or leave it.
+
 ## The free-tier allowance refills CONTINUOUSLY -- stop waiting for 3 AM
 
 Corrected by Jason 2026-10-10, and the session had the evidence already:
