@@ -1,0 +1,37 @@
+{
+ "video_id": "MCM00001426",
+ "provider": "gemini",
+ "generated_at": "2026-10-13T08:24:15Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7d07322893618cd1",
+ "subject": "Charter Study Final Report",
+ "overview": "The subcommittee reviewed remaining edits, layout formatting, and appendices for the committee's final charter report. Members set internal deadlines to compile the document ahead of the full committee's October meeting.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 11,
+   "summary": "The subcommittee approved the minutes from July 29.",
+   "speakers": [
+    "Milva McDonald",
+    "Jean Zotter"
+   ]
+  },
+  {
+   "title": "Final Report Compilation and Scheduling",
+   "t": 49,
+   "summary": "Members reviewed the inclusion of survey demographics, public comment links, and footnotes, and agreed on the document structure and formatting timeline before presenting the final report to the full committee.",
+   "speakers": [
+    "Milva McDonald",
+    "Jean Zotter",
+    "Maury Carroll"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8505,
+  "output_tokens": 213,
+  "model_version": "gemini-3.8-flash"
+ }
+}

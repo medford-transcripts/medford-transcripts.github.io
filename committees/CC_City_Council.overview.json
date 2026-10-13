@@ -3,21 +3,30 @@
  "provider": "gemini",
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-11T07:08:09Z",
- "sources_sha": "d46b3a15857f23f4",
- "n_meetings": 46,
+ "generated_at": "2026-10-13T08:13:50Z",
+ "sources_sha": "d54756993adb8230",
+ "n_meetings": 51,
  "period_style": "term",
  "span": [
-  "2024-11-19",
+  "2024-09-17",
   "2026-09-29"
  ],
- "overview": "The Medford City Council is the legislative body of the City of Medford, responsible for enacting ordinances, adopting the municipal operating budget, approving appropriations and loan orders, and authorizing zoning amendments and business licenses. The archive holds 46 meetings covering Council activity from November 19, 2024, through September 29, 2026, spanning the 2024–2025 and 2026–2027 legislative terms. Over this period, the Council has carried out comprehensive district-by-district zoning updates, revised municipal personnel standards, advanced school and utility infrastructure financing, and updated city governance documents. At the most recent meeting, the Council approved stabilization funds for road resurfacing and stadium turf, enacted an inclusionary zoning fractional payment amendment, granted a one-month stopgap appropriation for the Law Department, and scheduled ongoing neighborhood ward meetings.",
+ "overview": "The Medford City Council is the legislative body for the City of Medford, responsible for enacting ordinances, adopting the municipal budget, allocating property tax rates, authorizing appropriations and loan orders, and approving licenses and zoning changes. The council has been meeting across the 2024–2025 and 2026–2027 terms, spanning September 2024 through September 2026. Over this time, the body has enacted comprehensive zoning overhauls for commercial corridors, approved major financing packages for school facilities and lead pipe replacements, and updated municipal policies on surveillance and compensation. At its most recent meetings, the council has been managing recurring budgetary disputes with the administration regarding legal spending while advancing inclusionary housing adjustments, capital appropriations, and neighborhood ward meetings.",
  "threads": [
   {
-   "name": "Corridor and district zoning modernization",
+   "name": "Comprehensive corridor and district rezoning",
    "status": "ongoing",
-   "summary": "The Council embarked on an expansive overhaul of commercial and residential zoning across Medford's main corridors and business squares. It adopted the Mystic Avenue Corridor District zoning with affordable housing incentives and ground-floor commercial rules, followed by the adoption of the Salem Street Neighborhood Corridor District zoning and Green Score environmental regulations (M04#9, M09#4, M09#5). In late 2025, the Council amended the Salem and Park Street intersection node from MX2 to MX1 and severed various corridor and residential proposals for refined review (M27#2, M28#14, M28#15). The Council subsequently ordained the Medford Square District Zoning Ordinance and established the Medford Square City Hall Overlay District (M36#1, M37#6). Most recently, it ordained the Boston Avenue Neighborhood Corridor District zoning and referred a new zoning consultant draft RFP to the Committee of the Whole (M44#6, M46#6).",
+   "summary": "The council undertook an extensive overhaul of city zoning codes and district definitions across multiple commercial and neighborhood corridors. It referred and ultimately ordained rezoning for the Mystic Avenue Corridor District with affordable housing incentives and ground-floor commercial rules, followed by the Salem Street corridor, where the Salem and Park Street node was revised from MX2 to MX1. In 2026, the council ordained major overhauls for the Medford Square District and the Boston Avenue Neighborhood Corridor District, including allowances for student housing. Most recently, the council ordained an inclusionary housing amendment allowing fractional cash payments to the Affordable Housing Trust Fund and referred a draft request for proposals for zoning consultants to committee.",
    "citations": [
+    {
+     "video_id": "FomUj4CcW5M",
+     "t": 5295,
+     "date": "2024-10-29",
+     "base": "2024-10-30_FomUj4CcW5M",
+     "meeting_title": "City Council 10-29-24",
+     "title": "Mystic Avenue Corridor District Rezoning",
+     "label": "M04#6"
+    },
     {
      "video_id": "iw3k1TZ1ejU",
      "t": 9981,
@@ -25,7 +34,7 @@
      "base": "2024-12-18_iw3k1TZ1ejU",
      "meeting_title": "City Council 12-17-24",
      "title": "Mystic Avenue Corridor District Zoning",
-     "label": "M04#9"
+     "label": "M09#9"
     },
     {
      "video_id": "llQSZsu-6bs",
@@ -34,16 +43,16 @@
      "base": "2025-03-12_llQSZsu-6bs",
      "meeting_title": "City Council 03-11-25",
      "title": "Public Hearing: Salem Street Neighborhood Corridor District Rezoning",
-     "label": "M09#4"
+     "label": "M14#4"
     },
     {
-     "video_id": "llQSZsu-6bs",
-     "t": 15233,
-     "date": "2025-03-11",
-     "base": "2025-03-12_llQSZsu-6bs",
-     "meeting_title": "City Council 03-11-25",
-     "title": "Public Hearing: Green Score Zoning Regulations",
-     "label": "M09#5"
+     "video_id": "JOz8NJmqO-Y",
+     "t": 2068,
+     "date": "2025-11-12",
+     "base": "2025-11-12_JOz8NJmqO-Y",
+     "meeting_title": "City Council 11-12-25",
+     "title": "Salem Street Corridor Rezoning Map Change Public Hearing",
+     "label": "M30#5"
     },
     {
      "video_id": "UHZzywcUcK0",
@@ -52,34 +61,7 @@
      "base": "2025-12-03_UHZzywcUcK0",
      "meeting_title": "City Council 12-02-25",
      "title": "Salem Street Corridor Rezoning Map Change",
-     "label": "M27#2"
-    },
-    {
-     "video_id": "WaNbAOKeDiY",
-     "t": 10534,
-     "date": "2025-12-16",
-     "base": "2025-12-16_WaNbAOKeDiY",
-     "meeting_title": "City Council 12-16-25",
-     "title": "Resolution to Withdraw Residential Rezoning Proposal",
-     "label": "M28#14"
-    },
-    {
-     "video_id": "WaNbAOKeDiY",
-     "t": 10909,
-     "date": "2025-12-16",
-     "base": "2025-12-16_WaNbAOKeDiY",
-     "meeting_title": "City Council 12-16-25",
-     "title": "Resolution to Sever Medford Square and West Medford Square Zoning Proposals",
-     "label": "M28#15"
-    },
-    {
-     "video_id": "u1Dt2VrL-v4",
-     "t": 723,
-     "date": "2026-04-14",
-     "base": "2026-04-14_u1Dt2VrL-v4",
-     "meeting_title": "City Council Special Meeting 04-14-26",
-     "title": "Medford Square City Hall Overlay District Zoning Amendment",
-     "label": "M36#1"
+     "label": "M32#2"
     },
     {
      "video_id": "PxpKo8QasKw",
@@ -88,7 +70,7 @@
      "base": "2026-04-28_PxpKo8QasKw",
      "meeting_title": "City Council 04-28-26",
      "title": "Medford Square District Rezoning",
-     "label": "M37#6"
+     "label": "M42#6"
     },
     {
      "video_id": "eWg7lyFP5WI",
@@ -97,7 +79,7 @@
      "base": "2026-09-15_eWg7lyFP5WI",
      "meeting_title": "City Council 09-15-26",
      "title": "Boston Avenue Neighborhood Corridor District Zoning",
-     "label": "M44#6"
+     "label": "M49#6"
     },
     {
      "video_id": "kwIB-J6Fh9k",
@@ -106,452 +88,32 @@
      "base": "2026-09-29_kwIB-J6Fh9k",
      "meeting_title": "City Council 09-29-26",
      "title": "Zoning Consultant Request for Proposals",
-     "label": "M46#6"
-    }
-   ]
-  },
-  {
-   "name": "Values-Aligned Local Investments Ordinance and litigation",
-   "status": "ongoing",
-   "summary": "The Council introduced an ordinance to divest city funds from entities tied to fossil fuels, private prisons, weapons manufacturing, and human rights violations, prompting intense community debate (M17#11, M18#9, M19#6). The ordinance passed its third reading, after which the Council voted to override the Mayor's veto (M21#9, M25#6). Following a federal lawsuit challenging the measure, Chertok v. City of Medford, the Council requested $75,000 from the Mayor to finance its legal defense (M36#2). With litigation proceeding, the Council approved a declaration supporting intervention by residents or the state Attorney General to defend the ordinance (M44#7).",
-   "citations": [
-    {
-     "video_id": "rov34HMcKiU",
-     "t": 8142,
-     "date": "2025-06-24",
-     "base": "2025-06-24_rov34HMcKiU",
-     "meeting_title": "City Council 06-24-25",
-     "title": "Values Aligned Local Investments Ordinance",
-     "label": "M17#11"
-    },
-    {
-     "video_id": "Ig6AP1vJ1-8",
-     "t": 3159,
-     "date": "2025-07-15",
-     "base": "2025-07-16_Ig6AP1vJ1-8",
-     "meeting_title": "City Council 07-15-25",
-     "title": "Values Aligned Local Investment Ordinance",
-     "label": "M18#9"
-    },
-    {
-     "video_id": "cZff0fmztDw",
-     "t": 3179,
-     "date": "2025-08-05",
-     "base": "2025-08-06_cZff0fmztDw",
-     "meeting_title": "City Council 08-05-25",
-     "title": "Values Aligned Local Investments Ordinance",
-     "label": "M19#6"
-    },
-    {
-     "video_id": "L2PVZXRYAAI",
-     "t": 9942,
-     "date": "2025-09-30",
-     "base": "2025-10-01_L2PVZXRYAAI",
-     "meeting_title": "City Council 09-30-25",
-     "title": "Values-Aligned Local Investment Ordinance",
-     "label": "M21#9"
-    },
-    {
-     "video_id": "JOz8NJmqO-Y",
-     "t": 10447,
-     "date": "2025-11-12",
-     "base": "2025-11-12_JOz8NJmqO-Y",
-     "meeting_title": "City Council 11-12-25",
-     "title": "Values Aligned Local Investments Ordinance Veto Override",
-     "label": "M25#6"
-    },
-    {
-     "video_id": "u1Dt2VrL-v4",
-     "t": 1558,
-     "date": "2026-04-14",
-     "base": "2026-04-14_u1Dt2VrL-v4",
-     "meeting_title": "City Council Special Meeting 04-14-26",
-     "title": "Resolution for Legal Defense Funding in Chertok v. City of Medford",
-     "label": "M36#2"
-    },
-    {
-     "video_id": "eWg7lyFP5WI",
-     "t": 8953,
-     "date": "2026-09-15",
-     "base": "2026-09-15_eWg7lyFP5WI",
-     "meeting_title": "City Council 09-15-26",
-     "title": "Declaration on Chertok v. City of Medford",
-     "label": "M44#7"
-    }
-   ]
-  },
-  {
-   "name": "Law Department spending oversight and litigation reporting",
-   "status": "ongoing",
-   "summary": "Following sharp increases in labor disputes and legal settlements, the Council adopted a resolution demanding a comprehensive litigation report, quarterly reporting, and an independent review of the city's legal expenses (M32#7). After the administration did not provide the summary, the Council filed a formal public records request and later voted to appeal the administration's response to the Secretary of State (M37#8, M41#7). In response to the withheld information, the Council reduced the Law Department's fiscal year 2027 operating budget by 83 percent (M41#15). The Council subsequently funded the department through reduced short-term supplemental appropriations, most recently approving a one-month extension through October 2026 (M43#12, M46#15).",
-   "citations": [
-    {
-     "video_id": "OLDneqaxKDk",
-     "t": 5567,
-     "date": "2026-02-24",
-     "base": "2026-02-24_OLDneqaxKDk",
-     "meeting_title": "City Council 02-24-26",
-     "title": "Comprehensive Litigation and Labor Relations Reporting",
-     "label": "M32#7"
-    },
-    {
-     "video_id": "PxpKo8QasKw",
-     "t": 9337,
-     "date": "2026-04-28",
-     "base": "2026-04-28_PxpKo8QasKw",
-     "meeting_title": "City Council 04-28-26",
-     "title": "Public Records Request for Litigation Report",
-     "label": "M37#8"
-    },
-    {
-     "video_id": "-MlgNixuHJY",
-     "t": 5198,
-     "date": "2026-06-23",
-     "base": "2026-06-23_-MlgNixuHJY",
-     "meeting_title": "City Council 06-23-26",
-     "title": "Resolution to Appeal Deficient Public Records Response",
-     "label": "M41#7"
-    },
-    {
-     "video_id": "-MlgNixuHJY",
-     "t": 11583,
-     "date": "2026-06-23",
-     "base": "2026-06-23_-MlgNixuHJY",
-     "meeting_title": "City Council 06-23-26",
-     "title": "FY 2027 General Fund Budget Approval",
-     "label": "M41#15"
-    },
-    {
-     "video_id": "V2Hl1a0Audk",
-     "t": 6874,
-     "date": "2026-08-04",
-     "base": "2026-08-05_V2Hl1a0Audk",
-     "meeting_title": "City Council 08-04-26",
-     "title": "Law Department Supplemental Appropriation",
-     "label": "M43#12"
+     "label": "M51#6"
     },
     {
      "video_id": "kwIB-J6Fh9k",
-     "t": 11488,
+     "t": 5932,
      "date": "2026-09-29",
      "base": "2026-09-29_kwIB-J6Fh9k",
      "meeting_title": "City Council 09-29-26",
-     "title": "Supplemental Law Department Appropriation",
-     "label": "M46#15"
+     "title": "Inclusionary Housing Fractional Payment Zoning Amendment",
+     "label": "M51#13"
     }
    ]
   },
   {
-   "name": "School facilities and MSBA capital financing",
-   "status": "ongoing",
-   "summary": "To address significant infrastructure deficiencies across district schools, the Council advanced a $30.7 million package combining a $25,775,000 loan order and $5,000,000 in free cash for boilers, cooling systems, and roofs at the McGlynn and Andrews schools (M04#5, M11#3, M13#5). It authorized MSBA Statements of Interest for the Brooks, Missituk, and Roberts Elementary Schools and later funded MSBA feasibility studies for roof and heat pump projects at those buildings (M09#6, M30#5, M37#3). In addition, the Council approved school security upgrades, lease agreements for solar panels at McGlynn School, and a capital study for Curtis Tufts High School (M13#7, M28#8, M41#12).",
-   "citations": [
-    {
-     "video_id": "iw3k1TZ1ejU",
-     "t": 1516,
-     "date": "2024-12-17",
-     "base": "2024-12-18_iw3k1TZ1ejU",
-     "meeting_title": "City Council 12-17-24",
-     "title": "School HVAC and Roof Infrastructure Loan",
-     "label": "M04#5"
-    },
-    {
-     "video_id": "llQSZsu-6bs",
-     "t": 16315,
-     "date": "2025-03-11",
-     "base": "2025-03-12_llQSZsu-6bs",
-     "meeting_title": "City Council 03-11-25",
-     "title": "MSBA Accelerated Repair Statements of Interest",
-     "label": "M09#6"
-    },
-    {
-     "video_id": "4-jeNb9kYhc",
-     "t": 1882,
-     "date": "2025-04-08",
-     "base": "2025-04-09_4-jeNb9kYhc",
-     "meeting_title": "City Council Meeting 04-08-25",
-     "title": "School HVAC and Infrastructure Loan Order",
-     "label": "M11#3"
-    },
-    {
-     "video_id": "J5UJin9pTwE",
-     "t": 3714,
-     "date": "2025-04-29",
-     "base": "2025-04-29_J5UJin9pTwE",
-     "meeting_title": "City Council 04-29-25",
-     "title": "McGlynn and Andrews School Infrastructure Financing",
-     "label": "M13#5"
-    },
-    {
-     "video_id": "J5UJin9pTwE",
-     "t": 6105,
-     "date": "2025-04-29",
-     "base": "2025-04-29_J5UJin9pTwE",
-     "meeting_title": "City Council 04-29-25",
-     "title": "School Security and Claim Settlements",
-     "label": "M13#7"
-    },
-    {
-     "video_id": "WaNbAOKeDiY",
-     "t": 8156,
-     "date": "2025-12-16",
-     "base": "2025-12-16_WaNbAOKeDiY",
-     "meeting_title": "City Council 12-16-25",
-     "title": "McGlynn School Solar Panels PPA Lease Agreement",
-     "label": "M28#8"
-    },
-    {
-     "video_id": "0mNk_gUZ14M",
-     "t": 2215,
-     "date": "2026-01-20",
-     "base": "2026-01-20_0mNk_gUZ14M",
-     "meeting_title": "City Council 01-20-26",
-     "title": "Roberts Elementary School Feasibility Study Funding",
-     "label": "M30#5"
-    },
-    {
-     "video_id": "PxpKo8QasKw",
-     "t": 2044,
-     "date": "2026-04-28",
-     "base": "2026-04-28_PxpKo8QasKw",
-     "meeting_title": "City Council 04-28-26",
-     "title": "MSBA School Projects and High School Update",
-     "label": "M37#3"
-    },
-    {
-     "video_id": "-MlgNixuHJY",
-     "t": 9541,
-     "date": "2026-06-23",
-     "base": "2026-06-23_-MlgNixuHJY",
-     "meeting_title": "City Council 06-23-26",
-     "title": "Curtis Tufts High School Assessment Funding",
-     "label": "M41#12"
-    }
-   ]
-  },
-  {
-   "name": "Medford Square parking parcel redevelopment",
-   "status": "ongoing",
-   "summary": "The administration presented plans to develop city-owned surface parking lots in Medford Square, leading the Council to designate Transom Real Estate as the preferred developer to begin negotiations (M14#11). The Council then approved a regulatory vote declaring the municipal parcels surplus and authorizing a 99-year ground lease to Transom Real Estate (M33#8). It enacted the Medford Square City Hall Overlay District to guide site development and accepted a $450,000 state grant to support excavation and archaeological work at the site (M36#1, M38#10).",
-   "citations": [
-    {
-     "video_id": "v1jzPrb1DFs",
-     "t": 4940,
-     "date": "2025-05-13",
-     "base": "2025-05-14_v1jzPrb1DFs",
-     "meeting_title": "Medford City Council Meeting via Zoom",
-     "title": "Medford Square Parking Lot Development Update",
-     "label": "M14#11"
-    },
-    {
-     "video_id": "1WtWyjxGAoU",
-     "t": 9091,
-     "date": "2026-03-10",
-     "base": "2026-03-10_1WtWyjxGAoU",
-     "meeting_title": "City Council 03-10-26",
-     "title": "Medford Square Parcels Redevelopment Project Regulatory Vote",
-     "label": "M33#8"
-    },
-    {
-     "video_id": "u1Dt2VrL-v4",
-     "t": 723,
-     "date": "2026-04-14",
-     "base": "2026-04-14_u1Dt2VrL-v4",
-     "meeting_title": "City Council Special Meeting 04-14-26",
-     "title": "Medford Square City Hall Overlay District Zoning Amendment",
-     "label": "M36#1"
-    },
-    {
-     "video_id": "jbKzwV2kZnk",
-     "t": 7611,
-     "date": "2026-05-12",
-     "base": "2026-05-13_jbKzwV2kZnk",
-     "meeting_title": "City Council 05-12-26",
-     "title": "Medford Square Redevelopment Project Grant",
-     "label": "M38#10"
-    }
-   ]
-  },
-  {
-   "name": "Civil liberties and municipal surveillance regulation",
+   "name": "Municipal charter revision",
    "status": "settled",
-   "summary": "The Council updated the Community Control Over Public Surveillance ordinance by enacting stricter data disposal rules and prohibiting commercial acquisitions of bulk surveillance data (M04#13, M05#7). It also ordained the Welcoming City Ordinance to restrict local police cooperation with federal civil immigration enforcement, accompanied by requests for regular reports on ICE activities within the municipality (M04#12, M05#8, M16#5). Later, the Council approved protections against out-of-state legal interference for reproductive and gender-affirming healthcare (M11#6, M14#17). In 2026, the Council passed and ordained a total ban on municipal acquisition, possession, or use of face surveillance technology (M30#8, M35#12).",
+   "summary": "Following earlier study committee work, the council reviewed recommendations and prepared a comprehensive revision of the Medford City Charter. In March and April 2025, the council debated and approved a draft hybrid city charter with amendments addressing periodic review timelines and the mayor's role on the School Committee, submitting the finalized draft to the mayor and the state legislature. In October 2025, the council approved a resolution calling for a citywide public information campaign before the charter reform ballot question went before voters in November. Discussions regarding the implementation of the new charter and council procedures were referred to committee in February 2026.",
    "citations": [
     {
-     "video_id": "iw3k1TZ1ejU",
-     "t": 12622,
-     "date": "2024-12-17",
-     "base": "2024-12-18_iw3k1TZ1ejU",
-     "meeting_title": "City Council 12-17-24",
-     "title": "Welcoming City Ordinance",
-     "label": "M04#12"
-    },
-    {
-     "video_id": "iw3k1TZ1ejU",
-     "t": 16458,
-     "date": "2024-12-17",
-     "base": "2024-12-18_iw3k1TZ1ejU",
-     "meeting_title": "City Council 12-17-24",
-     "title": "Amendments to Public Surveillance Ordinance (CCOPS)",
-     "label": "M04#13"
-    },
-    {
-     "video_id": "zZxqrgNcAQo",
-     "t": 4754,
-     "date": "2025-01-14",
-     "base": "2025-01-14_zZxqrgNcAQo",
-     "meeting_title": "City Council 01-14-25",
-     "title": "Community Control Over Public Surveillance Ordinance Amendments",
-     "label": "M05#7"
-    },
-    {
-     "video_id": "zZxqrgNcAQo",
-     "t": 4984,
-     "date": "2025-01-14",
-     "base": "2025-01-14_zZxqrgNcAQo",
-     "meeting_title": "City Council 01-14-25",
-     "title": "Welcoming City Ordinance",
-     "label": "M05#8"
-    },
-    {
-     "video_id": "4-jeNb9kYhc",
-     "t": 3622,
-     "date": "2025-04-08",
-     "base": "2025-04-09_4-jeNb9kYhc",
-     "meeting_title": "City Council Meeting 04-08-25",
-     "title": "Gender-Affirming and Reproductive Health Care Ordinance",
-     "label": "M11#6"
-    },
-    {
-     "video_id": "v1jzPrb1DFs",
-     "t": 12484,
-     "date": "2025-05-13",
-     "base": "2025-05-14_v1jzPrb1DFs",
-     "meeting_title": "Medford City Council Meeting via Zoom",
-     "title": "Gender Affirming Care and Reproductive Care Ordinance",
-     "label": "M14#17"
-    },
-    {
-     "video_id": "a519TYOBRJE",
-     "t": 2593,
-     "date": "2025-06-10",
-     "base": "2025-06-10_a519TYOBRJE",
-     "meeting_title": "City Council 06-10-25",
-     "title": "Resolution on ICE Operations Transparency",
-     "label": "M16#5"
-    },
-    {
-     "video_id": "0mNk_gUZ14M",
-     "t": 9680,
-     "date": "2026-01-20",
-     "base": "2026-01-20_0mNk_gUZ14M",
-     "meeting_title": "City Council 01-20-26",
-     "title": "Face Surveillance Technology Ban Ordinance",
-     "label": "M30#8"
-    },
-    {
-     "video_id": "eX6vSG1G9V4",
-     "t": 4980,
-     "date": "2026-04-07",
-     "base": "2026-04-07_eX6vSG1G9V4",
-     "meeting_title": "City Council 04-07-26",
-     "title": "Face Surveillance Ban",
-     "label": "M35#12"
-    }
-   ]
-  },
-  {
-   "name": "Tree protection and urban canopy management",
-   "status": "ongoing",
-   "summary": "Following committee reviews of municipal tree rules and canopy health, the Council accepted a $25,000 donation from Trees Medford to plant public trees and ordained an ordinance establishing a volunteer Tree Committee to assist the tree warden (M03#3, M26#9, M27#5). The Council elevated the Tree Warden's pay grade and weekly hours to head the DPW's Forestry Division and urged full funding for the city's urban tree management plan (M33#5, M39#13, M42#7). It completed its regulatory framework by ordaining the Public Tree Ordinance to govern long-term preservation standards on municipal land (M44#8).",
-   "citations": [
-    {
-     "video_id": "kojaidJyMMQ",
-     "t": 2111,
-     "date": "2024-12-03",
-     "base": "2024-12-03_kojaidJyMMQ",
-     "meeting_title": "City Council 12-03-24",
-     "title": "Tree Ordinance Committee Report",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "egZJOUPL-iU",
-     "t": 12927,
-     "date": "2025-11-18",
-     "base": "2025-11-18_egZJOUPL-iU",
-     "meeting_title": "City Council 11-18-25",
-     "title": "Tree Committee Ordinance",
-     "label": "M26#9"
-    },
-    {
-     "video_id": "UHZzywcUcK0",
-     "t": 9349,
-     "date": "2025-12-02",
-     "base": "2025-12-03_UHZzywcUcK0",
-     "meeting_title": "City Council 12-02-25",
-     "title": "Trees Medford Donation",
-     "label": "M27#5"
-    },
-    {
-     "video_id": "1WtWyjxGAoU",
-     "t": 3904,
-     "date": "2026-03-10",
-     "base": "2026-03-10_1WtWyjxGAoU",
-     "meeting_title": "City Council 03-10-26",
-     "title": "Funding Medford's Tree Canopy",
-     "label": "M33#5"
-    },
-    {
-     "video_id": "MadMXcHPWI8",
-     "t": 4868,
-     "date": "2026-05-26",
-     "base": "2026-05-26_MadMXcHPWI8",
-     "meeting_title": "City Council 05-26-26",
-     "title": "Personnel Ordinance Amendment: Tree Warden",
-     "label": "M39#13"
-    },
-    {
-     "video_id": "qAw603Lq-Os",
-     "t": 3134,
-     "date": "2026-07-14",
-     "base": "2026-07-14_qAw603Lq-Os",
-     "meeting_title": "City Council 07-14-26",
-     "title": "Personnel Ordinance Amendments",
-     "label": "M42#7"
-    },
-    {
-     "video_id": "eWg7lyFP5WI",
-     "t": 14386,
-     "date": "2026-09-15",
-     "base": "2026-09-15_eWg7lyFP5WI",
-     "meeting_title": "City Council 09-15-26",
-     "title": "Public Tree Ordinance",
-     "label": "M44#8"
-    }
-   ]
-  },
-  {
-   "name": "City Charter revision",
-   "status": "settled",
-   "summary": "Following recommendations from its Governance Committee and the Charter Study, the Council reviewed and amended a comprehensive draft of a new hybrid City Charter (M04#3, M08#4, M09#7). During spring 2025 special sessions, the Council reconciled provisions concerning the Mayor's non-chair voting seat on the School Committee and five-year periodic review timelines before approving the final charter draft for submission to the Mayor and state legislature (M11#9, M12#2, M12#4). Ahead of the November 2025 election, the Council passed a resolution calling for public information robocalls and website postings regarding the charter ballot question (M23#6). In 2026, the Council referred operational implementation of the newly adopted charter to the Committee of the Whole (M31#4).",
-   "citations": [
-    {
-     "video_id": "iw3k1TZ1ejU",
-     "t": 1198,
-     "date": "2024-12-17",
-     "base": "2024-12-18_iw3k1TZ1ejU",
-     "meeting_title": "City Council 12-17-24",
-     "title": "Committee Reports",
-     "label": "M04#3"
-    },
-    {
-     "video_id": "Ve1E4R1vH68",
-     "t": 1489,
-     "date": "2025-02-25",
-     "base": "2025-02-25_Ve1E4R1vH68",
-     "meeting_title": "City Council 02-25-25",
-     "title": "Committee Reports on Zoning and Charter Recommendations",
-     "label": "M08#4"
+     "video_id": "9UBBIuMHGIQ",
+     "t": 1486,
+     "date": "2024-09-17",
+     "base": "2024-09-18_9UBBIuMHGIQ",
+     "meeting_title": "City Council 09-17-24",
+     "title": "City Charter Review Referral",
+     "label": "M01#5"
     },
     {
      "video_id": "llQSZsu-6bs",
@@ -560,7 +122,7 @@
      "base": "2025-03-12_llQSZsu-6bs",
      "meeting_title": "City Council 03-11-25",
      "title": "Draft City Charter Amendments",
-     "label": "M09#7"
+     "label": "M14#7"
     },
     {
      "video_id": "4-jeNb9kYhc",
@@ -569,7 +131,7 @@
      "base": "2025-04-09_4-jeNb9kYhc",
      "meeting_title": "City Council Meeting 04-08-25",
      "title": "City Charter Revision Draft",
-     "label": "M11#9"
+     "label": "M16#9"
     },
     {
      "video_id": "j2zlMvp6B6U",
@@ -578,7 +140,7 @@
      "base": "2025-04-15_j2zlMvp6B6U",
      "meeting_title": "Special Meeting of the Medford City Council 04-15-25",
      "title": "Amendments on School Committee and Charter Review Timeline",
-     "label": "M12#2"
+     "label": "M17#2"
     },
     {
      "video_id": "j2zlMvp6B6U",
@@ -587,7 +149,7 @@
      "base": "2025-04-15_j2zlMvp6B6U",
      "meeting_title": "Special Meeting of the Medford City Council 04-15-25",
      "title": "Approval of the Amended Draft City Charter",
-     "label": "M12#4"
+     "label": "M17#4"
     },
     {
      "video_id": "sAkPmqbndfk",
@@ -596,7 +158,7 @@
      "base": "2025-10-21_sAkPmqbndfk",
      "meeting_title": "City Council 10-21-25",
      "title": "City Charter Ballot Question Public Information",
-     "label": "M23#6"
+     "label": "M28#6"
     },
     {
      "video_id": "fy4uXt-Ba5U",
@@ -605,60 +167,41 @@
      "base": "2026-02-03_fy4uXt-Ba5U",
      "meeting_title": "City Council 02-03-26",
      "title": "New City Charter Implementation",
-     "label": "M31#4"
+     "label": "M36#4"
     }
    ]
-  }
- ],
- "periods": [
+  },
   {
-   "period": "2024-2025 term",
-   "narrative": "The Council implemented supplemental appropriations following successful override questions, advanced significant infrastructure loan orders for schools and water systems, and revised major zoning corridors along Mystic Avenue and Salem Street. It also finalized a comprehensive draft City Charter, adopted civil liberties protections, and enacted an ethical divestment ordinance over mayoral veto.",
+   "name": "Values-Aligned Local Investments Ordinance and litigation",
+   "status": "ongoing",
+   "summary": "The council debated an ethical divestment ordinance barring municipal investment in fossil fuels, private prisons, weapons manufacturers, and human rights violators, drawing substantial public testimony. After advancing through initial readings, the council enacted the ordinance on third reading in September 2025 and subsequently voted to override the mayor's veto in November 2025. Following a federal lawsuit challenging the ordinance, Chertok v. City of Medford, the council requested $75,000 from the mayor to fund its legal defense. By September 2026, the council adopted a formal declaration supporting legal intervention in the federal lawsuit by residents or the state Attorney General.",
    "citations": [
     {
-     "video_id": "rk5kVycceTI",
-     "t": null,
-     "date": "2024-11-19",
-     "base": "2024-11-20_rk5kVycceTI",
-     "meeting_title": "City Council 11-19-24",
-     "title": "City Council 11-19-24",
-     "label": "M01"
+     "video_id": "rov34HMcKiU",
+     "t": 8142,
+     "date": "2025-06-24",
+     "base": "2025-06-24_rov34HMcKiU",
+     "meeting_title": "City Council 06-24-25",
+     "title": "Values Aligned Local Investments Ordinance",
+     "label": "M22#11"
     },
     {
-     "video_id": "iw3k1TZ1ejU",
-     "t": 9981,
-     "date": "2024-12-17",
-     "base": "2024-12-18_iw3k1TZ1ejU",
-     "meeting_title": "City Council 12-17-24",
-     "title": "Mystic Avenue Corridor District Zoning",
-     "label": "M04#9"
+     "video_id": "cZff0fmztDw",
+     "t": 3179,
+     "date": "2025-08-05",
+     "base": "2025-08-06_cZff0fmztDw",
+     "meeting_title": "City Council 08-05-25",
+     "title": "Values Aligned Local Investments Ordinance",
+     "label": "M24#6"
     },
     {
-     "video_id": "Ve1E4R1vH68",
-     "t": 2267,
-     "date": "2025-02-25",
-     "base": "2025-02-25_Ve1E4R1vH68",
-     "meeting_title": "City Council 02-25-25",
-     "title": "MWRA Lead Service Line Replacement Loan",
-     "label": "M08#7"
-    },
-    {
-     "video_id": "j2zlMvp6B6U",
-     "t": 6800,
-     "date": "2025-04-15",
-     "base": "2025-04-15_j2zlMvp6B6U",
-     "meeting_title": "Special Meeting of the Medford City Council 04-15-25",
-     "title": "Approval of the Amended Draft City Charter",
-     "label": "M12#4"
-    },
-    {
-     "video_id": "J5UJin9pTwE",
-     "t": 3714,
-     "date": "2025-04-29",
-     "base": "2025-04-29_J5UJin9pTwE",
-     "meeting_title": "City Council 04-29-25",
-     "title": "McGlynn and Andrews School Infrastructure Financing",
-     "label": "M13#5"
+     "video_id": "L2PVZXRYAAI",
+     "t": 9942,
+     "date": "2025-09-30",
+     "base": "2025-10-01_L2PVZXRYAAI",
+     "meeting_title": "City Council 09-30-25",
+     "title": "Values-Aligned Local Investment Ordinance",
+     "label": "M26#9"
     },
     {
      "video_id": "JOz8NJmqO-Y",
@@ -667,40 +210,59 @@
      "base": "2025-11-12_JOz8NJmqO-Y",
      "meeting_title": "City Council 11-12-25",
      "title": "Values Aligned Local Investments Ordinance Veto Override",
-     "label": "M25#6"
+     "label": "M30#6"
+    },
+    {
+     "video_id": "u1Dt2VrL-v4",
+     "t": 1558,
+     "date": "2026-04-14",
+     "base": "2026-04-14_u1Dt2VrL-v4",
+     "meeting_title": "City Council Special Meeting 04-14-26",
+     "title": "Resolution for Legal Defense Funding in Chertok v. City of Medford",
+     "label": "M41#2"
+    },
+    {
+     "video_id": "eWg7lyFP5WI",
+     "t": 8953,
+     "date": "2026-09-15",
+     "base": "2026-09-15_eWg7lyFP5WI",
+     "meeting_title": "City Council 09-15-26",
+     "title": "Declaration on Chertok v. City of Medford",
+     "label": "M49#7"
     }
    ]
   },
   {
-   "period": "2026-2027 term",
-   "narrative": "The Council appointed a new City Clerk, enacted bans on face surveillance and ordinances on vacant buildings, and advanced rezonings for Medford Square and Boston Avenue. It also engaged in a protracted oversight conflict with the administration regarding legal spending and litigation reporting, resulting in targeted budget reductions to the Law Department.",
+   "name": "Law department oversight and legal spending dispute",
+   "status": "ongoing",
+   "summary": "Prompted by rising municipal litigation and unfair labor practice charges, the council approved a resolution in February 2026 seeking an independent review and a comprehensive report on legal expenses since 2019. After the administration failed to deliver the report, the council voted in April 2026 to submit a formal public records request, followed by an appeal to the state Public Records Division in June. Concurrently, the council cut the Law Department's fiscal year 2027 budget by 83 percent, requiring the administration to seek supplemental monthly appropriations. In September 2026, the council approved only a one-month supplemental funding extension through October while continuing to press for legal spending documentation.",
    "citations": [
     {
-     "video_id": "EgVeZVtzVUE",
-     "t": null,
-     "date": "2026-01-06",
-     "base": "2026-01-06_EgVeZVtzVUE",
-     "meeting_title": "City Council 01-06-25",
-     "title": "City Council 01-06-25",
-     "label": "M29"
-    },
-    {
-     "video_id": "eX6vSG1G9V4",
-     "t": 4980,
-     "date": "2026-04-07",
-     "base": "2026-04-07_eX6vSG1G9V4",
-     "meeting_title": "City Council 04-07-26",
-     "title": "Face Surveillance Ban",
-     "label": "M35#12"
+     "video_id": "OLDneqaxKDk",
+     "t": 5567,
+     "date": "2026-02-24",
+     "base": "2026-02-24_OLDneqaxKDk",
+     "meeting_title": "City Council 02-24-26",
+     "title": "Comprehensive Litigation and Labor Relations Reporting",
+     "label": "M37#7"
     },
     {
      "video_id": "PxpKo8QasKw",
-     "t": 7663,
+     "t": 9337,
      "date": "2026-04-28",
      "base": "2026-04-28_PxpKo8QasKw",
      "meeting_title": "City Council 04-28-26",
-     "title": "Medford Square District Rezoning",
-     "label": "M37#6"
+     "title": "Public Records Request for Litigation Report",
+     "label": "M42#8"
+    },
+    {
+     "video_id": "-MlgNixuHJY",
+     "t": 5198,
+     "date": "2026-06-23",
+     "base": "2026-06-23_-MlgNixuHJY",
+     "meeting_title": "City Council 06-23-26",
+     "title": "Resolution to Appeal Deficient Public Records Response",
+     "label": "M46#7"
     },
     {
      "video_id": "-MlgNixuHJY",
@@ -709,51 +271,437 @@
      "base": "2026-06-23_-MlgNixuHJY",
      "meeting_title": "City Council 06-23-26",
      "title": "FY 2027 General Fund Budget Approval",
-     "label": "M41#15"
-    },
-    {
-     "video_id": "qAw603Lq-Os",
-     "t": 466,
-     "date": "2026-07-14",
-     "base": "2026-07-14_qAw603Lq-Os",
-     "meeting_title": "City Council 07-14-26",
-     "title": "Election of City Clerk",
-     "label": "M42#2"
+     "label": "M46#15"
     },
     {
      "video_id": "V2Hl1a0Audk",
-     "t": 9916,
+     "t": 6874,
      "date": "2026-08-04",
      "base": "2026-08-05_V2Hl1a0Audk",
      "meeting_title": "City Council 08-04-26",
-     "title": "Vacant Building Ordinance",
-     "label": "M43#13"
+     "title": "Law Department Supplemental Appropriation",
+     "label": "M48#12"
+    },
+    {
+     "video_id": "kwIB-J6Fh9k",
+     "t": 7301,
+     "date": "2026-09-29",
+     "base": "2026-09-29_kwIB-J6Fh9k",
+     "meeting_title": "City Council 09-29-26",
+     "title": "Law Department Appropriations Response Paper",
+     "label": "M51#14"
+    },
+    {
+     "video_id": "kwIB-J6Fh9k",
+     "t": 11488,
+     "date": "2026-09-29",
+     "base": "2026-09-29_kwIB-J6Fh9k",
+     "meeting_title": "City Council 09-29-26",
+     "title": "Supplemental Law Department Appropriation",
+     "label": "M51#15"
+    }
+   ]
+  },
+  {
+   "name": "School and municipal infrastructure financing",
+   "status": "ongoing",
+   "summary": "The council regularly authorized substantial funding packages for school buildings, lead pipe remediation, and municipal facilities. Beginning in late 2024, the body authorized borrowing for school HVAC work and lead line replacement, culminating in a $30.7 million combined financing package for the McGlynn and Andrews schools in April 2025. Councilors allocated millions from free cash and capital stabilization funds to water main replacements and Massachusetts School Building Authority feasibility studies for Roberts, Missituk, and Brooks Elementary Schools. In September 2026, the council approved stabilization appropriations of $1.3 million for road resurfacing and $1 million for Hormel Stadium turf replacement.",
+   "citations": [
+    {
+     "video_id": "iw3k1TZ1ejU",
+     "t": 1516,
+     "date": "2024-12-17",
+     "base": "2024-12-18_iw3k1TZ1ejU",
+     "meeting_title": "City Council 12-17-24",
+     "title": "School HVAC and Roof Infrastructure Loan",
+     "label": "M09#5"
+    },
+    {
+     "video_id": "Ve1E4R1vH68",
+     "t": 2267,
+     "date": "2025-02-25",
+     "base": "2025-02-25_Ve1E4R1vH68",
+     "meeting_title": "City Council 02-25-25",
+     "title": "MWRA Lead Service Line Replacement Loan",
+     "label": "M13#7"
+    },
+    {
+     "video_id": "J5UJin9pTwE",
+     "t": 3714,
+     "date": "2025-04-29",
+     "base": "2025-04-29_J5UJin9pTwE",
+     "meeting_title": "City Council 04-29-25",
+     "title": "McGlynn and Andrews School Infrastructure Financing",
+     "label": "M18#5"
+    },
+    {
+     "video_id": "0mNk_gUZ14M",
+     "t": 2215,
+     "date": "2026-01-20",
+     "base": "2026-01-20_0mNk_gUZ14M",
+     "meeting_title": "City Council 01-20-26",
+     "title": "Roberts Elementary School Feasibility Study Funding",
+     "label": "M35#5"
+    },
+    {
+     "video_id": "PxpKo8QasKw",
+     "t": 2044,
+     "date": "2026-04-28",
+     "base": "2026-04-28_PxpKo8QasKw",
+     "meeting_title": "City Council 04-28-26",
+     "title": "MSBA School Projects and High School Update",
+     "label": "M42#3"
+    },
+    {
+     "video_id": "qy5_Am-xQ_s",
+     "t": 7242,
+     "date": "2026-06-09",
+     "base": "2026-06-09_qy5_Am-xQ_s",
+     "meeting_title": "City Council 06-09-26",
+     "title": "Water and Sewer Fund Appropriation (Paper 26113)",
+     "label": "M45#8"
+    },
+    {
+     "video_id": "-MlgNixuHJY",
+     "t": 1520,
+     "date": "2026-06-23",
+     "base": "2026-06-23_-MlgNixuHJY",
+     "meeting_title": "City Council 06-23-26",
+     "title": "Free Cash and Retained Earnings Appropriations",
+     "label": "M46#5"
+    },
+    {
+     "video_id": "kwIB-J6Fh9k",
+     "t": 3467,
+     "date": "2026-09-29",
+     "base": "2026-09-29_kwIB-J6Fh9k",
+     "meeting_title": "City Council 09-29-26",
+     "title": "Capital and General Stabilization Fund Appropriations",
+     "label": "M51#11"
+    }
+   ]
+  },
+  {
+   "name": "Surveillance and civil liberties policies",
+   "status": "settled",
+   "summary": "The council repeatedly addressed surveillance technology and resident privacy through ordinance amendments and policy votes. Between December 2024 and January 2025, the body amended the Community Control Over Public Surveillance Ordinance to restrict the purchase of bulk commercial surveillance data and regulate the disposal of improperly gathered records. In May 2025, the council approved the annual surveillance report and parking department license plate reader policies. The council then introduced and enacted a standalone ordinance prohibiting municipal acquisition, possession, or use of face surveillance technology, passing its third and final reading in April 2026.",
+   "citations": [
+    {
+     "video_id": "kojaidJyMMQ",
+     "t": 2208,
+     "date": "2024-12-03",
+     "base": "2024-12-03_kojaidJyMMQ",
+     "meeting_title": "City Council 12-03-24",
+     "title": "Public Surveillance Ordinance Amendments",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "iw3k1TZ1ejU",
+     "t": 16458,
+     "date": "2024-12-17",
+     "base": "2024-12-18_iw3k1TZ1ejU",
+     "meeting_title": "City Council 12-17-24",
+     "title": "Amendments to Public Surveillance Ordinance (CCOPS)",
+     "label": "M09#13"
+    },
+    {
+     "video_id": "zZxqrgNcAQo",
+     "t": 4754,
+     "date": "2025-01-14",
+     "base": "2025-01-14_zZxqrgNcAQo",
+     "meeting_title": "City Council 01-14-25",
+     "title": "Community Control Over Public Surveillance Ordinance Amendments",
+     "label": "M10#7"
+    },
+    {
+     "video_id": "B1AX1IdGJno",
+     "t": 8178,
+     "date": "2025-05-27",
+     "base": "2025-05-27_B1AX1IdGJno",
+     "meeting_title": "City Council 05-27-25",
+     "title": "2024 Surveillance Annual Report and License Plate Reader Policy",
+     "label": "M20#12"
+    },
+    {
+     "video_id": "0mNk_gUZ14M",
+     "t": 9680,
+     "date": "2026-01-20",
+     "base": "2026-01-20_0mNk_gUZ14M",
+     "meeting_title": "City Council 01-20-26",
+     "title": "Face Surveillance Technology Ban Ordinance",
+     "label": "M35#8"
+    },
+    {
+     "video_id": "eX6vSG1G9V4",
+     "t": 4980,
+     "date": "2026-04-07",
+     "base": "2026-04-07_eX6vSG1G9V4",
+     "meeting_title": "City Council 04-07-26",
+     "title": "Face Surveillance Ban",
+     "label": "M40#12"
+    }
+   ]
+  },
+  {
+   "name": "Medford Square parking lot redevelopment",
+   "status": "ongoing",
+   "summary": "Community members raised early concerns in October 2024 over preserving parking access for Senior Center visitors during the planned redevelopment behind City Hall. In May 2025, the city designated Transom Real Estate as the preferred developer to negotiate a long-term lease for the Medford Square parking lots. In March 2026, the council took a regulatory vote declaring the parcels surplus and authorizing a 99-year ground lease to Transom Real Estate, subsequently referring and adopting a Medford Square City Hall Overlay District. The council also accepted a $450,000 state grant in May 2026 to support archaeological and excavation work on the redevelopment site.",
+   "citations": [
+    {
+     "video_id": "FomUj4CcW5M",
+     "t": 1475,
+     "date": "2024-10-29",
+     "base": "2024-10-30_FomUj4CcW5M",
+     "meeting_title": "City Council 10-29-24",
+     "title": "Senior Center Parking Petition",
+     "label": "M04#3"
+    },
+    {
+     "video_id": "v1jzPrb1DFs",
+     "t": 4940,
+     "date": "2025-05-13",
+     "base": "2025-05-14_v1jzPrb1DFs",
+     "meeting_title": "Medford City Council Meeting via Zoom",
+     "title": "Medford Square Parking Lot Development Update",
+     "label": "M19#11"
+    },
+    {
+     "video_id": "1WtWyjxGAoU",
+     "t": 9091,
+     "date": "2026-03-10",
+     "base": "2026-03-10_1WtWyjxGAoU",
+     "meeting_title": "City Council 03-10-26",
+     "title": "Medford Square Parcels Redevelopment Project Regulatory Vote",
+     "label": "M38#8"
+    },
+    {
+     "video_id": "1WtWyjxGAoU",
+     "t": 10450,
+     "date": "2026-03-10",
+     "base": "2026-03-10_1WtWyjxGAoU",
+     "meeting_title": "City Council 03-10-26",
+     "title": "Medford Square City Hall Overlay District Zoning Referral",
+     "label": "M38#9"
+    },
+    {
+     "video_id": "u1Dt2VrL-v4",
+     "t": 723,
+     "date": "2026-04-14",
+     "base": "2026-04-14_u1Dt2VrL-v4",
+     "meeting_title": "City Council Special Meeting 04-14-26",
+     "title": "Medford Square City Hall Overlay District Zoning Amendment",
+     "label": "M41#1"
+    },
+    {
+     "video_id": "jbKzwV2kZnk",
+     "t": 7611,
+     "date": "2026-05-12",
+     "base": "2026-05-13_jbKzwV2kZnk",
+     "meeting_title": "City Council 05-12-26",
+     "title": "Medford Square Redevelopment Project Grant",
+     "label": "M43#10"
+    }
+   ]
+  },
+  {
+   "name": "Tree protection and urban canopy management",
+   "status": "settled",
+   "summary": "Efforts to safeguard Medford's urban forest began with committee reviews of public and private tree regulations in late 2024. In November 2025, the council ordained an ordinance creating a volunteer tree committee to support the tree warden, followed shortly by the acceptance of a $25,000 private donation from Trees Medford for plantings. In mid-2026, the council restructured DPW personnel by raising the pay grade and hours of the Tree Warden to lead the DPW Forestry Division. Finally, in September 2026, the council ordained the Public Tree Ordinance to establish binding management and preservation standards for trees on municipal land.",
+   "citations": [
+    {
+     "video_id": "kojaidJyMMQ",
+     "t": 2111,
+     "date": "2024-12-03",
+     "base": "2024-12-03_kojaidJyMMQ",
+     "meeting_title": "City Council 12-03-24",
+     "title": "Tree Ordinance Committee Report",
+     "label": "M08#3"
+    },
+    {
+     "video_id": "egZJOUPL-iU",
+     "t": 12927,
+     "date": "2025-11-18",
+     "base": "2025-11-18_egZJOUPL-iU",
+     "meeting_title": "City Council 11-18-25",
+     "title": "Tree Committee Ordinance",
+     "label": "M31#9"
+    },
+    {
+     "video_id": "UHZzywcUcK0",
+     "t": 9349,
+     "date": "2025-12-02",
+     "base": "2025-12-03_UHZzywcUcK0",
+     "meeting_title": "City Council 12-02-25",
+     "title": "Trees Medford Donation",
+     "label": "M32#5"
+    },
+    {
+     "video_id": "MadMXcHPWI8",
+     "t": 4868,
+     "date": "2026-05-26",
+     "base": "2026-05-26_MadMXcHPWI8",
+     "meeting_title": "City Council 05-26-26",
+     "title": "Personnel Ordinance Amendment: Tree Warden",
+     "label": "M44#13"
+    },
+    {
+     "video_id": "qAw603Lq-Os",
+     "t": 3134,
+     "date": "2026-07-14",
+     "base": "2026-07-14_qAw603Lq-Os",
+     "meeting_title": "City Council 07-14-26",
+     "title": "Personnel Ordinance Amendments",
+     "label": "M47#7"
     },
     {
      "video_id": "eWg7lyFP5WI",
-     "t": 4465,
+     "t": 14386,
      "date": "2026-09-15",
      "base": "2026-09-15_eWg7lyFP5WI",
      "meeting_title": "City Council 09-15-26",
-     "title": "Boston Avenue Neighborhood Corridor District Zoning",
-     "label": "M44#6"
+     "title": "Public Tree Ordinance",
+     "label": "M49#8"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "The council focused on post-override appropriations, school infrastructure financing, the adoption of a revised city charter, and corridor-level rezoning while passing controversial divestment legislation.",
+   "citations": [
+    {
+     "video_id": "rk5kVycceTI",
+     "t": 1426,
+     "date": "2024-11-19",
+     "base": "2024-11-20_rk5kVycceTI",
+     "meeting_title": "City Council 11-19-24",
+     "title": "Override Supplemental Appropriations",
+     "label": "M06#4"
+    },
+    {
+     "video_id": "iw3k1TZ1ejU",
+     "t": 9981,
+     "date": "2024-12-17",
+     "base": "2024-12-18_iw3k1TZ1ejU",
+     "meeting_title": "City Council 12-17-24",
+     "title": "Mystic Avenue Corridor District Zoning",
+     "label": "M09#9"
+    },
+    {
+     "video_id": "j2zlMvp6B6U",
+     "t": 6800,
+     "date": "2025-04-15",
+     "base": "2025-04-15_j2zlMvp6B6U",
+     "meeting_title": "Special Meeting of the Medford City Council 04-15-25",
+     "title": "Approval of the Amended Draft City Charter",
+     "label": "M17#4"
+    },
+    {
+     "video_id": "J5UJin9pTwE",
+     "t": 3714,
+     "date": "2025-04-29",
+     "base": "2025-04-29_J5UJin9pTwE",
+     "meeting_title": "City Council 04-29-25",
+     "title": "McGlynn and Andrews School Infrastructure Financing",
+     "label": "M18#5"
+    },
+    {
+     "video_id": "L2PVZXRYAAI",
+     "t": 9942,
+     "date": "2025-09-30",
+     "base": "2025-10-01_L2PVZXRYAAI",
+     "meeting_title": "City Council 09-30-25",
+     "title": "Values-Aligned Local Investment Ordinance",
+     "label": "M26#9"
+    },
+    {
+     "video_id": "JOz8NJmqO-Y",
+     "t": 10447,
+     "date": "2025-11-12",
+     "base": "2025-11-12_JOz8NJmqO-Y",
+     "meeting_title": "City Council 11-12-25",
+     "title": "Values Aligned Local Investments Ordinance Veto Override",
+     "label": "M30#6"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The council organized leadership, enacted major zoning and tree ordinances, addressed legal defense and oversight disputes with the executive branch, and managed municipal budgets and labor contracts.",
+   "citations": [
+    {
+     "video_id": "EgVeZVtzVUE",
+     "t": 1147,
+     "date": "2026-01-06",
+     "base": "2026-01-06_EgVeZVtzVUE",
+     "meeting_title": "City Council 01-06-25",
+     "title": "Election of Council President for 2026",
+     "label": "M34#1"
+    },
+    {
+     "video_id": "eX6vSG1G9V4",
+     "t": 4980,
+     "date": "2026-04-07",
+     "base": "2026-04-07_eX6vSG1G9V4",
+     "meeting_title": "City Council 04-07-26",
+     "title": "Face Surveillance Ban",
+     "label": "M40#12"
+    },
+    {
+     "video_id": "PxpKo8QasKw",
+     "t": 7663,
+     "date": "2026-04-28",
+     "base": "2026-04-28_PxpKo8QasKw",
+     "meeting_title": "City Council 04-28-26",
+     "title": "Medford Square District Rezoning",
+     "label": "M42#6"
+    },
+    {
+     "video_id": "-MlgNixuHJY",
+     "t": 11583,
+     "date": "2026-06-23",
+     "base": "2026-06-23_-MlgNixuHJY",
+     "meeting_title": "City Council 06-23-26",
+     "title": "FY 2027 General Fund Budget Approval",
+     "label": "M46#15"
+    },
+    {
+     "video_id": "eWg7lyFP5WI",
+     "t": 14386,
+     "date": "2026-09-15",
+     "base": "2026-09-15_eWg7lyFP5WI",
+     "meeting_title": "City Council 09-15-26",
+     "title": "Public Tree Ordinance",
+     "label": "M49#8"
+    },
+    {
+     "video_id": "kwIB-J6Fh9k",
+     "t": 11488,
+     "date": "2026-09-29",
+     "base": "2026-09-29_kwIB-J6Fh9k",
+     "meeting_title": "City Council 09-29-26",
+     "title": "Supplemental Law Department Appropriation",
+     "label": "M51#15"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 73,
-  "meetings_cited": 35,
-  "of_meetings": 46,
-  "max_share": 0.082,
-  "most_cited": "iw3k1TZ1ejU",
+  "citations": 67,
+  "meetings_cited": 36,
+  "of_meetings": 51,
+  "max_share": 0.09,
+  "even_share": 0.0196,
+  "concentration_ratio": 4.59,
+  "most_cited": "kwIB-J6Fh9k",
   "periods_covered": 2,
   "of_periods": 2
  },
  "usage": {
-  "input_tokens": 27434,
-  "output_tokens": 2564,
+  "input_tokens": 29887,
+  "output_tokens": 2185,
   "model_version": "gemini-3.8-flash"
  }
 }
