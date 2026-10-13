@@ -1,0 +1,72 @@
+{
+ "video_id": "MCM00001474",
+ "provider": "gemini",
+ "generated_at": "2026-10-13T06:06:37Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "246ebbd821259e59",
+ "subject": "ARPA Nonprofit Subrecipient Grant Funding",
+ "overview": "City officials and staff presented the application process, timeline, and regulatory requirements for nonprofits seeking grant funding through the American Rescue Plan Act (ARPA). The program prioritizes local projects addressing housing, food insecurity, and social services impacted by the COVID-19 pandemic.",
+ "items": [
+  {
+   "title": "Program Introduction and Timeline",
+   "t": 0,
+   "summary": "Mayor Breanna Lungo-Koehn and Federal Funds Manager Lorena Escalero introduced the grant program, noting that applications would open in March with project implementation beginning in July.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Lorena Escalero"
+   ]
+  },
+  {
+   "title": "Eligibility and Administrative Requirements",
+   "t": 237,
+   "summary": "Nonprofits with 501(c)(3) or 501(c)(19) status are eligible to apply but must be registered with the federal System for Award Management (SAM) and provide outcome data.",
+   "speakers": [
+    "Lorena Escalero"
+   ]
+  },
+  {
+   "title": "Application Walkthrough and Priority Areas",
+   "t": 372,
+   "summary": "Officials reviewed the online application form and highlighted community priorities including rental assistance, SNAP gap support, and mental health services.",
+   "speakers": [
+    "Lorena Escalero",
+    "Theresa Dupont"
+   ]
+  },
+  {
+   "title": "Scoring Rubric and Expenditure Restrictions",
+   "t": 789,
+   "summary": "Applications will be scored based on COVID-19 tie-ins and compliance capacity, with administrative costs capped at 15% and capital expenditures over $50,000 generally restricted.",
+   "speakers": [
+    "Lorena Escalero"
+   ]
+  },
+  {
+   "title": "Public Question and Answer Session",
+   "t": 1145,
+   "summary": "Staff clarified that there are no minimum or maximum grant amounts and that funds can support direct rental payments or the expansion of existing programs.",
+   "speakers": [
+    "Lorena Escalero",
+    "John Keegan",
+    "Marie Cassidy",
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Staff Testimony on Community Service Needs",
+   "t": 1885,
+   "summary": "City social services staff emphasized urgent needs for emergency fuel assistance and flexible funding to prevent homelessness among residents above traditional low-income thresholds.",
+   "speakers": [
+    "Theresa Dupont",
+    "Alicia Lagavina"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9678,
+  "output_tokens": 641,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
