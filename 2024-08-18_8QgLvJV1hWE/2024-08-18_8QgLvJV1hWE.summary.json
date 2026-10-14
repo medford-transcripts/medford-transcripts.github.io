@@ -1,0 +1,69 @@
+{
+ "video_id": "8QgLvJV1hWE",
+ "provider": "gemini",
+ "generated_at": "2026-10-14T23:05:51Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "413165b7b8d809b3",
+ "subject": "",
+ "overview": "The 2024 Medford Jazz Festival held its Saturday afternoon program at the West Medford Community Center, featuring live jazz and spoken-word performances by The Ally Project and a quartet from Berklee's Institute for Jazz and Gender Justice. Organizers also honored local West Medford African American history, recognized community sponsors, and announced the following day's schedule.",
+ "items": [
+  {
+   "title": "Welcome Remarks and Sponsor Acknowledgements",
+   "t": 1197,
+   "summary": "Terry Carter and festival organizer Jonathan Fagan welcomed attendees to the West Medford Community Center, highlighted the African American history of the surrounding neighborhood, and thanked event sponsors and volunteers.",
+   "speakers": [
+    "Terry Carter",
+    "Jonathan Fagan"
+   ]
+  },
+  {
+   "title": "Performance: The Ally Project",
+   "t": 1661,
+   "summary": "The Ally Project—featuring poet Terry Carter, pianist Jonathan Fagan, bassist Greg Toro, and drummer John Dalton—performed a series of spoken-word and jazz pieces exploring neighborhood history, gentrification, racial justice, and family.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Introduction of Berklee Institute for Jazz and Gender Justice",
+   "t": 7679,
+   "summary": "Terry Carter introduced the second act of the afternoon, an ensemble from the Berklee Institute for Jazz and Gender Justice led by pianist Anna Petrova.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Performance: Berklee Institute for Jazz and Gender Justice Quartet",
+   "t": 8279,
+   "summary": "Pianist Anna Petrova, flutist Annabelle Gil-Diaz, bassist Chris Lee, and drummer Aidan Ward-Richter performed a set of compositions written by female jazz composers, primarily drawn from Terri Lyne Carrington's New Standards songbook.",
+   "speakers": [
+    "Anna Petrova"
+   ]
+  },
+  {
+   "title": "Festival Announcements and Support Appeal",
+   "t": 11658,
+   "summary": "Jonathan Fagan thanked organizational sponsors and community partners, encouraging attendees to support the free festival through donations.",
+   "speakers": [
+    "Jonathan Fagan",
+    "Anna Petrova"
+   ]
+  },
+  {
+   "title": "Closing Remarks and Sunday Preview",
+   "t": 12885,
+   "summary": "Terry Carter and Jonathan Fagan concluded Saturday's concert and previewed the Sunday festival lineup featuring the Kevin Harris Project and the Jim Robitaille Nonet.",
+   "speakers": [
+    "Terry Carter",
+    "Jonathan Fagan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 22353,
+  "output_tokens": 604,
+  "model_version": "gemini-3.8-flash"
+ }
+}
