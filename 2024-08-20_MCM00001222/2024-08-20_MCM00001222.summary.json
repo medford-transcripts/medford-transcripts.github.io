@@ -1,0 +1,38 @@
+{
+ "video_id": "MCM00001222",
+ "provider": "gemini",
+ "generated_at": "2026-10-14T13:08:33Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "69263d7d3e7b776e",
+ "subject": "38 Pearl Street Demolition Delay",
+ "overview": "The commission held a special meeting to lift a demolition delay for a residential property and reviewed administrative correspondence regarding a public plaza project.",
+ "items": [
+  {
+   "title": "38 Pearl Street Demolition Delay",
+   "t": 46,
+   "summary": "Approved lifting the demolition delay for a partial demolition and addition after the applicant revised the massing and fenestration to maintain the integrity of the original house.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Doug Carr",
+    "Peter Miller",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Riverside Plaza Design Review",
+   "t": 519,
+   "summary": "Reviewed a draft letter of approval for the Riverside Avenue Plaza design and coordinated final edits on the document.",
+   "speakers": [
+    "Doug Carr",
+    "Jennifer Keenan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4223,
+  "output_tokens": 231,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

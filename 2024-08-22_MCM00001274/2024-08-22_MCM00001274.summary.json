@@ -1,0 +1,35 @@
+{
+ "video_id": "MCM00001274",
+ "provider": "gemini",
+ "generated_at": "2026-10-14T13:06:26Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "12d796689c17cb6f",
+ "subject": "Superintendent Contract Negotiations",
+ "overview": "The School Committee convened for a special meeting to enter executive session regarding contract negotiations with the Superintendent of Schools. The committee adjourned directly from the executive session without returning to open session.",
+ "items": [
+  {
+   "title": "Call to Order and Pledge of Allegiance",
+   "t": 0,
+   "summary": "Mayor Lungo-Koehn called the special meeting to order and led the Pledge of Allegiance.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Executive Session: Superintendent Contract Negotiations",
+   "t": 99,
+   "summary": "Approved entry into executive session to conduct strategy and contract negotiations with the Superintendent of Schools, with the committee electing to adjourn directly from that session.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1923,
+  "output_tokens": 216,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
