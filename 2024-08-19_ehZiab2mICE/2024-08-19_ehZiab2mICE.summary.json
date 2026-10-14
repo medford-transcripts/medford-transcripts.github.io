@@ -1,0 +1,65 @@
+{
+ "video_id": "ehZiab2mICE",
+ "provider": "gemini",
+ "generated_at": "2026-10-14T19:06:34Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f4b4e141f905e53f",
+ "subject": "Medford Jazz Festival Finale",
+ "overview": "The Medford Jazz Festival concluded its three-day 2024 festival at the West Medford Community Center. The afternoon featured performances by the Jim Repa Nonet and the Kevin Harris Project featuring Jason Palmer.",
+ "items": [
+  {
+   "title": "Welcome and Opening Remarks",
+   "t": 591,
+   "summary": "Jonathan Fagan welcomed attendees to the final day of the festival, thanked community sponsors and volunteers, and introduced master of ceremonies Terry Carter, who shared the history of the West Medford Community Center.",
+   "speakers": [
+    "Fagan",
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Jim Repa Nonet Performance",
+   "t": 1138,
+   "summary": "The Jim Repa Nonet performed a set of original compositions and jazz standards, concluding with Tom Harrell's Train Shuffle.",
+   "speakers": [
+    "Terry Carter",
+    "Weissman"
+   ]
+  },
+  {
+   "title": "Intermission Remarks",
+   "t": 5634,
+   "summary": "Terry Carter thanked the Jim Repa Nonet, noted merchandise and refreshments for sale, and announced the upcoming Kevin Harris Project set.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "The Kevin Harris Project Featuring Jason Palmer",
+   "t": 7468,
+   "summary": "The Kevin Harris Project performed an ensemble set featuring compositions by Kevin Harris and Jason Palmer, highlighting their shared history playing at Wally's Jazz Club.",
+   "speakers": [
+    "Terry Carter",
+    "Harris",
+    "Palmer"
+   ]
+  },
+  {
+   "title": "Closing Remarks",
+   "t": 11302,
+   "summary": "Jonathan Fagan and Terry Carter delivered closing thanks to the musicians, volunteers, sponsors, and the West Medford Community Center.",
+   "speakers": [
+    "Fagan",
+    "Harris",
+    "Palmer",
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13168,
+  "output_tokens": 414,
+  "model_version": "gemini-3.8-flash"
+ }
+}
