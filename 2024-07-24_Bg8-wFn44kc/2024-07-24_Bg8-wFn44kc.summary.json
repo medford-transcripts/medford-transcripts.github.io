@@ -1,0 +1,76 @@
+{
+ "video_id": "Bg8-wFn44kc",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T11:10:42Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b2af6049db8f87c8",
+ "subject": "State Audit Request",
+ "overview": "The council debated and rejected a resolution calling for the Massachusetts State Auditor to examine municipal finances and recent council proceedings. The council also approved several committee reports, a memorial resolution, and a donation for Pride Month activities.",
+ "items": [
+  {
+   "title": "Condolence resolution for Robin Irving",
+   "t": 95,
+   "summary": "Approved a resolution expressing condolences to the family of longtime Medford public school teacher Robin Irving.",
+   "speakers": [
+    "Zac Bears",
+    "George Scarpelli",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Approval of records",
+   "t": 397,
+   "summary": "Approved the records of the June 25, 2024 meeting.",
+   "speakers": [
+    "Zac Bears",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Committee reports",
+   "t": 445,
+   "summary": "Approved reports from the Planning and Permitting Committee, Committee of the Whole, and Resident Services and Public Engagement Committee covering the council's zoning consultant work plan, governing agenda, and resident guides.",
+   "speakers": [
+    "Zac Bears",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Resolution requesting State Auditor examination",
+   "t": 662,
+   "summary": "The council failed a resolution requesting that the Office of the State Auditor examine city finances and council procedural actions following a lengthy debate over free cash certification, budget deadlines, and parliamentary rulings.",
+   "speakers": [
+    "Zac Bears",
+    "George Scarpelli",
+    "Kit Collins",
+    "Anna Callahan",
+    "Justin Tseng",
+    "Nick Giurleo",
+    "Doreen O'Hare",
+    "Jessica Healey",
+    "Jennifer Yanko",
+    "Donna Sylva",
+    "Lori Spinney-Flagg",
+    "Deanne Andresano",
+    "Paulette Vartabedian",
+    "Bill Giglio"
+   ]
+  },
+  {
+   "title": "Pride Month donation acceptance",
+   "t": 6472,
+   "summary": "Approved the acceptance of a $500 donation from the Boston Foundation Corporation for municipal Pride Month activities.",
+   "speakers": [
+    "Zac Bears",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33322,
+  "output_tokens": 475,
+  "model_version": "gemini-3.8-flash"
+ }
+}
