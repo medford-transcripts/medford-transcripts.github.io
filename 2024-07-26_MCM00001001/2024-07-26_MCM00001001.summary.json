@@ -1,0 +1,53 @@
+{
+ "video_id": "MCM00001001",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T10:07:28Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c3f084789d7ef57e",
+ "subject": "",
+ "overview": "The board approved a special permit for a home addition at 86 Suffolk Street and denied a variance for a covered porch at 133 Century Street Extension. Members also reviewed meeting minutes and a proposal to update the board's rules and regulations.",
+ "items": [
+  {
+   "title": "86 Suffolk Street - Case A-2024-17",
+   "t": 44,
+   "summary": "Approved a special permit for a 264-square-foot addition extending an existing rear yard nonconformity, while continuing a related variance request to the next meeting pending updated plot plans.",
+   "speakers": [
+    "Amy Weber",
+    "Andrew Weber",
+    "Scott Vandewalle",
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "133 Century Street Extension - Case A-2024-18",
+   "t": 1502,
+   "summary": "Denied a variance for an eight-foot-deep covered front porch that would have encroached into the 15-foot front yard setback on a private way.",
+   "speakers": [
+    "Patrick Lavoie",
+    "Jennifer Lavoie",
+    "Scott Vandewalle",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Minutes",
+   "t": 4440,
+   "summary": "Approved the June 27 meeting minutes and discussed a recommendation from the Building Commissioner to appoint a subcommittee to update the board's dated rules and regulations.",
+   "speakers": [
+    "Mike Caldera",
+    "Scott Vandewalle"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21286,
+  "output_tokens": 361,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

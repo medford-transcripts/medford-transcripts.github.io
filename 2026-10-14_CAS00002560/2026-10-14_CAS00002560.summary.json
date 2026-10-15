@@ -1,0 +1,75 @@
+{
+ "video_id": "CAS00002560",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T10:05:35Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "559fcd71b57c4ab9",
+ "subject": "",
+ "overview": "The Board of Health approved a grease trap pumping variance for a food manufacturer and reviewed a biosafety permit application for a biotech facility relocating to Boston Avenue. The board also discussed tobacco permit suspension guidelines and received a regional infectious disease report.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 8,
+   "summary": "The board approved the minutes of the previous meeting.",
+   "speakers": [
+    "David Pladziewicz",
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Grease Trap Variance: 101 Mystic Avenue",
+   "t": 63,
+   "summary": "Approved a variance extending grease trap pumping frequency from every four months to six months for Just Us Foods Inc., provided facility operations do not add oily foods.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Colin Daly",
+    "David Pladziewicz"
+   ]
+  },
+  {
+   "title": "Hearing Postponement: 543 Riverside Avenue",
+   "t": 235,
+   "summary": "Postponed consideration of 543 Riverside Avenue because the owner was not in attendance.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Biosafety Permit: Wiser Biosciences",
+   "t": 254,
+   "summary": "Reviewed a Biosafety Level 2 permit application from Wiser Biosciences for their relocation to 200 Boston Avenue, with staff planning to issue the permit after completing final documentation review.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Tony Lee",
+    "Matt Leming",
+    "David Pladziewicz"
+   ]
+  },
+  {
+   "title": "Tobacco Regulation Suspension Language",
+   "t": 1270,
+   "summary": "Discussed whether local tobacco violation rules should mirror state language regarding discretionary versus mandatory suspensions and consecutive days, with members favoring prospective alignment.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "David Pladziewicz"
+   ]
+  },
+  {
+   "title": "Quarterly Infectious Disease Report",
+   "t": 1626,
+   "summary": "Received a quarterly infectious disease report from regional epidemiologist Guha Patel and noted upcoming schedules for the mobile health clinic van.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Guha Patel",
+    "David Pladziewicz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12632,
+  "output_tokens": 502,
+  "model_version": "gemini-3.8-flash"
+ }
+}

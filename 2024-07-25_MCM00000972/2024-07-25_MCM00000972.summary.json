@@ -1,0 +1,36 @@
+{
+ "video_id": "MCM00000972",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T10:08:14Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "33da8ee454bc4b73",
+ "subject": "Superintendent of Schools Contract Negotiations",
+ "overview": "The School Committee convened for a special meeting primarily to enter an executive session regarding non-union personnel contract negotiations.",
+ "items": [
+  {
+   "title": "Opening Procedures",
+   "t": 0,
+   "summary": "The committee convened the remote meeting, established a quorum through roll call, and led the pledge of allegiance.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Executive Session for Superintendent Negotiations",
+   "t": 103,
+   "summary": "The committee approved entering executive session to conduct strategy for contract negotiations with the Superintendent of Schools. The body adjourned directly from executive session without returning to open session.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1930,
+  "output_tokens": 226,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
