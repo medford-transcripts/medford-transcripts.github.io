@@ -1,0 +1,57 @@
+{
+ "video_id": "NWLvvQCjaf4",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T07:05:40Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "abf88fab29e4431c",
+ "subject": "",
+ "overview": "The Community Development Board approved a special permit for a detached accessory dwelling unit and endorsed an Approval Not Required subdivision plan. The board also received planning staff updates regarding ongoing city zoning overhaul efforts and recent state housing legislation.",
+ "items": [
+  {
+   "title": "1416 Mystic Valley Parkway Special Permit",
+   "t": 105,
+   "summary": "Approved a special permit to legalize and renovate an existing detached accessory dwelling unit above a garage, with the board finding the parking criteria satisfied without requiring additional spaces.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans",
+    "Peter Calves"
+   ]
+  },
+  {
+   "title": "98-100 Magoon Avenue Approval Not Required (ANR)",
+   "t": 958,
+   "summary": "Endorsed an Approval Not Required plan to divide a lot to allow construction of a single-family home after confirming the parcel satisfies vital access and frontage requirements.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans",
+    "Peter Calves"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 1363,
+   "summary": "Deferred approval of previous meeting minutes to the next meeting because the final draft was not ready.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans",
+    "Peter Calves"
+   ]
+  },
+  {
+   "title": "Zoning Overhaul Updates and Legislative Discussion",
+   "t": 1399,
+   "summary": "Staff provided updates on City Council work regarding corridor zoning for Mystic Avenue and Salem Street, followed by board discussion on the newly passed state housing bond bill and the potential for streamlining straightforward ANR reviews.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10737,
+  "output_tokens": 394,
+  "model_version": "gemini-3.8-flash"
+ }
+}
