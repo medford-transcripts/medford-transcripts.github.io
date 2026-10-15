@@ -1,0 +1,80 @@
+{
+ "video_id": "MCM00000913",
+ "provider": "gemini",
+ "generated_at": "2026-10-15T23:06:08Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "77ff4985401b1012",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals accepted withdrawals for commercial and Chapter 40B development petitions, denied a fence variance on Winford Way, and approved dimensional relief for projects on Sydney Street and Forest Street.",
+ "items": [
+  {
+   "title": "360 Salem Street",
+   "t": 125,
+   "summary": "The board voted to accept the applicant's request to withdraw without prejudice a special permit petition to convert a commercial condominium into a medical office.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "280 Mystic Avenue",
+   "t": 263,
+   "summary": "The board voted to accept the applicant's request to withdraw a Chapter 40B comprehensive permit petition for a 378-unit multi-family apartment development.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "28 Winford Way",
+   "t": 418,
+   "summary": "Following testimony from the builder and opposing neighbors regarding fence height and lack of prior communication, the board voted to deny a variance for an over-height fence.",
+   "speakers": [
+    "Denis MacDougall",
+    "Yuri",
+    "Andre Leroux",
+    "Lisa Defabritiis",
+    "Mike Caldera",
+    "Wayne Amico",
+    "Lynn Amico",
+    "Jennifer Schnabel",
+    "Chris D'Aveta"
+   ]
+  },
+  {
+   "title": "65 Sydney Street",
+   "t": 2775,
+   "summary": "The board voted to approve a side yard setback variance allowing a storage shed under 200 square feet to remain on the property.",
+   "speakers": [
+    "Denis MacDougall",
+    "Matthew Salamone",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Chris D'Aveta",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "160 Forest Street",
+   "t": 3907,
+   "summary": "The board approved a variance for a six-foot fence enclosed around a pool on a corner lot and granted a special permit waiving the corner visibility requirement.",
+   "speakers": [
+    "Denis MacDougall",
+    "Pamela Schaefer",
+    "Andre Leroux",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Sarah Willis",
+    "Chris D'Aveta"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29011,
+  "output_tokens": 550,
+  "model_version": "gemini-3.6-flash"
+ }
+}
