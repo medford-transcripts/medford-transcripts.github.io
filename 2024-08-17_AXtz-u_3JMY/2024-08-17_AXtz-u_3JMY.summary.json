@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "80dfefac31c2b536",
- "subject": "",
+ "subject": "Opening Night Performances",
  "overview": "The opening night of the 2024 Medford Jazz Festival featured performances by two local jazz ensembles and the announcement of a new fundraising initiative to support local musicians.",
  "items": [
   {
@@ -67,5 +67,6 @@
   "input_tokens": 9633,
   "output_tokens": 439,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

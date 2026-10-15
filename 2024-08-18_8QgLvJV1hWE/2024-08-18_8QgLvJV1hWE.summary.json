@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "413165b7b8d809b3",
- "subject": "",
+ "subject": "West Medford Community Center Performances",
  "overview": "The 2024 Medford Jazz Festival held its Saturday afternoon program at the West Medford Community Center, featuring live jazz and spoken-word performances by The Ally Project and a quartet from Berklee's Institute for Jazz and Gender Justice. Organizers also honored local West Medford African American history, recognized community sponsors, and announced the following day's schedule.",
  "items": [
   {
@@ -65,5 +65,6 @@
   "input_tokens": 22353,
   "output_tokens": 604,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
