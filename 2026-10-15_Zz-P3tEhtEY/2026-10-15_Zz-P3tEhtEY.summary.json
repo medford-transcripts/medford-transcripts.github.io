@@ -1,0 +1,42 @@
+{
+ "video_id": "Zz-P3tEhtEY",
+ "provider": "gemini",
+ "generated_at": "2026-10-16T10:05:48Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5e448973fac4280d",
+ "subject": "",
+ "overview": "The subcommittee received presentations from the administration on the district's comprehensive assessment landscape and reviewed Medford's readiness to implement proposed state graduation frameworks following the elimination of the MCAS graduation requirement. No formal votes or actions were taken.",
+ "items": [
+  {
+   "title": "Assessment Landscape Report",
+   "t": 51,
+   "summary": "Assistant Superintendent Kim Talbot presented an overview of the district's assessment landscape across classroom, district, state, and opt-in testing, and discussed efforts to use benchmarking data to inform grade-level instruction without excessive test preparation.",
+   "speakers": [
+    "Erika Reinfeld",
+    "Kim Talbot",
+    "Will Pipicelli",
+    "Jessica Parks",
+    "Aaron Olapade"
+   ]
+  },
+  {
+   "title": "Graduation Frameworks Update",
+   "t": 2966,
+   "summary": "Dr. Talbot reviewed the state's proposed graduation framework and evaluated Medford's readiness to meet emerging requirements for foundational coursework, end-of-course assessments, post-secondary planning, and culminating experiences.",
+   "speakers": [
+    "Erika Reinfeld",
+    "Kim Talbot",
+    "Will Pipicelli",
+    "Aaron Olapade",
+    "Jessica Parks"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24485,
+  "output_tokens": 257,
+  "model_version": "gemini-3.8-flash"
+ }
+}
