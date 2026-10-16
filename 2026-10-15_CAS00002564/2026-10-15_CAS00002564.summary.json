@@ -1,0 +1,62 @@
+{
+ "video_id": "CAS00002564",
+ "provider": "gemini",
+ "generated_at": "2026-10-16T19:07:56Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "47423c121448b5fb",
+ "subject": "Hormel Stadium Turf Replacement",
+ "overview": "The commission reviewed finances, approved past minutes, and discussed project planning and procurement for the upcoming $1 million Hormel Stadium turf replacement.",
+ "items": [
+  {
+   "title": "Permit and Use Applications",
+   "t": 39,
+   "summary": "The commission noted that no new permit applications or facility requests were submitted for review.",
+   "speakers": [
+    "Kevin Bailey",
+    "Brian Collins"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 69,
+   "summary": "Approved the August 12 meeting minutes with an edit clarifying that replacing the scoreboard panel is cheaper than replacing the lights.",
+   "speakers": [
+    "Kevin Bailey",
+    "Brian Collins"
+   ]
+  },
+  {
+   "title": "Finance Report",
+   "t": 260,
+   "summary": "Accepted the finance report after reviewing a temporary paper deficit caused by pending account rollovers and noting incoming rental revenue from the Boston Ski & Sports Club.",
+   "speakers": [
+    "Kevin Bailey",
+    "Brian Collins"
+   ]
+  },
+  {
+   "title": "Turf Replacement Update",
+   "t": 370,
+   "summary": "Staff reported that City Council approved the $1 million appropriation for turf replacement, and outlined next steps to hire an engineering firm for subsurface assessments, target a July construction period, and determine sport lining configurations.",
+   "speakers": [
+    "Kevin Bailey",
+    "Brian Collins"
+   ]
+  },
+  {
+   "title": "Next Meeting Scheduling",
+   "t": 993,
+   "summary": "Scheduled the November meeting for November 4 to avoid the Veterans Day holiday.",
+   "speakers": [
+    "Brian Collins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6094,
+  "output_tokens": 361,
+  "model_version": "gemini-3.8-flash"
+ }
+}
