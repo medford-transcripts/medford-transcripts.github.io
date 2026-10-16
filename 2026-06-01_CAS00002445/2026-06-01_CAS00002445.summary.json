@@ -1,0 +1,93 @@
+{
+ "video_id": "CAS00002445",
+ "provider": "gemini",
+ "generated_at": "2026-10-16T05:06:49Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b35b9a7ae08b7d6f",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals heard requests involving a residential zoning violation appeal, special permits for an adult-use cannabis dispensary, an addition for a play cafe and residential units, and a residential height variance. The board upheld the building commissioner's violation, approved special permits for medical cannabis and manufacturing while continuing the delivery request, approved permits and a variance for the play cafe addition, and continued the residential height variance.",
+ "items": [
+  {
+   "title": "91 Waterville Road: Administrative Appeal of Notice of Violation",
+   "t": 27,
+   "summary": "Upheld the Building Commissioner's notice of violation against Patricia and Paolo Wilder for operating a commercial business out of a residential property in a single-family zoning district.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Jessica Schiller",
+    "Scott Vandewalle",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "114 Mystic Avenue: Cannabis Dispensary Special Permits",
+   "t": 719,
+   "summary": "Approved special permits for medical cannabis sales and product manufacturing for Victory Gardens, but continued the application for courier delivery services to June 25 to seek input from the police chief.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Tito Jackson",
+    "Mary Lee",
+    "Mark Crowley",
+    "Jason Zuby",
+    "Scott Vandewalle",
+    "Chris D'Aveta"
+   ]
+  },
+  {
+   "title": "387-389 Main Street: Play Cafe Addition and Mixed-Use Renovation",
+   "t": 5867,
+   "summary": "Approved an off-street parking variance and special permits for a side yard setback, expansion of a non-conforming structure, and the operation of an indoor play cafe with residential units above.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Dargwyn Fortuna",
+    "Abigail Louis-Saint",
+    "Fernand Louis-Saint",
+    "Mark Crowley",
+    "Scott Vandewalle",
+    "Chris D'Aveta",
+    "Steph Butzowski-Maupin",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "31 Boynton Road: Height Variance for Residential Addition",
+   "t": 8515,
+   "summary": "Continued to June 25 an application by Jennifer Percy and Jordan Sherwood for a height variance for a 1.5-story addition to allow the applicants time to consult with abutting neighbors about building scale.",
+   "speakers": [
+    "Denis MacDougall",
+    "Bill Dickinson",
+    "Jen Percy",
+    "Andre Leroux",
+    "Francesca Lyon",
+    "Patricia Doherty",
+    "Brian Spence",
+    "Grace",
+    "Jess Wilhoft",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 11968,
+   "summary": "Approved the minutes from the April meeting with a minor clerical correction.",
+   "speakers": [
+    "Andre Leroux",
+    "Denis MacDougall",
+    "Mary Lee",
+    "Chris D'Aveta",
+    "Scott Vandewalle"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 65214,
+  "output_tokens": 663,
+  "model_version": "gemini-3.8-flash"
+ }
+}
