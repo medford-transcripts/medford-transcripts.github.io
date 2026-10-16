@@ -1,0 +1,40 @@
+{
+ "video_id": "RmvL56DRR5k",
+ "provider": "gemini",
+ "generated_at": "2026-10-16T07:07:22Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a327e19a3e060fff",
+ "subject": "Residents Guide to City Council Procedures",
+ "overview": "The committee approved the latest draft of the City Council newsletter for distribution after making minor textual edits. It also discussed creating a one-page guide to City Council procedures for residents and voted to authorize Councilor Tseng to prepare a draft for the next meeting.",
+ "items": [
+  {
+   "title": "Resolution to publish a City Council newsletter (24-354)",
+   "t": 255,
+   "summary": "Approved the draft newsletter for distribution following edits regarding meeting commemorations, listening sessions, and minor wording adjustments.",
+   "speakers": [
+    "Matt Leming",
+    "Anna Callahan",
+    "Justin Tseng",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Resolution to create a residents guide to City Council's procedures and processes (24-370)",
+   "t": 1286,
+   "summary": "The committee discussed format, content, and translation options for a one-page resident guide to council meetings and voted to authorize Councilor Tseng to draft it before the next committee meeting.",
+   "speakers": [
+    "Matt Leming",
+    "Justin Tseng",
+    "Anna Callahan",
+    "Emily Lazzaro"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13040,
+  "output_tokens": 258,
+  "model_version": "gemini-3.8-flash"
+ }
+}
