@@ -1,0 +1,44 @@
+{
+ "video_id": "qpYuRWvZecM",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T14:07:50Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "dd6c15e5f6835225",
+ "subject": "",
+ "overview": "The Medford Community Development Board continued a site plan and special permit review for 290 Salem Street and approved prior meeting minutes. Staff also provided an update on materials for the city's zoning overhaul.",
+ "items": [
+  {
+   "title": "290 Salem Street Continuance",
+   "t": 117,
+   "summary": "The board voted to continue the site plan and special permit application for 290 Salem Street to May 15, 2024, pending revised plans.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 271,
+   "summary": "The board approved the meeting minutes from March 20, 2024, and April 3, 2024.",
+   "speakers": [
+    "Paulette Van der Kloot"
+   ]
+  },
+  {
+   "title": "Zoning Overhaul Updates",
+   "t": 360,
+   "summary": "Staff informed the board of emailed zoning overhaul materials and a City Council subcommittee presentation for members to review ahead of a future discussion.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Danielle Evans"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3604,
+  "output_tokens": 330,
+  "model_version": "gemini-3.6-flash"
+ }
+}

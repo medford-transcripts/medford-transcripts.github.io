@@ -1,0 +1,64 @@
+{
+ "video_id": "CAS00002436",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T14:07:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cf4980fc04730770",
+ "subject": "DCR Deed Restriction and High School Design Options",
+ "overview": "The Medford Comprehensive High School Building Committee met to address a 1967 DCR deed restriction affecting Edgley Field and review updated design alternatives. The committee voted to eliminate impacted building options, adopted modified designs avoiding restricted land, and reviewed MSBA feedback and cost estimates.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 135,
+   "summary": "Approved the April 27, 2026 meeting minutes and passed a motion to attach the full agenda content to the official meeting minutes.",
+   "speakers": [
+    "Jenny Graham",
+    "John Falco",
+    "Michael Pardek",
+    "Suzanne Galusi"
+   ]
+  },
+  {
+   "title": "DCR Deed Restriction and Modified Building Options",
+   "t": 438,
+   "summary": "Adopted modified high school design options C2.2a and C3.4a while eliminating options C2.2, C3.4, and D2.1 due to a 1967 DCR deed restriction prohibiting buildings on Edgley Field.",
+   "speakers": [
+    "Jenny Graham",
+    "Kimberly Talbot",
+    "Michael Pardek",
+    "John Falco",
+    "Nick Giurleo",
+    "Zoe Moutsos",
+    "Suzanne Galusi"
+   ]
+  },
+  {
+   "title": "MSBA Preliminary Design Program Comments",
+   "t": 4576,
+   "summary": "Reviewed feedback from the MSBA on the Preliminary Design Program submission, which requested a cost breakdown option for a standalone grades 9–12 high school program.",
+   "speakers": [
+    "Jenny Graham",
+    "Michael Pardek",
+    "Suzanne Galusi",
+    "Kimberly Talbot"
+   ]
+  },
+  {
+   "title": "Preferred Schematic Report Cost Estimates",
+   "t": 6481,
+   "summary": "Reviewed updated total project cost estimates across design alternatives and program configurations for the upcoming Preferred Schematic Report submission.",
+   "speakers": [
+    "Michael Pardek",
+    "Jenny Graham",
+    "Kimberly Talbot"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 36057,
+  "output_tokens": 527,
+  "model_version": "gemini-3.6-flash"
+ }
+}
