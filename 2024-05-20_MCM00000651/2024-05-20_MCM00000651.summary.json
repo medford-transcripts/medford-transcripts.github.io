@@ -1,0 +1,131 @@
+{
+ "video_id": "MCM00000651",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T15:53:20Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "ecb04dc5ca4c74f6",
+ "subject": "",
+ "overview": "The board elected a new chair and adjudicated several variance and special permit requests for residential and commercial properties. Significant decisions included approving a use variance for auto sales at 38 Harvard Avenue and recognizing a pre-existing three-family use at 86 Orchard Street while denying a garage conversion at 52 Garfield Avenue.",
+ "items": [
+  {
+   "title": "Election of Board Chair",
+   "t": 82,
+   "summary": "Elected Jamie Thompson as the new chair of the Zoning Board of Appeals following the resignation of Mike Caldera.",
+   "speakers": [
+    "Mike Caldera",
+    "Jamie Thompson",
+    "Andre LaRue",
+    "Mary Lee",
+    "Chris D'Avetta"
+   ]
+  },
+  {
+   "title": "0 Windsor Road",
+   "t": 269,
+   "summary": "Approved the applicant's request to withdraw their petition without prejudice.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Chris D'Avetta",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "65 Sydney Street",
+   "t": 456,
+   "summary": "Postponed the hearing for a shed height variance because the initial application was incomplete.",
+   "speakers": [
+    "Jamie Thompson",
+    "Denis MacDougall",
+    "Scott Vandewalle"
+   ]
+  },
+  {
+   "title": "38 Harvard Avenue",
+   "t": 596,
+   "summary": "Approved a use variance to allow limited Class 2 motor vehicle sales at an existing auto repair shop. Conditions require the installation of screening compliant with city ordinances and prohibit on-site signage advertising the sales.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Mary Lee",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Alicia Hunt",
+    "Chris D'Avetta",
+    "Danielle Evans",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "28 Winford Way",
+   "t": 4762,
+   "summary": "Tabled the request for a fence height variance until May 30 to allow the applicant to provide precise measurements and address neighbor complaints that the fence exceeds nine feet. Neighbors testified that the structure is an unsightly 'prison wall' that impedes driveway visibility.",
+   "speakers": [
+    "Denis MacDougall",
+    "Scott Vandewalle",
+    "Mike Caldera",
+    "Lisa DeFabritiis",
+    "Andre LaRue",
+    "Skyke Rodriguez",
+    "Wayne Amigo",
+    "Len Amigo",
+    "Jennifer Schnabel",
+    "Fred Schnabel"
+   ]
+  },
+  {
+   "title": "86 Orchard Street",
+   "t": 8020,
+   "summary": "Approved a use variance to formalize a property as a three-family dwelling after the applicant provided historical voting and tax records showing the use predated modern zoning laws.",
+   "speakers": [
+    "Denis MacDougall",
+    "Bruce Fitzsimmons",
+    "Andre LaRue",
+    "Scott Vandewalle",
+    "Mike Caldera",
+    "Kevin McLaughlin",
+    "Chris D'Avetta"
+   ]
+  },
+  {
+   "title": "178 Fulton Street",
+   "t": 10125,
+   "summary": "Continued the petition for a front yard curb cut and driveway to allow for professional review by the Department of Public Works and the city traffic engineer. The board requested a more detailed design plan to address concerns regarding sight lines on a steep curve.",
+   "speakers": [
+    "Denis MacDougall",
+    "Henry Rappa",
+    "Andre LaRue",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Yvette Velez",
+    "Alicia Hunt",
+    "Chris D'Avetta"
+   ]
+  },
+  {
+   "title": "52 Garfield Avenue",
+   "t": 12462,
+   "summary": "Denied a special permit and associated variances to convert a detached garage into a fourth residential unit. Board members found the proposal lacked a compelling hardship and expressed concern over setting a precedent for converting garages into principal structures in single-family zones.",
+   "speakers": [
+    "Denis MacDougall",
+    "Adam Dash",
+    "Jose Guzman",
+    "Ian McKinnon",
+    "Mike Caldera",
+    "Scott Vandewalle",
+    "Andre LaRue",
+    "Danielle Evans",
+    "Monish Lalani",
+    "Mary Lee",
+    "Yvette Velez"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 78626,
+  "output_tokens": 1113,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

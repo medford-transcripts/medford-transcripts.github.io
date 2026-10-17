@@ -1,0 +1,41 @@
+{
+ "video_id": "MCM00000964",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T15:53:44Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "639d70c4ea16f55f",
+ "subject": "FY25 Budget Update",
+ "overview": "The Medford School Committee held a special remote meeting to appoint non-voting members to the high school building committee and review revenue strategies for the fiscal year 2025 budget.",
+ "items": [
+  {
+   "title": "High School Building Committee Non-Voting Members",
+   "t": 49,
+   "summary": "The committee voted to approve Larry Brown and Philip Santos as non-voting members of the Medford Comprehensive High School Building Committee.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Jenny Graham",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Fiscal Year 2025 Budget Update",
+   "t": 414,
+   "summary": "CFO Gerry McCue presented potential revenue sources and cost-saving measures for the FY25 budget, including program chargebacks, utilization of revolving and capital funds, and expected increases in Chapter 70 state funding.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Marice Edouard-Vincent",
+    "Gerry McCue",
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Erika Reinfeld"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9671,
+  "output_tokens": 259,
+  "model_version": "gemini-3.6-flash"
+ }
+}

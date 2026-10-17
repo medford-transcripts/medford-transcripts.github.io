@@ -1,0 +1,113 @@
+{
+ "video_id": "kCdGHg1OaMo",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T15:54:15Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "affeea5b209152ac",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals met to consider several dimensional variances and special permit applications, approving proposals for 100 Dartmouth Street, 76 Greenleaf Avenue, and 640 Boston Avenue while denying a variance for 289 Fellsway West. The board also approved previous meeting minutes and granted a continuance for 77 Shepard Road.",
+ "items": [
+  {
+   "title": "289 Fellsway West Variance (Deliberation and Vote)",
+   "t": 0,
+   "summary": "The board deliberated on a variance petition to convert a single-family residence into a two-family home at 289 Fellsway West and voted to deny the request.",
+   "speakers": [
+    "Chris D'Aveta",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Denis MacDougall",
+    "Edmond DeMori",
+    "Adam Hurtubise",
+    "Mary Lee",
+    "Jim Tarani"
+   ]
+  },
+  {
+   "title": "100 Dartmouth Street Garage Variance",
+   "t": 1003,
+   "summary": "The board approved a variance allowing the construction of a two-car garage within the required front yard setback on Wellesley Street.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Christopher Dedic",
+    "Jim Tarani",
+    "Andre Leroux",
+    "Yvette Velez",
+    "Mary Lee",
+    "Chris D'Aveta"
+   ]
+  },
+  {
+   "title": "76 Greenleaf Avenue Special Permit",
+   "t": 2230,
+   "summary": "The board granted a special permit for an accessory home occupation to operate a massage therapy service at 76 Greenleaf Avenue, subject to operating hour conditions.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Russell Robar",
+    "Andre Leroux",
+    "Yvette Velez",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Approval of Minutes",
+   "t": 3874,
+   "summary": "The board discussed potential AI-generated meeting minute formats and voted to approve the meeting minutes for March 27.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "77 Shepard Road Continuance Request",
+   "t": 4854,
+   "summary": "The board granted the applicant's request to continue the variance hearing for a hot tub setback at 77 Shepard Road to April 24.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "640 Boston Avenue Variance Amendment",
+   "t": 4991,
+   "summary": "The board approved an amendment to a prior variance condition, allowing ground-floor retail space at 640 Boston Avenue to be converted into a one-bedroom apartment.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Anne Vigorito",
+    "Paul Spivak",
+    "Eric Weyant",
+    "Shirene Cousins",
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "Mary Lee"
+   ]
+  },
+  {
+   "title": "289 Fellsway West Variance Presentation",
+   "t": 7532,
+   "summary": "The applicant presented a request for lot area and lot width variances to convert an existing single-family structure at 289 Fellsway West into a two-family dwelling.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Edmond DeMori",
+    "Chris D'Aveta",
+    "Mary Lee",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 41951,
+  "output_tokens": 974,
+  "model_version": "gemini-3.6-flash"
+ }
+}
