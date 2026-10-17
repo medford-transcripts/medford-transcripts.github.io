@@ -1,0 +1,50 @@
+{
+ "video_id": "x9FCCbALahQ",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T09:08:20Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f68d3673e803ffc5",
+ "subject": "Proposition 2½ and Municipal Property Taxes",
+ "overview": "City Councilor Matt Leming delivered an informational presentation explaining how Massachusetts Proposition 2½ caps municipal property tax growth below the rate of inflation, leading to local budgetary challenges. He detailed the mechanics of property assessments, how potential ballot overrides work, and specific cost pressures facing Medford.",
+ "items": [
+  {
+   "title": "Proposition 2½ Mechanics and Inflationary Impacts",
+   "t": 1,
+   "summary": "Matt Leming explained that Proposition 2½ caps municipal property tax revenue increases at 2.5 percent annually barring new growth, causing city budgets to lose value over time relative to inflation.",
+   "speakers": [
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Proposition 2½ Overrides and School Budget Deficit",
+   "t": 372,
+   "summary": "Leming discussed how voter-approved overrides allow municipalities to exceed tax levy limits, noting Medford's projected six million dollar school shortfall and the likelihood of a future override request.",
+   "speakers": [
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Property Tax Calculations and Reassessments",
+   "t": 520,
+   "summary": "Leming clarified that the 2.5 percent cap applies to the city's overall tax levy rather than individual tax bills, which can jump sharply when properties are reassessed at higher values.",
+   "speakers": [
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Override Cost Estimation and Municipal Budget Pressures",
+   "t": 782,
+   "summary": "Leming provided a formula for estimating household costs under a hypothetical override and reviewed budget pressures affecting city operations, including rising employee health insurance costs and weather-related road deterioration.",
+   "speakers": [
+    "Matt Leming"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5364,
+  "output_tokens": 446,
+  "model_version": "gemini-3.8-flash"
+ }
+}
