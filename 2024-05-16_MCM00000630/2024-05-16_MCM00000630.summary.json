@@ -1,0 +1,40 @@
+{
+ "video_id": "MCM00000630",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T10:07:25Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "82ef46594ad186cd",
+ "subject": "",
+ "overview": "The Financial Procedures Subcommittee reviewed administrative feedback regarding charter requirements for a joint annual budget meeting and discussed research on city council budgetary powers. The subcommittee agreed to soften budget meeting requirements and propose that a future charter review study municipal budgeting practices in greater depth.",
+ "items": [
+  {
+   "title": "Article 6 Annual Budget Meeting Requirements",
+   "t": 27,
+   "summary": "Following feedback from the administration regarding conflicts with the existing budget ordinance, members agreed to recommend removing specific forecast requirements from Article 6 to keep the proposed joint budget meeting among the mayor, city council, and school committee more general and flexible.",
+   "speakers": [
+    "Milva McDonald",
+    "Jean Zotter",
+    "Maury Carroll",
+    "Eunice Browne"
+   ]
+  },
+  {
+   "title": "Research on Legislative Budgetary Powers",
+   "t": 1194,
+   "summary": "Jean Zotter presented research on municipal councils' authority to increase budget lines and on participatory budgeting practices, and the subcommittee decided to draft a recommendation that a future charter review committee reexamine these budgeting models rather than proposing an exception to state law now.",
+   "speakers": [
+    "Jean Zotter",
+    "Milva McDonald",
+    "Maury Carroll",
+    "Eunice Browne"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12915,
+  "output_tokens": 294,
+  "model_version": "gemini-3.8-flash"
+ }
+}
