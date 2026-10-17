@@ -1,31 +1,40 @@
 {
  "committee": "CC Resident Services and Public Engagement Committee",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-11T08:11:24Z",
- "sources_sha": "4fd16fea587e045e",
- "n_meetings": 18,
+ "generated_at": "2026-10-17T11:06:19Z",
+ "sources_sha": "3e16fe413c73c8ff",
+ "n_meetings": 23,
  "period_style": "term",
  "span": [
-  "2024-11-19",
+  "2024-05-15",
   "2026-10-07"
  ],
- "overview": "The Resident Services and Public Engagement Committee manages the City Council's communication strategies and public outreach initiatives to improve resident access to municipal government. Its work consistently centers on the production of a regular council newsletter and the facilitation of direct engagement through listening sessions and neighborhood meetings. Over the 2024-2025 and 2026-2027 terms, the committee has also reviewed major ordinance updates regarding human rights, immigration policy, and noise regulations. At its most recent meetings, the committee has focused on executing a city-wide tour of neighborhood ward meetings and auditing the city website for accessibility and accuracy.",
+ "overview": "The CC Resident Services and Public Engagement Committee is a subcommittee of the Medford City Council tasked with public outreach, council communication, civic education, and reviewing municipal service policies. The committee met 23 times in the archive between May 15, 2024 and October 7, 2026. Over this span, the committee regularly edited and authorized the City Council newsletter, organized constituent listening sessions, and reviewed municipal policy measures such as veteran housing incentives, human rights ordinances, and budget feedback surveys. As of the October 7, 2026 meeting, the committee is active in executing a schedule of neighborhood ward meetings, drafting updates to the city's noise ordinance, evaluating city website accessibility, and maintaining the council newsletter workflow.",
  "threads": [
   {
    "name": "City Council Newsletter",
    "status": "ongoing",
-   "summary": "The committee maintains a recurring process for drafting, editing, and approving the City Council newsletter to summarize legislative actions for the public. Initially, drafts were approved meeting-by-meeting with specific content updates on items like tax deferrals or school solar projects. By early 2026, the committee shifted to a monthly rotation where individual councilors author the draft, and later proposed a resolution to approve the newsletter independently of the full council.",
+   "summary": "The committee regularly drafts, edits, and approves monthly and quarterly updates summarizing City Council resolutions, meetings, and public notices (M02#2, M04#1, M16#1). Throughout the 2024-2025 term, members refined newsletter content to maintain neutral tone, highlight legislative accomplishments, and include links to municipal boards (M02#2, M07#2, M12#1). In 2026, the committee implemented a rotating schedule assigning individual councilors to author upcoming monthly editions (M18#1, M21#2). At the October 2026 meeting, the committee considered a resolution allowing direct approval and distribution of newsletters without requiring full City Council referral (M23#1).",
    "citations": [
     {
-     "video_id": "7gllzJBT7FA",
-     "t": 2041,
-     "date": "2024-11-19",
-     "base": "2024-11-20_7gllzJBT7FA",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 11-19-24",
-     "title": "City Council newsletter",
-     "label": "M01#2"
+     "video_id": "4ZHb2ZhCwFo",
+     "t": 779,
+     "date": "2024-05-22",
+     "base": "2024-06-01_4ZHb2ZhCwFo",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 05-22-24",
+     "title": "Paper 24-354: City Council Newsletter",
+     "label": "M02#2"
+    },
+    {
+     "video_id": "KYii5qaeea0",
+     "t": 80,
+     "date": "2024-09-24",
+     "base": "2024-09-25_KYii5qaeea0",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 09-24-24",
+     "title": "Resolution to publish a City Council newsletter",
+     "label": "M04#1"
     },
     {
      "video_id": "Hrp8GfomyDk",
@@ -34,7 +43,16 @@
      "base": "2024-12-11_Hrp8GfomyDk",
      "meeting_title": "City Council Resident Services and Public Engagement 12-10-24",
      "title": "City Council Newsletter",
-     "label": "M02#2"
+     "label": "M07#2"
+    },
+    {
+     "video_id": "nSVrs1f-rd8",
+     "t": 772,
+     "date": "2025-05-04",
+     "base": "2025-06-04_nSVrs1f-rd8",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 05-04-25",
+     "title": "May Council Newsletter",
+     "label": "M12#1"
     },
     {
      "video_id": "FO9h-BfJzLU",
@@ -43,7 +61,7 @@
      "base": "2025-12-10_FO9h-BfJzLU",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 12-10-25",
      "title": "Medford City Council Newsletter Draft",
-     "label": "M11#1"
+     "label": "M16#1"
     },
     {
      "video_id": "9hCExE11hSk",
@@ -52,7 +70,7 @@
      "base": "2026-04-14_9hCExE11hSk",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 04-14-26",
      "title": "City Council Newsletter",
-     "label": "M13#1"
+     "label": "M18#1"
     },
     {
      "video_id": "kLjqyRQ8eNw",
@@ -61,7 +79,7 @@
      "base": "2026-08-06_kLjqyRQ8eNw",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 08-05-26",
      "title": "Newsletter Production Schedule",
-     "label": "M16#2"
+     "label": "M21#2"
     },
     {
      "video_id": "ECBPYXk9YgU",
@@ -70,15 +88,24 @@
      "base": "2026-10-07_ECBPYXk9YgU",
      "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
      "title": "City Council Newsletter",
-     "label": "M18#1"
+     "label": "M23#1"
     }
    ]
   },
   {
-   "name": "Neighborhood Ward Meetings and Outreach",
+   "name": "Community Listening Sessions and Ward Meetings",
    "status": "ongoing",
-   "summary": "Beginning with informal listening sessions at the Senior Center and public library, the committee worked to reach residents who do not traditionally attend council meetings. This effort evolved into a formal plan to hold hybrid meetings in each of the city's eight wards over a two-year period to discuss local concerns. As of late 2026, the committee is coordinating the schedule for these meetings through February 2027, following an inaugural session in Ward 1.",
+   "summary": "In May 2024, the committee initiated plans for public listening sessions targeting diverse demographic groups across Medford (M01#2, M06#3). Sessions held at local venues like the Senior Center yielded resident feedback on roads, housing, and navigating municipal contact information (M09#2, M12#3, M15#2). In 2026, the committee expanded this format into a structured strategy to hold hybrid neighborhood meetings across all eight city wards (M17#3, M18#2, M21#3). Following the inaugural Ward 1 meeting in September 2026, the committee finalized a schedule extending remaining ward meetings into early 2027 (M23#2).",
    "citations": [
+    {
+     "video_id": "kB9FUBQF7vM",
+     "t": 416,
+     "date": "2024-05-15",
+     "base": "2024-06-01_kB9FUBQF7vM",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 05-15-24",
+     "title": "Listening session format and group assignments",
+     "label": "M01#2"
+    },
     {
      "video_id": "7gllzJBT7FA",
      "t": 2318,
@@ -86,7 +113,7 @@
      "base": "2024-11-20_7gllzJBT7FA",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 11-19-24",
      "title": "City Council listening sessions update",
-     "label": "M01#3"
+     "label": "M06#3"
     },
     {
      "video_id": "T5xuIZg2Iek",
@@ -95,7 +122,7 @@
      "base": "2025-03-06_T5xuIZg2Iek",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 03-05-25",
      "title": "Senior Center Listening Session Reports",
-     "label": "M04#2"
+     "label": "M09#2"
     },
     {
      "video_id": "nSVrs1f-rd8",
@@ -104,7 +131,16 @@
      "base": "2025-06-04_nSVrs1f-rd8",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 05-04-25",
      "title": "Listening Session Update",
-     "label": "M07#3"
+     "label": "M12#3"
+    },
+    {
+     "video_id": "F1G_uayzNSg",
+     "t": 1049,
+     "date": "2025-09-30",
+     "base": "2025-10-01_F1G_uayzNSg",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 9-30-25",
+     "title": "Discussion of Resident Listening Sessions",
+     "label": "M15#2"
     },
     {
      "video_id": "SpqLTwFKFqc",
@@ -113,7 +149,7 @@
      "base": "2026-02-10_SpqLTwFKFqc",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 02-10-26",
      "title": "Resolution to Schedule Neighborhood Ward Meetings",
-     "label": "M12#3"
+     "label": "M17#3"
     },
     {
      "video_id": "9hCExE11hSk",
@@ -122,7 +158,7 @@
      "base": "2026-04-14_9hCExE11hSk",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 04-14-26",
      "title": "Neighborhood Ward Meetings Resolution",
-     "label": "M13#2"
+     "label": "M18#2"
     },
     {
      "video_id": "kLjqyRQ8eNw",
@@ -131,7 +167,7 @@
      "base": "2026-08-06_kLjqyRQ8eNw",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 08-05-26",
      "title": "Neighborhood Ward Meetings Planning",
-     "label": "M16#3"
+     "label": "M21#3"
     },
     {
      "video_id": "ECBPYXk9YgU",
@@ -140,15 +176,24 @@
      "base": "2026-10-07_ECBPYXk9YgU",
      "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
      "title": "Neighborhood Ward Meetings",
-     "label": "M18#2"
+     "label": "M23#2"
     }
    ]
   },
   {
    "name": "Human Rights Commission Modernization",
    "status": "settled",
-   "summary": "The committee reviewed and updated the enabling ordinance for the Human Rights Commission to modernize its operations. Key discussions included membership size, officer roles, and the establishment of member stipends. The final proposal, which set membership at 11 individuals with an annual stipend of $1,250, was referred to the full City Council in May 2025.",
+   "summary": "In October 2024, the committee received an update that a draft Human Rights Commission ordinance was under administrative review by the Mayor and Diversity, Equity, and Inclusion Director (M05#2). In early 2025, members reviewed proposed ordinance revisions covering membership size, officer roles, stipends, and meeting frequency (M09#1, M10#2). In May 2025, the committee approved amendments fixing commission membership at 11 individuals, authorizing a $1,250 annual stipend, and clarifying removal procedures (M13#1). The committee then voted to refer the modernized draft ordinance to the full City Council (M13#1).",
    "citations": [
+    {
+     "video_id": "EOItPyTno-c",
+     "t": 524,
+     "date": "2024-10-22",
+     "base": "2024-10-23_EOItPyTno-c",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 10-22-24",
+     "title": "Human Rights Commission Ordinance Update",
+     "label": "M05#2"
+    },
     {
      "video_id": "T5xuIZg2Iek",
      "t": 1104,
@@ -156,7 +201,7 @@
      "base": "2025-03-06_T5xuIZg2Iek",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 03-05-25",
      "title": "Human Rights Commission Enabling Ordinance",
-     "label": "M04#1"
+     "label": "M09#1"
     },
     {
      "video_id": "zmO5WffK7aY",
@@ -165,7 +210,7 @@
      "base": "2025-04-03_zmO5WffK7aY",
      "meeting_title": "Resident Services and Public Engagement Committee Meeting via Zoom",
      "title": "Human Rights Commission Enabling Ordinance Modernization",
-     "label": "M05#2"
+     "label": "M10#2"
     },
     {
      "video_id": "lGHiIPcdGwg",
@@ -174,48 +219,14 @@
      "base": "2025-05-07_lGHiIPcdGwg",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 05-07-25",
      "title": "Human Rights Commission Modernization Ordinance",
-     "label": "M08#1"
+     "label": "M13#1"
     }
    ]
   },
   {
-   "name": "Noise Ordinance Update",
-   "status": "ongoing",
-   "summary": "In late 2026, the committee began reviewing a proposal to update the city's 1974 noise ordinance, citing challenges with current enforcement. Councilor Tseng presented a draft based on a peer municipality's model that utilizes measurable decibel limits and a non-criminal fine structure. The matter remains in committee pending a public survey and consultation with the police department and local businesses.",
-   "citations": [
-    {
-     "video_id": "kLjqyRQ8eNw",
-     "t": 1723,
-     "date": "2026-08-05",
-     "base": "2026-08-06_kLjqyRQ8eNw",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 08-05-26",
-     "title": "Noise Ordinance Update",
-     "label": "M16#4"
-    },
-    {
-     "video_id": "NP2TS0C8lDU",
-     "t": 792,
-     "date": "2026-09-16",
-     "base": "2026-09-16_NP2TS0C8lDU",
-     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 09/16/26",
-     "title": "Noise Ordinance Update",
-     "label": "M17#3"
-    },
-    {
-     "video_id": "ECBPYXk9YgU",
-     "t": 866,
-     "date": "2026-10-07",
-     "base": "2026-10-07_ECBPYXk9YgU",
-     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
-     "title": "Noise Ordinance Update",
-     "label": "M18#3"
-    }
-   ]
-  },
-  {
-   "name": "FY 2026 Budget Public Engagement",
+   "name": "Municipal Budget Public Engagement",
    "status": "settled",
-   "summary": "To increase transparency in the municipal budget process, the committee developed a public feedback survey. The committee refined the survey to include budget visualizations and demographic questions to better understand resident priorities. Results from 110 respondents identified schools, infrastructure, and housing as primary concerns, and the final report was distributed to the full council in mid-2025.",
+   "summary": "The committee initiated a public engagement plan in April 2025 to collect resident feedback regarding the upcoming FY 2026 municipal budget (M10#3). Members reviewed and amended a public survey to include budget graphics, demographic questions, and preferred outreach channels (M11#1, M13#3). Survey responses gathered input from over 100 residents identifying schools and infrastructure as primary short-term priorities (M12#2, M14#2). The formal survey report was distributed to the full City Council and placed on file in June 2025 (M14#2).",
    "citations": [
     {
      "video_id": "zmO5WffK7aY",
@@ -224,7 +235,7 @@
      "base": "2025-04-03_zmO5WffK7aY",
      "meeting_title": "Resident Services and Public Engagement Committee Meeting via Zoom",
      "title": "FY 2026 Budget Public Engagement Plan",
-     "label": "M05#3"
+     "label": "M10#3"
     },
     {
      "video_id": "D8GJAXbG9Ig",
@@ -233,7 +244,7 @@
      "base": "2025-04-15_D8GJAXbG9Ig",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 04-15-25",
      "title": "Municipal Budget Feedback Survey",
-     "label": "M06#1"
+     "label": "M11#1"
     },
     {
      "video_id": "nSVrs1f-rd8",
@@ -242,7 +253,16 @@
      "base": "2025-06-04_nSVrs1f-rd8",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 05-04-25",
      "title": "FY26 Budget Survey Report",
-     "label": "M07#2"
+     "label": "M12#2"
+    },
+    {
+     "video_id": "lGHiIPcdGwg",
+     "t": 4338,
+     "date": "2025-05-07",
+     "base": "2025-05-07_lGHiIPcdGwg",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 05-07-25",
+     "title": "Municipal Budget Survey Results",
+     "label": "M13#3"
     },
     {
      "video_id": "MCM00001766",
@@ -251,107 +271,57 @@
      "base": "2025-07-03_MCM00001766",
      "meeting_title": "City Council Resident Services And Public Engagement 06-04-25",
      "title": "FY26 Budget Survey Report",
-     "label": "M09#2"
+     "label": "M14#2"
     }
    ]
   },
   {
-   "name": "Welcoming City Ordinance",
+   "name": "Veteran Housing Incentive Program",
    "status": "settled",
-   "summary": "The committee held a public hearing on the Welcoming City Ordinance, which codifies non-cooperation with federal immigration authorities on non-criminal matters. After a period of public comment involving residents and advocacy groups, the committee recommended the ordinance for adoption with minor technical amendments.",
+   "summary": "In May 2024, the Director of Veterans' Services presented a pilot program proposal offering annual stipends to landlords who rent to qualified veterans (M02#1). The committee voted to send the proposal to legal counsel while keeping the paper in committee (M02#1). In November 2024, the committee refined the proposal into a pilot program providing $750 annual rebates to owner-occupant landlords, administered through Housing Families using Veteran Services Office funds (M06#1). The committee then referred the proposal to legal counsel and the full City Council (M06#1).",
    "citations": [
     {
-     "video_id": "Hrp8GfomyDk",
-     "t": 404,
-     "date": "2024-12-10",
-     "base": "2024-12-11_Hrp8GfomyDk",
-     "meeting_title": "City Council Resident Services and Public Engagement 12-10-24",
-     "title": "Welcoming City Ordinance",
+     "video_id": "4ZHb2ZhCwFo",
+     "t": 109,
+     "date": "2024-05-22",
+     "base": "2024-06-01_4ZHb2ZhCwFo",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 05-22-24",
+     "title": "Paper 24-351: Housing Incentives for Veteran Renters",
      "label": "M02#1"
-    }
-   ]
-  },
-  {
-   "name": "City Website Improvements",
-   "status": "ongoing",
-   "summary": "The committee initiated a review of the municipal website, MedfordMass.org, following an audit that highlighted broken links and outdated content. A tiered improvement plan was proposed to address both quick content fixes and long-term structural changes. The committee plans to coordinate further with the IT and Communications departments to implement these accessibility and navigation updates.",
-   "citations": [
-    {
-     "video_id": "ECBPYXk9YgU",
-     "t": 2348,
-     "date": "2026-10-07",
-     "base": "2026-10-07_ECBPYXk9YgU",
-     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
-     "title": "City Website Improvements",
-     "label": "M18#4"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2024-2025 term",
-   "narrative": "During this term, the committee established its core communication tools and handled major legislative referrals including the Welcoming City Ordinance and the modernization of the Human Rights Commission.",
-   "citations": [
+    },
     {
      "video_id": "7gllzJBT7FA",
-     "t": null,
+     "t": 433,
      "date": "2024-11-19",
      "base": "2024-11-20_7gllzJBT7FA",
      "meeting_title": "City Council Resident Services and Public Engagement Committee 11-19-24",
-     "title": "City Council Resident Services and Public Engagement Committee 11-19-24",
-     "label": "M01"
-    },
-    {
-     "video_id": "Hrp8GfomyDk",
-     "t": 404,
-     "date": "2024-12-10",
-     "base": "2024-12-11_Hrp8GfomyDk",
-     "meeting_title": "City Council Resident Services and Public Engagement 12-10-24",
-     "title": "Welcoming City Ordinance",
-     "label": "M02#1"
-    },
-    {
-     "video_id": "lGHiIPcdGwg",
-     "t": 530,
-     "date": "2025-05-07",
-     "base": "2025-05-07_lGHiIPcdGwg",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 05-07-25",
-     "title": "Human Rights Commission Modernization Ordinance",
-     "label": "M08#1"
-    },
-    {
-     "video_id": "FO9h-BfJzLU",
-     "t": null,
-     "date": "2025-12-10",
-     "base": "2025-12-10_FO9h-BfJzLU",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 12-10-25",
-     "title": "City Council Resident Services and Public Engagement Committee 12-10-25",
-     "label": "M11"
+     "title": "Veteran housing incentives",
+     "label": "M06#1"
     }
    ]
   },
   {
-   "period": "2026-2027 term",
-   "narrative": "The committee shifted its focus toward institutionalizing public outreach through a city-wide ward meeting schedule and began technical updates to the city's noise regulations and digital infrastructure.",
+   "name": "Noise Ordinance Update",
+   "status": "ongoing",
+   "summary": "The committee scheduled a initial discussion to revise the city's 1974 noise ordinance in August 2026 (M21#4). In September 2026, members reviewed regulatory models from peer municipalities and discussed enforcement challenges with existing rules (M22#3). A draft ordinance modeled on Somerville's policy was presented in October 2026, introducing measurable decibel limits, a list of 17 defined disturbances, and a non-criminal fine structure (M23#3). The item was kept in committee to allow for a public survey and consultations with local businesses and the police department (M23#3).",
    "citations": [
     {
-     "video_id": "SpqLTwFKFqc",
-     "t": null,
-     "date": "2026-02-10",
-     "base": "2026-02-10_SpqLTwFKFqc",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 02-10-26",
-     "title": "City Council Resident Services and Public Engagement Committee 02-10-26",
-     "label": "M12"
+     "video_id": "kLjqyRQ8eNw",
+     "t": 1723,
+     "date": "2026-08-05",
+     "base": "2026-08-06_kLjqyRQ8eNw",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 08-05-26",
+     "title": "Noise Ordinance Update",
+     "label": "M21#4"
     },
     {
-     "video_id": "9hCExE11hSk",
-     "t": 903,
-     "date": "2026-04-14",
-     "base": "2026-04-14_9hCExE11hSk",
-     "meeting_title": "City Council Resident Services and Public Engagement Committee 04-14-26",
-     "title": "Neighborhood Ward Meetings Resolution",
-     "label": "M13#2"
+     "video_id": "NP2TS0C8lDU",
+     "t": 792,
+     "date": "2026-09-16",
+     "base": "2026-09-16_NP2TS0C8lDU",
+     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 09/16/26",
+     "title": "Noise Ordinance Update",
+     "label": "M22#3"
     },
     {
      "video_id": "ECBPYXk9YgU",
@@ -360,7 +330,32 @@
      "base": "2026-10-07_ECBPYXk9YgU",
      "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
      "title": "Noise Ordinance Update",
-     "label": "M18#3"
+     "label": "M23#3"
+    }
+   ]
+  },
+  {
+   "name": "Resident Procedural Guide and Website Improvements",
+   "status": "ongoing",
+   "summary": "In June 2024, the committee authorized the creation of a resident procedural guide to clarify City Council meeting processes and public comment options (M03#2). After editing terms and speaking guidelines, the committee referred the completed procedural guide to the full City Council in September 2024 (M04#2). In October 2026, the committee shifted focus to digital communication channels by reviewing an audit of the city website detailing broken links and accessibility issues (M23#4). The committee kept the website improvement plan in committee to plan a joint meeting with the IT and Communications departments (M23#4).",
+   "citations": [
+    {
+     "video_id": "RmvL56DRR5k",
+     "t": 1286,
+     "date": "2024-06-26",
+     "base": "2024-06-27_RmvL56DRR5k",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 06-26-24",
+     "title": "Resolution to create a residents guide to City Council's procedures and processes (24-370)",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "KYii5qaeea0",
+     "t": 1685,
+     "date": "2024-09-24",
+     "base": "2024-09-25_KYii5qaeea0",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 09-24-24",
+     "title": "Resolution to create a resident guide to City Council procedures",
+     "label": "M04#2"
     },
     {
      "video_id": "ECBPYXk9YgU",
@@ -369,24 +364,148 @@
      "base": "2026-10-07_ECBPYXk9YgU",
      "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
      "title": "City Website Improvements",
-     "label": "M18#4"
+     "label": "M23#4"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2024-2025 term",
+   "narrative": "During this term, the committee established regular monthly newsletter publication workflows, conducted demographic listening sessions, advanced the Welcoming City and Human Rights Commission ordinances, and executed a public budget engagement survey.",
+   "citations": [
+    {
+     "video_id": "kB9FUBQF7vM",
+     "t": 416,
+     "date": "2024-05-15",
+     "base": "2024-06-01_kB9FUBQF7vM",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 05-15-24",
+     "title": "Listening session format and group assignments",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "KYii5qaeea0",
+     "t": 1685,
+     "date": "2024-09-24",
+     "base": "2024-09-25_KYii5qaeea0",
+     "meeting_title": "City Council Resident Services And Public Engagement Committee 09-24-24",
+     "title": "Resolution to create a resident guide to City Council procedures",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "7gllzJBT7FA",
+     "t": 433,
+     "date": "2024-11-19",
+     "base": "2024-11-20_7gllzJBT7FA",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 11-19-24",
+     "title": "Veteran housing incentives",
+     "label": "M06#1"
+    },
+    {
+     "video_id": "Hrp8GfomyDk",
+     "t": 404,
+     "date": "2024-12-10",
+     "base": "2024-12-11_Hrp8GfomyDk",
+     "meeting_title": "City Council Resident Services and Public Engagement 12-10-24",
+     "title": "Welcoming City Ordinance",
+     "label": "M07#1"
+    },
+    {
+     "video_id": "lGHiIPcdGwg",
+     "t": 530,
+     "date": "2025-05-07",
+     "base": "2025-05-07_lGHiIPcdGwg",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 05-07-25",
+     "title": "Human Rights Commission Modernization Ordinance",
+     "label": "M13#1"
+    },
+    {
+     "video_id": "MCM00001766",
+     "t": 864,
+     "date": "2025-06-04",
+     "base": "2025-07-03_MCM00001766",
+     "meeting_title": "City Council Resident Services And Public Engagement 06-04-25",
+     "title": "FY26 Budget Survey Report",
+     "label": "M14#2"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "During this term, the committee expanded constituent outreach into formal hybrid ward meetings, instituted a monthly newsletter author rotation among councilors, and initiated major policy updates regarding the city noise ordinance and website accessibility.",
+   "citations": [
+    {
+     "video_id": "SpqLTwFKFqc",
+     "t": 1446,
+     "date": "2026-02-10",
+     "base": "2026-02-10_SpqLTwFKFqc",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 02-10-26",
+     "title": "Resolution to Schedule Neighborhood Ward Meetings",
+     "label": "M17#3"
+    },
+    {
+     "video_id": "9hCExE11hSk",
+     "t": 337,
+     "date": "2026-04-14",
+     "base": "2026-04-14_9hCExE11hSk",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 04-14-26",
+     "title": "City Council Newsletter",
+     "label": "M18#1"
+    },
+    {
+     "video_id": "kLjqyRQ8eNw",
+     "t": 1062,
+     "date": "2026-08-05",
+     "base": "2026-08-06_kLjqyRQ8eNw",
+     "meeting_title": "City Council Resident Services and Public Engagement Committee 08-05-26",
+     "title": "Newsletter Production Schedule",
+     "label": "M21#2"
+    },
+    {
+     "video_id": "NP2TS0C8lDU",
+     "t": 792,
+     "date": "2026-09-16",
+     "base": "2026-09-16_NP2TS0C8lDU",
+     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 09/16/26",
+     "title": "Noise Ordinance Update",
+     "label": "M22#3"
+    },
+    {
+     "video_id": "ECBPYXk9YgU",
+     "t": 866,
+     "date": "2026-10-07",
+     "base": "2026-10-07_ECBPYXk9YgU",
+     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
+     "title": "Noise Ordinance Update",
+     "label": "M23#3"
+    },
+    {
+     "video_id": "ECBPYXk9YgU",
+     "t": 2348,
+     "date": "2026-10-07",
+     "base": "2026-10-07_ECBPYXk9YgU",
+     "meeting_title": "Medford City Council Resident Services & Public Engagement Comm 10/07/26",
+     "title": "City Website Improvements",
+     "label": "M23#4"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 33,
-  "meetings_cited": 14,
-  "of_meetings": 18,
-  "max_share": 0.182,
+  "citations": 46,
+  "meetings_cited": 20,
+  "of_meetings": 23,
+  "max_share": 0.13,
+  "even_share": 0.0435,
+  "concentration_ratio": 2.99,
   "most_cited": "ECBPYXk9YgU",
   "periods_covered": 2,
   "of_periods": 2
  },
  "usage": {
-  "input_tokens": 4522,
-  "output_tokens": 1298,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 5475,
+  "output_tokens": 1913,
+  "model_version": "gemini-3.6-flash"
  }
 }

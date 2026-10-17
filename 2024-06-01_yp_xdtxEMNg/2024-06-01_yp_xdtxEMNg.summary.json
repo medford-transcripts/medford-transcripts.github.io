@@ -1,0 +1,53 @@
+{
+ "video_id": "yp_xdtxEMNg",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T11:10:59Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "d76dc22c4746869a",
+ "subject": "Fiscal Year 2025 Preliminary Budget Hearings",
+ "overview": "The committee conducted its fifth preliminary budget hearing to review fiscal year 2025 requests for the library and police departments. Discussions focused on staffing restorations, technology infrastructure costs, and the expansion of community services like mental health crisis response.",
+ "items": [
+  {
+   "title": "Library Department Budget Review",
+   "t": 45,
+   "summary": "The committee reviewed the proposed $2.24 million library budget, which includes a $1 per hour raise for part-time staff and increased data processing costs for the new building's technology. Director Kerr highlighted the success of new ESOL classes and the heavy use of the facility’s study and community rooms.",
+   "speakers": [
+    "Zac Bears",
+    "Barbara Kerr",
+    "Anna Callahan",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Police Department Budget Review",
+   "t": 1014,
+   "summary": "Chief Buckley presented a $14.78 million budget that restores several positions cut in previous years and funds the pursuit of state accreditation for the department. The proposal includes funding for the behavioral support unit's three clinicians and accounts for increased legal fees related to firearms licensing litigation.",
+   "speakers": [
+    "Zac Bears",
+    "Jack Buckley",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Anna Callahan",
+    "Kit Collins",
+    "Joe Gagliardi"
+   ]
+  },
+  {
+   "title": "Traffic Supervisors and Commission Budget Review",
+   "t": 2832,
+   "summary": "The committee reviewed minor budget increases for traffic supervisors and the Traffic Commission to cover contractual raises and the rising cost of signage materials. Chief Buckley noted that the Traffic Commission has seen high demand for signage and safety infrastructure requests.",
+   "speakers": [
+    "Zac Bears",
+    "Jack Buckley",
+    "Kit Collins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19217,
+  "output_tokens": 427,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
