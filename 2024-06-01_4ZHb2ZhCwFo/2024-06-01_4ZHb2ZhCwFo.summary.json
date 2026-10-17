@@ -1,0 +1,43 @@
+{
+ "video_id": "4ZHb2ZhCwFo",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T07:07:15Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7738f803f0bafa0b",
+ "subject": "",
+ "overview": "The committee considered a proposed incentive program for landlords renting to veterans and reviewed the draft City Council newsletter. Members voted to send the veteran incentive proposal to legal counsel for review and approved the newsletter draft as amended.",
+ "items": [
+  {
+   "title": "Paper 24-351: Housing Incentives for Veteran Renters",
+   "t": 109,
+   "summary": "Director of Veterans' Services Veronica Shaw presented a pilot initiative to offer a $500 annual stipend to landlords who rent to qualified veterans; the committee voted to refer the proposal to legal counsel for review and keep the paper in committee.",
+   "speakers": [
+    "Matt Leming",
+    "Frances Nwajei",
+    "Veronica Shaw",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Paper 24-354: City Council Newsletter",
+   "t": 779,
+   "summary": "The committee reviewed draft language for the upcoming City Council newsletter, making edits to ensure neutral phrasing before voting to approve the newsletter as amended and retain the paper in committee.",
+   "speakers": [
+    "Matt Leming",
+    "Anna Callahan",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10016,
+  "output_tokens": 329,
+  "model_version": "gemini-3.8-flash"
+ }
+}
