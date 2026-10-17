@@ -1,0 +1,87 @@
+{
+ "video_id": "0Eph4NzrdME",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T21:44:20Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c4cd3bfe470405aa",
+ "subject": "Preliminary FY25 Budget Overview",
+ "overview": "The Committee of the Whole held a preliminary fiscal year 2025 budget hearing featuring an overview from the finance director and initial reviews of the finance, city clerk, and city council budgets. The council approved requests for past new growth data, an update on potential FY24 department shortfalls, and an internal line-item transfer within the legislative budget.",
+ "items": [
+  {
+   "title": "Call to order and meeting purpose",
+   "t": 0,
+   "summary": "President Bears called the Committee of the Whole to order to review paper 24-045 concerning the preliminary FY25 budget process.",
+   "speakers": [
+    "Zac Bears",
+    "Adam Hurtubise",
+    "Anna Callahan",
+    "Kit Collins",
+    "Emily Lazzaro",
+    "Matt Leming",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "FY25 general fund budget overview and financial update",
+   "t": 90,
+   "summary": "Finance Director Bob Dickinson presented the FY25 revenue estimates and budget pressures, outlining approximately $188.59 million available for the general fund alongside rising fixed costs for group health insurance, pensions, and contractual wage increases.",
+   "speakers": [
+    "Bob Dickinson",
+    "Anna Callahan",
+    "Zac Bears",
+    "Emily Lazzaro",
+    "George Scarpelli",
+    "Matt Leming",
+    "Nina Nazarian",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Department budget review: Finance and procurement",
+   "t": 4328,
+   "summary": "Finance Director Dickinson reviewed the $859,901 proposed finance and procurement budget, noting ongoing work to issue an RFP for consolidated financial software and finalize the FY23 annual comprehensive financial report.",
+   "speakers": [
+    "Zac Bears",
+    "Bob Dickinson",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Department budget review: City clerk",
+   "t": 5310,
+   "summary": "City Clerk Hurtubise presented a proposed budget of $404,133, noting it is largely level-funded with increases driven primarily by contractual salary adjustments.",
+   "speakers": [
+    "Zac Bears",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Department budget review: Legislative (City Council)",
+   "t": 5571,
+   "summary": "President Bears presented the $312,689 legislative budget, which remains flat compared to the previous year, and requested a $1,800 internal line-item transfer to accommodate higher pay for the videographer.",
+   "speakers": [
+    "Zac Bears",
+    "Anna Callahan",
+    "George Scarpelli",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Council motions on budget requests and transfer",
+   "t": 5863,
+   "summary": "The council approved a package of motions requesting three years of projected versus actual new growth figures, an update on any projected FY24 department budget deficits, and the $1,800 transfer within the legislative budget.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 30141,
+  "output_tokens": 680,
+  "model_version": "gemini-3.8-flash"
+ }
+}

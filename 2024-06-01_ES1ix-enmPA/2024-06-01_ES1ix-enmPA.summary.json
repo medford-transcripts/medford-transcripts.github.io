@@ -1,0 +1,42 @@
+{
+ "video_id": "ES1ix-enmPA",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T21:45:22Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3c925075d57c6fee",
+ "subject": "City Council Newsletter",
+ "overview": "The committee approved the initial draft and rotation schedule for a monthly City Council newsletter and created a subcommittee to plan community listening sessions.",
+ "items": [
+  {
+   "title": "Modernizing Council Communications and Outreach Strategy",
+   "t": 26,
+   "summary": "The committee approved an edited draft and drafting schedule for a City Council newsletter and voted to consult with the Diversity, Equity, and Inclusion director on distribution methods, over concerns from Councilor Scarpelli that outreach plans for underserved residents were not sufficiently developed.",
+   "speakers": [
+    "Matt Leming",
+    "Anna Callahan",
+    "Zac Bears",
+    "Kit Collins",
+    "Emily Lazzaro",
+    "George Scarpelli",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Establishment of City Council Listening Sessions",
+   "t": 2413,
+   "summary": "Approved a motion to establish a subcommittee composed of Councilors Callahan, Tseng, and Leming to plan monthly community listening sessions targeting various civic and student groups.",
+   "speakers": [
+    "Matt Leming",
+    "Anna Callahan",
+    "Emily Lazzaro"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15162,
+  "output_tokens": 295,
+  "model_version": "gemini-3.8-flash"
+ }
+}
