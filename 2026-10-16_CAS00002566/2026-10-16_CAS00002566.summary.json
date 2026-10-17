@@ -1,0 +1,40 @@
+{
+ "video_id": "CAS00002566",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T03:07:43Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "94fb599b14d6dd0b",
+ "subject": "",
+ "overview": "The Curriculum and Instruction Subcommittee met to review the district's assessment landscape and discuss Medford's readiness for new state high school graduation frameworks. The subcommittee received presentations from district administration and took no formal votes.",
+ "items": [
+  {
+   "title": "Assessment Landscape Report",
+   "t": 68,
+   "summary": "Assistant Superintendent Dr. Kim Talbot presented an overview of state, district, classroom, and optional assessment tools, emphasizing that testing is used to inform grade-level instruction rather than drive test preparation.",
+   "speakers": [
+    "Erika Reinfeld",
+    "Kim Talbot",
+    "Jessica Parks",
+    "Aaron Olapade"
+   ]
+  },
+  {
+   "title": "Graduation Frameworks Update",
+   "t": 2985,
+   "summary": "Dr. Talbot presented an update on the state's proposed high school graduation requirements following the elimination of MCAS as a graduation requirement, reviewing Medford's readiness across required coursework, assessments, and post-secondary planning pillars.",
+   "speakers": [
+    "Erika Reinfeld",
+    "Kim Talbot",
+    "Aaron Olapade",
+    "Jessica Parks"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24615,
+  "output_tokens": 288,
+  "model_version": "gemini-3.6-flash"
+ }
+}
