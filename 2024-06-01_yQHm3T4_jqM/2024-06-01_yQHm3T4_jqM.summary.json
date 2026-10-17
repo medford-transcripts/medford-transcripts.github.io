@@ -1,0 +1,56 @@
+{
+ "video_id": "yQHm3T4_jqM",
+ "provider": "gemini",
+ "generated_at": "2026-10-17T12:10:50Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "2d2677817f1743cb",
+ "subject": "Human Rights Commission Ordinance Modernization",
+ "overview": "The committee approved a new social media policy for the City Council and scheduled an inaugural public listening session. Members also began reviewing a comprehensive proposal to restructure the Human Rights Commission and broaden its mandate.",
+ "items": [
+  {
+   "title": "Resolution 24-015: Social Media Policy",
+   "t": 18,
+   "summary": "Approved a draft social media policy for the City Council and referred it favorably out of committee. The committee discussed but ultimately declined a proposed amendment regarding quorum restrictions on social media threads to avoid potential Open Meeting Law misinterpretations.",
+   "speakers": [
+    "Matt Leming",
+    "Emily Lazzaro",
+    "Anna Callahan",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Resolution 24-069: Human Rights Commission Ordinance Modernization",
+   "t": 557,
+   "summary": "Reviewed a proposal to update the Human Rights Commission ordinance to address recruitment difficulties, quorum issues, and outdated language focusing exclusively on housing discrimination. The committee voted to request formal feedback on the draft from commission members, city staff, and legal counsel before further deliberation.",
+   "speakers": [
+    "Justin Tseng",
+    "George Scarpelli",
+    "Anna Callahan",
+    "Jennifer Yanko",
+    "Munir Jirmanus",
+    "David Harris",
+    "Matthew Page-Lieberman"
+   ]
+  },
+  {
+   "title": "Resolution 24-073: City Council Listening Sessions",
+   "t": 2318,
+   "summary": "Scheduled the first City Council listening session for May 31st at the Senior Center and authorized the chair to appoint one or two councilors per session based on availability. The committee debated the logistical structure to ensure attendance remains below a quorum to comply with Open Meeting Law.",
+   "speakers": [
+    "Matt Leming",
+    "Emily Lazzaro",
+    "Justin Tseng",
+    "Anna Callahan",
+    "George Scarpelli",
+    "Matthew Page-Lieberman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16383,
+  "output_tokens": 498,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
