@@ -1,0 +1,78 @@
+{
+ "video_id": "MCM00000648",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T09:10:54Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "62c6aac0aa134093",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals reviewed four applications, granting variances for a mixed-use development on Salem Street and a residential fence, while continuing applications for used car sales on Harvard Avenue and a single-family home on Windsor Road.",
+ "items": [
+  {
+   "title": "290 Salem Street",
+   "t": 65,
+   "summary": "Approved variances for insufficient front and side yard setbacks, lot coverage, lot area, and residential density to allow construction of a seven-unit mixed-use residential building with ground-floor commercial space.",
+   "speakers": [
+    "Denis MacDougall",
+    "Adam Barnosky",
+    "Jacob Levine",
+    "Jim Torani",
+    "Chris D'Aveta",
+    "Yvette Velez",
+    "Mary Lee",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "121 Third Street (Winthrop Street fence)",
+   "t": 1459,
+   "summary": "Approved a variance permitting a four-foot fence along the sidewalk, subject to the condition that the corner at the intersection be blunted back at least eight feet in both directions for vehicle visibility.",
+   "speakers": [
+    "Denis MacDougall",
+    "Scott Vandewalle",
+    "Yvette Velez",
+    "Danielle Evans",
+    "Jim Torani",
+    "Mary Lee",
+    "Alicia Hunt",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "38 Harvard Avenue",
+   "t": 3156,
+   "summary": "Continued to April 25, 2024, an application to permit Class 2 used motor vehicle sales at an existing repair shop in order to consult with KP Law regarding discrepancies between the advertised variance notice and relief sought as a pre-existing non-conforming use finding.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Scott Vandewalle",
+    "Alicia Hunt",
+    "Mary Lee",
+    "Jim Torani",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "0 Windsor Road",
+   "t": 4920,
+   "summary": "Continued to April 25, 2024, an application for dimensional variances to build a single-family house on a vacant corner lot after staff raised the merger doctrine regarding common ownership of the adjacent two-family parcel.",
+   "speakers": [
+    "Denis MacDougall",
+    "Adam Barnosky",
+    "Scott Vandewalle",
+    "Tim Harrington",
+    "Yvette Velez",
+    "Chris D'Aveta",
+    "Danielle Evans",
+    "Jim Torani",
+    "Jamie Thompson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 34501,
+  "output_tokens": 572,
+  "model_version": "gemini-3.8-flash"
+ }
+}
