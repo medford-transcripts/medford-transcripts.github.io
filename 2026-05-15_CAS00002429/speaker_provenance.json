@@ -1,0 +1,74 @@
+{
+    "SPEAKER_00": {
+        "value": "MCM00001828_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.9052703417441809,
+        "from": "CAS00002466_SPEAKER_08",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "CAS00002479_SPEAKER_06",
+        "source": "embedding_match",
+        "score": 0.8336831536916645,
+        "from": "CAS00002479_SPEAKER_06",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9119668921157983,
+        "from": "MCM00001807_SPEAKER_01",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Roberta Cameron",
+        "source": "embedding_match",
+        "score": 0.953209016312161,
+        "from": "CAS00002559_SPEAKER_06",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_07": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.9745490684505396,
+        "from": "MCM00001810_SPEAKER_05",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "Lauretta James",
+        "source": "embedding_match",
+        "score": 0.9358175338869477,
+        "from": "MCM00001610_SPEAKER_10",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_08"
+    },
+    "SPEAKER_09": {
+        "value": "Peter Miller",
+        "source": "embedding_match",
+        "score": 0.9111244004840587,
+        "from": "CAS00002466_SPEAKER_00",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_09"
+    },
+    "SPEAKER_10": {
+        "value": "CAS00002479_SPEAKER_07",
+        "source": "embedding_match",
+        "score": 0.8949337784152086,
+        "from": "CAS00002479_SPEAKER_07",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_10"
+    },
+    "SPEAKER_11": {
+        "value": "MCM00001828_SPEAKER_03",
+        "source": "embedding_match",
+        "score": 0.9645913452873885,
+        "from": "MCM00001828_SPEAKER_03",
+        "at": "2026-10-18T14:09:46Z",
+        "previous": "SPEAKER_11"
+    }
+}
