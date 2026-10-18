@@ -1,0 +1,63 @@
+{
+ "video_id": "vNvoSx4t4hk",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T07:07:27Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5cdd8fca04104aea",
+ "subject": "National Poetry Month Words and Music",
+ "overview": "The West Medford Community Center hosted its First Fridays Words and Music program celebrating National Poetry Month. Former Medford Poet Laureate Terry E. Carter led readings and discussions with poets laureate C.D. Collins and Vijaya Sundaram, followed by a spoken word and jazz set performed with pianist Jonathan Fagan.",
+ "items": [
+  {
+   "title": "Welcome and Poet Introductions",
+   "t": 396,
+   "summary": "Terry E. Carter opened the event for National Poetry Month, recited an original poem, and introduced guest poets C.D. Collins and Vijaya Sundaram.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Discussion and Poetry Readings with Collins and Sundaram",
+   "t": 998,
+   "summary": "Collins and Sundaram recounted their personal backgrounds, discussed their roles as local poets laureate, and performed readings from their work.",
+   "speakers": [
+    "Terry Carter",
+    "C.D. Collins",
+    "Vijaya Sundaram"
+   ]
+  },
+  {
+   "title": "Audience and Young Writers Discussion",
+   "t": 2381,
+   "summary": "The panel discussed guidance for younger generations, the writing process, and the literary communities in Malden and Medford alongside additional poem readings.",
+   "speakers": [
+    "Terry Carter",
+    "C.D. Collins",
+    "Vijaya Sundaram"
+   ]
+  },
+  {
+   "title": "Community Center Announcements",
+   "t": 4097,
+   "summary": "Carter highlighted upcoming events including the legislative breakfast forum, the Hoops and Hope fundraiser, the Black Veterans Project, and a Black Maternal Health seminar.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical and Spoken Word Performance by The Ally Project",
+   "t": 4296,
+   "summary": "Carter performed spoken word poetry accompanied by pianist Jonathan Fagan, concluding the program with selections exploring neighborhood history, gentrification, and jazz.",
+   "speakers": [
+    "Terry Carter",
+    "Jonathan Fagan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33274,
+  "output_tokens": 444,
+  "model_version": "gemini-3.8-flash"
+ }
+}
