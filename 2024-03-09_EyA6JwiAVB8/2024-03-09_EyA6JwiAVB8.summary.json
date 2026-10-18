@@ -1,0 +1,52 @@
+{
+ "video_id": "EyA6JwiAVB8",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T17:09:03Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c9904fa715019f3f",
+ "subject": "",
+ "overview": "The West Medford Community Center hosted its First Fridays Words and Music program in celebration of Women's History Month. The event featured an interview with trailblazing Pan American flight attendant Dr. Sheila E. Nutt, a musical performance and talk by cellist and conductor Marshaunda Smith, and community center announcements.",
+ "items": [
+  {
+   "title": "Welcome and Opening Poetry",
+   "t": 342,
+   "summary": "Terry Carter welcomed attendees to the Women's History Month edition of Words and Music and recited his original poem, 'Song of the Blackbirds.'",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Interview with Dr. Sheila E. Nutt",
+   "t": 806,
+   "summary": "Dr. Sheila E. Nutt discussed breaking barriers as one of Pan American World Airways' first Black flight attendants in 1970, navigating racial discrimination, her later educational career, and her efforts to document the history of the Pan Am Blackbirds.",
+   "speakers": [
+    "Terry Carter",
+    "Dr. Sheila E. Nutt"
+   ]
+  },
+  {
+   "title": "Performance and Remarks by Marshaunda Smith",
+   "t": 3782,
+   "summary": "Following Carter's reading of 'Brown Girl at the Cello,' conductor and cellist Marshaunda Smith reflected on her musical journey, conducting the Lowell Philharmonic, and the Waldorf education movement while performing selections by Daniel Delaney, Charles Turner, and Tom Fabonio.",
+   "speakers": [
+    "Terry Carter",
+    "Marshaunda Smith"
+   ]
+  },
+  {
+   "title": "Community Center Announcements and Closing",
+   "t": 7232,
+   "summary": "Carter highlighted upcoming events, including an afternoon tea fundraiser, an Alzheimer's health forum, weekly senior lunch programs, and the April legislative forum.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29560,
+  "output_tokens": 441,
+  "model_version": "gemini-3.8-flash"
+ }
+}
