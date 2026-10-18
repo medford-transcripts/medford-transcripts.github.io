@@ -1,0 +1,58 @@
+{
+ "video_id": "MCM00001234",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T01:06:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8855b6e2e052abcc",
+ "subject": "25 Salem Street LLC License Application",
+ "overview": "The Medford Liquor License Commission conditionally approved a new all-alcohol restaurant license for 25 Salem Street LLC pending updated documentation. The Commission also approved a one-day alcohol license and established a Friday deadline for future meeting application submissions.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 0,
+   "summary": "The Commission approved the minutes from the March 20, 2024 meeting.",
+   "speakers": [
+    "Allan Martorana",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "One-Day Special Alcohol License for Event Them",
+   "t": 156,
+   "summary": "Approved a one-day beer and wine license for Event Them to host a Friends of Medford Family Network fundraiser on May 5, 2024.",
+   "speakers": [
+    "Allan Martorana",
+    "Bryan MacAuslan",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "All-Alcohol License Application for 25 Salem Street LLC",
+   "t": 385,
+   "summary": "Conditionally approved a new all-alcohol license and pledge of collateral for 25 Salem Street LLC, doing business as Mrs. Murphys, subject to the submission of missing financial, landlord, and application details.",
+   "speakers": [
+    "Allan Martorana",
+    "Robert Delafano",
+    "Daria Tejera",
+    "Sage McCoy"
+   ]
+  },
+  {
+   "title": "Application Submission Deadline Policy",
+   "t": 2895,
+   "summary": "Agreed to establish a Friday 11:00 a.m. deadline for application submissions prior to Commission meetings to comply with open meeting laws and allow adequate review time.",
+   "speakers": [
+    "Allan Martorana",
+    "Robert Delafano",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 25335,
+  "output_tokens": 405,
+  "model_version": "gemini-3.6-flash"
+ }
+}
