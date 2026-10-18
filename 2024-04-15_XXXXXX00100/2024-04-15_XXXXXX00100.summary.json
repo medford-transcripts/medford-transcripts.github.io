@@ -1,0 +1,55 @@
+{
+ "video_id": "XXXXXX00100",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T03:05:48Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b35590b5270e996a",
+ "subject": "Nichole Mossalam State Representative Candidacy",
+ "overview": "Danielle Balocca interviews candidate Nichole Mossalam about her run for State Representative representing Medford and Malden. Mossalam shares a personal health update, discusses her legislative priorities, and outlines upcoming campaign events.",
+ "items": [
+  {
+   "title": "Introduction and Favorite Local Restaurant",
+   "t": 9,
+   "summary": "Host Danielle Balocca introduces State Representative candidate Nichole Mossalam, who shares her favorite local breakfast spot, Classic Cafe.",
+   "speakers": [
+    "Danielle Balocca",
+    "Chelli Keshavan",
+    "Nichole Mossalam"
+   ]
+  },
+  {
+   "title": "Candidate Background and Health Update",
+   "t": 141,
+   "summary": "Mossalam reflects on her previous legislative campaigns and details her recent diagnosis and treatment for breast cancer.",
+   "speakers": [
+    "Danielle Balocca",
+    "Nichole Mossalam"
+   ]
+  },
+  {
+   "title": "Legislative Priorities and State Budget",
+   "t": 456,
+   "summary": "Mossalam outlines her policy priorities, focusing on state budget fiscal responsibility, public transit, school funding, and community infrastructure.",
+   "speakers": [
+    "Danielle Balocca",
+    "Nichole Mossalam"
+   ]
+  },
+  {
+   "title": "Voter Outreach and Campaign Events",
+   "t": 717,
+   "summary": "Mossalam emphasizes the importance of the September 3 Democratic primary, provides contact details for her campaign, and announces an April 21 kickoff event.",
+   "speakers": [
+    "Danielle Balocca",
+    "Nichole Mossalam"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6193,
+  "output_tokens": 346,
+  "model_version": "gemini-3.6-flash"
+ }
+}
