@@ -1,0 +1,46 @@
+{
+ "video_id": "MCM00000515",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T19:07:58Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "59e2c2204022f2be",
+ "subject": "Charter Article 7 Revisions",
+ "overview": "The subcommittee approved previous minutes and finalized draft revisions to Article 7 regarding election timelines, procedures, and ward language. The revised draft will be forwarded to the full Charter Study Committee for further review.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 10,
+   "summary": "The subcommittee approved the minutes of the previous meeting.",
+   "speakers": [
+    "Milva McDonald"
+   ]
+  },
+  {
+   "title": "Review of Article 7 Election Language and Timelines",
+   "t": 24,
+   "summary": "Members discussed election administration, set timeline thresholds including nomination form availability and candidate ballot drawings, and agreed to simplify nonpartisan election language while leaving ward and school committee items tentative for Collins Center consultation.",
+   "speakers": [
+    "Milva McDonald",
+    "Andreottola",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Transmittal to Full Committee",
+   "t": 1978,
+   "summary": "The subcommittee agreed that the Article 7 draft was complete and ready to be shared with the full Charter Study Committee.",
+   "speakers": [
+    "Milva McDonald",
+    "Andreottola",
+    "Maury Carroll"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11654,
+  "output_tokens": 295,
+  "model_version": "gemini-3.8-flash"
+ }
+}
