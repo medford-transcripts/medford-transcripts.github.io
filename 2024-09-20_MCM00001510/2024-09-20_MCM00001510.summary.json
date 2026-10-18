@@ -1,0 +1,73 @@
+{
+ "video_id": "MCM00001510",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T14:08:00Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "5a13527733bd981a",
+ "subject": "Green Line Transit Area Permit Parking Zone",
+ "overview": "City officials presented a pilot program to consolidate street-by-street permit parking into a single district-wide zone near the Green Line Extension stations. The meeting addressed resident concerns regarding parking congestion, enforcement technology, and neighborhood infrastructure before a scheduled Traffic Commission vote.",
+ "items": [
+  {
+   "title": "Program Overview and Map",
+   "t": 0,
+   "summary": "Officials introduced the Green Line Transit Area Permit Parking Zone, a pilot program designed to allow residents within the designated zone to park on any included street rather than being restricted to their own.",
+   "speakers": [
+    "Steve Smerdy",
+    "Jim Silva",
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Timeline and Regulatory Background",
+   "t": 229,
+   "summary": "The proposal follows recommendations from a 2020 advisory commission and is scheduled for a formal hearing and vote by the Traffic Commission on April 9, 2024.",
+   "speakers": [
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Proposed Operational Changes and Pilot Mechanics",
+   "t": 530,
+   "summary": "While the zone consolidation would allow more flexibility for residents, the city confirmed that visitor pass systems, enforcement hours, and license plate scanning technology will remain unchanged.",
+   "speakers": [
+    "Todd Blake",
+    "Jim Silva"
+   ]
+  },
+  {
+   "title": "Public Feedback: Parking Influx and Safety Concerns",
+   "t": 1217,
+   "summary": "Residents expressed concern that the district-wide model could lead to overcrowding on dead-end streets and questioned how the change would impact snow plowing and winter emergency operations.",
+   "speakers": [
+    "Todd Blake",
+    "Sarah",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Transit Infrastructure and Pedestrian Safety",
+   "t": 2034,
+   "summary": "Discussion expanded to address the perceived lack of adequate sidewalks and bicycle lanes near the new transit stations, leading to a review of planned capital improvements and the city's Complete Streets policy.",
+   "speakers": [
+    "Jeremy Martin",
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Next Steps and Data Collection",
+   "t": 2720,
+   "summary": "The city will utilize SeeClickFix for data collection during the pilot and plans to re-evaluate the program's success based on resident feedback after implementation.",
+   "speakers": [
+    "Todd Blake",
+    "Steve Smerdy"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16598,
+  "output_tokens": 583,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
