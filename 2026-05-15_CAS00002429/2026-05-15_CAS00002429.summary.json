@@ -1,0 +1,68 @@
+{
+ "video_id": "CAS00002429",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T16:05:41Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e33b6343f8411fb9",
+ "subject": "",
+ "overview": "The Medford Historic District Commission heard an educational presentation on insurance considerations for historic properties, held preliminary discussions on renovation work at 20 Hillside Avenue and a proposed carriage house at 21 Touro Avenue, and approved past meeting minutes.",
+ "items": [
+  {
+   "title": "Presentation on Insurance Challenges for Historic Properties",
+   "t": 13,
+   "summary": "Public adjuster Josh Goldstein gave a presentation detailing replacement costs, co-insurance penalties, and building code upgrades as they impact historic property claims.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Josh Goldstein",
+    "Theresa Dupont",
+    "Lauretta James",
+    "CAS00002479_SPEAKER_07",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Preliminary Discussion: Renovation Work at 20 Hillside Avenue",
+   "t": 1915,
+   "summary": "The commission reviewed completed and planned renovations at 20 Hillside Avenue, directing the applicants to provide door and window cut sheets and photos ahead of an abutter-notified June hearing.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Laura McSweeney",
+    "Theresa Dupont",
+    "CAS00002479_SPEAKER_07",
+    "Peter Miller",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Preliminary Discussion: Proposed Carriage House at 21 Touro Avenue",
+   "t": 2797,
+   "summary": "Julius Rose presented conceptual plans to build an accessory carriage house garage with an ADU at 21 Touro Avenue, receiving guidance from commissioners on required elevation drawings and material specifications for formal review.",
+   "speakers": [
+    "CAS00002479_SPEAKER_06",
+    "Theresa Dupont",
+    "MCM00001828_SPEAKER_03",
+    "Peter Miller",
+    "MCM00001828_SPEAKER_01"
+   ]
+  },
+  {
+   "title": "Approval of Minutes: April 9, 2026",
+   "t": 4736,
+   "summary": "Approved the meeting minutes from the April 9 meeting.",
+   "speakers": [
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "Peter Miller",
+    "MCM00001828_SPEAKER_03",
+    "MCM00001828_SPEAKER_01"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 35086,
+  "output_tokens": 558,
+  "model_version": "gemini-3.8-flash"
+ }
+}
