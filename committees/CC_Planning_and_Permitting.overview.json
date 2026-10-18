@@ -1,31 +1,40 @@
 {
  "committee": "CC Planning and Permitting",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-17T13:05:46Z",
- "sources_sha": "c198861632939371",
- "n_meetings": 31,
+ "generated_at": "2026-10-18T23:06:19Z",
+ "sources_sha": "3d097884e4c516d7",
+ "n_meetings": 36,
  "period_style": "term",
  "span": [
-  "2024-05-08",
+  "2024-02-28",
   "2026-05-05"
  ],
- "overview": "The CC Planning and Permitting committee manages the modernization and overhaul of the city's zoning ordinances and land use regulations. Its primary responsibilities include refining zoning definitions, creating new corridor-specific districts, and establishing development standards for residential and commercial growth. The body began its work in May 2024 by prioritizing technical updates and has since moved through neighborhood-by-neighborhood rezoning efforts. As of May 2026, the committee has most recently referred a major rezoning proposal for the Boston Avenue corridor and Tufts University area for joint review with the Community Development Board.",
+ "overview": "The Planning and Permitting Committee is a committee of the Medford City Council responsible for reviewing and drafting municipal land use regulations, zoning code overhauls, development standards, and property ordinances. Its work covers reviewing comprehensive zoning updates, corridor master plans, environmental performance standards, and housing regulations in coordination with city planning staff and external consultants. The archive covers 36 meetings of the committee held between February 28, 2024, and May 5, 2026. Over this span, the committee has systematically processed citywide zoning changes, including specialized districts for major transit corridors and commercial squares, environmental green scoring, and state-mandated accessory dwelling unit provisions. At its most recent meeting, the committee advanced a draft rezoning proposal for the Boston Avenue corridor and Tufts Institutional District for a joint session with the Community Development Board.",
  "threads": [
   {
-   "name": "Comprehensive Zoning Modernization",
+   "name": "Comprehensive zoning overhaul and recodification",
    "status": "ongoing",
-   "summary": "The committee initiated a multi-year project to digitize the zoning map and modernize the table of uses and definitions to resolve regulatory gaps and non-conformities identified by city staff. Early work focused on non-substantive formatting changes and neutral definitions for residential types, eventually leading to the referral of a foundational zoning package in May 2024. Later sessions addressed technical cleanup of procedural language and the alignment of local codes with state mandates. Ongoing work includes mapping analysis and periodic technical updates to ensure citywide consistency across new sub-districts.",
+   "summary": "In March 2024, consultants from Innes Associates presented a multi-phase framework and timeline for a comprehensive overhaul of the city's zoning code (M02#1, M04#1). The committee reviewed proposed updates to use tables, definitions, and municipal exemptions, bundling them with a digitized GIS zoning map to report out to the full City Council (M06#9, M07#1, M07#2). The body subsequently conducted mapping workshops to examine setbacks, lot sizes, and widespread parcel non-conformities across neighborhoods (M09#1, M10#1). In March 2026, the committee took up technical and procedural cleanup amendments concerning building and dwelling definitions, keeping the item in committee for structured tiering by staff (M33#1).",
    "citations": [
     {
-     "video_id": "ziPfbtXDJSA",
-     "t": 45,
-     "date": "2024-05-08",
-     "base": "2024-06-01_ziPfbtXDJSA",
-     "meeting_title": "City Council Planning and Permitting Committee 05-08-24",
-     "title": "Zoning Memo and Table of Uses Updates",
-     "label": "M01#1"
+     "video_id": "tjJJRZXm810",
+     "t": 28,
+     "date": "2024-03-13",
+     "base": "2024-06-01_tjJJRZXm810",
+     "meeting_title": "City Council Planning and Permitting Committee 03-13-24",
+     "title": "Zoning Ordinance Update (Paper 24-033)",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "LzzLsOJuQBA",
+     "t": 44,
+     "date": "2024-04-10",
+     "base": "2024-06-01_LzzLsOJuQBA",
+     "meeting_title": "City Council Planning and Permitting Committee 04-10-24",
+     "title": "Zoning ordinance updates with Innes Associates",
+     "label": "M04#1"
     },
     {
      "video_id": "ziPfbtXDJSA",
@@ -34,7 +43,16 @@
      "base": "2024-06-01_ziPfbtXDJSA",
      "meeting_title": "City Council Planning and Permitting Committee 05-08-24",
      "title": "Future Work Plan and Phase 1 Package",
-     "label": "M01#9"
+     "label": "M06#9"
+    },
+    {
+     "video_id": "UEleLeeXrzM",
+     "t": 378,
+     "date": "2024-05-22",
+     "base": "2024-06-01_UEleLeeXrzM",
+     "meeting_title": "City Council Planning and Permitting Committee 05-22-24",
+     "title": "Table of Uses and Zoning Definitions",
+     "label": "M07#1"
     },
     {
      "video_id": "UEleLeeXrzM",
@@ -43,7 +61,7 @@
      "base": "2024-06-01_UEleLeeXrzM",
      "meeting_title": "City Council Planning and Permitting Committee 05-22-24",
      "title": "Digital GIS Zoning Map Codification",
-     "label": "M02#2"
+     "label": "M07#2"
     },
     {
      "video_id": "-vjCj0xS-sU",
@@ -52,7 +70,16 @@
      "base": "2024-06-26_-vjCj0xS-sU",
      "meeting_title": "City Council Planning and Permitting Committee 06-25-24",
      "title": "Zoning ordinance updates work plan and mapping analysis",
-     "label": "M04#1"
+     "label": "M09#1"
+    },
+    {
+     "video_id": "T1o-WALn6Tw",
+     "t": 252,
+     "date": "2024-07-24",
+     "base": "2024-07-25_T1o-WALn6Tw",
+     "meeting_title": "City Council Planning and Permitting Committee  07-24-24",
+     "title": "Zoning Mapping Workshop",
+     "label": "M10#1"
     },
     {
      "video_id": "1fMf4x8f4z0",
@@ -61,15 +88,24 @@
      "base": "2026-03-17_1fMf4x8f4z0",
      "meeting_title": "City Council Planning and Permitting Committee 03-17-26",
      "title": "Zoning Ordinance Technical and Procedural Cleanup",
-     "label": "M28#1"
+     "label": "M33#1"
     }
    ]
   },
   {
-   "name": "Mystic Avenue Corridor Rezoning",
+   "name": "Mystic Avenue corridor rezoning",
    "status": "settled",
-   "summary": "Beginning in mid-2024, the committee focused on transforming the auto-oriented Mystic Avenue into a walkable mixed-use corridor. Proposals introduced tiered building heights ranging from six to twelve stories and 'curb setbacks' to facilitate wider sidewalks on private property. The committee approved a specific model using incentive zoning to trade increased height for community benefits. The final proposal, which established four new sub-districts, was referred to the full City Council in October 2024.",
+   "summary": "The committee designated the Mystic Avenue commercial corridor as an urgent rezoning priority to replace auto-oriented parcels with walkable, multi-story mixed-use development (M08#5, M11#1). Consultants proposed curb setbacks, active ground floors, and height allowances tied to incentive zoning (M11#1, M13#3). The committee directed drafting under Option B to incorporate life sciences and refine sub-district dimensional standards (M13#3, M14#2). The committee voted to refer the finalized Mystic Avenue Corridor District zoning proposal to the City Council for referral to the Community Development Board (M15#1).",
    "citations": [
+    {
+     "video_id": "-smS3pjc1I0",
+     "t": 4321,
+     "date": "2024-06-12",
+     "base": "2024-06-13_-smS3pjc1I0",
+     "meeting_title": "City Council Planning and Permitting Committee 06-12-24",
+     "title": "Councilor Priorities and Commercial Corridor Rezoning",
+     "label": "M08#5"
+    },
     {
      "video_id": "ytZEv67Hdoc",
      "t": 616,
@@ -77,7 +113,7 @@
      "base": "2024-09-24_ytZEv67Hdoc",
      "meeting_title": "City Council Planning and Permitting Committee 08-14-24",
      "title": "Mystic Avenue Corridor Zoning Recommendations",
-     "label": "M06#1"
+     "label": "M11#1"
     },
     {
      "video_id": "zRypqjx_sS4",
@@ -86,7 +122,16 @@
      "base": "2024-09-26_zRypqjx_sS4",
      "meeting_title": "City Council Planning and Permitting Committee 09-25-24",
      "title": "Mystic Avenue Corridor Zoning Directives",
-     "label": "M08#3"
+     "label": "M13#3"
+    },
+    {
+     "video_id": "m5uYjUemjGA",
+     "t": 1712,
+     "date": "2024-10-09",
+     "base": "2024-10-10_m5uYjUemjGA",
+     "meeting_title": "City Council Planning and Permitting Committee 10-09-24",
+     "title": "Mystic Avenue Zoning Proposal and Dimensional Standards",
+     "label": "M14#2"
     },
     {
      "video_id": "Jdzud93kkaU",
@@ -95,23 +140,41 @@
      "base": "2024-10-24_Jdzud93kkaU",
      "meeting_title": "City Council Planning and Permitting Committee 10-23-24",
      "title": "Zoning Ordinance Updates (24-033)",
-     "label": "M10#1"
+     "label": "M15#1"
     }
    ]
   },
   {
-   "name": "Salem Street Corridor Rezoning",
+   "name": "Salem Street corridor rezoning",
    "status": "settled",
-   "summary": "The committee reviewed zoning for the Salem Street corridor to establish density nodes at major intersections while preserving existing residential blocks. Discussion centered on the feasibility of four-to-six-story building heights on small parcels and the use of step-backs to minimize visual impact on the narrow streetscape. In December 2024, the body referred a plan to the City Council that legalized existing non-conforming commercial uses and introduced height bonuses for projects providing deeper affordability and public parking.",
+   "summary": "Rezoning for the Salem Street corridor was initiated in mid-2024 alongside Mystic Avenue to address neighborhood commercial nodes and corridor parcels (M08#5, M10#2). Committee members and planning staff debated building heights, step-backs, and parcel viability on smaller lots (M11#3, M11#4). Consultants drafted a proposal establishing mixed-use and multi-unit residential sub-districts to correct existing zoning loopholes and preserve residential blocks (M16#2, M17#1). The committee reviewed incentive-based height bonuses, parking ratios, and compatibility standards before voting to refer the Salem Street proposal to the City Council for referral to the Community Development Board (M18#1).",
    "citations": [
     {
-     "video_id": "ytZEv67Hdoc",
-     "t": 3254,
-     "date": "2024-08-14",
-     "base": "2024-09-24_ytZEv67Hdoc",
-     "meeting_title": "City Council Planning and Permitting Committee 08-14-24",
-     "title": "Salem Street Corridor Zoning Recommendations",
-     "label": "M06#3"
+     "video_id": "-smS3pjc1I0",
+     "t": 4321,
+     "date": "2024-06-12",
+     "base": "2024-06-13_-smS3pjc1I0",
+     "meeting_title": "City Council Planning and Permitting Committee 06-12-24",
+     "title": "Councilor Priorities and Commercial Corridor Rezoning",
+     "label": "M08#5"
+    },
+    {
+     "video_id": "T1o-WALn6Tw",
+     "t": 5103,
+     "date": "2024-07-24",
+     "base": "2024-07-25_T1o-WALn6Tw",
+     "meeting_title": "City Council Planning and Permitting Committee  07-24-24",
+     "title": "Workshop Findings and Implementation Timeline",
+     "label": "M10#2"
+    },
+    {
+     "video_id": "aqU6GwG1M88",
+     "t": 3304,
+     "date": "2024-11-13",
+     "base": "2024-11-14_aqU6GwG1M88",
+     "meeting_title": "City Council Planning and Permitting Committee 11-13-24",
+     "title": "Salem Street Corridor Update",
+     "label": "M16#2"
     },
     {
      "video_id": "P82XV_Xc9RI",
@@ -120,7 +183,7 @@
      "base": "2024-12-03_P82XV_Xc9RI",
      "meeting_title": "City Council Planning and Permitting Committee 12-03-24",
      "title": "Presentation on Salem Street Corridor Zoning Updates (Paper 24-033)",
-     "label": "M12#1"
+     "label": "M17#1"
     },
     {
      "video_id": "yfpMOktT6KA",
@@ -129,14 +192,14 @@
      "base": "2024-12-11_yfpMOktT6KA",
      "meeting_title": "City Council Planning and Permitting Committee 12-11-24",
      "title": "24-033 Zoning Ordinance Updates (Salem Street Corridor)",
-     "label": "M13#1"
+     "label": "M18#1"
     }
    ]
   },
   {
-   "name": "Neighborhood and Urban Residential Zoning",
-   "status": "settled",
-   "summary": "The committee worked to replace single-family zoning with a density gradient across five new sub-districts, ranging from low-density neighborhoods to transit-oriented urban zones. Initial drafts were scaled back to protect the character of single-family areas while formalizing small-scale 'neighborhood nodes' for local businesses. Special attention was paid to ensuring that existing non-conforming homes could be renovated without requiring variances. The committee referred the completed residential zoning proposal in February 2025.",
+   "name": "Neighborhood and urban residential zoning",
+   "status": "ongoing",
+   "summary": "In January 2025, consultants presented a zoning proposal to replace single-family districts with tiered neighborhood residential zones allowing accessory units and historic conversions (M19#1). The committee approved motions to scale down proposed density tiers across several neighborhoods and requested improved public outreach (M19#2, M20#2). Discussions focused on establishing a density gradient, capping building heights at three stories, and protecting existing non-conforming single-family homes from unnecessary variance burdens (M21#1, M21#3). Although the committee voted to refer the draft residential proposal to the City Council in February 2025, Council President Zac Bears proposed in July 2025 to extend the review of residential districts into 2026 (M22#7, M30#1).",
    "citations": [
     {
      "video_id": "7W6Pc0j59SY",
@@ -145,7 +208,7 @@
      "base": "2025-01-15_7W6Pc0j59SY",
      "meeting_title": "City Council Planning and Permitting Committee 01-15-25",
      "title": "Zoning ordinance updates: Neighborhood Residential districts",
-     "label": "M14#1"
+     "label": "M19#1"
     },
     {
      "video_id": "7W6Pc0j59SY",
@@ -154,7 +217,16 @@
      "base": "2025-01-15_7W6Pc0j59SY",
      "meeting_title": "City Council Planning and Permitting Committee 01-15-25",
      "title": "Committee motions on zoning tiers and communications",
-     "label": "M14#2"
+     "label": "M19#2"
+    },
+    {
+     "video_id": "TZj4ALY_njg",
+     "t": 2208,
+     "date": "2025-01-29",
+     "base": "2025-01-29_TZj4ALY_njg",
+     "meeting_title": "City Council Planning and Permitting Committee 01-29-25",
+     "title": "Neighborhood and Urban Residential Zoning Proposal",
+     "label": "M20#2"
     },
     {
      "video_id": "PXpDguzCygs",
@@ -163,16 +235,16 @@
      "base": "2025-02-13_PXpDguzCygs",
      "meeting_title": "City Council Planning and Permitting Committee 02-12-25",
      "title": "Presentation of Residential Zoning Sub-Districts",
-     "label": "M16#1"
+     "label": "M21#1"
     },
     {
      "video_id": "PXpDguzCygs",
-     "t": 4909,
+     "t": 3547,
      "date": "2025-02-12",
      "base": "2025-02-13_PXpDguzCygs",
      "meeting_title": "City Council Planning and Permitting Committee 02-12-25",
-     "title": "Analysis of Neighborhood Commercial Nodes",
-     "label": "M16#4"
+     "title": "Protections for Non-Conforming Single-Family Homes",
+     "label": "M21#3"
     },
     {
      "video_id": "oTl3eTGg6is",
@@ -181,15 +253,42 @@
      "base": "2025-02-26_oTl3eTGg6is",
      "meeting_title": "City Council Planning and Permitting Committee 02-26-25",
      "title": "Referral of Draft Proposal and Adjournment",
-     "label": "M17#7"
+     "label": "M22#7"
+    },
+    {
+     "video_id": "ar92W3uq2rI",
+     "t": 1072,
+     "date": "2025-07-16",
+     "base": "2025-07-17_ar92W3uq2rI",
+     "meeting_title": "City Council Planning and Permitting Committee 07-16-25",
+     "title": "Council President's Statement on Rezoning Timeline",
+     "label": "M30#1"
     }
    ]
   },
   {
-   "name": "Accessory Dwelling Units (ADUs)",
+   "name": "Accessory Dwelling Unit regulations",
    "status": "settled",
-   "summary": "To comply with new state mandates, the committee developed a local ordinance governing Accessory Dwelling Units. Members debated discretionary regulations such as setback requirements, height limits for detached units, and a ban on short-term rentals. The body also established special permit requirements for properties seeking to add a second ADU or utilize historic accessory structures. The final set of ADU regulations was referred favorably in April 2025.",
+   "summary": "The committee initially addressed accessory dwellings through definition updates for manufactured and tiny homes during the Phase 1 zoning review (M06#6). Following state legislative changes, the committee reviewed local regulations to govern accessory dwelling units in residential districts, exploring special permits and short-term rental bans (M21#3, M23#2, M24#2). The committee evaluated draft rules allowing ADUs while setting local special permit standards for second units on single lots and conversions of historic accessory structures (M26#3). The committee voted to refer the ADU zoning regulations favorably to the City Council for referral to the Community Development Board (M26#4).",
    "citations": [
+    {
+     "video_id": "ziPfbtXDJSA",
+     "t": 4806,
+     "date": "2024-05-08",
+     "base": "2024-06-01_ziPfbtXDJSA",
+     "meeting_title": "City Council Planning and Permitting Committee 05-08-24",
+     "title": "Definitions - Manufactured and Tiny Homes",
+     "label": "M06#6"
+    },
+    {
+     "video_id": "PXpDguzCygs",
+     "t": 3547,
+     "date": "2025-02-12",
+     "base": "2025-02-13_PXpDguzCygs",
+     "meeting_title": "City Council Planning and Permitting Committee 02-12-25",
+     "title": "Protections for Non-Conforming Single-Family Homes",
+     "label": "M21#3"
+    },
     {
      "video_id": "KLG8r-52Wzg",
      "t": 3463,
@@ -197,7 +296,7 @@
      "base": "2025-03-12_KLG8r-52Wzg",
      "meeting_title": "City Council Planning and Permitting Committee 03-12-25",
      "title": "Accessory Dwelling Unit (ADU) Ordinance Updates",
-     "label": "M18#2"
+     "label": "M23#2"
     },
     {
      "video_id": "N657gyXQa48",
@@ -206,7 +305,7 @@
      "base": "2025-03-26_N657gyXQa48",
      "meeting_title": "City Council Planning and Permitting Committee 03-26-25",
      "title": "Accessory Dwelling Unit (ADU) Ordinance Draft",
-     "label": "M19#2"
+     "label": "M24#2"
     },
     {
      "video_id": "LX1_uV95d6w",
@@ -215,7 +314,7 @@
      "base": "2025-04-30_LX1_uV95d6w",
      "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
      "title": "Accessory Dwelling Unit (ADU) Regulations",
-     "label": "M21#3"
+     "label": "M26#3"
     },
     {
      "video_id": "LX1_uV95d6w",
@@ -224,101 +323,24 @@
      "base": "2025-04-30_LX1_uV95d6w",
      "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
      "title": "Referrals to Community Development Board",
-     "label": "M21#4"
+     "label": "M26#4"
     }
    ]
   },
   {
-   "name": "Environmental and Green Score Standards",
+   "name": "Commercial squares and smart growth zoning",
    "status": "ongoing",
-   "summary": "In September 2024, the committee reached a consensus to implement a 'green score' metric to mitigate urban heat and manage landscapes for projects triggering site plan review. This 100-point rubric was referred as a standalone ordinance in November 2024 to ensure environmental performance standards for new developments. The committee has continued to integrate these standards into corridor-specific plans, recently increasing the score requirements for the Boston Avenue corridor to 25 points to encourage more substantial green infrastructure.",
+   "summary": "In early 2025, consultants introduced a commercial zoning framework dividing commercial areas into mixed-use sub-districts, focusing on Medford Square and West Medford Square (M23#1, M24#1, M25#1). The committee refined district maps to establish daylight standards and angular planes protecting residential abutters in Medford Square and increased density near the commuter rail stop in West Medford Square (M26#1, M26#2). Both square proposals were referred favorably to the City Council for referral to the Community Development Board (M26#4). In 2026, the committee evaluated 40R Smart Growth zoning overlays to secure state reimbursements for the high school building project and directed planning staff to begin work on a 40R strategy for Medford Square (M34#4, M34#5).",
    "citations": [
     {
-     "video_id": "COIKCqnQvjE",
-     "t": 0,
-     "date": "2024-09-11",
-     "base": "2024-09-12_COIKCqnQvjE",
-     "meeting_title": "City Council Planning and Permitting Committee 09-11-24",
-     "title": "Green Score and Heat Mitigation",
-     "label": "M07#1"
+     "video_id": "KLG8r-52Wzg",
+     "t": 597,
+     "date": "2025-03-12",
+     "base": "2025-03-12_KLG8r-52Wzg",
+     "meeting_title": "City Council Planning and Permitting Committee 03-12-25",
+     "title": "Commercial Zoning Framework",
+     "label": "M23#1"
     },
-    {
-     "video_id": "aqU6GwG1M88",
-     "t": 553,
-     "date": "2024-11-13",
-     "base": "2024-11-14_aqU6GwG1M88",
-     "meeting_title": "City Council Planning and Permitting Committee 11-13-24",
-     "title": "Green Score Zoning Ordinance",
-     "label": "M11#1"
-    },
-    {
-     "video_id": "cDjBmWMBPbM",
-     "t": 5543,
-     "date": "2026-05-05",
-     "base": "2026-05-06_cDjBmWMBPbM",
-     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
-     "title": "Green Scores and Environmental Requirements",
-     "label": "M31#4"
-    }
-   ]
-  },
-  {
-   "name": "Tufts Institutional Zone and Boston Avenue",
-   "status": "settled",
-   "summary": "The committee developed a new institutional zoning district to better manage Tufts University's expansion and clarify the jurisdictional reach of the Dover Amendment. Early discussions explored how to regulate campus buildings that were previously categorized under residential zoning and how to create sub-areas that face residential neighborhoods. In May 2026, the committee referred an amended plan that includes three mixed-use sub-districts along Boston Avenue, specifically prohibiting drive-through restaurants and gas stations while setting incentive-based height limits.",
-   "citations": [
-    {
-     "video_id": "aDOHyHAgxKE",
-     "t": 1849,
-     "date": "2025-06-11",
-     "base": "2025-06-11_aDOHyHAgxKE",
-     "meeting_title": "City Council Planning and Permitting Committee 06-11-25",
-     "title": "Tufts Institutional District Progress Check",
-     "label": "M24#1"
-    },
-    {
-     "video_id": "mdayckzhuGI",
-     "t": 2259,
-     "date": "2026-04-08",
-     "base": "2026-04-08_mdayckzhuGI",
-     "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
-     "title": "Impact of Dover Amendment and Campus Zoning",
-     "label": "M29#3"
-    },
-    {
-     "video_id": "cDjBmWMBPbM",
-     "t": 1770,
-     "date": "2026-05-05",
-     "base": "2026-05-06_cDjBmWMBPbM",
-     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
-     "title": "District Naming and Use Table Amendments",
-     "label": "M31#2"
-    },
-    {
-     "video_id": "cDjBmWMBPbM",
-     "t": 3944,
-     "date": "2026-05-05",
-     "base": "2026-05-06_cDjBmWMBPbM",
-     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
-     "title": "Dimensional Standards and Incentive Heights",
-     "label": "M31#3"
-    },
-    {
-     "video_id": "cDjBmWMBPbM",
-     "t": 8919,
-     "date": "2026-05-05",
-     "base": "2026-05-06_cDjBmWMBPbM",
-     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
-     "title": "Committee Referral",
-     "label": "M31#7"
-    }
-   ]
-  },
-  {
-   "name": "Medford and West Medford Squares",
-   "status": "settled",
-   "summary": "Zoning for the city's commercial squares was updated to increase residential density near transit hubs. For Medford Square, the committee established 'daylight standards' and angular planes to protect sunlight for abutting homes, while West Medford Square was rezoned to incentivize housing near the commuter rail. Both square proposals were referred to the Community Development Board in April 2025. By 2026, the city also began exploring 40R 'Smart Growth' overlays for Medford Square to unlock state funding for the high school project.",
-   "citations": [
     {
      "video_id": "N657gyXQa48",
      "t": 1081,
@@ -326,7 +348,7 @@
      "base": "2025-03-26_N657gyXQa48",
      "meeting_title": "City Council Planning and Permitting Committee 03-26-25",
      "title": "Medford Square Zoning Map Proposal",
-     "label": "M19#1"
+     "label": "M24#1"
     },
     {
      "video_id": "7IncPtSEWk4",
@@ -335,7 +357,25 @@
      "base": "2025-04-09_7IncPtSEWk4",
      "meeting_title": "City Council Planning and Permitting Committee 04-09-25",
      "title": "Draft West Medford Square Zoning Proposal Presentation and Discussion",
-     "label": "M20#1"
+     "label": "M25#1"
+    },
+    {
+     "video_id": "LX1_uV95d6w",
+     "t": 1813,
+     "date": "2025-04-30",
+     "base": "2025-04-30_LX1_uV95d6w",
+     "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
+     "title": "Medford Square Zoning Proposal",
+     "label": "M26#1"
+    },
+    {
+     "video_id": "LX1_uV95d6w",
+     "t": 4684,
+     "date": "2025-04-30",
+     "base": "2025-04-30_LX1_uV95d6w",
+     "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
+     "title": "West Medford Square Zoning Proposal",
+     "label": "M26#2"
     },
     {
      "video_id": "LX1_uV95d6w",
@@ -344,7 +384,7 @@
      "base": "2025-04-30_LX1_uV95d6w",
      "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
      "title": "Referrals to Community Development Board",
-     "label": "M21#4"
+     "label": "M26#4"
     },
     {
      "video_id": "mdayckzhuGI",
@@ -353,15 +393,130 @@
      "base": "2026-04-08_mdayckzhuGI",
      "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
      "title": "Evaluation of 40R and 40S Smart Growth Zoning",
-     "label": "M29#4"
+     "label": "M34#4"
+    },
+    {
+     "video_id": "mdayckzhuGI",
+     "t": 4113,
+     "date": "2026-04-08",
+     "base": "2026-04-08_mdayckzhuGI",
+     "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
+     "title": "Public Comment and Committee Motions",
+     "label": "M34#5"
     }
    ]
   },
   {
-   "name": "Vacant Property and Rental Protections",
+   "name": "Boston Avenue and Tufts Institutional District rezoning",
    "status": "ongoing",
-   "summary": "The committee initiated legislation to address commercial vacancy and tenant displacement. This included a draft condominium conversion ordinance featuring relocation payments and a review board to protect rental stock. Additionally, the body is refining a vacant building ordinance that would establish an escalating fee structure and a registry for empty commercial properties to encourage reinvestment. Both items remain under legal and staff review as of early 2026.",
+   "summary": "The committee began exploring institutional zoning for Tufts University and rezoning along minor corridors like Boston Avenue in mid-2025 (M27#2, M29#1, M30#2). In 2026, consultants presented data showing widespread parcel non-conformity along Boston Avenue, while planning staff outlined legal limitations under the Dover Amendment regarding campus regulation (M34#1, M34#3, M35#1, M35#6). The committee considered boundary adjustments, provisions for private student housing, and three mixed-use sub-districts with incentive height tiers (M35#3, M36#1, M36#3). The committee approved amendments prohibiting drive-throughs and gas stations and referred the draft proposal to the City Council for a joint meeting with the Community Development Board (M36#2, M36#7).",
    "citations": [
+    {
+     "video_id": "mde-MlDPW-g",
+     "t": 1212,
+     "date": "2025-05-14",
+     "base": "2025-05-14_mde-MlDPW-g",
+     "meeting_title": "Planning and Permitting Committee Meeting via Zoom",
+     "title": "Presentation on Corridors and Neighborhood Nodes",
+     "label": "M27#2"
+    },
+    {
+     "video_id": "aDOHyHAgxKE",
+     "t": 1849,
+     "date": "2025-06-11",
+     "base": "2025-06-11_aDOHyHAgxKE",
+     "meeting_title": "City Council Planning and Permitting Committee 06-11-25",
+     "title": "Tufts Institutional District Progress Check",
+     "label": "M29#1"
+    },
+    {
+     "video_id": "ar92W3uq2rI",
+     "t": 1922,
+     "date": "2025-07-16",
+     "base": "2025-07-17_ar92W3uq2rI",
+     "meeting_title": "City Council Planning and Permitting Committee 07-16-25",
+     "title": "Tufts Institutional Zone Presentation",
+     "label": "M30#2"
+    },
+    {
+     "video_id": "mdayckzhuGI",
+     "t": 179,
+     "date": "2026-04-08",
+     "base": "2026-04-08_mdayckzhuGI",
+     "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
+     "title": "Presentation on Boston Avenue and Tufts Institutional District Rezoning",
+     "label": "M34#1"
+    },
+    {
+     "video_id": "mdayckzhuGI",
+     "t": 2259,
+     "date": "2026-04-08",
+     "base": "2026-04-08_mdayckzhuGI",
+     "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
+     "title": "Impact of Dover Amendment and Campus Zoning",
+     "label": "M34#3"
+    },
+    {
+     "video_id": "LWU0j1h4WTE",
+     "t": 231,
+     "date": "2026-04-22",
+     "base": "2026-04-22_LWU0j1h4WTE",
+     "meeting_title": "City Council Planning and Permitting Committee 04-22-26",
+     "title": "Call to Order and Presentation on Boston Avenue Corridor",
+     "label": "M35#1"
+    },
+    {
+     "video_id": "LWU0j1h4WTE",
+     "t": 1962,
+     "date": "2026-04-22",
+     "base": "2026-04-22_LWU0j1h4WTE",
+     "meeting_title": "City Council Planning and Permitting Committee 04-22-26",
+     "title": "Private Student Housing and Sub-District Proposals",
+     "label": "M35#3"
+    },
+    {
+     "video_id": "cDjBmWMBPbM",
+     "t": 680,
+     "date": "2026-05-05",
+     "base": "2026-05-06_cDjBmWMBPbM",
+     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
+     "title": "Boston Avenue Rezoning Presentation",
+     "label": "M36#1"
+    },
+    {
+     "video_id": "cDjBmWMBPbM",
+     "t": 1770,
+     "date": "2026-05-05",
+     "base": "2026-05-06_cDjBmWMBPbM",
+     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
+     "title": "District Naming and Use Table Amendments",
+     "label": "M36#2"
+    },
+    {
+     "video_id": "cDjBmWMBPbM",
+     "t": 8919,
+     "date": "2026-05-05",
+     "base": "2026-05-06_cDjBmWMBPbM",
+     "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
+     "title": "Committee Referral",
+     "label": "M36#7"
+    }
+   ]
+  },
+  {
+   "name": "Housing stability and property management ordinances",
+   "status": "ongoing",
+   "summary": "In February 2024, the committee reviewed the rollout of the Housing Stability Notification Ordinance and voted to keep the paper in committee to coordinate with the Building Department (M01#1). In December 2025, Chair Kit Collins presented a draft condominium conversion ordinance with tenant relocation payments and notification rules, which was kept in committee for further administrative consultation (M31#1). In early 2026, the committee reviewed a proposed vacant properties ordinance introducing registration requirements, online registries, and escalating fee structures (M32#1, M33#2). The committee approved a motion to refer the revised vacant building ordinance to the regular City Council meeting pending legal review and further edits (M33#2).",
+   "citations": [
+    {
+     "video_id": "HxbPqtm-S9M",
+     "t": 41,
+     "date": "2024-02-28",
+     "base": "2024-06-01_HxbPqtm-S9M",
+     "meeting_title": "City Council Planning and Permitting Committee 02-28-24",
+     "title": "Discussion on Housing Stability Notification Ordinance Implementation (Paper 24-042)",
+     "label": "M01#1"
+    },
     {
      "video_id": "Y-Q4wpPWQng",
      "t": 1004,
@@ -369,7 +524,7 @@
      "base": "2025-12-16_Y-Q4wpPWQng",
      "meeting_title": "City Council Planning and Permitting Committee 12-16-25",
      "title": "Condominium Conversion Ordinance",
-     "label": "M26#1"
+     "label": "M31#1"
     },
     {
      "video_id": "s_n0-O3NL5o",
@@ -378,7 +533,7 @@
      "base": "2026-01-28_s_n0-O3NL5o",
      "meeting_title": "City Council Planning and Permitting Committee 01-28-26",
      "title": "Vacant Properties Ordinance Proposal",
-     "label": "M27#1"
+     "label": "M32#1"
     },
     {
      "video_id": "1fMf4x8f4z0",
@@ -387,7 +542,7 @@
      "base": "2026-03-17_1fMf4x8f4z0",
      "meeting_title": "City Council Planning and Permitting Committee 03-17-26",
      "title": "Proposed Vacant Building Ordinance",
-     "label": "M28#2"
+     "label": "M33#2"
     }
    ]
   }
@@ -395,104 +550,176 @@
  "periods": [
   {
    "period": "2024-2025 term",
-   "narrative": "During this term, the committee focused on foundational zoning modernization and referred major rezoning plans for the Mystic Avenue and Salem Street corridors, residential districts, and Accessory Dwelling Units.",
+   "narrative": "During this term, the committee advanced a comprehensive overhaul of the city's zoning code, formulating new districts for the Mystic Avenue and Salem Street corridors, residential neighborhoods, Medford Square, and Accessory Dwelling Units. It also worked on climate action alignment, green score standards, short-term rental rules, and tenant protection ordinances.",
    "citations": [
     {
-     "video_id": "ziPfbtXDJSA",
-     "t": null,
-     "date": "2024-05-08",
-     "base": "2024-06-01_ziPfbtXDJSA",
-     "meeting_title": "City Council Planning and Permitting Committee 05-08-24",
-     "title": "City Council Planning and Permitting Committee 05-08-24",
-     "label": "M01"
+     "video_id": "HxbPqtm-S9M",
+     "t": 41,
+     "date": "2024-02-28",
+     "base": "2024-06-01_HxbPqtm-S9M",
+     "meeting_title": "City Council Planning and Permitting Committee 02-28-24",
+     "title": "Discussion on Housing Stability Notification Ordinance Implementation (Paper 24-042)",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "tjJJRZXm810",
+     "t": 28,
+     "date": "2024-03-13",
+     "base": "2024-06-01_tjJJRZXm810",
+     "meeting_title": "City Council Planning and Permitting Committee 03-13-24",
+     "title": "Zoning Ordinance Update (Paper 24-033)",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "UEleLeeXrzM",
+     "t": 378,
+     "date": "2024-05-22",
+     "base": "2024-06-01_UEleLeeXrzM",
+     "meeting_title": "City Council Planning and Permitting Committee 05-22-24",
+     "title": "Table of Uses and Zoning Definitions",
+     "label": "M07#1"
     },
     {
      "video_id": "Jdzud93kkaU",
-     "t": null,
+     "t": 415,
      "date": "2024-10-23",
      "base": "2024-10-24_Jdzud93kkaU",
      "meeting_title": "City Council Planning and Permitting Committee 10-23-24",
-     "title": "City Council Planning and Permitting Committee 10-23-24",
-     "label": "M10"
+     "title": "Zoning Ordinance Updates (24-033)",
+     "label": "M15#1"
+    },
+    {
+     "video_id": "aqU6GwG1M88",
+     "t": 553,
+     "date": "2024-11-13",
+     "base": "2024-11-14_aqU6GwG1M88",
+     "meeting_title": "City Council Planning and Permitting Committee 11-13-24",
+     "title": "Green Score Zoning Ordinance",
+     "label": "M16#1"
     },
     {
      "video_id": "yfpMOktT6KA",
-     "t": null,
+     "t": 454,
      "date": "2024-12-11",
      "base": "2024-12-11_yfpMOktT6KA",
      "meeting_title": "City Council Planning and Permitting Committee 12-11-24",
-     "title": "City Council Planning and Permitting Committee 12-11-24",
-     "label": "M13"
+     "title": "24-033 Zoning Ordinance Updates (Salem Street Corridor)",
+     "label": "M18#1"
     },
     {
      "video_id": "oTl3eTGg6is",
-     "t": null,
+     "t": 8880,
      "date": "2025-02-26",
      "base": "2025-02-26_oTl3eTGg6is",
      "meeting_title": "City Council Planning and Permitting Committee 02-26-25",
-     "title": "City Council Planning and Permitting Committee 02-26-25",
-     "label": "M17"
+     "title": "Referral of Draft Proposal and Adjournment",
+     "label": "M22#7"
     },
     {
      "video_id": "LX1_uV95d6w",
-     "t": null,
+     "t": 9428,
      "date": "2025-04-30",
      "base": "2025-04-30_LX1_uV95d6w",
      "meeting_title": "City Council Planning and Permitting Committee 04-30-25",
-     "title": "City Council Planning and Permitting Committee 04-30-25",
-     "label": "M21"
+     "title": "Referrals to Community Development Board",
+     "label": "M26#4"
+    },
+    {
+     "video_id": "ar92W3uq2rI",
+     "t": 1072,
+     "date": "2025-07-16",
+     "base": "2025-07-17_ar92W3uq2rI",
+     "meeting_title": "City Council Planning and Permitting Committee 07-16-25",
+     "title": "Council President's Statement on Rezoning Timeline",
+     "label": "M30#1"
+    },
+    {
+     "video_id": "Y-Q4wpPWQng",
+     "t": 1004,
+     "date": "2025-12-16",
+     "base": "2025-12-16_Y-Q4wpPWQng",
+     "meeting_title": "City Council Planning and Permitting Committee 12-16-25",
+     "title": "Condominium Conversion Ordinance",
+     "label": "M31#1"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The committee turned its attention to institutional zoning for Tufts University, the Boston Avenue corridor, and anti-vacancy ordinances while exploring state financial incentives through 40R zoning.",
+   "narrative": "The committee focused on vacant property regulations, technical zoning cleanups, 40R smart growth overlay planning, and drafting rezoning plans for the Boston Avenue corridor and Tufts University. It concluded by referring amended Boston Avenue and institutional district proposals to the full City Council for joint review with the Community Development Board.",
    "citations": [
     {
      "video_id": "s_n0-O3NL5o",
-     "t": null,
+     "t": 985,
      "date": "2026-01-28",
      "base": "2026-01-28_s_n0-O3NL5o",
      "meeting_title": "City Council Planning and Permitting Committee 01-28-26",
-     "title": "City Council Planning and Permitting Committee 01-28-26",
-     "label": "M27"
+     "title": "Vacant Properties Ordinance Proposal",
+     "label": "M32#1"
+    },
+    {
+     "video_id": "1fMf4x8f4z0",
+     "t": 681,
+     "date": "2026-03-17",
+     "base": "2026-03-17_1fMf4x8f4z0",
+     "meeting_title": "City Council Planning and Permitting Committee 03-17-26",
+     "title": "Zoning Ordinance Technical and Procedural Cleanup",
+     "label": "M33#1"
+    },
+    {
+     "video_id": "1fMf4x8f4z0",
+     "t": 4343,
+     "date": "2026-03-17",
+     "base": "2026-03-17_1fMf4x8f4z0",
+     "meeting_title": "City Council Planning and Permitting Committee 03-17-26",
+     "title": "Proposed Vacant Building Ordinance",
+     "label": "M33#2"
     },
     {
      "video_id": "mdayckzhuGI",
-     "t": null,
+     "t": 2491,
      "date": "2026-04-08",
      "base": "2026-04-08_mdayckzhuGI",
      "meeting_title": "City Council Planning and Permitting Committee 04-08-26",
-     "title": "City Council Planning and Permitting Committee 04-08-26",
-     "label": "M29"
+     "title": "Evaluation of 40R and 40S Smart Growth Zoning",
+     "label": "M34#4"
+    },
+    {
+     "video_id": "LWU0j1h4WTE",
+     "t": 231,
+     "date": "2026-04-22",
+     "base": "2026-04-22_LWU0j1h4WTE",
+     "meeting_title": "City Council Planning and Permitting Committee 04-22-26",
+     "title": "Call to Order and Presentation on Boston Avenue Corridor",
+     "label": "M35#1"
     },
     {
      "video_id": "cDjBmWMBPbM",
-     "t": null,
+     "t": 8919,
      "date": "2026-05-05",
      "base": "2026-05-06_cDjBmWMBPbM",
      "meeting_title": "City Council Planning and Permitting Committee 05-05-26",
-     "title": "City Council Planning and Permitting Committee 05-05-26",
-     "label": "M31"
+     "title": "Committee Referral",
+     "label": "M36#7"
     }
    ]
   }
  ],
- "dropped": 0,
+ "dropped": 1,
  "coverage": {
-  "citations": 43,
-  "meetings_cited": 23,
-  "of_meetings": 31,
-  "max_share": 0.116,
-  "even_share": 0.0323,
-  "concentration_ratio": 3.6,
-  "most_cited": "cDjBmWMBPbM",
+  "citations": 69,
+  "meetings_cited": 32,
+  "of_meetings": 36,
+  "max_share": 0.087,
+  "even_share": 0.0278,
+  "concentration_ratio": 3.13,
+  "most_cited": "LX1_uV95d6w",
   "periods_covered": 2,
   "of_periods": 2
  },
  "usage": {
-  "input_tokens": 9559,
-  "output_tokens": 1786,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 10484,
+  "output_tokens": 2494,
+  "model_version": "gemini-3.8-flash"
  }
 }
