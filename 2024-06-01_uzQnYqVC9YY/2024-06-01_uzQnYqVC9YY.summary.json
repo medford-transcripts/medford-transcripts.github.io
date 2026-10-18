@@ -1,0 +1,41 @@
+{
+ "video_id": "uzQnYqVC9YY",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T10:16:22Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cd6726a5017930b2",
+ "subject": "",
+ "overview": "The committee discussed zoning amendments requiring monthly reporting from short-term rental platforms and initiated a comprehensive review of the city's fee schedule. Both matters were advanced with requests for reports and feedback from city departments and legal counsel.",
+ "items": [
+  {
+   "title": "Short-Term Rental Ordinance Reporting Amendments",
+   "t": 44,
+   "summary": "Referred draft zoning language to the building commissioner, IT director, and Planning, Development, and Sustainability director for a 60-day review to establish mandatory monthly platform reporting on short-term rentals.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "City Fee Schedule Review",
+   "t": 815,
+   "summary": "Voted to request 90-day department reports on fee schedules, climate and housing incentive alignments, and legal authority, while also requesting a legal opinion from KP Law on tying municipal fees to inflation.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears",
+    "Anna Callahan",
+    "Danielle Evans",
+    "Matt Leming",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12333,
+  "output_tokens": 246,
+  "model_version": "gemini-3.8-flash"
+ }
+}

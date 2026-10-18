@@ -1,17 +1,17 @@
 {
  "video_id": "CAS00002437",
  "provider": "gemini",
- "generated_at": "2026-10-18T09:08:04Z",
+ "generated_at": "2026-10-18T10:12:10Z",
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "1819c1c56199cab8",
- "subject": "Tufts Aquatic Center Site Plan Approval",
- "overview": "The board approved site plans and zoning relief for the new Tufts University Aquatic Center, recommended City Council approval of Main Street alterations for MassDOT safety improvements, and approved releases of covenants and site plan modifications.",
+ "transcript_sha": "554460ea9b6f5ae0",
+ "subject": "",
+ "overview": "The Community Development Board approved site plan review and multiple zoning waivers for the new Tufts University Aquatic Center, recommended City Council approval of easements along Main Street for a MassDOT safety project, and approved site plan modifications for 99 Revere Beach Parkway. The board also released subdivision covenants on Mary Kenny Way and discussed hearing schedules for the Boston Avenue zoning corridor.",
  "items": [
   {
-   "title": "Alteration of Public Way: Main Street and Mystic Avenue",
+   "title": "Alteration of Public Way and Easements: Main Street",
    "t": 120,
-   "summary": "Voted 6-0 to recommend that the City Council approve the alteration of the layout of Main Street and associated temporary and permanent easements to allow MassDOT to execute a corridor safety improvement project.",
+   "summary": "The board voted to recommend that the City Council approve layout alterations and both temporary and permanent easements along Main Street and Mystic Avenue to enable a MassDOT safety and signalization improvement project.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -26,26 +26,24 @@
    ]
   },
   {
-   "title": "Release of Covenants: Mary Kenny Way Subdivision",
+   "title": "Release of Covenants: Mary Kenny Way",
    "t": 2260,
-   "summary": "Voted 6-0 to release lots 6, 7, and 8 from the subdivision covenant, retaining surety and the remaining lots to guarantee completion of infrastructure, with Director Hunt authorized to sign.",
+   "summary": "The board approved releasing lots 6, 7, and 8 from the subdivision covenant for Mary Kenny Way, authorizing Director Hunt to sign the release on behalf of the board while the city continues to hold cash surety and covenants on the remaining lots.",
    "speakers": [
     "Doug Carr",
-    "Alicia Hunt",
     "Danielle Evans",
+    "Alicia Hunt",
     "Ari Fishman",
-    "Page Buldini",
-    "Dina Caloggero"
+    "Page Buldini"
    ]
   },
   {
    "title": "Site Plan Review: 130 College Avenue (Tufts Aquatic Center)",
-   "t": 2676,
-   "summary": "Approved the site plan review and multiple zoning waivers under the Dover Amendment for the new Tufts University Aquatic Center at 130 College Avenue, subject to 24 conditions including traffic calming, a raised crosswalk, and parking management.",
+   "t": 2678,
+   "summary": "After finding the project protected under the Dover Amendment and approving waivers for setbacks, multiple structures, solar canopy requirements, and shared parking, the board approved the site plan with 24 conditions that include a raised crosswalk on College Avenue and expanded community swim access.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
-    "Alicia Hunt",
     "Patrick Gallagher",
     "Rocco DiRico",
     "Bryan Zimolka",
@@ -54,14 +52,14 @@
     "Ari Fishman",
     "Page Buldini",
     "Sean Beagan",
-    "John Anderson",
-    "Judith Weinstock"
+    "Judith Weinstock",
+    "Alicia Hunt"
    ]
   },
   {
    "title": "Zoning Amendment: Inclusionary Zoning",
    "t": 5907,
-   "summary": "Voted 6-0 to continue the public hearing on the inclusionary zoning amendment to June 17, 2026, while staff continues work on fractional payment calculations.",
+   "summary": "The board voted to continue the public hearing on the inclusionary zoning amendment regarding fractional payment formulas to June 17, 2026.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -71,7 +69,7 @@
   {
    "title": "Site Plan Modification: 99 Revere Beach Parkway",
    "t": 6036,
-   "summary": "Approved a modification to the approved site plan to alter the garage layout, reduce parking spaces from 238 to 209 to accommodate a gas pipeline easement, and raise building height by six inches for Passive House insulation.",
+   "summary": "The board approved modifications to the previously approved site plan, reducing parking garage capacity from 238 to 209 spaces to avoid an Enbridge gas pipeline easement, reconfiguring ground-floor delivery and drop-off areas, and adding six inches to building height for Passive House insulation.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -82,35 +80,33 @@
    ]
   },
   {
-   "title": "Approval of Minutes",
+   "title": "Meeting Minutes",
    "t": 7108,
-   "summary": "Approved the draft meeting minutes for March 4, 2026, and May 6, 2026, with an amendment clarifying building height and story requirements for a Mystic Avenue project.",
+   "summary": "The board approved meeting minutes from March 4 and May 6, 2026, with an amendment clarifying height and story details for a Mystic Avenue review.",
    "speakers": [
     "Doug Carr",
-    "Sean Beagan",
     "Dina Caloggero",
     "Danielle Evans",
     "John Anderson"
    ]
   },
   {
-   "title": "Administrative and Boston Avenue Zoning Updates",
+   "title": "Administrative and Zoning Project Updates",
    "t": 7377,
-   "summary": "Discussed scheduling, meeting format, and public outreach for upcoming Boston Avenue zoning discussions and reviewed coordination procedures with Tufts University.",
+   "summary": "The board and staff discussed hearing logistics and community outreach for the Boston Avenue corridor rezoning ahead of June meetings, as well as establishing earlier design review protocols for future Tufts University projects.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
     "Alicia Hunt",
     "Page Buldini",
-    "John Anderson",
-    "Dina Caloggero"
+    "John Anderson"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 48467,
-  "output_tokens": 857,
+  "input_tokens": 48481,
+  "output_tokens": 1043,
   "model_version": "gemini-3.8-flash"
  }
 }

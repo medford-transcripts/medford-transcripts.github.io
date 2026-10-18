@@ -1,0 +1,66 @@
+{
+ "video_id": "DqskVFQ6bhM",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T10:18:39Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7b4e3e7db72927c5",
+ "subject": "Elections Department Oversight and Staffing",
+ "overview": "The Governance Committee met to review administrative reports from the Elections Commission and the Chief of Staff regarding procedural errors in recent elections and the department's current staffing needs. The committee discussed technology deficiencies, poll worker training, and the status of the search for a new Elections Manager.",
+ "items": [
+  {
+   "title": "Oversight of Elections Department",
+   "t": 26,
+   "summary": "The committee reviewed procedural errors from the 2023 municipal election and the March 2024 primary, emphasizing the need for better communication protocols and transparency regarding election results.",
+   "speakers": [
+    "Justin Tseng",
+    "Zac Bears",
+    "George Scarpelli",
+    "Kit Collins",
+    "Matt Leming",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Administrative and Commission Reports",
+   "t": 107,
+   "summary": "Chief of Staff Nina Nazarian and Elections Commission Chair Henry Milorin discussed staffing shortages, aging technology infrastructure, and improvements made to results reporting during the March primary.",
+   "speakers": [
+    "Nina Nazarian",
+    "Henry Milorin"
+   ]
+  },
+  {
+   "title": "Elections Manager Recruitment Update",
+   "t": 3775,
+   "summary": "Nazarian reported that the search for a permanent Elections Manager is active and in the interview stage, while recruitment for a part-time position is also ongoing.",
+   "speakers": [
+    "Nina Nazarian",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Post-Election Audit and Procedural Improvements",
+   "t": 4874,
+   "summary": "Milorin described a plan to compile feedback from wardens and clerks into a benchmark report for the incoming manager to address issues with signage, courier routes, and tabulation speed.",
+   "speakers": [
+    "Justin Tseng",
+    "Henry Milorin"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 5907,
+   "summary": "A resident addressed machine counting accuracy, the need for independent investigations of irregularities, and the maintenance of accurate voter rolls.",
+   "speakers": [
+    "Melanie Tringali"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 27809,
+  "output_tokens": 467,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

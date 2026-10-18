@@ -1,0 +1,31 @@
+{
+ "video_id": "ICamVjB-gmE",
+ "provider": "gemini",
+ "generated_at": "2026-10-18T10:14:25Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "ca2b2f7a1ae3e07d",
+ "subject": "District Transportation Survey",
+ "overview": "The subcommittee met to discuss the scope, objectives, and timing for an upcoming district-wide student transportation survey.",
+ "items": [
+  {
+   "title": "District Transportation Survey Planning",
+   "t": 0,
+   "summary": "The subcommittee brainstormed questions and logistical considerations for a district school transportation survey, covering yellow bus policy, MBTA usage, driver shortages, late busing, and student outreach.",
+   "speakers": [
+    "Jenny Graham",
+    "Marice Edouard-Vincent",
+    "Erika Reinfeld",
+    "Paul Ruseau",
+    "Megan Fidler-Carey",
+    "Peter Cushing"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18797,
+  "output_tokens": 173,
+  "model_version": "gemini-3.6-flash"
+ }
+}
