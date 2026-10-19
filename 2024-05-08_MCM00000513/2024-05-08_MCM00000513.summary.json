@@ -1,0 +1,76 @@
+{
+ "video_id": "MCM00000513",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T00:07:16Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "bae9b504e71801ba",
+ "subject": "Charter Article 7 Election Procedures",
+ "overview": "The subcommittee met to draft a new section of the city charter establishing formal election and ward procedures. Members reached a consensus on recommending a random lottery for ballot positioning and increasing signature requirements for citywide candidates.",
+ "items": [
+  {
+   "title": "Article 7 Overview and Election Dates",
+   "t": 0,
+   "summary": "The subcommittee convened for the first time to draft a new Article 7 covering election procedures, as the current charter contains no such section. They recommended maintaining the second Tuesday of September for preliminary elections to align with local tradition.",
+   "speakers": [
+    "Milva McDonald",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Ballot Position Lottery",
+   "t": 651,
+   "summary": "Members agreed to recommend a random lottery for ballot positioning to replace the current practice of listing incumbents first, citing studies on the advantage of top placement. The committee will consult the City Clerk to determine the necessary timeline for conducting the drawing.",
+   "speakers": [
+    "Anthony Andreottola",
+    "Maury Carroll",
+    "Milva McDonald"
+   ]
+  },
+  {
+   "title": "Candidate Signature Requirements",
+   "t": 899,
+   "summary": "The subcommittee proposed increasing the required number of certified signatures to 150 for mayoral candidates and 100 for at-large councilors, while keeping ward council and school committee requirements at 50.",
+   "speakers": [
+    "Maury Carroll",
+    "Milva McDonald",
+    "Anthony Andreottola"
+   ]
+  },
+  {
+   "title": "Nonpartisan Elections and Wards",
+   "t": 1704,
+   "summary": "Members decided to maintain existing nonpartisan election language with updated gender-neutral pronouns and reviewed boilerplate text for the decennial review of ward boundaries.",
+   "speakers": [
+    "Milva McDonald",
+    "Anthony Andreottola",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Follow-up and Scheduling",
+   "t": 2188,
+   "summary": "The chair will consult with the Collins Center regarding state laws on mail-in voting and ward boundary functions before the subcommittee's next meeting on March 4, 2024.",
+   "speakers": [
+    "Milva McDonald",
+    "Maury Carroll",
+    "Anthony Andreottola"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 2290,
+   "summary": "A resident spoke in support of using a random lottery for ballot positioning to ensure fairness for all candidates.",
+   "speakers": [
+    "John",
+    "Milva McDonald"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13268,
+  "output_tokens": 556,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
