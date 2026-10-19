@@ -1,0 +1,39 @@
+{
+ "video_id": "qF2odNDrmLM",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T01:10:05Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1980fd689dbcac70",
+ "subject": "Fire Department Overtime and Chief Selection",
+ "overview": "A news report covers a Medford City Council meeting addressing allegations of sick time abuse within the fire department and the selection process for a new fire chief. The City Council voted to refer the fire chief appointment matter to committee.",
+ "items": [
+  {
+   "title": "Fire Department Sick Leave and Overtime Investigation",
+   "t": 0,
+   "summary": "Mayor Breanna Lungo-Koehn raised concerns over an investigation into 21 firefighters calling out sick during a single Saturday day shift, incurring nearly $100,000 in overtime costs, which union leadership defended as a contractual right.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Reporter 1",
+    "Reporter 2",
+    "Reporter 3",
+    "Buckley"
+   ]
+  },
+  {
+   "title": "Fire Chief Selection Process",
+   "t": 131,
+   "summary": "The City Council addressed the search for a new fire chief amidst disagreement between the mayor, who favors external management oversight, and the firefighters' union, which advocates hiring internally. The council voted to refer the matter to committee.",
+   "speakers": [
+    "Reporter 3",
+    "Buckley"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2024,
+  "output_tokens": 263,
+  "model_version": "gemini-3.6-flash"
+ }
+}
