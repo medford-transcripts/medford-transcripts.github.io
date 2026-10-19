@@ -1,0 +1,35 @@
+{
+ "video_id": "MCM00001742",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T10:08:41Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b27c0283753beac8",
+ "subject": "Mystic Valley Highway Water Bill Appeal",
+ "overview": "The Commission met to consider a resident's appeal regarding a high water bill and billing errors. No final decision was reached, and the matter was tabled for further investigation.",
+ "items": [
+  {
+   "title": "High Water Bill Appeal for 44-46 Mystic Valley Highway",
+   "t": 1,
+   "summary": "Tabled an appeal for a high water bill totaling over $22,000 to allow for a city-funded meter test and an investigation into why billing notifications were not received by the owner. The homeowner reported that sediment in toilet valves caused a continuous leak and that bills were being sent to the previous owner at the property address rather than her residence.",
+   "speakers": [
+    "Dan Stoneking",
+    "Ms. Lee"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 3554,
+   "summary": "Approved the minutes from the previous meeting.",
+   "speakers": [
+    "Dan Stoneking"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21946,
+  "output_tokens": 221,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
