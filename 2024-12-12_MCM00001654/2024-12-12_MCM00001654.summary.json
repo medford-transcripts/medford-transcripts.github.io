@@ -1,0 +1,110 @@
+{
+ "video_id": "MCM00001654",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T12:08:01Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "464b67d24e13fe69",
+ "subject": "",
+ "overview": "The Traffic Commission addressed residential parking permit issues caused by a database error for Sherbourne Court and established new parking restrictions on Mystic Avenue and surrounding streets to curb commercial vehicle storage. Several individual parking variances and the 2024 meeting schedule were also approved.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 23,
+   "summary": "Approved the minutes from the previous month's meeting.",
+   "speakers": [
+    "MCM00001829_SPEAKER_08"
+   ]
+  },
+  {
+   "title": "Sherbourne Court Address and Permit Issues",
+   "t": 157,
+   "summary": "Referred address database issues affecting parking permit renewals for Sherbourne Court residents to the Engineering Office for final resolution. The Commission authorized a six-month suspension of residential permit enforcement on Bow Street for affected residents in the interim.",
+   "speakers": [
+    "Jim Silva",
+    "MCM00001829_SPEAKER_08",
+    "Tim McGivern",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "2023-63: Parking Variance for 18 Salem Street",
+   "t": 1265,
+   "summary": "Approved a permit parking variance for a resident of 18 Salem Street to park on Forest Street due to a lack of on-site parking.",
+   "speakers": [
+    "Jack Buckley",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "2023-64: Parking Variance for 357 Riverside Avenue",
+   "t": 1540,
+   "summary": "Approved a recurring permit parking variance for a resident of 357 Riverside Avenue to park on Ross Street.",
+   "speakers": [
+    "Dave Beeman",
+    "Jack Buckley",
+    "Jim Silva",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "2024-01: 2024 Meeting Calendar",
+   "t": 1947,
+   "summary": "Approved the schedule of regular commission meetings for the 2024 calendar year.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "2024-03: Parking Variance for 372 Main Street",
+   "t": 2052,
+   "summary": "Approved a permit parking variance for 372 Main Street to park on Wright Avenue.",
+   "speakers": [
+    "Bonazita Sena",
+    "Jack Buckley",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "2024-05: Visitor Pass Variance for 194 College Avenue",
+   "t": 2285,
+   "summary": "Approved a visitor pass variance for 194 College Avenue to allow guest parking on Stearns Avenue because no parking is available on College Avenue.",
+   "speakers": [
+    "John Bolognese",
+    "Jack Buckley",
+    "Alicia Hunt",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "2024-06: Bonner Avenue and Alexander Avenue Parking Restrictions",
+   "t": 2964,
+   "summary": "Approved new daytime two-hour limits and overnight permit-only parking on Bonner Avenue and Alexander Avenue to prevent local businesses from using the street for long-term vehicle storage.",
+   "speakers": [
+    "Lily",
+    "Jack Buckley",
+    "Tim McGivern",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "2024-09: Mystic Avenue Overnight Parking Restrictions",
+   "t": 4294,
+   "summary": "Approved no-overnight parking restrictions on Mystic Avenue except by permit, with a condition that the police department monitor adjacent side streets for 30 days to identify any displaced parking issues.",
+   "speakers": [
+    "Lily",
+    "Jack Buckley",
+    "Tim McGivern",
+    "Alicia Hunt",
+    "MCM00001829_SPEAKER_08"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 37997,
+  "output_tokens": 1021,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
