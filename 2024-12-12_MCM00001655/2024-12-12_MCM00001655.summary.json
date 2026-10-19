@@ -1,0 +1,59 @@
+{
+ "video_id": "MCM00001655",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T03:06:08Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1b9aa922cef8e019",
+ "subject": "",
+ "overview": "The Medford Traffic Commission met to consider residential parking variance requests and street parking restriction updates. The commission approved parking variances for residents on Harvard Street and Marshall Street, as well as new parking regulations on Alfred Street.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 35,
+   "summary": "Approved the minutes from the previous meeting.",
+   "speakers": [
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Resident Permit Parking Variance - 164 Harvard Street",
+   "t": 95,
+   "summary": "Approved a resident permit parking variance on Wareham Street for an occupant of 164 Harvard Street.",
+   "speakers": [
+    "Alicia Hunt",
+    "Dave Rodrigues",
+    "Todd Blake",
+    "Tim McGivern",
+    "Jim Silva"
+   ]
+  },
+  {
+   "title": "Alfred Street Parking Regulations",
+   "t": 568,
+   "summary": "Approved designated business-adjacent areas on Alfred Street to be two-hour parking from 8:00 a.m. to 8:00 p.m. except by permit, and permit parking only from 8:00 p.m. to 8:00 a.m.",
+   "speakers": [
+    "Todd Blake",
+    "Alicia Hunt",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Marshall Street Parking Variance and Visitor Passes",
+   "t": 935,
+   "summary": "Approved a parking variance and visitor passes on Marshall Street for a Winter Street resident.",
+   "speakers": [
+    "Alicia Hunt",
+    "Todd Blake",
+    "Jim Silva",
+    "Tim McGivern"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9833,
+  "output_tokens": 436,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "c9e29cc74775d319",
- "subject": "",
+ "subject": "Interview with Rick Caraviello",
  "overview": "Host John Petrella interviewed former City Council President Rick Caraviello regarding his lifelong community service, political career, and leadership in local civic organizations. The discussion detailed the development of the new Medford Public Library, the establishment of the Medford Arts Center, and various volunteer initiatives supporting veterans and food security.",
  "items": [
   {
@@ -68,5 +68,6 @@
   "input_tokens": 15798,
   "output_tokens": 620,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }
