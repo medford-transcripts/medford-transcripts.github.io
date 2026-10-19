@@ -1,0 +1,61 @@
+{
+ "video_id": "2dmRw3Tp0tA",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T08:10:14Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4556974c7bdba2b0",
+ "subject": "Fresh Fridays Words and Music",
+ "overview": "The West Medford Community Center hosted its monthly Fresh Fridays Words and Music program celebrating Black History Month. The event featured poetry and an interview with Dr. Kiara Singleton of the Royale House and Slave Quarters, followed by a live musical performance by Athene Wilson and Rollins Ross.",
+ "items": [
+  {
+   "title": "Welcome, Community Condolences, and Poetry Reading",
+   "t": 439,
+   "summary": "Elder Services Director Terry E. Carter opened the Black History Month program, offered condolences for community members Charlie Paris and Ruth Youngblood, and recited his original poem \"We Earned It.\"",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Interview with Dr. Kiara Singleton",
+   "t": 1131,
+   "summary": "Carter interviewed Dr. Kiara Singleton about her background, her role as executive director of the Royall House and Slave Quarters, youth programming, and the importance of preserving and expanding public engagement with local Black history.",
+   "speakers": [
+    "Terry Carter",
+    "Dr. Kiara Singleton"
+   ]
+  },
+  {
+   "title": "Community Center Announcements",
+   "t": 4086,
+   "summary": "Carter shared updates regarding the center's weekly elder lunch program, membership outreach, and upcoming activities planned for the center's 90th anniversary.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance by Athene Wilson and Rollins Ross",
+   "t": 4234,
+   "summary": "Vocalist Athene Wilson and keyboardist Rollins Ross performed a set of jazz, soul, and gospel songs for the audience.",
+   "speakers": [
+    "Terry Carter",
+    "Athene Wilson"
+   ]
+  },
+  {
+   "title": "Closing Remarks",
+   "t": 6815,
+   "summary": "Carter delivered closing thanks to the performers, media crew, center staff, and attendees before concluding the event.",
+   "speakers": [
+    "Terry Carter",
+    "Athene Wilson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32195,
+  "output_tokens": 440,
+  "model_version": "gemini-3.8-flash"
+ }
+}
