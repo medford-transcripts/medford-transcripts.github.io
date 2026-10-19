@@ -1,0 +1,56 @@
+{
+ "video_id": "MCM00001237",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T11:08:14Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d92583396d60bbef",
+ "subject": "",
+ "overview": "The Medford Licensing Commission approved a license category change to an all-alcohol license for Naya Japanese Restaurant, four one-day event licenses for Event Them Studios, and the commission's 2023 annual report.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 23,
+   "summary": "Approved the minutes from the December 20, 2023 meeting.",
+   "speakers": [
+    "Robert Delafano",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Change of License Category: Naya Japanese Restaurant",
+   "t": 207,
+   "summary": "Approved an application by Naya Sky Inc., doing business as Naya Japanese Restaurant at 9 High Street, to change its license category from wine and malt to all-alcohol, subject to state approval.",
+   "speakers": [
+    "Kayang Wong",
+    "Adam Hurtubise",
+    "Daria Tejera",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "One-Day Special Licenses: Event Them Studios",
+   "t": 613,
+   "summary": "Approved four one-day liquor licenses for upcoming events at Event Them Studios located at 344 Salem Street.",
+   "speakers": [
+    "Marcelo",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "2023 Annual Report and Quota Discussion",
+   "t": 926,
+   "summary": "Approved the 2023 annual report and discussed population quota metrics regarding the potential availability of an additional package store license.",
+   "speakers": [
+    "Daria Tejera",
+    "Robert Delafano"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13404,
+  "output_tokens": 434,
+  "model_version": "gemini-3.6-flash"
+ }
+}
