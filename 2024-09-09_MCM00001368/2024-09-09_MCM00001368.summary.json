@@ -1,0 +1,75 @@
+{
+ "video_id": "MCM00001368",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T13:08:46Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8b05d5f2299b2cc9",
+ "subject": "",
+ "overview": "The Medford Commission for Persons with Disabilities reviewed accessible housing advocacy, received an update on city park accessibility and community survey efforts, and discussed goals and committee roles for 2024.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 3,
+   "summary": "The commission approved the previous meeting minutes.",
+   "speakers": [
+    "MCM00001367_SPEAKER_04",
+    "MCM00001818_SPEAKER_06",
+    "MCM00001367_SPEAKER_02",
+    "Tom Hamel"
+   ]
+  },
+  {
+   "title": "GBIO and Accessible Housing Discussion",
+   "t": 234,
+   "summary": "A commissioner shared personal experience regarding low-income subsidized accessible housing and recounted attending a Greater Boston Interfaith Organization event advocating for dignified housing.",
+   "speakers": [
+    "MCM00001366_SPEAKER_06",
+    "Adam Hurtubise",
+    "MCM00001818_SPEAKER_06",
+    "SPEAKER_05",
+    "MCM00001753_SPEAKER_08",
+    "Tom Hamel",
+    "MCM00001367_SPEAKER_04",
+    "MCM00001367_SPEAKER_02",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "Parks Accessibility and Carr Park Update",
+   "t": 1814,
+   "summary": "Chenine Peloquin provided updates on park accessibility planning, shared links for the Carr Park community survey and department newsletters, and discussed ongoing efforts to audit playgrounds and advocate for accessible restroom facilities.",
+   "speakers": [
+    "Chenine Peloquin",
+    "SPEAKER_03",
+    "Tom Hamel",
+    "MCM00001367_SPEAKER_02",
+    "MCM00001753_SPEAKER_08",
+    "MCM00001367_SPEAKER_04",
+    "MCM00001366_SPEAKER_06",
+    "SPEAKER_05",
+    "Evangelista"
+   ]
+  },
+  {
+   "title": "2024 Commission Goals and Community Outreach",
+   "t": 3269,
+   "summary": "Members discussed 2024 priorities, including organizing public listening sessions, increasing in-person community outreach, seeking open meeting law and monitor training, and assigning subject lead roles among commissioners.",
+   "speakers": [
+    "MCM00001367_SPEAKER_02",
+    "Evangelista",
+    "Tom Hamel",
+    "SPEAKER_05",
+    "MCM00001366_SPEAKER_06",
+    "MCM00001753_SPEAKER_08",
+    "Chenine Peloquin"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32313,
+  "output_tokens": 651,
+  "model_version": "gemini-3.8-flash"
+ }
+}
