@@ -1,0 +1,46 @@
+{
+ "video_id": "R05RUR--lkc",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T23:06:49Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "88e1446039831166",
+ "subject": "2024 Leadership Designations",
+ "overview": "The council members and members-elect held a caucus to conduct non-binding votes designating leadership for calendar year 2024. The caucus designated Councilor Isaac Bears as President and Councilor Kit Collins as Vice President.",
+ "items": [
+  {
+   "title": "Caucus Opening and Purpose",
+   "t": 75,
+   "summary": "Council President Nicole Morell convened the caucus to conduct non-binding votes for the positions of Council President and Vice President for 2024.",
+   "speakers": [
+    "Nicole Morell"
+   ]
+  },
+  {
+   "title": "Designation of Council President",
+   "t": 129,
+   "summary": "Councilor Kit Collins nominated Councilor Isaac Bears for Council President, and the caucus approved the non-binding motion.",
+   "speakers": [
+    "Nicole Morell",
+    "Kit Collins",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Designation of Council Vice President",
+   "t": 286,
+   "summary": "Councilor Justin Tseng nominated Councilor Kit Collins for Council Vice President, and the caucus approved the non-binding designation.",
+   "speakers": [
+    "Nicole Morell",
+    "Justin Tseng",
+    "Kit Collins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2987,
+  "output_tokens": 271,
+  "model_version": "gemini-3.6-flash"
+ }
+}

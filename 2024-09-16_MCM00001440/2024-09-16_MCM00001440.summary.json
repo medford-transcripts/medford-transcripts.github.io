@@ -1,0 +1,44 @@
+{
+ "video_id": "MCM00001440",
+ "provider": "gemini",
+ "generated_at": "2026-10-19T23:05:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8b8a015aaca4444e",
+ "subject": "Tobacco-Free Generation Proposal",
+ "overview": "The Medford Board of Health heard a presentation on the Tobacco-Free Generation policy initiative aimed at phasing out tobacco and nicotine sales to younger generations. The Board also outlined upcoming topics for its January meeting.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 57,
+   "summary": "Approved the minutes from the November 21 meeting.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Tobacco-Free Generation Presentation",
+   "t": 89,
+   "summary": "Received a presentation on the Tobacco-Free Generation initiative to restrict nicotine sales based on birth date, and discussed regional coordination and pending legal decisions.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Maureen Busby",
+    "Anthony Choi"
+   ]
+  },
+  {
+   "title": "New Business",
+   "t": 1545,
+   "summary": "Planned to resume the tobacco discussion and review body art regulations at the January meeting.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9779,
+  "output_tokens": 235,
+  "model_version": "gemini-3.6-flash"
+ }
+}
