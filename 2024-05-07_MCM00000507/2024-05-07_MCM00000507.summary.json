@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "96293aa69da3a2a9",
- "subject": "",
+ "subject": "City Council Size and Composition",
  "overview": "The Charter Study Committee refined charter provisions regarding appointments, approved draft preamble language, and established the proposed size and makeup of the City Council. The committee voted to recommend an 11-member City Council consisting of eight ward councilors and three at large.",
  "items": [
   {
@@ -110,5 +110,6 @@
   "input_tokens": 36931,
   "output_tokens": 762,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
