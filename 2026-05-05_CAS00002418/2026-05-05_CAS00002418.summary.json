@@ -1,72 +1,95 @@
 {
  "video_id": "CAS00002418",
  "provider": "gemini",
- "generated_at": "2026-10-20T10:07:16Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-10-20T12:05:53Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "df6c44dfe9b69964",
- "subject": "",
- "overview": "The Energy and Environment Committee reviewed city environmental updates, tracked progress on the Climate Action Plan, and debated proposed changes to municipal waste collection and pay-as-you-throw policies. The committee approved the previous meeting's minutes and discussed legislative initiatives around rodenticide and plastics reduction.",
+ "transcript_sha": "74168190203e96d4",
+ "subject": "Pay-As-You-Throw and Bi-Weekly Trash Proposal",
+ "overview": "The committee reviewed progress on the city's Climate Action Plan and received updates on municipal sustainability initiatives, including school air quality sensors and energy aggregation. A significant portion of the meeting was dedicated to debating a proposed pay-as-you-throw trash system and the transition to bi-weekly waste collection.",
  "items": [
   {
-   "title": "Approval of Minutes",
+   "title": "Minutes and Summer Schedule",
    "t": 196,
-   "summary": "The committee unanimously voted to accept the minutes from the previous meeting.",
+   "summary": "The committee approved the minutes from the previous meeting and discussed moving upcoming summer sessions to public outdoor spaces.",
    "speakers": [
+    "Will",
+    "Brenda Pike",
     "Barry Ingber",
-    "Lauretta James"
+    "Robert Paine",
+    "Josh Ekhart-Lee"
    ]
   },
   {
-   "title": "City Environmental Updates",
+   "title": "City Sustainability Updates",
    "t": 299,
-   "summary": "Staff provided updates on upcoming environmental events, the Electrify Medford program, third-party energy supplier costs, revisions to the municipal aggregation plan, air quality sensors at local schools, EV charger installations, and sustainability targets for the high school building project.",
+   "summary": "Brenda Pike announced upcoming community events including a bicycling fair and reported that outdoor air quality sensors are now live at five local schools. The city signed a three-year strategic energy management plan with National Grid to secure additional efficiency incentives.",
    "speakers": [
     "Brenda Pike",
+    "Will",
     "Lauretta James",
-    "Josh Ekhart-Lee",
+    "Josh Ekhart-Lee"
+   ]
+  },
+  {
+   "title": "Electricity Aggregation and Third-Party Suppliers",
+   "t": 735,
+   "summary": "The committee reviewed a report from the Attorney General regarding resident losses to third-party electricity suppliers and discussed a webinar to educate the public. The city is updating its aggregation plan to automatically enroll low-income residents in the lowest available basic rate.",
+   "speakers": [
+    "Brenda Pike",
     "Barry Ingber",
+    "Lauretta James",
+    "Will"
+   ]
+  },
+  {
+   "title": "New High School Sustainability Goals",
+   "t": 1547,
+   "summary": "Pike reported that the school committee voted to pursue LEED Platinum certification for the new high school project, which includes goals for full electrification and geothermal heating. The project aims for a 20% reduction in embodied carbon and net-zero energy operations.",
+   "speakers": [
+    "Brenda Pike",
     "John Rogers"
    ]
   },
   {
-   "title": "Climate Action Plan Review",
-   "t": 1978,
-   "summary": "The committee walked through the Climate Action Plan tracking matrix, discussing municipal progress on zoning recodification, affordable housing trusts, specialized energy code enforcement, and Building Department staffing capacity.",
+   "title": "Climate Action Plan Progress Review",
+   "t": 2004,
+   "summary": "The committee walked through a progress tracking spreadsheet for the Climate Action Plan, covering items such as greenhouse gas modeling and zoning recodification. Members discussed new accessory dwelling unit laws and the establishment of the Municipal Affordable Housing Trust.",
    "speakers": [
     "Brenda Pike",
-    "Lauretta James",
     "Josh Ekhart-Lee",
+    "Lauretta James",
     "Lois Grossman"
    ]
   },
   {
-   "title": "Member Updates and State Legislation",
-   "t": 3289,
-   "summary": "Members discussed state legislative items under the Mass Ready Act, including proposed bans and restrictions on anticoagulant rodenticides, plastics reduction measures, and dark sky lighting legislation.",
+   "title": "Legislative and Environmental Updates",
+   "t": 3331,
+   "summary": "Lauretta James summarized pending state environmental legislation, including the Mass Ready Act, the Plastics Reduction Act, and a bill to restrict anticoagulant rodenticides. The committee discussed the impact of these toxins on local wildlife and potential municipal levers for enacting bans.",
    "speakers": [
     "Lauretta James",
+    "Will",
     "John Rogers"
    ]
   },
   {
    "title": "Pay-As-You-Throw and Waste Management Discussion",
-   "t": 4478,
-   "summary": "The committee debated a proposal for bi-weekly trash pickup and pay-as-you-throw mechanisms, weighing concerns about rodents, odors, and service cuts against municipal costs and the impact of curbside composting.",
+   "t": 4491,
+   "summary": "The committee debated the merits and implementation challenges of a proposed pay-as-you-throw trash system and bi-weekly collection schedule. Discussion focused on rodent control, pet waste management, and the potential for municipal composting to reduce the volume of household trash.",
    "speakers": [
-    "Lois Grossman",
+    "Will",
     "John Rogers",
+    "Lois Grossman",
+    "Brenda Pike",
     "Barry Ingber",
-    "Christina Elaine",
-    "Brenda Pike"
+    "Christina Elaine"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 31936,
-  "output_tokens": 502,
-  "model_version": "gemini-3.8-flash"
- },
- "subject_source": "summary"
+  "output_tokens": 825,
+  "model_version": "gemini-3-flash-preview"
+ }
 }
