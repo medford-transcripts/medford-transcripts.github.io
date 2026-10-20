@@ -1,0 +1,28 @@
+{
+ "video_id": "GbhjYJ_J4oE",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T02:07:28Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f1e0fe33d67960ba",
+ "subject": "School Committee Pay Raise Proposal",
+ "overview": "A news report covers a Medford City Council proposal to raise School Committee salaries from $12,000 to over $29,000 annually. The plan drew opposition from teachers and parents concerned about impacts on the school district's budget.",
+ "items": [
+  {
+   "title": "School Committee Pay Raise Proposal",
+   "t": 0,
+   "summary": "Council President Nicole Morell proposed increasing School Committee salaries from $12,000 to over $29,000 to address pay equity, prompting an alternative suggestion from George Scarpelli to lower council pay and opposition from the Medford Teachers Association over funding the raises through the school budget.",
+   "speakers": [
+    "Reporter Eagan",
+    "Nicole Morell",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1304,
+  "output_tokens": 177,
+  "model_version": "gemini-3.8-flash"
+ }
+}

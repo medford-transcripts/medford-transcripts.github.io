@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "1c4ef15751439a74",
- "subject": "",
+ "subject": "Sandoval Family Restaurants",
  "overview": "Hosts Danielle Balocca and Chelli Keshavan spoke with restaurateur Alvaro Sandoval, his son Mateo, and America's Test Kitchen deputy food editor Bryan Roof about the Sandoval family's Medford restaurants. The conversation covered the history and culinary philosophy of Tenoch, El Tacuba, and Localito, as well as plans for their upcoming Spanish Mediterranean restaurant, Ultramarinos Tardeo.",
  "items": [
   {
@@ -80,5 +80,6 @@
   "input_tokens": 23040,
   "output_tokens": 635,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
