@@ -1,40 +1,40 @@
 {
  "committee": "CC Traffic Commission",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-11T10:06:21Z",
- "sources_sha": "323bf856a9982f74",
- "n_meetings": 8,
+ "generated_at": "2026-10-20T04:07:31Z",
+ "sources_sha": "70b1bcc2d66d20f5",
+ "n_meetings": 13,
  "period_style": "term",
  "span": [
-  "2024-11-12",
+  "2023-12-12",
   "2026-09-08"
  ],
- "overview": "The Medford Traffic Commission regulates vehicular traffic, parking rules, traffic safety infrastructure, and permit programs throughout the city of Medford. The archive's records document the commission's work across eight meetings spanning from November 2024 through September 2026. Over this span, the commission evaluated neighborhood petitions for permit parking zones, decided individual parking variance requests, designated accessible stalls, and enacted daylighting restrictions at pedestrian crosswalks. It also addressed intersection signage and turn rules to mitigate collisions and ensure clearance for emergency vehicles. As of its September 2026 meeting, the body continues to process residential parking variance requests, enact emergency access tow zones, and update administrative parking regulations.",
+ "overview": "The Medford Traffic Commission regulates parking regulations, permit programs, traffic flow, and roadway safety across the city of Medford. The commission's record in the archive covers 13 meetings held between December 2023 and September 2026. Throughout this period, the body has decided on residential permit variances, established transit parking zones, updated fee schedules, and enacted safety measures such as crosswalk daylighting. It also collaborates with municipal departments to manage commercial vehicle parking, emergency access clearances, and electric vehicle charging locations. At its most recent meeting, the commission enacted emergency vehicle tow zones, increased visitor pass replacement fees, and approved multiple intersection safety restrictions (M13#10, M13#12, M13#14).",
  "threads": [
   {
-   "name": "Residential permit parking programs",
-   "status": "ongoing",
-   "summary": "The commission regularly reviews neighborhood requests to enact or modify residential permit parking zones and permit rules. In late 2024, it approved permit parking on Gourley Road, introduced landlord parking permits, and instituted a tiered fee schedule taking effect in 2025 (M01#2, M01#9, M01#12). The commission subsequently made the G-Zone parking pilot permanent following a trial period with no formal complaints (M04#15). Later actions established 24/7 permit parking on Pinkham Road to address commuter overflow and instituted resident permit parking on a block of Quincy Street (M07#7, M08#5). To deter abuse, the commission voted in 2026 to increase fees for replacing lost visitor passes (M08#12).",
+   "name": "Transit area residential parking zones",
+   "status": "settled",
+   "summary": "In April 2024, the commission approved a one-year pilot program for a unified resident parking zone in South Medford to manage parking demand near Green Line transit stations (M04#2). The commission scheduled a formal review of the program for early 2025 (M08#14). Following a trial period with zero formal complaints and active enforcement, the commission voted to make the G-Zone residential parking program permanent (M09#15).",
    "citations": [
     {
-     "video_id": "MCM00001607",
-     "t": 83,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "Gourley Road Resident Permit Parking (2024-58)",
-     "label": "M01#2"
+     "video_id": "MCM00001656",
+     "t": 238,
+     "date": "2024-04-09",
+     "base": "2024-12-13_MCM00001656",
+     "meeting_title": "Medford Traffic Commission 04-09-24",
+     "title": "GLX Parking Zone Pilot",
+     "label": "M04#2"
     },
     {
-     "video_id": "MCM00001607",
-     "t": 5535,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "2025 Parking Fee Schedule (2024-65)",
-     "label": "M01#12"
+     "video_id": "MCM00001707",
+     "t": 6679,
+     "date": "2025-01-14",
+     "base": "2025-01-17_MCM00001707",
+     "meeting_title": "Medford Traffic Commission 01-14-25",
+     "title": "Schedule of Reviews for February 2025",
+     "label": "M08#14"
     },
     {
      "video_id": "MCM00001738",
@@ -43,50 +43,59 @@
      "base": "2025-02-12_MCM00001738",
      "meeting_title": "Medford Traffic Commission 02-11-25",
      "title": "2024-37: G-Zone Resident Parking Pilot Review",
-     "label": "M04#15"
-    },
-    {
-     "video_id": "MCM00001829",
-     "t": 3975,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001829",
-     "meeting_title": "Traffic Commission 10-14-25",
-     "title": "2025-74: Pinkham Road Resident Permit Parking",
-     "label": "M07#7"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 2017,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-41: Permit Parking - Quincy Street",
-     "label": "M08#5"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 7457,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-40: Visitor Pass Replacement Fee Increase",
-     "label": "M08#12"
+     "label": "M09#15"
     }
    ]
   },
   {
-   "name": "Residential parking variances",
+   "name": "Residential parking permit variances",
    "status": "ongoing",
-   "summary": "Property residents routinely petition the commission for street-parking variances when off-street space is lacking or when their addresses sit on metered or arterial corridors. The commission denied an early variance request on Honeywell Avenue due to nearby unrestricted spaces on Spring Street (M04#4). While it rejected variance requests on Winthrop Street, it granted variances for residents on Henry Street, Ship Avenue, Piggott Road, and Alexander Avenue to relieve localized congestion and night safety issues (M06#3, M06#7, M07#3, M07#4, M07#6). In 2026, the commission approved additional variances on Oakland Street, North Street, and Bow Street, while tabling an unrepresented petition on Wellesley Street (M08#2, M08#3, M08#6, M08#7, M08#8).",
+   "summary": "The commission routinely evaluates variance requests from residents lacking off-street parking or living on unpermitted main streets who seek permits for adjacent side streets (M01#8, M02#3, M04#4). In October 2024, the body streamlined its workflow by adopting a policy that makes residential parking variances permanent for current residents as long as permits are maintained (M05#10). Despite this administrative policy, the commission continues to consider individual petitions and grant location-specific variances (M11#7, M12#3, M13#2).",
    "citations": [
     {
-     "video_id": "MCM00001738",
-     "t": 1435,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001738",
-     "meeting_title": "Medford Traffic Commission 02-11-25",
-     "title": "2025-13: Parking Variance for Honeywell Avenue",
+     "video_id": "MCM00001741",
+     "t": 6366,
+     "date": "2023-12-12",
+     "base": "2025-02-13_MCM00001741",
+     "meeting_title": "Medford Traffic Commission 12-12-23",
+     "title": "Off-Agenda Request: Forest Street Parking Variance",
+     "label": "M01#8"
+    },
+    {
+     "video_id": "MCM00001654",
+     "t": 1265,
+     "date": "2024-01-09",
+     "base": "2024-12-12_MCM00001654",
+     "meeting_title": "Medford Traffic Commission 01-09-24",
+     "title": "2023-63: Parking Variance for 18 Salem Street",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001656",
+     "t": 8053,
+     "date": "2024-04-09",
+     "base": "2024-12-13_MCM00001656",
+     "meeting_title": "Medford Traffic Commission 04-09-24",
+     "title": "Residential Parking Variances",
      "label": "M04#4"
+    },
+    {
+     "video_id": "MCM00001593",
+     "t": 6196,
+     "date": "2024-10-08",
+     "base": "2024-11-26_MCM00001593",
+     "meeting_title": "Medford Traffic Commission 10-08-24",
+     "title": "Parking Variance Renewal Policy",
+     "label": "M05#10"
+    },
+    {
+     "video_id": "MCM00001809",
+     "t": 3600,
+     "date": "2025-09-09",
+     "base": "2025-09-11_MCM00001809",
+     "meeting_title": "Medford Traffic Commission 09-09-25",
+     "title": "2025-63: Permit Parking Variance at 612 Main Street",
+     "label": "M11#7"
     },
     {
      "video_id": "MCM00001829",
@@ -95,7 +104,7 @@
      "base": "2025-11-26_MCM00001829",
      "meeting_title": "Traffic Commission 10-14-25",
      "title": "2025-70: Parking Variance for 201 Riverside Ave",
-     "label": "M07#3"
+     "label": "M12#3"
     },
     {
      "video_id": "CAS00002518",
@@ -104,32 +113,41 @@
      "base": "2026-09-09_CAS00002518",
      "meeting_title": "Traffic Commission 09/08/26",
      "title": "2026-34: Permit Parking Variance - 64 Salem Street",
-     "label": "M08#2"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 4768,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-47: Permit Parking Variance - Wellesley Street",
-     "label": "M08#8"
+     "label": "M13#2"
     }
    ]
   },
   {
-   "name": "Commercial vehicle parking regulations",
+   "name": "Commercial vehicle parking restrictions",
    "status": "ongoing",
-   "summary": "The commission has reviewed variance petitions and regulatory policies regarding overnight commercial vehicle parking on residential streets. In early 2025, it tabled an overnight parking request for a commercial-plated sedan to explore administrative and ordinance solutions (M03#8). It subsequently denied commercial parking variances on Burgett Avenue and Sharon Street, citing a 2002 city ordinance prohibiting overnight commercial parking on public streets (M04#8, M04#10). In July 2025, the commission held preliminary discussions on allowing residential permits for select commercial vehicles under defined size criteria, advancing the proposal for public outreach (M05#5).",
+   "summary": "To prevent commercial trucks and local businesses from using public streets for long-term vehicle storage, the commission instituted overnight parking bans on major corridors like Commercial Street and Mystic Avenue (M01#7, M02#9). The body occasionally granted temporary variances for commercial work vehicles (M01#4), but later denied multiple commercial variance requests by citing a city ordinance prohibiting overnight commercial street parking (M09#8). In July 2025, the commission initiated discussions on updating regulations to allow residential permits for certain smaller commercial vehicles, referring the proposal for public outreach (M10#5).",
    "citations": [
     {
-     "video_id": "MCM00001707",
-     "t": 1613,
-     "date": "2025-01-14",
-     "base": "2025-01-17_MCM00001707",
-     "meeting_title": "Medford Traffic Commission 01-14-25",
-     "title": "2025-07: Commercial Vehicle Parking Variance at 18 Holton Street",
-     "label": "M03#8"
+     "video_id": "MCM00001741",
+     "t": 1651,
+     "date": "2023-12-12",
+     "base": "2025-02-13_MCM00001741",
+     "meeting_title": "Medford Traffic Commission 12-12-23",
+     "title": "Commercial Vehicle Parking Variance: 93 Walcott Street",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001741",
+     "t": 5683,
+     "date": "2023-12-12",
+     "base": "2025-02-13_MCM00001741",
+     "meeting_title": "Medford Traffic Commission 12-12-23",
+     "title": "No Overnight Parking Tow Zone: Commercial Street",
+     "label": "M01#7"
+    },
+    {
+     "video_id": "MCM00001654",
+     "t": 4294,
+     "date": "2024-01-09",
+     "base": "2024-12-12_MCM00001654",
+     "meeting_title": "Medford Traffic Commission 01-09-24",
+     "title": "2024-09: Mystic Avenue Overnight Parking Restrictions",
+     "label": "M02#9"
     },
     {
      "video_id": "MCM00001738",
@@ -138,16 +156,7 @@
      "base": "2025-02-12_MCM00001738",
      "meeting_title": "Medford Traffic Commission 02-11-25",
      "title": "2025-19: Parking Variance for 23 Burgett Avenue",
-     "label": "M04#8"
-    },
-    {
-     "video_id": "MCM00001738",
-     "t": 5551,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001738",
-     "meeting_title": "Medford Traffic Commission 02-11-25",
-     "title": "2025-20: Parking Variance for 72 Sharon Street",
-     "label": "M04#10"
+     "label": "M09#8"
     },
     {
      "video_id": "MCM00001776",
@@ -156,75 +165,32 @@
      "base": "2025-07-09_MCM00001776",
      "meeting_title": "Medford Traffic Commission 07-08-25",
      "title": "Commercial Vehicle Rules and Regulations",
-     "label": "M05#5"
+     "label": "M10#5"
     }
    ]
   },
   {
-   "name": "Accessible and handicap parking spaces",
+   "name": "Crosswalk daylighting and intersection sightlines",
    "status": "ongoing",
-   "summary": "The commission routinely considers and approves designated on-street handicap parking signage for residents and community facilities. Initial actions created accessible spaces on Bowdoin Street, Yeomans Avenue, Cherry Street, Circuit Road, and Sharon Street (M01#4, M03#3, M03#4, M03#5, M03#6). It also approved a second accessible space for the West Medford Community Center and added spaces on Hale Avenue, Hamilton Street, Willis Avenue, and George Street (M04#11, M05#2, M06#5). Later petitions saw an application on Central Avenue placed on file following the petitioner's death, while an on-street handicap space was approved on Linwood Street (M07#11, M08#4).",
+   "summary": "The commission frequently approves parking restrictions near intersections and crosswalks to improve driver visibility and pedestrian safety. Early interventions established no-parking safety buffer zones at intersections like Fulton Street and Spring Street (M04#6). The commission expanded these measures to daylight crosswalks near Kellis Field and Lawrence Road (M05#3, M06#7), and near High Street following traffic safety concerns (M09#13, M12#10). Later meetings saw additional corner parking offsets approved across the Hancock Street area to maintain clear sightlines (M13#14).",
    "citations": [
     {
-     "video_id": "MCM00001607",
-     "t": 2162,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "119 Bowdoin Street Accessible Parking Space (2024-60)",
-     "label": "M01#4"
+     "video_id": "MCM00001656",
+     "t": 9672,
+     "date": "2024-04-09",
+     "base": "2024-12-13_MCM00001656",
+     "meeting_title": "Medford Traffic Commission 04-09-24",
+     "title": "No Parking Safety Zone at Fulton Street and Maple Park Avenue",
+     "label": "M04#6"
     },
     {
-     "video_id": "MCM00001707",
-     "t": 298,
-     "date": "2025-01-14",
-     "base": "2025-01-17_MCM00001707",
-     "meeting_title": "Medford Traffic Commission 01-14-25",
-     "title": "2025-02: Handicap Parking Sign at 105 Yeomans Avenue",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "MCM00001809",
-     "t": 3314,
-     "date": "2025-09-09",
-     "base": "2025-09-11_MCM00001809",
-     "meeting_title": "Medford Traffic Commission 09-09-25",
-     "title": "George Street Handicap Parking Space",
-     "label": "M06#5"
-    },
-    {
-     "video_id": "MCM00001829",
-     "t": 5469,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001829",
-     "meeting_title": "Traffic Commission 10-14-25",
-     "title": "2025-60: Handicap Sign Removal",
-     "label": "M07#11"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 1796,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-36: Handicap Parking Sign - 63 Linwood Street",
-     "label": "M08#4"
-    }
-   ]
-  },
-  {
-   "name": "Crosswalk safety and daylighting",
-   "status": "ongoing",
-   "summary": "The commission implements pedestrian crosswalks and establishes parking clearances, known as daylighting, to enhance visibility at intersections. In late 2024, it designated painted crosswalks across Winchester Street and daylighted a crosswalk approach on Lawrence Road (M01#6, M01#7). In 2025, it restricted parking near crosswalks on High Street at Boynton Road and Powderhouse Road following an accident, and it introduced a 30-foot parking buffer at a Playstead Road commuter rail crosswalk (M04#13, M06#9). The commission also approved parking daylighting at the intersection crosswalk of High Street and Pitcher Avenue (M07#10).",
-   "citations": [
-    {
-     "video_id": "MCM00001607",
-     "t": 3187,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "Winchester Street Crosswalks (2024-62)",
-     "label": "M01#6"
+     "video_id": "MCM00001593",
+     "t": 2048,
+     "date": "2024-10-08",
+     "base": "2024-11-26_MCM00001593",
+     "meeting_title": "Medford Traffic Commission 10-08-24",
+     "title": "Fulton Street Crosswalk Daylighting",
+     "label": "M05#3"
     },
     {
      "video_id": "MCM00001607",
@@ -233,7 +199,7 @@
      "base": "2024-12-02_MCM00001607",
      "meeting_title": "Medford Traffic Commission 11-12-24",
      "title": "310 Lawrence Road Crosswalk Daylighting (2024-63)",
-     "label": "M01#7"
+     "label": "M06#7"
     },
     {
      "video_id": "MCM00001738",
@@ -242,16 +208,7 @@
      "base": "2025-02-12_MCM00001738",
      "meeting_title": "Medford Traffic Commission 02-11-25",
      "title": "2025-21: High Street Crosswalk Daylighting",
-     "label": "M04#13"
-    },
-    {
-     "video_id": "MCM00001809",
-     "t": 4492,
-     "date": "2025-09-09",
-     "base": "2025-09-11_MCM00001809",
-     "meeting_title": "Medford Traffic Commission 09-09-25",
-     "title": "2025-66: Crosswalk Daylighting at Playstead Road and Irving Street",
-     "label": "M06#9"
+     "label": "M09#13"
     },
     {
      "video_id": "MCM00001829",
@@ -260,129 +217,7 @@
      "base": "2025-11-26_MCM00001829",
      "meeting_title": "Traffic Commission 10-14-25",
      "title": "2025-77 & 78: High Street Safety Measures",
-     "label": "M07#10"
-    }
-   ]
-  },
-  {
-   "name": "Intersection traffic controls and turn restrictions",
-   "status": "ongoing",
-   "summary": "The commission assesses stop sign requests and turning prohibitions to control traffic patterns and reduce collisions. It authorized stop signs on Whittemore Street and at Warren Street and Cooley Road, while referring a Central Avenue stop sign request to police for a speed study (M01#5, M01#13, M02#5). Following a trial that reduced accidents, the commission made permanent a prohibition on left turns from Emerson Street onto Main Street (M04#14). It also initiated a one-year pilot with temporary barriers at Osborne Road, Woburn Street, and Playstead Road, and later established stop signs at Pitcher Avenue and Stearns Avenue (M05#3, M07#10, M08#9).",
-   "citations": [
-    {
-     "video_id": "MCM00001607",
-     "t": 2481,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "Central Avenue Stop Sign Request (2024-61)",
-     "label": "M01#5"
-    },
-    {
-     "video_id": "MCM00001607",
-     "t": 6086,
-     "date": "2024-11-12",
-     "base": "2024-12-02_MCM00001607",
-     "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "Whittemore Street Stop Sign (2024-66)",
-     "label": "M01#13"
-    },
-    {
-     "video_id": "MCM00001653",
-     "t": 3118,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001653",
-     "meeting_title": "Medford Traffic Commission 12-10-24",
-     "title": "2024-71: Warren Street and Cooley Road Four-Way Stop",
-     "label": "M02#5"
-    },
-    {
-     "video_id": "MCM00001738",
-     "t": 7378,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001738",
-     "meeting_title": "Medford Traffic Commission 02-11-25",
-     "title": "2023-47: No Left Turn from Emerson Street to Main Street",
-     "label": "M04#14"
-    },
-    {
-     "video_id": "MCM00001776",
-     "t": 1294,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001776",
-     "meeting_title": "Medford Traffic Commission 07-08-25",
-     "title": "Osborne Road and Woburn Street Safety Improvements",
-     "label": "M05#3"
-    },
-    {
-     "video_id": "MCM00001829",
-     "t": 5316,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001829",
-     "meeting_title": "Traffic Commission 10-14-25",
-     "title": "2025-77 & 78: High Street Safety Measures",
-     "label": "M07#10"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 4932,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-37: Stop Sign - Stearns Avenue at College Avenue",
-     "label": "M08#9"
-    }
-   ]
-  },
-  {
-   "name": "Emergency vehicle clearance and street navigation",
-   "status": "ongoing",
-   "summary": "The commission establishes localized parking prohibitions to prevent parked cars from impeding emergency vehicles, school buses, and sanitation access. In early 2025, it approved parking restrictions on Fulton Spring Road to permit safe school bus turns and implemented a chicane parking layout on Pearl Street to improve emergency access (M04#12, M05#4). Corner restrictions were similarly enacted on Lewis Street to ensure emergency apparatus clearance (M07#9). In 2026, the commission enacted No Parking Tow Zones on Metcalf Street and Elliott Street after the fire department presented evidence of apparatus encountering difficulties on sharp curves, and approved corner offsets along Hancock Street (M08#10, M08#11, M08#14).",
-   "citations": [
-    {
-     "video_id": "MCM00001738",
-     "t": 6620,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001738",
-     "meeting_title": "Medford Traffic Commission 02-11-25",
-     "title": "2025-18: No Parking on Fulton Spring Road",
-     "label": "M04#12"
-    },
-    {
-     "video_id": "MCM00001776",
-     "t": 5609,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001776",
-     "meeting_title": "Medford Traffic Commission 07-08-25",
-     "title": "Pearl Street Parking Plan",
-     "label": "M05#4"
-    },
-    {
-     "video_id": "MCM00001829",
-     "t": 5006,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001829",
-     "meeting_title": "Traffic Commission 10-14-25",
-     "title": "2025-76: Lewis Street Parking Restriction",
-     "label": "M07#9"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 5100,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-38: No Parking Anytime - 52 Metcalf Street",
-     "label": "M08#10"
-    },
-    {
-     "video_id": "CAS00002518",
-     "t": 6302,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002518",
-     "meeting_title": "Traffic Commission 09/08/26",
-     "title": "2026-39: No Parking Anytime - 25-31 Elliott Street",
-     "label": "M08#11"
+     "label": "M12#10"
     },
     {
      "video_id": "CAS00002518",
@@ -391,110 +226,177 @@
      "base": "2026-09-09_CAS00002518",
      "meeting_title": "Traffic Commission 09/08/26",
      "title": "2026-44, 45, 46: Corner Parking Offsets - Hancock Street Area",
-     "label": "M08#14"
+     "label": "M13#14"
+    }
+   ]
+  },
+  {
+   "name": "Emergency vehicle clearance and access",
+   "status": "ongoing",
+   "summary": "The commission acts on requests from the Fire Department and public safety officials to clear narrow streets and tight turns for emergency apparatus. In late 2023, the body created a tow zone on Foss Street to ensure emergency vehicles could pass safely (M01#3). It later implemented a chicane parking layout on Pearl Street to formalize legal parking while ensuring emergency vehicle access (M10#4). In September 2026, the commission designated tow zones on Metcalf Street and Elliott Street after receiving evidence of fire engines getting stuck on sharp turns (M13#10, M13#11).",
+   "citations": [
+    {
+     "video_id": "MCM00001741",
+     "t": 963,
+     "date": "2023-12-12",
+     "base": "2025-02-13_MCM00001741",
+     "meeting_title": "Medford Traffic Commission 12-12-23",
+     "title": "No Parking Tow Zone: Foss Street",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "MCM00001776",
+     "t": 5609,
+     "date": "2025-07-08",
+     "base": "2025-07-09_MCM00001776",
+     "meeting_title": "Medford Traffic Commission 07-08-25",
+     "title": "Pearl Street Parking Plan",
+     "label": "M10#4"
+    },
+    {
+     "video_id": "CAS00002518",
+     "t": 5100,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002518",
+     "meeting_title": "Traffic Commission 09/08/26",
+     "title": "2026-38: No Parking Anytime - 52 Metcalf Street",
+     "label": "M13#10"
+    },
+    {
+     "video_id": "CAS00002518",
+     "t": 6302,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002518",
+     "meeting_title": "Traffic Commission 09/08/26",
+     "title": "2026-39: No Parking Anytime - 25-31 Elliott Street",
+     "label": "M13#11"
+    }
+   ]
+  },
+  {
+   "name": "On-street electric vehicle charging infrastructure",
+   "status": "settled",
+   "summary": "In September 2025, the commission reviewed a grant-funded proposal to install on-street electric vehicle charging stations near five city parks, taking public comment on potential impacts to neighborhood parking (M11#10). The following month, the commission approved installing two on-street charging stations near 200 Boston Avenue as a compromise location for residents without off-street parking (M12#2).",
+   "citations": [
+    {
+     "video_id": "MCM00001809",
+     "t": 4704,
+     "date": "2025-09-09",
+     "base": "2025-09-11_MCM00001809",
+     "meeting_title": "Medford Traffic Commission 09-09-25",
+     "title": "2025-65: Proposed On-Street EV Charging Stations",
+     "label": "M11#10"
+    },
+    {
+     "video_id": "MCM00001829",
+     "t": 119,
+     "date": "2025-10-14",
+     "base": "2025-11-26_MCM00001829",
+     "meeting_title": "Traffic Commission 10-14-25",
+     "title": "2025-65: On-Street EV Charging Stations",
+     "label": "M12#2"
     }
    ]
   }
  ],
  "periods": [
   {
-   "period": "2024-2025 term",
-   "narrative": "During this term, the commission enacted new parking permit structures, instituted permanent traffic rules such as the G-Zone parking program and turn restrictions, and expanded pedestrian crosswalk daylighting. It also held preliminary discussions on municipal commercial vehicle regulations and approved site locations for on-street electric vehicle charging.",
+   "period": "2022-2023 term",
+   "narrative": "During this period, the commission granted accessible parking spaces, established parking rules on Foss and Park Streets, and limited overnight commercial vehicle parking.",
    "citations": [
     {
-     "video_id": "MCM00001607",
+     "video_id": "MCM00001741",
      "t": null,
+     "date": "2023-12-12",
+     "base": "2025-02-13_MCM00001741",
+     "meeting_title": "Medford Traffic Commission 12-12-23",
+     "title": "Medford Traffic Commission 12-12-23",
+     "label": "M01"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The commission approved and permanently established the G-Zone transit parking program, updated parking permit fee schedules, and implemented extensive crosswalk daylighting and intersection safety measures across the city.",
+   "citations": [
+    {
+     "video_id": "MCM00001656",
+     "t": 238,
+     "date": "2024-04-09",
+     "base": "2024-12-13_MCM00001656",
+     "meeting_title": "Medford Traffic Commission 04-09-24",
+     "title": "GLX Parking Zone Pilot",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00001607",
+     "t": 5535,
      "date": "2024-11-12",
      "base": "2024-12-02_MCM00001607",
      "meeting_title": "Medford Traffic Commission 11-12-24",
-     "title": "Medford Traffic Commission 11-12-24",
-     "label": "M01"
-    },
-    {
-     "video_id": "MCM00001653",
-     "t": null,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001653",
-     "meeting_title": "Medford Traffic Commission 12-10-24",
-     "title": "Medford Traffic Commission 12-10-24",
-     "label": "M02"
-    },
-    {
-     "video_id": "MCM00001707",
-     "t": null,
-     "date": "2025-01-14",
-     "base": "2025-01-17_MCM00001707",
-     "meeting_title": "Medford Traffic Commission 01-14-25",
-     "title": "Medford Traffic Commission 01-14-25",
-     "label": "M03"
+     "title": "2025 Parking Fee Schedule (2024-65)",
+     "label": "M06#12"
     },
     {
      "video_id": "MCM00001738",
-     "t": null,
+     "t": 7544,
      "date": "2025-02-11",
      "base": "2025-02-12_MCM00001738",
      "meeting_title": "Medford Traffic Commission 02-11-25",
-     "title": "Medford Traffic Commission 02-11-25",
-     "label": "M04"
-    },
-    {
-     "video_id": "MCM00001776",
-     "t": null,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001776",
-     "meeting_title": "Medford Traffic Commission 07-08-25",
-     "title": "Medford Traffic Commission 07-08-25",
-     "label": "M05"
-    },
-    {
-     "video_id": "MCM00001809",
-     "t": null,
-     "date": "2025-09-09",
-     "base": "2025-09-11_MCM00001809",
-     "meeting_title": "Medford Traffic Commission 09-09-25",
-     "title": "Medford Traffic Commission 09-09-25",
-     "label": "M06"
-    },
-    {
-     "video_id": "MCM00001829",
-     "t": null,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001829",
-     "meeting_title": "Traffic Commission 10-14-25",
-     "title": "Traffic Commission 10-14-25",
-     "label": "M07"
+     "title": "2024-37: G-Zone Resident Parking Pilot Review",
+     "label": "M09#15"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The commission focused on resolving residential parking variances, implementing tow zones to ensure Fire Department apparatus navigation, and approving sightline restrictions at intersections. It also expanded resident permit parking to Quincy Street and increased replacement fees for visitor parking passes.",
+   "narrative": "The commission addressed emergency apparatus navigation requirements, increased replacement fees for lost visitor passes, and established local resident parking regulations and stop signs.",
    "citations": [
     {
      "video_id": "CAS00002518",
-     "t": null,
+     "t": 5100,
      "date": "2026-09-08",
      "base": "2026-09-09_CAS00002518",
      "meeting_title": "Traffic Commission 09/08/26",
-     "title": "Traffic Commission 09/08/26",
-     "label": "M08"
+     "title": "2026-38: No Parking Anytime - 52 Metcalf Street",
+     "label": "M13#10"
+    },
+    {
+     "video_id": "CAS00002518",
+     "t": 7457,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002518",
+     "meeting_title": "Traffic Commission 09/08/26",
+     "title": "2026-40: Visitor Pass Replacement Fee Increase",
+     "label": "M13#12"
+    },
+    {
+     "video_id": "CAS00002518",
+     "t": 7981,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002518",
+     "meeting_title": "Traffic Commission 09/08/26",
+     "title": "2026-42 & 2026-43: No Parking - Walnut Street and Thomas Street",
+     "label": "M13#13"
     }
    ]
   }
  ],
- "dropped": 2,
+ "dropped": 0,
  "coverage": {
-  "citations": 45,
-  "meetings_cited": 8,
-  "of_meetings": 8,
-  "max_share": 0.222,
+  "citations": 34,
+  "meetings_cited": 11,
+  "of_meetings": 13,
+  "max_share": 0.206,
+  "even_share": 0.0769,
+  "concentration_ratio": 2.68,
   "most_cited": "CAS00002518",
-  "periods_covered": 2,
-  "of_periods": 2
+  "periods_covered": 3,
+  "of_periods": 3
  },
  "usage": {
-  "input_tokens": 6152,
-  "output_tokens": 2014,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 8541,
+  "output_tokens": 1647,
+  "model_version": "gemini-3.6-flash"
  }
 }

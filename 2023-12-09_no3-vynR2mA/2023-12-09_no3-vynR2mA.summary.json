@@ -1,0 +1,45 @@
+{
+ "video_id": "no3-vynR2mA",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T04:09:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "df901b4584aff56c",
+ "subject": "",
+ "overview": "The West Medford Community Center hosted its monthly First Fridays Words and Music program, featuring an interview with former Medford Poet Laureate Terry Carter and a gospel musical performance by Dr. Renee Haywood and Rayma Haywood.",
+ "items": [
+  {
+   "title": "Interview with Terry Carter",
+   "t": 267,
+   "summary": "Ilene Lerner interviewed Medford Poet Laureate Terry Carter about his background, literary influences, gentrification in West Medford, and local history, accompanied by readings of his poetry.",
+   "speakers": [
+    "Terry Carter",
+    "Ilene Lerner"
+   ]
+  },
+  {
+   "title": "Community Center Announcements",
+   "t": 3439,
+   "summary": "Terry Carter shared center updates regarding senior lunches, recent fundraising campaigns, upcoming Martin Luther King Jr. Day events, and fitness classes.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance by Renee and Rayma Haywood",
+   "t": 3646,
+   "summary": "Dr. Renee Haywood and Rayma Haywood performed a musical set of gospel and holiday songs.",
+   "speakers": [
+    "Terry Carter",
+    "Renee Haywood",
+    "Rayma Haywood"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 28752,
+  "output_tokens": 320,
+  "model_version": "gemini-3.6-flash"
+ }
+}
