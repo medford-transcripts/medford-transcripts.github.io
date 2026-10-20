@@ -1,0 +1,82 @@
+{
+ "video_id": "MCM00001143",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T17:08:48Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "590cbec8dbe9eae0",
+ "subject": "",
+ "overview": "The Medford Bicycle Advisory Commission reviewed community outreach and event recaps, discussed planning potential family bike rides with a guest organizer, and received updates from city staff on bike infrastructure, rack grants, and Bluebikes expansion.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 164,
+   "summary": "The commission approved the minutes from the September meeting.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Fairchild"
+   ]
+  },
+  {
+   "title": "Announcements and Recent Events",
+   "t": 194,
+   "summary": "Members reported on recent outreach tables and clinics, including Tufts Community Day, Harvest Your Energy, bike light kit distribution, and Safe Routes to School mapping at the Brooks School festival.",
+   "speakers": [
+    "Emily O'Brien",
+    "Ernie Meunier",
+    "Mary Kate Gustafson",
+    "Leah Grodstein"
+   ]
+  },
+  {
+   "title": "Halloween and Family Bike Ride Planning",
+   "t": 1099,
+   "summary": "Guest organizer Paul Morgan discussed the logistics and routing for large-scale family bike rides, exploring possibilities for hosting a similar ride in Medford in 2024 or 2025.",
+   "speakers": [
+    "Emily O'Brien",
+    "Mary Kate Gustafson",
+    "Paul Morgan",
+    "Ernie Meunier",
+    "Daniel Fairchild",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "City Engagement: Bike Racks and Passing Signage",
+   "t": 2642,
+   "summary": "City staff reported on a grant awarded for 40 bike racks, field siting procedures, and the expected distribution of state-provided four-foot passing signs.",
+   "speakers": [
+    "Emily O'Brien",
+    "Ernie Meunier",
+    "Leah Grodstein",
+    "Noam Rouveni"
+   ]
+  },
+  {
+   "title": "Subcommittee and Speaker Series Updates",
+   "t": 3509,
+   "summary": "Members shared brief updates on contacting potential speakers and noted a regional bike and pedestrian event series being developed in Everett.",
+   "speakers": [
+    "Emily O'Brien",
+    "Leah Grodstein"
+   ]
+  },
+  {
+   "title": "Infrastructure Updates",
+   "t": 3615,
+   "summary": "Staff provided updates on the Clipper Ship Connector groundbreaking, the installation schedule for new Bluebikes stations, road striping and contraflow considerations on West Street and Riverside Avenue, and city planning capacity.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Fairchild",
+    "Noam Rouveni",
+    "Leah Grodstein"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32751,
+  "output_tokens": 560,
+  "model_version": "gemini-3.8-flash"
+ }
+}
