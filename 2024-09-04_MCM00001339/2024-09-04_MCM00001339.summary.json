@@ -1,0 +1,43 @@
+{
+ "video_id": "MCM00001339",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T05:08:53Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "89777b43a7934352",
+ "subject": "McDonald Park Improvements Extension",
+ "overview": "The commission approved a three-year extension for work at McDonald Park and discussed upcoming filings for a new pedestrian pathway under Route 28.",
+ "items": [
+  {
+   "title": "McDonald Park Order of Conditions Extension",
+   "t": 36,
+   "summary": "Approved a three-year extension of the Order of Conditions for McDonald Park (DEP file 215-0206) to allow for the completion of a playground and vegetation management. The Department of Conservation and Recreation confirmed that an updated vegetation management plan is being developed to address the loss of mature ash and cottonwood trees.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Emily Ehlers",
+    "Lauren Block",
+    "Ruth Pellifield",
+    "Heather",
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "Administrative and Project Updates",
+   "t": 673,
+   "summary": "Staff announced a forthcoming filing for a pedestrian pathway under Route 28 and discussed board recruitment efforts and upcoming meeting schedules for January.",
+   "speakers": [
+    "Heather",
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Christopher Bader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5867,
+  "output_tokens": 277,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

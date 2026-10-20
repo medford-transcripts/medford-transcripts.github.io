@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "df901b4584aff56c",
- "subject": "",
+ "subject": "First Fridays Words and Music",
  "overview": "The West Medford Community Center hosted its monthly First Fridays Words and Music program, featuring an interview with former Medford Poet Laureate Terry Carter and a gospel musical performance by Dr. Renee Haywood and Rayma Haywood.",
  "items": [
   {
@@ -41,5 +41,6 @@
   "input_tokens": 28752,
   "output_tokens": 320,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
