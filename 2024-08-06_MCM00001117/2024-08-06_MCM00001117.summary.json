@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "03211589a808a8e7",
- "subject": "",
+ "subject": "Demolition Delay for 56 Wareham Street",
  "overview": "The Medford Historical Commission found 56 Wareham Street to be preferably preserved, imposing an 18-month demolition delay. The commission also recommended two properties for National Register eligibility review and discussed commemorative design concepts for Thomas Brooks Park.",
  "items": [
   {
@@ -109,5 +109,6 @@
   "input_tokens": 32663,
   "output_tokens": 866,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
