@@ -1,0 +1,106 @@
+{
+    "SPEAKER_00": {
+        "value": "MCM00000565_SPEAKER_05",
+        "source": "embedding_match",
+        "score": 0.8436687937087048,
+        "from": "XXXXXX00146_SPEAKER_02",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "MCM00001610_SPEAKER_06",
+        "source": "embedding_match",
+        "score": 0.930082777813208,
+        "from": "MCM00001831_SPEAKER_07",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9470401600483359,
+        "from": "MCM00001758_SPEAKER_08",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Lois Grossman",
+        "source": "embedding_match",
+        "score": 0.9613090526229254,
+        "from": "MCM00001823_SPEAKER_03",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Brenda Pike",
+        "source": "embedding_match",
+        "score": 0.9369898659912893,
+        "from": "MCM00001823_SPEAKER_02",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "Robert Paine",
+        "source": "embedding_match",
+        "score": 0.8582557634844082,
+        "from": "MCM00001823_SPEAKER_01",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "MCM00001758_SPEAKER_12",
+        "source": "embedding_match",
+        "score": 0.7558092710521601,
+        "from": "MCM00000570_SPEAKER_07",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_07": {
+        "value": "Barry Ingber",
+        "source": "embedding_match",
+        "score": 0.971521042830146,
+        "from": "MCM00001831_SPEAKER_11",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "L5Dn-1_BzKM_SPEAKER_12",
+        "source": "embedding_match",
+        "score": 0.7627549680240985,
+        "from": "MCM00001610_SPEAKER_02",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_08"
+    },
+    "SPEAKER_09": {
+        "value": "John Rogers",
+        "source": "embedding_match",
+        "score": 0.7723467118374092,
+        "from": "CAS00002550_SPEAKER_02",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_09"
+    },
+    "SPEAKER_10": {
+        "value": "Josh Ekhart-Lee",
+        "source": "embedding_match",
+        "score": 0.8036694048794196,
+        "from": "MCM00001823_SPEAKER_07",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_10"
+    },
+    "SPEAKER_11": {
+        "value": "rov34HMcKiU_SPEAKER_27",
+        "source": "embedding_match",
+        "score": 0.9472864574270401,
+        "from": "CAS00002550_SPEAKER_03",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_11"
+    },
+    "SPEAKER_12": {
+        "value": "Lauretta James",
+        "source": "embedding_match",
+        "score": 0.9488566709651012,
+        "from": "CAS00002429_SPEAKER_08",
+        "at": "2026-10-20T09:55:06Z",
+        "previous": "SPEAKER_12"
+    }
+}

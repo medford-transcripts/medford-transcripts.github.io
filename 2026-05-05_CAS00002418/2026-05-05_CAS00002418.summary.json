@@ -1,0 +1,71 @@
+{
+ "video_id": "CAS00002418",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T10:07:16Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "df6c44dfe9b69964",
+ "subject": "",
+ "overview": "The Energy and Environment Committee reviewed city environmental updates, tracked progress on the Climate Action Plan, and debated proposed changes to municipal waste collection and pay-as-you-throw policies. The committee approved the previous meeting's minutes and discussed legislative initiatives around rodenticide and plastics reduction.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 196,
+   "summary": "The committee unanimously voted to accept the minutes from the previous meeting.",
+   "speakers": [
+    "Barry Ingber",
+    "Lauretta James"
+   ]
+  },
+  {
+   "title": "City Environmental Updates",
+   "t": 299,
+   "summary": "Staff provided updates on upcoming environmental events, the Electrify Medford program, third-party energy supplier costs, revisions to the municipal aggregation plan, air quality sensors at local schools, EV charger installations, and sustainability targets for the high school building project.",
+   "speakers": [
+    "Brenda Pike",
+    "Lauretta James",
+    "Josh Ekhart-Lee",
+    "Barry Ingber",
+    "John Rogers"
+   ]
+  },
+  {
+   "title": "Climate Action Plan Review",
+   "t": 1978,
+   "summary": "The committee walked through the Climate Action Plan tracking matrix, discussing municipal progress on zoning recodification, affordable housing trusts, specialized energy code enforcement, and Building Department staffing capacity.",
+   "speakers": [
+    "Brenda Pike",
+    "Lauretta James",
+    "Josh Ekhart-Lee",
+    "Lois Grossman"
+   ]
+  },
+  {
+   "title": "Member Updates and State Legislation",
+   "t": 3289,
+   "summary": "Members discussed state legislative items under the Mass Ready Act, including proposed bans and restrictions on anticoagulant rodenticides, plastics reduction measures, and dark sky lighting legislation.",
+   "speakers": [
+    "Lauretta James",
+    "John Rogers"
+   ]
+  },
+  {
+   "title": "Pay-As-You-Throw and Waste Management Discussion",
+   "t": 4478,
+   "summary": "The committee debated a proposal for bi-weekly trash pickup and pay-as-you-throw mechanisms, weighing concerns about rodents, odors, and service cuts against municipal costs and the impact of curbside composting.",
+   "speakers": [
+    "Lois Grossman",
+    "John Rogers",
+    "Barry Ingber",
+    "Christina Elaine",
+    "Brenda Pike"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 31936,
+  "output_tokens": 502,
+  "model_version": "gemini-3.8-flash"
+ }
+}
