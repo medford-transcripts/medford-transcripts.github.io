@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "9abe34a2b83e331d",
- "subject": "",
+ "subject": "Legislative and Executive Charter Provisions",
  "overview": "The subcommittee reviewed executive and legislative provisions for Articles Two and Three of the proposed city charter, examining council composition, compensation, mayoral absence, and administrative oversight. Members agreed on multiple draft recommendations while deferring final proposals on term limits and a city auditor pending additional research.",
  "items": [
   {
@@ -126,5 +126,6 @@
   "input_tokens": 38732,
   "output_tokens": 1011,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

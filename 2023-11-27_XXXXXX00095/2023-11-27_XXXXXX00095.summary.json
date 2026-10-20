@@ -1,0 +1,57 @@
+{
+ "video_id": "XXXXXX00095",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T08:15:06Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "59fe3686cdf55a24",
+ "subject": "Medford Teacher Equity Scholarship",
+ "overview": "Medford High School educators discussed the background and ongoing fundraising efforts for the Medford Teacher Equity Scholarship, an initiative established to support students of color pursuing careers in education.",
+ "items": [
+  {
+   "title": "Introductions and Local Medford Dining",
+   "t": 42,
+   "summary": "High school music teacher Sarah Fard and guidance counselor Joel Menasha introduced themselves and shared their favorite dining spots in Medford.",
+   "speakers": [
+    "Danielle Balocca",
+    "Joel Menasha",
+    "Sarah Fard"
+   ]
+  },
+  {
+   "title": "Teaching and Programs at Medford High School",
+   "t": 144,
+   "summary": "Fard and Menasha described their paths to education, highlighting the school's diverse student population, accessible music electives, and vocational programming.",
+   "speakers": [
+    "Danielle Balocca",
+    "Sarah Fard",
+    "Joel Menasha"
+   ]
+  },
+  {
+   "title": "Medford Teacher Equity Scholarship",
+   "t": 465,
+   "summary": "The guests explained the origins, nonprofit structure, and mission of the scholarship fund created to reduce financial barriers for students of color entering teaching programs.",
+   "speakers": [
+    "Danielle Balocca",
+    "Joel Menasha",
+    "Sarah Fard"
+   ]
+  },
+  {
+   "title": "GSA Scholarship Acknowledgments and Closing",
+   "t": 1028,
+   "summary": "Menasha thanked Balocca for past community fundraising efforts benefiting scholarships for members of the high school Gay-Straight Alliance.",
+   "speakers": [
+    "Danielle Balocca",
+    "Joel Menasha"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7163,
+  "output_tokens": 386,
+  "model_version": "gemini-3.8-flash"
+ }
+}
