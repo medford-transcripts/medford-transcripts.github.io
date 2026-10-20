@@ -1,0 +1,115 @@
+{
+ "video_id": "MCM00001741",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T03:07:16Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "44ee49de5545429e",
+ "subject": "",
+ "overview": "The Medford Traffic Commission met to review several parking petitions and regulations. The commission approved two accessible parking spaces, parking restrictions on Foss Street and Commercial Street, a commercial vehicle parking variance, and designated on-street parking spaces on Park Street to eliminate parking on sidewalks.",
+ "items": [
+  {
+   "title": "Handicap Parking Sign: 20 Lookout Road",
+   "t": 34,
+   "summary": "Approved a handicapped parking sign request at 20 Lookout Road for an elderly resident lacking driveway access.",
+   "speakers": [
+    "Jack Buckley",
+    "Tom Carroll",
+    "Alicia Hunt",
+    "Bob Dickinson",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Handicap Parking Sign: 355 Main Street",
+   "t": 431,
+   "summary": "Removed from the table and approved a handicapped parking sign request for 355 Main Street.",
+   "speakers": [
+    "Jack Buckley",
+    "Joseph Nasta",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Bob Dickinson"
+   ]
+  },
+  {
+   "title": "No Parking Tow Zone: Foss Street",
+   "t": 963,
+   "summary": "Approved a no parking anytime tow zone on the even side of Foss Street from Fellsway West to Guild Street to address safety issues and allow emergency vehicles to pass.",
+   "speakers": [
+    "Jack Buckley",
+    "Rachel Tracy",
+    "Alicia Hunt",
+    "Bob Dickinson",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Commercial Vehicle Parking Variance: 93 Walcott Street",
+   "t": 1651,
+   "summary": "Approved a one-year commercial vehicle overnight parking permit variance for a work van with company lettering at 93 Walcott Street, despite commissioner concerns over broader policy implications.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt",
+    "Bob Dickinson",
+    "Todd Blake",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Parking Regulations: Park Street",
+   "t": 3825,
+   "summary": "Approved parking restrictions and designated on-street parking segments on Park Street between Fellsway West and Brogan Road to end habitual parking on sidewalks.",
+   "speakers": [
+    "Jack Buckley",
+    "Todd Blake",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Bob Dickinson"
+   ]
+  },
+  {
+   "title": "One-Hour Parking: Kenmare Road at Central Avenue",
+   "t": 5163,
+   "summary": "Approved one-hour parking from 8 a.m. to 8 p.m., Monday through Saturday, along the building on Kenmare Road for LB Music School customer turnover.",
+   "speakers": [
+    "Jack Buckley",
+    "Lauren Bateman",
+    "Alicia Hunt",
+    "Todd Blake",
+    "Bob Dickinson",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "No Overnight Parking Tow Zone: Commercial Street",
+   "t": 5683,
+   "summary": "Approved a no overnight parking tow zone between 10 p.m. and 6 a.m. on Commercial Street to deter commercial trucks and tractor-trailers from using the corridor for vehicle storage.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Bob Dickinson",
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Off-Agenda Request: Forest Street Parking Variance",
+   "t": 6366,
+   "summary": "Tabled a request from an 18 Salem Street resident for a parking variance on Forest Street to the January meeting because it was not listed on the posted agenda.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Todd Blake",
+    "Bob Dickinson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 41453,
+  "output_tokens": 803,
+  "model_version": "gemini-3.8-flash"
+ }
+}
