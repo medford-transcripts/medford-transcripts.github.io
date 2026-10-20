@@ -1,0 +1,54 @@
+{
+ "video_id": "XXXXXX00092",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T14:11:38Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "33402c4eb1ca3065",
+ "subject": "Library Podcast Class Trailers",
+ "overview": "Medford Bytes presented trailers for three student podcasts developed during a Medford Public Library instructional course.",
+ "items": [
+  {
+   "title": "K-Dramarama",
+   "t": 0,
+   "summary": "Presented a trailer exploring the popularity, tropes, and cultural impact of South Korean television dramas.",
+   "speakers": [
+    "Laura",
+    "Emma",
+    "Serena"
+   ]
+  },
+  {
+   "title": "Program Introduction",
+   "t": 130,
+   "summary": "Danielle Balocca introduced bonus content from the library's podcasting class and directed listeners to the show notes for event information.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "I Agree, That Is Stupid",
+   "t": 154,
+   "summary": "Presented a trailer for a career-focused podcast that discusses workplace frustrations and offers professional coaching advice.",
+   "speakers": [
+    "John",
+    "Calvin"
+   ]
+  },
+  {
+   "title": "Disgruntled Tales",
+   "t": 194,
+   "summary": "Presented a fantasy-themed trailer featuring an interview between a host and an imprisoned dwarf in the Irmor Kingdom.",
+   "speakers": [
+    "Astoria",
+    "Disgruntleden"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2518,
+  "output_tokens": 314,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
