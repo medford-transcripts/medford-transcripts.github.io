@@ -1,0 +1,77 @@
+{
+ "video_id": "MCM00000618",
+ "provider": "gemini",
+ "generated_at": "2026-10-20T13:14:43Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "9ba8bdbfb9faac95",
+ "subject": "Boston Avenue Redevelopment and Riverside Electric Fence",
+ "overview": "The board reviewed and approved amendments to a major mixed-use project on Boston Avenue and granted a variance for a high-security electric fence on Riverside Avenue. All petitions heard during the session were approved unanimously.",
+ "items": [
+  {
+   "title": "290 Salem Street LLC",
+   "t": 93,
+   "summary": "Continued the petition to construct a seven-unit residential structure to the November 30th meeting to allow the applicant time to coordinate with the planning department.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Michael Barone Jr."
+   ]
+  },
+  {
+   "title": "590 Boston Avenue Amendments",
+   "t": 373,
+   "summary": "Approved amendments to a previously granted variance and site plan for a five-story mixed-use building, which included increasing residential units from 40 to 45 and moving parking to an at-grade configuration. The board adopted conditions recommended by the Community Development Board, excluding a proposed land donation that was deemed procedurally ineligible due to public noticing requirements.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Adam Barnosky",
+    "Peter Quinn",
+    "Milton Yu",
+    "Michael Barone Jr.",
+    "Danielle Evans",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "436 Riverside Avenue Electric Fence",
+   "t": 3710,
+   "summary": "Approved a special permit to waive the requirement for police chief sign-off on a security plan and granted a height variance for a 10-foot-high electric fence at a Penske facility. The board determined that the proposed system, which includes a non-electrified outer perimeter and industry-standard emergency shut-offs for first responders, did not pose a threat to public safety.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Cindy Lundy",
+    "Bill Forte"
+   ]
+  },
+  {
+   "title": "277 Middlesex Avenue Prestige Car Wash",
+   "t": 7106,
+   "summary": "Approved a special permit to modify a non-conforming car wash use by installing three automated pay stations to improve on-site traffic flow. The board found the modification would reduce vehicle queuing on public streets and would not be detrimental to the neighborhood.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Nir Drori",
+    "Ronen Drory",
+    "Bill Forte"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 8584,
+   "summary": "Staff discussed upcoming 40B comprehensive permit filings for Front Street and a pending executive session to discuss litigation regarding a separate housing project.",
+   "speakers": [
+    "Denis MacDougall",
+    "Alicia Hunt",
+    "Mike Caldera",
+    "Jamie Thompson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 48088,
+  "output_tokens": 721,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
