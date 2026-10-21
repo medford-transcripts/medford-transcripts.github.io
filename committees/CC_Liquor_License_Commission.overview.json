@@ -1,22 +1,22 @@
 {
  "committee": "CC Liquor License Commission",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-19T02:06:26Z",
- "sources_sha": "31ef2a6cbd9248c8",
- "n_meetings": 17,
+ "generated_at": "2026-10-21T03:07:05Z",
+ "sources_sha": "a80f9b1730e6f1fd",
+ "n_meetings": 22,
  "period_style": "term",
  "span": [
-  "2024-02-21",
+  "2023-10-18",
   "2026-09-16"
  ],
- "overview": "The Medford Liquor License Commission regulates local alcoholic beverage licensing and statutory compliance, including the issuance of permanent licenses, special one-day permits, and entertainment licenses. The commission oversees operating hours, reviews license transfers and corporate amendments, and conducts disciplinary hearings following police compliance investigations. Across the 17 meetings held between February 2024 and September 2026, the board routinely handled annual license renewals and coordinated regulations with other municipal departments. At its most recent meeting in September 2026, the commission approved multiple event licenses, authorized business amendments, and took under advisement a disciplinary hearing regarding underage alcohol service.",
+ "overview": "The CC Liquor License Commission serves as the regulatory and disciplinary authority for alcohol and entertainment licensing within Medford. The body oversees the issuance of permanent and one-day liquor licenses, monitors compliance with state and local laws through police stings, and manages the annual license renewal process. Meeting from late 2023 through 2026, the commission has navigated evolving state regulations, including the adoption of early Sunday morning sales. At its most recent session, the body was actively managing new business transitions and had a major disciplinary hearing for an underage sale violation under advisement.",
  "threads": [
   {
-   "name": "Disciplinary enforcement and underage sales",
+   "name": "Alcohol Compliance and Enforcement",
    "status": "ongoing",
-   "summary": "The commission regularly adjudicates violations stemming from police compliance stings involving sales to minors. In July 2024, the commission issued warnings and one-year probations to five businesses following citywide checks, subsequently ordering abeyance suspensions and mandatory server training for other non-compliant establishments (M06#4, M06#5, M07#2). Following three sales to minors, the board imposed a ten-day license suspension on Medford Wine and Spirits later that year (M12#5). Disciplinary proceedings continued into 2025 and 2026, with the commission holding hearings and taking decisions under advisement for Main Street Liquors and the Great American Beer Hall (M14#5, M17#10).",
+   "summary": "The commission adjudicates violations identified through police-led compliance checks involving underage buyers. Early enforcement actions typically resulted in one-year probation and warnings for businesses like Medford Wine and Spirits and Hillside Wine and Spirits. Repeated or severe violations have led to harsher penalties, including a 10-day license suspension for Medford Wine and Spirits in late 2024. Most recently, the commission held a disciplinary hearing for the Great American Beer Hall regarding the service of a 19-year-old and took the matter under advisement.",
    "citations": [
     {
      "video_id": "MCM00001230",
@@ -25,7 +25,7 @@
      "base": "2024-08-20_MCM00001230",
      "meeting_title": "Medford Liquor License Commission 07-17-24",
      "title": "Compliance Check Procedure Overview",
-     "label": "M06#4"
+     "label": "M11#4"
     },
     {
      "video_id": "MCM00001230",
@@ -34,16 +34,16 @@
      "base": "2024-08-20_MCM00001230",
      "meeting_title": "Medford Liquor License Commission 07-17-24",
      "title": "Violation: Medford Wine and Spirits",
-     "label": "M06#5"
+     "label": "M11#5"
     },
     {
-     "video_id": "MCM00001261",
-     "t": 121,
-     "date": "2024-08-21",
-     "base": "2024-08-21_MCM00001261",
-     "meeting_title": "Medford Liquor License Commission 08-21-24",
-     "title": "Compliance Hearing: Blue Fuji",
-     "label": "M07#2"
+     "video_id": "MCM00001230",
+     "t": 4176,
+     "date": "2024-07-17",
+     "base": "2024-08-20_MCM00001230",
+     "meeting_title": "Medford Liquor License Commission 07-17-24",
+     "title": "Violation: Hillside Wine and Spirits",
+     "label": "M11#6"
     },
     {
      "video_id": "MCM00001624",
@@ -52,16 +52,7 @@
      "base": "2024-12-05_MCM00001624",
      "meeting_title": "Medford Liquor License Commission 11-26-24",
      "title": "Disciplinary Hearing: Medford Wine and Spirits",
-     "label": "M12#5"
-    },
-    {
-     "video_id": "MCM00001706",
-     "t": 1022,
-     "date": "2025-01-15",
-     "base": "2025-01-17_MCM00001706",
-     "meeting_title": "Medford Liquor License Commission 01-15-25",
-     "title": "Disciplinary Hearing: Main Street Liquors",
-     "label": "M14#5"
+     "label": "M17#5"
     },
     {
      "video_id": "CAS00002528",
@@ -70,23 +61,32 @@
      "base": "2026-09-17_CAS00002528",
      "meeting_title": "Liquor License Commission 09/16/26",
      "title": "Disciplinary Hearing: Great American Beer Hall",
-     "label": "M17#10"
+     "label": "M22#10"
     }
    ]
   },
   {
-   "name": "Special one-day alcohol licensing",
+   "name": "Special Event and One-Day Licensing",
    "status": "ongoing",
-   "summary": "The board routinely evaluates and approves temporary beer, wine, and all-alcohol licenses for local events, fundraisers, and athletic competitions (M01#2, M02#6, M04#5). To improve administrative oversight, the commission revised its application forms in mid-2024 to include dedicated sections for fee tracking, rain dates, and entertainment details (M05#9, M06#11). The commission also coordinated logistical and safety arrangements for events held in municipal spaces like the Condon Shell and Hormel Stadium (M04#5, M08#10). One-day permit approvals remain a consistent and active part of monthly business through late 2026 (M17#2, M17#7).",
+   "summary": "A high volume of the commission's business involves processing temporary licenses for community events, professional sports, and university functions. The body has refined its procedural requirements over time, establishing a strict Friday submission deadline for applications and revising the official form to include fee tracking and entertainment details. Frequent applicants include local entities like Medford Brewing Company, Tufts University, and the Medford Public Library. These licenses support a wide range of activities, from video game tournaments to professional ultimate frisbee games at Hormel Stadium.",
    "citations": [
     {
-     "video_id": "MCM00001233",
-     "t": 88,
-     "date": "2024-02-21",
-     "base": "2024-08-20_MCM00001233",
-     "meeting_title": "Medford Liquor License Commission 02-21-24",
-     "title": "Event Them One-Day License Applications",
-     "label": "M01#2"
+     "video_id": "MCM00001229",
+     "t": 39,
+     "date": "2023-10-18",
+     "base": "2024-08-20_MCM00001229",
+     "meeting_title": "Medford Liquor License Commission 10-18-23",
+     "title": "One-Day License: Medford Brewing Company",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00001235",
+     "t": 177,
+     "date": "2024-03-20",
+     "base": "2024-08-20_MCM00001235",
+     "meeting_title": "Medford Liquor License Commission 03-20-24",
+     "title": "Enforcement of 48-Hour Agenda Rule",
+     "label": "M07#2"
     },
     {
      "video_id": "MCM00001235",
@@ -95,16 +95,7 @@
      "base": "2024-08-20_MCM00001235",
      "meeting_title": "Medford Liquor License Commission 03-20-24",
      "title": "Boston Glory Sporting Event Licenses",
-     "label": "M02#6"
-    },
-    {
-     "video_id": "MCM00001231",
-     "t": 1271,
-     "date": "2024-05-15",
-     "base": "2024-08-20_MCM00001231",
-     "meeting_title": "Medford Liquor License Commission 05-15-24",
-     "title": "Winter Hill Brewing Company - One-Day Licenses",
-     "label": "M04#5"
+     "label": "M07#6"
     },
     {
      "video_id": "MCM00001232",
@@ -113,7 +104,7 @@
      "base": "2024-08-20_MCM00001232",
      "meeting_title": "Medford Liquor License Commission 06-26-24",
      "title": "One-Day License Application Form Revision",
-     "label": "M05#9"
+     "label": "M10#9"
     },
     {
      "video_id": "MCM00001230",
@@ -122,138 +113,41 @@
      "base": "2024-08-20_MCM00001230",
      "meeting_title": "Medford Liquor License Commission 07-17-24",
      "title": "New One-Day License Application",
-     "label": "M06#11"
+     "label": "M11#11"
     },
     {
-     "video_id": "MCM00001452",
-     "t": 6262,
-     "date": "2024-09-18",
-     "base": "2024-09-18_MCM00001452",
-     "meeting_title": "Medford Liquor License Commission 09-18-24",
-     "title": "Commission Discussion: D1 Soccer and General Updates",
-     "label": "M08#10"
-    },
-    {
-     "video_id": "CAS00002528",
-     "t": 72,
-     "date": "2026-09-16",
-     "base": "2026-09-17_CAS00002528",
-     "meeting_title": "Liquor License Commission 09/16/26",
-     "title": "One-Day License: Harvester Energy Festival",
-     "label": "M17#2"
+     "video_id": "MCM00001548",
+     "t": 36,
+     "date": "2024-10-01",
+     "base": "2024-10-01_MCM00001548",
+     "meeting_title": "Medford Liquor License Commission 10-01-24",
+     "title": "Medford Public Library Foundation One-Day License",
+     "label": "M14#1"
     },
     {
      "video_id": "CAS00002528",
-     "t": 1611,
+     "t": 1444,
      "date": "2026-09-16",
      "base": "2026-09-17_CAS00002528",
      "meeting_title": "Liquor License Commission 09/16/26",
-     "title": "One-Day Licenses: POTS Collaborative",
-     "label": "M17#7"
+     "title": "One-Day Licenses: Medford Public Library",
+     "label": "M22#6"
     }
    ]
   },
   {
-   "name": "Permanent license transfers, amendments, and surrenders",
+   "name": "Operating Hours and Regulatory Alignment",
    "status": "ongoing",
-   "summary": "The commission processes permanent licensing modifications, including manager changes, stock distributions, and category alterations (M02#4, M04#3, M11#4). The board also accepts the formal surrender of liquor and entertainment licenses when establishments close and approves annual renewals across all license classes (M07#6, M13#1, M13#5). In 2026, the board approved several full license transfers, such as Heritage Liquors and Rassos Grill, as well as a location change for Medford's Cappy's Inc. (M16#2, M16#3, M17#8).",
+   "summary": "The commission frequently evaluates operating hours, often seeking legal opinions to clarify the interplay between municipal zoning and state licensing rules. This included a 2024 decision to allow private clubs to continue 1:00 a.m. service while awaiting guidance on whether zoning bylaws applied to them. The body has also worked to align liquor licenses with required Common Victualler permits to ensure establishments maintain valid standing with the City Clerk. In later sessions, the commission moved away from blanket hour extensions, opting to review late-night requests on a case-by-case basis.",
    "citations": [
     {
-     "video_id": "MCM00001235",
-     "t": 500,
-     "date": "2024-03-20",
-     "base": "2024-08-20_MCM00001235",
-     "meeting_title": "Medford Liquor License Commission 03-20-24",
-     "title": "Ocean State Job Lot Manager Change Documentation",
-     "label": "M02#4"
-    },
-    {
-     "video_id": "MCM00001231",
-     "t": 461,
-     "date": "2024-05-15",
-     "base": "2024-08-20_MCM00001231",
-     "meeting_title": "Medford Liquor License Commission 05-15-24",
-     "title": "Semolina Kitchen - Stock Transfer and Change of Director",
-     "label": "M04#3"
-    },
-    {
-     "video_id": "MCM00001261",
-     "t": 2333,
-     "date": "2024-08-21",
-     "base": "2024-08-21_MCM00001261",
-     "meeting_title": "Medford Liquor License Commission 08-21-24",
-     "title": "License Surrender: Qdoba",
-     "label": "M07#6"
-    },
-    {
-     "video_id": "MCM00001619",
-     "t": 781,
-     "date": "2024-11-20",
-     "base": "2024-12-04_MCM00001619",
-     "meeting_title": "Medford Liquor License Commission 11-20-24",
-     "title": "Change of Category: Desisto Enterprises",
-     "label": "M11#4"
-    },
-    {
-     "video_id": "MCM00001662",
-     "t": 33,
-     "date": "2024-12-18",
-     "base": "2024-12-18_MCM00001662",
-     "meeting_title": "Medford Liquor License Commission 12-18-24",
-     "title": "Chili Gardens License Surrender",
-     "label": "M13#1"
-    },
-    {
-     "video_id": "MCM00001662",
-     "t": 3502,
-     "date": "2024-12-18",
-     "base": "2024-12-18_MCM00001662",
-     "meeting_title": "Medford Liquor License Commission 12-18-24",
-     "title": "2025 Liquor License Renewals",
-     "label": "M13#5"
-    },
-    {
-     "video_id": "CAS00002471",
-     "t": 88,
-     "date": "2026-06-24",
-     "base": "2026-06-29_CAS00002471",
-     "meeting_title": "Liquor License Commission 06/24/26",
-     "title": "License Transfer - Heritage Liquors and Market",
-     "label": "M16#2"
-    },
-    {
-     "video_id": "CAS00002471",
-     "t": 750,
-     "date": "2026-06-24",
-     "base": "2026-06-29_CAS00002471",
-     "meeting_title": "Liquor License Commission 06/24/26",
-     "title": "License Transfer and Entertainment License - Rassos Grill",
-     "label": "M16#3"
-    },
-    {
-     "video_id": "CAS00002528",
-     "t": 2007,
-     "date": "2026-09-16",
-     "base": "2026-09-17_CAS00002528",
-     "meeting_title": "Liquor License Commission 09/16/26",
-     "title": "License Amendment: Medford's Cappy's Inc.",
-     "label": "M17#8"
-    }
-   ]
-  },
-  {
-   "name": "Operating hours and Common Victualler alignment",
-   "status": "ongoing",
-   "summary": "The commission frequently addresses operating hour modifications and the requirement that alcohol licensees maintain active Common Victualler permits. Commissioners initiated interdepartmental efforts to align annual inspection schedules and verify Common Victualler licensing with the City Clerk's office (M01#6, M09#4, M15#7). The board deferred citywide guidance on extending New Year's Eve operating hours pending a legal opinion from KP Law (M10#4). In 2026, the commission declined to adopt a blanket one-hour extension policy in favor of case-by-case reviews and warned Asian Taste of potential suspension over delinquent Common Victualler paperwork (M16#5, M16#8).",
-   "citations": [
-    {
-     "video_id": "MCM00001233",
-     "t": 1300,
-     "date": "2024-02-21",
-     "base": "2024-08-20_MCM00001233",
-     "meeting_title": "Medford Liquor License Commission 02-21-24",
-     "title": "Licensing Discussion and Interdepartmental Coordination",
-     "label": "M01#6"
+     "video_id": "MCM00001236",
+     "t": 1,
+     "date": "2024-01-11",
+     "base": "2024-08-20_MCM00001236",
+     "meeting_title": "Medford Liquor License Commission 01-11-24",
+     "title": "Club Operating Hours and Special Permit Requirements",
+     "label": "M04#1"
     },
     {
      "video_id": "MCM00001548",
@@ -262,7 +156,7 @@
      "base": "2024-10-01_MCM00001548",
      "meeting_title": "Medford Liquor License Commission 10-01-24",
      "title": "2025 License Renewal and Common Victualler Permits",
-     "label": "M09#4"
+     "label": "M14#4"
     },
     {
      "video_id": "MCM00001597",
@@ -271,16 +165,7 @@
      "base": "2024-11-26_MCM00001597",
      "meeting_title": "Medford Liquor License Commission 10-23-24",
      "title": "New Year's Eve Operating Hours",
-     "label": "M10#4"
-    },
-    {
-     "video_id": "MCM00001747",
-     "t": 1983,
-     "date": "2025-02-20",
-     "base": "2025-02-21_MCM00001747",
-     "meeting_title": "Medford Liquor License Commission 02-20-25",
-     "title": "General Business and Policy Discussion",
-     "label": "M15#7"
+     "label": "M15#4"
     },
     {
      "video_id": "CAS00002471",
@@ -289,7 +174,7 @@
      "base": "2026-06-29_CAS00002471",
      "meeting_title": "Liquor License Commission 06/24/26",
      "title": "Temporary One-Hour Operating Extension Discussion",
-     "label": "M16#5"
+     "label": "M21#5"
     },
     {
      "video_id": "CAS00002471",
@@ -298,162 +183,51 @@
      "base": "2026-06-29_CAS00002471",
      "meeting_title": "Liquor License Commission 06/24/26",
      "title": "Common Victualler Compliance - Asian Taste",
-     "label": "M16#8"
+     "label": "M21#8"
     }
    ]
   },
   {
-   "name": "Great American Beer Hall permitting and oversight",
+   "name": "Corporate Transitions and License Transfers",
    "status": "ongoing",
-   "summary": "The commission monitored the opening requirements and ongoing operations of the Great American Beer Hall. In August 2024, the board authorized the establishment to begin service upon obtaining outstanding municipal inspections, Common Victualler approvals, and occupancy certifications (M07#7). The board subsequently approved an entertainment license for performers, patrons, and devices, and reviewed police incident reports regarding the location without taking disciplinary action (M08#7, M09#2). In September 2026, the commission convened a disciplinary hearing regarding allegations of alcohol service to a minor at the venue and took the matter under advisement (M17#10).",
+   "summary": "The body manages the transition of ownership and management for retail and restaurant licenses throughout the city. This work includes vetting new managers for social clubs and package stores, as well as approving complex stock transfers and corporate officer changes for entities like Wegmans and Semolina Kitchen. Major actions in 2026 included approving the license transfer for Heritage Liquors and Market and the relocation of Cappy's Inc. to Station Landing. These approvals are frequently conditioned on the submission of finalized financial records and updated state certifications.",
    "citations": [
     {
-     "video_id": "MCM00001261",
-     "t": 2418,
-     "date": "2024-08-21",
-     "base": "2024-08-21_MCM00001261",
-     "meeting_title": "Medford Liquor License Commission 08-21-24",
-     "title": "Great American Beer Hall Status Update",
-     "label": "M07#7"
+     "video_id": "MCM00001229",
+     "t": 2022,
+     "date": "2023-10-18",
+     "base": "2024-08-20_MCM00001229",
+     "meeting_title": "Medford Liquor License Commission 10-18-23",
+     "title": "License and Manager Transition for 55 High Street",
+     "label": "M01#8"
     },
     {
-     "video_id": "MCM00001452",
-     "t": 2210,
-     "date": "2024-09-18",
-     "base": "2024-09-18_MCM00001452",
-     "meeting_title": "Medford Liquor License Commission 09-18-24",
-     "title": "Status Update and Entertainment License: Great American Beer Hall",
-     "label": "M08#7"
-    },
-    {
-     "video_id": "MCM00001548",
-     "t": 555,
-     "date": "2024-10-01",
-     "base": "2024-10-01_MCM00001548",
-     "meeting_title": "Medford Liquor License Commission 10-01-24",
-     "title": "Great American Beer Hall Incident Reports",
-     "label": "M09#2"
-    },
-    {
-     "video_id": "CAS00002528",
-     "t": 2721,
-     "date": "2026-09-16",
-     "base": "2026-09-17_CAS00002528",
-     "meeting_title": "Liquor License Commission 09/16/26",
-     "title": "Disciplinary Hearing: Great American Beer Hall",
-     "label": "M17#10"
-    }
-   ]
-  },
-  {
-   "name": "Application submission deadlines and administrative policies",
-   "status": "settled",
-   "summary": "The commission established binding administrative timelines to comply with state open meeting laws and ensure adequate review periods. After discussing the 48-hour agenda notice requirement, the board voted in April 2024 to enforce a strict Friday 11:00 a.m. application deadline prior to meetings (M02#2, M03#4). Commissioners also created an administrative approval process for annual outdoor dining alcohol alterations to streamline seasonal applications (M04#10). In early 2025, the commission formally approved its 2024 annual report for submission to the Alcoholic Beverages Control Commission (M14#7).",
-   "citations": [
-    {
-     "video_id": "MCM00001235",
-     "t": 177,
-     "date": "2024-03-20",
-     "base": "2024-08-20_MCM00001235",
-     "meeting_title": "Medford Liquor License Commission 03-20-24",
-     "title": "Enforcement of 48-Hour Agenda Rule",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "MCM00001234",
-     "t": 2895,
-     "date": "2024-04-17",
-     "base": "2024-08-20_MCM00001234",
-     "meeting_title": "Medford Liquor License Commission 04-17-24",
-     "title": "Application Submission Deadline Policy",
-     "label": "M03#4"
+     "video_id": "MCM00001227",
+     "t": 2377,
+     "date": "2023-12-20",
+     "base": "2024-08-20_MCM00001227",
+     "meeting_title": "Medford Liquor License Commission 12-20-23",
+     "title": "Riverside Yacht Club Change of Manager",
+     "label": "M03#7"
     },
     {
      "video_id": "MCM00001231",
-     "t": 3554,
+     "t": 461,
      "date": "2024-05-15",
      "base": "2024-08-20_MCM00001231",
      "meeting_title": "Medford Liquor License Commission 05-15-24",
-     "title": "Outdoor Dining Alcohol Licensing Policy",
-     "label": "M04#10"
+     "title": "Semolina Kitchen - Stock Transfer and Change of Director",
+     "label": "M09#3"
     },
     {
-     "video_id": "MCM00001706",
-     "t": 4628,
-     "date": "2025-01-15",
-     "base": "2025-01-17_MCM00001706",
-     "meeting_title": "Medford Liquor License Commission 01-15-25",
-     "title": "2024 Annual Report",
-     "label": "M14#7"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2024-2025 term",
-   "narrative": "During this term, the commission established filing submission deadlines, approved one-day and permanent license requests, and conducted citywide compliance violation hearings resulting in warnings, probations, and a license suspension.",
-   "citations": [
-    {
-     "video_id": "MCM00001233",
-     "t": null,
-     "date": "2024-02-21",
-     "base": "2024-08-20_MCM00001233",
-     "meeting_title": "Medford Liquor License Commission 02-21-24",
-     "title": "Medford Liquor License Commission 02-21-24",
-     "label": "M01"
+     "video_id": "MCM00001231",
+     "t": 836,
+     "date": "2024-05-15",
+     "base": "2024-08-20_MCM00001231",
+     "meeting_title": "Medford Liquor License Commission 05-15-24",
+     "title": "Wegmans - Change of Officers",
+     "label": "M09#4"
     },
-    {
-     "video_id": "MCM00001234",
-     "t": 2895,
-     "date": "2024-04-17",
-     "base": "2024-08-20_MCM00001234",
-     "meeting_title": "Medford Liquor License Commission 04-17-24",
-     "title": "Application Submission Deadline Policy",
-     "label": "M03#4"
-    },
-    {
-     "video_id": "MCM00001230",
-     "t": null,
-     "date": "2024-07-17",
-     "base": "2024-08-20_MCM00001230",
-     "meeting_title": "Medford Liquor License Commission 07-17-24",
-     "title": "Medford Liquor License Commission 07-17-24",
-     "label": "M06"
-    },
-    {
-     "video_id": "MCM00001624",
-     "t": 1225,
-     "date": "2024-11-26",
-     "base": "2024-12-05_MCM00001624",
-     "meeting_title": "Medford Liquor License Commission 11-26-24",
-     "title": "Disciplinary Hearing: Medford Wine and Spirits",
-     "label": "M12#5"
-    },
-    {
-     "video_id": "MCM00001662",
-     "t": 3502,
-     "date": "2024-12-18",
-     "base": "2024-12-18_MCM00001662",
-     "meeting_title": "Medford Liquor License Commission 12-18-24",
-     "title": "2025 Liquor License Renewals",
-     "label": "M13#5"
-    },
-    {
-     "video_id": "MCM00001747",
-     "t": null,
-     "date": "2025-02-20",
-     "base": "2025-02-21_MCM00001747",
-     "meeting_title": "Medford Liquor License Commission 02-20-25",
-     "title": "Medford Liquor License Commission 02-20-25",
-     "label": "M15"
-    }
-   ]
-  },
-  {
-   "period": "2026-2027 term",
-   "narrative": "The commission reviewed business transfers and premise alterations, opted against blanket operating hour extensions, and took under advisement an underage service violation hearing.",
-   "citations": [
     {
      "video_id": "CAS00002471",
      "t": 88,
@@ -461,16 +235,7 @@
      "base": "2026-06-29_CAS00002471",
      "meeting_title": "Liquor License Commission 06/24/26",
      "title": "License Transfer - Heritage Liquors and Market",
-     "label": "M16#2"
-    },
-    {
-     "video_id": "CAS00002471",
-     "t": 3119,
-     "date": "2026-06-24",
-     "base": "2026-06-29_CAS00002471",
-     "meeting_title": "Liquor License Commission 06/24/26",
-     "title": "Temporary One-Hour Operating Extension Discussion",
-     "label": "M16#5"
+     "label": "M21#2"
     },
     {
      "video_id": "CAS00002528",
@@ -479,35 +244,240 @@
      "base": "2026-09-17_CAS00002528",
      "meeting_title": "Liquor License Commission 09/16/26",
      "title": "License Amendment: Medford's Cappy's Inc.",
-     "label": "M17#8"
+     "label": "M22#8"
+    }
+   ]
+  },
+  {
+   "name": "Entertainment and Music Licensing",
+   "status": "ongoing",
+   "summary": "The commission issues entertainment licenses for diverse uses, including televisions, karaoke, jukeboxes, and live performances. New establishments like the Great American Beer Hall and Establishment 2024 LLC sought these permits concurrently with their liquor licenses. The commission also addresses neighborhood impacts and complaints, as seen when a noise dispute regarding Mrs. Murphy's Pub was referred to the law department. Some approvals for expanded entertainment forms are granted conditionally pending final inspections by building and health departments.",
+   "citations": [
+    {
+     "video_id": "MCM00001227",
+     "t": 128,
+     "date": "2023-12-20",
+     "base": "2024-08-20_MCM00001227",
+     "meeting_title": "Medford Liquor License Commission 12-20-23",
+     "title": "Medford Professional Firefighters Club Change of Manager and Entertainment License",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001452",
+     "t": 2210,
+     "date": "2024-09-18",
+     "base": "2024-09-18_MCM00001452",
+     "meeting_title": "Medford Liquor License Commission 09-18-24",
+     "title": "Status Update and Entertainment License: Great American Beer Hall",
+     "label": "M13#7"
+    },
+    {
+     "video_id": "MCM00001452",
+     "t": 2945,
+     "date": "2024-09-18",
+     "base": "2024-09-18_MCM00001452",
+     "meeting_title": "Medford Liquor License Commission 09-18-24",
+     "title": "New Liquor and Entertainment License Application: Establishment 2024 LLC",
+     "label": "M13#8"
+    },
+    {
+     "video_id": "MCM00001662",
+     "t": 154,
+     "date": "2024-12-18",
+     "base": "2024-12-18_MCM00001662",
+     "meeting_title": "Medford Liquor License Commission 12-18-24",
+     "title": "Snappy Patty's Entertainment License Application",
+     "label": "M18#2"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 760,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "Entertainment License: El Tacuba",
+     "label": "M19#3"
+    },
+    {
+     "video_id": "CAS00002471",
+     "t": 3803,
+     "date": "2026-06-24",
+     "base": "2026-06-29_CAS00002471",
+     "meeting_title": "Liquor License Commission 06/24/26",
+     "title": "Entertainment License Complaint - Mrs. Murphy's Pub",
+     "label": "M21#7"
+    }
+   ]
+  },
+  {
+   "name": "Legislative and Administrative Policy",
+   "status": "settled",
+   "summary": "The commission has formally adopted state-level legislative options to modernize local alcohol regulations. A key early action was the adoption of Chapter 138, Section 33B, which allows on-premise alcohol sales to begin at 10 a.m. on Sundays and holidays. The commission also established an administrative approval process for seasonal outdoor dining to streamline the transition for local restaurants. Additionally, the board handles recurring statutory duties such as certifying annual population estimates for the Alcoholic Beverages Control Commission's quota determinations.",
+   "citations": [
+    {
+     "video_id": "MCM00001227",
+     "t": 1969,
+     "date": "2023-12-20",
+     "base": "2024-08-20_MCM00001227",
+     "meeting_title": "Medford Liquor License Commission 12-20-23",
+     "title": "Adoption of Chapter 138, Section 33B",
+     "label": "M03#6"
+    },
+    {
+     "video_id": "MCM00001227",
+     "t": 3085,
+     "date": "2023-12-20",
+     "base": "2024-08-20_MCM00001227",
+     "meeting_title": "Medford Liquor License Commission 12-20-23",
+     "title": "2024 Population Increase Estimation",
+     "label": "M03#9"
+    },
+    {
+     "video_id": "MCM00001237",
+     "t": 926,
+     "date": "2024-01-17",
+     "base": "2024-08-20_MCM00001237",
+     "meeting_title": "Medford Liquor License Commission 01-17-24",
+     "title": "2023 Annual Report and Quota Discussion",
+     "label": "M05#4"
+    },
+    {
+     "video_id": "MCM00001231",
+     "t": 3554,
+     "date": "2024-05-15",
+     "base": "2024-08-20_MCM00001231",
+     "meeting_title": "Medford Liquor License Commission 05-15-24",
+     "title": "Outdoor Dining Alcohol Licensing Policy",
+     "label": "M09#10"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 4628,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "2024 Annual Report",
+     "label": "M19#7"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "The commission focused on annual renewals, the adoption of Sunday morning alcohol sales, and processing several new manager applications for local clubs.",
+   "citations": [
+    {
+     "video_id": "MCM00001229",
+     "t": null,
+     "date": "2023-10-18",
+     "base": "2024-08-20_MCM00001229",
+     "meeting_title": "Medford Liquor License Commission 10-18-23",
+     "title": "Medford Liquor License Commission 10-18-23",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001226",
+     "t": null,
+     "date": "2023-11-15",
+     "base": "2024-08-20_MCM00001226",
+     "meeting_title": "Medford Liquor License Commission 11-15-23",
+     "title": "Medford Liquor License Commission 11-15-23",
+     "label": "M02"
+    },
+    {
+     "video_id": "MCM00001227",
+     "t": null,
+     "date": "2023-12-20",
+     "base": "2024-08-20_MCM00001227",
+     "meeting_title": "Medford Liquor License Commission 12-20-23",
+     "title": "Medford Liquor License Commission 12-20-23",
+     "label": "M03"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "This period was marked by extensive underage compliance stings and subsequent disciplinary hearings, alongside the refinement of application deadlines and administrative procedures.",
+   "citations": [
+    {
+     "video_id": "MCM00001236",
+     "t": null,
+     "date": "2024-01-11",
+     "base": "2024-08-20_MCM00001236",
+     "meeting_title": "Medford Liquor License Commission 01-11-24",
+     "title": "Medford Liquor License Commission 01-11-24",
+     "label": "M04"
+    },
+    {
+     "video_id": "MCM00001230",
+     "t": null,
+     "date": "2024-07-17",
+     "base": "2024-08-20_MCM00001230",
+     "meeting_title": "Medford Liquor License Commission 07-17-24",
+     "title": "Medford Liquor License Commission 07-17-24",
+     "label": "M11"
+    },
+    {
+     "video_id": "MCM00001624",
+     "t": null,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001624",
+     "meeting_title": "Medford Liquor License Commission 11-26-24",
+     "title": "Medford Liquor License Commission 11-26-24",
+     "label": "M17"
+    },
+    {
+     "video_id": "MCM00001706",
+     "t": 1022,
+     "date": "2025-01-15",
+     "base": "2025-01-17_MCM00001706",
+     "meeting_title": "Medford Liquor License Commission 01-15-25",
+     "title": "Disciplinary Hearing: Main Street Liquors",
+     "label": "M19#5"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "Recent work has involved major business relocations, license transfers, and addressing noise complaints while continuing to manage seasonal event permits.",
+   "citations": [
+    {
+     "video_id": "CAS00002471",
+     "t": null,
+     "date": "2026-06-24",
+     "base": "2026-06-29_CAS00002471",
+     "meeting_title": "Liquor License Commission 06/24/26",
+     "title": "Liquor License Commission 06/24/26",
+     "label": "M21"
     },
     {
      "video_id": "CAS00002528",
-     "t": 2721,
+     "t": null,
      "date": "2026-09-16",
      "base": "2026-09-17_CAS00002528",
      "meeting_title": "Liquor License Commission 09/16/26",
-     "title": "Disciplinary Hearing: Great American Beer Hall",
-     "label": "M17#10"
+     "title": "Liquor License Commission 09/16/26",
+     "label": "M22"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 47,
+  "citations": 43,
   "meetings_cited": 17,
-  "of_meetings": 17,
-  "max_share": 0.149,
-  "even_share": 0.0588,
-  "concentration_ratio": 2.53,
-  "most_cited": "CAS00002528",
-  "periods_covered": 2,
-  "of_periods": 2
+  "of_meetings": 22,
+  "max_share": 0.116,
+  "even_share": 0.0455,
+  "concentration_ratio": 2.55,
+  "most_cited": "MCM00001230",
+  "periods_covered": 3,
+  "of_periods": 3
  },
  "usage": {
-  "input_tokens": 8285,
-  "output_tokens": 1737,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 10289,
+  "output_tokens": 1453,
+  "model_version": "gemini-3-flash-preview"
  }
 }
