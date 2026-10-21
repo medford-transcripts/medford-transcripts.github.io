@@ -1,22 +1,22 @@
 {
  "committee": "MPS School Committee",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-20T07:08:36Z",
- "sources_sha": "ab52e44c82b70a3b",
- "n_meetings": 87,
+ "generated_at": "2026-10-21T10:11:36Z",
+ "sources_sha": "9b22313d0fb18574",
+ "n_meetings": 92,
  "period_style": "term",
  "span": [
-  "2023-12-04",
-  "2026-10-05"
+  "2023-10-11",
+  "2026-10-19"
  ],
- "overview": "The Medford School Committee is the governing body for the Medford Public Schools district, responsible for setting educational policies, adopting operating and capital budgets, overseeing superintendent leadership, and directing district-wide facilities planning. Across the 87 meetings held between December 2023 and October 2026, the committee navigated leadership transitions, resolved operational budget deficits through local override appropriations, and advanced major infrastructure investments including HVAC replacements and a comprehensive high school building project. The body also routinely updated academic graduation standards, student behavior and non-discrimination policies, and expanded after-school and career technical education programs. At its most recent meeting, the committee reviewed strategic planning community survey results alongside the Lynch Leadership Academy and considered draft guidelines for an elementary school intra-district reassignment policy.",
+ "overview": "The Medford School Committee is the governing body responsible for the fiscal oversight, infrastructure planning, and educational policy of the Medford Public Schools. Spanning terms from 2022 to 2026, the committee manages the district's participation in the Massachusetts School Building Authority (MSBA) process for major facility reconstruction and sets annual operating budgets. Its work includes evaluating district leadership, approving labor contracts, and responding to shifting enrollment patterns through redistricting and space utilization studies. As of late 2026, the committee is finalizing schematic designs for elementary school repairs and implementing a significant expansion of district-wide after-school programming.",
  "threads": [
   {
-   "name": "Medford Comprehensive High School Building Project",
+   "name": "Medford High School Building Project",
    "status": "ongoing",
-   "summary": "Following acceptance of Medford High School into the Massachusetts School Building Authority core program eligibility phase, the committee established the building committee structure, project goals, and online presence [M02#5, M06#5, M07#4, M07#7]. The body appointed community and administrative members, approved a feasibility study agreement for a 1,395-student enrollment cap, and hired Left Field as Owner's Project Manager [M12#8, M43#7, M51#5]. As educational plans and space summaries advanced, the committee adjusted options to navigate a 1967 DCR deed restriction barring construction on Edgley Field and refined submissions regarding sustainability certifications, vocational viability, and non-high school program spaces [M56#6, M76#2, M79#3, M81#7, M82#1, M83#7]. The committee most recently updated the building committee's membership for the schematic design phase [M84#9].",
+   "summary": "Following acceptance into the MSBA core program in late 2023, the committee established the Medford Comprehensive High School Building Committee to oversee a multi-year reconstruction project. The body appointed Left Field as the Owner's Project Manager and developed a comprehensive educational plan to guide the facility's design and vocational program expansions. In 2026, the project faced challenges regarding a 1967 DCR deed restriction on Edgley Field, prompting the committee to eliminate several design alternatives and adopt modified plans to avoid restricted land. The committee continues to refine the project's schematic design and sustainability goals while coordinating with the MSBA on reimbursement rates.",
    "citations": [
     {
      "video_id": "PZnGMmPL0QE",
@@ -25,52 +25,25 @@
      "base": "2023-12-19_PZnGMmPL0QE",
      "meeting_title": "12.18.2023 Medford School Committee Regular Meeting",
      "title": "MSBA Core Program Eligibility Phase Update",
-     "label": "M02#5"
-    },
-    {
-     "video_id": "cgP00rar6II",
-     "t": 5684,
-     "date": "2024-02-12",
-     "base": "2024-02-13_cgP00rar6II",
-     "meeting_title": "2.12.2024 Medford School Committee Regular Meeting",
-     "title": "Resolution 2024-9: High School Building Committee",
      "label": "M06#5"
     },
     {
      "video_id": "MCM00000931",
-     "t": 1405,
+     "t": 59,
      "date": "2024-02-29",
      "base": "2024-07-18_MCM00000931",
      "meeting_title": "Medford School Committee Special Meeting 02-29-24",
-     "title": "Building Committee Goals",
-     "label": "M07#4"
+     "title": "Overview of Resolution 2024-10",
+     "label": "M11#2"
     },
     {
-     "video_id": "MCM00000931",
-     "t": 4260,
-     "date": "2024-02-29",
-     "base": "2024-07-18_MCM00000931",
-     "meeting_title": "Medford School Committee Special Meeting 02-29-24",
-     "title": "Timeline and Final Adoption of Resolution 2024-10",
-     "label": "M07#7"
-    },
-    {
-     "video_id": "XPHQFz6BgV8",
-     "t": 7300,
-     "date": "2024-04-08",
-     "base": "2024-04-09_XPHQFz6BgV8",
-     "meeting_title": "4.8.2024 Medford School Committee Regular Meeting",
-     "title": "Medford High School Building Committee Update and Appointments",
-     "label": "M12#8"
-    },
-    {
-     "video_id": "0FSPW3s1sRE",
-     "t": 4174,
-     "date": "2025-02-10",
-     "base": "2025-02-11_0FSPW3s1sRE",
-     "meeting_title": "Regular MSC Meeting - 2.10.2025",
-     "title": "MSBA Feasibility Study Agreement",
-     "label": "M43#7"
+     "video_id": "MCM00000945",
+     "t": 4186,
+     "date": "2024-05-20",
+     "base": "2024-07-18_MCM00000945",
+     "meeting_title": "Medford School Committee 05-20-24",
+     "title": "Career and Technical Education Program Expansion",
+     "label": "M20#8"
     },
     {
      "video_id": "V2-HjCd92gQ",
@@ -79,16 +52,25 @@
      "base": "2025-05-06_V2-HjCd92gQ",
      "meeting_title": "05.05.2025 Regular MSC Meeting",
      "title": "MSBA High School Project Update",
-     "label": "M51#5"
+     "label": "M55#5"
     },
     {
-     "video_id": "MCM00001794",
-     "t": 2953,
-     "date": "2025-08-11",
-     "base": "2025-08-12_MCM00001794",
-     "meeting_title": "Medford School Committee Subcommittee 08-11-25",
-     "title": "Feasibility Study Site Options",
-     "label": "M56#6"
+     "video_id": "Sd0_od0581Y",
+     "t": 1236,
+     "date": "2026-02-02",
+     "base": "2026-02-02_Sd0_od0581Y",
+     "meeting_title": "02.02.2026 MSC Regular Meeting (In Person)",
+     "title": "Medford High School Building Project Educational Plan",
+     "label": "M72#3"
+    },
+    {
+     "video_id": "YSOHg9NmSPA",
+     "t": 3136,
+     "date": "2026-05-18",
+     "base": "2026-05-19_YSOHg9NmSPA",
+     "meeting_title": "05.18.2026 MSC Regular Meeting (In Person)",
+     "title": "Massachusetts School Building Authority Project Update",
+     "label": "M79#7"
     },
     {
      "video_id": "CAS00002436",
@@ -97,16 +79,7 @@
      "base": "2026-05-22_CAS00002436",
      "meeting_title": "School Committee >CHSBC 05/20/26",
      "title": "DCR Deed Restriction and Modified Building Options",
-     "label": "M76#2"
-    },
-    {
-     "video_id": "CAS00002450",
-     "t": 586,
-     "date": "2026-06-09",
-     "base": "2026-06-09_CAS00002450",
-     "meeting_title": "School Committee MM/DD/YY",
-     "title": "Deed Restrictions and Design Updates",
-     "label": "M79#3"
+     "label": "M80#2"
     },
     {
      "video_id": "7eh2EusWqec",
@@ -115,147 +88,14 @@
      "base": "2026-06-16_7eh2EusWqec",
      "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
      "title": "MSBA Medford High School Building Project Update & Ed Plan Changes",
-     "label": "M81#7"
-    },
-    {
-     "video_id": "0Rn7RLIPex8",
-     "t": 203,
-     "date": "2026-07-10",
-     "base": "2026-07-10_0Rn7RLIPex8",
-     "meeting_title": "MSC Special Meeting",
-     "title": "Chapter 74 Viability Form Approval",
-     "label": "M82#1"
-    },
-    {
-     "video_id": "mD9hKvWcadU",
-     "t": 8992,
-     "date": "2026-07-20",
-     "base": "2026-07-21_mD9hKvWcadU",
-     "meeting_title": "07.20.2026 Regular School Committee (Virtual)",
-     "title": "MCHSBC Update: Sustainability and LEED Goals",
-     "label": "M83#7"
-    },
-    {
-     "video_id": "Gd-UL0P_XT8",
-     "t": 5414,
-     "date": "2026-08-24",
-     "base": "2026-08-24_Gd-UL0P_XT8",
-     "meeting_title": "08.24.2026 Regular School Committee Meeting",
-     "title": "Resolution 2026-22: MCHS Building Committee Membership",
-     "label": "M84#9"
+     "label": "M85#7"
     }
    ]
   },
   {
-   "name": "Superintendent transitions and evaluation",
-   "status": "settled",
-   "summary": "After evaluating goals and negotiating contracts with Superintendent Marice Edouard-Vincent through 2024, the committee accepted her departure and appointed Assistant Superintendent Suzanne Galusi as Interim Superintendent [M03#8, M22#2, M38#2, M40#3]. Dr. Galusi presented transition priorities, completed an induction framework, and underwent an annual performance evaluation [M41#2, M62#5, M67#6]. In February 2026, the committee voted to appoint Dr. Galusi as the permanent superintendent and later approved a three-year contract [M68#4, M74#6]. The committee subsequently aligned the superintendent evaluation schedule with the academic year and approved Dr. Galusi's 2026–2027 district goals [M81#11, M85#6].",
-   "citations": [
-    {
-     "video_id": "ZTAFqIlEOR4",
-     "t": 4045,
-     "date": "2024-01-08",
-     "base": "2024-01-09_ZTAFqIlEOR4",
-     "meeting_title": "1.8.2024 Medford School Committee Regular Meeting",
-     "title": "Revised Superintendent's Evaluation Goals (2023-2024)",
-     "label": "M03#8"
-    },
-    {
-     "video_id": "MCM00000972",
-     "t": 103,
-     "date": "2024-07-24",
-     "base": "2024-07-25_MCM00000972",
-     "meeting_title": "Medford School Committee Special Meeting 07-24-24",
-     "title": "Executive Session for Superintendent Negotiations",
-     "label": "M22#2"
-    },
-    {
-     "video_id": "2Yhv5Nitagw",
-     "t": 190,
-     "date": "2024-12-11",
-     "base": "2024-12-11_2Yhv5Nitagw",
-     "meeting_title": "MSC Special Meeting",
-     "title": "Appointment of Interim Superintendent",
-     "label": "M38#2"
-    },
-    {
-     "video_id": "pVNz2f7XJUQ",
-     "t": 3868,
-     "date": "2025-01-13",
-     "base": "2025-01-14_pVNz2f7XJUQ",
-     "meeting_title": "Regular MSC Meeting - 01.13.2025",
-     "title": "Interim Superintendent Contract",
-     "label": "M40#3"
-    },
-    {
-     "video_id": "j8OA0M_9NI0",
-     "t": 3355,
-     "date": "2025-01-27",
-     "base": "2025-01-27_j8OA0M_9NI0",
-     "meeting_title": "Regular MSC Meeting - 1.27.2025",
-     "title": "Interim Superintendent Transition Plan",
-     "label": "M41#2"
-    },
-    {
-     "video_id": "BvvNXiHAPeI",
-     "t": 7053,
-     "date": "2025-10-20",
-     "base": "2025-10-20_BvvNXiHAPeI",
-     "meeting_title": "10.20.2025 MSC Regular Meeting (In Person)",
-     "title": "Transition Entry Findings Report",
-     "label": "M62#5"
-    },
-    {
-     "video_id": "fqWhmb7R8hA",
-     "t": 7864,
-     "date": "2026-01-26",
-     "base": "2026-01-26_fqWhmb7R8hA",
-     "meeting_title": "01.26.2026 MSC Regular Meeting",
-     "title": "Interim Superintendent Evaluation and Goals Feedback",
-     "label": "M67#6"
-    },
-    {
-     "video_id": "Sd0_od0581Y",
-     "t": 1408,
-     "date": "2026-02-02",
-     "base": "2026-02-02_Sd0_od0581Y",
-     "meeting_title": "02.02.2026 MSC Regular Meeting (In Person)",
-     "title": "Permanent Superintendent Appointment",
-     "label": "M68#4"
-    },
-    {
-     "video_id": "a17_UOV__Vs",
-     "t": 11084,
-     "date": "2026-05-04",
-     "base": "2026-05-04_a17_UOV__Vs",
-     "meeting_title": "05.04.2026 MSC Regular Meeting (In Person)",
-     "title": "Superintendent's Three-Year Contract",
-     "label": "M74#6"
-    },
-    {
-     "video_id": "7eh2EusWqec",
-     "t": 12346,
-     "date": "2026-06-15",
-     "base": "2026-06-16_7eh2EusWqec",
-     "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
-     "title": "Resolution 2026-15 (Superintendent Evaluation Cadence)",
-     "label": "M81#11"
-    },
-    {
-     "video_id": "1wG48dRbAM0",
-     "t": 8690,
-     "date": "2026-09-14",
-     "base": "2026-09-14_1wG48dRbAM0",
-     "meeting_title": "09.14.2026 MSC Regular Meeting (In Person)",
-     "title": "Superintendent's Goals 2026-2027",
-     "label": "M85#6"
-    }
-   ]
-  },
-  {
-   "name": "District operating budget and override funding",
+   "name": "Budget and Financial Oversight",
    "status": "ongoing",
-   "summary": "Mid-year in fiscal year 2024, the district confronted an initial $2.5 million deficit, which was remediated down to $216,000 using encumbrance adjustments, capital funds, and postponed spending [M06#4, M09#5]. The committee submitted a level-service FY25 budget request and adopted an eight-phase budget schedule before approving a $77.75 million operating budget [M16#9, M18#9, M20#7]. Following voter approval of Questions 7 and 8 ballot overrides, the committee approved a supplemental budget appropriation to restore positions and fund collective bargaining reserves [M27#8, M35#7, M40#7]. Budget reviews for FY26 and FY27 addressed inflation and structural deficits, concluding with the committee's approval of the FY27 budget closing a remaining gap of $833,398 [M46#2, M72#3, M81#4].",
+   "summary": "The committee navigated a preliminary $2.5 million deficit in fiscal year 2024 caused by structural underbudgeting in transportation and legal costs. To stabilize district finances, the committee advocated for local tax override questions, which voters approved in late 2024 to fund the restoration of teaching, nursing, and literacy positions. Subsequent budget cycles focused on closing gaps for level services, with the committee approving a $77.75 million operating budget for FY25 and finalizing the FY27 budget by adjusting administrative costs and utilizing revolving funds. Recent financial reporting in late 2026 shows a focus on managing risks associated with special education transportation and facility energy costs.",
    "citations": [
     {
      "video_id": "cgP00rar6II",
@@ -264,34 +104,7 @@
      "base": "2024-02-13_cgP00rar6II",
      "meeting_title": "2.12.2024 Medford School Committee Regular Meeting",
      "title": "Mid-Year FY24 Budget Update",
-     "label": "M06#4"
-    },
-    {
-     "video_id": "a6yjvy9bets",
-     "t": 4829,
-     "date": "2024-03-18",
-     "base": "2024-03-19_a6yjvy9bets",
-     "meeting_title": "3.18.2024 Medford School Committee Regular Meeting",
-     "title": "Budget Shortfall Resolution Report",
-     "label": "M09#5"
-    },
-    {
-     "video_id": "MCM00000945",
-     "t": 4994,
-     "date": "2024-05-20",
-     "base": "2024-07-18_MCM00000945",
-     "meeting_title": "Medford School Committee 05-20-24",
-     "title": "FY25 Budget Update, Public Comment, and School Committee Vote",
-     "label": "M16#9"
-    },
-    {
-     "video_id": "dO3Co7kdQLU",
-     "t": 9337,
-     "date": "2024-06-03",
-     "base": "2024-06-04_dO3Co7kdQLU",
-     "meeting_title": "6.3.2024 Regular School Committee Meeting",
-     "title": "Budget Preparation and Schedule Policy",
-     "label": "M18#9"
+     "label": "M10#4"
     },
     {
      "video_id": "2sWy59yRtEY",
@@ -300,7 +113,7 @@
      "base": "2024-06-25_2sWy59yRtEY",
      "meeting_title": "06.24.2017 MSC Special Meeting",
      "title": "FY25 Operating Budget",
-     "label": "M20#7"
+     "label": "M24#7"
     },
     {
      "video_id": "dAjG9wnL6rU",
@@ -309,16 +122,7 @@
      "base": "2024-09-24_dAjG9wnL6rU",
      "meeting_title": "9.23.2024 - MSC Regular Meeting",
      "title": "Resolution on November 2024 Ballot Questions",
-     "label": "M27#8"
-    },
-    {
-     "video_id": "ucoZOAdkTf4",
-     "t": 9673,
-     "date": "2024-11-18",
-     "base": "2024-11-18_ucoZOAdkTf4",
-     "meeting_title": "11.18.2024 - Regular MSC Meeting",
-     "title": "Supplemental Budget and Staffing Impact Report",
-     "label": "M35#7"
+     "label": "M31#8"
     },
     {
      "video_id": "pVNz2f7XJUQ",
@@ -327,16 +131,7 @@
      "base": "2025-01-14_pVNz2f7XJUQ",
      "meeting_title": "Regular MSC Meeting - 01.13.2025",
      "title": "Supplemental Budget Appropriation",
-     "label": "M40#7"
-    },
-    {
-     "video_id": "XMjhyZWt-ek",
-     "t": 987,
-     "date": "2025-03-05",
-     "base": "2025-03-05_XMjhyZWt-ek",
-     "meeting_title": "MSC Special Meeting - 3.5.2025",
-     "title": "Fiscal Year 2026 Budget Overview",
-     "label": "M46#2"
+     "label": "M44#7"
     },
     {
      "video_id": "I52c6Hg7LMw",
@@ -345,7 +140,7 @@
      "base": "2026-04-08_I52c6Hg7LMw",
      "meeting_title": "Joint Meeting of the City Council and School Committee 04-08-26",
      "title": "Budget Gap and Stabilization Fund Discussion",
-     "label": "M72#3"
+     "label": "M76#3"
     },
     {
      "video_id": "7eh2EusWqec",
@@ -354,84 +149,23 @@
      "base": "2026-06-16_7eh2EusWqec",
      "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
      "title": "FY27 Budget Update and Approval",
-     "label": "M81#4"
+     "label": "M85#4"
+    },
+    {
+     "video_id": "MUHwkD9zE2s",
+     "t": 7666,
+     "date": "2026-10-19",
+     "base": "2026-10-19_MUHwkD9zE2s",
+     "meeting_title": "10.19.2026 MSC REG Meeting (In Person)",
+     "title": "First Quarter Financial Update",
+     "label": "M92#6"
     }
    ]
   },
   {
-   "name": "School HVAC and facilities improvements",
+   "name": "Elementary School Capacity and Facility Repairs",
    "status": "ongoing",
-   "summary": "The committee initiated major building system upgrades by approving an estimated $15 to $20 million decarbonization HVAC project for Andrews and McGlynn middle schools, paired with a policy restriction on fossil-fuel facility equipment [M14#6, M14#13]. It later approved $5 million in initial design borrowing, authorized construction management at risk, and approved a final $25.77 million bond recommendation for the middle schools [M35#6, M39#6, M48#7]. Concurrently, after receiving an assessment identifying $83.7 million in district-wide repair needs, the body submitted MSBA Accelerated Repair statements and approved a $22.7 million schematic design for HVAC electrification and roof work at Roberts Elementary [M46#1, M62#3, M81#5, M84#4]. The committee also granted specific exceptions permitting natural gas-powered appliance replacements [M25#9, M86#4].",
-   "citations": [
-    {
-     "video_id": "MCM00001387",
-     "t": 6054,
-     "date": "2024-09-09",
-     "base": "2024-09-10_MCM00001387",
-     "meeting_title": "Medford School Committee 09-09-24",
-     "title": "Brooks School boiler and electrification planning",
-     "label": "M25#9"
-    },
-    {
-     "video_id": "ucoZOAdkTf4",
-     "t": 9458,
-     "date": "2024-11-18",
-     "base": "2024-11-18_ucoZOAdkTf4",
-     "meeting_title": "11.18.2024 - Regular MSC Meeting",
-     "title": "Construction Management at Risk Authorization",
-     "label": "M35#6"
-    },
-    {
-     "video_id": "5kvVHmOpvvU",
-     "t": 6346,
-     "date": "2024-12-16",
-     "base": "2024-12-16_5kvVHmOpvvU",
-     "meeting_title": "Regular MSC Meeting",
-     "title": "HVAC Project Approval and Bond Recommendation",
-     "label": "M39#6"
-    },
-    {
-     "video_id": "XMjhyZWt-ek",
-     "t": 135,
-     "date": "2025-03-05",
-     "base": "2025-03-05_XMjhyZWt-ek",
-     "meeting_title": "MSC Special Meeting - 3.5.2025",
-     "title": "MSBA Accelerated Repair Statements of Interest",
-     "label": "M46#1"
-    },
-    {
-     "video_id": "gpoenA2JwNk",
-     "t": 4562,
-     "date": "2025-04-07",
-     "base": "2025-04-07_gpoenA2JwNk",
-     "meeting_title": "Regular MSC Meeting - 4.7.2025",
-     "title": "McGlynn and Andrews HVAC Project Bond Request",
-     "label": "M48#7"
-    },
-    {
-     "video_id": "Gd-UL0P_XT8",
-     "t": 2080,
-     "date": "2026-08-24",
-     "base": "2026-08-24_Gd-UL0P_XT8",
-     "meeting_title": "08.24.2026 Regular School Committee Meeting",
-     "title": "Roberts Elementary HVAC and Roof Schematic Design",
-     "label": "M84#4"
-    },
-    {
-     "video_id": "EyuvqlHb6nk",
-     "t": 3778,
-     "date": "2026-09-28",
-     "base": "2026-09-28_EyuvqlHb6nk",
-     "meeting_title": "09.28.2026 MSC Regular Meeting (In Person)",
-     "title": "Natural Gas Powered Equipment Replacement",
-     "label": "M86#4"
-    }
-   ]
-  },
-  {
-   "name": "Elementary enrollment capacity and redistricting planning",
-   "status": "ongoing",
-   "summary": "Severe overcrowding emerged at Roberts Elementary School, leading to staff and committee proposals for strategic space planning and possible redistricting [M25#8, M26#6, M49#4]. To relieve short-term pressure, the committee relocated preschool classrooms from Roberts to Missituk Elementary and created a space planning task force [M54#6, M54#7]. Following an external space utilization study, the committee reviewed middle school reconfiguration models (such as grades 5–6 and 7–8 spans) but tabled immediate restructuring and later formally delayed any 5–8 grade reconfiguration to 2028 [M63#5, M64#5, M83#4]. The body subsequently took up a draft policy establishing guidelines and criteria for elementary school student reassignments [M59#11, M87#5].",
+   "summary": "Severe overcrowding at the Roberts Elementary School prompted the committee to explore short-term space solutions, including the relocation of preschool classrooms to other buildings and the hiring of additional staff. Concurrently, the committee addressed failing infrastructure at multiple schools, authorizing over $25 million in bonds for HVAC replacements at the McGlynn and Andrews schools. For broader district maintenance, the body submitted Accelerated Repair applications to the MSBA for the Roberts, Missituk, and Brooks schools to address roof and heating system failures. In late 2026, the committee selected a geothermal heat pump system for the Missituck project and approved a schematic design for electrification at Roberts.",
    "citations": [
     {
      "video_id": "MCM00001387",
@@ -440,393 +174,16 @@
      "base": "2024-09-10_MCM00001387",
      "meeting_title": "Medford School Committee 09-09-24",
      "title": "Roberts Elementary capacity and redistricting",
-     "label": "M25#8"
+     "label": "M29#8"
     },
     {
-     "video_id": "qepI_nDiY5s",
-     "t": 4996,
-     "date": "2024-09-10",
-     "base": "2024-09-10_qepI_nDiY5s",
-     "meeting_title": "Regular MSC Meeting",
-     "title": "Roberts Elementary Overcrowding and Redistricting",
-     "label": "M26#6"
-    },
-    {
-     "video_id": "Q8tZvOlAobY",
-     "t": 905,
-     "date": "2025-04-14",
-     "base": "2025-04-14_Q8tZvOlAobY",
-     "meeting_title": "Regular MSC Meeting",
-     "title": "Elementary School Overcrowding Resolution",
-     "label": "M49#4"
-    },
-    {
-     "video_id": "CsSw9Cunt1k",
-     "t": 5446,
-     "date": "2025-06-09",
-     "base": "2025-06-09_CsSw9Cunt1k",
-     "meeting_title": "06.09.2025 Regular MSC Meeting",
-     "title": "Elementary Space Capacity Adjustment",
-     "label": "M54#6"
-    },
-    {
-     "video_id": "CsSw9Cunt1k",
-     "t": 6186,
-     "date": "2025-06-09",
-     "base": "2025-06-09_CsSw9Cunt1k",
-     "meeting_title": "06.09.2025 Regular MSC Meeting",
-     "title": "Strategic Space Planning Task Force",
-     "label": "M54#7"
-    },
-    {
-     "video_id": "ewRLf8jM8M0",
-     "t": 10935,
-     "date": "2025-09-22",
-     "base": "2025-09-23_ewRLf8jM8M0",
-     "meeting_title": "09.22.2025 MSC Regular Meeting",
-     "title": "Resolution on Intra-District Enrollment Policy",
-     "label": "M59#11"
-    },
-    {
-     "video_id": "GvP0i0IR-AQ",
-     "t": 2470,
-     "date": "2025-11-17",
-     "base": "2025-11-17_GvP0i0IR-AQ",
-     "meeting_title": "11.17.2025 MSC Regular Meeting (REMOTE ONLY)",
-     "title": "HMFH Space Utilization Study and School Restructuring",
-     "label": "M63#5"
-    },
-    {
-     "video_id": "UIDbI2dyd14",
-     "t": 4955,
-     "date": "2025-12-01",
-     "base": "2025-12-02_UIDbI2dyd14",
-     "meeting_title": "12.01.2025 MSC Regular Meeting (In Person)",
-     "title": "Space Utilization and Overcrowding Update",
-     "label": "M64#5"
-    },
-    {
-     "video_id": "mD9hKvWcadU",
-     "t": 3141,
-     "date": "2026-07-20",
-     "base": "2026-07-21_mD9hKvWcadU",
-     "meeting_title": "07.20.2026 Regular School Committee (Virtual)",
-     "title": "Grade Configuration Update",
-     "label": "M83#4"
-    },
-    {
-     "video_id": "qrkId2z2FiU",
-     "t": 2612,
-     "date": "2026-10-05",
-     "base": "2026-10-05_qrkId2z2FiU",
-     "meeting_title": "10.05.2026 MSC Regular Meeting (In Person)",
-     "title": "Resolution 2026-24: Elementary School Reassignment Policy",
-     "label": "M87#5"
-    }
-   ]
-  },
-  {
-   "name": "Student transportation operations and safety",
-   "status": "ongoing",
-   "summary": "Driven by driver shortages and route disruptions under the Eastern Bus contract, the committee surveyed community needs, examined late busing, and addressed safety risks highlighted by students [M10#4, M11#1, M25#12, M31#4]. The committee authorized a new five-year agreement with Eastern Bus, initiated an electric bus study, and requested city adoption of automated stop-arm camera enforcement [M55#4, M58#8]. To improve onboard behavior and route reliability, the district implemented a tiered bus monitoring plan deploying paraprofessionals [M60#5, M61#6]. Student representatives recently reported on the successful implementation of high school late bus service expanding extracurricular access [M87#4].",
-   "citations": [
-    {
-     "video_id": "rB9j27alqxs",
-     "t": 2575,
-     "date": "2024-03-20",
-     "base": "2024-03-21_rB9j27alqxs",
-     "meeting_title": "MSC - Student Advisory Council Meeting with Whole Committee - 03.20.2024",
-     "title": "High School Transportation and Bus Safety",
-     "label": "M10#4"
-    },
-    {
-     "video_id": "MCM00000882",
-     "t": 78,
-     "date": "2024-03-26",
-     "base": "2024-07-11_MCM00000882",
-     "meeting_title": "Medford School Committee Subcommittee 03-26-24",
-     "title": "Meeting Context and Purpose",
-     "label": "M11#1"
-    },
-    {
-     "video_id": "MCM00001387",
-     "t": 7323,
-     "date": "2024-09-09",
-     "base": "2024-09-10_MCM00001387",
-     "meeting_title": "Medford School Committee 09-09-24",
-     "title": "Student transportation crisis",
-     "label": "M25#12"
-    },
-    {
-     "video_id": "kgJb8ZwdaF0",
-     "t": 3064,
-     "date": "2024-10-21",
-     "base": "2024-10-22_kgJb8ZwdaF0",
-     "meeting_title": "10.21.2024 - Regular MSC Meeting",
-     "title": "District-Wide Busing Report",
-     "label": "M31#4"
-    },
-    {
-     "video_id": "yGcuIBQZTjc",
-     "t": 1869,
-     "date": "2025-06-18",
-     "base": "2025-06-18_yGcuIBQZTjc",
-     "meeting_title": "06.18.2025 Last Regular School Committee Meeting",
-     "title": "Yellow Bus Transportation and Electrification",
-     "label": "M55#4"
-    },
-    {
-     "video_id": "3V7oKmMkJx0",
-     "t": 7445,
-     "date": "2025-09-08",
-     "base": "2025-09-08_3V7oKmMkJx0",
-     "meeting_title": "09.08.2025 MSC Regular Meeting (In Person)",
-     "title": "School Bus Stop-Arm Camera Enforcement Resolution",
-     "label": "M58#8"
-    },
-    {
-     "video_id": "MCM00001824",
-     "t": 3700,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001824",
-     "meeting_title": "Medford School Committee 10-06-25",
-     "title": "Bus Monitor Reports",
-     "label": "M60#5"
-    },
-    {
-     "video_id": "P8rYkRI7D6M",
-     "t": 6972,
-     "date": "2025-10-07",
-     "base": "2025-10-07_P8rYkRI7D6M",
-     "meeting_title": "10.06.2026 MSC regular Meeting (In Person)",
-     "title": "Bus Monitor Implementation Report",
-     "label": "M61#6"
-    },
-    {
-     "video_id": "qrkId2z2FiU",
-     "t": 2197,
-     "date": "2026-10-05",
-     "base": "2026-10-05_qrkId2z2FiU",
-     "meeting_title": "10.05.2026 MSC Regular Meeting (In Person)",
-     "title": "Student Advisory Council: Medford High School Late Bus",
-     "label": "M87#4"
-    }
-   ]
-  },
-  {
-   "name": "Graduation standards and academic policies",
-   "status": "settled",
-   "summary": "Following statewide voter passage of ballot Question 2 removing the MCAS competency requirement for high school graduation, the committee formally amended Policy IKF to replace the state test barrier with aligned local coursework completion [M43#3, M45#7]. It further refined Policy IKF to expand flexibility for health and physical education requirements and protect commencement participation for students receiving certificates of completion [M48#6, M49#3, M54#4]. The committee formally rescinded obsolete MCAS policy language and later approved an MCAS late-entry testing schedule pilot for high school grade cohorts [M55#9, M71#4].",
-   "citations": [
-    {
-     "video_id": "0FSPW3s1sRE",
-     "t": 291,
-     "date": "2025-02-10",
-     "base": "2025-02-11_0FSPW3s1sRE",
-     "meeting_title": "Regular MSC Meeting - 2.10.2025",
-     "title": "MHS Graduation and Competency Requirements",
-     "label": "M43#3"
-    },
-    {
-     "video_id": "8Kto7egzLDI",
-     "t": 5381,
-     "date": "2025-02-26",
-     "base": "2025-02-26_8Kto7egzLDI",
-     "meeting_title": "Regular MSC Meeting - 2.26.2025",
-     "title": "Policy IKF: Graduation and Competency Determination Requirements",
-     "label": "M45#7"
-    },
-    {
-     "video_id": "gpoenA2JwNk",
-     "t": 3842,
-     "date": "2025-04-07",
-     "base": "2025-04-07_gpoenA2JwNk",
-     "meeting_title": "Regular MSC Meeting - 4.7.2025",
-     "title": "Policy IKF Graduation Requirements Update",
-     "label": "M48#6"
-    },
-    {
-     "video_id": "Q8tZvOlAobY",
-     "t": 787,
-     "date": "2025-04-14",
-     "base": "2025-04-14_Q8tZvOlAobY",
-     "meeting_title": "Regular MSC Meeting",
-     "title": "Policy IKF: Graduation Requirements",
-     "label": "M49#3"
-    },
-    {
-     "video_id": "CsSw9Cunt1k",
-     "t": 4189,
-     "date": "2025-06-09",
-     "base": "2025-06-09_CsSw9Cunt1k",
-     "meeting_title": "06.09.2025 Regular MSC Meeting",
-     "title": "Policy IKF Health and Physical Education Update",
-     "label": "M54#4"
-    },
-    {
-     "video_id": "yGcuIBQZTjc",
-     "t": 8516,
-     "date": "2025-06-18",
-     "base": "2025-06-18_yGcuIBQZTjc",
-     "meeting_title": "06.18.2025 Last Regular School Committee Meeting",
-     "title": "Rescission of Outdated MCAS Policy",
-     "label": "M55#9"
-    },
-    {
-     "video_id": "tFu5GE7QDVU",
-     "t": 2582,
-     "date": "2026-03-16",
-     "base": "2026-03-16_tFu5GE7QDVU",
-     "meeting_title": "03.16.2026 MSC Regular Meeting (In Person)",
-     "title": "MHS MCAS Flex Pilot",
-     "label": "M71#4"
-    }
-   ]
-  },
-  {
-   "name": "Career and technical education expansion and admissions",
-   "status": "ongoing",
-   "summary": "The committee supported expanding vocational programming during the MSBA core project review, subsequently modifying timelines and removing veterinary science from its state Chapter 74 expansion submissions [M16#8, M45#6]. Facing enrollment caps and high demand, the committee adopted a straight lottery-based admissions policy for oversubscribed Chapter 74 programs and updated the policy following state feedback [M60#3, M61#4, M73#3]. It also approved updated Chapter 74 viability documentation for the MSBA and reviewed a vocational honors pilot allowing students to earn honors credit through co-op employment or capstone projects [M82#1, M85#4].",
-   "citations": [
-    {
-     "video_id": "MCM00000945",
-     "t": 4186,
-     "date": "2024-05-20",
-     "base": "2024-07-18_MCM00000945",
-     "meeting_title": "Medford School Committee 05-20-24",
-     "title": "Career and Technical Education Program Expansion",
-     "label": "M16#8"
-    },
-    {
-     "video_id": "8Kto7egzLDI",
-     "t": 4754,
-     "date": "2025-02-26",
-     "base": "2025-02-26_8Kto7egzLDI",
-     "meeting_title": "Regular MSC Meeting - 2.26.2025",
-     "title": "Chapter 74 CTE Expansion Plan Updates",
-     "label": "M45#6"
-    },
-    {
-     "video_id": "MCM00001824",
-     "t": 791,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001824",
-     "meeting_title": "Medford School Committee 10-06-25",
-     "title": "CTE Lottery Report and Admissions Policy",
-     "label": "M60#3"
-    },
-    {
-     "video_id": "P8rYkRI7D6M",
-     "t": 4067,
-     "date": "2025-10-07",
-     "base": "2025-10-07_P8rYkRI7D6M",
-     "meeting_title": "10.06.2026 MSC regular Meeting (In Person)",
-     "title": "CTE Admissions Policy and Program Expansion",
-     "label": "M61#4"
-    },
-    {
-     "video_id": "UAstXjHpFGg",
-     "t": 892,
-     "date": "2026-04-13",
-     "base": "2026-04-13_UAstXjHpFGg",
-     "meeting_title": "04.13.2026 MSC Regular Meeting (In Person)",
-     "title": "CTE Program Admissions Policy Update",
-     "label": "M73#3"
-    },
-    {
-     "video_id": "0Rn7RLIPex8",
-     "t": 203,
-     "date": "2026-07-10",
-     "base": "2026-07-10_0Rn7RLIPex8",
-     "meeting_title": "MSC Special Meeting",
-     "title": "Chapter 74 Viability Form Approval",
-     "label": "M82#1"
-    },
-    {
-     "video_id": "1wG48dRbAM0",
-     "t": 5041,
-     "date": "2026-09-14",
-     "base": "2026-09-14_1wG48dRbAM0",
-     "meeting_title": "09.14.2026 MSC Regular Meeting (In Person)",
-     "title": "CTE Honors Pilot Presentation",
-     "label": "M85#4"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "The committee concluded its term by reviewing fall district assessment results, honoring departing committee members, and receiving notification of Medford High School's acceptance into the MSBA core program eligibility phase.",
-   "citations": [
-    {
-     "video_id": "3-zXI9WME5I",
-     "t": 5668,
-     "date": "2023-12-04",
-     "base": "2023-12-05_3-zXI9WME5I",
-     "meeting_title": "12.4.2023 Medford School Committee Regular Meeting",
-     "title": "NWEA MAP Assessment Presentation",
-     "label": "M01#4"
-    },
-    {
-     "video_id": "PZnGMmPL0QE",
-     "t": 1200,
-     "date": "2023-12-18",
-     "base": "2023-12-19_PZnGMmPL0QE",
-     "meeting_title": "12.18.2023 Medford School Committee Regular Meeting",
-     "title": "Recognition of Outgoing School Committee Members",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "PZnGMmPL0QE",
-     "t": 3850,
-     "date": "2023-12-18",
-     "base": "2023-12-19_PZnGMmPL0QE",
-     "meeting_title": "12.18.2023 Medford School Committee Regular Meeting",
-     "title": "MSBA Core Program Eligibility Phase Update",
-     "label": "M02#5"
-    }
-   ]
-  },
-  {
-   "period": "2024-2025 term",
-   "narrative": "The committee governed through major fiscal challenges and the passage of municipal override ballot questions, appointed an interim superintendent, authorized multimillion-dollar HVAC bonds, and stood up the Medford Comprehensive High School Building Committee.",
-   "citations": [
-    {
-     "video_id": "cgP00rar6II",
-     "t": 2733,
-     "date": "2024-02-12",
-     "base": "2024-02-13_cgP00rar6II",
-     "meeting_title": "2.12.2024 Medford School Committee Regular Meeting",
-     "title": "Mid-Year FY24 Budget Update",
-     "label": "M06#4"
-    },
-    {
-     "video_id": "MCM00000931",
-     "t": 4260,
-     "date": "2024-02-29",
-     "base": "2024-07-18_MCM00000931",
-     "meeting_title": "Medford School Committee Special Meeting 02-29-24",
-     "title": "Timeline and Final Adoption of Resolution 2024-10",
-     "label": "M07#7"
-    },
-    {
-     "video_id": "2Yhv5Nitagw",
-     "t": 190,
-     "date": "2024-12-11",
-     "base": "2024-12-11_2Yhv5Nitagw",
-     "meeting_title": "MSC Special Meeting",
-     "title": "Appointment of Interim Superintendent",
-     "label": "M38#2"
-    },
-    {
-     "video_id": "pVNz2f7XJUQ",
-     "t": 5270,
-     "date": "2025-01-13",
-     "base": "2025-01-14_pVNz2f7XJUQ",
-     "meeting_title": "Regular MSC Meeting - 01.13.2025",
-     "title": "Supplemental Budget Appropriation",
-     "label": "M40#7"
+     "video_id": "XMjhyZWt-ek",
+     "t": 135,
+     "date": "2025-03-05",
+     "base": "2025-03-05_XMjhyZWt-ek",
+     "meeting_title": "MSC Special Meeting - 3.5.2025",
+     "title": "MSBA Accelerated Repair Statements of Interest",
+     "label": "M50#1"
     },
     {
      "video_id": "gpoenA2JwNk",
@@ -835,31 +192,16 @@
      "base": "2025-04-07_gpoenA2JwNk",
      "meeting_title": "Regular MSC Meeting - 4.7.2025",
      "title": "McGlynn and Andrews HVAC Project Bond Request",
-     "label": "M48#7"
-    }
-   ]
-  },
-  {
-   "period": "2026-2027 term",
-   "narrative": "The committee appointed Dr. Suzanne Galusi as permanent superintendent, approved the Roberts Elementary HVAC schematic design, narrowed high school building options around property deed restrictions, and advanced strategic district space planning.",
-   "citations": [
-    {
-     "video_id": "Sd0_od0581Y",
-     "t": 1408,
-     "date": "2026-02-02",
-     "base": "2026-02-02_Sd0_od0581Y",
-     "meeting_title": "02.02.2026 MSC Regular Meeting (In Person)",
-     "title": "Permanent Superintendent Appointment",
-     "label": "M68#4"
+     "label": "M52#7"
     },
     {
-     "video_id": "CAS00002436",
-     "t": 438,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002436",
-     "meeting_title": "School Committee >CHSBC 05/20/26",
-     "title": "DCR Deed Restriction and Modified Building Options",
-     "label": "M76#2"
+     "video_id": "CsSw9Cunt1k",
+     "t": 5446,
+     "date": "2025-06-09",
+     "base": "2025-06-09_CsSw9Cunt1k",
+     "meeting_title": "06.09.2025 Regular MSC Meeting",
+     "title": "Elementary Space Capacity Adjustment",
+     "label": "M58#6"
     },
     {
      "video_id": "7eh2EusWqec",
@@ -868,7 +210,7 @@
      "base": "2026-06-16_7eh2EusWqec",
      "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
      "title": "Roberts Elementary School HVAC Project Update",
-     "label": "M81#5"
+     "label": "M85#5"
     },
     {
      "video_id": "Gd-UL0P_XT8",
@@ -877,35 +219,434 @@
      "base": "2026-08-24_Gd-UL0P_XT8",
      "meeting_title": "08.24.2026 Regular School Committee Meeting",
      "title": "Roberts Elementary HVAC and Roof Schematic Design",
-     "label": "M84#4"
+     "label": "M88#4"
+    },
+    {
+     "video_id": "MUHwkD9zE2s",
+     "t": 3018,
+     "date": "2026-10-19",
+     "base": "2026-10-19_MUHwkD9zE2s",
+     "meeting_title": "10.19.2026 MSC REG Meeting (In Person)",
+     "title": "Missituck Elementary Feasibility Study",
+     "label": "M92#4"
+    }
+   ]
+  },
+  {
+   "name": "District Leadership and Superintendent Search",
+   "status": "settled",
+   "summary": "The committee managed the transition from Superintendent Marice Edouard-Vincent, who departed in early 2025 after seven years of service, to new leadership. Assistant Superintendent Dr. Suzanne Galusi was first appointed as Interim Superintendent to ensure continuity during active facility projects and budget cycles. After conducting an evaluation of her first year and soliciting community feedback on leadership priorities, the committee voted in February 2026 to appoint Galusi as the permanent superintendent. The committee subsequently approved a three-year contract for Galusi and realigned the evaluation schedule to match the academic year.",
+   "citations": [
+    {
+     "video_id": "2Yhv5Nitagw",
+     "t": 190,
+     "date": "2024-12-11",
+     "base": "2024-12-11_2Yhv5Nitagw",
+     "meeting_title": "MSC Special Meeting",
+     "title": "Appointment of Interim Superintendent",
+     "label": "M42#2"
+    },
+    {
+     "video_id": "pVNz2f7XJUQ",
+     "t": 3964,
+     "date": "2025-01-13",
+     "base": "2025-01-14_pVNz2f7XJUQ",
+     "meeting_title": "Regular MSC Meeting - 01.13.2025",
+     "title": "Superintendent's Updates and Comments",
+     "label": "M44#5"
+    },
+    {
+     "video_id": "q1XLT9n3ed0",
+     "t": 281,
+     "date": "2026-01-05",
+     "base": "2026-01-05_q1XLT9n3ed0",
+     "meeting_title": "01.05.2026 MSC Regular Meeting",
+     "title": "Interim Superintendent Evaluation and Goals",
+     "label": "M70#4"
+    },
+    {
+     "video_id": "fqWhmb7R8hA",
+     "t": 7864,
+     "date": "2026-01-26",
+     "base": "2026-01-26_fqWhmb7R8hA",
+     "meeting_title": "01.26.2026 MSC Regular Meeting",
+     "title": "Interim Superintendent Evaluation and Goals Feedback",
+     "label": "M71#6"
+    },
+    {
+     "video_id": "Sd0_od0581Y",
+     "t": 1408,
+     "date": "2026-02-02",
+     "base": "2026-02-02_Sd0_od0581Y",
+     "meeting_title": "02.02.2026 MSC Regular Meeting (In Person)",
+     "title": "Permanent Superintendent Appointment",
+     "label": "M72#4"
+    },
+    {
+     "video_id": "a17_UOV__Vs",
+     "t": 11084,
+     "date": "2026-05-04",
+     "base": "2026-05-04_a17_UOV__Vs",
+     "meeting_title": "05.04.2026 MSC Regular Meeting (In Person)",
+     "title": "Superintendent's Three-Year Contract",
+     "label": "M78#6"
+    },
+    {
+     "video_id": "7eh2EusWqec",
+     "t": 12346,
+     "date": "2026-06-15",
+     "base": "2026-06-16_7eh2EusWqec",
+     "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
+     "title": "Resolution 2026-15 (Superintendent Evaluation Cadence)",
+     "label": "M85#11"
+    }
+   ]
+  },
+  {
+   "name": "After-School Program Expansion",
+   "status": "ongoing",
+   "summary": "Long-standing capacity issues and waitlists for before- and after-school care led the committee to partner with the BASIC collaborative for a comprehensive program assessment. Based on these recommendations, the committee approved a restructuring that transitioned programs to a model featuring full-time site directors and specialized curriculum leaders to increase seat capacity by 150. To fund this expansion, the committee adopted a new tuition rate card with tiered fee structures and multi-day flexibility for families. By October 2026, the district reported a 50 percent increase in enrollment and a 68 percent reduction in waitlist numbers.",
+   "citations": [
+    {
+     "video_id": "wn9Gi3fuhEM",
+     "t": 4561,
+     "date": "2024-03-04",
+     "base": "2024-03-05_wn9Gi3fuhEM",
+     "meeting_title": "3.4.2024 Medford School Committee Regular Meeting",
+     "title": "Before and After School Program Update and Tuition Approval",
+     "label": "M12#7"
+    },
+    {
+     "video_id": "ucoZOAdkTf4",
+     "t": 4100,
+     "date": "2024-11-18",
+     "base": "2024-11-18_ucoZOAdkTf4",
+     "meeting_title": "11.18.2024 - Regular MSC Meeting",
+     "title": "After School Report",
+     "label": "M39#3"
+    },
+    {
+     "video_id": "SGdnUuDa2t4",
+     "t": 142,
+     "date": "2025-05-19",
+     "base": "2025-05-19_SGdnUuDa2t4",
+     "meeting_title": "05.19.2025 Regular MSC Meeting",
+     "title": "Afterschool Programming Expansion Plan",
+     "label": "M56#2"
+    },
+    {
+     "video_id": "a17_UOV__Vs",
+     "t": 2503,
+     "date": "2026-05-04",
+     "base": "2026-05-04_a17_UOV__Vs",
+     "meeting_title": "05.04.2026 MSC Regular Meeting (In Person)",
+     "title": "After School Update and BASIC Recommendations",
+     "label": "M78#4"
+    },
+    {
+     "video_id": "a17_UOV__Vs",
+     "t": 10469,
+     "date": "2026-05-04",
+     "base": "2026-05-04_a17_UOV__Vs",
+     "meeting_title": "05.04.2026 MSC Regular Meeting (In Person)",
+     "title": "Medford Public Schools After School Rate Card",
+     "label": "M78#5"
+    },
+    {
+     "video_id": "1wG48dRbAM0",
+     "t": 5927,
+     "date": "2026-09-14",
+     "base": "2026-09-14_1wG48dRbAM0",
+     "meeting_title": "09.14.2026 MSC Regular Meeting (In Person)",
+     "title": "Opening of Schools Update",
+     "label": "M89#5"
+    },
+    {
+     "video_id": "MUHwkD9zE2s",
+     "t": 1123,
+     "date": "2026-10-19",
+     "base": "2026-10-19_MUHwkD9zE2s",
+     "meeting_title": "10.19.2026 MSC REG Meeting (In Person)",
+     "title": "Before and After School Program Update",
+     "label": "M92#3"
+    }
+   ]
+  },
+  {
+   "name": "Student Advisory and Engagement",
+   "status": "ongoing",
+   "summary": "The committee established a formal partnership with a student-led advisory council to incorporate student voices into policy decisions regarding school rules and culture. Early discussions focused on student-proposed reforms to homework time limits, the backpack ban, and school bus safety at high-traffic loading zones. The committee eventually formalized student representation by designating a recurring agenda block for council presentations and establishing a rotation for members to attend student meetings. Students have since used this platform to advocate for late bus services and present research on increasing representation in advanced coursework.",
+   "citations": [
+    {
+     "video_id": "TI4RwUcsbmY",
+     "t": 792,
+     "date": "2023-11-16",
+     "base": "2023-11-16_TI4RwUcsbmY",
+     "meeting_title": "MSC - Student Advisory Council Meeting with Whole Committee",
+     "title": "Homework Policy Proposal",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "rB9j27alqxs",
+     "t": 540,
+     "date": "2024-03-20",
+     "base": "2024-03-21_rB9j27alqxs",
+     "meeting_title": "MSC - Student Advisory Council Meeting with Whole Committee - 03.20.2024",
+     "title": "Backpack Policy Repeal Proposal",
+     "label": "M14#2"
+    },
+    {
+     "video_id": "dO3Co7kdQLU",
+     "t": 7306,
+     "date": "2024-06-03",
+     "base": "2024-06-04_dO3Co7kdQLU",
+     "meeting_title": "6.3.2024 Regular School Committee Meeting",
+     "title": "Bloomsack Leadership Awards",
+     "label": "M22#5"
+    },
+    {
+     "video_id": "ewRLf8jM8M0",
+     "t": 1873,
+     "date": "2025-09-22",
+     "base": "2025-09-23_ewRLf8jM8M0",
+     "meeting_title": "09.22.2025 MSC Regular Meeting",
+     "title": "Mustang Moment: Student Advisory Council",
+     "label": "M63#3"
+    },
+    {
+     "video_id": "MCM00001824",
+     "t": 5180,
+     "date": "2025-10-06",
+     "base": "2025-10-10_MCM00001824",
+     "meeting_title": "Medford School Committee 10-06-25",
+     "title": "Resolution on Student Representative Agenda Participation",
+     "label": "M64#7"
+    },
+    {
+     "video_id": "P8rYkRI7D6M",
+     "t": 8450,
+     "date": "2025-10-07",
+     "base": "2025-10-07_P8rYkRI7D6M",
+     "meeting_title": "10.06.2026 MSC regular Meeting (In Person)",
+     "title": "Student Representation on School Committee",
+     "label": "M65#8"
     },
     {
      "video_id": "qrkId2z2FiU",
-     "t": 689,
+     "t": 2197,
      "date": "2026-10-05",
      "base": "2026-10-05_qrkId2z2FiU",
      "meeting_title": "10.05.2026 MSC Regular Meeting (In Person)",
-     "title": "Strategic Plan Survey Results and Process Update",
-     "label": "M87#3"
+     "title": "Student Advisory Council: Medford High School Late Bus",
+     "label": "M91#4"
+    }
+   ]
+  },
+  {
+   "name": "Curriculum, Policy, and Accountability",
+   "status": "ongoing",
+   "summary": "The committee regularly reviews district-wide performance data, including MCAS and NWEA MAP assessments, to inform targeted instructional interventions. In response to state ballot initiatives, the body updated graduation requirements to replace the MCAS competency mandate with successful completion of aligned coursework. The committee also modernized its policy manual by adopting regulations for the ethical use of generative artificial intelligence and updating Title IX grievance procedures to comply with federal standards. Recent efforts include developing a new district strategic plan to align curriculum across grade levels and improve early literacy benchmarks.",
+   "citations": [
+    {
+     "video_id": "3-zXI9WME5I",
+     "t": 5668,
+     "date": "2023-12-04",
+     "base": "2023-12-05_3-zXI9WME5I",
+     "meeting_title": "12.4.2023 Medford School Committee Regular Meeting",
+     "title": "NWEA MAP Assessment Presentation",
+     "label": "M05#4"
+    },
+    {
+     "video_id": "MCM00001601",
+     "t": 117,
+     "date": "2024-10-28",
+     "base": "2024-12-02_MCM00001601",
+     "meeting_title": "Medford School Committee Special Meeting 10-28-24",
+     "title": "Resolution 2024-38: Policy ACGB Title IX Sexual Discrimination Grievance Procedure",
+     "label": "M36#1"
+    },
+    {
+     "video_id": "0FSPW3s1sRE",
+     "t": 291,
+     "date": "2025-02-10",
+     "base": "2025-02-11_0FSPW3s1sRE",
+     "meeting_title": "Regular MSC Meeting - 2.10.2025",
+     "title": "MHS Graduation and Competency Requirements",
+     "label": "M47#3"
+    },
+    {
+     "video_id": "8Kto7egzLDI",
+     "t": 5381,
+     "date": "2025-02-26",
+     "base": "2025-02-26_8Kto7egzLDI",
+     "meeting_title": "Regular MSC Meeting - 2.26.2025",
+     "title": "Policy IKF: Graduation and Competency Determination Requirements",
+     "label": "M49#7"
+    },
+    {
+     "video_id": "UIDbI2dyd14",
+     "t": 7072,
+     "date": "2025-12-01",
+     "base": "2025-12-02_UIDbI2dyd14",
+     "meeting_title": "12.01.2025 MSC Regular Meeting (In Person)",
+     "title": "Policy on Generative AI in Schools",
+     "label": "M68#7"
+    },
+    {
+     "video_id": "7eh2EusWqec",
+     "t": 12277,
+     "date": "2026-06-15",
+     "base": "2026-06-16_7eh2EusWqec",
+     "meeting_title": "06.15.2026 MSC Regular Meeting (In Person)",
+     "title": "Resolution 2026-14 (AI Guidance in Handbook & Policy IJND-AI)",
+     "label": "M85#10"
+    },
+    {
+     "video_id": "1wG48dRbAM0",
+     "t": 8690,
+     "date": "2026-09-14",
+     "base": "2026-09-14_1wG48dRbAM0",
+     "meeting_title": "09.14.2026 MSC Regular Meeting (In Person)",
+     "title": "Superintendent's Goals 2026-2027",
+     "label": "M89#6"
+    },
+    {
+     "video_id": "EyuvqlHb6nk",
+     "t": 1219,
+     "date": "2026-09-28",
+     "base": "2026-09-28_EyuvqlHb6nk",
+     "meeting_title": "09.28.2026 MSC Regular Meeting (In Person)",
+     "title": "State Accountability and Academic Testing Results 2026 Part 1",
+     "label": "M90#3"
     }
    ]
   }
  ],
- "dropped": 2,
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "During this period, the committee focused on initial entries into the MSBA high school program, responded to budget deficits, and began formal collaborations with the Student Advisory Council.",
+   "citations": [
+    {
+     "video_id": "95wursjg8MQ",
+     "t": null,
+     "date": "2023-10-11",
+     "base": "2023-10-12_95wursjg8MQ",
+     "meeting_title": "MSC Family & Community Engagement Subcommittee - 10.11.2023",
+     "title": "MSC Family & Community Engagement Subcommittee - 10.11.2023",
+     "label": "M01"
+    },
+    {
+     "video_id": "TI4RwUcsbmY",
+     "t": null,
+     "date": "2023-11-16",
+     "base": "2023-11-16_TI4RwUcsbmY",
+     "meeting_title": "MSC - Student Advisory Council Meeting with Whole Committee",
+     "title": "MSC - Student Advisory Council Meeting with Whole Committee",
+     "label": "M03"
+    },
+    {
+     "video_id": "PZnGMmPL0QE",
+     "t": null,
+     "date": "2023-12-18",
+     "base": "2023-12-19_PZnGMmPL0QE",
+     "meeting_title": "12.18.2023 Medford School Committee Regular Meeting",
+     "title": "12.18.2023 Medford School Committee Regular Meeting",
+     "label": "M06"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "This term was defined by a successful funding override, a leadership transition to an interim superintendent, and the selection of an Owner's Project Manager for the high school project.",
+   "citations": [
+    {
+     "video_id": "i48LtULfW6M",
+     "t": null,
+     "date": "2024-02-05",
+     "base": "2024-02-06_i48LtULfW6M",
+     "meeting_title": "2.5.2024 Medford School Committee Regular Meeting",
+     "title": "2.5.2024 Medford School Committee Regular Meeting",
+     "label": "M09"
+    },
+    {
+     "video_id": "pVNz2f7XJUQ",
+     "t": null,
+     "date": "2025-01-13",
+     "base": "2025-01-14_pVNz2f7XJUQ",
+     "meeting_title": "Regular MSC Meeting - 01.13.2025",
+     "title": "Regular MSC Meeting - 01.13.2025",
+     "label": "M44"
+    },
+    {
+     "video_id": "V2-HjCd92gQ",
+     "t": null,
+     "date": "2025-05-05",
+     "base": "2025-05-06_V2-HjCd92gQ",
+     "meeting_title": "05.05.2025 Regular MSC Meeting",
+     "title": "05.05.2025 Regular MSC Meeting",
+     "label": "M55"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The committee appointed a permanent superintendent, addressed deed restrictions at the high school site, and finalized major bond authorizations for elementary school HVAC and roof repairs.",
+   "citations": [
+    {
+     "video_id": "Sd0_od0581Y",
+     "t": null,
+     "date": "2026-02-02",
+     "base": "2026-02-02_Sd0_od0581Y",
+     "meeting_title": "02.02.2026 MSC Regular Meeting (In Person)",
+     "title": "02.02.2026 MSC Regular Meeting (In Person)",
+     "label": "M72"
+    },
+    {
+     "video_id": "CAS00002436",
+     "t": null,
+     "date": "2026-05-20",
+     "base": "2026-05-22_CAS00002436",
+     "meeting_title": "School Committee >CHSBC 05/20/26",
+     "title": "School Committee >CHSBC 05/20/26",
+     "label": "M80"
+    },
+    {
+     "video_id": "Gd-UL0P_XT8",
+     "t": null,
+     "date": "2026-08-24",
+     "base": "2026-08-24_Gd-UL0P_XT8",
+     "meeting_title": "08.24.2026 Regular School Committee Meeting",
+     "title": "08.24.2026 Regular School Committee Meeting",
+     "label": "M88"
+    },
+    {
+     "video_id": "MUHwkD9zE2s",
+     "t": null,
+     "date": "2026-10-19",
+     "base": "2026-10-19_MUHwkD9zE2s",
+     "meeting_title": "10.19.2026 MSC REG Meeting (In Person)",
+     "title": "10.19.2026 MSC REG Meeting (In Person)",
+     "label": "M92"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
  "coverage": {
-  "citations": 89,
-  "meetings_cited": 53,
-  "of_meetings": 87,
-  "max_share": 0.045,
-  "even_share": 0.0115,
-  "concentration_ratio": 3.92,
+  "citations": 61,
+  "meetings_cited": 42,
+  "of_meetings": 92,
+  "max_share": 0.082,
+  "even_share": 0.0109,
+  "concentration_ratio": 7.54,
   "most_cited": "7eh2EusWqec",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 36643,
-  "output_tokens": 2818,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 38565,
+  "output_tokens": 1876,
+  "model_version": "gemini-3-flash-preview"
  }
 }
