@@ -1,0 +1,52 @@
+{
+ "video_id": "iwHfXwWQ0nY",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T09:10:08Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "153e3540a8dd1a20",
+ "subject": "Mayoral Candidate Rick Caraviello Interview",
+ "overview": "The West Medford Community Center hosted its monthly community program featuring a sit-down interview with mayoral candidate Rick Caraviello and a jazz performance by Farai Malek and Caio Afeyouni.",
+ "items": [
+  {
+   "title": "Opening and Poetical Reflection",
+   "t": 29,
+   "summary": "Host Terry Carter opened the session by reciting his poem 'Hired by the Mystic,' which reflects on the history, segregation, and gentrification of the West Medford neighborhood.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Interview with Rick Caraviello",
+   "t": 181,
+   "summary": "City Councilor and mayoral candidate Rick Caraviello discussed his lifelong residency, his work with the Medford Public Library project, and his desire to unify the city by bridging the gap between 'old' and 'new' residents.",
+   "speakers": [
+    "Terry Carter",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Community Center Announcements",
+   "t": 3287,
+   "summary": "Terry Carter provided updates on senior lunch programs, an upcoming apple-themed potluck, the Fiber Arts Club, and the 'brick by brick' commemorative fundraising campaign.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance: Farai Malek and Caio Afeyouni",
+   "t": 3508,
+   "summary": "Vocalist Farai Malek and guitarist Caio Afeyouni performed a set of jazz standards and an original composition titled 'Tonight.'",
+   "speakers": [
+    "Terry Carter",
+    "Farai Malek"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26616,
+  "output_tokens": 432,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
