@@ -1,0 +1,36 @@
+{
+ "video_id": "HHBg-KhZLyU",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T12:09:43Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "db1e0d89d8749587",
+ "subject": "Hispanic Heritage Month Celebration",
+ "overview": "Mayor Breanna Lungo-Koehn announced the city's upcoming Hispanic Heritage Month celebration and introduced municipal liaisons providing resident support services.",
+ "items": [
+  {
+   "title": "Hispanic Heritage Month Celebration",
+   "t": 0,
+   "summary": "Mayor Breanna Lungo-Koehn announced the city's Hispanic Heritage Month celebration scheduled for Sunday at the Andrews Middle School.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Community Liaison and Connector Services",
+   "t": 35,
+   "summary": "Spanish Community Liaison Jennifer Alvarez and Community Connector Lisette Carteiro outlined available municipal assistance, including support for MassHealth applications, housing, food pantry access, and language line services.",
+   "speakers": [
+    "Alvarez",
+    "Carteiro",
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1537,
+  "output_tokens": 182,
+  "model_version": "gemini-3.6-flash"
+ }
+}
