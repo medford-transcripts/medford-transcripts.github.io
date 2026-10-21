@@ -1,0 +1,41 @@
+{
+ "video_id": "MCM00000443",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T07:22:42Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "35ee6caed8854041",
+ "subject": "Comprehensive Budget Process Ordinance",
+ "overview": "The subcommittee reviewed a draft ordinance establishing an annual budget process and budget needs assessments. After the administration expressed concerns about the feasibility and prescriptive detail of the draft, the subcommittee voted to request written feedback and proposed timelines from the administration for future review.",
+ "items": [
+  {
+   "title": "Proposed Budget Ordinance",
+   "t": 47,
+   "summary": "The subcommittee discussed draft ordinance 22-494, which would create a structured annual budget schedule, quarterly financial reports, and capital and operating needs assessments; Chief of Staff Nina Nazarian and Finance Director Bob Dickinson voiced significant concerns about the city's technical and staffing capacity to meet the prescriptive requirements.",
+   "speakers": [
+    "Zac Bears",
+    "Justin Tseng",
+    "Kit Collins",
+    "Nina Nazarian",
+    "Bob Dickinson"
+   ]
+  },
+  {
+   "title": "Request for Written Administration Feedback",
+   "t": 3672,
+   "summary": "The subcommittee approved a motion requesting that administration staff submit written reactions and a proposed reasonable timeline for the budget process steps ahead of a mid-November meeting.",
+   "speakers": [
+    "Kit Collins",
+    "Adam Hurtubise",
+    "Zac Bears",
+    "Nina Nazarian"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19785,
+  "output_tokens": 264,
+  "model_version": "gemini-3.8-flash"
+ }
+}

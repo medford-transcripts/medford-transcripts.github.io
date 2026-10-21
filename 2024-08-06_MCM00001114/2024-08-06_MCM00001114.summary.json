@@ -1,0 +1,73 @@
+{
+ "video_id": "MCM00001114",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T07:09:15Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b5e0b288b2da2436",
+ "subject": "",
+ "overview": "The Medford Historical Commission evaluated demolition applications for three residential properties and received updates on city preservation projects. The Commission determined 67-69 Court Street to be historically significant while finding 587 Winthrop Street and 64 Myrtle Street not historically significant.",
+ "items": [
+  {
+   "title": "56 Wareham Street",
+   "t": 63,
+   "summary": "Tabled and removed the item from the agenda because no representative was present.",
+   "speakers": [
+    "Ryan Hayward"
+   ]
+  },
+  {
+   "title": "67-69 Court Street",
+   "t": 178,
+   "summary": "Accepted the demolition application as complete and voted to find the house and carriage house historically significant, advancing the application to a public hearing.",
+   "speakers": [
+    "Ryan Hayward",
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Doug Carr",
+    "Denise Rogier",
+    "Adrianne Appel"
+   ]
+  },
+  {
+   "title": "587 Winthrop Street",
+   "t": 1120,
+   "summary": "Accepted the demolition application as complete, but a motion to determine historic significance failed.",
+   "speakers": [
+    "Ryan Hayward",
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "64 Myrtle Street",
+   "t": 2050,
+   "summary": "Accepted the demolition application as complete and determined the property is not historically significant, with plans to document the structure before demolition.",
+   "speakers": [
+    "Ryan Hayward",
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "Committee Updates and Administrative Business",
+   "t": 2676,
+   "summary": "Received updates regarding the CLG annual report, Cross Street Cemetery restoration and archaeological studies, Thomas Brooks Park, local survey projects, and the Brooks Estate, and approved meeting minutes.",
+   "speakers": [
+    "Ryan Hayward",
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Doug Carr",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21637,
+  "output_tokens": 535,
+  "model_version": "gemini-3.6-flash"
+ }
+}

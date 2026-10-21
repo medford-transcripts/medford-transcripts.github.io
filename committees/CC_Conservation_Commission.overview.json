@@ -3,97 +3,65 @@
  "provider": "gemini",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-11T08:11:53Z",
- "sources_sha": "f22bcc9b98b25fbc",
- "n_meetings": 12,
+ "generated_at": "2026-10-21T07:06:03Z",
+ "sources_sha": "5b0e1d70273bb76d",
+ "n_meetings": 17,
  "period_style": "term",
  "span": [
-  "2024-12-18",
+  "2023-10-18",
   "2026-10-07"
  ],
- "overview": "The Medford Conservation Commission oversees the protection of wetland resource areas and floodplains through the review of Notices of Intent and the issuance of environmental permits. The commission has been meeting regularly from December 2024 through October 2026 to evaluate projects ranging from large-scale riverfront redevelopments to residential additions. Key areas of focus include stormwater management, tree preservation, and the management of invasive species in protected zones. As of the most recent meetings, the commission is actively drafting stricter local wetlands protection regulations and reviewing trail rehabilitation projects in the Middlesex Fells.",
+ "overview": "The Medford Conservation Commission is responsible for reviewing and permitting activities that impact wetland resource areas, floodplains, and riverfronts under state and local regulations. Throughout the record, the body has managed projects ranging from dam safety improvements and large-scale residential redevelopments to municipal park upgrades and trail restorations. Frequent points of discussion include invasive species management, stormwater calculations, tree preservation, and the use of native vegetation. The commission also performs ongoing compliance monitoring through site visits and the issuance of Certificates of Compliance. Most recently, the body has focused on drafting comprehensive new local wetlands regulations to establish more stringent environmental protections.",
  "threads": [
   {
-   "name": "Route 28 Pathway and Boardwalk",
-   "status": "settled",
-   "summary": "The commission initially reviewed plans for a multi-use connection near the Route 28 Fellsway bridge, requesting detailed planting plans and alternatives to tropical hardwood. The project was approved in early 2025 with a condition requiring a pre-construction operations and maintenance plan. In 2026, the commission received a pre-construction update regarding the removal and replacement of dead and diseased trees along the project site.",
-   "citations": [
-    {
-     "video_id": "MCM00001695",
-     "t": 4652,
-     "date": "2024-12-18",
-     "base": "2025-01-03_MCM00001695",
-     "meeting_title": "Medford Conservation Commission 12-18-24",
-     "title": "Notice of Intent: Route 28 Pathway and Boardwalk (DEP File 215-0240)",
-     "label": "M01#3"
-    },
-    {
-     "video_id": "MCM00001698",
-     "t": 33,
-     "date": "2025-01-08",
-     "base": "2025-01-09_MCM00001698",
-     "meeting_title": "Medford Conservation Commission 01-08-25",
-     "title": "Notice of Intent: Route 28 Pathway and Boardwalk (DEP #215-0240)",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "CAS00002494",
-     "t": 3550,
-     "date": "2026-07-29",
-     "base": "2026-07-30_CAS00002494",
-     "meeting_title": "Conservation Commission 07/29/26",
-     "title": "Wellington Bridge Shared-Use Path Update",
-     "label": "M09#10"
-    }
-   ]
-  },
-  {
-   "name": "97-99 Revere Beach Parkway Redevelopment",
-   "status": "settled",
-   "summary": "A proposal to transform the former KISS 108 radio station site into a 352,400-square-foot multi-family residential building was introduced in mid-2025. Commissioners scrutinized the project's groundwater data, stormwater level spreaders, and invasive species management. The project was ultimately approved with special conditions for porous pavement, preservation of existing black locust and birch groves, and public greenway access along the Malden River.",
-   "citations": [
-    {
-     "video_id": "MCM00001777",
-     "t": 43,
-     "date": "2025-07-09",
-     "base": "2025-07-10_MCM00001777",
-     "meeting_title": "Medford Conservation Commission 07-09-25",
-     "title": "Notice of Intent: 97-99 Revere Beach Parkway",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "MCM00001787",
-     "t": 12,
-     "date": "2025-07-23",
-     "base": "2025-07-29_MCM00001787",
-     "meeting_title": "Medford Conservation Commission 07-23-25",
-     "title": "99 Revere Beach Parkway Redevelopment",
-     "label": "M05#1"
-    }
-   ]
-  },
-  {
-   "name": "Drafting Local Wetlands Regulations",
+   "name": "Local Wetlands Protection Regulations",
    "status": "ongoing",
-   "summary": "Following concerns about potential state-level permit exemptions under the Mass Ready Act, the commission began a comprehensive review of new local wetlands protection regulations in 2026. These draft rules propose stricter standards than state law, including a two-to-one wetland replication ratio and a 25-foot no-activity buffer zone. The commission also explored tree replacement formulas and a potential ban on coal tar-based drive sealants, with further review sessions planned.",
+   "summary": "The commission initiated a detailed section-by-section review of a 42-page draft of local wetlands protection regulations intended to supplement the state's Wetlands Protection Act. The draft includes proposals for stricter two-to-one wetland replication ratios, a 25-foot no-activity zone, and prohibitions on certain hazardous construction materials like coal tar-based sealants. Members have debated the practical impacts of withholding Certificates of Compliance to monitor plant success and how to best incentivize tree preservation through financial penalties or replacement formulas. As of late 2026, the commission continues to refine these regulations in dedicated work sessions.",
    "citations": [
     {
-     "video_id": "MCM00001787",
-     "t": 2592,
-     "date": "2025-07-23",
-     "base": "2025-07-29_MCM00001787",
-     "meeting_title": "Medford Conservation Commission 07-23-25",
-     "title": "Mass Ready Act Legislative Discussion",
-     "label": "M05#3"
-    },
-    {
      "video_id": "CAS00002494",
-     "t": null,
+     "t": 42,
      "date": "2026-07-29",
      "base": "2026-07-30_CAS00002494",
      "meeting_title": "Conservation Commission 07/29/26",
-     "title": "Conservation Commission 07/29/26",
-     "label": "M09"
+     "title": "Genesis and Framework of Draft Regulations",
+     "label": "M14#1"
+    },
+    {
+     "video_id": "CAS00002494",
+     "t": 1117,
+     "date": "2026-07-29",
+     "base": "2026-07-30_CAS00002494",
+     "meeting_title": "Conservation Commission 07/29/26",
+     "title": "Review of Section 5 on Prohibited Materials",
+     "label": "M14#4"
+    },
+    {
+     "video_id": "CAS00002494",
+     "t": 1397,
+     "date": "2026-07-29",
+     "base": "2026-07-30_CAS00002494",
+     "meeting_title": "Conservation Commission 07/29/26",
+     "title": "Review of Sections 6 and 7 on Bank and Wetland Replication",
+     "label": "M14#5"
+    },
+    {
+     "video_id": "CAS00002494",
+     "t": 2788,
+     "date": "2026-07-29",
+     "base": "2026-07-30_CAS00002494",
+     "meeting_title": "Conservation Commission 07/29/26",
+     "title": "Review of Section 10 on Tree Preservation and Replacement",
+     "label": "M14#8"
+    },
+    {
+     "video_id": "CAS00002494",
+     "t": 3040,
+     "date": "2026-07-29",
+     "base": "2026-07-30_CAS00002494",
+     "meeting_title": "Conservation Commission 07/29/26",
+     "title": "Review of Section 11 on Buffer Zones and the No-Build Area",
+     "label": "M14#9"
     },
     {
      "video_id": "CAS00002558",
@@ -102,58 +70,49 @@
      "base": "2026-10-09_CAS00002558",
      "meeting_title": "Conservation Commission 10/07/26",
      "title": "Meeting Minutes and Next Meeting Scheduling",
-     "label": "M12#5"
+     "label": "M17#5"
     }
    ]
   },
   {
-   "name": "Middlesex Fells Reservation Projects",
-   "status": "ongoing",
-   "summary": "The commission frequently reviews ecological and infrastructure work within the Middlesex Fells, including the closeout of a 2014 stream crossing project. In 2026, the body approved invasive species management at the 90-millimeter meadow to restore pollinator habitat. Most recently, the commission issued an Order of Conditions for trail rehabilitation and bridge replacement along the Cross Fells and Skyline trails.",
-   "citations": [
-    {
-     "video_id": "CAS00002499",
-     "t": 56,
-     "date": "2026-08-05",
-     "base": "2026-08-06_CAS00002499",
-     "meeting_title": "Conservation Commission 08/05/26",
-     "title": "Middlesex Fells Invasive Plant Management",
-     "label": "M10#1"
-    },
-    {
-     "video_id": "CAS00002558",
-     "t": 486,
-     "date": "2026-10-07",
-     "base": "2026-10-09_CAS00002558",
-     "meeting_title": "Conservation Commission 10/07/26",
-     "title": "Certificate of Compliance: Middlesex Fells Stream Crossing (DEP #215-0195)",
-     "label": "M12#3"
-    },
-    {
-     "video_id": "CAS00002558",
-     "t": 628,
-     "date": "2026-10-07",
-     "base": "2026-10-09_CAS00002558",
-     "meeting_title": "Conservation Commission 10/07/26",
-     "title": "Notice of Intent: Middlesex Fells Trail Rehabilitation and Bridge Replacement",
-     "label": "M12#4"
-    }
-   ]
-  },
-  {
-   "name": "Infrastructure and Stormwater Management",
+   "name": "South Reservoir Dam Improvements",
    "status": "settled",
-   "summary": "The commission evaluated several road and parking projects where flooding was a primary concern for abutters. A parking lot expansion on Sycamore Avenue was approved only after the applicant reduced the number of spaces to preserve mature trees and increased compensatory flood storage. Similarly, improvements to Mystic River Road were approved with specific conditions to protect existing tree roots during grading.",
+   "summary": "The commission reviewed a Notice of Intent from the Town of Winchester for safety repairs and dam rehabilitation at the South Reservoir. Early discussions addressed the project's impact on bordering vegetated wetlands and the necessity of state and federal agency reviews. The project was eventually approved with an Order of Conditions that required a one-to-three tree replication ratio and a pre-construction invasive species management plan. This work also established a formal operations and maintenance plan for the wetland buffer area.",
    "citations": [
     {
-     "video_id": "MCM00001695",
-     "t": 15,
-     "date": "2024-12-18",
-     "base": "2025-01-03_MCM00001695",
-     "meeting_title": "Medford Conservation Commission 12-18-24",
-     "title": "Notice of Intent: Mystic River Road Improvements (DEP File 215-0239)",
+     "video_id": "MCM00001338",
+     "t": 39,
+     "date": "2023-10-18",
+     "base": "2024-09-04_MCM00001338",
+     "meeting_title": "Medford Conservation Commission 10-18-23",
+     "title": "South Reservoir Dam Improvement Project Notice of Intent",
      "label": "M01#1"
     },
+    {
+     "video_id": "MCM00001337",
+     "t": 47,
+     "date": "2023-11-15",
+     "base": "2024-09-04_MCM00001337",
+     "meeting_title": "Medford Conservation Commission 11-15-23",
+     "title": "South Reservoir Dam Improvements Notice of Intent",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "MCM00001336",
+     "t": 41,
+     "date": "2023-11-29",
+     "base": "2024-09-04_MCM00001336",
+     "meeting_title": "Medford Conservation Commission 11-29-23",
+     "title": "Notice of Intent: South Reservoir Dam Improvements (DEP #215-0235)",
+     "label": "M03#1"
+    }
+   ]
+  },
+  {
+   "name": "Large-Scale Residential Development",
+   "status": "settled",
+   "summary": "Significant reviews were conducted for multi-family developments at 28 Sycamore Avenue and 97-99 Revere Beach Parkway. The Sycamore Avenue project required revisions to reduce parking and increase compensatory flood storage to mitigate abutter concerns about high groundwater. The Revere Beach Parkway redevelopment, located at a former radio station site, was approved with conditions for porous pavement and the preservation of specific native tree groves along the Malden River. Both projects emphasized public access to greenways and robust herbicide protocols for managing invasive species.",
+   "citations": [
     {
      "video_id": "MCM00001695",
      "t": 138,
@@ -161,7 +120,7 @@
      "base": "2025-01-03_MCM00001695",
      "meeting_title": "Medford Conservation Commission 12-18-24",
      "title": "Notice of Intent: 28 Sycamore Avenue Parking Lot Expansion (DEP File 215-0238)",
-     "label": "M01#2"
+     "label": "M05#2"
     },
     {
      "video_id": "MCM00001723",
@@ -170,7 +129,50 @@
      "base": "2025-01-30_MCM00001723",
      "meeting_title": "Medford Conservation Commission 01-29-25",
      "title": "28 Sycamore Continuation",
-     "label": "M03#1"
+     "label": "M07#1"
+    },
+    {
+     "video_id": "MCM00001777",
+     "t": 43,
+     "date": "2025-07-09",
+     "base": "2025-07-10_MCM00001777",
+     "meeting_title": "Medford Conservation Commission 07-09-25",
+     "title": "Notice of Intent: 97-99 Revere Beach Parkway",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "MCM00001787",
+     "t": 12,
+     "date": "2025-07-23",
+     "base": "2025-07-29_MCM00001787",
+     "meeting_title": "Medford Conservation Commission 07-23-25",
+     "title": "99 Revere Beach Parkway Redevelopment",
+     "label": "M09#1"
+    }
+   ]
+  },
+  {
+   "name": "Public Infrastructure and Transportation",
+   "status": "ongoing",
+   "summary": "The commission oversees environmental compliance for municipal and state infrastructure projects, including improvements to Mystic River Road and the Route 28 boardwalk. A new pedestrian pathway and boardwalk under the Route 28 Fellsway bridge was approved with requirements for specific decking materials and a pre-construction maintenance plan. The body also approved a five-year vegetation management plan for MBTA commuter rail rights-of-way. Ongoing oversight includes monitoring tree removal and replacement for the Wellington Bridge shared-use path project.",
+   "citations": [
+    {
+     "video_id": "MCM00001695",
+     "t": 4652,
+     "date": "2024-12-18",
+     "base": "2025-01-03_MCM00001695",
+     "meeting_title": "Medford Conservation Commission 12-18-24",
+     "title": "Notice of Intent: Route 28 Pathway and Boardwalk (DEP File 215-0240)",
+     "label": "M05#3"
+    },
+    {
+     "video_id": "MCM00001698",
+     "t": 33,
+     "date": "2025-01-08",
+     "base": "2025-01-09_MCM00001698",
+     "meeting_title": "Medford Conservation Commission 01-08-25",
+     "title": "Notice of Intent: Route 28 Pathway and Boardwalk (DEP #215-0240)",
+     "label": "M06#2"
     },
     {
      "video_id": "MCM00001723",
@@ -179,58 +181,8 @@
      "base": "2025-01-30_MCM00001723",
      "meeting_title": "Medford Conservation Commission 01-29-25",
      "title": "Mystic River Road Improvements",
-     "label": "M03#2"
-    }
-   ]
-  },
-  {
-   "name": "Residential Additions and Compliance",
-   "status": "settled",
-   "summary": "Private property improvements, such as a retaining wall on Wentworth Road and additions on Arlington Street, required commission oversight to ensure permanent barriers between yards and wetlands. The commission typically conditions these approvals on the use of native vegetation and the installation of wetland signage. In some cases, such as at 54 South Street, the commission conducted site visits to verify that required plantings met density and quantity standards.",
-   "citations": [
-    {
-     "video_id": "MCM00001723",
-     "t": 3879,
-     "date": "2025-01-29",
-     "base": "2025-01-30_MCM00001723",
-     "meeting_title": "Medford Conservation Commission 01-29-25",
-     "title": "53 Wentworth Road",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "MCM00001803",
-     "t": 1311,
-     "date": "2025-09-03",
-     "base": "2025-09-04_MCM00001803",
-     "meeting_title": "Medford Conservation Commission 09-03-25",
-     "title": "54 South Street Planting Discussion",
-     "label": "M06#3"
-    },
-    {
-     "video_id": "MCM00001813",
-     "t": 1560,
-     "date": "2025-09-17",
-     "base": "2025-09-18_MCM00001813",
-     "meeting_title": "Medford Conservation Commission 09-17-25",
-     "title": "Notice of Intent: 173 Arlington Street",
      "label": "M07#2"
     },
-    {
-     "video_id": "MCM00001822",
-     "t": 1,
-     "date": "2025-10-01",
-     "base": "2025-10-10_MCM00001822",
-     "meeting_title": "Medford Conservation Commission 10-01-25",
-     "title": "171 Arlington Street Notice of Intent",
-     "label": "M08#1"
-    }
-   ]
-  },
-  {
-   "name": "Public and Municipal Projects",
-   "status": "ongoing",
-   "summary": "The commission reviews municipal maintenance and improvements, such as a five-year vegetation management plan for the MBTA commuter rail right-of-way. It issued negative determinations for pavement and lighting repairs at the Condon Shell and drainage improvements on the Mustang Loop Trail. In late 2026, the commission also approved a certificate of compliance for ADA accessibility modifications and dugout replacement at Veterans Memorial Park.",
-   "citations": [
     {
      "video_id": "MCM00001803",
      "t": 9,
@@ -238,7 +190,50 @@
      "base": "2025-09-04_MCM00001803",
      "meeting_title": "Medford Conservation Commission 09-03-25",
      "title": "MBTA Right-of-Way Vegetation Management",
-     "label": "M06#1"
+     "label": "M10#1"
+    },
+    {
+     "video_id": "CAS00002494",
+     "t": 3550,
+     "date": "2026-07-29",
+     "base": "2026-07-30_CAS00002494",
+     "meeting_title": "Conservation Commission 07/29/26",
+     "title": "Wellington Bridge Shared-Use Path Update",
+     "label": "M14#10"
+    }
+   ]
+  },
+  {
+   "name": "Park Improvements and Trail Restoration",
+   "status": "ongoing",
+   "summary": "Recreational projects reviewed by the commission include dugout replacements at Veterans Memorial Park and vegetation management at McDonald Park. The Friends of the Middlesex Fells have received approvals for invasive plant management, pollinator habitat restoration, and the rehabilitation of the Cross Fells and Skyline trails. The commission also issues Negative Determinations for smaller municipal projects like trail maintenance on the Mustang Loop and lighting repairs at the Condon Shell. Recent actions include closing out several long-standing projects through the issuance of Certificates of Compliance.",
+   "citations": [
+    {
+     "video_id": "MCM00001337",
+     "t": 2382,
+     "date": "2023-11-15",
+     "base": "2024-09-04_MCM00001337",
+     "meeting_title": "Medford Conservation Commission 11-15-23",
+     "title": "Veterans Memorial Park Dugout Replacement Notice of Intent",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001339",
+     "t": 36,
+     "date": "2023-12-06",
+     "base": "2024-09-04_MCM00001339",
+     "meeting_title": "Medford Conservation Commission 12-06-23",
+     "title": "McDonald Park Order of Conditions Extension",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "CAS00002499",
+     "t": 56,
+     "date": "2026-08-05",
+     "base": "2026-08-06_CAS00002499",
+     "meeting_title": "Conservation Commission 08/05/26",
+     "title": "Middlesex Fells Invasive Plant Management",
+     "label": "M15#1"
     },
     {
      "video_id": "CAS00002529",
@@ -247,16 +242,7 @@
      "base": "2026-09-18_CAS00002529",
      "meeting_title": "Conservation Commission 09/16/26",
      "title": "Request for Determination of Applicability - Condon Shell Lights",
-     "label": "M11#1"
-    },
-    {
-     "video_id": "CAS00002529",
-     "t": 1561,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002529",
-     "meeting_title": "Conservation Commission 09/16/26",
-     "title": "Request for Determination of Applicability - Mustang Loop Trail Maintenance",
-     "label": "M11#2"
+     "label": "M16#1"
     },
     {
      "video_id": "CAS00002558",
@@ -265,15 +251,118 @@
      "base": "2026-10-09_CAS00002558",
      "meeting_title": "Conservation Commission 10/07/26",
      "title": "Certificate of Compliance: Veterans Memorial Dugout Replacement (DEP #215-0234)",
+     "label": "M17#1"
+    },
+    {
+     "video_id": "CAS00002558",
+     "t": 628,
+     "date": "2026-10-07",
+     "base": "2026-10-09_CAS00002558",
+     "meeting_title": "Conservation Commission 10/07/26",
+     "title": "Notice of Intent: Middlesex Fells Trail Rehabilitation and Bridge Replacement",
+     "label": "M17#4"
+    }
+   ]
+  },
+  {
+   "name": "Compliance Monitoring and Administrative Business",
+   "status": "ongoing",
+   "summary": "The commission regularly performs site visits to verify the success of required plantings at residential properties like 54 South Street and 171 Arlington Street. Beyond project-specific reviews, the body has adopted provisions for electronic signatures and discussed the potential impacts of the state's Mass Ready Act on local permitting. Recent administrative priorities include auditing permit files with intern assistance and recruiting new members with environmental engineering backgrounds to fill vacancies.",
+   "citations": [
+    {
+     "video_id": "MCM00001337",
+     "t": 4044,
+     "date": "2023-11-15",
+     "base": "2024-09-04_MCM00001337",
+     "meeting_title": "Medford Conservation Commission 11-15-23",
+     "title": "Electronic Signatures and Approval of Minutes",
+     "label": "M02#4"
+    },
+    {
+     "video_id": "MCM00001787",
+     "t": 2307,
+     "date": "2025-07-23",
+     "base": "2025-07-29_MCM00001787",
+     "meeting_title": "Medford Conservation Commission 07-23-25",
+     "title": "Administrative Matters and Minutes",
+     "label": "M09#2"
+    },
+    {
+     "video_id": "MCM00001787",
+     "t": 2592,
+     "date": "2025-07-23",
+     "base": "2025-07-29_MCM00001787",
+     "meeting_title": "Medford Conservation Commission 07-23-25",
+     "title": "Mass Ready Act Legislative Discussion",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "MCM00001803",
+     "t": 1311,
+     "date": "2025-09-03",
+     "base": "2025-09-04_MCM00001803",
+     "meeting_title": "Medford Conservation Commission 09-03-25",
+     "title": "54 South Street Planting Discussion",
+     "label": "M10#3"
+    },
+    {
+     "video_id": "MCM00001822",
+     "t": 1,
+     "date": "2025-10-01",
+     "base": "2025-10-10_MCM00001822",
+     "meeting_title": "Medford Conservation Commission 10-01-25",
+     "title": "171 Arlington Street Notice of Intent",
      "label": "M12#1"
+    },
+    {
+     "video_id": "CAS00002401",
+     "t": 933,
+     "date": "2026-04-30",
+     "base": "2026-04-30_CAS00002401",
+     "meeting_title": "Conservation Commission 04/30/26",
+     "title": "Staff Reports and Project Updates",
+     "label": "M13#3"
     }
    ]
   }
  ],
  "periods": [
   {
+   "period": "2022-2023 term",
+   "narrative": "This period focused on regional safety improvements for the South Reservoir Dam and the approval of recreational upgrades at Veterans Memorial and McDonald Parks.",
+   "citations": [
+    {
+     "video_id": "MCM00001338",
+     "t": null,
+     "date": "2023-10-18",
+     "base": "2024-09-04_MCM00001338",
+     "meeting_title": "Medford Conservation Commission 10-18-23",
+     "title": "Medford Conservation Commission 10-18-23",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001337",
+     "t": 2382,
+     "date": "2023-11-15",
+     "base": "2024-09-04_MCM00001337",
+     "meeting_title": "Medford Conservation Commission 11-15-23",
+     "title": "Veterans Memorial Park Dugout Replacement Notice of Intent",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001339",
+     "t": 36,
+     "date": "2023-12-06",
+     "base": "2024-09-04_MCM00001339",
+     "meeting_title": "Medford Conservation Commission 12-06-23",
+     "title": "McDonald Park Order of Conditions Extension",
+     "label": "M04#1"
+    }
+   ]
+  },
+  {
    "period": "2024-2025 term",
-   "narrative": "This period focused on major residential and infrastructure developments, including the approval of the Route 28 boardwalk and the Revere Beach Parkway multi-family complex.",
+   "narrative": "The commission managed major residential redevelopments and infrastructure projects, while addressing legislative shifts and board recruitment needs.",
    "citations": [
     {
      "video_id": "MCM00001695",
@@ -282,22 +371,31 @@
      "base": "2025-01-03_MCM00001695",
      "meeting_title": "Medford Conservation Commission 12-18-24",
      "title": "Medford Conservation Commission 12-18-24",
-     "label": "M01"
+     "label": "M05"
     },
     {
-     "video_id": "MCM00001822",
+     "video_id": "MCM00001787",
      "t": null,
-     "date": "2025-10-01",
-     "base": "2025-10-10_MCM00001822",
-     "meeting_title": "Medford Conservation Commission 10-01-25",
-     "title": "Medford Conservation Commission 10-01-25",
-     "label": "M08"
+     "date": "2025-07-23",
+     "base": "2025-07-29_MCM00001787",
+     "meeting_title": "Medford Conservation Commission 07-23-25",
+     "title": "Medford Conservation Commission 07-23-25",
+     "label": "M09"
+    },
+    {
+     "video_id": "MCM00001803",
+     "t": null,
+     "date": "2025-09-03",
+     "base": "2025-09-04_MCM00001803",
+     "meeting_title": "Medford Conservation Commission 09-03-25",
+     "title": "Medford Conservation Commission 09-03-25",
+     "label": "M10"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The commission shifted its attention toward strengthening local environmental protections through new bylaws and managing several habitat restoration projects in the Middlesex Fells.",
+   "narrative": "Work shifted toward drafting comprehensive local wetlands regulations and finalizing trail and habitat restoration projects in the Middlesex Fells.",
    "citations": [
     {
      "video_id": "CAS00002494",
@@ -306,7 +404,16 @@
      "base": "2026-07-30_CAS00002494",
      "meeting_title": "Conservation Commission 07/29/26",
      "title": "Conservation Commission 07/29/26",
-     "label": "M09"
+     "label": "M14"
+    },
+    {
+     "video_id": "CAS00002499",
+     "t": null,
+     "date": "2026-08-05",
+     "base": "2026-08-06_CAS00002499",
+     "meeting_title": "Conservation Commission 08/05/26",
+     "title": "Conservation Commission 08/05/26",
+     "label": "M15"
     },
     {
      "video_id": "CAS00002558",
@@ -315,24 +422,26 @@
      "base": "2026-10-09_CAS00002558",
      "meeting_title": "Conservation Commission 10/07/26",
      "title": "Conservation Commission 10/07/26",
-     "label": "M12"
+     "label": "M17"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 27,
-  "meetings_cited": 12,
-  "of_meetings": 12,
-  "max_share": 0.185,
-  "most_cited": "CAS00002558",
-  "periods_covered": 2,
-  "of_periods": 2
+  "citations": 39,
+  "meetings_cited": 16,
+  "of_meetings": 17,
+  "max_share": 0.179,
+  "even_share": 0.0588,
+  "concentration_ratio": 3.04,
+  "most_cited": "CAS00002494",
+  "periods_covered": 3,
+  "of_periods": 3
  },
  "usage": {
-  "input_tokens": 4432,
-  "output_tokens": 1301,
+  "input_tokens": 5581,
+  "output_tokens": 1405,
   "model_version": "gemini-3-flash-preview"
  }
 }
