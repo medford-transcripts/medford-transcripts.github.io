@@ -1,0 +1,52 @@
+{
+ "video_id": "MCM00001302",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T16:09:02Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "25dffeace01a7adb",
+ "subject": "",
+ "overview": "The Historic District Commission approved prior meeting minutes and postponed a scheduled public hearing to November 9 due to pamphlet mailing delays. Commissioners also deferred discussion on a property inquiry for 20 Hillside and noted an upcoming member resignation.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 35,
+   "summary": "The commission voted to accept two sets of prior meeting minutes.",
+   "speakers": [
+    "Charlotte",
+    "Joe",
+    "Fred"
+   ]
+  },
+  {
+   "title": "20 Hillside Work Inquiry",
+   "t": 105,
+   "summary": "Discussion of proposed aluminum gutters and porch shingles at 20 Hillside was postponed to the next meeting pending a formal application.",
+   "speakers": []
+  },
+  {
+   "title": "Public Hearing Postponement",
+   "t": 196,
+   "summary": "The commission postponed its upcoming public hearing to November 9 at 6:00 p.m. in the City Council Chamber due to printing and mailing delays.",
+   "speakers": [
+    "Charlotte",
+    "Joe"
+   ]
+  },
+  {
+   "title": "Commission Administration and Updates",
+   "t": 295,
+   "summary": "Commissioners noted the anticipated resignation of member Chris Donovan and briefly discussed pamphlet design choices and access to meeting recordings.",
+   "speakers": [
+    "Chris Donovan",
+    "Dennis"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3374,
+  "output_tokens": 363,
+  "model_version": "gemini-3.6-flash"
+ }
+}
