@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "d9f4a773aa5f91f6",
- "subject": "",
+ "subject": "Interview with Councilor Zac Bears",
  "overview": "Medford City Councilor Zac Bears joined the Medford Bytes podcast to review his first four years in office and outline his re-election platform. He discussed municipal budget challenges, comprehensive zoning reform, balance-of-power issues in the city charter, and his campaign activities.",
  "items": [
   {
@@ -69,5 +69,6 @@
   "input_tokens": 8722,
   "output_tokens": 645,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
