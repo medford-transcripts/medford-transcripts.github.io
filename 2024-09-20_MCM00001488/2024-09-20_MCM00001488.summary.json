@@ -1,0 +1,34 @@
+{
+ "video_id": "MCM00001488",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T06:09:38Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "81e3b09b552511cb",
+ "subject": "CDBG Annual Performance and Evaluation Report",
+ "overview": "City staff presented the Consolidated Annual Performance and Evaluation Report (CAPER) detailing Medford's Community Development Block Grant accomplishments and solicited public input on future funding priorities.",
+ "items": [
+  {
+   "title": "Call to Order and Introduction",
+   "t": 0,
+   "summary": "Director of Planning, Development and Sustainability Alicia Hunt opened the public hearing on the Community Development Block Grant annual performance report.",
+   "speakers": [
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Consolidated Annual Performance and Evaluation Report Presentation",
+   "t": 29,
+   "summary": "CDBG Manager Laurel Siegel reviewed the past year's grant-funded infrastructure, housing, public service, and economic development accomplishments, outlined upcoming projects, and invited public feedback on community funding priorities.",
+   "speakers": [
+    "Laurel Siegel"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2728,
+  "output_tokens": 226,
+  "model_version": "gemini-3.8-flash"
+ }
+}

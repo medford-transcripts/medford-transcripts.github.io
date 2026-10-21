@@ -1,0 +1,48 @@
+{
+ "video_id": "CAS00002401",
+ "provider": "gemini",
+ "generated_at": "2026-10-21T06:05:48Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "974e491de28eb764",
+ "subject": "54 South Street Certificate of Compliance",
+ "overview": "The Commission approved a Certificate of Compliance for a residential project on South Street and discussed upcoming invasive species management and city-wide permit audits.",
+ "items": [
+  {
+   "title": "54 South Street Certificate of Compliance (DEP #2150230)",
+   "t": 9,
+   "summary": "Approved a Certificate of Compliance for a residential addition within the riverfront area following a review of as-built plans and site plantings. The Commission confirmed that the implemented landscape plan met the original order of conditions.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Eric",
+    "Craig Drennan"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 891,
+   "summary": "Tabled the approval of the previous meeting's minutes to the next session to allow for additional review.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Craig Drennan"
+   ]
+  },
+  {
+   "title": "Staff Reports and Project Updates",
+   "t": 933,
+   "summary": "Staff announced a upcoming permit file audit by a new intern, a pending filing for invasive species cleanup at McDonald Park, and the annual municipal rain barrel sale. The Commission also discussed a reported accumulation of debris near the state police barracks slated for removal.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7388,
+  "output_tokens": 340,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
