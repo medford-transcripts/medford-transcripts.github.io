@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "3578c30309269327",
- "subject": "",
+ "subject": "City Council Candidate Len Glionna",
  "overview": "Host Danielle Balocca interviewed City Council candidate Len Glionna about his background, campaign platform, and municipal policy views. Glionna outlined his support for building a new fire headquarters, studying high school replacement plans, adopting ward representation, and expanding mixed-use development on Mystic Avenue.",
  "items": [
   {
@@ -87,5 +87,6 @@
   "input_tokens": 9313,
   "output_tokens": 691,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
