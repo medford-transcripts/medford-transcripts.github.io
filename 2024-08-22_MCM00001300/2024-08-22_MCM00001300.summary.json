@@ -1,0 +1,36 @@
+{
+ "video_id": "MCM00001300",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T11:51:10Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "6fb87acdadf0a505",
+ "subject": "Proposed South Street Historic District",
+ "overview": "The Medford Historic District Commission reviewed outreach materials for a proposed historic district but was unable to vote on pending meeting minutes due to the lack of a quorum.",
+ "items": [
+  {
+   "title": "South Street Historic District Public Hearing Notice",
+   "t": 1,
+   "summary": "Commissioners reviewed and refined a draft letter inviting neighborhood property owners to an October 12 public hearing regarding the proposed South Street Historic District.",
+   "speakers": [
+    "Christopher Bader",
+    "Theresa Dupont"
+   ]
+  },
+  {
+   "title": "Quorum and Commission Administration",
+   "t": 717,
+   "summary": "Lacking a quorum to formally approve outstanding meeting minutes, members planned a brief follow-up meeting and discussed obtaining city administrative assistance for minute-taking.",
+   "speakers": [
+    "Christopher Bader",
+    "Theresa Dupont"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9993,
+  "output_tokens": 190,
+  "model_version": "gemini-3.6-flash"
+ }
+}

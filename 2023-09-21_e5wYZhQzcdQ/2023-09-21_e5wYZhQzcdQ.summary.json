@@ -1,0 +1,58 @@
+{
+ "video_id": "e5wYZhQzcdQ",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T11:55:35Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "24b9ef131e7de455",
+ "subject": "",
+ "overview": "Mayor Breanna Lungo-Koehn announced upcoming city events and community updates for September, including rescheduled park ceremonies, office hours, and weekend festivals.",
+ "items": [
+  {
+   "title": "Hickey Park Ribbon-Cutting Postponement",
+   "t": 9,
+   "summary": "The ribbon-cutting for the new tennis and basketball courts at Hickey Park was rescheduled to September 20 at 3 p.m. due to rain.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Mayoral Office Hours",
+   "t": 33,
+   "summary": "Mayor Lungo-Koehn announced upcoming community office hours scheduled for September 14 from 3 to 4 p.m. at CB Scoops.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Run Medford Weekend",
+   "t": 43,
+   "summary": "Run Medford weekend events will begin September 22 with the dedication of the Hormel Stadium track to Dave McGillivray alongside fun runs, followed by a five-mile race and two-mile walk on September 23.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Mystic River Celebration",
+   "t": 78,
+   "summary": "The Mystic River Celebration will take place at the Condon Shell on September 23 from 12 to 4 p.m., featuring artists, vendors, food, and live entertainment.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Medford Chamber of Commerce Oktoberfest",
+   "t": 99,
+   "summary": "The Medford Chamber of Commerce will host Oktoberfest in Medford Square on Saturday, September 30, from 1 to 5 p.m.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1811,
+  "output_tokens": 500,
+  "model_version": "gemini-3.8-flash"
+ }
+}

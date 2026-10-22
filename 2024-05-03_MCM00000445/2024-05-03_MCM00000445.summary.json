@@ -1,0 +1,80 @@
+{
+ "video_id": "MCM00000445",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T11:57:58Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "679d4d5c22b0e7df",
+ "subject": "Proposed Condominium Conversion Ordinance",
+ "overview": "The subcommittee deliberated on a draft ordinance to regulate the conversion of rental units into condominiums, focusing on tenant protections and displacement mitigation. The body reviewed local conversion data and discussed specific provisions regarding notice periods, relocation payments, and administrative oversight.",
+ "items": [
+  {
+   "title": "Introduction to Condominium Conversion Ordinance",
+   "t": 0,
+   "summary": "The subcommittee convened to discuss paper 22-321, a proposed legislative mechanism to regulate the conditions under which rental units are converted into condominiums.",
+   "speakers": [
+    "Zac Bears",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Presentation of Medford Conversion Data",
+   "t": 406,
+   "summary": "A representative from Planning, Development and Sustainability (PDS) presented research showing an average of approximately 30 condominium conversions per year in Medford since 2018, primarily involving multi-family dwellings.",
+   "speakers": [
+    "Kit Collins",
+    "MCM00001654_SPEAKER_16"
+   ]
+  },
+  {
+   "title": "Building Department Technical Feedback",
+   "t": 612,
+   "summary": "Interim Building Commissioner Bill Forte provided preliminary comments on permit tracking systems and confirmed that affordable units with state restrictive covenants generally cannot be converted.",
+   "speakers": [
+    "Bill Forte"
+   ]
+  },
+  {
+   "title": "Deliberation on Notice Periods and Purchase Rights",
+   "t": 1155,
+   "summary": "Members discussed extending notice requirements for protected tenants to five years and established a preference for including a tenant right of first refusal to purchase converted units.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Relocation Payments and Assistance",
+   "t": 1653,
+   "summary": "The subcommittee explored tying relocation payments to a formula based on median rent rather than a flat fee to better align with actual moving costs for displaced tenants.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Conversion Caps and Owner Exemptions",
+   "t": 2341,
+   "summary": "Discussion focused on potential annual caps for conversions and creating exemptions for owner-occupants to ensure the ordinance primarily targets for-profit developers.",
+   "speakers": [
+    "Kit Collins",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Administrative Authority and Legislative Referrals",
+   "t": 2802,
+   "summary": "The subcommittee approved motions to request that the Community Development Board serve as the implementing authority and referred legal questions regarding city purchase rights to KP Law.",
+   "speakers": [
+    "Zac Bears",
+    "Kit Collins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15234,
+  "output_tokens": 697,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
