@@ -1,0 +1,61 @@
+{
+ "video_id": "dsgiYCm1_2I",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T12:56:55Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "dc6735295395def5",
+ "subject": "Medford Poet Laureate Vijaya Sundaram",
+ "overview": "The body met to interview and introduce incoming Medford Poet Laureate Vijaya Sundaram and feature a live musical performance. The center also provided updates on its brick-based fundraising campaign and upcoming organizational elections.",
+ "items": [
+  {
+   "title": "Introduction and Opening Poem",
+   "t": 0,
+   "summary": "Host Terry Carter introduced the evening's guest and performed an original poem titled 'The Refreshing' to mark the transition of the city's Poet Laureate position.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Interview with Vijaya Sundaram",
+   "t": 305,
+   "summary": "Incoming Poet Laureate Vijaya Sundaram discussed her life as an immigrant and educator, the cultural nuances of Eye contact and communication styles between India and the US, and her vision for intergenerational poetry workshops.",
+   "speakers": [
+    "Terry Carter",
+    "Vijaya Sundaram"
+   ]
+  },
+  {
+   "title": "Poetry Reading",
+   "t": 2525,
+   "summary": "Sundaram performed a reading of two poems, 'My Body' and 'Here's the Thing,' from her recently published collection 'Fractured Lens.'",
+   "speakers": [
+    "Vijaya Sundaram"
+   ]
+  },
+  {
+   "title": "West Medford Community Center Announcements",
+   "t": 3314,
+   "summary": "The center provided updates on the 'Brick by Brick' fundraiser, an annual meeting scheduled for September 17, and current enrollment for the after-school youth program.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance",
+   "t": 3501,
+   "summary": "Vocalist Erin Hogan and bassist Ike Sturm performed a program of folk and jazz, including covers of Joni Mitchell and Sandy Denny as well as original pieces dedicated to social justice and family.",
+   "speakers": [
+    "Terry Carter",
+    "Erin Hogan",
+    "Ike Sturm"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29909,
+  "output_tokens": 480,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
