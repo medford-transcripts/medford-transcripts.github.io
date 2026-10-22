@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "d875876c1ea1ec78",
- "subject": "",
+ "subject": "HVAC Challenges in School Facilities",
  "overview": "The School Committee approved the consent agenda, tabled meeting minutes for revisions, welcomed new district administrators, and heard updates on the start of the school year and district operations, focusing on severe HVAC challenges across aging school facilities.",
  "items": [
   {
@@ -86,5 +86,6 @@
   "input_tokens": 23765,
   "output_tokens": 732,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

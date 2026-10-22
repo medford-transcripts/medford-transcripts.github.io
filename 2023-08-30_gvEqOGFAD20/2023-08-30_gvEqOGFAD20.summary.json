@@ -1,0 +1,34 @@
+{
+ "video_id": "gvEqOGFAD20",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T13:55:26Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "36047c874a6532a1",
+ "subject": "Aaron Olapade Campaign Kickoff",
+ "overview": "Supporters gathered for Aaron Olapade's campaign kickoff for the Medford School Committee, where speakers highlighted his civic background and core campaign platform.",
+ "items": [
+  {
+   "title": "Introduction and Endorsement",
+   "t": 1,
+   "summary": "State Representative Sean introduced Aaron Olapade, highlighting Olapade's legislative internship work, his Medford Public Schools background, and his focus on equity and school funding.",
+   "speakers": [
+    "Sean"
+   ]
+  },
+  {
+   "title": "Candidate Platform Address",
+   "t": 438,
+   "summary": "Aaron Olapade reflected on his roots as a Medford student and community liaison before outlining core platform priorities centered on equity, safe learning environments, educator support, and community collaboration.",
+   "speakers": [
+    "Aaron Olapade"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5858,
+  "output_tokens": 188,
+  "model_version": "gemini-3.8-flash"
+ }
+}
