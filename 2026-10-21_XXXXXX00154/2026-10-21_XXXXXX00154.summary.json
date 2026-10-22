@@ -1,0 +1,63 @@
+{
+ "video_id": "XXXXXX00154",
+ "provider": "gemini",
+ "generated_at": "2026-10-22T23:51:21Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3550d7e4e9d21d73",
+ "subject": "Andrea James Gubernatorial Campaign",
+ "overview": "Danielle Balocca interviewed independent candidate for governor Andrea James about her background and campaign priorities. James discussed prison abolition, housing, healthcare, education, childcare, debate exclusion, and voting rights for formerly incarcerated individuals.",
+ "items": [
+  {
+   "title": "Candidate Introduction and Platform Priorities",
+   "t": 45,
+   "summary": "Andrea James introduced her background as a Roxbury native, former defense attorney, and formerly incarcerated organizer, detailing her platform centered on housing, universal healthcare, equitably funded education, and childcare.",
+   "speakers": [
+    "Danielle Balocca",
+    "Andrea James"
+   ]
+  },
+  {
+   "title": "Criminal Justice Reform and Prison Abolition",
+   "t": 456,
+   "summary": "James argued against the construction of a proposed 360-million-dollar women's prison, advocating for prison abolition, investment in vulnerable communities, and an end to state cooperation with ICE.",
+   "speakers": [
+    "Andrea James",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Media Coverage and Debate Exclusion",
+   "t": 1373,
+   "summary": "James addressed being excluded from televised debates alongside the major-party candidates despite securing over 13,000 signatures to qualify for the ballot.",
+   "speakers": [
+    "Andrea James",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "First Priorities, Housing, and Decarceration",
+   "t": 1865,
+   "summary": "James outlined her plans to establish people's assembly processes, prioritize decarceration through executive clemency, and address housing affordability by limiting sharp rent increases and expanding vouchers.",
+   "speakers": [
+    "Danielle Balocca",
+    "Andrea James"
+   ]
+  },
+  {
+   "title": "Voting Rights for Formerly Incarcerated People",
+   "t": 2942,
+   "summary": "James clarified Massachusetts voting laws, explaining that individuals automatically regain voting rights upon release from prison and that individuals held pretrial or serving misdemeanor sentences in county jails retain the right to vote.",
+   "speakers": [
+    "Danielle Balocca",
+    "Andrea James"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17733,
+  "output_tokens": 466,
+  "model_version": "gemini-3.8-flash"
+ }
+}
