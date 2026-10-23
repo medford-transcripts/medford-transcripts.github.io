@@ -1,0 +1,26 @@
+{
+ "video_id": "wPoEP6bLYXc",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T16:09:08Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a4e42ddee6da280d",
+ "subject": "New Principal Introduction",
+ "overview": "Incoming Roberts Elementary School Principal Michelle Crowell introduced herself to the school community and shared her background and educational priorities.",
+ "items": [
+  {
+   "title": "Principal's Welcome and Introduction",
+   "t": 0,
+   "summary": "Incoming Principal Michelle Crowell introduced herself to Roberts Elementary School families, outlining her background in public education and emphasizing collaboration with families.",
+   "speakers": [
+    "Michelle Crowell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1313,
+  "output_tokens": 92,
+  "model_version": "gemini-3.6-flash"
+ }
+}
