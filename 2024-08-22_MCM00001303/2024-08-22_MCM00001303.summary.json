@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "5c2293f255e4cfc9",
- "subject": "",
+ "subject": "South Street Historic District Application",
  "overview": "The commission reviewed the resubmission timeline and hearing schedule for the South Street Historic District. Members also agreed to request a city staff executive secretary to handle administrative tasks and minutes.",
  "items": [
   {
@@ -32,5 +32,6 @@
   "input_tokens": 3930,
   "output_tokens": 254,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
