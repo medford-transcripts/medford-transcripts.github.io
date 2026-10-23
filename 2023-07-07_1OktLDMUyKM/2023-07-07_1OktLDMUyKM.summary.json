@@ -1,0 +1,26 @@
+{
+ "video_id": "1OktLDMUyKM",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T20:09:27Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1801e37a38201bb4",
+ "subject": "Principal Marta Cabral Welcome Message",
+ "overview": "Medford High School Principal Marta Cabral introduced herself to the school community, sharing her educational background, values, and vision for student engagement and partnerships with families.",
+ "items": [
+  {
+   "title": "Principal Welcome Message",
+   "t": 0,
+   "summary": "Principal Marta Cabral introduced herself, outlined her background and values, and welcomed students and caregivers to Medford High School.",
+   "speakers": [
+    "Marta Cabral"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1357,
+  "output_tokens": 133,
+  "model_version": "gemini-3.8-flash"
+ }
+}
