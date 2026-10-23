@@ -1,0 +1,86 @@
+{
+ "video_id": "MCM00000617",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T04:50:14Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d64c6069d86970e0",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals met to hear several residential petitions, granting variances for multi-family expansion projects at 15 Hadley Place and 54 South Street as well as a special permit to rebuild a fire-damaged four-family structure at 80 Canal Street.",
+ "items": [
+  {
+   "title": "Continued Matters: 436 Riverside Ave and 590 Boston Ave",
+   "t": 160,
+   "summary": "The board voted to continue a fence height variance application for 436 Riverside Avenue to September 28, 2023, and noted that 590 Boston Avenue was previously continued to October 26, 2023.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Variance Application for 15 Hadley Place",
+   "t": 339,
+   "summary": "Attorney Kathleen Desmond presented plans to merge lots and construct an addition to create a five-unit residential building, requiring side yard and usable open space variances. Following public comment raising parking and traffic concerns, the board approved the requested variances.",
+   "speakers": [
+    "Mike Caldera",
+    "Kathleen Desmond",
+    "Denis MacDougall",
+    "Bill Forte",
+    "Mary Lee",
+    "Stephanie Roshon",
+    "Cynthia Graco",
+    "Liliana Rochon",
+    "Linda Foote",
+    "Fred Capone",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Special Permit Application for 80 Canal Street",
+   "t": 4772,
+   "summary": "Attorney Sheila Grant petitioned for a special permit to reconstruct and expand the third-floor living space of a pre-existing nonconforming four-family home damaged by fire. Despite public objections alleging non-compliance and abandonment, the board found the structure legally nonconforming and approved the special permit.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Sheila Grant",
+    "Richard Brown",
+    "Bill Forte",
+    "Aaron Cohen",
+    "Matthew Wadsworth",
+    "Ben Rifa",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Variance Application for 54 South Street",
+   "t": 9579,
+   "summary": "Marsh Builders LLC sought a side yard setback variance to build a four-unit addition connected to an existing historic single-family house, bringing the total to five units while preserving the main structure and carriage house. After discussing tree preservation and parking layout, the board approved the variance.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Kathleen Desmond",
+    "Chris Mulhern",
+    "Ben Minnix",
+    "Steve Campbell",
+    "Sarah Barrett",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Meeting Minutes",
+   "t": 13054,
+   "summary": "The board received no administrative updates, postponed minute approvals to the next meeting, and adjourned.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 60308,
+  "output_tokens": 775,
+  "model_version": "gemini-3.6-flash"
+ }
+}
