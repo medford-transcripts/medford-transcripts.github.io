@@ -1,0 +1,78 @@
+{
+ "video_id": "MCM00001334",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T07:08:13Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c891bbe3996bd7a4",
+ "subject": "",
+ "overview": "The Medford Conservation Commission welcomed a new member and reviewed several wetland permitting applications and compliance requests. The commission approved a driveway replacement at 69 South Street, a 40B residential development at 4000 Mystic Valley Parkway, two certificates of compliance, and an amended order of conditions for a bicycle path extension.",
+ "items": [
+  {
+   "title": "Welcome New Commission Member",
+   "t": 47,
+   "summary": "The commission formally welcomed new member Caroline to the Conservation Commission.",
+   "speakers": [
+    "Heidi Davis",
+    "Heather",
+    "Marie Izzo",
+    "Craig Drennan"
+   ]
+  },
+  {
+   "title": "RDA - 69 South Street Driveway Replacement",
+   "t": 103,
+   "summary": "Approved a negative determination of applicability with conditions regarding tree protection and erosion control for driveway replacement and paver installation at 69 South Street.",
+   "speakers": [
+    "Heidi Davis",
+    "Adam Hurtubise",
+    "Marie Izzo",
+    "Craig Drennan",
+    "Heather"
+   ]
+  },
+  {
+   "title": "Notice of Intent - 4000 Mystic Valley Parkway",
+   "t": 1346,
+   "summary": "Approved an order of conditions for a 40B residential redevelopment project at 4000 Mystic Valley Parkway, subject to additional long-term pollution prevention and stormwater inspection details.",
+   "speakers": [
+    "Tim Alexander",
+    "Tony Donato",
+    "Craig Drennan",
+    "Heidi Davis"
+   ]
+  },
+  {
+   "title": "Certificates of Compliance - 4000 Mystic Valley Parkway and Commercial Street Extension",
+   "t": 2836,
+   "summary": "Approved certificates of compliance for prior completed work at 4000 Mystic Valley Parkway and the 1992 Commercial Street extension project.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heather",
+    "Craig Drennan",
+    "Heidi Davis",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Amended Notice of Intent - Bicycle Path Extension",
+   "t": 3447,
+   "summary": "Approved an amended order of conditions allowing Eversource and DCR to construct a bicycle path extension and raised crosswalks near the Medford Community Gardens.",
+   "speakers": [
+    "Peter Bacchus",
+    "Aaron Olapade",
+    "Heather",
+    "Marie Izzo",
+    "Craig Drennan",
+    "Denis MacDougall",
+    "Heidi Davis"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 27456,
+  "output_tokens": 529,
+  "model_version": "gemini-3.6-flash"
+ }
+}
