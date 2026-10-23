@@ -1,0 +1,79 @@
+{
+ "video_id": "MCM00001133",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T09:07:47Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "213a6a1248a03971",
+ "subject": "",
+ "overview": "The Medford Bicycle Advisory Commission met to discuss upcoming community events, design concerns for the proposed Mystic River Pedestrian Bridge, strategies to encourage cycling to Medford High School, and citywide infrastructure updates.",
+ "items": [
+  {
+   "title": "Approval of minutes",
+   "t": 326,
+   "summary": "The commission approved the minutes from its previous meeting.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Fairchild",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Announcements and upcoming events",
+   "t": 387,
+   "summary": "Members discussed plans to staff a booth and organize a group ride for Bike Fest Day at the Farmers Market on August 24, as well as participating in the Harvest Your Energy Festival.",
+   "speakers": [
+    "Emily O'Brien",
+    "Jared Powell",
+    "Daniel Fairchild"
+   ]
+  },
+  {
+   "title": "Mystic River Pedestrian Bridge",
+   "t": 1459,
+   "summary": "The commission reviewed design concerns regarding the proposed 12-foot width and T-station connectivity for the Mystic River Pedestrian Bridge, deciding to seek updated design documents before taking an official position.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Fairchild",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Biking to Medford High School",
+   "t": 3115,
+   "summary": "Medford High School teacher Sam Christie discussed potential initiatives to promote student cycling, including bike repair nights, student-fabricated bike racks, and route mapping.",
+   "speakers": [
+    "Emily O'Brien",
+    "Sam Christie",
+    "Daniel Fairchild",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Bike lane enforcement and vegetation trimming",
+   "t": 4167,
+   "summary": "The commission reviewed enforcement plans for vehicles parked in bike lanes on Winthrop Street and discussed procedures for reporting sidewalk-obstructing vegetation through SeeClickFix.",
+   "speakers": [
+    "Emily O'Brien",
+    "Daniel Fairchild",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Infrastructure updates",
+   "t": 5375,
+   "summary": "City staff provided status updates on pending bike rack grant applications, pavement marking and flex post installations across multiple corridors, and the Clippership Connector project.",
+   "speakers": [
+    "Emily O'Brien",
+    "Jared Powell",
+    "Daniel Fairchild"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 39971,
+  "output_tokens": 525,
+  "model_version": "gemini-3.6-flash"
+ }
+}
