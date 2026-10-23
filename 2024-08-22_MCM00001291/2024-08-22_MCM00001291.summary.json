@@ -1,0 +1,47 @@
+{
+ "video_id": "MCM00001291",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T09:59:50Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "72386ccff3633205",
+ "subject": "South Street Historic District Preliminary Report",
+ "overview": "The Commission approved a preliminary report for submission to the Massachusetts Historical Commission and planned public outreach for an upcoming hearing. The body coordinated mailings to district residents and abutters ahead of a scheduled public hearing in September.",
+ "items": [
+  {
+   "title": "Approval of Preliminary Report",
+   "t": 151,
+   "summary": "Approved the preliminary report prepared by Chris Skelly for submission to the Massachusetts Historical Commission.",
+   "speakers": [
+    "Christopher Bader",
+    "Fred Sewell"
+   ]
+  },
+  {
+   "title": "Public Outreach and Notification Plan",
+   "t": 244,
+   "summary": "The Commission planned to mail a letter and trifold brochure to all residents and owners within the district and abutters within 300 feet.",
+   "speakers": [
+    "Christopher Bader",
+    "Charlotte"
+   ]
+  },
+  {
+   "title": "Future Meeting and Hearing Schedule",
+   "t": 380,
+   "summary": "The body confirmed its next meeting for August 10 and scheduled a formal public hearing at City Hall for September 14.",
+   "speakers": [
+    "Christopher Bader",
+    "Melanie Tringali",
+    "Fred Sewell",
+    "Charlotte"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5680,
+  "output_tokens": 324,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
