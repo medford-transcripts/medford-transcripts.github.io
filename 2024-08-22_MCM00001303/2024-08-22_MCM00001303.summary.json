@@ -1,0 +1,36 @@
+{
+ "video_id": "MCM00001303",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T08:01:25Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5c2293f255e4cfc9",
+ "subject": "",
+ "overview": "The commission reviewed the resubmission timeline and hearing schedule for the South Street Historic District. Members also agreed to request a city staff executive secretary to handle administrative tasks and minutes.",
+ "items": [
+  {
+   "title": "South Street Historic District Application and Hearing Scheduling",
+   "t": 0,
+   "summary": "Following the rejection and resubmission of the South Street Historic District application, the commission scheduled the required public hearing for October 12, 2023, and moved its September regular meeting to September 7 to finalize outreach mailings.",
+   "speakers": [
+    "Christopher Bader",
+    "Melanie Tringali"
+   ]
+  },
+  {
+   "title": "Request for Staff Executive Secretary",
+   "t": 472,
+   "summary": "The commission agreed to ask the administration and the Office of Community Development to assign a staff executive secretary to take meeting minutes and manage administrative paperwork.",
+   "speakers": [
+    "Christopher Bader",
+    "Melanie Tringali"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3930,
+  "output_tokens": 254,
+  "model_version": "gemini-3.8-flash"
+ }
+}

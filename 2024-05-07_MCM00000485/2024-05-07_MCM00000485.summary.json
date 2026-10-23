@@ -1,0 +1,62 @@
+{
+ "video_id": "MCM00000485",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T08:01:53Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9599ecef8483a6ea",
+ "subject": "Council Composition and Ward Representation",
+ "overview": "The Charter Study Committee subcommittee met to define its scope and assign research tasks regarding city council composition and hybrid ward representation. Members reviewed historical ward-by-ward voter turnout data and delegated individual research topics to prepare draft language for the full committee.",
+ "items": [
+  {
+   "title": "Subcommittee Scope and Objectives",
+   "t": 2,
+   "summary": "The subcommittee discussed narrowing its scope to researching hybrid ward representation versus expanding at-large council seats in order to draft proposed charter sections for the full committee.",
+   "speakers": [
+    "Ron Giovino",
+    "Eunice Browne",
+    "Milva McDonald",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Municipal Models and Legal Framework",
+   "t": 675,
+   "summary": "Members discussed exploring state general laws, consulting the Collins Center, comparing Malden's hybrid council model, and examining the legal precedent set by the Lowell court case on ward representation.",
+   "speakers": [
+    "Ron Giovino",
+    "Milva McDonald",
+    "Eunice Browne",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Review of Ward Voting Data",
+   "t": 1684,
+   "summary": "Eunice Browne presented a detailed data sheet outlining registered voters, turnout percentages, and vote counts by ward and precinct from the 2021 municipal election.",
+   "speakers": [
+    "Eunice Browne",
+    "Milva McDonald",
+    "Ron Giovino",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Task Assignments and Future Meetings",
+   "t": 2780,
+   "summary": "Members agreed on individual research assignments covering census demographics, state laws, legal precedent, historical election trends, and candidate outreach before tentatively scheduling their next meeting for August 24.",
+   "speakers": [
+    "Ron Giovino",
+    "Milva McDonald",
+    "Eunice Browne",
+    "Maury Carroll"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21160,
+  "output_tokens": 420,
+  "model_version": "gemini-3.6-flash"
+ }
+}

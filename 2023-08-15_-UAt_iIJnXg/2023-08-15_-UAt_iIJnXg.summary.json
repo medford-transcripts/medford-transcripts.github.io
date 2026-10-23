@@ -1,0 +1,40 @@
+{
+ "video_id": "-UAt_iIJnXg",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T07:56:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7b1fcfc66f2763a9",
+ "subject": "Interim Finance Director Appointment",
+ "overview": "The Medford School Committee approved the appointment of Gerald McHugh as interim director of finance before voting to enter executive session to discuss collective bargaining, non-unit administrative contracts, and security matters.",
+ "items": [
+  {
+   "title": "Appointment of Interim Director of Finance",
+   "t": 106,
+   "summary": "Approved the appointment of Gerald McHugh as interim director of finance for Medford Public Schools following a recommendation from Superintendent Edouard-Vincent.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Marice Edouard-Vincent",
+    "Gerry McCue",
+    "Jenny Graham",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Executive Session",
+   "t": 452,
+   "summary": "Voted to convene in executive session to discuss strategy regarding Teamsters Local 25 negotiations, non-unit administrative contracts, and security personnel and devices, with no return to public session.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Jenny Graham",
+    "Paul Ruseau"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4435,
+  "output_tokens": 236,
+  "model_version": "gemini-3.8-flash"
+ }
+}
