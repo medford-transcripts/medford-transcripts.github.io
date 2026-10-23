@@ -1,0 +1,80 @@
+{
+ "video_id": "CAS00002406",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T00:50:42Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "73ccaaaaa1976db6",
+ "subject": "Waterville Road Gutter Business Violation Appeal",
+ "overview": "The Medford Zoning Board of Appeals met to deliberate on several residential zoning relief requests and a contested administrative appeal regarding a local business violation.",
+ "items": [
+  {
+   "title": "41 Yale Street",
+   "t": 77,
+   "summary": "Approved a special permit and variance for as-built dormers that were mistakenly constructed coplanar with the exterior walls, technically creating an unpermitted third story.",
+   "speakers": [
+    "Adam Dash",
+    "Mike Caldera",
+    "Chris D'Aveta",
+    "Danielle Evans",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "91 Waterville Road",
+   "t": 1606,
+   "summary": "Continued an administrative appeal regarding a notice of violation for operating a gutter business in a residential zone after neighbors testified about noise and idling trucks.",
+   "speakers": [
+    "Andre Leroux",
+    "Jessica Schiller",
+    "Yvette Velez",
+    "Mike Caldera",
+    "Danielle Evans",
+    "Chris D'Aveta",
+    "Michael Ciroccello",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "64 Boynton Road",
+   "t": 4950,
+   "summary": "Approved a rear yard setback variance for a residential addition on an irregularly shaped triangular lot.",
+   "speakers": [
+    "Jess Wilhoft",
+    "David Whitney",
+    "Chris D'Aveta",
+    "Aaron Knoplett",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "9 Sturgis Street",
+   "t": 5781,
+   "summary": "Approved a special permit to raise the roof and wall height of a non-conforming structure to bring it up to building code.",
+   "speakers": [
+    "Mary Lee",
+    "Edmund",
+    "Danielle Evans",
+    "Andre Leroux",
+    "Mike Caldera",
+    "Chris D'Aveta"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 7455,
+   "summary": "Approved the meeting minutes for March 26.",
+   "speakers": [
+    "Andre Leroux",
+    "Mike Caldera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 42643,
+  "output_tokens": 465,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
