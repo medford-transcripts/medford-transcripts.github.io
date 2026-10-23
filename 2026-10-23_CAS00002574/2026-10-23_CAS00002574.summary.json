@@ -1,0 +1,31 @@
+{
+ "video_id": "CAS00002574",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T15:06:16Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "25b2bda8683f6a82",
+ "subject": "Comcast Riverside Avenue Utility Relocation",
+ "overview": "The Council reviewed a petition to relocate Comcast utility infrastructure from 65 Riverside Avenue to the public right-of-way to prevent service loss for local businesses during the building's demolition. The body coordinated with city departments to ensure the developer and utility company maintain service continuity through a transition plan.",
+ "items": [
+  {
+   "title": "Comcast Grant of Location Petition",
+   "t": 181,
+   "summary": "Referred to the next regular meeting a petition to install approximately 273 feet of underground conduit on Riverside Avenue to prevent service disruptions for 23 commercial customers during the demolition of 65 Riverside Avenue.",
+   "speakers": [
+    "Zac Bears",
+    "Dave Flewelling",
+    "Owen Wartella",
+    "Bill Forte",
+    "Tim McGivern",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8513,
+  "output_tokens": 187,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
