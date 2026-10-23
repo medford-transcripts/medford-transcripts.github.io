@@ -1,97 +1,126 @@
 {
  "video_id": "CAS00002569",
  "provider": "gemini",
- "generated_at": "2026-10-23T10:16:31Z",
- "model": "gemini-3.6-flash",
+ "generated_at": "2026-10-23T10:50:33Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "dfaa9ea3e01d663a",
- "subject": "",
- "overview": "City Councillors Anna Callahan and Justin Tseng hosted a Ward 5 listening session to hear resident feedback on municipal issues. Discussions focused on traffic calming, street safety, noise regulations, snow removal, tree canopy initiatives, and air traffic concerns.",
+ "transcript_sha": "f5f8d75cb962c262",
+ "subject": "Ward 5 Neighborhood Listening Session",
+ "overview": "The City Council held a listening session for Ward 5 residents to identify neighborhood priorities and concerns. Key discussions centered on traffic calming, infrastructure maintenance, and public safety policy.",
  "items": [
   {
-   "title": "Ward 5 Listening Session Opening Remarks",
-   "t": 2,
-   "summary": "Councillors Anna Callahan and Justin Tseng opened the Ward 5 listening session to gather neighborhood feedback and review meeting logistics.",
+   "title": "Opening Remarks and Meeting Format",
+   "t": 21,
+   "summary": "Councilors Callahan and Tseng introduced the listening session as an open forum to gather feedback on local issues and neighborhood improvements.",
    "speakers": [
     "Anna Callahan",
     "Justin Tseng"
    ]
   },
   {
-   "title": "Public Comment on Neighborhood Concerns",
+   "title": "Resident Public Comment",
    "t": 309,
-   "summary": "Ward 5 residents and Zoom participants raised issues including traffic safety, zoning, tree canopy loss, snow removal, housing affordability, and pedestrian access.",
+   "summary": "Residents raised concerns regarding affordability, traffic safety on Main and Winchester Streets, tree canopy loss, and the impact of new zoning on historical neighborhoods.",
    "speakers": [
     "Erika DeRoche",
+    "Ann Laver",
     "Maria Mayorga",
+    "Martha",
+    "Charles",
+    "Lydia",
+    "Ryan",
     "Nancy Ann Marion",
+    "Michael",
+    "Kevin Wong",
+    "Rony Simcha-Miller",
+    "Zach",
+    "Micah Kesselman",
+    "Donna Pietropalo",
     "Robert Carney",
+    "Jerry Denning",
+    "Peter",
     "Dina Caloggero",
     "Paul Garrity",
-    "Adrianne Appel",
+    "Jamie",
+    "Javi",
+    "Adrianne Appel"
+   ]
+  },
+  {
+   "title": "Remote Participant Feedback",
+   "t": 1182,
+   "summary": "Zoom participants echoed concerns about motorcycle noise, water quality, gas leaks, and the need for better snow removal near Tufts Park.",
+   "speakers": [
+    "Oliver Maupin",
+    "Cyril",
+    "Danielle",
     "Jason Rabin",
     "Jeremy Martin",
     "Nayla Savage Romanos"
    ]
   },
   {
-   "title": "Traffic Calming and Street Safety",
+   "title": "Traffic Calming and Enforcement",
    "t": 1501,
-   "summary": "Participants and councillors discussed traffic calming solutions, speed enforcement, infrastructure improvements, and police department staffing levels.",
+   "summary": "Councilors addressed the city's limited traffic engineering staff and discussed using infrastructure design, such as speed humps and street bump-outs, as an alternative to police-led enforcement.",
    "speakers": [
     "Anna Callahan",
     "Justin Tseng",
-    "Robert Carney",
     "Dina Caloggero",
     "Erika DeRoche",
     "Rony Simcha-Miller"
    ]
   },
   {
-   "title": "Noise Ordinance and Cut-Through Heavy Trucking",
-   "t": 2494,
-   "summary": "Councillors reviewed proposed updates to the city's noise ordinance and explained plans to address heavy truck cut-through traffic in upcoming committee meetings.",
+   "title": "Noise Ordinance and Heavy Trucking",
+   "t": 2497,
+   "summary": "Councilor Tseng detailed a proposed update to the noise ordinance to address loud exhaust and outlined plans to lobby the state for waivers to restrict heavy trucks from cut-through streets.",
    "speakers": [
     "Justin Tseng",
-    "Anna Callahan",
-    "Dina Caloggero",
-    "Paul Garrity"
+    "Dina Caloggero"
    ]
   },
   {
-   "title": "Local ICE Policies, Tree Canopy, and Vacant Buildings",
+   "title": "Welcoming City Ordinance and ICE",
    "t": 3002,
-   "summary": "Councillors outlined local regulations regarding ICE enforcement, announced a spring volunteer tree-planting program, and detailed a proposed vacant building ordinance.",
+   "summary": "The Council reviewed legislative efforts to prevent local police from collaborating with ICE and upcoming committee work to strengthen resident protections.",
    "speakers": [
     "Anna Callahan",
     "Justin Tseng"
    ]
   },
   {
-   "title": "Tufts Park Upkeep and Winter Snow Removal",
-   "t": 3373,
-   "summary": "Councillors addressed resident concerns regarding maintenance at Tufts Park and discussed city efforts to improve winter snow plowing operations and DPW equipment.",
+   "title": "Tree Management and Vacant Buildings",
+   "t": 3110,
+   "summary": "Councilors highlighted the appointment of a new tree warden, upcoming volunteer planting initiatives, and a new ordinance to penalize landlords who keep properties vacant or poorly maintained.",
    "speakers": [
+    "Anna Callahan",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Snow Removal and Park Maintenance",
+   "t": 3365,
+   "summary": "The Council discussed the systemic underfunding and equipment shortages that hampered snow removal last winter and acknowledged a lack of administrative transparency regarding plans for Tufts Park.",
+   "speakers": [
+    "Danielle",
     "Justin Tseng",
     "Anna Callahan"
    ]
   },
   {
-   "title": "Massport Air Traffic Noise Update",
-   "t": 3684,
-   "summary": "Massport Community Advisory Committee representative Micah Kesselman provided an update on efforts to study and alter flight patterns causing local air traffic noise.",
+   "title": "Air Traffic Patterns",
+   "t": 3682,
+   "summary": "Representative Micah Kesselman provided an update on a reopened investigation into flight patterns over Medford and efforts to lobby the FAA for changes.",
    "speakers": [
-    "Micah Kesselman",
-    "Anna Callahan",
-    "Justin Tseng",
-    "Andrew Castagnetti"
+    "Micah Kesselman"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 21326,
-  "output_tokens": 651,
-  "model_version": "gemini-3.6-flash"
+  "input_tokens": 21328,
+  "output_tokens": 1024,
+  "model_version": "gemini-3-flash-preview"
  }
 }
