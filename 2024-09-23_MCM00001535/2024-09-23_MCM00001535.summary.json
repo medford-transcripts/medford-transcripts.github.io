@@ -1,0 +1,60 @@
+{
+ "video_id": "MCM00001535",
+ "provider": "gemini",
+ "generated_at": "2026-10-23T10:26:12Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "96090e3dbeb2eefa",
+ "subject": "FY2024 Water And Sewer Rate Increase",
+ "overview": "The Commission approved a 7% rate increase for fiscal year 2024, utilizing a $500,000 budget transfer to mitigate the impact on residents. The meeting also addressed a significant hardship abatement request for a residential pipe burst and the necessity of a 10-year capital plan for infrastructure replacement.",
+ "items": [
+  {
+   "title": "Staffing and Minutes",
+   "t": 46,
+   "summary": "The commission approved the minutes from the previous meeting and discussed the upcoming retirement of the commission secretary.",
+   "speakers": []
+  },
+  {
+   "title": "Hardship Abatement Request - 89 Sheppard Road",
+   "t": 277,
+   "summary": "The commission reviewed a request for relief following a major pipe burst but deferred a decision pending the submission of unemployment documentation from the residents.",
+   "speakers": [
+    "Dan Stoneking"
+   ]
+  },
+  {
+   "title": "FY2024 Water and Sewer Rates",
+   "t": 1003,
+   "summary": "Approved a 7% rate increase for the upcoming fiscal year, incorporating a $500,000 city budget transfer and a reduced assessment from the MWRA.",
+   "speakers": [
+    "Dave Fox",
+    "Dan Stoneking",
+    "Ron Baker"
+   ]
+  },
+  {
+   "title": "Infrastructure Replacement Planning",
+   "t": 1608,
+   "summary": "Members and staff discussed the long-term financial challenge of replacing 123 miles of aging water and sewer mains, estimated at $1.5 million per mile.",
+   "speakers": [
+    "Ron Baker",
+    "Dave Fox",
+    "Dan Stoneking"
+   ]
+  },
+  {
+   "title": "Meter Disputes and Testing",
+   "t": 3895,
+   "summary": "Reviewed the results of meter testing for disputed bills, including a case on High Street where testing validated the meter's accuracy.",
+   "speakers": [
+    "Dan Stoneking"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33782,
+  "output_tokens": 481,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
