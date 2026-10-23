@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "a275e92aae1b6e3c",
- "subject": "",
+ "subject": "Mayor-Led Executive Branch Structure",
  "overview": "The Medford Charter Study Committee met to review public participation rules, its draft work plan, and a public survey. The committee voted to continue focusing on a mayor-led executive branch rather than a city manager system unless public input directs otherwise.",
  "items": [
   {
@@ -139,5 +139,6 @@
   "input_tokens": 38770,
   "output_tokens": 903,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
