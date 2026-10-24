@@ -1,0 +1,37 @@
+{
+ "video_id": "XXXXXX00077",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T04:06:49Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e73b110357b0ee73",
+ "subject": "Review of Chevalier Theatre Pride Show",
+ "overview": "Danielle Balocca hosted guest Brittany Balocca on the Medford Bytes podcast to discuss dining in Medford and review the Chevalier Theatre performance of \"The Golden Girls: The Laughs Continue.\"",
+ "items": [
+  {
+   "title": "Introduction and Local Dining Favorites",
+   "t": 9,
+   "summary": "Brittany Balocca highlighted favorite local eateries, including Goldilocks Bagels and Real Gusto.",
+   "speakers": [
+    "Danielle Balocca",
+    "Chelli Keshavan",
+    "Brittany Balocca"
+   ]
+  },
+  {
+   "title": "Review of The Golden Girls: The Laughs Continue",
+   "t": 166,
+   "summary": "The hosts reviewed the touring parody show staged at the Chevalier Theatre for Pride Month, praising the performances, attendance, and accessibility of the venue.",
+   "speakers": [
+    "Danielle Balocca",
+    "Brittany Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3682,
+  "output_tokens": 205,
+  "model_version": "gemini-3.8-flash"
+ }
+}
