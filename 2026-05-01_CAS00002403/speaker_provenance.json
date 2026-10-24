@@ -1,0 +1,74 @@
+{
+    "SPEAKER_00": {
+        "value": "CAS00002438_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.8854073528723128,
+        "from": "CAS00002438_SPEAKER_01",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Jenny Graham",
+        "source": "embedding_match",
+        "score": 0.9494949984178465,
+        "from": "CAS00002475_SPEAKER_01",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "MCM00001615_SPEAKER_08",
+        "source": "embedding_match",
+        "score": 0.758847300374409,
+        "from": "MCM00000973_SPEAKER_07",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "MCM00001801_SPEAKER_10",
+        "source": "embedding_match",
+        "score": 0.8935657803504852,
+        "from": "CAS00002475_SPEAKER_03",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "MCM00001801_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.7451092433820732,
+        "from": "MCM00001801_SPEAKER_01",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "MCM00001801_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.8678631218770073,
+        "from": "MCM00001801_SPEAKER_01",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Brenda Pike",
+        "source": "embedding_match",
+        "score": 0.7038446055161015,
+        "from": "MCM00001758_SPEAKER_17",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_06"
+    },
+    "SPEAKER_08": {
+        "value": "Brenda Pike",
+        "source": "embedding_match",
+        "score": 0.9501686630825071,
+        "from": "MCM00001801_SPEAKER_03",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_08"
+    },
+    "SPEAKER_09": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.912213331307348,
+        "from": "MCM00001801_SPEAKER_04",
+        "at": "2026-10-24T22:16:34Z",
+        "previous": "SPEAKER_09"
+    }
+}
