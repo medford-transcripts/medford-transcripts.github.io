@@ -1,0 +1,77 @@
+{
+ "video_id": "CAS00002403",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T23:05:56Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "6eafe5d691beb430",
+ "subject": "",
+ "overview": "The Medford Climate Equity Council reviewed upcoming community environmental events, discussed a youth employment proposal for city gardening and tree care, and received updates on municipal energy initiatives and high school sustainability goals.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 0,
+   "summary": "The council approved the minutes from the March 2026 meeting.",
+   "speakers": []
+  },
+  {
+   "title": "Meeting Schedule",
+   "t": 24,
+   "summary": "The council maintained its next meeting date for May 20, 2026, with flexibility to adjust the schedule if needed.",
+   "speakers": [
+    "Brenda Pike",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Department Internships",
+   "t": 138,
+   "summary": "Brenda Pike announced that Tufts University interns will join the planning department in May to support council administration.",
+   "speakers": [
+    "Brenda Pike"
+   ]
+  },
+  {
+   "title": "Community Events Review",
+   "t": 210,
+   "summary": "Council members reviewed a calendar of spring events, including local cleanups, recycling drives, swap meets, and a planned June 9 Senior Center workshop on third-party energy suppliers.",
+   "speakers": [
+    "Brenda Pike",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Youth Gardening and Tree Care Initiatives",
+   "t": 1862,
+   "summary": "Staff outlined plans for a grant-funded youth employment program focused on raised-bed herb gardening at City Hall and volunteer tree watering with Trees Medford.",
+   "speakers": [
+    "Brenda Pike",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "City Environmental and Energy Updates",
+   "t": 2272,
+   "summary": "Brenda Pike presented updates on Electrify Medford, real-time school air quality sensors, a Tufts Park playground survey, revisions to the municipal energy aggregation plan, and LEED certification goals for the high school project.",
+   "speakers": [
+    "Brenda Pike",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Soil Contamination and Testing Outreach",
+   "t": 3662,
+   "summary": "The council discussed raising public awareness about lead contamination in residential soil and promoting soil testing and raised-bed gardening.",
+   "speakers": [
+    "Brenda Pike",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23993,
+  "output_tokens": 517,
+  "model_version": "gemini-3.6-flash"
+ }
+}
