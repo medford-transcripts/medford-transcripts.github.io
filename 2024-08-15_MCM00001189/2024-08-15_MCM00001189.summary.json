@@ -1,0 +1,68 @@
+{
+ "video_id": "MCM00001189",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T07:14:05Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "63023a72345ea90c",
+ "subject": "",
+ "overview": "The Medford Traffic Commission reviewed resident parking and traffic safety requests, approving a handicap parking sign, referring a dangerous intersection on Fulton Street to engineering, and directing staff to update resident permit signage near Chevalier Theatre.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 40,
+   "summary": "The Commission approved the amended minutes from the previous meeting.",
+   "speakers": [
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Permit Parking Variance: Forest Street",
+   "t": 195,
+   "summary": "Resident Jennifer Corrales requested permission to park on an adjacent street due to Chevalier Theatre events crowding Forest Street. The Commission voted to direct the engineering department to review and update Forest Street signage to protect resident permit parking overnight.",
+   "speakers": [
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Bob Dickinson",
+    "Jack Buckley"
+   ]
+  },
+  {
+   "title": "Handicap Parking Application: 51 Metcalf Street",
+   "t": 2985,
+   "summary": "The Commission approved a petition for an on-street handicap parking sign in front of 51 Metcalf Street.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Stop Sign Request: Fulton Street and Winslow Avenue",
+   "t": 3265,
+   "summary": "Petitioner Alex Genovese requested an all-way stop or blinking red light to address speeding and blind turns at Fulton and Winslow. The Commission referred the matter to the Traffic and Engineering Department for formal review and recommendations while police committed to placing speed trailers in the area.",
+   "speakers": [
+    "Alex Genovese",
+    "Alicia Hunt",
+    "Jack Buckley",
+    "Tim McGivern",
+    "Bob Dickinson"
+   ]
+  },
+  {
+   "title": "Commission Business and Summer Schedule",
+   "t": 4336,
+   "summary": "Commissioners discussed tracking previously approved measures, improving website guidance for public inquiries, parking constraints associated with residential development, and scheduling a daytime summer working session to review operating rules.",
+   "speakers": [
+    "Jack Buckley",
+    "Bob Dickinson",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 32247,
+  "output_tokens": 506,
+  "model_version": "gemini-3.8-flash"
+ }
+}

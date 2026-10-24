@@ -1,0 +1,80 @@
+{
+ "video_id": "MCM00000379",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T07:12:03Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d153a76d4402707e",
+ "subject": "",
+ "overview": "The Committee of the Whole reviewed proposed FY24 departmental budgets for the Water and Sewer Enterprise Fund, the Medford Public Library, the Medford Public Schools, and Debt Service. The committee took no final action on the budget but approved a motion requesting an accounting of school department consultant expenditures.",
+ "items": [
+  {
+   "title": "Water and Sewer Enterprise Fund",
+   "t": 70,
+   "summary": "DPW Commissioner Tim McGivern and staff presented the enterprise fund budget, discussing plans for in-house water main replacements, water quality positions, lead pipe replacement, and a forthcoming long-term rate study.",
+   "speakers": [
+    "Nicole Morell",
+    "Tim McGivern",
+    "Richard Caraviello",
+    "Ron Baker",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Medford Public Library",
+   "t": 1339,
+   "summary": "Director Barbara Kerr reported surging patron usage and programming at the new facility but emphasized that ordinary expense funding remains below FY17 levels, drawing strong council and public support for increased funding for books and staffing.",
+   "speakers": [
+    "Nicole Morell",
+    "Barbara Kerr",
+    "Zac Bears",
+    "Richard Caraviello",
+    "Kit Collins",
+    "Justin Tseng",
+    "Nina Nazarian",
+    "Margaret Zisk",
+    "Sam Sednek",
+    "Ellen Tonello"
+   ]
+  },
+  {
+   "title": "Medford Public Schools",
+   "t": 4242,
+   "summary": "Superintendent Marice Edouard-Vincent presented the School Committee's $71,995,165 requested budget, detailing literacy curriculum investments, full-day Wednesdays, and the cuts to coaches, theater, and library positions that would occur under a lower figure.",
+   "speakers": [
+    "Nicole Morell",
+    "Marice Edouard-Vincent",
+    "Zac Bears",
+    "Kit Collins",
+    "Justin Tseng",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Debt Service and Bonds",
+   "t": 7752,
+   "summary": "Finance Director Bob Dickinson presented the $6,474,578 debt service budget and reviewed Medford's relatively low debt burden in comparison to neighboring communities.",
+   "speakers": [
+    "Nicole Morell",
+    "Bob Dickinson",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "School Consultant Spending Information Request",
+   "t": 8223,
+   "summary": "Approved a motion requesting that the school administration provide the total amount spent on consultants across the school system.",
+   "speakers": [
+    "Richard Caraviello",
+    "Nicole Morell",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 44895,
+  "output_tokens": 681,
+  "model_version": "gemini-3.8-flash"
+ }
+}

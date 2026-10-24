@@ -1,0 +1,39 @@
+{
+ "video_id": "lxGqRLo36-s",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T07:08:16Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a26c2c7412f57a2a",
+ "subject": "",
+ "overview": "The School Committee tabled approval of the FY24 budget allocation pending action by the City Council. The committee then voted to enter executive session to discuss collective bargaining, administrative contracts, and security deployment without reconvening in public.",
+ "items": [
+  {
+   "title": "FY24 Budget Allocation Approval",
+   "t": 3,
+   "summary": "Tabled the FY24 budget allocation approval pending the City Council's vote on the municipal budget.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Jenny Graham",
+    "SPEAKER_04",
+    "SPEAKER_00"
+   ]
+  },
+  {
+   "title": "Executive Session",
+   "t": 259,
+   "summary": "Approved entering executive session to address collective bargaining with Teamsters Local 25, review administrative contracts, and discuss security personnel and devices, with no intent to reconvene in open session.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "SPEAKER_00",
+    "SPEAKER_04"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3839,
+  "output_tokens": 270,
+  "model_version": "gemini-3.8-flash"
+ }
+}

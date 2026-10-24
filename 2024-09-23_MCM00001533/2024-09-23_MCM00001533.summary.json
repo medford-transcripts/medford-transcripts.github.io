@@ -1,0 +1,76 @@
+{
+ "video_id": "MCM00001533",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T07:10:43Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9a82f07edc3bd931",
+ "subject": "",
+ "overview": "The Medford Water and Sewer Commission reviewed customer billing and abatement appeals, denied an irrigation meter request for a condominium complex, and postponed setting FY24 water and sewer rates pending City Council action on retained earnings.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 10,
+   "summary": "Approved the minutes of the prior meeting.",
+   "speakers": [
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Petition 1725: 65 Ashland Street High Bill Appeal",
+   "t": 44,
+   "summary": "Residents disputed a $3,120 bill attributed to a leak and agreed to have their removed water meter tested for accuracy by a third party.",
+   "speakers": [
+    "Adam Hurtubise",
+    "Dan Stoneking",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Petition 1742: Freeze-Related Water and Sewer Abatement Request",
+   "t": 2041,
+   "summary": "Approved a motion to reduce the sewer portion of a nearly $16,000 burst-pipe bill by 50 percent, conditional on the homeowner submitting documentation of fixed-income retiree hardship.",
+   "speakers": [
+    "Adam Hurtubise",
+    "Dan Stoneking",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Petition: Irrigation Meter Request for Wellington Woods",
+   "t": 3444,
+   "summary": "Denied an application for an irrigation meter for a 200-unit condominium development because city regulations restrict secondary irrigation meters to residential properties up to three units.",
+   "speakers": [
+    "Adam Hurtubise",
+    "Dan Stoneking",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Fiscal Year 2024 Water and Sewer Rates",
+   "t": 4058,
+   "summary": "Voted to postpone setting water and sewer rates until the City Council decides whether to approve the mayor's proposed $500,000 transfer from retained earnings.",
+   "speakers": [
+    "Dan Stoneking",
+    "Emily Lazzaro",
+    "Daniel Nuzzo-Mueller",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Review of Erratic Usage at 45 Coolidge Road",
+   "t": 4696,
+   "summary": "Staff reviewed an estimated billing issue stemming from a failing reading device and access delays, calculating adjustments based on new meter data.",
+   "speakers": [
+    "Dan Stoneking",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 42289,
+  "output_tokens": 550,
+  "model_version": "gemini-3.8-flash"
+ }
+}
