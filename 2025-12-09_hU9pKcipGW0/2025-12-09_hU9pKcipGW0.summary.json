@@ -1,0 +1,49 @@
+{
+ "video_id": "hU9pKcipGW0",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T22:08:56Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "3408665ba98a4e57",
+ "subject": "Proposed City Charter Amendments",
+ "overview": "The committee met with legal counsel to review three proposed charter amendments concerning the municipal budget process, council staffing, and mayoral appointments. The council requested draft revisions to the amendment language ahead of a formal public hearing.",
+ "items": [
+  {
+   "title": "Introduction of Charter Amendments",
+   "t": 35,
+   "summary": "Vice President Bears outlined three proposed amendments to modify the municipal budget process, permit independent council staffing, and establish a confirmation process for mayoral appointments.",
+   "speakers": [
+    "Nicole Morell",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Legal Analysis of Proposed Changes",
+   "t": 607,
+   "summary": "Attorney Goldberg advised on the legal distinction between executive and legislative roles regarding budget reallocations and suggested refining the independent counsel provision to prevent conflicts with the city solicitor. The attorney also recommended shortening the proposed 45-day confirmation period for board appointments to better retain potential candidates.",
+   "speakers": [
+    "Zac Bears",
+    "Attorney Goldberg",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Request for Revised Language",
+   "t": 2297,
+   "summary": "Approved a motion requesting that legal counsel provide draft revisions categorized into legal clarifications and policy suggestions prior to the scheduled public hearing. The committee reported the papers out to the regular meeting.",
+   "speakers": [
+    "Zac Bears",
+    "Attorney Goldberg",
+    "Kit Collins",
+    "Justin Tseng",
+    "Nicole Morell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13272,
+  "output_tokens": 321,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
