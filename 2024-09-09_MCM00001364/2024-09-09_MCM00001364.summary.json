@@ -1,0 +1,65 @@
+{
+ "video_id": "MCM00001364",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T13:05:57Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "48c9a5dd3ecf96cc",
+ "subject": "Open Meeting Law Training",
+ "overview": "The Medford Commission for Persons with Disabilities received an Open Meeting Law presentation from legal counsel and planned for an upcoming disability resource fair.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 131,
+   "summary": "The commission approved the April meeting minutes as amended.",
+   "speakers": [
+    "Tom Hamel",
+    "Frances Nwajei",
+    "Adam Hurtubise",
+    "Linda Braden"
+   ]
+  },
+  {
+   "title": "Open Meeting Law Presentation",
+   "t": 222,
+   "summary": "Janelle Austin delivered a presentation on Massachusetts Open Meeting Law requirements, detailing rules on public notice, email deliberations, subcommittees, and remote meeting options before answering commissioners' questions.",
+   "speakers": [
+    "Tom Hamel",
+    "Janelle Austin",
+    "Frances Nwajei",
+    "Marcia Kirssen",
+    "Linda Braden",
+    "Diane McDonald"
+   ]
+  },
+  {
+   "title": "Disability Product Resource Fair Planning",
+   "t": 3517,
+   "summary": "Commissioners assigned outreach responsibilities for vendors and organizations for the October 7, 2023 fair at the Brooks School and discussed a proposed photography initiative.",
+   "speakers": [
+    "Tom Hamel",
+    "Linda Braden",
+    "Yvette Wilkes",
+    "Frances Nwajei",
+    "Marcia Kirssen"
+   ]
+  },
+  {
+   "title": "Staff Updates and Announcements",
+   "t": 4777,
+   "summary": "Staff announced Commissioner Marcia Kirssen's upcoming retirement from the commission, and members shared announcements regarding upcoming city flag raisings, community walks, and federal accessibility comment periods.",
+   "speakers": [
+    "Frances Nwajei",
+    "Marcia Kirssen",
+    "Tom Hamel",
+    "Linda Braden"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24772,
+  "output_tokens": 387,
+  "model_version": "gemini-3.6-flash"
+ }
+}
