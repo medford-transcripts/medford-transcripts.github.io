@@ -1,0 +1,43 @@
+{
+ "video_id": "MCM00001301",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T09:05:47Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "bdb79b1171c5c132",
+ "subject": "South Street Historic District Planning",
+ "overview": "The Historic District Commission reviewed draft materials and established a timeline for creating the proposed South Street Historic District. Due to the lack of a quorum, no formal votes were taken.",
+ "items": [
+  {
+   "title": "Brochure and Website Updates",
+   "t": 0,
+   "summary": "Members discussed adding a QR code to the district brochure and updating the website with guidelines and information for the proposed South Street historic district.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "South Street Historic District Preliminary Report",
+   "t": 127,
+   "summary": "The commission reviewed the draft Local Historic District report and agreed to finalize edits for submission to the Massachusetts Historical Commission by mid-July.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "Public Hearing and Abutter Notification Planning",
+   "t": 583,
+   "summary": "Members planned a public hearing for September 14, 2023, at City Hall and set a target to mail notices to property owners and abutters within 300 feet in August.",
+   "speakers": [
+    "Christopher Bader",
+    "Denis MacDougall"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8389,
+  "output_tokens": 264,
+  "model_version": "gemini-3.6-flash"
+ }
+}

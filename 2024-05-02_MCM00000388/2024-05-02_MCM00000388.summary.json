@@ -1,0 +1,65 @@
+{
+ "video_id": "MCM00000388",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T09:13:06Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "30510c0f94088f80",
+ "subject": "FY 2024 Departmental Budget Reviews",
+ "overview": "The City Council Committee of the Whole reviewed proposed FY 2024 budgets for Medford Community Media, the City Clerk, the Legislative department, and the Electrical department. No formal votes were taken, but councilors debated the omission of funding for a council zoning consultant.",
+ "items": [
+  {
+   "title": "Medford Community Media Budget",
+   "t": 109,
+   "summary": "Station Manager Kevin Harrington presented the proposed $203,160 budget, highlighting an ARPA-funded upgrade to City Hall Chambers and a shift in equipment funds to hire vocational student co-ops and cover council meetings.",
+   "speakers": [
+    "Nicole Morell",
+    "Kevin Harrington",
+    "George Scarpelli",
+    "Richard Caraviello",
+    "Zac Bears",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "City Clerk Budget",
+   "t": 1359,
+   "summary": "City Clerk Adam Hurtubise reviewed his department's $384,156 proposed budget and outlined FY 2024 goals, including online licensing and new legislative agenda tracking software.",
+   "speakers": [
+    "Nicole Morell",
+    "Adam Hurtubise",
+    "George Scarpelli",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Legislative Budget",
+   "t": 1776,
+   "summary": "Councilors questioned the exclusion of $50,000 for a council zoning consultant, with Chief of Staff Nina Nazarian stating the administration is open to including it if the rest of the budget is not cut.",
+   "speakers": [
+    "Nicole Morell",
+    "Nina Nazarian",
+    "George Scarpelli",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Electrical Department Budget",
+   "t": 1944,
+   "summary": "With the superintendent absent, Chief of Staff Nina Nazarian answered questions regarding the transfer of a departmental clerk position to the building department and capital costs for a newly delivered vehicle.",
+   "speakers": [
+    "Nicole Morell",
+    "Adam Knight",
+    "George Scarpelli",
+    "Zac Bears",
+    "Nina Nazarian"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13100,
+  "output_tokens": 469,
+  "model_version": "gemini-3.8-flash"
+ }
+}
