@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "7db03c77d66b0129",
- "subject": "",
+ "subject": "FY24 Budget Allocation Recommendation",
  "overview": "The committee voted to recommend the FY24 budget and state match projections to the City Council. Members also discussed upcoming meeting schedules, summer outreach events, and plans for a five-year anniversary celebration of the Community Preservation Act in Medford.",
  "items": [
   {
@@ -84,5 +84,6 @@
   "input_tokens": 22783,
   "output_tokens": 553,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }
