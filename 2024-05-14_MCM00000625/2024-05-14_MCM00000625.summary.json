@@ -1,0 +1,84 @@
+{
+ "video_id": "MCM00000625",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T12:20:30Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "0dabd17fddc62111",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals granted variance requests for fencing at 22 Alston Street and a covered porch addition at 17 Green Road. The board also voted to continue hearings on three other property matters to its next regular meeting.",
+ "items": [
+  {
+   "title": "590 Boston Avenue",
+   "t": 100,
+   "summary": "The board approved a continuance to July 13, 2023, while the applicant addresses site plan modifications with the Community Development Board.",
+   "speakers": [
+    "Denis MacDougall",
+    "Michael Barone Jr",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "36 Riverside Avenue",
+   "t": 515,
+   "summary": "The board granted a continuance to the July 13 meeting to allow the applicant time to coordinate fence details with the police chief.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "396 Main Street",
+   "t": 659,
+   "summary": "The board voted to continue the bakery variance application to the next regular meeting to cure procedural defects.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "22 Alston Street",
+   "t": 845,
+   "summary": "The board approved a variance allowing the Medford Housing Authority to install a 10-foot chain-link privacy fence adjacent to a commercial construction yard.",
+   "speakers": [
+    "Denis MacDougall",
+    "Megan Tompkins",
+    "Gabe Ciccariello",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Meeting Minutes",
+   "t": 3076,
+   "summary": "The board reviewed upcoming zoning ordinance cleanup items with city staff and approved the meeting minutes from April 27, 2023.",
+   "speakers": [
+    "Alicia Hunt",
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "17 Green Road",
+   "t": 3879,
+   "summary": "The board approved a front setback variance to allow construction of an addition and covered porch matching the historical character of the dwelling.",
+   "speakers": [
+    "Denis MacDougall",
+    "Nicole Mucci",
+    "Bill Forte",
+    "Jennifer Keenan",
+    "Mike Caldera",
+    "Yvette Velez",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23452,
+  "output_tokens": 535,
+  "model_version": "gemini-3.6-flash"
+ }
+}

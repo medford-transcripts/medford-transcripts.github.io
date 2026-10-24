@@ -1,0 +1,49 @@
+{
+ "video_id": "XXXXXX00075",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T12:09:39Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7b09f60bf2deb85a",
+ "subject": "2023 Pride Events and Youth Service Program",
+ "overview": "Hosts discussed the upcoming 2023 Medford Pride schedule with committee members and reviewed the AM to PM summer youth program with Reverend Wendy Miller Olapade.",
+ "items": [
+  {
+   "title": "Review of 2022 Pride Events",
+   "t": 187,
+   "summary": "Planning committee members Sian McDormand and Michael Lowe reviewed the city's first city-sponsored Pride events, noting high attendance at the drag show and flag raising.",
+   "speakers": [
+    "Danielle Balocca",
+    "Sian McDormand",
+    "Michael Lowe",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "2023 Medford Pride Planning",
+   "t": 574,
+   "summary": "The committee announced a focused 2023 schedule featuring a flag raising on June 1st and a Community Pride Day at City Hall on June 25th.",
+   "speakers": [
+    "Michael Lowe",
+    "Sian McDormand",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "AM to PM Youth Service Program",
+   "t": 1217,
+   "summary": "Reverend Wendy Miller Olapade introduced the AM to PM program, which offers high school and middle school students leadership training and community service hours during the summer.",
+   "speakers": [
+    "Wendy Miller Olapade",
+    "Danielle Balocca",
+    "Chelli Keshavan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11255,
+  "output_tokens": 354,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
