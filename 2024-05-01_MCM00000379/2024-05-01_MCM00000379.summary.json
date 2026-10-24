@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "d153a76d4402707e",
- "subject": "",
+ "subject": "FY24 Departmental Budget Reviews",
  "overview": "The Committee of the Whole reviewed proposed FY24 departmental budgets for the Water and Sewer Enterprise Fund, the Medford Public Library, the Medford Public Schools, and Debt Service. The committee took no final action on the budget but approved a motion requesting an accounting of school department consultant expenditures.",
  "items": [
   {
@@ -76,5 +76,6 @@
   "input_tokens": 44895,
   "output_tokens": 681,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

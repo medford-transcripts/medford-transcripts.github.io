@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "a26c2c7412f57a2a",
- "subject": "",
+ "subject": "FY24 Budget Allocation Approval",
  "overview": "The School Committee tabled approval of the FY24 budget allocation pending action by the City Council. The committee then voted to enter executive session to discuss collective bargaining, administrative contracts, and security deployment without reconvening in public.",
  "items": [
   {
@@ -35,5 +35,6 @@
   "input_tokens": 3839,
   "output_tokens": 270,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
