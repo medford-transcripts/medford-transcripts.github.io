@@ -1,0 +1,59 @@
+{
+ "video_id": "CftWif4v9Wc",
+ "provider": "gemini",
+ "generated_at": "2026-10-24T10:12:55Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c5d6eb9aa39cd596",
+ "subject": "FY24 School Operating Budget Request",
+ "overview": "The School Committee held a statutory public hearing on the superintendent's proposed FY24 operating budget and heard extensive testimony from educators and residents regarding staffing, school safety, and the high school climate report. The committee approved a formal budget request of $71,995,165 to the municipal government.",
+ "items": [
+  {
+   "title": "FY24 Budget Presentation and Discussion",
+   "t": 265,
+   "summary": "Superintendent Marice Edouard-Vincent presented adjustments to align the FY24 operating budget with a $71 million target using ESSER grant funds, prompting committee discussion on literacy coaches and the impending federal funding cliff.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Marice Edouard-Vincent",
+    "Sharon Hays",
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Melanie McLaughlin"
+   ]
+  },
+  {
+   "title": "Public Hearing on Proposed Budget",
+   "t": 3063,
+   "summary": "Educators, parents, and residents spoke against the proposed funding level, urging the city to fully fund immediate staffing needs, permanent substitutes, and the recommendations of the Medford High School climate report.",
+   "speakers": [
+    "Audrey Feitor",
+    "Rich Cormier",
+    "Hendrick Gideons",
+    "Charlene Douglas",
+    "William Navarre",
+    "David McKenna",
+    "Anthony Geehan",
+    "Sophie Ricks",
+    "Lou Spagnola"
+   ]
+  },
+  {
+   "title": "FY24 Operating Budget Request",
+   "t": 4893,
+   "summary": "Approved a motion to submit an FY24 municipal budget request of $71,995,165, which incorporates funding for four elementary literacy coaches and supports implementation of high school climate recommendations.",
+   "speakers": [
+    "Jenny Graham",
+    "Melanie McLaughlin",
+    "Paul Ruseau",
+    "Marice Edouard-Vincent",
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 27920,
+  "output_tokens": 429,
+  "model_version": "gemini-3.8-flash"
+ }
+}

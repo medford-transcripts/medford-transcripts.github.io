@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "24a8f12c127953eb",
- "subject": "",
+ "subject": "City Charter Review Listening Session",
  "overview": "The Charter Study Committee held a public informational and listening session to outline the city charter review process and receive community feedback on potential municipal government reforms. No formal votes or actions were taken.",
  "items": [
   {
@@ -75,5 +75,6 @@
   "input_tokens": 27788,
   "output_tokens": 608,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
