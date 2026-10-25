@@ -1,0 +1,59 @@
+{
+ "video_id": "MCM00001527",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T12:07:51Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "f8d39f8172ffd354",
+ "subject": "In-House Parking Operations and Technology Transition",
+ "overview": "The Parking Department presented an overview of its move to in-house operations, detailing permitting requirements, enforcement policies, and new solar-powered meter technologies. Staff explained citation appeal processes and demonstrated the various mobile and physical payment methods available to residents.",
+ "items": [
+  {
+   "title": "Department Mission and Scope",
+   "t": 0,
+   "summary": "Director Faye Morrison introduced the department's role, clarifying that they handle civil parking enforcement exclusively while the police department manages towing and criminal matters.",
+   "speakers": [
+    "Faye Morrison"
+   ]
+  },
+  {
+   "title": "Permitting and Appeals Process",
+   "t": 142,
+   "summary": "Justin detailed the requirements for residential, business, and senior permits, as well as the 21-day timeline for appealing citations online or in person.",
+   "speakers": [
+    "Justin"
+   ]
+  },
+  {
+   "title": "Enforcement Policy and Strategy",
+   "t": 1041,
+   "summary": "Enforcement Supervisor George Bernosky explained that the department prioritizes public safety and vehicle turnover, noting that they do not target specific vehicles upon request or enforce on private ways.",
+   "speakers": [
+    "George Bernosky"
+   ]
+  },
+  {
+   "title": "Meter Maintenance and Payment Options",
+   "t": 1681,
+   "summary": "Foreman Michael Viola outlined five payment methods—coins, credit cards, telephone, website, and the PayByPhone app—and clarified that broken meters do not grant free parking.",
+   "speakers": [
+    "Michael Viola"
+   ]
+  },
+  {
+   "title": "Technology Demonstration and Closing",
+   "t": 2208,
+   "summary": "Mark Burling demonstrated the interface of the new solar-powered pay stations, and Faye Morrison discussed the department's future transition to hybrid vehicles and expanded kiosk installation.",
+   "speakers": [
+    "Mark Burling",
+    "Faye Morrison"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17618,
+  "output_tokens": 498,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
