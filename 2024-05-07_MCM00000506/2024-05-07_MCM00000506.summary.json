@@ -1,0 +1,85 @@
+{
+ "video_id": "MCM00000506",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T07:17:38Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a741e4554b742053",
+ "subject": "",
+ "overview": "The Medford Charter Study Committee met to review comparative data on city council charter provisions and plan upcoming community engagement efforts. The committee voted to submit an official response statement regarding proposed City Council charter amendments and heard an announcement of co-chair Laurel Siegel's resignation.",
+ "items": [
+  {
+   "title": "Approval of April Meeting Minutes",
+   "t": 1,
+   "summary": "The committee approved the minutes from its April meeting.",
+   "speakers": [
+    "Laurel Siegel"
+   ]
+  },
+  {
+   "title": "Presentation on City Council Charter Provisions",
+   "t": 34,
+   "summary": "Representatives from the Collins Center presented a comparative analysis of city council powers, compensation, staffing, and reorganization authority across several Massachusetts municipality charters.",
+   "speakers": [
+    "Laurel Siegel",
+    "Anthony Ivan Wilson",
+    "Contreas",
+    "Matt Leming",
+    "Jean Zotter",
+    "Eunice Browne",
+    "Ron Giovino",
+    "Milva McDonald"
+   ]
+  },
+  {
+   "title": "Response to Proposed City Council Charter Amendments",
+   "t": 1579,
+   "summary": "The committee voted to adopt a formal statement declining to take a stance on the City Council's proposed charter amendments prior to public input, submitting the response for the City Council record.",
+   "speakers": [
+    "Laurel Siegel",
+    "Andreottola",
+    "Anthony Ivan Wilson",
+    "Contreas",
+    "Ron Giovino",
+    "Maury Carroll",
+    "Danielle Balocca",
+    "Eunice Browne",
+    "Mike Mastrobuoni"
+   ]
+  },
+  {
+   "title": "Public Information Session and Community Outreach Planning",
+   "t": 2740,
+   "summary": "Members discussed logistics for the June 8 public information session, flyer distribution, social media outreach, and plans to interview current and former city officials.",
+   "speakers": [
+    "Milva McDonald",
+    "Ron Giovino",
+    "Matt Leming",
+    "Jean Zotter",
+    "Eunice Browne",
+    "Danielle Balocca",
+    "Laurel Siegel",
+    "Andreottola",
+    "Maury Carroll"
+   ]
+  },
+  {
+   "title": "Resignation Announcement",
+   "t": 3753,
+   "summary": "Co-chair Laurel Siegel announced her resignation from the committee due to taking a new position as Community Development Block Grant manager for the City of Medford.",
+   "speakers": [
+    "Laurel Siegel",
+    "Milva McDonald",
+    "Maury Carroll",
+    "Eunice Browne",
+    "Andreottola"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18632,
+  "output_tokens": 535,
+  "model_version": "gemini-3.6-flash"
+ }
+}

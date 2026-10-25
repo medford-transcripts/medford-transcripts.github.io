@@ -1,0 +1,27 @@
+{
+ "video_id": "7-fi3LLC1vY",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T07:15:16Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5264c3a4e717be3e",
+ "subject": "",
+ "overview": "The School Committee convened and voted to enter executive session to discuss contract negotiation strategy and pending legal matters.",
+ "items": [
+  {
+   "title": "Motion to Enter Executive Session",
+   "t": 8,
+   "summary": "The committee voted to enter executive session to discuss bargaining strategy regarding Teamsters Local 25 security monitors and administrators, as well as pending litigation before the Massachusetts Commission Against Discrimination and United States District Court.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2007,
+  "output_tokens": 119,
+  "model_version": "gemini-3.6-flash"
+ }
+}
