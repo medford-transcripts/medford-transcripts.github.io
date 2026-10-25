@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "c62ab9aa04f1a1dd",
- "subject": "",
+ "subject": "Middle School Assignment Lottery",
  "overview": "Medford Public Schools officials conducted a random lottery to assign fifth-grade students from the district's four elementary schools to the Andrews and McGlynn middle schools. Assignments were generated using a random number generator and results were scheduled for immediate online publication.",
  "items": [
   {
@@ -66,5 +66,6 @@
   "input_tokens": 6253,
   "output_tokens": 526,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }
