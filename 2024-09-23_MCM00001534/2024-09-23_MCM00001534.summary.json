@@ -1,0 +1,63 @@
+{
+ "video_id": "MCM00001534",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T10:14:47Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d4d7b6f489b8af87",
+ "subject": "",
+ "overview": "The commission addressed multiple abatement requests, approved a second water meter for the Riverside Yacht Club, and discussed meter installation progress and municipal water billing practices.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 7,
+   "summary": "Approved the minutes from the previous meeting.",
+   "speakers": [
+    "Dan Stoneking",
+    "Richard Orlando"
+   ]
+  },
+  {
+   "title": "Petition 1742: Water Abatement Request",
+   "t": 122,
+   "summary": "Tabled an abatement request on an approximately $16,000 bill resulting from frozen pipes pending an insurance determination, while voting to waive interest until the matter is resolved.",
+   "speakers": [
+    "Dan Stoneking",
+    "Richard Orlando"
+   ]
+  },
+  {
+   "title": "Medford Housing Authority Interest Abatement",
+   "t": 1408,
+   "summary": "Approved waiving accrued interest on Medford Housing Authority accounts following a check processing issue, while keeping the underlying balance due.",
+   "speakers": [
+    "Dan Stoneking",
+    "Richard Orlando"
+   ]
+  },
+  {
+   "title": "Riverside Yacht Club Second Meter Request",
+   "t": 1594,
+   "summary": "Approved a second water meter for the Riverside Yacht Club based on City Council support and the club providing free dock space to the Medford Fire Department.",
+   "speakers": [
+    "Dan Stoneking",
+    "Richard Orlando"
+   ]
+  },
+  {
+   "title": "Meter Replacement Progress and Municipal Billing Discussion",
+   "t": 1954,
+   "summary": "Reviewed progress on the citywide water meter replacement rollout and discussed the impact of unbilled municipal water usage on the department budget and water conservation.",
+   "speakers": [
+    "Dan Stoneking",
+    "Richard Orlando"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21392,
+  "output_tokens": 427,
+  "model_version": "gemini-3.8-flash"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "video_id": "8T-RdR3JMEI",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T10:12:53Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4bfbcb307793e9cd",
+ "subject": "",
+ "overview": "The West Medford Community Center hosted its First Fridays Words and Music event featuring a panel discussion with representatives from the Mystic River Watershed Association followed by an a cappella performance by vocalist Donna McElroy.",
+ "items": [
+  {
+   "title": "Poetry Reading and Opening Remarks",
+   "t": 0,
+   "summary": "Terry Carter opened the program with introductory remarks and a recitation of his poem, \"A River Runs Through It.\"",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Mystic River Watershed Association Panel Discussion",
+   "t": 476,
+   "summary": "Representatives from the Mystic River Watershed Association discussed river herring migration, urban heat mitigation, tree equity, and community engagement efforts across local municipalities.",
+   "speakers": [
+    "Terry Carter",
+    "Daria Clark",
+    "Mariangeli Echevarria-Ramos",
+    "Dave Quigley"
+   ]
+  },
+  {
+   "title": "Community Center Announcements",
+   "t": 3251,
+   "summary": "Terry Carter outlined upcoming West Medford Community Center programs, senior services, and summer community events.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance by Donna McElroy",
+   "t": 3522,
+   "summary": "Vocalist Donna McElroy performed a set of gospel hymns, spirituals, and jazz selections accompanied by personal stories and reflections.",
+   "speakers": [
+    "Terry Carter",
+    "Donna McElroy"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29917,
+  "output_tokens": 390,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "video_id": "MCM00001430",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T10:12:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cbe697bf70d11609",
+ "subject": "",
+ "overview": "The Medford Board of Health voted to adjust the citywide residential heating season end date to May 15 and granted a plan review requirement variance for a local restaurant.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 22,
+   "summary": "Approved the minutes from the March 21, 2023 meeting.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Dr. Platowicz",
+    "Kathleen Shelton"
+   ]
+  },
+  {
+   "title": "Housing Code Heating Season Alteration",
+   "t": 59,
+   "summary": "Approved ending the residential heating season on May 15 citywide in accordance with updated state housing code regulations.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Roberta Cameron",
+    "Andrea Wallace",
+    "Dr. Platowicz",
+    "Kathy Chabonier"
+   ]
+  },
+  {
+   "title": "Tacuba Food Establishment Plan Review Variance",
+   "t": 411,
+   "summary": "Granted a variance waiving the certified food consultant signature requirement for Tacuba's resubmitted plan review application after the city lost the original file.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Danetza",
+    "Alvaro Sandoval",
+    "Dr. Platowicz",
+    "Kathy Chabonier"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5090,
+  "output_tokens": 355,
+  "model_version": "gemini-3.6-flash"
+ }
+}
