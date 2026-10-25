@@ -3,29 +3,171 @@
  "provider": "gemini",
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-24T16:06:07Z",
- "sources_sha": "638820f4dd720e13",
- "n_meetings": 47,
+ "generated_at": "2026-10-25T22:06:17Z",
+ "sources_sha": "ca17257e0110f5a3",
+ "n_meetings": 52,
  "period_style": "term",
  "span": [
-  "2023-05-18",
+  "2023-04-10",
   "2026-10-19"
  ],
- "overview": "The CC Historical Commission, comprising historical and historic district advisory bodies in Medford, Massachusetts, oversees historic preservation, demolition delay reviews, neighborhood inventory surveys, local historic district designations, and municipal heritage projects. Meeting across 47 archived sessions from May 2023 through October 2026, the commission evaluates building demolition applications, conducts Section 106 historical reviews for government-assisted developments, and advises city departments on historic property regulations. The body also directs public grant funding for archaeological testing, cemetery stone restoration, and master planning at historic landmarks such as Thomas Brooks Park and Cross Street Cemetery. At its most recent meetings, the commission continues to adjudicate demolition delay requests, select target neighborhoods for state survey grants, monitor cemetery restoration projects, and review preservation incentive frameworks within city zoning reforms.",
+ "overview": "The CC Historical Commission and Historic District Commission evaluate historic significance, manage local historic districts, oversee demolition delay applications, and steward historic assets in Medford, Massachusetts. Meeting across 52 recorded sessions from April 10, 2023, through October 19, 2026, the body handles property preservation reviews, historical inventory surveys, and municipal preservation planning. Its work includes administering public hearings for demolition permits, managing Community Preservation Act projects at local historical sites, and integrating historic preservation provisions into updated municipal zoning policies. At its most recent meeting on October 19, 2026, the commission evaluated demolition applications, considered plans for veteran housing at 321 Winthrop Street, selected Lawrence Estates for its next state survey grant application, and reviewed updates on cemetery restoration and zoning incentives.",
  "threads": [
   {
-   "name": "Demolition delay and historical significance reviews",
+   "name": "South Street Historic District",
    "status": "ongoing",
-   "summary": "The commission routinely evaluates applications for full or partial demolition of structures to determine whether properties possess historical or architectural significance. When a property is found significant, public hearings are held to determine if it is preferably preserved, which can impose an 18-month demolition delay (M03#1, M13#1, M18#1). Throughout demolition delays, commissioners consult with applicants to review design modifications, massing adjustments, or addition plans that preserve core historical features (M22#1, M27#1). If structures are severely compromised by fire damage, collapse, or fall outside jurisdictional age thresholds, the commission waives further historic review (M14#1, M17#3, M44#2). The commission maintains an active agenda of significance determinations and demolition delay hearings (M45#1, M47#1, M47#2).",
+   "summary": "The commission initiated preliminary reports, owner notifications, and public outreach for the proposed South Street Historic District in early 2023. After drafting reports and holding public hearings, the commission voted to support the district's creation and submitted the proposal to city bodies. Officers noted the requirement to file the district map with the Registrar of Deeds to finalize its official status. Commission activities subsequently shifted toward implementation, including conducting neighborhood walking tours and planning historic signage for the district.",
    "citations": [
     {
+     "video_id": "MCM00001295",
+     "t": 2840,
+     "date": "2023-04-13",
+     "base": "2024-08-22_MCM00001295",
+     "meeting_title": "Medford Historic District Commission 04-13-23",
+     "title": "Commission Business and Updates",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001294",
+     "t": 184,
+     "date": "2023-05-11",
+     "base": "2024-08-22_MCM00001294",
+     "meeting_title": "Medford Historic District Commission 05-11-23",
+     "title": "South Street Historic District Preliminary Report",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00001299",
+     "t": 1,
+     "date": "2023-05-18",
+     "base": "2024-08-22_MCM00001299",
+     "meeting_title": "Medford Historic District Commission 05-18-23",
+     "title": "Website Updates and Property Owner Notification",
+     "label": "M06#1"
+    },
+    {
+     "video_id": "MCM00001291",
+     "t": 151,
+     "date": "2023-07-13",
+     "base": "2024-08-22_MCM00001291",
+     "meeting_title": "Medford Historic District Commission 07-13-23",
+     "title": "Approval of Preliminary Report",
+     "label": "M10#1"
+    },
+    {
+     "video_id": "MCM00001303",
+     "t": 0,
+     "date": "2023-08-10",
+     "base": "2024-08-22_MCM00001303",
+     "meeting_title": "Medford Historic District Commission 08-10-23",
+     "title": "South Street Historic District Application and Hearing Scheduling",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "MCM00001121",
+     "t": 1923,
+     "date": "2024-02-12",
+     "base": "2024-08-06_MCM00001121",
+     "meeting_title": "Medford Historical Commission 02-12-24",
+     "title": "South Street Local Historic District",
+     "label": "M20#5"
+    },
+    {
+     "video_id": "MCM00001696",
+     "t": 155,
+     "date": "2024-12-12",
+     "base": "2025-01-03_MCM00001696",
+     "meeting_title": "Medford Historic District Commission 12-12-24",
+     "title": "South Street Historic District Status",
+     "label": "M33#2"
+    },
+    {
+     "video_id": "MCM00001798",
+     "t": 152,
+     "date": "2025-08-14",
+     "base": "2025-08-18_MCM00001798",
+     "meeting_title": "Medford Historic District Commission 08/14/25",
+     "title": "South Street Site Visit and Signage",
+     "label": "M38#2"
+    },
+    {
+     "video_id": "MCM00001810",
+     "t": 3490,
+     "date": "2025-09-11",
+     "base": "2025-09-17_MCM00001810",
+     "meeting_title": "Medford Historic District Commission 09-11-25.mp 4",
+     "title": "South Street District Signage Meeting Logistics",
+     "label": "M40#3"
+    },
+    {
+     "video_id": "MCM00001828",
+     "t": 7,
+     "date": "2025-10-09",
+     "base": "2025-11-26_MCM00001828",
+     "meeting_title": "Historical District Commission 10-09-25",
+     "title": "South Street District Signage",
+     "label": "M41#1"
+    }
+   ]
+  },
+  {
+   "name": "Demolition delay ordinance and property reviews",
+   "status": "ongoing",
+   "summary": "Across its meetings, the commission regularly evaluates demolition applications for properties to determine historic significance and whether structures should be preferably preserved. When properties are designated as preferably preserved, the commission imposes demolition delays and collaborates with property owners to review revised architectural drawings or design modifications. The commission has also worked to refine its procedures, discussing bylaw enforceability, expedited review timelines, and exemptions for minor outbuildings. In late 2026, the commission continued to adjudicate demolition reviews and hold preferably preserved hearings for properties across the city.",
+   "citations": [
+    {
+     "video_id": "MCM00001106",
+     "t": 47,
+     "date": "2023-04-10",
+     "base": "2024-08-06_MCM00001106",
+     "meeting_title": "Medford Historical Commission 04-10-23",
+     "title": "222 Boston Avenue Preferably Preserved Hearing",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00001105",
+     "t": 0,
+     "date": "2023-05-08",
+     "base": "2024-08-06_MCM00001105",
+     "meeting_title": "Medford Historical Commission 05-08-23",
+     "title": "Preferably Preserved Hearing: 91 Winchester Street",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001105",
+     "t": 2268,
+     "date": "2023-05-08",
+     "base": "2024-08-06_MCM00001105",
+     "meeting_title": "Medford Historical Commission 05-08-23",
+     "title": "Preferably Preserved Hearing: 17 Green Road",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "MCM00001111",
+     "t": 44,
+     "date": "2023-05-15",
+     "base": "2024-08-06_MCM00001111",
+     "meeting_title": "Medford Historical Commission 05-15-23",
+     "title": "17 Green Road Demolition Delay",
+     "label": "M05#1"
+    },
+    {
      "video_id": "MCM00001116",
-     "t": 34,
+     "t": 2753,
      "date": "2023-06-12",
      "base": "2024-08-06_MCM00001116",
      "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "37 Locust Street Significance Determination",
-     "label": "M03#1"
+     "title": "Demolition Review Process Streamlining",
+     "label": "M08#7"
+    },
+    {
+     "video_id": "MCM00001109",
+     "t": 1915,
+     "date": "2023-07-10",
+     "base": "2024-08-06_MCM00001109",
+     "meeting_title": "Medford Historical Commission 07-10-23",
+     "title": "Proposed Bylaw and Process Changes",
+     "label": "M09#5"
     },
     {
      "video_id": "MCM00001117",
@@ -34,33 +176,6 @@
      "base": "2024-08-06_MCM00001117",
      "meeting_title": "Medford Historical Commission 12-18-23",
      "title": "56 Wareham Street preferably preserved hearing",
-     "label": "M13#1"
-    },
-    {
-     "video_id": "MCM00001123",
-     "t": 42,
-     "date": "2024-01-08",
-     "base": "2024-08-06_MCM00001123",
-     "meeting_title": "Medford Historical Commission 01-08-24",
-     "title": "43 Austin Street Significance Determination",
-     "label": "M14#1"
-    },
-    {
-     "video_id": "MCM00001124",
-     "t": 807,
-     "date": "2024-04-08",
-     "base": "2024-08-06_MCM00001124",
-     "meeting_title": "Medford Historical Commission 04-08-24",
-     "title": "289 Fells Way West: Demolition Application",
-     "label": "M17#3"
-    },
-    {
-     "video_id": "MCM00001118",
-     "t": 71,
-     "date": "2024-05-13",
-     "base": "2024-08-06_MCM00001118",
-     "meeting_title": "Medford Historical Commission 05-13-24",
-     "title": "27 Allmont Street Preferably Preserved Hearing",
      "label": "M18#1"
     },
     {
@@ -70,7 +185,7 @@
      "base": "2024-08-20_MCM00001222",
      "meeting_title": "Medford Historical Commission 08-19-24",
      "title": "38 Pearl Street Demolition Delay",
-     "label": "M22#1"
+     "label": "M27#1"
     },
     {
      "video_id": "MCM00001642",
@@ -79,16 +194,43 @@
      "base": "2024-12-10_MCM00001642",
      "meeting_title": "Medford Historical Commission 12-09-24",
      "title": "56 Wareham Street Demolition Delay Lift",
-     "label": "M27#1"
+     "label": "M32#1"
+    },
+    {
+     "video_id": "MCM00001731",
+     "t": 4190,
+     "date": "2025-02-10",
+     "base": "2025-02-11_MCM00001731",
+     "meeting_title": "Medford Historical Commission 02-10-25",
+     "title": "Preservation Directives and Subcommittee",
+     "label": "M35#8"
+    },
+    {
+     "video_id": "MCM00001781",
+     "t": 3370,
+     "date": "2025-07-14",
+     "base": "2025-07-29_MCM00001781",
+     "meeting_title": "Medford Historical Commission 07-14-25",
+     "title": "Preservation Ordinance Policy Changes",
+     "label": "M36#6"
+    },
+    {
+     "video_id": "CAS00002501",
+     "t": 17,
+     "date": "2026-08-10",
+     "base": "2026-08-12_CAS00002501",
+     "meeting_title": "Historical Commission 08/10/26",
+     "title": "15 Maple Park Avenue",
+     "label": "M48#1"
     },
     {
      "video_id": "CAS00002523",
-     "t": 111,
+     "t": 245,
      "date": "2026-09-14",
      "base": "2026-09-15_CAS00002523",
      "meeting_title": "Historical Commission 09/14/26",
-     "title": "67 Mystic Avenue",
-     "label": "M44#2"
+     "title": "71 Mystic Avenue",
+     "label": "M49#3"
     },
     {
      "video_id": "CAS00002551",
@@ -97,7 +239,7 @@
      "base": "2026-10-06_CAS00002551",
      "meeting_title": "Historical Commission Public Hearing 10/05/26",
      "title": "15 Maple Park Avenue Preferably Preserved Hearing",
-     "label": "M45#1"
+     "label": "M50#1"
     },
     {
      "video_id": "CAS00002568",
@@ -106,7 +248,7 @@
      "base": "2026-10-21_CAS00002568",
      "meeting_title": "Historical Commission 10/19/26",
      "title": "Preferably Preserved Hearing: 73 Surry Street",
-     "label": "M47#1"
+     "label": "M52#1"
     },
     {
      "video_id": "CAS00002568",
@@ -115,225 +257,31 @@
      "base": "2026-10-21_CAS00002568",
      "meeting_title": "Historical Commission 10/19/26",
      "title": "Significance Determination: 141 Grant Avenue",
-     "label": "M47#2"
-    }
-   ]
-  },
-  {
-   "name": "South Street Historic District establishment and outreach",
-   "status": "ongoing",
-   "summary": "In mid-2023, the commission initiated public outreach and preliminary report planning to establish the South Street Historic District (M01#1, M02#2). The commission published informational brochures, organized community outreach at PorchFest, and conducted formal public hearings with property abutters (M01#3, M05#1, M06#1). The commission voted to support the creation of the district in early 2024, advancing the application through city and state review channels (M15#5). By late 2024, the district map was prepared for filing with the Registrar of Deeds to finalize the local district (M28#2). Subsequent efforts centered on long-term administration, including walking tours to finalize site placements for permanent historic signage and educational mailers for district property owners (M33#2, M35#3, M36#1).",
-   "citations": [
-    {
-     "video_id": "MCM00001299",
-     "t": 1,
-     "date": "2023-05-18",
-     "base": "2024-08-22_MCM00001299",
-     "meeting_title": "Medford Historic District Commission 05-18-23",
-     "title": "Website Updates and Property Owner Notification",
-     "label": "M01#1"
-    },
-    {
-     "video_id": "MCM00001299",
-     "t": 944,
-     "date": "2023-05-18",
-     "base": "2024-08-22_MCM00001299",
-     "meeting_title": "Medford Historic District Commission 05-18-23",
-     "title": "PorchFest Outreach Planning",
-     "label": "M01#3"
-    },
-    {
-     "video_id": "MCM00001301",
-     "t": 127,
-     "date": "2023-06-08",
-     "base": "2024-08-22_MCM00001301",
-     "meeting_title": "Medford Historic District Commission 06-08-23",
-     "title": "South Street Historic District Preliminary Report",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "MCM00001291",
-     "t": 151,
-     "date": "2023-07-13",
-     "base": "2024-08-22_MCM00001291",
-     "meeting_title": "Medford Historic District Commission 07-13-23",
-     "title": "Approval of Preliminary Report",
-     "label": "M05#1"
-    },
-    {
-     "video_id": "MCM00001303",
-     "t": 0,
-     "date": "2023-08-10",
-     "base": "2024-08-22_MCM00001303",
-     "meeting_title": "Medford Historic District Commission 08-10-23",
-     "title": "South Street Historic District Application and Hearing Scheduling",
-     "label": "M06#1"
-    },
-    {
-     "video_id": "MCM00001121",
-     "t": 1923,
-     "date": "2024-02-12",
-     "base": "2024-08-06_MCM00001121",
-     "meeting_title": "Medford Historical Commission 02-12-24",
-     "title": "South Street Local Historic District",
-     "label": "M15#5"
-    },
-    {
-     "video_id": "MCM00001696",
-     "t": 155,
-     "date": "2024-12-12",
-     "base": "2025-01-03_MCM00001696",
-     "meeting_title": "Medford Historic District Commission 12-12-24",
-     "title": "South Street Historic District Status",
-     "label": "M28#2"
-    },
-    {
-     "video_id": "MCM00001798",
-     "t": 152,
-     "date": "2025-08-14",
-     "base": "2025-08-18_MCM00001798",
-     "meeting_title": "Medford Historic District Commission 08/14/25",
-     "title": "South Street Site Visit and Signage",
-     "label": "M33#2"
-    },
-    {
-     "video_id": "MCM00001810",
-     "t": 3490,
-     "date": "2025-09-11",
-     "base": "2025-09-17_MCM00001810",
-     "meeting_title": "Medford Historic District Commission 09-11-25.mp 4",
-     "title": "South Street District Signage Meeting Logistics",
-     "label": "M35#3"
-    },
-    {
-     "video_id": "MCM00001828",
-     "t": 7,
-     "date": "2025-10-09",
-     "base": "2025-11-26_MCM00001828",
-     "meeting_title": "Historical District Commission 10-09-25",
-     "title": "South Street District Signage",
-     "label": "M36#1"
-    }
-   ]
-  },
-  {
-   "name": "Cemetery restoration and archaeological investigations",
-   "status": "ongoing",
-   "summary": "The commission manages preservation and restoration initiatives across Medford's municipal burial sites, including Cross Street Cemetery, Oak Grove Cemetery, and Salem Street Burying Ground (M03#8, M11#5, M23#4). Archaeological exploratory trenching at the former Cross Street Cemetery lot uncovered human remains and artifacts, requiring state-level coordination and extended field assessments (M20#6, M29#6). The commission has funded consultant assessments for relocated gravestones, headstone cleaning, and emergency restorations for military veteran monuments (M29#5, M30#7, M32#8). Recent operations involve procuring ground-penetrating radar services, repairing boundary walls, and continuing multi-phase restoration work (M43#5, M44#12, M47#7).",
-   "citations": [
-    {
-     "video_id": "MCM00001116",
-     "t": 3231,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Community Preservation Act Projects",
-     "label": "M03#8"
-    },
-    {
-     "video_id": "MCM00001114",
-     "t": 2676,
-     "date": "2023-10-16",
-     "base": "2024-08-06_MCM00001114",
-     "meeting_title": "Medford Historical Commission 10-16-23",
-     "title": "Committee Updates and Administrative Business",
-     "label": "M11#5"
-    },
-    {
-     "video_id": "MCM00001120",
-     "t": 1808,
-     "date": "2024-07-08",
-     "base": "2024-08-06_MCM00001120",
-     "meeting_title": "Medford Historical Commission 07-08-24",
-     "title": "Cemetery Assessment and Archaeological Projects",
-     "label": "M20#6"
-    },
-    {
-     "video_id": "MCM00001388",
-     "t": 3336,
-     "date": "2024-09-09",
-     "base": "2024-09-10_MCM00001388",
-     "meeting_title": "Medford Historical Commission 09-09-24",
-     "title": "Salem Street Burying Ground Flagpole Replacement",
-     "label": "M23#4"
-    },
-    {
-     "video_id": "MCM00001705",
-     "t": 2573,
-     "date": "2025-01-13",
-     "base": "2025-01-17_MCM00001705",
-     "meeting_title": "Medford Historical Commission 01-13-25",
-     "title": "Oak Grove Cemetery Headstone Assessment",
-     "label": "M29#5"
-    },
-    {
-     "video_id": "MCM00001705",
-     "t": 3079,
-     "date": "2025-01-13",
-     "base": "2025-01-17_MCM00001705",
-     "meeting_title": "Medford Historical Commission 01-13-25",
-     "title": "Cross Street Cemetery Site Archaeological Findings",
-     "label": "M29#6"
-    },
-    {
-     "video_id": "MCM00001731",
-     "t": 3633,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001731",
-     "meeting_title": "Medford Historical Commission 02-10-25",
-     "title": "Cross Street Cemetery Monument Restoration",
-     "label": "M30#7"
-    },
-    {
-     "video_id": "MCM00001795",
-     "t": 3553,
-     "date": "2025-08-11",
-     "base": "2025-08-12_MCM00001795",
-     "meeting_title": "Medford Historical Commission 08-11-25",
-     "title": "Cross Street Cemetery restoration application",
-     "label": "M32#8"
-    },
-    {
-     "video_id": "CAS00002501",
-     "t": 821,
-     "date": "2026-08-10",
-     "base": "2026-08-12_CAS00002501",
-     "meeting_title": "Historical Commission 08/10/26",
-     "title": "Surveys and Cemetery Restoration",
-     "label": "M43#5"
-    },
-    {
-     "video_id": "CAS00002523",
-     "t": 3316,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002523",
-     "meeting_title": "Historical Commission 09/14/26",
-     "title": "Cross Street Cemetery Restoration",
-     "label": "M44#12"
-    },
-    {
-     "video_id": "CAS00002568",
-     "t": 3932,
-     "date": "2026-10-19",
-     "base": "2026-10-21_CAS00002568",
-     "meeting_title": "Historical Commission 10/19/26",
-     "title": "Zoning Incentives and Cemetery Project Updates",
-     "label": "M47#7"
+     "label": "M52#2"
     }
    ]
   },
   {
    "name": "Thomas Brooks Park preservation and master plan",
    "status": "ongoing",
-   "summary": "Preservation at Thomas Brooks Park began with restoring Pomp's Wall, repairing fieldstone walls along Grove Street, and completing initial archaeological surveys (M03#8, M04#7, M25#1). Landscape architect Peter Hedlund presented conceptual master plans featuring accessible history paths, subtle stone outlines tracing the historic house site, and interpretive signage (M14#3, M16#1, M25#2). Supported by Community Preservation Commission funding, Phase Two activities advanced tree management, ADA sidewalk connections, crosswalk striping, and further archaeological testing (M18#8, M25#3). The commission hosted public sessions to incorporate community feedback regarding tree preservation, traffic safety, and park access (M25#4). Ongoing efforts focus on ground-penetrating radar testing and contracting Phase Two archaeological work (M29#8, M37#3, M39#6).",
+   "summary": "The commission managed restoration and capital projects at Thomas Brooks Park, including wall repairs funded by the Community Preservation Act. The body commissioned landscape designs and archaeological plans for an archaeological cap, history walk, and interpretive signage. After securing grant funding, the commission presented updated master plans to the public to gather community input on park access and tree maintenance. Preservation efforts advanced with tree work, bidding for ground-penetrating radar, and ongoing phase two implementation.",
    "citations": [
     {
-     "video_id": "MCM00001116",
-     "t": 3231,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Community Preservation Act Projects",
+     "video_id": "MCM00001106",
+     "t": 4950,
+     "date": "2023-04-10",
+     "base": "2024-08-06_MCM00001106",
+     "meeting_title": "Medford Historical Commission 04-10-23",
+     "title": "CPA Projects and Survey Updates",
+     "label": "M01#10"
+    },
+    {
+     "video_id": "MCM00001105",
+     "t": 8015,
+     "date": "2023-05-08",
+     "base": "2024-08-06_MCM00001105",
+     "meeting_title": "Medford Historical Commission 05-08-23",
+     "title": "Project Updates and Approval of Minutes",
      "label": "M03#8"
     },
     {
@@ -343,7 +291,25 @@
      "base": "2024-08-06_MCM00001109",
      "meeting_title": "Medford Historical Commission 07-10-23",
      "title": "CPA Projects and Cemetery Restoration Updates",
-     "label": "M04#7"
+     "label": "M09#7"
+    },
+    {
+     "video_id": "MCM00001115",
+     "t": 1096,
+     "date": "2023-11-13",
+     "base": "2024-08-06_MCM00001115",
+     "meeting_title": "Medford Historical Commission 11-13-23",
+     "title": "Thomas Brooks Park Archaeological Cap",
+     "label": "M17#3"
+    },
+    {
+     "video_id": "MCM00001117",
+     "t": 2706,
+     "date": "2023-12-18",
+     "base": "2024-08-06_MCM00001117",
+     "meeting_title": "Medford Historical Commission 12-18-23",
+     "title": "Thomas Brooks Park archeological cap",
+     "label": "M18#4"
     },
     {
      "video_id": "MCM00001123",
@@ -352,7 +318,7 @@
      "base": "2024-08-06_MCM00001123",
      "meeting_title": "Medford Historical Commission 01-08-24",
      "title": "Thomas Brooks Park Preservation Design",
-     "label": "M14#3"
+     "label": "M19#3"
     },
     {
      "video_id": "MCM00001122",
@@ -361,16 +327,16 @@
      "base": "2024-08-06_MCM00001122",
      "meeting_title": "Medford Historical Commission 03-11-24",
      "title": "Thomas Brooks Park Master Plan Concepts",
-     "label": "M16#1"
+     "label": "M21#1"
     },
     {
-     "video_id": "MCM00001118",
-     "t": 3212,
-     "date": "2024-05-13",
-     "base": "2024-08-06_MCM00001118",
-     "meeting_title": "Medford Historical Commission 05-13-24",
-     "title": "Historical Project and Grant Updates",
-     "label": "M18#8"
+     "video_id": "MCM00001120",
+     "t": 1992,
+     "date": "2024-07-08",
+     "base": "2024-08-06_MCM00001120",
+     "meeting_title": "Medford Historical Commission 07-08-24",
+     "title": "Thomas Brooks Park and Brooks Estate Maintenance",
+     "label": "M25#7"
     },
     {
      "video_id": "MCM00001628",
@@ -379,16 +345,7 @@
      "base": "2024-12-05_MCM00001628",
      "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
      "title": "Master Plan and Phase One Overview",
-     "label": "M25#1"
-    },
-    {
-     "video_id": "MCM00001628",
-     "t": 797,
-     "date": "2024-10-22",
-     "base": "2024-12-05_MCM00001628",
-     "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
-     "title": "Phase Three History Walk Concept Design",
-     "label": "M25#2"
+     "label": "M30#1"
     },
     {
      "video_id": "MCM00001628",
@@ -397,16 +354,7 @@
      "base": "2024-12-05_MCM00001628",
      "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
      "title": "Phase Two Construction Update",
-     "label": "M25#3"
-    },
-    {
-     "video_id": "MCM00001628",
-     "t": 2630,
-     "date": "2024-10-22",
-     "base": "2024-12-05_MCM00001628",
-     "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
-     "title": "Public Comment",
-     "label": "M25#4"
+     "label": "M30#3"
     },
     {
      "video_id": "MCM00001705",
@@ -415,7 +363,7 @@
      "base": "2025-01-17_MCM00001705",
      "meeting_title": "Medford Historical Commission 01-13-25",
      "title": "CPA Archaeology and Neighborhood Surveys",
-     "label": "M29#8"
+     "label": "M34#8"
     },
     {
      "video_id": "CAS00002425",
@@ -424,7 +372,7 @@
      "base": "2026-05-12_CAS00002425",
      "meeting_title": "Historical Commission 05/12/26",
      "title": "Project Updates",
-     "label": "M37#3"
+     "label": "M42#3"
     },
     {
      "video_id": "CAS00002452",
@@ -433,41 +381,41 @@
      "base": "2026-06-10_CAS00002452",
      "meeting_title": "Historical Commission 06/09/26",
      "title": "Preservation Projects and Section 106 Updates",
-     "label": "M39#6"
+     "label": "M44#6"
     }
    ]
   },
   {
-   "name": "Neighborhood historical inventory surveys",
+   "name": "Cross Street Cemetery archaeological and restoration work",
    "status": "ongoing",
-   "summary": "To systematically document the city's architectural inventory, the commission allocates funding and requests state matching grants to produce MHC Form B inventory records (M03#2, M03#9, M04#6). Survey projects have covered neighborhoods including the Brickyards, Fulton Heights, the Boynton subdivision, Bradley Hall Estates, Sagamore Vale, and Hastings Heights (M03#9, M04#6, M14#6, M20#8, M29#8, M30#10). The commission launched a digital local history wiki initiative to publish inventory records in a searchable public database (M31#8, M32#5, M34#7). Most recently, the commission designated Lawrence Estates as the priority neighborhood for its next state survey grant application (M47#6).",
+   "summary": "The commission pursued headstone conservation, records research, and site assessments at the historic Cross Street Burial Ground. Exploratory trenching at the former burial ground parcel revealed intact artifacts and human remains, prompting coordination with state agencies and multi-year site investigations. The commission allocated funds to repair relocated gravestones at Oak Grove Cemetery and restore veteran monuments. Work continued into 2026 with requests for Community Preservation Act funding, ground-penetrating radar bidding, and fence and stone restoration.",
    "citations": [
     {
-     "video_id": "MCM00001116",
-     "t": 373,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "23 Winter Street Application",
-     "label": "M03#2"
+     "video_id": "MCM00001113",
+     "t": 2,
+     "date": "2023-09-11",
+     "base": "2024-08-06_MCM00001113",
+     "meeting_title": "Medford Historical Commission 09-11-23",
+     "title": "Cross Street Cemetery and Thomas Brooks Park",
+     "label": "M13#1"
     },
     {
-     "video_id": "MCM00001116",
-     "t": 3591,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Neighborhood Historical Surveys",
-     "label": "M03#9"
+     "video_id": "MCM00001114",
+     "t": 2676,
+     "date": "2023-10-16",
+     "base": "2024-08-06_MCM00001114",
+     "meeting_title": "Medford Historical Commission 10-16-23",
+     "title": "Committee Updates and Administrative Business",
+     "label": "M16#5"
     },
     {
-     "video_id": "MCM00001109",
-     "t": 2494,
-     "date": "2023-07-10",
-     "base": "2024-08-06_MCM00001109",
-     "meeting_title": "Medford Historical Commission 07-10-23",
-     "title": "Winter Hill/Boynton Subdivision Survey Project",
-     "label": "M04#6"
+     "video_id": "MCM00001115",
+     "t": 2238,
+     "date": "2023-11-13",
+     "base": "2024-08-06_MCM00001115",
+     "meeting_title": "Medford Historical Commission 11-13-23",
+     "title": "Historical Project Updates and Minutes",
+     "label": "M17#5"
     },
     {
      "video_id": "MCM00001123",
@@ -476,368 +424,25 @@
      "base": "2024-08-06_MCM00001123",
      "meeting_title": "Medford Historical Commission 01-08-24",
      "title": "Cemetery and Survey Updates",
-     "label": "M14#6"
+     "label": "M19#6"
     },
     {
-     "video_id": "MCM00001120",
-     "t": 2534,
-     "date": "2024-07-08",
-     "base": "2024-08-06_MCM00001120",
-     "meeting_title": "Medford Historical Commission 07-08-24",
-     "title": "Fulton Heights Survey and Future Survey Planning",
-     "label": "M20#8"
+     "video_id": "MCM00001586",
+     "t": 3523,
+     "date": "2024-10-07",
+     "base": "2024-10-09_MCM00001586",
+     "meeting_title": "Medford Historical Commission 10-07-24",
+     "title": "Cross Street Cemetery Archaeological Project",
+     "label": "M29#6"
     },
     {
      "video_id": "MCM00001705",
-     "t": 4714,
+     "t": 2573,
      "date": "2025-01-13",
      "base": "2025-01-17_MCM00001705",
      "meeting_title": "Medford Historical Commission 01-13-25",
-     "title": "CPA Archaeology and Neighborhood Surveys",
-     "label": "M29#8"
-    },
-    {
-     "video_id": "MCM00001731",
-     "t": 6016,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001731",
-     "meeting_title": "Medford Historical Commission 02-10-25",
-     "title": "Survey and Planning Updates",
-     "label": "M30#10"
-    },
-    {
-     "video_id": "MCM00001781",
-     "t": 5033,
-     "date": "2025-07-14",
-     "base": "2025-07-29_MCM00001781",
-     "meeting_title": "Medford Historical Commission 07-14-25",
-     "title": "CPC and Survey Updates",
-     "label": "M31#8"
-    },
-    {
-     "video_id": "MCM00001795",
-     "t": 2550,
-     "date": "2025-08-11",
-     "base": "2025-08-12_MCM00001795",
-     "meeting_title": "Medford Historical Commission 08-11-25",
-     "title": "Inventory database wiki project",
-     "label": "M32#5"
-    },
-    {
-     "video_id": "MCM00001806",
-     "t": 3544,
-     "date": "2025-09-08",
-     "base": "2025-09-09_MCM00001806",
-     "meeting_title": "Medford Historical Commission 09-08-25",
-     "title": "Wayfinding and Historic Resources Database",
-     "label": "M34#7"
-    },
-    {
-     "video_id": "CAS00002568",
-     "t": 3438,
-     "date": "2026-10-19",
-     "base": "2026-10-21_CAS00002568",
-     "meeting_title": "Historical Commission 10/19/26",
-     "title": "Survey and Planning Grant Priority Area",
-     "label": "M47#6"
-    }
-   ]
-  },
-  {
-   "name": "Historic preservation zoning reform and policy",
-   "status": "ongoing",
-   "summary": "The commission monitors and participates in municipal zoning discussions to incorporate preservation incentives into local planning policy (M30#9, M31#5). Members reviewed municipal zoning relief models from nearby communities to consider drafting local provisions that grant zoning incentives to property owners who preserve historic structures (M26#3, M27#5). The commission reviewed proposed commercial and multi-family rezoning maps for the Salem Street corridor and Boston Avenue, recommending height reductions and buffer protections for residential historic structures (M30#9, M39#2, M44#10). Following approval of the Medford Square zoning update, the commission reviewed dimensional waiver incentives tied to historical design review and continues to advocate for citywide preservation policy integration (M37#1, M42#3, M47#7).",
-   "citations": [
-    {
-     "video_id": "MCM00001614",
-     "t": 341,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001614",
-     "meeting_title": "Medford Historical Commission 11-18-24",
-     "title": "Preservation Ordinance Discussion",
-     "label": "M26#3"
-    },
-    {
-     "video_id": "MCM00001642",
-     "t": 1426,
-     "date": "2024-12-09",
-     "base": "2024-12-10_MCM00001642",
-     "meeting_title": "Medford Historical Commission 12-09-24",
-     "title": "Historic Preservation Ordinance Discussion",
-     "label": "M27#5"
-    },
-    {
-     "video_id": "MCM00001731",
-     "t": 5098,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001731",
-     "meeting_title": "Medford Historical Commission 02-10-25",
-     "title": "Salem Street Corridor Rezoning Discussion",
-     "label": "M30#9"
-    },
-    {
-     "video_id": "MCM00001781",
-     "t": 3188,
-     "date": "2025-07-14",
-     "base": "2025-07-29_MCM00001781",
-     "meeting_title": "Medford Historical Commission 07-14-25",
-     "title": "Legislative and Zoning Discussion",
-     "label": "M31#5"
-    },
-    {
-     "video_id": "CAS00002425",
-     "t": 8,
-     "date": "2026-05-12",
-     "base": "2026-05-12_CAS00002425",
-     "meeting_title": "Historical Commission 05/12/26",
-     "title": "Medford Square Zoning Discussion",
-     "label": "M37#1"
-    },
-    {
-     "video_id": "CAS00002452",
-     "t": 232,
-     "date": "2026-06-09",
-     "base": "2026-06-10_CAS00002452",
-     "meeting_title": "Historical Commission 06/09/26",
-     "title": "Boston Avenue Zoning Discussion",
-     "label": "M39#2"
-    },
-    {
-     "video_id": "CAS00002481",
-     "t": 2369,
-     "date": "2026-07-13",
-     "base": "2026-07-14_CAS00002481",
-     "meeting_title": "Historical Commission 07/13/26",
-     "title": "Zoning Update",
-     "label": "M42#3"
-    },
-    {
-     "video_id": "CAS00002523",
-     "t": 3179,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002523",
-     "meeting_title": "Historical Commission 09/14/26",
-     "title": "Boston Avenue Zoning Update",
-     "label": "M44#10"
-    },
-    {
-     "video_id": "CAS00002568",
-     "t": 3932,
-     "date": "2026-10-19",
-     "base": "2026-10-21_CAS00002568",
-     "meeting_title": "Historical Commission 10/19/26",
-     "title": "Zoning Incentives and Cemetery Project Updates",
-     "label": "M47#7"
-    }
-   ]
-  },
-  {
-   "name": "Section 106 federal and state environmental reviews",
-   "status": "ongoing",
-   "summary": "The commission serves as a consulting body for mandatory Section 106 historical evaluations on state and federally funded infrastructure and development proposals (M03#4, M14#5). For the Walkling Court housing redevelopment, commissioners requested archaeological monitoring and historical photo documentation prior to site demolition (M03#4, M07#2, M15#4, M20#2). The commission evaluated Section 106 applications for telecommunications installations, MassDOT highway bridge repairs, and the South Medford Connector community path (M14#5, M26#2, M39#7, M42#2). Review activity also encompasses historical documentation requirements for municipal safety facilities and public school capital projects (M39#6, M44#11).",
-   "citations": [
-    {
-     "video_id": "MCM00001116",
-     "t": 626,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Walkling Court Redevelopment",
-     "label": "M03#4"
-    },
-    {
-     "video_id": "MCM00001110",
-     "t": 344,
-     "date": "2023-08-14",
-     "base": "2024-08-06_MCM00001110",
-     "meeting_title": "Medford Historical Commission 08-14-23",
-     "title": "Walkling Court MHC Form A Review",
-     "label": "M07#2"
-    },
-    {
-     "video_id": "MCM00001123",
-     "t": 5679,
-     "date": "2024-01-08",
-     "base": "2024-08-06_MCM00001123",
-     "meeting_title": "Medford Historical Commission 01-08-24",
-     "title": "Section 106 Review: I-93 Bridge Repairs",
-     "label": "M14#5"
-    },
-    {
-     "video_id": "MCM00001121",
-     "t": 1447,
-     "date": "2024-02-12",
-     "base": "2024-08-06_MCM00001121",
-     "meeting_title": "Medford Historical Commission 02-12-24",
-     "title": "Walkling Court Section 106 Review",
-     "label": "M15#4"
-    },
-    {
-     "video_id": "MCM00001120",
-     "t": 63,
-     "date": "2024-07-08",
-     "base": "2024-08-06_MCM00001120",
-     "meeting_title": "Medford Historical Commission 07-08-24",
-     "title": "Wackling Court Demolition Review",
-     "label": "M20#2"
-    },
-    {
-     "video_id": "MCM00001614",
-     "t": 262,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001614",
-     "meeting_title": "Medford Historical Commission 11-18-24",
-     "title": "20 Harvard Avenue Section 106 Review",
-     "label": "M26#2"
-    },
-    {
-     "video_id": "CAS00002452",
-     "t": 2529,
-     "date": "2026-06-09",
-     "base": "2026-06-10_CAS00002452",
-     "meeting_title": "Historical Commission 06/09/26",
-     "title": "Preservation Projects and Section 106 Updates",
-     "label": "M39#6"
-    },
-    {
-     "video_id": "CAS00002452",
-     "t": 3216,
-     "date": "2026-06-09",
-     "base": "2026-06-10_CAS00002452",
-     "meeting_title": "Historical Commission 06/09/26",
-     "title": "Section 106 Review: 59–75 Valley Street",
-     "label": "M39#7"
-    },
-    {
-     "video_id": "CAS00002481",
-     "t": 479,
-     "date": "2026-07-13",
-     "base": "2026-07-14_CAS00002481",
-     "meeting_title": "Historical Commission 07/13/26",
-     "title": "South Medford Connector Section 106 Review",
-     "label": "M42#2"
-    },
-    {
-     "video_id": "CAS00002523",
-     "t": 3257,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002523",
-     "meeting_title": "Historical Commission 09/14/26",
-     "title": "Medford High School Survey",
-     "label": "M44#11"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "The commission initiated public outreach for the proposed South Street Historic District and refined its demolition delay review procedures. Members also began Section 106 consultations for Walkling Court, authorized neighborhood inventory surveys, and advanced initial stone wall restorations at historic cemetery sites.",
-   "citations": [
-    {
-     "video_id": "MCM00001299",
-     "t": 1,
-     "date": "2023-05-18",
-     "base": "2024-08-22_MCM00001299",
-     "meeting_title": "Medford Historic District Commission 05-18-23",
-     "title": "Website Updates and Property Owner Notification",
-     "label": "M01#1"
-    },
-    {
-     "video_id": "MCM00001301",
-     "t": 127,
-     "date": "2023-06-08",
-     "base": "2024-08-22_MCM00001301",
-     "meeting_title": "Medford Historic District Commission 06-08-23",
-     "title": "South Street Historic District Preliminary Report",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "MCM00001116",
-     "t": 626,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Walkling Court Redevelopment",
-     "label": "M03#4"
-    },
-    {
-     "video_id": "MCM00001116",
-     "t": 2753,
-     "date": "2023-06-12",
-     "base": "2024-08-06_MCM00001116",
-     "meeting_title": "Medford Historical Commission 06-12-23",
-     "title": "Demolition Review Process Streamlining",
-     "label": "M03#7"
-    },
-    {
-     "video_id": "MCM00001109",
-     "t": 2494,
-     "date": "2023-07-10",
-     "base": "2024-08-06_MCM00001109",
-     "meeting_title": "Medford Historical Commission 07-10-23",
-     "title": "Winter Hill/Boynton Subdivision Survey Project",
-     "label": "M04#6"
-    },
-    {
-     "video_id": "MCM00001117",
-     "t": 60,
-     "date": "2023-12-18",
-     "base": "2024-08-06_MCM00001117",
-     "meeting_title": "Medford Historical Commission 12-18-23",
-     "title": "56 Wareham Street preferably preserved hearing",
-     "label": "M13#1"
-    }
-   ]
-  },
-  {
-   "period": "2024-2025 term",
-   "narrative": "The commission formally supported the South Street Local Historic District, filing its boundary maps and planning district signage. Commissioners adjudicated numerous property demolition applications, launched master plan concepts for Thomas Brooks Park, oversaw archaeological findings at Cross Street Cemetery, and evaluated municipal zoning relief models.",
-   "citations": [
-    {
-     "video_id": "MCM00001121",
-     "t": 1923,
-     "date": "2024-02-12",
-     "base": "2024-08-06_MCM00001121",
-     "meeting_title": "Medford Historical Commission 02-12-24",
-     "title": "South Street Local Historic District",
-     "label": "M15#5"
-    },
-    {
-     "video_id": "MCM00001118",
-     "t": 71,
-     "date": "2024-05-13",
-     "base": "2024-08-06_MCM00001118",
-     "meeting_title": "Medford Historical Commission 05-13-24",
-     "title": "27 Allmont Street Preferably Preserved Hearing",
-     "label": "M18#1"
-    },
-    {
-     "video_id": "MCM00001628",
-     "t": 1938,
-     "date": "2024-10-22",
-     "base": "2024-12-05_MCM00001628",
-     "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
-     "title": "Phase Two Construction Update",
-     "label": "M25#3"
-    },
-    {
-     "video_id": "MCM00001642",
-     "t": 1426,
-     "date": "2024-12-09",
-     "base": "2024-12-10_MCM00001642",
-     "meeting_title": "Medford Historical Commission 12-09-24",
-     "title": "Historic Preservation Ordinance Discussion",
-     "label": "M27#5"
-    },
-    {
-     "video_id": "MCM00001696",
-     "t": 155,
-     "date": "2024-12-12",
-     "base": "2025-01-03_MCM00001696",
-     "meeting_title": "Medford Historic District Commission 12-12-24",
-     "title": "South Street Historic District Status",
-     "label": "M28#2"
+     "title": "Oak Grove Cemetery Headstone Assessment",
+     "label": "M34#5"
     },
     {
      "video_id": "MCM00001705",
@@ -846,85 +451,158 @@
      "base": "2025-01-17_MCM00001705",
      "meeting_title": "Medford Historical Commission 01-13-25",
      "title": "Cross Street Cemetery Site Archaeological Findings",
-     "label": "M29#6"
+     "label": "M34#6"
     },
     {
-     "video_id": "MCM00001781",
-     "t": 179,
-     "date": "2025-07-14",
-     "base": "2025-07-29_MCM00001781",
-     "meeting_title": "Medford Historical Commission 07-14-25",
-     "title": "47 Holton Street Public Hearing",
-     "label": "M31#1"
+     "video_id": "MCM00001731",
+     "t": 3633,
+     "date": "2025-02-10",
+     "base": "2025-02-11_MCM00001731",
+     "meeting_title": "Medford Historical Commission 02-10-25",
+     "title": "Cross Street Cemetery Monument Restoration",
+     "label": "M35#7"
     },
     {
-     "video_id": "MCM00001828",
-     "t": 1592,
-     "date": "2025-10-09",
-     "base": "2025-11-26_MCM00001828",
-     "meeting_title": "Historical District Commission 10-09-25",
-     "title": "41 Mystic Avenue Preservation",
-     "label": "M36#4"
+     "video_id": "MCM00001795",
+     "t": 3553,
+     "date": "2025-08-11",
+     "base": "2025-08-12_MCM00001795",
+     "meeting_title": "Medford Historical Commission 08-11-25",
+     "title": "Cross Street Cemetery restoration application",
+     "label": "M37#8"
+    },
+    {
+     "video_id": "CAS00002425",
+     "t": 1909,
+     "date": "2026-05-12",
+     "base": "2026-05-12_CAS00002425",
+     "meeting_title": "Historical Commission 05/12/26",
+     "title": "Project Updates",
+     "label": "M42#3"
+    },
+    {
+     "video_id": "CAS00002501",
+     "t": 821,
+     "date": "2026-08-10",
+     "base": "2026-08-12_CAS00002501",
+     "meeting_title": "Historical Commission 08/10/26",
+     "title": "Surveys and Cemetery Restoration",
+     "label": "M48#5"
+    },
+    {
+     "video_id": "CAS00002523",
+     "t": 3316,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002523",
+     "meeting_title": "Historical Commission 09/14/26",
+     "title": "Cross Street Cemetery Restoration",
+     "label": "M49#12"
+    },
+    {
+     "video_id": "CAS00002568",
+     "t": 3932,
+     "date": "2026-10-19",
+     "base": "2026-10-21_CAS00002568",
+     "meeting_title": "Historical Commission 10/19/26",
+     "title": "Zoning Incentives and Cemetery Project Updates",
+     "label": "M52#7"
     }
    ]
   },
   {
-   "period": "2026-2027 term",
-   "narrative": "The commission analyzed historic preservation incentives incorporated into newly adopted city zoning ordinances and continued reviewing demolition requests and Section 106 project submissions. The body also directed ground-penetrating radar work at burial grounds, hosted technical preservation presentations, and selected Lawrence Estates for future survey grant funding.",
+   "name": "Neighborhood historical surveys and inventory grants",
+   "status": "ongoing",
+   "summary": "To document local architectural resources, the commission funded and oversaw Form B inventory surveys in various neighborhoods, including Fulton Heights, the Brickyards, and the Boynton subdivision. Survey projects expanded to cover Bradley Hall Estates, Sagamore Vale, and Hastings Heights. Completed survey forms were compiled into proposals for a searchable online history database. In late 2026, the commission selected Lawrence Estates as its target neighborhood for the next state survey and planning grant application.",
    "citations": [
     {
-     "video_id": "CAS00002425",
-     "t": 8,
-     "date": "2026-05-12",
-     "base": "2026-05-12_CAS00002425",
-     "meeting_title": "Historical Commission 05/12/26",
-     "title": "Medford Square Zoning Discussion",
-     "label": "M37#1"
+     "video_id": "MCM00001106",
+     "t": 4950,
+     "date": "2023-04-10",
+     "base": "2024-08-06_MCM00001106",
+     "meeting_title": "Medford Historical Commission 04-10-23",
+     "title": "CPA Projects and Survey Updates",
+     "label": "M01#10"
     },
     {
-     "video_id": "CAS00002429",
-     "t": 13,
-     "date": "2026-05-14",
-     "base": "2026-05-15_CAS00002429",
-     "meeting_title": "Historic District Commission 05/14/26",
-     "title": "Presentation on Insurance Challenges for Historic Properties",
-     "label": "M38#1"
+     "video_id": "MCM00001116",
+     "t": 3591,
+     "date": "2023-06-12",
+     "base": "2024-08-06_MCM00001116",
+     "meeting_title": "Medford Historical Commission 06-12-23",
+     "title": "Neighborhood Historical Surveys",
+     "label": "M08#9"
     },
     {
-     "video_id": "CAS00002452",
-     "t": 232,
-     "date": "2026-06-09",
-     "base": "2026-06-10_CAS00002452",
-     "meeting_title": "Historical Commission 06/09/26",
-     "title": "Boston Avenue Zoning Discussion",
-     "label": "M39#2"
+     "video_id": "MCM00001109",
+     "t": 2494,
+     "date": "2023-07-10",
+     "base": "2024-08-06_MCM00001109",
+     "meeting_title": "Medford Historical Commission 07-10-23",
+     "title": "Winter Hill/Boynton Subdivision Survey Project",
+     "label": "M09#6"
     },
     {
-     "video_id": "CAS00002481",
-     "t": 479,
-     "date": "2026-07-13",
-     "base": "2026-07-14_CAS00002481",
-     "meeting_title": "Historical Commission 07/13/26",
-     "title": "South Medford Connector Section 106 Review",
-     "label": "M42#2"
+     "video_id": "MCM00001123",
+     "t": 6011,
+     "date": "2024-01-08",
+     "base": "2024-08-06_MCM00001123",
+     "meeting_title": "Medford Historical Commission 01-08-24",
+     "title": "Cemetery and Survey Updates",
+     "label": "M19#6"
     },
     {
-     "video_id": "CAS00002551",
-     "t": 193,
-     "date": "2026-10-05",
-     "base": "2026-10-06_CAS00002551",
-     "meeting_title": "Historical Commission Public Hearing 10/05/26",
-     "title": "15 Maple Park Avenue Preferably Preserved Hearing",
-     "label": "M45#1"
+     "video_id": "MCM00001586",
+     "t": 4011,
+     "date": "2024-10-07",
+     "base": "2024-10-09_MCM00001586",
+     "meeting_title": "Medford Historical Commission 10-07-24",
+     "title": "Survey Projects and Grant Applications",
+     "label": "M29#8"
     },
     {
-     "video_id": "CAS00002559",
-     "t": 2391,
-     "date": "2026-10-08",
-     "base": "2026-10-09_CAS00002559",
-     "meeting_title": "Historic District Commission 10/08/26",
-     "title": "Board Recruitment Efforts",
-     "label": "M46#2"
+     "video_id": "MCM00001705",
+     "t": 4714,
+     "date": "2025-01-13",
+     "base": "2025-01-17_MCM00001705",
+     "meeting_title": "Medford Historical Commission 01-13-25",
+     "title": "CPA Archaeology and Neighborhood Surveys",
+     "label": "M34#8"
+    },
+    {
+     "video_id": "MCM00001781",
+     "t": 5033,
+     "date": "2025-07-14",
+     "base": "2025-07-29_MCM00001781",
+     "meeting_title": "Medford Historical Commission 07-14-25",
+     "title": "CPC and Survey Updates",
+     "label": "M36#8"
+    },
+    {
+     "video_id": "MCM00001795",
+     "t": 2550,
+     "date": "2025-08-11",
+     "base": "2025-08-12_MCM00001795",
+     "meeting_title": "Medford Historical Commission 08-11-25",
+     "title": "Inventory database wiki project",
+     "label": "M37#5"
+    },
+    {
+     "video_id": "MCM00001795",
+     "t": 4089,
+     "date": "2025-08-11",
+     "base": "2025-08-12_MCM00001795",
+     "meeting_title": "Medford Historical Commission 08-11-25",
+     "title": "Hastings Survey and meeting minutes",
+     "label": "M37#10"
+    },
+    {
+     "video_id": "MCM00001806",
+     "t": 3544,
+     "date": "2025-09-08",
+     "base": "2025-09-09_MCM00001806",
+     "meeting_title": "Medford Historical Commission 09-08-25",
+     "title": "Wayfinding and Historic Resources Database",
+     "label": "M39#7"
     },
     {
      "video_id": "CAS00002568",
@@ -933,26 +611,465 @@
      "base": "2026-10-21_CAS00002568",
      "meeting_title": "Historical Commission 10/19/26",
      "title": "Survey and Planning Grant Priority Area",
-     "label": "M47#6"
+     "label": "M52#6"
+    }
+   ]
+  },
+  {
+   "name": "Zoning reform and preservation integration",
+   "status": "ongoing",
+   "summary": "The commission engaged with city planning officials to review proposed developments, rezoning initiatives, and environmental reviews across Medford. Members examined municipal preservation models, such as Reading's preservation zoning ordinance, to explore incentives for owners preserving historic structures. The commission expressed interest in protecting pre-1900 structures during discussions surrounding the Salem Street corridor rezoning and broader zoning updates. As new zoning policies were approved for Medford Square and drafted for Boston Avenue, the commission focused on reconciling zoning incentives and design reviews with the city's demolition delay bylaws.",
+   "citations": [
+    {
+     "video_id": "MCM00001116",
+     "t": 472,
+     "date": "2023-06-12",
+     "base": "2024-08-06_MCM00001116",
+     "meeting_title": "Medford Historical Commission 06-12-23",
+     "title": "280 Mystic Avenue Planned Development District",
+     "label": "M08#3"
+    },
+    {
+     "video_id": "MCM00001109",
+     "t": 749,
+     "date": "2023-07-10",
+     "base": "2024-08-06_MCM00001109",
+     "meeting_title": "Medford Historical Commission 07-10-23",
+     "title": "243 Mystic Avenue Proposed Development District Review",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "MCM00001123",
+     "t": 5679,
+     "date": "2024-01-08",
+     "base": "2024-08-06_MCM00001123",
+     "meeting_title": "Medford Historical Commission 01-08-24",
+     "title": "Section 106 Review: I-93 Bridge Repairs",
+     "label": "M19#5"
+    },
+    {
+     "video_id": "MCM00001614",
+     "t": 341,
+     "date": "2024-11-18",
+     "base": "2024-12-04_MCM00001614",
+     "meeting_title": "Medford Historical Commission 11-18-24",
+     "title": "Preservation Ordinance Discussion",
+     "label": "M31#3"
+    },
+    {
+     "video_id": "MCM00001642",
+     "t": 1426,
+     "date": "2024-12-09",
+     "base": "2024-12-10_MCM00001642",
+     "meeting_title": "Medford Historical Commission 12-09-24",
+     "title": "Historic Preservation Ordinance Discussion",
+     "label": "M32#5"
+    },
+    {
+     "video_id": "MCM00001731",
+     "t": 5098,
+     "date": "2025-02-10",
+     "base": "2025-02-11_MCM00001731",
+     "meeting_title": "Medford Historical Commission 02-10-25",
+     "title": "Salem Street Corridor Rezoning Discussion",
+     "label": "M35#9"
+    },
+    {
+     "video_id": "MCM00001781",
+     "t": 3188,
+     "date": "2025-07-14",
+     "base": "2025-07-29_MCM00001781",
+     "meeting_title": "Medford Historical Commission 07-14-25",
+     "title": "Legislative and Zoning Discussion",
+     "label": "M36#5"
+    },
+    {
+     "video_id": "CAS00002425",
+     "t": 8,
+     "date": "2026-05-12",
+     "base": "2026-05-12_CAS00002425",
+     "meeting_title": "Historical Commission 05/12/26",
+     "title": "Medford Square Zoning Discussion",
+     "label": "M42#1"
+    },
+    {
+     "video_id": "CAS00002452",
+     "t": 232,
+     "date": "2026-06-09",
+     "base": "2026-06-10_CAS00002452",
+     "meeting_title": "Historical Commission 06/09/26",
+     "title": "Boston Avenue Zoning Discussion",
+     "label": "M44#2"
+    },
+    {
+     "video_id": "CAS00002481",
+     "t": 2369,
+     "date": "2026-07-13",
+     "base": "2026-07-14_CAS00002481",
+     "meeting_title": "Historical Commission 07/13/26",
+     "title": "Zoning Update",
+     "label": "M47#3"
+    },
+    {
+     "video_id": "CAS00002523",
+     "t": 3179,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002523",
+     "meeting_title": "Historical Commission 09/14/26",
+     "title": "Boston Avenue Zoning Update",
+     "label": "M49#10"
+    },
+    {
+     "video_id": "CAS00002568",
+     "t": 3932,
+     "date": "2026-10-19",
+     "base": "2026-10-21_CAS00002568",
+     "meeting_title": "Historical Commission 10/19/26",
+     "title": "Zoning Incentives and Cemetery Project Updates",
+     "label": "M52#7"
+    }
+   ]
+  },
+  {
+   "name": "Brooks Estate preservation and oversight",
+   "status": "ongoing",
+   "summary": "The commission routinely received operational updates, grant status reports, and maintenance needs regarding the Brooks Estate. Discussions focused on maintaining stone walls, hiring administrative support, managing parking and access challenges, and coordinating with the Medford Brooks Estate Land Trust. The commission also reviewed plans for parking lot construction, permeable pavement requirements, and archaeological resource assessments on the estate grounds.",
+   "citations": [
+    {
+     "video_id": "MCM00001116",
+     "t": 3231,
+     "date": "2023-06-12",
+     "base": "2024-08-06_MCM00001116",
+     "meeting_title": "Medford Historical Commission 06-12-23",
+     "title": "Community Preservation Act Projects",
+     "label": "M08#8"
+    },
+    {
+     "video_id": "MCM00001114",
+     "t": 2676,
+     "date": "2023-10-16",
+     "base": "2024-08-06_MCM00001114",
+     "meeting_title": "Medford Historical Commission 10-16-23",
+     "title": "Committee Updates and Administrative Business",
+     "label": "M16#5"
+    },
+    {
+     "video_id": "MCM00001119",
+     "t": 4732,
+     "date": "2024-06-10",
+     "base": "2024-08-06_MCM00001119",
+     "meeting_title": "Medford Historical Commission 06-10-24",
+     "title": "Ongoing Project and Administrative Updates",
+     "label": "M24#9"
+    },
+    {
+     "video_id": "MCM00001120",
+     "t": 1992,
+     "date": "2024-07-08",
+     "base": "2024-08-06_MCM00001120",
+     "meeting_title": "Medford Historical Commission 07-08-24",
+     "title": "Thomas Brooks Park and Brooks Estate Maintenance",
+     "label": "M25#7"
+    },
+    {
+     "video_id": "MCM00001388",
+     "t": 5186,
+     "date": "2024-09-09",
+     "base": "2024-09-10_MCM00001388",
+     "meeting_title": "Medford Historical Commission 09-09-24",
+     "title": "Brooks Estate Administrative Position",
+     "label": "M28#12"
+    },
+    {
+     "video_id": "MCM00001614",
+     "t": 2098,
+     "date": "2024-11-18",
+     "base": "2024-12-04_MCM00001614",
+     "meeting_title": "Medford Historical Commission 11-18-24",
+     "title": "Brooks Estate Update",
+     "label": "M31#7"
+    },
+    {
+     "video_id": "CAS00002425",
+     "t": 2405,
+     "date": "2026-05-12",
+     "base": "2026-05-12_CAS00002425",
+     "meeting_title": "Historical Commission 05/12/26",
+     "title": "Brooks Estate Parking Lot and Cemetery Expansion",
+     "label": "M42#4"
+    },
+    {
+     "video_id": "CAS00002452",
+     "t": 3329,
+     "date": "2026-06-09",
+     "base": "2026-06-10_CAS00002452",
+     "meeting_title": "Historical Commission 06/09/26",
+     "title": "Brooks Estate Parking Lot",
+     "label": "M44#8"
+    },
+    {
+     "video_id": "CAS00002481",
+     "t": 150,
+     "date": "2026-07-13",
+     "base": "2026-07-14_CAS00002481",
+     "meeting_title": "Historical Commission 07/13/26",
+     "title": "Medford Brooks Estate Land Trust Appointment",
+     "label": "M47#1"
+    },
+    {
+     "video_id": "CAS00002481",
+     "t": 2887,
+     "date": "2026-07-13",
+     "base": "2026-07-14_CAS00002481",
+     "meeting_title": "Historical Commission 07/13/26",
+     "title": "Project Updates and Meeting Minutes",
+     "label": "M47#5"
+    },
+    {
+     "video_id": "CAS00002501",
+     "t": 821,
+     "date": "2026-08-10",
+     "base": "2026-08-12_CAS00002501",
+     "meeting_title": "Historical Commission 08/10/26",
+     "title": "Surveys and Cemetery Restoration",
+     "label": "M48#5"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "During this term, the commission launched outreach and preliminary reporting for the proposed South Street Historic District while adjudicating multiple demolition delay applications. Members also reviewed ordinance enforcement procedures with the Building Commissioner and initiated survey and restoration projects funded by the Community Preservation Act.",
+   "citations": [
+    {
+     "video_id": "MCM00001106",
+     "t": 47,
+     "date": "2023-04-10",
+     "base": "2024-08-06_MCM00001106",
+     "meeting_title": "Medford Historical Commission 04-10-23",
+     "title": "222 Boston Avenue Preferably Preserved Hearing",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00001106",
+     "t": 4626,
+     "date": "2023-04-10",
+     "base": "2024-08-06_MCM00001106",
+     "meeting_title": "Medford Historical Commission 04-10-23",
+     "title": "Building Commissioner and Ordinance Discussion",
+     "label": "M01#9"
+    },
+    {
+     "video_id": "MCM00001295",
+     "t": 2840,
+     "date": "2023-04-13",
+     "base": "2024-08-22_MCM00001295",
+     "meeting_title": "Medford Historic District Commission 04-13-23",
+     "title": "Commission Business and Updates",
+     "label": "M02#3"
+    },
+    {
+     "video_id": "MCM00001105",
+     "t": 4465,
+     "date": "2023-05-08",
+     "base": "2024-08-06_MCM00001105",
+     "meeting_title": "Medford Historical Commission 05-08-23",
+     "title": "Discussion on Ordinance Enforcement with Building Commissioner",
+     "label": "M03#6"
+    },
+    {
+     "video_id": "MCM00001294",
+     "t": 184,
+     "date": "2023-05-11",
+     "base": "2024-08-22_MCM00001294",
+     "meeting_title": "Medford Historic District Commission 05-11-23",
+     "title": "South Street Historic District Preliminary Report",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00001301",
+     "t": 127,
+     "date": "2023-06-08",
+     "base": "2024-08-22_MCM00001301",
+     "meeting_title": "Medford Historic District Commission 06-08-23",
+     "title": "South Street Historic District Preliminary Report",
+     "label": "M07#2"
+    },
+    {
+     "video_id": "MCM00001117",
+     "t": 60,
+     "date": "2023-12-18",
+     "base": "2024-08-06_MCM00001117",
+     "meeting_title": "Medford Historical Commission 12-18-23",
+     "title": "56 Wareham Street preferably preserved hearing",
+     "label": "M18#1"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The commission advanced the South Street Local Historic District proposal, conducted master planning and public outreach for Thomas Brooks Park, and uncovered human remains during archaeological investigations at Cross Street Cemetery. Members also evaluated numerous demolition applications, examined zoning preservation models, and began planning for a citywide searchable historic inventory database.",
+   "citations": [
+    {
+     "video_id": "MCM00001123",
+     "t": 970,
+     "date": "2024-01-08",
+     "base": "2024-08-06_MCM00001123",
+     "meeting_title": "Medford Historical Commission 01-08-24",
+     "title": "Thomas Brooks Park Preservation Design",
+     "label": "M19#3"
+    },
+    {
+     "video_id": "MCM00001121",
+     "t": 1923,
+     "date": "2024-02-12",
+     "base": "2024-08-06_MCM00001121",
+     "meeting_title": "Medford Historical Commission 02-12-24",
+     "title": "South Street Local Historic District",
+     "label": "M20#5"
+    },
+    {
+     "video_id": "MCM00001122",
+     "t": 40,
+     "date": "2024-03-11",
+     "base": "2024-08-06_MCM00001122",
+     "meeting_title": "Medford Historical Commission 03-11-24",
+     "title": "Thomas Brooks Park Master Plan Concepts",
+     "label": "M21#1"
+    },
+    {
+     "video_id": "MCM00001628",
+     "t": 0,
+     "date": "2024-10-22",
+     "base": "2024-12-05_MCM00001628",
+     "meeting_title": "Medford Historical Commission - Thomas Brooks Park Update 10-22-24",
+     "title": "Master Plan and Phase One Overview",
+     "label": "M30#1"
+    },
+    {
+     "video_id": "MCM00001642",
+     "t": 1426,
+     "date": "2024-12-09",
+     "base": "2024-12-10_MCM00001642",
+     "meeting_title": "Medford Historical Commission 12-09-24",
+     "title": "Historic Preservation Ordinance Discussion",
+     "label": "M32#5"
+    },
+    {
+     "video_id": "MCM00001705",
+     "t": 3079,
+     "date": "2025-01-13",
+     "base": "2025-01-17_MCM00001705",
+     "meeting_title": "Medford Historical Commission 01-13-25",
+     "title": "Cross Street Cemetery Site Archaeological Findings",
+     "label": "M34#6"
+    },
+    {
+     "video_id": "MCM00001731",
+     "t": 5098,
+     "date": "2025-02-10",
+     "base": "2025-02-11_MCM00001731",
+     "meeting_title": "Medford Historical Commission 02-10-25",
+     "title": "Salem Street Corridor Rezoning Discussion",
+     "label": "M35#9"
+    },
+    {
+     "video_id": "MCM00001795",
+     "t": 2550,
+     "date": "2025-08-11",
+     "base": "2025-08-12_MCM00001795",
+     "meeting_title": "Medford Historical Commission 08-11-25",
+     "title": "Inventory database wiki project",
+     "label": "M37#5"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "In this period, the commission focused on aligning historic preservation incentives with newly enacted and proposed municipal zoning reforms in Medford Square and Boston Avenue. Commissioners also continued managing ongoing archaeological and restoration work at municipal cemeteries and the Brooks Estate while evaluating demolition permits and selecting target areas for grant-funded property surveys.",
+   "citations": [
+    {
+     "video_id": "CAS00002425",
+     "t": 8,
+     "date": "2026-05-12",
+     "base": "2026-05-12_CAS00002425",
+     "meeting_title": "Historical Commission 05/12/26",
+     "title": "Medford Square Zoning Discussion",
+     "label": "M42#1"
+    },
+    {
+     "video_id": "CAS00002452",
+     "t": 232,
+     "date": "2026-06-09",
+     "base": "2026-06-10_CAS00002452",
+     "meeting_title": "Historical Commission 06/09/26",
+     "title": "Boston Avenue Zoning Discussion",
+     "label": "M44#2"
+    },
+    {
+     "video_id": "CAS00002481",
+     "t": 2369,
+     "date": "2026-07-13",
+     "base": "2026-07-14_CAS00002481",
+     "meeting_title": "Historical Commission 07/13/26",
+     "title": "Zoning Update",
+     "label": "M47#3"
+    },
+    {
+     "video_id": "CAS00002501",
+     "t": 821,
+     "date": "2026-08-10",
+     "base": "2026-08-12_CAS00002501",
+     "meeting_title": "Historical Commission 08/10/26",
+     "title": "Surveys and Cemetery Restoration",
+     "label": "M48#5"
+    },
+    {
+     "video_id": "CAS00002551",
+     "t": 193,
+     "date": "2026-10-05",
+     "base": "2026-10-06_CAS00002551",
+     "meeting_title": "Historical Commission Public Hearing 10/05/26",
+     "title": "15 Maple Park Avenue Preferably Preserved Hearing",
+     "label": "M50#1"
+    },
+    {
+     "video_id": "CAS00002568",
+     "t": 3438,
+     "date": "2026-10-19",
+     "base": "2026-10-21_CAS00002568",
+     "meeting_title": "Historical Commission 10/19/26",
+     "title": "Survey and Planning Grant Priority Area",
+     "label": "M52#6"
+    },
+    {
+     "video_id": "CAS00002568",
+     "t": 3932,
+     "date": "2026-10-19",
+     "base": "2026-10-21_CAS00002568",
+     "meeting_title": "Historical Commission 10/19/26",
+     "title": "Zoning Incentives and Cemetery Project Updates",
+     "label": "M52#7"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 95,
-  "meetings_cited": 38,
-  "of_meetings": 47,
-  "max_share": 0.084,
-  "even_share": 0.0213,
-  "concentration_ratio": 3.95,
-  "most_cited": "MCM00001116",
+  "citations": 108,
+  "meetings_cited": 42,
+  "of_meetings": 52,
+  "max_share": 0.065,
+  "even_share": 0.0192,
+  "concentration_ratio": 3.38,
+  "most_cited": "CAS00002568",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 18012,
-  "output_tokens": 2876,
+  "input_tokens": 19908,
+  "output_tokens": 2398,
   "model_version": "gemini-3.6-flash"
  }
 }

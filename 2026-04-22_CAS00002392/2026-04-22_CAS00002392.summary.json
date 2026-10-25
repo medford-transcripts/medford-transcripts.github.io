@@ -1,26 +1,26 @@
 {
  "video_id": "CAS00002392",
  "provider": "gemini",
- "generated_at": "2026-10-25T21:07:11Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-10-25T22:08:13Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "c92a829112b86faa",
- "subject": "",
- "overview": "The Parks Commission reviewed conceptual flood mitigation designs for Tufts Park, approved an expansion of the Tufts Park community garden, and resolved scheduling and permitting requests for spring and summer athletic field use across city parks.",
+ "transcript_sha": "ec8de3198caf4e62",
+ "subject": "Tufts Park Flood Mitigation and Redesign",
+ "overview": "The Commission reviewed conceptual flood mitigation designs for Tufts Park and approved an expansion of the community garden. The body also finalized summer field permits and established a tournament fee for pickleball.",
  "items": [
   {
    "title": "Approval of Minutes",
    "t": 4,
-   "summary": "The commission approved the March meeting minutes.",
+   "summary": "Approved the March meeting minutes.",
    "speakers": [
     "Reggie Graham",
     "Allan Martorana"
    ]
   },
   {
-   "title": "Park Permit Revenue Discussion",
+   "title": "2025 Park Permit Revenue",
    "t": 27,
-   "summary": "Commissioners briefly discussed park permit revenues and opted to table further review until next month.",
+   "summary": "Discussed lower revenue figures for park permits and tabled the matter until a direct comparison with previous years is available.",
    "speakers": [
     "Reggie Graham",
     "John Curley",
@@ -28,91 +28,96 @@
    ]
   },
   {
-   "title": "CPA Funding Report",
+   "title": "Community Preservation Act Revenue Report",
    "t": 117,
-   "summary": "Graham presented an overview of recent Community Preservation Act grant allocations across open space, historic preservation, and affordable housing.",
+   "summary": "Graham reported that the city received $639,500 in CPA revenue for open space and recreation for the fiscal year.",
    "speakers": [
     "Reggie Graham"
    ]
   },
   {
-   "title": "Pickleball Court Reservation Fee",
+   "title": "Pickleball Tournament Policy",
    "t": 253,
-   "summary": "The commission voted to set an initial $25 daily fee and restricted signage rules for an upcoming charity pickleball tournament while staff gathers regional benchmark data for future policy.",
+   "summary": "Established a $25 daily fee for tournaments at Carr Park and restricted signage to small stakes in the turf.",
    "speakers": [
     "Reggie Graham",
-    "Allan Martorana",
     "Chris Murphy",
-    "SPEAKER_06",
-    "SPEAKER_23"
+    "Allan Martorana"
    ]
   },
   {
-   "title": "Brooks Elementary PTO Pass Donation",
+   "title": "Brooks Elementary PTO Donation",
    "t": 681,
-   "summary": "The commission approved the annual donation of one pond pass and one pool pass to the Brooks Elementary PTO for an upcoming spring event.",
+   "summary": "Approved the donation of one pond pass and one pool pass for the school's spring event.",
    "speakers": [
     "Reggie Graham"
    ]
   },
   {
-   "title": "Tufts Park Conceptual Design Presentation",
+   "title": "Tufts Park Conceptual Design",
    "t": 739,
-   "summary": "Representatives from the Mystic River Watershed Association and Horsley Witten Group presented early conceptual designs to address flooding at Tufts Park through underground storage and field reconfigurations, receiving commissioner feedback on softball field dimensions and park amenities.",
+   "summary": "Consultants presented preliminary designs for flood mitigation at Tufts Park involving underground storage and potential reorientation of the softball fields.",
    "speakers": [
-    "Reggie Graham",
-    "Shannon Collins",
     "Nick Cohen",
-    "Chris Murphy",
-    "John Curley",
-    "Allan Martorana"
+    "Shannon Collins",
+    "Reggie Graham",
+    "Chris Murphy"
    ]
   },
   {
-   "title": "Tufts Park Community Garden Expansion",
+   "title": "Garden Commission Expansion",
    "t": 2233,
-   "summary": "The commission approved the Community Garden Commission's proposal to add 10 new garden beds at Tufts Park, agreeing that future community garden initiatives should consult the Parks Commission prior to applying for CPA funding.",
+   "summary": "Approved adding 10 garden beds to Tufts Park and requested that future garden expansion requests be brought to the Commission before seeking funding.",
    "speakers": [
-    "Reggie Graham",
     "Theresa Dupont",
-    "Chris Murphy",
-    "Allan Martorana",
-    "SPEAKER_05"
+    "Reggie Graham",
+    "Chris Murphy"
    ]
   },
   {
-   "title": "Field Permit Applications",
+   "title": "Ultimate Frisbee Permit Coordination",
    "t": 3075,
-   "summary": "The commission reviewed and acted on several summer field permits, approving requests for ultimate frisbee, school cross country, and adult softball while coordinating around scheduling conflicts at Morrison, Playstead, Tufts, and Barry parks.",
+   "summary": "Approved field use at Morrison Park and Playstead Lower field for specified summer dates to avoid scheduling conflicts.",
    "speakers": [
     "Reggie Graham",
-    "SPEAKER_22",
-    "John Curley",
-    "Allan Martorana",
     "Chris Murphy",
-    "SPEAKER_24",
-    "MCM00001460_SPEAKER_15",
-    "SPEAKER_28",
-    "SPEAKER_01",
-    "SPEAKER_20",
-    "SPEAKER_19"
+    "Kayla"
    ]
   },
   {
-   "title": "United India Event Request at Columbus Park",
-   "t": 5050,
-   "summary": "The commission approved Columbus Park field use for the United India festival while denying a requested bounce house pursuant to city legal guidance.",
+   "title": "Seasonal Field Permit Approvals",
+   "t": 4053,
+   "summary": "Approved summer permit requests for St. Raphael’s, Andre's Chiefs, Memorial Park, David Ferguson, and the Boston Ultimate Disc Alliance.",
    "speakers": [
     "Reggie Graham",
-    "SPEAKER_00",
-    "Allan Martorana"
+    "Sam Farnsworth",
+    "David Ferguson"
+   ]
+  },
+  {
+   "title": "Barry Park Field Conflict",
+   "t": 4252,
+   "summary": "Referred an Ultimate Frisbee request to staff to coordinate with Medford Youth Baseball regarding field availability at Barry Park.",
+   "speakers": [
+    "Reggie Graham",
+    "Chris Murphy",
+    "Haley"
+   ]
+  },
+  {
+   "title": "United India Summer Fest",
+   "t": 5050,
+   "summary": "Approved field use at Columbus Park on August 23 but denied a request for a bounce house due to city liability policies.",
+   "speakers": [
+    "Dr. Gandhi",
+    "Reggie Graham"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 34925,
-  "output_tokens": 816,
-  "model_version": "gemini-3.8-flash"
+  "output_tokens": 866,
+  "model_version": "gemini-3-flash-preview"
  }
 }
