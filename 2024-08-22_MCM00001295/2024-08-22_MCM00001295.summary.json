@@ -1,0 +1,52 @@
+{
+ "video_id": "MCM00001295",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T11:16:53Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c119958106dc9c34",
+ "subject": "",
+ "overview": "The Medford Historic District Commission conducted an advisory review of a proposed multi-unit addition at 54 South Street and approved window alterations for 15 Hillside. The commission also reviewed progress on the South Street Historic District report and website updates.",
+ "items": [
+  {
+   "title": "54 South Street Advisory Review",
+   "t": 341,
+   "summary": "The commission held an advisory discussion on plans for a multi-unit addition behind the historic Greek Revival structure at 54 South Street, with members expressing concern over the scale and massing of the addition relative to the original building.",
+   "speakers": [
+    "Christopher Bader",
+    "Kathleen Desmond",
+    "Christopher Mulhern",
+    "Fred",
+    "Melanie Tringali",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "15 Hillside Window Alterations",
+   "t": 2235,
+   "summary": "Approved an application to alter exterior windows at 15 Hillside, with a required modification to relocate the second-floor window rather than eliminate it.",
+   "speakers": [
+    "Christopher Bader",
+    "John Murphy",
+    "Fred",
+    "Melanie Tringali",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Commission Business and Updates",
+   "t": 2840,
+   "summary": "The chair provided updates on the proposed South Street Historic District report, commission website restoration, and plans to submit district guidelines for legal review.",
+   "speakers": [
+    "Christopher Bader",
+    "Fred"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17289,
+  "output_tokens": 396,
+  "model_version": "gemini-3.6-flash"
+ }
+}

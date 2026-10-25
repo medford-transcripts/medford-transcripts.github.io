@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "4bfbcb307793e9cd",
- "subject": "",
+ "subject": "First Fridays Words and Music",
  "overview": "The West Medford Community Center hosted its First Fridays Words and Music event featuring a panel discussion with representatives from the Mystic River Watershed Association followed by an a cappella performance by vocalist Donna McElroy.",
  "items": [
   {
@@ -50,5 +50,6 @@
   "input_tokens": 29917,
   "output_tokens": 390,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

@@ -1,0 +1,100 @@
+{
+ "video_id": "MCM00001461",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T11:15:17Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e18be39cb0c94faa",
+ "subject": "",
+ "overview": "The Medford Park Commission reviewed several park permit and field use requests for upcoming spring and summer activities. The commission approved several permits, tabled others pending additional information or scheduling, and tabled a memorial plaque proposal for Carr Park.",
+ "items": [
+  {
+   "title": "USTA League Dates and Memorandum of Understanding",
+   "t": 33,
+   "summary": "Approved a makeup date of June 8 at Playstead Park, while a proposed memorandum of understanding and summer dates were delayed to allow the commission to review the agreement and meet again in May.",
+   "speakers": [
+    "Reggie Graham",
+    "SPEAKER_01",
+    "SPEAKER_06",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "Boston Ultimate Disc Life Permit",
+   "t": 844,
+   "summary": "Approved use of Harris Park and Tufts Park for ultimate frisbee on specified dates from May through August, contingent on fee payment and a certificate of insurance.",
+   "speakers": [
+    "Reggie Graham",
+    "David Ferguson",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "School and Youth Field Permits",
+   "t": 1049,
+   "summary": "Approved St. Raphael School's field day at Playstead Park and provisionally approved a Missituk School PTO event and field day contingent on insurance and baseball scheduling, while tabling another youth organization's request due to lack of representation.",
+   "speakers": [
+    "Reggie Graham",
+    "SPEAKER_06",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "United India Association of New England Permit",
+   "t": 1658,
+   "summary": "Tabled the permit application to the next meeting due to the lack of an applicant representative.",
+   "speakers": [
+    "Reggie Graham",
+    "SPEAKER_06",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "Winky Face Ultimate Frisbee Permit",
+   "t": 1713,
+   "summary": "Held the application for Barry Park pending confirmation of Medford Youth Baseball's schedule.",
+   "speakers": [
+    "Reggie Graham",
+    "Nikki Head"
+   ]
+  },
+  {
+   "title": "Memorial Park Summer Permit",
+   "t": 1881,
+   "summary": "Approved a recurring summer league permit request for Memorial Park on Tuesday and Thursday evenings.",
+   "speakers": [
+    "Reggie Graham",
+    "SPEAKER_06"
+   ]
+  },
+  {
+   "title": "Birthday Party at Playstead Park",
+   "t": 1928,
+   "summary": "Approved a permit for a birthday party on the lower field at Playstead Park on April 23, contingent on receiving a certificate of insurance naming the city as an additional insured from the NERF vendor.",
+   "speakers": [
+    "SPEAKER_06",
+    "Reggie Graham",
+    "Eduardo Pagan",
+    "SPEAKER_10"
+   ]
+  },
+  {
+   "title": "Memorial Plaque Request for Carr Park",
+   "t": 2243,
+   "summary": "Tabled a request from Sue Fowler-Finn to place a memorial plaque at Carr Park honoring a deceased local pickleball player until ground is broken on the new courts and the full commission is present.",
+   "speakers": [
+    "Reggie Graham",
+    "Sue Fowler-Finn",
+    "SPEAKER_10",
+    "Chris Murphy",
+    "SPEAKER_06"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17128,
+  "output_tokens": 736,
+  "model_version": "gemini-3.8-flash"
+ }
+}
