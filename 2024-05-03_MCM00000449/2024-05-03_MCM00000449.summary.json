@@ -1,0 +1,43 @@
+{
+ "video_id": "MCM00000449",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T08:07:51Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "3a30b21addc575bb",
+ "subject": "",
+ "overview": "The subcommittee finalized updates to the waste hauler ordinance, delegating trash receptacle regulations to the DPW, and began reviewing parking congestion caused by auto repair shops on public ways.",
+ "items": [
+  {
+   "title": "Waste Hauler Ordinance",
+   "t": 76,
+   "summary": "The subcommittee struck outdated language regarding the timing and placement of trash receptacles, delegating that authority to the Public Works Commissioner. A motion passed to refer the ordinance to the Committee of the Whole once definitions are aligned with Board of Health regulations.",
+   "speakers": [
+    "Zac Bears",
+    "Tim McGivern",
+    "MaryAnn O'Connor",
+    "Kit Collins",
+    "Richard Caraviello",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Auto Repair and Body Shop Parking Review",
+   "t": 2341,
+   "summary": "Councilors discussed neighborhood complaints regarding auto repair shops storing disabled vehicles on public streets in the Mystic Avenue area. The chair will research ordinances from other municipalities and conduct outreach to local businesses and city departments for a future meeting.",
+   "speakers": [
+    "Zac Bears",
+    "Richard Caraviello",
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Bill Forte"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19044,
+  "output_tokens": 317,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

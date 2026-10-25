@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "a741e4554b742053",
- "subject": "",
+ "subject": "City Council Charter Provisions",
  "overview": "The Medford Charter Study Committee met to review comparative data on city council charter provisions and plan upcoming community engagement efforts. The committee voted to submit an official response statement regarding proposed City Council charter amendments and heard an announcement of co-chair Laurel Siegel's resignation.",
  "items": [
   {
@@ -81,5 +81,6 @@
   "input_tokens": 18632,
   "output_tokens": 535,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
