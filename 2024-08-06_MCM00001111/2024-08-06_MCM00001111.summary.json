@@ -1,0 +1,40 @@
+{
+ "video_id": "MCM00001111",
+ "provider": "gemini",
+ "generated_at": "2026-10-25T01:07:30Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1dceb8552206be33",
+ "subject": "17 Green Road Demolition Delay",
+ "overview": "The Medford Historical Commission voted to release the demolition delay for 17 Green Road following architectural revisions. Commissioners also discussed methods to streamline the demolition delay review process.",
+ "items": [
+  {
+   "title": "17 Green Road Demolition Delay",
+   "t": 44,
+   "summary": "The Commission voted to release the demolition delay for 17 Green Road based on revised plans for the proposed addition.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Doug Carr",
+    "Peter Miller",
+    "Ryan Hayward"
+   ]
+  },
+  {
+   "title": "Demolition Delay Process Review",
+   "t": 390,
+   "summary": "Commissioners discussed strategies to accelerate demolition delay review timelines and agreed to survey other Massachusetts historical commissions on their procedures.",
+   "speakers": [
+    "Doug Carr",
+    "Ryan Hayward",
+    "Jennifer Keenan",
+    "Peter Miller"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5857,
+  "output_tokens": 244,
+  "model_version": "gemini-3.6-flash"
+ }
+}
