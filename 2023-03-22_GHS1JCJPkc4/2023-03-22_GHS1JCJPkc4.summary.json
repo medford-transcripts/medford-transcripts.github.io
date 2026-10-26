@@ -1,0 +1,50 @@
+{
+ "video_id": "GHS1JCJPkc4",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T11:07:17Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "844c2056f742ba3b",
+ "subject": "Middle School Lottery Process",
+ "overview": "Medford Public Schools administration presented an informational session detailing the history, mechanics, and timeline of the annual middle school lottery used to balance enrollments between the McGlynn and Andrews middle schools. Officials reviewed sibling preferences, English learner and special education placements, and answered questions from families.",
+ "items": [
+  {
+   "title": "Welcome and Attendance Check",
+   "t": 16,
+   "summary": "Superintendent Edouard-Vincent and Mayor Lungo-Koehn welcomed families and conducted an informal roll call of students and parents representing each elementary school.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Marice Edouard-Vincent",
+    "Bernadette Ricciardelli"
+   ]
+  },
+  {
+   "title": "Middle School Lottery Presentation and Timeline",
+   "t": 400,
+   "summary": "Superintendent Edouard-Vincent reviewed demographic data showing improved balance between the Andrews and McGlynn schools since the lottery began in 2019, explained the allocation formulas, and outlined the schedule culminating in the April 12 lottery draw.",
+   "speakers": [
+    "Marice Edouard-Vincent",
+    "Bernadette Ricciardelli",
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Public Questions and Answers",
+   "t": 1969,
+   "summary": "Administrators answered parent questions concerning IEP placements, new student registrations, handling of twins, curriculum parity, and opportunities for social interaction across schools.",
+   "speakers": [
+    "Bernadette Ricciardelli",
+    "Marice Edouard-Vincent",
+    "Breanna Lungo-Koehn",
+    "SPEAKER_04",
+    "SPEAKER_02"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15689,
+  "output_tokens": 373,
+  "model_version": "gemini-3.8-flash"
+ }
+}

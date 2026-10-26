@@ -1,0 +1,39 @@
+{
+ "video_id": "MCM00000444",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T11:08:37Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b0a59650608fa9f8",
+ "subject": "Condominium Conversion Ordinance",
+ "overview": "The subcommittee met to discuss paper 22-321, a proposal to enact a local condominium conversion ordinance in Medford. Members reviewed regional ordinance comparisons and passed motions requesting municipal data and staff feedback to guide future drafting.",
+ "items": [
+  {
+   "title": "Discussion on Condominium Conversion Ordinance Proposal",
+   "t": 29,
+   "summary": "Councilor Collins presented an overview and comparative analysis of condominium conversion ordinances from five Massachusetts municipalities, while city staff discussed local housing data, tax implications, and building code considerations.",
+   "speakers": [
+    "Zac Bears",
+    "Kit Collins",
+    "Alicia Hunt",
+    "Bill Forte"
+   ]
+  },
+  {
+   "title": "Requests for Department Data and Staff Feedback",
+   "t": 3608,
+   "summary": "The subcommittee approved motions requesting historical condo conversion data from city departments and soliciting staff feedback on policy goals and potential negative consequences to avoid.",
+   "speakers": [
+    "Zac Bears",
+    "Kit Collins",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19501,
+  "output_tokens": 227,
+  "model_version": "gemini-3.6-flash"
+ }
+}
