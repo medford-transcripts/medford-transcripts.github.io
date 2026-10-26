@@ -1,0 +1,48 @@
+{
+ "video_id": "Pl78NKoMOYw",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T10:14:55Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7e815fcd157bccf8",
+ "subject": "MVTHS Graphic Design Shop Profile",
+ "overview": "The Graphic Design department at Medford Vocational Technical High School presented a profile of its curriculum, instructional philosophy, and career preparation pathways.",
+ "items": [
+  {
+   "title": "Program Introduction",
+   "t": 0,
+   "summary": "Instructor Lou Spagnola and students Blake, John McLaughlin, and Marcus introduced the Medford Vocational Technical High School Graphic Design program.",
+   "speakers": [
+    "Blake",
+    "John McLaughlin",
+    "Marcus",
+    "Lou Spagnola"
+   ]
+  },
+  {
+   "title": "Instructional Philosophy and Environment",
+   "t": 22,
+   "summary": "Spagnola and students discussed the shop's emphasis on maintaining a comfortable, creative environment that prioritizes industry standards over busy work.",
+   "speakers": [
+    "Lou Spagnola",
+    "Junkoski",
+    "Cogell"
+   ]
+  },
+  {
+   "title": "Curriculum and Career Preparation",
+   "t": 81,
+   "summary": "The presentation detailed training in logo creation, branding, and sign making, which prepares students for both higher education and immediate entry into the workforce.",
+   "speakers": [
+    "Lou Spagnola",
+    "Junkoski"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1524,
+  "output_tokens": 319,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

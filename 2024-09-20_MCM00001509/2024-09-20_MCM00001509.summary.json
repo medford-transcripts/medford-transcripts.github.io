@@ -1,0 +1,45 @@
+{
+ "video_id": "MCM00001509",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T10:15:16Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "974a86f7ad12c1af",
+ "subject": "Winthrop Street Milling and Paving Schedule",
+ "overview": "Eversource and city officials presented two scheduling options for milling work on Winthrop Street, weighing the traffic impacts of daytime construction against the noise impacts of nighttime work.",
+ "items": [
+  {
+   "title": "Eversource Project Presentation",
+   "t": 0,
+   "summary": "Eversource presented plans to mill a 0.6-mile stretch of Winthrop Street, offering a choice between an 11-day daytime schedule with significant traffic detours or a 5-day nighttime schedule with less traffic impact.",
+   "speakers": [
+    "Yana Linhart",
+    "Ayo Osamboni"
+   ]
+  },
+  {
+   "title": "Public Discussion and Resident Feedback",
+   "t": 266,
+   "summary": "Residents in attendance expressed a preference for nighttime work to minimize the duration of the project, while city officials noted a current preference for daytime work to avoid noise disturbances for abutters.",
+   "speakers": [
+    "Owen Wartella",
+    "Bill Giglio"
+   ]
+  },
+  {
+   "title": "Timeline and Final Decision Process",
+   "t": 812,
+   "summary": "Officials stated that a final decision on the schedule would be made within a week to accommodate contractor planning, with all paving work targeted for completion by July.",
+   "speakers": [
+    "Ayo Osamboni",
+    "Owen Wartella"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5449,
+  "output_tokens": 355,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
