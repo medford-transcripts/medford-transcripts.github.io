@@ -1,0 +1,62 @@
+{
+ "video_id": "MCM00000638",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T02:06:18Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4ee532c09c8fe78d",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals held a special meeting to act on two continued items, denying a dimensional variance for a home music studio garage addition on Governors Avenue and approving a special permit for a retail marijuana dispensary on Mystic Avenue.",
+ "items": [
+  {
+   "title": "93 Governors Ave Variance Request",
+   "t": 135,
+   "summary": "The board voted 4-1 to deny Leonardo Blanco's request for side and rear yard setback variances to construct an attached two-car garage with a second-floor acoustic music studio after abutters voiced opposition over the building's scale and proximity to lot lines.",
+   "speakers": [
+    "Mike Caldera",
+    "Theresa Dupont",
+    "Leonardo Blanco",
+    "John Andrews",
+    "Jamie Thompson",
+    "Alicia Hunt",
+    "Andre Leroux",
+    "Kirill Jacobson",
+    "Colm Lynch",
+    "Catherine Gaffney",
+    "Tanya Zucconi",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "114 Mystic Ave Special Permit",
+   "t": 4948,
+   "summary": "The board unanimously approved a special permit for New England Organics LLC to operate a retail marijuana dispensary at 114 Mystic Ave, attaching conditions requiring traffic safety review for signage placement and good-faith consultations on departmental plans.",
+   "speakers": [
+    "Mike Caldera",
+    "Theresa Dupont",
+    "Jason",
+    "Daniel",
+    "Jamie Thompson",
+    "Andre Leroux",
+    "Alicia Hunt",
+    "Jonathan Silverstein",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Adjournment",
+   "t": 11281,
+   "summary": "Staff confirmed member appointment letters were being processed, and the board adjourned without further business.",
+   "speakers": [
+    "Mike Caldera",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 51429,
+  "output_tokens": 476,
+  "model_version": "gemini-3.6-flash"
+ }
+}
