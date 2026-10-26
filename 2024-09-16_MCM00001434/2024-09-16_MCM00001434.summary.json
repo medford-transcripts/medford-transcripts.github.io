@@ -1,0 +1,48 @@
+{
+ "video_id": "MCM00001434",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T12:06:52Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "18123c8f3e5edf06",
+ "subject": "",
+ "overview": "The Board of Health approved a food safety variance for a local restaurant and discussed the recruitment process for a new public health nurse. The Board also reviewed plans for utilizing upcoming opioid settlement funds for prevention and recovery support.",
+ "items": [
+  {
+   "title": "Approval of minutes",
+   "t": 17,
+   "summary": "Approved the minutes from the January 17 meeting.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Dr. Plattowitz",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Matsuba sushi rice variance request",
+   "t": 52,
+   "summary": "Approved a variance for the acidification of sushi rice at Matsuba after reviewing the establishment's HACCP plan and standard operating procedures for pH monitoring.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Emily Hedeman",
+    "Adam Hurtubise",
+    "Dr. Plattowitz",
+    "Ms. Chen"
+   ]
+  },
+  {
+   "title": "Staffing and opioid settlement updates",
+   "t": 493,
+   "summary": "Director O'Connor announced the vacancy of the public health nurse position and discussed the status of opioid settlement funds, which will involve community listening sessions and City Council appropriation.",
+   "speakers": [
+    "MaryAnn O'Connor"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4658,
+  "output_tokens": 339,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
