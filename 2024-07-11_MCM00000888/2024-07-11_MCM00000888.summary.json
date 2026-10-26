@@ -1,0 +1,39 @@
+{
+ "video_id": "MCM00000888",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T09:19:00Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "0324f5200f4a643c",
+ "subject": "Superintendent Evaluation Template Selection",
+ "overview": "The subcommittee met to determine the format and process for the 2022-23 superintendent evaluation, ultimately selecting a standardized state template over a custom format.",
+ "items": [
+  {
+   "title": "Superintendent Evaluation Template Options",
+   "t": 143,
+   "summary": "Approved the use of the Department of Elementary and Secondary Education (DESE) template for the superintendent evaluation instead of a custom Google Sheet. The committee debated the merits of data aggregation efficiency versus the standardization provided by the official state form.",
+   "speakers": [
+    "Sharon Hays",
+    "Jenny Graham",
+    "Melanie McLaughlin",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "Evaluation Instructions and Timeline",
+   "t": 1362,
+   "summary": "Reviewed draft instructions for the evaluation process and scheduled a follow-up meeting for April 24 to finalize materials before the full committee review on May 8.",
+   "speakers": [
+    "Sharon Hays",
+    "Melanie McLaughlin",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13269,
+  "output_tokens": 275,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

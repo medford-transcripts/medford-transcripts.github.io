@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "2b4b32e37bc35d7a",
- "subject": "",
+ "subject": "The Stupid Siblings Show Episode Recording",
  "overview": "Participants recorded an episode of the youth podcast 'The Stupid Siblings Show,' discussing sibling relationships and conflicts. The group answered interview questions about their siblings before concluding with a humorous promotional sketch.",
  "items": [
   {
@@ -62,5 +62,6 @@
   "input_tokens": 6139,
   "output_tokens": 419,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
