@@ -1,0 +1,26 @@
+{
+ "video_id": "XXXXXX00067",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T07:18:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b520224ebf945dda",
+ "subject": "Medford Public Library Podcast Workshop",
+ "overview": "Host Danielle Balocca announced upcoming bonus episodes produced by students from the Medford Public Library's podcast workshop.",
+ "items": [
+  {
+   "title": "Student Podcast Content Announcement",
+   "t": 0,
+   "summary": "Danielle Balocca introduced bonus episodes featuring original student podcasts created during a workshop at the Medford Public Library.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1037,
+  "output_tokens": 121,
+  "model_version": "gemini-3.6-flash"
+ }
+}
