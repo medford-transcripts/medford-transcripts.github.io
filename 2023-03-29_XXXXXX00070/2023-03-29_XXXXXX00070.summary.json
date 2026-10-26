@@ -1,0 +1,51 @@
+{
+ "video_id": "XXXXXX00070",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T08:19:49Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "11cc5dfe6163bed6",
+ "subject": "Cat Trivia",
+ "overview": "Contestants competed in the premiere episode of Trivia On Air, answering trivia questions focused on cats across two rounds.",
+ "items": [
+  {
+   "title": "Introduction and Contestant Welcome",
+   "t": 4,
+   "summary": "Contestants were introduced for the first episode of the trivia competition.",
+   "speakers": []
+  },
+  {
+   "title": "Cat Trivia: Round One",
+   "t": 51,
+   "summary": "Contestants answered questions regarding cat biology, behavior, and population statistics.",
+   "speakers": [
+    "Asya",
+    "Marie",
+    "Ryan"
+   ]
+  },
+  {
+   "title": "Cat Trivia: Round Two",
+   "t": 262,
+   "summary": "A new contestant joined the game as participants answered additional questions about cat breeds, lifespans, and habits.",
+   "speakers": [
+    "Slater",
+    "Ryan",
+    "Marie",
+    "Asya"
+   ]
+  },
+  {
+   "title": "Episode Conclusion",
+   "t": 540,
+   "summary": "The host concluded the questions and directed viewers to the following episode for the final results.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4143,
+  "output_tokens": 259,
+  "model_version": "gemini-3.8-flash"
+ }
+}

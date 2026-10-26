@@ -1,0 +1,66 @@
+{
+ "video_id": "XXXXXX00069",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T08:13:21Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2b4b32e37bc35d7a",
+ "subject": "",
+ "overview": "Participants recorded an episode of the youth podcast 'The Stupid Siblings Show,' discussing sibling relationships and conflicts. The group answered interview questions about their siblings before concluding with a humorous promotional sketch.",
+ "items": [
+  {
+   "title": "Podcast Introduction and Sibling Profiles",
+   "t": 4,
+   "summary": "Participants introduced the show and shared the names, ages, and genders of their siblings.",
+   "speakers": [
+    "Annika",
+    "Izzy",
+    "Penny"
+   ]
+  },
+  {
+   "title": "Sibling Descriptions and Annoyance Ratings",
+   "t": 81,
+   "summary": "Participants described their siblings in single words, rated their annoyance levels, and recounted disruptive stories from art museum visits and piano practice.",
+   "speakers": [
+    "Penny",
+    "Izzy"
+   ]
+  },
+  {
+   "title": "Self-Assessments and Personality Descriptions",
+   "t": 217,
+   "summary": "The group debated whether they considered themselves angels or devils and offered one-word descriptions of their own personalities.",
+   "speakers": [
+    "Izzy",
+    "Annika",
+    "Ava",
+    "Conrad",
+    "Penny"
+   ]
+  },
+  {
+   "title": "Love Scale Ratings",
+   "t": 386,
+   "summary": "Participants rated their level of love and affection for their siblings on a scale from one to ten.",
+   "speakers": [
+    "Izzy",
+    "Conrad",
+    "Annika",
+    "Ava"
+   ]
+  },
+  {
+   "title": "Novelty Prank Product Commercials",
+   "t": 541,
+   "summary": "The podcast concluded with a comedic pitch for fictional prank products called 'The Slappy Diapy' and 'The Real Diapy.'",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6139,
+  "output_tokens": 419,
+  "model_version": "gemini-3.8-flash"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "video_id": "XXXXXX00068",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T08:11:49Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d4f613dc676d1fc7",
+ "subject": "Hypothetical Absence of Gravity",
+ "overview": "The hosts recorded the first episode of the Freaking Out on Science podcast to explore a world without gravity. The discussion included comedic claims about scientific history and a promotional message.",
+ "items": [
+  {
+   "title": "Podcast Introduction",
+   "t": 4,
+   "summary": "The show opens with an introduction to the comedy podcast premise alongside cast credits.",
+   "speakers": [
+    "Adam Peleguin",
+    "Nicholas Camargo",
+    "Daniel Erthel",
+    "Joe Hogan",
+    "Katherine Nguyen"
+   ]
+  },
+  {
+   "title": "Absence of Gravity",
+   "t": 73,
+   "summary": "Co-hosts Joe, Adam, and Dan pose the episode question regarding what would happen if gravity ceased to exist.",
+   "speakers": [
+    "Joe",
+    "Adam",
+    "Dan"
+   ]
+  },
+  {
+   "title": "Sponsor Announcement",
+   "t": 164,
+   "summary": "A promotional advertisement is read for sponsor Spatula City.",
+   "speakers": []
+  },
+  {
+   "title": "Discussion on Gravity and Historical Figures",
+   "t": 200,
+   "summary": "The participants present comedic theories regarding Isaac Newton, Nikola Tesla, and Frederick Douglass before concluding the episode.",
+   "speakers": [
+    "Catherine"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2745,
+  "output_tokens": 285,
+  "model_version": "gemini-3.6-flash"
+ }
+}

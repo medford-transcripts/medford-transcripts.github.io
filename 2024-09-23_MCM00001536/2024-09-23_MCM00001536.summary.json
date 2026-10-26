@@ -1,0 +1,73 @@
+{
+ "video_id": "MCM00001536",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T08:26:44Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "57ce7e308b65af9d",
+ "subject": "",
+ "overview": "The Medford Water and Sewer Commission met to review past minutes, postpone scheduled abatement appeals, and discuss water system infrastructure funding, rate setting, and unaccounted-for water loss.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 80,
+   "summary": "The commission approved the minutes from the previous meeting held on February 22.",
+   "speakers": [
+    "Dan Stoneking"
+   ]
+  },
+  {
+   "title": "Commitments",
+   "t": 110,
+   "summary": "The commission postponed action on commitments until the next meeting to allow for proper signatures.",
+   "speakers": [
+    "Dan Stoneking"
+   ]
+  },
+  {
+   "title": "Abatement Appeal: 5A Ashland Street",
+   "t": 178,
+   "summary": "The abatement appeal for 5A Ashland Street was deferred after determining the applicant was not in attendance.",
+   "speakers": [
+    "Dan Stoneking",
+    "Ron Baker",
+    "Adam Hurtubise",
+    "Richard Orlando"
+   ]
+  },
+  {
+   "title": "Medford Housing Abatements",
+   "t": 784,
+   "summary": "Staff presented 28 abatement requests from Medford Housing concerning late fees and returned check interest, which were deferred for further review at the next meeting.",
+   "speakers": [
+    "Dan Stoneking",
+    "Ron Baker",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Future Meeting Schedule",
+   "t": 1001,
+   "summary": "The commission considered upcoming meeting dates for April, May, and June to coordinate member and public availability.",
+   "speakers": [
+    "Dan Stoneking",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Water Rates and System Infrastructure Discussion",
+   "t": 1255,
+   "summary": "Commission members and department staff discussed long-term capital plans for replacing aging water mains, future rate structures, the use of retained earnings, and plans to locate uncounted water loss.",
+   "speakers": [
+    "Dan Stoneking",
+    "Ron Baker"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15894,
+  "output_tokens": 544,
+  "model_version": "gemini-3.6-flash"
+ }
+}

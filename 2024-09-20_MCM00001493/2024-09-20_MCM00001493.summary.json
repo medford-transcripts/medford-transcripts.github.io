@@ -1,0 +1,51 @@
+{
+ "video_id": "MCM00001493",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T08:26:18Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "df1f3386bf20958e",
+ "subject": "CDBG Annual Action Plan",
+ "overview": "City staff held a public hearing to outline the annual Community Development Block Grant process and receive feedback from residents and local service agencies. Attendees discussed CDBG-funded public services, capital projects, and supplemental ARPA grant opportunities.",
+ "items": [
+  {
+   "title": "CDBG Program Presentation",
+   "t": 1,
+   "summary": "City staff presented an overview of the CDBG program, detailing low- and moderate-income guidelines, funding allocation caps, and upcoming municipal improvement projects.",
+   "speakers": [
+    "Alicia Hunt",
+    "Ashley Williams"
+   ]
+  },
+  {
+   "title": "Public Comment from Service Providers and Residents",
+   "t": 684,
+   "summary": "Community members and agency representatives shared feedback on CDBG-funded services, highlighting the impact of senior transportation, ESOL classes, food security, and housing support.",
+   "speakers": [
+    "Renee Franks",
+    "Anne Bosman",
+    "Stella Mack",
+    "Heather Van Norman",
+    "Terry Carter",
+    "Nima",
+    "John Keegan"
+   ]
+  },
+  {
+   "title": "ARPA Grant Coordination",
+   "t": 1701,
+   "summary": "Staff discussed coordinating CDBG applications with available American Rescue Plan Act funds to help address funding requests that exceed CDBG allocations.",
+   "speakers": [
+    "Alicia Hunt",
+    "Ashley Williams",
+    "Anne Bosman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11630,
+  "output_tokens": 300,
+  "model_version": "gemini-3.6-flash"
+ }
+}
