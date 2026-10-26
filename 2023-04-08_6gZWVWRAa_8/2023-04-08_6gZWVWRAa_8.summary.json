@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "48e9d96133008dde",
- "subject": "",
+ "subject": "8th Annual Legislative Forum",
  "overview": "Medford municipal and school officials joined the local state legislative delegation for the 8th Annual Legislative Forum at the West Medford Community Center to answer constituent questions on transportation, housing, aging, charter review, and municipal staffing.",
  "items": [
   {
@@ -108,5 +108,6 @@
   "input_tokens": 27046,
   "output_tokens": 1010,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
