@@ -1,0 +1,36 @@
+{
+ "video_id": "q2M5tEbmTMI",
+ "provider": "gemini",
+ "generated_at": "2026-10-26T22:06:49Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "73f877e33811acd4",
+ "subject": "",
+ "overview": "The broadcast examined the 1980 Depositors Trust bank burglary in Medford planned by corrupt police officers, followed by the Bre-X mining fraud orchestrated in Indonesia.",
+ "items": [
+  {
+   "title": "Depositors Trust Burglary",
+   "t": 1,
+   "summary": "Commentators detailed the 1980 Memorial Day weekend burglary of Depositors Trust in Medford led by Police Captain Jerry Clemente, which resulted in the theft of $10 million and ended with convictions after coconspirators confessed.",
+   "speakers": [
+    "Robert Long",
+    "Kevin Stevens",
+    "William Lisano",
+    "Dave Burns",
+    "Barbara Hickey"
+   ]
+  },
+  {
+   "title": "Bre-X Mining Fraud",
+   "t": 1367,
+   "summary": "The broadcast documented how geologist Michael de Guzman faked a massive Indonesian gold deposit by salting core samples to inflate Bre-X stock before the fraud unraveled and he disappeared.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14427,
+  "output_tokens": 216,
+  "model_version": "gemini-3.8-flash"
+ }
+}
