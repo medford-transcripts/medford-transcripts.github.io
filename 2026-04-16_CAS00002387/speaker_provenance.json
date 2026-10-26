@@ -1,0 +1,42 @@
+{
+    "SPEAKER_00": {
+        "value": "Jenny Graham",
+        "source": "embedding_match",
+        "score": 0.9954636250033743,
+        "from": "SgSscsRWpgM_SPEAKER_02",
+        "at": "2026-10-26T16:40:14Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Suzanne Galusi",
+        "source": "embedding_match",
+        "score": 0.9974609913359781,
+        "from": "SgSscsRWpgM_SPEAKER_00",
+        "at": "2026-10-26T16:40:14Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Matt Rice",
+        "source": "embedding_match",
+        "score": 0.9968008061419968,
+        "from": "SgSscsRWpgM_SPEAKER_01",
+        "at": "2026-10-26T16:40:14Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Will Pipicelli",
+        "source": "embedding_match",
+        "score": 0.9919146516766203,
+        "from": "SgSscsRWpgM_SPEAKER_04",
+        "at": "2026-10-26T16:40:14Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Matt Gulino",
+        "source": "embedding_match",
+        "score": 0.9964876544056905,
+        "from": "SgSscsRWpgM_SPEAKER_03",
+        "at": "2026-10-26T16:40:14Z",
+        "previous": "SPEAKER_04"
+    }
+}
