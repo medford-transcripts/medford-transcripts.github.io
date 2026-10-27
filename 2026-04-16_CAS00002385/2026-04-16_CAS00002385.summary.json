@@ -1,21 +1,21 @@
 {
  "video_id": "CAS00002385",
  "provider": "gemini",
- "generated_at": "2026-10-27T07:09:32Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-10-27T08:10:01Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "9a5e07ca6fa8efa1",
- "subject": "",
- "overview": "The board voted to recommend the adoption of the Medford Square District Zoning Amendment to the City Council. It also opened and continued public hearings on a retail conversion at 85 Main Street and a proposed Tufts University aquatic center at 130 College Avenue.",
+ "transcript_sha": "e4a06488de79caf7",
+ "subject": "Medford Square District Zoning Amendment",
+ "overview": "The Medford Community Development Board reviewed site plan applications for a retail conversion at 85 Main Street and a new Tufts University aquatic center, continuing both public hearings. The board also voted to recommend city council adoption of the revised Medford Square District Zoning Amendment.",
  "items": [
   {
    "title": "85 Main Street Site Plan Review",
-   "t": 137,
-   "summary": "Continued to May 6 the public hearing on an application by M&E 85 Main Street LLC to convert an existing auto repair shop at a gas station into a convenience retail store with site and landscaping improvements.",
+   "t": 132,
+   "summary": "The board continued the public hearing for site plan review to convert a motor vehicle repair establishment into a neighborhood retail store at 85 Main Street to May 6, 2026.",
    "speakers": [
     "Doug Carr",
-    "Danielle Evans",
     "Sean Beagan",
+    "Danielle Evans",
     "Aiden Schlotman",
     "Paige Buldini",
     "Dina Caloggero",
@@ -24,9 +24,9 @@
    ]
   },
   {
-   "title": "130 College Avenue Site Plan Review (Tufts Aquatic Center)",
-   "t": 1435,
-   "summary": "Continued to May 6 the public hearing on Tufts University's Dover Amendment application to construct a 45,800-square-foot all-electric aquatic center and tennis team facility. Board members and residents raised concerns regarding parking capacity, College Avenue pedestrian safety, and the architectural scale of the southern brick wall facing the athletic fields.",
+   "title": "Tufts Aquatic Center Site Plan Review",
+   "t": 1421,
+   "summary": "The board heard a presentation on Tufts University's proposed 45,800-square-foot aquatic center at 130 College Avenue and continued the Dover Amendment site plan review to May 6, 2026.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -38,9 +38,9 @@
     "Greg McGuire",
     "Robert Corbett",
     "Dina Caloggero",
+    "Alicia Hunt",
     "Paige Buldini",
     "Sean Beagan",
-    "Alicia Hunt",
     "John Anderson",
     "Jeremy Martin",
     "Judith Weinstock"
@@ -49,7 +49,7 @@
   {
    "title": "Medford Square District Zoning Amendment",
    "t": 6660,
-   "summary": "Closed the public hearing and voted to recommend that the City Council adopt the revised Medford Square District Zoning Amendment text dated April 15, 2026, and zoning map dated March 23, 2026. Revisions addressed upper-story step backs along High Street, daylight and shadow study standards, and historic preservation incentives.",
+   "summary": "After reviewing revised draft language regarding building step backs, height calculations, and historic preservation incentives, the board voted to recommend that the City Council adopt the zoning amendment text and map.",
    "speakers": [
     "Doug Carr",
     "Alicia Hunt",
@@ -59,14 +59,14 @@
     "John Anderson",
     "Jeremy Martin",
     "Judith Weinstock",
-    "Sean Beagan",
-    "Christian Zepeda-Lipovsky"
+    "Christian Zepeda-Lipovsky",
+    "Sean Beagan"
    ]
   },
   {
-   "title": "Administrative Updates and Upcoming Business",
-   "t": 9528,
-   "summary": "Discussed departmental staffing updates, procedures to give board members earlier notification of new filings, and upcoming preliminary planning work on zoning for the Boston Avenue and Tufts campus area.",
+   "title": "Administrative Business and Approval of Minutes",
+   "t": 9548,
+   "summary": "Staff introduced new Economic Development Director John Ahumada and discussed advance notification procedures for board filings before the board approved previous meeting minutes.",
    "speakers": [
     "Doug Carr",
     "Danielle Evans",
@@ -77,24 +77,12 @@
     "Christian Zepeda-Lipovsky",
     "Dina Caloggero"
    ]
-  },
-  {
-   "title": "Approval of Minutes",
-   "t": 10548,
-   "summary": "Approved meeting minutes from December 17, 2025, and January 7, 2025.",
-   "speakers": [
-    "Doug Carr",
-    "John Anderson",
-    "Sean Beagan",
-    "Paige Buldini",
-    "Dina Caloggero"
-   ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 60086,
-  "output_tokens": 747,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 60091,
+  "output_tokens": 595,
+  "model_version": "gemini-3.6-flash"
  }
 }
