@@ -1,0 +1,46 @@
+{
+ "video_id": "MCM00001331",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T10:07:38Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "a7cb5383af4c6848",
+ "subject": "",
+ "overview": "The Conservation Commission approved modernization plans for a housing development at 121 Riverside Avenue and the Phase 4 extension of the Malden River pedestrian pathway. Both projects were approved with conditions regarding site restoration and native plantings.",
+ "items": [
+  {
+   "title": "121 Riverside Avenue Amended Notice of Intent",
+   "t": 52,
+   "summary": "Approved an amended plan for property modernization that removes current reliance on MassDOT land to satisfy funding deadlines. The approval includes conditions to revert to the original design if land rights are later secured and to replace any damaged vegetation with native species.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Tom Hughes",
+    "Steve Sawyer",
+    "Christopher Bader",
+    "Craig Drennan"
+   ]
+  },
+  {
+   "title": "Malden River Pathway Notice of Intent",
+   "t": 1391,
+   "summary": "Approved the extension of the Wellington Greenway pedestrian walkway between Wellington Station and the Woods Memorial Bridge. The commission required a site walk after initial tree clearing and the subsequent approval of a native planting plan before construction proceeds.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mark",
+    "John",
+    "Heidi Davis",
+    "Heather",
+    "Christopher Bader",
+    "Craig Drennan",
+    "Marie Izzo"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13719,
+  "output_tokens": 337,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

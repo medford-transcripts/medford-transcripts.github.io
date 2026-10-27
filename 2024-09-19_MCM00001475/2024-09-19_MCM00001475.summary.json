@@ -1,0 +1,36 @@
+{
+ "video_id": "MCM00001475",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T10:07:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "40ec19d656b5342b",
+ "subject": "Motor Vehicle Excise Commitments",
+ "overview": "The Board approved motor vehicle excise commitments for late 2022 and early 2023, totaling over $5.1 million. These approvals authorize the collector to begin issuing tax bills for the accounts specified.",
+ "items": [
+  {
+   "title": "Motor Vehicle Excise Commitment 2022 #7",
+   "t": 80,
+   "summary": "The Board approved commitment number seven for 2022, covering 990 accounts for a total of $38,737.24.",
+   "speakers": [
+    "Ellen Brideau",
+    "Steven Pompeo"
+   ]
+  },
+  {
+   "title": "Motor Vehicle Excise Commitment 2023 #1",
+   "t": 118,
+   "summary": "The Board approved the first commitment for 2023, totaling $5,094,859.27 across 37,525 accounts.",
+   "speakers": [
+    "Ellen Brideau",
+    "Steven Pompeo"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2547,
+  "output_tokens": 269,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
