@@ -1,0 +1,55 @@
+{
+ "video_id": "plvJyIW4I9Q",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T09:31:52Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2732ac3514e4a7d1",
+ "subject": "Programming and Web Development Shop Profile",
+ "overview": "Teacher Mrs. Miller and students present an overview of the Medford Vocational Technical High School Programming and Web Development shop, discussing its curriculum, hands-on projects, and classroom culture.",
+ "items": [
+  {
+   "title": "Shop Overview and Student Experience",
+   "t": 0,
+   "summary": "Teacher Mrs. Miller and student Saini introduce the shop, highlighting its focus on problem-solving, creativity, and building apps and websites with code.",
+   "speakers": [
+    "Miller",
+    "Saini"
+   ]
+  },
+  {
+   "title": "Curriculum and Technical Skills",
+   "t": 35,
+   "summary": "Mrs. Miller outlines the programming languages taught in the shop, including Python, Java, C Sharp, HTML, CSS, and JavaScript, while student George Toufas emphasizes teamwork.",
+   "speakers": [
+    "Miller",
+    "George Toufas"
+   ]
+  },
+  {
+   "title": "District Website Project and Shop Community",
+   "t": 54,
+   "summary": "Mrs. Miller highlights the creation of the district website, and student Billy Toufas describes the supportive classroom environment and teacher guidance.",
+   "speakers": [
+    "Miller",
+    "Billy Toufas"
+   ]
+  },
+  {
+   "title": "Post-Graduation Pathways",
+   "t": 72,
+   "summary": "Student Kouyate shares plans to study computer science and pursue game coding in college using the skills learned in the program.",
+   "speakers": [
+    "Kouyate",
+    "Billy Toufas",
+    "Miller"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1448,
+  "output_tokens": 333,
+  "model_version": "gemini-3.6-flash"
+ }
+}

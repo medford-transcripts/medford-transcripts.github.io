@@ -1,0 +1,29 @@
+{
+ "video_id": "_VdrI6Y_Ezc",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T09:31:09Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4c3d488d130623cc",
+ "subject": "Automotive Technology Shop Profile",
+ "overview": "Instructor Cassidy and students outlined the four-year vocational automotive technology curriculum and shared student experiences in the shop.",
+ "items": [
+  {
+   "title": "Automotive Technology Program Overview",
+   "t": 0,
+   "summary": "Instructor Cassidy reviewed the curriculum from freshman general maintenance to upperclassman diagnostics and electrical work, while students described why they joined the shop.",
+   "speakers": [
+    "Rortamel",
+    "Cassidy",
+    "Ramsay",
+    "Abreu"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1158,
+  "output_tokens": 134,
+  "model_version": "gemini-3.8-flash"
+ }
+}

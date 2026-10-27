@@ -1,76 +1,58 @@
 {
  "committee": "CC Zoning Board of Appeals",
  "provider": "gemini",
- "model": "gemini-3.6-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-26T03:06:02Z",
- "sources_sha": "090fd7a4c4b6867c",
- "n_meetings": 51,
+ "generated_at": "2026-10-27T09:08:35Z",
+ "sources_sha": "a0bfe68ae926ffc3",
+ "n_meetings": 56,
  "period_style": "term",
  "span": [
-  "2023-04-06",
+  "2023-02-23",
   "2026-09-24"
  ],
- "overview": "The Medford Zoning Board of Appeals is a public administrative body responsible for adjudicating petitions for variances, special permits, and Chapter 40B comprehensive permits, as well as hearing administrative appeals of municipal building violations. Operating across a meeting record spanning from April 6, 2023, to September 24, 2026, the board evaluates dimensional, use, site plan, and environmental conditions for residential and commercial properties throughout Medford. Over this period, the board has processed major multi-family M.G.L. Chapter 40B housing developments, commercial site expansions, auto and cannabis business permits, and residential nonconformity extensions. At its most recent meeting, the board evaluated residential use variances and commercial special permits while continuing applications for accessory dwelling units to review modified designs and obtain guidance on state zoning regulations.",
+ "overview": "The CC Zoning Board of Appeals (ZBA) adjudicates petitions for variances, special permits, and findings under the Medford zoning ordinance. Since early 2023, the board has managed several large-scale Chapter 40B comprehensive permit developments, requiring extensive peer reviews of traffic, civil engineering, and architectural massing. Its routine business includes resolving residential disputes over fences, setbacks, and multi-family conversions. At its most recent sessions, the board has focused on interpreting new state regulations regarding accessory dwelling units and the conversion of non-conforming commercial spaces into residential or service-based uses.",
  "threads": [
   {
-   "name": "4000 Mystic Valley Parkway Chapter 40B Permit",
+   "name": "4000 Mystic Valley Parkway (Case 40B-2022-01)",
    "status": "settled",
-   "summary": "The board opened hearings in April 2023 to evaluate a M.G.L. Chapter 40B comprehensive permit application for a proposed 350-unit, eight-story residential development at 4000 Mystic Valley Parkway. Deliberations focused on peer reviews for stormwater management, site congestion, fire safety, linkage fee exemptions, and bicycle storage restrictions. In July 2023, the board approved the comprehensive permit with conditions covering phased occupancy, public art, and a partial linkage fee waiver for market-rate units. The project returned to the board in October 2024, when members determined that design refinements to trash rooms, bike storage, and rooftop amenities constituted insubstantial changes under 40B regulations.",
+   "summary": "The board conducted a multi-month review of this 350-unit development, beginning with peer reviews on traffic and architectural design. Discussions focused on fire safety, construction logistics, and the inclusion of public art in consultation with the Medford Arts Council. The board approved the comprehensive permit with conditions and a partial linkage fee waiver in July 2023. Recent design refinements, including the relocation of bike and trash rooms, were deemed insubstantial changes to the original permit.",
    "citations": [
     {
-     "video_id": "MCM00000623",
-     "t": 41,
-     "date": "2023-04-12",
-     "base": "2024-05-14_MCM00000623",
-     "meeting_title": "Medford Zoning Board of Appeals 04-12-23",
-     "title": "4000 Mystic Valley Parkway (Case 40B-2022-01)",
-     "label": "M02#1"
+     "video_id": "MCM00000613",
+     "t": null,
+     "date": "2023-02-27",
+     "base": "2024-05-14_MCM00000613",
+     "meeting_title": "Medford Zoning Board of Appeals 02-27-23",
+     "title": "Medford Zoning Board of Appeals 02-27-23",
+     "label": "M02"
     },
     {
-     "video_id": "MCM00000639",
-     "t": 90,
-     "date": "2023-04-24",
-     "base": "2024-05-17_MCM00000639",
-     "meeting_title": "Medford Zoning Board of Appeals 04-24-23",
-     "title": "4000 Mississippi Parkway Comprehensive Permit",
-     "label": "M03#2"
-    },
-    {
-     "video_id": "MCM00000624",
-     "t": 2688,
-     "date": "2023-05-15",
-     "base": "2024-05-14_MCM00000624",
-     "meeting_title": "Medford Zoning Board of Appeals 05-15-23",
-     "title": "Waiver List Review",
-     "label": "M06#6"
-    },
-    {
-     "video_id": "MCM00000616",
-     "t": 6660,
-     "date": "2023-05-24",
-     "base": "2024-05-14_MCM00000616",
-     "meeting_title": "Medford Zoning Board of Appeals 05-24-23",
-     "title": "Linkage Fee Finding",
-     "label": "M07#5"
+     "video_id": "MCM00000632",
+     "t": null,
+     "date": "2023-03-13",
+     "base": "2024-05-17_MCM00000632",
+     "meeting_title": "Medford Zoning Board of Appeals 03-13-23",
+     "title": "Medford Zoning Board of Appeals 03-13-23",
+     "label": "M03"
     },
     {
      "video_id": "MCM00000612",
-     "t": 66,
+     "t": null,
      "date": "2023-06-12",
      "base": "2024-05-14_MCM00000612",
      "meeting_title": "Medford Zoning Board of Appeals 06-12-23",
-     "title": "4000 Mystic Valley Parkway (Case 40B-2022-01)",
-     "label": "M10#1"
+     "title": "Medford Zoning Board of Appeals 06-12-23",
+     "label": "M15"
     },
     {
      "video_id": "MCM00000619",
-     "t": 13338,
+     "t": null,
      "date": "2023-07-11",
      "base": "2024-05-14_MCM00000619",
      "meeting_title": "Medford Zoning Board of Appeals 07-11-23",
-     "title": "Final Decision and Permit Approval",
-     "label": "M11#7"
+     "title": "Medford Zoning Board of Appeals 07-11-23",
+     "label": "M16"
     },
     {
      "video_id": "MCM00001600",
@@ -79,14 +61,14 @@
      "base": "2024-12-02_MCM00001600",
      "meeting_title": "Medford Zoning Board Of Appeals 10-24-24",
      "title": "4000 Mystic Valley Parkway",
-     "label": "M38#2"
+     "label": "M43#2"
     }
    ]
   },
   {
-   "name": "970 Fellsway Chapter 40B Permit",
+   "name": "970 Fellsway Residential Development (Case 40B-2023-01)",
    "status": "settled",
-   "summary": "In November 2023, the board began reviewing a Chapter 40B application for a proposed 289-unit multi-family development at 970 Fellsway and authorized hiring peer review consultants. Through early 2024, the board and peer reviewers conducted detailed sessions addressing site massing, traffic impact assessments, civil engineering, stormwater management, and local regulatory waivers. The board voted to approve the comprehensive permit in May 2024, granting a partial linkage fee waiver based on proposed off-site public improvements and settling final peer review and transit conditions. In January 2025, the board granted a special permit to allow a partial commercial building demolition and lot split to preserve lot coverage requirements alongside the approved residential project.",
+   "summary": "This 289-unit project underwent design changes to reduce building massing near residential neighbors and increase pervious open space. The board authorized detailed peer reviews for traffic and civil engineering before approving the comprehensive permit in May 2024. A partial linkage fee waiver was granted in exchange for off-site public improvements. Subsequently, the board approved a special permit for a lot split to maintain the coverage ratios for a separate on-site commercial building.",
    "citations": [
     {
      "video_id": "MCM00000610",
@@ -95,43 +77,25 @@
      "base": "2024-05-14_MCM00000610",
      "meeting_title": "Medford Zoning Board of Appeals 11-30-23",
      "title": "970 Fellsway Chapter 40B Comprehensive Permit",
-     "label": "M16#2"
+     "label": "M21#2"
     },
     {
      "video_id": "MCM00000642",
-     "t": 1,
+     "t": null,
      "date": "2024-01-30",
      "base": "2024-05-17_MCM00000642",
      "meeting_title": "Medford Zoning Board of Appeals 01-30-24",
-     "title": "Architectural Peer Review and Alternative Concept Plan",
-     "label": "M19#1"
-    },
-    {
-     "video_id": "MCM00000646",
-     "t": 83,
-     "date": "2024-03-14",
-     "base": "2024-05-20_MCM00000646",
-     "meeting_title": "Medford Zoning Board of Appeals 03-14-24",
-     "title": "Comprehensive Permit: 970 Fellsway (Case 40B-2023-01)",
-     "label": "M23#1"
+     "title": "Medford Zoning Board of Appeals 01-30-24",
+     "label": "M24"
     },
     {
      "video_id": "MCM00000653",
-     "t": 109,
+     "t": null,
      "date": "2024-05-09",
      "base": "2024-05-20_MCM00000653",
      "meeting_title": "Medford Zoning Board of Appeals 05-09-24",
-     "title": "970 Fellsway Civil Engineering Presentation",
-     "label": "M30#2"
-    },
-    {
-     "video_id": "MCM00000686",
-     "t": 2070,
-     "date": "2024-05-21",
-     "base": "2024-05-23_MCM00000686",
-     "meeting_title": "Medford Zoning Board Of Appeals 05-21-24",
-     "title": "Linkage Ordinance Applicability and Determination",
-     "label": "M32#2"
+     "title": "Medford Zoning Board of Appeals 05-09-24",
+     "label": "M35"
     },
     {
      "video_id": "MCM00000760",
@@ -140,7 +104,7 @@
      "base": "2024-05-31_MCM00000760",
      "meeting_title": "Medford Zoning Board Of Appeals 05-30-24",
      "title": "970 Fellsway comprehensive permit",
-     "label": "M33#3"
+     "label": "M38#3"
     },
     {
      "video_id": "MCM00001697",
@@ -149,161 +113,14 @@
      "base": "2025-01-03_MCM00001697",
      "meeting_title": "Medford Zoning Board Of Appeals 01-02-25",
      "title": "970 Fellsway (Case A-2024-26)",
-     "label": "M40#2"
+     "label": "M45#2"
     }
    ]
   },
   {
-   "name": "280 Mystic Avenue Chapter 40B Permit",
-   "status": "settled",
-   "summary": "The board initiated review of a Chapter 40B comprehensive permit application for a 378-unit residential development at 280 Mystic Avenue in April 2024, authorizing peer review consultants and staff working sessions. In May 2024, the board voted to require the applicant to pay peer review fees by a specified deadline due to a lack of responsiveness. In June 2024, the board accepted the applicant's formal request to withdraw the comprehensive permit petition.",
-   "citations": [
-    {
-     "video_id": "MCM00000652",
-     "t": 44,
-     "date": "2024-04-30",
-     "base": "2024-05-20_MCM00000652",
-     "meeting_title": "Medford Zoning Board of Appeals 04-30-24",
-     "title": "280 Mystic Avenue Comprehensive Permit (Case 40B-2024-01)",
-     "label": "M29#1"
-    },
-    {
-     "video_id": "MCM00000652",
-     "t": 3867,
-     "date": "2024-04-30",
-     "base": "2024-05-20_MCM00000652",
-     "meeting_title": "Medford Zoning Board of Appeals 04-30-24",
-     "title": "Peer Review and Working Sessions Authorization",
-     "label": "M29#2"
-    },
-    {
-     "video_id": "MCM00000760",
-     "t": 231,
-     "date": "2024-05-30",
-     "base": "2024-05-31_MCM00000760",
-     "meeting_title": "Medford Zoning Board Of Appeals 05-30-24",
-     "title": "278–282 Mystic Avenue comprehensive permit",
-     "label": "M33#2"
-    },
-    {
-     "video_id": "MCM00000913",
-     "t": 263,
-     "date": "2024-06-27",
-     "base": "2024-07-17_MCM00000913",
-     "meeting_title": "Medford Zoning Board Of Appeals 06-27-24",
-     "title": "280 Mystic Avenue",
-     "label": "M34#2"
-    }
-   ]
-  },
-  {
-   "name": "Cannabis Special Permits at 114 Mystic Avenue",
-   "status": "settled",
-   "summary": "In April 2023, the board approved a special permit for New England Organics LLC to operate a retail marijuana dispensary at 114 Mystic Avenue with conditions for traffic safety and signage placement. In May 2026, the board granted special permits to Victory Gardens for medical cannabis sales and product manufacturing at the same location, while continuing an application for courier delivery services. After further continuances awaiting legal counsel, the board approved the special permit allowing cannabis delivery services in July 2026.",
-   "citations": [
-    {
-     "video_id": "MCM00000638",
-     "t": 4948,
-     "date": "2023-04-06",
-     "base": "2024-05-17_MCM00000638",
-     "meeting_title": "Medford Zoning Board of Appeals 04-06-23",
-     "title": "114 Mystic Ave Special Permit",
-     "label": "M01#2"
-    },
-    {
-     "video_id": "CAS00002445",
-     "t": 719,
-     "date": "2026-05-28",
-     "base": "2026-06-01_CAS00002445",
-     "meeting_title": "Zoning Board of Appeals 05/28/26",
-     "title": "114 Mystic Avenue: Cannabis Dispensary Special Permits",
-     "label": "M47#2"
-    },
-    {
-     "video_id": "CAS00002482",
-     "t": 31,
-     "date": "2026-06-25",
-     "base": "2026-07-14_CAS00002482",
-     "meeting_title": "Zoning Board of Appeals 06/25/26",
-     "title": "114 Mystic Avenue",
-     "label": "M48#1"
-    },
-    {
-     "video_id": "CAS00002495",
-     "t": 376,
-     "date": "2026-07-30",
-     "base": "2026-07-31_CAS00002495",
-     "meeting_title": "Zoning Board of Appeals 07/30/26",
-     "title": "Special Permit for Cannabis Delivery at 114 Mystic Avenue",
-     "label": "M49#1"
-    }
-   ]
-  },
-  {
-   "name": "Board Leadership and Administrative Rules",
+   "name": "Accessory Dwelling Units (ADUs)",
    "status": "ongoing",
-   "summary": "In April 2023, the board voted to move its regular meeting start time from 7:30 PM to 6:30 PM beginning in May 2023. In April 2024, the board elected Jamie Thompson as chair following the resignation of Mike Caldera. The board initiated discussions in July 2024 regarding the appointment of a subcommittee to update its rules and regulations. Following the resignation of Jamie Thompson, the board elected Mike Caldera as chair in February 2025, while continuing efforts to update administrative procedures and draft outstanding meeting minutes.",
-   "citations": [
-    {
-     "video_id": "MCM00000637",
-     "t": 9505,
-     "date": "2023-04-27",
-     "base": "2024-05-17_MCM00000637",
-     "meeting_title": "Medford Zoning Board of Appeals 04-27-23",
-     "title": "Administrative Updates and Rules of Order",
-     "label": "M04#7"
-    },
-    {
-     "video_id": "MCM00000651",
-     "t": 82,
-     "date": "2024-04-25",
-     "base": "2024-05-20_MCM00000651",
-     "meeting_title": "Medford Zoning Board of Appeals 04-25-24",
-     "title": "Election of Board Chair",
-     "label": "M28#1"
-    },
-    {
-     "video_id": "MCM00001001",
-     "t": 4440,
-     "date": "2024-07-25",
-     "base": "2024-07-26_MCM00001001",
-     "meeting_title": "Zoning Board Of Appeals 07-25-24",
-     "title": "Administrative Updates and Minutes",
-     "label": "M35#3"
-    },
-    {
-     "video_id": "MCM00001547",
-     "t": 1049,
-     "date": "2024-09-26",
-     "base": "2024-09-27_MCM00001547",
-     "meeting_title": "Medford Zoning Board Of Appeals 09-26-24",
-     "title": "Administrative Items and Scheduling",
-     "label": "M37#2"
-    },
-    {
-     "video_id": "MCM00001724",
-     "t": 1641,
-     "date": "2025-01-30",
-     "base": "2025-01-31_MCM00001724",
-     "meeting_title": "Medford Zoning Board Of Appeals 01-30-25",
-     "title": "Administrative Updates",
-     "label": "M41#3"
-    },
-    {
-     "video_id": "MCM00001757",
-     "t": 57,
-     "date": "2025-02-27",
-     "base": "2025-03-03_MCM00001757",
-     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
-     "title": "Election of Board Chair",
-     "label": "M42#1"
-    }
-   ]
-  },
-  {
-   "name": "Accessory Dwelling Units and State Zoning Compliance",
-   "status": "ongoing",
-   "summary": "In July 2026, the board approved a rear yard setback variance for an attached accessory dwelling unit (ADU) at 621 Fulton Street, while continuing companion attic expansion and ADU applications for 1-3 Vassar Street and 12 Wellesley Street to allow legal counsel review under new state zoning regulations. The Vassar Street and Wellesley Street applications were continued through August 2026 to maintain voting member consistency. In September 2026, the board continued both petitions to October 2026 to allow the applicant to present smaller modified designs and to obtain additional legal counsel regarding state ADU rules.",
+   "summary": "In early 2026, the board began evaluating petitions for accessory dwelling units under updated state zoning regulations. Petitions on Vassar Street and Wellesley Street have been continued to allow for legal counsel review and design modifications. The board is currently seeking to ensure these developments align with new guidelines while managing neighbor concerns regarding attic expansions and shed dormers.",
    "citations": [
     {
      "video_id": "CAS00002495",
@@ -312,25 +129,7 @@
      "base": "2026-07-31_CAS00002495",
      "meeting_title": "Zoning Board of Appeals 07/30/26",
      "title": "Attic Expansion and ADU Variance at 1-3 Vassar Street",
-     "label": "M49#3"
-    },
-    {
-     "video_id": "CAS00002495",
-     "t": 5687,
-     "date": "2026-07-30",
-     "base": "2026-07-31_CAS00002495",
-     "meeting_title": "Zoning Board of Appeals 07/30/26",
-     "title": "Attic Expansion and ADU Variance at 12 Wellesley Street",
-     "label": "M49#4"
-    },
-    {
-     "video_id": "CAS00002495",
-     "t": 6609,
-     "date": "2026-07-30",
-     "base": "2026-07-31_CAS00002495",
-     "meeting_title": "Zoning Board of Appeals 07/30/26",
-     "title": "Setback Variances for ADU Addition at 621 Fulton Street",
-     "label": "M49#6"
+     "label": "M54#3"
     },
     {
      "video_id": "CAS00002509",
@@ -339,7 +138,7 @@
      "base": "2026-08-28_CAS00002509",
      "meeting_title": "Zoning Board of Appeals 08/27/26",
      "title": "1-3 Vassar Street and 12-14 Wellesley Street",
-     "label": "M50#1"
+     "label": "M55#1"
     },
     {
      "video_id": "CAS00002540",
@@ -348,7 +147,7 @@
      "base": "2026-09-28_CAS00002540",
      "meeting_title": "Zoning Board of Appeals 09/24/26",
      "title": "1-3 Vassar Street",
-     "label": "M51#1"
+     "label": "M56#1"
     },
     {
      "video_id": "CAS00002540",
@@ -357,160 +156,41 @@
      "base": "2026-09-28_CAS00002540",
      "meeting_title": "Zoning Board of Appeals 09/24/26",
      "title": "12 Wellesley Street",
-     "label": "M51#2"
+     "label": "M56#2"
     }
    ]
   },
   {
-   "name": "Commercial and Auto Business Permitting",
+   "name": "Cannabis Dispensary Permitting",
    "status": "settled",
-   "summary": "The board evaluated multiple petitions for commercial expansions and vehicle services across several sessions. In March 2024 and April 2024, the board reviewed a petition for 38 Harvard Avenue, ultimately approving a use variance for limited Class 2 used motor vehicle sales at an existing repair shop subject to screening conditions. In May 2024, the board approved an amendment to a height variance at 400 Mystic Avenue to allow the construction of a new service facility and car elevator for an auto dealership. The board later granted a six-month variance extension for the vehicle sales use at 38 Harvard Avenue in June 2025.",
+   "summary": "The board originally approved a special permit for a retail dispensary at 114 Mystic Avenue in 2023. In 2026, the location received additional special permits for medical cannabis sales and product manufacturing under Victory Gardens. Following consultations with the police chief and legal counsel, the board also approved a special permit to allow courier delivery services from the facility.",
    "citations": [
     {
-     "video_id": "MCM00000648",
-     "t": 3156,
-     "date": "2024-03-28",
-     "base": "2024-05-20_MCM00000648",
-     "meeting_title": "Medford Zoning Board of Appeals 03-28-24",
-     "title": "38 Harvard Avenue",
-     "label": "M25#3"
+     "video_id": "MCM00000614",
+     "t": 5189,
+     "date": "2023-02-23",
+     "base": "2024-05-14_MCM00000614",
+     "meeting_title": "Medford Zoning Board of Appeals 02-23-23",
+     "title": "114 Mystic Avenue Marijuana Dispensary Special Permit",
+     "label": "M01#6"
     },
-    {
-     "video_id": "MCM00000651",
-     "t": 596,
-     "date": "2024-04-25",
-     "base": "2024-05-20_MCM00000651",
-     "meeting_title": "Medford Zoning Board of Appeals 04-25-24",
-     "title": "38 Harvard Avenue",
-     "label": "M28#4"
-    },
-    {
-     "video_id": "MCM00000760",
-     "t": 7461,
-     "date": "2024-05-30",
-     "base": "2024-05-31_MCM00000760",
-     "meeting_title": "Medford Zoning Board Of Appeals 05-30-24",
-     "title": "400 Mystic Avenue height variance amendment",
-     "label": "M33#7"
-    },
-    {
-     "video_id": "MCM00001767",
-     "t": 149,
-     "date": "2025-06-26",
-     "base": "2025-07-03_MCM00001767",
-     "meeting_title": "Medford Zoning Board Of Appeals 06 26 25",
-     "title": "38 Harvard Avenue",
-     "label": "M43#2"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "The board reviewed residential variances, commercial permits, and initiated extensive Chapter 40B comprehensive permit reviews for major multi-family housing projects.",
-   "citations": [
     {
      "video_id": "MCM00000638",
-     "t": 135,
+     "t": 4948,
      "date": "2023-04-06",
      "base": "2024-05-17_MCM00000638",
      "meeting_title": "Medford Zoning Board of Appeals 04-06-23",
-     "title": "93 Governors Ave Variance Request",
-     "label": "M01#1"
-    },
-    {
-     "video_id": "MCM00000637",
-     "t": 3217,
-     "date": "2023-04-27",
-     "base": "2024-05-17_MCM00000637",
-     "meeting_title": "Medford Zoning Board of Appeals 04-27-23",
-     "title": "12 George Street",
-     "label": "M04#5"
-    },
-    {
-     "video_id": "MCM00000619",
-     "t": 13338,
-     "date": "2023-07-11",
-     "base": "2024-05-14_MCM00000619",
-     "meeting_title": "Medford Zoning Board of Appeals 07-11-23",
-     "title": "Final Decision and Permit Approval",
-     "label": "M11#7"
-    },
-    {
-     "video_id": "MCM00000610",
-     "t": 197,
-     "date": "2023-11-30",
-     "base": "2024-05-14_MCM00000610",
-     "meeting_title": "Medford Zoning Board of Appeals 11-30-23",
-     "title": "970 Fellsway Chapter 40B Comprehensive Permit",
-     "label": "M16#2"
-    }
-   ]
-  },
-  {
-   "period": "2024-2025 term",
-   "narrative": "The board processed multiple Chapter 40B applications, adjusted internal board leadership, and granted dimensional and use variances for various residential and commercial properties.",
-   "citations": [
-    {
-     "video_id": "MCM00000641",
-     "t": 676,
-     "date": "2024-01-11",
-     "base": "2024-05-17_MCM00000641",
-     "meeting_title": "Medford Zoning Board of Appeals 01-11-24",
-     "title": "44 Terrace Road Reconstruction",
-     "label": "M17#4"
-    },
-    {
-     "video_id": "MCM00000651",
-     "t": 82,
-     "date": "2024-04-25",
-     "base": "2024-05-20_MCM00000651",
-     "meeting_title": "Medford Zoning Board of Appeals 04-25-24",
-     "title": "Election of Board Chair",
-     "label": "M28#1"
-    },
-    {
-     "video_id": "MCM00000760",
-     "t": 989,
-     "date": "2024-05-30",
-     "base": "2024-05-31_MCM00000760",
-     "meeting_title": "Medford Zoning Board Of Appeals 05-30-24",
-     "title": "970 Fellsway comprehensive permit",
-     "label": "M33#3"
-    },
-    {
-     "video_id": "MCM00001757",
-     "t": 57,
-     "date": "2025-02-27",
-     "base": "2025-03-03_MCM00001757",
-     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
-     "title": "Election of Board Chair",
-     "label": "M42#1"
-    }
-   ]
-  },
-  {
-   "period": "2026-2027 term",
-   "narrative": "The board adjudicated business violation appeals, commercial special permits, and began evaluating accessory dwelling unit proposals in relation to state zoning rules.",
-   "citations": [
-    {
-     "video_id": "CAS00002406",
-     "t": 1606,
-     "date": "2026-04-30",
-     "base": "2026-05-04_CAS00002406",
-     "meeting_title": "Zoning Board of Appeals 04/30/26",
-     "title": "91 Waterville Road",
-     "label": "M46#2"
+     "title": "114 Mystic Ave Special Permit",
+     "label": "M06#2"
     },
     {
      "video_id": "CAS00002445",
-     "t": 27,
+     "t": 719,
      "date": "2026-05-28",
      "base": "2026-06-01_CAS00002445",
      "meeting_title": "Zoning Board of Appeals 05/28/26",
-     "title": "91 Waterville Road: Administrative Appeal of Notice of Violation",
-     "label": "M47#1"
+     "title": "114 Mystic Avenue: Cannabis Dispensary Special Permits",
+     "label": "M52#2"
     },
     {
      "video_id": "CAS00002495",
@@ -519,35 +199,265 @@
      "base": "2026-07-31_CAS00002495",
      "meeting_title": "Zoning Board of Appeals 07/30/26",
      "title": "Special Permit for Cannabis Delivery at 114 Mystic Avenue",
-     "label": "M49#1"
+     "label": "M54#1"
+    }
+   ]
+  },
+  {
+   "name": "Residential Multi-Family Conversions",
+   "status": "ongoing",
+   "summary": "The board frequently hears petitions to convert single-family homes into two-family or three-family dwellings. While some requests are approved based on historical use records or topography hardships, others have been denied for failing to demonstrate a statutory hardship. Major projects in this category include the conversion of an auto repair shop into a three-unit townhouse on Elm Street and a historic restoration of a multi-family home on George Street.",
+   "citations": [
+    {
+     "video_id": "MCM00000637",
+     "t": 3217,
+     "date": "2023-04-27",
+     "base": "2024-05-17_MCM00000637",
+     "meeting_title": "Medford Zoning Board of Appeals 04-27-23",
+     "title": "12 George Street",
+     "label": "M09#5"
+    },
+    {
+     "video_id": "MCM00000645",
+     "t": 11336,
+     "date": "2024-02-29",
+     "base": "2024-05-20_MCM00000645",
+     "meeting_title": "Medford Zoning Board of Appeals 02-29-24",
+     "title": "65 Burgett Avenue",
+     "label": "M27#6"
+    },
+    {
+     "video_id": "MCM00001697",
+     "t": 41,
+     "date": "2025-01-02",
+     "base": "2025-01-03_MCM00001697",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-02-25",
+     "title": "85 Elm Street (Case A-2024-25)",
+     "label": "M45#1"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 321,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "85 Elm Street",
+     "label": "M47#3"
+    },
+    {
+     "video_id": "MCM00001802",
+     "t": 46,
+     "date": "2025-08-28",
+     "base": "2025-08-29_MCM00001802",
+     "meeting_title": "Medford Zoning Board Of Appeals 08-28-25",
+     "title": "121 Second Street",
+     "label": "M50#1"
+    }
+   ]
+  },
+  {
+   "name": "Administrative Appeals and Enforcement",
+   "status": "ongoing",
+   "summary": "The board adjudicates appeals of the building commissioner's decisions, such as the dismissal of an untimely residential alteration appeal. In 2026, the board heard a high-profile appeal regarding a notice of violation for a gutter business operating in a residential zone. After hearing testimony regarding noise and idling trucks, the board upheld the building commissioner's violation notice.",
+   "citations": [
+    {
+     "video_id": "MCM00000614",
+     "t": 3580,
+     "date": "2023-02-23",
+     "base": "2024-05-14_MCM00000614",
+     "meeting_title": "Medford Zoning Board of Appeals 02-23-23",
+     "title": "80 Canal Street Jurisdictional Dismissal",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "CAS00002406",
+     "t": 1606,
+     "date": "2026-04-30",
+     "base": "2026-05-04_CAS00002406",
+     "meeting_title": "Zoning Board of Appeals 04/30/26",
+     "title": "91 Waterville Road",
+     "label": "M51#2"
+    },
+    {
+     "video_id": "CAS00002445",
+     "t": 27,
+     "date": "2026-05-28",
+     "base": "2026-06-01_CAS00002445",
+     "meeting_title": "Zoning Board of Appeals 05/28/26",
+     "title": "91 Waterville Road: Administrative Appeal of Notice of Violation",
+     "label": "M52#1"
+    }
+   ]
+  },
+  {
+   "name": "Board Administration and Procedure",
+   "status": "ongoing",
+   "summary": "The board underwent several leadership changes, electing Mike Caldera as chair in 2023 and 2025, while Jamie Thompson served a term before resigning. Administrative efforts include updating the board's rules and regulations and moving meeting start times to 6:30 PM. To manage a backlog of minutes, the board has implemented new transcription and AI software tools.",
+   "citations": [
+    {
+     "video_id": "MCM00000632",
+     "t": 146,
+     "date": "2023-03-13",
+     "base": "2024-05-17_MCM00000632",
+     "meeting_title": "Medford Zoning Board of Appeals 03-13-23",
+     "title": "Election of Chair",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00000637",
+     "t": 9505,
+     "date": "2023-04-27",
+     "base": "2024-05-17_MCM00000637",
+     "meeting_title": "Medford Zoning Board of Appeals 04-27-23",
+     "title": "Administrative Updates and Rules of Order",
+     "label": "M09#7"
+    },
+    {
+     "video_id": "MCM00001001",
+     "t": 4440,
+     "date": "2024-07-25",
+     "base": "2024-07-26_MCM00001001",
+     "meeting_title": "Zoning Board Of Appeals 07-25-24",
+     "title": "Administrative Updates and Minutes",
+     "label": "M40#3"
+    },
+    {
+     "video_id": "MCM00001724",
+     "t": 1641,
+     "date": "2025-01-30",
+     "base": "2025-01-31_MCM00001724",
+     "meeting_title": "Medford Zoning Board Of Appeals 01-30-25",
+     "title": "Administrative Updates",
+     "label": "M46#3"
+    },
+    {
+     "video_id": "MCM00001757",
+     "t": 57,
+     "date": "2025-02-27",
+     "base": "2025-03-03_MCM00001757",
+     "meeting_title": "Medford Zoning Board Of Appeals 02-27-25",
+     "title": "Election of Board Chair",
+     "label": "M47#1"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "This period focused on the initial review and approval of the 4000 Mystic Valley Parkway 40B project and several residential multi-family conversions.",
+   "citations": [
+    {
+     "video_id": "MCM00000613",
+     "t": null,
+     "date": "2023-02-27",
+     "base": "2024-05-14_MCM00000613",
+     "meeting_title": "Medford Zoning Board of Appeals 02-27-23",
+     "title": "Medford Zoning Board of Appeals 02-27-23",
+     "label": "M02"
+    },
+    {
+     "video_id": "MCM00000637",
+     "t": null,
+     "date": "2023-04-27",
+     "base": "2024-05-17_MCM00000637",
+     "meeting_title": "Medford Zoning Board of Appeals 04-27-23",
+     "title": "Medford Zoning Board of Appeals 04-27-23",
+     "label": "M09"
+    },
+    {
+     "video_id": "MCM00000619",
+     "t": null,
+     "date": "2023-07-11",
+     "base": "2024-05-14_MCM00000619",
+     "meeting_title": "Medford Zoning Board of Appeals 07-11-23",
+     "title": "Medford Zoning Board of Appeals 07-11-23",
+     "label": "M16"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The board processed the 970 Fellsway 40B application and addressed numerous residential variances for additions, fences, and parking flooding mitigation.",
+   "citations": [
+    {
+     "video_id": "MCM00000610",
+     "t": null,
+     "date": "2023-11-30",
+     "base": "2024-05-14_MCM00000610",
+     "meeting_title": "Medford Zoning Board of Appeals 11-30-23",
+     "title": "Medford Zoning Board of Appeals 11-30-23",
+     "label": "M21"
+    },
+    {
+     "video_id": "MCM00000760",
+     "t": null,
+     "date": "2024-05-30",
+     "base": "2024-05-31_MCM00000760",
+     "meeting_title": "Medford Zoning Board Of Appeals 05-30-24",
+     "title": "Medford Zoning Board Of Appeals 05-30-24",
+     "label": "M38"
+    },
+    {
+     "video_id": "MCM00001307",
+     "t": 4534,
+     "date": "2024-08-29",
+     "base": "2024-08-30_MCM00001307",
+     "meeting_title": "Medford Zoning Board Of Appeals 08-29-24",
+     "title": "35-37 Lincoln Street",
+     "label": "M41#4"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "Recent work involves the interpretation of new state ADU laws and the expansion of cannabis dispensary operations to include delivery.",
+   "citations": [
+    {
+     "video_id": "CAS00002445",
+     "t": null,
+     "date": "2026-05-28",
+     "base": "2026-06-01_CAS00002445",
+     "meeting_title": "Zoning Board of Appeals 05/28/26",
+     "title": "Zoning Board of Appeals 05/28/26",
+     "label": "M52"
+    },
+    {
+     "video_id": "CAS00002495",
+     "t": null,
+     "date": "2026-07-30",
+     "base": "2026-07-31_CAS00002495",
+     "meeting_title": "Zoning Board of Appeals 07/30/26",
+     "title": "Zoning Board of Appeals 07/30/26",
+     "label": "M54"
     },
     {
      "video_id": "CAS00002540",
-     "t": 61,
+     "t": null,
      "date": "2026-09-24",
      "base": "2026-09-28_CAS00002540",
      "meeting_title": "Zoning Board of Appeals 09/24/26",
-     "title": "1-3 Vassar Street",
-     "label": "M51#1"
+     "title": "Zoning Board of Appeals 09/24/26",
+     "label": "M56"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 50,
-  "meetings_cited": 32,
-  "of_meetings": 51,
-  "max_share": 0.1,
-  "even_share": 0.0196,
-  "concentration_ratio": 5.1,
+  "citations": 40,
+  "meetings_cited": 24,
+  "of_meetings": 56,
+  "max_share": 0.075,
+  "even_share": 0.0179,
+  "concentration_ratio": 4.2,
   "most_cited": "CAS00002495",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 18005,
-  "output_tokens": 2083,
-  "model_version": "gemini-3.6-flash"
+  "input_tokens": 19963,
+  "output_tokens": 1457,
+  "model_version": "gemini-3-flash-preview"
  }
 }

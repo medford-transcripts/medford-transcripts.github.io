@@ -1,0 +1,56 @@
+{
+ "video_id": "-zyGVD3BFJw",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T09:10:40Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "0c19c99413a6a167",
+ "subject": "Municipal Finance Update",
+ "overview": "The Committee of the Whole met with Finance Director Bob Dickinson for an update on city finances, software limitations, and FY2024 budget planning. The Council approved motions requesting regular year-to-date financial reporting and detailed records of city legal expenses.",
+ "items": [
+  {
+   "title": "Paper 22-604 Finance Department Update",
+   "t": 35,
+   "summary": "Finance Director Bob Dickinson presented a municipal financial update covering audit progress, software system limitations, Proposition 2 1/2 levy calculations, special revenue fund deficits, and preliminary FY2024 budget preparation.",
+   "speakers": [
+    "Nicole Morell",
+    "Bob Dickinson",
+    "Richard Caraviello",
+    "Zac Bears",
+    "Nina Nazarian",
+    "George Scarpelli",
+    "Justin Tseng",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Motion on Year-to-Date Budget and Grant Reporting",
+   "t": 6778,
+   "summary": "The Council approved a motion requesting that the administration publish monthly year-to-date budget reports on the city website and explore including grant and special revenue account details in future budget books.",
+   "speakers": [
+    "Justin Tseng",
+    "Nicole Morell",
+    "Zac Bears",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Motion on Warrants and Legal Expenditures",
+   "t": 7136,
+   "summary": "The Council approved a motion requesting FY2022 warrants and a detailed accounting of city legal expenses, specifically regarding payments to KP Law.",
+   "speakers": [
+    "Richard Caraviello",
+    "Bob Dickinson",
+    "Nicole Morell",
+    "Kit Collins",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 42136,
+  "output_tokens": 373,
+  "model_version": "gemini-3.6-flash"
+ }
+}
