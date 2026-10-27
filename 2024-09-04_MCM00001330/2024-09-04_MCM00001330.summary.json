@@ -1,0 +1,44 @@
+{
+ "video_id": "MCM00001330",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T07:18:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4e6692174ac165ce",
+ "subject": "Carr Park Improvements",
+ "overview": "Lacking a quorum to conduct official business, the Commission held an informal informational session to hear a presentation from city staff and consultants on the Carr Park renovation project. The matter was carried over to the March 15 meeting for a formal hearing.",
+ "items": [
+  {
+   "title": "Quorum Announcement and Meeting Format",
+   "t": 0,
+   "summary": "City staff noted the absence of a quorum and decided to proceed with an informal presentation on the Carr Park project to accommodate public attendance, continuing the formal hearing to March 15.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis",
+    "Heather",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Carr Park Improvements Presentation and Discussion",
+   "t": 465,
+   "summary": "City staff and consultants reviewed the phased improvements for Carr Park—including field reconfigurations, pickleball courts, trail improvements, and debris removal—and explained that two delineated isolated vegetated wetlands showed no evidence of vernal pool species, prompting questions about buffer zone impacts, drainage, and tree preservation.",
+   "speakers": [
+    "Alicia Hunt",
+    "Amanda Centrella",
+    "Jen Reardon",
+    "Heather",
+    "Christopher Bader",
+    "Denis MacDougall",
+    "Adam Hurtubise",
+    "Heidi Davis"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14460,
+  "output_tokens": 334,
+  "model_version": "gemini-3.8-flash"
+ }
+}
