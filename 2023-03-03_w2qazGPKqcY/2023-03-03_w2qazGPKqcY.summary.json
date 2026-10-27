@@ -1,0 +1,63 @@
+{
+ "video_id": "w2qazGPKqcY",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T02:08:43Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "598d0fe7e6910a90",
+ "subject": "NAACP Presidential Interview and Spoken Word Showcase",
+ "overview": "The West Medford Community Center hosted a First Fridays program featuring an interview with the new Mystic Valley NAACP President Jillian Harvey. The event also included a spoken word performance by three female artists to celebrate Women’s History Month.",
+ "items": [
+  {
+   "title": "Community Engagement and Historical Trauma",
+   "t": 55,
+   "summary": "Frances Nwajei discussed the importance of proactive community engagement by city officials to build relationships and address historical trauma.",
+   "speakers": [
+    "Frances Nwajei"
+   ]
+  },
+  {
+   "title": "Interview with Jillian Harvey",
+   "t": 314,
+   "summary": "Jillian Harvey described her path into municipal leadership and her work establishing a Diversity, Equity, and Inclusion division in the town of Arlington.",
+   "speakers": [
+    "Terry Carter",
+    "Jillian Harvey"
+   ]
+  },
+  {
+   "title": "Mystic Valley NAACP Leadership",
+   "t": 1321,
+   "summary": "Harvey shared her vision for the Mystic Valley NAACP, focusing on increasing membership, revitalizing the youth council, and prioritizing voter registration.",
+   "speakers": [
+    "Terry Carter",
+    "Jillian Harvey"
+   ]
+  },
+  {
+   "title": "Women’s History Month Spoken Word Performance",
+   "t": 3434,
+   "summary": "Spoken word artists Michelle La Poetica, Cole Rodriguez, and Dexter Garcia performed original poetry regarding identity, social justice, and environmental conservation.",
+   "speakers": [
+    "Terry Carter",
+    "Michelle La Poetica",
+    "Cole Rodriguez",
+    "Dexter Garcia"
+   ]
+  },
+  {
+   "title": "WMCC Community Announcements",
+   "t": 6529,
+   "summary": "Terry Carter provided updates on upcoming community center events, including a scholarship tea, a legislative breakfast forum, and a West Medford family reunion.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33994,
+  "output_tokens": 453,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

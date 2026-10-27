@@ -1,0 +1,45 @@
+{
+ "video_id": "NLlmtxrVQi8",
+ "provider": "gemini",
+ "generated_at": "2026-10-27T02:06:06Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "f8ceb80fec76a181",
+ "subject": "Robotics and Engineering Shop Profile",
+ "overview": "Instructor Noah Lukiewicz and students from the Medford Vocational Technical High School describe the technical skills, facilities, and career pathways offered by the Robotics and Engineering shop. The presentation highlights the shop's focus on fabrication and its preparation for college and industrial careers.",
+ "items": [
+  {
+   "title": "Curriculum and Skills Overview",
+   "t": 13,
+   "summary": "Instructor Noah Lukiewicz and student Barayuga described the shop curriculum, which focuses on computer-aided design (CAD), coding, circuitry, and collaborative machinery projects.",
+   "speakers": [
+    "Lukiewicz",
+    "Barayuga"
+   ]
+  },
+  {
+   "title": "Career Pathways and Engineering Specialties",
+   "t": 46,
+   "summary": "Lukiewicz and students Whealan and Pahang discussed the diverse range of engineering fields available to students and noted that graduates often pursue four-year colleges, manufacturing, or military service.",
+   "speakers": [
+    "Lukiewicz",
+    "Whealan",
+    "Pahang"
+   ]
+  },
+  {
+   "title": "Shop Facilities and Fabrication",
+   "t": 95,
+   "summary": "Lukiewicz detailed the shop's electronics lab and machinery, which includes 3D printers, laser cutters, and PCB mills for student fabrication projects.",
+   "speakers": [
+    "Lukiewicz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1539,
+  "output_tokens": 342,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
