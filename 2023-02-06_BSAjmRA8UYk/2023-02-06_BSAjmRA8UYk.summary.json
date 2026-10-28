@@ -1,0 +1,33 @@
+{
+ "video_id": "BSAjmRA8UYk",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T08:14:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8be10094f54dc749",
+ "subject": "School Committee Goal Setting",
+ "overview": "The School Committee met in a Committee of the Whole session to discuss setting committee goals for the term. The committee approved motions to limit the target to three goals and set a timeline concluding on November 30.",
+ "items": [
+  {
+   "title": "School Committee Goals and Evaluation Process",
+   "t": 84,
+   "summary": "The committee voted to set three goals running through November 30, 2023, with a December evaluation period, and agreed to finalize the specific goals at a future meeting.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Breanna Lungo-Koehn",
+    "Jenny Graham",
+    "Sharon Hays",
+    "Kathy Kreatz",
+    "Mea Quinn Mustone",
+    "Paul Ruseau",
+    "Marice Edouard-Vincent"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10695,
+  "output_tokens": 179,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "video_id": "MCM00000566",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T08:14:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e45fac1ed23d0a3b",
+ "subject": "",
+ "overview": "The Medford Energy and Environment Committee received administrative updates from the Office of Planning, Development, and Sustainability, and viewed a presentation on using iTree software to analyze local tree canopy coverage.",
+ "items": [
+  {
+   "title": "Administrative Updates",
+   "t": 93,
+   "summary": "Alicia Hunt updated the committee on department staffing, the adoption of Medford's Comprehensive Plan, City Council interest in an advanced stretch building energy code, and upcoming planning for the Harvest Your Energy Festival.",
+   "speakers": [
+    "Alicia Hunt",
+    "Robert Paine",
+    "Barry Ingber"
+   ]
+  },
+  {
+   "title": "iTree Software Tree Canopy Presentation",
+   "t": 1339,
+   "summary": "Paul demonstrated how to use iTree Canopy and iTree Landscape software to assess tree canopy coverage, environmental benefits, and planting equity across Medford neighborhoods.",
+   "speakers": [
+    "Paul",
+    "Robert Paine",
+    "Barry Ingber"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26361,
+  "output_tokens": 207,
+  "model_version": "gemini-3.6-flash"
+ }
+}
