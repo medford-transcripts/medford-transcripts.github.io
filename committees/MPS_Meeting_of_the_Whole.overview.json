@@ -3,21 +3,30 @@
  "provider": "gemini",
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-25T07:07:12Z",
- "sources_sha": "c4b9873dd13eae2f",
- "n_meetings": 10,
+ "generated_at": "2026-10-28T10:07:12Z",
+ "sources_sha": "d85b1aafd637afc7",
+ "n_meetings": 15,
  "period_style": "term",
  "span": [
-  "2023-05-15",
+  "2023-02-01",
   "2026-04-06"
  ],
- "overview": "The Meeting of the Whole for Medford Public Schools is a deliberative body that manages the district's strategic priorities, including annual budget development, performance evaluations, and high-level policy revisions. The committee serves as a forum for in-depth review of administrative reports and financial planning before matters are referred to the full School Committee. Meetings in the archive span from the FY24 budget cycle in mid-2023 to the preliminary FY27 planning in early 2026. Most recently, the body has been focused on addressing significant projected budget gaps and advancing the design phase of a new high school construction project.",
+ "overview": "The MPS Meeting of the Whole is a deliberative body of the School Committee tasked with detailed fiscal planning, policy development, and executive evaluation for the Medford Public Schools. Throughout the 2022-2023 to 2026-2027 terms, the committee has primarily focused on navigating the transition from federal pandemic relief funding to municipal allocations. Its work includes the annual evaluation of the Superintendent, the development of district-wide non-discrimination policies, and the oversight of school building projects. As of early 2026, the body is focused on resolving a multi-million dollar gap in the FY27 budget and advancing the design phase of the high school construction project.",
  "threads": [
   {
-   "name": "Annual Budget Cycles and Fiscal Planning",
+   "name": "Annual Budget Planning",
    "status": "ongoing",
-   "summary": "The committee oversees the multi-year fiscal health of the district, beginning with a $71.8 million FY24 budget that anticipated a funding cliff from expiring federal relief funds. By the FY25 cycle, the body identified $7.5 million in spending pressures against minimal state aid growth, requiring strategies to close gaps against the city's preliminary allocation. The FY26 and FY27 preliminary proposals continued to navigate deficits caused by deferred maintenance, technology needs, and mandated transportation costs. As of April 2026, the committee was reviewing a $94 million preliminary request facing a $5 million gap relative to projected city funding.",
+   "summary": "The committee conducts multi-meeting reviews of the annual operating budget, starting with the $71.8 million FY24 proposal that addressed the initial loss of federal ESSER funds. For FY25, the body managed a $7.5 million spending pressure created by contractual obligations and underfunded operational accounts. Recent sessions for FY26 and FY27 have focused on 'right-sizing' maintenance and technology infrastructure, with the latest projections showing a $5 million gap relative to city funding.",
    "citations": [
+    {
+     "video_id": "nsewk1d6HpM",
+     "t": null,
+     "date": "2023-04-10",
+     "base": "2023-04-10_nsewk1d6HpM",
+     "meeting_title": "MSC - Committee of the Whole Meeting: FY24 Budget - 4.10.2023",
+     "title": "MSC - Committee of the Whole Meeting: FY24 Budget - 4.10.2023",
+     "label": "M04"
+    },
     {
      "video_id": "b258VJa79F4",
      "t": null,
@@ -25,6 +34,265 @@
      "base": "2023-05-16_b258VJa79F4",
      "meeting_title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
      "title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
+     "label": "M06"
+    },
+    {
+     "video_id": "rfgWV65I8WM",
+     "t": null,
+     "date": "2024-04-04",
+     "base": "2024-04-04_rfgWV65I8WM",
+     "meeting_title": "MSC Budget COW Meeting #2",
+     "title": "MSC Budget COW Meeting #2",
+     "label": "M12"
+    },
+    {
+     "video_id": "FH9HjEKbOIc",
+     "t": null,
+     "date": "2025-03-20",
+     "base": "2025-03-20_FH9HjEKbOIc",
+     "meeting_title": "Budget COW 03.20.2025",
+     "title": "Budget COW 03.20.2025",
+     "label": "M14"
+    },
+    {
+     "video_id": "QAjPmDQYddA",
+     "t": 6659,
+     "date": "2026-04-06",
+     "base": "2026-04-06_QAjPmDQYddA",
+     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
+     "title": "FY27 Preliminary Budget Recommendations",
+     "label": "M15#5"
+    }
+   ]
+  },
+  {
+   "name": "Superintendent Evaluation",
+   "status": "settled",
+   "summary": "In early 2023, the committee established nine focus indicators from the state rubric and created a new standing subcommittee to manage the evaluation process. The body reviewed self-evaluations and member data, eventually approving a composite rating of 'Proficient' for the Superintendent's 2022-2023 performance. The committee has since institutionalized the formal evaluation as a recurring annual agenda item for the month of June.",
+   "citations": [
+    {
+     "video_id": "e2JGoC251eM",
+     "t": null,
+     "date": "2023-02-01",
+     "base": "2023-02-01_e2JGoC251eM",
+     "meeting_title": "Medford School Committee of the Whole - Superintendent Goals - 02.01.2023",
+     "title": "Medford School Committee of the Whole - Superintendent Goals - 02.01.2023",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00000794",
+     "t": null,
+     "date": "2023-05-08",
+     "base": "2024-06-24_MCM00000794",
+     "meeting_title": "Medford School Committee of the Whole 05-08-23",
+     "title": "Medford School Committee of the Whole 05-08-23",
+     "label": "M05"
+    },
+    {
+     "video_id": "yB-9Wmg_zjs",
+     "t": null,
+     "date": "2023-06-05",
+     "base": "2023-06-06_yB-9Wmg_zjs",
+     "meeting_title": "MSC - Committee of the Whole - Evaluation 06.5.2023",
+     "title": "MSC - Committee of the Whole - Evaluation 06.5.2023",
+     "label": "M07"
+    },
+    {
+     "video_id": "MCM00000787",
+     "t": 2896,
+     "date": "2024-01-31",
+     "base": "2024-06-24_MCM00000787",
+     "meeting_title": "Medford School Committee of the Whole 01-31-24",
+     "title": "Superintendent Evaluation",
+     "label": "M10#7"
+    }
+   ]
+  },
+  {
+   "name": "High School Operations and Facilities",
+   "status": "ongoing",
+   "summary": "Following a consultant's report on high school culture and safety, the committee began overseeing administrative restructuring and the creation of new leadership committees for student behavior and diversity. This oversight expanded to the physical plant, with the body authorizing Statements of Interest for the MSBA Accelerated Repair Program to address roof and heating issues at elementary schools. Currently, the committee is reviewing design options for a comprehensive high school construction project.",
+   "citations": [
+    {
+     "video_id": "AyMsYF9M5k8",
+     "t": null,
+     "date": "2023-06-12",
+     "base": "2023-06-13_AyMsYF9M5k8",
+     "meeting_title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
+     "title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
+     "label": "M08"
+    },
+    {
+     "video_id": "MCM00001762",
+     "t": 129,
+     "date": "2025-03-05",
+     "base": "2025-03-06_MCM00001762",
+     "meeting_title": "Medford School Committee of the Whole 03-05-25",
+     "title": "MSBA Accelerated Repair Statements of Interest",
+     "label": "M13#1"
+    },
+    {
+     "video_id": "QAjPmDQYddA",
+     "t": 13178,
+     "date": "2026-04-06",
+     "base": "2026-04-06_QAjPmDQYddA",
+     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
+     "title": "MSBA Project Update",
+     "label": "M15#8"
+    }
+   ]
+  },
+  {
+   "name": "Financial Oversight and Revenue Management",
+   "status": "ongoing",
+   "summary": "To stabilize the district's long-term finances, the committee initiated a revenue collection audit and proposed a new methodology for charging administrative overhead to self-sustaining programs. Members regularly review revolving accounts for athletics, rentals, and the public pool to address persistent operating deficits. In 2026, the body authorized the payment of significant overdue electrical invoices that had been delayed due to past staffing transitions.",
+   "citations": [
+    {
+     "video_id": "di3OGRzz05w",
+     "t": 1697,
+     "date": "2024-03-13",
+     "base": "2024-03-14_di3OGRzz05w",
+     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
+     "title": "Revolving Funds and Program Deficits",
+     "label": "M11#3"
+    },
+    {
+     "video_id": "di3OGRzz05w",
+     "t": 3043,
+     "date": "2024-03-13",
+     "base": "2024-03-14_di3OGRzz05w",
+     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
+     "title": "Revenue Collection Audit and Rate Setting",
+     "label": "M11#4"
+    },
+    {
+     "video_id": "di3OGRzz05w",
+     "t": 4304,
+     "date": "2024-03-13",
+     "base": "2024-03-14_di3OGRzz05w",
+     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
+     "title": "Administrative and Facility Chargeback Proposal",
+     "label": "M11#6"
+    },
+    {
+     "video_id": "FH9HjEKbOIc",
+     "t": 1804,
+     "date": "2025-03-20",
+     "base": "2025-03-20_FH9HjEKbOIc",
+     "meeting_title": "Budget COW 03.20.2025",
+     "title": "Committee Discussion and Funding Strategy",
+     "label": "M14#2"
+    },
+    {
+     "video_id": "QAjPmDQYddA",
+     "t": 11472,
+     "date": "2026-04-06",
+     "base": "2026-04-06_QAjPmDQYddA",
+     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
+     "title": "Gone Green Overdue Invoices",
+     "label": "M15#6"
+    }
+   ]
+  },
+  {
+   "name": "Non-Discrimination Policy Development",
+   "status": "settled",
+   "summary": "The committee conducted a comprehensive review of Policy ACA-1 regarding gender identity to align district practices with state regulations. Key amendments included the standardization of 'caregiver' terminology and the clarification of student rights regarding record changes upon reaching age 14 or ninth grade. The final amended policy was referred to the full School Committee for formal adoption in late 2023.",
+   "citations": [
+    {
+     "video_id": "f9NpRcOkIx4",
+     "t": 23,
+     "date": "2023-11-01",
+     "base": "2023-11-02_f9NpRcOkIx4",
+     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
+     "title": "Policy ACA-1 Non-Discrimination on the Basis of Gender Identity",
+     "label": "M09#1"
+    },
+    {
+     "video_id": "f9NpRcOkIx4",
+     "t": 1498,
+     "date": "2023-11-01",
+     "base": "2023-11-02_f9NpRcOkIx4",
+     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
+     "title": "Standardization of Caregiver Terminology",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "f9NpRcOkIx4",
+     "t": 3332,
+     "date": "2023-11-01",
+     "base": "2023-11-02_f9NpRcOkIx4",
+     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
+     "title": "Integration of State Student Record Regulations",
+     "label": "M09#4"
+    },
+    {
+     "video_id": "f9NpRcOkIx4",
+     "t": 6730,
+     "date": "2023-11-01",
+     "base": "2023-11-02_f9NpRcOkIx4",
+     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
+     "title": "Referral to Full School Committee",
+     "label": "M09#8"
+    }
+   ]
+  },
+  {
+   "name": "District Reporting and Calendar Planning",
+   "status": "ongoing",
+   "summary": "The body manages the schedule of administrative reports, including recurring updates on student achievements, English learner enrollment, and MSBA progress. The committee has moved to consolidate social-emotional learning reports and set specific deadlines for annual reports on special education legal fees. Ongoing reviews are conducted to determine which historical report requests should remain as live presentations versus written updates.",
+   "citations": [
+    {
+     "video_id": "MCM00000787",
+     "t": 905,
+     "date": "2024-01-31",
+     "base": "2024-06-24_MCM00000787",
+     "meeting_title": "Medford School Committee of the Whole 01-31-24",
+     "title": "Presentation and Report Schedule",
+     "label": "M10#2"
+    },
+    {
+     "video_id": "MCM00000787",
+     "t": 2166,
+     "date": "2024-01-31",
+     "base": "2024-06-24_MCM00000787",
+     "meeting_title": "Medford School Committee of the Whole 01-31-24",
+     "title": "Special Education Legal Fees",
+     "label": "M10#4"
+    },
+    {
+     "video_id": "MCM00000787",
+     "t": 2376,
+     "date": "2024-01-31",
+     "base": "2024-06-24_MCM00000787",
+     "meeting_title": "Medford School Committee of the Whole 01-31-24",
+     "title": "SEL Report Consolidation",
+     "label": "M10#5"
+    },
+    {
+     "video_id": "MCM00000787",
+     "t": 3628,
+     "date": "2024-01-31",
+     "base": "2024-06-24_MCM00000787",
+     "meeting_title": "Medford School Committee of the Whole 01-31-24",
+     "title": "Comprehensive Report List Review",
+     "label": "M10#8"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "This period was defined by the establishment of the Superintendent's evaluation framework and the management of the 'funding cliff' as federal pandemic relief grants expired.",
+   "citations": [
+    {
+     "video_id": "e2JGoC251eM",
+     "t": null,
+     "date": "2023-02-01",
+     "base": "2023-02-01_e2JGoC251eM",
+     "meeting_title": "Medford School Committee of the Whole - Superintendent Goals - 02.01.2023",
+     "title": "Medford School Committee of the Whole - Superintendent Goals - 02.01.2023",
      "label": "M01"
     },
     {
@@ -34,153 +302,23 @@
      "base": "2023-05-16_b258VJa79F4",
      "meeting_title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
      "title": "ESSER Funding and Long-term Fiscal Risks",
-     "label": "M01#4"
-    },
-    {
-     "video_id": "rfgWV65I8WM",
-     "t": 0,
-     "date": "2024-04-04",
-     "base": "2024-04-04_rfgWV65I8WM",
-     "meeting_title": "MSC Budget COW Meeting #2",
-     "title": "FY25 Budget Overview and Spending Priorities",
-     "label": "M07#1"
-    },
-    {
-     "video_id": "FH9HjEKbOIc",
-     "t": 119,
-     "date": "2025-03-20",
-     "base": "2025-03-20_FH9HjEKbOIc",
-     "meeting_title": "Budget COW 03.20.2025",
-     "title": "Fiscal Year 2026 Budget Overview",
-     "label": "M09#1"
-    },
-    {
-     "video_id": "QAjPmDQYddA",
-     "t": 6659,
-     "date": "2026-04-06",
-     "base": "2026-04-06_QAjPmDQYddA",
-     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
-     "title": "FY27 Preliminary Budget Recommendations",
-     "label": "M10#5"
+     "label": "M06#4"
     }
    ]
   },
   {
-   "name": "Superintendent Performance and Evaluation",
-   "status": "settled",
-   "summary": "The body is responsible for consolidating school committee members' feedback into a formal performance review for the district's leadership. In 2023, the committee approved a composite evaluation for the superintendent that reflected consensus ratings of Proficient across state performance standards. Subsequent planning meetings in 2024 formally integrated the evaluation process into the annual administrative calendar for the month of June.",
+   "period": "2024-2025 term",
+   "narrative": "The committee focused on fiscal transparency through revenue audits and initiated the state-funded repair process for multiple elementary school facilities.",
    "citations": [
     {
-     "video_id": "yB-9Wmg_zjs",
-     "t": 501,
-     "date": "2023-06-05",
-     "base": "2023-06-06_yB-9Wmg_zjs",
-     "meeting_title": "MSC - Committee of the Whole - Evaluation 06.5.2023",
-     "title": "Superintendent Composite Evaluation Review",
-     "label": "M02#1"
+     "video_id": "di3OGRzz05w",
+     "t": 3043,
+     "date": "2024-03-13",
+     "base": "2024-03-14_di3OGRzz05w",
+     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
+     "title": "Revenue Collection Audit and Rate Setting",
+     "label": "M11#4"
     },
-    {
-     "video_id": "yB-9Wmg_zjs",
-     "t": 2305,
-     "date": "2023-06-05",
-     "base": "2023-06-06_yB-9Wmg_zjs",
-     "meeting_title": "MSC - Committee of the Whole - Evaluation 06.5.2023",
-     "title": "Approval of Superintendent Composite Evaluation",
-     "label": "M02#3"
-    },
-    {
-     "video_id": "MCM00000787",
-     "t": 2896,
-     "date": "2024-01-31",
-     "base": "2024-06-24_MCM00000787",
-     "meeting_title": "Medford School Committee of the Whole 01-31-24",
-     "title": "Superintendent Evaluation",
-     "label": "M05#7"
-    }
-   ]
-  },
-  {
-   "name": "Gender Identity and Non-Discrimination Policy",
-   "status": "settled",
-   "summary": "The committee conducted a detailed review and amendment of the district's policy regarding non-discrimination on the basis of gender identity. During this process, the body standardized terminology to use the term 'caregivers' and integrated state regulations regarding student record rights for those aged 14 or in the ninth grade. The committee also clarified guidelines for student transitions and record changes before reporting the amended policy to the full School Committee for a formal reading.",
-   "citations": [
-    {
-     "video_id": "f9NpRcOkIx4",
-     "t": 23,
-     "date": "2023-11-01",
-     "base": "2023-11-02_f9NpRcOkIx4",
-     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
-     "title": "Policy ACA-1 Non-Discrimination on the Basis of Gender Identity",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "f9NpRcOkIx4",
-     "t": 1498,
-     "date": "2023-11-01",
-     "base": "2023-11-02_f9NpRcOkIx4",
-     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
-     "title": "Standardization of Caregiver Terminology",
-     "label": "M04#3"
-    },
-    {
-     "video_id": "f9NpRcOkIx4",
-     "t": 3332,
-     "date": "2023-11-01",
-     "base": "2023-11-02_f9NpRcOkIx4",
-     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
-     "title": "Integration of State Student Record Regulations",
-     "label": "M04#4"
-    },
-    {
-     "video_id": "f9NpRcOkIx4",
-     "t": 6730,
-     "date": "2023-11-01",
-     "base": "2023-11-02_f9NpRcOkIx4",
-     "meeting_title": "MSC - Committee of the Whole - Nondiscrimination on the Basis of Gender Identity 11.01.2023",
-     "title": "Referral to Full School Committee",
-     "label": "M04#8"
-    }
-   ]
-  },
-  {
-   "name": "High School Operations and Safety",
-   "status": "ongoing",
-   "summary": "Following safety incidents at Medford High School, the committee reviewed a consultant’s report recommending a unified vision for vocational and comprehensive education supported by a single master schedule. The body tracked the formation of leadership committees for safety and diversity and requested progress reports on administrative mentoring and school-wide behavioral norms. By 2026, operational reviews expanded to include student survey data regarding cafeteria overcrowding and dissatisfaction with bus equipment.",
-   "citations": [
-    {
-     "video_id": "AyMsYF9M5k8",
-     "t": 208,
-     "date": "2023-06-12",
-     "base": "2023-06-13_AyMsYF9M5k8",
-     "meeting_title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
-     "title": "Report Presentation and Vision",
-     "label": "M03#1"
-    },
-    {
-     "video_id": "AyMsYF9M5k8",
-     "t": 1493,
-     "date": "2023-06-12",
-     "base": "2023-06-13_AyMsYF9M5k8",
-     "meeting_title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
-     "title": "Motion for Progress Updates",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "QAjPmDQYddA",
-     "t": 11763,
-     "date": "2026-04-06",
-     "base": "2026-04-06_QAjPmDQYddA",
-     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
-     "title": "Student Survey on Lunch and Transportation",
-     "label": "M10#7"
-    }
-   ]
-  },
-  {
-   "name": "MSBA Projects and Facilities",
-   "status": "ongoing",
-   "summary": "The committee manages interactions with the Massachusetts School Building Authority (MSBA) for major capital improvements. In 2025, the body authorized the administration to submit Statements of Interest for accelerated repair projects involving roofs and heat pumps at the Roberts, Missituck, and Brooks elementary schools. Recent updates from the building committee indicate that six design options have been selected for further study regarding the new high school construction project.",
-   "citations": [
     {
      "video_id": "MCM00001762",
      "t": 129,
@@ -188,7 +326,22 @@
      "base": "2025-03-06_MCM00001762",
      "meeting_title": "Medford School Committee of the Whole 03-05-25",
      "title": "MSBA Accelerated Repair Statements of Interest",
-     "label": "M08#1"
+     "label": "M13#1"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The body is currently addressing a $5 million shortfall in the preliminary FY27 budget while advancing the design study for a new high school building.",
+   "citations": [
+    {
+     "video_id": "QAjPmDQYddA",
+     "t": 6659,
+     "date": "2026-04-06",
+     "base": "2026-04-06_QAjPmDQYddA",
+     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
+     "title": "FY27 Preliminary Budget Recommendations",
+     "label": "M15#5"
     },
     {
      "video_id": "QAjPmDQYddA",
@@ -197,143 +350,26 @@
      "base": "2026-04-06_QAjPmDQYddA",
      "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
      "title": "MSBA Project Update",
-     "label": "M10#8"
-    }
-   ]
-  },
-  {
-   "name": "Financial Oversight and Revenue Auditing",
-   "status": "ongoing",
-   "summary": "Beyond general budgeting, the committee monitors revolving accounts, grants, and program-specific revenue collection. In 2024, the administration introduced a revenue collection audit and proposed a new methodology for recovery of facility and administrative costs from self-sustaining programs. Most recently, the committee authorized the payment of $48,665.51 in overdue invoices from a previous fiscal year that had been delayed due to staffing transitions.",
-   "citations": [
-    {
-     "video_id": "b258VJa79F4",
-     "t": 1645,
-     "date": "2023-05-15",
-     "base": "2023-05-16_b258VJa79F4",
-     "meeting_title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
-     "title": "Grants and Revolving Accounts Report",
-     "label": "M01#5"
-    },
-    {
-     "video_id": "di3OGRzz05w",
-     "t": 3043,
-     "date": "2024-03-13",
-     "base": "2024-03-14_di3OGRzz05w",
-     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
-     "title": "Revenue Collection Audit and Rate Setting",
-     "label": "M06#4"
-    },
-    {
-     "video_id": "di3OGRzz05w",
-     "t": 4304,
-     "date": "2024-03-13",
-     "base": "2024-03-14_di3OGRzz05w",
-     "meeting_title": "3.13.2024 MSC FY25 Budget Committee of the Whole",
-     "title": "Administrative and Facility Chargeback Proposal",
-     "label": "M06#6"
-    },
-    {
-     "video_id": "QAjPmDQYddA",
-     "t": 11472,
-     "date": "2026-04-06",
-     "base": "2026-04-06_QAjPmDQYddA",
-     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
-     "title": "Gone Green Overdue Invoices",
-     "label": "M10#6"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "This period focused on the adoption of the FY24 budget and a comprehensive review of high school safety and culture following external consultant reports.",
-   "citations": [
-    {
-     "video_id": "b258VJa79F4",
-     "t": null,
-     "date": "2023-05-15",
-     "base": "2023-05-16_b258VJa79F4",
-     "meeting_title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
-     "title": "5.15.2023 MSC FY24 Budget Committee of the Whole",
-     "label": "M01"
-    },
-    {
-     "video_id": "AyMsYF9M5k8",
-     "t": null,
-     "date": "2023-06-12",
-     "base": "2023-06-13_AyMsYF9M5k8",
-     "meeting_title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
-     "title": "MSC - Committee of the Whole - MHS Report 06.12.2023",
-     "label": "M03"
-    }
-   ]
-  },
-  {
-   "period": "2024-2025 term",
-   "narrative": "The committee established long-range reporting calendars and addressed fiscal pressures for the FY25 and FY26 budget cycles while initiating school building repair applications.",
-   "citations": [
-    {
-     "video_id": "MCM00000787",
-     "t": null,
-     "date": "2024-01-31",
-     "base": "2024-06-24_MCM00000787",
-     "meeting_title": "Medford School Committee of the Whole 01-31-24",
-     "title": "Medford School Committee of the Whole 01-31-24",
-     "label": "M05"
-    },
-    {
-     "video_id": "rfgWV65I8WM",
-     "t": null,
-     "date": "2024-04-04",
-     "base": "2024-04-04_rfgWV65I8WM",
-     "meeting_title": "MSC Budget COW Meeting #2",
-     "title": "MSC Budget COW Meeting #2",
-     "label": "M07"
-    },
-    {
-     "video_id": "MCM00001762",
-     "t": null,
-     "date": "2025-03-05",
-     "base": "2025-03-06_MCM00001762",
-     "meeting_title": "Medford School Committee of the Whole 03-05-25",
-     "title": "Medford School Committee of the Whole 03-05-25",
-     "label": "M08"
-    }
-   ]
-  },
-  {
-   "period": "2026-2027 term",
-   "narrative": "Recent work has centered on resolving a significant FY27 budget deficit and reviewing progress on the high school construction project design.",
-   "citations": [
-    {
-     "video_id": "QAjPmDQYddA",
-     "t": null,
-     "date": "2026-04-06",
-     "base": "2026-04-06_QAjPmDQYddA",
-     "meeting_title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
-     "title": "04.06.2026 Budget Committee of the Whole #2 (In Person)",
-     "label": "M10"
+     "label": "M15#8"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 27,
-  "meetings_cited": 10,
-  "of_meetings": 10,
-  "max_share": 0.185,
-  "even_share": 0.1,
-  "concentration_ratio": 1.85,
+  "citations": 31,
+  "meetings_cited": 13,
+  "of_meetings": 15,
+  "max_share": 0.161,
+  "even_share": 0.0667,
+  "concentration_ratio": 2.42,
   "most_cited": "QAjPmDQYddA",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 4349,
-  "output_tokens": 1291,
+  "input_tokens": 5371,
+  "output_tokens": 1271,
   "model_version": "gemini-3-flash-preview"
  }
 }
