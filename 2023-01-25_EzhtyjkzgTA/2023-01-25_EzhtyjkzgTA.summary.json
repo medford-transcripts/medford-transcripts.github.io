@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "df5f786b8f594d31",
- "subject": "",
+ "subject": "State of the City Address",
  "overview": "Mayor Breanna Lungo-Koehn delivered the 2023 State of the City Address, outlining major redevelopment initiatives for Wellington Station and Medford Square alongside priorities for public safety and school infrastructure. Representatives from the School Committee and City Council also reported on curriculum updates, labor negotiations, and zoning reforms.",
  "items": [
   {
@@ -47,5 +47,6 @@
   "input_tokens": 15740,
   "output_tokens": 462,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

@@ -1,31 +1,40 @@
 {
  "committee": "CC Commission for Persons with Disabilities",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-24T14:13:07Z",
- "sources_sha": "6f47e2cccd593ee4",
- "n_meetings": 15,
+ "generated_at": "2026-10-28T12:06:54Z",
+ "sources_sha": "65dec8800fbf4d7b",
+ "n_meetings": 20,
  "period_style": "term",
  "span": [
-  "2023-05-24",
+  "2023-01-25",
   "2026-09-23"
  ],
- "overview": "The Medford Commission for Persons with Disabilities is an advisory body tasked with promoting equal access, inclusion, and civil rights for residents with disabilities across municipal facilities, public spaces, and civic programs. Across 15 meetings held between May 2023 and September 2026, the commission organized community events, reviewed park and school designs, monitored public transit access, and advised on citywide accessibility improvements. Its work has included organizing annual disability resource fairs, reviewing voting accessibility, and advocating for facility upgrades at City Hall and local transit hubs. At its most recent meeting, the commission reviewed candidate intersections for accessible pedestrian signals and addressed digital communication accessibility concerns regarding the city's ongoing ADA transition plan.",
+ "overview": "The CC Commission for Persons with Disabilities advocates for the equal status of residents with disabilities by monitoring ADA compliance in Medford’s municipal infrastructure, programs, and services. Since 2023, the body has focused on removing physical barriers at public schools, City Hall, and transit stations while organizing annual community resource fairs. The commission maintains a digital repository of accessibility resources and provides input on inclusive designs for city playgrounds and polling places. As of late 2026, the body is collaborating with the Institute for Human Centered Design on a city-wide accessibility transition plan and prioritizing intersections for the installation of accessible pedestrian signals.",
  "threads": [
   {
-   "name": "Disability Resource Fair",
+   "name": "Disability Pride and Resource Fair",
    "status": "ongoing",
-   "summary": "The commission routinely organizes an annual Disability Resource Fair to connect residents with services, vendors, and health resources, holding an initial fair in October 2023 at the Brooks School that featured a mobile vaccine clinic (M01#3, M04#3). Members planned subsequent events for spring 2025 and spring 2026, working through logistics such as quiet sensory areas, ASL interpretation, donor-funded activities, and venue selection (M08#3, M10#8, M11#2, M12#6). Following the May 2026 event, the commission reviewed attendance feedback regarding event signage and water supplies (M13#4). Commissioners deferred decisions on whether to adjust event hours or return the fair to an autumn schedule for future iterations (M14#2).",
+   "summary": "The commission coordinates an annual event featuring resource vendors, speakers, and inclusive activities like sensory quiet spaces [M01#4, M15#2]. Planning began in early 2023 for a spring event, which was eventually held in October 2023 with a focus on vaccinations and vendor networking [M03#2, M08#3]. Subsequent fairs were held or planned for May 2025 and May 2026, including features such as inclusive dance performances and mayoral proclamations [M14#8, M17#4, M18#4]. By late 2026, the commission began discussing schedule adjustments to move future fairs to the autumn [M19#2].",
    "citations": [
     {
-     "video_id": "MCM00001364",
-     "t": 3517,
-     "date": "2023-05-24",
-     "base": "2024-09-09_MCM00001364",
-     "meeting_title": "Medford Commission For Persons With Disabilities 05-24-23",
-     "title": "Disability Product Resource Fair Planning",
-     "label": "M01#3"
+     "video_id": "MCM00001359",
+     "t": 2262,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Disability Pride Day and High School ADA Issues",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001362",
+     "t": 495,
+     "date": "2023-03-22",
+     "base": "2024-09-05_MCM00001362",
+     "meeting_title": "Medford Commission For Persons With Disabilities 03-22-23",
+     "title": "Disability Resource Fair Planning",
+     "label": "M03#2"
     },
     {
      "video_id": "MCM00001369",
@@ -34,7 +43,16 @@
      "base": "2024-09-09_MCM00001369",
      "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
      "title": "Recap of Disability Fair and Mobile Vaccine Clinic",
-     "label": "M04#3"
+     "label": "M08#3"
+    },
+    {
+     "video_id": "MCM00001652",
+     "t": 2540,
+     "date": "2024-12-11",
+     "base": "2024-12-12_MCM00001652",
+     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
+     "title": "2025 Disability Fair Scheduling",
+     "label": "M14#8"
     },
     {
      "video_id": "MCM00001753",
@@ -43,16 +61,16 @@
      "base": "2025-02-27_MCM00001753",
      "meeting_title": "Medford Commission For Persons With Disabilities 02-26-25",
      "title": "Disability Fair Update",
-     "label": "M11#2"
+     "label": "M15#2"
     },
     {
-     "video_id": "MCM00001818",
-     "t": 1258,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Disability Fair Scheduling",
-     "label": "M12#6"
+     "video_id": "CAS00002394",
+     "t": 1549,
+     "date": "2026-04-22",
+     "base": "2026-04-23_CAS00002394",
+     "meeting_title": "Commission for Persons with Disabilities 04/22/26",
+     "title": "Mayoral Proclamation and Commission Speaker",
+     "label": "M17#4"
     },
     {
      "video_id": "CAS00002444",
@@ -61,7 +79,7 @@
      "base": "2026-06-01_CAS00002444",
      "meeting_title": "Commission for Persons with Disabilities 05/27/26",
      "title": "Disability fair recap",
-     "label": "M13#4"
+     "label": "M18#4"
     },
     {
      "video_id": "CAS00002474",
@@ -70,15 +88,33 @@
      "base": "2026-06-30_CAS00002474",
      "meeting_title": "Commission for Persons with Disabilities 06/24/26",
      "title": "Disability Fair Timing Discussion",
-     "label": "M14#2"
+     "label": "M19#2"
     }
    ]
   },
   {
-   "name": "Transit and Pedestrian Infrastructure",
+   "name": "Public Transit Advocacy",
    "status": "ongoing",
-   "summary": "The commission identified transit accessibility barriers early by addressing the lack of accessible parking at the Tufts Green Line Extension station, which led to the installation of two dedicated spaces (M03#6, M04#5). Commissioners supported municipal grant applications prioritizing curb cuts and tracked ongoing station accessibility upgrades, including Keolis ramp construction at the West Medford commuter rail station (M07#3, M10#4, M11#4). The focus later shifted to pedestrian safety and traffic signals, with Director of Traffic and Transportation Todd Blake presenting plans for accessible pedestrian pushbuttons and route adjustments (M14#4). The body subsequently prioritized a list of Medford intersections to receive audible pedestrian signals funded by a casino mitigation grant (M15#3).",
+   "summary": "The body advocates for accessibility improvements at key transit hubs, including the West Medford commuter rail station and the Tufts Green Line Extension (GLX) station [M03#6, M07#6]. Early efforts focused on supporting funding for West Medford and securing accessible parking at the new Tufts station, which was resolved with two painted spots in late 2023 [M08#5, M14#4]. The commission also monitors 'The Ride' paratransit services and reviews proposed MBTA bus route changes presented by Director of Traffic and Transportation Todd Blake [M02#6, M15#4, M19#4].",
    "citations": [
+    {
+     "video_id": "MCM00001361",
+     "t": 3632,
+     "date": "2023-02-22",
+     "base": "2024-09-05_MCM00001361",
+     "meeting_title": "Medford Commission For Persons With Disabilities 02-22-23",
+     "title": "Regional Coordinating Council Update",
+     "label": "M02#6"
+    },
+    {
+     "video_id": "MCM00001362",
+     "t": 4863,
+     "date": "2023-03-22",
+     "base": "2024-09-05_MCM00001362",
+     "meeting_title": "Medford Commission For Persons With Disabilities 03-22-23",
+     "title": "West Medford Commuter Rail Station Accessibility Support",
+     "label": "M03#6"
+    },
     {
      "video_id": "MCM00001360",
      "t": 2747,
@@ -86,7 +122,7 @@
      "base": "2024-09-05_MCM00001360",
      "meeting_title": "Medford Commission For Persons With Disabilities 09-27-23",
      "title": "Tufts GLX Station Accessibility Concerns",
-     "label": "M03#6"
+     "label": "M07#6"
     },
     {
      "video_id": "MCM00001369",
@@ -95,16 +131,7 @@
      "base": "2024-09-09_MCM00001369",
      "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
      "title": "Tufts T Station Accessibility Update",
-     "label": "M04#5"
-    },
-    {
-     "video_id": "MCM00001366",
-     "t": 1030,
-     "date": "2024-03-27",
-     "base": "2024-09-09_MCM00001366",
-     "meeting_title": "Medford Commission For Persons With Disabilities 03-27-24",
-     "title": "ADA Municipal Improvement Grant Application",
-     "label": "M07#3"
+     "label": "M08#5"
     },
     {
      "video_id": "MCM00001652",
@@ -113,7 +140,7 @@
      "base": "2024-12-12_MCM00001652",
      "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
      "title": "Commuter Rail and Transit Advocacy",
-     "label": "M10#4"
+     "label": "M14#4"
     },
     {
      "video_id": "MCM00001753",
@@ -122,7 +149,7 @@
      "base": "2025-02-27_MCM00001753",
      "meeting_title": "Medford Commission For Persons With Disabilities 02-26-25",
      "title": "Transportation Accessibility and Keolis Update",
-     "label": "M11#4"
+     "label": "M15#4"
     },
     {
      "video_id": "CAS00002474",
@@ -131,24 +158,42 @@
      "base": "2026-06-30_CAS00002474",
      "meeting_title": "Commission for Persons with Disabilities 06/24/26",
      "title": "Traffic, Accessible Pedestrian Signals, and Bus Route Updates",
-     "label": "M14#4"
-    },
-    {
-     "video_id": "CAS00002538",
-     "t": 1480,
-     "date": "2026-09-23",
-     "base": "2026-09-28_CAS00002538",
-     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
-     "title": "Pedestrian Signal Grant and Intersection Prioritization",
-     "label": "M15#3"
+     "label": "M19#4"
     }
    ]
   },
   {
-   "name": "Municipal Building and Facility Upgrades",
+   "name": "Municipal Building and Park Accessibility",
    "status": "ongoing",
-   "summary": "The commission tracks physical accessibility across city properties, overseeing ARPA-funded procurements of assistive listening receivers, armchairs for meeting chambers, and elevator wiring repairs at City Hall (M10#3, M10#7). Director Frances Nwajei and staff reported on long-term capital goals, including municipal restroom redesigns and access improvements at school buildings (M10#6, M11#3, M12#5). The city engaged the Institute for Human Centered Design to conduct structural and sidewalk accessibility audits to establish a comprehensive ADA transition plan (M13#6, M14#3). At the September 2026 meeting, the commission reviewed ongoing survey findings and raised accessibility concerns regarding the digital formats used by the consultants (M15#2).",
+   "summary": "The commission reviews ADA compliance across city facilities, from physical barriers at Medford High School to hearing accessibility upgrades in the City Hall chambers [M01#4, M14#3, M15#3]. Members provide feedback on inclusive playground designs, including projects at Carr Park and the Tufts Park redesign [M04#4, M08#6, M18#2]. Recently, the Institute for Human Centered Design (IHCD) completed accessibility surveys of municipal structures and sidewalks to inform a city-wide transition plan [M19#3, M20#2].",
    "citations": [
+    {
+     "video_id": "MCM00001359",
+     "t": 2262,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Disability Pride Day and High School ADA Issues",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001358",
+     "t": 3189,
+     "date": "2023-04-26",
+     "base": "2024-09-05_MCM00001358",
+     "meeting_title": "Medford Commission For Persons With Disabilities 04-26-23",
+     "title": "Carr Park Accessibility",
+     "label": "M04#4"
+    },
+    {
+     "video_id": "MCM00001369",
+     "t": 3045,
+     "date": "2023-11-29",
+     "base": "2024-09-09_MCM00001369",
+     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
+     "title": "Inclusive Playgrounds and Carr Park",
+     "label": "M08#6"
+    },
     {
      "video_id": "MCM00001652",
      "t": 446,
@@ -156,16 +201,7 @@
      "base": "2024-12-12_MCM00001652",
      "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
      "title": "Physical Equipment and Assistive Technology Upgrades",
-     "label": "M10#3"
-    },
-    {
-     "video_id": "MCM00001652",
-     "t": 1970,
-     "date": "2024-12-11",
-     "base": "2024-12-12_MCM00001652",
-     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
-     "title": "City Hall Elevator and Emergency Testing",
-     "label": "M10#7"
+     "label": "M14#3"
     },
     {
      "video_id": "MCM00001753",
@@ -174,25 +210,16 @@
      "base": "2025-02-27_MCM00001753",
      "meeting_title": "Medford Commission For Persons With Disabilities 02-26-25",
      "title": "City Hall Accessibility Updates",
-     "label": "M11#3"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 784,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Disability Specialist Update",
-     "label": "M12#5"
+     "label": "M15#3"
     },
     {
      "video_id": "CAS00002444",
-     "t": 3815,
+     "t": 142,
      "date": "2026-05-27",
      "base": "2026-06-01_CAS00002444",
      "meeting_title": "Commission for Persons with Disabilities 05/27/26",
-     "title": "Disability Commission ordinance and ADA transition plan updates",
-     "label": "M13#6"
+     "title": "Tufts Park redesign presentation and feedback",
+     "label": "M18#2"
     },
     {
      "video_id": "CAS00002474",
@@ -201,7 +228,7 @@
      "base": "2026-06-30_CAS00002474",
      "meeting_title": "Commission for Persons with Disabilities 06/24/26",
      "title": "ADA Transition Plan and IHCD Survey Updates",
-     "label": "M14#3"
+     "label": "M19#3"
     },
     {
      "video_id": "CAS00002538",
@@ -210,206 +237,50 @@
      "base": "2026-09-28_CAS00002538",
      "meeting_title": "Commission for Persons with Disabilities 09/23/26",
      "title": "IHCD Survey and Digital Accessibility Concerns",
-     "label": "M15#2"
+     "label": "M20#2"
     }
    ]
   },
   {
-   "name": "Parks and Playgrounds Accessibility",
+   "name": "Digital Resources and Website Management",
    "status": "ongoing",
-   "summary": "Beginning in 2023, the commission consulted with accessibility specialists to ensure city playgrounds and recreational open spaces adhere to inclusive ADA standards, focusing initial reviews on Carr Park (M04#6, M05#3). The commission evaluated accessible playground designs across several public spaces, including the McGlynn school play space and Gaga pits (M10#5, M12#5). In late 2025, members provided accessibility feedback for Medford's Open Space and Recreation Plan extension based on community survey data (M12#8). City planners and consultants later presented preliminary redesign concepts for Tufts Park, where commissioners advocated for accessible pathways, restrooms, dog separation, and screen-reader accessible surveys (M13#2).",
+   "summary": "The commission maintains a dedicated section on the city website to provide vetted accessibility and recreational resources for residents [M01#2]. Members identified errors and missing transportation data during a site transition in 2023 and subsequently audited the page to include accordions for various services [M02#3, M12#7]. Collaborative efforts with the Medford Senior Center and the Medford Public Library have expanded the site's listings for tax assistance and adaptive technology [M10#3, M10#6]. Recent work involves monitoring the city's progress toward full digital accessibility compliance [M17#6].",
    "citations": [
     {
-     "video_id": "MCM00001369",
-     "t": 3045,
-     "date": "2023-11-29",
-     "base": "2024-09-09_MCM00001369",
-     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
-     "title": "Inclusive Playgrounds and Carr Park",
-     "label": "M04#6"
-    },
-    {
-     "video_id": "MCM00001368",
-     "t": 1814,
-     "date": "2023-12-27",
-     "base": "2024-09-09_MCM00001368",
-     "meeting_title": "Medford Commission For Persons With Disabilities 12-27-23",
-     "title": "Parks Accessibility and Carr Park Update",
-     "label": "M05#3"
-    },
-    {
-     "video_id": "MCM00001652",
-     "t": 831,
-     "date": "2024-12-11",
-     "base": "2024-12-12_MCM00001652",
-     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
-     "title": "Public Space and Playground Consultation",
-     "label": "M10#5"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 784,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Disability Specialist Update",
-     "label": "M12#5"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 2445,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Open Space and Recreation Plan Update",
-     "label": "M12#8"
-    },
-    {
-     "video_id": "CAS00002444",
-     "t": 142,
-     "date": "2026-05-27",
-     "base": "2026-06-01_CAS00002444",
-     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
-     "title": "Tufts Park redesign presentation and feedback",
-     "label": "M13#2"
-    }
-   ]
-  },
-  {
-   "name": "Voting and Polling Place Accessibility",
-   "status": "ongoing",
-   "summary": "The commission actively monitors municipal election accessibility to ensure disabled residents have equal access to voting (M09#5). In late 2024, commissioners raised concerns about the proper setup and operational readiness of accessible voting equipment at polling places, planning site visits to verify machine operation and poll worker preparedness (M09#4). The body continued coordination with the Elections Department regarding voting machine calibration, poll worker training, and alternative voting formats in 2025 (M12#9). In 2026, members followed up on pedestrian signal access near polling locations and continued tracking voting machine accessibility testing (M13#7).",
-   "citations": [
-    {
-     "video_id": "MCM00001598",
-     "t": 1115,
-     "date": "2024-10-23",
-     "base": "2024-11-26_MCM00001598",
-     "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
-     "title": "Polling Place Accessibility",
-     "label": "M09#4"
-    },
-    {
-     "video_id": "MCM00001598",
-     "t": 1682,
-     "date": "2024-10-23",
-     "base": "2024-11-26_MCM00001598",
-     "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
-     "title": "Commission Ordinance Review",
-     "label": "M09#5"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 3974,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Accessible Voting and Elections Update",
-     "label": "M12#9"
-    },
-    {
-     "video_id": "CAS00002444",
-     "t": 4260,
-     "date": "2026-05-27",
-     "base": "2026-06-01_CAS00002444",
-     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
-     "title": "Other business and community announcements",
-     "label": "M13#7"
-    }
-   ]
-  },
-  {
-   "name": "Commission Governance and Ordinance Review",
-   "status": "ongoing",
-   "summary": "The body has periodically reviewed its internal governance, including discussions regarding leadership, secretary vacancies, and proposals to update the commission's official name (M03#8, M04#4, M04#8, M06#2). Members reviewed their statutory powers under municipal ordinances to advocate effectively for equal status in civic affairs (M09#5, M12#7). By mid-2026, city staff announced that a revised commission ordinance had entered legal review prior to submission to the Medford City Council (M13#6). Throughout these operational shifts, the commission consistently maintained compliance through Open Meeting Law reviews and calendar adjustments to consolidate holiday meetings (M01#2, M12#2, M15#1).",
-   "citations": [
-    {
-     "video_id": "MCM00001364",
-     "t": 222,
-     "date": "2023-05-24",
-     "base": "2024-09-09_MCM00001364",
-     "meeting_title": "Medford Commission For Persons With Disabilities 05-24-23",
-     "title": "Open Meeting Law Presentation",
+     "video_id": "MCM00001359",
+     "t": 715,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Website Update",
      "label": "M01#2"
     },
     {
-     "video_id": "MCM00001360",
-     "t": 3889,
-     "date": "2023-09-27",
-     "base": "2024-09-05_MCM00001360",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-27-23",
-     "title": "Announcements and Future Business",
-     "label": "M03#8"
+     "video_id": "MCM00001361",
+     "t": 1612,
+     "date": "2023-02-22",
+     "base": "2024-09-05_MCM00001361",
+     "meeting_title": "Medford Commission For Persons With Disabilities 02-22-23",
+     "title": "Commission Webpage Updates",
+     "label": "M02#3"
     },
-    {
-     "video_id": "MCM00001369",
-     "t": 2286,
-     "date": "2023-11-29",
-     "base": "2024-09-09_MCM00001369",
-     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
-     "title": "Commission Name and Identity",
-     "label": "M04#4"
-    },
-    {
-     "video_id": "MCM00001598",
-     "t": 1682,
-     "date": "2024-10-23",
-     "base": "2024-11-26_MCM00001598",
-     "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
-     "title": "Commission Ordinance Review",
-     "label": "M09#5"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 1567,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Commission Project Planning",
-     "label": "M12#7"
-    },
-    {
-     "video_id": "CAS00002444",
-     "t": 3815,
-     "date": "2026-05-27",
-     "base": "2026-06-01_CAS00002444",
-     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
-     "title": "Disability Commission ordinance and ADA transition plan updates",
-     "label": "M13#6"
-    },
-    {
-     "video_id": "CAS00002538",
-     "t": 15,
-     "date": "2026-09-23",
-     "base": "2026-09-28_CAS00002538",
-     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
-     "title": "Welcome, Administrative Updates, and Holiday Meeting Calendar",
-     "label": "M15#1"
-    }
-   ]
-  },
-  {
-   "name": "Community Outreach and Information Sharing",
-   "status": "ongoing",
-   "summary": "The commission expanded resident access to services by establishing collaborations with community entities, including the Medford Public Library and the Medford Senior Center, where it established a monthly tabling presence (M06#5, M06#6). Commissioners systematically overhauled the city's disability resources web page, restructuring links into accordions and vetting services for accuracy and relevance (M07#4, M08#7). The commission also promoted Community Access Monitor training sessions offered by the Massachusetts Office on Disability for residents and members (M10#2, M12#4). Digital inclusion remained a focus through discussions addressing accessibility barriers within municipal online surveys and consultant communications (M15#2).",
-   "citations": [
     {
      "video_id": "MCM00001365",
-     "t": 3293,
+     "t": 160,
      "date": "2024-02-28",
      "base": "2024-09-09_MCM00001365",
      "meeting_title": "Medford Commission For Persons With Disabilities 02-28-24",
-     "title": "Senior Center Collaboration",
-     "label": "M06#5"
+     "title": "Senior Center Updates and Resource Sharing",
+     "label": "M10#3"
     },
     {
-     "video_id": "MCM00001366",
-     "t": 1804,
-     "date": "2024-03-27",
-     "base": "2024-09-09_MCM00001366",
-     "meeting_title": "Medford Commission For Persons With Disabilities 03-27-24",
-     "title": "Website Resources Review",
-     "label": "M07#4"
+     "video_id": "MCM00001365",
+     "t": 3712,
+     "date": "2024-02-28",
+     "base": "2024-09-09_MCM00001365",
+     "meeting_title": "Medford Commission For Persons With Disabilities 02-28-24",
+     "title": "Medford Public Library Collaboration",
+     "label": "M10#6"
     },
     {
      "video_id": "MCM00001367",
@@ -418,94 +289,24 @@
      "base": "2024-09-09_MCM00001367",
      "meeting_title": "Medford Commission For Persons With Disabilities 05-22-24",
      "title": "Website Resource Revisions",
-     "label": "M08#7"
+     "label": "M12#7"
     },
     {
-     "video_id": "MCM00001652",
-     "t": 115,
-     "date": "2024-12-11",
-     "base": "2024-12-12_MCM00001652",
-     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
-     "title": "Commission Mandate and Program Review",
-     "label": "M10#2"
-    },
-    {
-     "video_id": "MCM00001818",
-     "t": 681,
-     "date": "2025-09-24",
-     "base": "2025-10-10_MCM00001818",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
-     "title": "Community Access Monitoring Training",
-     "label": "M12#4"
-    },
-    {
-     "video_id": "CAS00002538",
-     "t": 967,
-     "date": "2026-09-23",
-     "base": "2026-09-28_CAS00002538",
-     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
-     "title": "IHCD Survey and Digital Accessibility Concerns",
-     "label": "M15#2"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "The commission conducted Open Meeting Law compliance training, resolved accessible parking deficiencies at the new Tufts Green Line Extension station, and hosted its October 2023 disability resource fair.",
-   "citations": [
-    {
-     "video_id": "MCM00001364",
-     "t": 222,
-     "date": "2023-05-24",
-     "base": "2024-09-09_MCM00001364",
-     "meeting_title": "Medford Commission For Persons With Disabilities 05-24-23",
-     "title": "Open Meeting Law Presentation",
-     "label": "M01#2"
-    },
-    {
-     "video_id": "MCM00001360",
-     "t": 2747,
-     "date": "2023-09-27",
-     "base": "2024-09-05_MCM00001360",
-     "meeting_title": "Medford Commission For Persons With Disabilities 09-27-23",
-     "title": "Tufts GLX Station Accessibility Concerns",
-     "label": "M03#6"
-    },
-    {
-     "video_id": "MCM00001369",
-     "t": 677,
-     "date": "2023-11-29",
-     "base": "2024-09-09_MCM00001369",
-     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
-     "title": "Recap of Disability Fair and Mobile Vaccine Clinic",
-     "label": "M04#3"
-    },
-    {
-     "video_id": "MCM00001369",
-     "t": 2950,
-     "date": "2023-11-29",
-     "base": "2024-09-09_MCM00001369",
-     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
-     "title": "Tufts T Station Accessibility Update",
-     "label": "M04#5"
+     "video_id": "CAS00002394",
+     "t": 3590,
+     "date": "2026-04-22",
+     "base": "2026-04-23_CAS00002394",
+     "meeting_title": "Commission for Persons with Disabilities 04/22/26",
+     "title": "Grants and Digital Accessibility Updates",
+     "label": "M17#6"
     }
    ]
   },
   {
-   "period": "2024-2025 term",
-   "narrative": "Commissioners prioritized municipal website resource redesigns, implemented assistive technology and physical renovations at City Hall, and monitored accessible voting equipment and transit station upgrades.",
+   "name": "Voting and Polling Place Readiness",
+   "status": "ongoing",
+   "summary": "The commission focuses on the accessibility of the political sphere by verifying that polling locations are prepared for voters with disabilities [M13#5]. Members coordinate with the Elections Commission to ensure accessible voting machines are properly set up, calibrated, and staffed by trained workers [M13#4, M16#9]. Recent efforts include reviewing voting machine accessibility testing results and discussing alternative voting methods [M18#7].",
    "citations": [
-    {
-     "video_id": "MCM00001366",
-     "t": 1804,
-     "date": "2024-03-27",
-     "base": "2024-09-09_MCM00001366",
-     "meeting_title": "Medford Commission For Persons With Disabilities 03-27-24",
-     "title": "Website Resources Review",
-     "label": "M07#4"
-    },
     {
      "video_id": "MCM00001598",
      "t": 1115,
@@ -513,25 +314,16 @@
      "base": "2024-11-26_MCM00001598",
      "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
      "title": "Polling Place Accessibility",
-     "label": "M09#4"
+     "label": "M13#4"
     },
     {
-     "video_id": "MCM00001652",
-     "t": 446,
-     "date": "2024-12-11",
-     "base": "2024-12-12_MCM00001652",
-     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
-     "title": "Physical Equipment and Assistive Technology Upgrades",
-     "label": "M10#3"
-    },
-    {
-     "video_id": "MCM00001753",
-     "t": 3902,
-     "date": "2025-02-26",
-     "base": "2025-02-27_MCM00001753",
-     "meeting_title": "Medford Commission For Persons With Disabilities 02-26-25",
-     "title": "City Hall Accessibility Updates",
-     "label": "M11#3"
+     "video_id": "MCM00001598",
+     "t": 1682,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001598",
+     "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
+     "title": "Commission Ordinance Review",
+     "label": "M13#5"
     },
     {
      "video_id": "MCM00001818",
@@ -540,22 +332,86 @@
      "base": "2025-10-10_MCM00001818",
      "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
      "title": "Accessible Voting and Elections Update",
-     "label": "M12#9"
+     "label": "M16#9"
+    },
+    {
+     "video_id": "CAS00002444",
+     "t": 4260,
+     "date": "2026-05-27",
+     "base": "2026-06-01_CAS00002444",
+     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
+     "title": "Other business and community announcements",
+     "label": "M18#7"
     }
    ]
   },
   {
-   "period": "2026-2027 term",
-   "narrative": "The commission provided accessibility feedback on the Tufts Park redesign, engaged with the Institute for Human Centered Design on the city's ADA transition plan, and prioritized intersections for audible pedestrian signal grants.",
+   "name": "Commission Identity and Governance",
+   "status": "ongoing",
+   "summary": "The commission has periodically reviewed the city ordinance governing its powers to ensure its role in advocating for residents remains current [M04#5, M13#5]. Governance activities have included electing officers like Gabrielle Evangelista as secretary and naming Gabby as interim chair following the departure of Tom Hamel [M01#5, M08#8]. Members also explored a formal name change and rebranding through a new logo designed in collaboration with local students [M01#3, M07#8, M08#4]. In 2026, staff reported that an updated commission ordinance was undergoing legal review [M18#6].",
    "citations": [
     {
-     "video_id": "CAS00002444",
-     "t": 142,
-     "date": "2026-05-27",
-     "base": "2026-06-01_CAS00002444",
-     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
-     "title": "Tufts Park redesign presentation and feedback",
-     "label": "M13#2"
+     "video_id": "MCM00001359",
+     "t": 1534,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Logo Design Subcommittee",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "MCM00001359",
+     "t": 4701,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Election of Secretary",
+     "label": "M01#5"
+    },
+    {
+     "video_id": "MCM00001358",
+     "t": 3435,
+     "date": "2023-04-26",
+     "base": "2024-09-05_MCM00001358",
+     "meeting_title": "Medford Commission For Persons With Disabilities 04-26-23",
+     "title": "Ordinance Review",
+     "label": "M04#5"
+    },
+    {
+     "video_id": "MCM00001360",
+     "t": 3889,
+     "date": "2023-09-27",
+     "base": "2024-09-05_MCM00001360",
+     "meeting_title": "Medford Commission For Persons With Disabilities 09-27-23",
+     "title": "Announcements and Future Business",
+     "label": "M07#8"
+    },
+    {
+     "video_id": "MCM00001369",
+     "t": 2286,
+     "date": "2023-11-29",
+     "base": "2024-09-09_MCM00001369",
+     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
+     "title": "Commission Name and Identity",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "MCM00001369",
+     "t": 4843,
+     "date": "2023-11-29",
+     "base": "2024-09-09_MCM00001369",
+     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
+     "title": "Interim Chair Selection",
+     "label": "M08#8"
+    },
+    {
+     "video_id": "MCM00001598",
+     "t": 1682,
+     "date": "2024-10-23",
+     "base": "2024-11-26_MCM00001598",
+     "meeting_title": "Medford Commission For Persons With Disabilities 10-23-24",
+     "title": "Commission Ordinance Review",
+     "label": "M13#5"
     },
     {
      "video_id": "CAS00002444",
@@ -564,7 +420,41 @@
      "base": "2026-06-01_CAS00002444",
      "meeting_title": "Commission for Persons with Disabilities 05/27/26",
      "title": "Disability Commission ordinance and ADA transition plan updates",
-     "label": "M13#6"
+     "label": "M18#6"
+    }
+   ]
+  },
+  {
+   "name": "Pedestrian Infrastructure and Signals",
+   "status": "ongoing",
+   "summary": "The commission prioritizes the installation of ADA-compliant audible pedestrian signals at intersections throughout the city [M20#3]. In 2026, Director of Traffic and Transportation Todd Blake detailed plans for upgrades at multiple intersections funded by a casino mitigation grant [M19#4]. This work coincides with discussions regarding sidewalk conditions, snow removal requirements, and the importance of planting accessible tree species that do not damage walkways [M14#9, M15#4, M17#7].",
+   "citations": [
+    {
+     "video_id": "MCM00001652",
+     "t": 3170,
+     "date": "2024-12-11",
+     "base": "2024-12-12_MCM00001652",
+     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
+     "title": "Community Complaint Trends and Code Enforcement",
+     "label": "M14#9"
+    },
+    {
+     "video_id": "MCM00001753",
+     "t": 4167,
+     "date": "2025-02-26",
+     "base": "2025-02-27_MCM00001753",
+     "meeting_title": "Medford Commission For Persons With Disabilities 02-26-25",
+     "title": "Transportation Accessibility and Keolis Update",
+     "label": "M15#4"
+    },
+    {
+     "video_id": "CAS00002394",
+     "t": 3862,
+     "date": "2026-04-22",
+     "base": "2026-04-23_CAS00002394",
+     "meeting_title": "Commission for Persons with Disabilities 04/22/26",
+     "title": "Accessible Infrastructure and Trees",
+     "label": "M17#7"
     },
     {
      "video_id": "CAS00002474",
@@ -573,16 +463,7 @@
      "base": "2026-06-30_CAS00002474",
      "meeting_title": "Commission for Persons with Disabilities 06/24/26",
      "title": "Traffic, Accessible Pedestrian Signals, and Bus Route Updates",
-     "label": "M14#4"
-    },
-    {
-     "video_id": "CAS00002538",
-     "t": 967,
-     "date": "2026-09-23",
-     "base": "2026-09-28_CAS00002538",
-     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
-     "title": "IHCD Survey and Digital Accessibility Concerns",
-     "label": "M15#2"
+     "label": "M19#4"
     },
     {
      "video_id": "CAS00002538",
@@ -591,26 +472,163 @@
      "base": "2026-09-28_CAS00002538",
      "meeting_title": "Commission for Persons with Disabilities 09/23/26",
      "title": "Pedestrian Signal Grant and Intersection Prioritization",
-     "label": "M15#3"
+     "label": "M20#3"
     }
    ]
   }
  ],
- "dropped": 1,
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "The commission focused on establishing its organizational structure, initiating plans for the first Disability Pride event, and addressing urgent ADA failures at the high school and transit stations.",
+   "citations": [
+    {
+     "video_id": "MCM00001359",
+     "t": null,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001359",
+     "t": 2262,
+     "date": "2023-01-25",
+     "base": "2024-09-05_MCM00001359",
+     "meeting_title": "Medford Commission For Persons With Disabilities 01-25-23",
+     "title": "Disability Pride Day and High School ADA Issues",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001362",
+     "t": 495,
+     "date": "2023-03-22",
+     "base": "2024-09-05_MCM00001362",
+     "meeting_title": "Medford Commission For Persons With Disabilities 03-22-23",
+     "title": "Disability Resource Fair Planning",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "MCM00001360",
+     "t": 2747,
+     "date": "2023-09-27",
+     "base": "2024-09-05_MCM00001360",
+     "meeting_title": "Medford Commission For Persons With Disabilities 09-27-23",
+     "title": "Tufts GLX Station Accessibility Concerns",
+     "label": "M07#6"
+    },
+    {
+     "video_id": "MCM00001369",
+     "t": null,
+     "date": "2023-11-29",
+     "base": "2024-09-09_MCM00001369",
+     "meeting_title": "Medford Commission For Persons With Disabilities 11-29-23",
+     "title": "Medford Commission For Persons With Disabilities 11-29-23",
+     "label": "M08"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "During this term, the body expanded its outreach through collaborations with the Senior Center and the High School Building Committee while beginning a multi-year audit of city facilities.",
+   "citations": [
+    {
+     "video_id": "MCM00001365",
+     "t": 3293,
+     "date": "2024-02-28",
+     "base": "2024-09-09_MCM00001365",
+     "meeting_title": "Medford Commission For Persons With Disabilities 02-28-24",
+     "title": "Senior Center Collaboration",
+     "label": "M10#5"
+    },
+    {
+     "video_id": "MCM00001366",
+     "t": 295,
+     "date": "2024-03-27",
+     "base": "2024-09-09_MCM00001366",
+     "meeting_title": "Medford Commission For Persons With Disabilities 03-27-24",
+     "title": "Medford High School Building Committee Update",
+     "label": "M11#2"
+    },
+    {
+     "video_id": "MCM00001652",
+     "t": null,
+     "date": "2024-12-11",
+     "base": "2024-12-12_MCM00001652",
+     "meeting_title": "Medford Commission For Persons With Disabilities 12-11-24",
+     "title": "Medford Commission For Persons With Disabilities 12-11-24",
+     "label": "M14"
+    },
+    {
+     "video_id": "MCM00001818",
+     "t": 784,
+     "date": "2025-09-24",
+     "base": "2025-10-10_MCM00001818",
+     "meeting_title": "Medford Commission For Persons With Disabilities 09-24-25",
+     "title": "Disability Specialist Update",
+     "label": "M16#5"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "The commission prioritized pedestrian signal upgrades and reviewed comprehensive city-wide accessibility surveys conducted by the Institute for Human Centered Design.",
+   "citations": [
+    {
+     "video_id": "CAS00002444",
+     "t": 3815,
+     "date": "2026-05-27",
+     "base": "2026-06-01_CAS00002444",
+     "meeting_title": "Commission for Persons with Disabilities 05/27/26",
+     "title": "Disability Commission ordinance and ADA transition plan updates",
+     "label": "M18#6"
+    },
+    {
+     "video_id": "CAS00002474",
+     "t": 861,
+     "date": "2026-06-24",
+     "base": "2026-06-30_CAS00002474",
+     "meeting_title": "Commission for Persons with Disabilities 06/24/26",
+     "title": "ADA Transition Plan and IHCD Survey Updates",
+     "label": "M19#3"
+    },
+    {
+     "video_id": "CAS00002538",
+     "t": 967,
+     "date": "2026-09-23",
+     "base": "2026-09-28_CAS00002538",
+     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
+     "title": "IHCD Survey and Digital Accessibility Concerns",
+     "label": "M20#2"
+    },
+    {
+     "video_id": "CAS00002538",
+     "t": 1480,
+     "date": "2026-09-23",
+     "base": "2026-09-28_CAS00002538",
+     "meeting_title": "Commission for Persons with Disabilities 09/23/26",
+     "title": "Pedestrian Signal Grant and Intersection Prioritization",
+     "label": "M20#3"
+    }
+   ]
+  }
+ ],
+ "dropped": 0,
  "coverage": {
-  "citations": 57,
-  "meetings_cited": 14,
-  "of_meetings": 15,
-  "max_share": 0.14,
-  "even_share": 0.0667,
-  "concentration_ratio": 2.1,
-  "most_cited": "MCM00001818",
+  "citations": 59,
+  "meetings_cited": 17,
+  "of_meetings": 20,
+  "max_share": 0.119,
+  "even_share": 0.05,
+  "concentration_ratio": 2.38,
+  "most_cited": "MCM00001359",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 6293,
-  "output_tokens": 2130,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 8060,
+  "output_tokens": 1885,
+  "model_version": "gemini-3-flash-preview"
  }
 }
