@@ -1,0 +1,42 @@
+{
+ "video_id": "MCM00000869",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T03:32:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "600d6b9667d56706",
+ "subject": "School Facility Naming Policy",
+ "overview": "The Strategic Planning Subcommittee met to draft a district-wide facility naming policy and discuss community participation options for the McGlynn Elementary School playground. The subcommittee approved a draft naming policy for full committee review and recommended plaque-based donor recognition levels for the playground project.",
+ "items": [
+  {
+   "title": "Draft School Facility Naming Policy",
+   "t": 93,
+   "summary": "The subcommittee approved a draft policy governing the naming and renaming of school facilities, spaces, and grounds as amended, advancing it to the full committee for two required readings.",
+   "speakers": [
+    "Jenny Graham",
+    "Paul Ruseau",
+    "Sharon Hays",
+    "Peter Cushing",
+    "Eunice Browne"
+   ]
+  },
+  {
+   "title": "Community Participation Options for McGlynn Playground",
+   "t": 1905,
+   "summary": "The subcommittee discussed fundraising and donor recognition options for the McGlynn Elementary School playground, recommending tiered sponsorship levels on a central plaque rather than naming individual pieces of play equipment.",
+   "speakers": [
+    "Jenny Graham",
+    "Paul Ruseau",
+    "Sharon Hays",
+    "Peter Cushing",
+    "Marice Edouard-Vincent"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16564,
+  "output_tokens": 257,
+  "model_version": "gemini-3.6-flash"
+ }
+}

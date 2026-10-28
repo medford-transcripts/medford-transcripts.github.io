@@ -1,0 +1,69 @@
+{
+ "video_id": "MCM00001298",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T03:33:35Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "18bf6b0123a8e5a7",
+ "subject": "",
+ "overview": "The commission approved chimney repairs for 309 High Street and began reviewing draft design guidelines for the city's historic districts. The meeting also addressed aesthetic standards for solar panel installations and outreach strategies for the proposed South Street district.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 4,
+   "summary": "Approved the minutes from the meeting held on January 12.",
+   "speakers": [
+    "Christopher Donovan",
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "309 High Street Chimney Repair",
+   "t": 148,
+   "summary": "Approved an application by owner Ben Coy to rebuild two chimneys in bare brick to match previous repairs and install a low-profile damper.",
+   "speakers": [
+    "Christopher Bader",
+    "Ben Coy",
+    "Christopher Donovan",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Solar Energy in Historic Districts",
+   "t": 1070,
+   "summary": "Discussed the aesthetic impact of solar panels on historic properties and the potential suitability of solar shingles for preserving district character.",
+   "speakers": [
+    "Tim Matuszewski",
+    "Christopher Bader",
+    "Christopher Donovan",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Historic District Design Guidelines",
+   "t": 1861,
+   "summary": "Reviewed a draft of comprehensive design guidelines intended to balance historic preservation with modern materials and energy efficiency upgrades.",
+   "speakers": [
+    "Christopher Bader",
+    "Christopher Donovan",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "South Street District Planning",
+   "t": 3083,
+   "summary": "Scheduled a site walkthrough for the week of February 20 and reviewed community outreach materials for property owners within the proposed district.",
+   "speakers": [
+    "Christopher Bader",
+    "Christopher Donovan",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23853,
+  "output_tokens": 498,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
