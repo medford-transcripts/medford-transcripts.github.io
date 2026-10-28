@@ -1,0 +1,75 @@
+{
+ "video_id": "MCM00001546",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T21:05:59Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b795bb5619ecc0f0",
+ "subject": "Welcome to Medford Postcard and Resident Materials",
+ "overview": "The committee refined welcoming materials for new residents, including revisions to the city's postcard and the format of informational packets. Members also confirmed their 2023 meeting schedule and discussed filling the secretary role.",
+ "items": [
+  {
+   "title": "Agenda and Secretary Role",
+   "t": 0,
+   "summary": "Approved the agenda and noted that Lisa will serve as secretary until a replacement is found.",
+   "speakers": [
+    "Henry Miller",
+    "Pam Kelly",
+    "Lisa"
+   ]
+  },
+  {
+   "title": "2023 Meeting Schedule",
+   "t": 623,
+   "summary": "Confirmed that the committee will continue to meet on the second Wednesday of each month throughout 2023.",
+   "speakers": [
+    "Henry Miller",
+    "Kevin",
+    "Danny",
+    "Pam Kelly"
+   ]
+  },
+  {
+   "title": "Welcome Postcard Revisions",
+   "t": 709,
+   "summary": "Discussed updating the city's welcoming postcard to include snow emergency parking regulations, street sweeping information, and city alert sign-up instructions.",
+   "speakers": [
+    "Henry Miller",
+    "Lisa",
+    "Danny",
+    "Kevin",
+    "Pam Kelly"
+   ]
+  },
+  {
+   "title": "Welcoming Packets and Maps",
+   "t": 2074,
+   "summary": "Evaluated replacing the physical welcoming booklet with digital one-sheeters and neighborhood-based maps to better manage changing city information.",
+   "speakers": [
+    "Henry Miller",
+    "Lisa",
+    "Danny",
+    "Pam Kelly",
+    "Kevin"
+   ]
+  },
+  {
+   "title": "Multilingual Resources",
+   "t": 3144,
+   "summary": "Proposed listing the multilingual resource line in several different languages on printed materials to improve accessibility for non-English speakers.",
+   "speakers": [
+    "Lisa",
+    "Kevin",
+    "Henry Miller",
+    "Danny",
+    "Pam Kelly"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24676,
+  "output_tokens": 417,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
