@@ -1,52 +1,51 @@
 {
  "video_id": "CAS00002378",
  "provider": "gemini",
- "generated_at": "2026-10-28T06:10:48Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-10-28T07:06:28Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "4b9d0bb0bb3a215c",
+ "transcript_sha": "12193c5cd3e34942",
  "subject": "",
- "overview": "The School Committee reviewed technical updates to the Chapter 74 vocational admissions policy, discussed operational and religious holiday constraints regarding the 2026-2027 school calendar, and walked through proposed revisions to the committee's operating rules. The committee approved the consent agenda, adopted the revised vocational admissions policy, and directed that consolidated rules be presented at the next meeting.",
+ "overview": "The Medford School Committee approved updates to its CTE admissions policy, recognized MHS Science Fair awardees, and discussed constraints facing the 2026–2027 school calendar. The committee also reviewed proposed revisions to its operating rules.",
  "items": [
   {
-   "title": "Consent agenda",
+   "title": "Consent Agenda",
    "t": 72,
-   "summary": "Approved the consent agenda, including bills and payrolls, meeting minutes, and a $1,000 PTO donation.",
+   "summary": "Approved the consent agenda, including bills and payrolls, donations, a quarterly update, and prior meeting minutes.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "Mustang Moment: Science Fair recognition",
-   "t": 113,
-   "summary": "Science Director Rocco Cieri and Superintendent Galusi introduced Medford High School Science Fair awardees, who presented overviews of their research projects.",
+   "title": "Mustang Moment: MHS Science Fair Recognition",
+   "t": 104,
+   "summary": "Recognized award winners and student presenters from the annual Medford High School Science Fair.",
    "speakers": [
     "Suzanne Galusi",
     "Rocco Cieri",
-    "Jayden Vil",
-    "Breanna Lungo-Koehn"
+    "Jayden Vil"
    ]
   },
   {
-   "title": "Chapter 74 CTE admissions policy update",
+   "title": "CTE Program Admissions Policy Revisions",
    "t": 870,
-   "summary": "Approved language revisions required by the Department of Elementary and Secondary Education to clarify details and retention pathways in the vocational admissions lottery policy.",
+   "summary": "Approved Department of Elementary and Secondary Education requested language updates to the Chapter 74 CTE admissions lottery policy.",
    "speakers": [
-    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
     "Chad Fallon",
+    "Breanna Lungo-Koehn",
     "Erika Reinfeld",
     "Jenny Graham",
     "Christine DesAutels"
    ]
   },
   {
-   "title": "2026-2027 school year calendar review",
+   "title": "FY 2026–2027 School Calendar Review",
    "t": 2020,
-   "summary": "Superintendent Galusi outlined scheduling constraints for the 2026-2027 school year caused by a late Labor Day, five required snow days, and staffing impacts on Good Friday, noting upcoming community and union discussions ahead of a revised proposal.",
+   "summary": "Discussed scheduling constraints and holiday observances for the upcoming school year, with plans to gather union and community feedback before proposing calendar updates.",
    "speakers": [
-    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
+    "Breanna Lungo-Koehn",
     "Jenny Graham",
     "Jessica Parks",
     "Erika Reinfeld",
@@ -54,30 +53,31 @@
    ]
   },
   {
-   "title": "School Committee term objectives",
+   "title": "Term Objectives Summary Review",
    "t": 3600,
-   "summary": "Tabled review of the summary of objectives from the January retreat.",
+   "summary": "Tabled the review of the committee's term objectives summary from its January retreat.",
    "speakers": [
     "Breanna Lungo-Koehn"
    ]
   },
   {
-   "title": "School Committee rules revisions",
-   "t": 3621,
-   "summary": "Voted to direct Member Ruseau to consolidate proposed edits to the committee's operating rules, covering summer meetings, materials deadlines, and charter alignment, for final action at the next meeting.",
+   "title": "School Committee Rules Review",
+   "t": 3625,
+   "summary": "Reviewed proposed revisions to the committee's operating rules and voted to consolidate the edits for presentation at the next meeting.",
    "speakers": [
-    "Breanna Lungo-Koehn",
     "Paul Ruseau",
     "Erika Reinfeld",
     "Suzanne Galusi",
-    "Mike Mastrobuoni"
+    "Jenny Graham",
+    "Mike Mastrobuoni",
+    "Breanna Lungo-Koehn"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 26517,
-  "output_tokens": 625,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 26524,
+  "output_tokens": 656,
+  "model_version": "gemini-3.6-flash"
  }
 }
