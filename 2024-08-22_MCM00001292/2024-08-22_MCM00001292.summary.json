@@ -1,0 +1,42 @@
+{
+ "video_id": "MCM00001292",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T09:27:44Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7ea702406364c1e0",
+ "subject": "South Street Historic District Outreach Planning",
+ "overview": "The Medford Historic District Commission discussed public outreach strategies and architectural guidelines for establishing a proposed South Street historic district covering roughly 20 homes. Consultant Chris Skelly advised the commission on conducting resident-led listening sessions and the required study report under Chapter 40C.",
+ "items": [
+  {
+   "title": "Communication strategies and resident outreach",
+   "t": 3,
+   "summary": "Commission members discussed strategy for reaching the roughly 20 homeowners in the proposed South Street district, emphasizing peer-to-peer listening sessions, drafted educational materials, and early communication with city councilors.",
+   "speakers": [
+    "Christopher Bader",
+    "Christopher Donovan",
+    "Sharon",
+    "Chris Skelly",
+    "Fred"
+   ]
+  },
+  {
+   "title": "Contract details, site visit, and Chapter 40C report",
+   "t": 1665,
+   "summary": "The commission coordinated a site tour with consultant Chris Skelly, examined CPA grant possibilities for architectural assistance, and confirmed Form B surveys are not strictly required for the 40C study report.",
+   "speakers": [
+    "Christopher Bader",
+    "Christopher Donovan",
+    "Sharon",
+    "Chris Skelly",
+    "Fred"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21786,
+  "output_tokens": 261,
+  "model_version": "gemini-3.8-flash"
+ }
+}

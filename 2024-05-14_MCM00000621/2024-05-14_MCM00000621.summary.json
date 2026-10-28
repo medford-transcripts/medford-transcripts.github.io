@@ -1,0 +1,79 @@
+{
+ "video_id": "MCM00000621",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T09:15:25Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "ff3477fc1019f129",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals met to consider several property petitions, approving a driveway special permit at 7 Summer Street, an industrial building addition finding at 55 Hall Street, and setback variances for 180 Lincoln Road. The board also granted continuances for cases on Burgett Avenue, Governors Avenue, and Riverside Avenue.",
+ "items": [
+  {
+   "title": "55 Burgett Avenue (Case A-2022-15)",
+   "t": 97,
+   "summary": "The board granted a continuance to the next regular meeting at the applicant's request.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "93 Governors Avenue (Case A-2022-21)",
+   "t": 250,
+   "summary": "The board granted a continuance to the next regular meeting after the applicant requested time due to a scheduling conflict.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "7 Summer Street (Case A-2022-17)",
+   "t": 355,
+   "summary": "The board approved a special permit for a driveway opening with reduced buffer setback, subject to a condition requiring fence height modifications to protect pedestrian sightlines.",
+   "speakers": [
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "436 Riverside Avenue (Case A-2022-19)",
+   "t": 1950,
+   "summary": "The board granted a continuance to February 23, 2023, allowing the applicant time to obtain required police chief certification for a proposed 10-foot electric security fence plan.",
+   "speakers": [
+    "Cindy Lundy",
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "55 Hall Street (Case A-2022-20)",
+   "t": 3404,
+   "summary": "The board approved a special permit finding that a proposed commercial building addition extending a pre-existing nonconforming side yard setback would not be substantially more detrimental to the neighborhood.",
+   "speakers": [
+    "Doug Shoup",
+    "Mike Caldera",
+    "Jamie Thompson",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "180 Lincoln Road (Case A-2022-22)",
+   "t": 4758,
+   "summary": "The board approved side and rear yard setback variances to allow the demolition of an existing structure and construction of a new single-story accessible single-family home.",
+   "speakers": [
+    "Anam Changwai",
+    "Mike Caldera",
+    "Denis MacDougall",
+    "Andre Leroux"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 36077,
+  "output_tokens": 718,
+  "model_version": "gemini-3.6-flash"
+ }
+}
