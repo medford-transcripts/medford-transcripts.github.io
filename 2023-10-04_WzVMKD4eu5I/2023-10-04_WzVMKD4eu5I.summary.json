@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "fd84a57ba51bce88",
- "subject": "",
+ "subject": "Mayoral Debate",
  "overview": "Mayor Breanna Lungo-Koehn and City Councilor Richard Caraviello participated in a debate hosted by the Medford Chamber of Commerce to discuss key municipal issues ahead of the 2023 election.",
  "items": [
   {
@@ -196,5 +196,6 @@
   "input_tokens": 38562,
   "output_tokens": 2113,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
