@@ -1,0 +1,51 @@
+{
+ "video_id": "EzhtyjkzgTA",
+ "provider": "gemini",
+ "generated_at": "2026-10-28T11:06:54Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "df5f786b8f594d31",
+ "subject": "",
+ "overview": "Mayor Breanna Lungo-Koehn delivered the 2023 State of the City Address, outlining major redevelopment initiatives for Wellington Station and Medford Square alongside priorities for public safety and school infrastructure. Representatives from the School Committee and City Council also reported on curriculum updates, labor negotiations, and zoning reforms.",
+ "items": [
+  {
+   "title": "Poet Laureate Presentation",
+   "t": 426,
+   "summary": "Terry Carter performed \"A Medford State of Mind\" as the city's first Poet Laureate to open the program.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "School Committee Update",
+   "t": 834,
+   "summary": "Vice Chair Jenny Graham highlighted new literacy and math curricula, the settlement of 11 labor contracts providing living wages for paraprofessionals, and plans to resubmit an application to the MSBA for a new high school.",
+   "speakers": [
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "City Council Year in Review",
+   "t": 1274,
+   "summary": "President Nicole Morell reported on the completion of the city's first comprehensive zoning recodification in decades, the passage of a polystyrene ban, and updates to senior property tax deferrals.",
+   "speakers": [
+    "Nicole Morell"
+   ]
+  },
+  {
+   "title": "State of the City Address",
+   "t": 1492,
+   "summary": "Mayor Breanna Lungo-Koehn announced upcoming redevelopment proposals for Wellington Station and Medford Square, detailed over $20 million in planned fire station upgrades, and noted that a future tax override may be necessary to address a structural deficit once federal ARPA funds expire.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15740,
+  "output_tokens": 462,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
