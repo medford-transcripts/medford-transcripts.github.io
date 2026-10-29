@@ -1,0 +1,54 @@
+{
+ "video_id": "mzAfWK2luWc",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T18:13:02Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "848c6b611216a967",
+ "subject": "Medford-Malden Thanksgiving Football Game",
+ "overview": "Medford High School played Malden High School in the annual Thanksgiving football game at Fenway Park. Malden defeated Medford by a final score of 34 to 15.",
+ "items": [
+  {
+   "title": "Pregame and Coin Toss",
+   "t": 304,
+   "summary": "Honorary captains Ron Zambel, Mike Colonna, and George Bob Baker joined the teams on the field, and Malden won the coin toss and elected to receive.",
+   "speakers": []
+  },
+  {
+   "title": "First Quarter",
+   "t": 559,
+   "summary": "Malden took a 14-0 lead behind a touchdown run by Kevin Exelhom and a fumble recovery return for a touchdown by Felix Acosta.",
+   "speakers": []
+  },
+  {
+   "title": "Second Quarter",
+   "t": 2488,
+   "summary": "Malden extended its lead to 22-0 following a second touchdown carry by Kevin Exelhom and a successful two-point conversion pass to Kyle Paulding.",
+   "speakers": []
+  },
+  {
+   "title": "Halftime",
+   "t": 4126,
+   "summary": "The Malden High School Band performed, and the winning raffle ticket for the Wasabi Fenway Bowl was drawn.",
+   "speakers": []
+  },
+  {
+   "title": "Second Half",
+   "t": 5032,
+   "summary": "Medford answered with touchdowns from Stephens Exeter and Luis Barboza, but Malden pulled away with additional touchdowns by Kevin Exelhom and Davian McGuffey.",
+   "speakers": []
+  },
+  {
+   "title": "Final Score",
+   "t": 8552,
+   "summary": "Malden concluded the game with a 34-15 victory over Medford.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9830,
+  "output_tokens": 426,
+  "model_version": "gemini-3.8-flash"
+ }
+}
