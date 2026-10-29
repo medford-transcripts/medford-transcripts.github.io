@@ -1,0 +1,37 @@
+{
+ "video_id": "ssV32LgKHvc",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T12:09:13Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "3f902bbae146872d",
+ "subject": "Teachers Union Vote of No Confidence",
+ "overview": "Medford teachers rallied at City Hall to deliver a vote of no confidence to the Mayor and School Committee following an 18-month contract stalemate. The union is seeking increased compensation and improved benefits to attract and retain staff.",
+ "items": [
+  {
+   "title": "Rally at City Hall",
+   "t": 0,
+   "summary": "Over 100 teachers marched to City Hall to deliver a formal vote of no confidence to the Mayor and School Committee.",
+   "speakers": [
+    "Charlene Douglas",
+    "Paul Burton"
+   ]
+  },
+  {
+   "title": "Contract Negotiations",
+   "t": 51,
+   "summary": "The union is seeking a 3% pay increase and improved benefits, while the city maintains that a signed tentative agreement has already been reached with union leadership.",
+   "speakers": [
+    "Paul Burton",
+    "Katie Perez",
+    "Charlene Douglas"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1597,
+  "output_tokens": 202,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
