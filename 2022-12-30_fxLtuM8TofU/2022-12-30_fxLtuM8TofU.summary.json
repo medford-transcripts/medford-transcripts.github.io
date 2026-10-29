@@ -1,0 +1,34 @@
+{
+ "video_id": "fxLtuM8TofU",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T07:18:48Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "74ed75938f58cbcc",
+ "subject": "Medford High School Security Protocols",
+ "overview": "Medford High School announced new security protocols following a recent student stabbing and subsequent student walkout. The victim's mother expressed skepticism that the new measures will help.",
+ "items": [
+  {
+   "title": "New High School Security Protocols",
+   "t": 0,
+   "summary": "The superintendent announced new security protocols starting Tuesday, including bathroom monitoring and a limit of two students at a time, following a recent bathroom stabbing and student walkout.",
+   "speakers": [
+    "Reporter"
+   ]
+  },
+  {
+   "title": "Victim's Family Response",
+   "t": 27,
+   "summary": "The mother of 17-year-old stabbing victim Jordan Pineda stated that she does not believe the new security measures will help.",
+   "speakers": [
+    "Reporter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1061,
+  "output_tokens": 166,
+  "model_version": "gemini-3.6-flash"
+ }
+}

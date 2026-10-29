@@ -1,0 +1,63 @@
+{
+ "video_id": "MCM00001512",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T07:17:22Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f1d47f9ee895e8ed",
+ "subject": "",
+ "overview": "The Hormel Stadium Commission met to review the facility's financial status, discuss spring field grooming and scheduling, and consider proposed locker room painting projects.",
+ "items": [
+  {
+   "title": "Financial Status",
+   "t": 10,
+   "summary": "The commission reviewed financial reports from the finance office and discussed pending revenue and outstanding user fees.",
+   "speakers": [
+    "Brian Collins",
+    "Kevin Bailey"
+   ]
+  },
+  {
+   "title": "Facility Maintenance and Signage",
+   "t": 225,
+   "summary": "Kevin Bailey reported plans to professionally groom the field in early spring and confirmed that updated emergency exit and facility rule signs are in place.",
+   "speakers": [
+    "Kevin Bailey"
+   ]
+  },
+  {
+   "title": "Spring Field Scheduling and Rental Inquiries",
+   "t": 326,
+   "summary": "Staff reviewed field reservation requests for the upcoming spring season, including Medford High School athletics, Boston Glory, and potential community events.",
+   "speakers": [
+    "Kevin Bailey",
+    "John Curley"
+   ]
+  },
+  {
+   "title": "Historical Family Outreach Update",
+   "t": 444,
+   "summary": "Phyllis informed the commission that ancestry research is underway to contact family members regarding a city inquiry.",
+   "speakers": [
+    "Phyllis"
+   ]
+  },
+  {
+   "title": "Locker Room Painting and Upkeep",
+   "t": 506,
+   "summary": "Staff proposed a locker room painting and mural project involving student-athletes, while commissioners noted past concerns regarding flaking ceiling paint.",
+   "speakers": [
+    "John Curley",
+    "Kevin Bailey",
+    "Brian Collins",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6554,
+  "output_tokens": 370,
+  "model_version": "gemini-3.6-flash"
+ }
+}
