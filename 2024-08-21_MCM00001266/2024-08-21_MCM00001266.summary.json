@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "72ed34440f39acc4",
- "subject": "",
+ "subject": "MLK Day Event Planning",
  "overview": "The commission approved previous meeting minutes, discussed planning and logistics for an upcoming MLK Day event at the public library, and reviewed organizational recommendations from Safe Medford. It also formed a three-person subcommittee to coordinate the MLK event.",
  "items": [
   {
@@ -89,5 +89,6 @@
   "input_tokens": 27125,
   "output_tokens": 748,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

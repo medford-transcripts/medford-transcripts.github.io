@@ -1,0 +1,68 @@
+{
+ "video_id": "MCM00001076",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T10:21:35Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2db7faddd310a026",
+ "subject": "",
+ "overview": "The Medford Community Preservation Committee reviewed the status of past CPA-funded projects, received an update on available funding for the current grant cycle, and evaluated scenario options for prioritizing FY23 funding requests. No formal grant award recommendations were finalized during the meeting.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 42,
+   "summary": "The committee postponed approval of prior meeting minutes because they were not yet available.",
+   "speakers": [
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Past CPA Project Updates",
+   "t": 56,
+   "summary": "Committee members and staff reviewed the current progress, completions, and delays across previously funded CPA projects.",
+   "speakers": [
+    "Roberta Cameron",
+    "Danielle Evans",
+    "Doug Carr",
+    "Adam Hurtubise",
+    "Amanda Centrella",
+    "Heidi Davis",
+    "Joan Cyr"
+   ]
+  },
+  {
+   "title": "CPA Financial Update and Available Revenue",
+   "t": 2419,
+   "summary": "Staff presented a financial summary detailing approximately $2.26 million in certified reserves and revenue available to make funding awards during the current funding cycle.",
+   "speakers": [
+    "Danielle Evans",
+    "Roberta Cameron",
+    "Matt Leming",
+    "Joan Cyr"
+   ]
+  },
+  {
+   "title": "FY23 Funding Requests Review and Prioritization",
+   "t": 2990,
+   "summary": "The committee discussed options and potential cost adjustments for several proposed projects to align total funding recommendations with available funds.",
+   "speakers": [
+    "Roberta Cameron",
+    "Danielle Evans",
+    "Matt Leming",
+    "Jenny Graham",
+    "Adam Hurtubise",
+    "Joan Cyr",
+    "Losa Julie Genevieve",
+    "Doug Carr",
+    "Heidi Davis",
+    "Amanda Centrella"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 38667,
+  "output_tokens": 485,
+  "model_version": "gemini-3.6-flash"
+ }
+}
