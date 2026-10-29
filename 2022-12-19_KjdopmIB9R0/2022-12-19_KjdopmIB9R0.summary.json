@@ -1,0 +1,28 @@
+{
+ "video_id": "KjdopmIB9R0",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T09:18:13Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f0a8111ebc45dba2",
+ "subject": "Medford High School Stabbing Incident",
+ "overview": "News coverage reports on a stabbing inside a Medford High School bathroom that resulted in non-life-threatening injuries to one student and a temporary school lockdown. Police took a juvenile suspect into custody.",
+ "items": [
+  {
+   "title": "Medford High School Stabbing Report",
+   "t": 0,
+   "summary": "Following a stabbing in a second-floor boys' bathroom that left one student with non-life-threatening injuries, police took a juvenile suspect into custody and lifted a schoolwide lockdown at lunchtime.",
+   "speakers": [
+    "Reporter",
+    "Jagolinzer",
+    "Nicole Branley"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1244,
+  "output_tokens": 171,
+  "model_version": "gemini-3.8-flash"
+ }
+}
