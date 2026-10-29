@@ -1,0 +1,79 @@
+{
+ "video_id": "CAS00002396",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T15:09:45Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "51258473aac95b8c",
+ "subject": "",
+ "overview": "The Traffic Commission approved a residential handicap parking space and a parking variance for Main Street residents. The body also implemented parking restrictions on Washington Street and Governors Avenue to improve sightlines and protect public infrastructure.",
+ "items": [
+  {
+   "title": "77 Lawrence Street Handicap Parking Space",
+   "t": 0,
+   "summary": "Approved a handicap parking space for a resident with significant mobility and medical needs after determining the existing driveway was too narrow for a motorized wheelchair ramp.",
+   "speakers": [
+    "Alicia Hunt",
+    "Todd Blake",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Tabled Handicap Parking Requests",
+   "t": 408,
+   "summary": "Tabled requests for handicap parking signs at 219 Salem Street, 149 Middlesex Avenue, and 36 Fourth Avenue because the applicants were not present to answer questions about driveway access.",
+   "speakers": [
+    "Todd Blake",
+    "Alicia Hunt",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "383 Main Street Parking Variance",
+   "t": 716,
+   "summary": "Approved a variance allowing two vehicles from 383 Main Street to park in the G resident parking zone because the property faces a metered section of Main Street.",
+   "speakers": [
+    "Alicia Hunt",
+    "Todd Blake",
+    "Jim Silva",
+    "Tim McGivern",
+    "Sarah McDermod"
+   ]
+  },
+  {
+   "title": "Washington Street and Dudley Street Sightlines",
+   "t": 1091,
+   "summary": "Approved extending the \"No Parking\" zones at the corners of Washington Street and Dudley Street to improve visibility and address safety concerns regarding accidents and speeding.",
+   "speakers": [
+    "Todd Blake",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Governors Avenue Parking Restriction",
+   "t": 1280,
+   "summary": "Approved removing approximately 20 feet of parking on the east side of Governors Avenue to prevent exiting vehicles from driving over the landscaped median.",
+   "speakers": [
+    "Todd Blake",
+    "Alicia Hunt",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Contraflow Lane Project Updates",
+   "t": 1708,
+   "summary": "Commissioners discussed implementation delays for the Park Street contraflow lane due to poor pavement conditions and noted the Clippership lane is undergoing conservation review.",
+   "speakers": [
+    "Alicia Hunt",
+    "Todd Blake",
+    "Tim McGivern"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11796,
+  "output_tokens": 646,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
