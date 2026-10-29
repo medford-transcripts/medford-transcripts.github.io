@@ -1,0 +1,35 @@
+{
+ "video_id": "kE3HHoFOyVU",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T08:10:32Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7c4e2d30e3527adc",
+ "subject": "Medford High School Stabbing Response",
+ "overview": "A local news report details the aftermath of a stabbing incident at Medford High School, featuring safety concerns from the victim's mother. Authorities announced juvenile charges and increased police presence at the school.",
+ "items": [
+  {
+   "title": "Stabbing Incident and Family Response",
+   "t": 0,
+   "summary": "The mother of 17-year-old victim Jordan Pineda reported that she does not feel safe sending her son back to school following a stabbing in a campus bathroom.",
+   "speakers": [
+    "Reporter",
+    "Pineda"
+   ]
+  },
+  {
+   "title": "Law Enforcement and School Security Measures",
+   "t": 33,
+   "summary": "Police confirmed that a juvenile has been arrested and charged in connection with the fight, and patrols will be increased at the school for the rest of the week.",
+   "speakers": [
+    "Reporter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1070,
+  "output_tokens": 199,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

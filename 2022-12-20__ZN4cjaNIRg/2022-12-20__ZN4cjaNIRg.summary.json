@@ -1,0 +1,51 @@
+{
+ "video_id": "_ZN4cjaNIRg",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T08:11:17Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "8203801a934aabe6",
+ "subject": "Medford High School Bathroom Stabbing Response",
+ "overview": "This news report covers the immediate security response and public outcry following a violent incident at Medford High School. Officials implemented increased police patrols while parents and students demanded stricter discipline and better facility management at a School Committee meeting.",
+ "items": [
+  {
+   "title": "Increased Police Presence",
+   "t": 0,
+   "summary": "Police officers were deployed to Medford High School to monitor the campus following a stabbing incident in a bathroom.",
+   "speakers": [
+    "Reporter"
+   ]
+  },
+  {
+   "title": "Student Safety and Facility Concerns",
+   "t": 15,
+   "summary": "Students identified bathrooms as high-risk areas for fighting and reported that digital hall pass systems are ineffective at preventing violence.",
+   "speakers": [
+    "Student 1",
+    "Student 2"
+   ]
+  },
+  {
+   "title": "School Committee Public Comment",
+   "t": 49,
+   "summary": "Parents and students criticized school leadership for a perceived lack of discipline and demanded harsher punishments for violent behavior.",
+   "speakers": [
+    "Student 1"
+   ]
+  },
+  {
+   "title": "Security Duration and Climate Study",
+   "t": 67,
+   "summary": "Heightened security will remain in place through the end of the week, and the Mayor announced an upcoming culture and climate study to address safety issues.",
+   "speakers": [
+    "Bienick"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1326,
+  "output_tokens": 337,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

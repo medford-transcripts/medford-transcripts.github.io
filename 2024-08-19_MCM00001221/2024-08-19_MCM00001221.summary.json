@@ -1,0 +1,70 @@
+{
+ "video_id": "MCM00001221",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T08:10:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "38086245f4f594fe",
+ "subject": "2023 License Renewals and El Tacuba Status",
+ "overview": "The Commission approved annual liquor license renewals and applications for entertainment and ownership transfers. The board specifically conditioned one renewal on an explanation for a long-term business closure and discussed updated municipal population estimates.",
+ "items": [
+  {
+   "title": "Medford Brewing Company Entertainment License",
+   "t": 1,
+   "summary": "Approved an entertainment license for performers, devices, and patrons following a discussion on acoustic music and plans to close by 10:00 PM.",
+   "speakers": [
+    "Max Heinegg",
+    "Allan Martorana",
+    "Robert Delafano",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Chili Garden Ownership Transfer",
+   "t": 307,
+   "summary": "Approved the transfer of stock and change of officers for Chili Garden to new owners Jing, Wang, and Zhang.",
+   "speakers": [
+    "Allan Martorana",
+    "Jing",
+    "Robert Delafano",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "2023 Liquor License Renewals",
+   "t": 996,
+   "summary": "Approved the annual renewal list for all alcohol and wine/malt establishments, noting that Carol's and Wingstop did not seek renewal.",
+   "speakers": [
+    "Allan Martorana",
+    "Daria Tejera",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "El Tacuba Renewal Contingency",
+   "t": 1391,
+   "summary": "Conditioned the renewal of El Tacuba's license on the owner providing a satisfactory written explanation for why the business has remained closed for four years.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Departmental Updates",
+   "t": 1838,
+   "summary": "Received updates regarding ongoing renovations at Deep Cuts and reviewed preliminary census data showing the city population has increased to approximately 62,000.",
+   "speakers": [
+    "Allan Martorana",
+    "Robert Delafano",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14957,
+  "output_tokens": 564,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
