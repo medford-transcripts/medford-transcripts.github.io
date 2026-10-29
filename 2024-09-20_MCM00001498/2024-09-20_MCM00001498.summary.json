@@ -1,0 +1,54 @@
+{
+ "video_id": "MCM00001498",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T11:17:42Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1fc24cb5a889561d",
+ "subject": "243 Mystic Avenue Life Science Development",
+ "overview": "Developers and architects presented a pre-application proposal for an incubator biotech lab building at 243 Mystic Avenue. The team outlined architectural designs, mechanical infrastructure, and sustainability plans, and answered public questions regarding site operations.",
+ "items": [
+  {
+   "title": "Project Team Introduction",
+   "t": 0,
+   "summary": "Developer Doug Medvets introduced the development team and shared background on Verdant's focus on life science incubator projects.",
+   "speakers": [
+    "Doug Medvets"
+   ]
+  },
+  {
+   "title": "243 Mystic Avenue Proposal Presentation",
+   "t": 466,
+   "summary": "Architect Matthew Juros detailed the proposed design for the lab facility, including automated stacker parking, transit accommodations, floor layouts, exterior aesthetics, and roof-level mechanical equipment.",
+   "speakers": [
+    "Matthew Juros"
+   ]
+  },
+  {
+   "title": "Public Questions and Environmental Features",
+   "t": 1360,
+   "summary": "The development team addressed questions regarding acid neutralization wastewater treatment, confirmed no live animals will be housed, and described green initiatives such as electric heating, solar readiness, and subsurface rainwater drainage.",
+   "speakers": [
+    "Doug Medvets",
+    "Matthew Juros",
+    "Peter McNeil"
+   ]
+  },
+  {
+   "title": "City Application Process Overview",
+   "t": 1985,
+   "summary": "Economic Development Director Victor Schrader explained the city's pre-application review process and noted future public hearings with the Community Development Board and Zoning Board of Appeals.",
+   "speakers": [
+    "Victor Schrader",
+    "Doug Medvets",
+    "Matthew Juros"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11472,
+  "output_tokens": 370,
+  "model_version": "gemini-3.6-flash"
+ }
+}

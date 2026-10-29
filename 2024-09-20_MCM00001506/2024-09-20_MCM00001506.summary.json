@@ -1,0 +1,53 @@
+{
+ "video_id": "MCM00001506",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T11:18:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "74d9cc70b3ff09df",
+ "subject": "Route 28 Wellington Underpass Shared-Use Path",
+ "overview": "MassDOT, the City of Medford, and the Department of Conservation and Recreation hosted a virtual public hearing on the 25% design for a proposed shared-use path and boardwalk beneath Route 28. Project leads presented the preliminary layout, right-of-way requirements, and environmental permitting steps before taking feedback from the public.",
+ "items": [
+  {
+   "title": "Introduction and Hearing Procedures",
+   "t": 0,
+   "summary": "MassDOT representatives outlined virtual hearing procedures, accessibility guidelines, and civil rights compliance policies.",
+   "speakers": [
+    "Linda Walsh",
+    "Joe Yu"
+   ]
+  },
+  {
+   "title": "Route 28 Underpass Shared-Use Path Presentation",
+   "t": 420,
+   "summary": "Engineers and officials presented the 25% design for a proposed $4.5 million 12-foot-wide shared-use path and timber boardwalk connecting McDonald Park to Station Landing under the Route 28 bridge over the Mystic River.",
+   "speakers": [
+    "Linda Walsh",
+    "John Michalak",
+    "Angela Schofield"
+   ]
+  },
+  {
+   "title": "Public Comment and Questions",
+   "t": 1401,
+   "summary": "Panelists answered public inquiries regarding surface paving materials, winter snow maintenance, bicycle safety barriers, construction access, dark-sky lighting, and signage.",
+   "speakers": [
+    "Joe Yu",
+    "Alicia Hunt",
+    "John Michalak",
+    "Tim McGivern",
+    "Dan Flory",
+    "Amber Christopherson",
+    "Linda Walsh",
+    "Ryan O'Malley",
+    "Lynn Weissman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19579,
+  "output_tokens": 356,
+  "model_version": "gemini-3.6-flash"
+ }
+}
