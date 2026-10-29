@@ -1,0 +1,61 @@
+{
+ "video_id": "MCM00000609",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T13:08:09Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "ab5632cc00ce6ad4",
+ "subject": "Overturning Building Inspector Classification for 54 South Street",
+ "overview": "The board deliberated on three variance petitions, notably overturning a zoning classification for a residential project on South Street. All active cases were continued to the January 2023 meeting.",
+ "items": [
+  {
+   "title": "71 South Street",
+   "t": 40,
+   "summary": "Continued the petition for a height variance at 71 South Street to the next regular meeting at the request of the applicant.",
+   "speakers": [
+    "Denis MacDougall",
+    "Sean Fahey",
+    "Mike Caldera",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "54 South Street",
+   "t": 180,
+   "summary": "The board voted to overturn the Building Inspector's classification of the project as a multiple-dwelling use, reclassifying it as four single-family attached dwellings which necessitates an additional variance for frontage. The public hearing was reopened and continued to allow the applicant to amend the petition and for the city to republish the notice.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Bill Forte",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "55 Burgett Avenue",
+   "t": 1578,
+   "summary": "Continued the hearing for a fence height variance at 55 Burgett Avenue to allow the applicant to provide specific data regarding the topographical grade differences between properties.",
+   "speakers": [
+    "Denis MacDougall",
+    "James Donovan",
+    "Bernadette Ricciardelli",
+    "Andre Leroux",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 2409,
+   "summary": "Approved the meeting minutes from October 27, 2022.",
+   "speakers": [
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14980,
+  "output_tokens": 406,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

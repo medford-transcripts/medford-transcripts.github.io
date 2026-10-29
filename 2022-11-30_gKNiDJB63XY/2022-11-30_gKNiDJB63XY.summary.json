@@ -1,0 +1,77 @@
+{
+ "video_id": "gKNiDJB63XY",
+ "provider": "gemini",
+ "generated_at": "2026-10-29T13:09:44Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "36ccfd4939c1242e",
+ "subject": "NWEA MAP Growth Assessment Overview",
+ "overview": "District administrators presented an overview of the NWEA MAP growth assessment tool, explaining how computer-adaptive testing measures student progress throughout the year. The session detailed how to interpret student reports and how the data informs classroom instruction and personalized learning.",
+ "items": [
+  {
+   "title": "Introduction to NWEA MAP",
+   "t": 118,
+   "summary": "Presenters defined the Northwest Evaluation Association (NWEA) and the Measures of Academic Progress (MAP) assessment as a norm-based tool used to track student growth.",
+   "speakers": [
+    "Bernadette Ricciardelli",
+    "Suzanne Galusi"
+   ]
+  },
+  {
+   "title": "Computer Adaptive Testing Mechanics",
+   "t": 245,
+   "summary": "The assessment was described as a computer-adaptive test that adjusts question difficulty based on student performance to identify their specific level of academic knowledge.",
+   "speakers": [
+    "Bernadette Ricciardelli"
+   ]
+  },
+  {
+   "title": "RIT Scores and Testing Timeline",
+   "t": 425,
+   "summary": "Staff explained the Roche unit (RIT) scoring system and outlined the three-part annual testing window for elementary, middle, and high school students.",
+   "speakers": [
+    "Bernadette Ricciardelli"
+   ]
+  },
+  {
+   "title": "Growth Mindset Philosophy",
+   "t": 553,
+   "summary": "The district emphasized using test data to propel students forward by focusing on strengths and weaknesses rather than treating the score as a fixed measure of ability.",
+   "speakers": [
+    "Bernadette Ricciardelli"
+   ]
+  },
+  {
+   "title": "Practice Test Demonstration",
+   "t": 634,
+   "summary": "Administrators demonstrated the student interface and built-in accessibility features, including highlighters, line readers, and digital notepads.",
+   "speakers": [
+    "Bernadette Ricciardelli",
+    "Suzanne Galusi"
+   ]
+  },
+  {
+   "title": "Interpretation of Family Reports",
+   "t": 1209,
+   "summary": "Presenters walked through a sample report, explaining color-coded percentile rankings and how plot graphs track individual achievement versus national norms over time.",
+   "speakers": [
+    "Suzanne Galusi"
+   ]
+  },
+  {
+   "title": "MCAS Correlation and Q&A",
+   "t": 1434,
+   "summary": "The presentation noted that MAP scores include a projected MCAS performance level and concluded by addressing parent questions about report details.",
+   "speakers": [
+    "Suzanne Galusi",
+    "Bernadette Ricciardelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10498,
+  "output_tokens": 617,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
