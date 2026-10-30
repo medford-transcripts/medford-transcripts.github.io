@@ -1,0 +1,81 @@
+{
+ "video_id": "MCM00001519",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T07:13:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e23ca7e9f599f16b",
+ "subject": "MBTA Bus Network Redesign Revised Proposal",
+ "overview": "The MBTA held a regional community meeting to present a revised Bus Network Redesign map reflecting changes made in response to over 20,000 public comments. Staff detailed route updates, conducted geographic breakout discussions, and received feedback from elected officials and community members.",
+ "items": [
+  {
+   "title": "Overview of Revised Bus Network Redesign Plan",
+   "t": 0,
+   "summary": "MBTA officials presented the revised Bus Network Redesign proposal, highlighting that two-thirds of the originally proposed routes were modified while maintaining a planned 25 percent overall service increase.",
+   "speakers": [
+    "Reagan",
+    "Justin Antos",
+    "Doug Johnson"
+   ]
+  },
+  {
+   "title": "Subregional Breakout Sessions",
+   "t": 1400,
+   "summary": "Staff in the Burlington, Medford, Winchester, and Woburn breakout room detailed specific route updates—including adjustments to routes T96, 80, 87, 95, 134, and the 354 Express—and answered resident questions.",
+   "speakers": [
+    "Reagan",
+    "David Baumgartner",
+    "Melissa DeLea"
+   ]
+  },
+  {
+   "title": "Elected Official Comments",
+   "t": 5341,
+   "summary": "State legislators and a Medford city councilor offered feedback requesting the preservation of express and local routes, increased advance notice for service changes, and ongoing public input during the five-year rollout.",
+   "speakers": [
+    "Reagan",
+    "Mike Conley",
+    "Steve Owens",
+    "Dan Ryan",
+    "Melissa DeLea",
+    "Doug Johnson",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Public Comment and Q&A",
+   "t": 6351,
+   "summary": "Riders and community members expressed concerns regarding express bus reductions, loss of one-seat trips, route accessibility for seniors, and service reliability across various municipalities.",
+   "speakers": [
+    "Reagan",
+    "James Williamson",
+    "Justin Antos",
+    "Rob",
+    "Betty Lowe",
+    "Adam Hurtubise",
+    "Doug Johnson",
+    "Robin Forrest",
+    "Sasha Merstein",
+    "Anita Lichtbau",
+    "Terry Alther",
+    "Daniel",
+    "Katie P",
+    "Gregory Zelt",
+    "Carl Speth",
+    "Tianli Li",
+    "Casey Connors",
+    "Eugene Benson",
+    "Rich",
+    "Susan",
+    "Debbie",
+    "Patrick"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 50516,
+  "output_tokens": 523,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "video_id": "MCM00001092",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T07:13:39Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "fdebb335c0af4c5d",
+ "subject": "",
+ "overview": "The Medford Historical Commission met to review determinations of significance for 31 South Street and 180 Lincoln Road, approve funding allocations for historic survey and mapping projects, and receive updates on ongoing CPA and budget matters.",
+ "items": [
+  {
+   "title": "Determination of Significance: 31 South Street",
+   "t": 45,
+   "summary": "Approved a motion finding 31 South Street historically significant, setting up a preferably preserved hearing for the following month.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Doug Carr",
+    "Kit Collins",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Determination of Significance: 180 Lincoln Road",
+   "t": 1604,
+   "summary": "Failed to pass a motion finding 180 Lincoln Road historically significant, releasing the hold on the demolition permit.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Doug Carr",
+    "Adam Hurtubise",
+    "Kit Collins",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Survey Allocations for 15 Marion Street and Royall Estate Mapping",
+   "t": 2024,
+   "summary": "Approved allocating $500 for a Form B inventory of 15 Marion Street and up to $1,000 for a cartographer to create geo-referenced maps overlaying historic Royall Estate landholdings.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Adam Hurtubise",
+    "Jenny Graham",
+    "Peter Miller",
+    "Doug Carr",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Administrative and Project Updates",
+   "t": 2885,
+   "summary": "Received updates on 33 Third Street, the introduction of a new building commissioner, upcoming public presentations for Thomas Brooks Park, and fiscal year survey budget adjustments.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Ryan Hayward",
+    "Jenny Graham",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 3362,
+   "summary": "Approved the October meeting minutes as submitted.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Jenny Graham",
+    "Peter Miller",
+    "Ryan Hayward",
+    "Doug Carr",
+    "Kit Collins"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17519,
+  "output_tokens": 504,
+  "model_version": "gemini-3.6-flash"
+ }
+}

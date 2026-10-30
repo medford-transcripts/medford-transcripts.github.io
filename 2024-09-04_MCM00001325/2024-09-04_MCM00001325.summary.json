@@ -1,0 +1,55 @@
+{
+ "video_id": "MCM00001325",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T07:06:42Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "5cbbb46e05bb2e2e",
+ "subject": "Mystic River Gas Line Installation",
+ "overview": "The Conservation Commission continued a hearing on a Riverside Avenue stormwater project and approved a Notice of Intent with conditions for a Boston Gas Company pipeline installation crossing beneath the Mystic River.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 62,
+   "summary": "Approved the minutes of the November 2, 2022 meeting.",
+   "speakers": [
+    "Heidi Davis",
+    "Marie Izzo",
+    "Heather"
+   ]
+  },
+  {
+   "title": "Riverside Avenue Notice of Intent",
+   "t": 131,
+   "summary": "Continued the hearing to December 7, 2022, following discussion of updated drainage calculations, bioretention sizing, swale stabilization, and coordination with DCR trail construction.",
+   "speakers": [
+    "Heidi Davis",
+    "Steve Sawyer",
+    "Craig Drennan",
+    "Christopher Bader",
+    "Heather"
+   ]
+  },
+  {
+   "title": "Boston Gas Company Mystic River Crossing",
+   "t": 1667,
+   "summary": "Approved an Order of Conditions with conditions concerning dewatering, erosion controls, spill response, and tree protection for horizontal directional drilling of a gas main beneath the Mystic River.",
+   "speakers": [
+    "Heidi Davis",
+    "SPEAKER_00",
+    "Heather",
+    "Craig Drennan",
+    "Denis MacDougall",
+    "Christopher Bader",
+    "Marie Izzo",
+    "Susan Altman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 20159,
+  "output_tokens": 312,
+  "model_version": "gemini-3.8-flash"
+ }
+}
