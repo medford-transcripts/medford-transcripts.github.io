@@ -1,0 +1,58 @@
+{
+ "video_id": "CAS00002407",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T03:08:45Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a1299866bc7db1f4",
+ "subject": "",
+ "overview": "The Medford Historical District Commission reviewed insurance considerations for properties in historic districts, received an update on the Medford Square rezoning effort, and approved its previous meeting minutes.",
+ "items": [
+  {
+   "title": "Insurance and historic properties discussion",
+   "t": 111,
+   "summary": "The commission postponed an invited guest's presentation due to a family emergency and held a preliminary discussion on insurance replacement costs, code coverage, and bonding challenges for designated historic properties.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "Peter Miller"
+   ]
+  },
+  {
+   "title": "Medford Square rezoning update",
+   "t": 1545,
+   "summary": "Staff reported that a broad commercial historic district for Medford Square is no longer an immediate priority, with interest shifting toward creating an institutional historic district encompassing CPA-funded buildings and churches.",
+   "speakers": [
+    "Theresa Dupont",
+    "MCM00001828_SPEAKER_03",
+    "Peter Miller"
+   ]
+  },
+  {
+   "title": "Approval of minutes",
+   "t": 1930,
+   "summary": "The commission approved the February meeting minutes as amended.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "Peter Miller"
+   ]
+  },
+  {
+   "title": "Institutional district religious symbol considerations",
+   "t": 2279,
+   "summary": "Commissioners discussed how creating an institutional historic district might intersect with religious iconography, alterations, and potential changes in property ownership.",
+   "speakers": [
+    "MCM00001828_SPEAKER_03",
+    "Theresa Dupont",
+    "Peter Miller"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18630,
+  "output_tokens": 391,
+  "model_version": "gemini-3.8-flash"
+ }
+}
