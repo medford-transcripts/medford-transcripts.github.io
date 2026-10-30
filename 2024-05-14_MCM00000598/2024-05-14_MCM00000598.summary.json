@@ -1,0 +1,65 @@
+{
+ "video_id": "MCM00000598",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T11:08:59Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c2b6193e0f6a4b9b",
+ "subject": "595 Broadway Split-Lot Multifamily Development",
+ "overview": "The board adjudicated three continued residential petitions, approving a seven-unit development on a split lot between Medford and Somerville while denying lot area relief for a project on Bailey Street. A proposal for a four-unit conversion on South Street was continued to a later date to allow the board to seek a legal opinion regarding zoning definitions.",
+ "items": [
+  {
+   "title": "Zero Bailey Street",
+   "t": 34,
+   "summary": "The board denied a variance for lot area while approving a variance for lot depth for a proposed single-family home on an undersized lot.",
+   "speakers": [
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "54 South Street",
+   "t": 2778,
+   "summary": "The board continued a petition to convert a single-family dwelling into four units to December 1, 2022, pending a legal opinion from counsel to clarify if the design constitutes 'multiple dwelling' or 'single family attached' row houses. The delay follows concerns from the board regarding frontage requirements and the architectural compatibility of the new addition with the existing historic structure.",
+   "speakers": [
+    "Kathleen Desmond",
+    "Bill Forte",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Ben Minnix"
+   ]
+  },
+  {
+   "title": "595 Broadway",
+   "t": 8522,
+   "summary": "Approved several dimensional variances for a seven-unit multifamily building on a lot split between Medford and Somerville, finding that the municipal boundary created a unique hardship regarding lot shape. The approval is subject to eight conditions from the Community Development Board, including electric vehicle charging infrastructure and soil testing for drainage.",
+   "speakers": [
+    "Adam Barnosky",
+    "Michael Barone Jr",
+    "Milton Yu",
+    "Mike Caldera",
+    "Yvette Velez",
+    "Andre Leroux"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Minutes",
+   "t": 12409,
+   "summary": "Received updates regarding a forthcoming 40B application and approved meeting minutes from a prior session with name corrections.",
+   "speakers": [
+    "Denis MacDougall",
+    "Bill Forte",
+    "Mike Caldera",
+    "Yvette Velez"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 61849,
+  "output_tokens": 584,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
