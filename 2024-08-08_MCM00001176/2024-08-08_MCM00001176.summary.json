@@ -1,0 +1,92 @@
+{
+ "video_id": "MCM00001176",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T20:08:41Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "312fd9ce403f0dd6",
+ "subject": "",
+ "overview": "The Traffic Commission approved a military parking variance, two resident handicap parking space requests, and a no-parking restriction on Harvard Street. A broader discussion on proposed Green Line Extension resident parking zones was tabled until November after hearing public comments.",
+ "items": [
+  {
+   "title": "Approval of September Minutes",
+   "t": 141,
+   "summary": "Approved the minutes of the September meeting.",
+   "speakers": [
+    "Jack Buckley",
+    "MCM00001607_SPEAKER_07"
+   ]
+  },
+  {
+   "title": "2022-54: Permit Parking Variance Military Exemption, 12 Golden Ave",
+   "t": 177,
+   "summary": "Approved a military exemption parking variance for an active-duty military member residing at 12 Golden Avenue.",
+   "speakers": [
+    "Jack Buckley",
+    "MCM00001607_SPEAKER_07",
+    "Alicia Hunt",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "2022-55: Handicap Sign, 18 Dexter Street",
+   "t": 355,
+   "summary": "Approved a handicap parking sign for 18 Dexter Street after reviewing the site layout and driveway accessibility.",
+   "speakers": [
+    "Jack Buckley",
+    "Bob Dickinson",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "MCM00001829_SPEAKER_08",
+    "MCM00001607_SPEAKER_07"
+   ]
+  },
+  {
+   "title": "2022-56: No Parking Anytime, 192-196 Harvard Street Eastbound",
+   "t": 862,
+   "summary": "Approved a no parking anytime zone on eastbound Harvard Street from approximately 192 to 196 to resolve roadway narrowing and illegal sidewalk parking, despite objections from neighboring condominium residents concerned about displaced parkers trespassing across their private property.",
+   "speakers": [
+    "Jack Buckley",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "MCM00001607_SPEAKER_07",
+    "MCM00001829_SPEAKER_08",
+    "Ann Fretts",
+    "Larry Fretts"
+   ]
+  },
+  {
+   "title": "2022-53: Handicap Sign, 79 Dexter Street",
+   "t": 2492,
+   "summary": "Approved a handicap parking space at 79 Dexter Street following receipt of updated vehicle registration paperwork.",
+   "speakers": [
+    "Jack Buckley",
+    "MCM00001607_SPEAKER_07",
+    "Alicia Hunt",
+    "SPEAKER_15"
+   ]
+  },
+  {
+   "title": "2022-49: Resident Parking for GLX Stations",
+   "t": 2688,
+   "summary": "Tabled the proposed Green Line Extension resident permit parking expansion to November due to the absence of the commission chair, after hearing public comments regarding street opt-out petitions and neighborhood business impacts.",
+   "speakers": [
+    "Jack Buckley",
+    "MCM00001607_SPEAKER_07",
+    "Alicia Hunt",
+    "Robert Paine",
+    "SPEAKER_13",
+    "MCM00001829_SPEAKER_08",
+    "Pat Hansen",
+    "XXXXXX00116_SPEAKER_01",
+    "SPEAKER_12"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19183,
+  "output_tokens": 761,
+  "model_version": "gemini-3.8-flash"
+ }
+}
