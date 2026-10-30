@@ -1,379 +1,40 @@
 {
  "committee": "CC Energy & Environment Committee",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-25T13:06:40Z",
- "sources_sha": "8bed753ab0ba12af",
- "n_meetings": 25,
+ "generated_at": "2026-10-30T02:06:52Z",
+ "sources_sha": "65ee522bf4695c5c",
+ "n_meetings": 30,
  "period_style": "term",
  "span": [
-  "2023-04-12",
+  "2022-11-17",
   "2026-10-05"
  ],
- "overview": "The CC Energy & Environment Committee serves as an advisory body focusing on sustainability, climate resilience, and environmental policy in Medford. Its work includes drafting local ordinances for tree protection, promoting building electrification through the Electrify Medford program, and managing community waste reduction initiatives. Meeting since early 2023, the committee has transitioned from setting foundational priorities to tracking the city’s comprehensive Climate Action and Adaptation Plan. By late 2026, the committee was focused on municipal rodenticide restrictions, analyzing greenhouse gas inventories, and overseeing school energy projects.",
+ "overview": "The Medford Energy and Environment Committee is an advisory and municipal working group focused on building decarbonization, renewable energy, waste reduction, tree canopy preservation, and environmental stewardship in Medford. The archive documents 30 meetings of the committee held between November 2022 and October 2026. Over this span, the body has coordinated citywide educational events, reviewed state and local climate policy, endorsed tree preservation ordinances, and supported community heat pump adoption. At its most recent meetings, the committee continued monitoring progress on the city's Climate Action and Adaptation Plan, prepared for the annual Harvest Your Energy Festival, and explored policy options to restrict anticoagulant rodenticides.",
  "threads": [
-  {
-   "name": "Tree Protection and Ordinances",
-   "status": "ongoing",
-   "summary": "The committee spent several years developing and revising municipal tree ordinances to protect the public and private tree canopy. Initial discussions focused on reforestation legislation and the need for a certified arborist to support local regulations. The committee formally endorsed draft ordinances for public and private property in early 2024, emphasizing data transparency and mitigation fees for removals. By late 2026, the public tree ordinance received a favorable vote from the City Council Committee of the Whole, while the committee continued to monitor state legislation regarding homeowner tree insurance protections.",
-   "citations": [
-    {
-     "video_id": "MCM00000561",
-     "t": 3311,
-     "date": "2023-04-12",
-     "base": "2024-05-10_MCM00000561",
-     "meeting_title": "Medford Energy And Environment Commmittee 04-12-23",
-     "title": "Community Events and Reforestation Bill",
-     "label": "M01#5"
-    },
-    {
-     "video_id": "MCM00000559",
-     "t": 3800,
-     "date": "2023-11-06",
-     "base": "2024-05-10_MCM00000559",
-     "meeting_title": "Medford Energy And Environment Commmittee 11-06-23",
-     "title": "Tree Ordinance Revisions",
-     "label": "M06#7"
-    },
-    {
-     "video_id": "MCM00000568",
-     "t": 2309,
-     "date": "2024-01-08",
-     "base": "2024-05-10_MCM00000568",
-     "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
-     "title": "Tree Ordinance Endorsement",
-     "label": "M08#4"
-    },
-    {
-     "video_id": "MCM00001610",
-     "t": 3294,
-     "date": "2024-12-02",
-     "base": "2024-12-03_MCM00001610",
-     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
-     "title": "Trees Medford and Draft Tree Ordinances Update",
-     "label": "M16#5"
-    },
-    {
-     "video_id": "CAS00002489",
-     "t": 1802,
-     "date": "2026-07-20",
-     "base": "2026-07-21_CAS00002489",
-     "meeting_title": "Energy and Environment 07/20/26",
-     "title": "Member Updates and Public Tree Ordinance",
-     "label": "M23#4"
-    },
-    {
-     "video_id": "CAS00002522",
-     "t": 3568,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002522",
-     "meeting_title": "Energy and Environment 09/14/26",
-     "title": "Homeowner Tree Insurance Protection Legislation",
-     "label": "M24#8"
-    }
-   ]
-  },
-  {
-   "name": "Electrify Medford and Heat Pump Advocacy",
-   "status": "ongoing",
-   "summary": "Building and transportation electrification became a core priority in 2023, leading to the development of the 'Electrify Medford' outreach campaign. The program utilizes a grant-funded network of energy coaches to help residents navigate heat pump installations and Mass Save rebates. Regular updates track coach recruitment, community tabling events, and efforts to address resident 'cold anxiety' regarding heat pump technology. Recent work includes coordinating the program with state-level initiatives like the Mass Save Community First Partnership.",
-   "citations": [
-    {
-     "video_id": "MCM00000565",
-     "t": 3638,
-     "date": "2023-05-01",
-     "base": "2024-05-10_MCM00000565",
-     "meeting_title": "Medford Energy And Environment Commmittee 05-01-23",
-     "title": "2023 Committee Priorities",
-     "label": "M02#8"
-    },
-    {
-     "video_id": "MCM00000563",
-     "t": 2549,
-     "date": "2023-06-05",
-     "base": "2024-05-10_MCM00000563",
-     "meeting_title": "Medford Energy And Environment Commmittee 06-05-23",
-     "title": "Melrose Heat Pump Program Presentation",
-     "label": "M03#6"
-    },
-    {
-     "video_id": "MCM00000568",
-     "t": 3353,
-     "date": "2024-01-08",
-     "base": "2024-05-10_MCM00000568",
-     "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
-     "title": "Electrify Medford Outreach Plan",
-     "label": "M08#6"
-    },
-    {
-     "video_id": "MCM00000572",
-     "t": 185,
-     "date": "2024-05-06",
-     "base": "2024-05-10_MCM00000572",
-     "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
-     "title": "Electrify Medford and Energy Coaching",
-     "label": "M12#2"
-    },
-    {
-     "video_id": "MCM00001700",
-     "t": 3355,
-     "date": "2025-01-06",
-     "base": "2025-01-09_MCM00001700",
-     "meeting_title": "Medford Energy And Environment Committee 01-06-25",
-     "title": "City Climate Planner Updates",
-     "label": "M17#5"
-    },
-    {
-     "video_id": "MCM00001823",
-     "t": 337,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001823",
-     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
-     "title": "Administrative and City Updates",
-     "label": "M20#3"
-    }
-   ]
-  },
-  {
-   "name": "Waste Management and Zero-Waste Initiatives",
-   "status": "ongoing",
-   "summary": "The committee manages various waste reduction efforts, ranging from citywide curbside composting to specific initiatives like a survey of restaurant takeout containers to eliminate black plastic. Significant debate occurred in 2026 regarding a proposed transition to bi-weekly trash collection and the implementation of a pay-as-you-throw system. Members have explored diverse strategies including repair cafes, specialty recycling for plastic film, and waste diversion at large-scale community festivals. Recent efforts include researching model ordinances for single-use plastics and zero-waste programming.",
-   "citations": [
-    {
-     "video_id": "MCM00000563",
-     "t": 270,
-     "date": "2023-06-05",
-     "base": "2024-05-10_MCM00000563",
-     "meeting_title": "Medford Energy And Environment Commmittee 06-05-23",
-     "title": "Administrative Updates",
-     "label": "M03#2"
-    },
-    {
-     "video_id": "MCM00000571",
-     "t": 158,
-     "date": "2024-04-01",
-     "base": "2024-05-10_MCM00000571",
-     "meeting_title": "Medford Energy And Environment Commmittee 04-01-24",
-     "title": "Administrative Updates and City Initiatives",
-     "label": "M11#2"
-    },
-    {
-     "video_id": "MCM00001758",
-     "t": 361,
-     "date": "2025-03-03",
-     "base": "2025-03-04_MCM00001758",
-     "meeting_title": "Medford Energy And Environment Committee 03-03-25",
-     "title": "Single-Use Plastic Takeout Containers Project",
-     "label": "M19#3"
-    },
-    {
-     "video_id": "MCM00001831",
-     "t": 227,
-     "date": "2026-01-05",
-     "base": "2026-01-09_MCM00001831",
-     "meeting_title": "Medford Energy And Environment Committee 1-5-26",
-     "title": "Trash Policy and Zero Waste Initiatives",
-     "label": "M21#2"
-    },
-    {
-     "video_id": "CAS00002418",
-     "t": 4491,
-     "date": "2026-05-05",
-     "base": "2026-05-05_CAS00002418",
-     "meeting_title": "Energy and Environment MM/DD/YY",
-     "title": "Pay-As-You-Throw and Waste Management Discussion",
-     "label": "M22#7"
-    },
-    {
-     "video_id": "CAS00002522",
-     "t": 2,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002522",
-     "meeting_title": "Energy and Environment 09/14/26",
-     "title": "Black Plastic Zero Waste Initiative Update",
-     "label": "M24#1"
-    }
-   ]
-  },
-  {
-   "name": "Rodent Control and Rodenticide Restrictions",
-   "status": "ongoing",
-   "summary": "Sparked by the poisoning deaths of local bald eagles, the committee has consistently advocated for alternatives to anticoagulant rodenticides. Early work focused on promoting carbon dioxide treatments and rodent birth control as part of integrated pest management. The committee has since engaged with state-level advocacy groups and researchers to understand the ecological dangers of these toxins on natural predators. By late 2026, the committee was actively researching municipal levers for enacting bans and exploring model lighting ordinances to complement pest management goals.",
-   "citations": [
-    {
-     "video_id": "MCM00000561",
-     "t": 4447,
-     "date": "2023-04-12",
-     "base": "2024-05-10_MCM00000561",
-     "meeting_title": "Medford Energy And Environment Commmittee 04-12-23",
-     "title": "Rodent Control and Rodenticide Alternatives",
-     "label": "M01#6"
-    },
-    {
-     "video_id": "MCM00000559",
-     "t": 2898,
-     "date": "2023-11-06",
-     "base": "2024-05-10_MCM00000559",
-     "meeting_title": "Medford Energy And Environment Commmittee 11-06-23",
-     "title": "Municipal Energy and Climate Updates",
-     "label": "M06#6"
-    },
-    {
-     "video_id": "MCM00001631",
-     "t": 4668,
-     "date": "2024-11-13",
-     "base": "2024-12-06_MCM00001631",
-     "meeting_title": "Medford Energy And Environment Committee 11-13-24",
-     "title": "Rodent Control and State Climate Legislation",
-     "label": "M15#8"
-    },
-    {
-     "video_id": "CAS00002522",
-     "t": 2431,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002522",
-     "meeting_title": "Energy and Environment 09/14/26",
-     "title": "Rodenticide Restrictions and Pest Management",
-     "label": "M24#6"
-    },
-    {
-     "video_id": "CAS00002550",
-     "t": 1576,
-     "date": "2026-10-05",
-     "base": "2026-10-06_CAS00002550",
-     "meeting_title": "Energy and Environment 10/05/26",
-     "title": "Rodenticide Impacts on Wildlife",
-     "label": "M25#7"
-    }
-   ]
-  },
-  {
-   "name": "Climate Action Plan Tracking",
-   "status": "ongoing",
-   "summary": "The committee serves as a primary monitor for the city's Climate Action and Adaptation Plan, which encompasses approximately 150 individual action points. This work involves reviewing greenhouse gas emissions inventories, which show a downward trend in building energy emissions through 2024. Members use a tracking spreadsheet to perform gap analyses on strategies ranging from zoning recodification to grid reliability. In late 2026, the committee began data collection for the formal five-year review of the plan.",
-   "citations": [
-    {
-     "video_id": "MCM00001823",
-     "t": 1280,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001823",
-     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
-     "title": "Greenhouse Gas Inventory",
-     "label": "M20#4"
-    },
-    {
-     "video_id": "MCM00001823",
-     "t": 2766,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001823",
-     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
-     "title": "Climate Action Plan Monitoring",
-     "label": "M20#6"
-    },
-    {
-     "video_id": "CAS00002418",
-     "t": 2004,
-     "date": "2026-05-05",
-     "base": "2026-05-05_CAS00002418",
-     "meeting_title": "Energy and Environment MM/DD/YY",
-     "title": "Climate Action Plan Progress Review",
-     "label": "M22#5"
-    },
-    {
-     "video_id": "CAS00002522",
-     "t": 3630,
-     "date": "2026-09-14",
-     "base": "2026-09-15_CAS00002522",
-     "meeting_title": "Energy and Environment 09/14/26",
-     "title": "Climate Action and Adaptation Plan Tracking",
-     "label": "M24#9"
-    },
-    {
-     "video_id": "CAS00002550",
-     "t": 1000,
-     "date": "2026-10-05",
-     "base": "2026-10-06_CAS00002550",
-     "meeting_title": "Energy and Environment 10/05/26",
-     "title": "Climate Action and Adaptation Plan Tracking",
-     "label": "M25#6"
-    }
-   ]
-  },
-  {
-   "name": "Municipal Energy and Building Projects",
-   "status": "ongoing",
-   "summary": "The committee oversees environmental standards for municipal infrastructure, including school HVAC upgrades and the electrification of the city fleet. Key projects include the installation of solar arrays at the McGlynn School and the library, and advocating for LEED Platinum certification for the new high school. The committee also reviews the city's electricity aggregation contracts, which have increasingly prioritized renewable energy content. Recent updates involve the deployment of electric vehicle charging stations and monitoring the sustainability design of new fire stations.",
-   "citations": [
-    {
-     "video_id": "MCM00000567",
-     "t": 2370,
-     "date": "2023-11-01",
-     "base": "2024-05-10_MCM00000567",
-     "meeting_title": "Medford Energy And Environment Commmittee 11-01-23",
-     "title": "Stormwater and Renewable Energy Projects",
-     "label": "M05#5"
-    },
-    {
-     "video_id": "MCM00000572",
-     "t": 761,
-     "date": "2024-05-06",
-     "base": "2024-05-10_MCM00000572",
-     "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
-     "title": "School HVAC Upgrades and Resilience Hubs",
-     "label": "M12#5"
-    },
-    {
-     "video_id": "MCM00000572",
-     "t": 1156,
-     "date": "2024-05-06",
-     "base": "2024-05-10_MCM00000572",
-     "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
-     "title": "Electric Vehicle Fleet Updates",
-     "label": "M12#6"
-    },
-    {
-     "video_id": "MCM00001823",
-     "t": 337,
-     "date": "2025-10-06",
-     "base": "2025-10-10_MCM00001823",
-     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
-     "title": "Administrative and City Updates",
-     "label": "M20#3"
-    },
-    {
-     "video_id": "CAS00002418",
-     "t": 1547,
-     "date": "2026-05-05",
-     "base": "2026-05-05_CAS00002418",
-     "meeting_title": "Energy and Environment MM/DD/YY",
-     "title": "New High School Sustainability Goals",
-     "label": "M22#4"
-    },
-    {
-     "video_id": "CAS00002550",
-     "t": 300,
-     "date": "2026-10-05",
-     "base": "2026-10-06_CAS00002550",
-     "meeting_title": "Energy and Environment 10/05/26",
-     "title": "Resumed City Updates",
-     "label": "M25#3"
-    }
-   ]
-  },
   {
    "name": "Harvest Your Energy Festival",
    "status": "ongoing",
-   "summary": "The annual Harvest Your Energy Festival is the committee's flagship community outreach event, focusing on recycling, energy education, and sustainability. The event includes electronics recycling, on-site paper shredding, wind turbine tours, and an electric vehicle showcase. Each year the committee coordinates logistics such as vendor recruitment, volunteer shifts, and shuttle services. The festival typically processes over 1,000 pounds of materials and dozens of appliances for recycling annually.",
+   "summary": "The committee oversees coordination and logistics for the city's annual Harvest Your Energy Festival. Early meetings focused on vendor recruitment, wind turbine tours, and setting fee schedules for electronics and appliance recycling [M02#5, M03#4, M09#3]. The committee routinely evaluated festival outcomes, noting tonnage of collected materials, dehumidifiers, and electronics recycling participation [M11#5, M20#4]. Planning expanded across successive years to integrate electric vehicle showcases, shuttle bus routes, and thin-film plastic recycling demonstrations [M19#3, M25#5]. Preparations and volunteer recruitment for the festival remained an active priority through late 2026 [M28#3, M30#1].",
    "citations": [
     {
-     "video_id": "MCM00000561",
-     "t": 3311,
-     "date": "2023-04-12",
-     "base": "2024-05-10_MCM00000561",
-     "meeting_title": "Medford Energy And Environment Commmittee 04-12-23",
-     "title": "Community Events and Reforestation Bill",
-     "label": "M01#5"
+     "video_id": "MCM00000547",
+     "t": 988,
+     "date": "2022-12-05",
+     "base": "2024-05-10_MCM00000547",
+     "meeting_title": "Medford Energy And Environment Commmittee 12-05-22",
+     "title": "Harvest Your Energy Festival Logistics",
+     "label": "M02#5"
+    },
+    {
+     "video_id": "MCM00000564",
+     "t": 1526,
+     "date": "2023-01-09",
+     "base": "2024-05-10_MCM00000564",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-09-23",
+     "title": "Energy Festival 2023 Date",
+     "label": "M03#4"
     },
     {
      "video_id": "MCM00000558",
@@ -382,7 +43,7 @@
      "base": "2024-05-10_MCM00000558",
      "meeting_title": "Medford Energy And Environment Commmittee 10-02-23",
      "title": "Harvest Your Energy Festival Planning",
-     "label": "M04#3"
+     "label": "M09#3"
     },
     {
      "video_id": "MCM00000559",
@@ -391,7 +52,7 @@
      "base": "2024-05-10_MCM00000559",
      "meeting_title": "Medford Energy And Environment Commmittee 11-06-23",
      "title": "2023 Harvester Energy Festival Review",
-     "label": "M06#5"
+     "label": "M11#5"
     },
     {
      "video_id": "MCM00001626",
@@ -400,16 +61,16 @@
      "base": "2024-12-05_MCM00001626",
      "meeting_title": "Medford Energy And Environment Committee 10-07-24",
      "title": "Harvest Your Energy Festival Logistics",
-     "label": "M14#3"
+     "label": "M19#3"
     },
     {
-     "video_id": "MCM00001631",
-     "t": 1729,
-     "date": "2024-11-13",
-     "base": "2024-12-06_MCM00001631",
-     "meeting_title": "Medford Energy And Environment Committee 11-13-24",
-     "title": "Harvest Your Energy Festival Debrief",
-     "label": "M15#4"
+     "video_id": "MCM00001823",
+     "t": 1961,
+     "date": "2025-10-06",
+     "base": "2025-10-10_MCM00001823",
+     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
+     "title": "Harvest Your Energy Festival Preparation",
+     "label": "M25#5"
     },
     {
      "video_id": "CAS00002489",
@@ -418,24 +79,138 @@
      "base": "2026-07-21_CAS00002489",
      "meeting_title": "Energy and Environment 07/20/26",
      "title": "Harvest Your Energy Festival Planning",
-     "label": "M23#3"
+     "label": "M28#3"
+    },
+    {
+     "video_id": "CAS00002550",
+     "t": 2,
+     "date": "2026-10-05",
+     "base": "2026-10-06_CAS00002550",
+     "meeting_title": "Energy and Environment 10/05/26",
+     "title": "Meeting Opening and Volunteer Appeals",
+     "label": "M30#1"
     }
    ]
-  }
- ],
- "periods": [
+  },
   {
-   "period": "2022-2023 term",
-   "narrative": "The committee established its foundational priorities, including tree canopy preservation and rodenticide alternatives, while initiating regional climate resilience webinars.",
+   "name": "Tree protection and tree ordinances",
+   "status": "ongoing",
+   "summary": "The committee has dedicated sustained work to expanding Medford's tree canopy and establishing municipal tree protections. Early efforts evaluated canopy data using iTree software and reviewed draft ordinances dividing regulations between public land, private land, and a municipal tree committee [M04#2, M05#6, M07#10]. In January 2024, the committee voted to endorse the tree ordinance drafts submitted to the City Council [M13#4]. The body subsequently tracked council discussions regarding enforcement capacity, canopy goals, and mitigation fees [M15#3, M21#5]. In mid-2026, members noted a favorable vote by the City Council Committee of the Whole on the public tree ordinance while continuing to monitor state tree protection legislation and local planting programs [M28#4, M29#3, M29#8].",
    "citations": [
     {
-     "video_id": "MCM00000561",
-     "t": null,
-     "date": "2023-04-12",
-     "base": "2024-05-10_MCM00000561",
-     "meeting_title": "Medford Energy And Environment Commmittee 04-12-23",
-     "title": "Medford Energy And Environment Commmittee 04-12-23",
-     "label": "M01"
+     "video_id": "MCM00000566",
+     "t": 1339,
+     "date": "2023-02-06",
+     "base": "2024-05-10_MCM00000566",
+     "meeting_title": "Medford Energy And Environment Commmittee 02-06-23",
+     "title": "iTree Software Tree Canopy Presentation",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00000560",
+     "t": 4682,
+     "date": "2023-03-06",
+     "base": "2024-05-10_MCM00000560",
+     "meeting_title": "Medford Energy And Environment Commmittee 03-06-23",
+     "title": "Tree Ordinance Update",
+     "label": "M05#6"
+    },
+    {
+     "video_id": "MCM00000565",
+     "t": 4826,
+     "date": "2023-05-01",
+     "base": "2024-05-10_MCM00000565",
+     "meeting_title": "Medford Energy And Environment Commmittee 05-01-23",
+     "title": "State Reforestation Legislation and Tree Ordinance",
+     "label": "M07#10"
+    },
+    {
+     "video_id": "MCM00000568",
+     "t": 2309,
+     "date": "2024-01-08",
+     "base": "2024-05-10_MCM00000568",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
+     "title": "Tree Ordinance Endorsement",
+     "label": "M13#4"
+    },
+    {
+     "video_id": "MCM00000570",
+     "t": 1957,
+     "date": "2024-03-04",
+     "base": "2024-05-10_MCM00000570",
+     "meeting_title": "Medford Energy And Environment Commmittee 03-04-24",
+     "title": "Trees Medford and Tree Ordinances Update",
+     "label": "M15#3"
+    },
+    {
+     "video_id": "MCM00001610",
+     "t": 3294,
+     "date": "2024-12-02",
+     "base": "2024-12-03_MCM00001610",
+     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
+     "title": "Trees Medford and Draft Tree Ordinances Update",
+     "label": "M21#5"
+    },
+    {
+     "video_id": "CAS00002489",
+     "t": 1802,
+     "date": "2026-07-20",
+     "base": "2026-07-21_CAS00002489",
+     "meeting_title": "Energy and Environment 07/20/26",
+     "title": "Member Updates and Public Tree Ordinance",
+     "label": "M28#4"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 258,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Local Tree Initiative Updates",
+     "label": "M29#3"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 3568,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Homeowner Tree Insurance Protection Legislation",
+     "label": "M29#8"
+    }
+   ]
+  },
+  {
+   "name": "Building decarbonization and Electrify Medford",
+   "status": "ongoing",
+   "summary": "Efforts to decarbonize residential and municipal buildings began with presentations on heat pump technology, financing programs, and volunteer coaching models used in neighboring communities [M01#2, M03#8, M08#6]. The committee reviewed proposals for an outreach grant that established the Electrify Medford campaign, aiming to provide resident consultations and address cold-weather concerns [M09#5, M13#6]. City staff routinely delivered updates on coach training, Mass Save partnership enrollment, and outreach at civic festivals [M14#3, M17#2, M22#5]. Decarbonization discussions subsequently broadened to encompass municipal building roadmaps, geothermal feasibility, and school HVAC replacements through 2026 [M18#3, M21#4, M27#4].",
+   "citations": [
+    {
+     "video_id": "MCM00000557",
+     "t": 627,
+     "date": "2022-11-17",
+     "base": "2024-05-10_MCM00000557",
+     "meeting_title": "Medford Energy And Environment Commmittee 11-17-22",
+     "title": "Presentation on Building Electrification and Heat Pump Technology",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "MCM00000564",
+     "t": 2929,
+     "date": "2023-01-09",
+     "base": "2024-05-10_MCM00000564",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-09-23",
+     "title": "Electrify Arlington Presentation",
+     "label": "M03#8"
+    },
+    {
+     "video_id": "MCM00000563",
+     "t": 2549,
+     "date": "2023-06-05",
+     "base": "2024-05-10_MCM00000563",
+     "meeting_title": "Medford Energy And Environment Commmittee 06-05-23",
+     "title": "Melrose Heat Pump Program Presentation",
+     "label": "M08#6"
     },
     {
      "video_id": "MCM00000558",
@@ -444,119 +219,562 @@
      "base": "2024-05-10_MCM00000558",
      "meeting_title": "Medford Energy And Environment Commmittee 10-02-23",
      "title": "Decarbonization Outreach Campaign Grant",
-     "label": "M04#5"
+     "label": "M09#5"
+    },
+    {
+     "video_id": "MCM00000568",
+     "t": 3353,
+     "date": "2024-01-08",
+     "base": "2024-05-10_MCM00000568",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
+     "title": "Electrify Medford Outreach Plan",
+     "label": "M13#6"
+    },
+    {
+     "video_id": "MCM00000569",
+     "t": 724,
+     "date": "2024-02-05",
+     "base": "2024-05-10_MCM00000569",
+     "meeting_title": "Medford Energy And Environment Commmittee 02-05-24",
+     "title": "Climate Policy Initiatives and Sustainability Updates",
+     "label": "M14#3"
+    },
+    {
+     "video_id": "MCM00000572",
+     "t": 185,
+     "date": "2024-05-06",
+     "base": "2024-05-10_MCM00000572",
+     "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
+     "title": "Electrify Medford and Energy Coaching",
+     "label": "M17#2"
+    },
+    {
+     "video_id": "MCM00000770",
+     "t": 605,
+     "date": "2024-06-03",
+     "base": "2024-06-24_MCM00000770",
+     "meeting_title": "Medford Energy And Environment Committee 06-03-24",
+     "title": "City Climate Initiatives Update",
+     "label": "M18#3"
+    },
+    {
+     "video_id": "MCM00001610",
+     "t": 2246,
+     "date": "2024-12-02",
+     "base": "2024-12-03_MCM00001610",
+     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
+     "title": "Climate Policy and Municipal Project Updates",
+     "label": "M21#4"
+    },
+    {
+     "video_id": "MCM00001700",
+     "t": 3355,
+     "date": "2025-01-06",
+     "base": "2025-01-09_MCM00001700",
+     "meeting_title": "Medford Energy And Environment Committee 01-06-25",
+     "title": "City Climate Planner Updates",
+     "label": "M22#5"
+    },
+    {
+     "video_id": "CAS00002418",
+     "t": 1547,
+     "date": "2026-05-05",
+     "base": "2026-05-05_CAS00002418",
+     "meeting_title": "Energy and Environment MM/DD/YY",
+     "title": "New High School Sustainability Goals",
+     "label": "M27#4"
+    }
+   ]
+  },
+  {
+   "name": "Waste management and zero-waste initiatives",
+   "status": "ongoing",
+   "summary": "The committee regularly monitors municipal waste contracts and develops zero-waste initiatives. Early discussions covered procurement for multi-year waste contracts, event composting feasibility, and the rollout of citywide curbside composting [M03#3, M09#4, M14#3, M17#4]. The body later formed an informal zero-waste working group and developed a business survey regarding the transition away from single-use black plastic takeout containers [M21#3, M24#3, M25#7, M29#1]. In 2026, the committee engaged in extended debates over a municipal proposal to transition to bi-weekly trash collection and implement a pay-as-you-throw framework, balancing diversion benefits against rodent control and household concerns [M26#2, M27#7].",
+   "citations": [
+    {
+     "video_id": "MCM00000564",
+     "t": 734,
+     "date": "2023-01-09",
+     "base": "2024-05-10_MCM00000564",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-09-23",
+     "title": "Waste Initiatives Status",
+     "label": "M03#3"
+    },
+    {
+     "video_id": "MCM00000558",
+     "t": 2956,
+     "date": "2023-10-02",
+     "base": "2024-05-10_MCM00000558",
+     "meeting_title": "Medford Energy And Environment Commmittee 10-02-23",
+     "title": "Event Waste and Composting Logistics",
+     "label": "M09#4"
+    },
+    {
+     "video_id": "MCM00000569",
+     "t": 724,
+     "date": "2024-02-05",
+     "base": "2024-05-10_MCM00000569",
+     "meeting_title": "Medford Energy And Environment Commmittee 02-05-24",
+     "title": "Climate Policy Initiatives and Sustainability Updates",
+     "label": "M14#3"
+    },
+    {
+     "video_id": "MCM00000572",
+     "t": 638,
+     "date": "2024-05-06",
+     "base": "2024-05-10_MCM00000572",
+     "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
+     "title": "Curbside Composting and Rain Barrel Events",
+     "label": "M17#4"
+    },
+    {
+     "video_id": "MCM00001610",
+     "t": 532,
+     "date": "2024-12-02",
+     "base": "2024-12-03_MCM00001610",
+     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
+     "title": "New Member Recruitment and Committee Priorities",
+     "label": "M21#3"
+    },
+    {
+     "video_id": "MCM00001758",
+     "t": 361,
+     "date": "2025-03-03",
+     "base": "2025-03-04_MCM00001758",
+     "meeting_title": "Medford Energy And Environment Committee 03-03-25",
+     "title": "Single-Use Plastic Takeout Containers Project",
+     "label": "M24#3"
+    },
+    {
+     "video_id": "MCM00001823",
+     "t": 3787,
+     "date": "2025-10-06",
+     "base": "2025-10-10_MCM00001823",
+     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
+     "title": "Project Updates and New Business",
+     "label": "M25#7"
+    },
+    {
+     "video_id": "MCM00001831",
+     "t": 227,
+     "date": "2026-01-05",
+     "base": "2026-01-09_MCM00001831",
+     "meeting_title": "Medford Energy And Environment Committee 1-5-26",
+     "title": "Trash Policy and Zero Waste Initiatives",
+     "label": "M26#2"
+    },
+    {
+     "video_id": "CAS00002418",
+     "t": 4491,
+     "date": "2026-05-05",
+     "base": "2026-05-05_CAS00002418",
+     "meeting_title": "Energy and Environment MM/DD/YY",
+     "title": "Pay-As-You-Throw and Waste Management Discussion",
+     "label": "M27#7"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 2,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Black Plastic Zero Waste Initiative Update",
+     "label": "M29#1"
+    }
+   ]
+  },
+  {
+   "name": "Rodent control and rodenticide restrictions",
+   "status": "ongoing",
+   "summary": "Prompted by poisonings of local wildlife, the committee began investigating alternatives to anticoagulant rodenticides and advocating for non-toxic pest management [M06#6, M07#6]. Discussions covered integrated pest management strategies, rodent birth control, and coordinating public education alongside municipal health officials [M06#6, M08#4]. Members monitored state legislative bills restricting toxic rodenticides and reviewed local authority to regulate their deployment [M20#8, M21#7, M27#6]. By late 2026, the committee continued researching municipal restriction policies and hosted Save Arlington Wildlife to evaluate ecological damage and alternative abatement measures [M29#6, M30#7].",
+   "citations": [
+    {
+     "video_id": "MCM00000561",
+     "t": 4447,
+     "date": "2023-04-12",
+     "base": "2024-05-10_MCM00000561",
+     "meeting_title": "Medford Energy And Environment Commmittee 04-12-23",
+     "title": "Rodent Control and Rodenticide Alternatives",
+     "label": "M06#6"
+    },
+    {
+     "video_id": "MCM00000565",
+     "t": 2792,
+     "date": "2023-05-01",
+     "base": "2024-05-10_MCM00000565",
+     "meeting_title": "Medford Energy And Environment Commmittee 05-01-23",
+     "title": "Report on Meeting with the Mayor",
+     "label": "M07#6"
+    },
+    {
+     "video_id": "MCM00000563",
+     "t": 969,
+     "date": "2023-06-05",
+     "base": "2024-05-10_MCM00000563",
+     "meeting_title": "Medford Energy And Environment Commmittee 06-05-23",
+     "title": "Rodent Control Education",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "MCM00001631",
+     "t": 4668,
+     "date": "2024-11-13",
+     "base": "2024-12-06_MCM00001631",
+     "meeting_title": "Medford Energy And Environment Committee 11-13-24",
+     "title": "Rodent Control and State Climate Legislation",
+     "label": "M20#8"
+    },
+    {
+     "video_id": "MCM00001610",
+     "t": 5473,
+     "date": "2024-12-02",
+     "base": "2024-12-03_MCM00001610",
+     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
+     "title": "New Business and Rodenticide Advocacy Update",
+     "label": "M21#7"
+    },
+    {
+     "video_id": "CAS00002418",
+     "t": 3331,
+     "date": "2026-05-05",
+     "base": "2026-05-05_CAS00002418",
+     "meeting_title": "Energy and Environment MM/DD/YY",
+     "title": "Legislative and Environmental Updates",
+     "label": "M27#6"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 2431,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Rodenticide Restrictions and Pest Management",
+     "label": "M29#6"
+    },
+    {
+     "video_id": "CAS00002550",
+     "t": 1576,
+     "date": "2026-10-05",
+     "base": "2026-10-06_CAS00002550",
+     "meeting_title": "Energy and Environment 10/05/26",
+     "title": "Rodenticide Impacts on Wildlife",
+     "label": "M30#7"
+    }
+   ]
+  },
+  {
+   "name": "Climate Action Plan and resilience tracking",
+   "status": "ongoing",
+   "summary": "The committee tracks citywide climate vulnerability, greenhouse gas metrics, and implementation of Medford's Climate Action Plan. Initial meetings focused on regional watershed flood mitigation, Amelia Earhart Dam protection, and stormwater infrastructure grants [M09#6, M10#2, M18#4]. In late 2025, the committee received the city's greenhouse gas emissions inventory and established a process to track specific action items in the Climate Action Plan [M25#4, M25#6]. This tracking continued across subsequent sessions, reviewing items including zoning recodification, municipal energy reductions, and gap analyses leading into the plan's five-year review [M27#5, M29#9, M30#6].",
+   "citations": [
+    {
+     "video_id": "MCM00000558",
+     "t": 5566,
+     "date": "2023-10-02",
+     "base": "2024-05-10_MCM00000558",
+     "meeting_title": "Medford Energy And Environment Commmittee 10-02-23",
+     "title": "Flooding Resilience Webinar",
+     "label": "M09#6"
+    },
+    {
+     "video_id": "MCM00000567",
+     "t": 213,
+     "date": "2023-11-01",
+     "base": "2024-05-10_MCM00000567",
+     "meeting_title": "Medford Energy And Environment Commmittee 11-01-23",
+     "title": "Resilient Mystic Collaborative Overview",
+     "label": "M10#2"
+    },
+    {
+     "video_id": "MCM00000770",
+     "t": 1648,
+     "date": "2024-06-03",
+     "base": "2024-06-24_MCM00000770",
+     "meeting_title": "Medford Energy And Environment Committee 06-03-24",
+     "title": "Stormwater Flooding and Infrastructure",
+     "label": "M18#4"
+    },
+    {
+     "video_id": "MCM00001823",
+     "t": 1280,
+     "date": "2025-10-06",
+     "base": "2025-10-10_MCM00001823",
+     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
+     "title": "Greenhouse Gas Inventory",
+     "label": "M25#4"
+    },
+    {
+     "video_id": "MCM00001823",
+     "t": 2766,
+     "date": "2025-10-06",
+     "base": "2025-10-10_MCM00001823",
+     "meeting_title": "Medford Energy And Environment Committee 10-06-25",
+     "title": "Climate Action Plan Monitoring",
+     "label": "M25#6"
+    },
+    {
+     "video_id": "CAS00002418",
+     "t": 2004,
+     "date": "2026-05-05",
+     "base": "2026-05-05_CAS00002418",
+     "meeting_title": "Energy and Environment MM/DD/YY",
+     "title": "Climate Action Plan Progress Review",
+     "label": "M27#5"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 3630,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Climate Action and Adaptation Plan Tracking",
+     "label": "M29#9"
+    },
+    {
+     "video_id": "CAS00002550",
+     "t": 1000,
+     "date": "2026-10-05",
+     "base": "2026-10-06_CAS00002550",
+     "meeting_title": "Energy and Environment 10/05/26",
+     "title": "Climate Action and Adaptation Plan Tracking",
+     "label": "M30#6"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "The committee concentrated on heat pump education, developing draft tree protection ordinances, planning the annual Harvest Your Energy Festival, and evaluating regional flood resilience across the Mystic River Watershed.",
+   "citations": [
+    {
+     "video_id": "MCM00000557",
+     "t": 627,
+     "date": "2022-11-17",
+     "base": "2024-05-10_MCM00000557",
+     "meeting_title": "Medford Energy And Environment Commmittee 11-17-22",
+     "title": "Presentation on Building Electrification and Heat Pump Technology",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "MCM00000564",
+     "t": 1526,
+     "date": "2023-01-09",
+     "base": "2024-05-10_MCM00000564",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-09-23",
+     "title": "Energy Festival 2023 Date",
+     "label": "M03#4"
+    },
+    {
+     "video_id": "MCM00000560",
+     "t": 4682,
+     "date": "2023-03-06",
+     "base": "2024-05-10_MCM00000560",
+     "meeting_title": "Medford Energy And Environment Commmittee 03-06-23",
+     "title": "Tree Ordinance Update",
+     "label": "M05#6"
+    },
+    {
+     "video_id": "MCM00000558",
+     "t": 782,
+     "date": "2023-10-02",
+     "base": "2024-05-10_MCM00000558",
+     "meeting_title": "Medford Energy And Environment Commmittee 10-02-23",
+     "title": "Harvest Your Energy Festival Planning",
+     "label": "M09#3"
+    },
+    {
+     "video_id": "MCM00000567",
+     "t": 213,
+     "date": "2023-11-01",
+     "base": "2024-05-10_MCM00000567",
+     "meeting_title": "Medford Energy And Environment Commmittee 11-01-23",
+     "title": "Resilient Mystic Collaborative Overview",
+     "label": "M10#2"
     },
     {
      "video_id": "MCM00000559",
-     "t": null,
+     "t": 3800,
      "date": "2023-11-06",
      "base": "2024-05-10_MCM00000559",
      "meeting_title": "Medford Energy And Environment Commmittee 11-06-23",
-     "title": "Medford Energy And Environment Commmittee 11-06-23",
-     "label": "M06"
+     "title": "Tree Ordinance Revisions",
+     "label": "M11#7"
+    },
+    {
+     "video_id": "MCM00000562",
+     "t": 1594,
+     "date": "2023-12-04",
+     "base": "2024-05-10_MCM00000562",
+     "meeting_title": "Medford Energy And Environment Commmittee 12-04-23",
+     "title": "Tree Ordinance Revisions Discussion",
+     "label": "M12#6"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "This period focused on the launch of the Electrify Medford coaching program, the formal endorsement of tree ordinances, and in-depth educational presentations on chemicals like PFAS.",
+   "narrative": "The body formally endorsed tree protection ordinances to the City Council, launched the Electrify Medford coaching program, supported citywide curbside composting, and established a framework to monitor the Climate Action Plan.",
    "citations": [
     {
      "video_id": "MCM00000568",
-     "t": null,
+     "t": 2309,
      "date": "2024-01-08",
      "base": "2024-05-10_MCM00000568",
      "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
-     "title": "Medford Energy And Environment Commmittee 01-08-24",
-     "label": "M08"
+     "title": "Tree Ordinance Endorsement",
+     "label": "M13#4"
+    },
+    {
+     "video_id": "MCM00000568",
+     "t": 3353,
+     "date": "2024-01-08",
+     "base": "2024-05-10_MCM00000568",
+     "meeting_title": "Medford Energy And Environment Commmittee 01-08-24",
+     "title": "Electrify Medford Outreach Plan",
+     "label": "M13#6"
+    },
+    {
+     "video_id": "MCM00000569",
+     "t": 724,
+     "date": "2024-02-05",
+     "base": "2024-05-10_MCM00000569",
+     "meeting_title": "Medford Energy And Environment Commmittee 02-05-24",
+     "title": "Climate Policy Initiatives and Sustainability Updates",
+     "label": "M14#3"
     },
     {
      "video_id": "MCM00000572",
-     "t": null,
+     "t": 185,
      "date": "2024-05-06",
      "base": "2024-05-10_MCM00000572",
      "meeting_title": "Medford Energy And Environment Commmittee 05-06-24",
-     "title": "Medford Energy And Environment Commmittee 05-06-24",
-     "label": "M12"
+     "title": "Electrify Medford and Energy Coaching",
+     "label": "M17#2"
     },
     {
-     "video_id": "MCM00001626",
-     "t": 4062,
-     "date": "2024-10-07",
-     "base": "2024-12-05_MCM00001626",
-     "meeting_title": "Medford Energy And Environment Committee 10-07-24",
-     "title": "PFAS Educational Presentation",
-     "label": "M14#6"
+     "video_id": "MCM00001610",
+     "t": 3294,
+     "date": "2024-12-02",
+     "base": "2024-12-03_MCM00001610",
+     "meeting_title": "Medford Energy And Environment Committee 12-02-24",
+     "title": "Trees Medford and Draft Tree Ordinances Update",
+     "label": "M21#5"
+    },
+    {
+     "video_id": "MCM00001758",
+     "t": 361,
+     "date": "2025-03-03",
+     "base": "2025-03-04_MCM00001758",
+     "meeting_title": "Medford Energy And Environment Committee 03-03-25",
+     "title": "Single-Use Plastic Takeout Containers Project",
+     "label": "M24#3"
     },
     {
      "video_id": "MCM00001823",
-     "t": null,
+     "t": 2766,
      "date": "2025-10-06",
      "base": "2025-10-10_MCM00001823",
      "meeting_title": "Medford Energy And Environment Committee 10-06-25",
-     "title": "Medford Energy And Environment Committee 10-06-25",
-     "label": "M20"
+     "title": "Climate Action Plan Monitoring",
+     "label": "M25#6"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The committee transitioned to high-level tracking of the Climate Action Plan and debated significant municipal waste policy changes including bi-weekly trash collection.",
+   "narrative": "Discussions centered on municipal proposals for bi-weekly trash collection and pay-as-you-throw policies, tracking the public tree ordinance, advancing anticoagulant rodenticide restrictions, and conducting reviews of the Climate Action and Adaptation Plan.",
    "citations": [
     {
      "video_id": "MCM00001831",
-     "t": null,
+     "t": 227,
      "date": "2026-01-05",
      "base": "2026-01-09_MCM00001831",
      "meeting_title": "Medford Energy And Environment Committee 1-5-26",
-     "title": "Medford Energy And Environment Committee 1-5-26",
-     "label": "M21"
+     "title": "Trash Policy and Zero Waste Initiatives",
+     "label": "M26#2"
     },
     {
      "video_id": "CAS00002418",
-     "t": null,
+     "t": 2004,
      "date": "2026-05-05",
      "base": "2026-05-05_CAS00002418",
      "meeting_title": "Energy and Environment MM/DD/YY",
-     "title": "Energy and Environment MM/DD/YY",
-     "label": "M22"
+     "title": "Climate Action Plan Progress Review",
+     "label": "M27#5"
+    },
+    {
+     "video_id": "CAS00002418",
+     "t": 4491,
+     "date": "2026-05-05",
+     "base": "2026-05-05_CAS00002418",
+     "meeting_title": "Energy and Environment MM/DD/YY",
+     "title": "Pay-As-You-Throw and Waste Management Discussion",
+     "label": "M27#7"
+    },
+    {
+     "video_id": "CAS00002489",
+     "t": 1802,
+     "date": "2026-07-20",
+     "base": "2026-07-21_CAS00002489",
+     "meeting_title": "Energy and Environment 07/20/26",
+     "title": "Member Updates and Public Tree Ordinance",
+     "label": "M28#4"
     },
     {
      "video_id": "CAS00002522",
-     "t": null,
+     "t": 2431,
      "date": "2026-09-14",
      "base": "2026-09-15_CAS00002522",
      "meeting_title": "Energy and Environment 09/14/26",
-     "title": "Energy and Environment 09/14/26",
-     "label": "M24"
+     "title": "Rodenticide Restrictions and Pest Management",
+     "label": "M29#6"
+    },
+    {
+     "video_id": "CAS00002522",
+     "t": 3630,
+     "date": "2026-09-14",
+     "base": "2026-09-15_CAS00002522",
+     "meeting_title": "Energy and Environment 09/14/26",
+     "title": "Climate Action and Adaptation Plan Tracking",
+     "label": "M29#9"
     },
     {
      "video_id": "CAS00002550",
-     "t": null,
+     "t": 1000,
      "date": "2026-10-05",
      "base": "2026-10-06_CAS00002550",
      "meeting_title": "Energy and Environment 10/05/26",
-     "title": "Energy and Environment 10/05/26",
-     "label": "M25"
+     "title": "Climate Action and Adaptation Plan Tracking",
+     "label": "M30#6"
+    },
+    {
+     "video_id": "CAS00002550",
+     "t": 1576,
+     "date": "2026-10-05",
+     "base": "2026-10-06_CAS00002550",
+     "meeting_title": "Energy and Environment 10/05/26",
+     "title": "Rodenticide Impacts on Wildlife",
+     "label": "M30#7"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 51,
-  "meetings_cited": 20,
-  "of_meetings": 25,
-  "max_share": 0.098,
-  "even_share": 0.04,
-  "concentration_ratio": 2.45,
+  "citations": 76,
+  "meetings_cited": 28,
+  "of_meetings": 30,
+  "max_share": 0.092,
+  "even_share": 0.0333,
+  "concentration_ratio": 2.76,
   "most_cited": "CAS00002522",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 10890,
-  "output_tokens": 1613,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 12543,
+  "output_tokens": 2140,
+  "model_version": "gemini-3.8-flash"
  }
 }
