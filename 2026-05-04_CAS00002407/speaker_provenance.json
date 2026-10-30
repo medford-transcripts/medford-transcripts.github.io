@@ -1,0 +1,26 @@
+{
+    "SPEAKER_00": {
+        "value": "Peter Miller",
+        "source": "embedding_match",
+        "score": 0.9544768528804926,
+        "from": "CAS00002466_SPEAKER_00",
+        "at": "2026-10-30T02:34:54Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Theresa Dupont",
+        "source": "embedding_match",
+        "score": 0.962517683568408,
+        "from": "MCM00001828_SPEAKER_05",
+        "at": "2026-10-30T02:34:54Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "MCM00001828_SPEAKER_03",
+        "source": "embedding_match",
+        "score": 0.9679991940092345,
+        "from": "CAS00002429_SPEAKER_11",
+        "at": "2026-10-30T02:34:54Z",
+        "previous": "SPEAKER_02"
+    }
+}
