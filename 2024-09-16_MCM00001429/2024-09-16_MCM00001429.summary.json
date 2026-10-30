@@ -1,0 +1,58 @@
+{
+ "video_id": "MCM00001429",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T15:05:52Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1f8981a056a5c131",
+ "subject": "",
+ "overview": "The Medford Board of Health approved a grease trap variance for Grounded Cafe, received updates on upcoming vaccination clinics, and introduced new health department personnel.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 0,
+   "summary": "The board approved the minutes from the previous meeting.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Grounded Cafe Grease Trap Variance Request",
+   "t": 40,
+   "summary": "The board approved a variance allowing Grounded Cafe to clean its grease trap every six months rather than quarterly, contingent on keeping the same menu and ownership.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Adam Hurtubise",
+    "Emily Hedeman"
+   ]
+  },
+  {
+   "title": "COVID-19 and Flu Vaccination Clinics Update",
+   "t": 422,
+   "summary": "Staff updated the board on local vaccination efforts and announced a tri-community COVID-19 booster and flu clinic scheduled for November 5 at Tufts University.",
+   "speakers": [
+    "Adam Hurtubise",
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Staff Introductions",
+   "t": 625,
+   "summary": "The board introduced new department staff members, including prevention coordinator Sophie Greenbaum, health equity coordinator Sophie Antoine, and special projects manager Millie.",
+   "speakers": [
+    "MaryAnn O'Connor",
+    "Sophie Greenbaum",
+    "Sophie Antoine",
+    "Penny Funaiole",
+    "Adam Hurtubise"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6491,
+  "output_tokens": 347,
+  "model_version": "gemini-3.6-flash"
+ }
+}
