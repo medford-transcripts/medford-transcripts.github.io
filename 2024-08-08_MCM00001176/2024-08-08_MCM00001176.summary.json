@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "312fd9ce403f0dd6",
- "subject": "",
+ "subject": "Resident Parking for GLX Stations",
  "overview": "The Traffic Commission approved a military parking variance, two resident handicap parking space requests, and a no-parking restriction on Harvard Street. A broader discussion on proposed Green Line Extension resident parking zones was tabled until November after hearing public comments.",
  "items": [
   {
@@ -88,5 +88,6 @@
   "input_tokens": 19183,
   "output_tokens": 761,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
