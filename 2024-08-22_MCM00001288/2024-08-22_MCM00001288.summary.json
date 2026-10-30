@@ -1,0 +1,45 @@
+{
+ "video_id": "MCM00001288",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T09:15:03Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "74fe76f2bc7f1e6b",
+ "subject": "South Street Historic District Proposal",
+ "overview": "The commission reviewed historical research on South Street properties to consider creating local historic district protections. Lacking a quorum, no formal votes were taken, and commissioners agreed to prepare proposed boundary maps and a community outreach plan ahead of their December meeting.",
+ "items": [
+  {
+   "title": "253 South Street Porch Application",
+   "t": 0,
+   "summary": "Chair Christopher Bader noted that the applicant had withdrawn the application for a porch prior to the meeting.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  },
+  {
+   "title": "South Street Historic District Discussion",
+   "t": 34,
+   "summary": "Libby Brown presented research detailing pre-1855 homes and maritime history in the South Street neighborhood, after which the commission discussed whether to pursue single-house districts or a broader contiguous boundary and assigned members to draft boundary options and an outreach plan for the next meeting.",
+   "speakers": [
+    "Christopher Bader",
+    "Denis MacDougall",
+    "Libby Brown",
+    "Christopher Donovan"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 4861,
+   "summary": "The floor was opened for public comment, and none was received.",
+   "speakers": [
+    "Christopher Bader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26718,
+  "output_tokens": 317,
+  "model_version": "gemini-3.8-flash"
+ }
+}

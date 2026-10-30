@@ -1,0 +1,44 @@
+{
+ "video_id": "MCM00001494",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T09:13:45Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3c7d45d64802fd98",
+ "subject": "Fellsway Innovation Center Proposal",
+ "overview": "The development team presented a conceptual proposal to replace an existing industrial site at 48-64 Commercial Street with a two-story, 102,600-square-foot life sciences and technology building. Attendees discussed project timelines, traffic impacts, parking, public transit connections, and building height.",
+ "items": [
+  {
+   "title": "Fellsway Innovation Center Project Presentation",
+   "t": 0,
+   "summary": "The development team introduced plans to replace an existing 30,000-square-foot building at 48-64 Commercial Street with a two-story, roughly 102,600-square-foot life sciences and research facility featuring 250 parking spaces and streetscape improvements.",
+   "speakers": [
+    "MCM00000645_SPEAKER_02",
+    "SPEAKER_02",
+    "Jim Almonte",
+    "Matt Hargrave",
+    "Emily Mowbray"
+   ]
+  },
+  {
+   "title": "Public Questions and Discussion",
+   "t": 2004,
+   "summary": "Attendees and City Councilor Richard Caraviello questioned the development team regarding the construction timeline, traffic impacts on Commercial Street, rooftop mechanical noise, and potential shuttle connections to the Wellington MBTA station.",
+   "speakers": [
+    "MCM00000645_SPEAKER_02",
+    "SPEAKER_04",
+    "SPEAKER_03",
+    "Emily Mowbray",
+    "Jim Almonte",
+    "Matt Hargrave",
+    "Richard Caraviello"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17972,
+  "output_tokens": 402,
+  "model_version": "gemini-3.8-flash"
+ }
+}
