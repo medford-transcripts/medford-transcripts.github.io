@@ -1,52 +1,34 @@
 {
  "video_id": "CAS00002373",
  "provider": "gemini",
- "generated_at": "2026-10-30T12:08:28Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-10-30T13:08:57Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "395b6380fdb7b232",
- "subject": "Fiscal 2027 Joint Budget Update",
- "overview": "The City Council and School Committee convened in a joint session to review the FY 2027 budget calendar and receive a preliminary financial update from the administration. Officials discussed revenue projections, cost drivers, and funding baselines for Medford Public Schools.",
+ "transcript_sha": "c09fe12da031c349",
+ "subject": "FY 2027 Budget Process and Financial Update",
+ "overview": "The City Council and School Committee held a joint meeting to review the FY 2027 budget process schedule and receive a municipal financial update from the chief financial officer.",
  "items": [
   {
-   "title": "Paper 26-061: FY 2027 Budget Schedule",
+   "title": "FY 2027 Budget Process and Financial Presentation",
    "t": 100,
-   "summary": "Council President Zac Bears reviewed the council's proposed schedule for FY 2027 budget reviews and department hearings, and School Committee Acting Chair Paul Ruseau summarized the school district's budget formulation process.",
+   "summary": "Council President Zac Bears presented the FY 2027 budget schedule, and Chief Financial Officer Bob Dickinson delivered a financial update outlining revenue estimates, fixed cost increases, and an initial budget gap.",
    "speakers": [
     "Zac Bears",
     "Paul Ruseau",
-    "Breanna Lungo-Koehn"
-   ]
-  },
-  {
-   "title": "Administration Financial Update and Budget Outlook",
-   "t": 276,
-   "summary": "CFO Bob Dickinson delivered a financial update outlining revenue trends, cost increases for health insurance and pensions, and an initial projected municipal deficit between $1 million and $1.8 million. Committee members and councilors questioned the administration on local receipt estimates, the expiration of ARPA funding, and differing interpretations of how the 2024 override stabilization funds apply to the school district's base budget.",
-   "speakers": [
-    "Bob Dickinson",
-    "Zac Bears",
-    "Emily Lazzaro",
     "Breanna Lungo-Koehn",
+    "Bob Dickinson",
+    "Emily Lazzaro",
     "Mike Mastrobuoni",
     "Nina Nazarian",
     "Jenny Graham",
-    "Erika Reinfeld",
-    "Paul Ruseau"
-   ]
-  },
-  {
-   "title": "Public Participation",
-   "t": 6468,
-   "summary": "No members of the public rose to speak on the presentation.",
-   "speakers": [
-    "Zac Bears"
+    "Erika Reinfeld"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 31187,
-  "output_tokens": 448,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 31199,
+  "output_tokens": 188,
+  "model_version": "gemini-3.6-flash"
  }
 }

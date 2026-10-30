@@ -1,31 +1,126 @@
 {
  "committee": "CC Public Health and Community Safety",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "generated_at": "2026-10-17T03:06:12Z",
- "sources_sha": "b6973cb5d99356a8",
- "n_meetings": 17,
+ "generated_at": "2026-10-30T13:07:08Z",
+ "sources_sha": "bac83fd12fb47f8f",
+ "n_meetings": 22,
  "period_style": "term",
  "span": [
-  "2024-06-05",
+  "2022-10-19",
   "2026-07-16"
  ],
- "overview": "The Medford City Council Committee on Public Health and Community Safety is a municipal committee responsible for reviewing and drafting legislation on public health regulations, community safety standards, and municipal surveillance oversight. Between June 2024 and July 2026, the committee held 17 recorded meetings to address city ordinances, departmental reports, and civil protections. Over this period, the committee developed and reported out ordinances regulating wildlife feeding, vegetative overgrowth, rodent control, and reproductive and gender-affirming healthcare protections. It has also maintained ongoing oversight over annual surveillance reports from the police and parking departments and local procedures regarding federal immigration enforcement. At its most recent meeting in July 2026, the committee approved an ordinance mandating law enforcement identification and restricting on-duty officer masking.",
+ "overview": "The CC Public Health and Community Safety committee manages municipal regulations concerning civil liberties, public health nuisances, and law enforcement accountability. Established in late 2022, the body provides oversight for the Community Control Over Public Surveillance (CCOPS) ordinance and develops local protections for healthcare access. Its work encompasses legislative drafting for property maintenance, rodent mitigation, and sanctuary status for vulnerable populations. As of July 2026, the committee has successfully transitioned several public safety ordinances to the full City Council for adoption and continues to review annual surveillance reports.",
  "threads": [
   {
-   "name": "Wildlife feeding regulation",
-   "status": "settled",
-   "summary": "In June 2024, the committee reviewed legal advice and Board of Health feedback on a proposed wildlife feeding ordinance, authorizing Vice President Collins to revise the draft offline to clarify enforcement terms and feral cat rules [M01#1]. By August 2024, an updated draft was presented that established exemptions for bird feeders and registered feral cat caregivers [M02#1]. Following advice from Health Director O'Connor to designate sanitarians as enforcement agents, the committee approved the amended text and reported it out to the full City Council [M02#1].",
+   "name": "Public Surveillance and Body Camera Oversight",
+   "status": "ongoing",
+   "summary": "The committee oversees the CCOPS ordinance, which was refined in 2022 to govern municipal surveillance technology and legal compliance. Beginning in 2024, the body transitioned to reviewing annual reports from the police department regarding body-worn cameras and data auditing. Later amendments in 2024 strengthened data destruction requirements and removed law enforcement exemptions for bulk data acquisition. The most recent review in 2025 and 2026 focused on internal audit compliance and the methodology for assessing community impacts.",
    "citations": [
     {
-     "video_id": "MzfT6g6xeyw",
-     "t": 38,
-     "date": "2024-06-05",
-     "base": "2024-06-06_MzfT6g6xeyw",
-     "meeting_title": "City Council  Public Health and Community Safety Committee 06-05-24",
-     "title": "Resolution 23-449: Wildlife Feeding Ordinance",
+     "video_id": "MCM00000429",
+     "t": 0,
+     "date": "2022-10-19",
+     "base": "2024-05-03_MCM00000429",
+     "meeting_title": "Medford City Council Public Health And Community Safety Subcommittee 10-19-22",
+     "title": "Overview of Ordinance Revisions",
      "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00000471",
+     "t": 31,
+     "date": "2024-04-09",
+     "base": "2024-05-06_MCM00000471",
+     "meeting_title": "Medford City Council Public Health And Community Safety Committee 04-09-24",
+     "title": "Annual Surveillance Report Presentation (24-074)",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "pUMtYvwLQbQ",
+     "t": 509,
+     "date": "2024-12-11",
+     "base": "2024-12-11_pUMtYvwLQbQ",
+     "meeting_title": "City Council Public Health and Community Safety Committee 12-11-24",
+     "title": "CCOPS Ordinance Technical Amendments",
+     "label": "M11#1"
+    },
+    {
+     "video_id": "HW_5AfM_YUs",
+     "t": 637,
+     "date": "2025-05-07",
+     "base": "2025-05-07_HW_5AfM_YUs",
+     "meeting_title": "Public Health and Community Safety Committee 05-07-25",
+     "title": "Presentation of 2024 Annual Surveillance Report",
+     "label": "M14#1"
+    },
+    {
+     "video_id": "TwEwR75jhDM",
+     "t": 337,
+     "date": "2026-06-16",
+     "base": "2026-06-17_TwEwR75jhDM",
+     "meeting_title": "Medford City Council Committee Meetings PHCS, 6/16/26",
+     "title": "2025 Annual Surveillance Report",
+     "label": "M21#1"
+    }
+   ]
+  },
+  {
+   "name": "Gender-Affirming and Reproductive Healthcare Sanctuary",
+   "status": "settled",
+   "summary": "In early 2023, the committee began reviewing a proposed ordinance to shield healthcare patients and providers from out-of-state legal action. Deliberations continued through 2024 to include compliance language for pharmacies and legal protections for 'City Agents.' By April 2025, the committee finalized the draft, establishing Medford as a sanctuary for reproductive and gender-affirming care and removing requirements for medical documentation to protect resident privacy. The final ordinance was referred to the full City Council for adoption.",
+   "citations": [
+    {
+     "video_id": "MCM00000446",
+     "t": 0,
+     "date": "2023-03-28",
+     "base": "2024-05-03_MCM00000446",
+     "meeting_title": "Medford City Council Public Health and Community Safety Subcommittee 03-28-23",
+     "title": "Proposed Gender-Affirming and Reproductive Health Care Ordinance",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "ZuecN3BHnp0",
+     "t": 197,
+     "date": "2024-10-16",
+     "base": "2024-10-17_ZuecN3BHnp0",
+     "meeting_title": "City Council Public Health and Community Safety Committee 10-16-24",
+     "title": "Gender-Affirming Care and Reproductive Health Ordinances",
+     "label": "M10#1"
+    },
+    {
+     "video_id": "kwBGhJnWGUU",
+     "t": 1014,
+     "date": "2025-04-01",
+     "base": "2025-04-01_kwBGhJnWGUU",
+     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
+     "title": "Gender Affirming and Reproductive Healthcare Ordinance",
+     "label": "M13#1"
+    },
+    {
+     "video_id": "kwBGhJnWGUU",
+     "t": 4862,
+     "date": "2025-04-01",
+     "base": "2025-04-01_kwBGhJnWGUU",
+     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
+     "title": "Purpose Statement and Referral",
+     "label": "M13#5"
+    }
+   ]
+  },
+  {
+   "name": "Rodent and Wildlife Management",
+   "status": "settled",
+   "summary": "To address rodent and pest issues, the committee developed a Wildlife Feeding Ordinance that exempts bird feeders and registered feral cat caretakers, which was approved in August 2024. Concurrent work update the city's rodent control ordinance to increase fees for utility street openings and mandate damaged trash barrel replacement within 15 days. By December 2025, the committee finalized regulations for backyard composting and scaled fines for landlords of larger properties. Both the feeding and rodent control measures were reported out to the council for first readings.",
+   "citations": [
+    {
+     "video_id": "V64stR284Pc",
+     "t": 32,
+     "date": "2024-03-12",
+     "base": "2024-06-01_V64stR284Pc",
+     "meeting_title": "City Council Public Health and Community Safety Committee 03-12-24",
+     "title": "Wildlife Feeding Ordinance",
+     "label": "M04#1"
     },
     {
      "video_id": "UuhcxZvksfg",
@@ -34,23 +129,7 @@
      "base": "2024-08-14_UuhcxZvksfg",
      "meeting_title": "City Council Public Health and Community Safety Committee 08-13-24",
      "title": "Wildlife Feeding Ordinance Draft (Paper 23-449)",
-     "label": "M02#1"
-    }
-   ]
-  },
-  {
-   "name": "Overgrowth and rodent control ordinances",
-   "status": "settled",
-   "summary": "In September 2024, the committee approved motions to draft an overgrowth ordinance and amend existing rodent control regulations to enhance public health enforcement [M03#1, M03#2]. Initial drafts were sent for legal and departmental review in October 2024 [M04#1, M04#2]. The committee revisited both measures in October 2025 to consider solicitor redlines on regulatory placement and coordinate enforcement language with DPW Commissioner McGivern, voting to retain them in committee for technical updates [M11#1, M11#2, M11#3, M11#4]. In December 2025, the committee approved and reported out both measures, forwarding an overgrowth ordinance that redirects fines to the general fund and a rodent control ordinance establishing composting rules and tiered fines [M13#1, M13#2].",
-   "citations": [
-    {
-     "video_id": "k65YPGeaIcs",
-     "t": 41,
-     "date": "2024-09-17",
-     "base": "2024-09-18_k65YPGeaIcs",
-     "meeting_title": "City Council Public Health and Community Safety Committee 09-17-24",
-     "title": "Resolution to Discuss an Overgrowth Ordinance (24-036)",
-     "label": "M03#1"
+     "label": "M07#1"
     },
     {
      "video_id": "k65YPGeaIcs",
@@ -59,7 +138,32 @@
      "base": "2024-09-18_k65YPGeaIcs",
      "meeting_title": "City Council Public Health and Community Safety Committee 09-17-24",
      "title": "Updates to the Rodent Control Ordinance (24-461)",
-     "label": "M03#2"
+     "label": "M08#2"
+    },
+    {
+     "video_id": "YihOwP7qXJM",
+     "t": 881,
+     "date": "2025-12-10",
+     "base": "2025-12-10_YihOwP7qXJM",
+     "meeting_title": "City Council Public Health and Community Safety Committee 12-10-25",
+     "title": "Rodent Control Ordinance",
+     "label": "M18#2"
+    }
+   ]
+  },
+  {
+   "name": "Property Overgrowth and Vegetation Regulation",
+   "status": "settled",
+   "summary": "The committee initiated a new overgrowth ordinance in September 2024 to empower the Health Department to address vegetation obstructing public ways or providing pest harborage. Drafting involved coordinating with the DPW and legal counsel to avoid duplicating sidewalk obstruction enforcement and aligning stagnant water definitions with state codes. In late 2025, the committee amended the language to redirect penalty fines to the general operating fund rather than a specific account. The finalized ordinance was reported out of committee in December 2025.",
+   "citations": [
+    {
+     "video_id": "k65YPGeaIcs",
+     "t": 41,
+     "date": "2024-09-17",
+     "base": "2024-09-18_k65YPGeaIcs",
+     "meeting_title": "City Council Public Health and Community Safety Committee 09-17-24",
+     "title": "Resolution to Discuss an Overgrowth Ordinance (24-036)",
+     "label": "M08#1"
     },
     {
      "video_id": "EZNSKYxjrUE",
@@ -68,34 +172,7 @@
      "base": "2024-10-09_EZNSKYxjrUE",
      "meeting_title": "City Council Public Health and Community Safety Meeting 10-08-24",
      "title": "Overgrowth Ordinance (Paper 24-036)",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "EZNSKYxjrUE",
-     "t": 1302,
-     "date": "2024-10-08",
-     "base": "2024-10-09_EZNSKYxjrUE",
-     "meeting_title": "City Council Public Health and Community Safety Meeting 10-08-24",
-     "title": "Rodent Control Ordinance Updates (Paper 24-461)",
-     "label": "M04#2"
-    },
-    {
-     "video_id": "HaW-_4A8T8c",
-     "t": 789,
-     "date": "2025-10-22",
-     "base": "2025-10-22_HaW-_4A8T8c",
-     "meeting_title": "Medford City Council Public Health and Community Safety Committee Meeting",
-     "title": "Overgrowth and Rodent Control Ordinances",
-     "label": "M11#1"
-    },
-    {
-     "video_id": "HaW-_4A8T8c",
-     "t": 1221,
-     "date": "2025-10-22",
-     "base": "2025-10-22_HaW-_4A8T8c",
-     "meeting_title": "Medford City Council Public Health and Community Safety Committee Meeting",
-     "title": "Solicitor Review and Regulatory Language",
-     "label": "M11#2"
+     "label": "M09#1"
     },
     {
      "video_id": "HaW-_4A8T8c",
@@ -104,16 +181,7 @@
      "base": "2025-10-22_HaW-_4A8T8c",
      "meeting_title": "Medford City Council Public Health and Community Safety Committee Meeting",
      "title": "DPW Enforcement Coordination",
-     "label": "M11#3"
-    },
-    {
-     "video_id": "HaW-_4A8T8c",
-     "t": 3403,
-     "date": "2025-10-22",
-     "base": "2025-10-22_HaW-_4A8T8c",
-     "meeting_title": "Medford City Council Public Health and Community Safety Committee Meeting",
-     "title": "Committee Action",
-     "label": "M11#4"
+     "label": "M16#3"
     },
     {
      "video_id": "YihOwP7qXJM",
@@ -122,154 +190,14 @@
      "base": "2025-12-10_YihOwP7qXJM",
      "meeting_title": "City Council Public Health and Community Safety Committee 12-10-25",
      "title": "Overgrowth Ordinance",
-     "label": "M13#1"
-    },
-    {
-     "video_id": "YihOwP7qXJM",
-     "t": 881,
-     "date": "2025-12-10",
-     "base": "2025-12-10_YihOwP7qXJM",
-     "meeting_title": "City Council Public Health and Community Safety Committee 12-10-25",
-     "title": "Rodent Control Ordinance",
-     "label": "M13#2"
+     "label": "M18#1"
     }
    ]
   },
   {
-   "name": "Reproductive and gender-affirming healthcare protections",
-   "status": "settled",
-   "summary": "In October 2024, the committee initiated review of draft ordinances to protect reproductive health and gender-affirming care by limiting municipal cooperation with out-of-state enforcement [M05#1]. The ordinance remained in committee in February 2025 pending a formal legal review by city solicitors [M07#1]. In April 2025, the committee approved amendments narrowing the definition of city agents, removing documentation requirements from the gender identity definition, and refining the purpose statement [M08#2, M08#3, M08#5]. The committee then approved the amended sanctuary ordinance and referred it to the full City Council for adoption [M08#1, M08#5].",
-   "citations": [
-    {
-     "video_id": "ZuecN3BHnp0",
-     "t": 197,
-     "date": "2024-10-16",
-     "base": "2024-10-17_ZuecN3BHnp0",
-     "meeting_title": "City Council Public Health and Community Safety Committee 10-16-24",
-     "title": "Gender-Affirming Care and Reproductive Health Ordinances",
-     "label": "M05#1"
-    },
-    {
-     "video_id": "7kQ21iErs-Y",
-     "t": 278,
-     "date": "2025-02-04",
-     "base": "2025-02-04_7kQ21iErs-Y",
-     "meeting_title": "Public Health and Community Safety Meeting via Zoom",
-     "title": "Ordinance for Gender-Affirming and Reproductive Healthcare Protections",
-     "label": "M07#1"
-    },
-    {
-     "video_id": "kwBGhJnWGUU",
-     "t": 1014,
-     "date": "2025-04-01",
-     "base": "2025-04-01_kwBGhJnWGUU",
-     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Gender Affirming and Reproductive Healthcare Ordinance",
-     "label": "M08#1"
-    },
-    {
-     "video_id": "kwBGhJnWGUU",
-     "t": 2186,
-     "date": "2025-04-01",
-     "base": "2025-04-01_kwBGhJnWGUU",
-     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Definition of City Agent",
-     "label": "M08#2"
-    },
-    {
-     "video_id": "kwBGhJnWGUU",
-     "t": 3763,
-     "date": "2025-04-01",
-     "base": "2025-04-01_kwBGhJnWGUU",
-     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Definition of Gender Identity",
-     "label": "M08#3"
-    },
-    {
-     "video_id": "kwBGhJnWGUU",
-     "t": 4862,
-     "date": "2025-04-01",
-     "base": "2025-04-01_kwBGhJnWGUU",
-     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Purpose Statement and Referral",
-     "label": "M08#5"
-    }
-   ]
-  },
-  {
-   "name": "Surveillance oversight and CCOPS reporting",
+   "name": "Immigration Enforcement and Welcoming City Accountability",
    "status": "ongoing",
-   "summary": "In December 2024, the committee approved technical amendments to the Community Control Over Public Surveillance (CCOPS) ordinance to strengthen data destruction rules and eliminate certain law enforcement exemptions, reporting the measure out [M06#1]. Police Chief Buckley presented the 2024 Annual Surveillance Report in May 2025, detailing body-worn camera volume and audit results regarding civilian notification compliance [M09#1, M09#2, M09#5]. In May 2026, the committee reviewed parking department license plate reader data with Parking Director Sarah McDermod and kept surveillance reporting in committee to coordinate with police officials [M15#1]. In June 2026, Chief Buckley delivered the 2025 CCOPS annual report covering body camera recordings and external investigative data, and the committee voted to approve the report while keeping the paper in committee [M16#1, M16#2].",
-   "citations": [
-    {
-     "video_id": "pUMtYvwLQbQ",
-     "t": 509,
-     "date": "2024-12-11",
-     "base": "2024-12-11_pUMtYvwLQbQ",
-     "meeting_title": "City Council Public Health and Community Safety Committee 12-11-24",
-     "title": "CCOPS Ordinance Technical Amendments",
-     "label": "M06#1"
-    },
-    {
-     "video_id": "HW_5AfM_YUs",
-     "t": 637,
-     "date": "2025-05-07",
-     "base": "2025-05-07_HW_5AfM_YUs",
-     "meeting_title": "Public Health and Community Safety Committee 05-07-25",
-     "title": "Presentation of 2024 Annual Surveillance Report",
-     "label": "M09#1"
-    },
-    {
-     "video_id": "HW_5AfM_YUs",
-     "t": 1621,
-     "date": "2025-05-07",
-     "base": "2025-05-07_HW_5AfM_YUs",
-     "meeting_title": "Public Health and Community Safety Committee 05-07-25",
-     "title": "Internal Use and Access Audits",
-     "label": "M09#2"
-    },
-    {
-     "video_id": "HW_5AfM_YUs",
-     "t": 5517,
-     "date": "2025-05-07",
-     "base": "2025-05-07_HW_5AfM_YUs",
-     "meeting_title": "Public Health and Community Safety Committee 05-07-25",
-     "title": "Motion for Council’s Annual Public Report",
-     "label": "M09#5"
-    },
-    {
-     "video_id": "OIWMkmBz29E",
-     "t": 677,
-     "date": "2026-05-20",
-     "base": "2026-05-20_OIWMkmBz29E",
-     "meeting_title": "City Council Public Health and Community Safety Committee 05-20-26",
-     "title": "Annual Surveillance Reports",
-     "label": "M15#1"
-    },
-    {
-     "video_id": "TwEwR75jhDM",
-     "t": 337,
-     "date": "2026-06-16",
-     "base": "2026-06-17_TwEwR75jhDM",
-     "meeting_title": "Medford City Council Committee Meetings PHCS, 6/16/26",
-     "title": "2025 Annual Surveillance Report",
-     "label": "M16#1"
-    },
-    {
-     "video_id": "TwEwR75jhDM",
-     "t": 3757,
-     "date": "2026-06-16",
-     "base": "2026-06-17_TwEwR75jhDM",
-     "meeting_title": "Medford City Council Committee Meetings PHCS, 6/16/26",
-     "title": "Report Approval and Adjournment",
-     "label": "M16#2"
-    }
-   ]
-  },
-  {
-   "name": "Immigration enforcement accountability and Welcoming City tracking",
-   "status": "ongoing",
-   "summary": "In May 2025, the committee questioned Chief Buckley regarding federal immigration operations utilizing police department grounds [M09#3]. The committee subsequently approved a motion in October 2025 requesting the City Solicitor look into filing Freedom of Information Act requests to track detained residents, keeping the matter in committee [M10#2]. In November 2025, the committee reviewed the Police Department's Welcoming City Ordinance report and debated methods for tracking ICE detainer requests without compromising privacy, ultimately keeping the report in committee [M12#1].",
+   "summary": "Committee members have consistently monitored municipal responses to federal immigration activities, specifically regarding the use of city property by federal agents. In 2025, the committee requested that the City Solicitor use Freedom of Information Act requests to identify detained residents and explored logistical support for affected families. Discussions in late 2025 focused on the Welcoming City Ordinance, with the police department agreeing to provide quantitative tallies of ICE detainer requests in future reports to increase transparency.",
    "citations": [
     {
      "video_id": "HW_5AfM_YUs",
@@ -278,7 +206,7 @@
      "base": "2025-05-07_HW_5AfM_YUs",
      "meeting_title": "Public Health and Community Safety Committee 05-07-25",
      "title": "Inquiry into Federal Law Enforcement Operations",
-     "label": "M09#3"
+     "label": "M14#3"
     },
     {
      "video_id": "2UhDsuA0gwU",
@@ -287,7 +215,7 @@
      "base": "2025-10-08_2UhDsuA0gwU",
      "meeting_title": "City Council Public Health and Community Safety Committee 10-8-25",
      "title": "Resolution on Immigration Enforcement Accountability",
-     "label": "M10#2"
+     "label": "M15#2"
     },
     {
      "video_id": "9GYt_u4s5fY",
@@ -296,14 +224,14 @@
      "base": "2025-11-20_9GYt_u4s5fY",
      "meeting_title": "Public Health and Community Safety Committee 11-19-25",
      "title": "Welcoming City Ordinance Report and ICE Detainer Tracking",
-     "label": "M12#1"
+     "label": "M17#1"
     }
    ]
   },
   {
-   "name": "Law enforcement identification and masking standards",
+   "name": "Law Enforcement Identification and Accountability",
    "status": "settled",
-   "summary": "In February 2026, the committee reviewed a resolution regarding law enforcement identification and Fourth Amendment rights, voting to keep the paper in committee to collect input from police, legal advocates, and community organizations [M14#1]. In July 2026, the committee discussed and approved an ordinance that restricts on-duty law enforcement officers from wearing masks or disguises outside of narrow tactical, medical, religious, or weather exemptions [M17#1]. The approved ordinance also mandates visible officer identification and sets procedures for verifying the identity of individuals asserting law enforcement authority [M17#1].",
+   "summary": "A resolution was introduced in 2026 to codify identification protocols for law enforcement officers to protect Fourth Amendment rights and build public trust. After seeking feedback from the ACLU and the local police department, the committee refined the language to address both identification and masking. In July 2026, the committee approved an ordinance prohibiting officers from wearing masks on duty except in specific tactical or medical circumstances and requiring visible identification during enforcement actions.",
    "citations": [
     {
      "video_id": "pqAf_i55F28",
@@ -312,7 +240,7 @@
      "base": "2026-02-10_pqAf_i55F28",
      "meeting_title": "City Council Public Health and Community Safety Committee 02-10-26",
      "title": "Resolution to Require Law Enforcement Identification and Protect Fourth Amendment Rights",
-     "label": "M14#1"
+     "label": "M19#1"
     },
     {
      "video_id": "-DQWYGWBiFc",
@@ -321,238 +249,161 @@
      "base": "2026-07-16_-DQWYGWBiFc",
      "meeting_title": "Medford City Council Public Health and Community Safety Committee",
      "title": "Ordinance to Require Law Enforcement Identification and Limit Masking",
-     "label": "M17#1"
+     "label": "M22#1"
+    }
+   ]
+  },
+  {
+   "name": "Public Social Infrastructure",
+   "status": "unclear",
+   "summary": "The committee explored regional models for overnight warming and cooling centers for unhoused adults in early 2024, hearing from Malden service directors. Later that year, the body discussed the community need for public sanitary facilities in city parks and solicited feedback from department heads regarding financial constraints. While these items appeared on the governing agenda, no final ordinances or funding mechanisms were approved in the record.",
+   "citations": [
+    {
+     "video_id": "ciyF6x2BC3o",
+     "t": 79,
+     "date": "2024-02-13",
+     "base": "2024-06-01_ciyF6x2BC3o",
+     "meeting_title": "City Council Public Health and Community Safety Committee 02-13-24",
+     "title": "Warming and Cooling Center for Adults Experiencing Homelessness",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "ciyF6x2BC3o",
+     "t": 3809,
+     "date": "2024-02-13",
+     "base": "2024-06-01_ciyF6x2BC3o",
+     "meeting_title": "City Council Public Health and Community Safety Committee 02-13-24",
+     "title": "2024–2025 Council Governing Agenda Review",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "ZuecN3BHnp0",
+     "t": 1467,
+     "date": "2024-10-16",
+     "base": "2024-10-17_ZuecN3BHnp0",
+     "meeting_title": "City Council Public Health and Community Safety Committee 10-16-24",
+     "title": "Public Sanitary Facilities in City Parks",
+     "label": "M10#2"
     }
    ]
   }
  ],
  "periods": [
   {
-   "period": "2024-2025 term",
-   "narrative": "During this term, the committee developed and reported out regulatory ordinances on wildlife feeding, property overgrowth, rodent mitigation, and healthcare sanctuary protections [M02#1, M08#5, M13#1, M13#2]. It also conducted oversight regarding public surveillance standards and city coordination concerning immigration enforcement [M06#1, M09#1, M10#2, M12#1].",
+   "period": "2022-2023 term",
+   "narrative": "This period focused on establishing the foundational legal framework for municipal surveillance oversight and beginning the drafting of healthcare privacy protections.",
    "citations": [
     {
-     "video_id": "MzfT6g6xeyw",
-     "t": 38,
-     "date": "2024-06-05",
-     "base": "2024-06-06_MzfT6g6xeyw",
-     "meeting_title": "City Council  Public Health and Community Safety Committee 06-05-24",
-     "title": "Resolution 23-449: Wildlife Feeding Ordinance",
-     "label": "M01#1"
+     "video_id": "MCM00000429",
+     "t": null,
+     "date": "2022-10-19",
+     "base": "2024-05-03_MCM00000429",
+     "meeting_title": "Medford City Council Public Health And Community Safety Subcommittee 10-19-22",
+     "title": "Medford City Council Public Health And Community Safety Subcommittee 10-19-22",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00000446",
+     "t": null,
+     "date": "2023-03-28",
+     "base": "2024-05-03_MCM00000446",
+     "meeting_title": "Medford City Council Public Health and Community Safety Subcommittee 03-28-23",
+     "title": "Medford City Council Public Health and Community Safety Subcommittee 03-28-23",
+     "label": "M02"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The committee significantly expanded its legislative output, finalizing ordinances for wildlife feeding, rodent control, property overgrowth, and sanctuary healthcare status.",
+   "citations": [
+    {
+     "video_id": "ciyF6x2BC3o",
+     "t": null,
+     "date": "2024-02-13",
+     "base": "2024-06-01_ciyF6x2BC3o",
+     "meeting_title": "City Council Public Health and Community Safety Committee 02-13-24",
+     "title": "City Council Public Health and Community Safety Committee 02-13-24",
+     "label": "M03"
     },
     {
      "video_id": "UuhcxZvksfg",
-     "t": 667,
+     "t": null,
      "date": "2024-08-13",
      "base": "2024-08-14_UuhcxZvksfg",
      "meeting_title": "City Council Public Health and Community Safety Committee 08-13-24",
-     "title": "Wildlife Feeding Ordinance Draft (Paper 23-449)",
-     "label": "M02#1"
-    },
-    {
-     "video_id": "k65YPGeaIcs",
-     "t": 41,
-     "date": "2024-09-17",
-     "base": "2024-09-18_k65YPGeaIcs",
-     "meeting_title": "City Council Public Health and Community Safety Committee 09-17-24",
-     "title": "Resolution to Discuss an Overgrowth Ordinance (24-036)",
-     "label": "M03#1"
-    },
-    {
-     "video_id": "k65YPGeaIcs",
-     "t": 53,
-     "date": "2024-09-17",
-     "base": "2024-09-18_k65YPGeaIcs",
-     "meeting_title": "City Council Public Health and Community Safety Committee 09-17-24",
-     "title": "Updates to the Rodent Control Ordinance (24-461)",
-     "label": "M03#2"
-    },
-    {
-     "video_id": "EZNSKYxjrUE",
-     "t": 368,
-     "date": "2024-10-08",
-     "base": "2024-10-09_EZNSKYxjrUE",
-     "meeting_title": "City Council Public Health and Community Safety Meeting 10-08-24",
-     "title": "Overgrowth Ordinance (Paper 24-036)",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "EZNSKYxjrUE",
-     "t": 1302,
-     "date": "2024-10-08",
-     "base": "2024-10-09_EZNSKYxjrUE",
-     "meeting_title": "City Council Public Health and Community Safety Meeting 10-08-24",
-     "title": "Rodent Control Ordinance Updates (Paper 24-461)",
-     "label": "M04#2"
-    },
-    {
-     "video_id": "ZuecN3BHnp0",
-     "t": 197,
-     "date": "2024-10-16",
-     "base": "2024-10-17_ZuecN3BHnp0",
-     "meeting_title": "City Council Public Health and Community Safety Committee 10-16-24",
-     "title": "Gender-Affirming Care and Reproductive Health Ordinances",
-     "label": "M05#1"
-    },
-    {
-     "video_id": "pUMtYvwLQbQ",
-     "t": 509,
-     "date": "2024-12-11",
-     "base": "2024-12-11_pUMtYvwLQbQ",
-     "meeting_title": "City Council Public Health and Community Safety Committee 12-11-24",
-     "title": "CCOPS Ordinance Technical Amendments",
-     "label": "M06#1"
-    },
-    {
-     "video_id": "7kQ21iErs-Y",
-     "t": 278,
-     "date": "2025-02-04",
-     "base": "2025-02-04_7kQ21iErs-Y",
-     "meeting_title": "Public Health and Community Safety Meeting via Zoom",
-     "title": "Ordinance for Gender-Affirming and Reproductive Healthcare Protections",
-     "label": "M07#1"
+     "title": "City Council Public Health and Community Safety Committee 08-13-24",
+     "label": "M07"
     },
     {
      "video_id": "kwBGhJnWGUU",
-     "t": 1014,
+     "t": null,
      "date": "2025-04-01",
      "base": "2025-04-01_kwBGhJnWGUU",
      "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Gender Affirming and Reproductive Healthcare Ordinance",
-     "label": "M08#1"
-    },
-    {
-     "video_id": "kwBGhJnWGUU",
-     "t": 4862,
-     "date": "2025-04-01",
-     "base": "2025-04-01_kwBGhJnWGUU",
-     "meeting_title": "Public Health and Community Safety Committee Meeting via Zoom",
-     "title": "Purpose Statement and Referral",
-     "label": "M08#5"
-    },
-    {
-     "video_id": "HW_5AfM_YUs",
-     "t": 637,
-     "date": "2025-05-07",
-     "base": "2025-05-07_HW_5AfM_YUs",
-     "meeting_title": "Public Health and Community Safety Committee 05-07-25",
-     "title": "Presentation of 2024 Annual Surveillance Report",
-     "label": "M09#1"
-    },
-    {
-     "video_id": "2UhDsuA0gwU",
-     "t": 4817,
-     "date": "2025-10-08",
-     "base": "2025-10-08_2UhDsuA0gwU",
-     "meeting_title": "City Council Public Health and Community Safety Committee 10-8-25",
-     "title": "Resolution on Immigration Enforcement Accountability",
-     "label": "M10#2"
-    },
-    {
-     "video_id": "HaW-_4A8T8c",
-     "t": 3403,
-     "date": "2025-10-22",
-     "base": "2025-10-22_HaW-_4A8T8c",
-     "meeting_title": "Medford City Council Public Health and Community Safety Committee Meeting",
-     "title": "Committee Action",
-     "label": "M11#4"
-    },
-    {
-     "video_id": "9GYt_u4s5fY",
-     "t": 865,
-     "date": "2025-11-19",
-     "base": "2025-11-20_9GYt_u4s5fY",
-     "meeting_title": "Public Health and Community Safety Committee 11-19-25",
-     "title": "Welcoming City Ordinance Report and ICE Detainer Tracking",
-     "label": "M12#1"
+     "title": "Public Health and Community Safety Committee Meeting via Zoom",
+     "label": "M13"
     },
     {
      "video_id": "YihOwP7qXJM",
-     "t": 32,
+     "t": null,
      "date": "2025-12-10",
      "base": "2025-12-10_YihOwP7qXJM",
      "meeting_title": "City Council Public Health and Community Safety Committee 12-10-25",
-     "title": "Overgrowth Ordinance",
-     "label": "M13#1"
-    },
-    {
-     "video_id": "YihOwP7qXJM",
-     "t": 881,
-     "date": "2025-12-10",
-     "base": "2025-12-10_YihOwP7qXJM",
-     "meeting_title": "City Council Public Health and Community Safety Committee 12-10-25",
-     "title": "Rodent Control Ordinance",
-     "label": "M13#2"
+     "title": "City Council Public Health and Community Safety Committee 12-10-25",
+     "label": "M18"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "In this term, the committee evaluated annual municipal surveillance data and developed accountability standards for policing [M15#1, M16#1, M16#2]. The body concluded its work on the subject by approving an ordinance regulating law enforcement identification and on-duty masking [M17#1].",
+   "narrative": "Work shifted toward strengthening police accountability through masking and identification regulations while maintaining oversight of annual surveillance and parking reports.",
    "citations": [
     {
      "video_id": "pqAf_i55F28",
-     "t": 1628,
+     "t": null,
      "date": "2026-02-10",
      "base": "2026-02-10_pqAf_i55F28",
      "meeting_title": "City Council Public Health and Community Safety Committee 02-10-26",
-     "title": "Resolution to Require Law Enforcement Identification and Protect Fourth Amendment Rights",
-     "label": "M14#1"
-    },
-    {
-     "video_id": "OIWMkmBz29E",
-     "t": 677,
-     "date": "2026-05-20",
-     "base": "2026-05-20_OIWMkmBz29E",
-     "meeting_title": "City Council Public Health and Community Safety Committee 05-20-26",
-     "title": "Annual Surveillance Reports",
-     "label": "M15#1"
+     "title": "City Council Public Health and Community Safety Committee 02-10-26",
+     "label": "M19"
     },
     {
      "video_id": "TwEwR75jhDM",
-     "t": 337,
+     "t": null,
      "date": "2026-06-16",
      "base": "2026-06-17_TwEwR75jhDM",
      "meeting_title": "Medford City Council Committee Meetings PHCS, 6/16/26",
-     "title": "2025 Annual Surveillance Report",
-     "label": "M16#1"
-    },
-    {
-     "video_id": "TwEwR75jhDM",
-     "t": 3757,
-     "date": "2026-06-16",
-     "base": "2026-06-17_TwEwR75jhDM",
-     "meeting_title": "Medford City Council Committee Meetings PHCS, 6/16/26",
-     "title": "Report Approval and Adjournment",
-     "label": "M16#2"
+     "title": "Medford City Council Committee Meetings PHCS, 6/16/26",
+     "label": "M21"
     },
     {
      "video_id": "-DQWYGWBiFc",
-     "t": 264,
+     "t": null,
      "date": "2026-07-16",
      "base": "2026-07-16_-DQWYGWBiFc",
      "meeting_title": "Medford City Council Public Health and Community Safety Committee",
-     "title": "Ordinance to Require Law Enforcement Identification and Limit Masking",
-     "label": "M17#1"
+     "title": "Medford City Council Public Health and Community Safety Committee",
+     "label": "M22"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 52,
-  "meetings_cited": 17,
-  "of_meetings": 17,
-  "max_share": 0.115,
-  "even_share": 0.0588,
-  "concentration_ratio": 1.96,
+  "citations": 34,
+  "meetings_cited": 19,
+  "of_meetings": 22,
+  "max_share": 0.088,
+  "even_share": 0.0455,
+  "concentration_ratio": 1.94,
   "most_cited": "kwBGhJnWGUU",
-  "periods_covered": 2,
-  "of_periods": 2
+  "periods_covered": 3,
+  "of_periods": 3
  },
  "usage": {
-  "input_tokens": 4267,
-  "output_tokens": 1918,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 5342,
+  "output_tokens": 1480,
+  "model_version": "gemini-3-flash-preview"
  }
 }
