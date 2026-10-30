@@ -1,0 +1,61 @@
+{
+ "video_id": "MCM00000429",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T12:13:36Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "d98f37694a179ffe",
+ "subject": "Community Control Over Public Surveillance Ordinance",
+ "overview": "The subcommittee reviewed a revised draft of an ordinance governing municipal use of surveillance technology, focusing on administrative feasibility and legal compliance. The matter was referred to the Committee of the Whole for further deliberation.",
+ "items": [
+  {
+   "title": "Overview of Ordinance Revisions",
+   "t": 0,
+   "summary": "Chair Collins presented a revised draft of the surveillance technology ordinance, highlighting modifications to definitions, exemptions for routine software, and the removal of the community advisory committee.",
+   "speakers": [
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Administrative and Legal Impacts",
+   "t": 535,
+   "summary": "Councilors and city staff debated the financial and administrative feasibility of the ordinance, while legal counsel flagged potential conflicts with state law, collective bargaining, and existing contracts.",
+   "speakers": [
+    "Justin Tseng",
+    "Richard Caraviello",
+    "Austin",
+    "Nina Nazarian",
+    "Jack Buckley"
+   ]
+  },
+  {
+   "title": "Public Testimony",
+   "t": 1073,
+   "summary": "Residents and representatives from the ACLU and the Human Rights Commission advocated for the ordinance as a necessary measure for transparency and civil liberties.",
+   "speakers": [
+    "Barry Ingber",
+    "Julie Flynn",
+    "Emiliano Falcón-Morano",
+    "Munir Jirmanus",
+    "Jean Zotter",
+    "Steve Schnapp"
+   ]
+  },
+  {
+   "title": "Referral to Committee of the Whole",
+   "t": 4553,
+   "summary": "Referred the ordinance to the Committee of the Whole for further review alongside legal recommendations. The committee also directed the chair and clerk to provide sample surveillance reports from other municipalities for the next discussion.",
+   "speakers": [
+    "Richard Caraviello",
+    "Kit Collins",
+    "Justin Tseng"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24495,
+  "output_tokens": 473,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
