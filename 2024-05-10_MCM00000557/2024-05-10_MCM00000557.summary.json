@@ -1,0 +1,65 @@
+{
+ "video_id": "MCM00000557",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T01:07:12Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c297abae1d0089a2",
+ "subject": "Home Electrification and Heat Pump Technology",
+ "overview": "The committee hosted a presentation by BlockPower and the Tufts Energy Group focused on home electrification and building decarbonization. The meeting detailed the technical functionality of heat pumps and reviewed state and federal financial incentives available to residents.",
+ "items": [
+  {
+   "title": "Introductions by Medford Energy and Environment Committee and Tufts Energy Group",
+   "t": 184,
+   "summary": "Representatives from both organizations outlined their missions to promote renewable energy and support environmental stewardship in the Medford and Tufts communities.",
+   "speakers": [
+    "Robert Paine",
+    "Jacqueline Dobonich"
+   ]
+  },
+  {
+   "title": "Presentation on Building Electrification and Heat Pump Technology",
+   "t": 627,
+   "summary": "BlockPower presented the benefits of electrifying buildings to reduce fossil fuel consumption, focusing on modern heat pump technology that remains effective in extreme cold temperatures.",
+   "speakers": [
+    "Craig Altamos",
+    "Dennis"
+   ]
+  },
+  {
+   "title": "Overview of State and Federal Financial Incentives",
+   "t": 1393,
+   "summary": "The presentation detailed MassSave rebates, interest-free loans, and federal Inflation Reduction Act programs including HOMES and HERA rebates for residential energy retrofits.",
+   "speakers": [
+    "Craig Altamos"
+   ]
+  },
+  {
+   "title": "BlockPower Leasing Model and Community Decarbonization Strategy",
+   "t": 1661,
+   "summary": "BlockPower described its 15-year lease model for heat pumps and suggested that Medford and Tufts set ambitious goals to electrify existing building stocks by 2030.",
+   "speakers": [
+    "Craig Altamos",
+    "Dennis"
+   ]
+  },
+  {
+   "title": "Question and Answer Session on Implementation and Maintenance",
+   "t": 2297,
+   "summary": "Discussion addressed the costs of installation, maintenance requirements, and the specific challenges of retrofitting older Medford homes with existing radiator systems.",
+   "speakers": [
+    "Robert Paine",
+    "Craig Altamos",
+    "Dennis",
+    "Paul",
+    "Gaston Fiore"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29442,
+  "output_tokens": 490,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
