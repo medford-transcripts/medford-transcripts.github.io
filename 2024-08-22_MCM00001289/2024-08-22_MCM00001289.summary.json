@@ -1,0 +1,48 @@
+{
+ "video_id": "MCM00001289",
+ "provider": "gemini",
+ "generated_at": "2026-10-30T18:06:30Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3ca6edc65df32e80",
+ "subject": "South Street Local Historic District",
+ "overview": "The Medford Historic District Commission met to plan its primary project for the fiscal year centered on creating a South Street local historic district. The commission voted to establish a subcommittee to explore the proposal and discussed funding a consultant to guide the designation process.",
+ "items": [
+  {
+   "title": "South Street Local Historic District Proposal",
+   "t": 1,
+   "summary": "The commission discussed establishing a South Street local historic district and voted to create a subcommittee to oversee the initiative.",
+   "speakers": [
+    "Christopher Bader",
+    "Zac Bears",
+    "Denis MacDougall",
+    "Christopher Donovan"
+   ]
+  },
+  {
+   "title": "Consultant Funding and Outreach Planning",
+   "t": 1248,
+   "summary": "Members discussed allocating commission funds for a consultant to define district boundaries and prepare guidelines, while planning public engagement and a meeting with the mayor.",
+   "speakers": [
+    "Christopher Bader",
+    "Christopher Donovan"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 2893,
+   "summary": "Resident Maryanne Adduci shared information regarding the historic Middlesex Canal route along West Street and offered to fund a historical marker.",
+   "speakers": [
+    "Maryanne Adduci",
+    "Christopher Bader",
+    "Christopher Donovan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19443,
+  "output_tokens": 277,
+  "model_version": "gemini-3.6-flash"
+ }
+}
