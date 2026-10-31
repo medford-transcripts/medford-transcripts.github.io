@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "fd34556d447abfbc",
- "subject": "",
+ "subject": "Approval Not Required Plan for 69 Horn Ave",
  "overview": "The Community Development Board approved an Approval Not Required plan for 69 Horn Ave and approved its January 13, 2022 meeting minutes. The board also tabled two sets of June 2022 meeting minutes and received staff updates on upcoming development applications and department staffing.",
  "items": [
   {
@@ -52,5 +52,6 @@
   "input_tokens": 11413,
   "output_tokens": 351,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
