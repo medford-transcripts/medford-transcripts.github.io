@@ -1,0 +1,42 @@
+{
+ "video_id": "arBtuu89tIk",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T17:05:36Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c6732dc35d0f9410",
+ "subject": "McGlynn Elementary School Welcome Address",
+ "overview": "Principal Andy O'Brien welcomed families for the 2022-2023 school year and outlined the school's educational philosophy and communication protocols.",
+ "items": [
+  {
+   "title": "Welcome and School Philosophy",
+   "t": 0,
+   "summary": "Principal Andy O'Brien introduced the school staff and described a child-centered learning environment serving over 500 students.",
+   "speakers": [
+    "O'Brien"
+   ]
+  },
+  {
+   "title": "Specialized Language Programs",
+   "t": 34,
+   "summary": "The principal noted that the school hosts the Access and Newcomer English Language Learner programs.",
+   "speakers": [
+    "O'Brien"
+   ]
+  },
+  {
+   "title": "Parental Engagement and Communication",
+   "t": 59,
+   "summary": "O'Brien encouraged parents to stay involved by monitoring the school website and reading monthly newsletters distributed via email.",
+   "speakers": [
+    "O'Brien"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1455,
+  "output_tokens": 273,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
