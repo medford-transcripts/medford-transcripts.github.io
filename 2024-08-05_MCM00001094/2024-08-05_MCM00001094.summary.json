@@ -1,0 +1,55 @@
+{
+ "video_id": "MCM00001094",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T03:06:10Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "e9172df97d5b588f",
+ "subject": "16 Foster Court Demolition Determination",
+ "overview": "The Commission reviewed the historical preservation status of 16 Foster Court and 20 Otis Street, voting to release both from demolition delay. Members also discussed potential updates to the city ordinance to clarify procedural ambiguities during property ownership transitions.",
+ "items": [
+  {
+   "title": "16 Foster Court Demolition Review",
+   "t": 90,
+   "summary": "Voted to find the early 19th-century structure not preferably preserved, concluding that further preservation efforts were unlikely to succeed given a previous lack of City Council support for a local historic district.",
+   "speakers": [
+    "Ryan Hayward",
+    "Doug Carr",
+    "Peter Miller",
+    "Ed Wiest",
+    "Kit Collins",
+    "Roberto DeMarco"
+   ]
+  },
+  {
+   "title": "20 Otis Street Carriage House Design",
+   "t": 862,
+   "summary": "Released the property from demolition delay after the owners modified their architectural plans to include historical details like corner boards and trim that better recall the original carriage house.",
+   "speakers": [
+    "Peter Miller",
+    "Kit Collins",
+    "Ryan Hayward",
+    "Jess Farrell",
+    "Ed Wiest",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "Ordinance Revision Discussion",
+   "t": 1243,
+   "summary": "Commissioners and city legal staff discussed drafting amendments to the demolition delay ordinance to clarify procedures and avoid legal \"gray areas\" when properties change ownership during the review process.",
+   "speakers": [
+    "Doug Carr",
+    "Robin Stein",
+    "Victor Schrader",
+    "Ryan Hayward"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8765,
+  "output_tokens": 414,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
