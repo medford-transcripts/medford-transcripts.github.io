@@ -1,0 +1,97 @@
+{
+ "video_id": "MCM00000602",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T07:20:34Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cdac7baf3d94255d",
+ "subject": "",
+ "overview": "The Zoning Board of Appeals granted a special permit to convert two commercial units to residential apartments on High Street and approved meeting minutes. Hearings for residential variance requests on Broadway, Bailey Street, and South Street were continued to the October meeting.",
+ "items": [
+  {
+   "title": "595 Broadway",
+   "t": 83,
+   "summary": "Continued to October 27 at the applicant's request to allow time to finalize updated plans and zoning analysis tables.",
+   "speakers": [
+    "Denis MacDougall",
+    "Michael Barone Jr",
+    "Mike Caldera",
+    "Jacqueline Daugherty"
+   ]
+  },
+  {
+   "title": "0 Bailey Street",
+   "t": 294,
+   "summary": "Continued to the next meeting to allow the applicant to submit a legal memorandum addressing hardship criteria and questions regarding site access and drainage.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Bill Carroll",
+    "Mike Welsh",
+    "Jeff Fargo",
+    "Jim Tarani",
+    "Jacqueline Daugherty"
+   ]
+  },
+  {
+   "title": "20-22 High Street",
+   "t": 2973,
+   "summary": "Approved a special permit to convert two second-floor commercial units into residential apartments with a parking requirement waiver.",
+   "speakers": [
+    "Denis MacDougall",
+    "Sean Beagan",
+    "Christopher Bader",
+    "Mike Caldera",
+    "Alicia Hunt",
+    "Jacqueline Daugherty"
+   ]
+  },
+  {
+   "title": "54 South Street",
+   "t": 4487,
+   "summary": "Continued to the next regular meeting after board members and abutters raised concerns regarding the proposed four-unit addition classification, carriage house demolition, and drainage impacts.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Jeff Fargo",
+    "Ben Minnix",
+    "Mike Caldera",
+    "Peter Miller",
+    "Sharon Guzik",
+    "Christopher Bader",
+    "Martine Dion",
+    "Mi Moi",
+    "Pat Hanson",
+    "Lois Grossman",
+    "Alicia Hunt",
+    "Jacqueline Daugherty"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 9147,
+   "summary": "Approved the August meeting minutes with minor corrections.",
+   "speakers": [
+    "Jacqueline Daugherty",
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "Executive Session",
+   "t": 9216,
+   "summary": "Voted to enter executive session to discuss litigation strategy in Sidney Wolfe, Trustee v. City of Medford Zoning Board of Appeals regarding 4060 Mystic Valley Parkway.",
+   "speakers": [
+    "Jacqueline Daugherty",
+    "Jonathan Murray"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 46483,
+  "output_tokens": 584,
+  "model_version": "gemini-3.8-flash"
+ }
+}

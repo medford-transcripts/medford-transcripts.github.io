@@ -1,0 +1,54 @@
+{
+ "video_id": "MCM00001373",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T07:28:00Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "ca6d7fb1285060e1",
+ "subject": "",
+ "overview": "The Cannabis Advisory Committee voted to forward Kindly Cannabis Delivery's scored application to the mayor and authorized En Route to move forward with a public community meeting for its proposed delivery operation.",
+ "items": [
+  {
+   "title": "Kindly Cannabis Delivery Application Review",
+   "t": 45,
+   "summary": "The committee reviewed scoring for Kindly Cannabis Delivery's proposed delivery service at 86 Swan Street and voted to forward the application to the mayor for host community agreement consideration.",
+   "speakers": [
+    "Victor Schrader",
+    "Bowie Berthold",
+    "MaryAnn O'Connor",
+    "Neil Osborne",
+    "Jack Buckley",
+    "Bob Dickinson"
+   ]
+  },
+  {
+   "title": "En Route Delivery Presentation",
+   "t": 551,
+   "summary": "En Route presented its proposal to operate an all-electric cannabis delivery business out of 151 Mystic Avenue, and the committee voted to allow the applicant to proceed to a public community meeting.",
+   "speakers": [
+    "Victor Schrader",
+    "Brian Keith",
+    "Salman Chowdhury",
+    "MaryAnn O'Connor",
+    "Jack Buckley",
+    "Gabriel Camacho"
+   ]
+  },
+  {
+   "title": "Public Participation and Correspondence",
+   "t": 2490,
+   "summary": "Schrader noted neighborhood correspondence citing parking and roadway concerns regarding the Swan Street proposal, and explained the municipal ordinance governing committee review in response to a public question.",
+   "speakers": [
+    "Victor Schrader",
+    "Jack Buckley",
+    "Emily"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14523,
+  "output_tokens": 319,
+  "model_version": "gemini-3.8-flash"
+ }
+}

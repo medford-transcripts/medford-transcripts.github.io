@@ -1,0 +1,80 @@
+{
+ "video_id": "MCM00000361",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T07:26:32Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "af6dae1a481c78c4",
+ "subject": "Parking Department and Enforcement Update",
+ "overview": "The City Council Committee of the Whole met with Parking Director Faye Morrison to review parking department operations, meter upgrades, and widespread permitting data errors. The council approved a motion requesting a legal review of the city's contract with former vendor Park Medford.",
+ "items": [
+  {
+   "title": "Parking Department Overview and Working Conditions",
+   "t": 94,
+   "summary": "Parking Director Faye Morrison presented an operational update detailing department staffing, appeal resolution times, and outstanding facility and safety issues in the parking office.",
+   "speakers": [
+    "Faye Morrison",
+    "Nicole Morell",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Medford Square Meter Replacement and Lobby Payment Kiosk",
+   "t": 558,
+   "summary": "Morrison detailed the ongoing replacement of street kiosks with single-space contactless meters in Medford Square and the procurement of an exterior multilingual payment and document kiosk.",
+   "speakers": [
+    "Faye Morrison",
+    "Nicole Morell",
+    "Zac Bears",
+    "Richard Caraviello",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Public Comment and Resident Permitting Errors",
+   "t": 1516,
+   "summary": "Residents and councilors criticized recent mass-ticketing incidents and proposed permit expansions, while Morrison attributed street-level ticketing errors to inaccurate legacy data inherited from the prior vendor.",
+   "speakers": [
+    "Nicole Morell",
+    "Anita Nagem",
+    "Faye Morrison",
+    "Zac Bears",
+    "Eunice Browne",
+    "Michael Marks",
+    "George Scarpelli",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Parking Office Renovations and RMV Holds",
+   "t": 3487,
+   "summary": "Chief of Staff Nina Nazarian addressed delays in reconfiguring the parking director's office, while resident testimony highlighted ongoing difficulties clearing resolved parking tickets with the Registry of Motor Vehicles.",
+   "speakers": [
+    "Nicole Morell",
+    "Michael Marks",
+    "Zac Bears",
+    "Nina Nazarian",
+    "Justin Tseng",
+    "Andrew Castagnetti",
+    "Richard Caraviello",
+    "Kit Collins",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Legal Review of Park Medford Contract",
+   "t": 5016,
+   "summary": "Approved a motion requesting that the administration and city solicitor review the contract with former parking vendor Park Medford and Reef Republic to determine if grounds exist for legal action to recover costs.",
+   "speakers": [
+    "Zac Bears",
+    "Nicole Morell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 27850,
+  "output_tokens": 587,
+  "model_version": "gemini-3.8-flash"
+ }
+}

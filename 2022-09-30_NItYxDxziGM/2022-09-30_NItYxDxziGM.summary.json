@@ -1,0 +1,43 @@
+{
+ "video_id": "NItYxDxziGM",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T07:15:43Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "678cd85c8b8d9b99",
+ "subject": "",
+ "overview": "The Medford Jazz Festival opened its 2022 outdoor festival at the West Medford Community Center. The evening featured jazz and spoken-word performances by the Beacon Blue Jazz Quintet and The Ally Project.",
+ "items": [
+  {
+   "title": "Opening Remarks",
+   "t": 396,
+   "summary": "Medford Poet Laureate Terry Carter and festival producer Jonathan Fagan welcomed attendees to the West Medford Community Center and recognized organizational partners and sponsors.",
+   "speakers": [
+    "Terry Carter",
+    "Jonathan Fagan"
+   ]
+  },
+  {
+   "title": "Beacon Blue Jazz Quintet Performance",
+   "t": 717,
+   "summary": "The Beacon Blue Jazz Quintet performed an opening set of jazz standards and original compositions directed by Jonathan Fagan.",
+   "speakers": [
+    "Jonathan Fagan"
+   ]
+  },
+  {
+   "title": "The Ally Project Performance",
+   "t": 4253,
+   "summary": "The Ally Project performed a set pairing jazz instrumentation with Terry Carter's spoken-word poetry addressing social justice, gentrification, and West Medford history.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 22370,
+  "output_tokens": 248,
+  "model_version": "gemini-3.8-flash"
+ }
+}
