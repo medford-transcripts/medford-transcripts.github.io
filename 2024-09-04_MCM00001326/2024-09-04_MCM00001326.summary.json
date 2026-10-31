@@ -1,0 +1,42 @@
+{
+ "video_id": "MCM00001326",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T08:12:25Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "f210cfaa2c613482",
+ "subject": "54 South Street Multi-Family Redevelopment",
+ "overview": "The Commission met to review a Notice of Intent for a residential redevelopment project at 54 South Street within the Mystic River riverfront area. The hearing was continued to October 5th to allow the applicant to provide additional data on groundwater levels, native plantings, and regulatory compliance.",
+ "items": [
+  {
+   "title": "Remote Meeting Law Update",
+   "t": 0,
+   "summary": "The chair announced that state provisions allowing for remote public meetings have been extended through March 31, 2023.",
+   "speakers": [
+    "Denis MacDougall",
+    "Heidi Davis"
+   ]
+  },
+  {
+   "title": "54 South Street Multi-Family Redevelopment Hearing",
+   "t": 92,
+   "summary": "Continued the public hearing for a four-unit residential redevelopment at 54 South Street to October 5th to allow for the submission of additional stormwater data and native planting plans. The project involves preserving an existing home while adding three units within the 200-foot riverfront area, requiring driveway modifications for fire access and the installation of a new subsurface infiltration system. Commission members requested further demonstrations of compliance with state redevelopment standards, specifically regarding groundwater test logs and the adequacy of the alternatives analysis for impervious surfaces.",
+   "speakers": [
+    "Heidi Davis",
+    "Ben Minnix",
+    "Kathleen Desmond",
+    "Christopher Bader",
+    "Craig Drennan",
+    "Marie Izzo",
+    "Claudia D'Amato",
+    "Jack Boosman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11180,
+  "output_tokens": 371,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

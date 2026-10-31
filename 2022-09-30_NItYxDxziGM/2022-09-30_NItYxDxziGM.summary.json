@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "678cd85c8b8d9b99",
- "subject": "",
+ "subject": "Jazz and Spoken-Word Performances",
  "overview": "The Medford Jazz Festival opened its 2022 outdoor festival at the West Medford Community Center. The evening featured jazz and spoken-word performances by the Beacon Blue Jazz Quintet and The Ally Project.",
  "items": [
   {
@@ -39,5 +39,6 @@
   "input_tokens": 22370,
   "output_tokens": 248,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
