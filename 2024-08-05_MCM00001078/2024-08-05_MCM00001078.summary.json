@@ -1,0 +1,60 @@
+{
+ "video_id": "MCM00001078",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T10:15:14Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "0e1486850da2ea36",
+ "subject": "",
+ "overview": "The Medford Community Preservation Committee reviewed 2022 eligibility determination forms for upcoming project proposals and received status updates on active Community Preservation Act projects.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 91,
+   "summary": "The committee approved the meeting minutes for May 10, June 14, June 21, and July 26, 2022.",
+   "speakers": [
+    "Roberta Cameron",
+    "Joan Cyr",
+    "Danielle Evans",
+    "Matt Leming",
+    "Daniel Nuzzo-Mueller",
+    "Heidi Davis",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Review of 2022 Eligibility Determination Forms",
+   "t": 364,
+   "summary": "The committee reviewed preliminary eligibility forms for various historic preservation, open space, and affordable housing proposals, and discussed potential bonding strategies for large-scale requests.",
+   "speakers": [
+    "Roberta Cameron",
+    "Danielle Evans",
+    "Amanda Centrella",
+    "Joan Cyr",
+    "Matt Leming",
+    "Jenny Graham",
+    "Daniel Nuzzo-Mueller",
+    "Heidi Davis"
+   ]
+  },
+  {
+   "title": "CPA Project Updates",
+   "t": 2599,
+   "summary": "Staff and members reviewed progress, procurement timelines, and administrative needs for active CPA-funded projects across the city.",
+   "speakers": [
+    "Danielle Evans",
+    "Roberta Cameron",
+    "Matt Leming",
+    "Amanda Centrella",
+    "Heidi Davis",
+    "Joan Cyr"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18677,
+  "output_tokens": 334,
+  "model_version": "gemini-3.6-flash"
+ }
+}

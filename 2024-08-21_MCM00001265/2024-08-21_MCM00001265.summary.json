@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "d9861410f385d186",
- "subject": "",
+ "subject": "Commission Vacancy Interviews",
  "overview": "The Human Rights Commission approved prior meeting minutes, heard introductions and questions from nine applicants seeking appointment to five commission vacancies, and discussed ongoing efforts to review the municipal human rights ordinance.",
  "items": [
   {
@@ -89,5 +89,6 @@
   "input_tokens": 25714,
   "output_tokens": 666,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
