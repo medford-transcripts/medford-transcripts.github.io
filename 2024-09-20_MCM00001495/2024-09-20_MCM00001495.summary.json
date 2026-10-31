@@ -1,0 +1,42 @@
+{
+ "video_id": "MCM00001495",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T09:13:39Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "190fe8e47d1d03d3",
+ "subject": "Medford Life Science Park Proposal",
+ "overview": "Combined Properties presented a proposal to redevelop approximately eight acres along Mystic Avenue into the Medford Life Science Park, featuring 1.2 million square feet of lab and office space across four buildings. The development team detailed the site plan, requested zoning overlay, traffic considerations, and stormwater mitigation before taking public questions.",
+ "items": [
+  {
+   "title": "Presentation: Medford Life Science Park",
+   "t": 0,
+   "summary": "Combined Properties presented plans for a 1.2-million-square-foot life science campus across four eight-story buildings on Mystic Avenue, requiring a Planned Commercial Development District zoning overlay.",
+   "speakers": [
+    "Chris Magetta",
+    "Sean Burns",
+    "Scott Thornton",
+    "Paul Avery"
+   ]
+  },
+  {
+   "title": "Public Q&A",
+   "t": 4447,
+   "summary": "The development team addressed submitted questions regarding Winterbrook maintenance, retail spaces, ground-breaking timelines, flooding mitigation, street safety along Mystic Avenue, and community benefits.",
+   "speakers": [
+    "Chris Magetta",
+    "John Carey",
+    "Paul Avery",
+    "Scott Thornton",
+    "Sean Burns",
+    "Victor Schrader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 35943,
+  "output_tokens": 258,
+  "model_version": "gemini-3.8-flash"
+ }
+}

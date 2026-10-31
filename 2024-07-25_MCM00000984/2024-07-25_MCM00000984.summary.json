@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "d3cfc4843a80a10a",
- "subject": "",
+ "subject": "CDBG Program Public Hearing",
  "overview": "The Office of Planning, Development and Sustainability held a public hearing to review recent accomplishments of the Community Development Block Grant program and to solicit resident input for future funding cycles. Staff detailed completed infrastructure projects and affordable housing initiatives while outlining upcoming improvements for city parks and sidewalks.",
  "items": [
   {
@@ -66,5 +66,6 @@
   "input_tokens": 7111,
   "output_tokens": 585,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

@@ -1,0 +1,37 @@
+{
+ "video_id": "MCM00000608",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T09:17:40Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "43f644bd4587a11d",
+ "subject": "Chapter 40B Board Training",
+ "overview": "The Medford Zoning Board of Appeals met for an educational training session on Massachusetts Chapter 40B regulations led by planning consultant Judy Barrett. No formal votes or project determinations were made.",
+ "items": [
+  {
+   "title": "Remote Meeting Announcement",
+   "t": 0,
+   "summary": "Denis MacDougall read the state-mandated remote meeting disclosure and introduced the training topic.",
+   "speakers": [
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "Chapter 40B Training Presentation",
+   "t": 72,
+   "summary": "Planning consultant Judy Barrett presented an educational overview of Chapter 40B affordable housing law, covering statutory safe harbors, project eligibility reviews, local board jurisdiction, hearing timelines, and fair housing rules.",
+   "speakers": [
+    "Judy Barrett",
+    "Alicia Hunt",
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 31747,
+  "output_tokens": 199,
+  "model_version": "gemini-3.6-flash"
+ }
+}
