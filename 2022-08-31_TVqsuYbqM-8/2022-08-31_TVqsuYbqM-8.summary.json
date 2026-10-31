@@ -1,0 +1,36 @@
+{
+ "video_id": "TVqsuYbqM-8",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T12:12:44Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "6af8b6ba20eb20fb",
+ "subject": "Medford Teachers Association Collective Bargaining Strategy",
+ "overview": "The School Committee met briefly to vote to enter an executive session for the purpose of discussing collective bargaining strategy.",
+ "items": [
+  {
+   "title": "Call to Order and Pledge of Allegiance",
+   "t": 0,
+   "summary": "The meeting opened with a roll call and the recitation of the Pledge of Allegiance.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Executive Session for Collective Bargaining",
+   "t": 83,
+   "summary": "The committee approved a motion to enter executive session to discuss collective bargaining strategy regarding the Medford Teachers Association and did not reconvene in public session.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1799,
+  "output_tokens": 226,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "video_id": "MCM00001499",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T12:13:14Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "944d5c8c27904d98",
+ "subject": "100 Winchester Street Proposed Residential Development",
+ "overview": "The development team presented a preliminary proposal for a 65-unit residential building at 100 Winchester Street under Medford’s new Planned Development District ordinance. The project includes underground parking, a commercial corner building restoration, and public landscaping, which residents discussed in relation to traffic safety and neighborhood character.",
+ "items": [
+  {
+   "title": "Planned Development District Overview",
+   "t": 3,
+   "summary": "Facilitators and city officials explained the Planned Development District (PDD) process, which allows for custom zoning overlays for specific projects through Community Development Board and City Council review.",
+   "speakers": [
+    "Adam Barnosky",
+    "Victor Schrader"
+   ]
+  },
+  {
+   "title": "Site Design and Architectural Presentation",
+   "t": 314,
+   "summary": "Architect Peter Quinn described the L-shaped, 65-unit building that steps down in height to respond to site slopes and includes two levels of underground parking with 50 spaces. The plan preserves a historic corner building to be restored for approximately 4,000 square feet of commercial use.",
+   "speakers": [
+    "Peter Quinn"
+   ]
+  },
+  {
+   "title": "Landscape Architecture and Pocket Park",
+   "t": 1200,
+   "summary": "The proposed landscape includes a formal entrance on Winchester Street, a woodland-style buffer on Alfred Street, and a public pocket park with seating at the corner of Winchester and Albion.",
+   "speakers": [
+    "Katja Pasablo",
+    "Peter Quinn"
+   ]
+  },
+  {
+   "title": "Public Q&A: Neighborhood Impacts",
+   "t": 1913,
+   "summary": "Residents expressed concerns regarding traffic speeds on Winchester Street, the potential noise impact of a rooftop deck, and the management of trash and local rodent issues. Neighbors also suggested adding amenities such as car-sharing stations and co-working spaces for public use.",
+   "speakers": [
+    "Adam Barnosky",
+    "Peter Quinn",
+    "Martha Mcpartlin",
+    "Francis Avola"
+   ]
+  },
+  {
+   "title": "Residential Parking Restrictions",
+   "t": 2401,
+   "summary": "Director of Planning Alicia Hunt stated that a likely condition for site plan approval would be prohibiting residents of the new development from obtaining street parking permits on Alfred Street.",
+   "speakers": [
+    "Alicia Hunt",
+    "Martha Mcpartlin"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21930,
+  "output_tokens": 600,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

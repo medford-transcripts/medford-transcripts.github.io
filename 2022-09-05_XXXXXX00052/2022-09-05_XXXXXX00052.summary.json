@@ -1,0 +1,73 @@
+{
+ "video_id": "XXXXXX00052",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T12:12:20Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c287cf38d8e1c0f8",
+ "subject": "2022 Elections and Voter Guide",
+ "overview": "Hosts Danielle Balocca and Chelli Keshavan spoke with Medford City Council Vice President Zac Bears about the upcoming 2022 state primary and general elections. Bears outlined key candidates, state ballot questions, and local budget constraints under Proposition 2 1/2.",
+ "items": [
+  {
+   "title": "Podcast introduction and social media update",
+   "t": 9,
+   "summary": "Hosts Danielle Balocca and Chelli Keshavan introduced season three of the podcast and shared social media handles for listener updates.",
+   "speakers": [
+    "Danielle Balocca",
+    "Chelli Keshavan"
+   ]
+  },
+  {
+   "title": "Overview of the 2022 election schedule",
+   "t": 128,
+   "summary": "City Council Vice President Zac Bears detailed the schedule for the September primary and November general elections, emphasizing the high impact of Democratic primary races in Massachusetts.",
+   "speakers": [
+    "Danielle Balocca",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Statewide and local primary candidates",
+   "t": 365,
+   "summary": "Bears listed candidates running in primary races for governor, lieutenant governor, attorney general, secretary of state, auditor, and state representative seats covering Medford.",
+   "speakers": [
+    "Zac Bears",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "November ballot questions and Fair Share Amendment",
+   "t": 670,
+   "summary": "Bears described the three state ballot questions, detailing how Question 1's Fair Share Amendment would tax income over one million dollars to fund public education and transportation.",
+   "speakers": [
+    "Danielle Balocca",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Medford structural deficit and Proposition 2 1/2",
+   "t": 1526,
+   "summary": "Bears explained the mechanics of Proposition 2 1/2 and how its tax levy limits contribute to Medford's long-term municipal budget challenges.",
+   "speakers": [
+    "Danielle Balocca",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Voting options and primary closing remarks",
+   "t": 2141,
+   "summary": "Bears encouraged voters to participate in the primary election and highlighted available voting options, including mail-in and early voting.",
+   "speakers": [
+    "Chelli Keshavan",
+    "Zac Bears",
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14573,
+  "output_tokens": 636,
+  "model_version": "gemini-3.6-flash"
+ }
+}

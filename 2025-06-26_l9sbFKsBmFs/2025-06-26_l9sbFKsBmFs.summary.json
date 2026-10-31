@@ -1,0 +1,56 @@
+{
+ "video_id": "l9sbFKsBmFs",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T12:11:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "fd34556d447abfbc",
+ "subject": "",
+ "overview": "The Community Development Board approved an Approval Not Required plan for 69 Horn Ave and approved its January 13, 2022 meeting minutes. The board also tabled two sets of June 2022 meeting minutes and received staff updates on upcoming development applications and department staffing.",
+ "items": [
+  {
+   "title": "Approval Not Required Plan: 69 Horn Ave",
+   "t": 143,
+   "summary": "Approved an Approval Not Required plan for 69 Horn Ave to reconfigure three undersized parcels into two buildable lots.",
+   "speakers": [
+    "David Blumberg",
+    "Bob Ryan",
+    "Amanda Centrella",
+    "Chuck Andre",
+    "Jackie Furtado",
+    "Alicia Hunt",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 917,
+   "summary": "Approved the meeting minutes from January 13, 2022, and tabled the minutes from June 9 and June 22, 2022.",
+   "speakers": [
+    "David Blumberg",
+    "Jackie Furtado",
+    "Alicia Hunt",
+    "Amanda Centrella",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Staff and Project Updates",
+   "t": 1314,
+   "summary": "Staff briefed the board on upcoming site plan applications for Tufts University student housing, a Medford Housing Authority project, future development proposals, and new planning staff positions.",
+   "speakers": [
+    "Amanda Centrella",
+    "David Blumberg",
+    "Jackie Furtado",
+    "Georges Fischer",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11413,
+  "output_tokens": 351,
+  "model_version": "gemini-3.6-flash"
+ }
+}
