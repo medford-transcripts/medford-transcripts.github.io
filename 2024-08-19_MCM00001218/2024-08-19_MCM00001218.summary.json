@@ -1,0 +1,68 @@
+{
+ "video_id": "MCM00001218",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T14:08:56Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "bab78319ca2640a3",
+ "subject": "One-Day Liquor Licenses for September Events",
+ "overview": "The commission approved one-day liquor licenses for three community events in September and discussed the regulatory status of specialty cooking wine.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 35,
+   "summary": "Approved the minutes from the July 13 meeting.",
+   "speakers": [
+    "Allan Martorana",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Medford Family Network Gala One-Day License",
+   "t": 119,
+   "summary": "Approved a one-day license for a gala at Wright's Pond on September 10, with the condition that the event utilize a TIPS-certified bartender.",
+   "speakers": [
+    "Allan Martorana",
+    "Renee",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Music Festival One-Day License",
+   "t": 938,
+   "summary": "Approved a one-day license for a music festival at the Condon Shell on September 18, with the applicant agreeing to implement perimeter signage defining the alcohol service area.",
+   "speakers": [
+    "Allan Martorana",
+    "Nick Bolitho",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Run MedFed Road Race One-Day License",
+   "t": 1405,
+   "summary": "Approved a one-day license for a road race on September 18, conditioned on the applicant providing a site diagram for the beer garden once the location is finalized.",
+   "speakers": [
+    "Allan Martorana",
+    "Maury Carroll",
+    "Robert Delafano",
+    "Maria Cassidy"
+   ]
+  },
+  {
+   "title": "Sale of Mirin Cooking Wine at Ebisuya Market",
+   "t": 2025,
+   "summary": "Discussed a request from Ebisuya Market to sell Mirin and requested further legal research into alcohol content thresholds and neighboring municipalities' policies.",
+   "speakers": [
+    "Daria Tejera",
+    "Allan Martorana",
+    "Robert Delafano"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19382,
+  "output_tokens": 548,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
