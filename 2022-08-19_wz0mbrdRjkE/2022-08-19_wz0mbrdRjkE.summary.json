@@ -1,0 +1,42 @@
+{
+ "video_id": "wz0mbrdRjkE",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T15:06:05Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "47d79ad2e596b7bc",
+ "subject": "Brooks Elementary School Overview",
+ "overview": "Principal Shannon Demos presented an overview of the Brooks Elementary School's programs, staffing, and educational philosophy. The presentation detailed the school's specialized classrooms and its commitment to the responsive classroom model.",
+ "items": [
+  {
+   "title": "School Demographics and Programs",
+   "t": 1,
+   "summary": "Principal Shannon Demos detailed the school's enrollment of 520 students and its array of specialized preschool and language-based classrooms.",
+   "speakers": [
+    "Demos"
+   ]
+  },
+  {
+   "title": "Educational Philosophy and Behavioral Standards",
+   "t": 43,
+   "summary": "The school follows a responsive classroom model centered on the 'Brooks Bees' values of being kind, safe, and responsible.",
+   "speakers": [
+    "Demos"
+   ]
+  },
+  {
+   "title": "Principal Background and Communication",
+   "t": 112,
+   "summary": "Demos shared her professional history in Medford and Tewksbury and emphasized the importance of home-school collaboration for student success.",
+   "speakers": [
+    "Demos"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1640,
+  "output_tokens": 271,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
