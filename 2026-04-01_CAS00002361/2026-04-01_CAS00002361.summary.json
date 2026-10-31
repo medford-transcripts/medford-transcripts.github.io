@@ -1,0 +1,42 @@
+{
+ "video_id": "CAS00002361",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T22:08:07Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "43e68a769650ea02",
+ "subject": "Medford Citywide Cleanup and Keep Medford Beautiful",
+ "overview": "Mayor Breanna Lungo-Koehn announced the citywide cleanup scheduled for May 2, 2026, and introduced the new Keep Medford Beautiful chapter and its associated volunteer programs.",
+ "items": [
+  {
+   "title": "Upcoming City Events",
+   "t": 4,
+   "summary": "The Mayor highlighted several events on the city calendar for the upcoming three months, including Pride, Juneteenth, and Haitian Flag Day.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Medford Citywide Cleanup",
+   "t": 26,
+   "summary": "The citywide cleanup is scheduled for Saturday, May 2nd, from 10:00 a.m. to 12:30 p.m. at 22 locations across the city.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Keep Medford Beautiful Initiatives",
+   "t": 60,
+   "summary": "The Mayor announced the formation of a Keep Medford Beautiful chapter and detailed programs including tree and drain adoption, as well as incentives for sharing cleanup progress photos.",
+   "speakers": [
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1610,
+  "output_tokens": 333,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
