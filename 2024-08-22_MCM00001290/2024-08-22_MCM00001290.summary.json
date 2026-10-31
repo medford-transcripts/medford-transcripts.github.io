@@ -1,0 +1,75 @@
+{
+ "video_id": "MCM00001290",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T20:11:21Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b8054b7eb770ca55",
+ "subject": "",
+ "overview": "The Historic District Commission approved certificates of appropriateness for chimney rebuilds at 306 High Street and a new exterior railing at 15 High Street. Consultant Chris Skelly presented strategic recommendations on creating local historic districts and securing administrative staff support for the commission.",
+ "items": [
+  {
+   "title": "306 High Street Chimney Rebuild",
+   "t": 150,
+   "summary": "Approved an application to dismantle and rebuild two damaged brick chimneys down to the roofline using matching historic brick and lead flashing.",
+   "speakers": [
+    "Christopher Bader",
+    "Ben Coey",
+    "Melanie Tringali",
+    "Joe Ronin",
+    "Frederick Soul",
+    "Charlotte Scudder"
+   ]
+  },
+  {
+   "title": "15 High Street Railing Application",
+   "t": 1176,
+   "summary": "Approved an application to install a custom steel and mahogany handrail along the front sidewalk steps, with commissioners recommending consideration of a narrower handrail profile.",
+   "speakers": [
+    "Christopher Bader",
+    "John Murphy",
+    "Frederick Soul",
+    "Joe Ronin",
+    "Charlotte Scudder"
+   ]
+  },
+  {
+   "title": "Strategies for Establishing Local Historic Districts",
+   "t": 1664,
+   "summary": "Consultant Chris Skelly presented strategies for expanding local historic districts, advising the commission to establish local design guidelines, pursue single-building districts, and build grassroots neighborhood support.",
+   "speakers": [
+    "Christopher Bader",
+    "Chris Skelly",
+    "Melanie Tringali",
+    "Frederick Soul"
+   ]
+  },
+  {
+   "title": "Administrative Staff Assistance Report",
+   "t": 2910,
+   "summary": "Chris Skelly reviewed staffing models from neighboring communities to alleviate volunteer workloads and support Open Meeting Law compliance, prompting the commission to arrange a meeting to present the findings to the mayor.",
+   "speakers": [
+    "Chris Skelly",
+    "Christopher Bader",
+    "Frederick Soul",
+    "Melanie Tringali",
+    "Joe Ronin"
+   ]
+  },
+  {
+   "title": "78 Cotting Street Public Comment",
+   "t": 4082,
+   "summary": "Resident Marianne Adduci inquired about establishing a historic district for 78 Cotting Street, which commissioners deferred to a future meeting pending the drafting of local guidelines and community outreach.",
+   "speakers": [
+    "Christopher Bader",
+    "Marianne Adduci"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 29431,
+  "output_tokens": 508,
+  "model_version": "gemini-3.8-flash"
+ }
+}
