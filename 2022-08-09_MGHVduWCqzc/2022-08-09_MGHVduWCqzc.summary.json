@@ -1,0 +1,42 @@
+{
+ "video_id": "MGHVduWCqzc",
+ "provider": "gemini",
+ "generated_at": "2026-10-31T23:05:52Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "daf75fe8af217099",
+ "subject": "Medford High School Overview",
+ "overview": "Principal Paul D'Alleva provides an introduction to Medford High School, outlining its integrated vocational curriculum, staffing structure, and educational mission.",
+ "items": [
+  {
+   "title": "Integration with Vocational Technical High School",
+   "t": 0,
+   "summary": "Principal Paul D'Alleva introduces Medford High School as a comprehensive institution that now integrates the Medford Vocational Technical High School into a single school structure.",
+   "speakers": [
+    "Paul D'Alleva"
+   ]
+  },
+  {
+   "title": "Enrollment and Staffing Overview",
+   "t": 24,
+   "summary": "The school serves approximately 1,300 students with a staff comprising 175 teachers, three assistant principals, and various guidance and psychological service providers.",
+   "speakers": [
+    "Paul D'Alleva"
+   ]
+  },
+  {
+   "title": "Educational Mission and School Culture",
+   "t": 49,
+   "summary": "D'Alleva outlines the school's commitment to fostering global citizenship, personal integrity, and an inclusive environment for lifelong learners.",
+   "speakers": [
+    "Paul D'Alleva"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1262,
+  "output_tokens": 299,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
