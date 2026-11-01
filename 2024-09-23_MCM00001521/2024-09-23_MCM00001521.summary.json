@@ -1,0 +1,73 @@
+{
+ "video_id": "MCM00001521",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T12:09:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "acc501d59433539d",
+ "subject": "Bus Network Redesign",
+ "overview": "The MBTA presented its draft Bus Network Redesign proposal for Brookline, Cambridge, Medford, Somerville, and Watertown, outlining a 25 percent overall service increase and doubled high-frequency routes. Officials and residents voiced concerns regarding eliminated bus lines, reduced spans of service, and severed crosstown connections before the public feedback window closes.",
+ "items": [
+  {
+   "title": "Introduction and Opening Remarks",
+   "t": 0,
+   "summary": "Meeting organizers opened the session and introduced MBTA General Manager Steve Poftak, who described the Bus Network Redesign draft map as an effort to increase service by 25 percent over five years.",
+   "speakers": [
+    "Jason Silva",
+    "Walid Elhirach",
+    "Steve Poftak"
+   ]
+  },
+  {
+   "title": "Overview and Regional Network Proposals",
+   "t": 570,
+   "summary": "Project planners detailed the draft redesign goals, high-frequency network concepts, and corridor-specific route changes proposed for Brookline, Cambridge, Medford, Somerville, and Watertown.",
+   "speakers": [
+    "Walid Elhirach",
+    "Melissa Dullea"
+   ]
+  },
+  {
+   "title": "Breakout Group Discussions",
+   "t": 3889,
+   "summary": "Participants discussed the impacts of the proposed route modifications, raising concerns about eliminated routes, lost connections to rapid transit, and neighborhood-level accessibility.",
+   "speakers": [
+    "Doug Johnson",
+    "Veer",
+    "Shira",
+    "Steve",
+    "Gabriel Ciccariello",
+    "Rebecca Schmaeling",
+    "Karen",
+    "Eric",
+    "Victor",
+    "Eugene"
+   ]
+  },
+  {
+   "title": "Elected Officials and Public Q&A",
+   "t": 5372,
+   "summary": "State legislators and residents asked MBTA representatives about route eliminations, reduced off-peak frequency, and transfers, with planners stating public comments will inform revisions before presenting a map to the MBTA board.",
+   "speakers": [
+    "Jason Silva",
+    "Rep. Steve Owens",
+    "Rep. Mike Connolly",
+    "Sen. Pat Jehlen",
+    "Walid Elhirach",
+    "Pasquale DeLeo",
+    "Melissa Dullea",
+    "Brandon Langton",
+    "Emily Bargava",
+    "Daryl Haynes",
+    "Rahul Bhargav",
+    "Michael Kirpin"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 37977,
+  "output_tokens": 497,
+  "model_version": "gemini-3.8-flash"
+ }
+}
