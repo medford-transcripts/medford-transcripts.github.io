@@ -1,0 +1,72 @@
+{
+ "video_id": "CAS00002364",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T21:08:38Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d931b9961c02cb46",
+ "subject": "Disability Fair Planning",
+ "overview": "The Commission for Persons with Disabilities reviewed vendor confirmations and site tour arrangements for the upcoming Disability Fair. The commission also received an update on a proposed ordinance submitted to the City Council.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 201,
+   "summary": "The commission approved the meeting notes from the previous month.",
+   "speakers": [
+    "Frances Nwajei"
+   ]
+  },
+  {
+   "title": "Disability Fair Vendor and Logistics Update",
+   "t": 387,
+   "summary": "Nicholas Karinge presented an updated list of confirmed and potential vendors for the upcoming Disability Fair and discussed logistical roles for commissioners.",
+   "speakers": [
+    "Nicholas Karinge",
+    "Kate Ryan"
+   ]
+  },
+  {
+   "title": "Disability Fair Site Visit",
+   "t": 1236,
+   "summary": "An on-site tour of the school venue and playground was scheduled for April 10 at 11:00 a.m.",
+   "speakers": [
+    "Nicholas Karinge",
+    "Kate Ryan"
+   ]
+  },
+  {
+   "title": "Fair Craft Activity Proposal",
+   "t": 1404,
+   "summary": "The commission reviewed a proposal to host an assistive device decorating activity at the fair in collaboration with the Medford Public Library.",
+   "speakers": [
+    "Nicholas Karinge",
+    "Kate Ryan",
+    "Andreottola"
+   ]
+  },
+  {
+   "title": "City Council Ordinance Update",
+   "t": 2025,
+   "summary": "Anthony Andreottola and Nicholas Karinge reported that the City Council approved forwarding the commission's proposed ordinance to the mayor for legal review.",
+   "speakers": [
+    "Andreottola",
+    "Kate Ryan",
+    "Nicholas Karinge"
+   ]
+  },
+  {
+   "title": "Public Participation",
+   "t": 2587,
+   "summary": "Guest Mark Ingram introduced himself as a disabled veteran living in Medford attending to support the commission's work.",
+   "speakers": [
+    "Nicholas Karinge"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13009,
+  "output_tokens": 453,
+  "model_version": "gemini-3.6-flash"
+ }
+}
