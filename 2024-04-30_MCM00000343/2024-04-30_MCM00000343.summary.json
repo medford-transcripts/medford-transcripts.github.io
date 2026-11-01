@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "a0ad7b7bf24b37ad",
- "subject": "",
+ "subject": "FY 2023 Budget Review",
  "overview": "The Committee reviewed the FY 2023 budget proposals for several departments and debated the causes of an $8 million revenue shortfall. The Council expressed severe dissatisfaction with the administration regarding the lack of a formal budget book and the legal compliance of specific personnel salary grades.",
  "items": [
   {
@@ -98,5 +98,6 @@
   "input_tokens": 49713,
   "output_tokens": 720,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

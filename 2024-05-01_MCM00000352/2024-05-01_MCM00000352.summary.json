@@ -1,0 +1,67 @@
+{
+ "video_id": "MCM00000352",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T16:10:18Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9f847ee7ca5344e6",
+ "subject": "Fiscal Year 2023 City Budget",
+ "overview": "The Medford City Council Committee of the Whole met with city administration officials to review the proposed fiscal year 2023 budget and discuss a projected budget deficit. Councilors expressed frustration regarding delayed financial updates, federal ARPA funding constraints, and local economic development priorities.",
+ "items": [
+  {
+   "title": "Mayor's Fiscal Year 2023 Budget Overview",
+   "t": 109,
+   "summary": "Mayor Breanna Lungo-Koehn presented an overview of the fiscal year 2023 budget, highlighting an $8 million deficit driven by federal ARPA revenue replacement limits and proposing the use of $3.5 million from free cash.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Zac Bears",
+    "Nicole Morell"
+   ]
+  },
+  {
+   "title": "Finance Director's Revenue and Expense Report",
+   "t": 603,
+   "summary": "Finance Director Bob Dickinson detailed projected revenues, fixed cost increases, level-funding measures for city departments, and long-term risks associated with relying on free cash to cover operating deficits.",
+   "speakers": [
+    "Bob Dickinson",
+    "Nicole Morell",
+    "Zac Bears",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Council Discussion on Financial Planning and Priorities",
+   "t": 1515,
+   "summary": "Council members voiced frustration regarding late financial reporting from the administration, slow commercial tax growth, unfunded council budget priorities, and potential school department layoffs.",
+   "speakers": [
+    "Zac Bears",
+    "Nicole Morell",
+    "Bob Dickinson",
+    "Nina Nazarian",
+    "Richard Caraviello",
+    "Adam Knight",
+    "Kit Collins",
+    "Justin Tseng",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "ARPA Revenue Loss Rules and Library Donation Impact",
+   "t": 5401,
+   "summary": "Consultant Sean McGoldrick explained federal ARPA revenue loss calculation rules and confirmed that a $3.4 million library donation counted as revenue, thereby reducing the city's eligible ARPA revenue replacement capacity.",
+   "speakers": [
+    "Zac Bears",
+    "Nina Nazarian",
+    "Richard Caraviello",
+    "Jared Powell",
+    "Nicole Morell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33616,
+  "output_tokens": 587,
+  "model_version": "gemini-3.6-flash"
+ }
+}

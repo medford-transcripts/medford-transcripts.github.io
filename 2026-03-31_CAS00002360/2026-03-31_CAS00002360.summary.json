@@ -1,17 +1,17 @@
 {
  "video_id": "CAS00002360",
  "provider": "gemini",
- "generated_at": "2026-11-01T15:07:37Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-11-01T16:08:49Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "965c4e0e70300c1f",
- "subject": "Administrative Appeal for Keeping Residential Chickens",
- "overview": "The board elected a new chair and heard several zoning cases, including a contested administrative appeal regarding city livestock regulations. The board approved residential variances and a special permit for a local business expansion while upholding a zoning violation against the keeping of chickens.",
+ "transcript_sha": "ae2b74e452945a52",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals elected Andre Leroux as chair, reviewed an administrative zoning appeal, and acted on several special permit and variance applications. The board approved a lot width variance for a two-family dwelling and a change of non-conforming use for an engineering business while upholding a zoning violation citation regarding domestic chickens.",
  "items": [
   {
-   "title": "Election of Chair",
+   "title": "Election of Board Chair",
    "t": 21,
-   "summary": "Elected Andre Leroux as the new chair of the board.",
+   "summary": "Elected Andre Leroux to serve as board chair following a nomination by Mary Lee.",
    "speakers": [
     "Mike Caldera",
     "Mary Lee",
@@ -20,9 +20,9 @@
    ]
   },
   {
-   "title": "85 Elm Street Variance Extension",
+   "title": "85 Elm Street Extension Request",
    "t": 185,
-   "summary": "Approved a six-month extension for variances at 85 Elm Street due to delays in stormwater testing.",
+   "summary": "Approved a six-month extension for variances granted to demolish a motor vehicle repair shop and construct a three-unit dwelling.",
    "speakers": [
     "Denis MacDougall",
     "Kathleen Desmond",
@@ -31,9 +31,9 @@
    ]
   },
   {
-   "title": "7 Tyrell Road Special Permit",
+   "title": "Special Permit – 7 Tyrell Road",
    "t": 312,
-   "summary": "Approved a special permit for a side porch awning that encroaches on the required side yard setback.",
+   "summary": "Approved a special permit allowing the construction of a side porch awning encroaching into the side yard setback.",
    "speakers": [
     "Denis MacDougall",
     "Dave Central",
@@ -43,77 +43,71 @@
    ]
   },
   {
-   "title": "33 Watson Street Administrative Appeal",
+   "title": "Zoning Appeal – 33 Watson Street",
    "t": 709,
-   "summary": "Upheld the Building Commissioner's violation notice regarding the keeping of chickens as an illegal livestock use after a motion to overturn the determination failed to reach a supermajority. The board debated whether chickens should be classified as pets or livestock in the absence of a specific ordinance definition.",
+   "summary": "Upheld a zoning violation citation for keeping chickens in a residential district after a motion to overturn the building commissioner's determination failed to secure a supermajority.",
    "speakers": [
     "Denis MacDougall",
     "Tom Stanley",
-    "Laurie Phillips Stanley",
-    "Andre Leroux",
+    "Laurie Stanley",
     "Scott Vandewalle",
     "Yvette Velez",
     "Chris D'Aveta",
-    "Jim Tirani",
-    "Mary Lee",
     "Mike Caldera",
     "Katie Carterelli",
-    "Liz Galvin"
+    "Liz Galvin",
+    "Mary Lee",
+    "Andre Leroux"
    ]
   },
   {
-   "title": "145 Jerome Street Lot-Width Variance",
+   "title": "Lot Width Variance – 145 Jerome Street",
    "t": 2507,
-   "summary": "Approved a lot-width variance for a new two-family dwelling, conditioned on the demolition of an adjacent structure and the recording of a land transfer to meet lot area requirements.",
+   "summary": "Approved a lot width variance to construct a two-family dwelling, conditioned on completing a lot line adjustment for a 6,000-square-foot lot and demolishing a structure on an adjacent parcel.",
    "speakers": [
     "Denis MacDougall",
-    "Michael Cabral",
+    "Mike Cabral",
     "Scott Vandewalle",
     "Mike Caldera",
-    "Andre Leroux",
     "Chris D'Aveta",
+    "Andre Leroux",
     "Steve",
     "Yvette Velez",
-    "Mary Lee",
-    "Jim Tirani"
+    "Mary Lee"
    ]
   },
   {
-   "title": "42 Dexter Street Special Permit",
+   "title": "Special Permit – 42 Dexter Street",
    "t": 6388,
-   "summary": "Approved a special permit for a change of non-conforming use to convert a former auto-repair garage into an engineering and prototyping office.",
+   "summary": "Approved a special permit to change the non-conforming use of a commercial garage to an engineering prototyping and services business.",
    "speakers": [
     "Denis MacDougall",
     "Dan Holzer",
     "Derek Stevens",
-    "Mary Lee",
     "Yvette Velez",
+    "Mary Lee",
     "Andre Leroux",
-    "Chris D'Aveta",
     "Scott Vandewalle",
     "Mike Caldera",
-    "Jim Tirani"
+    "Chris D'Aveta"
    ]
   },
   {
    "title": "Approval of Minutes",
    "t": 8321,
-   "summary": "Approved the board minutes from meetings held in January and February 2026.",
+   "summary": "Approved the board's meeting minutes for January and February.",
    "speakers": [
     "Denis MacDougall",
     "Andre Leroux",
     "Mike Caldera",
-    "Mary Lee",
-    "Chris D'Aveta",
-    "Yvette Velez",
-    "Jim Tirani"
+    "Mary Lee"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42763,
-  "output_tokens": 941,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 42764,
+  "output_tokens": 725,
+  "model_version": "gemini-3.6-flash"
  }
 }
