@@ -1,23 +1,32 @@
 {
  "committee": "CC Community Development Board",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-30T13:06:51Z",
- "sources_sha": "5addfa167b099dc6",
- "n_meetings": 86,
+ "generated_at": "2026-11-01T09:09:24Z",
+ "sources_sha": "f1689cc816c2a4dd",
+ "n_meetings": 91,
  "period_style": "term",
  "span": [
-  "2022-10-26",
+  "2022-07-14",
   "2026-10-07"
  ],
- "overview": "The CC Community Development Board is responsible for site plan reviews, granting special permits, and recommending zoning amendments to the City Council to align Medford’s development with its 2023 Comprehensive Plan. Meeting regularly since late 2022, the board oversees large-scale commercial developments, public housing modernizations, and institutional expansions for Tufts University. Its work involves balancing neighborhood character and infrastructure capacity with state-mandated housing unit requirements and transit-oriented development goals. Most recently, the board has been finalizing citywide zoning 'cleanup' amendments and procurement for long-term planning consultants.",
+ "overview": "The Medford Community Development Board is the municipal planning and special permit granting authority responsible for reviewing site plans, endorsing Approval Not Required plans, evaluating special permit applications, and formulating recommendations to the City Council on zoning amendments. Over the course of meetings spanning from July 2022 to October 2026, the board engaged in a multi-year citywide comprehensive zoning overhaul, modernizing commercial corridors, implementing state MBTA Communities and accessory dwelling unit mandates, and establishing ecological development standards. The board also presided over institutional reviews under the Dover Amendment for Tufts University and reviewed housing modernizations led by the Medford Housing Authority. In alongside regulatory business, the body participated in public hearings evaluating Community Development Block Grant expenditures and annual performance reports. As of its October 2026 meeting, the board's work focused on municipal zoning cleanup amendments, standardizing height definitions, and preparing procurement for a multi-year zoning consultancy contract.",
  "threads": [
   {
-   "name": "Comprehensive Zoning Recodification",
+   "name": "Comprehensive citywide zoning overhaul",
    "status": "ongoing",
-   "summary": "Following the adoption of the city's Comprehensive Plan in early 2023, the board embarked on a multi-year effort to modernize archaic zoning definitions and use tables. This process included hiring consultants to lead a 18-month citywide overhaul and implementing a multiplier-based 'Green Score' system to improve ecological standards for private development. The board has held dozens of workshops to align local ordinances with the city's long-term vision for housing density and climate resiliency. By late 2026, the work shifted toward a 'cleanup' phase to standardize height definitions and formatting across the newly adopted districts.",
+   "summary": "The board initiated work aligning city ordinances with the new Comprehensive Plan adopted in early 2023, kicking off an 18-month zoning recodification process with consultant Emily Innes. Early actions modernized parking formatting, baseline definitions, and municipal GIS zoning maps. Throughout 2025 and 2026, the board and City Council held informational sessions and public hearings addressing residential districts, corridor rezonings, parking minimums, and ecological standards like the Green Score. Recent business involves reviewing general cleanup amendments to standardize formatting, height definitions, and development incentive tables.",
    "citations": [
+    {
+     "video_id": "BjCn4D5TbjU",
+     "t": 3106,
+     "date": "2022-07-14",
+     "base": "2025-06-26_BjCn4D5TbjU",
+     "meeting_title": "Community Development Board 07-14-22",
+     "title": "Comprehensive Plan Draft Presentation",
+     "label": "M01#3"
+    },
     {
      "video_id": "oefytL6ycdo",
      "t": 155,
@@ -25,7 +34,7 @@
      "base": "2025-06-26_oefytL6ycdo",
      "meeting_title": "Community Development Board 01-18-23",
      "title": "Comprehensive Plan Presentation and Adoption",
-     "label": "M04#1"
+     "label": "M09#1"
     },
     {
      "video_id": "o3BXgn2s6XE",
@@ -34,16 +43,16 @@
      "base": "2025-06-26_o3BXgn2s6XE",
      "meeting_title": "Community Development Board 12-06-23",
      "title": "City-Wide Rezoning Project Update",
-     "label": "M23#5"
+     "label": "M28#5"
     },
     {
-     "video_id": "hUaFTg-SXts",
-     "t": 2102,
-     "date": "2024-04-03",
-     "base": "2025-06-26_hUaFTg-SXts",
-     "meeting_title": "Community Development Board 04-03-24",
-     "title": "City Zoning Overhaul Updates",
-     "label": "M29#5"
+     "video_id": "XKbpn7WuHTw",
+     "t": 5377,
+     "date": "2024-06-05",
+     "base": "2025-06-26_XKbpn7WuHTw",
+     "meeting_title": "Community Development Board 06-05-24",
+     "title": "Zoning Ordinance Amendments (City Council Paper 24-033)",
+     "label": "M38#3"
     },
     {
      "video_id": "-2bR_RbuznY",
@@ -52,208 +61,7 @@
      "base": "2025-06-26_-2bR_RbuznY",
      "meeting_title": "Community Development Board 02-05-25",
      "title": "Green Score Zoning Amendment Recommendation",
-     "label": "M48#4"
-    },
-    {
-     "video_id": "CAS00002502",
-     "t": 5179,
-     "date": "2026-08-12",
-     "base": "2026-08-13_CAS00002502",
-     "meeting_title": "Community Development Board 08/12/26",
-     "title": "Zoning Project Timeline",
-     "label": "M82#4"
-    },
-    {
-     "video_id": "CAS00002557",
-     "t": 1189,
-     "date": "2026-10-07",
-     "base": "2026-10-08_CAS00002557",
-     "meeting_title": "Community Development Board 10/07/26",
-     "title": "Zoning Cleanup Draft Amendments",
-     "label": "M86#2"
-    }
-   ]
-  },
-  {
-   "name": "Tufts University Institutional Development",
-   "status": "ongoing",
-   "summary": "The board frequently reviews institutional projects under the Dover Amendment, which limits municipal authority over educational uses while allowing for reasonable dimensional standards. Significant projects included an 8-court tennis facility, the modernization of various academic halls, and a highly debated 10-story, 677-bed dormitory at 401 Boston Avenue. The board eventually approved the 401 Boston Avenue site plan with conditions for annual reporting on shuttle usage and community fund transparency. Recent efforts have focused on creating a dedicated 'Institutional Zoning District' for the Tufts campus to establish clearer boundaries and height transitions near residential areas.",
-   "citations": [
-    {
-     "video_id": "MCM00000997",
-     "t": 2011,
-     "date": "2023-02-15",
-     "base": "2024-07-25_MCM00000997",
-     "meeting_title": "Medford Community Development Board 02-15-23",
-     "title": "Tufts University Tennis Courts Site Plan Review",
-     "label": "M06#3"
-    },
-    {
-     "video_id": "XmUZLMvFw8s",
-     "t": 169,
-     "date": "2023-06-07",
-     "base": "2025-06-26_XmUZLMvFw8s",
-     "meeting_title": "Community Development Board 06-07-23",
-     "title": "Tufts University Eaton Hall Addition",
-     "label": "M12#1"
-    },
-    {
-     "video_id": "pNq06c2r0cA",
-     "t": 323,
-     "date": "2023-07-19",
-     "base": "2025-06-26_pNq06c2r0cA",
-     "meeting_title": "Community Development Board 07-19-23",
-     "title": "550 Boston Avenue Site Plan Review",
-     "label": "M14#2"
-    },
-    {
-     "video_id": "mWDt7WwQEq8",
-     "t": 440,
-     "date": "2024-11-20",
-     "base": "2025-06-26_mWDt7WwQEq8",
-     "meeting_title": "Community Development Board 11-20-24",
-     "title": "Site Plan Review: 401 Boston Avenue",
-     "label": "M43#2"
-    },
-    {
-     "video_id": "-2bR_RbuznY",
-     "t": 183,
-     "date": "2025-02-05",
-     "base": "2025-06-26_-2bR_RbuznY",
-     "meeting_title": "Community Development Board 02-05-25",
-     "title": "401 Boston Avenue Site Plan Review",
-     "label": "M48#1"
-    },
-    {
-     "video_id": "jJ8nibzobNI",
-     "t": null,
-     "date": "2025-05-01",
-     "base": "2025-06-26_jJ8nibzobNI",
-     "meeting_title": "Zoning Q&A/Info Session - Tufts Institutional Zoning 05-01-25",
-     "title": "Zoning Q&A/Info Session - Tufts Institutional Zoning 05-01-25",
-     "label": "M54"
-    },
-    {
-     "video_id": "CAS00002437",
-     "t": 2678,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002437",
-     "meeting_title": "Community Development Board 05/20/26",
-     "title": "Site Plan Review: 130 College Avenue (Tufts Aquatic Center)",
-     "label": "M74#3"
-    }
-   ]
-  },
-  {
-   "name": "Medford Housing Authority Modernization",
-   "status": "settled",
-   "summary": "The board has overseen the comprehensive modernization of major public housing facilities, beginning with a 222-unit overhaul of the Saltonstall building at 121 Riverside Avenue. A major effort involved the redevelopment of Walkling Court into 238 deeply affordable units, which required the recommendation of a new Planned Development District (PDD-3). The board approved modified site plans for these projects as financing and land acquisitions from state agencies necessitated changes to parking and circulation layouts. These approvals were often conditioned on contributions to city funds or improvements to adjacent greenway paths.",
-   "citations": [
-    {
-     "video_id": "v8aFu2OAn8o",
-     "t": 160,
-     "date": "2022-11-10",
-     "base": "2025-06-26_v8aFu2OAn8o",
-     "meeting_title": "Community Development Board 11-10-22",
-     "title": "Site Plan Review: 121 Riverside Avenue (Saltonstall Building)",
-     "label": "M02#1"
-    },
-    {
-     "video_id": "MCM00000991",
-     "t": 343,
-     "date": "2023-01-04",
-     "base": "2024-07-25_MCM00000991",
-     "meeting_title": "Medford Community Development Board 01-04-23",
-     "title": "121 Riverside Avenue Site Plan Modification",
-     "label": "M03#1"
-    },
-    {
-     "video_id": "8msxsKW1z_4",
-     "t": 1577,
-     "date": "2023-09-06",
-     "base": "2025-06-26_8msxsKW1z_4",
-     "meeting_title": "Community Development Board 09-06-23",
-     "title": "Planned Development District Zoning Amendment for 1–20 Walkling Court",
-     "label": "M17#2"
-    },
-    {
-     "video_id": "L5KoM4khxVw",
-     "t": 5037,
-     "date": "2023-10-04",
-     "base": "2025-06-26_L5KoM4khxVw",
-     "meeting_title": "Community Development Board 10-04-23",
-     "title": "Walkling Court Planned Development District (PDD-3)",
-     "label": "M19#3"
-    },
-    {
-     "video_id": "TnJNLyjh-qU",
-     "t": 109,
-     "date": "2024-02-07",
-     "base": "2025-06-26_TnJNLyjh-qU",
-     "meeting_title": "Community Development Board 02-07-24",
-     "title": "Walkling Court Site Plan Review and Special Permit Recommendation",
-     "label": "M25#1"
-    },
-    {
-     "video_id": "Qf7XgUqJFIM",
-     "t": 161,
-     "date": "2024-08-21",
-     "base": "2025-06-26_Qf7XgUqJFIM",
-     "meeting_title": "Community Development Board 08-21-24",
-     "title": "121 Riverside Avenue Site Plan Modification",
-     "label": "M37#1"
-    }
-   ]
-  },
-  {
-   "name": "Accessory Dwelling Units (ADUs)",
-   "status": "ongoing",
-   "summary": "The board initially managed the city's first ADU permits through individual special permit applications for detached garage conversions and legalizing existing units. Following changes to Massachusetts state law, the board transitioned to developing a comprehensive local regulatory framework for 'protected' ADUs. These new regulations addressed size caps, physical typologies, and the elimination of owner-occupancy or transit-adjacent parking requirements. Public sessions focused on helping residents understand if small lots could physically accommodate such units under the new density standards.",
-   "citations": [
-    {
-     "video_id": "MCM00000991",
-     "t": 2224,
-     "date": "2023-01-04",
-     "base": "2024-07-25_MCM00000991",
-     "meeting_title": "Medford Community Development Board 01-04-23",
-     "title": "Special Permit for Accessory Dwelling Unit",
-     "label": "M03#2"
-    },
-    {
-     "video_id": "MCM00000997",
-     "t": 195,
-     "date": "2023-02-15",
-     "base": "2024-07-25_MCM00000997",
-     "meeting_title": "Medford Community Development Board 02-15-23",
-     "title": "11 Paul Road Accessory Dwelling Unit",
-     "label": "M06#1"
-    },
-    {
-     "video_id": "NWLvvQCjaf4",
-     "t": 105,
-     "date": "2024-08-07",
-     "base": "2025-06-26_NWLvvQCjaf4",
-     "meeting_title": "Community Development Board 08-07-24",
-     "title": "1416 Mystic Valley Parkway Special Permit",
-     "label": "M36#1"
-    },
-    {
-     "video_id": "A9cRMSDehTg",
-     "t": 433,
-     "date": "2025-04-16",
-     "base": "2025-06-26_A9cRMSDehTg",
-     "meeting_title": "Community Development Board 04-16-25",
-     "title": "Accessory Dwelling Unit (ADU) Presentation",
-     "label": "M53#2"
-    },
-    {
-     "video_id": "A9cRMSDehTg",
-     "t": 1540,
-     "date": "2025-04-16",
-     "base": "2025-06-26_A9cRMSDehTg",
-     "meeting_title": "Community Development Board 04-16-25",
-     "title": "Board Discussion on ADUs and Density",
-     "label": "M53#3"
+     "label": "M53#4"
     },
     {
      "video_id": "hLm7uOhMYTQ",
@@ -262,75 +70,41 @@
      "base": "2025-06-26_hLm7uOhMYTQ",
      "meeting_title": "Community Development Board 06-18-25",
      "title": "ADU and Residential Zoning Districts Hearing",
-     "label": "M60#1"
+     "label": "M65#1"
+    },
+    {
+     "video_id": "CAS00002557",
+     "t": 1189,
+     "date": "2026-10-07",
+     "base": "2026-10-08_CAS00002557",
+     "meeting_title": "Community Development Board 10/07/26",
+     "title": "Zoning Cleanup Draft Amendments",
+     "label": "M91#2"
     }
    ]
   },
   {
-   "name": "MBTA Communities & Wellington Transit Overlay",
-   "status": "settled",
-   "summary": "To comply with state mandates for multi-family housing near transit, the board developed the Wellington Station Multifamily Overlay District. Deliberations focused on modeling unit capacity and balancing transit goals with local car dependency through reduced parking minimums and maximums. The final recommendation to the City Council included a parking minimum of 0.5 spaces per unit to achieve a theoretical capacity of over 6,000 units. Subsequent amendments were recommended to refine setbacks, green standards, and definitions for building coverage within the overlay.",
-   "citations": [
-    {
-     "video_id": "qefSwzu_K1A",
-     "t": 6902,
-     "date": "2023-08-16",
-     "base": "2025-06-26_qefSwzu_K1A",
-     "meeting_title": "Community Development Board 08-16-23",
-     "title": "MBTA Communities Zoning Update",
-     "label": "M16#6"
-    },
-    {
-     "video_id": "m2kzyUMwUOc",
-     "t": 119,
-     "date": "2023-11-15",
-     "base": "2025-06-26_m2kzyUMwUOc",
-     "meeting_title": "Community Development Board 11-15-23",
-     "title": "Wellington Station Multifamily Overlay District Hearing",
-     "label": "M22#1"
-    },
-    {
-     "video_id": "o3BXgn2s6XE",
-     "t": 157,
-     "date": "2023-12-06",
-     "base": "2025-06-26_o3BXgn2s6XE",
-     "meeting_title": "Community Development Board 12-06-23",
-     "title": "Parking and Unit Capacity Modeling",
-     "label": "M23#2"
-    },
-    {
-     "video_id": "o3BXgn2s6XE",
-     "t": 4000,
-     "date": "2023-12-06",
-     "base": "2025-06-26_o3BXgn2s6XE",
-     "meeting_title": "Community Development Board 12-06-23",
-     "title": "Wellington Station Multifamily Overlay Recommendation",
-     "label": "M23#6"
-    },
-    {
-     "video_id": "mVW6vz9N5fM",
-     "t": 458,
-     "date": "2025-03-19",
-     "base": "2025-06-26_mVW6vz9N5fM",
-     "meeting_title": "Community Development Board 03-19-25",
-     "title": "Wellington Station Multifamily Overlay District Amendment",
-     "label": "M50#3"
-    }
-   ]
-  },
-  {
-   "name": "Commercial Transit Corridor Zoning",
+   "name": "Commercial corridor zoning and district creation",
    "status": "ongoing",
-   "summary": "The board has systematically reviewed and recommended new zoning districts for major city corridors, including Mystic Avenue, Salem Street, and Boston Avenue. These amendments aim to transform industrial or commercial corridors into walkable, mixed-use districts with simplified dimensional standards and incentive-based building heights. The process for the Boston Avenue corridor involved extensive joint sessions with the City Council to establish standards for 'purpose-built student housing' and shadow protections for neighboring homes. While some corridor plans were tabled by the City Council, the board continues to refine mapping and height scenarios based on public feedback.",
+   "summary": "The board systematically examined commercial corridors across Medford to replace industrial and commercial designations with mixed-use districts. Early rezonings focused on Boston Avenue, North Street, and Planned Development Districts along Mystic Avenue and Winchester Street. The board developed and recommended the Mystic Avenue Corridor District in late 2024 and the Salem Street Corridor District in early 2025. In mid-2026, after extensive joint sessions with the City Council regarding building heights and purpose-built student housing, the board finalized recommendations for the Boston Avenue Neighborhood Corridor District.",
    "citations": [
     {
-     "video_id": "mWDt7WwQEq8",
-     "t": 9262,
-     "date": "2024-11-20",
-     "base": "2025-06-26_mWDt7WwQEq8",
-     "meeting_title": "Community Development Board 11-20-24",
-     "title": "Mystic Avenue Corridor District Zoning Amendment",
-     "label": "M43#3"
+     "video_id": "BjCn4D5TbjU",
+     "t": 290,
+     "date": "2022-07-14",
+     "base": "2025-06-26_BjCn4D5TbjU",
+     "meeting_title": "Community Development Board 07-14-22",
+     "title": "Public Hearing: Boston Avenue and North Street Rezoning",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "aCJcADLEqaY",
+     "t": 66,
+     "date": "2023-08-02",
+     "base": "2025-06-26_aCJcADLEqaY",
+     "meeting_title": "Community Development Board 08-02-23",
+     "title": "243 Mystic Avenue Planned Development District Rezoning",
+     "label": "M20#1"
     },
     {
      "video_id": "KaEkSOLEwkQ",
@@ -339,16 +113,7 @@
      "base": "2025-06-26_KaEkSOLEwkQ",
      "meeting_title": "Community Development Board 12-04-24",
      "title": "Mystic Avenue Corridor District Zoning Amendment",
-     "label": "M44#3"
-    },
-    {
-     "video_id": "kOuBy-MtMpc",
-     "t": 171,
-     "date": "2025-01-22",
-     "base": "2025-06-26_kOuBy-MtMpc",
-     "meeting_title": "Community Development Board 01-22-25",
-     "title": "Salem Street Corridor District and Green Score Zoning Amendments",
-     "label": "M47#1"
+     "label": "M49#3"
     },
     {
      "video_id": "TdrPH5HfJeg",
@@ -357,25 +122,16 @@
      "base": "2025-06-26_TdrPH5HfJeg",
      "meeting_title": "Community Development Board 03-05-25",
      "title": "Salem Street Corridor Zoning Amendments",
-     "label": "M49#3"
-    },
-    {
-     "video_id": "IdtnKgt5ogU",
-     "t": 3616,
-     "date": "2026-06-03",
-     "base": "2026-06-04_IdtnKgt5ogU",
-     "meeting_title": "Joint Meeting of the Medford City Council and Community Development Board 06-03-26",
-     "title": "Presentation of Alternative Boundary and Height Proposals",
-     "label": "M76#5"
+     "label": "M54#3"
     },
     {
      "video_id": "P8rHfRVDKLQ",
-     "t": 12209,
+     "t": 611,
      "date": "2026-06-24",
      "base": "2026-06-24_P8rHfRVDKLQ",
      "meeting_title": "Joint Meeting of the City Council and Community Development Board 06-24-26",
-     "title": "Affordability Incentive and Student Housing Definitions",
-     "label": "M80#8"
+     "title": "Hearing 26093: Boston Avenue Neighborhood Corridor District Zoning Amendments",
+     "label": "M85#1"
     },
     {
      "video_id": "TSZw6HVZ9Dk",
@@ -384,41 +140,50 @@
      "base": "2026-09-07_TSZw6HVZ9Dk",
      "meeting_title": "Community Development Board 09-02-26",
      "title": "Boston Avenue Neighborhood Corridor District Zoning",
-     "label": "M83#2"
+     "label": "M88#2"
+    },
+    {
+     "video_id": "CAS00002530",
+     "t": 5700,
+     "date": "2026-09-16",
+     "base": "2026-09-18_CAS00002530",
+     "meeting_title": "Community Development Board 09/16/26",
+     "title": "Zoning Project and Administrative Updates",
+     "label": "M89#4"
     }
    ]
   },
   {
-   "name": "Medford and West Medford Square Rezoning",
+   "name": "Medford Square and City Hall redevelopment",
    "status": "settled",
-   "summary": "Zoning updates for the city's squares focused on encouraging commercial density while protecting historic assets and sun access for neighbors. The board evaluated framework proposals for building heights ranging up to 12 stories near major highways, balanced by 45-degree height transitions at residential edges. A significant 'Transom' project overlay was recommended for the City Hall parking lot to facilitate 300 residential units and an urban grocery store. The board ultimately recommended that the City Council adopt the revised Medford Square District Zoning Amendment in April 2026.",
+   "summary": "Following master planning updates in 2024, the board worked with the City Council on mixed-use zoning for Medford Square and West Medford Square. In early 2026, joint hearings shaped building heights, daylight standards, parking ratios, and historic preservation incentives for the district. Alongside general district updates, the board reviewed and recommended approval of the City Hall Overlay District to enable Transom Real Estate's 300-unit mixed-use development, urban grocery store, and municipal garage spaces. The board officially recommended City Council adoption of the Medford Square District Zoning Amendment in April 2026.",
    "citations": [
     {
-     "video_id": "EO-vAhUJAKo",
-     "t": 589,
-     "date": "2025-05-08",
-     "base": "2025-06-26_EO-vAhUJAKo",
-     "meeting_title": "Zoning Q&A/Info Session - Medford Square 05-08-25",
-     "title": "Medford Square Zoning Framework",
-     "label": "M56#3"
+     "video_id": "Qf7XgUqJFIM",
+     "t": 1145,
+     "date": "2024-08-21",
+     "base": "2025-06-26_Qf7XgUqJFIM",
+     "meeting_title": "Community Development Board 08-21-24",
+     "title": "Zoning Overhaul and City Planning Updates",
+     "label": "M42#2"
     },
     {
-     "video_id": "ZkVvlwQNw_U",
-     "t": 336,
-     "date": "2025-06-25",
-     "base": "2025-07-03_ZkVvlwQNw_U",
-     "meeting_title": "Community Development Board 06-25-25",
-     "title": "Public Hearing on Medford Square and West Medford Square Districts Rezoning",
-     "label": "M61#1"
+     "video_id": "M2dn2QxmG2g",
+     "t": 303,
+     "date": "2025-06-04",
+     "base": "2025-06-26_M2dn2QxmG2g",
+     "meeting_title": "Community Development Board 06-04-25",
+     "title": "Medford Square and West Medford Square Zoning Amendments Public Hearing",
+     "label": "M63#2"
     },
     {
      "video_id": "-40wKgx6pDo",
-     "t": 838,
+     "t": 500,
      "date": "2026-03-25",
      "base": "2026-03-25_-40wKgx6pDo",
      "meeting_title": "City Council and Community Development Board Special Joint Meeting 03-25-26",
-     "title": "Parking, Incentives, and Historic Preservation",
-     "label": "M69#4"
+     "title": "Hearing 26023: Medford Square Zoning Amendments",
+     "label": "M74#2"
     },
     {
      "video_id": "9XhnRoIfu_I",
@@ -427,7 +192,7 @@
      "base": "2026-03-31_9XhnRoIfu_I",
      "meeting_title": "City Council and Community Development Board Special Joint Meeting 03-31-26",
      "title": "Public Hearing: City Hall Overlay District/Transom Project (Paper 26058)",
-     "label": "M70#3"
+     "label": "M75#3"
     },
     {
      "video_id": "CAS00002385",
@@ -436,136 +201,41 @@
      "base": "2026-04-16_CAS00002385",
      "meeting_title": "Community Development Board 04/15/26",
      "title": "Medford Square District Zoning Amendment",
-     "label": "M71#3"
+     "label": "M76#3"
     }
    ]
   },
   {
-   "name": "Community Development Block Grant (CDBG) Oversight",
+   "name": "Tufts University institutional reviews",
    "status": "ongoing",
-   "summary": "The board holds annual public hearings to manage the CDBG program, covering funding priorities for infrastructure, housing rehabilitation, and public services. Accomplishments reported over several fiscal years include sidewalk installations on Arlington Street, housing rehab loans, and support for food security and senior transportation. The board also coordinates CDBG allocations with supplemental ARPA grant opportunities and reviews the Consolidated Annual Performance Evaluation Report (CAPER). Recent initiatives included establishing a Neighborhood Revitalization Strategy Area to better target resources for low-to-moderate-income communities.",
+   "summary": "The board repeatedly conducted Dover Amendment site plan reviews for Tufts University campus construction, balancing institutional protections with neighborhood mitigation. Approvals included dormitories on Capen and Winthrop Streets, athletic courts on College Avenue, an addition to Eaton Hall, and climate center facilities at Bacon Hall. Over prolonged hearings spanning late 2024 to early 2025, the board approved a 10-story, 677-bed dormitory at 401 Boston Avenue with stipulations for neighborhood transparency and fund oversight. In May 2026, the board approved site plans and waivers for a 45,800-square-foot aquatic center while discussions began on creating a dedicated Tufts campus institutional zoning district.",
    "citations": [
     {
-     "video_id": "MCM00001493",
-     "t": 1,
-     "date": "2023-03-29",
-     "base": "2024-09-20_MCM00001493",
-     "meeting_title": "Medford Community Development Block Grant Public Hearing 03-29-23",
-     "title": "CDBG Program Presentation",
-     "label": "M08#1"
+     "video_id": "LaD96QjuMPs",
+     "t": 3630,
+     "date": "2022-10-12",
+     "base": "2025-06-26_LaD96QjuMPs",
+     "meeting_title": "Community Development Board 10-12-22",
+     "title": "Site plan review for 2-4 Capen Street",
+     "label": "M05#5"
     },
     {
-     "video_id": "MCM00001488",
-     "t": 29,
-     "date": "2023-10-16",
-     "base": "2024-09-20_MCM00001488",
-     "meeting_title": "Medford Community Development Block Grant Public Hearing 10-16-23",
-     "title": "Consolidated Annual Performance and Evaluation Report Presentation",
-     "label": "M20#2"
+     "video_id": "MCM00000997",
+     "t": 2011,
+     "date": "2023-02-15",
+     "base": "2024-07-25_MCM00000997",
+     "meeting_title": "Medford Community Development Board 02-15-23",
+     "title": "Tufts University Tennis Courts Site Plan Review",
+     "label": "M11#3"
     },
     {
-     "video_id": "MCM00001630",
-     "t": 2760,
-     "date": "2024-11-12",
-     "base": "2024-12-05_MCM00001630",
-     "meeting_title": "Medford Community Development Board 11-12-24",
-     "title": "Riverside Plaza Shade Structure Funding",
-     "label": "M42#3"
-    },
-    {
-     "video_id": "MCM00001817",
-     "t": 12,
-     "date": "2025-09-17",
-     "base": "2025-09-26_MCM00001817",
-     "meeting_title": "Medford Community Development Block Grant Public Hearing 9/17/25",
-     "title": "Public Hearing on the CDBG Consolidated Annual Performance Evaluation Report",
-     "label": "M65#1"
-    },
-    {
-     "video_id": "CAS00002536",
-     "t": 289,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002536",
-     "meeting_title": "Community Development Block Grant CAPER Hearing 09/23/26",
-     "title": "Review of Fiscal Year Accomplishments and Expenditures",
-     "label": "M85#2"
-    },
-    {
-     "video_id": "CAS00002536",
-     "t": 611,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002536",
-     "meeting_title": "Community Development Block Grant CAPER Hearing 09/23/26",
-     "title": "Upcoming Program Year Plans",
-     "label": "M85#3"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2022-2023 term",
-   "narrative": "This period focused on the formal adoption of the city's new Comprehensive Plan and early site plan reviews for major commercial anchors like the Great American Beer Hall and H Mart.",
-   "citations": [
-    {
-     "video_id": "eytfxLwMk5s",
-     "t": null,
-     "date": "2022-10-26",
-     "base": "2025-06-26_eytfxLwMk5s",
-     "meeting_title": "Community Development Board 10-26-22",
-     "title": "Community Development Board 10-26-22",
-     "label": "M01"
-    },
-    {
-     "video_id": "oefytL6ycdo",
-     "t": 155,
-     "date": "2023-01-18",
-     "base": "2025-06-26_oefytL6ycdo",
-     "meeting_title": "Community Development Board 01-18-23",
-     "title": "Comprehensive Plan Presentation and Adoption",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "qefSwzu_K1A",
-     "t": 131,
-     "date": "2023-08-16",
-     "base": "2025-06-26_qefSwzu_K1A",
-     "meeting_title": "Community Development Board 08-16-23",
-     "title": "Site Plan Review for 285-295 Middlesex Avenue",
-     "label": "M16#1"
-    }
-   ]
-  },
-  {
-   "period": "2024-2025 term",
-   "narrative": "The board initiated intensive rezoning efforts for the Mystic Avenue and Salem Street corridors while navigating complex Dover Amendment reviews for new Tufts University residential and laboratory facilities.",
-   "citations": [
-    {
-     "video_id": "hUaFTg-SXts",
-     "t": 2102,
-     "date": "2024-04-03",
-     "base": "2025-06-26_hUaFTg-SXts",
-     "meeting_title": "Community Development Board 04-03-24",
-     "title": "City Zoning Overhaul Updates",
-     "label": "M29#5"
-    },
-    {
-     "video_id": "oM84wx0fXIk",
-     "t": 122,
-     "date": "2024-10-30",
-     "base": "2025-06-26_oM84wx0fXIk",
-     "meeting_title": "Community Development Board 10-30-24",
-     "title": "Public Hearing: 200 Mystic Avenue Special Permit",
-     "label": "M40#1"
-    },
-    {
-     "video_id": "mWDt7WwQEq8",
-     "t": 440,
-     "date": "2024-11-20",
-     "base": "2025-06-26_mWDt7WwQEq8",
-     "meeting_title": "Community Development Board 11-20-24",
-     "title": "Site Plan Review: 401 Boston Avenue",
-     "label": "M43#2"
+     "video_id": "pNq06c2r0cA",
+     "t": 323,
+     "date": "2023-07-19",
+     "base": "2025-06-26_pNq06c2r0cA",
+     "meeting_title": "Community Development Board 07-19-23",
+     "title": "550 Boston Avenue Site Plan Review",
+     "label": "M19#2"
     },
     {
      "video_id": "-2bR_RbuznY",
@@ -574,49 +244,233 @@
      "base": "2025-06-26_-2bR_RbuznY",
      "meeting_title": "Community Development Board 02-05-25",
      "title": "401 Boston Avenue Site Plan Review",
-     "label": "M48#1"
+     "label": "M53#1"
     },
     {
-     "video_id": "TdrPH5HfJeg",
-     "t": 1565,
-     "date": "2025-03-05",
-     "base": "2025-06-26_TdrPH5HfJeg",
-     "meeting_title": "Community Development Board 03-05-25",
-     "title": "Salem Street Corridor Zoning Amendments",
-     "label": "M49#3"
+     "video_id": "jJ8nibzobNI",
+     "t": 265,
+     "date": "2025-05-01",
+     "base": "2025-06-26_jJ8nibzobNI",
+     "meeting_title": "Zoning Q&A/Info Session - Tufts Institutional Zoning 05-01-25",
+     "title": "Proposed Institutional District Boundaries",
+     "label": "M59#2"
+    },
+    {
+     "video_id": "UXjoTYnBHEI",
+     "t": 11553,
+     "date": "2026-05-13",
+     "base": "2026-05-13_UXjoTYnBHEI",
+     "meeting_title": "Joint Meeting of the Medford City Council and Community Development Board 05-13-26",
+     "title": "Tufts Institutional Zone Discussion",
+     "label": "M78#2"
+    },
+    {
+     "video_id": "CAS00002437",
+     "t": 2678,
+     "date": "2026-05-20",
+     "base": "2026-05-22_CAS00002437",
+     "meeting_title": "Community Development Board 05/20/26",
+     "title": "Site Plan Review: 130 College Avenue (Tufts Aquatic Center)",
+     "label": "M79#3"
     }
    ]
   },
   {
-   "period": "2026-2027 term",
-   "narrative": "Work was characterized by joint legislative sessions with the City Council to finalize the Square and Boston Avenue zoning districts, alongside updates to ADU and inclusionary housing regulations.",
+   "name": "Medford Housing Authority redevelopments",
+   "status": "settled",
+   "summary": "The board reviewed several modernization and expansion initiatives submitted by the Medford Housing Authority. Initial hearings granted waivers and approved site plans to modernize the 222-unit Saltonstall building at 121 Riverside Avenue, later followed by site plan modifications for office extensions and parking reconfigurations. In late 2023 and early 2024, the board recommended a Planned Development District zoning amendment and subsequently approved the site plan review and special permit for the 238-unit affordable redevelopment of Walkling Court.",
    "citations": [
     {
-     "video_id": "xl-rVBoybgA",
-     "t": null,
-     "date": "2026-01-21",
-     "base": "2026-01-22_xl-rVBoybgA",
-     "meeting_title": "Special Joint Meeting of the Medford City Council and Community Development Board 01-21-26",
-     "title": "Special Joint Meeting of the Medford City Council and Community Development Board 01-21-26",
-     "label": "M66"
+     "video_id": "LaD96QjuMPs",
+     "t": 340,
+     "date": "2022-10-12",
+     "base": "2025-06-26_LaD96QjuMPs",
+     "meeting_title": "Community Development Board 10-12-22",
+     "title": "Traffic study waiver request for 121 Riverside Avenue",
+     "label": "M05#2"
     },
     {
-     "video_id": "CAS00002385",
-     "t": 6660,
-     "date": "2026-04-15",
-     "base": "2026-04-16_CAS00002385",
-     "meeting_title": "Community Development Board 04/15/26",
-     "title": "Medford Square District Zoning Amendment",
-     "label": "M71#3"
+     "video_id": "v8aFu2OAn8o",
+     "t": 160,
+     "date": "2022-11-10",
+     "base": "2025-06-26_v8aFu2OAn8o",
+     "meeting_title": "Community Development Board 11-10-22",
+     "title": "Site Plan Review: 121 Riverside Avenue (Saltonstall Building)",
+     "label": "M07#1"
     },
     {
-     "video_id": "P8rHfRVDKLQ",
-     "t": null,
-     "date": "2026-06-24",
-     "base": "2026-06-24_P8rHfRVDKLQ",
-     "meeting_title": "Joint Meeting of the City Council and Community Development Board 06-24-26",
-     "title": "Joint Meeting of the City Council and Community Development Board 06-24-26",
-     "label": "M80"
+     "video_id": "MCM00000991",
+     "t": 343,
+     "date": "2023-01-04",
+     "base": "2024-07-25_MCM00000991",
+     "meeting_title": "Medford Community Development Board 01-04-23",
+     "title": "121 Riverside Avenue Site Plan Modification",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "L5KoM4khxVw",
+     "t": 5037,
+     "date": "2023-10-04",
+     "base": "2025-06-26_L5KoM4khxVw",
+     "meeting_title": "Community Development Board 10-04-23",
+     "title": "Walkling Court Planned Development District (PDD-3)",
+     "label": "M24#3"
+    },
+    {
+     "video_id": "TnJNLyjh-qU",
+     "t": 109,
+     "date": "2024-02-07",
+     "base": "2025-06-26_TnJNLyjh-qU",
+     "meeting_title": "Community Development Board 02-07-24",
+     "title": "Walkling Court Site Plan Review and Special Permit Recommendation",
+     "label": "M30#1"
+    },
+    {
+     "video_id": "Qf7XgUqJFIM",
+     "t": 161,
+     "date": "2024-08-21",
+     "base": "2025-06-26_Qf7XgUqJFIM",
+     "meeting_title": "Community Development Board 08-21-24",
+     "title": "121 Riverside Avenue Site Plan Modification",
+     "label": "M42#1"
+    }
+   ]
+  },
+  {
+   "name": "MBTA Communities Act multifamily overlay compliance",
+   "status": "settled",
+   "summary": "Pursuant to state requirements under MGL Chapter 40A Section 3A, the board guided the drafting of a transit-oriented multifamily overlay district. Deliberations centered on parcel capacity around the Wellington Orange Line station, base building heights, and reduced parking ratios. In December 2023, the board recommended that the City Council adopt the Wellington Station Multifamily Overlay District with parking set between 0.5 and 1.2 spaces per unit. Minor corrective text amendments addressing setback standards, green requirements, and building coverage definitions were recommended to the City Council in March 2025.",
+   "citations": [
+    {
+     "video_id": "qefSwzu_K1A",
+     "t": 6902,
+     "date": "2023-08-16",
+     "base": "2025-06-26_qefSwzu_K1A",
+     "meeting_title": "Community Development Board 08-16-23",
+     "title": "MBTA Communities Zoning Update",
+     "label": "M21#6"
+    },
+    {
+     "video_id": "m2kzyUMwUOc",
+     "t": 119,
+     "date": "2023-11-15",
+     "base": "2025-06-26_m2kzyUMwUOc",
+     "meeting_title": "Community Development Board 11-15-23",
+     "title": "Wellington Station Multifamily Overlay District Hearing",
+     "label": "M27#1"
+    },
+    {
+     "video_id": "o3BXgn2s6XE",
+     "t": 4000,
+     "date": "2023-12-06",
+     "base": "2025-06-26_o3BXgn2s6XE",
+     "meeting_title": "Community Development Board 12-06-23",
+     "title": "Wellington Station Multifamily Overlay Recommendation",
+     "label": "M28#6"
+    },
+    {
+     "video_id": "mVW6vz9N5fM",
+     "t": 458,
+     "date": "2025-03-19",
+     "base": "2025-06-26_mVW6vz9N5fM",
+     "meeting_title": "Community Development Board 03-19-25",
+     "title": "Wellington Station Multifamily Overlay District Amendment",
+     "label": "M55#3"
+    }
+   ]
+  },
+  {
+   "name": "Community Development Block Grant program administration",
+   "status": "ongoing",
+   "summary": "The board held recurring public hearings to evaluate Medford's Community Development Block Grant (CDBG) program funding and performance. Regular sessions addressed annual action plans, local social service funding caps, infrastructure updates including sidewalk installations and park renovations, and federal reporting requirements. Each year the board heard presentations on the Consolidated Annual Performance and Evaluation Report (CAPER), reviewing expenditures that exceeded $1 million annually through September 2026.",
+   "citations": [
+    {
+     "video_id": "MCM00000984",
+     "t": 144,
+     "date": "2022-09-21",
+     "base": "2024-07-25_MCM00000984",
+     "meeting_title": "Medford Community Development Block Grant 09-21-22",
+     "title": "Program Year Timeline and Reporting",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "MCM00001493",
+     "t": 1,
+     "date": "2023-03-29",
+     "base": "2024-09-20_MCM00001493",
+     "meeting_title": "Medford Community Development Block Grant Public Hearing 03-29-23",
+     "title": "CDBG Program Presentation",
+     "label": "M13#1"
+    },
+    {
+     "video_id": "MCM00001488",
+     "t": 29,
+     "date": "2023-10-16",
+     "base": "2024-09-20_MCM00001488",
+     "meeting_title": "Medford Community Development Block Grant Public Hearing 10-16-23",
+     "title": "Consolidated Annual Performance and Evaluation Report Presentation",
+     "label": "M25#2"
+    },
+    {
+     "video_id": "MCM00001817",
+     "t": 12,
+     "date": "2025-09-17",
+     "base": "2025-09-26_MCM00001817",
+     "meeting_title": "Medford Community Development Block Grant Public Hearing 9/17/25",
+     "title": "Public Hearing on the CDBG Consolidated Annual Performance Evaluation Report",
+     "label": "M70#1"
+    },
+    {
+     "video_id": "CAS00002536",
+     "t": 4,
+     "date": "2026-09-23",
+     "base": "2026-09-25_CAS00002536",
+     "meeting_title": "Community Development Block Grant CAPER Hearing 09/23/26",
+     "title": "Introduction to the CDBG CAPER Hearing",
+     "label": "M90#1"
+    },
+    {
+     "video_id": "CAS00002536",
+     "t": 289,
+     "date": "2026-09-23",
+     "base": "2026-09-25_CAS00002536",
+     "meeting_title": "Community Development Block Grant CAPER Hearing 09/23/26",
+     "title": "Review of Fiscal Year Accomplishments and Expenditures",
+     "label": "M90#2"
+    }
+   ]
+  },
+  {
+   "name": "Inclusionary housing and development incentive reform",
+   "status": "ongoing",
+   "summary": "In coordination with citywide zoning updates, the board worked on adjusting inclusionary housing standards and developer incentives. Deliberations focused on fixing statutory gaps regarding fractional payments after the state stopped publishing total development cost metrics. In August 2026, the board recommended a zoning amendment to Section 94-8.1 permitting fractional payments into the Affordable Housing Trust for project calculations resulting in a remainder below 0.5. Concurrently, the board held working sessions to reform height and density bonus calculations and refine community amenity criteria.",
+   "citations": [
+    {
+     "video_id": "aCJcADLEqaY",
+     "t": 4364,
+     "date": "2023-08-02",
+     "base": "2025-06-26_aCJcADLEqaY",
+     "meeting_title": "Community Development Board 08-02-23",
+     "title": "City Council Petition for Zoning Ordinance Amendments",
+     "label": "M20#4"
+    },
+    {
+     "video_id": "CAS00002420",
+     "t": 11676,
+     "date": "2026-05-06",
+     "base": "2026-05-07_CAS00002420",
+     "meeting_title": "Community Development Board 05/06/26",
+     "title": "Zoning Amendment: Inclusionary Housing Fractional Payments",
+     "label": "M77#5"
+    },
+    {
+     "video_id": "vIXAnO_MxfQ",
+     "t": 10286,
+     "date": "2026-06-23",
+     "base": "2026-09-07_vIXAnO_MxfQ",
+     "meeting_title": "Community Development Board 06-23-26",
+     "title": "Boston Avenue Zoning – Affordability Incentives",
+     "label": "M84#6"
     },
     {
      "video_id": "CAS00002502",
@@ -625,35 +479,199 @@
      "base": "2026-08-13_CAS00002502",
      "meeting_title": "Community Development Board 08/12/26",
      "title": "Inclusionary Housing Zoning Amendment",
-     "label": "M82#1"
+     "label": "M87#1"
+    },
+    {
+     "video_id": "CAS00002502",
+     "t": 2576,
+     "date": "2026-08-12",
+     "base": "2026-08-13_CAS00002502",
+     "meeting_title": "Community Development Board 08/12/26",
+     "title": "Development Incentive Bonuses Working Session",
+     "label": "M87#2"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2022-2023 term",
+   "narrative": "The board adopted Medford's citywide Comprehensive Plan, recommended the MBTA Communities multifamily zoning overlay for Wellington Station, and reviewed initial Planned Development Districts alongside housing authority modernizations.",
+   "citations": [
+    {
+     "video_id": "BjCn4D5TbjU",
+     "t": 3106,
+     "date": "2022-07-14",
+     "base": "2025-06-26_BjCn4D5TbjU",
+     "meeting_title": "Community Development Board 07-14-22",
+     "title": "Comprehensive Plan Draft Presentation",
+     "label": "M01#3"
+    },
+    {
+     "video_id": "v8aFu2OAn8o",
+     "t": 160,
+     "date": "2022-11-10",
+     "base": "2025-06-26_v8aFu2OAn8o",
+     "meeting_title": "Community Development Board 11-10-22",
+     "title": "Site Plan Review: 121 Riverside Avenue (Saltonstall Building)",
+     "label": "M07#1"
+    },
+    {
+     "video_id": "oefytL6ycdo",
+     "t": 155,
+     "date": "2023-01-18",
+     "base": "2025-06-26_oefytL6ycdo",
+     "meeting_title": "Community Development Board 01-18-23",
+     "title": "Comprehensive Plan Presentation and Adoption",
+     "label": "M09#1"
+    },
+    {
+     "video_id": "o3BXgn2s6XE",
+     "t": 4000,
+     "date": "2023-12-06",
+     "base": "2025-06-26_o3BXgn2s6XE",
+     "meeting_title": "Community Development Board 12-06-23",
+     "title": "Wellington Station Multifamily Overlay Recommendation",
+     "label": "M28#6"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The board advanced the comprehensive zoning overhaul across residential and commercial corridors, established the Mystic Avenue and Salem Street corridor districts, adopted Green Score ecological rules, and reviewed controversial Dover Amendment site plans.",
+   "citations": [
+    {
+     "video_id": "TnJNLyjh-qU",
+     "t": 109,
+     "date": "2024-02-07",
+     "base": "2025-06-26_TnJNLyjh-qU",
+     "meeting_title": "Community Development Board 02-07-24",
+     "title": "Walkling Court Site Plan Review and Special Permit Recommendation",
+     "label": "M30#1"
+    },
+    {
+     "video_id": "KaEkSOLEwkQ",
+     "t": 227,
+     "date": "2024-12-04",
+     "base": "2025-06-26_KaEkSOLEwkQ",
+     "meeting_title": "Community Development Board 12-04-24",
+     "title": "Mystic Avenue Corridor District Zoning Amendment",
+     "label": "M49#3"
+    },
+    {
+     "video_id": "-2bR_RbuznY",
+     "t": 183,
+     "date": "2025-02-05",
+     "base": "2025-06-26_-2bR_RbuznY",
+     "meeting_title": "Community Development Board 02-05-25",
+     "title": "401 Boston Avenue Site Plan Review",
+     "label": "M53#1"
+    },
+    {
+     "video_id": "-2bR_RbuznY",
+     "t": 6046,
+     "date": "2025-02-05",
+     "base": "2025-06-26_-2bR_RbuznY",
+     "meeting_title": "Community Development Board 02-05-25",
+     "title": "Green Score Zoning Amendment Recommendation",
+     "label": "M53#4"
+    },
+    {
+     "video_id": "TdrPH5HfJeg",
+     "t": 1565,
+     "date": "2025-03-05",
+     "base": "2025-06-26_TdrPH5HfJeg",
+     "meeting_title": "Community Development Board 03-05-25",
+     "title": "Salem Street Corridor Zoning Amendments",
+     "label": "M54#3"
+    },
+    {
+     "video_id": "hLm7uOhMYTQ",
+     "t": 424,
+     "date": "2025-06-18",
+     "base": "2025-06-26_hLm7uOhMYTQ",
+     "meeting_title": "Community Development Board 06-18-25",
+     "title": "ADU and Residential Zoning Districts Hearing",
+     "label": "M65#1"
+    }
+   ]
+  },
+  {
+   "period": "2026-2027 term",
+   "narrative": "Working in joint sessions with the City Council, the board recommended new zoning for Medford Square, approved the City Hall overlay, formulated the Boston Avenue Corridor regulations, and pursued inclusionary zoning and text cleanup amendments.",
+   "citations": [
+    {
+     "video_id": "9XhnRoIfu_I",
+     "t": 1672,
+     "date": "2026-03-31",
+     "base": "2026-03-31_9XhnRoIfu_I",
+     "meeting_title": "City Council and Community Development Board Special Joint Meeting 03-31-26",
+     "title": "Public Hearing: City Hall Overlay District/Transom Project (Paper 26058)",
+     "label": "M75#3"
+    },
+    {
+     "video_id": "CAS00002385",
+     "t": 6660,
+     "date": "2026-04-15",
+     "base": "2026-04-16_CAS00002385",
+     "meeting_title": "Community Development Board 04/15/26",
+     "title": "Medford Square District Zoning Amendment",
+     "label": "M76#3"
+    },
+    {
+     "video_id": "P8rHfRVDKLQ",
+     "t": 611,
+     "date": "2026-06-24",
+     "base": "2026-06-24_P8rHfRVDKLQ",
+     "meeting_title": "Joint Meeting of the City Council and Community Development Board 06-24-26",
+     "title": "Hearing 26093: Boston Avenue Neighborhood Corridor District Zoning Amendments",
+     "label": "M85#1"
+    },
+    {
+     "video_id": "CAS00002502",
+     "t": 105,
+     "date": "2026-08-12",
+     "base": "2026-08-13_CAS00002502",
+     "meeting_title": "Community Development Board 08/12/26",
+     "title": "Inclusionary Housing Zoning Amendment",
+     "label": "M87#1"
+    },
+    {
+     "video_id": "TSZw6HVZ9Dk",
+     "t": 3330,
+     "date": "2026-09-02",
+     "base": "2026-09-07_TSZw6HVZ9Dk",
+     "meeting_title": "Community Development Board 09-02-26",
+     "title": "Boston Avenue Neighborhood Corridor District Zoning",
+     "label": "M88#2"
     },
     {
      "video_id": "CAS00002557",
-     "t": null,
+     "t": 1189,
      "date": "2026-10-07",
      "base": "2026-10-08_CAS00002557",
      "meeting_title": "Community Development Board 10/07/26",
-     "title": "Community Development Board 10/07/26",
-     "label": "M86"
+     "title": "Zoning Cleanup Draft Amendments",
+     "label": "M91#2"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 61,
-  "meetings_cited": 43,
-  "of_meetings": 86,
-  "max_share": 0.049,
-  "even_share": 0.0116,
-  "concentration_ratio": 4.21,
-  "most_cited": "o3BXgn2s6XE",
+  "citations": 63,
+  "meetings_cited": 39,
+  "of_meetings": 91,
+  "max_share": 0.063,
+  "even_share": 0.011,
+  "concentration_ratio": 5.73,
+  "most_cited": "-2bR_RbuznY",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 28623,
-  "output_tokens": 1963,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 30251,
+  "output_tokens": 2112,
+  "model_version": "gemini-3.8-flash"
  }
 }

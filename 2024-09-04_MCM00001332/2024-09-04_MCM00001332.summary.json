@@ -1,0 +1,59 @@
+{
+ "video_id": "MCM00001332",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T09:17:58Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e37cbd16393c447d",
+ "subject": "Riverbend Park Enforcement Order",
+ "overview": "The Medford Conservation Commission issued a negative wetland determination for 400 Mystic Avenue, approved a long-standing certificate of compliance, and ratified an enforcement order regarding unauthorized tree cutting at Riverbend Park.",
+ "items": [
+  {
+   "title": "400 Mystic Avenue Determination of Applicability",
+   "t": 185,
+   "summary": "Issued a negative determination finding that two isolated stormwater swales near 400 Mystic Avenue are not jurisdictional under state or local wetland regulations.",
+   "speakers": [
+    "Lindsay Colburn",
+    "Brianna Summers",
+    "Gabe Crocker",
+    "Christopher Bader",
+    "Heidi Davis",
+    "Dave Sharon",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "Hicks Avenue and Colbert Road Certificate of Compliance",
+   "t": 1729,
+   "summary": "Issued a certificate of compliance clearing a 1976 order of conditions attached to a condominium unit at Hicks Avenue and Colbert Road.",
+   "speakers": [
+    "Lindsay Colburn",
+    "Denis MacDougall",
+    "Christopher Bader",
+    "Dave Sharon",
+    "Heidi Davis",
+    "Eric Rexford"
+   ]
+  },
+  {
+   "title": "Riverbend Park Enforcement Order",
+   "t": 2358,
+   "summary": "Ratified an enforcement order directing a resident to cease unauthorized tree and vegetation cutting in Riverbend Park.",
+   "speakers": [
+    "Denis MacDougall",
+    "Alicia Hunt",
+    "Christopher Bader",
+    "Heidi Davis",
+    "Dave Sharon",
+    "Lindsay Colburn",
+    "Eric Rexford"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 27621,
+  "output_tokens": 366,
+  "model_version": "gemini-3.6-flash"
+ }
+}

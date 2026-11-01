@@ -1,0 +1,64 @@
+{
+ "video_id": "MCM00001540",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T09:18:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "36585b39f18a6dd0",
+ "subject": "Tufts University Tennis Courts Proposal",
+ "overview": "Tufts University held a pre-application community meeting to present its proposal to construct eight new tennis courts on Field A along College Avenue in Medford. University representatives and project designers detailed site plans, lighting spill mitigation, and public access before answering questions from local residents.",
+ "items": [
+  {
+   "title": "Introduction and Proposal Overview",
+   "t": 0,
+   "summary": "Rocco DiRico opened the meeting and outlined the plan to construct eight new tennis courts on Field A across from Cousins Gym to replace former courts repurposed for student housing.",
+   "speakers": [
+    "Rocco DiRico"
+   ]
+  },
+  {
+   "title": "Athletic Department Remarks",
+   "t": 196,
+   "summary": "Athletic Director John Morris discussed the benefits of consolidating varsity tennis with adjacent sports facilities and confirmed that the courts will be available for Medford community use.",
+   "speakers": [
+    "John Morris"
+   ]
+  },
+  {
+   "title": "Project Design Overview",
+   "t": 366,
+   "summary": "Project Manager Jen Whitney presented site plans for the eight concrete acrylic courts, scoreboards, spectator seating, and perimeter landscaping.",
+   "speakers": [
+    "Jen Whitney"
+   ]
+  },
+  {
+   "title": "Lighting Spill Analysis",
+   "t": 653,
+   "summary": "Architect John Hickok explained how programmable LED light fixtures will minimize light spillage compared to the existing recreational lighting on Field A.",
+   "speakers": [
+    "John Hickok",
+    "Jen Whitney"
+   ]
+  },
+  {
+   "title": "Project Timeline and Community Q&A",
+   "t": 1004,
+   "summary": "Panelists reviewed the construction schedule targeting completion by June 2023 and answered resident questions regarding lighting controls, pedestrian gate access, construction impacts, stormwater drainage, and tree screening.",
+   "speakers": [
+    "Jen Whitney",
+    "Rocco DiRico",
+    "Leah Boudreau",
+    "John Morris",
+    "John Hickok",
+    "Victor Schrader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13162,
+  "output_tokens": 435,
+  "model_version": "gemini-3.6-flash"
+ }
+}

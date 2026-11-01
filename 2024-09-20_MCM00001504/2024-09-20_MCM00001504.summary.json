@@ -1,0 +1,50 @@
+{
+ "video_id": "MCM00001504",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T09:17:30Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1f41bdedf1032dec",
+ "subject": "970 Fellsway Residential Development Proposal",
+ "overview": "The Davis Companies hosted an informal community engagement meeting to introduce a proposed 289-unit residential redevelopment at 970 Fellsway. Development representatives presented preliminary design plans and answered community questions regarding traffic, building height, and affordability.",
+ "items": [
+  {
+   "title": "Project Overview and Background",
+   "t": 0,
+   "summary": "Chris Shandor presented background on the Davis Companies and explained the history of the 970 Fellsway site and its proposed Chapter 40B residential path.",
+   "speakers": [
+    "Chris Shandor"
+   ]
+  },
+  {
+   "title": "Conceptual Site Design Presentation",
+   "t": 990,
+   "summary": "John Harding outlined the conceptual design plans, including 11 townhomes along Myrtle Street, a six-story residential building, garage parking, and public open space.",
+   "speakers": [
+    "John Harding"
+   ]
+  },
+  {
+   "title": "Public Comment and Question Period",
+   "t": 1810,
+   "summary": "Neighborhood residents and city officials asked questions and voiced concerns focused primarily on traffic congestion, shadow impacts, building height, utility capacity, and affordability levels.",
+   "speakers": [
+    "Chris Shandor",
+    "Barry Ingber",
+    "Alison D'Agostino",
+    "Matt Leming",
+    "Paul Terenzi",
+    "Sue Fitzgerald",
+    "Ron Vining",
+    "Alex Lussenhop",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 28717,
+  "output_tokens": 319,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "08a8fbd4af27f783",
- "subject": "",
+ "subject": "Boston Avenue and North Street Rezoning",
  "overview": "The Medford Community Development Board voted to recommend a zoning map amendment changing parcels on Boston Avenue and North Street from Industrial to Office 2. The board also received a presentation on draft materials for the city's Comprehensive Plan and elected board officers.",
  "items": [
   {
@@ -70,5 +70,6 @@
   "input_tokens": 35966,
   "output_tokens": 437,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

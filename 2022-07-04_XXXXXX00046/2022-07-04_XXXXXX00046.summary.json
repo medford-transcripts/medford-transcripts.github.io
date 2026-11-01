@@ -1,0 +1,35 @@
+{
+ "video_id": "XXXXXX00046",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T09:18:19Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8ec7f436dcfdd87e",
+ "subject": "LGBTQ Parentage and Second Parent Adoption",
+ "overview": "Host Danielle Balocca summarizes recent Medford City Council budget adjustments before interviewing family law attorney Caitlin Eagleson about same-sex parentage and second parent adoption in Massachusetts.",
+ "items": [
+  {
+   "title": "Medford City Council Budget Update",
+   "t": 4,
+   "summary": "Host Danielle Balocca recaps approved Medford City Council budget adjustments, including funding for public schools, library staffing, a zoning consultant, and election operations.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Interview on LGBTQ Parentage and Second Parent Adoption",
+   "t": 108,
+   "summary": "Family law attorney Caitlin Eagleson discusses the legal requirements, emotional aspects, and broader societal perceptions surrounding second parent adoptions for same-sex couples in Massachusetts.",
+   "speakers": [
+    "Danielle Balocca",
+    "Caitlin Eagleson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12155,
+  "output_tokens": 240,
+  "model_version": "gemini-3.6-flash"
+ }
+}
