@@ -1,0 +1,56 @@
+{
+ "video_id": "XXXXXX00049",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T06:12:03Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "96f7f7baa58ffea9",
+ "subject": "Medford Family Network",
+ "overview": "Host Danielle Balocca provided an update on proposed city budget measures before interviewing Medford Family Network representatives about the organization's history, community programming, equity outreach, and upcoming fundraising gala.",
+ "items": [
+  {
+   "title": "City Budget Proposals Update",
+   "t": 4,
+   "summary": "Danielle Balocca outlined competing proposals to address the city budget, including the Mayor's $3 million tax levy plan and a $12 million Proposition 2.5 override proposed by Councilors Zach Bears and Kit Collins.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Medford Family Network History and Operations",
+   "t": 97,
+   "summary": "Marie Cassidy and Caroline Cohen described how the Medford Family Network was established, its transition to include an advisory board and a 501(c)(3) fundraising arm, and its role in connecting local parents.",
+   "speakers": [
+    "Danielle Balocca",
+    "Marie Cassidy",
+    "Caroline Cohen"
+   ]
+  },
+  {
+   "title": "Equity Initiatives and Cummings Foundation Grant",
+   "t": 1115,
+   "summary": "The guests detailed plans to expand outreach to underserved communities and announced a $100,000 Cummings Foundation grant over three years to fund additional staffing and targeted programming.",
+   "speakers": [
+    "Danielle Balocca",
+    "Marie Cassidy",
+    "Caroline Cohen"
+   ]
+  },
+  {
+   "title": "Night Under 10,000 Lights Gala",
+   "t": 1488,
+   "summary": "Caroline Cohen announced that the annual fundraising gala will take place at Wright's Pond on September 10th to raise funds for summer programming.",
+   "speakers": [
+    "Danielle Balocca",
+    "Marie Cassidy",
+    "Caroline Cohen"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13118,
+  "output_tokens": 393,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "video_id": "MCM00001355",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T06:11:39Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8770af4e0e187994",
+ "subject": "",
+ "overview": "The Medford Commission for Persons with Disabilities approved its June meeting minutes, elected a new slate of officers, and planned to request ARPA funding for an intern. Commissioners also agreed to consult city officials regarding an Architectural Access Board variance notice.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 176,
+   "summary": "The commission approved the amended meeting minutes from June.",
+   "speakers": [
+    "Susan Bibbins",
+    "Frances Nwajei"
+   ]
+  },
+  {
+   "title": "Election of Officers",
+   "t": 362,
+   "summary": "The commission unanimously approved a slate electing Tom Hamel as Chair, Linda Smith as Vice Chair, and Megan as Secretary.",
+   "speakers": [
+    "Susan Bibbins",
+    "Frances Nwajei",
+    "Tom Hamel",
+    "Marcia Kirssen",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Architectural Access Board Variance Notice",
+   "t": 1264,
+   "summary": "The commission reviewed a notice of a public hearing from the Architectural Access Board and agreed to seek advice from the city solicitor regarding its potential involvement.",
+   "speakers": [
+    "Frances Nwajei",
+    "Susan Bibbins",
+    "Marcia Kirssen",
+    "Tom Hamel",
+    "Smith"
+   ]
+  },
+  {
+   "title": "Commission Goals and ARPA Intern Funding Request",
+   "t": 2332,
+   "summary": "Commissioners discussed establishing long-term goals and agreed to draft a request for ARPA funds to support hiring a commission intern.",
+   "speakers": [
+    "Susan Bibbins",
+    "Marcia Kirssen",
+    "Frances Nwajei",
+    "Smith",
+    "Tom Hamel",
+    "Heather McKinnon",
+    "Adam Hurtubise"
+   ]
+  },
+  {
+   "title": "Public Participation and Announcements",
+   "t": 5058,
+   "summary": "No members of the public spoke, and the meeting adjourned after confirming that the commission will not meet in August.",
+   "speakers": [
+    "Frances Nwajei",
+    "Susan Bibbins",
+    "Smith",
+    "Tom Hamel"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 22458,
+  "output_tokens": 561,
+  "model_version": "gemini-3.6-flash"
+ }
+}
