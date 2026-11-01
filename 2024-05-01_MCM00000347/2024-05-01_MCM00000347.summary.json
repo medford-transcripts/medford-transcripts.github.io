@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "5bad4b516f0fdcba",
- "subject": "",
+ "subject": "FY 2023 Budget Review",
  "overview": "The Committee of the Whole reviewed proposed FY 2023 budgets for the City Clerk, Electrical, Library, Law, and Recreation departments. The council passed recommendations to designate funds for library maintenance and to cut funding for outside legal counsel.",
  "items": [
   {
@@ -82,5 +82,6 @@
   "input_tokens": 42272,
   "output_tokens": 738,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

@@ -1,0 +1,75 @@
+{
+ "video_id": "XXXXXX00043",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T14:05:56Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "489152fe3b741b63",
+ "subject": "Middle School Transition",
+ "overview": "Fifth-grade students from Mr. Cormier's class at Roberts Elementary School interviewed middle school principals and sixth-grade students to prepare for their transition to middle school. The students also shared favorite elementary school memories and offered advice to rising fifth graders.",
+ "items": [
+  {
+   "title": "McGlynn Middle School Q&A",
+   "t": 49,
+   "summary": "McGlynn Middle School Principal Nick Tucci and sixth-grade students answered fifth-grader questions about navigating multi-teacher schedules, joining extracurricular clubs, and adapting to academic expectations.",
+   "speakers": [
+    "Danielle Balocca",
+    "Nick Tucci",
+    "Nell Reese",
+    "Luke Martino",
+    "John DeMayo",
+    "Davi",
+    "Callaway",
+    "Mohammed",
+    "Matthew"
+   ]
+  },
+  {
+   "title": "Andrews Middle School Q&A",
+   "t": 920,
+   "summary": "Andrews Middle School Principal Michael Downs and sixth-grade students addressed questions regarding middle school homework, moving between classrooms, and core school values.",
+   "speakers": [
+    "Danielle Balocca",
+    "Michael Downs",
+    "Olivia O'Brien",
+    "Georgia Scott",
+    "Gabriel Silva",
+    "Jalen",
+    "Charles"
+   ]
+  },
+  {
+   "title": "Elementary School Reflections",
+   "t": 1188,
+   "summary": "Fifth graders from Mr. Cormier's class shared favorite elementary memories, including gym parachute games, field trips, class presentations, and making new friends.",
+   "speakers": [
+    "Danielle Balocca",
+    "Alyssa Bucknum",
+    "Adan",
+    "Mark Marino",
+    "Michael Sumitakis",
+    "James Moreno"
+   ]
+  },
+  {
+   "title": "Advice for Rising Fifth Graders",
+   "t": 1388,
+   "summary": "Roberts Elementary fifth graders offered guidance to incoming fifth graders on handling schoolwork, managing nerves, and participating in student council.",
+   "speakers": [
+    "Danielle Balocca",
+    "Lucy McSheffery",
+    "Gabrielle",
+    "Gianna Sullivan",
+    "Matthew",
+    "Charles",
+    "Emma McCormick"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9790,
+  "output_tokens": 451,
+  "model_version": "gemini-3.6-flash"
+ }
+}
