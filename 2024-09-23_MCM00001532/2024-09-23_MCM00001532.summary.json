@@ -1,0 +1,62 @@
+{
+ "video_id": "MCM00001532",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T15:08:29Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "fca65f15611e84d4",
+ "subject": "CoHo Student Housing Expansion Projects",
+ "overview": "Tufts University presented plans to replace two existing properties with new student dormitories to increase housing capacity for upperclassmen. Officials discussed sustainability goals, architectural designs, and management strategies to address neighborhood concerns regarding parking and noise.",
+ "items": [
+  {
+   "title": "Projects Introduction",
+   "t": 1,
+   "summary": "Rocco DiRico introduced plans to develop student housing at 50 Winthrop and 24 Capen Street as part of the university's 'COHO' program for juniors and seniors.",
+   "speakers": [
+    "Rocco DiRico"
+   ]
+  },
+  {
+   "title": "Sustainability Initiatives",
+   "t": 155,
+   "summary": "Ruthie Bennett described energy efficiency standards and decarbonization efforts, including the use of super-insulated prefabricated panels, triple-pane windows, and drought-resistant landscaping.",
+   "speakers": [
+    "Ruthie Bennett"
+   ]
+  },
+  {
+   "title": "Site Design and Accessibility",
+   "t": 354,
+   "summary": "Architect Jerry Frank presented the proposed replacement structures, detailing the structural deficiencies of current buildings and the shift to ADA-compliant units providing 21 and 28 student beds respectively.",
+   "speakers": [
+    "Jerry Frank"
+   ]
+  },
+  {
+   "title": "Project Timeline",
+   "t": 884,
+   "summary": "The development schedule includes demolition applications to the Historical Commission in June 2022 and site plan reviews in the fall, with targeted project completion by August 2023.",
+   "speakers": [
+    "Rocco DiRico"
+   ]
+  },
+  {
+   "title": "Community Q&A",
+   "t": 924,
+   "summary": "Representatives addressed neighborhood concerns regarding student parking restrictions, noise enforcement, zoning compliance for dormitories, and private trash collection services.",
+   "speakers": [
+    "Rocco DiRico",
+    "Ruthie Bennett",
+    "Jerry Frank",
+    "Adam Dash",
+    "Victor Schrader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14799,
+  "output_tokens": 514,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
