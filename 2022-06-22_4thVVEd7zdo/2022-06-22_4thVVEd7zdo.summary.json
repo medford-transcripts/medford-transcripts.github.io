@@ -1,0 +1,44 @@
+{
+ "video_id": "4thVVEd7zdo",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T11:12:26Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cbf68ba92545583e",
+ "subject": "Superintendent Performance Evaluation",
+ "overview": "The School Committee met to review and discuss the annual performance evaluation for Superintendent Dr. Marice Edouard-Vincent, approving the composite evaluation as amended. The committee also formally approved its meeting calendar for the 2022–2023 school year.",
+ "items": [
+  {
+   "title": "Superintendent Performance Evaluation",
+   "t": 0,
+   "summary": "The committee discussed the state evaluation framework, performance goals, and individual category ratings for Superintendent Dr. Marice Edouard-Vincent, approving the evaluation as amended to include missing committee feedback.",
+   "speakers": [
+    "Paul Ruseau",
+    "Breanna Lungo-Koehn",
+    "Melanie McLaughlin",
+    "Kathy Kreatz",
+    "Sharon Hays",
+    "Marice Edouard-Vincent",
+    "Jenny Graham",
+    "Mea Quinn Mustone"
+   ]
+  },
+  {
+   "title": "2022–2023 School Committee Meeting Calendar",
+   "t": 5409,
+   "summary": "Approved the regular meeting dates for the 2022–2023 school year.",
+   "speakers": [
+    "Jenny Graham",
+    "Melanie McLaughlin",
+    "Paul Ruseau",
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 28249,
+  "output_tokens": 329,
+  "model_version": "gemini-3.6-flash"
+ }
+}
