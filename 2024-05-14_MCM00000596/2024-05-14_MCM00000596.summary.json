@@ -1,0 +1,88 @@
+{
+ "video_id": "MCM00000596",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T10:06:15Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "fac20d4a61a56ed7",
+ "subject": "4060 Mystic Valley Parkway Life Science Facility",
+ "overview": "The Medford Zoning Board of Appeals met remotely to consider several residential variance and finding requests alongside a major commercial proposal. The Board approved a permit extension for Edward Street, a finding for Summer Street, a lot width variance for Spring Street, and variances and site plan approval for an eight-story life science laboratory on Mystic Valley Parkway.",
+ "items": [
+  {
+   "title": "17 Edward Street Permit Extension",
+   "t": 131,
+   "summary": "Approved a six-month extension of a special permit finding to construct a second-story addition and convert a single-family dwelling into a two-family home.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Robin Stein"
+   ]
+  },
+  {
+   "title": "29 Summer Street Special Permit Finding",
+   "t": 594,
+   "summary": "Approved a finding that constructing a third-story addition to an existing four-unit dwelling would not be substantially more detrimental to the neighborhood.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mark Scriver",
+    "Mike Caldera",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "0 Spring Street Lot Width Variance",
+   "t": 1555,
+   "summary": "Approved a lot width variance to erect a single-family home on an existing lot measuring 48 feet wide where 50 feet is required.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "Mike Caldera",
+    "Yvette Velez",
+    "Lorianne Wood",
+    "George Sanboros",
+    "Andre LeRoux"
+   ]
+  },
+  {
+   "title": "4060 Mystic Valley Parkway Life Science Facility",
+   "t": 3036,
+   "summary": "Approved variances for building height, lot coverage, and loading bays, and granted site plan review approval subject to 14 conditions to allow demolition of an existing commercial structure and construction of an eight-story laboratory facility.",
+   "speakers": [
+    "Denis MacDougall",
+    "Quinlan Locke",
+    "Timothy Fraser",
+    "Brian Cook",
+    "Victor Schrader",
+    "Maury Carroll",
+    "Mike Caldera",
+    "Mark Junghans",
+    "Alicia Hunt",
+    "Steve Presage",
+    "Ryan White",
+    "Mike Rettenmeier",
+    "Yvette Velez",
+    "Robin Stein"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Board Business",
+   "t": 8651,
+   "summary": "Discussed scheduling upcoming board member training, assigning draft decision writing among members, and procedural updates on pending Chapter 40B applications.",
+   "speakers": [
+    "Denis MacDougall",
+    "Robin Stein",
+    "Alicia Hunt",
+    "Yvette Velez",
+    "Mike Caldera",
+    "Victor Schrader"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 53179,
+  "output_tokens": 640,
+  "model_version": "gemini-3.6-flash"
+ }
+}

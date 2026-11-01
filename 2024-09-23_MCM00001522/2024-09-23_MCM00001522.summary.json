@@ -1,0 +1,59 @@
+{
+ "video_id": "MCM00001522",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T10:07:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2884d331cdb5102a",
+ "subject": "Wellington Track and Signal Upgrades",
+ "overview": "MBTA Capital Transformation staff presented plans for summer 2022 Orange Line infrastructure work, including a 30-day service diversion between Oak Grove and Wellington. Project leaders outlined track and signal replacements, replacement shuttle logistics, noise mitigation plans, and answered public questions.",
+ "items": [
+  {
+   "title": "Meeting Introduction and Accessibility Guidelines",
+   "t": 1,
+   "summary": "MBTA staff opened the virtual meeting with language translation details, accessibility options, and a safety reminder regarding station ambassadors.",
+   "speakers": []
+  },
+  {
+   "title": "Capital Transformation Program Overview",
+   "t": 240,
+   "summary": "Desiree Patrice and Steve Moore introduced the Capital Transformation Program and summarized key Orange Line projects, including traction power substation upgrades, digital signaling, and Wellington Yard rehabilitation.",
+   "speakers": [
+    "Desiree Patrice",
+    "Steve Moore"
+   ]
+  },
+  {
+   "title": "Wellington Construction and Service Diversion Plan",
+   "t": 479,
+   "summary": "Matt Canova and Ashley Fowle outlined a 30-day Orange Line closure from July 29 to August 28 between Oak Grove and Wellington to replace track, signals, and switches, supported by free shuttle bus service.",
+   "speakers": [
+    "Matt Canova",
+    "Ashley Fowle"
+   ]
+  },
+  {
+   "title": "Noise Mitigation and Community Outreach",
+   "t": 914,
+   "summary": "Desiree Patrice detailed measures to limit neighborhood disturbance during 24/7 construction, including a noise hotline, pest control, equipment idling limits, and ongoing public notifications.",
+   "speakers": [
+    "Desiree Patrice"
+   ]
+  },
+  {
+   "title": "Public Question and Answer Session",
+   "t": 1064,
+   "summary": "MBTA representatives answered community inquiries regarding free shuttle bus operations, noise levels, track greasing to reduce screeching, and post-construction service schedules.",
+   "speakers": [
+    "Matt Canova",
+    "Ashley Fowle"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 8276,
+  "output_tokens": 451,
+  "model_version": "gemini-3.6-flash"
+ }
+}

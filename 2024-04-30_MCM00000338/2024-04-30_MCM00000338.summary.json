@@ -1,0 +1,60 @@
+{
+ "video_id": "MCM00000338",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T10:09:39Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "15fd359ce7193b65",
+ "subject": "",
+ "overview": "The committee conducted a final review of the proposed fiscal year 2023 budget categories for insurance, pensions, and debt service. Finance officials provided updates on the city's bond rating and current indebtedness levels prior to the full council's budget vote.",
+ "items": [
+  {
+   "title": "Insurance Budget",
+   "t": 77,
+   "summary": "Councilors discussed liability insurance bidding processes and confirmed the city utilizes the state Group Insurance Commission (GIC) for health coverage.",
+   "speakers": [
+    "Zac Bears",
+    "Adam Knight",
+    "Bob Dickinson",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Pensions Budget",
+   "t": 304,
+   "summary": "The committee reviewed the $14.3 million pension contribution requirement mandated by the Medford Retirement Board.",
+   "speakers": [
+    "Zac Bears",
+    "Bob Dickinson",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Debt Service, Bonds, and Interest",
+   "t": 403,
+   "summary": "Officials confirmed the city's double A plus bond rating and discussed managing authorized but unissued debt from the library project.",
+   "speakers": [
+    "Zac Bears",
+    "Bob Dickinson",
+    "George Scarpelli",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Public Participation",
+   "t": 658,
+   "summary": "A resident inquired about the city's total indebtedness, which Finance Director Dickinson stated was approximately $72.5 million as of June 30, 2021.",
+   "speakers": [
+    "Zac Bears",
+    "Andrew Castagnetti",
+    "Bob Dickinson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5140,
+  "output_tokens": 442,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
