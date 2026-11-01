@@ -1,0 +1,59 @@
+{
+ "video_id": "MCM00000604",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T22:07:54Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "71c632d86749ddaf",
+ "subject": "",
+ "overview": "The board granted two continuances for residential and commercial projects and received updates regarding board vacancies and upcoming marijuana licensing procedures. The session concluded with a closed meeting to discuss litigation strategy for several Housing Appeals Committee cases.",
+ "items": [
+  {
+   "title": "4060 Mystic Valley Parkway (Case A-2022-08)",
+   "t": 145,
+   "summary": "Approved a continuance to June 30 while the eight-story laboratory project undergoes site plan review with the Community Development Board.",
+   "speakers": [
+    "Denis MacDougall",
+    "Michael Parker",
+    "Mike Caldera",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "29 Summer Street (Case A-2022-07)",
+   "t": 322,
+   "summary": "Continued the petition to June 30 so the applicant can provide specific square footage data required to determine if the project qualifies for a finding or necessitates a variance.",
+   "speakers": [
+    "Denis MacDougall",
+    "Paul Smith",
+    "Mike Caldera",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 2486,
+   "summary": "Staff provided updates on candidate applications for the board's open seat and outlined the special permit process for pending marijuana retail and cultivation applications.",
+   "speakers": [
+    "Victor Schrader",
+    "Yvette Velez",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "Executive Session",
+   "t": 2855,
+   "summary": "Entered executive session to discuss strategy regarding Housing Appeals Committee litigation involving MVP Mystic LLC, CID Fellsway LLC, and Combined Properties Incorporated.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16456,
+  "output_tokens": 456,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
