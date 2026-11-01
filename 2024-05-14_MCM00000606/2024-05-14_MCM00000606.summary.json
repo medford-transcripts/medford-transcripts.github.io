@@ -1,0 +1,64 @@
+{
+ "video_id": "MCM00000606",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T05:07:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "49b1d89f40ff5f51",
+ "subject": "",
+ "overview": "The board granted a one-year extension for a 40-unit residential project and continued a residential variance hearing pending a certified plot plan. Members also received legal training on the Massachusetts Zoning Act and Medford’s recently recodified zoning ordinance.",
+ "items": [
+  {
+   "title": "590 Boston Avenue Extension",
+   "t": 94,
+   "summary": "Approved a 12-month extension for a previously granted variance and special permit to demolish a gas station and construct a 40-unit, mixed-use building.",
+   "speakers": [
+    "Adam Barnosky",
+    "Andre Leroux",
+    "Mike Caldera",
+    "Jacqueline",
+    "Denis MacDougall",
+    "Jim",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "5 Russell Street Variance",
+   "t": 442,
+   "summary": "Continued the application to convert a detached garage into a workshop until August 25 to allow the applicant to provide a certified plot plan verifying that the lot can accommodate two legal parking spaces.",
+   "speakers": [
+    "Danielle Pierkowski",
+    "Alana Pierkowski",
+    "Dennis McDonald",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Jacqueline",
+    "Alicia Hunt",
+    "Denis MacDougall",
+    "Jim",
+    "Jamie Thompson"
+   ]
+  },
+  {
+   "title": "Zoning Board Training Session",
+   "t": 3482,
+   "summary": "Legal counsel provided a comprehensive presentation on the Zoning Act, variances, special permits, and the city's recent zoning recodification.",
+   "speakers": [
+    "Robin Stein",
+    "Alicia Hunt",
+    "Victor Schrader",
+    "Mike Caldera",
+    "Andre Leroux",
+    "Jacqueline",
+    "Jamie Thompson",
+    "Denis MacDougall"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 42233,
+  "output_tokens": 468,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

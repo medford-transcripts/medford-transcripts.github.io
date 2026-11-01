@@ -1,26 +1,26 @@
 {
  "video_id": "CAS00002359",
  "provider": "gemini",
- "generated_at": "2026-11-01T03:05:30Z",
+ "generated_at": "2026-11-01T05:05:44Z",
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "e2fc776308aa4bd2",
- "subject": "Medford Family Network Overview and Funding Loss",
- "overview": "Host John Petrella interviewed Marie Cassidy and Irina Shumway about the history, services, and community partnerships of the Medford Family Network. The guests outlined MFN's free family support programming and discussed strategies to address an upcoming grant loss that cuts half their budget.",
+ "transcript_sha": "e7496efcfaf48183",
+ "subject": "Medford Family Network",
+ "overview": "Host John Petrella interviewed Marie Cassidy and Irina Shumway about the history, community services, and upcoming events of the Medford Family Network. The guests also highlighted a major funding challenge following the loss of a long-standing state grant.",
  "items": [
   {
-   "title": "Introduction and Guest Welcome",
+   "title": "Introduction",
    "t": 21,
-   "summary": "Host John Petrella introduced the episode of Medford Happenings and welcomed guests Marie Cassidy and Irina Shumway from the Medford Family Network.",
+   "summary": "Host John Petrella introduced the show and welcomed Marie Cassidy and Irina Shumway from the Medford Family Network.",
    "speakers": [
     "John Petrella",
     "Marie Cassidy"
    ]
   },
   {
-   "title": "Guest Backgrounds",
+   "title": "Guest Backgrounds and Origins of MFN",
    "t": 106,
-   "summary": "Marie Cassidy and Irina Shumway shared their background experience in early childhood education and social work.",
+   "summary": "Marie Cassidy and Irina Shumway shared their personal backgrounds and described how they first became involved with the Medford Family Network.",
    "speakers": [
     "John Petrella",
     "Marie Cassidy",
@@ -28,29 +28,19 @@
    ]
   },
   {
-   "title": "Founding and History of Medford Family Network",
-   "t": 372,
-   "summary": "Cassidy described founding MFN through a state grant in 1993, and Shumway explained her path from a parent participant to a staff member.",
+   "title": "Overview of Programs and Services",
+   "t": 644,
+   "summary": "Irina Shumway and Marie Cassidy outlined MFN's free services for families with children from birth to age eight, including playgroups, parent education, home visits, and diaper drives.",
    "speakers": [
     "John Petrella",
-    "Marie Cassidy",
-    "Irina Shumway"
+    "Irina Shumway",
+    "Marie Cassidy"
    ]
   },
   {
-   "title": "Overview of Network Services",
-   "t": 622,
-   "summary": "Shumway and Cassidy detailed MFN's free services for local families with children up to age eight, including playgroups, parent education classes, home visits, and essential material goods.",
-   "speakers": [
-    "John Petrella",
-    "Marie Cassidy",
-    "Irina Shumway"
-   ]
-  },
-  {
-   "title": "Organizational Successes and Major Funding Loss",
+   "title": "Successes and Funding Challenges",
    "t": 931,
-   "summary": "Cassidy announced that MFN will lose a primary grant representing half of its annual operating budget as of July 1st.",
+   "summary": "The guests discussed organizational milestones alongside the recent loss of a key grant that accounts for half of MFN's operating budget.",
    "speakers": [
     "John Petrella",
     "Marie Cassidy",
@@ -58,9 +48,9 @@
    ]
   },
   {
-   "title": "Fundraising and Volunteer Opportunities",
-   "t": 1169,
-   "summary": "The guests described the role of the Friends of the Medford Family Network board and invited community members to assist through monetary donations, material supplies, or volunteering.",
+   "title": "Community Partnerships and Ways to Support",
+   "t": 1458,
+   "summary": "Marie Cassidy and Irina Shumway detailed options for community donations, volunteer work, and organizational partnerships to support MFN.",
    "speakers": [
     "John Petrella",
     "Marie Cassidy",
@@ -68,19 +58,9 @@
    ]
   },
   {
-   "title": "Community Partnerships",
-   "t": 1632,
-   "summary": "Cassidy outlined MFN's collaborations with city agencies, local schools, housing shelters, and community groups.",
-   "speakers": [
-    "John Petrella",
-    "Marie Cassidy",
-    "Irina Shumway"
-   ]
-  },
-  {
-   "title": "Upcoming Events and 33rd Anniversary",
-   "t": 2043,
-   "summary": "Guests previewed upcoming summer events celebrating MFN's 33rd anniversary, including a dance-a-thon, teddy bear picnic, and concert series.",
+   "title": "Upcoming Events and Closing",
+   "t": 2049,
+   "summary": "The guests previewed 33rd-anniversary events, including a dance-a-thon and teddy bear picnic, before John Petrella concluded the episode.",
    "speakers": [
     "John Petrella",
     "Marie Cassidy",
@@ -90,8 +70,8 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 16135,
-  "output_tokens": 817,
+  "input_tokens": 16131,
+  "output_tokens": 508,
   "model_version": "gemini-3.6-flash"
  }
 }
