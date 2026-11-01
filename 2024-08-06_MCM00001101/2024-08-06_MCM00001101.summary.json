@@ -1,0 +1,134 @@
+{
+ "video_id": "MCM00001101",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T07:25:50Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "6dec7d1862268263",
+ "subject": "",
+ "overview": "The Medford Historical Commission held public hearings on demolition delay applications, determining preferably preserved status for properties on Otis Street and Sharon Street while releasing several others for demolition. The commission also voted to lift a demolition delay on Jerome Street following design revisions and reviewed updates on Community Preservation Act projects.",
+ "items": [
+  {
+   "title": "20 Otis Street Carriage House Preferably Preserved Hearing",
+   "t": 41,
+   "summary": "Voted to find the carriage house at 20 Otis Street preferably preserved, imposing a demolition delay.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Peter Miller",
+    "Ryan Hayward",
+    "Jenny Graham",
+    "Tim Stark",
+    "Thomas Downing",
+    "George Kong"
+   ]
+  },
+  {
+   "title": "76 Sharon Street Preferably Preserved Hearing",
+   "t": 1125,
+   "summary": "Found the property at 76 Sharon Street preferably preserved in a 3-2 vote, placing the partial demolition project under a demolition delay.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Jenny Graham",
+    "Peter Miller",
+    "Ed Wiest",
+    "Doug Carr",
+    "Jim Patnaud",
+    "Elizabeth Dowie",
+    "Susie Neko",
+    "Kathy Ball"
+   ]
+  },
+  {
+   "title": "80 Canal Street Application Acceptance",
+   "t": 3021,
+   "summary": "Accepted the demolition application for 80 Canal Street, automatically scheduling it for a preferably preserved hearing because it sits within a National Register historic district.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward"
+   ]
+  },
+  {
+   "title": "10 Newcomb Street Historical Significance Hearing",
+   "t": 3190,
+   "summary": "Determined that 10 Newcomb Street is not historically significant, releasing the property for total demolition.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "85 Fern Road Historical Significance Hearing",
+   "t": 3362,
+   "summary": "Found 85 Fern Road not historically significant, releasing the building for proposed redevelopment.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Doug Carr",
+    "Peter Miller",
+    "Jenny Graham",
+    "Ed Wiest"
+   ]
+  },
+  {
+   "title": "2-4 Capen Street Historical Significance Hearing",
+   "t": 4142,
+   "summary": "Determined 2-4 Capen Street is not historically significant, allowing a proposed Tufts University student housing project to proceed.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Ed Wiest",
+    "Doug Carr",
+    "Peter Miller",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "50 Winthrop Street Historical Significance Hearing",
+   "t": 4441,
+   "summary": "Found 50 Winthrop Street not historically significant, permitting Tufts University to replace the structure with student housing.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Ed Wiest",
+    "Doug Carr",
+    "Peter Miller",
+    "Jenny Graham",
+    "Adam Dash"
+   ]
+  },
+  {
+   "title": "69 Jerome Street Demolition Delay Lift",
+   "t": 4972,
+   "summary": "Voted to lift the demolition delay for 69 Jerome Street after approving revised architectural plans.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "Commission Business, CPA Updates, and Minutes",
+   "t": 5319,
+   "summary": "Reviewed progress on the Thomas Brooks Park archaeological dig, discussed neighborhood survey work and defense of the demolition delay ordinance, and approved the June 2022 meeting minutes.",
+   "speakers": [
+    "Jennifer Keenan",
+    "Kathleen Desmond",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Denis MacDougall",
+    "Doug Carr",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 36085,
+  "output_tokens": 837,
+  "model_version": "gemini-3.6-flash"
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "video_id": "MCM00001260",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T07:24:56Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c1f25d4b86ed1dbf",
+ "subject": "MBTA Bus Route Redesign",
+ "overview": "The Medford Human Rights Commission approved past minutes, voted to disband an internal subcommittee, and discussed the community impacts of proposed MBTA bus route changes.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 16,
+   "summary": "The commission approved the meeting minutes from prior meetings.",
+   "speakers": [
+    "Frances Nwajei",
+    "Munir Jirmanus",
+    "Chelli Keshavan"
+   ]
+  },
+  {
+   "title": "Open Meeting Law Updates and Meeting Schedule",
+   "t": 59,
+   "summary": "The commission discussed virtual meeting regulations under the Open Meeting Law and agreed to take August off before inviting applicants to the September meeting.",
+   "speakers": [
+    "Frances Nwajei",
+    "Munir Jirmanus",
+    "Jack Buckley",
+    "Chelli Keshavan",
+    "Joan Cyr"
+   ]
+  },
+  {
+   "title": "Boston Bangla Festival Announcement",
+   "t": 461,
+   "summary": "Frances Nwajei shared details regarding the Boston Bangla Festival scheduled at Andrews Field on July 23.",
+   "speakers": [
+    "Frances Nwajei",
+    "Munir Jirmanus",
+    "Chelli Keshavan",
+    "Jack Buckley"
+   ]
+  },
+  {
+   "title": "Disbanding of HRC Subcommittee",
+   "t": 938,
+   "summary": "The commission voted to officially disband its charter subcommittee.",
+   "speakers": [
+    "Munir Jirmanus",
+    "Joan Cyr",
+    "Frances Nwajei"
+   ]
+  },
+  {
+   "title": "Discussion on Proposed MBTA Bus Route Redesign",
+   "t": 1150,
+   "summary": "Members discussed proposed MBTA bus route cuts, raising equity and accessibility concerns regarding transit access for West Medford, seniors, public housing residents, and Medford Square.",
+   "speakers": [
+    "Frances Nwajei",
+    "Joan Cyr",
+    "Chelli Keshavan",
+    "Steve Schnapp",
+    "Munir Jirmanus"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 15022,
+  "output_tokens": 431,
+  "model_version": "gemini-3.6-flash"
+ }
+}

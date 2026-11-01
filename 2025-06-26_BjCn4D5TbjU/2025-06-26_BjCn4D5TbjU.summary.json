@@ -1,0 +1,74 @@
+{
+ "video_id": "BjCn4D5TbjU",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T07:23:43Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "08a8fbd4af27f783",
+ "subject": "",
+ "overview": "The Medford Community Development Board voted to recommend a zoning map amendment changing parcels on Boston Avenue and North Street from Industrial to Office 2. The board also received a presentation on draft materials for the city's Comprehensive Plan and elected board officers.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 204,
+   "summary": "The board approved the minutes from the meeting held on January 5, 2022.",
+   "speakers": [
+    "Amanda Centrella",
+    "David Blumberg",
+    "Emily Hedeman"
+   ]
+  },
+  {
+   "title": "Public Hearing: Boston Avenue and North Street Rezoning",
+   "t": 290,
+   "summary": "The board held a public hearing and voted to recommend a zoning map amendment changing properties bounded by Boston Avenue, North Street, and the railroad tracks from Industrial to Office 2.",
+   "speakers": [
+    "Amanda Centrella",
+    "David Blumberg",
+    "Jacqueline McPherson",
+    "Michael Levaney",
+    "John Walsh",
+    "Alicia Hunt",
+    "Victor Schrader",
+    "Emily Hedeman",
+    "Kaila Bachman",
+    "Elizabeth Bayle",
+    "Emily Innes"
+   ]
+  },
+  {
+   "title": "Comprehensive Plan Draft Presentation",
+   "t": 3106,
+   "summary": "Consultants presented an update on draft recommendations and implementation strategies for Medford's citywide Comprehensive Plan.",
+   "speakers": [
+    "Amanda Centrella",
+    "Brie Hensold",
+    "Alicia Hunt",
+    "Emily Innes",
+    "Jenny Graham",
+    "David Blumberg",
+    "Victor Schrader",
+    "Jacqueline McPherson"
+   ]
+  },
+  {
+   "title": "Election of Board Officers",
+   "t": 6470,
+   "summary": "The board elected David Blumberg as Chair, Jacqueline McPherson as Vice Chair, and Emily Hedeman as Clerk.",
+   "speakers": [
+    "Amanda Centrella",
+    "Alicia Hunt",
+    "Jacqueline McPherson",
+    "David Blumberg",
+    "Jenny Graham",
+    "Emily Hedeman"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 35966,
+  "output_tokens": 437,
+  "model_version": "gemini-3.6-flash"
+ }
+}
