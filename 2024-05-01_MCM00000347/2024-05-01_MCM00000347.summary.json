@@ -1,0 +1,86 @@
+{
+ "video_id": "MCM00000347",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T13:08:34Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "5bad4b516f0fdcba",
+ "subject": "",
+ "overview": "The Committee of the Whole reviewed proposed FY 2023 budgets for the City Clerk, Electrical, Library, Law, and Recreation departments. The council passed recommendations to designate funds for library maintenance and to cut funding for outside legal counsel.",
+ "items": [
+  {
+   "title": "Office of the City Clerk",
+   "t": 244,
+   "summary": "City Clerk Adam Hurtubise presented a level-funded budget featuring a slight decrease due to the elimination of a part-time position following a retirement.",
+   "speakers": [
+    "Adam Hurtubise",
+    "Zac Bears",
+    "Richard Caraviello",
+    "Adam Knight",
+    "Nina Nazarian"
+   ]
+  },
+  {
+   "title": "Electrical Department",
+   "t": 675,
+   "summary": "Superintendent Steve Randazzo reviewed the budget, highlighting cost savings achieved through in-house maintenance of streetlights and the status of a pending bucket truck purchase.",
+   "speakers": [
+    "Steve Randazzo",
+    "Adam Knight",
+    "Zac Bears",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Library",
+   "t": 974,
+   "summary": "Director Barbara Kerr reported that staffing shortages will prevent the library from opening on Saturdays this summer and stated the budget has been artificially low since 2018. Approved a motion to recommend the administration delineate $100,000 specifically for library maintenance within the facilities budget.",
+   "speakers": [
+    "Barbara Kerr",
+    "Zac Bears",
+    "Adam Knight",
+    "Richard Caraviello",
+    "Kit Collins",
+    "Justin Tseng",
+    "George Scarpelli",
+    "Leilani Germain",
+    "Tom Lincoln",
+    "Sam Sednek",
+    "Penelope Taylor",
+    "Karen Chung Larrabee"
+   ]
+  },
+  {
+   "title": "Law Department",
+   "t": 4136,
+   "summary": "City Solicitor Kimberly Scanlon detailed the department's heavy caseload and reliance on outside counsel, prompting council members to criticize the administration for failing to hire an assistant city solicitor. Approved motions to recommend reducing the professional services line by $81,600 and to request all invoices from outside firm KP Law for the previous two years.",
+   "speakers": [
+    "Kimberly Scanlon",
+    "Zac Bears",
+    "Kit Collins",
+    "George Scarpelli",
+    "Richard Caraviello",
+    "Adam Knight",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Recreation and Hormel Stadium",
+   "t": 5960,
+   "summary": "Director Kevin Bailey discussed lifeguard recruitment challenges and a proposal to open the ice rink during July. Councilors questioned the utility costs of summer rink operations and suggested exploring mobile food options for Hormel Stadium.",
+   "speakers": [
+    "Kevin Bailey",
+    "George Scarpelli",
+    "Richard Caraviello",
+    "Adam Knight",
+    "Zac Bears"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 42272,
+  "output_tokens": 738,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
