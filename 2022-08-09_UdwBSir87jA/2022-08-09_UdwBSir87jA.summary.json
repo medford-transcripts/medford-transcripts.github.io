@@ -1,0 +1,34 @@
+{
+ "video_id": "UdwBSir87jA",
+ "provider": "gemini",
+ "generated_at": "2026-11-01T00:08:35Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "af6ea7244ba32377",
+ "subject": "McGlynn Middle School Overview",
+ "overview": "John J. McGlynn Middle School Principal Nick Tucci introduced himself and provided an overview of the school's academic programs, unified arts, and extracurricular opportunities.",
+ "items": [
+  {
+   "title": "Principal Introduction and Educational Philosophy",
+   "t": 1,
+   "summary": "John J. McGlynn Middle School Principal Nick Tucci shared his professional background, education, and core leadership principles.",
+   "speakers": [
+    "Nick Tucci"
+   ]
+  },
+  {
+   "title": "Academic Offerings and Extracurricular Programs",
+   "t": 91,
+   "summary": "Nick Tucci outlined the core academic subjects, language options, unified arts courses, and available after-school clubs and athletic teams.",
+   "speakers": [
+    "Nick Tucci"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1832,
+  "output_tokens": 178,
+  "model_version": "gemini-3.6-flash"
+ }
+}
