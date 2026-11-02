@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "82fcea8cde932b25",
- "subject": "",
+ "subject": "School Attorney and Dress Code Policies",
  "overview": "The Rules and Policy Subcommittee reviewed revisions to the district's school attorney policy and considered a draft dress code policy. The subcommittee voted to advance the school attorney policy to the full committee and continued discussion on the dress code policy to a future meeting.",
  "items": [
   {
@@ -37,5 +37,6 @@
   "input_tokens": 14208,
   "output_tokens": 211,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
