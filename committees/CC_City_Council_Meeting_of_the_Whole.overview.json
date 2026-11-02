@@ -1,189 +1,22 @@
 {
  "committee": "CC City Council Meeting of the Whole",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-11-01T21:07:06Z",
- "sources_sha": "b34636bf9e9d571f",
- "n_meetings": 120,
+ "generated_at": "2026-11-02T18:06:37Z",
+ "sources_sha": "06a2166bbb44e45d",
+ "n_meetings": 125,
  "period_style": "term",
  "span": [
-  "2022-06-01",
+  "2022-04-13",
   "2026-10-13"
  ],
- "overview": "The Medford City Council Committee of the Whole is a deliberative body that handles detailed policy reviews, annual budget hearings, and the development of municipal ordinances before they reach the full City Council. Meeting from mid-2022 through late 2026, the committee focuses heavily on the city's long-term financial health, navigating the expiration of federal pandemic aid and the modernization of legacy administrative systems. Its work is characterized by multi-year legislative efforts regarding environmental regulations, comprehensive zoning reform, and the allocation of Community Preservation Act funds. Most recently, the body has been occupied with litigation strategy for various court cases and the procurement of consultants for the next phase of citywide zoning updates.",
+ "overview": "The Medford City Council Committee of the Whole is a committee comprising all city council members that reviews municipal budgets, proposed ordinances, grant allocations, capital plans, and city policies prior to formal action. The body has been meeting continuously across the recorded archive span from April 13, 2022, to October 13, 2026. Throughout its meetings, the committee conducts detailed departmental hearings, deliberates on legislative amendments, and hears testimony from administration officials, municipal staff, and community stakeholders. It routinely refers refined ordinance drafts, grant packages, and budget priorities to regular council sessions or administrative departments for implementation. At its most recent meeting on October 13, 2026, the committee voted to enter executive session to discuss strategy regarding pending court litigation and adjourned directly from that session.",
  "threads": [
   {
-   "name": "Annual Budget and Fiscal Management",
+   "name": "Tree Canopy and Preservation Ordinances",
    "status": "ongoing",
-   "summary": "The committee conducts extensive annual budget reviews, consistently addressing structural deficits and the challenge of transitioning recurring costs from one-time federal ARPA and ESSER funds to the general fund. Councilors have repeatedly called for the modernization of the city's antiquated, paper-based accounting and payroll software to improve financial transparency and reporting efficiency. In the 2024 and 2025 cycles, the committee focused on funding schools and libraries while managing rising costs for health insurance and pensions. Recent hearings have centered on utilizing property tax overrides to prevent significant service cuts in the face of outpacing inflation.",
-   "citations": [
-    {
-     "video_id": "MCM00000352",
-     "t": 109,
-     "date": "2022-06-07",
-     "base": "2024-05-01_MCM00000352",
-     "meeting_title": "Medford City Council Committee Of The Whole 06-07-22",
-     "title": "Mayor's Fiscal Year 2023 Budget Overview",
-     "label": "M02#1"
-    },
-    {
-     "video_id": "MCM00000348",
-     "t": 605,
-     "date": "2022-06-21",
-     "base": "2024-05-01_MCM00000348",
-     "meeting_title": "Medford City Council Committee Of The Whole 06-21-22",
-     "title": "Discussion of Budget Gap and Funding Sources",
-     "label": "M07#2"
-    },
-    {
-     "video_id": "MCM00000338",
-     "t": 403,
-     "date": "2022-06-28",
-     "base": "2024-04-30_MCM00000338",
-     "meeting_title": "Medford City Council Committee Of The Whole 06-28-22",
-     "title": "Debt Service, Bonds, and Interest",
-     "label": "M09#3"
-    },
-    {
-     "video_id": "-VL4y0G9Y3w",
-     "t": 6493,
-     "date": "2023-05-30",
-     "base": "2025-12-09_-VL4y0G9Y3w",
-     "meeting_title": "City Council Committee of the Whole 05-30-23",
-     "title": "Finance and Auditing Department Review",
-     "label": "M42#6"
-    },
-    {
-     "video_id": "LgKMjmYyikc",
-     "t": 2441,
-     "date": "2024-03-06",
-     "base": "2024-06-01_LgKMjmYyikc",
-     "meeting_title": "City Council Committee of the Whole 03-06-24",
-     "title": "Financial and Operational Infrastructure",
-     "label": "M62#3"
-    },
-    {
-     "video_id": "0Eph4NzrdME",
-     "t": 90,
-     "date": "2024-04-23",
-     "base": "2024-06-01_0Eph4NzrdME",
-     "meeting_title": "City Council Committee of the Whole 04-23-24",
-     "title": "FY25 general fund budget overview and financial update",
-     "label": "M66#2"
-    },
-    {
-     "video_id": "ZkSmsyn-XNs",
-     "t": 1155,
-     "date": "2024-05-21",
-     "base": "2024-06-01_ZkSmsyn-XNs",
-     "meeting_title": "City Council Committee of the Whole 05-21-24",
-     "title": "Paper 24-045: Medford Public Schools Budget Presentation and Discussion",
-     "label": "M72#3"
-    },
-    {
-     "video_id": "pMp24GBph-w",
-     "t": 1298,
-     "date": "2025-04-29",
-     "base": "2025-04-29_pMp24GBph-w",
-     "meeting_title": "City Council Committee of the Whole 04-29-25",
-     "title": "Fiscal Year 2026 Budget Outlook",
-     "label": "M86#1"
-    },
-    {
-     "video_id": "fKTK3cmlYsg",
-     "t": 149,
-     "date": "2026-06-02",
-     "base": "2026-06-02_fKTK3cmlYsg",
-     "meeting_title": "City Council Committee of the Whole 05-02-26",
-     "title": "Fiscal Year 2027 Budget Overview",
-     "label": "M114#1"
-    }
-   ]
-  },
-  {
-   "name": "Zoning Reform and Comprehensive Planning",
-   "status": "ongoing",
-   "summary": "Following the adoption of the Medford Comprehensive Plan, the committee initiated a multi-year effort to recodify the city's zoning ordinances to align with current housing and climate goals. This work included establishing overlay districts to comply with the state's MBTA Communities Act and developing specific corridor guidelines for areas like Mystic Avenue. The committee oversees the procurement of specialized planning consultants to handle technical revisions and GIS map updates. As of late 2026, the body is advancing a new Request for Proposals to hire consultants for the project's next phase, including a focus on design standards and economic feasibility.",
-   "citations": [
-    {
-     "video_id": "MCM00000353",
-     "t": 46,
-     "date": "2022-10-05",
-     "base": "2024-05-01_MCM00000353",
-     "meeting_title": "Medford City Council Committee Of The Whole 10-05-22",
-     "title": "Draft Medford Comprehensive Plan (Paper 22-496)",
-     "label": "M16#1"
-    },
-    {
-     "video_id": "MCM00000330",
-     "t": 35,
-     "date": "2022-10-26",
-     "base": "2024-04-30_MCM00000330",
-     "meeting_title": "Medford City Council Committee Of The Whole 10-26-22",
-     "title": "Phase Two Zoning Ordinance Revisions (22-533)",
-     "label": "M17#1"
-    },
-    {
-     "video_id": "sQ6zd8wYgg8",
-     "t": 4203,
-     "date": "2022-12-14",
-     "base": "2025-12-09_sQ6zd8wYgg8",
-     "meeting_title": "City Council Committee of the Whole 12-14-22",
-     "title": "Scope and Procurement for Phase Two Zoning",
-     "label": "M24#6"
-    },
-    {
-     "video_id": "_QCWGiFk8jo",
-     "t": 1364,
-     "date": "2023-04-12",
-     "base": "2025-12-09__QCWGiFk8jo",
-     "meeting_title": "City Council Committee of the Whole 04-12-23",
-     "title": "Scope of Services Amendments",
-     "label": "M36#2"
-    },
-    {
-     "video_id": "_r--u5JPvtQ",
-     "t": 47,
-     "date": "2023-11-29",
-     "base": "2024-10-05__r--u5JPvtQ",
-     "meeting_title": "City Council Committee Of The Whole 11-29-23",
-     "title": "MBTA Communities Zoning Presentation and Discussion",
-     "label": "M55#1"
-    },
-    {
-     "video_id": "bxdTkh9HwuM",
-     "t": 36,
-     "date": "2023-12-06",
-     "base": "2024-10-05_bxdTkh9HwuM",
-     "meeting_title": "City Council Committee Of The Whole 12-06-23",
-     "title": "Zoning Ordinance Update RFP (Paper 22-533)",
-     "label": "M57#1"
-    },
-    {
-     "video_id": "DqMvnghi1-4",
-     "t": 2564,
-     "date": "2024-12-18",
-     "base": "2024-12-18_DqMvnghi1-4",
-     "meeting_title": "City Council Committee of the Whole 12-18-24",
-     "title": "Planning and Permitting Committee Review",
-     "label": "M78#4"
-    },
-    {
-     "video_id": "eB_wVwTf6cQ",
-     "t": 773,
-     "date": "2026-09-30",
-     "base": "2026-09-30_eB_wVwTf6cQ",
-     "meeting_title": "City Council Committee of the Whole 09-30-26",
-     "title": "Item 24033 - Zoning Updates Project RFP",
-     "label": "M119#1"
-    }
-   ]
-  },
-  {
-   "name": "Tree Canopy and Environmental Protection",
-   "status": "ongoing",
-   "summary": "Since 2022, the committee has been refining a comprehensive tree ordinance to protect the city's canopy on both public and private property. Key points of debate included the establishment of a Tree Committee, the creation of a dedicated tree fund, and the development of mitigation schedules for private lot clearing during construction. The body has balanced ecological goals against departmental staffing capacity and state forestry laws, often sending drafts back to legal counsel for restructuring. While a Tree Committee ordinance was advanced in 2025, the public tree regulations remained under active review into late 2026.",
+   "summary": "In June 2022, the committee began reviewing a draft tree ordinance to establish public shade tree and private property protections, directing legal counsel to format the draft into existing city code (M06#1, M06#2). After legal drafting stalled in late 2022, the committee referred the matter to subcommittees and requested joint interdepartmental comments (M19#1, M19#3, M19#4). In March 2023, the committee evaluated a zoning-based mitigation model for private trees and discussed creating an advisory Tree Committee (M39#1, M39#2, M39#3). Revisions continued through late 2023 and 2024, culminating in referral of a Tree Committee Ordinance to the full council in July 2025 (M57#1, M81#1, M98#1). The committee approved amendments to the Public Tree Ordinance in July 2026 and referred the paper to the regular meeting (M122#1).",
    "citations": [
     {
      "video_id": "MCM00000370",
@@ -192,7 +25,7 @@
      "base": "2024-05-01_MCM00000370",
      "meeting_title": "Medford City Council Committee Of The Whole 06-01-22",
      "title": "Discussion on Draft Tree Ordinance",
-     "label": "M01#1"
+     "label": "M06#1"
     },
     {
      "video_id": "MCM00000359",
@@ -201,16 +34,16 @@
      "base": "2024-05-01_MCM00000359",
      "meeting_title": "Medford City Council Committee Of The Whole 09-21-22",
      "title": "Tree Preservation and Protection Ordinance Status",
-     "label": "M14#1"
+     "label": "M19#1"
     },
     {
      "video_id": "diHs4f7jscI",
-     "t": 454,
+     "t": 2537,
      "date": "2023-03-08",
      "base": "2025-12-09_diHs4f7jscI",
      "meeting_title": "City Council Committee of the Whole 03-08-23",
-     "title": "Public Tree Preservation and Protection",
-     "label": "M34#1"
+     "title": "Private Tree Regulations and Zoning Model",
+     "label": "M39#2"
     },
     {
      "video_id": "GJTD4A730TA",
@@ -219,7 +52,7 @@
      "base": "2025-12-09_GJTD4A730TA",
      "meeting_title": "City Council Committee of the Whole 10-11-23",
      "title": "Private Property Tree Protection Regulations",
-     "label": "M52#1"
+     "label": "M57#1"
     },
     {
      "video_id": "0fZ4E0HakWA",
@@ -228,7 +61,7 @@
      "base": "2024-11-21_0fZ4E0HakWA",
      "meeting_title": "City Council Committee of the Whole 11-20-24",
      "title": "Tree Committee and Public Tree Ordinances",
-     "label": "M76#1"
+     "label": "M81#1"
     },
     {
      "video_id": "1dIxixg8FHg",
@@ -237,7 +70,7 @@
      "base": "2025-07-16_1dIxixg8FHg",
      "meeting_title": "City Council Committee of the Whole 07-15-25",
      "title": "Tree Committee Ordinance",
-     "label": "M93#1"
+     "label": "M98#1"
     },
     {
      "video_id": "mfKqW_cWmiE",
@@ -246,259 +79,58 @@
      "base": "2026-07-14_mfKqW_cWmiE",
      "meeting_title": "City Council Committee of the Whole 07-14-26",
      "title": "Public Tree Ordinance (Paper 19-070)",
-     "label": "M117#1"
+     "label": "M122#1"
     }
    ]
   },
   {
-   "name": "Waste Management and Composting",
+   "name": "Leaf Blower Regulations",
    "status": "settled",
-   "summary": "The committee evaluated and approved a major shift in municipal solid waste services through a new 10-year contract with Waste Management. The plan introduced citywide weekly curbside food composting in 2024 and scheduled a transition to bi-weekly trash collection for 2026 to manage rising disposal costs and meet zero-waste targets. To support these changes, the committee revised local ordinances to mandate recycling and established a preferred hauler program for commercial districts to reduce loose trash on sidewalks.",
+   "summary": "The committee began reviewing draft regulations on seasonal leaf blower use and noise limits in May 2022, approving instructions to phase out gas-powered equipment over two years while retaining the paper (M04#1, M04#2). In November 2022, the committee discussed operational enforcement with the Building Commissioner and expanded de minimis exemptions (M23#1, M23#3, M23#5). A comprehensive package of eleven policy amendments was adopted in November 2023 to align operating hours with existing noise rules and eliminate decibel measuring requirements (M59#1). In February 2024, the committee adopted final text amendments on seasonal restrictions and commercial operational plans, voting to report the draft ordinance out of committee as amended (M66#1).",
    "citations": [
     {
-     "video_id": "DqcHAMGFVXA",
-     "t": 763,
-     "date": "2023-02-15",
-     "base": "2025-12-09_DqcHAMGFVXA",
-     "meeting_title": "City Council Committee of the Whole 02-15-23",
-     "title": "RFP Scopes and Proposed Service Changes",
-     "label": "M31#2"
+     "video_id": "MCM00000373",
+     "t": 44,
+     "date": "2022-05-18",
+     "base": "2024-05-01_MCM00000373",
+     "meeting_title": "Medford City Council Committee Of The Whole 05-18-22",
+     "title": "Paper 21-057: Leaf Blower Ordinance",
+     "label": "M04#1"
     },
     {
-     "video_id": "UykhxoirJ2Q",
-     "t": 417,
-     "date": "2023-07-25",
-     "base": "2025-12-09_UykhxoirJ2Q",
-     "meeting_title": "City Council Committee of the Whole 07-25-23",
-     "title": "Proposed Weekly Food Composting and Bi-weekly Trash",
-     "label": "M47#2"
-    },
-    {
-     "video_id": "bWqpYOnpRTA",
-     "t": 33,
-     "date": "2023-08-15",
-     "base": "2025-12-09_bWqpYOnpRTA",
-     "meeting_title": "City Council Committee of the Whole 08-15-23",
-     "title": "Proposed Waste Hauler Ordinance Overview",
-     "label": "M48#1"
-    },
-    {
-     "video_id": "zI7b343mLuM",
-     "t": 5383,
-     "date": "2024-05-15",
-     "base": "2024-06-01_zI7b343mLuM",
-     "meeting_title": "City Council Committee of the Whole 05-15-24",
-     "title": "DPW Highway Division",
-     "label": "M71#6"
-    },
-    {
-     "video_id": "IP1sqjGemck",
-     "t": 5448,
-     "date": "2025-05-27",
-     "base": "2025-05-28_IP1sqjGemck",
-     "meeting_title": "City Council Committee of the Whole 05-27-25",
-     "title": "Department of Public Works and Engineering Budgets",
-     "label": "M91#3"
-    }
-   ]
-  },
-  {
-   "name": "Community Preservation Act (CPA) Funding",
-   "status": "ongoing",
-   "summary": "The committee holds annual reviews of project recommendations from the Community Preservation Committee to allocate funds for historic preservation, open space, and affordable housing. Major approved projects include the restoration of Oak Grove and Cross Street cemeteries, various park renovations such as Carr Park pickleball courts, and funding for the city's Affordable Housing Trust. The body also prioritizes emergency rental assistance and the restoration of historic community assets like Shiloh Baptist Church across multiple funding cycles.",
-   "citations": [
-    {
-     "video_id": "OhWle3KSq6I",
-     "t": 1,
-     "date": "2023-01-17",
-     "base": "2025-12-09_OhWle3KSq6I",
-     "meeting_title": "City Council Committee of the Whole 01-17-23",
-     "title": "Community Preservation Act Ordinance Amendments (Paper 22-519)",
-     "label": "M26#1"
-    },
-    {
-     "video_id": "2kAt0v9zwyw",
-     "t": 68,
-     "date": "2023-01-24",
-     "base": "2025-12-09_2kAt0v9zwyw",
-     "meeting_title": "City Council Committee Of The Whole 01-24-23",
-     "title": "Community Preservation Committee Overview",
-     "label": "M28#1"
-    },
-    {
-     "video_id": "2kAt0v9zwyw",
-     "t": 552,
-     "date": "2023-01-24",
-     "base": "2025-12-09_2kAt0v9zwyw",
-     "meeting_title": "City Council Committee Of The Whole 01-24-23",
-     "title": "Carr Park Pickleball Courts",
-     "label": "M28#4"
-    },
-    {
-     "video_id": "dcCBbf5sPdI",
-     "t": 48,
-     "date": "2024-02-20",
-     "base": "2024-06-01_dcCBbf5sPdI",
-     "meeting_title": "City Council Committee of the Whole 02-20-24",
-     "title": "FY24 Community Preservation Fund Annual Appropriations",
-     "label": "M60#1"
-    },
-    {
-     "video_id": "cNtcjeG3bMI",
-     "t": 527,
-     "date": "2025-01-21",
-     "base": "2025-01-21_cNtcjeG3bMI",
-     "meeting_title": "City Council Committee of the Whole 01-21-25",
-     "title": "Community Preservation Act funding overview and project presentations",
-     "label": "M80#1"
-    },
-    {
-     "video_id": "rUwakbVv_oY",
-     "t": 1435,
-     "date": "2026-01-20",
-     "base": "2026-01-20_rUwakbVv_oY",
-     "meeting_title": "City Council Committee of the Whole 01-20-25",
-     "title": "Fiscal Year 2026 CPA Appropriation Requests Overview",
-     "label": "M97#1"
-    },
-    {
-     "video_id": "rUwakbVv_oY",
-     "t": 3181,
-     "date": "2026-01-20",
-     "base": "2026-01-20_rUwakbVv_oY",
-     "meeting_title": "City Council Committee of the Whole 01-20-25",
-     "title": "Medford Affordable Housing Trust Funding",
-     "label": "M97#10"
-    }
-   ]
-  },
-  {
-   "name": "City Charter and Governance Reform",
-   "status": "ongoing",
-   "summary": "The committee has deliberated on several fundamental changes to the city's governing structure, including expanding the City Council's authority to amend the municipal budget. Significant progress was made on a comprehensive charter review, where the committee voted to recommend a new council composition of five at-large seats and four district seats. Other governance work includes establishing formal procedures for mayoral appointments and reviewing the compensation of the School Committee.",
-   "citations": [
-    {
-     "video_id": "MCM00000402",
-     "t": 1,
-     "date": "2023-04-18",
-     "base": "2024-05-02_MCM00000402",
-     "meeting_title": "City Council ComMedford City Council Committee Of The Whole 04-18-23",
-     "title": "Proposed amendments to the city charter",
-     "label": "M38#1"
-    },
-    {
-     "video_id": "hU9pKcipGW0",
+     "video_id": "MCM00000364",
      "t": 35,
-     "date": "2023-05-16",
-     "base": "2025-12-09_hU9pKcipGW0",
-     "meeting_title": "City Council Committee of the Whole 05-16-23",
-     "title": "Introduction of Charter Amendments",
-     "label": "M40#1"
+     "date": "2022-11-01",
+     "base": "2024-05-01_MCM00000364",
+     "meeting_title": "Medford City Council Committee Of The Whole 11-01-22",
+     "title": "Review of Proposed Leaf Blower Ordinance",
+     "label": "M23#1"
     },
     {
-     "video_id": "dymGDMprwPs",
-     "t": 8447,
-     "date": "2024-01-17",
-     "base": "2024-06-01_dymGDMprwPs",
-     "meeting_title": "City Council Committee of the Whole 01-17-24",
-     "title": "Four-Year Phase-In to Council Parity",
-     "label": "M58#4"
+     "video_id": "p1rND0ygKWg",
+     "t": 46,
+     "date": "2023-11-15",
+     "base": "2025-12-09_p1rND0ygKWg",
+     "meeting_title": "City Council Committee of the Whole 11-15-23",
+     "title": "Paper 21-057: Proposed Leaf Blower Ordinance",
+     "label": "M59#1"
     },
     {
-     "video_id": "l8nn1rt7aY0",
-     "t": 6831,
-     "date": "2025-03-04",
-     "base": "2025-03-04_l8nn1rt7aY0",
-     "meeting_title": "City Council Committee of the Whole 03-04-25",
-     "title": "Vote on Council Representation Model",
-     "label": "M81#2"
-    },
-    {
-     "video_id": "3ypfWQqQ8Ws",
-     "t": 1880,
-     "date": "2026-05-27",
-     "base": "2026-05-27_3ypfWQqQ8Ws",
-     "meeting_title": "City Council Committee of the Whole 05-27-26",
-     "title": "FY 2027 Preliminary Budget: Legislative Department",
-     "label": "M111#2"
+     "video_id": "QyOHt10oLs0",
+     "t": 46,
+     "date": "2024-02-21",
+     "base": "2024-06-01_QyOHt10oLs0",
+     "meeting_title": "City Council Committee of the Whole 02-21-24",
+     "title": "Leaf Blower Ordinance Revision (Paper 21-057)",
+     "label": "M66#1"
     }
    ]
   },
   {
-   "name": "Housing Stability and Development",
-   "status": "ongoing",
-   "summary": "The committee established several mechanisms to promote housing stability, including an ordinance requiring landlords to notify tenants of their rights and the creation of an Affordable Housing Trust. Large-scale redevelopment projects, such as the Walkling Court project and proposed mixed-use developments for municipal parking lots in Medford Square, have undergone preliminary reviews regarding density and infrastructure impact. Most recently, the committee received a nexus study recommending the implementation of commercial linkage fees to generate long-term funding for affordable housing production.",
+   "name": "Outdoor Dining Ordinance",
+   "status": "settled",
+   "summary": "In December 2022, the committee reviewed a proposal from the Office of Economic Development to establish a permanent outdoor dining ordinance with standardized safety, design, and accessibility guidelines (M28#1, M28#5). The committee refined the draft in February 2023, adding provisions on accessibility enforcement, severability, and tiered fee structures before voting to report the paper out (M35#1). Further revisions were reviewed in March 2023 regarding alcohol licensing, indemnification, safety barriers, and patio heater compliance (M40#1, M40#3, M40#5). The committee officially reported the ordinance out to the City Council favorably as amended in March 2023 (M40#6).",
    "citations": [
-    {
-     "video_id": "MCM00000346",
-     "t": 56,
-     "date": "2022-09-14",
-     "base": "2024-05-01_MCM00000346",
-     "meeting_title": "Medford City Council Committee Of The Whole 09-14-22",
-     "title": "Housing Production Plan",
-     "label": "M12#1"
-    },
-    {
-     "video_id": "MCM00000351",
-     "t": 37,
-     "date": "2022-11-02",
-     "base": "2024-05-01_MCM00000351",
-     "meeting_title": "Medford City Council Committee Of The Whole 11-02-22",
-     "title": "Establishment of an Affordable Housing Trust (20-024)",
-     "label": "M19#1"
-    },
-    {
-     "video_id": "MCM00000407",
-     "t": 66,
-     "date": "2023-01-18",
-     "base": "2024-05-02_MCM00000407",
-     "meeting_title": "Medford City Council Committee Of The Whole 01-18-23",
-     "title": "Housing Stability Notification Ordinance Overview",
-     "label": "M27#1"
-    },
-    {
-     "video_id": "6zUtu0XZLH4",
-     "t": 354,
-     "date": "2023-09-12",
-     "base": "2025-12-09_6zUtu0XZLH4",
-     "meeting_title": "City Council Committee of the Whole 09-12-23",
-     "title": "Walkling Court Redevelopment Presentation",
-     "label": "M50#2"
-    },
-    {
-     "video_id": "ObzNxwbGKmg",
-     "t": 3138,
-     "date": "2025-11-18",
-     "base": "2025-11-18_ObzNxwbGKmg",
-     "meeting_title": "City Council Committee of the Whole 11-18-25",
-     "title": "Discussion on Medford Square Parking Lots Redevelopment Proposal",
-     "label": "M94#1"
-    },
-    {
-     "video_id": "FCSEVB7kB-Q",
-     "t": 74,
-     "date": "2026-08-04",
-     "base": "2026-08-05_FCSEVB7kB-Q",
-     "meeting_title": "City Council Committee of the Whole 08-04-26",
-     "title": "Affordable Housing Linkage Nexus Study Report Presentation",
-     "label": "M118#1"
-    }
-   ]
-  },
-  {
-   "name": "Food Truck and Outdoor Dining Regulation",
-   "status": "ongoing",
-   "summary": "The committee worked to transition temporary pandemic-era outdoor dining rules into a permanent municipal ordinance with tiered fees and design standards for sidewalk seating and in-street parklets. Parallel efforts to establish a food truck ordinance focused on creating an administrative permitting process for special events while protecting existing brick-and-mortar restaurants. These regulations were often kept in committee to refine jurisdictional authority over public ways and ensure compliance with Board of Health safety standards.",
-   "citations": [
-    {
-     "video_id": "MCM00000334",
-     "t": 53,
-     "date": "2022-09-20",
-     "base": "2024-04-30_MCM00000334",
-     "meeting_title": "Medford City Council Committee Of The Whole 09-20-22",
-     "title": "Proposed Food Truck Ordinance",
-     "label": "M13#1"
-    },
     {
      "video_id": "MCM00000340",
      "t": 209,
@@ -506,7 +138,7 @@
      "base": "2024-04-30_MCM00000340",
      "meeting_title": "Medford City Council Committee Of The Whole 12-13-22",
      "title": "Outdoor Dining Ordinance Proposal",
-     "label": "M23#1"
+     "label": "M28#1"
     },
     {
      "video_id": "Bxoy4HfZz2w",
@@ -515,16 +147,7 @@
      "base": "2025-12-09_Bxoy4HfZz2w",
      "meeting_title": "City Council Committee of the Whole 02-08-23",
      "title": "Outdoor Dining Ordinance Update (Paper 22-514)",
-     "label": "M30#1"
-    },
-    {
-     "video_id": "dYuts-l8llI",
-     "t": 39,
-     "date": "2023-02-28",
-     "base": "2025-12-09_dYuts-l8llI",
-     "meeting_title": "City Council Committee of the Whole 02-28-23",
-     "title": "Draft Food Truck Ordinance",
-     "label": "M33#1"
+     "label": "M35#1"
     },
     {
      "video_id": "t15sh-lyws8",
@@ -533,16 +156,258 @@
      "base": "2025-12-09_t15sh-lyws8",
      "meeting_title": "City Council Committee of the Whole 03-15-23",
      "title": "Ordinance Overview and Fee Structure",
-     "label": "M35#1"
+     "label": "M40#1"
+    },
+    {
+     "video_id": "t15sh-lyws8",
+     "t": 1951,
+     "date": "2023-03-15",
+     "base": "2025-12-09_t15sh-lyws8",
+     "meeting_title": "City Council Committee of the Whole 03-15-23",
+     "title": "Disposition of Paper 22-514",
+     "label": "M40#6"
+    }
+   ]
+  },
+  {
+   "name": "Comprehensive Zoning Ordinance Updates",
+   "status": "ongoing",
+   "summary": "The committee initiated Phase Two zoning ordinance updates in October 2022 to align municipal code with comprehensive city plans for housing, climate, and economic development (M22#1, M22#3). In April 2023, the committee approved a draft Request for Proposals (RFP) specifying vendor criteria, scope of work, and project schedules for a zoning consultant (M41#1, M41#2, M41#4). Following vendor proposal evaluations in December 2023, the committee authorized a selection committee to negotiate a contract with Innes Associates (M62#1). Procurement work continued into September 2026, when the committee approved advancing a new RFP for a consultant to execute the next multi-year phase of the Zoning Updates Project (M124#1).",
+   "citations": [
+    {
+     "video_id": "MCM00000330",
+     "t": 35,
+     "date": "2022-10-26",
+     "base": "2024-04-30_MCM00000330",
+     "meeting_title": "Medford City Council Committee Of The Whole 10-26-22",
+     "title": "Phase Two Zoning Ordinance Revisions (22-533)",
+     "label": "M22#1"
+    },
+    {
+     "video_id": "_QCWGiFk8jo",
+     "t": 833,
+     "date": "2023-04-12",
+     "base": "2025-12-09__QCWGiFk8jo",
+     "meeting_title": "City Council Committee of the Whole 04-12-23",
+     "title": "Evaluation Criteria for Zoning RFP",
+     "label": "M41#1"
+    },
+    {
+     "video_id": "bxdTkh9HwuM",
+     "t": 36,
+     "date": "2023-12-06",
+     "base": "2024-10-05_bxdTkh9HwuM",
+     "meeting_title": "City Council Committee Of The Whole 12-06-23",
+     "title": "Zoning Ordinance Update RFP (Paper 22-533)",
+     "label": "M62#1"
+    },
+    {
+     "video_id": "eB_wVwTf6cQ",
+     "t": 773,
+     "date": "2026-09-30",
+     "base": "2026-09-30_eB_wVwTf6cQ",
+     "meeting_title": "City Council Committee of the Whole 09-30-26",
+     "title": "Item 24033 - Zoning Updates Project RFP",
+     "label": "M124#1"
+    }
+   ]
+  },
+  {
+   "name": "Community Development Block Grant (CDBG) Allocations",
+   "status": "ongoing",
+   "summary": "In April 2022, the committee reviewed CDBG Year 48 funding recommendations across eleven local service agencies and voted to report the applications out favorably (M01#1, M01#13). The committee reviewed the Year 49 Action Plan proposals in April 2023, placing the matter on file ahead of formal public hearings (M42#1, M42#15). The FY2025 CDBG Action Plan was reviewed and reported out favorably in May 2024 (M74#1, M74#6). Similar annual reviews occurred for FY2026 in April 2025 and for FY2027 in April 2026, with the committee referring the respective plans to regular council sessions for public hearings and final votes (M90#1, M90#3, M110#1, M110#11).",
+   "citations": [
+    {
+     "video_id": "MCM00000355",
+     "t": 112,
+     "date": "2022-04-13",
+     "base": "2024-05-01_MCM00000355",
+     "meeting_title": "Medford City Council Committee Of The Whole 04-13-22",
+     "title": "CDBG Program and Funding Overview",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00000389",
+     "t": 2,
+     "date": "2023-04-18",
+     "base": "2024-05-02_MCM00000389",
+     "meeting_title": "Medford City Council Committee Of The Whole 04-18-23",
+     "title": "CDBG Action Plan Year 49 Overview",
+     "label": "M42#1"
+    },
+    {
+     "video_id": "oQhgxoJb8UA",
+     "t": 2328,
+     "date": "2024-05-07",
+     "base": "2024-06-01_oQhgxoJb8UA",
+     "meeting_title": "City Council Committee of the Whole 05-07-24",
+     "title": "Referral of Action Plan",
+     "label": "M74#6"
+    },
+    {
+     "video_id": "xnzCAcrA2NE",
+     "t": 3451,
+     "date": "2025-04-16",
+     "base": "2025-04-16_xnzCAcrA2NE",
+     "meeting_title": "City Council Committee of the Whole 04-16-25",
+     "title": "Funding Reductions and Plan Referral",
+     "label": "M90#3"
+    },
+    {
+     "video_id": "6YvXuWnWMWI",
+     "t": 3115,
+     "date": "2026-04-28",
+     "base": "2026-04-28_6YvXuWnWMWI",
+     "meeting_title": "City Council Committee of the Whole 04-28-26",
+     "title": "Plan Review and Adjournment",
+     "label": "M110#11"
+    }
+   ]
+  },
+  {
+   "name": "Community Preservation Act (CPA) Funding",
+   "status": "ongoing",
+   "summary": "The committee began evaluating Community Preservation Committee project funding recommendations in January 2023, favorably referring 11 applications for historic preservation, parks, and housing assistance to the regular council meeting (M33#1, M33#12). In February 2024, the committee recommended approval for ten FY24 CPA projects totaling over $1.1 million (M65#1). The FY25 funding round was reviewed in January 2025, resulting in eight project recommendations totaling over $1.8 million being referred to the regular meeting (M85#1, M85#3). In January 2026, the committee favorably referred eleven FY26 projects totaling approximately $2.4 million to the regular City Council meeting (M102#1, M102#13).",
+   "citations": [
+    {
+     "video_id": "2kAt0v9zwyw",
+     "t": 68,
+     "date": "2023-01-24",
+     "base": "2025-12-09_2kAt0v9zwyw",
+     "meeting_title": "City Council Committee Of The Whole 01-24-23",
+     "title": "Community Preservation Committee Overview",
+     "label": "M33#1"
+    },
+    {
+     "video_id": "dcCBbf5sPdI",
+     "t": 48,
+     "date": "2024-02-20",
+     "base": "2024-06-01_dcCBbf5sPdI",
+     "meeting_title": "City Council Committee of the Whole 02-20-24",
+     "title": "FY24 Community Preservation Fund Annual Appropriations",
+     "label": "M65#1"
+    },
+    {
+     "video_id": "cNtcjeG3bMI",
+     "t": 527,
+     "date": "2025-01-21",
+     "base": "2025-01-21_cNtcjeG3bMI",
+     "meeting_title": "City Council Committee of the Whole 01-21-25",
+     "title": "Community Preservation Act funding overview and project presentations",
+     "label": "M85#1"
+    },
+    {
+     "video_id": "rUwakbVv_oY",
+     "t": 4132,
+     "date": "2026-01-20",
+     "base": "2026-01-20_rUwakbVv_oY",
+     "meeting_title": "City Council Committee of the Whole 01-20-25",
+     "title": "Committee Recommendation and Adjournment",
+     "label": "M102#13"
+    }
+   ]
+  },
+  {
+   "name": "Annual Municipal Budget Planning and Reviews",
+   "status": "ongoing",
+   "summary": "The committee establishes annual budget priorities and conducts preliminary departmental reviews prior to executive budget submissions. In May 2022, councilors agreed on five consensus priority recommendations for FY23 before reviewing department proposals (M05#1, M07#1). The committee formalized collective priority lists for FY25 in March 2024, FY26 in March 2025, and FY27 in March 2026 (M68#1, M88#1, M105#1). During each spring cycle, the committee holds extensive preliminary budget hearings with department heads to evaluate personnel, operations, fixed costs, and software modernization plans (M71#2, M91#1, M109#1, M119#1).",
+   "citations": [
+    {
+     "video_id": "MCM00000375",
+     "t": 51,
+     "date": "2022-05-24",
+     "base": "2024-05-01_MCM00000375",
+     "meeting_title": "Medford City Council Committee Of The Whole 05-24-22",
+     "title": "Joint Budget Proposals for FY 2023",
+     "label": "M05#1"
+    },
+    {
+     "video_id": "wtwrOMEbog0",
+     "t": 36,
+     "date": "2024-03-19",
+     "base": "2024-06-01_wtwrOMEbog0",
+     "meeting_title": "City Council Committee of the Whole 03-19-24",
+     "title": "FY 2025 Collective Budget Recommendations",
+     "label": "M68#1"
+    },
+    {
+     "video_id": "0Eph4NzrdME",
+     "t": 90,
+     "date": "2024-04-23",
+     "base": "2024-06-01_0Eph4NzrdME",
+     "meeting_title": "City Council Committee of the Whole 04-23-24",
+     "title": "FY25 general fund budget overview and financial update",
+     "label": "M71#2"
+    },
+    {
+     "video_id": "DtNTjLLICLg",
+     "t": 563,
+     "date": "2025-03-18",
+     "base": "2025-03-18_DtNTjLLICLg",
+     "meeting_title": "City Council Committee of the Whole 03-18-25",
+     "title": "Resolution 25-039: Fiscal Year 2026 Budget Schedule and Recommendations",
+     "label": "M88#1"
+    },
+    {
+     "video_id": "zeY6uXsavtM",
+     "t": 953,
+     "date": "2026-03-24",
+     "base": "2026-03-24_zeY6uXsavtM",
+     "meeting_title": "City Council Committee of the Whole 03-24-26",
+     "title": "FY 2027 Budget Recommendations to the Mayor (Paper 26-061)",
+     "label": "M105#1"
+    },
+    {
+     "video_id": "tHyDbpxwsBY",
+     "t": 457,
+     "date": "2026-04-21",
+     "base": "2026-04-22_tHyDbpxwsBY",
+     "meeting_title": "City Council Committee of the Whole 04-21-26",
+     "title": "Opening of Annual Budget Process (Item 26-061)",
+     "label": "M109#1"
+    },
+    {
+     "video_id": "fKTK3cmlYsg",
+     "t": 149,
+     "date": "2026-06-02",
+     "base": "2026-06-02_fKTK3cmlYsg",
+     "meeting_title": "City Council Committee of the Whole 05-02-26",
+     "title": "Fiscal Year 2027 Budget Overview",
+     "label": "M119#1"
+    }
+   ]
+  },
+  {
+   "name": "Food Truck Ordinance Reform",
+   "status": "ongoing",
+   "summary": "In September 2022, the committee discussed a food truck ordinance draft focused on one-day and special event licenses, referring it to subcommittee (M18#1). The committee reviewed administrative permitting options in February 2023 to streamline event licensing while protecting brick-and-mortar restaurants (M38#1, M38#3). In November 2023, legal counsel advised splitting the proposal into Board of Health operational rules and council land use controls (M58#1, M58#2). The ordinance was kept in committee in March 2024 for redrafting with legal counsel to clarify jurisdictional authority over public ways and city properties (M69#1).",
+   "citations": [
+    {
+     "video_id": "MCM00000334",
+     "t": 53,
+     "date": "2022-09-20",
+     "base": "2024-04-30_MCM00000334",
+     "meeting_title": "Medford City Council Committee Of The Whole 09-20-22",
+     "title": "Proposed Food Truck Ordinance",
+     "label": "M18#1"
+    },
+    {
+     "video_id": "dYuts-l8llI",
+     "t": 39,
+     "date": "2023-02-28",
+     "base": "2025-12-09_dYuts-l8llI",
+     "meeting_title": "City Council Committee of the Whole 02-28-23",
+     "title": "Draft Food Truck Ordinance",
+     "label": "M38#1"
     },
     {
      "video_id": "JPQiQSTu8Ag",
-     "t": 942,
+     "t": 213,
      "date": "2023-11-14",
      "base": "2024-10-05_JPQiQSTu8Ag",
      "meeting_title": "City Council Committee of the Whole 11-14-23",
-     "title": "Administrative Permitting Authority",
-     "label": "M53#4"
+     "title": "Regulatory Framework and Legal Recommendations",
+     "label": "M58#2"
     },
     {
      "video_id": "YorlYaO9Sys",
@@ -551,7 +416,7 @@
      "base": "2024-06-01_YorlYaO9Sys",
      "meeting_title": "City Council Committee of the Whole 03-20-24",
      "title": "Food Truck Ordinance (Item 20-020)",
-     "label": "M64#1"
+     "label": "M69#1"
     }
    ]
   }
@@ -559,8 +424,26 @@
  "periods": [
   {
    "period": "2022-2023 term",
-   "narrative": "This period focused on post-pandemic financial adjustments, the adoption of a Comprehensive Plan, and the initial drafting of long-term environmental and housing ordinances.",
+   "narrative": "During this term, the committee conducted extensive reviews of annual city budgets, evaluated CDBG and CPA grant applications, and advanced key ordinances governing outdoor dining, leaf blowers, tree preservation, and food trucks. It also reviewed Phase Two zoning recodification work and updates to city council rules.",
    "citations": [
+    {
+     "video_id": "MCM00000355",
+     "t": null,
+     "date": "2022-04-13",
+     "base": "2024-05-01_MCM00000355",
+     "meeting_title": "Medford City Council Committee Of The Whole 04-13-22",
+     "title": "Medford City Council Committee Of The Whole 04-13-22",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00000371",
+     "t": 3991,
+     "date": "2022-04-26",
+     "base": "2024-05-01_MCM00000371",
+     "meeting_title": "Medford City Council Committee Of The Whole 04-26-22",
+     "title": "Final Recommendation",
+     "label": "M02#5"
+    },
     {
      "video_id": "MCM00000352",
      "t": null,
@@ -568,164 +451,191 @@
      "base": "2024-05-01_MCM00000352",
      "meeting_title": "Medford City Council Committee Of The Whole 06-07-22",
      "title": "Medford City Council Committee Of The Whole 06-07-22",
-     "label": "M02"
+     "label": "M07"
     },
     {
-     "video_id": "MCM00000353",
-     "t": null,
-     "date": "2022-10-05",
-     "base": "2024-05-01_MCM00000353",
-     "meeting_title": "Medford City Council Committee Of The Whole 10-05-22",
-     "title": "Medford City Council Committee Of The Whole 10-05-22",
-     "label": "M16"
+     "video_id": "MCM00000340",
+     "t": 2848,
+     "date": "2022-12-13",
+     "base": "2024-04-30_MCM00000340",
+     "meeting_title": "Medford City Council Committee Of The Whole 12-13-22",
+     "title": "Motions and Referral",
+     "label": "M28#5"
     },
     {
-     "video_id": "MCM00000344",
-     "t": null,
-     "date": "2022-12-07",
-     "base": "2024-04-30_MCM00000344",
-     "meeting_title": "Medford City Council Committee Of The Whole 12-07-22",
-     "title": "Medford City Council Committee Of The Whole 12-07-22",
-     "label": "M22"
+     "video_id": "t15sh-lyws8",
+     "t": 1951,
+     "date": "2023-03-15",
+     "base": "2025-12-09_t15sh-lyws8",
+     "meeting_title": "City Council Committee of the Whole 03-15-23",
+     "title": "Disposition of Paper 22-514",
+     "label": "M40#6"
     },
     {
-     "video_id": "wNdJllOU2KE",
-     "t": null,
-     "date": "2023-04-26",
-     "base": "2025-12-09_wNdJllOU2KE",
-     "meeting_title": "City Council Committee of the Whole 04-26-23",
-     "title": "City Council Committee of the Whole 04-26-23",
-     "label": "M39"
+     "video_id": "_QCWGiFk8jo",
+     "t": 2310,
+     "date": "2023-04-12",
+     "base": "2025-12-09__QCWGiFk8jo",
+     "meeting_title": "City Council Committee of the Whole 04-12-23",
+     "title": "Project Timeline and Submission Checklist",
+     "label": "M41#4"
     },
     {
-     "video_id": "_r--u5JPvtQ",
-     "t": null,
-     "date": "2023-11-29",
-     "base": "2024-10-05__r--u5JPvtQ",
-     "meeting_title": "City Council Committee Of The Whole 11-29-23",
-     "title": "City Council Committee Of The Whole 11-29-23",
-     "label": "M55"
+     "video_id": "bxdTkh9HwuM",
+     "t": 36,
+     "date": "2023-12-06",
+     "base": "2024-10-05_bxdTkh9HwuM",
+     "meeting_title": "City Council Committee Of The Whole 12-06-23",
+     "title": "Zoning Ordinance Update RFP (Paper 22-533)",
+     "label": "M62#1"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "The committee prioritized citywide charter review, the implementation of a new 10-year waste management contract, and navigating school budget deficits through tax override discussions.",
+   "narrative": "The committee focused on multi-year governing agendas, preliminary budget hearings across municipal departments, and Community Preservation Act funding cycles. Key policy actions included reporting out a leaf blower ordinance, recommending charter amendments on council composition, and reviewing Proposition 2.5 override proposals and capital plans.",
    "citations": [
     {
+     "video_id": "heiIdRQDlrw",
+     "t": 29,
+     "date": "2024-01-24",
+     "base": "2024-06-01_heiIdRQDlrw",
+     "meeting_title": "City Council Committee of the Whole 01-24-24",
+     "title": "Governing Agenda Framework",
+     "label": "M64#1"
+    },
+    {
      "video_id": "QyOHt10oLs0",
-     "t": null,
+     "t": 46,
      "date": "2024-02-21",
      "base": "2024-06-01_QyOHt10oLs0",
      "meeting_title": "City Council Committee of the Whole 02-21-24",
-     "title": "City Council Committee of the Whole 02-21-24",
-     "label": "M61"
+     "title": "Leaf Blower Ordinance Revision (Paper 21-057)",
+     "label": "M66#1"
+    },
+    {
+     "video_id": "LgKMjmYyikc",
+     "t": 35,
+     "date": "2024-03-06",
+     "base": "2024-06-01_LgKMjmYyikc",
+     "meeting_title": "City Council Committee of the Whole 03-06-24",
+     "title": "Budget Process and Schedule",
+     "label": "M67#1"
     },
     {
      "video_id": "kP4iRYobyr0",
-     "t": null,
+     "t": 129,
      "date": "2024-10-15",
      "base": "2024-10-15_kP4iRYobyr0",
      "meeting_title": "City Council Committee of the Whole 10-15-24",
-     "title": "City Council Committee of the Whole 10-15-24",
-     "label": "M75"
+     "title": "Resolution 24-475 for Proposition 2.5 Q&A Session",
+     "label": "M80#1"
     },
     {
      "video_id": "l8nn1rt7aY0",
-     "t": null,
+     "t": 6831,
      "date": "2025-03-04",
      "base": "2025-03-04_l8nn1rt7aY0",
      "meeting_title": "City Council Committee of the Whole 03-04-25",
-     "title": "City Council Committee of the Whole 03-04-25",
-     "label": "M81"
+     "title": "Vote on Council Representation Model",
+     "label": "M86#2"
     },
     {
-     "video_id": "pMp24GBph-w",
-     "t": null,
-     "date": "2025-04-29",
-     "base": "2025-04-29_pMp24GBph-w",
-     "meeting_title": "City Council Committee of the Whole 04-29-25",
-     "title": "City Council Committee of the Whole 04-29-25",
-     "label": "M86"
-    },
-    {
-     "video_id": "IP1sqjGemck",
-     "t": null,
-     "date": "2025-05-27",
-     "base": "2025-05-28_IP1sqjGemck",
-     "meeting_title": "City Council Committee of the Whole 05-27-25",
-     "title": "City Council Committee of the Whole 05-27-25",
-     "label": "M91"
+     "video_id": "1dIxixg8FHg",
+     "t": 1246,
+     "date": "2025-07-15",
+     "base": "2025-07-16_1dIxixg8FHg",
+     "meeting_title": "City Council Committee of the Whole 07-15-25",
+     "title": "Tree Committee Ordinance",
+     "label": "M98#1"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "Work in this term includes managing the transition of city clerk leadership, evaluating residential tax exemptions, and advancing the next phase of comprehensive zoning consultant procurement.",
+   "narrative": "This period featured annual preliminary budget reviews, evaluations of residential property tax exemptions, standard compensation ordinance amendments, and oversight of municipal transitions including ambulance provider changes and city clerk recruitment. The committee also held multiple executive sessions on pending city litigation.",
    "citations": [
     {
      "video_id": "buR1554iquY",
-     "t": null,
+     "t": 447,
      "date": "2026-01-13",
      "base": "2026-01-13_buR1554iquY",
      "meeting_title": "City Council Committee of the Whole 01-13-26",
-     "title": "City Council Committee of the Whole 01-13-26",
-     "label": "M96"
+     "title": "Ambulance Service Transition Review",
+     "label": "M101#1"
+    },
+    {
+     "video_id": "rUwakbVv_oY",
+     "t": 4132,
+     "date": "2026-01-20",
+     "base": "2026-01-20_rUwakbVv_oY",
+     "meeting_title": "City Council Committee of the Whole 01-20-25",
+     "title": "Committee Recommendation and Adjournment",
+     "label": "M102#13"
     },
     {
      "video_id": "lfqWNwA5sHI",
-     "t": null,
+     "t": 428,
      "date": "2026-04-07",
      "base": "2026-04-07_lfqWNwA5sHI",
      "meeting_title": "City Council Committee of the Whole 04-07-26",
-     "title": "City Council Committee of the Whole 04-07-26",
-     "label": "M102"
+     "title": "Discussion of Residential Property Tax Exemption Implementation (Resolution 26-066)",
+     "label": "M107#1"
+    },
+    {
+     "video_id": "q2WvOKcufgc",
+     "t": 5681,
+     "date": "2026-04-14",
+     "base": "2026-04-14_q2WvOKcufgc",
+     "meeting_title": "City Council Committee of the Whole 04-14-26",
+     "title": "Referral of Standard Compensation Ordinance",
+     "label": "M108#4"
     },
     {
      "video_id": "6YvXuWnWMWI",
-     "t": null,
+     "t": 3115,
      "date": "2026-04-28",
      "base": "2026-04-28_6YvXuWnWMWI",
      "meeting_title": "City Council Committee of the Whole 04-28-26",
-     "title": "City Council Committee of the Whole 04-28-26",
-     "label": "M105"
+     "title": "Plan Review and Adjournment",
+     "label": "M110#11"
     },
     {
      "video_id": "boyuFzjZmR4",
-     "t": null,
+     "t": 107,
      "date": "2026-06-23",
      "base": "2026-06-23_boyuFzjZmR4",
      "meeting_title": "City Council Committee of the Whole 06-23-26",
-     "title": "City Council Committee of the Whole 06-23-26",
-     "label": "M116"
+     "title": "Resolution 25149: City Clerk Recruitment and Hiring Process",
+     "label": "M121#1"
     },
     {
-     "video_id": "eB_wVwTf6cQ",
-     "t": null,
-     "date": "2026-09-30",
-     "base": "2026-09-30_eB_wVwTf6cQ",
-     "meeting_title": "City Council Committee of the Whole 09-30-26",
-     "title": "City Council Committee of the Whole 09-30-26",
-     "label": "M119"
+     "video_id": "F2L9bYRlIGw",
+     "t": 20,
+     "date": "2026-10-13",
+     "base": "2026-10-13_F2L9bYRlIGw",
+     "meeting_title": "Medford City Council COW and Regular Meeting 10/13/26",
+     "title": "Litigation Strategy Executive Session",
+     "label": "M125#1"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 69,
-  "meetings_cited": 60,
-  "of_meetings": 120,
-  "max_share": 0.029,
-  "even_share": 0.0083,
-  "concentration_ratio": 3.48,
-  "most_cited": "MCM00000352",
+  "citations": 59,
+  "meetings_cited": 49,
+  "of_meetings": 125,
+  "max_share": 0.051,
+  "even_share": 0.008,
+  "concentration_ratio": 6.37,
+  "most_cited": "t15sh-lyws8",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 37445,
-  "output_tokens": 1934,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 39236,
+  "output_tokens": 2788,
+  "model_version": "gemini-3.6-flash"
  }
 }
