@@ -1,0 +1,53 @@
+{
+ "video_id": "MCM00000599",
+ "provider": "gemini",
+ "generated_at": "2026-11-02T13:09:55Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "399af88d11e2fb67",
+ "subject": "",
+ "overview": "The Zoning Board of Appeals approved a two-family conversion at 64 Court Street and a residential addition at 86 Sherwood Road. The board determined both projects met the legal standards for findings and variances based on unique lot shapes and existing non-conformities.",
+ "items": [
+  {
+   "title": "64 Court Street Two-Family Conversion",
+   "t": 82,
+   "summary": "Approved a finding that the proposed second-story addition and conversion to a two-family dwelling would not be substantially more detrimental to the neighborhood despite lot area deficiencies. The board conditioned the approval on the installation of pervious pavers in the rear parking area to mitigate the loss of green space.",
+   "speakers": [
+    "Denis MacDougall",
+    "Kathleen Desmond",
+    "John Lloyd",
+    "John Lightbody",
+    "Barbara Siftar",
+    "Mike Caldera",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "86 Sherwood Road Two-Story Addition",
+   "t": 2982,
+   "summary": "Granted variances for front and side yard setbacks to allow a two-story addition on a trapezoidal corner lot. The board found that the unique lot shape created a hardship and noted that the project was supported by neighboring residents.",
+   "speakers": [
+    "Denis MacDougall",
+    "Danielle Wellnitz",
+    "Jenny Graham",
+    "Mike Caldera",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "Minutes and Adjournment",
+   "t": 4138,
+   "summary": "Approved the January meeting minutes and scheduled the next meeting for May 26, 2022.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21819,
+  "output_tokens": 394,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
