@@ -1,0 +1,36 @@
+{
+ "video_id": "XXXXXX00039",
+ "provider": "gemini",
+ "generated_at": "2026-11-02T04:06:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "e9192470b0aba8a0",
+ "subject": "Medford Charter Review",
+ "overview": "Host Danielle Balocca discussed a recent police complaint with David McKenna and interviewed Milva McDonald about ongoing efforts to initiate a charter review in Medford.",
+ "items": [
+  {
+   "title": "Medford Police Department Complaint",
+   "t": 2,
+   "summary": "David McKenna detailed a public complaint regarding a police stop of two local graduates and described a community letter calling on the mayor to address city public safety standards.",
+   "speakers": [
+    "Danielle Balocca",
+    "David McKenna"
+   ]
+  },
+  {
+   "title": "Discussion on Charter Review",
+   "t": 165,
+   "summary": "Milva McDonald explained the structure of Medford's Plan A charter, potential updates like ward representation and term limits, and the Medford Charter Review Coalition's efforts to trigger a review process.",
+   "speakers": [
+    "Danielle Balocca",
+    "Milva McDonald"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11396,
+  "output_tokens": 238,
+  "model_version": "gemini-3.6-flash"
+ }
+}

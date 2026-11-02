@@ -1,0 +1,42 @@
+{
+ "video_id": "XXXXXX00038",
+ "provider": "gemini",
+ "generated_at": "2026-11-02T04:07:52Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4ec759857897520c",
+ "subject": "Middle School Hat and Hood Policy",
+ "overview": "Danielle Balocca presented a bonus episode featuring an NPR Student Podcast Challenge finalist podcast created by Andrews Middle School students advocating for changes to the district dress code policy on hats and hoods.",
+ "items": [
+  {
+   "title": "Podcast Introduction",
+   "t": 4,
+   "summary": "Danielle Balocca introduced the student-produced podcast No Cap, created by Ms. Whalen's eighth-grade class at Andrews Middle School.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "No Cap: Student Proposal on School Hat and Hood Rules",
+   "t": 29,
+   "summary": "Students presented research, teacher interviews, and proposed safety and behavioral compromises to advocate amending the Medford Public Schools dress code policy banning hats and hoods.",
+   "speakers": [
+    "Lynch"
+   ]
+  },
+  {
+   "title": "Sign-Off and Contact Information",
+   "t": 514,
+   "summary": "Danielle Balocca concluded the episode and shared podcast contact information for listener feedback.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4423,
+  "output_tokens": 244,
+  "model_version": "gemini-3.6-flash"
+ }
+}
