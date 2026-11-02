@@ -1,0 +1,35 @@
+{
+ "video_id": "XXXXXX00037",
+ "provider": "gemini",
+ "generated_at": "2026-11-02T08:23:47Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cbee0b2eecbf1071",
+ "subject": "SCOTUS Draft Opinion Overturning Roe v. Wade",
+ "overview": "The podcast hosts shared an update on local tenant displacement before holding a discussion on the leaked Supreme Court draft opinion overturning Roe v. Wade.",
+ "items": [
+  {
+   "title": "Bradley Road Tenant Association Press Release",
+   "t": 4,
+   "summary": "Danielle Balocca read a press release regarding Bradley Road residents rallying against mass no-fault notices to quit issued by landlord Savage Properties.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Discussion on SCOTUS Draft Opinion Overturning Roe v. Wade",
+   "t": 162,
+   "summary": "Danielle Balocca and Chelli Keshavan discussed the leaked Supreme Court draft opinion reversing Roe v. Wade, addressing healthcare access, social equity, and ways for community members to take action.",
+   "speakers": [
+    "Danielle Balocca",
+    "Chelli Keshavan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9721,
+  "output_tokens": 209,
+  "model_version": "gemini-3.6-flash"
+ }
+}
