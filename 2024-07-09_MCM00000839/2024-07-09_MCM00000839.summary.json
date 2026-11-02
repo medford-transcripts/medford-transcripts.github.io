@@ -1,0 +1,41 @@
+{
+ "video_id": "MCM00000839",
+ "provider": "gemini",
+ "generated_at": "2026-11-02T11:41:54Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "82fcea8cde932b25",
+ "subject": "",
+ "overview": "The Rules and Policy Subcommittee reviewed revisions to the district's school attorney policy and considered a draft dress code policy. The subcommittee voted to advance the school attorney policy to the full committee and continued discussion on the dress code policy to a future meeting.",
+ "items": [
+  {
+   "title": "School Attorney Policy",
+   "t": 128,
+   "summary": "Approved sending an amended school attorney policy regarding legal counsel usage and retainer budget limits to the full committee.",
+   "speakers": [
+    "Paul Ruseau",
+    "Melanie McLaughlin",
+    "Jenny Graham",
+    "David Murphy"
+   ]
+  },
+  {
+   "title": "Dress Code Policy",
+   "t": 1217,
+   "summary": "Tabled a proposed dress code policy for further review by district administrators prior to a future subcommittee meeting.",
+   "speakers": [
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Melanie McLaughlin",
+    "Suzanne Galusi",
+    "Marice Edouard-Vincent"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14208,
+  "output_tokens": 211,
+  "model_version": "gemini-3.6-flash"
+ }
+}
