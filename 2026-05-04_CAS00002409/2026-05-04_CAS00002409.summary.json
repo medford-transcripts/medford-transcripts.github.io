@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "85a33d71efd82c24",
- "subject": "",
+ "subject": "Disability Fair Planning",
  "overview": "The Commission for Persons with Disabilities reviewed logistical plans, vendor recruitment, and activities for the upcoming Disability Fair. The commission also received an update on the City Council advancing its proposed ordinance to the mayor for legal review.",
  "items": [
   {
@@ -75,5 +75,6 @@
   "input_tokens": 12470,
   "output_tokens": 613,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
