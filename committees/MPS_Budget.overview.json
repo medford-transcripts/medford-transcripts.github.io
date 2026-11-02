@@ -1,40 +1,40 @@
 {
  "committee": "MPS Budget",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-17T14:06:14Z",
- "sources_sha": "e59ce08c68884c80",
- "n_meetings": 5,
+ "generated_at": "2026-11-02T10:09:31Z",
+ "sources_sha": "93d3e688b14192d8",
+ "n_meetings": 10,
  "period_style": "term",
  "span": [
-  "2024-05-07",
+  "2022-05-09",
   "2026-05-13"
  ],
- "overview": "The MPS Budget process involves the annual formulation and approval of operating funds for Medford Public Schools, covering everything from staffing levels to capital maintenance. Between May 2024 and May 2026, the body has navigated significant fiscal challenges, including multi-million dollar deficits and rising contractual costs. The process includes statutory public hearings and joint coordination sessions with the Medford City Council to align revenue projections. At the most recent meeting in May 2026, the body approved a preliminary budget proposal for the 2027 fiscal year that balances base budget increases with targeted net reductions.",
+ "overview": "MPS Budget sessions of the Medford School Committee review and approve annual operating budget proposals, capital requests, and external grant allocations. Spanning from May 2022 through May 2026, the committee conducted public hearings, addressed fixed cost increases, and weighed staffing and academic investments against available municipal revenues. Over successive cycles, the committee submitted municipal requests rising from $72.4 million for FY23 to $87.58 million for FY26. Most recently, the committee approved the preliminary FY27 operating budget, which accommodates a $4.1 million base increase alongside $3.3 million in net reductions. The committee's latest action also instructed district leadership to prioritize restoring a vacant inclusion specialist position as funds become available.",
  "threads": [
   {
-   "name": "FY25 Budget Process",
-   "status": "settled",
-   "summary": "In early 2024, the budget faced a $2.7 million deficit despite $2.3 million in proposed cuts to staff and programs. Finance Director Gerry McCue detailed rising operational costs and the potential loss of 17.4 full-time positions. Following significant public pressure, the committee approved a level-service request of $79,399,774 to be submitted to city officials.",
+   "name": "Annual municipal operating budget requests",
+   "status": "ongoing",
+   "summary": "In May 2022, the committee voted to submit an FY23 operating budget request of $72.4 million to municipal government (M03#2). For FY24, the committee approved a municipal request of $71,995,165 following a public hearing on staffing needs and school climate priorities (M04#3). Facing projected deficits in FY25, the committee approved a level-service budget request of $79,399,774 to transmit to the Mayor and City Council (M06#7). Deliberations for FY26 concluded with approval of an $87,583,000 preliminary budget request (M08#3). Most recently, the committee approved preliminary FY27 budget recommendations incorporating a $4.1 million base increase alongside $3.3 million in net reductions (M10#2).",
    "citations": [
     {
-     "video_id": "S39QSClb618",
-     "t": 152,
-     "date": "2024-05-07",
-     "base": "2024-05-07_S39QSClb618",
-     "meeting_title": "Public Budget Hearing",
-     "title": "FY25 Recommended Operating Budget Presentation",
-     "label": "M01#1"
+     "video_id": "V6Avy5_u4Ug",
+     "t": 2430,
+     "date": "2022-05-25",
+     "base": "2022-05-25_V6Avy5_u4Ug",
+     "meeting_title": "Special School Committee Meeting:  SY2023 Budget May 25, 2022",
+     "title": "FY23 Municipal Budget Request and Free School Meals Motion",
+     "label": "M03#2"
     },
     {
-     "video_id": "S39QSClb618",
-     "t": 9041,
-     "date": "2024-05-07",
-     "base": "2024-05-07_S39QSClb618",
-     "meeting_title": "Public Budget Hearing",
-     "title": "Public Hearing and Public Comment",
-     "label": "M01#2"
+     "video_id": "CftWif4v9Wc",
+     "t": 4893,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Operating Budget Request",
+     "label": "M04#3"
     },
     {
      "video_id": "3RWkmZ9GDFQ",
@@ -43,50 +43,7 @@
      "base": "2024-05-20_3RWkmZ9GDFQ",
      "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
      "title": "FY25 School Budget Update and Request",
-     "label": "M02#7"
-    }
-   ]
-  },
-  {
-   "name": "FY26 Budget Process",
-   "status": "settled",
-   "summary": "Planning for the 2026 fiscal year began with joint revenue projections showing a certified free cash balance of $28.3 million. Administrators presented an $87,583,000 preliminary budget that accounted for enrollment increases and salary adjustments. Unlike previous years, the public hearing for this budget saw no public testimony for or against the proposal before it was approved as the formal municipal request.",
-   "citations": [
-    {
-     "video_id": "Aod_AldxCno",
-     "t": 521,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Fiscal Year 2026 Budget Schedule",
-     "label": "M03#2"
-    },
-    {
-     "video_id": "Aod_AldxCno",
-     "t": 669,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Financial Update and Revenue Projections",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "fyxDl0MdF_A",
-     "t": 0,
-     "date": "2025-03-24",
-     "base": "2025-03-24_fyxDl0MdF_A",
-     "meeting_title": "MSC Budget Hearing - 3.24.2025",
-     "title": "Presentation of Proposed FY26 Budget",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "fyxDl0MdF_A",
-     "t": 2279,
-     "date": "2025-03-24",
-     "base": "2025-03-24_fyxDl0MdF_A",
-     "meeting_title": "MSC Budget Hearing - 3.24.2025",
-     "title": "Public Hearing",
-     "label": "M04#2"
+     "label": "M06#7"
     },
     {
      "video_id": "fyxDl0MdF_A",
@@ -95,23 +52,7 @@
      "base": "2025-03-24_fyxDl0MdF_A",
      "meeting_title": "MSC Budget Hearing - 3.24.2025",
      "title": "Committee Discussion and Budget Request Approval",
-     "label": "M04#3"
-    }
-   ]
-  },
-  {
-   "name": "FY27 Budget Process",
-   "status": "ongoing",
-   "summary": "The fiscal year 2027 budget proposal included a $4.1 million base budget increase. However, the finance team also presented $3.3 million in net reductions. The committee approved the preliminary recommendations while making it a priority to restore a vacant inclusion specialist position if funds are available.",
-   "citations": [
-    {
-     "video_id": "uYNRPEdBbz0",
-     "t": 0,
-     "date": "2026-05-13",
-     "base": "2026-05-13_uYNRPEdBbz0",
-     "meeting_title": "MPS Budget Hearing",
-     "title": "Opening of Public Hearing",
-     "label": "M05#1"
+     "label": "M08#3"
     },
     {
      "video_id": "uYNRPEdBbz0",
@@ -120,15 +61,103 @@
      "base": "2026-05-13_uYNRPEdBbz0",
      "meeting_title": "MPS Budget Hearing",
      "title": "FY27 Preliminary Budget Presentation, Discussion, and Vote",
-     "label": "M05#2"
+     "label": "M10#2"
     }
    ]
   },
   {
-   "name": "Staffing and Personnel Levels",
+   "name": "ESSER grant allocations and federal funding transitions",
    "status": "ongoing",
-   "summary": "Budgetary constraints have frequently centered on the preservation of student-facing roles. In 2024, dozens of community members protested cuts to nurses, drama coordinators, and administrative assistants. By 2026, the focus shifted to maintaining specialized positions, such as inclusion specialists, amidst ongoing net reductions.",
+   "summary": "During the FY23 budget cycle, the administration established a categorization system to distinguish between recurring operating needs and one-time ESSER grant allocations (M01#2, M01#4). Federal funds were designated for instruments, summer programming, and student transit passes before being integrated into the FY23 presentation (M01#10, M03#1). During FY24 planning, the superintendent adjusted operating allocations to meet budget targets using ESSER grants while the committee discussed the impending funding cliff (M04#1). Grant uncertainties remained a subject of committee review during the FY26 budget approval process (M08#3).",
    "citations": [
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 336,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "FY23 Budget Development Process and Revenue Overview",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 2267,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "Categorization of Strategic Priorities",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 6724,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "Music, Arts, and Transportation Initiatives",
+     "label": "M01#10"
+    },
+    {
+     "video_id": "V6Avy5_u4Ug",
+     "t": 268,
+     "date": "2022-05-25",
+     "base": "2022-05-25_V6Avy5_u4Ug",
+     "meeting_title": "Special School Committee Meeting:  SY2023 Budget May 25, 2022",
+     "title": "FY23 Operating Budget and ESSER Funding Presentation",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "CftWif4v9Wc",
+     "t": 265,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Budget Presentation and Discussion",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "fyxDl0MdF_A",
+     "t": 2339,
+     "date": "2025-03-24",
+     "base": "2025-03-24_fyxDl0MdF_A",
+     "meeting_title": "MSC Budget Hearing - 3.24.2025",
+     "title": "Committee Discussion and Budget Request Approval",
+     "label": "M08#3"
+    }
+   ]
+  },
+  {
+   "name": "Special education and student support staffing",
+   "status": "ongoing",
+   "summary": "During FY23 budget development, the administration submitted requests for additional adjustment counselors, a career counselor, and high school special education personnel (M01#6, M01#8). In the FY25 budget presentation, proposed reductions affecting guidance and nursing positions prompted extensive public testimony against the cuts (M05#1, M05#2). Middle school guidance staffing levels were evaluated again during FY26 deliberations (M08#3). In the FY27 budget votes, the committee approved the recommended operating plan while explicitly directing that a vacant inclusion specialist position be reinstated when funds permit (M09#1, M10#2).",
+   "citations": [
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 3447,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "Mental Health and Counseling Positions",
+     "label": "M01#6"
+    },
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 5490,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "Special Education Personnel and Assistive Technology",
+     "label": "M01#8"
+    },
+    {
+     "video_id": "S39QSClb618",
+     "t": 152,
+     "date": "2024-05-07",
+     "base": "2024-05-07_S39QSClb618",
+     "meeting_title": "Public Budget Hearing",
+     "title": "FY25 Recommended Operating Budget Presentation",
+     "label": "M05#1"
+    },
     {
      "video_id": "S39QSClb618",
      "t": 9041,
@@ -136,16 +165,25 @@
      "base": "2024-05-07_S39QSClb618",
      "meeting_title": "Public Budget Hearing",
      "title": "Public Hearing and Public Comment",
-     "label": "M01#2"
+     "label": "M05#2"
     },
     {
-     "video_id": "3RWkmZ9GDFQ",
-     "t": 5355,
-     "date": "2024-05-20",
-     "base": "2024-05-20_3RWkmZ9GDFQ",
-     "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
-     "title": "FY25 School Budget Update and Request",
-     "label": "M02#7"
+     "video_id": "fyxDl0MdF_A",
+     "t": 2339,
+     "date": "2025-03-24",
+     "base": "2025-03-24_fyxDl0MdF_A",
+     "meeting_title": "MSC Budget Hearing - 3.24.2025",
+     "title": "Committee Discussion and Budget Request Approval",
+     "label": "M08#3"
+    },
+    {
+     "video_id": "CAS00002428",
+     "t": 64,
+     "date": "2026-05-12",
+     "base": "2026-05-13_CAS00002428",
+     "meeting_title": "School Committee Budget Public Hearing 05/12/26",
+     "title": "Superintendent's Recommended FY27 Operating Budget",
+     "label": "M09#1"
     },
     {
      "video_id": "uYNRPEdBbz0",
@@ -154,58 +192,42 @@
      "base": "2026-05-13_uYNRPEdBbz0",
      "meeting_title": "MPS Budget Hearing",
      "title": "FY27 Preliminary Budget Presentation, Discussion, and Vote",
-     "label": "M05#2"
+     "label": "M10#2"
     }
    ]
   },
   {
-   "name": "Inter-governmental Coordination",
+   "name": "High school facilities, climate, and alternative programming",
    "status": "ongoing",
-   "summary": "The School Committee and City Council established joint rules to govern shared sessions regarding fiscal planning. These meetings involve reviews of the budget calendar and requests for formal documentation of revenue estimates from the city's Chief Financial Officer. These sessions aim to reconcile city-wide revenue forecasts with school-specific cost drivers like health insurance premiums.",
+   "summary": "Early operational reviews identified high school facility needs alongside McGlynn building repairs as capital priorities (M02#5). The committee subsequently incorporated funding into its FY24 budget submission to support recommendations from the Medford High School climate report (M04#2, M04#3). In May 2024, the committee voted to co-locate Curtis-Tufts School with Medford High School in the future building project (M06#3). At the same meeting, the committee approved staffing to pilot an alternative education program for at-risk students following improvements in high school climate survey results (M06#5).",
    "citations": [
     {
-     "video_id": "Aod_AldxCno",
-     "t": 419,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Joint Rules",
-     "label": "M03#1"
+     "video_id": "k23Jlj002f0",
+     "t": 6115,
+     "date": "2022-05-10",
+     "base": "2022-05-10_k23Jlj002f0",
+     "meeting_title": "Special School Committee Meeting:  Budget May 10, 2022",
+     "title": "Operations, Maintenance, and Capital Budget Items",
+     "label": "M02#5"
     },
     {
-     "video_id": "Aod_AldxCno",
-     "t": 521,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Fiscal Year 2026 Budget Schedule",
-     "label": "M03#2"
+     "video_id": "CftWif4v9Wc",
+     "t": 3063,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "Public Hearing on Proposed Budget",
+     "label": "M04#2"
     },
     {
-     "video_id": "Aod_AldxCno",
-     "t": 669,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Financial Update and Revenue Projections",
-     "label": "M03#3"
+     "video_id": "CftWif4v9Wc",
+     "t": 4893,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Operating Budget Request",
+     "label": "M04#3"
     },
-    {
-     "video_id": "Aod_AldxCno",
-     "t": 3859,
-     "date": "2025-03-19",
-     "base": "2025-03-19_Aod_AldxCno",
-     "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Revenue Documentation Request",
-     "label": "M03#4"
-    }
-   ]
-  },
-  {
-   "name": "Facilities and Programmatic Expansion",
-   "status": "ongoing",
-   "summary": "While managing operating deficits, the committee also makes budgetary decisions regarding long-term facility usage and program pilots. This included approving the co-location of the Curtis-Tufts School with the high school and directing funds for a new alternative education pilot for at-risk students. Additionally, the committee has sought to expand Career Technical Education (CTE) offerings through coordination with the MSBA feasibility study.",
-   "citations": [
     {
      "video_id": "3RWkmZ9GDFQ",
      "t": 844,
@@ -213,7 +235,7 @@
      "base": "2024-05-20_3RWkmZ9GDFQ",
      "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
      "title": "Subcommittee Report: Behavioral Health and Special Education",
-     "label": "M02#3"
+     "label": "M06#3"
     },
     {
      "video_id": "3RWkmZ9GDFQ",
@@ -222,7 +244,23 @@
      "base": "2024-05-20_3RWkmZ9GDFQ",
      "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
      "title": "Medford High School Update and Culture Survey",
-     "label": "M02#5"
+     "label": "M06#5"
+    }
+   ]
+  },
+  {
+   "name": "Career Technical Education expansion",
+   "status": "ongoing",
+   "summary": "Chad Fallon presented growing CTE enrollment and equipment acquisitions during FY23 deliberations, requesting two instructor positions and an increase in supply funding (M02#2). In May 2024, the committee voted to request that the school building committee and MSBA explore proposed CTE program expansions and new program offerings within the feasibility study (M06#6).",
+   "citations": [
+    {
+     "video_id": "k23Jlj002f0",
+     "t": 2495,
+     "date": "2022-05-10",
+     "base": "2022-05-10_k23Jlj002f0",
+     "meeting_title": "Special School Committee Meeting:  Budget May 10, 2022",
+     "title": "Vocational School Program and Budget Requests",
+     "label": "M02#2"
     },
     {
      "video_id": "3RWkmZ9GDFQ",
@@ -231,76 +269,195 @@
      "base": "2024-05-20_3RWkmZ9GDFQ",
      "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
      "title": "Career Technical Education Update",
-     "label": "M02#6"
+     "label": "M06#6"
+    }
+   ]
+  },
+  {
+   "name": "Elementary literacy initiatives and coaching",
+   "status": "settled",
+   "summary": "Suzanne Galusi and Dr. Cushing outlined elementary literacy planning involving Hill for Literacy, DIBELS assessments, and science of reading practices during FY23 budget reviews (M02#4). Superintendent Marice Edouard-Vincent presented adjustments to the FY24 budget that prompted discussion on elementary literacy coaches (M04#1). The committee subsequently approved an FY24 budget request incorporating funding for four elementary literacy coaches (M04#3).",
+   "citations": [
+    {
+     "video_id": "k23Jlj002f0",
+     "t": 4820,
+     "date": "2022-05-10",
+     "base": "2022-05-10_k23Jlj002f0",
+     "meeting_title": "Special School Committee Meeting:  Budget May 10, 2022",
+     "title": "Curriculum, Literacy Initiatives, and Professional Learning Plans",
+     "label": "M02#4"
+    },
+    {
+     "video_id": "CftWif4v9Wc",
+     "t": 265,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Budget Presentation and Discussion",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "CftWif4v9Wc",
+     "t": 4893,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Operating Budget Request",
+     "label": "M04#3"
+    }
+   ]
+  },
+  {
+   "name": "Universal free school meals policy",
+   "status": "settled",
+   "summary": "In May 2022, the committee debated the cost of universal free school lunch after the administration noted financial uncertainty and an estimated $1.5 million expense (M01#11). The committee later approved a motion instructing the district to maintain universal free school meals and to seek supplemental municipal funding if state support did not materialize (M03#2).",
+   "citations": [
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 7346,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "School Lunch Program Funding Debate",
+     "label": "M01#11"
+    },
+    {
+     "video_id": "V6Avy5_u4Ug",
+     "t": 2430,
+     "date": "2022-05-25",
+     "base": "2022-05-25_V6Avy5_u4Ug",
+     "meeting_title": "Special School Committee Meeting:  SY2023 Budget May 25, 2022",
+     "title": "FY23 Municipal Budget Request and Free School Meals Motion",
+     "label": "M03#2"
     }
    ]
   }
  ],
  "periods": [
   {
+   "period": "2022-2023 term",
+   "narrative": "The committee established frameworks for the FY23 and FY24 operating budgets, balancing post-pandemic federal ESSER funding against recurring municipal revenues and fixed cost increases. Key actions included submitting multi-million dollar municipal requests, supporting universal free school meals, and funding elementary literacy coaches.",
+   "citations": [
+    {
+     "video_id": "UKy15P8nAPo",
+     "t": 336,
+     "date": "2022-05-09",
+     "base": "2022-05-09_UKy15P8nAPo",
+     "meeting_title": "Special School Committee Meeting:  Budget May 9, 2022",
+     "title": "FY23 Budget Development Process and Revenue Overview",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "k23Jlj002f0",
+     "t": 4820,
+     "date": "2022-05-10",
+     "base": "2022-05-10_k23Jlj002f0",
+     "meeting_title": "Special School Committee Meeting:  Budget May 10, 2022",
+     "title": "Curriculum, Literacy Initiatives, and Professional Learning Plans",
+     "label": "M02#4"
+    },
+    {
+     "video_id": "V6Avy5_u4Ug",
+     "t": 2430,
+     "date": "2022-05-25",
+     "base": "2022-05-25_V6Avy5_u4Ug",
+     "meeting_title": "Special School Committee Meeting:  SY2023 Budget May 25, 2022",
+     "title": "FY23 Municipal Budget Request and Free School Meals Motion",
+     "label": "M03#2"
+    },
+    {
+     "video_id": "CftWif4v9Wc",
+     "t": 4893,
+     "date": "2023-06-05",
+     "base": "2023-06-06_CftWif4v9Wc",
+     "meeting_title": "MSC Public Budget Hearing & Special Meeting - 06.05.2023",
+     "title": "FY24 Operating Budget Request",
+     "label": "M04#3"
+    }
+   ]
+  },
+  {
    "period": "2024-2025 term",
-   "narrative": "This period was dominated by the resolution of a multi-million dollar deficit for FY25 and the initiation of joint financial planning sessions with the City Council.",
+   "narrative": "Facing projected deficits during FY25, the committee heard extensive public opposition to staffing reductions and approved a level-service request. The body also adopted joint procedural rules with the City Council and approved the preliminary FY26 municipal budget request following multi-year revenue reviews.",
    "citations": [
     {
      "video_id": "S39QSClb618",
-     "t": null,
+     "t": 152,
      "date": "2024-05-07",
      "base": "2024-05-07_S39QSClb618",
      "meeting_title": "Public Budget Hearing",
-     "title": "Public Budget Hearing",
-     "label": "M01"
+     "title": "FY25 Recommended Operating Budget Presentation",
+     "label": "M05#1"
     },
     {
      "video_id": "3RWkmZ9GDFQ",
-     "t": null,
+     "t": 5355,
      "date": "2024-05-20",
      "base": "2024-05-20_3RWkmZ9GDFQ",
      "meeting_title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
-     "title": "5.20.2024 Regular /Budget Vote School Committee Meeting",
-     "label": "M02"
+     "title": "FY25 School Budget Update and Request",
+     "label": "M06#7"
     },
     {
      "video_id": "Aod_AldxCno",
-     "t": null,
+     "t": 419,
      "date": "2025-03-19",
      "base": "2025-03-19_Aod_AldxCno",
      "meeting_title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "title": "Joint Meeting of the Medford City Council and Medford School Committee to Discuss FY 26 Budget",
-     "label": "M03"
+     "title": "Joint Rules",
+     "label": "M07#1"
+    },
+    {
+     "video_id": "fyxDl0MdF_A",
+     "t": 2339,
+     "date": "2025-03-24",
+     "base": "2025-03-24_fyxDl0MdF_A",
+     "meeting_title": "MSC Budget Hearing - 3.24.2025",
+     "title": "Committee Discussion and Budget Request Approval",
+     "label": "M08#3"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "This period focused on the FY27 operating budget and the challenge of balancing base budget growth against necessary service reductions.",
+   "narrative": "The committee focused on the preliminary FY27 operating budget, which paired a base budget increase with $3.3 million in net reductions. Public hearings concluded with approval of the recommended spending plan alongside direction to restore a vacant inclusion specialist position when funding becomes available.",
    "citations": [
     {
+     "video_id": "CAS00002428",
+     "t": 64,
+     "date": "2026-05-12",
+     "base": "2026-05-13_CAS00002428",
+     "meeting_title": "School Committee Budget Public Hearing 05/12/26",
+     "title": "Superintendent's Recommended FY27 Operating Budget",
+     "label": "M09#1"
+    },
+    {
      "video_id": "uYNRPEdBbz0",
-     "t": null,
+     "t": 103,
      "date": "2026-05-13",
      "base": "2026-05-13_uYNRPEdBbz0",
      "meeting_title": "MPS Budget Hearing",
-     "title": "MPS Budget Hearing",
-     "label": "M05"
+     "title": "FY27 Preliminary Budget Presentation, Discussion, and Vote",
+     "label": "M10#2"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 24,
-  "meetings_cited": 5,
-  "of_meetings": 5,
-  "max_share": 0.292,
-  "even_share": 0.2,
-  "concentration_ratio": 1.46,
-  "most_cited": "Aod_AldxCno",
-  "periods_covered": 2,
-  "of_periods": 2
+  "citations": 40,
+  "meetings_cited": 10,
+  "of_meetings": 10,
+  "max_share": 0.175,
+  "even_share": 0.1,
+  "concentration_ratio": 1.75,
+  "most_cited": "CftWif4v9Wc",
+  "periods_covered": 3,
+  "of_periods": 3
  },
  "usage": {
-  "input_tokens": 2325,
-  "output_tokens": 1089,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 4177,
+  "output_tokens": 1837,
+  "model_version": "gemini-3.8-flash"
  }
 }
