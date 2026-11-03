@@ -1,0 +1,37 @@
+{
+ "video_id": "XXXXXX00028",
+ "provider": "gemini",
+ "generated_at": "2026-11-03T13:12:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "0102949aa56fc220",
+ "subject": "",
+ "overview": "Host Danielle Balocca interviewed Laurel Siegel about local arts initiatives and a proposed community arts center, followed by an update from student correspondents Joe and Conrad.",
+ "items": [
+  {
+   "title": "Medford Arts Initiatives and Proposed Community Arts Center",
+   "t": 30,
+   "summary": "Laurel Siegel discussed local arts organizations including ArtsLive Medford Foundation and CACHE, and outlined plans to establish a multi-use community arts center in partnership with cannabis dispensary Theory Wellness.",
+   "speakers": [
+    "Danielle Balocca",
+    "Laurel Siegel"
+   ]
+  },
+  {
+   "title": "Kid Correspondents Update",
+   "t": 986,
+   "summary": "Student guests Joe and Conrad shared highlights from their school year, their thoughts on the new Medford Public Library, winter activities, and a cross-country road trip visiting national parks.",
+   "speakers": [
+    "Danielle Balocca",
+    "Joe",
+    "Conrad Hogan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14723,
+  "output_tokens": 204,
+  "model_version": "gemini-3.6-flash"
+ }
+}
