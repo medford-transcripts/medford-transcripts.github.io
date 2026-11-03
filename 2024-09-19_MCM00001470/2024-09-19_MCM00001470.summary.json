@@ -1,0 +1,46 @@
+{
+ "video_id": "MCM00001470",
+ "provider": "gemini",
+ "generated_at": "2026-11-03T09:07:49Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f2597050efcbd374",
+ "subject": "Salem Place Mixed-Use Development Proposal",
+ "overview": "The development team presented initial designs for a proposed nine-unit mixed-use building at 290 Salem Street and answered questions from area residents.",
+ "items": [
+  {
+   "title": "Development Proposal Presentation",
+   "t": 0,
+   "summary": "Attorney Adam Barnosky and architect Jacob Levine presented plans for a three-story mixed-use project at 290 Salem Street featuring nine residential units, ground-floor commercial space, and rear parking.",
+   "speakers": [
+    "Adam Barnosky",
+    "Jacob Levine",
+    "Sal Caruso"
+   ]
+  },
+  {
+   "title": "Public Comment and Neighborhood Feedback",
+   "t": 602,
+   "summary": "Residents and city officials raised concerns and asked questions regarding street parking shortages, public meeting notices, zoning relief, inclusionary housing options, and architectural alignment with nearby historic buildings.",
+   "speakers": [
+    "Adam Barnosky",
+    "Sal Caruso",
+    "Barbara",
+    "Eunice Browne",
+    "Victor Schrader",
+    "Cheryl Rodriguez",
+    "Alex Lussenhop",
+    "Jamie",
+    "William Navarre",
+    "Jacob Levine",
+    "Anne Sullivan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 16378,
+  "output_tokens": 252,
+  "model_version": "gemini-3.6-flash"
+ }
+}
