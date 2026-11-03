@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "ba2929a81c6e9bf0",
- "subject": "",
+ "subject": "Interview with Poet Laureate Max Heinegg",
  "overview": "Host Laura Duggan interviewed Medford Poet Laureate, teacher, musician, and brewer Max Heinegg about his poetry, musical projects, and Medford Brewing Company, followed by announcements for local Patriots Day events.",
  "items": [
   {
@@ -104,5 +104,6 @@
   "input_tokens": 27222,
   "output_tokens": 957,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
