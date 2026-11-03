@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "0102949aa56fc220",
- "subject": "",
+ "subject": "Local Arts Initiatives and Community Arts Center",
  "overview": "Host Danielle Balocca interviewed Laurel Siegel about local arts initiatives and a proposed community arts center, followed by an update from student correspondents Joe and Conrad.",
  "items": [
   {
@@ -33,5 +33,6 @@
   "input_tokens": 14723,
   "output_tokens": 204,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
