@@ -1,0 +1,65 @@
+{
+ "video_id": "uoSJeAqES98",
+ "provider": "gemini",
+ "generated_at": "2026-11-03T12:09:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b517ba3a25ae8741",
+ "subject": "",
+ "overview": "The Medford City Council approved a common victualler license for Starbucks on College Avenue, passed a condolence resolution, and accepted committee reports and previous meeting records.",
+ "items": [
+  {
+   "title": "Resolution of Condolence",
+   "t": 35,
+   "summary": "The Council approved a resolution extending condolences to the family of long-time public servant Jerry DeCristofaro.",
+   "speakers": [
+    "Nicole Morell",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Common Victualler License – Starbucks Corporation",
+   "t": 160,
+   "summary": "The Council approved a common victualler license for Starbucks Corporation to operate a location at 177 College Avenue.",
+   "speakers": [
+    "Nicole Morell",
+    "Dan Brennan",
+    "George Scarpelli",
+    "Adam Knight",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Committee of the Whole Report – Flooding Discussion",
+   "t": 358,
+   "summary": "The Council approved a report from a March 7, 2022 Committee of the Whole meeting regarding flooding issues at Woolard and High Street.",
+   "speakers": [
+    "Nicole Morell"
+   ]
+  },
+  {
+   "title": "Subcommittee on Ordinances and Rules Report",
+   "t": 412,
+   "summary": "The Council approved a report from the Subcommittee on Ordinances and Rules regarding proposed updates to Council rules.",
+   "speakers": [
+    "Nicole Morell",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Approval of Records",
+   "t": 486,
+   "summary": "The Council approved the meeting records of March 8, 2022.",
+   "speakers": [
+    "Nicole Morell",
+    "Justin Tseng"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4296,
+  "output_tokens": 388,
+  "model_version": "gemini-3.6-flash"
+ }
+}
