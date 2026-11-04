@@ -1,0 +1,76 @@
+{
+ "video_id": "Sog9mTxuN90",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T23:25:21Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "948e137d74faed69",
+ "subject": "Analysis of 2021 MCAS Results",
+ "overview": "The School Committee reviewed 2021 MCAS performance in Mathematics, Science, and English Language Arts, focusing on pandemic-related shifts and curriculum adjustments. The body voted to include alternative assessment data in future reports and discussed strategies for closing achievement gaps among student subgroups.",
+ "items": [
+  {
+   "title": "Mathematics Results and Action Items",
+   "t": 633,
+   "summary": "Presented district-wide math scores and growth percentiles, highlighting the transition to inquiry-based learning and the restructuring of middle school acceleration pathways.",
+   "speakers": [
+    "Khan",
+    "Marice Edouard-Vincent",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Data Embargo and Reporting Process",
+   "t": 1419,
+   "summary": "Discussed the timing of state-mandated data releases and requested that the committee receive detailed reports earlier in the future to allow for more thorough analysis.",
+   "speakers": [
+    "Paul Ruseau",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "MCAS-Alt Data Reporting",
+   "t": 1814,
+   "summary": "Approved a motion to include MCAS Alternative Assessment (MCAS-Alt) data in all future annual district reports.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Joan Bowen",
+    "Paulette Van der Kloot"
+   ]
+  },
+  {
+   "title": "Science and Technology Results",
+   "t": 2121,
+   "summary": "Reviewed science performance across grades five, eight, and high school, noting a transition to online testing and the full implementation of the FOSS curriculum.",
+   "speakers": [
+    "Rocco Cieri",
+    "Paul D'Alleva",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "English Language Arts Performance",
+   "t": 3392,
+   "summary": "Presented ELA results showing that district growth percentiles exceeded state averages in several grades and detailed efforts to increase text diversity and inclusivity.",
+   "speakers": [
+    "Dr. Chiesa",
+    "Paul Ruseau"
+   ]
+  },
+  {
+   "title": "Subgroup Performance and Resource Allocation",
+   "t": 4446,
+   "summary": "Discussed achievement gaps among specific student subgroups and requested standardized data formats to better compare outcomes across different subjects.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Dr. Chiesa",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23159,
+  "output_tokens": 631,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
