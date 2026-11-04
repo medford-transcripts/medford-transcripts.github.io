@@ -1,0 +1,77 @@
+{
+ "video_id": "CAS00002350",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T20:06:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cf7c5e0af34b9e1e",
+ "subject": "Great American Beer Hall Disciplinary Hearing",
+ "overview": "The Medford Liquor License Commission approved several one-day license applications for local community events and sports games. The commission also held a disciplinary hearing concerning a New Year's Eve disturbance at Great American Beer Hall, taking the matter under advisement.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 10,
+   "summary": "The commission approved the meeting minutes from February 18, 2026.",
+   "speakers": [
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Eventland Studios One-Day Licenses",
+   "t": 61,
+   "summary": "The commission approved two one-day alcohol licenses for Eventland Studios events on April 2 and April 30.",
+   "speakers": [
+    "Robert Delafano",
+    "Bryan MacAuslan",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Boston Glory One-Day Licenses",
+   "t": 500,
+   "summary": "The commission approved seven one-day licenses for Boston Glory ultimate frisbee games at Hormel Stadium.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Medford Brewing Company One-Day Licenses",
+   "t": 1004,
+   "summary": "The commission approved 14 one-day licenses for Medford Brewing Company events, including 11 pop-up park concerts, a music festival at Condon Shell, and Run Medford events.",
+   "speakers": [
+    "Robert Delafano",
+    "Nick Bolitho",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Medford Brewing Company Business Update",
+   "t": 1567,
+   "summary": "Nick Bolitho updated the commission on state distilling and winery permit applications to expand future product offerings.",
+   "speakers": [
+    "Nick Bolitho",
+    "Daria Tejera",
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Great American Beer Hall Disciplinary Hearing",
+   "t": 2446,
+   "summary": "The commission reviewed a police report regarding a New Year's Eve disturbance at Great American Beer Hall. Officer Patrick Smith concluded no Chapter 138 liquor law violations occurred, and the commission took the matter under advisement while recommending police details for high-volume events.",
+   "speakers": [
+    "Robert Delafano",
+    "Patrick Smith",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 33855,
+  "output_tokens": 550,
+  "model_version": "gemini-3.6-flash"
+ }
+}
