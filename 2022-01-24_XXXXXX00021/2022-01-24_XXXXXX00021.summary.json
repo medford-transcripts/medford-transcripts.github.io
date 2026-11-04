@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "c1038da26da33c8a",
- "subject": "",
+ "subject": "Interview with City Councilor Kit Collins",
  "overview": "Medford Bytes host Danielle Balocca interviewed newly elected City Councilor Kit Collins regarding her campaign experience, local priorities, and goals for her first term.",
  "items": [
   {
@@ -76,5 +76,6 @@
   "input_tokens": 12532,
   "output_tokens": 501,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
