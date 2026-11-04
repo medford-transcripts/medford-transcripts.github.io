@@ -1,0 +1,36 @@
+{
+ "video_id": "XXXXXX00015",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T11:10:08Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "dc96603caa648a5f",
+ "subject": "Irish Music and Medford Brewing Taproom Development",
+ "overview": "Host Danielle Balocca interviewed Medford residents Shannon Heaton and Max Heinegg regarding their artistic contributions and community-focused projects. The discussion highlighted Heaton's Irish music podcast and Heinegg's plans for a new physical taproom for the Medford Brewing Company.",
+ "items": [
+  {
+   "title": "Interview with Shannon Heaton",
+   "t": 33,
+   "summary": "Musician Shannon Heaton discussed her background in Irish traditional music, the community-building aspects of inclusive local sessions, and her podcast, *Irish Music Stories*, which examines social themes through the lens of music and dance.",
+   "speakers": [
+    "Danielle Balocca",
+    "Shannon Heaton"
+   ]
+  },
+  {
+   "title": "Interview with Max Heinegg",
+   "t": 1011,
+   "summary": "Teacher and artist Max Heinegg detailed his creative work and outlined the development of the Medford Brewing Company, including a timeline for opening a community-centered taproom and performance venue on Harvard Avenue in 2022.",
+   "speakers": [
+    "Danielle Balocca",
+    "Max Heinegg"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14753,
+  "output_tokens": 273,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
