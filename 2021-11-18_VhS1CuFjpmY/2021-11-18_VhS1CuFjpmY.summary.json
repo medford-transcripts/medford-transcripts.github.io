@@ -1,0 +1,37 @@
+{
+ "video_id": "VhS1CuFjpmY",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T12:11:20Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "8adb8a5455dc2560",
+ "subject": "Collective Bargaining Strategy",
+ "overview": "The School Committee met and voted to enter executive session to discuss collective bargaining strategy for several district employee units.",
+ "items": [
+  {
+   "title": "Opening and Attendance",
+   "t": 55,
+   "summary": "The meeting was called to order and attendance was established through a roll call.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Melanie McLaughlin",
+    "David Murphy"
+   ]
+  },
+  {
+   "title": "Motion to Enter Executive Session",
+   "t": 133,
+   "summary": "Approved a motion to enter executive session to discuss collective bargaining strategy for teachers, paraprofessionals, administrative assistants, and administrators.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1974,
+  "output_tokens": 218,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
