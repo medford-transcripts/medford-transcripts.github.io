@@ -1,0 +1,36 @@
+{
+ "video_id": "XXXXXX00018",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T08:12:37Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c90ae9af3f8fe692",
+ "subject": "",
+ "overview": "City Councilor Nicole Morell reviewed her recent policy efforts and upcoming council priorities, followed by an interview with the co-owners of Reimagine gym.",
+ "items": [
+  {
+   "title": "City Council Reflections and Priorities",
+   "t": 19,
+   "summary": "City Councilor Nicole Morell highlighted her advocacy for emergency rental assistance, tree and diversity budget increases, sustainable transportation, and charter review.",
+   "speakers": [
+    "Nicole Morell"
+   ]
+  },
+  {
+   "title": "Interview with Reimagine Owners",
+   "t": 462,
+   "summary": "Co-owners Teresa Racicot and Mike Denton shared the background, mission, and community focus of their inclusive fitness studio.",
+   "speakers": [
+    "Danielle Balocca",
+    "Teresa Racicot",
+    "Mike Denton"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10725,
+  "output_tokens": 177,
+  "model_version": "gemini-3.6-flash"
+ }
+}
