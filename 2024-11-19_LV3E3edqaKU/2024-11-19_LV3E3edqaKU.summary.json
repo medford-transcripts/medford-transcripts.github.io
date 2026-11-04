@@ -1,0 +1,51 @@
+{
+ "video_id": "LV3E3edqaKU",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T10:14:33Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "8f8c752d58657574",
+ "subject": "FY 2022 Property Tax Classification",
+ "overview": "The Medford City Council approved an updated city re-precincting map and held a public hearing on fiscal year 2022 property tax allocations. The Council voted to adopt the minimum residential factor for a split tax rate while declining residential, small commercial, and open space tax exemptions.",
+ "items": [
+  {
+   "title": "Proposed Re-precincting Map",
+   "t": 47,
+   "summary": "The Council approved the final proposed re-precincting map to align city voting precincts with state legislative district lines.",
+   "speakers": [
+    "Richard Caraviello",
+    "Gale",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "FY 2022 Property Tax Allocation Hearing",
+   "t": 257,
+   "summary": "The Council adopted the lowest residential factor to establish a split tax rate and voted against implementing residential, small commercial, or open space exemptions for fiscal year 2022.",
+   "speakers": [
+    "Richard Caraviello",
+    "Ellen Brideau",
+    "Zac Bears",
+    "Nicole Morell",
+    "Adam Knight",
+    "Michael Marks",
+    "Andrew Castagnetti"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 2194,
+   "summary": "The Council approved the meeting records from November 30, 2021, and December 7, 2021.",
+   "speakers": [
+    "Richard Caraviello",
+    "Nicole Morell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13130,
+  "output_tokens": 332,
+  "model_version": "gemini-3.6-flash"
+ }
+}

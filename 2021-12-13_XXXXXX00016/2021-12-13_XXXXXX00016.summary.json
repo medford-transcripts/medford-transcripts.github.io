@@ -1,0 +1,46 @@
+{
+ "video_id": "XXXXXX00016",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T10:14:57Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a606622a708ba23b",
+ "subject": "",
+ "overview": "Medford Bytes host Danielle Balocca shares resident feedback on a controversial menorah display at City Hall and moderates a discussion with local faith and cultural leaders on winter holiday traditions, equity, and community healing.",
+ "items": [
+  {
+   "title": "Opening Announcements and Community Context",
+   "t": 11,
+   "summary": "Danielle Balocca addresses a recent sexual assault in the Middlesex Fells and introduces upcoming content regarding an anti-Semitic incident at a City Hall holiday celebration.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Resident Comments on City Hall Menorah Display",
+   "t": 276,
+   "summary": "Residents Shira Cohen-Goldberg and Melanie Raelin express dismay and criticism regarding an inaccurate and exclusionary menorah graphic displayed at the Mayor's holiday event.",
+   "speakers": [
+    "Shira Cohen-Goldberg",
+    "Melanie Raelin"
+   ]
+  },
+  {
+   "title": "Panel Discussion on Winter Holidays, Faith, and Equity",
+   "t": 620,
+   "summary": "Terry Carter, Rev. Wendy Miller Olapade, and Rev. Bruce Taylor discuss the traditions of Christmas, Kwanzaa, and Unitarian Universalism, reflecting on ways to foster community connection, dialogue, and equity.",
+   "speakers": [
+    "Danielle Balocca",
+    "Terry Carter",
+    "Wendy Miller Olapade",
+    "Bruce Taylor"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 14263,
+  "output_tokens": 366,
+  "model_version": "gemini-3.6-flash"
+ }
+}

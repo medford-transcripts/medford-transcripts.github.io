@@ -1,0 +1,39 @@
+{
+ "video_id": "YHKDy2Mf3XI",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T10:13:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d8b83a66e6eac235",
+ "subject": "",
+ "overview": "The Behavioral Health Subcommittee met to outline its annual problem of practice focused on improving access to and awareness of mental health resources for students and caregivers. The committee also received news regarding a new grant awarded to expand mental health staffing at Medford High School.",
+ "items": [
+  {
+   "title": "Behavioral Health Problem of Practice and Resource Access",
+   "t": 1,
+   "summary": "The subcommittee discussed formalizing its annual problem of practice around identifying behavioral health supports, evaluating communication modalities, and sharing resource guides with families.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Stacey Schulman",
+    "Suzanne Galusi",
+    "Mea Quinn Mustone"
+   ]
+  },
+  {
+   "title": "Mental Health Staffing Grant Announcement",
+   "t": 1820,
+   "summary": "Guidance Director Stacey Schulman announced a new grant awarded to the district to fund a community mental health clinician at Medford High School and a paraprofessional for the steps re-entry program.",
+   "speakers": [
+    "Stacey Schulman",
+    "Melanie McLaughlin",
+    "Marice Edouard-Vincent"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10870,
+  "output_tokens": 283,
+  "model_version": "gemini-3.6-flash"
+ }
+}
