@@ -1,0 +1,42 @@
+{
+ "video_id": "OqhVXheg_Mw",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T03:11:42Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b7baac8f3c4f76fe",
+ "subject": "Subcommittee Policy and Structure Revisions",
+ "overview": "The committee met to revise policies governing how subcommittees are convened and the process for referring business to them. The body approved a new structure requiring full committee referral for most business while allowing for annual listening sessions and adjusting the list of standing subcommittees.",
+ "items": [
+  {
+   "title": "Subcommittee Meeting Policy",
+   "t": 265,
+   "summary": "Approved a policy requiring subcommittees to conduct only business referred by a majority vote of the full committee, with an amendment allowing each subcommittee to hold one annual listening session for community input.",
+   "speakers": [
+    "Jenny Graham",
+    "Breanna Lungo-Koehn",
+    "Melanie McLaughlin",
+    "Kathy Kreatz",
+    "Paul Ruseau",
+    "Mea Quinn Mustone",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "Standing Subcommittee Assignments",
+   "t": 3312,
+   "summary": "Voted to remove 'Pupil Services' from the proposed list of standing subcommittees to prevent duplication of responsibilities with the Special Education and Behavioral Health subcommittee.",
+   "speakers": [
+    "Melanie McLaughlin",
+    "Jenny Graham",
+    "Breanna Lungo-Koehn"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17485,
+  "output_tokens": 265,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
