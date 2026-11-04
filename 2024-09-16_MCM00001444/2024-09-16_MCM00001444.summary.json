@@ -1,0 +1,109 @@
+{
+ "video_id": "MCM00001444",
+ "provider": "gemini",
+ "generated_at": "2026-11-04T13:08:54Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b6938a82a6cb2bd3",
+ "subject": "Verizon 5G Small Cell Infrastructure Applications",
+ "overview": "The Ad Hoc Small Cell Committee met to review nine applications from Verizon Wireless for small cell infrastructure installations on utility poles throughout the city. The committee approved all nine locations, most with a set of ten standard conditions and several with site-specific requirements regarding ADA compliance, signage, and site preservation.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 34,
+   "summary": "Approved the minutes from the September 23, 2021, meeting.",
+   "speakers": [
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Verizon Presentation and General Public Comment",
+   "t": 535,
+   "summary": "Verizon representatives presented the technical specifications, health safety standards, and coverage goals of the 5G rollout, while the committee and public discussed federal constraints that prevent municipalities from denying applications based on health concerns. The chair emphasized that the city's purview is limited to conditioning permits for safety, ADA compliance, and infrastructure conflicts.",
+   "speakers": [
+    "Tim Twardowski",
+    "Stan Yusevich",
+    "Jason Flanagan",
+    "Sean Conway",
+    "Dr. Eric Swanson",
+    "Tim McGivern",
+    "Betty L"
+   ]
+  },
+  {
+   "title": "Franklin Street (Pole 1455)",
+   "t": 2303,
+   "summary": "Approved with ten standard conditions and two special requirements: replacing sidewalk concrete to ensure a 36-inch ADA-compliant clearance and relocating permit parking signage to a separate pole.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "84 South Street (Pole 1227)",
+   "t": 3244,
+   "summary": "Approved with standard conditions plus requirements to upgrade the slow children sign to current standards, tidy redundant service wires, and verify that wires meet vertical clearance requirements.",
+   "speakers": [
+    "Tim McGivern",
+    "Paul Mochi",
+    "MaryAnn O'Connor",
+    "Stan Yusevich"
+   ]
+  },
+  {
+   "title": "15 Reardon Road (Pole 2421)",
+   "t": 3781,
+   "summary": "Approved with standard conditions, noting the site is on a private way surrounded by businesses.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "60 Oakland Street (Pole 204)",
+   "t": 4038,
+   "summary": "Approved with standard conditions and a specific instruction for the applicant to take measures to preserve a private garden located at the base of the pole.",
+   "speakers": [
+    "Tim McGivern",
+    "Anna",
+    "Paul Mochi",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "84 Paris Street (Pole 2087) and 167 Grant Avenue (Pole 1876)",
+   "t": 4460,
+   "summary": "Approved both locations with standard conditions; the Grant Avenue site was noted as being eight feet from a residence but positioned above the roofline.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Paul Mochi"
+   ]
+  },
+  {
+   "title": "33 Grant Avenue (Pole 4447) and 103 Otis Street (Pole 1333)",
+   "t": 4736,
+   "summary": "Approved both locations with standard conditions after finding no significant ADA or infrastructure conflicts.",
+   "speakers": [
+    "Tim McGivern",
+    "Paul Mochi",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "15 Daniel Street (Pole 2939)",
+   "t": 4999,
+   "summary": "Approved with standard conditions, including the requirement that any existing double-pole issues be resolved prior to installation.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 30889,
+  "output_tokens": 1014,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
