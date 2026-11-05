@@ -1,0 +1,67 @@
+{
+ "video_id": "CAS00002345",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T19:06:17Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "ab3768e78dcf30fa",
+ "subject": "Medford Square Mixed-Use Rezoning",
+ "overview": "The Planning and Permitting Committee and Community Development Board held a community meeting to present a draft rezoning proposal for Medford Square that enables mixed-use development through a height-incentive system. Residents and city officials discussed the project's impact on traffic, parking capacity, and neighborhood character ahead of a formal public hearing scheduled for March 25th.",
+ "items": [
+  {
+   "title": "Introduction to the Rezoning Process",
+   "t": 2,
+   "summary": "Councilor Matt Leming explained the collaborative procedure between the City Council and the Community Development Board to update zoning for a more vibrant Medford Square.",
+   "speakers": [
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Medford Square Mixed-Use Proposal",
+   "t": 373,
+   "summary": "Consultant Emily Innes detailed the transition from use-separated zoning to four new mixed-use districts that allow building heights to increase from base levels in exchange for community benefits like affordable housing.",
+   "speakers": [
+    "Emily Innes"
+   ]
+  },
+  {
+   "title": "Dimensional and Environmental Standards",
+   "t": 1346,
+   "summary": "Presenters introduced development standards including building frontage requirements, 'green scores' for ecological health, and a proposed 'daylight score' to protect solar access for residential neighbors.",
+   "speakers": [
+    "Emily Innes",
+    "Paula Ramos Martinez",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Feedback on Traffic and Infrastructure",
+   "t": 1944,
+   "summary": "Residents expressed concerns regarding the ownership of the National Grid substation and argued that existing congestion from the Interstate 93 rotary necessitates higher parking ratios for new developments.",
+   "speakers": [
+    "Paul Garrity",
+    "Ralph Klein",
+    "Alicia Hunt",
+    "Matt Leming"
+   ]
+  },
+  {
+   "title": "Feedback on Building Height and Green Space",
+   "t": 2230,
+   "summary": "Community members highlighted the potential for mid-rise buildings to shadow residential homes and requested more substantial green space requirements and better pedestrian connectivity to the Mystic River.",
+   "speakers": [
+    "Maryanne Adduci",
+    "Alicia Hunt",
+    "Emily Innes",
+    "Paula Ramos Martinez",
+    "Ralph Klein"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19930,
+  "output_tokens": 583,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
