@@ -1,0 +1,59 @@
+{
+ "video_id": "YmO-36LceWQ",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T10:13:18Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "69f3de66e35438eb",
+ "subject": "Connecting MacBooks to District Network Printers",
+ "overview": "This instructional session provided Medford Public Schools staff with a step-by-step guide on connecting MacBook devices to networked printers. Peter Cushing also demonstrated how to configure trackpad settings to enable right-click functionality.",
+ "items": [
+  {
+   "title": "Network Connection Requirements",
+   "t": 31,
+   "summary": "Users must ensure their device is connected to the MPS staff network before attempting to access district printers.",
+   "speakers": [
+    "Peter Cushing"
+   ]
+  },
+  {
+   "title": "Accessing Printer Settings",
+   "t": 64,
+   "summary": "The presenter demonstrated how to locate the Printers & Scanners menu through System Preferences or the search function.",
+   "speakers": [
+    "Peter Cushing"
+   ]
+  },
+  {
+   "title": "Adding and Removing Printers",
+   "t": 125,
+   "summary": "Instructions were provided on using the plus and minus icons to add specific building photocopiers or remove old printer connections.",
+   "speakers": [
+    "Peter Cushing"
+   ]
+  },
+  {
+   "title": "Application Printing Demonstration",
+   "t": 223,
+   "summary": "Cushing walked through selecting a newly added printer within the Google Chrome print dialog and 'See More' menu.",
+   "speakers": [
+    "Peter Cushing",
+    "John McLaughlin"
+   ]
+  },
+  {
+   "title": "Trackpad and Secondary Click Configuration",
+   "t": 363,
+   "summary": "The session concluded with instructions on enabling the trackpad's secondary click to mimic the right-click function of a standard PC mouse.",
+   "speakers": [
+    "Peter Cushing"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2750,
+  "output_tokens": 428,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

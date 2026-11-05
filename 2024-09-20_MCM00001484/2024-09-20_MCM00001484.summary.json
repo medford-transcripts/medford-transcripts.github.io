@@ -1,0 +1,165 @@
+{
+ "video_id": "MCM00001484",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T10:10:04Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "54f74355e01dad1f",
+ "subject": "Verizon Small Cell Wireless Infrastructure Applications",
+ "overview": "The committee held hearings on 18 applications for 5G small cell installations on utility poles, approving 17 with standard and site-specific conditions. One application was withdrawn by Verizon following committee concerns regarding ADA sidewalk accessibility.",
+ "items": [
+  {
+   "title": "Call to Order and Legal Purview",
+   "t": 13,
+   "summary": "The chair called the meeting to order and detailed the committee's limited regulatory scope under FCC rulings, noting that health impacts cannot be considered in the review process.",
+   "speakers": [
+    "Tim McGivern",
+    "Robin Stein"
+   ]
+  },
+  {
+   "title": "Verizon Presentation and Health Safety Overview",
+   "t": 560,
+   "summary": "Verizon representatives presented the technical requirements for 5G ultra-wideband infrastructure and provided scientific testimony regarding the safety of non-ionizing radiofrequency emissions.",
+   "speakers": [
+    "Mike Chima",
+    "Stan Yusevich",
+    "Jason Flanagan",
+    "Sean Conway",
+    "Dr. Eric Swanson"
+   ]
+  },
+  {
+   "title": "Non-Site Specific Public Comment",
+   "t": 2232,
+   "summary": "Members of the public raised concerns regarding noise from equipment fans, equitable coverage distribution across the city, and notification procedures for residents near installation sites.",
+   "speakers": [
+    "Anna",
+    "Tim McGivern",
+    "Sean Conway",
+    "Robin Stein",
+    "Alicia Hunt",
+    "Paul Mochi",
+    "Susan Lee Woods"
+   ]
+  },
+  {
+   "title": "Establishment of General Conditions",
+   "t": 3819,
+   "summary": "The committee established ten general conditions for all approvals, including requirements for insurance certificates, noise restrictions, ADA compliance measurements, and restoration of ground surfaces.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Paul Mochi",
+    "MaryAnn O'Connor",
+    "Robin Stein",
+    "Mike Chima"
+   ]
+  },
+  {
+   "title": "Yale Street, Brookside Parkway, West Street, and 39 Charnwood Road",
+   "t": 4400,
+   "summary": "Approved four applications with general conditions, noting existing city assets and approximate distances to nearby dwellings.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Paul Mochi",
+    "MaryAnn O'Connor",
+    "Sean Conway",
+    "Anna"
+   ]
+  },
+  {
+   "title": "48 Clark Street",
+   "t": 6553,
+   "summary": "Approved with a site-specific condition requiring a pole extension to a minimum height of 33.33 feet to meet committee safety preferences.",
+   "speakers": [
+    "Tim McGivern",
+    "MaryAnn O'Connor",
+    "Paul Mochi",
+    "Mike Chima",
+    "Dr. Eric Swanson",
+    "Sean Conway",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Gorley Road",
+   "t": 7385,
+   "summary": "Approved with general conditions.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Paul Mochi"
+   ]
+  },
+  {
+   "title": "18 Fleming Street",
+   "t": 7485,
+   "summary": "Verizon withdrew the application after the committee determined the existing pole location obstructed the ADA-accessible path on a driveway apron.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Mike Chima",
+    "Sean Conway"
+   ]
+  },
+  {
+   "title": "24 Pearl Street, 26 Royal Street, 40 Ashland Street, and 23 Woodrow Avenue",
+   "t": 7841,
+   "summary": "Approved four applications with conditions including base cleanup, double pole removal, and the installation of a new one-way sign on Royal Street.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Paul Mochi",
+    "MaryAnn O'Connor",
+    "Mike Chima"
+   ]
+  },
+  {
+   "title": "163 Forest Street, 199 Forest Street, and 12 Fulton Street",
+   "t": 8485,
+   "summary": "Approved three applications with site-specific requirements for new street signage, expansion joints at the base, and the investigation of abandoned risers.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "MaryAnn O'Connor",
+    "Sean Conway",
+    "Paul Mochi",
+    "Mike Chima"
+   ]
+  },
+  {
+   "title": "123 Grant Avenue, Logan Avenue, 83 Washington Street, and 59 Jerome Street",
+   "t": 9425,
+   "summary": "Approved the final four applications with conditions for site restoration and the replacement of existing safety and street signage.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Robin Stein",
+    "Mike Chima",
+    "MaryAnn O'Connor",
+    "Paul Mochi",
+    "Sean Conway"
+   ]
+  },
+  {
+   "title": "Administrative Finalization",
+   "t": 10568,
+   "summary": "The committee authorized the chair to draft and file the formal written decisions for the approved applications.",
+   "speakers": [
+    "Tim McGivern",
+    "Robin Stein",
+    "Paul Mochi",
+    "MaryAnn O'Connor",
+    "Alicia Hunt"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 63723,
+  "output_tokens": 1407,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
