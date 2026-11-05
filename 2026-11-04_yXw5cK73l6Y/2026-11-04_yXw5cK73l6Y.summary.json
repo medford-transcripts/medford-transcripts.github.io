@@ -1,0 +1,61 @@
+{
+ "video_id": "yXw5cK73l6Y",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T11:09:03Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c3a6978a1dbc8784",
+ "subject": "",
+ "overview": "The committee approved a draft City Council newsletter and reviewed feedback from recent neighborhood meetings. It also finalized public surveys aimed at gathering resident input on the noise ordinance and municipal website accessibility.",
+ "items": [
+  {
+   "title": "City Council Newsletter",
+   "t": 54,
+   "summary": "Matt Leming presented a draft newsletter covering council activity since August, including legislative progress on the Boston Avenue corridor and affordable housing linkage fees. The committee approved the draft for publication and kept the matter in committee for future editions.",
+   "speakers": [
+    "Matt Leming",
+    "Liz Mullane",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Neighborhood Ward Meetings",
+   "t": 532,
+   "summary": "The committee recapped the Ward 5 neighborhood meeting and discussed logistical improvements for future sessions, including the possibility of providing child care through the Recreation Department. Members reviewed the upcoming schedule for Ward 2 and Ward 4 meetings in late 2026 and early 2027.",
+   "speakers": [
+    "Liz Mullane",
+    "Anna Callahan",
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Noise Ordinance Resident Survey",
+   "t": 1293,
+   "summary": "Approved a public survey to identify specific noise disturbances and preferred enforcement hours while requesting historical complaint data from the police and code enforcement departments. Resident Andrew Castagnetti noted long-standing traffic noise issues near Route 93 that lack adequate sound barriers.",
+   "speakers": [
+    "Liz Mullane",
+    "Justin Tseng",
+    "George Scarpelli",
+    "Anna Callahan",
+    "Andrew Castagnetti"
+   ]
+  },
+  {
+   "title": "City Website Improvement Survey",
+   "t": 2131,
+   "summary": "Approved a resident survey to evaluate website accessibility and user experience across mobile and desktop devices. The committee discussed gathering technical analytics from the IT department and potentially involving vocational school students in a website redesign project.",
+   "speakers": [
+    "Liz Mullane",
+    "Justin Tseng",
+    "Anna Callahan",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13246,
+  "output_tokens": 522,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

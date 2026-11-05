@@ -1,0 +1,34 @@
+{
+ "video_id": "iIp6ODorcE0",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T11:11:09Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "650998186c238f8d",
+ "subject": "School Reopening and COVID-19 Safety Protocols",
+ "overview": "Superintendent Marice Edouard-Vincent outlined health and safety measures for the 2021-2022 school year and announced upcoming student start dates. The district confirmed mandatory masking and the continuation of its COVID-19 testing program.",
+ "items": [
+  {
+   "title": "COVID-19 Safety and Testing",
+   "t": 0,
+   "summary": "Superintendent Edouard-Vincent announced mandatory masking for all students and staff and the continuation of the district's COVID-19 testing partnership with Tufts University and Armstrong Ambulance.",
+   "speakers": [
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "Vaccination and Start Dates",
+   "t": 140,
+   "summary": "The Superintendent encouraged community vaccination and announced school start dates of August 31 for grades 1-12 and September 8 for kindergarten.",
+   "speakers": [
+    "Marice Edouard-Vincent"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1600,
+  "output_tokens": 256,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
