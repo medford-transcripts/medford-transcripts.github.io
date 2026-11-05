@@ -1,0 +1,26 @@
+{
+ "video_id": "XXXXXX00002",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T08:08:41Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7bc6f3f00c44d9e6",
+ "subject": "",
+ "overview": "Host Danielle Balocca introduced the launch of the Medford Bytes podcast, outlining its focus on local current events, dining spots, and interviews with candidates ahead of the November 2 municipal election.",
+ "items": [
+  {
+   "title": "Medford Bytes Podcast Introduction",
+   "t": 4,
+   "summary": "Host Danielle Balocca introduced the Medford Bytes podcast, announcing upcoming candidate interviews for the November 2 municipal election alongside coverage of local news and food recommendations.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1173,
+  "output_tokens": 140,
+  "model_version": "gemini-3.6-flash"
+ }
+}
