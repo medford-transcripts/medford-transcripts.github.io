@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "a31b2427b844067e",
- "subject": "",
+ "subject": "Interview with School Committee Candidate Melanie Perkins-McLaughlin",
  "overview": "School Committee incumbent Melanie Perkins-McLaughlin discussed her background in child advocacy and her priorities for a second term, emphasizing systemic equity and student mental health.",
  "items": [
   {
@@ -73,5 +73,6 @@
   "input_tokens": 9744,
   "output_tokens": 582,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

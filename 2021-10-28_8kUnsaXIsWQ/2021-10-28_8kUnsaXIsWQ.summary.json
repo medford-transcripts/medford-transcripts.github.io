@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "a475c5e3f28f7ca5",
- "subject": "",
+ "subject": "Annual Goals and Subcommittee Structure",
  "overview": "The MPS Behavioral Health & Special Education Subcommittee met to set its annual goals and establish a new meeting structure for the school year. The subcommittee decided to alternate monthly meetings between special education and behavioral health focus areas.",
  "items": [
   {
@@ -53,5 +53,6 @@
   "input_tokens": 16619,
   "output_tokens": 349,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

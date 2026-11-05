@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "0fcd553844be8777",
- "subject": "",
+ "subject": "Interview with Mayoral Candidate John Falco",
  "overview": "Danielle Balocca interviewed Medford mayoral candidate John Falco regarding his public service background, community involvement, and key policy priorities. Falco discussed proposals for education, municipal infrastructure, environmental sustainability, diversity initiatives, and management of federal relief funds.",
  "items": [
   {
@@ -76,5 +76,6 @@
   "input_tokens": 10832,
   "output_tokens": 628,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
