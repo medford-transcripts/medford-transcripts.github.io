@@ -1,0 +1,48 @@
+{
+ "video_id": "CAS00002348",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T07:05:55Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "fad0ed6b31d1bff1",
+ "subject": "",
+ "overview": "The committee reviewed proposed \"cleanup\" amendments to the zoning ordinance and a revised vacant building ordinance. It kept the zoning amendments in committee to allow for a tiered implementation of technical corrections while referring the vacant building ordinance to the City Council for legal review and potential adoption.",
+ "items": [
+  {
+   "title": "Zoning Ordinance Technical Amendments",
+   "t": 79,
+   "summary": "Kept technical zoning amendments in committee to allow staff to develop a tiered implementation plan for a 165-page proposal correcting typos, formatting, and outdated references. The discussion focused on shifting terminology from \"buildings\" to \"dwellings\" and \"structures\" to ensure consistency between the zoning code and state building standards.",
+   "speakers": [
+    "Matt Leming",
+    "Alicia Hunt",
+    "Scott Vandewalle",
+    "Danielle Evans",
+    "Anna Callahan",
+    "Liz Mullane",
+    "Zac Bears",
+    "Christian Zepeda-Lipovsky"
+   ]
+  },
+  {
+   "title": "Vacant Building Ordinance",
+   "t": 3739,
+   "summary": "Referred a revised vacant building ordinance to the City Council for legal review and potential transfer from the zoning code to general building ordinances. The updated proposal establishes a square-footage-based fee structure for vacant commercial spaces and requires property owners to designate local management contacts for improved enforcement.",
+   "speakers": [
+    "Matt Leming",
+    "Zac Bears",
+    "Justin Tseng",
+    "Liz Mullane",
+    "Emily Lazzaro",
+    "Scott Vandewalle",
+    "Alicia Hunt",
+    "Danielle Evans"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 36956,
+  "output_tokens": 399,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
