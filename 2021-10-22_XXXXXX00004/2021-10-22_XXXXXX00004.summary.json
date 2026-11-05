@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "768bb0851ea82ba1",
- "subject": "",
+ "subject": "Interview with Jenny Graham",
  "overview": "Host Danielle Balocca interviewed Medford School Committee member Jenny Graham about her first term, key district initiatives, equity in transportation, and the city's pandemic response. Graham outlined her priorities for strategic planning, vocational education, and district infrastructure ahead of the upcoming election.",
  "items": [
   {
@@ -85,5 +85,6 @@
   "input_tokens": 11380,
   "output_tokens": 585,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

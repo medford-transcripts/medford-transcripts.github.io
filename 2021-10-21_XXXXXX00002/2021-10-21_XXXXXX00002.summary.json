@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "7bc6f3f00c44d9e6",
- "subject": "",
+ "subject": "Podcast Introduction",
  "overview": "Host Danielle Balocca introduced the launch of the Medford Bytes podcast, outlining its focus on local current events, dining spots, and interviews with candidates ahead of the November 2 municipal election.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 1173,
   "output_tokens": 140,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

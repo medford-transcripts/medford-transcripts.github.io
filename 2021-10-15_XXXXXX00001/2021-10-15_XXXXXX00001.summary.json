@@ -1,0 +1,26 @@
+{
+ "video_id": "XXXXXX00001",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T09:08:02Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "4524f0600fcb727c",
+ "subject": "Introduction to Medford Bites Podcast",
+ "overview": "Resident Danielle Balocca introduced a new community podcast focused on Medford city government, local events, and small businesses.",
+ "items": [
+  {
+   "title": "Medford Bites Podcast Introduction",
+   "t": 4,
+   "summary": "Danielle Balocca introduced the 'Medford Bites' podcast as a platform for discussing local government updates, community events, and recommendations for local establishments.",
+   "speakers": [
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1106,
+  "output_tokens": 131,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
