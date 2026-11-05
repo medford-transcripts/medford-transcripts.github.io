@@ -1,0 +1,63 @@
+{
+ "video_id": "XXXXXX00005",
+ "provider": "gemini",
+ "generated_at": "2026-11-05T05:09:57Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "a5371b937fc1bffa",
+ "subject": "Abigail Dickson City Council Platform",
+ "overview": "Host Danielle Balocca interviewed City Council candidate Abigail Dickson regarding their history of community organizing and their policy priorities for the city. Dickson discussed housing affordability, city charter reform, and climate resiliency ahead of the November municipal election.",
+ "items": [
+  {
+   "title": "Candidate background and community organizing",
+   "t": 5,
+   "summary": "Host Danielle Balocca introduced Abigail Dickson and summarized their local background as a founder of youth theater and LGBTQ support groups.",
+   "speakers": [
+    "Danielle Balocca",
+    "Abigail Dickson"
+   ]
+  },
+  {
+   "title": "Housing affordability and displacement",
+   "t": 269,
+   "summary": "Dickson identified housing affordability as their primary campaign issue, advocating for municipal policy actions to stabilize renters and prevent resident displacement.",
+   "speakers": [
+    "Abigail Dickson",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "City charter review and ward representation",
+   "t": 403,
+   "summary": "The candidate proposed a charter review to establish ward-based representation for city council seats to improve neighborhood equity and reduce barriers for new candidates.",
+   "speakers": [
+    "Abigail Dickson",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Climate action and infrastructure resiliency",
+   "t": 624,
+   "summary": "Dickson emphasized the need for municipal-level climate mitigation and infrastructure improvements to prepare the city for flooding and environmental events.",
+   "speakers": [
+    "Abigail Dickson",
+    "Danielle Balocca"
+   ]
+  },
+  {
+   "title": "Voter engagement and election deadlines",
+   "t": 850,
+   "summary": "The interview concluded with a call for increased voter participation and youth involvement in local government as early voting begins.",
+   "speakers": [
+    "Abigail Dickson",
+    "Danielle Balocca"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5618,
+  "output_tokens": 442,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
