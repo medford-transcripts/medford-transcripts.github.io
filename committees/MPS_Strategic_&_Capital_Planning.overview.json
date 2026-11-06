@@ -1,152 +1,32 @@
 {
  "committee": "MPS Strategic & Capital Planning",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-11T10:06:50Z",
- "sources_sha": "db10c5aa6c9fe564",
- "n_meetings": 7,
+ "generated_at": "2026-11-06T12:10:30Z",
+ "sources_sha": "506cbd88964c4e3e",
+ "n_meetings": 12,
  "period_style": "term",
  "span": [
-  "2024-11-26",
+  "2021-05-25",
   "2026-05-06"
  ],
- "overview": "The MPS Strategic & Capital Planning Subcommittee oversees the district's long-term facility improvements and multi-year organizational goals. The body manages the prioritization of capital projects, coordinates with state funding programs like the Massachusetts School Building Authority, and addresses operational challenges such as enrollment shifts and space constraints. Since late 2024, the subcommittee has been developing a comprehensive five-year strategic plan informed by community engagement. As of the most recent records, the body is focusing on integrating facility planning with academic grade configurations and finalizing its strategic vision for 2027.",
+ "overview": "The MPS Strategic & Capital Planning subcommittee oversees the district's long-term strategy, multi-year capital improvements, facility allocations, and policy development. Its work spans from May 2021 through May 2026 across several school committee terms. Key responsibilities include creating facility naming and capital planning frameworks, prioritizing urgent infrastructure projects, managing elementary school overcrowding, and designing community visioning processes. At its most recent meeting, the body set a timeline targeting February 2027 for a finalized strategic plan and pursued grant funding for a technical consultant.",
  "threads": [
   {
-   "name": "Capital Project Prioritization and Budgeting",
+   "name": "District Strategic Planning",
    "status": "ongoing",
-   "summary": "The subcommittee maintains a multi-year capital plan spreadsheet to track building needs and potential funding sources. Early efforts focused on bundling HVAC and roof repairs at McGlynn and Andrews into city bonding packages to ensure timely construction completion. Kenneth Lord presented a prioritized plan based on facility assessments, which was eventually adapted into a specific format for coordination with city-wide capital planning. The subcommittee regularly votes to recommend updated project priorities to the full School Committee for budget inclusion.",
+   "summary": "The subcommittee initially reviewed an updated draft District Strategy for Improvement in May 2021 and voted to forward it to the full School Committee. In October 2025, the body launched a multi-phase community engagement process involving public surveys and focus groups to redefine district priorities and mission statements. By May 2026, the subcommittee established a schedule targeting a finalized strategic plan by February 2027. It also moved to coordinate strategic visioning with facility studies and pursue grant funding for consultant assistance.",
    "citations": [
     {
-     "video_id": "MCM00001623",
-     "t": 78,
-     "date": "2024-11-26",
-     "base": "2024-12-05_MCM00001623",
-     "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
-     "title": "McGlynn and Andrews Capital Project Scope and Bonding",
+     "video_id": "f4ew4tBIRXk",
+     "t": 234,
+     "date": "2021-05-25",
+     "base": "2021-05-25_f4ew4tBIRXk",
+     "meeting_title": "Communication, Stakeholder Engagement & Strategic Planning Subcommittee Meeting - Strategic Planning",
+     "title": "Review of Draft Strategic Plan",
      "label": "M01#1"
     },
-    {
-     "video_id": "qorztDP2QHI",
-     "t": 6744,
-     "date": "2024-11-27",
-     "base": "2024-11-27_qorztDP2QHI",
-     "meeting_title": "Strategic & Capital Planning SubCommittee",
-     "title": "Capital Plan Recommendation to School Committee",
-     "label": "M02#5"
-    },
-    {
-     "video_id": "bcKRqhwDHWE",
-     "t": 338,
-     "date": "2025-11-20",
-     "base": "2025-11-20_bcKRqhwDHWE",
-     "meeting_title": "Strategic & Capital Planning Subcommittee",
-     "title": "Presentation of Prioritized Capital Plan Spreadsheet",
-     "label": "M05#2"
-    },
-    {
-     "video_id": "6M-0h6z7BqQ",
-     "t": 1484,
-     "date": "2025-12-08",
-     "base": "2025-12-08_6M-0h6z7BqQ",
-     "meeting_title": "Strategic & Capital Planning Meeting",
-     "title": "Coordination with City Capital Planning and Formats",
-     "label": "M06#3"
-    },
-    {
-     "video_id": "6M-0h6z7BqQ",
-     "t": 3337,
-     "date": "2025-12-08",
-     "base": "2025-12-08_6M-0h6z7BqQ",
-     "meeting_title": "Strategic & Capital Planning Meeting",
-     "title": "Approval of Capital Plan for School Committee Agenda",
-     "label": "M06#5"
-    }
-   ]
-  },
-  {
-   "name": "MSBA Accelerated Repair Program",
-   "status": "ongoing",
-   "summary": "The district utilizes the Massachusetts School Building Authority (MSBA) Accelerated Repair Program to address large-scale roof and HVAC needs at aging facilities. Initial planning involved funding mini-assessments for the Brooks, Roberts, and Missituk schools to prepare for the state application window. By late 2025, the MSBA had approved three statements of interest for these projects. The subcommittee continues to monitor the timeline for these improvements alongside other city-led electrification assessments.",
-   "citations": [
-    {
-     "video_id": "MCM00001623",
-     "t": 726,
-     "date": "2024-11-26",
-     "base": "2024-12-05_MCM00001623",
-     "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
-     "title": "Building Recommissioning and MSBA Accelerated Repair Program",
-     "label": "M01#2"
-    },
-    {
-     "video_id": "qorztDP2QHI",
-     "t": 770,
-     "date": "2024-11-27",
-     "base": "2024-11-27_qorztDP2QHI",
-     "meeting_title": "Strategic & Capital Planning SubCommittee",
-     "title": "MSBA Accelerated Repair and Electrification Assessments",
-     "label": "M02#2"
-    },
-    {
-     "video_id": "bcKRqhwDHWE",
-     "t": 66,
-     "date": "2025-11-20",
-     "base": "2025-11-20_bcKRqhwDHWE",
-     "meeting_title": "Strategic & Capital Planning Subcommittee",
-     "title": "Capital Planning Overview and MSBA Project Approvals",
-     "label": "M05#1"
-    }
-   ]
-  },
-  {
-   "name": "Elementary Enrollment and Overcrowding",
-   "status": "ongoing",
-   "summary": "The body addresses acute capacity constraints and enrollment inequities, particularly at the Roberts School. Dr. Suzanne Galusi presented data on rising transportation costs and specialized programming needs that led to the relocation of MEEP preschool classrooms to the Missituk School. A strategic space planning task force was created to manage community engagement regarding space utilization. Recent discussions focus on aligning these facility decisions with a broader middle school grade reconfiguration study.",
-   "citations": [
-    {
-     "video_id": "9fui-IqEKvo",
-     "t": 0,
-     "date": "2025-05-20",
-     "base": "2025-05-20_9fui-IqEKvo",
-     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
-     "title": "Presentation of Enrollment and Space Report",
-     "label": "M03#1"
-    },
-    {
-     "video_id": "9fui-IqEKvo",
-     "t": 5090,
-     "date": "2025-05-20",
-     "base": "2025-05-20_9fui-IqEKvo",
-     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
-     "title": "Relocation of MEEP Classrooms",
-     "label": "M03#3"
-    },
-    {
-     "video_id": "9fui-IqEKvo",
-     "t": 5343,
-     "date": "2025-05-20",
-     "base": "2025-05-20_9fui-IqEKvo",
-     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
-     "title": "Strategic Space Planning Task Force",
-     "label": "M03#5"
-    },
-    {
-     "video_id": "J4h-UZDF4Ps",
-     "t": 1257,
-     "date": "2026-05-06",
-     "base": "2026-05-06_J4h-UZDF4Ps",
-     "meeting_title": "Strategy Planning Subcommittee Meeting",
-     "title": "Alignment with Middle School Task Force",
-     "label": "M07#3"
-    }
-   ]
-  },
-  {
-   "name": "Strategic Planning and Community Engagement",
-   "status": "ongoing",
-   "summary": "The subcommittee is leading the development of a district-wide strategic plan to establish a five-year mission and vision. The process involves two phases: a community input phase utilizing surveys and focus groups, followed by an administrative action plan. Efforts have been made to reach underrepresented groups and avoid community survey fatigue by coordinating with high school feasibility studies. The body has set a target to finalize the draft plan by February 2027 and is seeking technical consultant assistance to lead the drafting process.",
-   "citations": [
     {
      "video_id": "XpeAyM9qjgI",
      "t": 78,
@@ -154,7 +34,7 @@
      "base": "2025-10-14_XpeAyM9qjgI",
      "meeting_title": "Strategic & Capital Planning Subcommittee",
      "title": "Phase One Strategic Planning Framework",
-     "label": "M04#1"
+     "label": "M09#1"
     },
     {
      "video_id": "XpeAyM9qjgI",
@@ -163,7 +43,16 @@
      "base": "2025-10-14_XpeAyM9qjgI",
      "meeting_title": "Strategic & Capital Planning Subcommittee",
      "title": "Public Survey Development",
-     "label": "M04#3"
+     "label": "M09#3"
+    },
+    {
+     "video_id": "XpeAyM9qjgI",
+     "t": 4346,
+     "date": "2025-10-14",
+     "base": "2025-10-14_XpeAyM9qjgI",
+     "meeting_title": "Strategic & Capital Planning Subcommittee",
+     "title": "Focus Group Structure and Facilitation",
+     "label": "M09#4"
     },
     {
      "video_id": "J4h-UZDF4Ps",
@@ -172,7 +61,16 @@
      "base": "2026-05-06_J4h-UZDF4Ps",
      "meeting_title": "Strategy Planning Subcommittee Meeting",
      "title": "Strategic Plan Development and Timeline",
-     "label": "M07#2"
+     "label": "M12#2"
+    },
+    {
+     "video_id": "J4h-UZDF4Ps",
+     "t": 1257,
+     "date": "2026-05-06",
+     "base": "2026-05-06_J4h-UZDF4Ps",
+     "meeting_title": "Strategy Planning Subcommittee Meeting",
+     "title": "Alignment with Middle School Task Force",
+     "label": "M12#3"
     },
     {
      "video_id": "J4h-UZDF4Ps",
@@ -181,32 +79,147 @@
      "base": "2026-05-06_J4h-UZDF4Ps",
      "meeting_title": "Strategy Planning Subcommittee Meeting",
      "title": "Consultant Procurement and Next Steps",
-     "label": "M07#4"
+     "label": "M12#4"
     }
    ]
   },
   {
-   "name": "Building Security and Systems Maintenance",
+   "name": "Capital Planning Framework and Priorities",
    "status": "ongoing",
-   "summary": "Immediate facilities work frequently targets security infrastructure and mechanical system failures. The subcommittee recommended a major project for district-wide keyless fobs, electronic door locks, and integrated camera intercoms. Other prioritized maintenance includes freight elevator motor repairs at Medford High School and the installation of network closet mini-splits. While some projects like the security upgrades were slated for completion by early 2026, others have faced challenges regarding funding allocation and coordination.",
+   "summary": "The subcommittee re-established an annual capital planning process in May 2024, approving a draft policy to restore district oversight of facility needs. Throughout late 2024, members categorized building maintenance and security projects into prioritized lists to align with municipal budget cycles. In late 2025, the committee refined its project spreadsheet using facility assessment data and adapted its format to meet city requirements. The subcommittee continues to update and forward recommended capital plans to the full School Committee.",
    "citations": [
     {
+     "video_id": "B3irwyUDnjU",
+     "t": 127,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "Meeting Opening and Agenda",
+     "label": "M04#1"
+    },
+    {
+     "video_id": "B3irwyUDnjU",
+     "t": 2926,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "Capital Planning Policy Draft",
+     "label": "M04#5"
+    },
+    {
+     "video_id": "MVExTf_vuaw",
+     "t": 157,
+     "date": "2024-10-16",
+     "base": "2024-10-16_MVExTf_vuaw",
+     "meeting_title": "MSC Strategic & Capital Planning Meeting",
+     "title": "Review and Update of School Capital Plan",
+     "label": "M05#1"
+    },
+    {
      "video_id": "MCM00001623",
-     "t": 3868,
+     "t": 6029,
      "date": "2024-11-26",
      "base": "2024-12-05_MCM00001623",
      "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
-     "title": "Security and Keyless Access Upgrades",
-     "label": "M01#5"
+     "title": "Referral of Capital Plan Recommendations",
+     "label": "M06#7"
     },
     {
      "video_id": "qorztDP2QHI",
-     "t": 1299,
+     "t": 6744,
      "date": "2024-11-27",
      "base": "2024-11-27_qorztDP2QHI",
      "meeting_title": "Strategic & Capital Planning SubCommittee",
-     "title": "FY25 and FY26 Capital Project Priorities",
-     "label": "M02#3"
+     "title": "Capital Plan Recommendation to School Committee",
+     "label": "M07#5"
+    },
+    {
+     "video_id": "bcKRqhwDHWE",
+     "t": 338,
+     "date": "2025-11-20",
+     "base": "2025-11-20_bcKRqhwDHWE",
+     "meeting_title": "Strategic & Capital Planning Subcommittee",
+     "title": "Presentation of Prioritized Capital Plan Spreadsheet",
+     "label": "M10#2"
+    },
+    {
+     "video_id": "6M-0h6z7BqQ",
+     "t": 1484,
+     "date": "2025-12-08",
+     "base": "2025-12-08_6M-0h6z7BqQ",
+     "meeting_title": "Strategic & Capital Planning Meeting",
+     "title": "Coordination with City Capital Planning and Formats",
+     "label": "M11#3"
+    },
+    {
+     "video_id": "6M-0h6z7BqQ",
+     "t": 3337,
+     "date": "2025-12-08",
+     "base": "2025-12-08_6M-0h6z7BqQ",
+     "meeting_title": "Strategic & Capital Planning Meeting",
+     "title": "Approval of Capital Plan for School Committee Agenda",
+     "label": "M11#5"
+    }
+   ]
+  },
+  {
+   "name": "School Infrastructure and Repairs",
+   "status": "ongoing",
+   "summary": "The subcommittee systematically tracks building maintenance and major infrastructure requirements across district facilities. In late 2024, members outlined municipal bonding packages for bundled HVAC and roof reconstruction projects while preparing applications for state repair programs. By late 2025, the Massachusetts School Building Authority approved statements of interest for roof and HVAC replacements at three elementary schools. The committee also maintains ongoing oversight over active security upgrades, elevator repairs, and cooling systems.",
+   "citations": [
+    {
+     "video_id": "B3irwyUDnjU",
+     "t": 214,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "Capital Planning Process and Operations Hero System",
+     "label": "M04#2"
+    },
+    {
+     "video_id": "B3irwyUDnjU",
+     "t": 1708,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "Review of District Capital Projects",
+     "label": "M04#4"
+    },
+    {
+     "video_id": "MCM00001623",
+     "t": 78,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001623",
+     "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
+     "title": "McGlynn and Andrews Capital Project Scope and Bonding",
+     "label": "M06#1"
+    },
+    {
+     "video_id": "MCM00001623",
+     "t": 726,
+     "date": "2024-11-26",
+     "base": "2024-12-05_MCM00001623",
+     "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
+     "title": "Building Recommissioning and MSBA Accelerated Repair Program",
+     "label": "M06#2"
+    },
+    {
+     "video_id": "qorztDP2QHI",
+     "t": 770,
+     "date": "2024-11-27",
+     "base": "2024-11-27_qorztDP2QHI",
+     "meeting_title": "Strategic & Capital Planning SubCommittee",
+     "title": "MSBA Accelerated Repair and Electrification Assessments",
+     "label": "M07#2"
+    },
+    {
+     "video_id": "bcKRqhwDHWE",
+     "t": 66,
+     "date": "2025-11-20",
+     "base": "2025-11-20_bcKRqhwDHWE",
+     "meeting_title": "Strategic & Capital Planning Subcommittee",
+     "title": "Capital Planning Overview and MSBA Project Approvals",
+     "label": "M10#1"
     },
     {
      "video_id": "6M-0h6z7BqQ",
@@ -215,7 +228,7 @@
      "base": "2025-12-08_6M-0h6z7BqQ",
      "meeting_title": "Strategic & Capital Planning Meeting",
      "title": "Status Updates on In-Progress Capital Projects",
-     "label": "M06#1"
+     "label": "M11#1"
     },
     {
      "video_id": "6M-0h6z7BqQ",
@@ -224,15 +237,85 @@
      "base": "2025-12-08_6M-0h6z7BqQ",
      "meeting_title": "Strategic & Capital Planning Meeting",
      "title": "Network Closet Mini Splits Funding Review",
-     "label": "M06#2"
+     "label": "M11#2"
     }
    ]
   },
   {
-   "name": "Playground Feasibility and Development",
+   "name": "Elementary Overcrowding and Space Management",
    "status": "ongoing",
-   "summary": "Playground renovations are a recurring priority due to site limitations and aging equipment at elementary schools. The subcommittee identified the Roberts playground as a top priority but noted significant space and parking constraints that require further exploration. The body has explored using Community Preservation Act funds for design and feasibility studies at multiple school sites. Recent updates include a proposed design study for three remaining school playgrounds to determine future renovation costs.",
+   "summary": "In May 2025, the subcommittee reviewed enrollment and capacity data revealing severe space constraints at the Roberts Elementary School. To provide immediate relief, the committee voted to relocate preschool classrooms to Missituk School and requested additional staffing. The committee also voted to establish a strategic space planning task force to handle community engagement around space studies. By May 2026, the subcommittee aligned these facility space decisions with ongoing strategic planning and potential grade reconfigurations.",
    "citations": [
+    {
+     "video_id": "9fui-IqEKvo",
+     "t": 0,
+     "date": "2025-05-20",
+     "base": "2025-05-20_9fui-IqEKvo",
+     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
+     "title": "Presentation of Enrollment and Space Report",
+     "label": "M08#1"
+    },
+    {
+     "video_id": "9fui-IqEKvo",
+     "t": 5090,
+     "date": "2025-05-20",
+     "base": "2025-05-20_9fui-IqEKvo",
+     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
+     "title": "Relocation of MEEP Classrooms",
+     "label": "M08#3"
+    },
+    {
+     "video_id": "9fui-IqEKvo",
+     "t": 5314,
+     "date": "2025-05-20",
+     "base": "2025-05-20_9fui-IqEKvo",
+     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
+     "title": "Roberts School Staffing Request",
+     "label": "M08#4"
+    },
+    {
+     "video_id": "9fui-IqEKvo",
+     "t": 5343,
+     "date": "2025-05-20",
+     "base": "2025-05-20_9fui-IqEKvo",
+     "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
+     "title": "Strategic Space Planning Task Force",
+     "label": "M08#5"
+    },
+    {
+     "video_id": "J4h-UZDF4Ps",
+     "t": 1257,
+     "date": "2026-05-06",
+     "base": "2026-05-06_J4h-UZDF4Ps",
+     "meeting_title": "Strategy Planning Subcommittee Meeting",
+     "title": "Alignment with Middle School Task Force",
+     "label": "M12#3"
+    }
+   ]
+  },
+  {
+   "name": "Playground Development and Funding",
+   "status": "ongoing",
+   "summary": "The subcommittee evaluated fundraising and donor options for the McGlynn Elementary Playground, which reached 50 percent completion in May 2024. The committee subsequently focused on Roberts Elementary as a top priority for playground updates due to footprint constraints. By late 2025, the body sought Community Preservation Act funding to support design and feasibility studies for renovations across three remaining school playgrounds.",
+   "citations": [
+    {
+     "video_id": "43e2jY84pIA",
+     "t": 1902,
+     "date": "2023-02-01",
+     "base": "2023-02-09_43e2jY84pIA",
+     "meeting_title": "Strategic Planning Subcommittee - 02.01.2023",
+     "title": "McGlynn Elementary Playground Participation Options",
+     "label": "M02#2"
+    },
+    {
+     "video_id": "B3irwyUDnjU",
+     "t": 2956,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "McGlynn Playground Update",
+     "label": "M04#6"
+    },
     {
      "video_id": "MCM00001623",
      "t": 4687,
@@ -240,7 +323,16 @@
      "base": "2024-12-05_MCM00001623",
      "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
      "title": "Elementary Playground Priorities and Space Constraints",
-     "label": "M01#6"
+     "label": "M06#6"
+    },
+    {
+     "video_id": "qorztDP2QHI",
+     "t": 4730,
+     "date": "2024-11-27",
+     "base": "2024-11-27_qorztDP2QHI",
+     "meeting_title": "Strategic & Capital Planning SubCommittee",
+     "title": "Elementary Playground Prioritization",
+     "label": "M07#4"
     },
     {
      "video_id": "bcKRqhwDHWE",
@@ -249,7 +341,7 @@
      "base": "2025-11-20_bcKRqhwDHWE",
      "meeting_title": "Strategic & Capital Planning Subcommittee",
      "title": "Playground Feasibility and Community Preservation Act Funding",
-     "label": "M05#3"
+     "label": "M10#3"
     },
     {
      "video_id": "6M-0h6z7BqQ",
@@ -258,74 +350,167 @@
      "base": "2025-12-08_6M-0h6z7BqQ",
      "meeting_title": "Strategic & Capital Planning Meeting",
      "title": "Future Capital Priorities and Playground Planning",
-     "label": "M06#4"
+     "label": "M11#4"
+    }
+   ]
+  },
+  {
+   "name": "School Facility Naming Policy",
+   "status": "settled",
+   "summary": "In February 2023, the subcommittee drafted a policy establishing procedures and authority for naming school buildings, grounds, and interior spaces. The draft policy included clarification supporting the recommendations of naming advisory committees. The subcommittee approved the policy and referred it to the full School Committee.",
+   "citations": [
+    {
+     "video_id": "43e2jY84pIA",
+     "t": 132,
+     "date": "2023-02-01",
+     "base": "2023-02-09_43e2jY84pIA",
+     "meeting_title": "Strategic Planning Subcommittee - 02.01.2023",
+     "title": "Draft School Facility Naming Policy",
+     "label": "M02#1"
     }
    ]
   }
  ],
  "periods": [
   {
-   "period": "2024-2025 term",
-   "narrative": "This period focused on finalizing the multi-year capital plan, initiating MSBA repair applications, and implementing immediate measures to relieve overcrowding at the Roberts school.",
+   "period": "2020-2021 term",
+   "narrative": "The subcommittee evaluated the draft district strategy for improvement and forwarded the document to the full School Committee.",
    "citations": [
     {
+     "video_id": "f4ew4tBIRXk",
+     "t": 234,
+     "date": "2021-05-25",
+     "base": "2021-05-25_f4ew4tBIRXk",
+     "meeting_title": "Communication, Stakeholder Engagement & Strategic Planning Subcommittee Meeting - Strategic Planning",
+     "title": "Review of Draft Strategic Plan",
+     "label": "M01#1"
+    }
+   ]
+  },
+  {
+   "period": "2022-2023 term",
+   "narrative": "The subcommittee drafted a school facility naming policy and established fundraising guidelines for playground enhancements.",
+   "citations": [
+    {
+     "video_id": "43e2jY84pIA",
+     "t": 132,
+     "date": "2023-02-01",
+     "base": "2023-02-09_43e2jY84pIA",
+     "meeting_title": "Strategic Planning Subcommittee - 02.01.2023",
+     "title": "Draft School Facility Naming Policy",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "43e2jY84pIA",
+     "t": 1902,
+     "date": "2023-02-01",
+     "base": "2023-02-09_43e2jY84pIA",
+     "meeting_title": "Strategic Planning Subcommittee - 02.01.2023",
+     "title": "McGlynn Elementary Playground Participation Options",
+     "label": "M02#2"
+    }
+   ]
+  },
+  {
+   "period": "2024-2025 term",
+   "narrative": "The body established a capital planning process, prioritized major facility bonding and repairs, addressed elementary overcrowding, and launched public engagement for strategic planning.",
+   "citations": [
+    {
+     "video_id": "B3irwyUDnjU",
+     "t": 2926,
+     "date": "2024-05-22",
+     "base": "2024-05-22_B3irwyUDnjU",
+     "meeting_title": "Strategic and Capital Planning Subcommittee",
+     "title": "Capital Planning Policy Draft",
+     "label": "M04#5"
+    },
+    {
      "video_id": "MCM00001623",
-     "t": null,
+     "t": 78,
      "date": "2024-11-26",
      "base": "2024-12-05_MCM00001623",
      "meeting_title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
-     "title": "School Committee Strategic And Capital Planning Subcommittee 11 26 24",
-     "label": "M01"
+     "title": "McGlynn and Andrews Capital Project Scope and Bonding",
+     "label": "M06#1"
+    },
+    {
+     "video_id": "qorztDP2QHI",
+     "t": 6744,
+     "date": "2024-11-27",
+     "base": "2024-11-27_qorztDP2QHI",
+     "meeting_title": "Strategic & Capital Planning SubCommittee",
+     "title": "Capital Plan Recommendation to School Committee",
+     "label": "M07#5"
     },
     {
      "video_id": "9fui-IqEKvo",
-     "t": null,
+     "t": 5090,
      "date": "2025-05-20",
      "base": "2025-05-20_9fui-IqEKvo",
      "meeting_title": "Strategic and Capital Planning Subcommittee Meeting",
-     "title": "Strategic and Capital Planning Subcommittee Meeting",
-     "label": "M03"
+     "title": "Relocation of MEEP Classrooms",
+     "label": "M08#3"
+    },
+    {
+     "video_id": "XpeAyM9qjgI",
+     "t": 78,
+     "date": "2025-10-14",
+     "base": "2025-10-14_XpeAyM9qjgI",
+     "meeting_title": "Strategic & Capital Planning Subcommittee",
+     "title": "Phase One Strategic Planning Framework",
+     "label": "M09#1"
     },
     {
      "video_id": "6M-0h6z7BqQ",
-     "t": null,
+     "t": 3337,
      "date": "2025-12-08",
      "base": "2025-12-08_6M-0h6z7BqQ",
      "meeting_title": "Strategic & Capital Planning Meeting",
-     "title": "Strategic & Capital Planning Meeting",
-     "label": "M06"
+     "title": "Approval of Capital Plan for School Committee Agenda",
+     "label": "M11#5"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The subcommittee established a formal timeline for the district's strategic plan and began integrating facility studies with long-term academic configuration goals.",
+   "narrative": "The subcommittee set a deliverable timeline for the strategic plan and aligned visioning work with middle school grade configuration studies.",
    "citations": [
     {
      "video_id": "J4h-UZDF4Ps",
-     "t": null,
+     "t": 218,
      "date": "2026-05-06",
      "base": "2026-05-06_J4h-UZDF4Ps",
      "meeting_title": "Strategy Planning Subcommittee Meeting",
-     "title": "Strategy Planning Subcommittee Meeting",
-     "label": "M07"
+     "title": "Strategic Plan Development and Timeline",
+     "label": "M12#2"
+    },
+    {
+     "video_id": "J4h-UZDF4Ps",
+     "t": 1257,
+     "date": "2026-05-06",
+     "base": "2026-05-06_J4h-UZDF4Ps",
+     "meeting_title": "Strategy Planning Subcommittee Meeting",
+     "title": "Alignment with Middle School Task Force",
+     "label": "M12#3"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 27,
-  "meetings_cited": 7,
-  "of_meetings": 7,
-  "max_share": 0.222,
-  "most_cited": "6M-0h6z7BqQ",
-  "periods_covered": 2,
-  "of_periods": 2
+  "citations": 46,
+  "meetings_cited": 11,
+  "of_meetings": 12,
+  "max_share": 0.13,
+  "even_share": 0.0833,
+  "concentration_ratio": 1.56,
+  "most_cited": "J4h-UZDF4Ps",
+  "periods_covered": 4,
+  "of_periods": 4
  },
  "usage": {
-  "input_tokens": 3148,
-  "output_tokens": 1201,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 4138,
+  "output_tokens": 1426,
+  "model_version": "gemini-3.6-flash"
  }
 }

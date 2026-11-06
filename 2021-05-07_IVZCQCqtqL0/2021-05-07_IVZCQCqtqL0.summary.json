@@ -1,0 +1,36 @@
+{
+ "video_id": "IVZCQCqtqL0",
+ "provider": "gemini",
+ "generated_at": "2026-11-06T12:14:33Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "6e4a6ce98776c9af",
+ "subject": "School Name Review Committee Assignments",
+ "overview": "The meeting was held to randomly assign committee members to specific school name proposals and review categories for research purposes.",
+ "items": [
+  {
+   "title": "Random Selection Process",
+   "t": 13,
+   "summary": "Assistant Superintendent Peter Cushing utilized a random number generator to assign numbered committee members to a list of school name proposals on a spreadsheet.",
+   "speakers": [
+    "Peter Cushing"
+   ]
+  },
+  {
+   "title": "Correction of Spreadsheet Entries",
+   "t": 1842,
+   "summary": "The committee corrected manual entry errors and split a combined line for the Sagamore John and Pawtucket schools to ensure each received a separate assignment sequence.",
+   "speakers": [
+    "Peter Cushing",
+    "Hendrik Gideonse",
+    "Bri Brothers"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7284,
+  "output_tokens": 175,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
