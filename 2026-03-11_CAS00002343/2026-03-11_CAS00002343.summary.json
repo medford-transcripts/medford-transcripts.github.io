@@ -1,0 +1,68 @@
+{
+ "video_id": "CAS00002343",
+ "provider": "gemini",
+ "generated_at": "2026-11-06T09:08:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f3057c00f7135f4a",
+ "subject": "",
+ "overview": "The Medford Community Preservation Committee held its annual public hearing to review Fiscal Year 2026 Community Preservation Act projects, public feedback, and department updates. The committee also received a presentation on the Mystic Shoreline Initiative and approved past meeting minutes.",
+ "items": [
+  {
+   "title": "Annual CPA Public Hearing and Presentation",
+   "t": 20,
+   "summary": "Theresa Dupont presented an overview of Community Preservation Act funding history and reviewed $2.4 million in awarded Fiscal Year 2026 projects across open space, historic preservation, and affordable housing.",
+   "speakers": [
+    "Theresa Dupont",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Public Participation and Partner Updates",
+   "t": 1459,
+   "summary": "The committee heard feedback and updates from residents and officials on accessibility, cemetery master planning, recreation facility upgrades, and affordable housing challenges.",
+   "speakers": [
+    "Cindy Watson",
+    "Ken Krause",
+    "Dee Morris",
+    "Kevin Bailey",
+    "Lisa Davidson",
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "Doug Carr",
+    "Joan Cyr"
+   ]
+  },
+  {
+   "title": "Mystic Shoreline Initiative Presentation",
+   "t": 4953,
+   "summary": "Carl Alexander of the Mystic River Watershed Association presented conceptual plans for shoreline restoration, accessible pathways, and recreational improvements along the Mystic River and Mystic Lakes.",
+   "speakers": [
+    "Carl Alexander",
+    "Roberta Cameron",
+    "Reggie Graham",
+    "Jeremy Martin",
+    "Doug Carr",
+    "Theresa Dupont"
+   ]
+  },
+  {
+   "title": "Meeting Minutes and Committee Business",
+   "t": 7021,
+   "summary": "The committee deferred officer elections to the next meeting and approved the meeting minutes for January and February 2026.",
+   "speakers": [
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "Reggie Graham",
+    "Joan Cyr",
+    "Doug Carr"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 39162,
+  "output_tokens": 510,
+  "model_version": "gemini-3.6-flash"
+ }
+}
