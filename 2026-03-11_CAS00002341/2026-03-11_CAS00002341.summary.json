@@ -1,0 +1,92 @@
+{
+ "video_id": "CAS00002341",
+ "provider": "gemini",
+ "generated_at": "2026-11-06T14:09:59Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "926b95bb8ff7f093",
+ "subject": "",
+ "overview": "The Commission approved several residential parking variances and a handicap sign for a local resident. It also adjusted parking durations on Salem Street to support business turnover while discussing the need for a citywide commercial parking policy.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 67,
+   "summary": "Approved the minutes from the previous meeting.",
+   "speakers": [
+    "Zac Bears",
+    "Jim Silva"
+   ]
+  },
+  {
+   "title": "Handicap Parking Sign: 39 Wellington Road",
+   "t": 101,
+   "summary": "Approved a request for a handicap parking sign due to the resident's difficulty navigating a hill and limited local parking.",
+   "speakers": [
+    "Vincent Federico",
+    "Alicia Hunt",
+    "Jim Silva"
+   ]
+  },
+  {
+   "title": "Permit Parking Variance: 545 Main Street",
+   "t": 345,
+   "summary": "Approved a variance allowing a resident of 545 Main Street to park on Smith Street because Main Street is subject to frequent street sweeping and lacks a driveway.",
+   "speakers": [
+    "Zachary Gaffney",
+    "Todd Blake",
+    "Alicia Hunt",
+    "Sarah McDermod",
+    "Jim Silva"
+   ]
+  },
+  {
+   "title": "Permit Parking Variance: 61 Quincy Street",
+   "t": 923,
+   "summary": "Approved a variance for a resident in a non-permitted section of Quincy Street to access permitted spots during snow emergencies.",
+   "speakers": [
+    "Jared Graber",
+    "Jim Silva",
+    "Sarah McDermod",
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Parking Duration Change: 301 Salem Street",
+   "t": 1327,
+   "summary": "Approved converting three two-hour parking spaces to 30-minute spaces in front of Eddie's Place and Douglas Bakery to facilitate customer turnover.",
+   "speakers": [
+    "Enio Duka",
+    "Alicia Hunt",
+    "Sarah McDermod",
+    "Todd Blake",
+    "Tim McGivern"
+   ]
+  },
+  {
+   "title": "Tabled Business",
+   "t": 2102,
+   "summary": "Tabled items regarding 427 High Street and 191 Riverside Avenue because the petitioners were not in attendance.",
+   "speakers": [
+    "Zac Bears",
+    "Todd Blake"
+   ]
+  },
+  {
+   "title": "Commercial Parking Variance: 11 Walcott Park",
+   "t": 2173,
+   "summary": "Placed the matter on file after informing the petitioner that the Commission lacks the legal authority to grant parking variances for commercial vehicles.",
+   "speakers": [
+    "Paula",
+    "Alicia Hunt",
+    "Tim McGivern",
+    "Todd Blake"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19328,
+  "output_tokens": 726,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
