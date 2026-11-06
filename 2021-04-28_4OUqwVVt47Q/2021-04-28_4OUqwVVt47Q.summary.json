@@ -1,0 +1,51 @@
+{
+ "video_id": "4OUqwVVt47Q",
+ "provider": "gemini",
+ "generated_at": "2026-11-06T18:06:15Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d13e1a1752e3626a",
+ "subject": "Science and Fine Arts Curriculum Review",
+ "overview": "The Curriculum Subcommittee met remotely to receive presentations on the district's K–12 science and fine arts curricula. Department leaders outlined framework alignments, course offerings, textbook and resource needs, and instructional adjustments made during the pandemic.",
+ "items": [
+  {
+   "title": "Meeting Opening and Agenda Review",
+   "t": 38,
+   "summary": "Paulette Van der Kloot opened the meeting and outlined the agenda focused on reviewing science and fine arts curricula across all grade levels.",
+   "speakers": [
+    "Paulette Van der Kloot",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "Science Curriculum Review",
+   "t": 164,
+   "summary": "Science Director Rocco Cieri presented an overview of K–12 science instruction, state framework alignment, high school course sequences, and textbook needs for biology and chemistry.",
+   "speakers": [
+    "Marice Edouard-Vincent",
+    "Rocco Cieri",
+    "Paulette Van der Kloot",
+    "Paul Ruseau",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Fine Arts Curriculum Review",
+   "t": 2829,
+   "summary": "Dr. Bernadette Ricciardelli presented on the fine arts curriculum, reviewing state framework revisions, online tools like Quaver Music, instrument access, and upcoming budgetary needs.",
+   "speakers": [
+    "Bernadette Ricciardelli",
+    "Marice Edouard-Vincent",
+    "Haley Rallo",
+    "Paulette Van der Kloot",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 25356,
+  "output_tokens": 338,
+  "model_version": "gemini-3.6-flash"
+ }
+}
