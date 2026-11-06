@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "f3057c00f7135f4a",
- "subject": "",
+ "subject": "Annual CPA Public Hearing and Project Updates",
  "overview": "The Medford Community Preservation Committee held its annual public hearing to review Fiscal Year 2026 Community Preservation Act projects, public feedback, and department updates. The committee also received a presentation on the Mystic Shoreline Initiative and approved past meeting minutes.",
  "items": [
   {
@@ -64,5 +64,6 @@
   "input_tokens": 39162,
   "output_tokens": 510,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

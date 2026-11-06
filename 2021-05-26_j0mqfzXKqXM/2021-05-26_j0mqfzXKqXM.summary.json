@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "f5f4ebe72a835c2c",
- "subject": "",
+ "subject": "School Facility Repairs and Capital Projects",
  "overview": "The MPS Building & Grounds Subcommittee received facilities and capital updates for the vocational and high school campuses. The committee voted to approve several facility repairs, including the high school hot water system, generator replacement, transformer repairs, and boiler maintenance.",
  "items": [
   {
@@ -118,5 +118,6 @@
   "input_tokens": 37233,
   "output_tokens": 1035,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
