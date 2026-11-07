@@ -1,0 +1,89 @@
+{
+ "video_id": "3aghgs5t794",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T18:11:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "bb90d27bf4711abd",
+ "subject": "",
+ "overview": "The Medford City Council considered a $740,000 supplemental budget amendment, approved an ordinance establishing a Cannabis Commission, and granted a utility location permit on Medford Street while tabling another on Riverside Avenue. The council also voted to enter executive session regarding small cell telecommunications siting litigation.",
+ "items": [
+  {
+   "title": "Executive session request on small cell telecommunications",
+   "t": 167,
+   "summary": "The council voted to enter executive session to discuss strategy regarding potential litigation with Verizon Wireless over small cell telecommunications equipment siting.",
+   "speakers": [
+    "George Scarpelli",
+    "John Falco"
+   ]
+  },
+  {
+   "title": "FY 2021 supplemental budget amendment",
+   "t": 283,
+   "summary": "The council tabled indefinitely a proposed $740,000 budget amendment following extensive debate regarding the funding and creation of a full-time election coordinator position.",
+   "speakers": [
+    "John Falco",
+    "Adam Knight",
+    "Aleesha Nunley-Benjamin",
+    "Dave Rodrigues",
+    "Michael Marks",
+    "Adam Hurtubise",
+    "Richard Caraviello",
+    "George Scarpelli",
+    "Zac Bears"
+   ]
+  },
+  {
+   "title": "Cannabis Commission ordinance third reading",
+   "t": 1871,
+   "summary": "The council removed the paper from the table and approved the third reading of an ordinance creating a local Cannabis Commission.",
+   "speakers": [
+    "Zac Bears",
+    "John Falco",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Grant of location hearing for Riverside Avenue gas main",
+   "t": 1985,
+   "summary": "The council tabled the continued public hearing to December 8 to allow city legal counsel and National Grid to finalize negotiations on street curbing mitigation.",
+   "speakers": [
+    "John Falco",
+    "Diana Cuddy",
+    "Michael Marks",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Grant of location hearing for Medford Street gas main",
+   "t": 2244,
+   "summary": "The council approved National Grid's petition to install 532 feet of plastic gas main on Winter Hill Road and Medford Street subject to 11 engineering conditions.",
+   "speakers": [
+    "John Falco",
+    "Michael Marks",
+    "Diana Cuddy",
+    "George Scarpelli",
+    "Tim McGivern",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Condolences, committee reports, and meeting records",
+   "t": 3018,
+   "summary": "The council approved condolence resolutions for Leo McHugh and Trieste Silvio, accepted an Ordinance Subcommittee report, and approved the records of prior meetings.",
+   "speakers": [
+    "John Falco",
+    "Richard Caraviello",
+    "Adam Knight",
+    "Michael Marks",
+    "George Scarpelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23116,
+  "output_tokens": 610,
+  "model_version": "gemini-3.6-flash"
+ }
+}
