@@ -1,0 +1,45 @@
+{
+ "video_id": "gDhRmP_86Kw",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T14:15:39Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "50e1e70db966371b",
+ "subject": "Welcome Project Immigrant Assistance",
+ "overview": "The Welcome Project presented an overview of its mission and the severe economic and health impacts of the COVID-19 pandemic on immigrant families in the Somerville area. The organization requested community support through donations to its Immigrant Assistance Fund and called for bilingual volunteers to assist with outreach.",
+ "items": [
+  {
+   "title": "Mission of The Welcome Project",
+   "t": 1,
+   "summary": "Kenia Alfaro explained that the organization works to empower immigrant families in Somerville and Metro North Boston through English classes, youth programs, and community advocacy.",
+   "speakers": [
+    "Anna Callahan",
+    "Kenia Alfaro"
+   ]
+  },
+  {
+   "title": "COVID-19 Impact on Immigrant Communities",
+   "t": 49,
+   "summary": "Alfaro described the disproportionate impact of the pandemic on immigrant families, noting record levels of job loss, food insecurity, and high infection rates among Central American, Haitian, and Brazilian residents.",
+   "speakers": [
+    "Anna Callahan",
+    "Kenia Alfaro"
+   ]
+  },
+  {
+   "title": "Assistance Fund and Volunteer Opportunities",
+   "t": 185,
+   "summary": "The organization solicited donations for its Immigrant Assistance Fund to provide rental and utility aid and requested volunteers fluent in Spanish, Portuguese, or Haitian Creole to assist with outreach.",
+   "speakers": [
+    "Anna Callahan",
+    "Kenia Alfaro"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2369,
+  "output_tokens": 358,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

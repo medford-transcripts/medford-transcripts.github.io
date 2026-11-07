@@ -1,0 +1,45 @@
+{
+ "video_id": "d2kxCwTOWE8",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T14:14:23Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "031f349327f94bc7",
+ "subject": "Nellie's Wildflowers Business Spotlight",
+ "overview": "Anna Callahan interviewed Joyce McKenzie about the history of Nellie's Wildflowers and how the business adapted to the COVID-19 pandemic. The discussion highlighted the shop's 30th anniversary and provided details for holiday ordering and delivery.",
+ "items": [
+  {
+   "title": "Business Background and History",
+   "t": 2,
+   "summary": "Joyce McKenzie discussed opening the shop in 1990 and naming it after her grandmother.",
+   "speakers": [
+    "Anna Callahan",
+    "Joyce McKenzie"
+   ]
+  },
+  {
+   "title": "COVID-19 Business Impact",
+   "t": 78,
+   "summary": "The shop remained operational during the pandemic by shifting to online ordering and providing free local delivery to the community.",
+   "speakers": [
+    "Anna Callahan",
+    "Joyce McKenzie"
+   ]
+  },
+  {
+   "title": "Holiday Services and Contact Information",
+   "t": 158,
+   "summary": "McKenzie detailed the store's holiday hours, curbside pickup options, and wide delivery range for customers.",
+   "speakers": [
+    "Anna Callahan",
+    "Joyce McKenzie"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2649,
+  "output_tokens": 281,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
