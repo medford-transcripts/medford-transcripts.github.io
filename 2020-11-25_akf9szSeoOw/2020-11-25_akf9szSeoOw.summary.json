@@ -1,0 +1,69 @@
+{
+ "video_id": "akf9szSeoOw",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T16:08:32Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "61ee9cd11532ca0a",
+ "subject": "COVID-19 Reopening Dashboard Metrics",
+ "overview": "The School Committee met to review COVID-19 infection metrics, contact tracing capacity, and health guidelines for Medford Public Schools. The committee voted to update the district dashboard to reflect revised state Department of Public Health metrics, affirmed the superintendent's authority regarding school closures, and added reporting requirements for affected buildings and student infection data.",
+ "items": [
+  {
+   "title": "COVID-19 Reopening Dashboard Presentation and Health Metrics Discussion",
+   "t": 111,
+   "summary": "Superintendent Edouard-Vincent and administration staff presented low in-school transmission numbers and proposed aligning district dashboard metrics with updated Department of Public Health color-coded community risk categories. Committee members and health officials debated contact tracing capacity, testing programs, and whether community transmission metrics or administrative discretion should trigger transitions to remote instruction.",
+   "speakers": [
+    "Marice Edouard-Vincent",
+    "Tom Milaschewski",
+    "Paul Ruseau",
+    "MaryAnn O'Connor",
+    "Melanie McLaughlin",
+    "Paulette Van der Kloot",
+    "Jenny Graham",
+    "Kathy Kreatz",
+    "David Murphy",
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Public Comment",
+   "t": 5539,
+   "summary": "Parents, teachers, and community members offered spoken and emailed comment addressing low recorded in-school transmission, upcoming holiday travel risks, student testing protocols, and parent notification procedures in the event of closures.",
+   "speakers": [
+    "Sean Beagan",
+    "Rocha",
+    "Nadeen Moretti",
+    "Christopher Carboni",
+    "Jessica Healey",
+    "Paulette Van der Kloot",
+    "Kate Willard",
+    "Breanna Lungo-Koehn",
+    "Alison Leed",
+    "MaryAnn O'Connor",
+    "Paul Ruseau",
+    "David Murphy",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "Votes on Dashboard Amendments, Closure Authority, and Final Adoption",
+   "t": 7874,
+   "summary": "The committee passed amendments requiring disaggregated student case data and building-level notices, voted to affirm the superintendent's decision-making authority over classroom and school closures, and approved the main motion adopting the revised dashboard metrics.",
+   "speakers": [
+    "Jenny Graham",
+    "Melanie McLaughlin",
+    "Kathy Kreatz",
+    "Paulette Van der Kloot",
+    "Breanna Lungo-Koehn",
+    "Paul Ruseau",
+    "David Murphy"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 44039,
+  "output_tokens": 528,
+  "model_version": "gemini-3.8-flash"
+ }
+}
