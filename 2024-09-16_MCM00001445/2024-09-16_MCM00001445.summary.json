@@ -1,0 +1,102 @@
+{
+ "video_id": "MCM00001445",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T03:09:25Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "3e638612f7960f05",
+ "subject": "Verizon Small Cell Antenna Applications",
+ "overview": "The committee held a public hearing on 44 applications from Verizon for small cell wireless installations on existing utility poles across Medford. The committee established standard conditions for approvals and granted the first application before continuing the remainder of the hearing to a later date.",
+ "items": [
+  {
+   "title": "Verizon Technical and Safety Presentation",
+   "t": 713,
+   "summary": "Verizon representatives and a physics expert presented on the technical necessity of small cells for 5G coverage and the federal legal framework that prohibits municipalities from denying applications based on health concerns. They argued the non-ionizing radiation levels are well below FCC safety limits and that the installations are designed to improve local network capacity.",
+   "speakers": [
+    "Michael Jamo",
+    "Stan Yusevich",
+    "Jason Flanagan",
+    "Sean Conway",
+    "Dr. Eric Swanson"
+   ]
+  },
+  {
+   "title": "General Public Comment",
+   "t": 3795,
+   "summary": "Councilor Michael Marks and numerous residents expressed strong opposition, citing concerns over long-term health effects, property values, and the visual impact of equipment on residential streets. A few speakers supported the applications, emphasizing the need for digital equity and improved internet access for remote work and education.",
+   "speakers": [
+    "Michael Marks",
+    "Delphine Picard",
+    "Peter Jones",
+    "Aaron Brandes",
+    "Luke Preisner",
+    "Denis Dettling Kalthofer",
+    "Larry Chucky",
+    "Brad Clompus",
+    "Marvin Vinay",
+    "George Silvestro",
+    "Jarrett Johnson",
+    "John Costas",
+    "Joseph Nazaro",
+    "Barbara Kendall",
+    "Micah Kesselman",
+    "Craig Slatin",
+    "Bryce Shinsuas",
+    "Susan Liebowitz",
+    "Kathleen Rourke",
+    "Carolyn Montello",
+    "Nancy Kopecky",
+    "Donna Edmonds",
+    "Andrew Oswald",
+    "Tony Nardella",
+    "Melanie Tringali",
+    "Marie Izzo",
+    "Karen Hollweg",
+    "Michael Caldera",
+    "Carol DeMeo"
+   ]
+  },
+  {
+   "title": "287 Main Street (Application 3)",
+   "t": 12723,
+   "summary": "The committee granted the application for utility pole 4136 with standard conditions.",
+   "speakers": [
+    "Tim McGivern",
+    "Paul Mochi",
+    "Alicia Hunt",
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Standard Conditions for Approval",
+   "t": 14278,
+   "summary": "The committee voted to adopt a set of standard conditions for any granted applications, including requirements for professional engineering certifications, radio frequency affidavits, and updated insurance. Additional conditions require Verizon to pay for any infrastructure relocation, prohibit installations on double poles, and ensure noise levels are not detectable to the human ear.",
+   "speakers": [
+    "Tim McGivern",
+    "Robin Stein",
+    "Alicia Hunt",
+    "Paul Mochi",
+    "MaryAnn O'Connor"
+   ]
+  },
+  {
+   "title": "Hearing Continuance",
+   "t": 15657,
+   "summary": "The committee voted to continue the hearing for the remaining 43 applications to April 8, 2021, at 6:30 p.m. due to the length of the proceedings.",
+   "speakers": [
+    "Tim McGivern",
+    "Alicia Hunt",
+    "Michael Marks",
+    "Robin Stein",
+    "Paul Mochi",
+    "MaryAnn O'Connor"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 89892,
+  "output_tokens": 900,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
