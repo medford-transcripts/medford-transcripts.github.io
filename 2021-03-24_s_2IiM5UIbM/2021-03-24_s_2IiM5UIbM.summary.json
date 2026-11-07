@@ -1,0 +1,44 @@
+{
+ "video_id": "s_2IiM5UIbM",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T04:06:44Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f1b55116b70dd6fb",
+ "subject": "Student Representation on the School Committee",
+ "overview": "The subcommittee discussed ways to enhance student voice and integration on the School Committee and reviewed a proposed district face coverings policy. It approved advancing the face coverings policy to the full School Committee while committing to draft rule recommendations regarding student representatives before the end of the school year.",
+ "items": [
+  {
+   "title": "Student Voice and Representation on the School Committee",
+   "t": 204,
+   "summary": "The subcommittee discussed strategies to expand student voice and participation—including student-led elections, grade-level liaisons, and non-binding voting—with plans to draft formal recommendations before the end of the school year.",
+   "speakers": [
+    "Paul Ruseau",
+    "Melanie McLaughlin",
+    "Joan Bowen",
+    "David May",
+    "Jenny Graham",
+    "Marice Edouard-Vincent",
+    "David Murphy"
+   ]
+  },
+  {
+   "title": "Policy on Face Coverings",
+   "t": 3076,
+   "summary": "The subcommittee voted to approve the MASC model face coverings policy for submission to the full School Committee on April 12, with an amendment forthcoming to clarify exemptions for students with disabilities.",
+   "speakers": [
+    "Paul Ruseau",
+    "Toni Wray",
+    "Melanie McLaughlin",
+    "David May",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19498,
+  "output_tokens": 281,
+  "model_version": "gemini-3.6-flash"
+ }
+}
