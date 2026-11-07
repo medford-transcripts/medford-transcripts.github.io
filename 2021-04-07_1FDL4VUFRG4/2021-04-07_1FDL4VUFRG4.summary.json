@@ -1,0 +1,60 @@
+{
+ "video_id": "1FDL4VUFRG4",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T01:11:32Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "4f251515588cb74d",
+ "subject": "Agenda Format Changes and Harassment Policy Revisions",
+ "overview": "The subcommittee recommended several structural changes to the School Committee agenda format and advanced updated policies on staff conduct and harassment. A proposed revision to the Title IX grievance procedure was tabled to allow for legal consultation regarding federal compliance.",
+ "items": [
+  {
+   "title": "Agenda Format Revisions",
+   "t": 282,
+   "summary": "Recommended moving routine items to a consent agenda at the end of meetings, shifting the secretary's report to the community participation section, and adding student representatives to the attendance roll call.",
+   "speakers": [
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Paulette Van der Kloot",
+    "David Murphy"
+   ]
+  },
+  {
+   "title": "Staff Conduct Policy",
+   "t": 2757,
+   "summary": "Recommended the staff conduct policy for approval by the full committee.",
+   "speakers": [
+    "Paul Ruseau",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Harassment Policy",
+   "t": 2891,
+   "summary": "Recommended an amended harassment policy to the full committee for a first reading.",
+   "speakers": [
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Peter Cushing"
+   ]
+  },
+  {
+   "title": "Title IX Grievance Procedure",
+   "t": 3314,
+   "summary": "Tabled the review of the updated Title IX grievance procedure to permit further legal review and administrative consultation.",
+   "speakers": [
+    "Paul Ruseau",
+    "Jenny Graham",
+    "Peter Cushing",
+    "Joan Bowen",
+    "David Murphy"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18581,
+  "output_tokens": 346,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
