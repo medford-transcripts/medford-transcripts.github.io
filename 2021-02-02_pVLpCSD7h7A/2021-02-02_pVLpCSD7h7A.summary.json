@@ -1,0 +1,42 @@
+{
+ "video_id": "pVLpCSD7h7A",
+ "provider": "gemini",
+ "generated_at": "2026-11-07T11:09:43Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "0093a6ee22ff1938",
+ "subject": "District-Wide Strategic Plan",
+ "overview": "The MPS Communications Subcommittee reviewed the draft district-wide strategic plan and established a timeline for spring community engagement. The subcommittee also received an update on spring 2021 middle school lottery and transition practices.",
+ "items": [
+  {
+   "title": "District-Wide Strategic Plan",
+   "t": 314,
+   "summary": "The subcommittee reviewed the draft strategic plan and set a schedule to host community roundtables and surveys in spring 2021 before finalizing the plan.",
+   "speakers": [
+    "Jenny Graham",
+    "Marice Edouard-Vincent",
+    "Peter Cushing",
+    "Melanie McLaughlin",
+    "Kathy Kreatz"
+   ]
+  },
+  {
+   "title": "Middle School Orientation Practices",
+   "t": 4280,
+   "summary": "Administration outlined transition plans for rising middle schoolers, including a March lottery, virtual or in-person open houses, parent information sessions, and an orientation cookout.",
+   "speakers": [
+    "Jenny Graham",
+    "Marice Edouard-Vincent",
+    "Kathy Kreatz",
+    "Peter Cushing",
+    "Melanie McLaughlin"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 22622,
+  "output_tokens": 292,
+  "model_version": "gemini-3.6-flash"
+ }
+}
