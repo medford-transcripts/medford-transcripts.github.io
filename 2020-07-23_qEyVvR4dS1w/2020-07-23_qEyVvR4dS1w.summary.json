@@ -1,0 +1,35 @@
+{
+ "video_id": "qEyVvR4dS1w",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T09:18:43Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "480c419082cb69cb",
+ "subject": "Somerville Homeless Coalition COVID-19 Response",
+ "overview": "Host Anna Callahan spoke with Hannah O'Halloran of the Somerville Homeless Coalition about the pandemic's impact on unhoused residents and local shelters. The coalition highlighted doubled food pantry demand, emergency 24/7 shelter operations, and the urgent need for quarantine housing and volunteers.",
+ "items": [
+  {
+   "title": "Introduction and SNAP grocery delivery petition",
+   "t": 0,
+   "summary": "Callahan introduced the program, promoted a petition to allow online grocery delivery for Massachusetts SNAP recipients, and previewed the broadcast lineup.",
+   "speakers": [
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Somerville Homeless Coalition services and pandemic response",
+   "t": 160,
+   "summary": "O'Halloran detailed the coalition's shelter, outreach, and supportive housing work, noting severe strains from COVID-19 including surging food pantry demand and the need for shelter depopulation and additional funding.",
+   "speakers": [
+    "Anna Callahan",
+    "Hannah O'Halloran"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4876,
+  "output_tokens": 231,
+  "model_version": "gemini-3.8-flash"
+ }
+}
