@@ -1,0 +1,50 @@
+{
+    "SPEAKER_00": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8467708534330376,
+        "from": "CAS00002418_SPEAKER_02",
+        "at": "2026-11-08T20:28:02Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Emily O'Brien",
+        "source": "embedding_match",
+        "score": 0.9489843595796729,
+        "from": "MCM00001816_SPEAKER_12",
+        "at": "2026-11-08T20:28:02Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_03": {
+        "value": "Daniel Nuzzo-Mueller",
+        "source": "embedding_match",
+        "score": 0.9426268389393835,
+        "from": "CAS00002357_SPEAKER_10",
+        "at": "2026-11-08T20:28:03Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Daniel Nuzzo-Mueller",
+        "source": "embedding_match",
+        "score": 0.882336933051277,
+        "from": "CAS00002357_SPEAKER_09",
+        "at": "2026-11-08T20:28:03Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "Jared Powell",
+        "source": "embedding_match",
+        "score": 0.9318005924601928,
+        "from": "CAS00002473_SPEAKER_02",
+        "at": "2026-11-08T20:28:03Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Milva McDonald",
+        "source": "embedding_match",
+        "score": 0.8245220747821089,
+        "from": "MCM00001177_SPEAKER_57",
+        "at": "2026-11-08T20:28:03Z",
+        "previous": "SPEAKER_06"
+    }
+}
