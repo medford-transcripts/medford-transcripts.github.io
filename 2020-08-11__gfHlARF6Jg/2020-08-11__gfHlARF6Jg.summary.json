@@ -1,0 +1,40 @@
+{
+ "video_id": "_gfHlARF6Jg",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T06:12:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "fd4d08318decd929",
+ "subject": "School Reopening Plan",
+ "overview": "Medford Public Schools leadership hosted a live Q&A session to address community questions regarding the district's school reopening plan. Administrators reviewed local COVID-19 health metrics and detailed plans for remote learning, hybrid scheduling, facility safety, and special education services.",
+ "items": [
+  {
+   "title": "Opening Remarks and COVID-19 Metrics",
+   "t": 1,
+   "summary": "District administrators reviewed state COVID-19 positivity data showing Medford in a safe threshold and announced an upcoming HVAC engineering evaluation of Medford High School.",
+   "speakers": [
+    "Peter Cushing",
+    "Suzanne Galusi",
+    "Marice Edouard-Vincent"
+   ]
+  },
+  {
+   "title": "School Reopening Questions and Answers",
+   "t": 482,
+   "summary": "School leaders answered public questions concerning hybrid and remote learning schedules, special education accommodations, mandatory mask rules, and staff COVID-19 testing.",
+   "speakers": [
+    "Tom Milachewski",
+    "Marice Edouard-Vincent",
+    "Peter Cushing",
+    "Suzanne Galusi",
+    "Joan Bowen"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 19826,
+  "output_tokens": 237,
+  "model_version": "gemini-3.6-flash"
+ }
+}
