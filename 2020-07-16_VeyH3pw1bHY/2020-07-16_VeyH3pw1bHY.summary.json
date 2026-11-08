@@ -1,0 +1,34 @@
+{
+ "video_id": "VeyH3pw1bHY",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T10:16:31Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3d4e90ce351da80b",
+ "subject": "Anna Callahan State Representative Endorsement",
+ "overview": "Daphne Bowen spoke at a campaign launch party for Anna Callahan, describing the local paraprofessional contract fight and endorsing Callahan's candidacy for State Representative.",
+ "items": [
+  {
+   "title": "Introduction of Daphne Bowen",
+   "t": 0,
+   "summary": "An organizer introduced Daphne Bowen as a local educator and leader in the paraprofessional contract fight.",
+   "speakers": [
+    "SPEAKER_01"
+   ]
+  },
+  {
+   "title": "Remarks on Paraprofessional Contract Fight and Campaign Endorsement",
+   "t": 38,
+   "summary": "Daphne Bowen outlined the low pay and contract struggles faced by paraprofessionals and endorsed Anna Callahan for State Representative.",
+   "speakers": [
+    "Daphne Bowen"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1887,
+  "output_tokens": 177,
+  "model_version": "gemini-3.6-flash"
+ }
+}

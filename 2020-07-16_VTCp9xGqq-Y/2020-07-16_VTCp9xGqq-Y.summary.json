@@ -1,0 +1,32 @@
+{
+ "video_id": "VTCp9xGqq-Y",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T10:10:41Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f1fab8cf4c0cbe2b",
+ "subject": "Anna Callahan Campaign Launch",
+ "overview": "Medford resident Rebecca Bartorski spoke at a campaign launch event endorsing Anna Callahan for State Representative in the 34th Middlesex district. She highlighted local grassroots organizing and the development of the People's Platform.",
+ "items": [
+  {
+   "title": "Introduction",
+   "t": 0,
+   "summary": "An opening speaker introduced Rebecca Bartorski, noting her community involvement with Our Revolution Medford.",
+   "speakers": []
+  },
+  {
+   "title": "Remarks by Rebecca Bartorski",
+   "t": 31,
+   "summary": "Rebecca Bartorski discussed how Our Revolution Medford used grassroots workshops to create the People's Platform and elect progressive municipal candidates, expressing her support for Anna Callahan.",
+   "speakers": [
+    "Rebecca Bartorski"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2313,
+  "output_tokens": 196,
+  "model_version": "gemini-3.8-flash"
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "video_id": "Y7GCA5CdC0k",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T10:15:53Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cac11a4480832e41",
+ "subject": "Susan Eldridge Endorsement of Anna Callahan",
+ "overview": "Susan Eldridge spoke in support of Anna Callahan's campaign for State Representative, highlighting her community work and policy priorities.",
+ "items": [
+  {
+   "title": "Introduction of Susan Eldridge",
+   "t": 0,
+   "summary": "An unnamed speaker introduced Susan Eldridge and highlighted her grassroots work with Our Revolution Somerville and the Tufts PILOT program.",
+   "speakers": []
+  },
+  {
+   "title": "Remarks by Susan Eldridge",
+   "t": 53,
+   "summary": "Susan Eldridge endorsed Anna Callahan for State Representative, citing her commitment to issues such as affordable housing and healthcare.",
+   "speakers": [
+    "Susan Eldridge",
+    "Anna Callahan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1327,
+  "output_tokens": 148,
+  "model_version": "gemini-3.6-flash"
+ }
+}

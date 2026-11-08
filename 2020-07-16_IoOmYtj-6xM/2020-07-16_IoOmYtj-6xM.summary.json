@@ -1,0 +1,32 @@
+{
+ "video_id": "IoOmYtj-6xM",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T10:15:34Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "97ed51be015bd7a4",
+ "subject": "Anna Callahan Campaign Launch",
+ "overview": "Joshua Chaisin spoke at a campaign launch event for State Representative candidate Anna Callahan, sharing his experience with student loan debt and calling for public college funding and debt cancellation.",
+ "items": [
+  {
+   "title": "Introduction of Joshua Chaisin",
+   "t": 5,
+   "summary": "A speaker introduced Middlesex Community College student Joshua Chaisin to share his personal experience with student debt.",
+   "speakers": []
+  },
+  {
+   "title": "Remarks on Student Debt and Endorsement",
+   "t": 25,
+   "summary": "Joshua Chaisin described how student debt has affected his education and personal life, advocating for debt forgiveness and endorsing Anna Callahan's platform.",
+   "speakers": [
+    "Joshua Chaisin"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2089,
+  "output_tokens": 202,
+  "model_version": "gemini-3.6-flash"
+ }
+}
