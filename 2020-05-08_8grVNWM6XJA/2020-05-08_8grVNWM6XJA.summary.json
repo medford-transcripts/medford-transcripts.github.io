@@ -1,0 +1,81 @@
+{
+ "video_id": "8grVNWM6XJA",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T13:14:04Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b92beeff9cc92bea",
+ "subject": "Andrews Middle School Virtual Orientation",
+ "overview": "Principal Mike Downs led a virtual open house for incoming sixth-graders and their families to introduce the school's facilities, staff, and academic expectations. The session included a video tour, a review of administrative procedures, and a panel discussion with faculty members regarding the transition to middle school.",
+ "items": [
+  {
+   "title": "Welcome and Core Values",
+   "t": 7,
+   "summary": "Principal Mike Downs introduced the faculty and outlined the school's core values of excellence, responsibility, and respect.",
+   "speakers": [
+    "Downs"
+   ]
+  },
+  {
+   "title": "Virtual Building Tour",
+   "t": 224,
+   "summary": "Superintendent Marice Edouard-Vincent and Principal Downs presented a video tour of the school's cafeteria, gymnasium, tech lab, and outdoor athletic facilities.",
+   "speakers": [
+    "Marice Edouard-Vincent",
+    "Downs"
+   ]
+  },
+  {
+   "title": "Student Schedules and Academic Overview",
+   "t": 1154,
+   "summary": "The principal reviewed sample sixth-grade schedules, detailing the eight-block system, exploratory classes, and the 'What I Need Now' (WINN) period.",
+   "speakers": [
+    "Downs"
+   ]
+  },
+  {
+   "title": "Parent Fact Sheet and Administrative Procedures",
+   "t": 1216,
+   "summary": "Downs discussed logistical procedures including the School Brains grading platform, busing schedules, dismissal protocols, and the use of school-issued lockers.",
+   "speakers": [
+    "Downs"
+   ]
+  },
+  {
+   "title": "PTO Overview",
+   "t": 1464,
+   "summary": "The presentation highlighted the Parent Teacher Organization's role in fundraising for technology and sponsoring school social events.",
+   "speakers": [
+    "Downs"
+   ]
+  },
+  {
+   "title": "Faculty Panel and Question and Answer",
+   "t": 1544,
+   "summary": "Teachers and administrators answered questions regarding intramural sports, club availability, and social equity while offering advice for a successful transition.",
+   "speakers": [
+    "Downs",
+    "Reginald Maidment",
+    "Peter Cushing",
+    "Yvonne Dwojeski-Santos",
+    "Michael DiClemente",
+    "Julia McEwen"
+   ]
+  },
+  {
+   "title": "Staff and Student Welcome Video",
+   "t": 3117,
+   "summary": "The meeting concluded with a compilation video featuring messages from current students and faculty members welcoming the incoming class.",
+   "speakers": [
+    "Downs",
+    "Sarah Grant"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21701,
+  "output_tokens": 557,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

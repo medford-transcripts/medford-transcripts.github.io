@@ -1,0 +1,62 @@
+{
+ "video_id": "MCM00001502",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T13:12:21Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "173d07bcf032b04d",
+ "subject": "COVID-19 Emergency Housing Information Session",
+ "overview": "Housing Medford and the City of Medford co-hosted a public information session detailing emergency rental assistance, public housing vouchers, and legal resources available to residents during the COVID-19 pandemic. Regional service providers presented their assistance programs and answered community questions regarding application procedures and eligibility.",
+ "items": [
+  {
+   "title": "Welcome and Overview of Municipal Housing Initiatives",
+   "t": 3,
+   "summary": "Representatives from Housing Medford and the Office of Community Development introduced the session and encouraged public participation in the city's ongoing Housing Production Plan process.",
+   "speakers": [
+    "Roberta Cameron",
+    "Alicia Hunt",
+    "Molly Kivi",
+    "Alex Lussenhop",
+    "Danielle Evans",
+    "Osborne"
+   ]
+  },
+  {
+   "title": "Presentations by Housing Service Providers",
+   "t": 783,
+   "summary": "Representatives from ABCD, Metro Housing Boston, Housing Families, and the Medford Housing Authority outlined available emergency rental assistance, eviction defense services, public housing vouchers, and property tax relief.",
+   "speakers": [
+    "Alex Lussenhop",
+    "Josh Young",
+    "Lydia McCoy",
+    "Jason Malenciano",
+    "Jayna Stafford",
+    "Barbara Fleming",
+    "Roberta Cameron",
+    "Alicia Hunt"
+   ]
+  },
+  {
+   "title": "Public Question and Answer Session",
+   "t": 1968,
+   "summary": "Panelists addressed resident questions regarding income calculation for emergency rental aid, qualification rules for roommates on shared leases, and housing authority waiting list procedures.",
+   "speakers": [
+    "Alex Lussenhop",
+    "Molly Kivi",
+    "Josh Young",
+    "Alicia Hunt",
+    "Barbara Fleming",
+    "Jason Malenciano",
+    "Jayna Stafford",
+    "Roberta Cameron",
+    "Justin Silva"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 21327,
+  "output_tokens": 383,
+  "model_version": "gemini-3.6-flash"
+ }
+}
