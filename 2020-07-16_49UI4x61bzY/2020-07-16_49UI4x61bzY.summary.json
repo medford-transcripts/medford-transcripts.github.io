@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "b75f7c28a5decb52",
- "subject": "",
+ "subject": "Canvassing Pitch and Voter Messaging",
  "overview": "Candidate Anna Callahan provided an update on her campaign for 34th District State Representative, discussing her door-knocking experiences and voter messaging strategy.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 1710,
   "output_tokens": 101,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
