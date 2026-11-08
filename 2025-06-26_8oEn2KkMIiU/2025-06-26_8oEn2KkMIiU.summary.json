@@ -1,0 +1,58 @@
+{
+ "video_id": "8oEn2KkMIiU",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T01:07:54Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "454cfd890f10e6c4",
+ "subject": "",
+ "overview": "The Medford Community Development Board approved meeting minutes and granted a permit extension for the Macklin Road subdivision. The board also reviewed the city's ongoing zoning recodification effort and voted to submit board feedback to the Community Development Director.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 149,
+   "summary": "The board approved the meeting minutes for August 20, 2020, and September 16, 2020.",
+   "speakers": [
+    "Andre Leroux",
+    "David Blumberg",
+    "Katie McCue",
+    "Jacqueline McPherson",
+    "Jenny Graham"
+   ]
+  },
+  {
+   "title": "Macklin Road Subdivision Extension",
+   "t": 297,
+   "summary": "Approved a permit time extension through June 30, 2021, for the Macklin Road subdivision project.",
+   "speakers": [
+    "Andre Leroux",
+    "Michael Collins",
+    "Nicole Morell",
+    "Claes Andreasen",
+    "Jacqueline McPherson",
+    "Katie McCue"
+   ]
+  },
+  {
+   "title": "Zoning Review and Board Rules Discussion",
+   "t": 937,
+   "summary": "The board reviewed the city's zoning recodification process and voted to direct staff to send board feedback and questions regarding zoning criteria and board procedures to the Community Development Director.",
+   "speakers": [
+    "Andre Leroux",
+    "Katie McCue",
+    "Alicia Hunt",
+    "Jacqueline McPherson",
+    "Nicole Morell",
+    "David Blumberg",
+    "Claes Andreasen",
+    "Jenny Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23231,
+  "output_tokens": 343,
+  "model_version": "gemini-3.6-flash"
+ }
+}
