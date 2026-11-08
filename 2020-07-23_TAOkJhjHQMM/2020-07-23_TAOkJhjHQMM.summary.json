@@ -1,0 +1,45 @@
+{
+ "video_id": "TAOkJhjHQMM",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T08:09:38Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "6b26203156eb8134",
+ "subject": "South Korea COVID-19 Response",
+ "overview": "Host Anna Callahan interviewed software engineer Howard Kim about his travel from Somerville to South Korea during the COVID-19 pandemic. Kim described South Korea's quarantine and testing protocols and compared its public health response to that of the United States.",
+ "items": [
+  {
+   "title": "Introduction of Howard Kim",
+   "t": 0,
+   "summary": "Anna Callahan introduced Somerville resident Howard Kim to discuss living in South Korea during the COVID-19 outbreak.",
+   "speakers": [
+    "Anna Callahan",
+    "Howard Kim"
+   ]
+  },
+  {
+   "title": "Travel and Quarantine Experience in South Korea",
+   "t": 39,
+   "summary": "Howard Kim detailed undergoing airport testing upon arrival in Seoul, followed by a mandatory two-week monitored quarantine supported by government care packages.",
+   "speakers": [
+    "Howard Kim",
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Comparison of South Korean and US Pandemic Responses",
+   "t": 667,
+   "summary": "Kim and Callahan discussed differences in testing availability, public trust, and universal healthcare between South Korea and the United States.",
+   "speakers": [
+    "Anna Callahan",
+    "Howard Kim"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7316,
+  "output_tokens": 261,
+  "model_version": "gemini-3.8-flash"
+ }
+}
