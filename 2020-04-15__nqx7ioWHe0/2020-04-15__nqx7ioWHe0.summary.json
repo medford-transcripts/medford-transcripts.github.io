@@ -1,0 +1,53 @@
+{
+ "video_id": "_nqx7ioWHe0",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T15:09:46Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "4e110fa6eb538a4b",
+ "subject": "COVID-19 Community Support and Medical Surge Preparation",
+ "overview": "The Solidarity Live program reviewed the impacts of COVID-19 on vulnerable populations and the medical system's preparation for a projected case surge. Discussions focused on housing stability for tenants, resources for the homeless, and the expansion of hospital capacity.",
+ "items": [
+  {
+   "title": "SNAP Online Delivery Petition",
+   "t": 0,
+   "summary": "Anna Callahan introduced the program and requested signatures for a petition to allow SNAP food assistance benefits to be used for online grocery delivery during the pandemic.",
+   "speakers": [
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Somerville Homeless Coalition Impact Report",
+   "t": 85,
+   "summary": "Hannah O'Halloran discussed the challenges of social distancing in shelters, the loss of panhandling income for people in encampments, and the transition of shelters to 24/7 operations.",
+   "speakers": [
+    "Anna Callahan",
+    "Hannah O'Halloran"
+   ]
+  },
+  {
+   "title": "Affordable Housing and Tenant Relief",
+   "t": 746,
+   "summary": "David Tissell outlined the Somerville Community Corporation’s efforts to prevent displacement through the 100 Homes program and guided residents toward rental assistance resources like RAFT and the Cosecha fund.",
+   "speakers": [
+    "Anna Callahan",
+    "David Tissell"
+   ]
+  },
+  {
+   "title": "Medical System Response and Surge Planning",
+   "t": 1345,
+   "summary": "Dr. Myfanwy Callahan detailed the expansion of ICU beds in Massachusetts, the use of decontaminated N95 masks, and the establishment of a field hospital at the Boston Convention Center to handle the projected surge.",
+   "speakers": [
+    "Anna Callahan",
+    "Myfanwy Callahan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12101,
+  "output_tokens": 454,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

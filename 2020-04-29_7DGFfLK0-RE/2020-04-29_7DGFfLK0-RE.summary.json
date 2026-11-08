@@ -1,0 +1,46 @@
+{
+ "video_id": "7DGFfLK0-RE",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T15:06:12Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "7b87a9ac8ceabe49",
+ "subject": "Community COVID-19 Response and Relief Efforts",
+ "overview": "The host interviewed community organizers and residents to discuss pandemic relief strategies for immigrants and students. The broadcast compared local mutual aid efforts in Somerville and Medford with the national public health response in South Korea.",
+ "items": [
+  {
+   "title": "The Welcome Project Immigrant Assistance Fund",
+   "t": 34,
+   "summary": "Kenia Alfaro described the organization's work providing financial support, food resources, and interpretation services for immigrant families across several local cities.",
+   "speakers": [
+    "Anna Callahan",
+    "Kenia Alfaro"
+   ]
+  },
+  {
+   "title": "Tufts Mutual Aid and Student Support",
+   "t": 973,
+   "summary": "Nikhil and Madeline Clark explained how their student-led collective operates a food pantry and advocates for equitable academic policies following the transition to remote learning.",
+   "speakers": [
+    "Anna Callahan",
+    "Nikhil",
+    "Madeline Clark"
+   ]
+  },
+  {
+   "title": "South Korean Pandemic Response Comparison",
+   "t": 2336,
+   "summary": "Howard Kim provided a firsthand account of South Korea’s rigorous testing, contact tracing, and universal healthcare system as a model for containing the virus.",
+   "speakers": [
+    "Anna Callahan",
+    "Howard Kim"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 20055,
+  "output_tokens": 310,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

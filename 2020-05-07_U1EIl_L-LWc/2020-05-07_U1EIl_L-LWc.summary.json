@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "d1b3504b9eae5d72",
- "subject": "",
+ "subject": "Andrews Middle School Incoming Sixth Grade Orientation",
  "overview": "Andrews Middle School faculty, staff, and student leaders held a virtual open house to welcome incoming sixth graders and present information on school culture, clubs, and academic programs.",
  "items": [
   {
@@ -65,5 +65,6 @@
   "input_tokens": 4343,
   "output_tokens": 412,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

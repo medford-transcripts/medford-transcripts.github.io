@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "3dee51564c24a90f",
- "subject": "",
+ "subject": "Incoming Sixth Grade Virtual Open House",
  "overview": "School administrators, teachers, and student ambassadors hosted a remote open house for incoming sixth-grade students and their families. The presentation featured a prerecorded tour and overview of the school followed by a live panel answering questions about academics, schedules, and student life.",
  "items": [
   {
@@ -49,5 +49,6 @@
   "input_tokens": 24899,
   "output_tokens": 359,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
