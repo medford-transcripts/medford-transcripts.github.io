@@ -1,0 +1,80 @@
+{
+ "video_id": "CAS00002333",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T14:11:07Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "eba2f312fa1f5d28",
+ "subject": "",
+ "overview": "The Zoning Board of Appeals approved variances for a hot tub and fence at 77 Sheppard Road and granted a special permit for Theory Wellness to add medical cannabis sales at 162 Mystic Avenue. The board also closed a hearing following the withdrawal of a special permit request for 106 Alexander Avenue and continued a hearing for 7 Terrell Road.",
+ "items": [
+  {
+   "title": "7 Terrell Road",
+   "t": 55,
+   "summary": "Continued the public hearing on a special permit application for a side porch awning to March 26, 2026, at the applicant's request.",
+   "speakers": [
+    "Mike Caldera",
+    "Denis MacDougall"
+   ]
+  },
+  {
+   "title": "106 Alexander Avenue",
+   "t": 128,
+   "summary": "Closed the hearing following the applicant's withdrawal of a special permit request for parking, noting that previously granted variances remain intact after revisions brought the parking plan into compliance.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Mike Cabral"
+   ]
+  },
+  {
+   "title": "77 Sheppard Road",
+   "t": 375,
+   "summary": "Approved variances allowing an accessory structure (hot tub) in the front yard and a six-foot fence within the front yard setback, rejecting objections from an abutting neighbor regarding statutory hardship criteria.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Chris D'Aveta",
+    "SPEAKER_10",
+    "kCdGHg1OaMo_SPEAKER_21",
+    "SPEAKER_08",
+    "Mike Caldera",
+    "Henry Rappa",
+    "SPEAKER_01",
+    "SPEAKER_09",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "162 Mystic Avenue",
+   "t": 3283,
+   "summary": "Approved a special permit allowing Theory Wellness to add medical marijuana sales to its existing recreational cannabis dispensary.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Brandon Pollock",
+    "Chris D'Aveta",
+    "Mary Lee",
+    "Yvette Velez",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "Administrative Updates and Board Membership",
+   "t": 4445,
+   "summary": "Discussed upcoming meeting minutes, board member appointment processes, and member Mike Caldera's upcoming departure from the board in March.",
+   "speakers": [
+    "Denis MacDougall",
+    "Andre Leroux",
+    "Mike Caldera",
+    "Chris D'Aveta"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 28459,
+  "output_tokens": 552,
+  "model_version": "gemini-3.8-flash"
+ }
+}
