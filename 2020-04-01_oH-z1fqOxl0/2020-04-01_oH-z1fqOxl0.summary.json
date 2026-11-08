@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "160bdffb9687a5bd",
- "subject": "",
+ "subject": "COVID-19 Response",
  "overview": "The panel discussed Medford's local public health response to COVID-19, focusing on emergency measures and food security initiatives. Participants also reviewed technical barriers to online grocery shopping for SNAP recipients and the health risks facing the state's incarcerated population.",
  "items": [
   {
@@ -77,5 +77,6 @@
   "input_tokens": 17047,
   "output_tokens": 621,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }
