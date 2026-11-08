@@ -1,0 +1,73 @@
+{
+ "video_id": "kv8LdhmTAaQ",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T22:06:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "00bf79278410304d",
+ "subject": "",
+ "overview": "The Medford City Council approved a utility grant of location on Medford Street and passed resolutions regarding vacant municipal job positions, accessible traffic signals, and public education on corner parking laws.",
+ "items": [
+  {
+   "title": "Grant of Location: National Grid Conduit Installation",
+   "t": 689,
+   "summary": "Approved National Grid's petition to install underground electrical conduit at 87 Medford Street subject to engineering division conditions, including replacing the driveway apron.",
+   "speakers": [
+    "Moses Okokuro",
+    "Adam Knight",
+    "George Scarpelli",
+    "John Falco"
+   ]
+  },
+  {
+   "title": "Resolution on Vacant Municipal Positions",
+   "t": 1102,
+   "summary": "Passed a resolution requesting a list of funded vacant positions in the city budget and an organizational chart showing transitional department roles.",
+   "speakers": [
+    "Adam Knight",
+    "John Falco"
+   ]
+  },
+  {
+   "title": "Resolution on Audible Traffic Signals near Whole Foods",
+   "t": 1200,
+   "summary": "Passed a resolution requesting DCR install sound devices on traffic signals at the Mystic Valley Parkway, Auburn Street, and South Street intersection for visually impaired pedestrians, with a request to audit signalization citywide.",
+   "speakers": [
+    "Richard Caraviello",
+    "Zac Bears",
+    "Adam Knight",
+    "Rosemary Tehan",
+    "Michael Marks",
+    "John Falco"
+   ]
+  },
+  {
+   "title": "Resolution on Corner Parking Restrictions and Public Education",
+   "t": 1627,
+   "summary": "Approved a resolution requesting corner parking restrictions at New Bern Avenue and Medford Street, while directing city departments and local outlets to notify residents about intersection parking regulations.",
+   "speakers": [
+    "Michael Marks",
+    "Zac Bears",
+    "George Scarpelli",
+    "Nicole Morell",
+    "Richard Caraviello",
+    "John Falco"
+   ]
+  },
+  {
+   "title": "Approval of Meeting Records",
+   "t": 2069,
+   "summary": "Approved the records of the city council meeting held on February 4, 2020.",
+   "speakers": [
+    "Zac Bears",
+    "John Falco"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9473,
+  "output_tokens": 467,
+  "model_version": "gemini-3.6-flash"
+ }
+}
