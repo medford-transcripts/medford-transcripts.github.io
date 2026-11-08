@@ -1,0 +1,53 @@
+{
+ "video_id": "XR045-Loi0M",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T14:17:00Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3dee51564c24a90f",
+ "subject": "",
+ "overview": "School administrators, teachers, and student ambassadors hosted a remote open house for incoming sixth-grade students and their families. The presentation featured a prerecorded tour and overview of the school followed by a live panel answering questions about academics, schedules, and student life.",
+ "items": [
+  {
+   "title": "Welcome and School Overview Video",
+   "t": 29,
+   "summary": "Principal Tucci and school staff introduced the McGlynn Middle School structure, covering the academic team system, daily eight-period schedule, unified arts rotations, and extracurricular offerings.",
+   "speakers": [
+    "Tucci",
+    "Jodi Liu"
+   ]
+  },
+  {
+   "title": "Academic Teaming, Facilities, and Student Perspectives",
+   "t": 1260,
+   "summary": "Teachers and students showcased the two-team model for incoming sixth graders, library programs, and music electives, offering advice on adjusting to middle school life.",
+   "speakers": [
+    "Michael Kremen",
+    "McCarthy",
+    "Danny Le",
+    "Derek Marino"
+   ]
+  },
+  {
+   "title": "Live Panel Question and Answer Forum",
+   "t": 2736,
+   "summary": "Administrators, faculty, and student ambassadors answered questions from viewers regarding morning arrival, lockers, academic support, club participation, sports eligibility, and August orientation plans.",
+   "speakers": [
+    "Tucci",
+    "Jodi Liu",
+    "Vinny Martino",
+    "Jamie Taylor",
+    "Derek Marino",
+    "Peter Cushing",
+    "Dan Harrington",
+    "Emma Beardsley"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 24899,
+  "output_tokens": 359,
+  "model_version": "gemini-3.8-flash"
+ }
+}

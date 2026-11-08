@@ -1,0 +1,54 @@
+{
+ "video_id": "n31pl_EctQM",
+ "provider": "gemini",
+ "generated_at": "2026-11-08T14:18:14Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "c92bb6f54f5ef445",
+ "subject": "Musician Life Under COVID US vs Canada",
+ "overview": "The program featured a comparison of the financial and social safety nets available to musicians in Somerville and Toronto during the COVID-19 pandemic. Participants discussed the differences between American mutual aid and Canadian federal income support programs.",
+ "items": [
+  {
+   "title": "Introduction to Solidarity Live",
+   "t": 2,
+   "summary": "Anna Callahan introduced the program as a community forum designed to share stories and solve problems through expert discussion.",
+   "speakers": [
+    "Anna Callahan"
+   ]
+  },
+  {
+   "title": "Financial impact on Somerville musicians",
+   "t": 62,
+   "summary": "James Lesuey described the total loss of his performance and restaurant income, noting his reliance on local mutual aid and a one-time stimulus check to cover expenses.",
+   "speakers": [
+    "Anna Callahan",
+    "James Lesuey"
+   ]
+  },
+  {
+   "title": "Economic support for musicians in Canada",
+   "t": 402,
+   "summary": "Kat McCleavey detailed her transition to online teaching and the availability of a $2,000 monthly federal benefit provided by the Canadian government.",
+   "speakers": [
+    "Anna Callahan",
+    "Kat McCleavey"
+   ]
+  },
+  {
+   "title": "Comparison of national health and safety policies",
+   "t": 747,
+   "summary": "Participants compared the impacts of single-payer healthcare and national rent protections on their personal safety and financial security during the public health crisis.",
+   "speakers": [
+    "Anna Callahan",
+    "Kat McCleavey",
+    "James Lesuey"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7632,
+  "output_tokens": 379,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
