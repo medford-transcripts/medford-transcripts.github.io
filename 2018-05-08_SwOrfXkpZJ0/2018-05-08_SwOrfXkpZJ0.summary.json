@@ -1,0 +1,55 @@
+{
+ "video_id": "SwOrfXkpZJ0",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T14:16:49Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "e588e5b759f0939c",
+ "subject": "Medford Little League Opening Day Ceremony",
+ "overview": "The City of Medford held its annual Little League opening day ceremony, featuring a parade of teams, recitation of league pledges, and ceremonial first pitches.",
+ "items": [
+  {
+   "title": "Parade and Team Assembly",
+   "t": 20,
+   "summary": "Coaches and youth players from various local teams gathered for the annual parade and team assembly.",
+   "speakers": [
+    "William O'Keefe"
+   ]
+  },
+  {
+   "title": "National Anthem",
+   "t": 795,
+   "summary": "Renee and Kara Messerschmitt performed the national anthem to open the formal ceremony.",
+   "speakers": [
+    "William O'Keefe"
+   ]
+  },
+  {
+   "title": "Recitation of Pledges",
+   "t": 917,
+   "summary": "Participants recited the Little League pledge followed by the coach's pledge, which emphasizes positive reinforcement and team culture.",
+   "speakers": [
+    "William O'Keefe",
+    "Joe Salera"
+   ]
+  },
+  {
+   "title": "Mayor's Remarks and Ceremonial First Pitches",
+   "t": 1090,
+   "summary": "Mayor Stephanie Muccini Burke addressed the families and players before city officials threw ceremonial first pitches to start the season.",
+   "speakers": [
+    "William O'Keefe",
+    "Stephanie Muccini Burke",
+    "Michael Marks",
+    "John Falco",
+    "Mia Mustone"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4909,
+  "output_tokens": 350,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
