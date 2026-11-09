@@ -1,0 +1,52 @@
+{
+ "video_id": "CAS00002332",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T04:05:25Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "072f4ca8bb8730d8",
+ "subject": "High School Construction Delivery Method",
+ "overview": "The committee voted to use the Construction Manager at Risk delivery method for the high school project and appointed district representatives to the evaluation committee.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 170,
+   "summary": "Approved the minutes from the previous meeting for submission to the MSBA.",
+   "speakers": [
+    "Jenny Graham",
+    "Brian Hilliard"
+   ]
+  },
+  {
+   "title": "Construction Delivery Method Presentation and Vote",
+   "t": 257,
+   "summary": "Voted to proceed with the Construction Manager at Risk delivery method and authorized Left Field to submit the application to the Office of the Inspector General following a presentation comparing delivery options.",
+   "speakers": [
+    "Jenny Graham",
+    "Matt Gulino",
+    "Paul Ruseau",
+    "Adele Sands",
+    "Breanna Lungo-Koehn",
+    "Kimberly Talbot",
+    "Kenneth Lord"
+   ]
+  },
+  {
+   "title": "CM Evaluation Committee Appointments",
+   "t": 3271,
+   "summary": "Appointed Dr. Galussi, Jenny Graham, Ken Lord, Libby Brown, and Brian Hilliard as district representatives on the evaluation committee to select the construction manager.",
+   "speakers": [
+    "Jenny Graham",
+    "Nicole Morell",
+    "Brian Hilliard",
+    "Will Pipicelli"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 17408,
+  "output_tokens": 358,
+  "model_version": "gemini-3.6-flash"
+ }
+}
