@@ -1,0 +1,61 @@
+{
+ "video_id": "TayqV05M2I0",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T16:13:41Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b2026c5390c7022b",
+ "subject": "Superintendent Candidate Interviews",
+ "overview": "The Medford School Committee conducted its second night of public interviews for the superintendent search, interviewing candidates Dr. Marice Edouard-Vincent and Thomas Martellone.",
+ "items": [
+  {
+   "title": "Call to Order and Opening Remarks",
+   "t": 2,
+   "summary": "Mayor Burke opened the meeting, outlined the schedule for deciding on candidate site visits, and led a moment of silence in memory of Dr. Martin Luther King Jr.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Kathy Kreatz",
+    "Erin DiBenedetto"
+   ]
+  },
+  {
+   "title": "Interview with Dr. Marice Edouard-Vincent",
+   "t": 136,
+   "summary": "The committee interviewed Boston Public Schools Instructional Superintendent Dr. Marice Edouard-Vincent on topics including management style, student achievement data, English learner instruction, and career technical education.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Marice Edouard-Vincent",
+    "Paulette Van der Kloot",
+    "Paul Ruseau",
+    "Mea Quinn Mustone",
+    "Kathy Kreatz",
+    "Erin DiBenedetto",
+    "Michael Ruggiero",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Interview with Thomas Martellone",
+   "t": 6558,
+   "summary": "The committee interviewed Lexington elementary principal Thomas Martellone regarding district leadership, special education accountability, budget administration, school safety, and student engagement.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Thomas Martellone",
+    "Michael Ruggiero",
+    "Erin DiBenedetto",
+    "Kathy Kreatz",
+    "Mea Quinn Mustone",
+    "Justin Tseng",
+    "Paulette Van der Kloot",
+    "Paul Ruseau",
+    "Sebastian Tringali"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 59087,
+  "output_tokens": 389,
+  "model_version": "gemini-3.6-flash"
+ }
+}
