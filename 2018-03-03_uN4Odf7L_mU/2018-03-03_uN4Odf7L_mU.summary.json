@@ -1,0 +1,30 @@
+{
+ "video_id": "uN4Odf7L_mU",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T22:10:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9d14279f63a9129b",
+ "subject": "Gleason School Performance of Annie",
+ "overview": "Second and third-grade students at Gleason School presented a musical performance of Annie. Following the play, staff recognized the cast groups and parent volunteers.",
+ "items": [
+  {
+   "title": "Student Performance of Annie",
+   "t": 4,
+   "summary": "Second and third-grade students acted out scenes and sang musical numbers from Annie.",
+   "speakers": []
+  },
+  {
+   "title": "Curtain Call and Acknowledgments",
+   "t": 3204,
+   "summary": "Organizers called up student cast groups for applause and presented flowers to parent volunteers.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13033,
+  "output_tokens": 149,
+  "model_version": "gemini-3.6-flash"
+ }
+}
