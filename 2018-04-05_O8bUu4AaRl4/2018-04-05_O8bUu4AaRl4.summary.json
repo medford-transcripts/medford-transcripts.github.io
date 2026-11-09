@@ -1,0 +1,52 @@
+{
+ "video_id": "O8bUu4AaRl4",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T17:13:21Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "a6aca9a92c04700f",
+ "subject": "Superintendent Candidate Interviews",
+ "overview": "The School Committee conducted public interviews with two superintendent finalists, Dr. Donna Straight and Dr. John Perella. No deliberations or votes took place.",
+ "items": [
+  {
+   "title": "Interview with Dr. Donna Straight",
+   "t": 102,
+   "summary": "Dr. Donna Straight answered questions regarding communication strategies, vocational education, special education, social-emotional learning, collective bargaining, and capital planning.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Donna Straight",
+    "Mea Quinn Mustone",
+    "Kathy Kreatz",
+    "Erin DiBenedetto",
+    "Michael Ruggiero",
+    "Paulette Van der Kloot",
+    "Paul Ruseau",
+    "Sebastian Tringali",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Interview with Dr. John Perella",
+   "t": 6227,
+   "summary": "Medford High School Headmaster Dr. John Perella responded to committee questions regarding leadership philosophy, high school and vocational integration, standardized testing, school budgeting, and district-wide academic alignment.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "John Perella",
+    "Paul Ruseau",
+    "Paulette Van der Kloot",
+    "Mea Quinn Mustone",
+    "Kathy Kreatz",
+    "Erin DiBenedetto",
+    "Michael Ruggiero",
+    "Sebastian Tringali",
+    "Justin Tseng"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 55307,
+  "output_tokens": 373,
+  "model_version": "gemini-3.8-flash"
+ }
+}
