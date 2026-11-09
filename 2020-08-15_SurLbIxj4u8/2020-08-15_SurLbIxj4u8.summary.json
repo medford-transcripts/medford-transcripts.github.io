@@ -1,0 +1,27 @@
+{
+ "video_id": "SurLbIxj4u8",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T01:17:21Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "33c5f8a5690a07e1",
+ "subject": "2020 Commencement Exercises",
+ "overview": "Medford Vocational Technical High School convened for its 2020 Commencement Exercises, featuring opening remarks and the Pledge of Allegiance.",
+ "items": [
+  {
+   "title": "Pledge of Allegiance and Opening Remarks",
+   "t": 788,
+   "summary": "Paul D'Alleva opened the ceremony, and Elijah Fortune led the Pledge of Allegiance and delivered brief remarks to the graduating class.",
+   "speakers": [
+    "Paul D'Alleva",
+    "Elijah Fortune"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1301,
+  "output_tokens": 120,
+  "model_version": "gemini-3.6-flash"
+ }
+}
