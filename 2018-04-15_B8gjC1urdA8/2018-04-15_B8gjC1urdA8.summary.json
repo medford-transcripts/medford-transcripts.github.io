@@ -1,0 +1,36 @@
+{
+ "video_id": "B8gjC1urdA8",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T15:16:34Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "e1997139250400bb",
+ "subject": "",
+ "overview": "Host Michael Marks interviewed State Representative Sean Garbali on state budget priorities and criminal justice reform, and sustainability consultant Craig Foley on residential energy efficiency and solar power.",
+ "items": [
+  {
+   "title": "Legislative Update with State Representative Sean Garbali",
+   "t": 101,
+   "summary": "Representative Garbali discussed state aid formulas for local schools, proposed grants for higher education, and the implementation of restorative justice programs in the criminal justice system. He also advocated for mandatory civics education and lowering the municipal voting age to 17 to address low voter turnout.",
+   "speakers": [
+    "Michael Marks",
+    "Sean Garbali"
+   ]
+  },
+  {
+   "title": "Energy Efficiency and Sustainability with Craig Foley",
+   "t": 1224,
+   "summary": "Sustainability consultant Craig Foley detailed the benefits of the Mass Save program for home energy audits and explained the financial feasibility of residential solar photovoltaic systems. He also described how municipal aggregation programs allow communities to secure stable, fixed pricing for electricity.",
+   "speakers": [
+    "Michael Marks",
+    "Craig Foley"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13349,
+  "output_tokens": 256,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

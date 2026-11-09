@@ -1,0 +1,44 @@
+{
+ "video_id": "o9F0qYH9Geo",
+ "provider": "gemini",
+ "generated_at": "2026-11-09T15:13:21Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "bbf6513448f3e9f9",
+ "subject": "Superintendent Finalist Scenario Interviews",
+ "overview": "The School Committee met as a committee of the whole to conduct scenario-based interviews with the two finalists for superintendent of schools, Dr. Marice Edouard-Vincent and Thomas Martellone. No votes were taken, with deliberations and a final selection scheduled for the following meeting.",
+ "items": [
+  {
+   "title": "Superintendent Finalist Interview: Dr. Marice Edouard-Vincent",
+   "t": 77,
+   "summary": "Dr. Marice Edouard-Vincent presented proposals to resolve middle school enrollment disparities through STEAM programming and community outreach, followed by responses to hypothetical scenarios involving an emergency school evacuation and unexpected mid-year budget deficits.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Marice Edouard-Vincent",
+    "Erin DiBenedetto",
+    "Paul Ruseau",
+    "Paulette Van der Kloot"
+   ]
+  },
+  {
+   "title": "Superintendent Finalist Interview: Thomas Martellone",
+   "t": 3027,
+   "summary": "Thomas Martellone recommended implementing a geocoded placement model and buffer zones to balance middle school enrollment and demographics, and answered scenario questions regarding emergency facility shutdowns and mid-year budget cuts.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Thomas Martellone",
+    "Paul Ruseau",
+    "Erin DiBenedetto",
+    "Paulette Van der Kloot",
+    "Mea Quinn Mustone",
+    "Kathy Kreatz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 26661,
+  "output_tokens": 317,
+  "model_version": "gemini-3.8-flash"
+ }
+}
