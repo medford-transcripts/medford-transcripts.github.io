@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "580c55fcd0ef3b49",
- "subject": "",
+ "subject": "Mayoral and School Committee Candidate Forum",
  "overview": "The Medford Ward 6 Democratic Committee hosted a mayoral and school committee candidate forum ahead of the 2017 municipal election. Candidates presented platforms focusing on infrastructure, school facility maintenance, special education, and public safety priorities.",
  "items": [
   {
@@ -121,5 +121,6 @@
   "input_tokens": 27778,
   "output_tokens": 1132,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

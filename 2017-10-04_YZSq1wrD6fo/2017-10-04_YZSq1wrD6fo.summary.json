@@ -1,0 +1,43 @@
+{
+ "video_id": "YZSq1wrD6fo",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T11:13:47Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "eb1ffd610fe35d87",
+ "subject": "Chevalier Theater Management Agreement",
+ "overview": "Mayor Stephanie Muccini Burke and city officials announced a long-term management agreement with promoter Bill Blumenreich for the Chevalier Theatre. The presentation outlined the terms of the agreement and concluded with the signing of the contract.",
+ "items": [
+  {
+   "title": "Chevalier Theatre Agreement Announcement",
+   "t": 11,
+   "summary": "Mayor Stephanie Muccini Burke announced a partnership with Bill Blumenreich spanning four five-year terms, including a one-dollar per ticket restoration fund contribution, Medford hiring priorities, and continued accommodation for the Boys and Girls Club.",
+   "speakers": [
+    "Stephanie Muccini Burke"
+   ]
+  },
+  {
+   "title": "Remarks from Chevalier Commission",
+   "t": 281,
+   "summary": "Chevalier Commission Chair John Costas recognized long-time contributors to the venue's preservation and praised the committee for securing a professional theater management partner.",
+   "speakers": [
+    "John Costas"
+   ]
+  },
+  {
+   "title": "Promoter Remarks and Contract Signing",
+   "t": 421,
+   "summary": "Bill Blumenreich outlined plans to buy and book major entertainment acts directly for the Chevalier Theatre before joining the mayor to sign the management contract.",
+   "speakers": [
+    "Bill Blumenreich",
+    "Stephanie Muccini Burke"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3715,
+  "output_tokens": 288,
+  "model_version": "gemini-3.8-flash"
+ }
+}

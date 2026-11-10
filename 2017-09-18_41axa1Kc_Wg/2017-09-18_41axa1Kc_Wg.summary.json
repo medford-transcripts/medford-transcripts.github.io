@@ -1,0 +1,47 @@
+{
+ "video_id": "41axa1Kc_Wg",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T11:17:39Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "e209b5f83c659257",
+ "subject": "Support for Kingwood High School Relief Efforts",
+ "overview": "Medford city and school officials recorded messages of solidarity for Kingwood High School in Houston to assist with recovery efforts. The city announced the dispatch of a truckload of relief supplies coordinated through the school department and Local 25.",
+ "items": [
+  {
+   "title": "Opening Messages of Solidarity",
+   "t": 40,
+   "summary": "Mayor Stephanie Muccini Burke and Athletic Director Robert Maloney offered messages of support to the Kingwood Mustangs in Houston.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Robert Maloney"
+   ]
+  },
+  {
+   "title": "Relief Supply Shipment",
+   "t": 61,
+   "summary": "The city and school department announced the dispatch of a truckload of aid to Houston via Local 25.",
+   "speakers": [
+    "Robert Maloney"
+   ]
+  },
+  {
+   "title": "Statements from Coaches and School Staff",
+   "t": 98,
+   "summary": "Superintendent Roy Belson, Principal John Perella, and various athletic coaches expressed encouragement and communal support for the Kingwood community.",
+   "speakers": [
+    "Roy Belson",
+    "Joe Donlon",
+    "John Perella",
+    "Jason Nascimento",
+    "Nick Tucci"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2477,
+  "output_tokens": 302,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
