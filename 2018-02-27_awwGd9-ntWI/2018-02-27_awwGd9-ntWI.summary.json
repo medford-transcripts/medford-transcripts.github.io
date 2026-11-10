@@ -1,0 +1,46 @@
+{
+ "video_id": "awwGd9-ntWI",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T00:09:03Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "af1ed6061c7f611e",
+ "subject": "Superintendent Roy Belson Early Retirement",
+ "overview": "Superintendent Roy Belson announced his early retirement following community backlash over an unreported loaded gun magazine found at a middle school. Officials also approved new school safety protocols, including ALICE training and mandatory immediate reporting to police.",
+ "items": [
+  {
+   "title": "Early retirement announcement and apology",
+   "t": 1,
+   "summary": "Superintendent Roy Belson announced he will retire two months early on April 30 after facing criticism for waiting two months to report a loaded gun magazine found in a middle school auditorium.",
+   "speakers": [
+    "Reporter",
+    "Roy Belson"
+   ]
+  },
+  {
+   "title": "Student demands for safety transparency",
+   "t": 45,
+   "summary": "Students called on leadership to be proactive, transparent, and responsive to student concerns regarding safety.",
+   "speakers": [
+    "Reporter",
+    "Justin Tseng"
+   ]
+  },
+  {
+   "title": "Implementation of new school safety protocols",
+   "t": 62,
+   "summary": "Officials announced safety measures including ALICE training, a school safety advisory committee, and an immediate policy requiring anyone finding potential safety hazards on school grounds to notify police right away.",
+   "speakers": [
+    "Reporter",
+    "Stephanie Muccini Burke",
+    "Mary Saladna"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1275,
+  "output_tokens": 279,
+  "model_version": "gemini-3.8-flash"
+ }
+}
