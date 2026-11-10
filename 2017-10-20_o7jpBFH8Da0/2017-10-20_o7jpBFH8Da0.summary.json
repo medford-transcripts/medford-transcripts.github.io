@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "168ead51e1dd0191",
- "subject": "",
+ "subject": "City Council Candidate Forum",
  "overview": "The Medford Democratic City Committee hosted a public forum for the fourteen candidates running for Medford City Council. Each candidate delivered a five-minute statement regarding their policy priorities, qualifications, and vision for the city's future.",
  "items": [
   {
@@ -136,5 +136,6 @@
   "input_tokens": 27725,
   "output_tokens": 1128,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

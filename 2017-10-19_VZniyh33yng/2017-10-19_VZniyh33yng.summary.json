@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "e3b0c44298fc1c14",
- "subject": "",
+ "subject": "Mayor's Monthly Update",
  "overview": "Mayor Stephanie M. Burke delivered a monthly video update for October 2017, highlighting city projects and upcoming community events.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 862,
   "output_tokens": 117,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }

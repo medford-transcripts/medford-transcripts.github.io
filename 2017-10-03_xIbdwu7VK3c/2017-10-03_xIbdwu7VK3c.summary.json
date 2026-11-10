@@ -1,0 +1,43 @@
+{
+ "video_id": "xIbdwu7VK3c",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T10:10:08Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "06801d4e393e318c",
+ "subject": "Standoff Outside Columbus Elementary School",
+ "overview": "Police peacefully resolved an hour-long standoff with an armed man outside Columbus Elementary School, which triggered a campus lockdown. The incident concluded with the suspect's apprehension and transport to a hospital.",
+ "items": [
+  {
+   "title": "Standoff with armed suspect",
+   "t": 1,
+   "summary": "Police negotiators responded to an armed man sitting outside Columbus Elementary School while approximately 350 students were inside the building.",
+   "speakers": [
+    "Todd Kaskiewicz"
+   ]
+  },
+  {
+   "title": "School lockdown and security response",
+   "t": 34,
+   "summary": "Superintendent Roy Belson confirmed that the school implemented lockdown protocols, securing students in designated areas and monitoring all entry points.",
+   "speakers": [
+    "Roy Belson"
+   ]
+  },
+  {
+   "title": "Apprehension and parent reunification",
+   "t": 58,
+   "summary": "Officers apprehended the suspect without injury and transported him to a hospital, allowing for the eventual reunification of students and parents.",
+   "speakers": [
+    "Todd Kaskiewicz",
+    "Delbene"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1339,
+  "output_tokens": 297,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
