@@ -1,0 +1,63 @@
+{
+ "video_id": "9Tzwvuy0OVQ",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T09:09:22Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "8126766de96ea431",
+ "subject": "",
+ "overview": "The council approved legal settlements for personal injury claims and addressed procedural conflicts arising from a concurrent Zoning Board of Appeals meeting. A resolution to reschedule an upcoming council meeting was tabled due to a scheduling conflict with a utility hearing.",
+ "items": [
+  {
+   "title": "Claim for Medical Expenses",
+   "t": 0,
+   "summary": "Approved a claim for medical expenses totaling $6,500 following a brief discussion regarding the categorization of out-of-pocket costs.",
+   "speakers": [
+    "Kimberly Scanlon",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Settlement for Deidre Alessio v. City of Medford",
+   "t": 47,
+   "summary": "Approved a $5,000 expenditure, the statutory cap, for a claim involving a fractured elbow and concussion caused by a pothole on College Avenue.",
+   "speakers": [
+    "Kimberly Scanlon",
+    "Richard Caraviello"
+   ]
+  },
+  {
+   "title": "Recess Request for ZBA Hearing",
+   "t": 242,
+   "summary": "Councilor Lungo-Koehn requested a 20-minute recess for members to testify at a Zoning Board of Appeals meeting regarding a development at Medford Street and Broadway; however, Councilor Knight urged the body to finish the remaining agenda items first.",
+   "speakers": [
+    "Breanna Lungo-Koehn",
+    "Richard Caraviello",
+    "Adam Knight"
+   ]
+  },
+  {
+   "title": "Resolution 17-726: Meeting Start Time",
+   "t": 373,
+   "summary": "Tabled a resolution to move the October 31st meeting start time to 8:00 p.m. because a National Grid hearing was already noticed for 7:00 p.m.",
+   "speakers": [
+    "Richard Caraviello",
+    "Breanna Lungo-Koehn"
+   ]
+  },
+  {
+   "title": "Approval of Minutes and Adjournment",
+   "t": 471,
+   "summary": "Tabled the records of the October 17th meeting and adjourned the session.",
+   "speakers": [
+    "Richard Caraviello"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12362,
+  "output_tokens": 454,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "1e03912252a853da",
- "subject": "",
+ "subject": "Mayoral Debate",
  "overview": "Incumbent Mayor Stephanie Muccini Burke and challenger David McKillop, Sr. participated in a mayoral debate hosted by the Medford Chamber of Commerce and Tufts University. The candidates discussed city infrastructure, downtown parking, charter review, commercial development, housing affordability, public safety funding, the opioid crisis, and Complete Streets projects ahead of the November 7 municipal election.",
  "items": [
   {
@@ -140,5 +140,6 @@
   "input_tokens": 34586,
   "output_tokens": 1387,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
