@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "ab75c36fc3a59f01",
- "subject": "",
+ "subject": "Biennial Inaugural Ceremony",
  "overview": "The City of Medford held its biennial inaugural ceremony to swear in the Mayor, City Council, and School Committee members for the 2018–2019 term. Guest speakers and city officials delivered addresses reflecting on municipal progress and outline priorities for the upcoming term.",
  "items": [
   {
@@ -116,5 +116,6 @@
   "input_tokens": 12259,
   "output_tokens": 822,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
