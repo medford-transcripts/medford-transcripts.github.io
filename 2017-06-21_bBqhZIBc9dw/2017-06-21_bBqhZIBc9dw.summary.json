@@ -1,0 +1,32 @@
+{
+ "video_id": "bBqhZIBc9dw",
+ "provider": "gemini",
+ "generated_at": "2026-11-10T14:06:44Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "be4f90e37036eea7",
+ "subject": "40th Anniversary Medford Junior Olympics",
+ "overview": "Participants gathered for the 40th anniversary of the Medford Junior Olympics, featuring opening ceremonies and athletic competitions.",
+ "items": [
+  {
+   "title": "Welcome and Opening Ceremonies",
+   "t": 11,
+   "summary": "Principal Diane Gershow was welcomed to open the event, followed by the Pledge of Allegiance and the national anthem.",
+   "speakers": [
+    "Diane Gershow"
+   ]
+  },
+  {
+   "title": "Athletic Competition",
+   "t": 405,
+   "summary": "Students participated in athletic events and field competitions.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1530,
+  "output_tokens": 143,
+  "model_version": "gemini-3.6-flash"
+ }
+}
