@@ -1,0 +1,42 @@
+{
+ "video_id": "KYoYpYfOwMU",
+ "provider": "gemini",
+ "generated_at": "2026-11-11T00:08:08Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "00dd0826a43d0cb3",
+ "subject": "",
+ "overview": "The broadcast featured highlights from the Mr. MHS 2017 competition, promotions for the Team HEMO pediatric cancer fundraiser, and a student commentary addressing homelessness.",
+ "items": [
+  {
+   "title": "Mr. MHS 2017",
+   "t": 11,
+   "summary": "Medford High School hosted the Mr. MHS 2017 contest, which concluded with Devin Bombardo being named the winner.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Anthony Petrelis"
+   ]
+  },
+  {
+   "title": "Team HEMO Buzz Off Fundraiser",
+   "t": 293,
+   "summary": "Community members and McGlynn Elementary School teacher Anthony Petrelis promoted participation and donations for Team HEMO at the One Mission Buzz Off event for pediatric cancer.",
+   "speakers": [
+    "Stephanie Muccini Burke",
+    "Anthony Petrelis"
+   ]
+  },
+  {
+   "title": "Student Perspective on Homelessness",
+   "t": 408,
+   "summary": "A student presentation urged compassion, volunteerism, and donations for people experiencing homelessness while reflecting on consumerism.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3572,
+  "output_tokens": 304,
+  "model_version": "gemini-3.8-flash"
+ }
+}
