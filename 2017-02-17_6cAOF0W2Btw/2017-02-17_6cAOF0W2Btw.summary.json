@@ -1,0 +1,50 @@
+{
+ "video_id": "6cAOF0W2Btw",
+ "provider": "gemini",
+ "generated_at": "2026-11-11T06:05:51Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "627fe4c63537b779",
+ "subject": "Arantia King Hall of Fame Induction",
+ "overview": "Student broadcasters produced a variety of segments including an outdoor survival demonstration, sports news, and a promotional skit for a community race. The report highlighted the induction of two-time Olympian Arantia King into the school's Athletes Hall of Fame.",
+ "items": [
+  {
+   "title": "Leprechaun Scavenger Hunt Skit",
+   "t": 47,
+   "summary": "Students performed a comedic search for a pot of gold around the school building to promote the Leprechaun Race scheduled for March 12th.",
+   "speakers": [
+    "Ruby Fernandez"
+   ]
+  },
+  {
+   "title": "Survival Skills Demonstration",
+   "t": 231,
+   "summary": "Participants discussed techniques for building emergency shelters quickly from wood and moss to conserve energy in cold weather.",
+   "speakers": [
+    "Ruby Fernandez"
+   ]
+  },
+  {
+   "title": "Athletes Hall of Fame Induction",
+   "t": 308,
+   "summary": "Arantia King was inducted into the Athletes Hall of Fame for her career as a world youth champion and two-time Olympic long jumper representing Bermuda.",
+   "speakers": []
+  },
+  {
+   "title": "Mustang Sports Update",
+   "t": 576,
+   "summary": "Student reporters discussed the Patriots' recent Super Bowl victory, new New Balance athletic jerseys, and high-scoring performances in varsity basketball.",
+   "speakers": [
+    "Nick Kenniston",
+    "Haley DiPietro Antonio",
+    "Ruby Fernandez"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4384,
+  "output_tokens": 391,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
