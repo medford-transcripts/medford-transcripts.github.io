@@ -1,0 +1,51 @@
+{
+ "video_id": "6rsYzUjTrfc",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T20:10:39Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "064ecfb94d79eb60",
+ "subject": "",
+ "overview": "This broadcast of the Mustang Report features a trivia answer, an interview about an upcoming fundraiser for pediatric cancer, and various student classroom video clips.",
+ "items": [
+  {
+   "title": "Question of the Week Answer",
+   "t": 36,
+   "summary": "The broadcast opens with the answer to the previous week's trivia question about a balloon ride in Australia.",
+   "speakers": []
+  },
+  {
+   "title": "Buzz Off for Kids with Cancer Interview",
+   "t": 59,
+   "summary": "Victoria Rasche interviews McGlynn Middle School teacher Anthony Petrelis about Team Medford's participation in the Buzz Off for Kids with Cancer fundraiser at Gillette Stadium.",
+   "speakers": [
+    "Anthony Petrelis",
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "History Exhibition Presentation",
+   "t": 207,
+   "summary": "A clip features a presentation discussing John F. Kennedy's presidential legacy and public memory.",
+   "speakers": []
+  },
+  {
+   "title": "Mock Congressional Debate",
+   "t": 254,
+   "summary": "Students participate in a simulated legislative session debating trade and national security.",
+   "speakers": []
+  },
+  {
+   "title": "Student Musical Performance",
+   "t": 314,
+   "summary": "Students sing a graduation song about moving forward while holding onto memories.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2884,
+  "output_tokens": 362,
+  "model_version": "gemini-3.6-flash"
+ }
+}
