@@ -1,0 +1,45 @@
+{
+ "video_id": "czQcsPgIdAs",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T07:13:32Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "bce1d0c2034fc786",
+ "subject": "State of the City Address",
+ "overview": "Mayor Stephanie Muccini Burke delivered her first State of the City Address, reviewing the city's financial standing and municipal initiatives. She announced plans to submit a loan order for a new police headquarters on Main Street and highlighted a proposed hotel development in Medford Square.",
+ "items": [
+  {
+   "title": "Opening ceremonies and student readings",
+   "t": 1711,
+   "summary": "City officials and clergy were introduced, followed by the presentation of colors, the national anthem, an opening prayer, and local students reciting the city council's unity resolution.",
+   "speakers": [
+    "Fred Dello Russo",
+    "Clayton",
+    "Noah Evans"
+   ]
+  },
+  {
+   "title": "Mayor Burke's State of the City Address",
+   "t": 2702,
+   "summary": "Mayor Burke reviewed municipal finances, community compact projects, environmental grants, and schools, and announced plans to submit a loan order to fund architectural plans for a new police headquarters on Main Street.",
+   "speakers": [
+    "Stephanie Muccini Burke"
+   ]
+  },
+  {
+   "title": "Benediction and closing",
+   "t": 4173,
+   "summary": "Reverend Wendy Miller Olapade offered the benediction, followed by the retiring of the colors.",
+   "speakers": [
+    "Fred Dello Russo",
+    "Wendy Miller Olapade"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10429,
+  "output_tokens": 351,
+  "model_version": "gemini-3.8-flash"
+ }
+}
