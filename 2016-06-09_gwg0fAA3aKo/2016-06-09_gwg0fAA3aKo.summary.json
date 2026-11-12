@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "d19ca7aca3e07557",
- "subject": "",
+ "subject": "Performance of Dynamite",
  "overview": "Cruz performed lyrics to the song Dynamite throughout the recording.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 1514,
   "output_tokens": 57,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }

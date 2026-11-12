@@ -1,0 +1,73 @@
+{
+ "video_id": "D_jWsQOZBOc",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T16:08:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "8192f8a956ae163c",
+ "subject": "Class of 2016 Final Mustang Report",
+ "overview": "The final Mustang Report of the school year featured student projects from the Bloomberg Fair and CCSR, followed by farewell messages and college announcements from graduating seniors.",
+ "items": [
+  {
+   "title": "Opening Skit",
+   "t": 10,
+   "summary": "Students performed a parody search for staff and facilities around the high school campus.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Mustang Report Question of the Week",
+   "t": 95,
+   "summary": "The program announced the answer to the previous weekly question and posed a final inquiry regarding the size of the 2016 graduating class.",
+   "speakers": []
+  },
+  {
+   "title": "Bloomberg Fair",
+   "t": 122,
+   "summary": "Mr. Skorka explained that the fair showcases student organizations and activities that receive support from Bloomberg funds.",
+   "speakers": [
+    "Lydia Ryan",
+    "Skorka"
+   ]
+  },
+  {
+   "title": "Center for Citizenship and Social Responsibility Projects",
+   "t": 149,
+   "summary": "Students presented CCSR initiatives including a financial literacy curriculum for high schoolers, a museum docent program, and the installation of buddy benches on playgrounds.",
+   "speakers": [
+    "Lydia Ryan",
+    "Ramon",
+    "Katie Russo",
+    "Alana Landano",
+    "Jazlyn Merida",
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Senior Farewell and Future Plans",
+   "t": 217,
+   "summary": "Graduating seniors thanked the media technology department and announced their upcoming college destinations and intended majors.",
+   "speakers": [
+    "Carrie Anne",
+    "Katrina Rasche",
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Headmaster's Closing Remarks",
+   "t": 312,
+   "summary": "Dr. John Perella commended the Mustang Report staff for their dedication to documenting school events throughout the academic year.",
+   "speakers": [
+    "Victoria Rasche",
+    "John Perella"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2789,
+  "output_tokens": 548,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
