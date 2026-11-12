@@ -1,0 +1,26 @@
+{
+ "video_id": "gwg0fAA3aKo",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T15:07:40Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d19ca7aca3e07557",
+ "subject": "",
+ "overview": "Cruz performed lyrics to the song Dynamite throughout the recording.",
+ "items": [
+  {
+   "title": "Performance of Dynamite",
+   "t": 7,
+   "summary": "Cruz recited and sang song lyrics throughout the recording.",
+   "speakers": [
+    "Cruz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1514,
+  "output_tokens": 57,
+  "model_version": "gemini-3.6-flash"
+ }
+}
