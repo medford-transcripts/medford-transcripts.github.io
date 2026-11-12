@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "52cef4628a3afa21",
- "subject": "",
+ "subject": "Mustang Report",
  "overview": "Medford High School's Mustang Report featured athlete Jordan Howard's college letter of intent signing, coverage of the Krystle Campbell Softball Tournament, and graduation advice for the Class of 2016.",
  "items": [
   {
@@ -48,5 +48,6 @@
   "input_tokens": 3285,
   "output_tokens": 331,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
