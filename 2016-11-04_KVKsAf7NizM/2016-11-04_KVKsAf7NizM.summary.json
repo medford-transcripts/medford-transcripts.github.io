@@ -1,0 +1,69 @@
+{
+ "video_id": "KVKsAf7NizM",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T10:33:34Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "dd830258be7c696e",
+ "subject": "Staff College Backgrounds and Advice",
+ "overview": "This student-led broadcast featured Medford High School staff discussing their collegiate experiences and offering guidance to seniors. The program also included a showcase of Halloween costumes from across the school community.",
+ "items": [
+  {
+   "title": "Halloween Costume Showcase",
+   "t": 0,
+   "summary": "Staff and students displayed various costumes and shared holiday greetings.",
+   "speakers": [
+    "Ruby Fernandez",
+    "John Perella",
+    "Normandin",
+    "Skorka",
+    "Drauske"
+   ]
+  },
+  {
+   "title": "Staff Academic Backgrounds",
+   "t": 130,
+   "summary": "Numerous faculty members listed the undergraduate and graduate institutions they attended across the country.",
+   "speakers": [
+    "Skorka",
+    "John Perella",
+    "Normandin",
+    "Drauske",
+    "Klein",
+    "Heinegg",
+    "Daneu",
+    "Mr. McLaughlin",
+    "Ambrose"
+   ]
+  },
+  {
+   "title": "Collegiate Memories and Activities",
+   "t": 192,
+   "summary": "Speakers recounted notable experiences from their college years, such as performing at a presidential inauguration, participating in campus media, and meeting spouses.",
+   "speakers": [
+    "Ambrose",
+    "Ruby Fernandez",
+    "Skorka",
+    "Daneu",
+    "Drauske"
+   ]
+  },
+  {
+   "title": "Guidance for College Applicants",
+   "t": 287,
+   "summary": "Staff advised current students on selecting colleges based on size and location, conducting campus tours, and using college as a time for exploration rather than immediate specialization.",
+   "speakers": [
+    "Klein",
+    "Mr. McLaughlin",
+    "Drauske",
+    "Heinegg"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3071,
+  "output_tokens": 467,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
