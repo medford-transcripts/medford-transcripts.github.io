@@ -1,0 +1,65 @@
+{
+ "video_id": "4D0eqMvSYMA",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T09:33:15Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "fb24428fd1051008",
+ "subject": "129th Medford vs. Malden Football Game",
+ "overview": "Student reporters interviewed faculty and city officials regarding the conclusion of the fall athletic season and preparations for the 129th annual Thanksgiving Day football rivalry. The program featured highlights from the joint team luncheon and discussions on school spirit initiatives.",
+ "items": [
+  {
+   "title": "Interview with the Mascot",
+   "t": 32,
+   "summary": "Lydia Ryan interviewed the school mascot regarding methods for generating crowd spirit during indoor athletic events.",
+   "speakers": [
+    "Lydia Ryan"
+   ]
+  },
+  {
+   "title": "Fall Sports Season Review",
+   "t": 90,
+   "summary": "Athletic Director Robert Maloney reviewed GBL championships in girls soccer, volleyball, and golf, and discussed the athletic department's upcoming move to the Northeast Conference.",
+   "speakers": [
+    "Cariann Lacharis",
+    "Robert Maloney"
+   ]
+  },
+  {
+   "title": "Thanksgiving Traditions and Predictions",
+   "t": 190,
+   "summary": "Coach Jason Nascimento and high school staff members shared their family holiday traditions and offered score predictions for the game against Malden.",
+   "speakers": [
+    "Lydia Ryan",
+    "Jason Nascimento",
+    "Maria D'Orsi",
+    "Stephanie Muccini Burke",
+    "Nick Kenison"
+   ]
+  },
+  {
+   "title": "Mustang Movember Contest",
+   "t": 769,
+   "summary": "A student update on the Mustang Movember competition identified Mr. Drowski as the current leader in the fundraising contest.",
+   "speakers": [
+    "Nick Kenison"
+   ]
+  },
+  {
+   "title": "Ninth Annual Football Luncheon",
+   "t": 804,
+   "summary": "Mayor Stephanie Muccini Burke, Mayor Gary Christensen, and Superintendent Roy Belson addressed student-athletes from both cities at John Brewer’s Tavern.",
+   "speakers": [
+    "Bill Honeycutt",
+    "Gary Christensen",
+    "Stephanie Muccini Burke"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 7293,
+  "output_tokens": 430,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

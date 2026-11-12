@@ -1,0 +1,35 @@
+{
+ "video_id": "cJjnIO6sVJY",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T09:31:06Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4a81fc203b2653a8",
+ "subject": "",
+ "overview": "The Mustang Report student broadcast recognized fall athletic teams and GBL All-Stars, announced the graduation speaker, and shared footage of student sports and activities.",
+ "items": [
+  {
+   "title": "Fall Sports and Graduation Announcements",
+   "t": 0,
+   "summary": "Dennis Robinson and Superintendent Roy Belson announced graduation speaker Andy Miller, recognized alumni award recipients, and honored boys and girls soccer GBL All-Stars.",
+   "speakers": [
+    "Dennis Robinson",
+    "Roy Belson"
+   ]
+  },
+  {
+   "title": "Student Athletic Highlights",
+   "t": 255,
+   "summary": "The segment featured music montages alongside footage of cross-country runners and school events.",
+   "speakers": [
+    "Dennis Robinson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3624,
+  "output_tokens": 202,
+  "model_version": "gemini-3.8-flash"
+ }
+}
