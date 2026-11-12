@@ -1,0 +1,63 @@
+{
+ "video_id": "cE1ej-t8q1U",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T08:08:45Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "b2601b57e9f91469",
+ "subject": "",
+ "overview": "Medford High School students presented a Mustang Report broadcast featuring student interviews, musical performances, staff profiles, and winter sports updates.",
+ "items": [
+  {
+   "title": "Student Interview with Lydia Ryan",
+   "t": 43,
+   "summary": "Ruby Fernandez interviewed gymnastics team member Lydia Ryan about her favorite movies, season preferences, and sports background.",
+   "speakers": [
+    "Ruby Fernandez",
+    "Lydia Ryan"
+   ]
+  },
+  {
+   "title": "Student Musical Performances",
+   "t": 178,
+   "summary": "Students performed vocal selections, including covers of songs by Regina Spektor, Justin Bieber, Frank Sinatra, and Alicia Keys.",
+   "speakers": [
+    "Alida Brenton",
+    "Beatrice Gonsalves",
+    "Raquel Darachi",
+    "Julia Mara"
+   ]
+  },
+  {
+   "title": "Main Office Staff Profile",
+   "t": 369,
+   "summary": "Mr. McLaughlin described his role supporting students in the main office and discussed his background in education and balloon art.",
+   "speakers": [
+    "Mr. McLaughlin"
+   ]
+  },
+  {
+   "title": "Patriots Game Predictions",
+   "t": 494,
+   "summary": "Students and staff shared score predictions for the upcoming Patriots versus Steelers football game.",
+   "speakers": [
+    "Ruby Fernandez",
+    "Lydia Ryan"
+   ]
+  },
+  {
+   "title": "Mustang Winter Sports Report",
+   "t": 539,
+   "summary": "Nick Hennessy provided updates on Medford High School swim, basketball, track, and hockey teams, highlighting key roster performances and recent results.",
+   "speakers": [
+    "Nick Hennessy"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4068,
+  "output_tokens": 362,
+  "model_version": "gemini-3.6-flash"
+ }
+}

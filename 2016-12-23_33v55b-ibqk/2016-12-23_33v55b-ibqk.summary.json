@@ -1,0 +1,45 @@
+{
+ "video_id": "33v55b-ibqk",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T08:10:50Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7b26399ac67da29e",
+ "subject": "",
+ "overview": "Medford High School students presented Mustang Report 7, featuring a classroom relay game, coverage of a track meet against Arlington Catholic, and holiday tradition interviews with students and staff.",
+ "items": [
+  {
+   "title": "Mustang Report Intro and Classroom Relay Game",
+   "t": 0,
+   "summary": "Students opened the broadcast with holiday singing before competing in a classroom relay game.",
+   "speakers": [
+    "Amber Harbison",
+    "Cruz"
+   ]
+  },
+  {
+   "title": "Medford vs. Arlington Catholic Track Meet",
+   "t": 193,
+   "summary": "Student reporters provided coverage of the Medford track meet against Arlington Catholic and interviewed student-athletes.",
+   "speakers": [
+    "Amber Harbison",
+    "Cruz"
+   ]
+  },
+  {
+   "title": "Holiday Tradition Interviews and Ugly Sweater Contest",
+   "t": 463,
+   "summary": "Students and faculty shared their holiday plans, favorite meals, and movies, and Raquel Quiroz was named winner of the sweater contest.",
+   "speakers": [
+    "Donlan",
+    "Cruz"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4380,
+  "output_tokens": 234,
+  "model_version": "gemini-3.6-flash"
+ }
+}
