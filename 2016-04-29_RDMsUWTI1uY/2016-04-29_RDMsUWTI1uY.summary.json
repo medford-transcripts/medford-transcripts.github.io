@@ -1,0 +1,52 @@
+{
+ "video_id": "RDMsUWTI1uY",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T22:14:24Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "52cef4628a3afa21",
+ "subject": "",
+ "overview": "Medford High School's Mustang Report featured athlete Jordan Howard's college letter of intent signing, coverage of the Krystle Campbell Softball Tournament, and graduation advice for the Class of 2016.",
+ "items": [
+  {
+   "title": "Paul Revere Intro and Trivia Question",
+   "t": 0,
+   "summary": "A Paul Revere skit opens the segment, followed by the answer to the prior week's trivia question and a new question of the week.",
+   "speakers": [
+    "Robert Maloney",
+    "Ambrose"
+   ]
+  },
+  {
+   "title": "Jordan Howard Letter of Intent Signing",
+   "t": 117,
+   "summary": "Athletic Director Robert Maloney and Coach Mike Petritus celebrate senior athlete Jordan Howard as he signs his letter of intent to play at UMass Amherst.",
+   "speakers": [
+    "Robert Maloney"
+   ]
+  },
+  {
+   "title": "Third Annual Krystle Campbell Softball Tournament",
+   "t": 259,
+   "summary": "Student reporters recap a victory at the 3rd Annual Krystle Campbell Softball Tournament and interview players about the win.",
+   "speakers": []
+  },
+  {
+   "title": "Faculty Advice for the Class of 2016",
+   "t": 343,
+   "summary": "Medford High School teachers and administrators offer congratulations and practical advice to the graduating senior class.",
+   "speakers": [
+    "Heinegg",
+    "Rich Cormio",
+    "Nick Tucci",
+    "Glasser"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3285,
+  "output_tokens": 331,
+  "model_version": "gemini-3.6-flash"
+ }
+}

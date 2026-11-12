@@ -1,0 +1,58 @@
+{
+    "SPEAKER_01": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.8069662063591747,
+        "from": "MCM00001223_SPEAKER_05",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Patrick Smith",
+        "source": "embedding_match",
+        "score": 0.7887182645354174,
+        "from": "MCM00001624_SPEAKER_08",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Robert Delafano",
+        "source": "embedding_match",
+        "score": 0.9541426446997223,
+        "from": "CAS00002384_SPEAKER_02",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Allan Martorana",
+        "source": "embedding_match",
+        "score": 0.9245823757286952,
+        "from": "MCM00001662_SPEAKER_05",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.7751791513193549,
+        "from": "CAS00002350_SPEAKER_04",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_07": {
+        "value": "Daria Tejera",
+        "source": "embedding_match",
+        "score": 0.8257311257052914,
+        "from": "MCM00001597_SPEAKER_02",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_07"
+    },
+    "SPEAKER_08": {
+        "value": "MCM00001624_SPEAKER_00",
+        "source": "embedding_match",
+        "score": 0.8925224722935758,
+        "from": "MCM00001624_SPEAKER_00",
+        "at": "2026-11-12T22:10:02Z",
+        "previous": "SPEAKER_08"
+    }
+}
