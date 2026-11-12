@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "c3da982a21d3c1f0",
- "subject": "",
+ "subject": "Pedestrian and Traffic Safety",
  "overview": "The Medford City Council met to vote on municipal appropriations, cemetery account transfers, and multiple resolutions concerning pedestrian safety, traffic enforcement, and speed limits across the city.",
  "items": [
   {
@@ -142,5 +142,6 @@
   "input_tokens": 38392,
   "output_tokens": 1103,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
