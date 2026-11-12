@@ -1,0 +1,44 @@
+{
+ "video_id": "bD6iwxKW5JM",
+ "provider": "gemini",
+ "generated_at": "2026-11-12T21:13:54Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d1ec571e3a7d1c10",
+ "subject": "",
+ "overview": "The Mustang Report features updates on the Medford High School girls lacrosse team's season, the Key Club blood drive, and an upcoming cancer research fundraiser.",
+ "items": [
+  {
+   "title": "Girls Lacrosse Season Update",
+   "t": 73,
+   "summary": "Girls lacrosse coach Matthew Galusi discussed the team's rebuilding season, a recent win against Malden, and strong player motivation.",
+   "speakers": [
+    "Victoria Rasche",
+    "Matthew Galusi"
+   ]
+  },
+  {
+   "title": "Key Club Blood Drive",
+   "t": 193,
+   "summary": "Key Club advisor Mr. Wilson described the high school blood drive organized with the Red Cross, which targeted 40 units of blood from roughly 60 sign-ups.",
+   "speakers": [
+    "Mr. Wilson"
+   ]
+  },
+  {
+   "title": "Buzz Off Cancer Fundraiser",
+   "t": 280,
+   "summary": "Mr. Richards detailed Team HEMO's participation in the upcoming Buzz Off for Kids with Cancer event at Gillette Stadium.",
+   "speakers": [
+    "Victoria Rasche",
+    "Mr. Richards"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2842,
+  "output_tokens": 249,
+  "model_version": "gemini-3.6-flash"
+ }
+}
