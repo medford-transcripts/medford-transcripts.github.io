@@ -1,0 +1,38 @@
+{
+ "video_id": "IwX6IFmztm4",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T08:12:09Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "226bc55a3ba0d910",
+ "subject": "",
+ "overview": "Medford High School students present episode 17 of the Mustang Report, featuring talent show announcements, player introductions for the girls hockey team, and student musical performances.",
+ "items": [
+  {
+   "title": "Talent Show Announcement",
+   "t": 0,
+   "summary": "Victoria Rasche hosts a comedic talent segment promoting the upcoming Medford High School Talent Show.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Girls Hockey Player Introductions",
+   "t": 61,
+   "summary": "Members of the girls hockey team are announced individually during player introductions.",
+   "speakers": []
+  },
+  {
+   "title": "Question of the Week and Musical Performances",
+   "t": 127,
+   "summary": "Students highlight special talents and present vocal performances of the songs Glory and We're All in This Together.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2592,
+  "output_tokens": 201,
+  "model_version": "gemini-3.6-flash"
+ }
+}

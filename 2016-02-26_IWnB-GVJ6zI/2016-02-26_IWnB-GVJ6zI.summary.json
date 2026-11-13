@@ -1,0 +1,73 @@
+{
+ "video_id": "IWnB-GVJ6zI",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T08:16:59Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "b6b518e965e0bd77",
+ "subject": "Mock Presidential Speeches and Science Fair Highlights",
+ "overview": "Medford High School students produced a video report featuring highlights from the school science fair and mock campaign speeches by students portraying 2016 presidential candidates.",
+ "items": [
+  {
+   "title": "Softball Team Sketch",
+   "t": 4,
+   "summary": "Students performed a comedy sketch based on the 'Who's on First?' routine regarding the roster of the softball team.",
+   "speakers": [
+    "Lydia Ryan",
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Science Fair: Music Tempo and Cognition",
+   "t": 49,
+   "summary": "Students presented a project finding that no music is generally more effective for cognitive tasks than music at varying speeds, though faster tempos performed better than slow ones.",
+   "speakers": [
+    "Victoria Rasche",
+    "Molly Fenn",
+    "Georgia Bowder-Newton",
+    "Emma Boston-Wong"
+   ]
+  },
+  {
+   "title": "Science Fair: Physics of Gymnastics",
+   "t": 137,
+   "summary": "A student explained a physics experiment determining that a back layout flip takes longer to complete than a back tuck due to increased air resistance.",
+   "speakers": [
+    "Victoria Rasche",
+    "Ruby Fernandez"
+   ]
+  },
+  {
+   "title": "Science Fair: Muon Flux Detection",
+   "t": 182,
+   "summary": "Students demonstrated a cloud chamber used to test how varying alcohol concentrations affect the detection sensitivity of cosmic ray decay particles.",
+   "speakers": [
+    "Victoria Rasche",
+    "Simona",
+    "Serena"
+   ]
+  },
+  {
+   "title": "Question of the Week",
+   "t": 303,
+   "summary": "The segment provided an answer to the previous week's trivia question and introduced a new question concerning unique student talents.",
+   "speakers": [
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Mock Presidential Campaign Speeches",
+   "t": 323,
+   "summary": "Students delivered campaign-style speeches portraying various 2016 presidential candidates, including Hillary Clinton, Donald Trump, Bernie Sanders, Marco Rubio, Mike Bloomberg, John Kasich, Ted Cruz, Ben Carson, and Jeb Bush.",
+   "speakers": [
+    "Sebastian Tringali"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4929,
+  "output_tokens": 586,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
