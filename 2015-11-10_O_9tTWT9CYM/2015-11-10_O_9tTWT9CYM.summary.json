@@ -1,0 +1,29 @@
+{
+ "video_id": "O_9tTWT9CYM",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T14:07:28Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "251219d53037c8ed",
+ "subject": "",
+ "overview": "Participants and the clerk engaged in an informal game of rock, paper, scissors.",
+ "items": [
+  {
+   "title": "Rock, Paper, Scissors",
+   "t": 0,
+   "summary": "Multiple participants and the clerk played several rounds of rock, paper, scissors, concluding with brief remarks from a speaker.",
+   "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_02",
+    "SPEAKER_03",
+    "Clerk"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1312,
+  "output_tokens": 137,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

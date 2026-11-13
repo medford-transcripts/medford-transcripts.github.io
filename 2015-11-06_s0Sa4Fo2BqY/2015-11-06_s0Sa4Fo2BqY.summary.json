@@ -1,0 +1,53 @@
+{
+ "video_id": "s0Sa4Fo2BqY",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T14:08:50Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "6d3dd645c7a44009",
+ "subject": "",
+ "overview": "The Mustang Report features updates on Medford High School activities, including a vocational school open house, National Honor Society community initiatives, and a commemorative program for Veterans Day.",
+ "items": [
+  {
+   "title": "Vocational School Open House Preview",
+   "t": 79,
+   "summary": "Director Heidi Riccio announced an open house for November 12th focused on career and technical education and the dedication of a new health assisting lab.",
+   "speakers": [
+    "Victoria Rasche",
+    "Heidi Riccio"
+   ]
+  },
+  {
+   "title": "National Honor Society Initiatives",
+   "t": 138,
+   "summary": "Students discussed a recent food truck fundraiser to purchase laptops for tutoring and the launch of the 'How to Survive High School 101' networking service.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Veterans Day Commemoration",
+   "t": 246,
+   "summary": "Social studies teacher Mr. Kane and several alumni veterans shared their military experiences and discussed the importance of connecting students with local service members.",
+   "speakers": [
+    "Lydia Ryan",
+    "Mr. Kane",
+    "Staff Sergeant Zee"
+   ]
+  },
+  {
+   "title": "Boys Soccer State Tournament Progress",
+   "t": 605,
+   "summary": "The varsity boys soccer team advanced to the state quarterfinals against Malden following a penalty shootout victory over Acton-Boxborough.",
+   "speakers": [
+    "Nick Keniston"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4562,
+  "output_tokens": 359,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
