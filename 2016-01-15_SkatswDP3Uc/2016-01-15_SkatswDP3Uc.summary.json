@@ -1,0 +1,36 @@
+{
+ "video_id": "SkatswDP3Uc",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T11:08:57Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "3a88a1e81beb83d2",
+ "subject": "Vocational School Partnership With Boston Cares",
+ "overview": "The Mustang Report featured information on community pool programming and a collaboration between the carpentry department and Boston Cares to build furniture for homeless shelters.",
+ "items": [
+  {
+   "title": "Community Pool Programming and Information",
+   "t": 33,
+   "summary": "Students reviewed open swim hours, upcoming swimming lessons, and the cardiovascular benefits of swimming for the school community.",
+   "speakers": [
+    "Lydia Ryan",
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Carpentry Partnership with Boston Cares",
+   "t": 126,
+   "summary": "Mr. Ward detailed a vocational school partnership with Boston Cares to manufacture 50 bookcases and 500 toddler beds for local families and homeless shelters.",
+   "speakers": [
+    "Carrie Anne",
+    "Mr. Ward"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2594,
+  "output_tokens": 210,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

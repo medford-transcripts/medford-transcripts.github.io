@@ -1,0 +1,58 @@
+{
+ "video_id": "lBm1jZcsI6s",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T11:10:01Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "a2614074a01ff30f",
+ "subject": "",
+ "overview": "Medford High School media technology students produced this video report featuring school events, athletic achievements, and musical performances.",
+ "items": [
+  {
+   "title": "Introduction and Senior Breakfast",
+   "t": 0,
+   "summary": "Victoria Rasche and Katrina Rasche introduced the media technology class production and highlighted the recent senior breakfast.",
+   "speakers": [
+    "Victoria Rasche",
+    "Katrina Rasche"
+   ]
+  },
+  {
+   "title": "AP Spanish Musical Performance",
+   "t": 153,
+   "summary": "Students in the AP Spanish class performed a musical rendition of Cascabeles.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Girls Basketball Update",
+   "t": 179,
+   "summary": "Katrina Rasche reported on a recent victory by the girls basketball team over Boston Latin.",
+   "speakers": [
+    "Katrina Rasche"
+   ]
+  },
+  {
+   "title": "Gymnastics Team Feature",
+   "t": 217,
+   "summary": "The segment featured the athletic skills of gymnastics team captain Renee Stoudy."
+  },
+  {
+   "title": "Student Vocal Performance",
+   "t": 256,
+   "summary": "A student performed a vocal solo for the Mustang Report production."
+  },
+  {
+   "title": "TD Garden Basketball Announcement",
+   "t": 357,
+   "summary": "Students announced an upcoming boys basketball game against Arlington Catholic scheduled for January 24th at the TD Garden."
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1618,
+  "output_tokens": 332,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
