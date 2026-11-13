@@ -1,0 +1,53 @@
+{
+ "video_id": "Sx_Iesl9gsc",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T05:16:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f4634706dc7d5447",
+ "subject": "",
+ "overview": "Mustang Report 19 features student segments on the immune system, a cosmetology paraffin hand treatment demonstration, and opening remarks for the spring sports season.",
+ "items": [
+  {
+   "title": "Breaking Science: Immune System",
+   "t": 83,
+   "summary": "A student presentation covers the components and functions of the innate and adaptive immune systems.",
+   "speakers": []
+  },
+  {
+   "title": "Question of the Week Answer",
+   "t": 214,
+   "summary": "The answer to the previous week's question of the week is announced.",
+   "speakers": []
+  },
+  {
+   "title": "Question of the Week",
+   "t": 227,
+   "summary": "A new question of the week is introduced.",
+   "speakers": []
+  },
+  {
+   "title": "Cosmetology Shop Paraffin Treatment",
+   "t": 240,
+   "summary": "Nick Keniston reports from the Cosmetology Shop to demonstrate the benefits and process of paraffin hand treatments.",
+   "speakers": [
+    "Nick Keniston",
+    "Miss Dunphy"
+   ]
+  },
+  {
+   "title": "Spring Sports Address",
+   "t": 361,
+   "summary": "Nick Tucci wishes spring student-athletes good luck and speaks on the character values gained through participation in sports.",
+   "speakers": [
+    "Nick Tucci"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2752,
+  "output_tokens": 309,
+  "model_version": "gemini-3.6-flash"
+ }
+}
