@@ -1,0 +1,38 @@
+{
+ "video_id": "OjrhjY4Eios",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T15:13:37Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "5b3560e1d16e9e1f",
+ "subject": "Medford High School Football vs Dracut",
+ "overview": "High School Student Videos documented game play and sideline commentary during a football match between Medford and Dracut high schools.",
+ "items": [
+  {
+   "title": "Opening Game Play and Reactions",
+   "t": 0,
+   "summary": "Participants react to live on-field action as the recording begins.",
+   "speakers": []
+  },
+  {
+   "title": "Field Action Commentary",
+   "t": 42,
+   "summary": "George Scarpelli notes a specific play moving toward the left side of the field.",
+   "speakers": [
+    "George Scarpelli"
+   ]
+  },
+  {
+   "title": "Clock Management and Late-Game Positioning",
+   "t": 104,
+   "summary": "Speakers track the remaining game clock and direct play positioning toward the middle of the field.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 925,
+  "output_tokens": 226,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "video_id": "AdDVF43220I",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T15:13:03Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "38147e4a27f4f622",
+ "subject": "",
+ "overview": "Student hosts announced a state sportsmanship award win for members of the broadcast team and presented features on the Krystle Campbell Scholarship fund, a new guidance counselor, and Spirit Week.",
+ "items": [
+  {
+   "title": "Introduction and MIAA Sportsmanship Award",
+   "t": 1,
+   "summary": "Student anchors open the broadcast and announce that Mustang Report team members won first place in the MIAA Sportsmanship Award competition.",
+   "speakers": [
+    "Victoria Rasche",
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Krystle Campbell Memorial and Scholarship Feature",
+   "t": 43,
+   "summary": "A featured video honors alumnus Krystle Campbell, highlighting the annual softball tournament and scholarship fund established in her memory.",
+   "speakers": [
+    "Michael McGlynn",
+    "Victoria Rasche",
+    "Carrie Anne"
+   ]
+  },
+  {
+   "title": "Interview with Guidance Counselor Mr. Klein",
+   "t": 283,
+   "summary": "New guidance counselor Mr. Klein discusses his work organizing C3 Day and his approach to student goal planning.",
+   "speakers": [
+    "Carrie Anne",
+    "Klein"
+   ]
+  },
+  {
+   "title": "Spirit Week and Halloween Coverage",
+   "t": 493,
+   "summary": "The broadcast highlights Spirit Week activities and features a Halloween haiku written by student Cullen Burke.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2237,
+  "output_tokens": 306,
+  "model_version": "gemini-3.6-flash"
+ }
+}
