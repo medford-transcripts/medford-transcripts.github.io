@@ -1,0 +1,42 @@
+{
+ "video_id": "KA53o-bPStE",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T12:11:31Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c909e3627d89fd0a",
+ "subject": "",
+ "overview": "Medford High School's Mustang Report announced the Class of 2016 graduation speaker and broadcast seasonal musical performances. The program also featured coverage and player interviews from the annual faculty flag football game.",
+ "items": [
+  {
+   "title": "Graduation Speaker Announcement",
+   "t": 9,
+   "summary": "John Perella announced that Michael Skorka was selected as the graduation speaker for 2016 after a close vote.",
+   "speakers": [
+    "Victoria Rasche",
+    "John Perella"
+   ]
+  },
+  {
+   "title": "Holiday Musical Selections",
+   "t": 169,
+   "summary": "The broadcast featured vocal performances of holiday songs including \"Jingle Bells.\"",
+   "speakers": []
+  },
+  {
+   "title": "Faculty Flag Football Game",
+   "t": 367,
+   "summary": "Reporters covered the second annual faculty flag football game and interviewed participating staff members on the field.",
+   "speakers": [
+    "Victoria Rasche",
+    "Jason Nascimento"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 2992,
+  "output_tokens": 227,
+  "model_version": "gemini-3.8-flash"
+ }
+}
