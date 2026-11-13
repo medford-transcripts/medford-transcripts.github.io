@@ -1,0 +1,26 @@
+{
+    "SPEAKER_00": {
+        "value": "Jason Stone",
+        "source": "embedding_match",
+        "score": 0.9998612550830897,
+        "from": "d4HrXimx3gU_SPEAKER_01",
+        "at": "2026-11-13T19:21:05Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "John Petrella",
+        "source": "embedding_match",
+        "score": 0.9994902512498101,
+        "from": "d4HrXimx3gU_SPEAKER_00",
+        "at": "2026-11-13T19:21:05Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9356075182926292,
+        "from": "d4HrXimx3gU_SPEAKER_02",
+        "at": "2026-11-13T19:21:05Z",
+        "previous": "SPEAKER_02"
+    }
+}
