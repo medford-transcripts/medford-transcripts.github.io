@@ -1,0 +1,65 @@
+{
+ "video_id": "qGZ8XcMgD9Y",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T03:08:16Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "4ef15bb12a75d879",
+ "subject": "",
+ "overview": "The Mustang Report featured updates on a recent snowstorm, the progress of a student hydroponics project, and promotions for upcoming school events.",
+ "items": [
+  {
+   "title": "Opening Sketch",
+   "t": 0,
+   "summary": "Victoria Rasche searches for various team members throughout the school to assemble the Mustang Report crew.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Weather Report",
+   "t": 79,
+   "summary": "Amber Harbison reported on a recent snowstorm that dropped approximately 13 inches of snow and interviewed others about winter activities.",
+   "speakers": [
+    "Amber Harbison"
+   ]
+  },
+  {
+   "title": "Question of the Week",
+   "t": 132,
+   "summary": "The answer to the previous week was revealed as 'Two', and a new question was posed regarding a date in 2001.",
+   "speakers": [
+    "Ambrose"
+   ]
+  },
+  {
+   "title": "Hydroponics Project Update",
+   "t": 151,
+   "summary": "An update was provided on a Medford Education Foundation grant-funded hydroponics system that uses fish to help grow edible plants.",
+   "speakers": []
+  },
+  {
+   "title": "Breaking Science Announcement",
+   "t": 303,
+   "summary": "Victoria Rasche promoted a new science program scheduled for April 12th in the science lecture hall.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Drama Club: Fiddler on the Roof",
+   "t": 336,
+   "summary": "Drama Club president Marcus Mazzotti discussed the themes and performance schedule for the upcoming production of Fiddler on the Roof.",
+   "speakers": [
+    "Victoria Rasche",
+    "Marcus Mazzotti"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3152,
+  "output_tokens": 480,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
