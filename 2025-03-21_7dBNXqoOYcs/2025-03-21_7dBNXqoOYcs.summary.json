@@ -1,0 +1,61 @@
+{
+ "video_id": "7dBNXqoOYcs",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T13:12:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "d43e52aafc460d8e",
+ "subject": "Mayor Michael McGlynn Farewell Address",
+ "overview": "Mayor Michael McGlynn delivered his final State of the City address after 28 years in office, reflecting on Medford's financial stability, major development projects, and public investments. The event featured civic acknowledgments, musical performances, and blessings from local religious leaders.",
+ "items": [
+  {
+   "title": "Opening Acknowledgments",
+   "t": 11,
+   "summary": "City Solicitor Mark Rumley welcomed attendees and recognized city staff, educators, first responders, board members, and department heads.",
+   "speakers": [
+    "Mark Rumley"
+   ]
+  },
+  {
+   "title": "Pledge of Allegiance, National Anthem, and Invocation",
+   "t": 617,
+   "summary": "Romeo Robbins led the Pledge of Allegiance, Renise King performed the national anthem, and Reverend Noah Evans delivered the invocation.",
+   "speakers": [
+    "Mark Rumley",
+    "Noah Evans"
+   ]
+  },
+  {
+   "title": "State of the City Address",
+   "t": 1105,
+   "summary": "Mayor Michael McGlynn presented his final address, detailing accomplishments in brownfield remediation, transit-oriented developments, municipal finances, public safety upgrades, and new school facilities.",
+   "speakers": [
+    "Michael McGlynn",
+    "Mark Rumley"
+   ]
+  },
+  {
+   "title": "Recognition of Staff and Family",
+   "t": 2094,
+   "summary": "Mayor McGlynn expressed gratitude to his long-serving mayoral office staff, city administration colleagues, and family members.",
+   "speakers": [
+    "Michael McGlynn"
+   ]
+  },
+  {
+   "title": "Benediction and Farewell Reception Announcement",
+   "t": 3055,
+   "summary": "Geshe Tenley offered a Tibetan blessing and Mark Rumley concluded the ceremony with directions to a farewell reception.",
+   "speakers": [
+    "Mark Rumley",
+    "Geshe Tenley"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 12886,
+  "output_tokens": 417,
+  "model_version": "gemini-3.6-flash"
+ }
+}
