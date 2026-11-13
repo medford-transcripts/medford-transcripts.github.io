@@ -1,0 +1,83 @@
+{
+ "video_id": "YVx604fOA0E",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T10:10:29Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "9b2a6f38504e1caa",
+ "subject": "Patriot's Day Commemoration Ceremony",
+ "overview": "The City of Medford held a Patriot's Day ceremony at the East Elm Street Burial Ground to honor the anniversary of the battles of Lexington and Concord. The event featured historical readings, musical tributes from the Medford High School Band, and a formal reading of the Governor's proclamation.",
+ "items": [
+  {
+   "title": "Opening Remarks and Military Reflection",
+   "t": 6,
+   "summary": "Master of ceremonies Mike Durham opened the event by reflecting on his military service in Afghanistan and the importance of civic engagement in maintaining self-governance.",
+   "speakers": [
+    "Mike Durham"
+   ]
+  },
+  {
+   "title": "Pledge of Allegiance and National Anthem",
+   "t": 470,
+   "summary": "Local Girl Scouts and Boy Scouts led the Pledge of Allegiance, followed by a performance of the Star Spangled Banner by the Medford High School Band.",
+   "speakers": [
+    "Mike Durham"
+   ]
+  },
+  {
+   "title": "Concord Hymn Reading",
+   "t": 588,
+   "summary": "Student Ellie Hunt read Ralph Waldo Emerson's 'Concord Hymn' to the gathered attendees.",
+   "speakers": [
+    "Ellie Hunt"
+   ]
+  },
+  {
+   "title": "Invocation",
+   "t": 665,
+   "summary": "Reverend Lambert Brandon delivered an invocation focused on community spirit, public safety, and local leadership.",
+   "speakers": [
+    "Lambert Brandon"
+   ]
+  },
+  {
+   "title": "Mayor's Address and Governor's Proclamation",
+   "t": 824,
+   "summary": "Mayor Stephanie Muccini Burke recognized local officials and read Governor Charlie Baker's proclamation declaring April 18, 2016, as Patriot's Day.",
+   "speakers": [
+    "Stephanie Muccini Burke"
+   ]
+  },
+  {
+   "title": "City Council Historical Remarks",
+   "t": 1129,
+   "summary": "Council President Fred DelRusso discussed the local historical significance of Paul Revere's ride and his stop at the home of Isaac Hall in Medford.",
+   "speakers": [
+    "Fred Dello Russo"
+   ]
+  },
+  {
+   "title": "Flag Placement and Benediction",
+   "t": 1297,
+   "summary": "Scouts placed flags at the gravesites of patriots while the band performed musical tributes, followed by a closing benediction by Reverend Brandon.",
+   "speakers": [
+    "Mike Durham",
+    "Lambert Brandon"
+   ]
+  },
+  {
+   "title": "Conclusion and Reenactment Arrival",
+   "t": 1466,
+   "summary": "The ceremony concluded with 'Taps' and the arrival of a Paul Revere reenactor following a performance of 'God Bless America.'",
+   "speakers": [
+    "Mike Durham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6095,
+  "output_tokens": 667,
+  "model_version": "gemini-3-flash-preview"
+ }
+}

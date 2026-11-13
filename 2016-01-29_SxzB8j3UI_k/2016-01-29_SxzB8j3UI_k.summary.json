@@ -1,0 +1,51 @@
+{
+ "video_id": "SxzB8j3UI_k",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T10:08:01Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "4522fb9f555ee6df",
+ "subject": "",
+ "overview": "Medford High School's Mustang Report broadcast featured an interview on the Year Up post-graduation program, a demonstration of a student aquaculture project, and student public service announcements.",
+ "items": [
+  {
+   "title": "Year Up Program Interview",
+   "t": 8,
+   "summary": "Gigi Braga interviewed guidance counselor Mr. Klein about Year Up, a tuition-free post-graduation program offering college credits, job skill training, and corporate internships.",
+   "speakers": [
+    "Gigi Braga",
+    "Klein"
+   ]
+  },
+  {
+   "title": "Question of the Week",
+   "t": 253,
+   "summary": "Ms. Donlan posed the Mustang Report question of the week regarding her middle name.",
+   "speakers": [
+    "Donlan"
+   ]
+  },
+  {
+   "title": "Aquaculture Project Overview",
+   "t": 270,
+   "summary": "A speaker outlined a multidisciplinary aquaculture project where robotics, engineering, and culinary students collaborate to raise and prepare food-grade tilapia.",
+   "speakers": []
+  },
+  {
+   "title": "Student Skits and Public Service Announcements",
+   "t": 375,
+   "summary": "Students performed public service skits covering medical checkups, seatbelt safety, distracted driving, and school spirit.",
+   "speakers": [
+    "Gigi Braga",
+    "Klein",
+    "Donlan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4333,
+  "output_tokens": 300,
+  "model_version": "gemini-3.6-flash"
+ }
+}
