@@ -1,0 +1,70 @@
+{
+ "video_id": "ozInS00ujUM",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T17:08:13Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "97112c64cfb8e959",
+ "subject": "",
+ "overview": "The Mustang Report student broadcast featured interviews with Medford High School athletes, staff, and administrators covering varsity sports teams, school routines, eighth-grade open house activities, and a faculty fundraiser.",
+ "items": [
+  {
+   "title": "Eighth Grade Open House and Student Life",
+   "t": 63,
+   "summary": "Student reporters interviewed gymnastics captain Erica, secretary Mike McLaughlin, freshman Carmen Diorio, and staff member Nick Tucci regarding school activities and advice for prospective students.",
+   "speakers": [
+    "Hallie Farrell",
+    "Mike McLaughlin",
+    "Carmen Diorio",
+    "Nick Tucci"
+   ]
+  },
+  {
+   "title": "Varsity Sports Team Updates",
+   "t": 102,
+   "summary": "Reporters spoke with varsity basketball, soccer, and baseball players and coaches about off-season training, conditioning routines, and season expectations.",
+   "speakers": [
+    "Nick Canniston",
+    "Abby McCarthy",
+    "Rhiannon Arnold",
+    "Destiny Fitzgerald",
+    "Mike Senner",
+    "Mike Nestor",
+    "Kelly Mead"
+   ]
+  },
+  {
+   "title": "Morning Announcements Feature",
+   "t": 148,
+   "summary": "Student host Victoria Rasche explained the process and purpose behind broadcasting daily school announcements and event updates.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "Football Team Manager Report",
+   "t": 452,
+   "summary": "Team manager Eric Rapucci discussed his equipment and scheduling duties alongside areas for team focus during game second halves.",
+   "speakers": [
+    "Nick Canniston",
+    "Eric Rapucci"
+   ]
+  },
+  {
+   "title": "Faculty Flag Football Game Preview",
+   "t": 599,
+   "summary": "Staff members Jason Nascimento and Mr. Jaworski debated game rules and past rivalries while highlighting the event's benefit for the Eric Roselli scholarship fund.",
+   "speakers": [
+    "Nick Canniston",
+    "Jason Nascimento",
+    "Jaworski"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4866,
+  "output_tokens": 423,
+  "model_version": "gemini-3.6-flash"
+ }
+}

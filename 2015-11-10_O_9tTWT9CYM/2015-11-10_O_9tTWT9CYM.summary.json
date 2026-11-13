@@ -5,7 +5,7 @@
  "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
  "transcript_sha": "251219d53037c8ed",
- "subject": "",
+ "subject": "Rock, Paper, Scissors Game",
  "overview": "Participants and the clerk engaged in an informal game of rock, paper, scissors.",
  "items": [
   {
@@ -25,5 +25,6 @@
   "input_tokens": 1312,
   "output_tokens": 137,
   "model_version": "gemini-3-flash-preview"
- }
+ },
+ "subject_source": "summary"
 }
