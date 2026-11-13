@@ -1,0 +1,59 @@
+{
+ "video_id": "CAS00002347",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T00:06:25Z",
+ "model": "gemini-3-flash-preview",
+ "model_requested": "gemini",
+ "transcript_sha": "2ff3e4b3e733913b",
+ "subject": "",
+ "overview": "The Commission approved one-day liquor license applications for a restaurant grand opening and a university event, and tabled a hearing regarding Great American Beer Hall.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 23,
+   "summary": "The Commission approved the minutes from the January 28, 2026 meeting.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "WANDA One-Day License Application",
+   "t": 84,
+   "summary": "Approved a one-day liquor license for a grand opening event on March 5, 2026, which will include beer samples.",
+   "speakers": [
+    "Elise Richards",
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Tufts University One-Day License Application",
+   "t": 689,
+   "summary": "Approved a one-day license for a senior jazz night on February 20, 2026, at the Joyce Cummings Center.",
+   "speakers": [
+    "Tamara Kinney",
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Great American Beer Hall Hearing",
+   "t": 842,
+   "summary": "Tabled the hearing until the next meeting because the petitioner was not present.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Patrick Smith",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9981,
+  "output_tokens": 418,
+  "model_version": "gemini-3-flash-preview"
+ }
+}
