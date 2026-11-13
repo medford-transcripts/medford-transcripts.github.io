@@ -1,0 +1,54 @@
+{
+ "video_id": "ufk70y6MGR0",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T18:06:13Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "69317b6a5b332860",
+ "subject": "",
+ "overview": "Student reporters for the Mustang Report interview Medford High School staff and students regarding high school athletics, physical education programs, and a reverse science fair.",
+ "items": [
+  {
+   "title": "Athletic Director Interview",
+   "t": 5,
+   "summary": "Athletic Director Robert Maloney discusses facility advantages, weather and budget challenges, and the hiring process for local coaches.",
+   "speakers": [
+    "Jocelyn McCarthy",
+    "Robert Maloney"
+   ]
+  },
+  {
+   "title": "Boys Varsity Basketball Coach Interview",
+   "t": 85,
+   "summary": "New Boys Varsity Basketball Coach John Skerry shares his background, team philosophy, youth fall ball program, and tryout expectations.",
+   "speakers": [
+    "Lydia Ryan",
+    "John Skerry"
+   ]
+  },
+  {
+   "title": "Physical Education Teacher Interview",
+   "t": 420,
+   "summary": "Physical Education teacher Matthew Galusi details course scheduling, student health responsibilities, and physical education curriculum requirements.",
+   "speakers": [
+    "Matthew Galusi"
+   ]
+  },
+  {
+   "title": "Reverse Science Fair Coverage",
+   "t": 553,
+   "summary": "Reporters interview science fair participants and teacher Mr. Wilson about ongoing scientific research projects and practical lab applications.",
+   "speakers": [
+    "Amber Harbison",
+    "Victoria Rasche",
+    "Mr. Wilson"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6248,
+  "output_tokens": 297,
+  "model_version": "gemini-3.6-flash"
+ }
+}
