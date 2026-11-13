@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "80c632fa6894993a",
- "subject": "",
+ "subject": "Mustang Report Episode 3",
  "overview": "Medford High School students present episode three of the Mustang Report, covering community and school news including the 385th Medford Parade, athletics, a building leak, and a school-wide t-shirt campaign.",
  "items": [
   {
@@ -73,5 +73,6 @@
   "input_tokens": 6574,
   "output_tokens": 586,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
