@@ -1,0 +1,77 @@
+{
+ "video_id": "4up_cmlg7RM",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T19:07:30Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "80c632fa6894993a",
+ "subject": "",
+ "overview": "Medford High School students present episode three of the Mustang Report, covering community and school news including the 385th Medford Parade, athletics, a building leak, and a school-wide t-shirt campaign.",
+ "items": [
+  {
+   "title": "Studio Introduction",
+   "t": 0,
+   "summary": "Student hosts open the segment discussing recent athletics, local charity events, and upcoming broadcast topics.",
+   "speakers": [
+    "Victoria Rasche"
+   ]
+  },
+  {
+   "title": "385th Medford Parade Coverage",
+   "t": 45,
+   "summary": "Reporters interview student-athletes, coaches, and costumed participants marching in the 385th Medford Parade.",
+   "speakers": [
+    "Victoria Rasche",
+    "Brie Forcier",
+    "Matthew Galusi",
+    "Katrina Rasche",
+    "Sean Freeman",
+    "Nev Jacks"
+   ]
+  },
+  {
+   "title": "Weather Update",
+   "t": 333,
+   "summary": "Carrie Anne Lucharis reports on a flash flood warning and heavy rainfall expected in the area.",
+   "speakers": [
+    "Carrie Anne Lucharis"
+   ]
+  },
+  {
+   "title": "Teacher Marathon Training Segment",
+   "t": 346,
+   "summary": "Katrina Rasche interviews English teacher Max Heinegg about his 18-week marathon training program.",
+   "speakers": [
+    "Katrina Rasche",
+    "Max Heinegg"
+   ]
+  },
+  {
+   "title": "School Building Flooding Report",
+   "t": 514,
+   "summary": "Carrie Anne Lucharis and Lydia Ryan report on interior leaking and rain cleanup near 3rd Cap caused by a damaged roof drain pipe.",
+   "speakers": [
+    "Carrie Anne Lucharis",
+    "Lydia Ryan"
+   ]
+  },
+  {
+   "title": "\"What Would Tucci Do?\" Campaign Feature",
+   "t": 552,
+   "summary": "Reporters speak with Dr. John Perella, students, and Nick Tucci regarding the popular \"What Would Tucci Do?\" t-shirt initiative.",
+   "speakers": [
+    "Victoria Rasche",
+    "John Perella",
+    "Carrie Anne Lucharis",
+    "Katrina Rasche",
+    "Nick Tucci"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 6574,
+  "output_tokens": 586,
+  "model_version": "gemini-3.6-flash"
+ }
+}
