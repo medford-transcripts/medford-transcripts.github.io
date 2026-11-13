@@ -1,0 +1,50 @@
+{
+ "video_id": "CAS00002368",
+ "provider": "gemini",
+ "generated_at": "2026-11-13T07:13:02Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "51001d196b5d234c",
+ "subject": "Medford Square Rezoning Historic Protections",
+ "overview": "The Medford Historic District Commission discussed options to incorporate historic protections into the proposed Medford Square rezoning and reviewed an informal siding proposal for the 16 Whitman Road carriage house project. Consideration of the December meeting minutes was postponed to March.",
+ "items": [
+  {
+   "title": "Medford Square Rezoning Discussion",
+   "t": 18,
+   "summary": "The Commission discussed strategies to protect historic commercial and institutional properties in the proposed Medford Square rezoning plan, agreeing to attend upcoming joint planning meetings to advocate for historic preservation controls.",
+   "speakers": [
+    "Doug Carr",
+    "Theresa Dupont",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Patricia Brady",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "16 Whitman Road Carriage House Update",
+   "t": 1676,
+   "summary": "Ryan Hayward presented an informal update on restoring board and batten siding for the carriage house project at 16 Whitman Road, receiving supportive feedback from the Commission ahead of a formal application next month.",
+   "speakers": [
+    "Ryan Hayward",
+    "Theresa Dupont",
+    "Peter Miller",
+    "Patricia Brady"
+   ]
+  },
+  {
+   "title": "Approval of Minutes",
+   "t": 2440,
+   "summary": "Action on the December meeting minutes was tabled to the March meeting because the draft minutes were not ready for review.",
+   "speakers": [
+    "Theresa Dupont"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13502,
+  "output_tokens": 375,
+  "model_version": "gemini-3.6-flash"
+ }
+}
