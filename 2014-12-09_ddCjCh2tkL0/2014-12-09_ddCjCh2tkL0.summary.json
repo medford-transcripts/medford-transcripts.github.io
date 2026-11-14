@@ -1,0 +1,26 @@
+{
+ "video_id": "ddCjCh2tkL0",
+ "provider": "gemini",
+ "generated_at": "2026-11-14T08:14:10Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "f3e8d38d8799676b",
+ "subject": "Pay-by-Plate Parking Kiosk Demonstration",
+ "overview": "An instructional presentation demonstrated how to use Medford's new solar-powered pay-by-plate parking kiosks. The narrator detailed the process for entering a license plate number, paying by coin or card, and retrieving a receipt.",
+ "items": [
+  {
+   "title": "Demonstration of Pay-by-Plate Parking Kiosks",
+   "t": 8,
+   "summary": "A narrator demonstrated how to activate the kiosk, enter a vehicle license plate number, select parking time, and complete payment using coins or credit and debit cards.",
+   "speakers": [
+    "Narrator"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1468,
+  "output_tokens": 140,
+  "model_version": "gemini-3.8-flash"
+ }
+}
