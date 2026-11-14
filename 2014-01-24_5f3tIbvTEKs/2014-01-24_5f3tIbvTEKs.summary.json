@@ -1,0 +1,36 @@
+{
+ "video_id": "5f3tIbvTEKs",
+ "provider": "gemini",
+ "generated_at": "2026-11-14T10:12:46Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "33b4f0f3f870d6e3",
+ "subject": "",
+ "overview": "High school robotics team members tested their robots and conducted competition rounds. They also presented an award for outstanding robot synchronization to Team 547 Medfield.",
+ "items": [
+  {
+   "title": "Robotics Build and Testing",
+   "t": 0,
+   "summary": "Team members conducted robot testing and discussed their technical progress.",
+   "speakers": []
+  },
+  {
+   "title": "Double Elimination Competition Round",
+   "t": 258,
+   "summary": "Participants ran a double elimination competition round and noted significant performance improvements over the previous year.",
+   "speakers": []
+  },
+  {
+   "title": "Synchronization Award Presentation",
+   "t": 401,
+   "summary": "Team 547 Medfield was recognized with an award for outstanding robot synchronization.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1874,
+  "output_tokens": 187,
+  "model_version": "gemini-3.6-flash"
+ }
+}

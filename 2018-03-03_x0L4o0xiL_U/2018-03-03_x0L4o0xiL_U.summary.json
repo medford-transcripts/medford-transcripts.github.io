@@ -1,0 +1,58 @@
+{
+ "video_id": "x0L4o0xiL_U",
+ "provider": "gemini",
+ "generated_at": "2026-11-14T10:13:37Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "be206e71c390ecb4",
+ "subject": "Patriots Day Ceremonies",
+ "overview": "Medford officials, veterans groups, and community members gathered for annual Patriots Day observances, including a POW MIA ceremony, a grave decoration service at Salem Street Burying Ground, and a re-enactment of Paul Revere's ride.",
+ "items": [
+  {
+   "title": "POW MIA Flag Raising Ceremony",
+   "t": 163,
+   "summary": "City officials and veterans gathered at City Hall for a POW MIA flag-raising ceremony featuring remarks on war prisoners and missing service members by City Councilor Alfred Pompeo.",
+   "speakers": [
+    "Mike Colombo",
+    "Alfred Pompeo"
+   ]
+  },
+  {
+   "title": "Revolutionary War Memorial Service at Salem Street Burying Ground",
+   "t": 986,
+   "summary": "Participants assembled at Salem Street Burying Ground to hear Governor William Weld's Patriots Day proclamation, an address by Council President Robert Maiocco, and to decorate the graves of Revolutionary War soldiers.",
+   "speakers": [
+    "John McNair",
+    "Adelaide Everson",
+    "William Weld",
+    "Robert Maiocco",
+    "Joseph Stokes",
+    "King"
+   ]
+  },
+  {
+   "title": "Community Remarks",
+   "t": 2972,
+   "summary": "Local veterans, school officials, and American Legion Auxiliary leaders offered public comments during the ceremonies.",
+   "speakers": [
+    "John Sardone",
+    "Tom McCartney",
+    "Marcia Caron"
+   ]
+  },
+  {
+   "title": "Re-enactment of Paul Revere's Ride",
+   "t": 3942,
+   "summary": "Spectators gathered to hear a recitation of Longfellow's poem and greet a re-enactor portraying Paul Revere during his ride toward Lexington.",
+   "speakers": [
+    "Alicia Indichati"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 9081,
+  "output_tokens": 385,
+  "model_version": "gemini-3.6-flash"
+ }
+}

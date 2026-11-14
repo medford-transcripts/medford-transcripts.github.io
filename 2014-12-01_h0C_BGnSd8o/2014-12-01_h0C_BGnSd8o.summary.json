@@ -1,0 +1,26 @@
+{
+ "video_id": "h0C_BGnSd8o",
+ "provider": "gemini",
+ "generated_at": "2026-11-14T10:11:16Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "9fa1a0d06e33e157",
+ "subject": "",
+ "overview": "The recording captures brief announcer remarks and spectator commentary during the Thanksgiving football game between Medford and Malden. No municipal business or formal actions were conducted.",
+ "items": [
+  {
+   "title": "Thanksgiving Game Audio",
+   "t": 0,
+   "summary": "Spectators and an announcer react to plays during the football game.",
+   "speakers": [
+    "Announcer"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 998,
+  "output_tokens": 80,
+  "model_version": "gemini-3.8-flash"
+ }
+}
