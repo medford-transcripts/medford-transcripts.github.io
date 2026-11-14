@@ -1,0 +1,38 @@
+{
+ "video_id": "zbF0WIZmuo0",
+ "provider": "gemini",
+ "generated_at": "2026-11-14T03:22:11Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "055d2000fe43582d",
+ "subject": "",
+ "overview": "Students and vocational director Heidi Riccio showcase technical coursework, robotics demonstrations, and expanding vocational programs.",
+ "items": [
+  {
+   "title": "Student Perspectives on Campus Integration",
+   "t": 5,
+   "summary": "Students discuss their daily shop coursework in electrical work and health vitals while highlighting their shared school campus.",
+   "speakers": []
+  },
+  {
+   "title": "Robotics and Technical Demonstrations",
+   "t": 29,
+   "summary": "Students demonstrate keyboard-controlled robot signaling and technical measurement techniques.",
+   "speakers": []
+  },
+  {
+   "title": "Tour of Vocational Programs",
+   "t": 74,
+   "summary": "Heidi Riccio highlights student cafeteria renovation work, licensing opportunities in cosmetology, college credit partnerships in culinary arts, and the construction of a mock hotel for hospitality training.",
+   "speakers": [
+    "Heidi Riccio"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 1879,
+  "output_tokens": 235,
+  "model_version": "gemini-3.8-flash"
+ }
+}
