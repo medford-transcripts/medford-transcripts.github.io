@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "9fa1a0d06e33e157",
- "subject": "",
+ "subject": "Medford vs. Malden Thanksgiving Football Game",
  "overview": "The recording captures brief announcer remarks and spectator commentary during the Thanksgiving football game between Medford and Malden. No municipal business or formal actions were conducted.",
  "items": [
   {
@@ -22,5 +22,6 @@
   "input_tokens": 998,
   "output_tokens": 80,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }

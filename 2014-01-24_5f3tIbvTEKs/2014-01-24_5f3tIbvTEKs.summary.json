@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "33b4f0f3f870d6e3",
- "subject": "",
+ "subject": "High School Robotics Competition",
  "overview": "High school robotics team members tested their robots and conducted competition rounds. They also presented an award for outstanding robot synchronization to Team 547 Medfield.",
  "items": [
   {
@@ -32,5 +32,6 @@
   "input_tokens": 1874,
   "output_tokens": 187,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
