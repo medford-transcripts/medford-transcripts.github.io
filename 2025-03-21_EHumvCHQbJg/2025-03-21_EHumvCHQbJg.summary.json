@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "325314c535b7caaa",
- "subject": "",
+ "subject": "Citizen Street Recovery Program",
  "overview": "The Medford City Council approved a resolution establishing a citizen street recovery program backed by a request for $1 million from free cash to repair winter-damaged roads. Councilors also requested internal budget transfer reports and asked the police chief to review the city's resident permit parking system.",
  "items": [
   {
@@ -100,5 +100,6 @@
   "input_tokens": 23744,
   "output_tokens": 909,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
