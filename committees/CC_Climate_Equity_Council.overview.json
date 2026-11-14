@@ -1,23 +1,32 @@
 {
  "committee": "CC Climate Equity Council",
  "provider": "gemini",
- "model": "gemini-3.8-flash",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-20T01:07:13Z",
- "sources_sha": "e26e951ee50a9960",
- "n_meetings": 16,
+ "generated_at": "2026-11-14T04:11:47Z",
+ "sources_sha": "a09475352d182f21",
+ "n_meetings": 21,
  "period_style": "term",
  "span": [
-  "2023-12-18",
-  "2026-09-16"
+  "2023-11-27",
+  "2026-10-21"
  ],
- "overview": "The Medford Climate Equity Council is a municipal body established to advance local climate resilience, environmental equity, and emissions reduction initiatives. The council reviews city sustainability policies, coordinates public education, and guides community-level climate adaptation and mitigation efforts. Across the 16 meetings recorded between December 2023 and September 2026, the body has tracked home energy coaching, municipal decarbonization projects, composting expansion, flood vulnerability, and public outreach. It also examines infrastructure improvements such as stormwater systems, electric vehicle charging facilities, and public transit accessibility. At its most recent meeting, the council reviewed the city's curbside composting program, discussed hazardous waste protocols, and planned winter heating outreach.",
+ "overview": "The Medford Climate Equity Council is an advisory body formed to represent historically underrepresented communities and advise the city on its Climate Action and Adaptation Plan. The council met regularly from November 2023 through October 2026 to evaluate environmental policy, municipal resilience projects, and public outreach strategies. Over this period, the council tracked local initiatives including home clean energy programs, curbside composting, flood mitigation grants, tree canopy ordinances, and municipal building decarbonization. At its most recent recorded meeting, the council reviewed a regional de-paving grant project, discussed rodent control and waste outreach, and considered new strategies to expand resident participation in energy coaching.",
  "threads": [
   {
-   "name": "Electrify Medford and residential energy coaching",
+   "name": "Electrify Medford clean energy outreach",
    "status": "ongoing",
-   "summary": "Brenda Pike announced that the city received a MassCEC Empower grant to hire energy coaches and launch the Electrify Medford campaign to assist residents with clean heating and weatherization. Following coach training and translations of program materials, resident enrollment climbed steadily from initial cohorts to nearly two hundred households. The council organized coaching sessions at local libraries and tracked changes to state MassSave incentive rebates. Program participation figures and coaching metrics continued to be monitored by the council into mid-2026.",
+   "summary": "The council reviewed plans for the Electrify Medford campaign at its inaugural meeting to help lower-income residents and renters adopt clean energy technologies. The city secured grant funding to hire energy coaches and offer free heat pump consultations, subsequently launching the program and translating outreach materials into multiple languages. Members routinely tracked enrollee numbers as participation grew from early signups to nearly 200 residents. At later meetings, the council explored updated strategies to boost participation, including youth language coaches and direct incentives.",
    "citations": [
+    {
+     "video_id": "MCM00000939",
+     "t": 2630,
+     "date": "2023-11-27",
+     "base": "2024-07-18_MCM00000939",
+     "meeting_title": "Medford Climate Equity Council 11-27-23",
+     "title": "Electrify Medford Outreach Campaign",
+     "label": "M01#4"
+    },
     {
      "video_id": "MCM00000941",
      "t": 1959,
@@ -25,16 +34,7 @@
      "base": "2024-07-18_MCM00000941",
      "meeting_title": "Medford Climate Equity Council 02-26-24",
      "title": "Electrify Medford Campaign Update",
-     "label": "M02#3"
-    },
-    {
-     "video_id": "MCM00000943",
-     "t": 1878,
-     "date": "2024-04-22",
-     "base": "2024-07-18_MCM00000943",
-     "meeting_title": "Medford Climate Equity Council 04-22-24",
-     "title": "Electrify Medford and Electricity Aggregation",
-     "label": "M04#5"
+     "label": "M03#3"
     },
     {
      "video_id": "MCM00000973",
@@ -43,43 +43,7 @@
      "base": "2024-07-25_MCM00000973",
      "meeting_title": "Medford Climate Equity Council 07-19-24",
      "title": "Electrify Medford Program Updates",
-     "label": "M06#4"
-    },
-    {
-     "video_id": "MCM00001441",
-     "t": 1981,
-     "date": "2024-08-23",
-     "base": "2024-09-16_MCM00001441",
-     "meeting_title": "Medford Climate Equity Council 08-23-24",
-     "title": "Electrify Medford Program Status",
-     "label": "M07#8"
-    },
-    {
-     "video_id": "MCM00001615",
-     "t": 805,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Upcoming Community Events",
-     "label": "M10#4"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 874,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "Electrify Medford and Outreach Strategies",
-     "label": "M11#3"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 2296,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "City Energy Initiatives and MassSave Policy Changes",
-     "label": "M11#4"
+     "label": "M07#4"
     },
     {
      "video_id": "MCM00001801",
@@ -88,32 +52,23 @@
      "base": "2025-08-29_MCM00001801",
      "meeting_title": "Medford Climate Equity Council 08-27-25",
      "title": "Electrify Medford and Main Streets Program Update",
-     "label": "M12#6"
+     "label": "M13#6"
     },
     {
-     "video_id": "CAS00002438",
-     "t": 2058,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Electrify Medford and Energy & Environment Committee Updates",
-     "label": "M13#5"
-    },
-    {
-     "video_id": "CAS00002475",
-     "t": 3161,
-     "date": "2026-06-24",
-     "base": "2026-07-01_CAS00002475",
-     "meeting_title": "Climate Equity Council 06/24/26",
-     "title": "City Sustainability and Energy Updates",
-     "label": "M14#5"
+     "video_id": "CAS00002576",
+     "t": 2241,
+     "date": "2026-10-21",
+     "base": "2026-10-23_CAS00002576",
+     "meeting_title": "Climate Equity Council 10/21/26",
+     "title": "Electrify Medford Coaching and Incentive Strategies",
+     "label": "M21#5"
     }
    ]
   },
   {
-   "name": "Curbside composting and solid waste reduction",
+   "name": "Curbside composting and waste management",
    "status": "ongoing",
-   "summary": "The city announced a free curbside composting program in early 2024 for residential buildings with four units or fewer. Participation grew rapidly from several hundred residents in the spring to more than five thousand households by late summer, supported by bulk bin distribution events and automatic distribution pilots. The council also explored wider zero-waste initiatives, including swap events and a campaign to phase out non-recyclable black plastic takeout containers. In late 2026, the council reviewed the Garbage to Garden program ahead of municipal trash schedule shifts and discussed proper disposal protocols for lithium-ion batteries and hazardous household waste.",
+   "summary": "Medford introduced a free curbside composting program in mid-2024 for small residential buildings. The council tracked household enrollment milestones as signups reached over 5,000 residents by late 2024. In 2026, municipal staff briefed the council on plans to transition to every-other-week trash collection by 2027 to incentivize further composting adoption. The body subsequently discussed targeted educational outreach for renters, non-English speakers, and high school volunteers producing waste reduction videos.",
    "citations": [
     {
      "video_id": "MCM00000941",
@@ -122,16 +77,7 @@
      "base": "2024-07-18_MCM00000941",
      "meeting_title": "Medford Climate Equity Council 02-26-24",
      "title": "Curbside Composting Program",
-     "label": "M02#4"
-    },
-    {
-     "video_id": "MCM00000942",
-     "t": 753,
-     "date": "2024-03-18",
-     "base": "2024-07-18_MCM00000942",
-     "meeting_title": "Medford Climate Equity Council 03-18-24",
-     "title": "City Action Updates",
-     "label": "M03#3"
+     "label": "M03#4"
     },
     {
      "video_id": "MCM00000943",
@@ -140,7 +86,7 @@
      "base": "2024-07-18_MCM00000943",
      "meeting_title": "Medford Climate Equity Council 04-22-24",
      "title": "Curbside Composting Program",
-     "label": "M04#6"
+     "label": "M05#6"
     },
     {
      "video_id": "MCM00001441",
@@ -149,68 +95,32 @@
      "base": "2024-09-16_MCM00001441",
      "meeting_title": "Medford Climate Equity Council 08-23-24",
      "title": "Curbside Composting Program",
-     "label": "M07#4"
+     "label": "M08#4"
     },
     {
-     "video_id": "MCM00001513",
-     "t": 2313,
-     "date": "2024-09-20",
-     "base": "2024-09-23_MCM00001513",
-     "meeting_title": "Medford Climate Equity Council 09-20-24",
-     "title": "Curbside Composting Pilot",
-     "label": "M08#5"
+     "video_id": "CAS00002325",
+     "t": 56,
+     "date": "2026-02-11",
+     "base": "2026-02-12_CAS00002325",
+     "meeting_title": "Climate Equity Council 2/11/26",
+     "title": "Waste Management and Composting Policy Update",
+     "label": "M14#2"
     },
     {
-     "video_id": "MCM00001615",
-     "t": 1445,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Energy Committee and Zero Waste Initiative",
-     "label": "M10#7"
-    },
-    {
-     "video_id": "CAS00002438",
-     "t": 2058,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Electrify Medford and Energy & Environment Committee Updates",
-     "label": "M13#5"
-    },
-    {
-     "video_id": "CAS00002475",
-     "t": 4287,
-     "date": "2026-06-24",
-     "base": "2026-07-01_CAS00002475",
-     "meeting_title": "Climate Equity Council 06/24/26",
-     "title": "Black Plastic Takeout Container Initiative",
-     "label": "M14#6"
-    },
-    {
-     "video_id": "CAS00002531",
-     "t": 1797,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "City Composting Program Update",
-     "label": "M16#4"
-    },
-    {
-     "video_id": "CAS00002531",
-     "t": 3587,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "Waste and Battery Disposal Q&A",
-     "label": "M16#5"
+     "video_id": "CAS00002576",
+     "t": 1487,
+     "date": "2026-10-21",
+     "base": "2026-10-23_CAS00002576",
+     "meeting_title": "Climate Equity Council 10/21/26",
+     "title": "Rodent Control, Waste Reduction, and Student Outreach",
+     "label": "M21#4"
     }
    ]
   },
   {
-   "name": "Stormwater management and flood mitigation",
+   "name": "Stormwater infrastructure and flood mitigation",
    "status": "ongoing",
-   "summary": "After reviewing flood projection maps through 2070, the council evaluated localized infrastructure needs to manage stormwater and maintain dams. The council voted to approve letters of support for Municipal Vulnerability Preparedness and BRIC grant applications to fund drainage upgrades on Bowen and Golden Avenues as well as Tufts Park. Members subsequently reviewed proposed Green Score zoning mechanisms designed to incentivize stormwater retention and native plantings in FEMA flood zones. In 2026, staff reported that regional grant funding was awarded for a community depaving project but denied for Tufts Park stormwater improvements.",
+   "summary": "Early meetings examined long-term flood projections and localized stormwater vulnerability across the city. The council approved formal letters of support for Municipal Vulnerability Preparedness and BRIC grants targeting drainage infrastructure in South Medford and Tufts Park. Members later reviewed tri-city proposals for residential de-paving and permeable surfaces, receiving updates in August 2026 that regional de-paving funds were awarded while Tufts Park improvements were denied. By late 2026, the council received updates on MVP grant-funded green infrastructure and de-paving work in West Medford.",
    "citations": [
     {
      "video_id": "MCM00000940",
@@ -219,16 +129,7 @@
      "base": "2024-07-18_MCM00000940",
      "meeting_title": "Medford Climate Equity Council 12-18-23",
      "title": "Flood Risk and Mitigation",
-     "label": "M01#6"
-    },
-    {
-     "video_id": "MCM00000941",
-     "t": 2488,
-     "date": "2024-02-26",
-     "base": "2024-07-18_MCM00000941",
-     "meeting_title": "Medford Climate Equity Council 02-26-24",
-     "title": "South Medford Stormwater Improvements",
-     "label": "M02#5"
+     "label": "M02#6"
     },
     {
      "video_id": "MCM00000942",
@@ -237,7 +138,7 @@
      "base": "2024-07-18_MCM00000942",
      "meeting_title": "Medford Climate Equity Council 03-18-24",
      "title": "South Medford Stormwater Mitigation Support",
-     "label": "M03#7"
+     "label": "M04#7"
     },
     {
      "video_id": "MCM00000943",
@@ -246,25 +147,16 @@
      "base": "2024-07-18_MCM00000943",
      "meeting_title": "Medford Climate Equity Council 04-22-24",
      "title": "Stormwater Infrastructure Grants",
-     "label": "M04#4"
+     "label": "M05#4"
     },
     {
-     "video_id": "MCM00001732",
-     "t": 3785,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "Zoning Codification and Green Score Proposal",
-     "label": "M11#6"
-    },
-    {
-     "video_id": "MCM00001801",
-     "t": 3878,
-     "date": "2025-08-27",
-     "base": "2025-08-29_MCM00001801",
-     "meeting_title": "Medford Climate Equity Council 08-27-25",
-     "title": "Climate Change Vulnerability Assessment",
-     "label": "M12#8"
+     "video_id": "CAS00002358",
+     "t": 1082,
+     "date": "2026-03-18",
+     "base": "2026-03-30_CAS00002358",
+     "meeting_title": "Climate Equity Council 03/18/26",
+     "title": "Fairfield Street Flood Mitigation and De-paving",
+     "label": "M15#3"
     },
     {
      "video_id": "CAS00002504",
@@ -273,15 +165,33 @@
      "base": "2026-08-20_CAS00002504",
      "meeting_title": "Climate Equity Council 08/19/26",
      "title": "Grants and Projects Update",
-     "label": "M15#2"
+     "label": "M19#2"
+    },
+    {
+     "video_id": "CAS00002576",
+     "t": 208,
+     "date": "2026-10-21",
+     "base": "2026-10-23_CAS00002576",
+     "meeting_title": "Climate Equity Council 10/21/26",
+     "title": "West Medford De-Paving MVP Grant Update",
+     "label": "M21#2"
     }
    ]
   },
   {
-   "name": "Electric vehicle charging and transit infrastructure",
+   "name": "EV charging and fleet electrification",
    "status": "ongoing",
-   "summary": "The council reviewed initial rollouts of public electric vehicle charging stations and discussed technical assistance grants for electrifying the school bus fleet. Members later examined municipal fee structures, including an EV charging revolving fund ordinance and potential low-income charging discount rates. In parallel, the council tracked local transit developments, including Blue Bikes station expansions, MBTA fare discounts for income-eligible residents, and bus route redesigns. Staff later updated the council on grant-funded on-street charging installations at city parks and bicycle lane network improvements.",
+   "summary": "Staff briefed the council on expanding public charging stations and seeking technical assistance grants for school bus electrification. The body evaluated proposed EV charging revolving fund ordinances and potential rate increases alongside low-income discount options. The city pursued state grants for on-street EV charging across municipal parks, leading to charger installations and a ribbon-cutting event in mid-2026.",
    "citations": [
+    {
+     "video_id": "MCM00000939",
+     "t": 1980,
+     "date": "2023-11-27",
+     "base": "2024-07-18_MCM00000939",
+     "meeting_title": "Medford Climate Equity Council 11-27-23",
+     "title": "Ongoing City Climate Initiatives",
+     "label": "M01#3"
+    },
     {
      "video_id": "MCM00000940",
      "t": 1618,
@@ -289,16 +199,7 @@
      "base": "2024-07-18_MCM00000940",
      "meeting_title": "Medford Climate Equity Council 12-18-23",
      "title": "EV Infrastructure and Bus Electrification",
-     "label": "M01#4"
-    },
-    {
-     "video_id": "MCM00000941",
-     "t": 3192,
-     "date": "2024-02-26",
-     "base": "2024-07-18_MCM00000941",
-     "meeting_title": "Medford Climate Equity Council 02-26-24",
-     "title": "Transportation: Blue Bikes and Wellington Underpass",
-     "label": "M02#6"
+     "label": "M02#4"
     },
     {
      "video_id": "MCM00001441",
@@ -307,43 +208,7 @@
      "base": "2024-09-16_MCM00001441",
      "meeting_title": "Medford Climate Equity Council 08-23-24",
      "title": "EV Charging Revolving Fund and Rates",
-     "label": "M07#6"
-    },
-    {
-     "video_id": "MCM00001441",
-     "t": 1811,
-     "date": "2024-08-23",
-     "base": "2024-09-16_MCM00001441",
-     "meeting_title": "Medford Climate Equity Council 08-23-24",
-     "title": "MBTA Discount Program Expansion",
-     "label": "M07#7"
-    },
-    {
-     "video_id": "MCM00001513",
-     "t": 2617,
-     "date": "2024-09-20",
-     "base": "2024-09-23_MCM00001513",
-     "meeting_title": "Medford Climate Equity Council 09-20-24",
-     "title": "City Infrastructure and Legislative Updates",
      "label": "M08#6"
-    },
-    {
-     "video_id": "MCM00001615",
-     "t": 3988,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Transportation and Bus Route Changes",
-     "label": "M10#12"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 2296,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "City Energy Initiatives and MassSave Policy Changes",
-     "label": "M11#4"
     },
     {
      "video_id": "MCM00001801",
@@ -352,16 +217,7 @@
      "base": "2025-08-29_MCM00001801",
      "meeting_title": "Medford Climate Equity Council 08-27-25",
      "title": "High School HVAC and EV Charging Grant",
-     "label": "M12#7"
-    },
-    {
-     "video_id": "CAS00002438",
-     "t": 3122,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Transportation and Pedestrian Infrastructure Update",
-     "label": "M13#6"
+     "label": "M13#7"
     },
     {
      "video_id": "CAS00002475",
@@ -370,14 +226,14 @@
      "base": "2026-07-01_CAS00002475",
      "meeting_title": "Climate Equity Council 06/24/26",
      "title": "City Sustainability and Energy Updates",
-     "label": "M14#5"
+     "label": "M18#5"
     }
    ]
   },
   {
-   "name": "Tree protection ordinances and canopy care",
+   "name": "Tree protection ordinances and canopy expansion",
    "status": "ongoing",
-   "summary": "Early briefings to the council noted ongoing work on tree protection ordinances by the Energy and Environment Committee. Staff presented three proposed ordinances addressing public and private property trees, and the council designated urban tree canopy expansion as a primary annual focus area. The City Council Committee of the Whole subsequently took up formal review of the public and private tree ordinances alongside efforts by community groups to identify landmark trees. The council also coordinated tree care strategies and discussed community maintenance support during severe regional drought conditions.",
+   "summary": "The council reviewed proposed public and private tree protection ordinances and designated urban tree canopy expansion as a key priority. Members discussed City Council reviews of tree legislation, historic landmark tree identification, and youth involvement in tree watering during droughts. In 2026, staff outlined grant-funded youth employment programs focused on tree care partnerships with Trees Medford and neighborhood tree distributions.",
    "citations": [
     {
      "video_id": "MCM00000940",
@@ -386,16 +242,7 @@
      "base": "2024-07-18_MCM00000940",
      "meeting_title": "Medford Climate Equity Council 12-18-23",
      "title": "City Action Updates",
-     "label": "M01#3"
-    },
-    {
-     "video_id": "MCM00000941",
-     "t": 48,
-     "date": "2024-02-26",
-     "base": "2024-07-18_MCM00000941",
-     "meeting_title": "Medford Climate Equity Council 02-26-24",
-     "title": "Energy and Environment Committee Briefing",
-     "label": "M02#2"
+     "label": "M02#3"
     },
     {
      "video_id": "MCM00000942",
@@ -404,7 +251,7 @@
      "base": "2024-07-18_MCM00000942",
      "meeting_title": "Medford Climate Equity Council 03-18-24",
      "title": "Energy and Environment Committee Report",
-     "label": "M03#5"
+     "label": "M04#5"
     },
     {
      "video_id": "MCM00000973",
@@ -413,16 +260,7 @@
      "base": "2024-07-25_MCM00000973",
      "meeting_title": "Medford Climate Equity Council 07-19-24",
      "title": "Council Annual Priorities",
-     "label": "M06#7"
-    },
-    {
-     "video_id": "MCM00001513",
-     "t": 5414,
-     "date": "2024-09-20",
-     "base": "2024-09-23_MCM00001513",
-     "meeting_title": "Medford Climate Equity Council 09-20-24",
-     "title": "Proposed Tree Ordinances",
-     "label": "M08#9"
+     "label": "M07#7"
     },
     {
      "video_id": "MCM00001615",
@@ -431,41 +269,32 @@
      "base": "2024-12-04_MCM00001615",
      "meeting_title": "Medford Climate Equity Council 11-18-24",
      "title": "Tree Ordinances and Landmark Trees",
-     "label": "M10#9"
+     "label": "M11#9"
     },
     {
-     "video_id": "MCM00001615",
-     "t": 2470,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Tree Care and Community Service",
-     "label": "M10#10"
+     "video_id": "CAS00002403",
+     "t": 1862,
+     "date": "2026-04-29",
+     "base": "2026-05-01_CAS00002403",
+     "meeting_title": "Climate Equity Council 04/29/26",
+     "title": "Youth Gardening and Tree Care Initiatives",
+     "label": "M16#5"
     }
    ]
   },
   {
-   "name": "Municipal building decarbonization and resilience hubs",
+   "name": "Municipal building decarbonization and school HVAC upgrades",
    "status": "ongoing",
-   "summary": "The council evaluated Medford High School's function as the city's primary emergency shelter and discussed plans for a future multi-service resilience hub. Updates followed regarding a federal earmark request for a resilience hub at the Willis-Appe Community Center, alongside School Committee commitments to HVAC repairs and fossil fuel equipment restrictions. Design work advanced for HVAC electrification at the Andrews and McGlynn schools, though subsequent reports noted delays in high school cooling repairs. The council also monitored long-term planning efforts, including technical assistance for a 30-year municipal building decarbonization roadmap.",
+   "summary": "The council monitored municipal energy efficiency projects, starting with weatherization goals and a state technical assistance award for a 30-year building decarbonization roadmap. Staff reported on design contracts for HVAC repairs at the McGlynn and Andrews schools, though high school cooling work faced delays in 2025. Updates in 2026 highlighted real-time air quality sensor installations in schools and LEED certification goals for the high school project.",
    "citations": [
     {
-     "video_id": "MCM00000940",
-     "t": 4514,
-     "date": "2023-12-18",
-     "base": "2024-07-18_MCM00000940",
-     "meeting_title": "Medford Climate Equity Council 12-18-23",
-     "title": "Emergency Shelters and Resilience Hubs",
-     "label": "M01#7"
-    },
-    {
-     "video_id": "MCM00000943",
-     "t": 2375,
-     "date": "2024-04-22",
-     "base": "2024-07-18_MCM00000943",
-     "meeting_title": "Medford Climate Equity Council 04-22-24",
-     "title": "Municipal Infrastructure and Energy Efficiency",
-     "label": "M04#7"
+     "video_id": "MCM00000939",
+     "t": 1980,
+     "date": "2023-11-27",
+     "base": "2024-07-18_MCM00000939",
+     "meeting_title": "Medford Climate Equity Council 11-27-23",
+     "title": "Ongoing City Climate Initiatives",
+     "label": "M01#3"
     },
     {
      "video_id": "MCM00000944",
@@ -474,15 +303,6 @@
      "base": "2024-07-18_MCM00000944",
      "meeting_title": "Medford Climate Equity Council 05-20-24",
      "title": "School Building HVAC and Decarbonization Roadmap",
-     "label": "M05#5"
-    },
-    {
-     "video_id": "MCM00000973",
-     "t": 1550,
-     "date": "2024-07-19",
-     "base": "2024-07-25_MCM00000973",
-     "meeting_title": "Medford Climate Equity Council 07-19-24",
-     "title": "Curbside Composting, Fleet Electrification, and School HVAC",
      "label": "M06#5"
     },
     {
@@ -492,16 +312,7 @@
      "base": "2024-09-16_MCM00001441",
      "meeting_title": "Medford Climate Equity Council 08-23-24",
      "title": "McGlynn and Andrews HVAC Project",
-     "label": "M07#5"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 2296,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "City Energy Initiatives and MassSave Policy Changes",
-     "label": "M11#4"
+     "label": "M08#5"
     },
     {
      "video_id": "MCM00001801",
@@ -510,121 +321,15 @@
      "base": "2025-08-29_MCM00001801",
      "meeting_title": "Medford Climate Equity Council 08-27-25",
      "title": "High School HVAC and EV Charging Grant",
-     "label": "M12#7"
-    }
-   ]
-  },
-  {
-   "name": "Extreme weather preparedness and community outreach",
-   "status": "ongoing",
-   "summary": "The council maintained a regular calendar of tabling and outreach at city cultural festivals, farmers markets, and events such as the Harvest Your Energy Festival. Members coordinated winter preparedness events that combined utility fuel assistance applications with coat and winter gear distributions. The body also examined public health responses to extreme weather, analyzing real-time air quality maps during wildfire smoke events and planning cooling resource maps for summer heat waves. Outreach efforts emphasized translated materials and engagement strategies tailored to non-English speaking and immigrant communities.",
-   "citations": [
-    {
-     "video_id": "MCM00000944",
-     "t": 272,
-     "date": "2024-05-20",
-     "base": "2024-07-18_MCM00000944",
-     "meeting_title": "Medford Climate Equity Council 05-20-24",
-     "title": "Community Events Outreach",
-     "label": "M05#3"
+     "label": "M13#7"
     },
     {
-     "video_id": "MCM00000973",
-     "t": 299,
-     "date": "2024-07-19",
-     "base": "2024-07-25_MCM00000973",
-     "meeting_title": "Medford Climate Equity Council 07-19-24",
-     "title": "Community Outreach and Events Calendar",
-     "label": "M06#3"
-    },
-    {
-     "video_id": "MCM00001441",
-     "t": 322,
-     "date": "2024-08-23",
-     "base": "2024-09-16_MCM00001441",
-     "meeting_title": "Medford Climate Equity Council 08-23-24",
-     "title": "Medford Connects and City Outreach Events",
-     "label": "M07#2"
-    },
-    {
-     "video_id": "MCM00001441",
-     "t": 1981,
-     "date": "2024-08-23",
-     "base": "2024-09-16_MCM00001441",
-     "meeting_title": "Medford Climate Equity Council 08-23-24",
-     "title": "Electrify Medford Program Status",
-     "label": "M07#8"
-    },
-    {
-     "video_id": "MCM00001513",
-     "t": 634,
-     "date": "2024-09-20",
-     "base": "2024-09-23_MCM00001513",
-     "meeting_title": "Medford Climate Equity Council 09-20-24",
-     "title": "Event Planning and Debrief",
-     "label": "M08#4"
-    },
-    {
-     "video_id": "MCM00001596",
-     "t": 533,
-     "date": "2024-10-21",
-     "base": "2024-11-26_MCM00001596",
-     "meeting_title": "Medford Climate Equity Council 10-21-24",
-     "title": "Winter Preparedness Event",
-     "label": "M09#3"
-    },
-    {
-     "video_id": "MCM00001615",
-     "t": 428,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Winter Preparedness Event Recap",
-     "label": "M10#3"
-    },
-    {
-     "video_id": "MCM00001615",
-     "t": 1565,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Air Quality and Extreme Weather Communications",
-     "label": "M10#8"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 4166,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "Federal Funding and Community Climate Concerns",
-     "label": "M11#7"
-    },
-    {
-     "video_id": "CAS00002438",
-     "t": 1320,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Summer Heat Preparedness and Cooling Resources",
-     "label": "M13#4"
-    },
-    {
-     "video_id": "CAS00002531",
-     "t": 395,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "Upcoming Autumn Events",
-     "label": "M16#3"
-    },
-    {
-     "video_id": "CAS00002531",
-     "t": 4500,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "Future Agenda Planning and Winter Preparedness",
+     "video_id": "CAS00002403",
+     "t": 2272,
+     "date": "2026-04-29",
+     "base": "2026-05-01_CAS00002403",
+     "meeting_title": "Climate Equity Council 04/29/26",
+     "title": "City Environmental and Energy Updates",
      "label": "M16#6"
     }
    ]
@@ -633,8 +338,17 @@
  "periods": [
   {
    "period": "2022-2023 term",
-   "narrative": "The council convened to appoint its co-chairs and review municipal emissions progress, home energy rebates, localized flood risks, and emergency shelter infrastructure.",
+   "narrative": "The council held its inaugural sessions, selected co-chairs, and reviewed Medford's Climate Action and Adaptation Plan along with baseline municipal energy and flood risk reports.",
    "citations": [
+    {
+     "video_id": "MCM00000939",
+     "t": 4,
+     "date": "2023-11-27",
+     "base": "2024-07-18_MCM00000939",
+     "meeting_title": "Medford Climate Equity Council 11-27-23",
+     "title": "Introductions and Council Purpose",
+     "label": "M01#1"
+    },
     {
      "video_id": "MCM00000940",
      "t": 388,
@@ -642,25 +356,7 @@
      "base": "2024-07-18_MCM00000940",
      "meeting_title": "Medford Climate Equity Council 12-18-23",
      "title": "Selection of Co-Chairs",
-     "label": "M01#2"
-    },
-    {
-     "video_id": "MCM00000940",
-     "t": 808,
-     "date": "2023-12-18",
-     "base": "2024-07-18_MCM00000940",
-     "meeting_title": "Medford Climate Equity Council 12-18-23",
-     "title": "City Action Updates",
-     "label": "M01#3"
-    },
-    {
-     "video_id": "MCM00000940",
-     "t": 2372,
-     "date": "2023-12-18",
-     "base": "2024-07-18_MCM00000940",
-     "meeting_title": "Medford Climate Equity Council 12-18-23",
-     "title": "Mass Save Incentives Deep Dive",
-     "label": "M01#5"
+     "label": "M02#2"
     },
     {
      "video_id": "MCM00000940",
@@ -669,22 +365,13 @@
      "base": "2024-07-18_MCM00000940",
      "meeting_title": "Medford Climate Equity Council 12-18-23",
      "title": "Flood Risk and Mitigation",
-     "label": "M01#6"
-    },
-    {
-     "video_id": "MCM00000940",
-     "t": 4514,
-     "date": "2023-12-18",
-     "base": "2024-07-18_MCM00000940",
-     "meeting_title": "Medford Climate Equity Council 12-18-23",
-     "title": "Emergency Shelters and Resilience Hubs",
-     "label": "M01#7"
+     "label": "M02#6"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "Across eleven meetings, the council focused on expanding the Electrify Medford coaching campaign, launching free curbside composting, supporting stormwater grant applications, and organizing community outreach for extreme weather and energy efficiency.",
+   "narrative": "The council supported municipal grant applications, monitored the launch of Electrify Medford and curbside composting, and reviewed school HVAC and EV infrastructure projects.",
    "citations": [
     {
      "video_id": "MCM00000941",
@@ -693,7 +380,7 @@
      "base": "2024-07-18_MCM00000941",
      "meeting_title": "Medford Climate Equity Council 02-26-24",
      "title": "Electrify Medford Campaign Update",
-     "label": "M02#3"
+     "label": "M03#3"
     },
     {
      "video_id": "MCM00000942",
@@ -702,7 +389,7 @@
      "base": "2024-07-18_MCM00000942",
      "meeting_title": "Medford Climate Equity Council 03-18-24",
      "title": "South Medford Stormwater Mitigation Support",
-     "label": "M03#7"
+     "label": "M04#7"
     },
     {
      "video_id": "MCM00000943",
@@ -711,85 +398,40 @@
      "base": "2024-07-18_MCM00000943",
      "meeting_title": "Medford Climate Equity Council 04-22-24",
      "title": "Curbside Composting Program",
-     "label": "M04#6"
+     "label": "M05#6"
     },
     {
-     "video_id": "MCM00001441",
-     "t": 1981,
-     "date": "2024-08-23",
-     "base": "2024-09-16_MCM00001441",
-     "meeting_title": "Medford Climate Equity Council 08-23-24",
-     "title": "Electrify Medford Program Status",
-     "label": "M07#8"
-    },
-    {
-     "video_id": "MCM00001596",
-     "t": 533,
-     "date": "2024-10-21",
-     "base": "2024-11-26_MCM00001596",
-     "meeting_title": "Medford Climate Equity Council 10-21-24",
-     "title": "Winter Preparedness Event",
-     "label": "M09#3"
-    },
-    {
-     "video_id": "MCM00001615",
-     "t": 1198,
-     "date": "2024-11-18",
-     "base": "2024-12-04_MCM00001615",
-     "meeting_title": "Medford Climate Equity Council 11-18-24",
-     "title": "Electrify Medford and Energy Aggregation",
-     "label": "M10#5"
-    },
-    {
-     "video_id": "MCM00001732",
-     "t": 3785,
-     "date": "2025-02-10",
-     "base": "2025-02-11_MCM00001732",
-     "meeting_title": "Medford Climate Equity Council 02-10-25",
-     "title": "Zoning Codification and Green Score Proposal",
-     "label": "M11#6"
-    },
-    {
-     "video_id": "MCM00001801",
-     "t": 3006,
-     "date": "2025-08-27",
-     "base": "2025-08-29_MCM00001801",
-     "meeting_title": "Medford Climate Equity Council 08-27-25",
-     "title": "Electrify Medford and Main Streets Program Update",
-     "label": "M12#6"
+     "video_id": "MCM00000973",
+     "t": 1550,
+     "date": "2024-07-19",
+     "base": "2024-07-25_MCM00000973",
+     "meeting_title": "Medford Climate Equity Council 07-19-24",
+     "title": "Curbside Composting, Fleet Electrification, and School HVAC",
+     "label": "M07#5"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "During this period, the council addressed transportation and pedestrian improvements, navigated staff transitions, evaluated environmental grant awards, and coordinated outreach for waste diversion and winter heating safety.",
+   "narrative": "The body focused on citywide transitions to every-other-week trash collection, reviewed regional de-paving grants, and discussed revitalizing clean energy outreach strategies.",
    "citations": [
     {
-     "video_id": "CAS00002438",
-     "t": 1320,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Summer Heat Preparedness and Cooling Resources",
-     "label": "M13#4"
-    },
-    {
-     "video_id": "CAS00002438",
-     "t": 3122,
-     "date": "2026-05-20",
-     "base": "2026-05-22_CAS00002438",
-     "meeting_title": "Climate Equity Council 05/20/26",
-     "title": "Transportation and Pedestrian Infrastructure Update",
-     "label": "M13#6"
-    },
-    {
-     "video_id": "CAS00002475",
-     "t": 311,
-     "date": "2026-06-24",
-     "base": "2026-07-01_CAS00002475",
-     "meeting_title": "Climate Equity Council 06/24/26",
-     "title": "Staff Transitions and Intern Introductions",
+     "video_id": "CAS00002325",
+     "t": 56,
+     "date": "2026-02-11",
+     "base": "2026-02-12_CAS00002325",
+     "meeting_title": "Climate Equity Council 2/11/26",
+     "title": "Waste Management and Composting Policy Update",
      "label": "M14#2"
+    },
+    {
+     "video_id": "CAS00002358",
+     "t": 1082,
+     "date": "2026-03-18",
+     "base": "2026-03-30_CAS00002358",
+     "meeting_title": "Climate Equity Council 03/18/26",
+     "title": "Fairfield Street Flood Mitigation and De-paving",
+     "label": "M15#3"
     },
     {
      "video_id": "CAS00002504",
@@ -798,44 +440,35 @@
      "base": "2026-08-20_CAS00002504",
      "meeting_title": "Climate Equity Council 08/19/26",
      "title": "Grants and Projects Update",
-     "label": "M15#2"
+     "label": "M19#2"
     },
     {
-     "video_id": "CAS00002531",
-     "t": 1797,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "City Composting Program Update",
-     "label": "M16#4"
-    },
-    {
-     "video_id": "CAS00002531",
-     "t": 4500,
-     "date": "2026-09-16",
-     "base": "2026-09-18_CAS00002531",
-     "meeting_title": "Climate Equity Council 09/16/26",
-     "title": "Future Agenda Planning and Winter Preparedness",
-     "label": "M16#6"
+     "video_id": "CAS00002576",
+     "t": 2241,
+     "date": "2026-10-21",
+     "base": "2026-10-23_CAS00002576",
+     "meeting_title": "Climate Equity Council 10/21/26",
+     "title": "Electrify Medford Coaching and Incentive Strategies",
+     "label": "M21#5"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 82,
+  "citations": 42,
   "meetings_cited": 16,
-  "of_meetings": 16,
-  "max_share": 0.11,
-  "even_share": 0.0625,
-  "concentration_ratio": 1.76,
+  "of_meetings": 21,
+  "max_share": 0.119,
+  "even_share": 0.0476,
+  "concentration_ratio": 2.5,
   "most_cited": "MCM00000940",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 7206,
-  "output_tokens": 1952,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 9074,
+  "output_tokens": 1433,
+  "model_version": "gemini-3.6-flash"
  }
 }
