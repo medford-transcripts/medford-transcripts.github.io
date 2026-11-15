@@ -1,63 +1,80 @@
 {
  "video_id": "CAS00002315",
  "provider": "gemini",
- "generated_at": "2026-11-15T13:06:21Z",
- "model": "gemini-3.6-flash",
+ "generated_at": "2026-11-15T14:13:21Z",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "59b175ff46b93800",
- "subject": "",
- "overview": "Host John Petrella interviews Robert Delafano, Chair of the Medford Licensing Commission, regarding the commission's roles and responsibilities in Medford. Delafano outlines the types of liquor licenses, application processes, local fee structures, renewal rules, and compliance enforcement.",
+ "transcript_sha": "f71107278561f475",
+ "subject": "Medford Liquor Licensing Regulations",
+ "overview": "Host John Petrella interviewed Licensing Commission Chair Robert Delafano regarding the city's liquor licensing procedures, available license quotas, application costs, and regulatory compliance.",
  "items": [
   {
-   "title": "Guest Introduction and Personal Background",
+   "title": "Introduction and Guest Background",
    "t": 30,
-   "summary": "Host John Petrella introduces Robert Delafano, Chairperson of the Medford Licensing Commission, who discusses his background as a lifelong Medford resident, retired firefighter, and community volunteer.",
+   "summary": "Robert Delafano discussed his background as a lifelong Medford resident, former firefighter, business owner, and wholesale liquor salesman.",
    "speakers": [
     "John Petrella",
     "Robert Delafano"
    ]
   },
   {
-   "title": "Licensing Commission Operations and Composition",
+   "title": "Licensing Commission Operations and Membership",
    "t": 367,
-   "summary": "Delafano outlines the commission's monthly public meeting schedule, introduces fellow commissioners and administrative staff, and shares statement excerpts emphasizing support for local business growth.",
+   "summary": "Delafano outlined the commission's public meeting schedule and introduced commissioners Alan Maturana and Ben O'Sullivan Pierce and secretary Daria Tahara.",
    "speakers": [
     "John Petrella",
     "Robert Delafano"
    ]
   },
   {
-   "title": "License Classifications, Application Steps, and Fees",
-   "t": 737,
-   "summary": "Delafano explains retail alcohol categories, Section 12 on-premise, Section 14 one-day, and Section 15 package store licenses, along with state application procedures and municipal fee schedules.",
+   "title": "License Categories and Quotas",
+   "t": 707,
+   "summary": "Delafano explained the state license classifications and reported that Medford has 28 on-premise pouring licenses available, while off-premise package store licenses remain capped at the statutory limit of 12.",
    "speakers": [
     "John Petrella",
     "Robert Delafano"
    ]
   },
   {
-   "title": "Enforcement, Compliance Checks, and Renewal Deadlines",
+   "title": "Application Procedures and Municipal Fees",
+   "t": 1117,
+   "summary": "Delafano detailed the joint application process with the state Alcoholic Beverages Control Commission (ABCC) and reviewed annual licensing and entertainment permit fees.",
+   "speakers": [
+    "John Petrella",
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Enforcement, Compliance Checks, and Renewals",
    "t": 1850,
-   "summary": "Delafano describes police compliance checks, strict state renewal deadlines, common violation types, and mandatory annual educational sessions for liquor licensees.",
+   "summary": "Delafano reviewed common violations, undercover compliance checks conducted with local police, annual educational meetings, and the mandatory November 30 renewal deadline.",
    "speakers": [
     "John Petrella",
     "Robert Delafano"
    ]
   },
   {
-   "title": "License Transfers and Quotas",
+   "title": "License Transfers and Secondary Market Sales",
    "t": 2440,
-   "summary": "Delafano details the process for transferring existing liquor licenses during business sales and explains how population quotas affect license availability.",
+   "summary": "Delafano explained how license transfers operate during business sales and noted that licenses carry financial value only when municipal quotas are exhausted.",
    "speakers": [
     "John Petrella",
     "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Closing Announcements",
+   "t": 2705,
+   "summary": "Petrella concluded the broadcast with station information and details on how residents can contact the show.",
+   "speakers": [
+    "John Petrella"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 16918,
-  "output_tokens": 454,
-  "model_version": "gemini-3.6-flash"
+  "output_tokens": 554,
+  "model_version": "gemini-3.8-flash"
  }
 }
