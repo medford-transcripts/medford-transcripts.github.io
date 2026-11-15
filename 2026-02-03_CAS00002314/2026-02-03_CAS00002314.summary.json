@@ -1,0 +1,71 @@
+{
+ "video_id": "CAS00002314",
+ "provider": "gemini",
+ "generated_at": "2026-11-15T20:07:14Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3152e7c7c6ab87a5",
+ "subject": "Artificial Turf and Playground Surfacing",
+ "overview": "The committee heard a detailed presentation from city staff on the health, environmental, and accessibility tradeoffs of artificial turf and poured-in-place playground rubber. Members also discussed municipal energy aggregation, smart meters, and a volunteer tracking framework for the Climate Action Plan.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 82,
+   "summary": "Approved the December minutes as written and the January minutes with a typographical correction.",
+   "speakers": [
+    "Josh Ekhart-Lee",
+    "Lois Grossman"
+   ]
+  },
+  {
+   "title": "Artificial Turf and Playground Surfacing",
+   "t": 354,
+   "summary": "Open Space Planner Amanda Centrella reviewed the maintenance demands, heat absorption, accessibility factors, and PFAS chemical risks of artificial turf fields and poured-in-place playground surfaces. Committee members discussed procurement specifications to avoid PFAS, infill alternatives, and the ecological impacts of synthetic installations.",
+   "speakers": [
+    "Amanda Centrella",
+    "Brenda Pike",
+    "Barry Ingber",
+    "Josh Ekhart-Lee",
+    "Lauretta James"
+   ]
+  },
+  {
+   "title": "City Sustainability and Energy Updates",
+   "t": 3869,
+   "summary": "Staff provided updates on resolving electricity aggregation mailing errors, evaluating automatic low-income enrollment, fielding concerns about National Grid smart meters and opt-out fees, and preparing solar grant applications for local schools.",
+   "speakers": [
+    "Brenda Pike",
+    "Josh Ekhart-Lee",
+    "Barry Ingber",
+    "Lauretta James",
+    "Lois Grossman"
+   ]
+  },
+  {
+   "title": "Climate Action Plan Tracking Framework",
+   "t": 5460,
+   "summary": "Josh Ekhart-Lee presented a spreadsheet tool designed for committee volunteers to liaise with municipal stewards and quantitatively track progress on individual Climate Action Plan objectives.",
+   "speakers": [
+    "Josh Ekhart-Lee",
+    "Lauretta James"
+   ]
+  },
+  {
+   "title": "Committee Announcements and New Business",
+   "t": 5741,
+   "summary": "Members shared information regarding an upcoming forum on the Tufts Park mini-forest, volunteer opportunities for municipal pollinator gardens, and plans to take up recommendations on takeout containers and black plastics at the next meeting.",
+   "speakers": [
+    "Lauretta James",
+    "Brenda Pike",
+    "Lois Grossman",
+    "Barry Ingber"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 31408,
+  "output_tokens": 559,
+  "model_version": "gemini-3.8-flash"
+ }
+}
