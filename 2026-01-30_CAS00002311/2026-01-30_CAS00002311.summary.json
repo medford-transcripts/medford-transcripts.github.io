@@ -1,0 +1,36 @@
+{
+ "video_id": "CAS00002311",
+ "provider": "gemini",
+ "generated_at": "2026-11-15T22:07:52Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3116efaea34672e9",
+ "subject": "",
+ "overview": "The board voted to continue its sole hearing, a variance application for 106 Alexander, to February 26, 2026, and discussed administrative staffing updates including the chair's upcoming departure.",
+ "items": [
+  {
+   "title": "106 Alexander (Case 25-00026)",
+   "t": 29,
+   "summary": "Approved a continuance of the variance hearing to demolish a single-family home to February 26, 2026, allowing staff time to review late-filed parking analysis materials.",
+   "speakers": [
+    "Mike Caldera",
+    "Scott Vandewalle"
+   ]
+  },
+  {
+   "title": "Administrative Updates",
+   "t": 129,
+   "summary": "Staff provided updates on medical leave and upcoming caseloads, and Chair Mike Caldera announced he will step down from the board after the March meeting.",
+   "speakers": [
+    "Mike Caldera",
+    "Scott Vandewalle"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 3246,
+  "output_tokens": 257,
+  "model_version": "gemini-3.8-flash"
+ }
+}
