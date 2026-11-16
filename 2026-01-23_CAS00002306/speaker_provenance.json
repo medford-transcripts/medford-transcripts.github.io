@@ -1,0 +1,58 @@
+{
+    "SPEAKER_00": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.7680337774269097,
+        "from": "MCM00001624_SPEAKER_12",
+        "at": "2026-11-16T14:16:29Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "MCM00001615_SPEAKER_04",
+        "source": "embedding_match",
+        "score": 0.8901775731209499,
+        "from": "CAS00002358_SPEAKER_03",
+        "at": "2026-11-16T14:16:29Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Brenda Pike",
+        "source": "embedding_match",
+        "score": 0.9065996849860114,
+        "from": "CAS00002325_SPEAKER_08",
+        "at": "2026-11-16T14:16:29Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "Jennifer Yanko",
+        "source": "embedding_match",
+        "score": 0.9206126580367208,
+        "from": "CAS00002325_SPEAKER_11",
+        "at": "2026-11-16T14:16:30Z",
+        "previous": "SPEAKER_03"
+    },
+    "SPEAKER_04": {
+        "value": "Jennifer Yanko",
+        "source": "embedding_match",
+        "score": 0.7341674176317,
+        "from": "CAS00002358_SPEAKER_04",
+        "at": "2026-11-16T14:16:30Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_05": {
+        "value": "Jenny Graham",
+        "source": "embedding_match",
+        "score": 0.8746104033449779,
+        "from": "CAS00002576_SPEAKER_07",
+        "at": "2026-11-16T14:16:30Z",
+        "previous": "SPEAKER_05"
+    },
+    "SPEAKER_06": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9268828936010117,
+        "from": "MCM00000943_SPEAKER_01",
+        "at": "2026-11-16T14:16:30Z",
+        "previous": "SPEAKER_06"
+    }
+}
