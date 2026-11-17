@@ -1,61 +1,82 @@
 {
  "video_id": "CAS00002300",
  "provider": "gemini",
- "generated_at": "2026-11-17T18:05:37Z",
- "model": "gemini-3-flash-preview",
+ "generated_at": "2026-11-17T21:10:11Z",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "65eab3b916d276f2",
+ "transcript_sha": "e1537a44801b4e22",
  "subject": "",
- "overview": "The commission found 36 Mystic Street significant, initiating a public hearing process, and accepted demolition applications for 17 Sharon and 85 Marshall Streets with conditions. The chair also provided major updates regarding the exhumation of the former Cross Street Cemetery and ongoing archaeological surveys.",
+ "overview": "The Medford Historical Commission determined 36 Mystic Street to be historically significant, conditionally accepted demolition applications for 17 Sharon Street and 85 Marshall Street, and received updates on the Medford Square rezoning and the Cross Street Cemetery exhumation project.",
  "items": [
   {
-   "title": "36 Mystic Street Determination of Significance",
+   "title": "36 Mystic Street - Demolition Application",
    "t": 42,
-   "summary": "Determined the property is significant due to its Italianate architecture and historical integrity, moving the project to a public hearing. The owner clarified that proposed work is primarily interior renovation and exterior maintenance.",
+   "summary": "The commission approved the application for partial demolition to initiate the review process.",
    "speakers": [
     "Ryan Hayward",
     "Peter Miller",
-    "Doug Carr",
     "Kit Collins",
-    "Rick Caraviello",
+    "Doug Carr"
+   ]
+  },
+  {
+   "title": "36 Mystic Street - Determination of Significance",
+   "t": 118,
+   "summary": "The commission determined the property to be historically significant due to its architectural integrity and neighborhood history, advancing it to a future public hearing.",
+   "speakers": [
+    "Doug Carr",
+    "Peter Miller",
+    "Kit Collins",
+    "Ryan Hayward",
+    "Richard Caraviello",
     "Vijay",
-    "Ken Krauss"
+    "Ken Krause"
    ]
   },
   {
-   "title": "17 Sharon Street Demolition Application",
+   "title": "17 Sharon Street - Demolition Application",
    "t": 992,
-   "summary": "Accepted the demolition application contingent on the applicant providing graphic elevations and sketches showing the scope of change. The commission will hire a consultant to complete a historical inventory form for the property.",
+   "summary": "Approved the demolition application contingent on the applicant providing graphic drawings illustrating the proposed scope of work, and authorized hiring a consultant for a Massachusetts Historical Commission Form B.",
    "speakers": [
     "Ryan Hayward",
     "Doug Carr",
-    "Peter Miller"
-   ]
-  },
-  {
-   "title": "85 Marshall Street Demolition Application",
-   "t": 1189,
-   "summary": "Accepted the demolition application with conditions requiring additional architectural drawings for proposed alterations. The commission will proceed with a determination of significance next month.",
-   "speakers": [
-    "Ryan Hayward",
-    "Doug Carr",
-    "Peter Miller"
-   ]
-  },
-  {
-   "title": "Medford Square Zoning Discussion",
-   "t": 1303,
-   "summary": "Discussed an upcoming joint meeting on Medford Square zoning, with members emphasizing the need for historic building protections and potential design guidelines within the plan.",
-   "speakers": [
-    "Doug Carr",
-    "Ryan Hayward",
+    "Peter Miller",
     "Kit Collins"
    ]
   },
   {
-   "title": "Commission Membership and Appointments",
+   "title": "85 Marshall Street - Demolition Application",
+   "t": 1189,
+   "summary": "Approved the demolition application contingent on receiving drawings clarifying proposed changes, and authorized an MHC Form B survey.",
+   "speakers": [
+    "Doug Carr",
+    "Ryan Hayward",
+    "Peter Miller",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Upcoming Demolition Reviews",
+   "t": 1264,
+   "summary": "Chair Hayward reported that a potential project at 119 Jerome Street may come before the commission and noted that all pending permit reviews were otherwise cleared.",
+   "speakers": [
+    "Ryan Hayward"
+   ]
+  },
+  {
+   "title": "Medford Square Zoning",
+   "t": 1303,
+   "summary": "Commissioners discussed an upcoming joint meeting with the City Council on Medford Square rezoning, stressing the need to protect historic structures through design guidelines or historic districts.",
+   "speakers": [
+    "Ryan Hayward",
+    "Doug Carr",
+    "Kit Collins"
+   ]
+  },
+  {
+   "title": "Commission Appointments",
    "t": 1814,
-   "summary": "Provided updates on the appointment process for two new commissioners and invited further public interest for remaining vacancies.",
+   "summary": "Chair Hayward reviewed the appointment status of prospective commissioners Sarah and Luke with the mayor's office.",
    "speakers": [
     "Ryan Hayward",
     "Sarah",
@@ -63,26 +84,26 @@
    ]
   },
   {
-   "title": "41 Mystic Street Preservation",
-   "t": 1973,
-   "summary": "Discussed establishing a local historic district to preserve the 18th-century structure due to its historical ties to slavery and the Hall family. The chair noted the potential for relocating the building to a city-owned lot to prevent demolition.",
+   "title": "41 Mystic Street Demolition Delay Update",
+   "t": 1970,
+   "summary": "Hayward reported that documentation discussions with the owner have stalled, suggesting the commission consider pursuing a local historic district or investigating building relocation options.",
    "speakers": [
     "Ryan Hayward",
     "Doug Carr"
    ]
   },
   {
-   "title": "Brooks Estate and Thomas Brooks Park Archaeological Surveys",
+   "title": "Brooks Estate and Thomas Brooks Park Projects",
    "t": 2218,
-   "summary": "Reported that the Brooks Estate survey is out to bid and that lab work for artifact cleaning at Thomas Brooks Park is moving into its next phase. Recent excavations at Thomas Brooks Park identified an 18th-century trash midden with artifacts correlating to the site's history of enslaved people.",
+   "summary": "Hayward provided updates on bidding an archaeological survey for the Brooks Estate and seeking lab space and volunteers to clean artifacts recovered from Thomas Brooks Park.",
    "speakers": [
     "Ryan Hayward"
    ]
   },
   {
-   "title": "Cross Street Cemetery Restoration and Exhumation",
+   "title": "Cross Street Cemetery Exhumation and Restoration",
    "t": 2471,
-   "summary": "Announced that the project to remove the City Hall parking lot for the exhumation of remains from the former Cross Street Cemetery is going out to bid. The commission is also seeking funding to restore 85 headstones at the current cemetery site.",
+   "summary": "Hayward and Theresa Dupont discussed pending Community Preservation Committee review for headstone conservation and the upcoming bidding process to remove the City Hall upper parking lot to exhume unmarked graves.",
    "speakers": [
     "Ryan Hayward",
     "Theresa Dupont",
@@ -91,9 +112,9 @@
    ]
   },
   {
-   "title": "Hastings Heights and Brooks Estate Neighborhood Surveys",
+   "title": "Neighborhood Surveys",
    "t": 3005,
-   "summary": "Confirmed that the Hastings Heights survey has commenced and outlined plans to apply for grants to survey the Brooks Estate neighborhood in 2027.",
+   "summary": "Hayward announced that consultants have begun the Hastings Heights neighborhood survey and noted plans to seek a grant for the Brooks Estate area next cycle.",
    "speakers": [
     "Ryan Hayward"
    ]
@@ -101,20 +122,19 @@
   {
    "title": "Approval of Minutes",
    "t": 3072,
-   "summary": "Approved meeting minutes and adjourned the meeting.",
+   "summary": "The commission approved the previous meeting minutes.",
    "speakers": [
-    "Ryan Hayward",
     "Doug Carr",
     "Kit Collins",
-    "Peter Miller"
+    "Peter Miller",
+    "Ryan Hayward"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 16706,
-  "output_tokens": 952,
-  "model_version": "gemini-3-flash-preview"
- },
- "subject_source": "summary"
+  "input_tokens": 16701,
+  "output_tokens": 924,
+  "model_version": "gemini-3.8-flash"
+ }
 }
