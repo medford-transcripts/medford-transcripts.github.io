@@ -1,73 +1,77 @@
 {
  "video_id": "92U3kjqBghU",
  "provider": "gemini",
- "generated_at": "2026-11-12T14:13:54Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-11-18T21:07:05Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "cc2b1ca86bc1bb7a",
- "subject": "",
- "overview": "The council approved a joint press release outlining the timeline and cost review for the Medford High School project, authorized capital and stabilization funds for municipal facility repairs and the police chief search, and received updates regarding Cataldo Ambulance operations. The council also tabled a supplemental appropriation to restore the law department budget and referred a fire department drone surveillance policy to committee.",
+ "transcript_sha": "afd3366344d3ee5c",
+ "subject": "Medford High School Project Next Steps",
+ "overview": "The Council approved a joint press release and timeline for the Medford High School project, focusing on cost-mitigation strategies for the estimated $700 million renovation. The body also addressed municipal infrastructure funding, zoning amendments for vacant properties, and the operational status of the city's ambulance and veteran services.",
  "items": [
   {
-   "title": "Winter Preparedness and Veterans Day Recognition",
-   "t": 279,
-   "summary": "The council recognized Veterans Day and approved a resolution inviting residents to upcoming community winter clothing giveaways and preparedness clinics.",
+   "title": "Ceremonial recognitions and records",
+   "t": 20,
+   "summary": "The Council honored veterans, recognized the outgoing Veteran Services Director, and approved records of several special and regular meetings from October and November 2026.",
    "speakers": [
     "Zac Bears",
-    "Emily Lazzaro",
     "George Scarpelli",
+    "Emily Lazzaro",
     "Justin Tseng",
     "Matt Leming"
    ]
   },
   {
-   "title": "Committee Report: Public Works and Facilities",
-   "t": 403,
-   "summary": "Approved the committee report on private ways maintenance, legal counsel requests regarding maintenance budgeting, and snow plowing liability.",
+   "title": "Winter aid and preparedness",
+   "t": 279,
+   "summary": "Approved a resolution inviting residents to participate in upcoming winter aid events, including clothing giveaways and heating assistance clinics.",
    "speakers": [
     "Zac Bears",
+    "Emily Lazzaro"
+   ]
+  },
+  {
+   "title": "Public Works report on private ways",
+   "t": 403,
+   "summary": "Approved the Public Works and Facilities Committee report regarding legal liability for snow plowing and a request for better website information on private way maintenance.",
+   "speakers": [
     "Anna Callahan"
    ]
   },
   {
-   "title": "Grant of Location: Fulton Street and Brogan Road Gas Main",
+   "title": "National Grid gas main replacement",
    "t": 490,
-   "summary": "Approved a grant of location with engineering conditions for National Grid to replace 1,665 feet of gas main along Fulton Street and Brogan Road.",
+   "summary": "Approved a grant of location for National Grid to replace 1,665 feet of gas main along Fulton Street and Brogan Road subject to conditions on abutter communication and paving quality.",
    "speakers": [
-    "Zac Bears",
     "Diana Cuddy",
     "George Scarpelli",
     "Sharon Deyeso"
    ]
   },
   {
-   "title": "Zoning Amendment: Vacant and Foreclosing Properties",
+   "title": "Vacant property zoning amendment",
    "t": 1008,
-   "summary": "Approved the Community Development Board's recommendation to delete Section 94-7.5 from the zoning ordinance effective August 4, 2027, to coincide with the effective date of the new general vacant building ordinance.",
+   "summary": "Approved an amendment to the zoning ordinance deleting the section on vacant and foreclosing properties, effective concurrently with the implementation of a new general ordinance in August 2027.",
    "speakers": [
-    "Zac Bears",
     "Matt Leming",
     "Justin Tseng",
     "Emily Lazzaro",
-    "Robert Carney",
-    "Denis Dettling Kalthofer"
+    "Robert Kearney"
    ]
   },
   {
-   "title": "Resolution on Veterans Department Vacancy",
-   "t": 1676,
-   "summary": "Approved a resolution requesting a staffing update for the Veterans Services Department, with the chief of staff confirming interim coverage and upcoming candidate interviews.",
+   "title": "Veteran Services staffing update",
+   "t": 1678,
+   "summary": "Approved a request for an update on the Veterans Department vacancy; the Chief of Staff reported that the office is currently staffed by an acting director while interviews for a permanent replacement begin next week.",
    "speakers": [
-    "Zac Bears",
     "George Scarpelli",
     "Nina Nazarian",
     "Matt Leming"
    ]
   },
   {
-   "title": "Medford High School Project Press Release and Timeline",
+   "title": "Medford High School project communication",
    "t": 1986,
-   "summary": "Approved an amended resolution authorizing a joint press release with the School Committee detailing project timeline milestones, upcoming public forums, and financial vetting ahead of a February 2027 presentation. Multiple residents spoke during public comment to voice concern over the estimated project cost and tax impact.",
+   "summary": "Approved a joint press release outlining the timeline for finalized taxpayer impact data, which will be presented at a joint meeting on February 2, 2027. Discussion emphasized strategies to mitigate the impact of the multi-hundred million dollar project through pension funding shifts and new growth revenue.",
    "speakers": [
     "Emily Lazzaro",
     "Zac Bears",
@@ -85,66 +89,56 @@
    ]
   },
   {
-   "title": "Resolution on Cataldo Ambulance Operations and Ownership",
+   "title": "Cataldo Ambulance Service sale inquiry",
    "t": 5399,
-   "summary": "Approved a resolution inquiring into the contractual impacts of any potential sale of Cataldo Ambulance, following statements from company leadership clarifying that no sale is imminent and addressing neighborhood parking concerns.",
+   "summary": "Approved a resolution seeking a legal analysis of the city's ambulance contract following reports of a potential sale; owner Dennis Cataldo testified that there is no imminent sale and recent filings were procedural.",
    "speakers": [
-    "Zac Bears",
     "George Scarpelli",
     "Anna Callahan",
+    "Zac Bears",
     "Dennis Cataldo",
     "Patrick Tyler"
    ]
   },
   {
-   "title": "Stabilization Appropriation: Police Chief Search",
+   "title": "Municipal and public safety appropriations",
    "t": 6085,
-   "summary": "Approved an appropriation of $35,000 from the General Stabilization Fund to compensate recruitment consulting firm MGT for the ongoing police chief search.",
+   "summary": "Approved appropriations including $35,000 for a police chief search consultant, $85,000 for a recreation center feasibility study, and various sums for fire headquarters repairs and flood mitigation.",
    "speakers": [
-    "Zac Bears",
     "Nina Nazarian",
     "Emily Lazzaro",
-    "Anna Callahan"
-   ]
-  },
-  {
-   "title": "Capital and Stabilization Appropriations: Municipal Facilities",
-   "t": 6659,
-   "summary": "Approved appropriations of $85,000 for a recreation center rehabilitation study, $71,000 for fire headquarters weatherproofing, and $24,476.44 for water damage remediation at the former police station.",
-   "speakers": [
-    "Zac Bears",
+    "Anna Callahan",
     "David McIntyre",
     "Kevin Bailey",
     "George Scarpelli"
    ]
   },
   {
-   "title": "Supplemental Appropriation: FY2027 Law Department Budget",
+   "title": "Law Department supplemental appropriation",
    "t": 7397,
-   "summary": "Tabled a request to appropriate $269,295.81 to fully restore the FY2027 law department budget prior to the upcoming tax classification hearing.",
+   "summary": "Tabled a request for a $269,295 supplemental appropriation for the Law Department to allow for further discussion on alternative funding and a requested audit.",
    "speakers": [
-    "Zac Bears",
     "Nina Nazarian",
+    "Zac Bears",
     "George Scarpelli",
     "Emily Lazzaro",
-    "Matt Leming",
-    "Justin Tseng"
+    "Matt Leming"
    ]
   },
   {
-   "title": "Fire Department Drone Surveillance Policy",
-   "t": 8442,
-   "summary": "Referred the fire department's unmanned aerial system operating policy and surveillance report to the Public Health and Community Safety Committee.",
+   "title": "Fire Department drone policy",
+   "t": 8433,
+   "summary": "Referred the Medford Fire Department’s unmanned aerial system policy and surveillance impact report to the Public Health and Community Safety Committee.",
    "speakers": [
-    "Zac Bears",
     "Emily Lazzaro",
-    "Anna Callahan"
+    "Anna Callahan",
+    "Zac Bears"
    ]
   },
   {
-   "title": "Public Participation: Sturgis Street Traffic Safety",
-   "t": 8755,
-   "summary": "Heard a petition from residents regarding severe speeding and wrong-way driving at Sturgis and Morgan streets, with councilors agreeing to coordinate an on-site audit with traffic officials.",
+   "title": "Traffic safety petition on Sturgis Street",
+   "t": 8756,
+   "summary": "Heard a resident petition regarding speeding and one-way violations on Sturgis Street; the council recommended a walking audit with traffic engineers to assess physical calming measures.",
    "speakers": [
     "Andrew Dahl",
     "Rick Paone",
@@ -159,8 +153,7 @@
  "dropped": 0,
  "usage": {
   "input_tokens": 56774,
-  "output_tokens": 1356,
-  "model_version": "gemini-3.8-flash"
- },
- "subject_source": "summary"
+  "output_tokens": 1207,
+  "model_version": "gemini-3-flash-preview"
+ }
 }
