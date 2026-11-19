@@ -1,0 +1,60 @@
+{
+ "video_id": "wm10-CCVxDw",
+ "provider": "gemini",
+ "generated_at": "2026-11-19T09:11:26Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "95aea6a4d4ca8c97",
+ "subject": "",
+ "overview": "The West Medford Community Center hosted its monthly Fresh Fridays program featuring an interview with Shiloh Baptist Church's new senior pastor, Rev. Dr. Jerron S. Green, followed by a live jazz set by the Samuel Batista Quartet.",
+ "items": [
+  {
+   "title": "Opening and Welcome",
+   "t": 17,
+   "summary": "Terry Carter welcomed attendees and viewers, acknowledged community partners, and read his poem 'Home Spun.'",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Conversation with Rev. Dr. Jerron S. Green",
+   "t": 639,
+   "summary": "Rev. Dr. Green discussed his background, his calling to lead West Medford's historic Shiloh Baptist Church, and his priorities for church and community life.",
+   "speakers": [
+    "Terry Carter",
+    "Jerron S. Green"
+   ]
+  },
+  {
+   "title": "Community Announcements",
+   "t": 3450,
+   "summary": "Carter announced upcoming center programming, memorial services for Joanne Tyler, a vendor market, and an in-person bank vote to award a community grant.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Musical Performance by the Samuel Batista Quartet",
+   "t": 3744,
+   "summary": "The Samuel Batista Quartet performed a series of original jazz compositions and traditional arrangements inspired by family and Panamanian heritage.",
+   "speakers": [
+    "Terry Carter",
+    "Samuel Batista"
+   ]
+  },
+  {
+   "title": "Closing Remarks",
+   "t": 6627,
+   "summary": "Carter thanked the performers and partners and delivered final reminders regarding upcoming winter events and donor support.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 25480,
+  "output_tokens": 383,
+  "model_version": "gemini-3.8-flash"
+ }
+}
