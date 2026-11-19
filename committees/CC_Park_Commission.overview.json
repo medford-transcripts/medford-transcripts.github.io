@@ -1,23 +1,41 @@
 {
  "committee": "CC Park Commission",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "generated_at": "2026-10-27T08:07:53Z",
- "sources_sha": "cacd3dc15318b64d",
- "n_meetings": 5,
+ "generated_at": "2026-11-19T19:11:43Z",
+ "sources_sha": "b277df78409218a7",
+ "n_meetings": 10,
  "period_style": "term",
  "span": [
-  "2023-03-01",
-  "2026-10-20"
+  "2022-04-04",
+  "2026-11-17"
  ],
- "overview": "The CC Park Commission manages the permitting, maintenance, and policy for Medford's parks, pools, and recreational facilities. The body reviews seasonal field and court requests from local sports leagues, schools, and private organizations to ensure fair use of city resources. Its work spans from early 2023 through late 2026, covering infrastructure projects like flood mitigation and community garden expansions. As of the most recent meetings, the commission is shifting focus toward reviewing long-term fee structures, pavilion reservation policies, and field priorities for youth sports.",
+ "overview": "The Medford Park Commission oversees municipal park facilities, recreational field and court permitting, capital improvements, and related fee policies. The body handles facility use requests from youth leagues, adult sports organizations, and community groups across city parks. Across the archive, its meetings range from April 2022 to November 2026. At its most recent meeting, the commission accepted a conceptual presentation on an underground geothermal well field beneath Columbus Park to support a school heating project.",
  "threads": [
   {
-   "name": "Athletic Field and Court Permitting",
+   "name": "Athletic and community field permitting",
    "status": "ongoing",
-   "summary": "The commission regularly reviews and approves permits for a variety of sports including youth soccer, softball, tennis, and ultimate frisbee. Requests are often contingent on Department of Public Works field readiness and coordination between different leagues to avoid scheduling conflicts. In several instances, permits were tabled or held until applicant representatives could attend meetings or provide specific insurance documentation. By late 2026, the body began planning a broader review of field priorities for youth sports.",
+   "summary": "The commission routinely reviews and issues permits for youth and adult leagues, school events, and private gatherings across municipal fields. In 2023, the board formalized a two-hour minimum and hourly rate structure for rentals, updated permit applications, and established rules requiring DPW readiness and interdepartmental sign-offs. Additional policy revisions were approved in 2026 requiring full upfront payment for single-day rentals, a 50 percent deposit for seasonal users, and an explicit ban on bounce houses. The body continues to grant regular seasonal approvals for sports such as soccer, softball, ultimate frisbee, and adult leagues while resolving scheduling conflicts.",
    "citations": [
+    {
+     "video_id": "MCM00001462",
+     "t": 1492,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "2023 Field Permit Application",
+     "label": "M03#3"
+    },
+    {
+     "video_id": "MCM00001462",
+     "t": 1870,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Rental Fee Structure",
+     "label": "M03#4"
+    },
     {
      "video_id": "MCM00001460",
      "t": 2953,
@@ -25,25 +43,16 @@
      "base": "2024-09-19_MCM00001460",
      "meeting_title": "Medford Parks Commission 03-01-23",
      "title": "Permit Application: Medford Youth Soccer",
-     "label": "M01#6"
+     "label": "M04#6"
     },
     {
-     "video_id": "MCM00001460",
-     "t": 3346,
-     "date": "2023-03-01",
-     "base": "2024-09-19_MCM00001460",
-     "meeting_title": "Medford Parks Commission 03-01-23",
-     "title": "Permit Application: Medford Youth Girls Softball",
-     "label": "M01#7"
-    },
-    {
-     "video_id": "MCM00001461",
-     "t": 1713,
-     "date": "2023-04-18",
-     "base": "2024-09-19_MCM00001461",
-     "meeting_title": "Medford Parks Commission 04-18-23",
-     "title": "Winky Face Ultimate Frisbee Permit",
-     "label": "M02#5"
+     "video_id": "CAS00002370",
+     "t": 552,
+     "date": "2026-01-20",
+     "base": "2026-04-03_CAS00002370",
+     "meeting_title": "Parks Commission 01/20/26",
+     "title": "Field Permit Application Procedures and Payment Rules",
+     "label": "M07#2"
     },
     {
      "video_id": "CAS00002392",
@@ -52,24 +61,42 @@
      "base": "2026-04-22_CAS00002392",
      "meeting_title": "Parks Commission 04/22/26",
      "title": "Seasonal Field Permit Approvals",
-     "label": "M04#9"
+     "label": "M08#9"
     },
     {
      "video_id": "CAS00002570",
-     "t": 2994,
+     "t": 1267,
      "date": "2026-10-20",
      "base": "2026-10-22_CAS00002570",
      "meeting_title": "Parks Commission 10/20/26",
-     "title": "January Planning and Policy Review",
-     "label": "M05#7"
+     "title": "Hub Sports and FM Collective Permits",
+     "label": "M09#2"
     }
    ]
   },
   {
-   "name": "Pickleball Policy and Facilities",
+   "name": "Tennis and pickleball facilities and policy",
    "status": "ongoing",
-   "summary": "Early in 2023, the commission reviewed citywide survey results and considered expanding courts at Duggar Park, though the proposal was initially tabled for funding confirmation. The body also handled requests for memorial plaques at new pickleball courts, deferring decisions until construction progress was made. By 2026, the commission established specific tournament policies for the Carr Park courts, including a daily fee and restrictions on signage.",
+   "summary": "The commission has repeatedly addressed public interest and court space allocations between tennis and pickleball. Early discussions focused on court congestion at Playstead and Dugger parks, with proposed expansions of pickleball courts at Dugger Park repeatedly tabled in 2023 pending survey results and funding reviews. In 2025, a proposed contract with the USTA regarding smart court access was tabled for legal review. In 2026, the commission established a $25 daily fee for pickleball tournaments at Carr Park and approved an equipment storage box for Dugger Park.",
    "citations": [
+    {
+     "video_id": "MCM00001462",
+     "t": 31,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Public Comment on Court Usage",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001462",
+     "t": 6135,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Dugger Park Pickleball Expansion",
+     "label": "M03#8"
+    },
     {
      "video_id": "MCM00001460",
      "t": 5569,
@@ -77,16 +104,25 @@
      "base": "2024-09-19_MCM00001460",
      "meeting_title": "Medford Parks Commission 03-01-23",
      "title": "Pickleball Survey Results and Duggar Park Court Expansion",
-     "label": "M01#12"
+     "label": "M04#12"
     },
     {
-     "video_id": "MCM00001461",
-     "t": 2243,
-     "date": "2023-04-18",
-     "base": "2024-09-19_MCM00001461",
-     "meeting_title": "Medford Parks Commission 04-18-23",
-     "title": "Memorial Plaque Request for Carr Park",
-     "label": "M02#8"
+     "video_id": "MCM00001799",
+     "t": 1914,
+     "date": "2025-08-19",
+     "base": "2025-08-20_MCM00001799",
+     "meeting_title": "Medford Parks Commission 08-19-25",
+     "title": "USTA Smart Access Contract",
+     "label": "M06#6"
+    },
+    {
+     "video_id": "CAS00002370",
+     "t": 4,
+     "date": "2026-01-20",
+     "base": "2026-04-03_CAS00002370",
+     "meeting_title": "Parks Commission 01/20/26",
+     "title": "Dugger Park Equipment Storage Box Request",
+     "label": "M07#1"
     },
     {
      "video_id": "CAS00002392",
@@ -95,15 +131,24 @@
      "base": "2026-04-22_CAS00002392",
      "meeting_title": "Parks Commission 04/22/26",
      "title": "Pickleball Tournament Policy",
-     "label": "M04#4"
+     "label": "M08#4"
     }
    ]
   },
   {
-   "name": "Facility Access and Fee Policies",
+   "name": "Tufts Pool and Wright's Pond administration",
    "status": "ongoing",
-   "summary": "The commission manages access rules and fees for city-managed facilities like Tufts Pool and Wright's Pond. In 2023, the body approved eliminating daily drop-in passes for non-residents at Tufts Pool to prioritize resident access. More recently, the commission has taken up discussions regarding vehicle stickers and walking passes for Wright's Pond. The body also reviews financial matters such as permit revenue fluctuations and the allocation of Community Preservation Act funds.",
+   "summary": "The commission manages access rules, pass donations, and rate structures for Tufts Pool and Wright's Pond. In early 2023, the board approved a 10 percent fee increase, added a caregiver pass, and eliminated drop-in daily passes for non-residents at Tufts Pool. Membership fees and operating rules were held steady for the 2026 season. In late 2026, a proposed change regarding vehicle stickers and walking passes at Wright's Pond was tabled to January.",
    "citations": [
+    {
+     "video_id": "MCM00001462",
+     "t": 5056,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Wright’s Pond and Tufts Pool Fees",
+     "label": "M03#7"
+    },
     {
      "video_id": "MCM00001460",
      "t": 4365,
@@ -111,25 +156,16 @@
      "base": "2024-09-19_MCM00001460",
      "meeting_title": "Medford Parks Commission 03-01-23",
      "title": "Tufts Pool Non-Resident Daily Fee Policy",
-     "label": "M01#11"
+     "label": "M04#11"
     },
     {
-     "video_id": "CAS00002392",
-     "t": 27,
-     "date": "2026-04-22",
-     "base": "2026-04-22_CAS00002392",
-     "meeting_title": "Parks Commission 04/22/26",
-     "title": "2025 Park Permit Revenue",
-     "label": "M04#2"
-    },
-    {
-     "video_id": "CAS00002392",
-     "t": 117,
-     "date": "2026-04-22",
-     "base": "2026-04-22_CAS00002392",
-     "meeting_title": "Parks Commission 04/22/26",
-     "title": "Community Preservation Act Revenue Report",
-     "label": "M04#3"
+     "video_id": "CAS00002370",
+     "t": 1428,
+     "date": "2026-01-20",
+     "base": "2026-04-03_CAS00002370",
+     "meeting_title": "Parks Commission 01/20/26",
+     "title": "Tufts Pool and Wrights Pond Fees and Rules",
+     "label": "M07#3"
     },
     {
      "video_id": "CAS00002570",
@@ -138,15 +174,85 @@
      "base": "2026-10-22_CAS00002570",
      "meeting_title": "Parks Commission 10/20/26",
      "title": "Wright's Pond Access Policy",
-     "label": "M05#3"
+     "label": "M09#3"
     }
    ]
   },
   {
-   "name": "Park Infrastructure and Improvements",
-   "status": "ongoing",
-   "summary": "The commission oversees physical changes to park land, including flood mitigation designs and garden expansions. In 2026, consultants presented conceptual designs for Tufts Park that included underground storage to manage flooding and potential reorientation of softball fields. During the same period, the body approved adding ten new beds to the community garden at Tufts Park. Other projects include tree planting and soil preparation efforts at College Grove.",
+   "name": "Dog park management and off-leash policies",
+   "status": "settled",
+   "summary": "In early 2022, meetings focused on dog park operations, including grant allocation from the Stanton Foundation, replacement shed installation, security camera quotes, and acorn toxicity signage. The committee also considered a proposed pilot program for designated off-leash hours across city parks and discussed establishing an off-leash subcommittee. Agility equipment and park maintenance items were purchased before the body transitioned its focus to general park facilities in 2023.",
    "citations": [
+    {
+     "video_id": "MCM00001455",
+     "t": 93,
+     "date": "2022-04-04",
+     "base": "2024-09-19_MCM00001455",
+     "meeting_title": "Medford Dog Park Commission 04-04-22",
+     "title": "Financial Update",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "MCM00001455",
+     "t": 332,
+     "date": "2022-04-04",
+     "base": "2024-09-19_MCM00001455",
+     "meeting_title": "Medford Dog Park Commission 04-04-22",
+     "title": "Storage Shed Project Update",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "MCM00001455",
+     "t": 1082,
+     "date": "2022-04-04",
+     "base": "2024-09-19_MCM00001455",
+     "meeting_title": "Medford Dog Park Commission 04-04-22",
+     "title": "Off-Leash Dog Hours Discussion",
+     "label": "M01#4"
+    },
+    {
+     "video_id": "MCM00001456",
+     "t": 0,
+     "date": "2022-08-24",
+     "base": "2024-09-19_MCM00001456",
+     "meeting_title": "Medford Dog Park Commission 08-24-22",
+     "title": "Off-Leash Subcommittee Proposal",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "MCM00001456",
+     "t": 210,
+     "date": "2022-08-24",
+     "base": "2024-09-19_MCM00001456",
+     "meeting_title": "Medford Dog Park Commission 08-24-22",
+     "title": "Acorn Toxicity and Safety",
+     "label": "M02#2"
+    },
+    {
+     "video_id": "MCM00001456",
+     "t": 1575,
+     "date": "2022-08-24",
+     "base": "2024-09-19_MCM00001456",
+     "meeting_title": "Medford Dog Park Commission 08-24-22",
+     "title": "Equipment and Budget Allocation",
+     "label": "M02#5"
+    }
+   ]
+  },
+  {
+   "name": "Park infrastructure, flood mitigation, and capital projects",
+   "status": "ongoing",
+   "summary": "The commission evaluates capital alterations, park lighting, and public infrastructure works in park spaces. In early 2026, the commission updated operating hours and lighting schedules across several parks, including restoring basketball court lighting at Hickey Park. Later that year, consultants presented flood mitigation plans for Tufts Park involving underground storage and softball field reorientation, alongside an approved community garden expansion. In late 2026, the board voted to accept a plan to drill roughly 65 geothermal wells under the Columbus Park baseball field for the Missituk School project.",
+   "citations": [
+    {
+     "video_id": "CAS00002370",
+     "t": 1790,
+     "date": "2026-01-20",
+     "base": "2026-04-03_CAS00002370",
+     "meeting_title": "Parks Commission 01/20/26",
+     "title": "Park Operating Hours and Lighting Schedules",
+     "label": "M07#5"
+    },
     {
      "video_id": "CAS00002392",
      "t": 739,
@@ -154,7 +260,7 @@
      "base": "2026-04-22_CAS00002392",
      "meeting_title": "Parks Commission 04/22/26",
      "title": "Tufts Park Conceptual Design",
-     "label": "M04#6"
+     "label": "M08#6"
     },
     {
      "video_id": "CAS00002392",
@@ -163,32 +269,41 @@
      "base": "2026-04-22_CAS00002392",
      "meeting_title": "Parks Commission 04/22/26",
      "title": "Garden Commission Expansion",
-     "label": "M04#7"
+     "label": "M08#7"
     },
     {
-     "video_id": "CAS00002570",
-     "t": 37,
-     "date": "2026-10-20",
-     "base": "2026-10-22_CAS00002570",
-     "meeting_title": "Parks Commission 10/20/26",
-     "title": "College Grove Tree Planting and Celebration",
-     "label": "M05#1"
+     "video_id": "CAS00002604",
+     "t": 29,
+     "date": "2026-11-17",
+     "base": "2026-11-18_CAS00002604",
+     "meeting_title": "Parks Commission 11/17/26",
+     "title": "Missituk School Geothermal Well Presentation",
+     "label": "M10#1"
     }
    ]
   },
   {
-   "name": "Community Events and Public Art",
+   "name": "Park memorials, dedications, and installations",
    "status": "ongoing",
-   "summary": "Beyond athletic leagues, the commission reviews permits for one-time community events ranging from school fundraisers to cultural festivals. It has approved the relocation of traveling art exhibits to Brooks Park and handled logistics for the United India Summer Fest. The body also manages requests for donations, such as providing pond and pool passes to local school PTOs for fundraising raffles.",
+   "summary": "Requests to place memorials, plaques, and public art in city parks come before the commission. In early 2023, the board approved a standardized request form to streamline approvals for park memorials and benches, subsequently tabling a specific plaque proposal for Carr Park until ground was broken on new courts. In 2025, the commission approved temporarily placing a traveling art exhibit in Brooks Park. A proposed memorial at Columbus Park was tabled in late 2026 because the applicant was not present.",
    "citations": [
     {
-     "video_id": "MCM00001460",
-     "t": 4125,
-     "date": "2023-03-01",
-     "base": "2024-09-19_MCM00001460",
-     "meeting_title": "Medford Parks Commission 03-01-23",
-     "title": "Roberts Elementary PTO Donation Request",
-     "label": "M01#10"
+     "video_id": "MCM00001462",
+     "t": 4350,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Memorials and Dedications",
+     "label": "M03#6"
+    },
+    {
+     "video_id": "MCM00001461",
+     "t": 2243,
+     "date": "2023-04-18",
+     "base": "2024-09-19_MCM00001461",
+     "meeting_title": "Medford Parks Commission 04-18-23",
+     "title": "Memorial Plaque Request for Carr Park",
+     "label": "M05#8"
     },
     {
      "video_id": "MCM00001799",
@@ -197,41 +312,16 @@
      "base": "2025-08-20_MCM00001799",
      "meeting_title": "Medford Parks Commission 08-19-25",
      "title": "Brooks Park Art Installation",
-     "label": "M03#5"
+     "label": "M06#5"
     },
     {
-     "video_id": "CAS00002392",
-     "t": 681,
-     "date": "2026-04-22",
-     "base": "2026-04-22_CAS00002392",
-     "meeting_title": "Parks Commission 04/22/26",
-     "title": "Brooks Elementary PTO Donation",
-     "label": "M04#5"
-    },
-    {
-     "video_id": "CAS00002392",
-     "t": 5050,
-     "date": "2026-04-22",
-     "base": "2026-04-22_CAS00002392",
-     "meeting_title": "Parks Commission 04/22/26",
-     "title": "United India Summer Fest",
-     "label": "M04#11"
-    }
-   ]
-  },
-  {
-   "name": "Technology and Contractual Agreements",
-   "status": "paused",
-   "summary": "The commission has explored technological upgrades for court management, specifically through a contract with the USTA. A proposal for smart access to courts was tabled in late 2025 to allow for legal review by the City Solicitor. The commission sought to resolve concerns from city and USTA legal teams before proceeding with the project.",
-   "citations": [
-    {
-     "video_id": "MCM00001799",
-     "t": 1914,
-     "date": "2025-08-19",
-     "base": "2025-08-20_MCM00001799",
-     "meeting_title": "Medford Parks Commission 08-19-25",
-     "title": "USTA Smart Access Contract",
-     "label": "M03#6"
+     "video_id": "CAS00002570",
+     "t": 2707,
+     "date": "2026-10-20",
+     "base": "2026-10-22_CAS00002570",
+     "meeting_title": "Parks Commission 10/20/26",
+     "title": "Minutes and Columbus Park Memorial",
+     "label": "M09#6"
     }
    ]
   }
@@ -239,8 +329,26 @@
  "periods": [
   {
    "period": "2022-2023 term",
-   "narrative": "This period focused on establishing seasonal permit cycles for local sports and revising residency requirements for pool access.",
+   "narrative": "The body handled dog park facility improvements and grant expenditures before shifting to citywide athletic field permitting, permit fee updates, and pool and pond regulations.",
    "citations": [
+    {
+     "video_id": "MCM00001455",
+     "t": null,
+     "date": "2022-04-04",
+     "base": "2024-09-19_MCM00001455",
+     "meeting_title": "Medford Dog Park Commission 04-04-22",
+     "title": "Medford Dog Park Commission 04-04-22",
+     "label": "M01"
+    },
+    {
+     "video_id": "MCM00001462",
+     "t": null,
+     "date": "2023-01-17",
+     "base": "2024-09-19_MCM00001462",
+     "meeting_title": "Medford Parks Commission 01-17-23",
+     "title": "Medford Parks Commission 01-17-23",
+     "label": "M03"
+    },
     {
      "video_id": "MCM00001460",
      "t": null,
@@ -248,7 +356,7 @@
      "base": "2024-09-19_MCM00001460",
      "meeting_title": "Medford Parks Commission 03-01-23",
      "title": "Medford Parks Commission 03-01-23",
-     "label": "M01"
+     "label": "M04"
     },
     {
      "video_id": "MCM00001461",
@@ -257,13 +365,13 @@
      "base": "2024-09-19_MCM00001461",
      "meeting_title": "Medford Parks Commission 04-18-23",
      "title": "Medford Parks Commission 04-18-23",
-     "label": "M02"
+     "label": "M05"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "During this term, the commission managed fall sports permitting and authorized the installation of public art in city parks.",
+   "narrative": "The commission reviewed fall athletic permits, authorized an art installation at Brooks Park, and tabled a smart court access contract with the USTA.",
    "citations": [
     {
      "video_id": "MCM00001799",
@@ -272,14 +380,23 @@
      "base": "2025-08-20_MCM00001799",
      "meeting_title": "Medford Parks Commission 08-19-25",
      "title": "Medford Parks Commission 08-19-25",
-     "label": "M03"
+     "label": "M06"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "Recent work has shifted toward large-scale infrastructure designs for flood mitigation and the formalization of tournament fees.",
+   "narrative": "The board revised field permit payment procedures, addressed park hours and lighting cutoffs, and reviewed major capital initiatives including Tufts Park flood mitigation and Columbus Park geothermal drilling.",
    "citations": [
+    {
+     "video_id": "CAS00002370",
+     "t": null,
+     "date": "2026-01-20",
+     "base": "2026-04-03_CAS00002370",
+     "meeting_title": "Parks Commission 01/20/26",
+     "title": "Parks Commission 01/20/26",
+     "label": "M07"
+    },
     {
      "video_id": "CAS00002392",
      "t": null,
@@ -287,7 +404,7 @@
      "base": "2026-04-22_CAS00002392",
      "meeting_title": "Parks Commission 04/22/26",
      "title": "Parks Commission 04/22/26",
-     "label": "M04"
+     "label": "M08"
     },
     {
      "video_id": "CAS00002570",
@@ -296,26 +413,35 @@
      "base": "2026-10-22_CAS00002570",
      "meeting_title": "Parks Commission 10/20/26",
      "title": "Parks Commission 10/20/26",
-     "label": "M05"
+     "label": "M09"
+    },
+    {
+     "video_id": "CAS00002604",
+     "t": null,
+     "date": "2026-11-17",
+     "base": "2026-11-18_CAS00002604",
+     "meeting_title": "Parks Commission 11/17/26",
+     "title": "Parks Commission 11/17/26",
+     "label": "M10"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 25,
-  "meetings_cited": 5,
-  "of_meetings": 5,
-  "max_share": 0.36,
-  "even_share": 0.2,
-  "concentration_ratio": 1.8,
-  "most_cited": "CAS00002392",
+  "citations": 39,
+  "meetings_cited": 10,
+  "of_meetings": 10,
+  "max_share": 0.179,
+  "even_share": 0.1,
+  "concentration_ratio": 1.79,
+  "most_cited": "MCM00001462",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 3140,
-  "output_tokens": 1172,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 4757,
+  "output_tokens": 1435,
+  "model_version": "gemini-3.8-flash"
  }
 }
