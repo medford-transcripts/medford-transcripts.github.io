@@ -1,0 +1,29 @@
+{
+ "video_id": "CAS00002604",
+ "provider": "gemini",
+ "generated_at": "2026-11-19T18:10:36Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "17d5f5fc3c591075",
+ "subject": "Missituk School Geothermal at Columbus Park",
+ "overview": "The commission reviewed a proposal to install an underground geothermal well field beneath Columbus Park to support the Missituk School HVAC project. The commission voted to accept the presentation and asked to be kept updated as design and funding proceed.",
+ "items": [
+  {
+   "title": "Missituk School Geothermal Well Presentation",
+   "t": 29,
+   "summary": "Representatives from the school department and project management presented plans to drill approximately 65 geothermal wells beneath the Columbus Park baseball field as part of the MSBA Accelerated Repair Program, with full surface restoration scheduled following construction; the commission voted to accept the plan.",
+   "speakers": [
+    "Kenneth Lord",
+    "Brian LaRoche",
+    "Chris Murphy",
+    "Reggie Graham"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11774,
+  "output_tokens": 169,
+  "model_version": "gemini-3.8-flash"
+ }
+}
