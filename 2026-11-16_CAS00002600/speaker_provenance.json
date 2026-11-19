@@ -1,0 +1,34 @@
+{
+    "SPEAKER_00": {
+        "value": "GLk5XLhYZCI_SPEAKER_03",
+        "source": "embedding_match",
+        "score": 0.9997145800775177,
+        "from": "GLk5XLhYZCI_SPEAKER_03",
+        "at": "2026-11-19T15:01:09Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9430155596344114,
+        "from": "GLk5XLhYZCI_SPEAKER_02",
+        "at": "2026-11-19T15:01:09Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.7725714772863254,
+        "from": "GLk5XLhYZCI_SPEAKER_02",
+        "at": "2026-11-19T15:01:09Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_03": {
+        "value": "John Petrella",
+        "source": "embedding_match",
+        "score": 0.9996835347197142,
+        "from": "GLk5XLhYZCI_SPEAKER_00",
+        "at": "2026-11-19T15:01:09Z",
+        "previous": "SPEAKER_03"
+    }
+}
