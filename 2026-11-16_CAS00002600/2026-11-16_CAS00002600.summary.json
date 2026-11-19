@@ -1,80 +1,63 @@
 {
  "video_id": "CAS00002600",
  "provider": "gemini",
- "generated_at": "2026-11-19T15:12:19Z",
+ "generated_at": "2026-11-19T16:10:02Z",
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "27bc9561b84442e4",
+ "transcript_sha": "39034635003084bc",
  "subject": "Neighborhood Ambassador Task Force",
- "overview": "Host John Petrella interviews North Medford Ambassador Nate Rubright about the city's Neighborhood Ambassador Task Force. Rubright outlines his volunteer role connecting residents with municipal services, building neighborhood ties, and serving as an informational liaison.",
+ "overview": "Host John Petrella interviewed North Medford Ambassador Nate Rubright about the city's Neighborhood Ambassador Task Force. Rubright discussed the program's volunteer structure, community building in North Medford, and efforts to help residents navigate municipal services.",
  "items": [
   {
-   "title": "Introduction",
+   "title": "Introduction and Background",
    "t": 11,
-   "summary": "Host John Petrella welcomes North Medford Ambassador Nate Rubright to discuss the purpose and activities of the Ambassador Task Force.",
-   "speakers": [
-    "John Petrella"
-   ]
-  },
-  {
-   "title": "Guest Background",
-   "t": 67,
-   "summary": "Rubright describes his background as a North Medford resident, youth minister at Grace Episcopal Church, and writer for Gotta Know Medford.",
-   "speakers": [
-    "Nate Rubright",
-    "John Petrella"
-   ]
-  },
-  {
-   "title": "Ambassador Program Role and Structure",
-   "t": 173,
-   "summary": "Rubright clarifies that ambassadors are unpaid, non-elected volunteers who learn municipal operations to help guide neighbors to the appropriate city departments.",
+   "summary": "Host John Petrella introduced North Medford Ambassador Nate Rubright, who shared his background working in ministry at Grace Episcopal Church and contributing articles to Gotta Know Medford.",
    "speakers": [
     "John Petrella",
-    "Nate Rubright"
+    "GLk5XLhYZCI_SPEAKER_03"
+   ]
+  },
+  {
+   "title": "Role and Structure of the Ambassador Task Force",
+   "t": 173,
+   "summary": "Rubright explained that the ambassador role is an uncompensated volunteer position focused on being a resource for neighbors and helping them connect with local government services.",
+   "speakers": [
+    "John Petrella",
+    "GLk5XLhYZCI_SPEAKER_03"
    ]
   },
   {
    "title": "North Medford Community and Carr Park",
-   "t": 470,
-   "summary": "Rubright discusses building local community connections and highlights Carr Park as a vital gathering space following its recent renovations.",
+   "t": 472,
+   "summary": "The discussion highlighted the renovated Carr Park as a key community gathering space and examined the need for hyper-local connections across North Medford neighborhoods.",
    "speakers": [
-    "Nate Rubright",
-    "John Petrella"
+    "John Petrella",
+    "GLk5XLhYZCI_SPEAKER_03"
    ]
   },
   {
-   "title": "Resident Outreach and Municipal Liaison Work",
+   "title": "Resident Outreach and Departmental Coordination",
    "t": 888,
-   "summary": "Rubright explains his approach to resident communications and describes meeting with city departments, including Parking and DEI, to better navigate resident inquiries.",
+   "summary": "Rubright detailed meeting monthly with city departments like Parking and Public Works to learn how to route resident questions effectively, noting he primarily communicates with neighbors via email.",
    "speakers": [
     "John Petrella",
-    "Nate Rubright"
+    "GLk5XLhYZCI_SPEAKER_03"
    ]
   },
   {
-   "title": "Neighborhood Meetings and Community Benefits",
-   "t": 1688,
-   "summary": "Rubright outlines upcoming city-led neighborhood listening sessions and shares examples of helping residents coordinate street block parties and accessibility inquiries.",
+   "title": "Community Benefits and Program Outlook",
+   "t": 1818,
+   "summary": "Rubright outlined how ambassadors assist residents with micro-level issues like block parties and park proposals, and Petrella concluded with show contact details.",
    "speakers": [
     "John Petrella",
-    "Nate Rubright"
-   ]
-  },
-  {
-   "title": "Conclusion and Contact Information",
-   "t": 2185,
-   "summary": "Petrella thanks Rubright for his service and shares viewing and contact details for Medford Happenings.",
-   "speakers": [
-    "John Petrella",
-    "Nate Rubright"
+    "GLk5XLhYZCI_SPEAKER_03"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 21596,
-  "output_tokens": 522,
+  "output_tokens": 477,
   "model_version": "gemini-3.8-flash"
  }
 }
