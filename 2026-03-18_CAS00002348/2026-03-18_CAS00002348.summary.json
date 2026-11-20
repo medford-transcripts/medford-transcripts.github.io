@@ -1,17 +1,17 @@
 {
  "video_id": "CAS00002348",
  "provider": "gemini",
- "generated_at": "2026-11-05T08:07:03Z",
- "model": "gemini-3.6-flash",
+ "generated_at": "2026-11-20T15:13:16Z",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "a477f21d3876a907",
- "subject": "",
- "overview": "The Planning and Permitting Committee reviewed proposed technical cleanups to the city zoning ordinance and refined draft language for a vacant building ordinance. The committee kept the zoning cleanups in committee for further staff revision and voted to refer the vacant building ordinance to the full City Council pending legal review.",
+ "transcript_sha": "770a35e0a8803b31",
+ "subject": "Vacant Building Ordinance and Zoning Cleanup",
+ "overview": "The committee reviewed proposed technical and procedural cleanup amendments to the zoning ordinance, voting to keep the matter in committee until late April. It also reviewed revisions to the proposed vacant building ordinance and voted to refer it to a regular City Council meeting and to KP Law for legal review.",
  "items": [
   {
-   "title": "Technical and Procedural Zoning Ordinance Amendments",
+   "title": "Zoning ordinance cleanup amendments",
    "t": 79,
-   "summary": "The committee reviewed proposed formatting fixes, typo corrections, and updated definitions for the zoning code with planning and building staff. The item was kept in committee to allow staff to compile a consolidated draft for review at an April meeting.",
+   "summary": "Voted to keep proposed technical and procedural cleanup amendments to the zoning ordinance in committee, scheduling further review for late April after staff prepares consolidated redline documents and categorizes changes into tiers.",
    "speakers": [
     "Matt Leming",
     "Alicia Hunt",
@@ -24,26 +24,25 @@
    ]
   },
   {
-   "title": "Vacant Building Ordinance",
+   "title": "Vacant building ordinance",
    "t": 3739,
-   "summary": "The committee reviewed redlined updates to the proposed vacant building ordinance, discussing local property management definitions, square-footage-based registration fees, legal dispute waivers, and staff enforcement discretion. The committee voted to refer the paper out of committee to a regular City Council meeting pending finalized edits and legal review by KP Law.",
+   "summary": "Referred the proposed vacant building ordinance to the regular City Council meeting and to legal counsel for review, authorizing Councilor Tseng to incorporate edits on square-footage-tiered fees, enforcement discretion, and treatment of residential properties.",
    "speakers": [
     "Matt Leming",
     "Zac Bears",
     "Justin Tseng",
-    "Alicia Hunt",
-    "Scott Vandewalle",
     "Emily Lazzaro",
-    "Liz Mullane",
-    "Danielle Evans"
+    "Scott Vandewalle",
+    "Alicia Hunt",
+    "Danielle Evans",
+    "Liz Mullane"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 36978,
-  "output_tokens": 327,
-  "model_version": "gemini-3.6-flash"
- },
- "subject_source": "summary"
+  "output_tokens": 306,
+  "model_version": "gemini-3.8-flash"
+ }
 }
