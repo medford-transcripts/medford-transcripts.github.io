@@ -23,6 +23,29 @@
 (function () {
   "use strict";
 
+  // BOLD SPEAKER NAMES ON PAGES RENDERED BEFORE srt2html EMITTED span.spk.
+  // New pages carry <span class="spk">[Name]:</span> in the HTML; ~2,500
+  // older ones have the label as bare text, and re-rendering all of them for
+  // a font weight is not worth a sweep. This wraps the same characters in the
+  // same span, so textContent -- what the correction form submits, and what
+  // wordify() and timeAtPoint() skip as prefix -- is byte-for-byte unchanged.
+  // Runs before the player check so pages without a player get it too.
+  Array.prototype.forEach.call(
+    document.querySelectorAll("p.line[data-speaker]"),
+    function (p) {
+      if (p.querySelector("span.spk")) return;
+      var first = p.firstChild;
+      if (!first || first.nodeType !== 3) return;
+      var m = first.nodeValue.match(/^(\s*\[[^\]]*\]:)/);
+      if (!m) return;
+      var span = document.createElement("span");
+      span.className = "spk";
+      span.textContent = m[1];
+      first.nodeValue = first.nodeValue.slice(m[1].length);
+      p.insertBefore(span, first);
+    }
+  );
+
   var mount = document.getElementById("mt-player");
   if (!mount) return;
 

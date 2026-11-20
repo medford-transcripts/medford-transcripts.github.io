@@ -52,6 +52,56 @@ ELECTED = (
     ("school_committee_vice",  "Vice Chair",     "MPS"),
     ("school_committee",       "Member",         "MPS"),
 )
+# WHERE AN ELECTED TITLE NEEDS NO BODY PREFIX: the council or the School
+# Committee itself, and their own subcommittees. A LIST, NOT THE NAME PREFIX.
+# The "CC"/"MPS" prefix in meeting_types.json means "a city / a school
+# body", not "this elected body": the rule used to be mt.startswith("MPS"),
+# which printed Jenny Graham as plain "Vice Chair" at the High School
+# Building Committee -- a body she CHAIRS -- and "President Bears" at the
+# Board of Health, as though he presided over it.
+#
+# Membership is MEASURED, not guessed (2026-11-20): median sitting members
+# among a meeting's identified speakers is 2-6 for every type below and 0 for
+# every independent board (ZBA, CDB, Charter Study, Energy & Environment,
+# ...). The Building Committee measures 2 and is still left out: two members
+# sit on it, but it has its own chair. A type is absent when there was no data
+# to decide it. Absent is the safe side: "CC President" is true at any
+# meeting, while a bare "President" is only true at home. The CC/SC joint
+# session is absent ON PURPOSE -- both bodies are home there, so every
+# officer is qualified.
+HOME_BODY = dict(
+    [(t, "CC") for t in (
+        "CC City Council",
+        "CC City Council Meeting of the Whole",
+        "CC Caucus",
+        "CC Administration and Finance Committee",
+        "CC Governance Committee",
+        "CC Education and Culture",
+        "CC Public Health and Community Safety",
+        "CC Planning and Permitting",
+        "CC Resident Services and Public Engagement Committee",
+        "CC Public Works and Facilities",
+        "CC Climate, Sustainability and Transportation",
+        "CC Housing",
+        "CC Ordinances and Rules",
+        "CC Zoning, Planning and Development",
+        "CC Business, Cultural Arts and Economic Development",
+    )] +
+    [(t, "MPS") for t in (
+        "MPS School Committee",
+        "MPS Meeting of the Whole",
+        "MPS School Committee Executive Session",
+        "MPS Budget",
+        "MPS Building & Grounds",
+        "MPS Superintendent Evaluation",
+        "MPS Rules & Policy",
+        "MPS Communications",
+        "MPS Curriculum, Instruction, Assessment & Accountability",
+        "MPS Strategic & Capital Planning",
+        "MPS Diversity, Equity, & Inclusion",
+        "MPS Family Engagement & Communication",
+        "MPS Behavioral Health & Special Education",
+    )])
 # Plain membership adds nothing beside a name on that body's own page.
 BOARD_SKIP = {"member", "full member", "associate member", "alternate",
               "staff liaison"}
@@ -159,9 +209,7 @@ def title_for(name, meeting_type, date, councilors=None, rosters=None,
         if spoken:
             if body == "City":
                 return spoken                   # the mayor is the mayor anywhere
-            here = ("CC" if mt.startswith("CC")
-                    else "MPS" if mt.startswith(("MPS", "SC", "MSC")) else "")
-            out = spoken if here == body else "%s %s" % (body, spoken)
+            out = spoken if HOME_BODY.get(mt) == body else "%s %s" % (body, spoken)
             return out if len(out) <= MAX_TITLE else None
 
     t = staff_title(name, date, staff)
@@ -278,6 +326,21 @@ def self_test():
     ck("qualified at another body",
        title_for("Zac Bears", "MPS School Committee", "2024-03-01", **kw),
        "CC President")
+    # a CC-prefixed board is NOT the council: he does not preside there
+    ck("qualified at a city board",
+       title_for("Zac Bears", "CC Board of Health", "2024-03-01", **kw),
+       "CC President")
+    # ...but a council subcommittee is home
+    ck("unqualified at a council subcommittee",
+       title_for("Zac Bears", "CC Governance Committee", "2024-03-01", **kw),
+       "President")
+    # an MPS-prefixed body with its own chair is not the School Committee
+    ck("qualified at the building committee",
+       title_for("Jenny Graham", "MPS High School Building Committee",
+                 "2026-03-01", councilors={"Jenny Graham": {"2026": {
+                     "position": ["school_committee_vice",
+                                  "school_committee"]}}}, rosters={}, staff={}),
+       "MPS Vice Chair")
     # the mayor is the mayor anywhere
     ck("mayor unqualified at school committee",
        title_for("Breanna Lungo-Koehn", "MPS School Committee", "2026-03-01", **kw),
@@ -353,7 +416,7 @@ def self_test():
 
     for f in fails:
         print("  FAIL %s" % f)
-    print("titles self-test: %d checks, %d failed" % (28, len(fails)))
+    print("titles self-test: %d checks, %d failed" % (31, len(fails)))
     return 1 if fails else 0
 
 

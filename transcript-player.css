@@ -216,6 +216,17 @@ span.w.w-active {
 p.line:not([data-speaker]) {
   margin-left: 2.2em;
 }
+/* ...and a change of speaker gets more space than a paragraph break, so a
+   turn reads as one block. The indent alone was the only cue, and it is easy
+   to lose down a long page. The name is bold for the same reason: it is what
+   the eye scans for. span.spk is emitted by srt2html for new pages and added
+   by transcript-player.js on older ones; same text either way. */
+p.line[data-speaker] {
+  margin-top: 1.9em;
+}
+span.spk {
+  font-weight: 600;
+}
 /* On a page rendered BEFORE data-speaker existed, no line carries the
    attribute, so every paragraph indents equally. Those pages do have
    continuation paragraphs -- they just cannot be told apart -- so the result

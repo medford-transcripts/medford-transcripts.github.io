@@ -59,14 +59,89 @@ TRANSLATIONS_DISABLED = True
 
 # file suffixes of the retired translated pages, used to keep them out of the
 # sitemap even while they remain on disk
-TRANSLATED_SUFFIXES = (".es.html", ".pt.html", ".pt-BR.html", ".zh-cn.html",
-                       ".ht.html", ".vi.html", ".km.html", ".ru.html",
-                       ".ar.html", ".ko.html")
+#
+# ".en.html" IS ON THIS LIST, and it is the one that was doing damage. English
+# briefly had its own language suffix; the canonical English page has always
+# been "<base>.html". Exactly one ".en.html" survives that era
+# (2023-06-06_CftWif4v9Wc) and it is a 1,428-byte TRUNCATED stub: no transcript
+# body, unterminated <a href> tags, language links pointing at ".srt.html"
+# names that never existed -- and a self-referential <link rel="canonical">.
+# Because it did not match any retired suffix, make_sitemap advertised it to
+# crawlers right beside the intact 153 KB page, so a thin duplicate competed
+# with the real transcript and claimed to be the original.
+#
+# Excluded rather than deleted: the URL has been in the sitemap, the real page
+# is unaffected, and dropping it from the sitemap stops the harm without
+# turning a crawled URL into a 404. See PENDING.md for the 21 truncated pages
+# this came from and the non-atomic write that produces them.
+TRANSLATED_SUFFIXES = (".en.html", ".es.html", ".pt.html", ".pt-BR.html",
+                       ".zh-cn.html", ".ht.html", ".vi.html", ".km.html",
+                       ".ru.html", ".ar.html", ".ko.html")
 
 
 def is_translated_page(path):
     """True for a retired per-language transcript page."""
     return str(path).endswith(TRANSLATED_SUFFIXES)
+
+
+def page_path(basename, language):
+    """The PUBLISHED path of a transcript page -- what a reader fetches.
+
+    Also the canonical URL, so this is the one the markup must name.
+    """
+    if language == 'en':
+        return basename + '.html'
+    return basename + '.' + language + '.html'
+
+
+def render_path(basename, language):
+    """Where a page is BUILT, renamed over page_path() once complete.
+
+    WHY PAGES ARE NOT WRITTEN IN PLACE. A transcript page is not written once;
+    it is STREAMED, through a handle opened and closed repeatedly -- once to
+    start the document, once per speaker turn in finish_speaker(), once for the
+    stats table, once for the footer. For a 4-hour meeting that is thousands of
+    reopens, and the file sat on its PUBLISHED path for all of it. So the live
+    page was incomplete for the whole render, and `open(..., 'w')` destroyed
+    the previous good copy before the first byte of the new one was written.
+
+    Kill the process anywhere in that window -- and three long passes were
+    OOM-killed on this box in October -- and the published page is a stub. That
+    is the measured shape of the damage: 21 truncated pages arriving in
+    whole-meeting clusters of 9, one interrupted run per cluster, including a
+    1,428-byte stub that the sitemap then advertised beside the real page.
+
+    Building on a `.tmp` and renaming makes the failure mode staleness instead
+    of a stub: an interrupted render leaves the PREVIOUS page serving, intact.
+    `os.replace` is required rather than `os.rename` -- on Windows, rename onto
+    an existing path raises, and replace is what utils.write_atomic already
+    uses for the same reason.
+    """
+    return page_path(basename, language) + '.tmp'
+
+
+def publish_page(basename, language):
+    """Move a finished render onto its published path. Returns True if moved."""
+    tmp = render_path(basename, language)
+    if not os.path.exists(tmp):
+        return False
+    os.replace(tmp, page_path(basename, language))
+    return True
+
+
+def clear_stale_renders(basename):
+    """Drop .tmp renders left by an earlier interrupted run.
+
+    They are harmless to readers -- nothing globs `*.html.tmp`, so they reach
+    neither the sitemap nor the search index -- but `20*` IS a published path,
+    so a leftover would otherwise be committed, and a stale one for a language
+    this run does not emit would never be overwritten.
+    """
+    for p in glob.glob(glob.escape(basename) + '*.html.tmp'):
+        try:
+            os.remove(p)
+        except OSError:
+            pass
 
 
 def translate_text(text, dest="en", cachefile=None):
@@ -635,8 +710,7 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
 
     for language in languages.keys():
         if language == 'en':
-            htmlfilename = basename + '.html'
-            html = open(htmlfilename, 'a', encoding="utf-8")
+            html = open(render_path(basename, language), 'a', encoding="utf-8")
             # data-t drives the in-page synced player (transcript-player.js).
             # The <a href> inside htmltext is deliberately KEPT: without JS,
             # and for crawlers, the line behaves exactly as it always has.
@@ -652,14 +726,14 @@ def finish_speaker(basename, speaker_stats, text, speaker, yt_id, start, stop, h
             # actually uses before sending.
             html.write('    <p class="line" data-t="' + str(start)
                        + '" data-speaker="' + escape(speaker, quote=True)
-                       + '">[' + shown + ']: ' + htmltext + '</p>\n\n')
+                       + '"><span class="spk">[' + shown + ']:</span> '
+                       + htmltext + '</p>\n\n')
             html.close()
-        else: 
-            htmlfilename = basename + '.' + language + '.html'
+        else:
             if text != None:
                 text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
             else: text = ""
-            html = open(htmlfilename, 'a', encoding="utf-8")
+            html = open(render_path(basename, language), 'a', encoding="utf-8")
             url = timestamp_url(yt_id, start, video_data)
             if url:
                 html.write('    <p><a href="' + url + '" rel="nofollow">')
@@ -771,6 +845,8 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
     print("Making HTML for " + yt_id)
 
+    clear_stale_renders(basename)
+
     # THE SUBJECT LEADS WHERE WE HAVE ONE. display_title composes
     # "COW: City Clerk Selection - 2026-06-23" when the summary found a single
     # dominant matter, and otherwise returns the city's own title untouched --
@@ -787,12 +863,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
     translator = Translator()
     for language in languages.keys():
 
-        if language == 'en':
-            htmlfilename = basename + '.html'
-        else: 
-            htmlfilename = basename + '.' + language + '.html'
+        # htmlfilename stays the PUBLISHED path: it is the canonical URL below
+        # (and the og/meta self-references), which must name the page a reader
+        # fetches, never the .tmp it is being built on.
+        htmlfilename = page_path(basename, language)
 
-        html = open(htmlfilename, 'w', encoding="utf-8")
+        html = open(render_path(basename, language), 'w', encoding="utf-8")
         html.write('<!DOCTYPE html>\n')
         html.write('<html lang="' + language + '">\n')
         html.write('  <head>\n')
@@ -1142,8 +1218,7 @@ def srt2html(yt_id,skip_translation=False, force=False):
         if speaker_id in councilors: present_councilors.append(speaker_id)
 
     # make a table with stats (english only)
-    htmlfilename = basename + '.html'
-    html = open(htmlfilename, 'a', encoding="utf-8")
+    html = open(render_path(basename, 'en'), 'a', encoding="utf-8")
     html.write('  <table>\n')
     for i in range(nrows):
         html.write('    <tr>\n')
@@ -1165,13 +1240,10 @@ def srt2html(yt_id,skip_translation=False, force=False):
 
         text = "Back to all transcripts"
 
-        if language == 'en':
-            htmlfilename = basename + '.html'
-        else: 
-            htmlfilename = basename + '.' + language + '.html'
+        if language != 'en':
             text = translate_text(text, dest=language, cachefile=basename + '.cache.json')
 
-        html = open(htmlfilename, 'a', encoding="utf-8")
+        html = open(render_path(basename, language), 'a', encoding="utf-8")
         html.write('  <br><br><a href="../index.html">' + text + '</a><br><br>\n')
 
         ctte = committee_page(yt_id, video_data)
@@ -1188,6 +1260,12 @@ def srt2html(yt_id,skip_translation=False, force=False):
         html.write('  </body>\n')
         html.write('</html>\n')
         html.close()
+
+        # THE DOCUMENT IS COMPLETE HERE -- `</html>` is written and the handle
+        # is closed -- so this is the only correct moment to publish it. Before
+        # the rename the reader still gets the previous page; after it, the new
+        # one, with no window in between where the page is half-written.
+        publish_page(basename, language)
 
     # update the saved video data, but reload it in case another process updated it in the meantime
     video_data = utils.get_video_data()
@@ -1609,6 +1687,23 @@ def make_sitemap():
         return bool(_vd.get(d.split("_", 1)[1], {}).get("skip"))
     files = [f for f in files if not _is_skipped(f)]
 
+    # THE PAGE'S OWN noindex IS THE LAST WORD, whatever the rules above miss.
+    # Each filter above names one family of noindex page; a page that sets
+    # noindex for a reason nobody wrote a filter for slipped through. Found
+    # 2026-11-20 from a Search Console "Excluded by 'noindex' tag" notice:
+    # committees/Campaign.html, the hand-written redirect stub left by the
+    # Campaign -> Election rename, was the ONE noindex page in the sitemap --
+    # the same contradiction the index.html filter above was written to remove.
+    # Reading the head is cheap (2 KB of ~2,500 files) and cannot drift.
+    def _says_noindex(path):
+        try:
+            with open(path, encoding="utf-8", errors="ignore") as fh:
+                head = fh.read(2048).lower()
+        except OSError:
+            return False
+        return bool(re.search(r'<meta[^>]+name=["\']robots["\'][^>]*noindex', head))
+    files = [f for f in files if not _says_noindex(f)]
+
     # create root XML node
     sitemap_root = cElementTree.Element('urlset')
     sitemap_root.attrib['xmlns'] = "http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -1743,13 +1838,52 @@ if __name__ == "__main__":
     parser.add_argument('-i','--yt_id', dest='yt_id', default=None, help="id to just do one")
     parser.add_argument('-s','--skip_translation', dest='skip_translation', action='store_true', default=False, help="Only do english transcript")
     parser.add_argument('-f','--force', dest='force', action='store_true', default=False, help="Force regeneration of html")
+    # WHY THIS FLAG EXISTS: `-i <id>` RENDERS ONE PAGE AND REBUILDS THE CORPUS.
+    #
+    # Measured 2026-10-14, timing a single `-i <id> -f`: the page itself is a
+    # small part of a ~30-MINUTE run, 87% CPU-bound the whole way. Everything
+    # else is corpus-wide work that does not depend on which id was asked for:
+    #
+    #   utils.update_all()                 re-reads metadata for all 2,396
+    #                                      transcripts AND every channel in
+    #                                      channels_to_transcribe.txt over the
+    #                                      network -- and WRITES video_data.json
+    #   make_committee_pages.make()        every committee page
+    #   make_index()                       globs ~2,400 dirs, 706 KB front page
+    #   make_resolution_tracker()          scrapes the city website
+    #   make_sitemap()                     globs ~2,500 files
+    #   supercut.do_all_councilors()       every councilor, every meeting
+    #
+    # do_all() already knows this and runs the extras only on its LAST file.
+    # The per-id path never got the same treatment, so a bulk regeneration --
+    # 102 pages after a speaker name propagated -- paid for 102 full corpus
+    # rebuilds and 102 metadata refreshes. That is the real reason these runs
+    # "keep getting OOM-killed": the cost was never the page.
+    #
+    # DEFAULT IS UNCHANGED, deliberately. A publish relies on `-i` refreshing
+    # the index and sitemap, and an orphaned page nobody links to is the defect
+    # that was paid for on 2026-10-08. This flag is opt-in for the bulk case,
+    # where the caller runs the extras ONCE at the end instead (regen_stale.py).
+    #
+    # It also makes a bulk pass SAFE AGAINST THE CLOBBER: skipping update_all
+    # means a page rebuild no longer writes video_data.json at all, so it
+    # cannot race the live create_subtitles loops (see CLAUDE.md).
+    parser.add_argument('--page-only', dest='page_only', action='store_true',
+                        default=False,
+                        help="render just this page: no metadata refresh, no "
+                             "index/committee/sitemap/resolution rebuild, no "
+                             "supercut. For bulk regeneration -- run the "
+                             "extras once afterwards.")
 
     opt = parser.parse_args()
-    utils.update_all()
+    if not opt.page_only:
+        utils.update_all()
 
     if opt.yt_id != None:
-        do_one(opt.yt_id, skip_translation=opt.skip_translation, force=opt.force)
+        do_one(opt.yt_id, skip_translation=opt.skip_translation, force=opt.force,
+               do_scrape=not opt.page_only, do_extras=not opt.page_only)
     else:
         do_all(skip_translation=opt.skip_translation, force=opt.force)
 
-    supercut.do_all_councilors(useGPT=False)
+    if not opt.page_only:
+        supercut.do_all_councilors(useGPT=False)
