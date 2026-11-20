@@ -1,0 +1,70 @@
+{
+ "video_id": "CAS00002607",
+ "provider": "gemini",
+ "generated_at": "2026-11-20T17:06:47Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "688fc57db2cd8713",
+ "subject": "",
+ "overview": "The Medford Liquor License Commission met to consider several license applications, permits, and operational requests. The commission approved a one-day license for an art studio, entertainment and conditional hours requests for a new Irish pub, distillery and winery permits for a local brewery, and a new liquor license for a Mediterranean restaurant.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 10,
+   "summary": "Approved the meeting minutes from the October 22, 2026 meeting.",
+   "speakers": [
+    "Robert Delafano"
+   ]
+  },
+  {
+   "title": "Eventham Studios One-Day License",
+   "t": 68,
+   "summary": "Approved a one-day liquor license for Eventham Studios to serve beer, wine, and malt beverages at a gallery exhibit reception on December 3, 2026.",
+   "speakers": [
+    "Robert Delafano",
+    "Megan Smith",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Rory O'Connor's Entertainment License and Change of Hours",
+   "t": 246,
+   "summary": "Approved an entertainment license for up to 10 devices and background music, and conditionally approved a change of operating hours pending receipt of a common victualler license.",
+   "speakers": [
+    "Robert Delafano",
+    "Peter O'Connor",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Medford Brewing Company Distillery and Winery Permits",
+   "t": 740,
+   "summary": "Approved Section 19E farmer-distillery and Section 19B farmer-winery pouring permits for Medford Brewing Company's expanded product offerings.",
+   "speakers": [
+    "Robert Delafano",
+    "Nick Bolitho",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Ultramarinos Liquor License Application",
+   "t": 1832,
+   "summary": "Approved a new liquor license for 42 Riverside LLC, doing business as Ultramarinos, for a new restaurant at the former Zam Zam location.",
+   "speakers": [
+    "Robert Delafano",
+    "Alvaro Sandoval",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23495,
+  "output_tokens": 595,
+  "model_version": "gemini-3.6-flash"
+ }
+}
