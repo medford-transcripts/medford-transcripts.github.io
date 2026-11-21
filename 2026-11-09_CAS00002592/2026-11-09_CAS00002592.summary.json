@@ -5,7 +5,7 @@
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
  "transcript_sha": "a94ed20c0d7ac06c",
- "subject": "",
+ "subject": "Interview with Johnny Kinsman",
  "overview": "Host Laura Duggan interviewed actor, director, and tour guide Johnny Kinsman about his theater career, Boston Duck Tours, and his historical performance projects. They also discussed historical presentations spotlighting women and Black participants in the American Revolution, as well as Medford historical figure Sarah Bradley Fulton.",
  "items": [
   {
@@ -68,5 +68,6 @@
   "input_tokens": 29620,
   "output_tokens": 521,
   "model_version": "gemini-3.8-flash"
- }
+ },
+ "subject_source": "summary"
 }
