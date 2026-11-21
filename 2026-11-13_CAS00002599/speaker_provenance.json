@@ -1,0 +1,34 @@
+{
+    "SPEAKER_00": {
+        "value": "Laura Swan",
+        "source": "embedding_match",
+        "score": 0.94424477710472,
+        "from": "CAS00002572_SPEAKER_02",
+        "at": "2026-11-21T05:37:38Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_02": {
+        "value": "lq25S5HOVFA_SPEAKER_10",
+        "source": "embedding_match",
+        "score": 0.9527410299701523,
+        "from": "CAS00002572_SPEAKER_04",
+        "at": "2026-11-21T05:37:38Z",
+        "previous": "SPEAKER_02"
+    },
+    "SPEAKER_04": {
+        "value": "bq-gVu-g8qk_SPEAKER_01",
+        "source": "embedding_match",
+        "score": 0.92558623045687,
+        "from": "CAS00002572_SPEAKER_03",
+        "at": "2026-11-21T05:37:38Z",
+        "previous": "SPEAKER_04"
+    },
+    "SPEAKER_06": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.9015530885412364,
+        "from": "MCM00000568_SPEAKER_08",
+        "at": "2026-11-21T05:37:38Z",
+        "previous": "SPEAKER_06"
+    }
+}
