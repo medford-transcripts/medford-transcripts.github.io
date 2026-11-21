@@ -1,0 +1,66 @@
+{
+ "video_id": "CAS00002606",
+ "provider": "gemini",
+ "generated_at": "2026-11-21T01:06:26Z",
+ "model": "gemini-3.8-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "cff57f98af3a5b43",
+ "subject": "Boston Avenue Bikeway Design",
+ "overview": "The commission met to determine minimum acceptable bicycle infrastructure for the Boston Avenue corridor alongside new Tufts University construction. Members voted on prioritized roadway cross-sections and established a working group to coordinate advocacy with the city and Tufts.",
+ "items": [
+  {
+   "title": "Boston Avenue Infrastructure Review and Design Parameters",
+   "t": 36,
+   "summary": "Members and community guests reviewed street width constraints, parking demand, and ongoing studies related to Tufts University dormitory construction along Boston Avenue.",
+   "speakers": [
+    "Daniel Nuzzo-Mueller",
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Jeremy Martin",
+    "Jared Powell",
+    "Zachary Stocks"
+   ]
+  },
+  {
+   "title": "Motion on Hybrid Bikeway Configuration",
+   "t": 6440,
+   "summary": "A motion to formally endorse a hybrid design—featuring a protected bike lane on one side and a shared travel lane on the other—over the status quo configuration failed.",
+   "speakers": [
+    "Bruce Kulik",
+    "Emily O'Brien",
+    "Jared Powell",
+    "Daniel Nuzzo-Mueller"
+   ]
+  },
+  {
+   "title": "Boston Avenue Design Recommendations",
+   "t": 6662,
+   "summary": "The commission approved a prioritized list of three design alternatives for Boston Avenue, leading with protected bike lanes and north-side parking removal as the preferred option, followed by two parking-protected variations.",
+   "speakers": [
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Daniel Nuzzo-Mueller",
+    "Jeremy Martin",
+    "Jared Powell"
+   ]
+  },
+  {
+   "title": "Boston Avenue Working Group",
+   "t": 7710,
+   "summary": "The commission voted to create an ad hoc working group to draft an advocacy letter and coordinate next steps with city officials and Tufts University representatives.",
+   "speakers": [
+    "Daniel Nuzzo-Mueller",
+    "Jeremy Martin",
+    "Emily O'Brien",
+    "Bruce Kulik",
+    "Jared Powell"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 44396,
+  "output_tokens": 523,
+  "model_version": "gemini-3.8-flash"
+ }
+}
