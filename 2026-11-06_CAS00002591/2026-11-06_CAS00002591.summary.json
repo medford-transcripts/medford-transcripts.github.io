@@ -1,26 +1,26 @@
 {
  "video_id": "CAS00002591",
  "provider": "gemini",
- "generated_at": "2026-11-21T23:06:46Z",
+ "generated_at": "2026-11-22T00:12:33Z",
  "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "dd47d05701ae66cd",
+ "transcript_sha": "4699feb6669e6302",
  "subject": "",
- "overview": "The board held its annual meeting to elect officers, approved a developer funding application template, reviewed quarterly finances, and discussed potential roles in developing affordable housing on city-owned land.",
+ "overview": "The board re-elected its slate of officers, reviewed quarterly financials, and approved a standardized funding application template. Trustees also received updates on city housing initiatives and voted to cancel their December meeting.",
  "items": [
   {
-   "title": "Welcome and Introductions",
+   "title": "Trustee Introductions",
    "t": 54,
-   "summary": "Trustees welcomed new board member Megan Kelly and conducted brief round-robin introductions.",
+   "summary": "The board welcomed new trustee Megan Kelly and members shared background introductions.",
    "speakers": [
     "Roberta Cameron",
     "CAS00002514_SPEAKER_03",
+    "Kayla Lessen",
     "Penelope Taylor",
     "Teda DeRosa",
-    "MCM00001729_SPEAKER_03",
     "Jenny Graham",
     "Katherine Buckingham",
-    "SPEAKER_05"
+    "Megan Kelly"
    ]
   },
   {
@@ -34,9 +34,9 @@
    ]
   },
   {
-   "title": "Annual Meeting: Officer Elections and Working Groups",
+   "title": "Annual Meeting Officer Elections and Working Groups",
    "t": 388,
-   "summary": "Reelected Lisa Davidson as chair, Penelope Taylor as vice chair, and Kayla Lessen as treasurer, and appointed Teda DeRosa and Megan Kelly to the fundraising working group.",
+   "summary": "Elected Lisa Davidson as chair, Penelope Taylor as vice chair, and Kayla Lessen as treasurer, and confirmed Teda DeRosa and Megan Kelly for the fundraising working group.",
    "speakers": [
     "Katherine Buckingham",
     "Roberta Cameron",
@@ -47,18 +47,18 @@
   },
   {
    "title": "Quarterly Financial Report",
-   "t": 1196,
-   "summary": "Staff and Treasurer Kayla Lessen presented the third quarter 2026 financial report, showing $576,129.01 in total assets, including $200,000 encumbered for a Medford Community Housing loan.",
+   "t": 1189,
+   "summary": "Reviewed third-quarter financials showing $376,129 in unencumbered cash, $200,000 reserved for a Medford Community Housing loan, and pending incoming transfers.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham",
-    "Jenny Graham"
+    "Kayla Lessen"
    ]
   },
   {
    "title": "Housing Resource Fair Summary",
-   "t": 1589,
-   "summary": "Staff reported on the housing resource fair, noting that over 50 attendees and 16 organizations participated.",
+   "t": 1585,
+   "summary": "Staff reported on the housing resource fair, which featured 16 organizations and over 50 attendees.",
    "speakers": [
     "Katherine Buckingham",
     "Teda DeRosa",
@@ -66,48 +66,47 @@
    ]
   },
   {
-   "title": "Affordable Housing Linkage Fee Nexus Study",
+   "title": "Linkage Fee Nexus Study Update",
    "t": 1827,
-   "summary": "Staff updated the board that draft ordinance language based on the linkage fee nexus study was sent to the Community Development Board.",
+   "summary": "Staff provided an update that City Council drafted linkage fee ordinance language and referred it to the Community Development Board.",
    "speakers": [
-    "Katherine Buckingham",
-    "Roberta Cameron"
+    "Roberta Cameron",
+    "Katherine Buckingham"
    ]
   },
   {
    "title": "Fractional Payment Ordinance Update",
    "t": 1881,
-   "summary": "Staff confirmed the fractional payment ordinance has taken effect.",
+   "summary": "Staff reported that the fractional payment ordinance has taken effect.",
    "speakers": [
-    "Katherine Buckingham",
-    "Roberta Cameron"
+    "Roberta Cameron",
+    "Katherine Buckingham"
    ]
   },
   {
    "title": "Affordable Housing Incentive Bonus",
    "t": 1920,
-   "summary": "Staff shared that the Community Development Board is reviewing zoning table structures to clean up incentive bonus provisions across rezoned districts.",
+   "summary": "Staff updated the board on the Community Development Board's ongoing review to clean up affordable housing development incentive tables across rezoned districts.",
    "speakers": [
     "Roberta Cameron",
     "CAS00002514_SPEAKER_03"
    ]
   },
   {
-   "title": "Funding Application Template",
+   "title": "Trust Funding Application Template",
    "t": 1991,
-   "summary": "Approved the developer funding application template subject to staff reconciling area median income limits with board policies.",
+   "summary": "Approved the developer funding application template subject to minor adjustments aligning AMI eligibility thresholds.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham",
     "Teda DeRosa",
-    "Penelope Taylor",
-    "Jenny Graham"
+    "Penelope Taylor"
    ]
   },
   {
-   "title": "Presentation to Community Preservation Committee",
+   "title": "Community Preservation Committee Presentation",
    "t": 2769,
-   "summary": "Staff outlined plans to present the trust's fiscal year 2027 funding application to the Community Preservation Committee.",
+   "summary": "Staff previewed the trust's upcoming presentation to the Community Preservation Committee for fiscal year 2027 funding.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham",
@@ -115,9 +114,9 @@
    ]
   },
   {
-   "title": "City-Owned Parcels Discussion",
-   "t": 2876,
-   "summary": "The board discussed potential roles and staffing considerations for acquiring or developing city-owned parcels for affordable housing.",
+   "title": "City-Owned Parcel Disposition",
+   "t": 2874,
+   "summary": "Trustees discussed the potential role of the trust in utilizing city-owned parcels for affordable housing and examined regional practices and federal housing frameworks.",
    "speakers": [
     "Katherine Buckingham",
     "Teda DeRosa",
@@ -126,21 +125,20 @@
    ]
   },
   {
-   "title": "Pipeline Updates and Schedule",
+   "title": "Project Pipeline and Meeting Schedule",
    "t": 3472,
-   "summary": "Staff noted an upcoming funding request for Walkling Court Phase 2, and the board voted to cancel its scheduled December meeting.",
+   "summary": "Staff noted an anticipated future funding request for Walkling Court phase two, and the board voted to cancel its December meeting.",
    "speakers": [
     "Katherine Buckingham",
     "Penelope Taylor",
-    "Roberta Cameron",
-    "Jenny Graham"
+    "Roberta Cameron"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 20292,
-  "output_tokens": 1208,
+  "input_tokens": 20291,
+  "output_tokens": 957,
   "model_version": "gemini-3.8-flash"
  }
 }
