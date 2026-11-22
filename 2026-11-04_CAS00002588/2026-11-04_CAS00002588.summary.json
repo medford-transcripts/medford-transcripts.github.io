@@ -1,0 +1,62 @@
+{
+ "video_id": "CAS00002588",
+ "provider": "gemini",
+ "generated_at": "2026-11-22T07:05:47Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "42c7ee7955e63b4b",
+ "subject": "Seven Acres Cemetery Expansion",
+ "overview": "The Oak Grove Cemetery Board of Trustees discussed community outreach and timeline plans for the Seven Acres cemetery expansion project. The board also reviewed cemetery burial capacity, ongoing maintenance projects, and staffing updates.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 0,
+   "summary": "The board unanimously approved the minutes from the previous meeting.",
+   "speakers": [
+    "Clayton",
+    "Dee Morris"
+   ]
+  },
+  {
+   "title": "Seven Acres Expansion Project Update",
+   "t": 118,
+   "summary": "Clayton reported on a meeting with the mayor regarding the Seven Acres project, detailing plans for public education, a media release, community polling, and a public hearing before final funding decisions are made.",
+   "speakers": [
+    "Clayton",
+    "Dee Morris"
+   ]
+  },
+  {
+   "title": "Maintenance and Restoration Updates",
+   "t": 645,
+   "summary": "Theresa Dupont and trustees reviewed maintenance items including fountain winterization, gravel removal, World War II fountain cleaning, and Cross Street Cemetery restoration work following ground-penetrating radar surveys.",
+   "speakers": [
+    "Clayton",
+    "Theresa Dupont"
+   ]
+  },
+  {
+   "title": "Burial Capacity and Veterans Section Planning",
+   "t": 1119,
+   "summary": "The board discussed opening new burial graves as Mulberry Lane reaches capacity and coordinating with city engineers to design a multi-conflict veterans area.",
+   "speakers": [
+    "Clayton"
+   ]
+  },
+  {
+   "title": "Mausoleum Proposal and Staffing Updates",
+   "t": 1224,
+   "summary": "Trustees learned of a private plot transfer intended for a future mausoleum that will require board approval, and received updates that cemetery maintenance staffing will soon be fully filled.",
+   "speakers": [
+    "Clayton",
+    "Dee Morris"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 10846,
+  "output_tokens": 403,
+  "model_version": "gemini-3.6-flash"
+ }
+}
