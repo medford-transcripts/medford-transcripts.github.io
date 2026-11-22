@@ -1,104 +1,103 @@
 {
  "video_id": "CAS00002586",
  "provider": "gemini",
- "generated_at": "2026-11-22T18:07:42Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-11-22T19:09:04Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "f509d6c6cf447484",
+ "transcript_sha": "d5c94159e57e1e84",
  "subject": "",
- "overview": "The board reviewed several residential dimensional relief and special permit petitions, focusing heavily on evaluating municipal interests and dimensional standards for protected accessory dwelling units under state law. Decisions included approving dormer and dimensional relief for two ADUs, granting a variance and special permit for a single-family home expansion, approving a special permit to demolish and rebuild a three-family dwelling, and granting a permit extension for a mixed-use development.",
+ "overview": "The Medford Zoning Board of Appeals met to hear multiple residential requests, including administrative appeals regarding state-protected accessory dwelling units (ADUs), dimensional variances, and special permits. The board approved a permit extension for a mixed-use project at 590 Boston Avenue, granted dimensional relief and special permits for proposals on Vassar Street, Wellesley Street, and Albion Street, and approved the reconstruction of a three-family dwelling on South Street.",
  "items": [
   {
    "title": "226 Main Street",
-   "t": 101,
-   "summary": "Continued the hearing on a proposed three-story, three-unit townhouse dwelling to December 3, 2026, at the applicant's request.",
+   "t": 165,
+   "summary": "The board granted the applicant's request to continue the hearing for a proposed three-story, three-unit townhouse dwelling to December 3, 2026.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
-    "Yvette Velez"
+    "Andre Leroux"
    ]
   },
   {
    "title": "590 Boston Avenue",
    "t": 273,
-   "summary": "Approved a two-year extension of the variance and special permit for the demolition of an existing gas station and construction of a five-story, 45-unit mixed-use building.",
+   "summary": "The board approved a two-year extension for a variance and special permit for the demolition of a gas station and car wash to construct a five-story mixed-use building with 45 units and commercial space.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
     "Adam Barnosky",
-    "Chris DeVetta",
-    "Yvette Velez",
-    "Mary Lee",
-    "Jim Turani"
+    "Andre Leroux"
    ]
   },
   {
    "title": "1-3 Vassar Street",
    "t": 616,
-   "summary": "Approved a site-specific finding granting dimensional relief for a reduced 780-square-foot protected accessory dwelling unit, determined a variance was not required under state law, and granted a special permit to vertically extend the nonconforming side yard plane.",
+   "summary": "The board granted dimensional relief for a reduced 780-square-foot protected accessory dwelling unit and approved a special permit to extend an existing nonconforming side yard setback vertically.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
     "Kathleen Desmond",
     "Chris D'Aveta",
     "Bill Forte",
     "Danielle Evans",
     "Alicia Hunt",
     "Mary Lee",
-    "Yvette Velez"
+    "Yvette Velez",
+    "Andre Leroux",
+    "Jim Tirani"
    ]
   },
   {
    "title": "12 Wellesley Street",
    "t": 6526,
-   "summary": "Approved a site-specific finding granting dimensional relief for a reduced 769-square-foot protected accessory dwelling unit with dormers, ruling that a variance was not required.",
+   "summary": "The board granted dimensional relief allowing the applicant to construct two shed dormers for a 769-square-foot third-story protected accessory dwelling unit.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
-    "Yvette Velez",
     "Kathleen Desmond",
-    "Chris D'Aveta",
     "Bill Forte",
-    "Mary Lee"
+    "Chris D'Aveta",
+    "Yvette Velez",
+    "Mary Lee",
+    "Jim Tirani",
+    "Andre Leroux"
    ]
   },
   {
    "title": "11 Albion Street",
    "t": 8138,
-   "summary": "Approved a variance allowing 640 square feet of livable space on the third floor of a single-family home and approved a special permit to extend the nonconforming side yard setback vertically for a dormer.",
+   "summary": "The board approved a variance for third-floor square footage and a special permit to extend a side setback nonconformity vertically to expand living space in a single-family home.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
     "Sam Collins",
     "Matt Carlson",
     "Chris D'Aveta",
     "Yvette Velez",
-    "Mary Lee"
+    "Mary Lee",
+    "Jim Tirani",
+    "Andre Leroux"
    ]
   },
   {
    "title": "75 South Street",
    "t": 9341,
-   "summary": "Approved a special permit to demolish an existing deteriorated nonconforming three-family dwelling and construct a new three-story, three-family residential building.",
+   "summary": "The board approved a special permit to demolish an existing dilapidated three-family home and construct a new three-story, three-unit residential building.",
    "speakers": [
     "Denis MacDougall",
-    "Andre Leroux",
     "Kathleen Desmond",
     "Jacob Levine",
     "Bill Forte",
-    "Chris D'Aveta",
     "Chris Lamb",
     "Naomi Altman",
-    "Kelly Morrissey",
+    "Chris D'Aveta",
     "Yvette Velez",
-    "Mary Lee"
+    "Kelly Morrissey",
+    "Mary Lee",
+    "Jim Tirani",
+    "Andre Leroux"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 70278,
-  "output_tokens": 790,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 70280,
+  "output_tokens": 879,
+  "model_version": "gemini-3.6-flash"
  }
 }
