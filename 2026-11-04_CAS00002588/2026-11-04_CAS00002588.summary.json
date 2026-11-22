@@ -1,53 +1,48 @@
 {
  "video_id": "CAS00002588",
  "provider": "gemini",
- "generated_at": "2026-11-22T07:05:47Z",
- "model": "gemini-3.6-flash",
+ "generated_at": "2026-11-22T09:14:35Z",
+ "model": "gemini-3.8-flash",
  "model_requested": "gemini",
- "transcript_sha": "42c7ee7955e63b4b",
+ "transcript_sha": "e5927eca28eb8c2e",
  "subject": "Seven Acres Cemetery Expansion",
- "overview": "The Oak Grove Cemetery Board of Trustees discussed community outreach and timeline plans for the Seven Acres cemetery expansion project. The board also reviewed cemetery burial capacity, ongoing maintenance projects, and staffing updates.",
+ "overview": "The board discussed public outreach and timeline plans for the proposed Seven Acres cemetery expansion to address impending grave shortages. Trustees also received updates on staffing, veteran plot capacity, and restoration work at Cross Street Cemetery.",
  "items": [
   {
    "title": "Approval of Minutes",
-   "t": 0,
-   "summary": "The board unanimously approved the minutes from the previous meeting.",
+   "t": 8,
+   "summary": "The board unanimously approved the previous meeting's minutes as written.",
    "speakers": [
     "Clayton",
     "Dee Morris"
    ]
   },
   {
-   "title": "Seven Acres Expansion Project Update",
+   "title": "Seven Acres Cemetery Expansion",
    "t": 118,
-   "summary": "Clayton reported on a meeting with the mayor regarding the Seven Acres project, detailing plans for public education, a media release, community polling, and a public hearing before final funding decisions are made.",
+   "summary": "Clayton reported on discussions with the mayor regarding the Seven Acres expansion to address burial capacity projected to run out in approximately three years, outlining plans for historical education, a press release, community polling, and a subsequent public hearing.",
    "speakers": [
     "Clayton",
+    "Steve",
     "Dee Morris"
    ]
   },
   {
-   "title": "Maintenance and Restoration Updates",
-   "t": 645,
-   "summary": "Theresa Dupont and trustees reviewed maintenance items including fountain winterization, gravel removal, World War II fountain cleaning, and Cross Street Cemetery restoration work following ground-penetrating radar surveys.",
+   "title": "Cemetery Maintenance and Cross Street Restoration Updates",
+   "t": 636,
+   "summary": "Updates were shared on fountain winterization, gravel removal, and the Cross Street Cemetery project, where monument restoration and ground-penetrating radar surveys are nearly complete pending gate repairs.",
    "speakers": [
     "Clayton",
+    "Steve",
     "Theresa Dupont"
    ]
   },
   {
-   "title": "Burial Capacity and Veterans Section Planning",
-   "t": 1119,
-   "summary": "The board discussed opening new burial graves as Mulberry Lane reaches capacity and coordinating with city engineers to design a multi-conflict veterans area.",
+   "title": "Grave Capacity, Mausoleum Proposal, and Staffing",
+   "t": 1115,
+   "summary": "Steve reported that developed Vietnam veteran plots are at capacity, discussions are underway with engineering to design a multi-conflict veterans section, burial rights were acquired for an adjacent private mausoleum, and newly hired grounds staff will bring maintenance up to full staffing.",
    "speakers": [
-    "Clayton"
-   ]
-  },
-  {
-   "title": "Mausoleum Proposal and Staffing Updates",
-   "t": 1224,
-   "summary": "Trustees learned of a private plot transfer intended for a future mausoleum that will require board approval, and received updates that cemetery maintenance staffing will soon be fully filled.",
-   "speakers": [
+    "Steve",
     "Clayton",
     "Dee Morris"
    ]
@@ -55,8 +50,8 @@
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 10846,
-  "output_tokens": 403,
-  "model_version": "gemini-3.6-flash"
+  "input_tokens": 10847,
+  "output_tokens": 378,
+  "model_version": "gemini-3.8-flash"
  }
 }
