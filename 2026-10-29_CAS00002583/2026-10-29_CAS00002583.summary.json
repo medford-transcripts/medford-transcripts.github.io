@@ -1,48 +1,48 @@
 {
  "video_id": "CAS00002583",
  "provider": "gemini",
- "generated_at": "2026-11-23T19:07:09Z",
+ "generated_at": "2026-11-23T20:06:20Z",
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "2d6a0f7f250fad62",
- "subject": "",
- "overview": "Arlington Catholic High School defeated Medford High School 20-6 in a varsity football game. Medford mounted a fourth-quarter touchdown drive following a quarterback change, but Arlington Catholic responded with a late touchdown to secure the win.",
+ "transcript_sha": "2b5eef2cd7925638",
+ "subject": "Arlington Catholic Football Game",
+ "overview": "Medford High School hosted Arlington Catholic in a varsity football contest. Arlington Catholic defeated Medford by a final score of 20-6.",
  "items": [
   {
    "title": "First Quarter",
    "t": 84,
-   "summary": "Arlington Catholic won the coin toss, and both defenses held each other scoreless through the opening quarter.",
+   "summary": "Arlington Catholic won the coin toss and received the opening kickoff, with both teams remaining scoreless through the opening period.",
    "speakers": []
   },
   {
    "title": "Second Quarter",
    "t": 1437,
-   "summary": "Arlington Catholic built a 14-0 halftime lead following touchdown plays by Brady Cassidy and Jordan Nash.",
+   "summary": "Arlington Catholic built a 14-0 lead following a touchdown run by Brady Cassidy and a touchdown pass to Jordan Nash after an onside kick recovery.",
    "speakers": []
   },
   {
-   "title": "Halftime Performance",
-   "t": 3372,
-   "summary": "The Medford High School Marching Band performed on the field during halftime.",
+   "title": "Halftime Intermission",
+   "t": 3395,
+   "summary": "The Medford High School Marching Band performed during the halftime break.",
    "speakers": []
   },
   {
    "title": "Third Quarter",
    "t": 4169,
-   "summary": "Medford introduced Devin Brown at quarterback to generate offense, but penalties and a red-zone fumble kept Medford scoreless.",
+   "summary": "Medford inserted Devin Brown at quarterback to move into Arlington Catholic territory, but penalties and a turnover stalled the drive.",
    "speakers": []
   },
   {
    "title": "Fourth Quarter",
-   "t": 5624,
-   "summary": "Medford cut the deficit with a Devin Brown quarterback sneak, but Arlington Catholic answered with a touchdown run by Tyler Venezia to close out a 20-6 victory.",
+   "t": 5702,
+   "summary": "Medford cut the deficit to 14-6 on a Devin Brown touchdown sneak, but Arlington Catholic answered with a Tyler Venezia touchdown run to seal a 20-6 victory.",
    "speakers": []
   }
  ],
  "dropped": 0,
  "usage": {
   "input_tokens": 28794,
-  "output_tokens": 334,
+  "output_tokens": 339,
   "model_version": "gemini-3.6-flash"
  }
 }
