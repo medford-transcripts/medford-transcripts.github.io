@@ -1,0 +1,48 @@
+{
+ "video_id": "CAS00002583",
+ "provider": "gemini",
+ "generated_at": "2026-11-23T19:07:09Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "2d6a0f7f250fad62",
+ "subject": "",
+ "overview": "Arlington Catholic High School defeated Medford High School 20-6 in a varsity football game. Medford mounted a fourth-quarter touchdown drive following a quarterback change, but Arlington Catholic responded with a late touchdown to secure the win.",
+ "items": [
+  {
+   "title": "First Quarter",
+   "t": 84,
+   "summary": "Arlington Catholic won the coin toss, and both defenses held each other scoreless through the opening quarter.",
+   "speakers": []
+  },
+  {
+   "title": "Second Quarter",
+   "t": 1437,
+   "summary": "Arlington Catholic built a 14-0 halftime lead following touchdown plays by Brady Cassidy and Jordan Nash.",
+   "speakers": []
+  },
+  {
+   "title": "Halftime Performance",
+   "t": 3372,
+   "summary": "The Medford High School Marching Band performed on the field during halftime.",
+   "speakers": []
+  },
+  {
+   "title": "Third Quarter",
+   "t": 4169,
+   "summary": "Medford introduced Devin Brown at quarterback to generate offense, but penalties and a red-zone fumble kept Medford scoreless.",
+   "speakers": []
+  },
+  {
+   "title": "Fourth Quarter",
+   "t": 5624,
+   "summary": "Medford cut the deficit with a Devin Brown quarterback sneak, but Arlington Catholic answered with a touchdown run by Tyler Venezia to close out a 20-6 victory.",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 28794,
+  "output_tokens": 334,
+  "model_version": "gemini-3.6-flash"
+ }
+}
