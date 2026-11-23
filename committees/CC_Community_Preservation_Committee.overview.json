@@ -1,22 +1,22 @@
 {
  "committee": "CC Community Preservation Committee",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-11-09T16:11:51Z",
- "sources_sha": "0874b0431c2dc746",
- "n_meetings": 33,
+ "generated_at": "2026-11-23T12:08:27Z",
+ "sources_sha": "0922ff8ddce383c9",
+ "n_meetings": 38,
  "period_style": "term",
  "span": [
-  "2018-04-24",
-  "2026-10-13"
+  "2018-03-12",
+  "2026-11-10"
  ],
- "overview": "The Community Preservation Committee (CPC) is responsible for recommending the allocation of Community Preservation Act (CPA) funds toward open space, recreation, historic preservation, and affordable housing projects in Medford. Since its inaugural meetings in 2018, the committee has managed millions of dollars in local surcharges and state matching funds, developing rigorous application guidelines and project evaluation criteria. The body serves as a central hub for reviewing proposals from city departments, non-profits, and private historic property owners. As of October 2026, the committee is reviewing a new round of applications for the 2027 fiscal year while refining its strategies for long-term bonding and large-scale municipal projects.",
+ "overview": "The CC Community Preservation Committee administers local Community Preservation Act funds derived from property tax surcharges and state trust fund matches to support affordable housing, open space, recreation, and historic preservation projects in Medford. The committee's archived meetings cover a timeline extending from March 12, 2018, through November 10, 2026. Over this span, the body has evaluated annual grant applications, established funding set-asides, monitored active capital projects, and executed emergency and small grant recommendations. At its November 10, 2026 meeting, the committee evaluated FY27 proposals for shoreline design and Affordable Housing Trust support, approved an emergency roof grant for the Unitarian Universalist Church, and reallocated lighting funds between municipal parks.",
  "threads": [
   {
-   "name": "Affordable Housing Initiatives",
+   "name": "Affordable housing and Walkling Court redevelopment",
    "status": "ongoing",
-   "summary": "Early work focused on individual unit construction and heating conversions for housing authority residents. The committee eventually transitioned to multi-year, multi-million dollar commitments for large redevelopments, most notably recommending $2.4 million for the Walkling Court project. Recent work includes the establishment of a dedicated Affordable Housing Trust Fund to manage seed money and homebuyer assistance programs. The committee also supports homelessness prevention through rental assistance grants.",
+   "summary": "The committee evaluated affordable housing initiatives early in its tenure, reviewing proposals from local housing organizations for multi-unit construction and heating conversions (M02#3, M03#2, M03#3). In late 2022, the Medford Housing Authority presented a multi-million dollar proposal for the expansion and redevelopment of Walkling Court (M11#7). The committee voted to recommend $800,000 in pre-development loan funding for Walkling Court Phase 1 in early 2023, followed by additional construction allocation support later that year (M14#1, M17#3). The committee also expanded housing efforts by recommending seed funding and annual allocations to the newly created Medford Affordable Housing Trust (M24#2, M25#10, M38#2). By mid-2026, construction for Walkling Court Phase 1 was confirmed to begin in late summer 2026 (M33#4).",
    "citations": [
     {
      "video_id": "I5lIrWN8Vh8",
@@ -25,16 +25,16 @@
      "base": "2018-04-26_I5lIrWN8Vh8",
      "meeting_title": "Community Preservation Committee Meeting 04/24/18",
      "title": "Medford Community Housing Affordable Units",
-     "label": "M01#3"
+     "label": "M02#3"
     },
     {
      "video_id": "0HXibsUvumY",
-     "t": 3834,
+     "t": 1404,
      "date": "2018-05-01",
      "base": "2018-05-07_0HXibsUvumY",
      "meeting_title": "Community Preservation Committee Meeting 05/01/18",
-     "title": "LaPrise Village Heating Conversion",
-     "label": "M02#3"
+     "title": "St. Clement and St. Francis Affordable Housing Development",
+     "label": "M03#2"
     },
     {
      "video_id": "MCM00001074",
@@ -43,7 +43,7 @@
      "base": "2024-08-05_MCM00001074",
      "meeting_title": "Medford Community Preservation Committee 11-30-22",
      "title": "Walkland Court Affordable Housing Redevelopment",
-     "label": "M10#7"
+     "label": "M11#7"
     },
     {
      "video_id": "MCM00001038",
@@ -52,7 +52,25 @@
      "base": "2024-07-29_MCM00001038",
      "meeting_title": "Medford Community Preservation Committee 03-14-23",
      "title": "Walkling Court Phase 1 Funding",
-     "label": "M13#1"
+     "label": "M14#1"
+    },
+    {
+     "video_id": "MCM00001036",
+     "t": 787,
+     "date": "2023-08-22",
+     "base": "2024-07-29_MCM00001036",
+     "meeting_title": "Medford Community Preservation Committee 08-22-23",
+     "title": "Walkland Court Funding Request",
+     "label": "M17#3"
+    },
+    {
+     "video_id": "MCM00001588",
+     "t": 613,
+     "date": "2024-10-22",
+     "base": "2024-11-26_MCM00001588",
+     "meeting_title": "Medford Community Preservation Committee 10-22-24",
+     "title": "Affordable Housing Trust Funding Proposal",
+     "label": "M24#2"
     },
     {
      "video_id": "MCM00001648",
@@ -61,111 +79,32 @@
      "base": "2024-12-12_MCM00001648",
      "meeting_title": "Medford Community Preservation Committee 12-10-24",
      "title": "Medford Affordable Housing Trust Seed Funding",
-     "label": "M24#10"
+     "label": "M25#10"
     },
     {
      "video_id": "CAS00002455",
-     "t": 3411,
+     "t": 4463,
      "date": "2026-06-09",
      "base": "2026-06-11_CAS00002455",
      "meeting_title": "Community Preservation Committee 06/09/26",
-     "title": "Affordable Housing Trust Fund Update",
-     "label": "M30#3"
+     "title": "Walkling Court Redevelopment Update",
+     "label": "M33#4"
     },
     {
-     "video_id": "CAS00002562",
-     "t": 57,
-     "date": "2026-10-13",
-     "base": "2026-10-14_CAS00002562",
-     "meeting_title": "Community Preservation Committee 10/13/26",
-     "title": "ABCD Medford Move In Medford Move Forward",
-     "label": "M33#1"
+     "video_id": "CAS00002598",
+     "t": 2230,
+     "date": "2026-11-10",
+     "base": "2026-11-13_CAS00002598",
+     "meeting_title": "Community Preservation Committee 11/10/26",
+     "title": "Medford Affordable Housing Trust FY27 Funding Request",
+     "label": "M38#2"
     }
    ]
   },
   {
-   "name": "Park and Playground Development",
+   "name": "Brooks Estate historic preservation and land management",
    "status": "ongoing",
-   "summary": "The committee has consistently funded the design and construction of inclusive recreational spaces, including the $2.8 million universally accessible playground at McGlynn School. Major recurring projects include the phased renovation of Carr Park for pickleball and other amenities, and the reconstruction of tennis courts at Playstead Park. Funding has also been used to leverage larger state and federal grants through initial feasibility and design studies. Recently, the committee has expanded its focus to include athletic court resurfacing at Victory Park and athletic field lighting at Tufts Park.",
-   "citations": [
-    {
-     "video_id": "_Zabvvh8vxM",
-     "t": 117,
-     "date": "2018-10-02",
-     "base": "2018-10-05__Zabvvh8vxM",
-     "meeting_title": "CPC Meeting 10/2/18",
-     "title": "Harris Park Phase 2 Design Funding",
-     "label": "M04#1"
-    },
-    {
-     "video_id": "MCM00001035",
-     "t": 2696,
-     "date": "2023-01-10",
-     "base": "2024-07-29_MCM00001035",
-     "meeting_title": "Medford Community Preservation Committee 01-10-23",
-     "title": "McGlynn Playground Rehabilitation",
-     "label": "M12#4"
-    },
-    {
-     "video_id": "MCM00001035",
-     "t": 7166,
-     "date": "2023-01-10",
-     "base": "2024-07-29_MCM00001035",
-     "meeting_title": "Medford Community Preservation Committee 01-10-23",
-     "title": "Carr Park Pickleball Courts",
-     "label": "M12#11"
-    },
-    {
-     "video_id": "MCM00001449",
-     "t": 2772,
-     "date": "2024-06-11",
-     "base": "2024-09-17_MCM00001449",
-     "meeting_title": "Medford Community Preservation Committee 06-11-24",
-     "title": "McGlynn School Playground Project Update",
-     "label": "M19#4"
-    },
-    {
-     "video_id": "MCM00001648",
-     "t": 1521,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001648",
-     "meeting_title": "Medford Community Preservation Committee 12-10-24",
-     "title": "Carr Park Renovation Phase Two",
-     "label": "M24#3"
-    },
-    {
-     "video_id": "MCM00001648",
-     "t": 1759,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001648",
-     "meeting_title": "Medford Community Preservation Committee 12-10-24",
-     "title": "Playstead Park Tennis Courts Reconstruction",
-     "label": "M24#5"
-    },
-    {
-     "video_id": "CAS00002519",
-     "t": 4146,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002519",
-     "meeting_title": "Community Preservation Committee 09/08/26",
-     "title": "Tufts Park Field Lighting Improvements",
-     "label": "M32#6"
-    },
-    {
-     "video_id": "CAS00002562",
-     "t": 3654,
-     "date": "2026-10-13",
-     "base": "2026-10-14_CAS00002562",
-     "meeting_title": "Community Preservation Committee 10/13/26",
-     "title": "Victory Park Athletic Courts",
-     "label": "M33#5"
-    }
-   ]
-  },
-  {
-   "name": "Brooks Estate Restoration",
-   "status": "ongoing",
-   "summary": "Restoration of the historic Shepherd Brooks Manor and its surrounding estate has been a core thread since the committee's inception. Funded projects range from invasive species management and trail restoration to major structural work on the manor's east entryways and wood trim. The committee has also supported professional engineering for the estate's historic 1,900-foot access drive. Most recently, the committee approved a small grant for an archaeological sensitivity report covering the estate and a neighboring cemetery parcel.",
+   "summary": "Preservation and restoration at the Shepherd Brooks Estate emerged as an early focus, covering invasive species control, access drive engineering, stone wall repair, and manor wood trim painting (M02#4, M02#6, M05#3, M05#4). In 2022 and 2023, the committee evaluated further requests for water line testing, access drive design amendments, and exterior envelope restorations (M10#6, M13#12). The body also funded small grant initiatives to design an archaeological protective cap at Thomas Brooks Park (M17#5). In 2026, the committee approved a $10,000 small grant for a desktop archaeological survey covering the estate and neighboring land (M29#1, M35#1).",
    "citations": [
     {
      "video_id": "I5lIrWN8Vh8",
@@ -174,25 +113,25 @@
      "base": "2018-04-26_I5lIrWN8Vh8",
      "meeting_title": "Community Preservation Committee Meeting 04/24/18",
      "title": "Brooks Estate Invasive Species Management",
-     "label": "M01#4"
+     "label": "M02#4"
     },
     {
      "video_id": "I5lIrWN8Vh8",
-     "t": 3907,
+     "t": 4500,
      "date": "2018-04-24",
      "base": "2018-04-26_I5lIrWN8Vh8",
      "meeting_title": "Community Preservation Committee Meeting 04/24/18",
-     "title": "Brooks Estate Manor East Entryways Restoration",
-     "label": "M01#5"
+     "title": "Brooks Estate Access Drive Design",
+     "label": "M02#6"
     },
     {
      "video_id": "_Zabvvh8vxM",
-     "t": 2814,
+     "t": 2033,
      "date": "2018-10-02",
      "base": "2018-10-05__Zabvvh8vxM",
      "meeting_title": "CPC Meeting 10/2/18",
-     "title": "Brooks Estate Manor Wood Trim Restoration",
-     "label": "M04#4"
+     "title": "Brooks Estate Stone Wall Restoration",
+     "label": "M05#3"
     },
     {
      "video_id": "MCM00001075",
@@ -201,7 +140,7 @@
      "base": "2024-08-05_MCM00001075",
      "meeting_title": "Medford Community Preservation Committee 11-15-22",
      "title": "Brooks Estate Access Drive and Manor Restoration",
-     "label": "M09#6"
+     "label": "M10#6"
     },
     {
      "video_id": "MCM00001035",
@@ -210,7 +149,25 @@
      "base": "2024-07-29_MCM00001035",
      "meeting_title": "Medford Community Preservation Committee 01-10-23",
      "title": "Brooks Estate Access Drive Design",
-     "label": "M12#12"
+     "label": "M13#12"
+    },
+    {
+     "video_id": "MCM00001036",
+     "t": 6625,
+     "date": "2023-08-22",
+     "base": "2024-07-29_MCM00001036",
+     "meeting_title": "Medford Community Preservation Committee 08-22-23",
+     "title": "Thomas Brooks Park Archaeological Cap",
+     "label": "M17#5"
+    },
+    {
+     "video_id": "CAS00002301",
+     "t": 70,
+     "date": "2026-01-13",
+     "base": "2026-01-14_CAS00002301",
+     "meeting_title": "Community Preservation Committee 01/13/26",
+     "title": "Brooks Estate Archaeological Survey Small Grant Application",
+     "label": "M29#1"
     },
     {
      "video_id": "CAS00002519",
@@ -219,163 +176,14 @@
      "base": "2026-09-09_CAS00002519",
      "meeting_title": "Community Preservation Committee 09/08/26",
      "title": "Brooks Estate Archaeological Survey",
-     "label": "M32#1"
+     "label": "M35#1"
     }
    ]
   },
   {
-   "name": "Historic Cemetery Preservation",
+   "name": "Historic church building restorations",
    "status": "ongoing",
-   "summary": "The committee oversees ongoing preservation efforts at Oak Grove, Cross Street, and the Salem Street Burial Ground. Early projects involved landscape rehabilitation and wall repairs, evolving into a comprehensive master planning study for cemetery buildings and caretakers' quarters. Significant funding has been recommended for the restoration of the Angel of Victory and Peace fountain and veteran headstones. Ongoing discussions involve the long-term strategic plan for cemetery structures, weighing restoration against the construction of new operational facilities.",
-   "citations": [
-    {
-     "video_id": "sBk_gQcj4fU",
-     "t": 2400,
-     "date": "2018-09-25",
-     "base": "2018-10-01_sBk_gQcj4fU",
-     "meeting_title": "Medford CPC Meeting 9/25/18",
-     "title": "Oak Grove Cemetery Landscape Rehabilitation",
-     "label": "M03#4"
-    },
-    {
-     "video_id": "MCM00001075",
-     "t": 1949,
-     "date": "2022-11-15",
-     "base": "2024-08-05_MCM00001075",
-     "meeting_title": "Medford Community Preservation Committee 11-15-22",
-     "title": "Salem Street Burial Ground Wall Restoration",
-     "label": "M09#4"
-    },
-    {
-     "video_id": "MCM00001035",
-     "t": 2186,
-     "date": "2023-01-10",
-     "base": "2024-07-29_MCM00001035",
-     "meeting_title": "Medford Community Preservation Committee 01-10-23",
-     "title": "Oak Grove Cemetery Caretaker Quarters",
-     "label": "M12#3"
-    },
-    {
-     "video_id": "MCM00001648",
-     "t": 3379,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001648",
-     "meeting_title": "Medford Community Preservation Committee 12-10-24",
-     "title": "Oak Grove Cemetery Building Restoration",
-     "label": "M24#8"
-    },
-    {
-     "video_id": "MCM00001737",
-     "t": 62,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001737",
-     "meeting_title": "Medford Community Preservation Committee 02-11-25",
-     "title": "Cross Street Cemetery Headstone Restoration",
-     "label": "M25#1"
-    },
-    {
-     "video_id": "MCM00001830",
-     "t": 159,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001830",
-     "meeting_title": "Community Preservation Committee 10-14-25",
-     "title": "Angel of Victory and Peace Fountain Restoration",
-     "label": "M27#1"
-    },
-    {
-     "video_id": "MCM00001830",
-     "t": 6327,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001830",
-     "meeting_title": "Community Preservation Committee 10-14-25",
-     "title": "Oak Grove Cemetery Buildings Preservation",
-     "label": "M27#6"
-    },
-    {
-     "video_id": "CAS00002519",
-     "t": 3407,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002519",
-     "meeting_title": "Community Preservation Committee 09/08/26",
-     "title": "Cross Street Cemetery Restoration Phase 2",
-     "label": "M32#4"
-    }
-   ]
-  },
-  {
-   "name": "Municipal Building and Infrastructure Maintenance",
-   "status": "ongoing",
-   "summary": "Municipal preservation has increasingly focused on City Hall, including restroom ADA compliance and historically accurate window restorations in the City Council chambers. The committee has also funded repairs for the Condon Shell and studied potential uses for the Curtis Tufts school and the Hegner Center. In 2026, the committee began reviewing a large request for City Hall limestone facade repairs. While it supports municipal assets, the committee denied a pivot request to use preservation funds for fire station HVAC systems, as the work did not meet eligibility requirements.",
-   "citations": [
-    {
-     "video_id": "0HXibsUvumY",
-     "t": 21,
-     "date": "2018-05-01",
-     "base": "2018-05-07_0HXibsUvumY",
-     "meeting_title": "Community Preservation Committee Meeting 05/01/18",
-     "title": "Condon Shell Renovations",
-     "label": "M02#1"
-    },
-    {
-     "video_id": "MCM00001779",
-     "t": 3417,
-     "date": "2024-03-12",
-     "base": "2025-07-11_MCM00001779",
-     "meeting_title": "Community Preservation Act 03-12-24",
-     "title": "Historic Preservation and Municipal Assets",
-     "label": "M17#4"
-    },
-    {
-     "video_id": "MCM00001446",
-     "t": 2252,
-     "date": "2024-07-09",
-     "base": "2024-09-17_MCM00001446",
-     "meeting_title": "Medford Community Preservation Committee 07-09-24",
-     "title": "Fire Station Windows Study Pivot Request",
-     "label": "M20#3"
-    },
-    {
-     "video_id": "MCM00001595",
-     "t": 2508,
-     "date": "2024-10-08",
-     "base": "2024-11-26_MCM00001595",
-     "meeting_title": "Medford Community Preservation Committee 10-08-24",
-     "title": "City Hall Restroom ADA Upgrades",
-     "label": "M22#4"
-    },
-    {
-     "video_id": "MCM00001595",
-     "t": 5434,
-     "date": "2024-10-08",
-     "base": "2024-11-26_MCM00001595",
-     "meeting_title": "Medford Community Preservation Committee 10-08-24",
-     "title": "Hegner Center Building Restoration",
-     "label": "M22#5"
-    },
-    {
-     "video_id": "MCM00001648",
-     "t": 2468,
-     "date": "2024-12-10",
-     "base": "2024-12-12_MCM00001648",
-     "meeting_title": "Medford Community Preservation Committee 12-10-24",
-     "title": "City Hall Council Chambers Window Restoration Approval",
-     "label": "M24#7"
-    },
-    {
-     "video_id": "CAS00002562",
-     "t": 1128,
-     "date": "2026-10-13",
-     "base": "2026-10-14_CAS00002562",
-     "meeting_title": "Community Preservation Committee 10/13/26",
-     "title": "City Hall Facade Restoration",
-     "label": "M33#2"
-    }
-   ]
-  },
-  {
-   "name": "Private Property and Religious Institution Preservation",
-   "status": "ongoing",
-   "summary": "The committee provides grants for historic preservation on non-municipal properties, including several local churches and sites like the Royall House and Isaac Hall House. Projects often include exterior siding, wood trim restoration, and stained-glass window repairs at Shiloh Baptist and Unitarian Universalist churches. These grants are typically conditioned on preservation restrictions and the exclusion of religious imagery from funded elements. Recent deliberations have focused on establishing stricter guidelines for public funding of private property to ensure functional community use.",
+   "summary": "In 2022, Shiloh Baptist Church requested CPA funds to restore historic stained-glass windows, resulting in a recommended $150,000 grant conditioned on a preservation restriction and the exclusion of religious imagery from funded panels (M11#6, M13#2). During the same period, the committee recommended window restoration funds for the historic Isaac Hall House (M11#5, M13#5). Shiloh Baptist Church later secured additional recommendations for ADA accessibility improvements and Phase 2 stained-glass restoration across subsequent grant cycles (M25#9, M29#5, M35#5). In late 2026, the committee evaluated further requests for Shiloh Baptist Church windows and voted to approve an emergency roof grant for the Unitarian Universalist Church (M37#1, M38#3).",
    "citations": [
     {
      "video_id": "MCM00001074",
@@ -384,7 +192,16 @@
      "base": "2024-08-05_MCM00001074",
      "meeting_title": "Medford Community Preservation Committee 11-30-22",
      "title": "Isaac Hall House Exterior Restoration",
-     "label": "M10#5"
+     "label": "M11#5"
+    },
+    {
+     "video_id": "MCM00001074",
+     "t": 6645,
+     "date": "2022-11-30",
+     "base": "2024-08-05_MCM00001074",
+     "meeting_title": "Medford Community Preservation Committee 11-30-22",
+     "title": "Shiloh Baptist Church Window Restoration",
+     "label": "M11#6"
     },
     {
      "video_id": "MCM00001035",
@@ -393,69 +210,297 @@
      "base": "2024-07-29_MCM00001035",
      "meeting_title": "Medford Community Preservation Committee 01-10-23",
      "title": "Shiloh Baptist Church Funding Recommendation",
-     "label": "M12#2"
+     "label": "M13#2"
+    },
+    {
+     "video_id": "MCM00001035",
+     "t": 4424,
+     "date": "2023-01-10",
+     "base": "2024-07-29_MCM00001035",
+     "meeting_title": "Medford Community Preservation Committee 01-10-23",
+     "title": "Isaac Hall House (Islamic Cultural Center of Medford)",
+     "label": "M13#5"
     },
     {
      "video_id": "MCM00001648",
-     "t": 2423,
+     "t": 3570,
      "date": "2024-12-10",
      "base": "2024-12-12_MCM00001648",
      "meeting_title": "Medford Community Preservation Committee 12-10-24",
-     "title": "Unitarian Universalist Church Siding Restoration",
-     "label": "M24#6"
+     "title": "Shiloh Baptist Church ADA Improvements",
+     "label": "M25#9"
     },
     {
-     "video_id": "MCM00001775",
-     "t": 74,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001775",
-     "meeting_title": "Community Preservation Committee 07-08-25",
-     "title": "Medford Armory Emergency Building Restoration",
-     "label": "M26#1"
-    },
-    {
-     "video_id": "MCM00001775",
-     "t": 1909,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001775",
-     "meeting_title": "Community Preservation Committee 07-08-25",
-     "title": "Guidelines for Private Building Preservation",
-     "label": "M26#2"
-    },
-    {
-     "video_id": "CAS00002455",
-     "t": 1853,
-     "date": "2026-06-09",
-     "base": "2026-06-11_CAS00002455",
-     "meeting_title": "Community Preservation Committee 06/09/26",
-     "title": "Royall House Perimeter Wall Emergency Restoration",
-     "label": "M30#2"
-    },
-    {
-     "video_id": "CAS00002486",
-     "t": 116,
-     "date": "2026-07-14",
-     "base": "2026-07-16_CAS00002486",
-     "meeting_title": "Community Preservation Committee 07/14/26",
-     "title": "Osgood House Restoration Funding",
-     "label": "M31#1"
-    },
-    {
-     "video_id": "CAS00002519",
+     "video_id": "CAS00002301",
      "t": 3535,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002519",
-     "meeting_title": "Community Preservation Committee 09/08/26",
-     "title": "Shiloh Baptist Church Window Restoration Phase 2",
-     "label": "M32#5"
+     "date": "2026-01-13",
+     "base": "2026-01-14_CAS00002301",
+     "meeting_title": "Community Preservation Committee 01/13/26",
+     "title": "Shiloh Baptist Church Window Restoration Phase Two",
+     "label": "M29#5"
+    },
+    {
+     "video_id": "CAS00002582",
+     "t": 59,
+     "date": "2026-10-27",
+     "base": "2026-10-28_CAS00002582",
+     "meeting_title": "Community Preservation Committee 10/27/26",
+     "title": "Shiloh Baptist Church Stained Glass Window Restoration",
+     "label": "M37#1"
+    },
+    {
+     "video_id": "CAS00002598",
+     "t": 3242,
+     "date": "2026-11-10",
+     "base": "2026-11-13_CAS00002598",
+     "meeting_title": "Community Preservation Committee 11/10/26",
+     "title": "Unitarian Universalist Church Roof Repair Grant",
+     "label": "M38#3"
     }
    ]
   },
   {
-   "name": "Administrative Policy and Grant Management",
+   "name": "Condon Shell facility and lighting upgrades",
    "status": "ongoing",
-   "summary": "The committee continuously refines its administrative operations, including the hiring of a full-time CPA manager in 2023. Key policy changes include increasing the small grant limit from $5,000 to $10,000 and removing mandatory matching requirements to increase accessibility. The committee also establishes annual budget set-asides, recently increasing the minimum allocation for affordable housing to 15%. Ongoing efforts include improving application transparency through online templates and public outreach via QR codes and community events.",
+   "summary": "Initial CPA support for the Condon Shell was introduced in 2018 to fund exterior cleaning, masonry weatherproofing, and lighting repair requests (M03#1). In 2023, the committee approved a $3,276 small grant to install electrical outlets and safety lighting for public performances and events (M17#2). Proponents returned in late 2024 with a request for app-controlled field and walkway lighting, which received a recommendation for $98,285 in funding (M24#1, M25#4). In late 2026, to address unexpected construction cost shortfalls, the committee approved reallocating $50,000 from an existing Tufts Park grant to complete the Condon Shell lighting work (M36#4, M38#4).",
    "citations": [
+    {
+     "video_id": "0HXibsUvumY",
+     "t": 21,
+     "date": "2018-05-01",
+     "base": "2018-05-07_0HXibsUvumY",
+     "meeting_title": "Community Preservation Committee Meeting 05/01/18",
+     "title": "Condon Shell Renovations",
+     "label": "M03#1"
+    },
+    {
+     "video_id": "MCM00001036",
+     "t": 205,
+     "date": "2023-08-22",
+     "base": "2024-07-29_MCM00001036",
+     "meeting_title": "Medford Community Preservation Committee 08-22-23",
+     "title": "Condon Shell Electrical Upgrade",
+     "label": "M17#2"
+    },
+    {
+     "video_id": "MCM00001588",
+     "t": 115,
+     "date": "2024-10-22",
+     "base": "2024-11-26_MCM00001588",
+     "meeting_title": "Medford Community Preservation Committee 10-22-24",
+     "title": "Condon Shell Lighting Application",
+     "label": "M24#1"
+    },
+    {
+     "video_id": "MCM00001648",
+     "t": 1663,
+     "date": "2024-12-10",
+     "base": "2024-12-12_MCM00001648",
+     "meeting_title": "Medford Community Preservation Committee 12-10-24",
+     "title": "Condon Shell Lighting Improvements",
+     "label": "M25#4"
+    },
+    {
+     "video_id": "CAS00002562",
+     "t": 2758,
+     "date": "2026-10-13",
+     "base": "2026-10-14_CAS00002562",
+     "meeting_title": "Community Preservation Committee 10/13/26",
+     "title": "Condon Shell Lighting Budget Pivot",
+     "label": "M36#4"
+    },
+    {
+     "video_id": "CAS00002598",
+     "t": 4849,
+     "date": "2026-11-10",
+     "base": "2026-11-13_CAS00002598",
+     "meeting_title": "Community Preservation Committee 11/10/26",
+     "title": "Condon Shell Field Lighting Funding Reallocation",
+     "label": "M38#4"
+    }
+   ]
+  },
+  {
+   "name": "School playground and youth recreation improvements",
+   "status": "settled",
+   "summary": "Recreation requests initially included surfacing replacement at Roberts Elementary School (M02#2). In 2022 and 2023, the committee evaluated and recommended $900,000 across two phases for a universally accessible playground at the McGlynn School (M11#4, M13#4, M17#4). Small grants were awarded in 2024 to install additional play features at Roberts and McGlynn schools while construction on the main inclusive playground neared completion (M20#2, M20#3, M20#4). In 2026, the committee shifted focus to broader youth accessibility by reviewing architectural design studies for playgrounds across three additional elementary schools (M37#4).",
+   "citations": [
+    {
+     "video_id": "I5lIrWN8Vh8",
+     "t": 114,
+     "date": "2018-04-24",
+     "base": "2018-04-26_I5lIrWN8Vh8",
+     "meeting_title": "Community Preservation Committee Meeting 04/24/18",
+     "title": "Roberts School Playground Surfacing",
+     "label": "M02#2"
+    },
+    {
+     "video_id": "MCM00001074",
+     "t": 2856,
+     "date": "2022-11-30",
+     "base": "2024-08-05_MCM00001074",
+     "meeting_title": "Medford Community Preservation Committee 11-30-22",
+     "title": "McGlynn University Accessible Playground",
+     "label": "M11#4"
+    },
+    {
+     "video_id": "MCM00001035",
+     "t": 2696,
+     "date": "2023-01-10",
+     "base": "2024-07-29_MCM00001035",
+     "meeting_title": "Medford Community Preservation Committee 01-10-23",
+     "title": "McGlynn Playground Rehabilitation",
+     "label": "M13#4"
+    },
+    {
+     "video_id": "MCM00001036",
+     "t": 3516,
+     "date": "2023-08-22",
+     "base": "2024-07-29_MCM00001036",
+     "meeting_title": "Medford Community Preservation Committee 08-22-23",
+     "title": "McGlynn School Playground Renovation",
+     "label": "M17#4"
+    },
+    {
+     "video_id": "MCM00001449",
+     "t": 1303,
+     "date": "2024-06-11",
+     "base": "2024-09-17_MCM00001449",
+     "meeting_title": "Medford Community Preservation Committee 06-11-24",
+     "title": "Roberts Elementary School Basketball Hoop",
+     "label": "M20#2"
+    },
+    {
+     "video_id": "MCM00001449",
+     "t": 2451,
+     "date": "2024-06-11",
+     "base": "2024-09-17_MCM00001449",
+     "meeting_title": "Medford Community Preservation Committee 06-11-24",
+     "title": "McGlynn School Gaga Ball Pit",
+     "label": "M20#3"
+    },
+    {
+     "video_id": "MCM00001449",
+     "t": 2772,
+     "date": "2024-06-11",
+     "base": "2024-09-17_MCM00001449",
+     "meeting_title": "Medford Community Preservation Committee 06-11-24",
+     "title": "McGlynn School Playground Project Update",
+     "label": "M20#4"
+    },
+    {
+     "video_id": "CAS00002582",
+     "t": 3485,
+     "date": "2026-10-27",
+     "base": "2026-10-28_CAS00002582",
+     "meeting_title": "Community Preservation Committee 10/27/26",
+     "title": "Medford Public Schools Playground and Curtis Tufts Preservation Studies",
+     "label": "M37#4"
+    }
+   ]
+  },
+  {
+   "name": "Municipal cemetery preservation and maintenance",
+   "status": "ongoing",
+   "summary": "Early cemetery preservation efforts focused on tree replacements and informational kiosk installation at Oak Grove Cemetery (M04#4). In 2022 and 2023, the committee reviewed and recommended funding for perimeter brick wall repairs at Salem Street Burial Ground and a feasibility study for Oak Grove's historic caretakers' quarters (M10#2, M10#4, M13#3). Subsequent cycles yielded recommendations for Oak Grove building preservation design, veteran headstone restoration at Cross Street Cemetery, and system repairs for the Angel of Victory and Peace Fountain (M25#8, M26#1, M28#1, M35#3, M35#4). DPW officials continue to engage the committee on broader master planning and facility options for cemetery structures (M28#6).",
+   "citations": [
+    {
+     "video_id": "sBk_gQcj4fU",
+     "t": 2400,
+     "date": "2018-09-25",
+     "base": "2018-10-01_sBk_gQcj4fU",
+     "meeting_title": "Medford CPC Meeting 9/25/18",
+     "title": "Oak Grove Cemetery Landscape Rehabilitation",
+     "label": "M04#4"
+    },
+    {
+     "video_id": "MCM00001075",
+     "t": 126,
+     "date": "2022-11-15",
+     "base": "2024-08-05_MCM00001075",
+     "meeting_title": "Medford Community Preservation Committee 11-15-22",
+     "title": "Oak Grove Cemetery Caretakers' Quarters Feasibility Study",
+     "label": "M10#2"
+    },
+    {
+     "video_id": "MCM00001075",
+     "t": 1949,
+     "date": "2022-11-15",
+     "base": "2024-08-05_MCM00001075",
+     "meeting_title": "Medford Community Preservation Committee 11-15-22",
+     "title": "Salem Street Burial Ground Wall Restoration",
+     "label": "M10#4"
+    },
+    {
+     "video_id": "MCM00001035",
+     "t": 2186,
+     "date": "2023-01-10",
+     "base": "2024-07-29_MCM00001035",
+     "meeting_title": "Medford Community Preservation Committee 01-10-23",
+     "title": "Oak Grove Cemetery Caretaker Quarters",
+     "label": "M13#3"
+    },
+    {
+     "video_id": "MCM00001648",
+     "t": 3379,
+     "date": "2024-12-10",
+     "base": "2024-12-12_MCM00001648",
+     "meeting_title": "Medford Community Preservation Committee 12-10-24",
+     "title": "Oak Grove Cemetery Building Restoration",
+     "label": "M25#8"
+    },
+    {
+     "video_id": "MCM00001737",
+     "t": 62,
+     "date": "2025-02-11",
+     "base": "2025-02-12_MCM00001737",
+     "meeting_title": "Medford Community Preservation Committee 02-11-25",
+     "title": "Cross Street Cemetery Headstone Restoration",
+     "label": "M26#1"
+    },
+    {
+     "video_id": "MCM00001830",
+     "t": 159,
+     "date": "2025-10-14",
+     "base": "2025-11-26_MCM00001830",
+     "meeting_title": "Community Preservation Committee 10-14-25",
+     "title": "Angel of Victory and Peace Fountain Restoration",
+     "label": "M28#1"
+    },
+    {
+     "video_id": "CAS00002519",
+     "t": 3249,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002519",
+     "meeting_title": "Community Preservation Committee 09/08/26",
+     "title": "Angel of Victory and Peace Fountain Restoration",
+     "label": "M35#3"
+    },
+    {
+     "video_id": "CAS00002519",
+     "t": 3407,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002519",
+     "meeting_title": "Community Preservation Committee 09/08/26",
+     "title": "Cross Street Cemetery Restoration Phase 2",
+     "label": "M35#4"
+    }
+   ]
+  },
+  {
+   "name": "Small Grants Program policy and expansion",
+   "status": "settled",
+   "summary": "The committee created a Small Grants Program in 2018 to offer a streamlined application pathway for funding requests up to $5,000 (M01#3). The program was sustained with annual reserve set-asides for rolling grant awards supporting park tree inventories and school play equipment (M06#2, M19#2, M20#2). In early 2025, the committee formally adopted policy changes that doubled the maximum small grant award limit to $10,000 and removed mandatory matching requirements (M26#4).",
+   "citations": [
+    {
+     "video_id": "33evm6nt4PM",
+     "t": 213,
+     "date": "2018-03-12",
+     "base": "2018-03-16_33evm6nt4PM",
+     "meeting_title": "Community Preservation Committee FY2018 Info Session 3/12/18",
+     "title": "Small Grants Program and Funding Allocations",
+     "label": "M01#3"
+    },
     {
      "video_id": "w_xBmBEZF2M",
      "t": 169,
@@ -463,7 +508,93 @@
      "base": "2019-03-04_w_xBmBEZF2M",
      "meeting_title": "Medford Community Preservation Committee Presentation February 26, 2019",
      "title": "Available FY 2019 Funding and Small Grants Program",
-     "label": "M05#2"
+     "label": "M06#2"
+    },
+    {
+     "video_id": "MCM00001448",
+     "t": 196,
+     "date": "2024-05-14",
+     "base": "2024-09-17_MCM00001448",
+     "meeting_title": "Medford Community Preservation Committee 05-14-24",
+     "title": "Trees Medford Small Grant Application",
+     "label": "M19#2"
+    },
+    {
+     "video_id": "MCM00001449",
+     "t": 1303,
+     "date": "2024-06-11",
+     "base": "2024-09-17_MCM00001449",
+     "meeting_title": "Medford Community Preservation Committee 06-11-24",
+     "title": "Roberts Elementary School Basketball Hoop",
+     "label": "M20#2"
+    },
+    {
+     "video_id": "MCM00001737",
+     "t": 3811,
+     "date": "2025-02-11",
+     "base": "2025-02-12_MCM00001737",
+     "meeting_title": "Medford Community Preservation Committee 02-11-25",
+     "title": "Small Grant Funding Policy",
+     "label": "M26#4"
+    }
+   ]
+  }
+ ],
+ "periods": [
+  {
+   "period": "2018-2019 term",
+   "narrative": "During its inaugural term, the committee defined its operational structure, established funding guidelines and timelines, and reviewed initial applications across affordable housing, open space, and historic estate preservation.",
+   "citations": [
+    {
+     "video_id": "33evm6nt4PM",
+     "t": 0,
+     "date": "2018-03-12",
+     "base": "2018-03-16_33evm6nt4PM",
+     "meeting_title": "Community Preservation Committee FY2018 Info Session 3/12/18",
+     "title": "Introduction to the CPA and Committee Structure",
+     "label": "M01#1"
+    },
+    {
+     "video_id": "33evm6nt4PM",
+     "t": 78,
+     "date": "2018-03-12",
+     "base": "2018-03-16_33evm6nt4PM",
+     "meeting_title": "Community Preservation Committee FY2018 Info Session 3/12/18",
+     "title": "Funding Sources and Revenue Projections",
+     "label": "M01#2"
+    },
+    {
+     "video_id": "I5lIrWN8Vh8",
+     "t": 43,
+     "date": "2018-04-24",
+     "base": "2018-04-26_I5lIrWN8Vh8",
+     "meeting_title": "Community Preservation Committee Meeting 04/24/18",
+     "title": "Minutes and Procedures",
+     "label": "M02#1"
+    },
+    {
+     "video_id": "w_xBmBEZF2M",
+     "t": 2,
+     "date": "2019-02-26",
+     "base": "2019-03-04_w_xBmBEZF2M",
+     "meeting_title": "Medford Community Preservation Committee Presentation February 26, 2019",
+     "title": "Community Preservation Act Overview",
+     "label": "M06#1"
+    }
+   ]
+  },
+  {
+   "period": "2022-2023 term",
+   "narrative": "The committee updated its Community Preservation Plan, established annual budget allocation ratios, and approved major funding commitments for Walkling Court pre-development, the McGlynn School playground, and emergency repairs to the Chevalier Theater.",
+   "citations": [
+    {
+     "video_id": "MCM00001503",
+     "t": 4967,
+     "date": "2022-04-12",
+     "base": "2024-09-20_MCM00001503",
+     "meeting_title": "Medford CPA Annual Hearing 04-12-22",
+     "title": "Chevalier Theater Emergency Funding",
+     "label": "M07#5"
     },
     {
      "video_id": "MCM00001034",
@@ -472,102 +603,16 @@
      "base": "2024-07-29_MCM00001034",
      "meeting_title": "Medford Community Preservation Committee 05-10-22",
      "title": "FY23 Budget Recommendation",
-     "label": "M07#3"
+     "label": "M08#3"
     },
     {
-     "video_id": "MCM00001040",
-     "t": 167,
-     "date": "2023-04-11",
-     "base": "2024-07-29_MCM00001040",
-     "meeting_title": "Medford Community Preservation Committee 04-11-23",
-     "title": "Introductions and Personnel Changes",
-     "label": "M14#1"
-    },
-    {
-     "video_id": "MCM00001448",
-     "t": 3104,
-     "date": "2024-05-14",
-     "base": "2024-09-17_MCM00001448",
-     "meeting_title": "Medford Community Preservation Committee 05-14-24",
-     "title": "FY25 Budget Disbursement",
-     "label": "M18#4"
-    },
-    {
-     "video_id": "MCM00001447",
-     "t": 5973,
-     "date": "2024-09-10",
-     "base": "2024-09-17_MCM00001447",
-     "meeting_title": "Medford Community Preservation Committee 09-10-24",
-     "title": "Administrative Fund Expenditure Policy",
-     "label": "M21#3"
-    },
-    {
-     "video_id": "MCM00001737",
-     "t": 3811,
-     "date": "2025-02-11",
-     "base": "2025-02-12_MCM00001737",
-     "meeting_title": "Medford Community Preservation Committee 02-11-25",
-     "title": "Small Grant Funding Policy",
-     "label": "M25#4"
-    },
-    {
-     "video_id": "MCM00001775",
-     "t": 6086,
-     "date": "2025-07-08",
-     "base": "2025-07-09_MCM00001775",
-     "meeting_title": "Community Preservation Committee 07-08-25",
-     "title": "CPA Temporary Signage",
-     "label": "M26#5"
-    },
-    {
-     "video_id": "CAS00002519",
-     "t": 4684,
-     "date": "2026-09-08",
-     "base": "2026-09-09_CAS00002519",
-     "meeting_title": "Community Preservation Committee 09/08/26",
-     "title": "Application Process and 2026 Meeting Calendar",
-     "label": "M32#7"
-    }
-   ]
-  }
- ],
- "periods": [
-  {
-   "period": "2018-2019 term",
-   "narrative": "This foundational period focused on hearing inaugural project presentations and establishing the legal and administrative framework for Medford's Community Preservation Act funding.",
-   "citations": [
-    {
-     "video_id": "I5lIrWN8Vh8",
-     "t": null,
-     "date": "2018-04-24",
-     "base": "2018-04-26_I5lIrWN8Vh8",
-     "meeting_title": "Community Preservation Committee Meeting 04/24/18",
-     "title": "Community Preservation Committee Meeting 04/24/18",
-     "label": "M01"
-    },
-    {
-     "video_id": "w_xBmBEZF2M",
-     "t": null,
-     "date": "2019-02-26",
-     "base": "2019-03-04_w_xBmBEZF2M",
-     "meeting_title": "Medford Community Preservation Committee Presentation February 26, 2019",
-     "title": "Medford Community Preservation Committee Presentation February 26, 2019",
-     "label": "M05"
-    }
-   ]
-  },
-  {
-   "period": "2022-2023 term",
-   "narrative": "The committee managed a significant expansion in funding requests, including multi-year affordable housing redevelopments and major park transformations.",
-   "citations": [
-    {
-     "video_id": "MCM00001503",
-     "t": null,
-     "date": "2022-04-12",
-     "base": "2024-09-20_MCM00001503",
-     "meeting_title": "Medford CPA Annual Hearing 04-12-22",
-     "title": "Medford CPA Annual Hearing 04-12-22",
-     "label": "M06"
+     "video_id": "MCM00001035",
+     "t": 2696,
+     "date": "2023-01-10",
+     "base": "2024-07-29_MCM00001035",
+     "meeting_title": "Medford Community Preservation Committee 01-10-23",
+     "title": "McGlynn Playground Rehabilitation",
+     "label": "M13#4"
     },
     {
      "video_id": "MCM00001038",
@@ -576,31 +621,49 @@
      "base": "2024-07-29_MCM00001038",
      "meeting_title": "Medford Community Preservation Committee 03-14-23",
      "title": "Walkling Court Phase 1 Funding",
-     "label": "M13#1"
+     "label": "M14#1"
     },
     {
      "video_id": "MCM00001036",
-     "t": null,
+     "t": 787,
      "date": "2023-08-22",
      "base": "2024-07-29_MCM00001036",
      "meeting_title": "Medford Community Preservation Committee 08-22-23",
-     "title": "Medford Community Preservation Committee 08-22-23",
-     "label": "M16"
+     "title": "Walkland Court Funding Request",
+     "label": "M17#3"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "Policy refinement dominated this term, with the committee increasing housing allocations and adjusting small grant limits to improve community engagement.",
+   "narrative": "The committee increased set-asides for affordable housing, doubled the small grant award cap, and recommended over $2 million for City Hall window restorations, historic church preservation, cemetery structures, and seed money for the Affordable Housing Trust.",
    "citations": [
     {
      "video_id": "MCM00001448",
-     "t": null,
+     "t": 3104,
      "date": "2024-05-14",
      "base": "2024-09-17_MCM00001448",
      "meeting_title": "Medford Community Preservation Committee 05-14-24",
-     "title": "Medford Community Preservation Committee 05-14-24",
-     "label": "M18"
+     "title": "FY25 Budget Disbursement",
+     "label": "M19#4"
+    },
+    {
+     "video_id": "MCM00001648",
+     "t": 2468,
+     "date": "2024-12-10",
+     "base": "2024-12-12_MCM00001648",
+     "meeting_title": "Medford Community Preservation Committee 12-10-24",
+     "title": "City Hall Council Chambers Window Restoration Approval",
+     "label": "M25#7"
+    },
+    {
+     "video_id": "MCM00001648",
+     "t": 3874,
+     "date": "2024-12-10",
+     "base": "2024-12-12_MCM00001648",
+     "meeting_title": "Medford Community Preservation Committee 12-10-24",
+     "title": "Medford Affordable Housing Trust Seed Funding",
+     "label": "M25#10"
     },
     {
      "video_id": "MCM00001737",
@@ -609,59 +672,86 @@
      "base": "2025-02-12_MCM00001737",
      "meeting_title": "Medford Community Preservation Committee 02-11-25",
      "title": "Small Grant Funding Policy",
-     "label": "M25#4"
+     "label": "M26#4"
     },
     {
-     "video_id": "MCM00001830",
-     "t": null,
-     "date": "2025-10-14",
-     "base": "2025-11-26_MCM00001830",
-     "meeting_title": "Community Preservation Committee 10-14-25",
-     "title": "Community Preservation Committee 10-14-25",
-     "label": "M27"
+     "video_id": "MCM00001775",
+     "t": 74,
+     "date": "2025-07-08",
+     "base": "2025-07-09_MCM00001775",
+     "meeting_title": "Community Preservation Committee 07-08-25",
+     "title": "Medford Armory Emergency Building Restoration",
+     "label": "M27#1"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "Current work involves preparing for massive capital needs like the new high school while maintaining a diverse portfolio of park, housing, and historic projects.",
+   "narrative": "The committee recommended funding for field lighting and cemetery monuments, approved emergency building maintenance grants, reallocated park lighting funds, and began reviewing preliminary FY27 requests for shoreline revitalization and municipal facilities.",
    "citations": [
     {
-     "video_id": "CAS00002486",
-     "t": 1343,
-     "date": "2026-07-14",
-     "base": "2026-07-16_CAS00002486",
-     "meeting_title": "Community Preservation Committee 07/14/26",
-     "title": "Medford High School Project Introduction",
-     "label": "M31#3"
+     "video_id": "CAS00002301",
+     "t": 4146,
+     "date": "2026-01-13",
+     "base": "2026-01-14_CAS00002301",
+     "meeting_title": "Community Preservation Committee 01/13/26",
+     "title": "Tufts Park Field Lighting Improvements",
+     "label": "M29#6"
     },
     {
-     "video_id": "CAS00002562",
-     "t": null,
-     "date": "2026-10-13",
-     "base": "2026-10-14_CAS00002562",
-     "meeting_title": "Community Preservation Committee 10/13/26",
-     "title": "Community Preservation Committee 10/13/26",
-     "label": "M33"
+     "video_id": "CAS00002519",
+     "t": 3249,
+     "date": "2026-09-08",
+     "base": "2026-09-09_CAS00002519",
+     "meeting_title": "Community Preservation Committee 09/08/26",
+     "title": "Angel of Victory and Peace Fountain Restoration",
+     "label": "M35#3"
+    },
+    {
+     "video_id": "CAS00002582",
+     "t": 59,
+     "date": "2026-10-27",
+     "base": "2026-10-28_CAS00002582",
+     "meeting_title": "Community Preservation Committee 10/27/26",
+     "title": "Shiloh Baptist Church Stained Glass Window Restoration",
+     "label": "M37#1"
+    },
+    {
+     "video_id": "CAS00002598",
+     "t": 76,
+     "date": "2026-11-10",
+     "base": "2026-11-13_CAS00002598",
+     "meeting_title": "Community Preservation Committee 11/10/26",
+     "title": "Mystic River West Medford Shoreline Revitalization Presentation",
+     "label": "M38#1"
+    },
+    {
+     "video_id": "CAS00002598",
+     "t": 4849,
+     "date": "2026-11-10",
+     "base": "2026-11-13_CAS00002598",
+     "meeting_title": "Community Preservation Committee 11/10/26",
+     "title": "Condon Shell Field Lighting Funding Reallocation",
+     "label": "M38#4"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 62,
-  "meetings_cited": 27,
-  "of_meetings": 33,
-  "max_share": 0.097,
-  "even_share": 0.0303,
-  "concentration_ratio": 3.2,
+  "citations": 72,
+  "meetings_cited": 26,
+  "of_meetings": 38,
+  "max_share": 0.083,
+  "even_share": 0.0263,
+  "concentration_ratio": 3.15,
   "most_cited": "MCM00001648",
   "periods_covered": 4,
   "of_periods": 4
  },
  "usage": {
-  "input_tokens": 13781,
-  "output_tokens": 1752,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 15835,
+  "output_tokens": 2466,
+  "model_version": "gemini-3.6-flash"
  }
 }
