@@ -1,0 +1,42 @@
+{
+ "video_id": "6ELF0_YKQcs",
+ "provider": "gemini",
+ "generated_at": "2026-11-24T04:07:09Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "3ab5a1c76514f804",
+ "subject": "Reese Pike Trio Performance",
+ "overview": "The Medford Jazz Festival hosted a performance by the Reese Pike Trio featuring original compositions and reimagined standards at the West Medford Community Center. Jonathan Fagan concluded the evening with closing acknowledgments and announcements for upcoming festival events.",
+ "items": [
+  {
+   "title": "Introduction of Reese Pike Trio",
+   "t": 5,
+   "summary": "Terry Carter introduced pianist Reese Pike, bassist Jan Portisch, and drummer Seba Ramirez to open the Medford Jazz Festival set.",
+   "speakers": [
+    "Terry Carter"
+   ]
+  },
+  {
+   "title": "Reese Pike Trio Performance",
+   "t": 470,
+   "summary": "Reese Pike led her trio through jazz arrangements of West Side Story songs alongside original compositions inspired by poetry, travel, and personal experiences.",
+   "speakers": [
+    "CgcJaOBCrh8_SPEAKER_01"
+   ]
+  },
+  {
+   "title": "Closing Remarks and Announcements",
+   "t": 3440,
+   "summary": "Jonathan Fagan thanked the performers, venue staff, and organizers while sharing details about festival merchandise, donations, and the following day's schedule.",
+   "speakers": [
+    "Jonathan Fagan"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 4199,
+  "output_tokens": 263,
+  "model_version": "gemini-3.6-flash"
+ }
+}

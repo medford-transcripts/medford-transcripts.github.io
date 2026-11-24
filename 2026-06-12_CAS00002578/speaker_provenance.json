@@ -1,0 +1,26 @@
+{
+    "SPEAKER_00": {
+        "value": "Robert Carney",
+        "source": "embedding_match",
+        "score": 0.9951175579701877,
+        "from": "FDon8t2WL74_SPEAKER_02",
+        "at": "2026-11-24T07:11:59Z",
+        "previous": "SPEAKER_00"
+    },
+    "SPEAKER_01": {
+        "value": "John Petrella",
+        "source": "embedding_match",
+        "score": 0.9975743569835989,
+        "from": "FDon8t2WL74_SPEAKER_00",
+        "at": "2026-11-24T07:11:59Z",
+        "previous": "SPEAKER_01"
+    },
+    "SPEAKER_02": {
+        "value": "Unidentified",
+        "source": "embedding_match",
+        "score": 0.950144722584998,
+        "from": "FDon8t2WL74_SPEAKER_01",
+        "at": "2026-11-24T07:11:59Z",
+        "previous": "SPEAKER_02"
+    }
+}
