@@ -1,0 +1,67 @@
+{
+ "video_id": "CAS00002476",
+ "provider": "gemini",
+ "generated_at": "2026-11-24T11:09:57Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "040a9507b1b4e5a8",
+ "subject": "Medford Community Chorale Spring Concert",
+ "overview": "The Medford Community Chorale and Youth and Young Adult Chorus presented their 10th live spring concert, titled \"You're the Inspiration,\" featuring popular, folk, musical theater, and patriotic selections. Proceeds from the concert program were designated for donation to the Medford Youth Center.",
+ "items": [
+  {
+   "title": "Welcome and Opening Remarks",
+   "t": 24,
+   "summary": "The director welcomed the audience to the chorale's 10th live concert and announced that program proceeds would benefit the Medford Youth Center.",
+   "speakers": []
+  },
+  {
+   "title": "Medford Community Chorale First Set",
+   "t": 163,
+   "summary": "The full chorale performed an opening set of songs including \"You're the Inspiration,\" \"Shenandoah,\" a medley from Hair, \"For Good,\" and \"You Raise Me Up.\"",
+   "speakers": [
+    "Monty Hill"
+   ]
+  },
+  {
+   "title": "Youth and Young Adult Chorus Set",
+   "t": 1419,
+   "summary": "The Youth and Young Adult Chorus took the stage to perform \"Here Comes the Sun,\" \"Somewhere Out There,\" \"California Dreamin',\" \"Take Me Home, Country Roads,\" and \"Swinging on a Star.\"",
+   "speakers": [
+    "Deacon Chuck Hall"
+   ]
+  },
+  {
+   "title": "Joint Chorus Performances",
+   "t": 2553,
+   "summary": "Both chorus groups combined to perform \"I Believe\" alongside a medley of \"Heal the World\" and \"We Are the World.\"",
+   "speakers": []
+  },
+  {
+   "title": "Full Chorus Second Set",
+   "t": 3149,
+   "summary": "The chorale returned to perform \"One Voice,\" \"Thank You for the Music,\" \"What a Wonderful World,\" \"The Greatest Love of All,\" and \"New York, New York.\"",
+   "speakers": [
+    "Olivia Sawyer",
+    "Cheyenne Payen"
+   ]
+  },
+  {
+   "title": "Recognitions, Raffles, and Closing Acknowledggments",
+   "t": 4442,
+   "summary": "Chorale members presented tokens of appreciation to the director and accompanist, followed by raffle winner drawings and expressions of gratitude to supporters.",
+   "speakers": []
+  },
+  {
+   "title": "Concert Finale",
+   "t": 4902,
+   "summary": "The chorale and audience concluded the evening with a joint sing-along performance of \"God Bless America.\"",
+   "speakers": []
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 11826,
+  "output_tokens": 569,
+  "model_version": "gemini-3.6-flash"
+ }
+}
