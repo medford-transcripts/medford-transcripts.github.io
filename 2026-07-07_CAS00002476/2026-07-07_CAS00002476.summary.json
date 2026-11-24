@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "7358fb24a3024a77",
- "subject": "",
+ "subject": "10th Live Spring Concert",
  "overview": "The Medford Community Chorale and Youth and Young Adult Chorus held their 10th live spring concert featuring a varied program of popular, folk, and theatre music. A portion of the concert proceeds was donated to the Medford Youth Center.",
  "items": [
   {
@@ -98,5 +98,6 @@
   "input_tokens": 11825,
   "output_tokens": 882,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
