@@ -1,0 +1,63 @@
+{
+ "video_id": "CAS00002578",
+ "provider": "gemini",
+ "generated_at": "2026-11-24T08:07:12Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "c2a170076f0f6d7d",
+ "subject": "",
+ "overview": "Host John Petrella interviewed Medford resident Robert Carney on Medford Happenings regarding civic engagement, local trash pickup policies, the high school building project, and rent control.",
+ "items": [
+  {
+   "title": "Introduction of Guest Robert Carney",
+   "t": 31,
+   "summary": "Host John Petrella introduced resident Robert Carney to discuss his background and involvement in Medford civic issues.",
+   "speakers": [
+    "John Petrella",
+    "Robert Carney"
+   ]
+  },
+  {
+   "title": "HOA Trash Collection Policy",
+   "t": 270,
+   "summary": "Carney explained how a city notice terminating trash pickup for condo townhouses motivated him to organize neighbors, petition city officials, and speak at City Council meetings.",
+   "speakers": [
+    "John Petrella",
+    "Robert Carney"
+   ]
+  },
+  {
+   "title": "Civic Engagement and Local Governance",
+   "t": 863,
+   "summary": "Carney shared advice on resident participation and expressed concerns that political slates limit independent decision-making on the City Council.",
+   "speakers": [
+    "John Petrella",
+    "Robert Carney"
+   ]
+  },
+  {
+   "title": "Medford High School Rebuild Proposals",
+   "t": 1873,
+   "summary": "Carney critiqued the high school project planning, raising questions regarding proposed building size, land-use due diligence, fiscal oversight, and preventative maintenance.",
+   "speakers": [
+    "John Petrella",
+    "Robert Carney"
+   ]
+  },
+  {
+   "title": "Rent Control Initiative",
+   "t": 2735,
+   "summary": "Carney expressed opposition to a proposed statewide rent control ballot initiative, arguing it would overburden non-owner-occupied landlords and suppress housing investment.",
+   "speakers": [
+    "John Petrella",
+    "Robert Carney"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 18115,
+  "output_tokens": 389,
+  "model_version": "gemini-3.6-flash"
+ }
+}
