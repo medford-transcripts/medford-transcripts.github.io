@@ -1,67 +1,102 @@
 {
  "video_id": "CAS00002476",
  "provider": "gemini",
- "generated_at": "2026-11-24T11:09:57Z",
+ "generated_at": "2026-11-24T19:06:41Z",
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "040a9507b1b4e5a8",
- "subject": "Medford Community Chorale Spring Concert",
- "overview": "The Medford Community Chorale and Youth and Young Adult Chorus presented their 10th live spring concert, titled \"You're the Inspiration,\" featuring popular, folk, musical theater, and patriotic selections. Proceeds from the concert program were designated for donation to the Medford Youth Center.",
+ "transcript_sha": "7358fb24a3024a77",
+ "subject": "",
+ "overview": "The Medford Community Chorale and Youth and Young Adult Chorus held their 10th live spring concert featuring a varied program of popular, folk, and theatre music. A portion of the concert proceeds was donated to the Medford Youth Center.",
  "items": [
   {
-   "title": "Welcome and Opening Remarks",
+   "title": "Opening Remarks and \"You're the Inspiration\"",
    "t": 24,
-   "summary": "The director welcomed the audience to the chorale's 10th live concert and announced that program proceeds would benefit the Medford Youth Center.",
-   "speakers": []
+   "summary": "Director Betsy introduced the concert and announced that proceeds would support the Medford Youth Center before the chorus performed Chicago's \"You're the Inspiration.\"",
+   "speakers": [
+    "SPEAKER_04"
+   ]
   },
   {
-   "title": "Medford Community Chorale First Set",
-   "t": 163,
-   "summary": "The full chorale performed an opening set of songs including \"You're the Inspiration,\" \"Shenandoah,\" a medley from Hair, \"For Good,\" and \"You Raise Me Up.\"",
+   "title": "\"Shenandoah\"",
+   "t": 356,
+   "summary": "The full chorus performed an arrangement of the traditional American folk song \"Shenandoah.\"",
    "speakers": [
-    "Monty Hill"
+    "SPEAKER_04"
+   ]
+  },
+  {
+   "title": "Hair Medley (\"Age of Aquarius\")",
+   "t": 570,
+   "summary": "The chorus performed a medley of songs from the musical Hair featuring guest soloist Monty Hill.",
+   "speakers": [
+    "SPEAKER_04",
+    "SPEAKER_03"
+   ]
+  },
+  {
+   "title": "\"For Good\"",
+   "t": 852,
+   "summary": "The chorus performed the ballad \"For Good\" from the musical Wicked.",
+   "speakers": [
+    "SPEAKER_04"
+   ]
+  },
+  {
+   "title": "\"You Raise Me Up\"",
+   "t": 1145,
+   "summary": "The chorus performed the ballad \"You Raise Me Up.\"",
+   "speakers": [
+    "SPEAKER_04"
    ]
   },
   {
    "title": "Youth and Young Adult Chorus Set",
    "t": 1419,
-   "summary": "The Youth and Young Adult Chorus took the stage to perform \"Here Comes the Sun,\" \"Somewhere Out There,\" \"California Dreamin',\" \"Take Me Home, Country Roads,\" and \"Swinging on a Star.\"",
+   "summary": "The Youth and Young Adult Chorus performed a set featuring \"Here Comes the Sun,\" \"Somewhere Out There,\" \"California Dreamin',\" \"Take Me Home, Country Roads,\" and \"Swinging on a Star.\"",
    "speakers": [
-    "Deacon Chuck Hall"
+    "SPEAKER_04"
    ]
   },
   {
-   "title": "Joint Chorus Performances",
+   "title": "Combined Chorus Medleys",
    "t": 2553,
-   "summary": "Both chorus groups combined to perform \"I Believe\" alongside a medley of \"Heal the World\" and \"We Are the World.\"",
-   "speakers": []
-  },
-  {
-   "title": "Full Chorus Second Set",
-   "t": 3149,
-   "summary": "The chorale returned to perform \"One Voice,\" \"Thank You for the Music,\" \"What a Wonderful World,\" \"The Greatest Love of All,\" and \"New York, New York.\"",
+   "summary": "The combined choruses performed \"I Believe\" along with a medley of Michael Jackson's \"Heal the World\" and \"We Are the World.\"",
    "speakers": [
-    "Olivia Sawyer",
-    "Cheyenne Payen"
+    "SPEAKER_04"
    ]
   },
   {
-   "title": "Recognitions, Raffles, and Closing Acknowledggments",
-   "t": 4442,
-   "summary": "Chorale members presented tokens of appreciation to the director and accompanist, followed by raffle winner drawings and expressions of gratitude to supporters.",
-   "speakers": []
+   "title": "\"One Voice\"",
+   "t": 3146,
+   "summary": "Alumni singers joined the chorus to perform Barry Manilow's \"One Voice.\"",
+   "speakers": [
+    "SPEAKER_04"
+   ]
   },
   {
-   "title": "Concert Finale",
-   "t": 4902,
-   "summary": "The chorale and audience concluded the evening with a joint sing-along performance of \"God Bless America.\"",
-   "speakers": []
+   "title": "Full Chorus Standards Set",
+   "t": 3374,
+   "summary": "The main chorus performed \"Thank You for the Music,\" \"What a Wonderful World,\" \"The Greatest Love of All,\" and \"New York, New York.\"",
+   "speakers": [
+    "SPEAKER_04"
+   ]
+  },
+  {
+   "title": "Recognitions, Raffle, and \"God Bless America\"",
+   "t": 4408,
+   "summary": "Speakers recognized director Betsy and accompanist Holly, called out raffle prize winners, and led the audience in singing \"God Bless America\" to close the concert.",
+   "speakers": [
+    "SPEAKER_04",
+    "SPEAKER_05",
+    "SPEAKER_00",
+    "SPEAKER_03"
+   ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 11826,
-  "output_tokens": 569,
+  "input_tokens": 11825,
+  "output_tokens": 882,
   "model_version": "gemini-3.6-flash"
  }
 }
