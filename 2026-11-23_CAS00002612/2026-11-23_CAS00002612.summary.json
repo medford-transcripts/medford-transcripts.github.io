@@ -1,0 +1,57 @@
+{
+ "video_id": "CAS00002612",
+ "provider": "gemini",
+ "generated_at": "2026-11-25T04:05:45Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "62bfc6f3465bab72",
+ "subject": "",
+ "overview": "The Historic District Commission reviewed application certificates for properties on Grandview Avenue and voted to advance a single-home historic district designation for 44 Bradley Avenue.",
+ "items": [
+  {
+   "title": "Certificate of Appropriateness: 36 Grandview Ave",
+   "t": 31,
+   "summary": "Approved an application to replace first-floor windows and convert an unused side door into a window, with the condition that window 108 be replaced with double-hung windows instead of a single picture window.",
+   "speakers": [
+    "Jason Mayer",
+    "Theresa Dupont",
+    "Roberta Cameron",
+    "Daryl Slane"
+   ]
+  },
+  {
+   "title": "Single Home Historic District: 44 Bradley Ave",
+   "t": 2283,
+   "summary": "Voted to proceed with establishing a single-home local historic district designation for 44 Bradley Ave and agreed to schedule a board site visit prior to the next meeting.",
+   "speakers": [
+    "Theresa Dupont",
+    "Ryan Hayward",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Certificate of Applicability: 8 Grandview Ave",
+   "t": 3144,
+   "summary": "Voted that a proposed six-inch shift of a planned garage door is non-applicable because the alteration is not visible from the public way.",
+   "speakers": [
+    "Theresa Dupont",
+    "Roberta Cameron"
+   ]
+  },
+  {
+   "title": "Meeting Minutes and Guidelines Discussion",
+   "t": 3536,
+   "summary": "Postponed approval of the October meeting minutes to December and agreed to begin reviewing and updating commission guidelines.",
+   "speakers": [
+    "Theresa Dupont",
+    "Roberta Cameron"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 23366,
+  "output_tokens": 447,
+  "model_version": "gemini-3.6-flash"
+ }
+}
