@@ -5,7 +5,7 @@
  "model": "gemini-3.6-flash",
  "model_requested": "gemini",
  "transcript_sha": "62bfc6f3465bab72",
- "subject": "",
+ "subject": "44 Bradley Avenue Single Home Historic District",
  "overview": "The Historic District Commission reviewed application certificates for properties on Grandview Avenue and voted to advance a single-home historic district designation for 44 Bradley Avenue.",
  "items": [
   {
@@ -53,5 +53,6 @@
   "input_tokens": 23366,
   "output_tokens": 447,
   "model_version": "gemini-3.6-flash"
- }
+ },
+ "subject_source": "summary"
 }
