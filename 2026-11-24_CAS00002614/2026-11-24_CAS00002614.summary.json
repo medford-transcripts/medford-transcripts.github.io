@@ -1,0 +1,42 @@
+{
+ "video_id": "CAS00002614",
+ "provider": "gemini",
+ "generated_at": "2026-11-25T11:05:49Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "703d33137ea08ac0",
+ "subject": "Fan Expo Boston 2026 Retrospective",
+ "overview": "Host Stevie B presented a year-end retrospective featuring footage from Fan Expo Boston 2026 and offered personal acknowledgments following the passing of his mother.",
+ "items": [
+  {
+   "title": "Host Introduction and Acknowledgments",
+   "t": 66,
+   "summary": "Host Stevie B opened the year-end episode by thanking station staff, friends, and supporters for comforting him following the passing of his mother.",
+   "speakers": [
+    "Stevie B"
+   ]
+  },
+  {
+   "title": "Fan Expo Boston 2026 Footage",
+   "t": 496,
+   "summary": "Video footage highlighted Stevie B's visit to Fan Expo Boston alongside his friend Lenny to meet featured celebrity guests.",
+   "speakers": [
+    "Stevie B"
+   ]
+  },
+  {
+   "title": "Closing Remarks and Reflections",
+   "t": 1299,
+   "summary": "Stevie B reflected on meeting convention voice actors, remembered performers who passed away in 2026, and thanked his family before concluding the broadcast.",
+   "speakers": [
+    "Stevie B"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 5430,
+  "output_tokens": 258,
+  "model_version": "gemini-3.6-flash"
+ }
+}
