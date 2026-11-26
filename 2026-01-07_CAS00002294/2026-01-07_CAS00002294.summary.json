@@ -1,42 +1,39 @@
 {
  "video_id": "CAS00002294",
  "provider": "gemini",
- "generated_at": "2026-11-26T00:09:49Z",
- "model": "gemini-3.6-flash",
+ "generated_at": "2026-11-26T01:08:20Z",
+ "model": "gemini-3-flash-preview",
  "model_requested": "gemini",
- "transcript_sha": "05447699c55e0fe2",
- "subject": "",
- "overview": "The MPS School Committee reviewed the Interim Superintendent's self-evaluation and state of the district presentation, and received an update on the high school building project. The committee also approved the 2026–2027 district school calendar and routine consent items.",
+ "transcript_sha": "0aed39e4998e09c7",
+ "subject": "Comprehensive High School Building Project Update",
+ "overview": "The School Committee approved the 2026-2027 district school calendar and a resolution to postpone officer elections. The body also reviewed the interim superintendent's strategic self-evaluation and received a detailed progress report regarding the high school building project feasibility study.",
  "items": [
   {
-   "title": "Officer Election Resolution and Swearing-In Status",
+   "title": "Resolution to Postpone Officer Elections",
    "t": 31,
-   "summary": "The committee passed a resolution maintaining current officers until the next scheduled meeting election, while two members noted they must abstain from votes until officially sworn in.",
+   "summary": "Approved a resolution to conduct officer elections for the 2026-2027 term at the next scheduled meeting, with current officers serving in the interim.",
    "speakers": [
     "Breanna Lungo-Koehn",
-    "Paul Ruseau",
-    "Aaron Olapade",
-    "Erika Reinfeld",
-    "Jenny Graham"
+    "Paul Ruseau"
    ]
   },
   {
    "title": "Consent Agenda",
    "t": 183,
-   "summary": "The committee approved the consent agenda, including bills, payrolls, capital purchases, donations, grants, field trips, and prior meeting minutes.",
+   "summary": "Approved routine items including bills, payroll, capital purchases, donations, grants, field trips, and the minutes from the December 15, 2025 meeting.",
    "speakers": [
     "Breanna Lungo-Koehn",
     "Erika Reinfeld",
-    "Paul Ruseau"
+    "Mike Mastrobuoni"
    ]
   },
   {
-   "title": "Interim Superintendent Evaluation and Strategic Goals",
-   "t": 272,
-   "summary": "Interim Superintendent Dr. Suzanne Galusi presented her self-evaluation, detailing district progress in leadership stabilization, instructional coherence, operational management, and future strategic goals.",
+   "title": "Superintendent's Self-Evaluation and Goals",
+   "t": 264,
+   "summary": "Interim Superintendent Suzanne Galusi presented a comprehensive review of district progress, highlighting leadership reorganization, a new instructional vision centered on 'belonging,' and the implementation of the OpenArchitects data platform.",
    "speakers": [
-    "Breanna Lungo-Koehn",
     "Suzanne Galusi",
+    "Breanna Lungo-Koehn",
     "Paul Ruseau",
     "Jenny Graham",
     "Erika Reinfeld",
@@ -48,34 +45,39 @@
    ]
   },
   {
-   "title": "2026–2027 District School Calendar",
+   "title": "2026-2027 District School Calendar",
    "t": 6112,
-   "summary": "The committee approved Option A for the 2026–2027 district school calendar, establishing September 2, 2026, as the first day of school for students.",
+   "summary": "Approved 'Option A' for the 2026-2027 school calendar, which sets the student start date for September 2 and ensures compliance with state regulations regarding high school graduation dates.",
    "speakers": [
-    "Suzanne Galusi",
     "Breanna Lungo-Koehn",
+    "Suzanne Galusi",
     "Paul Ruseau",
-    "Jenny Graham",
-    "Erika Reinfeld"
+    "Jenny Graham"
    ]
   },
   {
    "title": "Medford Comprehensive High School Building Committee Update",
    "t": 6561,
-   "summary": "Building Committee Chair Jenny Graham outlined recent educational planning sessions, traffic and existing condition surveys, and upcoming public input forums leading to the preliminary design submission.",
+   "summary": "Member Graham provided a detailed update on the high school building project, mapping out a schedule for educational planning and community design forums required for the upcoming MSBA submission.",
    "speakers": [
     "Jenny Graham",
     "Erika Reinfeld",
-    "Simon Alcindor",
-    "Alachie Yeager",
+    "Simon Alcindor"
+   ]
+  },
+  {
+   "title": "Condolences",
+   "t": 8904,
+   "summary": "The committee recognized the passing of several local residents and former staff members before adjourning.",
+   "speakers": [
     "Breanna Lungo-Koehn"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 42604,
-  "output_tokens": 701,
-  "model_version": "gemini-3.6-flash"
+  "input_tokens": 42633,
+  "output_tokens": 633,
+  "model_version": "gemini-3-flash-preview"
  }
 }
