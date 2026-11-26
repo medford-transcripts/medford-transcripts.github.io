@@ -1,0 +1,56 @@
+{
+ "video_id": "CAS00002289",
+ "provider": "gemini",
+ "generated_at": "2026-11-26T19:07:33Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "7be9cbdf23aecf0f",
+ "subject": "Jonathan Malerba Interview",
+ "overview": "Host Steve Bertorelli interviews UMass Boston student Jonathan Malerba about his experience overcoming neurofibromatosis and his work as a local sports photographer.",
+ "items": [
+  {
+   "title": "Host Introduction and Background",
+   "t": 64,
+   "summary": "Host Steve Bertorelli introduces guest Jonathan Malerba, a former Medford High School student currently attending UMass Boston.",
+   "speakers": [
+    "Steve Bertorelli",
+    "Jonathan Malerba"
+   ]
+  },
+  {
+   "title": "Boston 25 News Feature",
+   "t": 164,
+   "summary": "The show plays a news broadcast segment profiling Jonathan Malerba's positivity and impact on the Medford High School track team while battling neurofibromatosis.",
+   "speakers": [
+    "Carrie Cavanaugh",
+    "Joe Donlon",
+    "Melissa Malerba",
+    "Jonathan Malerba"
+   ]
+  },
+  {
+   "title": "Discussion of Medical Diagnosis",
+   "t": 396,
+   "summary": "Malerba explains his diagnosis of neurofibromatosis, a genetic disorder causing tumor growth, and details the leg surgeries he underwent during high school.",
+   "speakers": [
+    "Steve Bertorelli",
+    "Jonathan Malerba"
+   ]
+  },
+  {
+   "title": "Sports Photography Showcase",
+   "t": 526,
+   "summary": "Malerba discusses how he began taking sports photographs to stay involved with athletics while recovering from surgery and presents a selection of his high school and college sports photos.",
+   "speakers": [
+    "Steve Bertorelli",
+    "Jonathan Malerba"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 13653,
+  "output_tokens": 416,
+  "model_version": "gemini-3.6-flash"
+ }
+}
