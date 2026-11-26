@@ -1,0 +1,77 @@
+{
+ "video_id": "CAS00002290",
+ "provider": "gemini",
+ "generated_at": "2026-11-26T21:07:56Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "47fa7f9b6b859c22",
+ "subject": "",
+ "overview": "The Medford License Commission met to consider a one-day liquor license, a hotel license transfer and entertainment permit, a change of closing hours request, annual 2026 license renewals, and the city's annual population estimation form.",
+ "items": [
+  {
+   "title": "Approval of Minutes",
+   "t": 14,
+   "summary": "The commission postponed approval of the November meeting minutes until January.",
+   "speakers": [
+    "Robert Delafano",
+    "Daria Tejera",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "One-Day License: Event Them",
+   "t": 82,
+   "summary": "Approved a one-day beer and wine license for Event Them for a January 17, 2026 gallery opening, conditional upon submission of a certificate of liability insurance.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "License Transfer and Entertainment License: Medford Hyatt Place",
+   "t": 339,
+   "summary": "Approved the transfer of an in-holder all-alcohol license at 116 Riverside Avenue to Coleman Management Inc. doing business as Medford Hyatt Place, subject to a minor address correction. The commission also conditionally approved a new entertainment license pending final sign-offs from city department heads.",
+   "speakers": [
+    "Robert Delafano",
+    "John Aida",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "Change of Hours: Razzo's Room",
+   "t": 1103,
+   "summary": "Approved a change of closing hours to 1:00 AM for KLME Inc., doing business as Razzo's Grill.",
+   "speakers": [
+    "Robert Delafano",
+    "Richard Razzo",
+    "Allan Martorana"
+   ]
+  },
+  {
+   "title": "2026 Liquor License Renewals",
+   "t": 1397,
+   "summary": "Approved the 2026 annual renewals for all alcohol, club, farmer brewery pouring, package store, and wine and malt licenses.",
+   "speakers": [
+    "Robert Delafano",
+    "Allan Martorana",
+    "Daria Tejera"
+   ]
+  },
+  {
+   "title": "Renewal Certification and Population Estimation Form",
+   "t": 1959,
+   "summary": "Accepted the non-renewal certification for Blue Fuji and approved the estimated 2026 resident population count of 59,898.",
+   "speakers": [
+    "Robert Delafano",
+    "Daria Tejera",
+    "Allan Martorana"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 25642,
+  "output_tokens": 668,
+  "model_version": "gemini-3.6-flash"
+ }
+}
