@@ -1,126 +1,101 @@
 {
  "committee": "CC Bicycling Advisory Commission",
  "provider": "gemini",
- "model": "gemini-3-flash-preview",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "generated_at": "2026-11-02T12:06:48Z",
- "sources_sha": "fb8ab12465908297",
- "n_meetings": 28,
+ "generated_at": "2026-11-27T14:06:44Z",
+ "sources_sha": "e5fd9c10122c6053",
+ "n_meetings": 33,
  "period_style": "term",
  "span": [
   "2022-04-27",
-  "2026-09-23"
+  "2026-11-17"
  ],
- "overview": "The CC Bicycling Advisory Commission is a municipal body in Medford that advises on cycling infrastructure, safety policy, and community outreach. Meeting since April 2022, the commission has worked to expand the city's bike network, manage the local Bluebikes system, and distribute safety equipment to residents. Its work spans major state-led redesigns of rotaries and the development of regional connectors like the Clippership Connector. The body also advocates for legislative changes and improved road safety enforcement through collaboration with the police department. As of late 2026, the commission is focused on filling membership vacancies, implementing contraflow lane projects, and standardizing its strategic goals.",
+ "overview": "The Medford Bicycling Advisory Commission serves in an advisory role to evaluate local cycling infrastructure, safety policies, and public outreach initiatives across Medford. Meeting from April 2022 through November 2026, the commission addresses municipal road projects, bike-share network expansions, and safety gear distribution. Throughout its meetings, the body has regularly reviewed plans for dedicated bike lanes, offered feedback on state-managed roadways, and advocated for traffic safety enforcement. At its November 2026 meeting, work focused on recommending preferred bicycle infrastructure cross-sections for the Boston Avenue corridor in coordination with city and university stakeholders.",
  "threads": [
   {
-   "name": "Bicycle Infrastructure and Lane Projects",
+   "name": "Safety equipment distribution",
    "status": "ongoing",
-   "summary": "Early work focused on connecting Medford Square to the Green Line Extension via bike lanes on Main and George Streets. The commission later evaluated complex designs for Salem and Winthrop Streets, focusing on bus stop interfaces and parking impacts. Most recently, the body has overseen the painting of a contraflow lane on Park Street and identified potential connections on Fulton Street.",
+   "summary": "The commission regularly organized and funded distributions of free bicycle light kits and safety helmets for residents and students. Starting with light purchases and helmet rodeo planning in spring 2022, the body authorized repeated orders of light kits and sought grant funding and bank sponsorships. After a donated helmet program concluded, members formed a working group in 2025 to research purchasing helmets directly and soliciting donors. By late 2026, the commission continued approving bulk light orders offset by corporate sponsorships and distributing equipment to school groups.",
    "citations": [
     {
      "video_id": "MCM00001132",
-     "t": 6020,
+     "t": 6185,
      "date": "2022-04-27",
      "base": "2024-08-06_MCM00001132",
      "meeting_title": "Medford Bicycle Advisory Commission 04-27-22",
-     "title": "Medford Square to GLX Bike Infrastructure Update",
-     "label": "M01#6"
+     "title": "Bike Light Kit Distribution and Funding",
+     "label": "M01#7"
     },
     {
-     "video_id": "MCM00001153",
-     "t": 4767,
-     "date": "2022-05-25",
-     "base": "2024-08-07_MCM00001153",
-     "meeting_title": "Medford Bicycle Advisory Commission 05-25-22",
-     "title": "Winthrop Street Bike Infrastructure",
-     "label": "M02#6"
+     "video_id": "MCM00001132",
+     "t": 7061,
+     "date": "2022-04-27",
+     "base": "2024-08-06_MCM00001132",
+     "meeting_title": "Medford Bicycle Advisory Commission 04-27-22",
+     "title": "Helmet Distribution and Bike Rodeo Event",
+     "label": "M01#8"
     },
-    {
-     "video_id": "MCM00001142",
-     "t": 527,
-     "date": "2023-05-24",
-     "base": "2024-08-07_MCM00001142",
-     "meeting_title": "Medford Bicycle Advisory Commission 05-24-23",
-     "title": "Salem Street Bike Lane Refinements",
-     "label": "M12#2"
-    },
-    {
-     "video_id": "MCM00001141",
-     "t": 4314,
-     "date": "2023-08-23",
-     "base": "2024-08-07_MCM00001141",
-     "meeting_title": "Medford Bicycle Advisory Commission 08-23-23",
-     "title": "Infrastructure and Signage Updates",
-     "label": "M15#6"
-    },
-    {
-     "video_id": "CAS00002535",
-     "t": 4784,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002535",
-     "meeting_title": "Bicycle Advisory Commission 09/23/26",
-     "title": "Contraflow Infrastructure Projects",
-     "label": "M28#8"
-    }
-   ]
-  },
-  {
-   "name": "Clippership Connector Development",
-   "status": "ongoing",
-   "summary": "The commission monitored the design and groundbreaking of the Clippership Connector throughout 2022 and 2023. While the project faced construction delays for boardwalk components, it officially opened to the public in mid-2025. Current efforts focus on improving wayfinding signage through Medford Square and finalizing a contraflow lane for the path.",
-   "citations": [
     {
      "video_id": "MCM00001135",
-     "t": 3250,
+     "t": 1123,
      "date": "2022-06-29",
      "base": "2024-08-06_MCM00001135",
      "meeting_title": "Medford Bicycle Advisory Commission 06-29-22",
-     "title": "Project Updates: Clippership Connector and GLX Lanes",
-     "label": "M03#8"
+     "title": "Bike Light Kit Funding and Sponsorships",
+     "label": "M03#5"
     },
     {
-     "video_id": "MCM00001143",
-     "t": 3615,
-     "date": "2023-10-25",
-     "base": "2024-08-07_MCM00001143",
-     "meeting_title": "Medford Bicycle Advisory Commission 10-25-23",
-     "title": "Infrastructure Updates",
-     "label": "M17#6"
+     "video_id": "MCM00001131",
+     "t": 2629,
+     "date": "2023-03-29",
+     "base": "2024-08-06_MCM00001131",
+     "meeting_title": "Medford Bicycle Advisory Commission 03-29-23",
+     "title": "Bike Lights Program",
+     "label": "M11#7"
     },
     {
-     "video_id": "MCM00001544",
-     "t": 2478,
-     "date": "2024-09-25",
-     "base": "2024-09-26_MCM00001544",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-25-24",
-     "title": "Clippership Connector Status",
-     "label": "M19#3"
-    },
-    {
-     "video_id": "MCM00001790",
-     "t": 343,
-     "date": "2025-07-30",
-     "base": "2025-07-31_MCM00001790",
-     "meeting_title": "Bicycle Advisory Commission Meeting 07/30/25",
-     "title": "Announcements",
-     "label": "M22#3"
+     "video_id": "MCM00001804",
+     "t": 4068,
+     "date": "2025-09-03",
+     "base": "2025-09-04_MCM00001804",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-03-25",
+     "title": "Safety Equipment and Helmet Working Group",
+     "label": "M23#7"
     },
     {
      "video_id": "MCM00001816",
-     "t": 4807,
+     "t": 2749,
      "date": "2025-09-24",
      "base": "2025-09-25_MCM00001816",
      "meeting_title": "Medford Bicycle Advisory Commission 09-24-25",
-     "title": "Infrastructure Updates and Door Zone Safety",
-     "label": "M24#7"
+     "title": "Bike Light and Helmet Reports",
+     "label": "M24#6"
+    },
+    {
+     "video_id": "CAS00002535",
+     "t": 539,
+     "date": "2026-09-23",
+     "base": "2026-09-25_CAS00002535",
+     "meeting_title": "Bicycle Advisory Commission 09/23/26",
+     "title": "Medford High School Presentation and Prize Request",
+     "label": "M31#3"
+    },
+    {
+     "video_id": "CAS00002535",
+     "t": 3814,
+     "date": "2026-09-23",
+     "base": "2026-09-25_CAS00002535",
+     "meeting_title": "Bicycle Advisory Commission 09/23/26",
+     "title": "Bicycle Light Purchase Approval",
+     "label": "M31#7"
     }
    ]
   },
   {
-   "name": "Bluebikes System Expansion",
+   "name": "Bluebikes expansion",
    "status": "ongoing",
-   "summary": "Members coordinated with city staff to identify approximately ten initial station locations to bridge gaps between Wellington Station and Medford Square. Expansion continued with federal grant funding, leading to new stations in West Medford and Logan Park. By late 2026, the city reached a milestone of 17 active stations.",
+   "summary": "The commission worked alongside city staff to expand regional bike-share connectivity across Medford. Early efforts included supporting grant applications for additional stations and coordinating placement to connect Wellington Station with Medford Square. New stations were installed in West Medford and Logan Park by late 2023. Regional grant allocations and municipal installations continued through 2024 and 2026, expanding the local network to 17 active stations.",
    "citations": [
     {
      "video_id": "MCM00001158",
@@ -130,6 +105,15 @@
      "meeting_title": "Medford Bicycle Advisory Commission 07-27-22",
      "title": "City Infrastructure Projects and Bluebikes Expansion",
      "label": "M04#7"
+    },
+    {
+     "video_id": "MCM00001159",
+     "t": 341,
+     "date": "2022-12-07",
+     "base": "2024-08-07_MCM00001159",
+     "meeting_title": "Medford Bicycle Advisory Commission 12-07-22",
+     "title": "Bluebikes Grant Support",
+     "label": "M08#3"
     },
     {
      "video_id": "MCM00001134",
@@ -165,180 +149,15 @@
      "base": "2026-08-28_CAS00002510",
      "meeting_title": "Bicycle Advisory Commission 08/27/26",
      "title": "Transportation Department Project Updates",
-     "label": "M27#7"
+     "label": "M30#7"
     }
    ]
   },
   {
-   "name": "Safety Equipment Distribution",
+   "name": "Public bike rack installation",
    "status": "ongoing",
-   "summary": "The commission manages a recurring program to purchase and distribute bicycle light kits to students and the general public. While a helmet distribution program was temporarily discontinued, the body formed a new working group in 2025 to research municipal procurement of helmets and solicit corporate sponsors. In late 2026, the body authorized its largest bulk purchase to date of 960 bicycle lights.",
+   "summary": "The commission consistently tracked funding, procurement, and siting priorities for public bike racks across commercial districts and schools. Early efforts focused on re-submitting prioritized rack location maps to city departments and identifying grant opportunities. After securing grant funding for 40 racks in late 2023, the city confirmed plans in 2026 to install 65 new racks, with the commission voting on specific placement allocations along major commercial corridors.",
    "citations": [
-    {
-     "video_id": "MCM00001132",
-     "t": 6185,
-     "date": "2022-04-27",
-     "base": "2024-08-06_MCM00001132",
-     "meeting_title": "Medford Bicycle Advisory Commission 04-27-22",
-     "title": "Bike Light Kit Distribution and Funding",
-     "label": "M01#7"
-    },
-    {
-     "video_id": "MCM00001155",
-     "t": 6181,
-     "date": "2022-09-27",
-     "base": "2024-08-07_MCM00001155",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-27-22",
-     "title": "Bike Light Distribution and Purchase Approval",
-     "label": "M06#7"
-    },
-    {
-     "video_id": "MCM00001544",
-     "t": 5134,
-     "date": "2024-09-25",
-     "base": "2024-09-26_MCM00001544",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-25-24",
-     "title": "Bicycle Light Distribution",
-     "label": "M19#7"
-    },
-    {
-     "video_id": "MCM00001804",
-     "t": 4068,
-     "date": "2025-09-03",
-     "base": "2025-09-04_MCM00001804",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-03-25",
-     "title": "Safety Equipment and Helmet Working Group",
-     "label": "M23#7"
-    },
-    {
-     "video_id": "CAS00002535",
-     "t": 3814,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002535",
-     "meeting_title": "Bicycle Advisory Commission 09/23/26",
-     "title": "Bicycle Light Purchase Approval",
-     "label": "M28#7"
-    }
-   ]
-  },
-  {
-   "name": "Bicycle Master Plan and Strategic Planning",
-   "status": "ongoing",
-   "summary": "The body initiated a new citywide bike plan to replace the 2016 master plan, incorporating data collection on 'neighborway' routes. Members also advocated for a Vision Zero policy to establish a high-injury network map and a formal task force. In 2026, the commission formally adopted a new mission statement and a set of time-bound strategic goals to guide its infrastructure advocacy.",
-   "citations": [
-    {
-     "video_id": "MCM00001135",
-     "t": 3560,
-     "date": "2022-06-29",
-     "base": "2024-08-06_MCM00001135",
-     "meeting_title": "Medford Bicycle Advisory Commission 06-29-22",
-     "title": "Citywide Bike Plan Development",
-     "label": "M03#9"
-    },
-    {
-     "video_id": "MCM00001157",
-     "t": 3409,
-     "date": "2022-08-24",
-     "base": "2024-08-07_MCM00001157",
-     "meeting_title": "Medford Bicycle Advisory Commission 08-24-22",
-     "title": "Vision Zero Implementation",
-     "label": "M05#7"
-    },
-    {
-     "video_id": "MCM00001144",
-     "t": 3177,
-     "date": "2023-03-01",
-     "base": "2024-08-07_MCM00001144",
-     "meeting_title": "Medford Bicycle Advisory Commission 03-01-23",
-     "title": "Infrastructure Updates",
-     "label": "M10#5"
-    },
-    {
-     "video_id": "CAS00002473",
-     "t": 381,
-     "date": "2026-06-24",
-     "base": "2026-06-30_CAS00002473",
-     "meeting_title": "Bicycle Advisory Commission 06/24/26",
-     "title": "Adoption of Mission Statement and 2026 Goals",
-     "label": "M25#2"
-    },
-    {
-     "video_id": "CAS00002535",
-     "t": 1008,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002535",
-     "meeting_title": "Bicycle Advisory Commission 09/23/26",
-     "title": "Commission Goals Review",
-     "label": "M28#4"
-    }
-   ]
-  },
-  {
-   "name": "Safety Advocacy and Law Enforcement Coordination",
-   "status": "ongoing",
-   "summary": "Following several fatal crashes and a member's injury, the commission began sending formal letters to MassDOT and the DCR requesting safety reviews of state-owned roads. The body established a police working group to discuss officer training on safe passing laws and the reporting of dooring collisions. Advocacy efforts now include requesting targeted harassment stings and endorsing lower speed limits on state roads.",
-   "citations": [
-    {
-     "video_id": "MCM00001155",
-     "t": 286,
-     "date": "2022-09-27",
-     "base": "2024-08-07_MCM00001155",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-27-22",
-     "title": "Uncontrolled Intersections and Letter to the City",
-     "label": "M06#3"
-    },
-    {
-     "video_id": "MCM00001136",
-     "t": 890,
-     "date": "2022-10-26",
-     "base": "2024-08-06_MCM00001136",
-     "meeting_title": "Medford Bicycle Advisory Commission 10-26-22",
-     "title": "Middlesex Avenue Fatal Crash Response",
-     "label": "M07#3"
-    },
-    {
-     "video_id": "MCM00001669",
-     "t": 4585,
-     "date": "2024-12-18",
-     "base": "2024-12-19_MCM00001669",
-     "meeting_title": "Medford Bicycle Advisory Commission 12-18-24",
-     "title": "Infrastructure Updates and State Road Speed Limit Endorsement",
-     "label": "M20#6"
-    },
-    {
-     "video_id": "MCM00001790",
-     "t": 1829,
-     "date": "2025-07-30",
-     "base": "2025-07-31_MCM00001790",
-     "meeting_title": "Bicycle Advisory Commission Meeting 07/30/25",
-     "title": "Hormel Stadium and Police Working Group Updates",
-     "label": "M22#6"
-    },
-    {
-     "video_id": "CAS00002535",
-     "t": 6249,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002535",
-     "meeting_title": "Bicycle Advisory Commission 09/23/26",
-     "title": "Police Department Collaboration",
-     "label": "M28#11"
-    }
-   ]
-  },
-  {
-   "name": "Public Bike Rack Installation",
-   "status": "ongoing",
-   "summary": "The commission maintains a prioritized list of requested bike rack locations for the Department of Public Works to address installation backlogs. Efforts to expand the program included applying for state grants for dozens of new racks and requesting that a rack request category be added to the city's SeeClickFix system. Funding and installation coordination with the DPW remain recurring challenges for the body.",
-   "citations": [
-    {
-     "video_id": "MCM00001135",
-     "t": 2191,
-     "date": "2022-06-29",
-     "base": "2024-08-06_MCM00001135",
-     "meeting_title": "Medford Bicycle Advisory Commission 06-29-22",
-     "title": "Bike Infrastructure and Rack Updates",
-     "label": "M03#6"
-    },
     {
      "video_id": "MCM00001136",
      "t": 3579,
@@ -367,13 +186,275 @@
      "label": "M16#4"
     },
     {
+     "video_id": "MCM00001143",
+     "t": 2642,
+     "date": "2023-10-25",
+     "base": "2024-08-07_MCM00001143",
+     "meeting_title": "Medford Bicycle Advisory Commission 10-25-23",
+     "title": "City Engagement: Bike Racks and Passing Signage",
+     "label": "M17#4"
+    },
+    {
+     "video_id": "CAS00002367",
+     "t": 15,
+     "date": "2026-02-25",
+     "base": "2026-04-02_CAS00002367",
+     "meeting_title": "Bicycle Advisory Commission 02/25/26",
+     "title": "Bike Rack Planning and Installation",
+     "label": "M26#1"
+    },
+    {
+     "video_id": "CAS00002357",
+     "t": 6222,
+     "date": "2026-03-25",
+     "base": "2026-03-27_CAS00002357",
+     "meeting_title": "Bicycle Advisory Commission 03/25/26",
+     "title": "Bike Rack Installation Sites",
+     "label": "M27#12"
+    }
+   ]
+  },
+  {
+   "name": "Boston Avenue corridor design",
+   "status": "ongoing",
+   "summary": "The commission monitored road design and redevelopment plans along Boston Avenue, beginning with restoration advocacy during a university project. Members joined advisory discussions regarding raised crosswalks and formally requested the preservation of key cycling paths near proposed Tufts University developments. In late 2026, the body evaluated redesign concepts to prioritize safe bike lanes over street parking. The commission ultimately approved a prioritized list of design alternatives for Boston Avenue and formed an ad hoc working group to lead advocacy efforts with city and university representatives.",
+   "citations": [
+    {
+     "video_id": "MCM00001130",
+     "t": 6328,
+     "date": "2023-09-27",
+     "base": "2024-08-06_MCM00001130",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-27-23",
+     "title": "Infrastructure and Boston Avenue Restoration",
+     "label": "M16#7"
+    },
+    {
+     "video_id": "CAS00002357",
+     "t": 2751,
+     "date": "2026-03-25",
+     "base": "2026-03-27_CAS00002357",
+     "meeting_title": "Bicycle Advisory Commission 03/25/26",
+     "title": "Tufts Boston Avenue Advisory Group",
+     "label": "M27#7"
+    },
+    {
+     "video_id": "CAS00002357",
+     "t": 3117,
+     "date": "2026-03-25",
+     "base": "2026-03-27_CAS00002357",
+     "meeting_title": "Bicycle Advisory Commission 03/25/26",
+     "title": "Tufts Aquatic Center Path",
+     "label": "M27#8"
+    },
+    {
+     "video_id": "CAS00002585",
+     "t": 2844,
+     "date": "2026-10-28",
+     "base": "2026-10-30_CAS00002585",
+     "meeting_title": "Bicycle Advisory Commission 10/28/26",
+     "title": "Tufts Boston Avenue Redesign Concepts",
+     "label": "M32#6"
+    },
+    {
+     "video_id": "CAS00002606",
+     "t": 6662,
+     "date": "2026-11-17",
+     "base": "2026-11-19_CAS00002606",
+     "meeting_title": "Bicycle Advisory Commission 11/17/26",
+     "title": "Boston Avenue Design Recommendations",
+     "label": "M33#3"
+    },
+    {
+     "video_id": "CAS00002606",
+     "t": 7710,
+     "date": "2026-11-17",
+     "base": "2026-11-19_CAS00002606",
+     "meeting_title": "Bicycle Advisory Commission 11/17/26",
+     "title": "Boston Avenue Working Group",
+     "label": "M33#4"
+    }
+   ]
+  },
+  {
+   "name": "Clippership Connector project",
+   "status": "settled",
+   "summary": "The commission tracked progress on the Clippership Connector shared-use path from early design phases through final construction. Initial meetings covered design updates from state agencies and groundbreaking announcements. Although construction delays postponed the project completion to 2025, the official opening of the Clippership Connector occurred in July 2025. Following the opening, the commission focused on access improvements and temporary wayfinding signage through Medford Square.",
+   "citations": [
+    {
+     "video_id": "MCM00001135",
+     "t": 3250,
+     "date": "2022-06-29",
+     "base": "2024-08-06_MCM00001135",
+     "meeting_title": "Medford Bicycle Advisory Commission 06-29-22",
+     "title": "Project Updates: Clippership Connector and GLX Lanes",
+     "label": "M03#8"
+    },
+    {
+     "video_id": "MCM00001144",
+     "t": 3177,
+     "date": "2023-03-01",
+     "base": "2024-08-07_MCM00001144",
+     "meeting_title": "Medford Bicycle Advisory Commission 03-01-23",
+     "title": "Infrastructure Updates",
+     "label": "M10#5"
+    },
+    {
+     "video_id": "MCM00001143",
+     "t": 3615,
+     "date": "2023-10-25",
+     "base": "2024-08-07_MCM00001143",
+     "meeting_title": "Medford Bicycle Advisory Commission 10-25-23",
+     "title": "Infrastructure Updates",
+     "label": "M17#6"
+    },
+    {
+     "video_id": "MCM00001544",
+     "t": 2478,
+     "date": "2024-09-25",
+     "base": "2024-09-26_MCM00001544",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-25-24",
+     "title": "Clippership Connector Status",
+     "label": "M19#3"
+    },
+    {
+     "video_id": "MCM00001790",
+     "t": 343,
+     "date": "2025-07-30",
+     "base": "2025-07-31_MCM00001790",
+     "meeting_title": "Bicycle Advisory Commission Meeting 07/30/25",
+     "title": "Announcements",
+     "label": "M22#3"
+    },
+    {
+     "video_id": "MCM00001790",
+     "t": 3945,
+     "date": "2025-07-30",
+     "base": "2025-07-31_MCM00001790",
+     "meeting_title": "Bicycle Advisory Commission Meeting 07/30/25",
+     "title": "Clippership Connector Access and Wayfinding",
+     "label": "M22#9"
+    },
+    {
      "video_id": "MCM00001804",
-     "t": 1496,
+     "t": 5163,
      "date": "2025-09-03",
      "base": "2025-09-04_MCM00001804",
      "meeting_title": "Medford Bicycle Advisory Commission 09-03-25",
-     "title": "Bike Rack Procurement",
-     "label": "M23#3"
+     "title": "Clipper Ship Connector Wayfinding",
+     "label": "M23#8"
+    }
+   ]
+  },
+  {
+   "name": "State roadway safety and rotary redesigns",
+   "status": "ongoing",
+   "summary": "The commission regularly engaged state agencies like DCR and MassDOT regarding safety deficiencies on state-controlled roads and rotaries in Medford. Members requested formal safety reviews following crashes on Middlesex Avenue and analyzed safety hazards along the Route 16 bridge corridor. The commission repeatedly protested repainting designs at local rotaries, collaborating with neighboring towns to propose sharrows and unified safety markings. The body also established a shared photo project to document inadequate snow removal on state-controlled bike paths.",
+   "citations": [
+    {
+     "video_id": "MCM00001136",
+     "t": 890,
+     "date": "2022-10-26",
+     "base": "2024-08-06_MCM00001136",
+     "meeting_title": "Medford Bicycle Advisory Commission 10-26-22",
+     "title": "Middlesex Avenue Fatal Crash Response",
+     "label": "M07#3"
+    },
+    {
+     "video_id": "MCM00001669",
+     "t": 2423,
+     "date": "2024-12-18",
+     "base": "2024-12-19_MCM00001669",
+     "meeting_title": "Medford Bicycle Advisory Commission 12-18-24",
+     "title": "Route 16 Auburn Street Walkthrough Recap",
+     "label": "M20#4"
+    },
+    {
+     "video_id": "MCM00001804",
+     "t": 5888,
+     "date": "2025-09-03",
+     "base": "2025-09-04_MCM00001804",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-03-25",
+     "title": "Route 60 Rotary Repainting",
+     "label": "M23#9"
+    },
+    {
+     "video_id": "MCM00001816",
+     "t": 388,
+     "date": "2025-09-24",
+     "base": "2025-09-25_MCM00001816",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-24-25",
+     "title": "Arlington-Medford Rotary Safety Coordination",
+     "label": "M24#2"
+    },
+    {
+     "video_id": "CAS00002367",
+     "t": 1234,
+     "date": "2026-02-25",
+     "base": "2026-04-02_CAS00002367",
+     "meeting_title": "Bicycle Advisory Commission 02/25/26",
+     "title": "Snow Removal Advocacy and Infrastructure Maintenance",
+     "label": "M26#2"
+    },
+    {
+     "video_id": "CAS00002357",
+     "t": 6145,
+     "date": "2026-03-25",
+     "base": "2026-03-27_CAS00002357",
+     "meeting_title": "Bicycle Advisory Commission 03/25/26",
+     "title": "Mystic River Rotary",
+     "label": "M27#11"
+    }
+   ]
+  },
+  {
+   "name": "Police engagement and crash response",
+   "status": "ongoing",
+   "summary": "In response to cyclist collisions and harassment, the commission sought formal collaboration with local law enforcement. Members initially brainstormed safety requirements and training components for police officers in 2022. Following a road rage incident involving a member in 2024, the body formed a working group to meet with the mayor and police chief regarding driver harassment and crash reporting. The commission later established a working group to engage police officials on traffic division training, harassment stings, and accurate dooring collision reporting.",
+   "citations": [
+    {
+     "video_id": "MCM00001135",
+     "t": 5859,
+     "date": "2022-06-29",
+     "base": "2024-08-06_MCM00001135",
+     "meeting_title": "Medford Bicycle Advisory Commission 06-29-22",
+     "title": "Ordinance Components and Implementation",
+     "label": "M03#12"
+    },
+    {
+     "video_id": "MCM00001544",
+     "t": 2731,
+     "date": "2024-09-25",
+     "base": "2024-09-26_MCM00001544",
+     "meeting_title": "Medford Bicycle Advisory Commission 09-25-24",
+     "title": "Working Group on Aggressive Driving",
+     "label": "M19#4"
+    },
+    {
+     "video_id": "MCM00001669",
+     "t": 85,
+     "date": "2024-12-18",
+     "base": "2024-12-19_MCM00001669",
+     "meeting_title": "Medford Bicycle Advisory Commission 12-18-24",
+     "title": "Announcements and Police Outreach",
+     "label": "M20#2"
+    },
+    {
+     "video_id": "CAS00002492",
+     "t": 2697,
+     "date": "2026-07-22",
+     "base": "2026-07-23_CAS00002492",
+     "meeting_title": "Bicycle Advisory Commission 07/22/26",
+     "title": "Road Safety Advocacy and Police Engagement",
+     "label": "M29#9"
+    },
+    {
+     "video_id": "CAS00002535",
+     "t": 6249,
+     "date": "2026-09-23",
+     "base": "2026-09-25_CAS00002535",
+     "meeting_title": "Bicycle Advisory Commission 09/23/26",
+     "title": "Police Department Collaboration",
+     "label": "M31#11"
     }
    ]
   }
@@ -381,7 +462,7 @@
  "periods": [
   {
    "period": "2022-2023 term",
-   "narrative": "The commission focused on its initial orientation, launching the citywide bike plan framework, and distributing safety lights and helmets through community events.",
+   "narrative": "The commission elected officers, established frameworks for the citywide bike plan, reviewed street redesigns, and initiated equipment distribution programs. Members also engaged in advocacy regarding state road safety reviews and Bluebikes station expansion.",
    "citations": [
     {
      "video_id": "MCM00001132",
@@ -402,28 +483,46 @@
      "label": "M03#9"
     },
     {
-     "video_id": "MCM00001131",
-     "t": 378,
-     "date": "2023-03-29",
-     "base": "2024-08-06_MCM00001131",
-     "meeting_title": "Medford Bicycle Advisory Commission 03-29-23",
-     "title": "Helmet Donation and Distribution Planning",
-     "label": "M11#2"
+     "video_id": "MCM00001136",
+     "t": 890,
+     "date": "2022-10-26",
+     "base": "2024-08-06_MCM00001136",
+     "meeting_title": "Medford Bicycle Advisory Commission 10-26-22",
+     "title": "Middlesex Avenue Fatal Crash Response",
+     "label": "M07#3"
+    },
+    {
+     "video_id": "MCM00001159",
+     "t": 341,
+     "date": "2022-12-07",
+     "base": "2024-08-07_MCM00001159",
+     "meeting_title": "Medford Bicycle Advisory Commission 12-07-22",
+     "title": "Bluebikes Grant Support",
+     "label": "M08#3"
     }
    ]
   },
   {
    "period": "2024-2025 term",
-   "narrative": "This period was marked by the opening of the Clippership Connector and increased advocacy for safety improvements at rotaries and state-controlled intersections.",
+   "narrative": "The commission created working groups to address driver harassment and road safety, marked the opening of the Clippership Connector, and expanded public gear distribution. Members also advocated for lowered state road speed limits and urged the city to fill vacant transportation planning roles.",
    "citations": [
     {
      "video_id": "MCM00001544",
-     "t": null,
+     "t": 2731,
      "date": "2024-09-25",
      "base": "2024-09-26_MCM00001544",
      "meeting_title": "Medford Bicycle Advisory Commission 09-25-24",
-     "title": "Medford Bicycle Advisory Commission 09-25-24",
-     "label": "M19"
+     "title": "Working Group on Aggressive Driving",
+     "label": "M19#4"
+    },
+    {
+     "video_id": "MCM00001669",
+     "t": 4585,
+     "date": "2024-12-18",
+     "base": "2024-12-19_MCM00001669",
+     "meeting_title": "Medford Bicycle Advisory Commission 12-18-24",
+     "title": "Infrastructure Updates and State Road Speed Limit Endorsement",
+     "label": "M20#6"
     },
     {
      "video_id": "MCM00001790",
@@ -435,65 +534,74 @@
      "label": "M22#3"
     },
     {
-     "video_id": "MCM00001816",
-     "t": 388,
-     "date": "2025-09-24",
-     "base": "2025-09-25_MCM00001816",
-     "meeting_title": "Medford Bicycle Advisory Commission 09-24-25",
-     "title": "Arlington-Medford Rotary Safety Coordination",
-     "label": "M24#2"
+     "video_id": "CAS00002281",
+     "t": 1131,
+     "date": "2025-12-11",
+     "base": "2025-12-10_CAS00002281",
+     "meeting_title": "Bicycle Advisory Commission 12/11/25",
+     "title": "Transportation Planning Personnel Advocacy",
+     "label": "M25#4"
     }
    ]
   },
   {
    "period": "2026-2027 term",
-   "narrative": "The commission adopted formal strategic goals and a mission statement while managing leadership transitions and intensive membership recruitment.",
+   "narrative": "The commission established formal strategic goals, approved specific locations for dozens of new city bike racks, and organized snow removal advocacy. The body focused heavily on evaluating cross-section recommendations for the Boston Avenue bikeway design.",
    "citations": [
     {
+     "video_id": "CAS00002367",
+     "t": 15,
+     "date": "2026-02-25",
+     "base": "2026-04-02_CAS00002367",
+     "meeting_title": "Bicycle Advisory Commission 02/25/26",
+     "title": "Bike Rack Planning and Installation",
+     "label": "M26#1"
+    },
+    {
+     "video_id": "CAS00002367",
+     "t": 1234,
+     "date": "2026-02-25",
+     "base": "2026-04-02_CAS00002367",
+     "meeting_title": "Bicycle Advisory Commission 02/25/26",
+     "title": "Snow Removal Advocacy and Infrastructure Maintenance",
+     "label": "M26#2"
+    },
+    {
      "video_id": "CAS00002473",
-     "t": null,
+     "t": 381,
      "date": "2026-06-24",
      "base": "2026-06-30_CAS00002473",
      "meeting_title": "Bicycle Advisory Commission 06/24/26",
-     "title": "Bicycle Advisory Commission 06/24/26",
-     "label": "M25"
+     "title": "Adoption of Mission Statement and 2026 Goals",
+     "label": "M28#2"
     },
     {
-     "video_id": "CAS00002492",
-     "t": 1293,
-     "date": "2026-07-22",
-     "base": "2026-07-23_CAS00002492",
-     "meeting_title": "Bicycle Advisory Commission 07/22/26",
-     "title": "Election of New Chair",
-     "label": "M26#4"
-    },
-    {
-     "video_id": "CAS00002535",
-     "t": 5221,
-     "date": "2026-09-23",
-     "base": "2026-09-25_CAS00002535",
-     "meeting_title": "Bicycle Advisory Commission 09/23/26",
-     "title": "Membership Vacancies and Recruitment",
-     "label": "M28#9"
+     "video_id": "CAS00002606",
+     "t": 6662,
+     "date": "2026-11-17",
+     "base": "2026-11-19_CAS00002606",
+     "meeting_title": "Bicycle Advisory Commission 11/17/26",
+     "title": "Boston Avenue Design Recommendations",
+     "label": "M33#3"
     }
    ]
   }
  ],
  "dropped": 0,
  "coverage": {
-  "citations": 44,
-  "meetings_cited": 25,
-  "of_meetings": 28,
-  "max_share": 0.114,
-  "even_share": 0.0357,
-  "concentration_ratio": 3.19,
-  "most_cited": "CAS00002535",
+  "citations": 56,
+  "meetings_cited": 26,
+  "of_meetings": 33,
+  "max_share": 0.071,
+  "even_share": 0.0303,
+  "concentration_ratio": 2.34,
+  "most_cited": "MCM00001135",
   "periods_covered": 3,
   "of_periods": 3
  },
  "usage": {
-  "input_tokens": 12849,
-  "output_tokens": 1406,
-  "model_version": "gemini-3-flash-preview"
+  "input_tokens": 14911,
+  "output_tokens": 1692,
+  "model_version": "gemini-3.6-flash"
  }
 }
