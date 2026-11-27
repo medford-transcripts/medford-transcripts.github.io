@@ -1,0 +1,70 @@
+{
+ "video_id": "CAS00002284",
+ "provider": "gemini",
+ "generated_at": "2026-11-27T21:08:04Z",
+ "model": "gemini-3.6-flash",
+ "model_requested": "gemini",
+ "transcript_sha": "1069ff975612a3c3",
+ "subject": "",
+ "overview": "The Medford Zoning Board of Appeals met to consider several development applications, approving a use variance and special permit for a maker space at 400 Riverside Avenue, granting dimensional variances while continuing a parking permit for 106 Alexander Avenue, and accepting a withdrawal for 41 Yale Street.",
+ "items": [
+  {
+   "title": "41 Yale Street",
+   "t": 30,
+   "summary": "The board voted to allow the applicant to withdraw the petition without prejudice after the property was redesigned to eliminate the need for zoning relief.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "106 Alexander Avenue",
+   "t": 122,
+   "summary": "The board approved variances for lot area and lot width to replace a single-family home with a two-family dwelling, but denied a special permit for non-conforming tandem parking. The applicant requested to continue the matter to January 8 to submit revised parking plans, which the board approved.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Cabral",
+    "Mike Caldera",
+    "Chris D'Aveta",
+    "Mary Lee",
+    "Danielle Evans",
+    "Yvette Velez"
+   ]
+  },
+  {
+   "title": "400 Riverside Avenue",
+   "t": 4860,
+   "summary": "The board approved a use variance to operate a flexible co-working and maker space and granted a special permit to utilize a portion of the vacant industrial property for warehouse and wholesale use.",
+   "speakers": [
+    "Denis MacDougall",
+    "Victor Schmidt",
+    "Rob Choklo",
+    "Danielle Evans",
+    "Chris D'Aveta",
+    "Yvette Velez",
+    "Nate Merritt",
+    "Jonathan Arnone",
+    "Mary Lee",
+    "Mike Caldera"
+   ]
+  },
+  {
+   "title": "Meeting Minutes and Administrative Business",
+   "t": 8173,
+   "summary": "The board voted to approve the meeting minutes from the previous meeting and discussed upcoming updates to the board's administrative regulations.",
+   "speakers": [
+    "Denis MacDougall",
+    "Mike Caldera",
+    "Chris D'Aveta",
+    "Yvette Velez",
+    "Mary Lee"
+   ]
+  }
+ ],
+ "dropped": 0,
+ "usage": {
+  "input_tokens": 44879,
+  "output_tokens": 571,
+  "model_version": "gemini-3.6-flash"
+ }
+}
