@@ -1,76 +1,82 @@
 {
  "video_id": "CAS00002410",
  "provider": "gemini",
- "generated_at": "2026-11-28T07:09:48Z",
- "model": "gemini-3.8-flash",
+ "generated_at": "2026-11-28T08:07:15Z",
+ "model": "gemini-3.6-flash",
  "model_requested": "gemini",
- "transcript_sha": "38f5c6177aa63211",
+ "transcript_sha": "032088c49e47b56d",
  "subject": "",
- "overview": "The board voted to submit a letter of support for proposed zoning amendments permitting fractional cash payments to the trust. Members also discussed fundraising and revenue options, including a state technical assistance application, and received updates on pending funding requests, the action plan, and the 703 Fellsway West project.",
+ "overview": "The CC Affordable Housing Trust Fund Board reviewed proposed zoning ordinance language regarding fractional inclusionary housing payments and received updates on funding requests, property developments, and revenue generation. The board voted to submit a letter supporting the fractional payment ordinance and directed staff to apply for technical assistance focused on voluntary fundraising.",
  "items": [
   {
    "title": "Approval of Minutes",
    "t": 35,
-   "summary": "Approved the minutes from the November 5, 2025 meeting.",
+   "summary": "The board approved the minutes from the November 5 meeting.",
    "speakers": [
-    "Roberta Cameron"
+    "Roberta Cameron",
+    "Penelope Taylor",
+    "Teda DeRosa",
+    "Lisa Davidson"
    ]
   },
   {
    "title": "Fractional Payment Ordinance",
    "t": 89,
-   "summary": "Voted to send a letter of support for proposed zoning ordinance changes that permit fractional cash payments to the trust in lieu of building fractional units, with staff incorporating board edits regarding payment timing.",
+   "summary": "Staff presented proposed ordinance language allowing cash payments for fractional affordable unit requirements, and the board voted to submit a letter supporting the proposal with minor edits.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham",
     "Penelope Taylor",
-    "Teda DeRosa"
+    "Teda DeRosa",
+    "Kayla"
    ]
   },
   {
    "title": "CPC Funding Request Update",
    "t": 1480,
-   "summary": "Received an update on the trust's presentation requesting $550,000 from the Community Preservation Committee, which is scheduled to deliberate on awards the following week.",
+   "summary": "Staff and members reviewed the trust's presentation requesting $550,000 from the Community Preservation Committee, noting that funding deliberations will occur the following week.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham"
    ]
   },
   {
-   "title": "City Council Action Plan Presentation Debrief",
+   "title": "Action Plan Presentation to City Council Update",
    "t": 1601,
-   "summary": "Reviewed city council and community feedback from the December 2 presentation of the five-year action plan, focusing on future strategies for broader survey and outreach distribution to homeowners and renters.",
+   "summary": "Trustees summarized their presentation of the five-year action plan to the City Council and discussed strategies to expand community outreach for future surveys.",
    "speakers": [
     "Roberta Cameron",
+    "Kayla",
     "Katherine Buckingham",
     "Penelope Taylor"
    ]
   },
   {
-   "title": "703 Fellsway West Update",
-   "t": 2330,
-   "summary": "Staff reported that certificates of occupancy have been issued, the housing lottery closes December 10, and a ribbon-cutting ceremony is scheduled for December 18.",
+   "title": "703 Fellsway West Development Update",
+   "t": 2322,
+   "summary": "Staff reported that certificates of occupancy have been issued for 703 Fellsway West and announced a ribbon-cutting ceremony scheduled for December 18.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham"
    ]
   },
   {
-   "title": "Increasing Trust Revenue and Fundraising",
-   "t": 2529,
-   "summary": "Agreed to prepare an application for Massachusetts Housing Partnership technical assistance focused on voluntary fundraising and received updates on resident donation inquiries, free cash research, and incoming development and resale fees.",
+   "title": "Increasing Affordable Housing Trust Fund Revenue",
+   "t": 2523,
+   "summary": "The board discussed resident donation inquiries and incoming revenue streams, and agreed to have staff draft an application for MHP technical assistance focused on voluntary fundraising.",
    "speakers": [
     "Roberta Cameron",
     "Katherine Buckingham",
     "Penelope Taylor",
+    "Kayla",
     "Teda DeRosa"
    ]
   }
  ],
  "dropped": 0,
  "usage": {
-  "input_tokens": 19569,
-  "output_tokens": 540,
-  "model_version": "gemini-3.8-flash"
+  "input_tokens": 19571,
+  "output_tokens": 539,
+  "model_version": "gemini-3.6-flash"
  }
 }
